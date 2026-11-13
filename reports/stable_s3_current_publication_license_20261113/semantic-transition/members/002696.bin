@@ -1,0 +1,83 @@
+identifier: CHEBI:16113
+preferred_term: cholesterol
+ontology_mapping:
+  ontology_id: CHEBI:16113
+  ontology_label: cholesterol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 57-88-5
+    notes: 'Corrected mis-mapping: CAS-RN 57-88-5 (cholesterol) had resolved to the
+      deuterated isotopologue CHEBI:140435 (cholesterol-2,2,3,4,4,6-d6); remapped
+      to CHEBI:16113 (cholesterol). EXACT_MATCH.'
+synonyms:
+- synonym_text: (3beta,14beta,17alpha)-cholest-5-en-3-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cholest-5-en-3beta-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cholesterin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-07T10:20:24.168389+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:140435
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: (2,2,3,4,4,6-(2)H6)cholest-5-en-3beta-ol,
+    (2,2,3,4,4,6-(2)H6)cholesterol, (3beta,14beta,17alpha)-cholest-5-en-3-ol, 3beta-hydroxy-5-cholestene-2,2,3,4,4,5-d6,
+    5-cholesten-3beta-ol-2,2,3,4,4,5-d6, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.976633+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:33.067107+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C33H58O; inchi=InChI=1S/C27H46O/c1-18(2)7-6-8-19(3)23-11-12-24-22;
+    smiles=[H][C@@]12CC(C)=C3C(C)(C)[C@@](C)(O)C(C)(C)C[C@]3(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.355327+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: ontology_id CHEBI:140435 (cholesterol-2,2,3,4,4,6-d6, deuterated isotopologue)
+    -> CHEBI:16113 (cholesterol); mapping_quality CAS_RN_LOOKUP -> EXACT_MATCH; molecular_formula
+    C33H58O -> C27H46O; cleared deuterated inchi/smiles for backfill. CAS 57-88-5
+    retained.
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.520186+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 1/1 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Created from FEBA ontology enrichment workflow. Used in 1 FEBA media formulations.
+chemical_properties:
+  cas_rn: 57-88-5
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:20:24.168399+00:00'
+  molecular_formula: C27H46O
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,94 @@
+identifier: CHEBI:219652
+preferred_term: nocamycin
+ontology_mapping:
+  ontology_id: CHEBI:219652
+  ontology_label: Nocamycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgmicrobe.compound:nocamycin
+    notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
+synonyms:
+- synonym_text: methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: nocamycin'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T06:10:55.017713+00:00'
+  curator: audit_propose_chebi_for_unmapped
+  action: CREATED_FROM_UNMAPPED_QUEUE
+  changes: Created new ingredient from kgmicrobe.compound:nocamycin with auto-curated
+    CHEBI CHEBI:219652 (Nocamycin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.602243+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.706679+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C26H33NO9; inchi=InChI=1S/C26H33NO9/c1-12(7-8-16(28)19-18(30)11-27-;
+    smiles=COC(=O)C(C)C1OC12CC(=O)C1OC2(C)OC(C(C)/C=C(C)/C=C/
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.502686+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.392143+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    nocamycin''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    nocamycin''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001911; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C26H33NO9
+  inchi: InChI=1S/C26H33NO9/c1-12(7-8-16(28)19-18(30)11-27-23(19)31)9-13(2)20-14(3)21-17(29)10-26(25(5,34-20)35-21)22(36-26)15(4)24(32)33-6/h7-9,13-15,20-22,28H,10-11H2,1-6H3,(H,27,31)/b8-7+,12-9+,19-16?
+  smiles: COC(=O)C(C)C1OC12CC(=O)C1OC2(C)OC(C(C)/C=C(C)/C=C/C(O)=C2C(=O)CNC2=O)C1C
+  data_source: CHEBI sqlite (oaklib)
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001911
+legacy_identifiers:
+- MIM:Nocamycin
+- CHEBI:219652

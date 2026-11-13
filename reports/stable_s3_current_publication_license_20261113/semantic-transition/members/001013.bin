@@ -1,0 +1,55 @@
+identifier: NCIT:C1928
+preferred_term: Dynemicin
+ontology_mapping:
+  ontology_id: NCIT:C1928
+  ontology_label: Dynemicin
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgmicrobe.compound:dynemicin
+    notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.851793+00:00'
+  curator: audit_propose_chebi_for_unmapped
+  action: CREATED_FROM_UNMAPPED_QUEUE
+  changes: Created new ingredient from kgmicrobe.compound:dynemicin with auto-curated
+    CHEBI NCIT:C1928 (Dynemicin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.399522+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.193679+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228241+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: CHEBI -> NCIT (aligned with NCIT:C1928 prefix)'
+- timestamp: '2026-06-02T07:05:13.388789+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -1,0 +1,54 @@
+{
+  "status": "PASS_BOUNDED_AUTHOR_CONTROLS_INDEPENDENT_REVIEW_PENDING",
+  "candidate_sha256": "4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591",
+  "author_checks": {
+    "checks": [
+      {
+        "name": "closed schema before/after and exact inverse delta",
+        "status": "PASS"
+      },
+      {
+        "name": "Hemodal no longer resolves; three supported chemical names still resolve",
+        "status": "PASS"
+      },
+      {
+        "name": "reject historical authorship mutation",
+        "status": "expected_refusal"
+      },
+      {
+        "name": "reject identity mutation",
+        "status": "expected_refusal"
+      },
+      {
+        "name": "reject second synonym rejection mutation",
+        "status": "expected_refusal"
+      },
+      {
+        "name": "closed synonym schema rejects invented identity field",
+        "status": "expected_refusal"
+      },
+      {
+        "name": "native guarded private publication and exact roundtrip",
+        "status": "PASS"
+      }
+    ],
+    "source_and_inputs_unchanged": true,
+    "private_only": true,
+    "candidate_sha256": "4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591"
+  },
+  "additional_checks": [
+    "full2956-catalog partonomy zero before/after",
+    "unchanged preferred-name owner index",
+    "native full13-field comparison only source/other changes",
+    "only Hemodal token removed and three supported names retained",
+    "forced actualKG Hemodal/HEMODAL reintroduction blocked",
+    "restoring resolving type demonstrates positive route",
+    "occupied native publication destination refused",
+    "all captured author/source/producer inputs unchanged"
+  ],
+  "partonomy_violations_before": 0,
+  "partonomy_violations_after": 0,
+  "actual_full_generation": false,
+  "source_application": false,
+  "independent_approval": false
+}

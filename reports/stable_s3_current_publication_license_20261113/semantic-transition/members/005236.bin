@@ -1,0 +1,167 @@
+id: CultureMech:011324
+preferred_term: Main sol. 927
+term:
+  id: mediadive.solution:1909
+  label: Main sol. 927
+composition:
+- preferred_term: NaCl
+  concentration:
+    value: '270'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:43
+    label: NaCl
+  chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: NaBr
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:353
+    label: NaBr
+  chebi_term:
+    id: CHEBI:63004
+    label: sodium bromide
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: MgSO4 x 7 H2O
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:8
+    label: MgSO4 x 7 H2O
+  chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: KCl
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:61
+    label: KCl
+  chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: NH4Cl
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:42
+    label: NH4Cl
+  chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Tris-HCl
+  concentration:
+    value: '12'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:452
+    label: Tris-HCl
+  chebi_term:
+    id: CHEBI:9754
+    label: tris
+    match_type: exact_match
+- preferred_term: Yeast extract
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:16
+    label: Yeast extract
+- preferred_term: Glucose
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:5
+    label: Glucose
+  chebi_term:
+    id: CHEBI:17234
+    label: glucose
+    confidence: 0.9
+    match_type: manual_curated
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: 'Prepare the medium, and adjust the pH to 7.6 with 5M NaOH.
+
+  Autoclave and when the medium has cooled add 2.5 ml of the phosphate solution, 0.5
+  ml of the calcium chloride solution, and 0.25 ml of the Fe/Mn solution. This strain
+  will not grow in normal media for halobacteria, such as DSM medium 372!'
+curation_history:
+- timestamp: '2026-06-14T07:03:53.728571+00:00'
+  curator: kg-fallback-cleanup-v1.0
+  action: Cleaned residual kg_fallback chebi_terms
+  notes: 'Cleaned 1 low-confidence kg_fallback chebi_term(s): 1 re-grounded via OAK, 0 de-grounded (unverifiable id).'
+- timestamp: '2026-06-14T05:58:58.561437+00:00'
+  curator: idnf-grounding-fix-v1.0
+  action: Fixed ID_NOT_FOUND term groundings
+  notes: 'Absent/obsolete CHEBI term ids fixed - 1 re-grounded to the correct CHEBI, 0 de-grounded (mixture or unverifiable).'
+- timestamp: '2026-03-13T06:20:18.918311Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:011324'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:21.989883'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:17.595257'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:45.621298+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:18.773824+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 2 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:46:08.099825+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:06.990386+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '2 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

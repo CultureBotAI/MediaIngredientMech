@@ -1,0 +1,71 @@
+identifier: CHEBI:34582
+preferred_term: Bleomycin sulfate
+ontology_mapping:
+  ontology_id: CHEBI:34582
+  ontology_label: bleomycin sulfate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=9041-93-4); Imported
+    from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.441675+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.254360+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C50H71N16O21S2R.(H2O4S)n
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.867238+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386910+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000510; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9041-93-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C50H71N16O21S2R.(H2O4S)n
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000510
+legacy_identifiers:
+- MIM:Bleomycin_Sulfate
+- CHEBI:34582

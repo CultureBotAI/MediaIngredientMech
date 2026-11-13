@@ -1,0 +1,395 @@
+{
+  "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v2/detached-inputs/c6f35f1442b6da32bec0-union-ledger.json",
+  "source_sha256": "a709fa2094a25e244b96f18699be06c266b7653719fcba04062c6f195daa25c5",
+  "source_bytes": 11933664,
+  "population": 1879,
+  "selector": "case_id in exact two reviewed origins",
+  "cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:8f83392682836884405f095d7da4802c611dad853124e0b97d18064388173284",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/9",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/basal_salts_medium_bsm_modified_from_that_of_hareland_et_al_j_bacteriol_121_272_285_1975_by_removal_of_the_nitriloacetic_acid.yaml",
+          "native_name": "Sodium dihydrogen orthophosphate monohydrate",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:9e4e4d3564af4b31d199f0e5fe27e9236692f567def70d08fbed75d438b23ca0",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20"
+            },
+            "notes": "Role: Buffer; Properties: Simple component, Inorganic compound, Defined component",
+            "preferred_term": "Sodium dihydrogen orthophosphate monohydrate"
+          },
+          "raw_preferred_term": "Sodium dihydrogen orthophosphate monohydrate",
+          "recipe_id": "CultureMech:008825",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008825"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2237"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/basal_salts_medium_bsm_modified_from_that_of_hareland_et_al_j_bacteriol_121_272_285_1975_by_removal_of_the_nitriloacetic_acid.yaml",
+          "source_file_sha256": "3b7a45d113c023b8109ac32ad04cb8ab92dc126036d3314ad911b37ce622e239",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3236,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:008825",
+        "ingredient_name": "Sodium dihydrogen orthophosphate monohydrate",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Sodium dihydrogen orthophosphate monohydrate",
+      "source": "culturemech",
+      "source_case_id": "Sodium dihydrogen orthophosphate monohydrate",
+      "source_identity_claimed": false,
+      "source_label": "Sodium dihydrogen orthophosphate monohydrate"
+    },
+    {
+      "baseline_outcome": "current_source_placeholder_preserved",
+      "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+      "case_id": "KG_CASE:474ac93022610e80bc34d2f6ab7a416e9e79b410b22210369ade23571f67fc61",
+      "original_kg_entry": {
+        "candidate_id": "474ac93022610e80bc34d2f6ab7a416e9e79b410b22210369ade23571f67fc61",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "L-Cysteine x HCl x H2O solution",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1583",
+                "object_id": "CHEBI:91248",
+                "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                "owner_record_sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+                "predicate_id": "skos:closeMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                "row_sha256": "53518c518f83829677bc93cd088620c51779b1791dd5a4f9f622489c9f864f01",
+                "source_position": "1583",
+                "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:91248",
+              "object_label": "L-cysteine hydrochloride hydrate",
+              "object_source": "obo:chebi.owl",
+              "other": "QSY9 succinimidyl ester(1+)",
+              "predicate_id": "skos:closeMatch",
+              "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:MIM curation (#321)",
+              "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+              "subject_label": "L-Cysteine x HCl x H2O solution",
+              "validation_method": ""
+            },
+            "row_sha256": "53518c518f83829677bc93cd088620c51779b1791dd5a4f9f622489c9f864f01"
+          },
+          {
+            "candidate_field": "source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "L-Cysteine x HCl x H2O solution",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1584",
+                "object_id": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+                "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                "owner_record_sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                "row_sha256": "65c8c90b556b0c74b43fcbc37fc7dfb0647e1014d87ac399bda257f69a1fc28a",
+                "source_position": "1584",
+                "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution"
+              }
+            ],
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution alongside parent CHEBI:91248.",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+              "object_label": "L-Cysteine x HCl x H2O solution",
+              "object_source": "kgm:ingredient",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+              "subject_label": "L-Cysteine x HCl x H2O solution",
+              "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+            },
+            "row_sha256": "65c8c90b556b0c74b43fcbc37fc7dfb0647e1014d87ac399bda257f69a1fc28a"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "L-Cysteine x HCl x H2O solution",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1583",
+                "object_id": "CHEBI:91248",
+                "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                "owner_record_sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+                "predicate_id": "skos:closeMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                "row_sha256": "53518c518f83829677bc93cd088620c51779b1791dd5a4f9f622489c9f864f01",
+                "source_position": "1583",
+                "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:91248",
+              "object_label": "L-cysteine hydrochloride hydrate",
+              "object_source": "obo:chebi.owl",
+              "other": "QSY9 succinimidyl ester(1+)",
+              "predicate_id": "skos:closeMatch",
+              "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:MIM curation (#321)",
+              "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+              "subject_label": "L-Cysteine x HCl x H2O solution",
+              "validation_method": ""
+            },
+            "row_sha256": "53518c518f83829677bc93cd088620c51779b1791dd5a4f9f622489c9f864f01"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "subject_label",
+            "matched_label": "L-Cysteine x HCl x H2O solution",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "1584",
+                "object_id": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+                "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                "owner_record_sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                "row_sha256": "65c8c90b556b0c74b43fcbc37fc7dfb0647e1014d87ac399bda257f69a1fc28a",
+                "source_position": "1584",
+                "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution"
+              }
+            ],
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution alongside parent CHEBI:91248.",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-10",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+              "object_label": "L-Cysteine x HCl x H2O solution",
+              "object_source": "kgm:ingredient",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+              "subject_label": "L-Cysteine x HCl x H2O solution",
+              "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+            },
+            "row_sha256": "65c8c90b556b0c74b43fcbc37fc7dfb0647e1014d87ac399bda257f69a1fc28a"
+          }
+        ],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "source_label",
+            "kind": "preferred_term",
+            "label": "L-Cysteine x HCl x H2O solution",
+            "owner": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "source_label",
+            "kind": "synonym",
+            "label": "L-Cysteine x HCl x H2O solution",
+            "owner": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "mim-queue",
+              "synonym_text": "L-Cysteine x HCl x H2O solution",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "preferred_term",
+            "label": "L-Cysteine x HCl x H2O solution",
+            "owner": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "L-Cysteine x HCl x H2O solution",
+            "owner": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "mim-queue",
+              "synonym_text": "L-Cysteine x HCl x H2O solution",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1583",
+                  "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                  "row_sha256": "53518c518f83829677bc93cd088620c51779b1791dd5a4f9f622489c9f864f01",
+                  "source_position": 1583
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.9",
+                  "mapping_date": "2026-09-10",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "CHEBI:91248",
+                  "object_label": "L-cysteine hydrochloride hydrate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "QSY9 succinimidyl ester(1+)",
+                  "predicate_id": "skos:closeMatch",
+                  "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:MIM curation (#321)",
+                  "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+                  "subject_label": "L-Cysteine x HCl x H2O solution",
+                  "validation_method": ""
+                }
+              },
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1584",
+                  "owner_record": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: QSY9 succinimidyl ester still publishes as a final SSSOM synonym.",
+                  "row_sha256": "65c8c90b556b0c74b43fcbc37fc7dfb0647e1014d87ac399bda257f69a1fc28a",
+                  "source_position": 1584
+                },
+                "row": {
+                  "comment": "Registry/identity row preserving kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution alongside parent CHEBI:91248.",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-10",
+                  "mapping_justification": "semapv:ManualMappingCuration",
+                  "object_id": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+                  "object_label": "L-Cysteine x HCl x H2O solution",
+                  "object_source": "kgm:ingredient",
+                  "other": "",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:MIM curation (#288)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+                  "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution",
+                  "subject_label": "L-Cysteine x HCl x H2O solution",
+                  "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "A prepared solution of a single compound: STOCK_SOLUTION, so it takes a kgmicrobe.ingredient: mint rather than the compound's own identifier, with a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in #114. For PBS, note the term is NCIT:C178908 'phosphate-buffered saline'; searching the bare acronym instead returns NCIT:C122728 'TSPO wt Allele', a gene allele (#288).",
+                  "source": "MIM curation (#288)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:91247 ('L-cysteine hydrochloride') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged.",
+                  "source": "MIM curation (#342)"
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Repointed the local solution identity's parent from CHEBI:91247 to the hydrate-specific CHEBI:91248 ('L-cysteine hydrochloride hydrate'). The record still denotes a prepared solution, not the pure ChEBI compound, so it keeps its kgmicrobe.ingredient identifier and closeMatch grade.",
+                  "source": "MIM curation (#321)"
+                }
+              ],
+              "mapping_quality": "CLOSE_MATCH",
+              "ontology_id": "CHEBI:91248",
+              "ontology_label": "L-cysteine hydrochloride hydrate",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+            "preferred_term": "L-Cysteine x HCl x H2O solution",
+            "sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+            "subject_id": "MIM:L-Cysteine_X_HCl_X_H2O_Solution"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "L-Cysteine x HCl x H2O solution",
+        "resolving_owner_paths": [
+          "data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml"
+        ],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:1860",
+        "source_label": "L-Cysteine x HCl x H2O solution",
+        "source_record": {
+          "amount": 10,
+          "attribute": "*",
+          "compound": "L-Cysteine x HCl x H2O solution",
+          "compound_id": 1860,
+          "optional": 0,
+          "recipe_order": 14,
+          "unit": "ml"
+        },
+        "triage_flags": [
+          "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+          "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+        ]
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "L-Cysteine x HCl x H2O solution",
+      "source": "mediadive",
+      "source_case_id": "mediadive.ingredient:1860",
+      "source_identity_claimed": false,
+      "source_label": "L-Cysteine x HCl x H2O solution"
+    }
+  ],
+  "raw_cases_rewritten": false
+}

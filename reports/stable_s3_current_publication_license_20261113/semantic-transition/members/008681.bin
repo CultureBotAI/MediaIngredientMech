@@ -1,0 +1,209 @@
+identifier: kgmicrobe.ingredient:marine_broth_2216
+preferred_term: Marine broth 2216
+synonyms:
+- synonym_text: Marine broth 2216
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Marine broth 2216 (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth  (MB) 2216  (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD 279110)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Difco Bacto Marine Broth (DIFCO 2216)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ514a and cited NBRC primary recipes; worker03 broth evidence ledger
+- synonym_text: Bacto Marine Broth 2216 (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ514a and cited NBRC primary recipes; worker03 broth evidence ledger
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.725141+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth
+    formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Marine_Broth_2216-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: - **Recommended mapping status:** `UNMAPPED` No ontology CURIE was proposed. Recorded as
+    provenance only — no grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263
+    exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: PROMOTED_TO_MAPPED
+  changes: 'UNMAPPED_0434 -> kgmicrobe.ingredient:marine_broth_2216 (FALLBACK_REGISTRY). Minted under
+    the #288 named-preparation convention (#260): the broth twin of Marine Agar 2216, already in the corpus
+    as an UNMAPPED record. Minted alongside its agar rather than left unmapped: the two differ only by
+    the gelling agent, and splitting them would be arbitrary. Cross-reference: CultureMech:008094. A CultureMech
+    id cannot be the identifier — MIM''s primary key is an ontology CURIE or a registry mint — so it is
+    carried here as evidence.'
+  llm_assisted: false
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.517817+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 19/19 (media_count/total_occurrences), derived from distinct
+    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired
+    in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s published label
+    but were absent from MIM''s label index, so CultureMech could not resolve them: ''Marine broth 2216
+    (BD-Difco)'' (x9 CultureMech mentions); ''Marine Broth  (MB) 2216  (Difco)'' (x1 CultureMech mentions);
+    ''Marine Broth 2216 (BD 279110)'' (x1 CultureMech mentions); ''Marine Broth 2216 (BD--Difco)'' (x1
+    CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the ATCC Medium 2887 Difco Marine
+    Agar 2216 scratch formula with agar omitted for broth.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed two exact Difco2216 source aliases. Dose differences and separately added agar/salts
+    remain occurrence context. Existing component payload and WITHHOLD native status are not cleared.
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or CHEBI/NCIT match. Curator
+  review needed.
+ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: Peptone
+  component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: G_PER_L
+- component_name: Yeast Extract
+  component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: Ferric Citrate
+  component_id: CHEBI:144421
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '19.45'
+  concentration_unit: G_PER_L
+- component_name: Magnesium Chloride
+  component_id: CHEBI:86345
+  reference_scope: MIM_CATALOG
+  concentration_value: '8.8'
+  concentration_unit: G_PER_L
+- component_name: Sodium Sulfate
+  component_id: CHEBI:32149
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.24'
+  concentration_unit: G_PER_L
+- component_name: Calcium Chloride
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.8'
+  concentration_unit: G_PER_L
+- component_name: Potassium Chloride
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.55'
+  concentration_unit: G_PER_L
+- component_name: Sodium Bicarbonate
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.16'
+  concentration_unit: G_PER_L
+- component_name: Potassium Bromide
+  component_id: CHEBI:32030
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.08'
+  concentration_unit: G_PER_L
+- component_name: Strontium Chloride
+  component_id: CHEBI:36383
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.034'
+  concentration_unit: G_PER_L
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.022'
+  concentration_unit: G_PER_L
+- component_name: Sodium Silicate
+  component_id: CHEBI:60720
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.004'
+  concentration_unit: G_PER_L
+- component_name: Sodium Fluoride
+  component_id: CHEBI:28741
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0024'
+  concentration_unit: G_PER_L
+- component_name: Ammonium Nitrate
+  component_id: CHEBI:63038
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0016'
+  concentration_unit: G_PER_L
+- component_name: Disodium Phosphate
+  component_id: CHEBI:34683
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.008'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx
+    source_record: ATCC Medium 2887 Marine Agar/Broth 2216
+    notes: ATCC Medium 2887 lists the Difco Marine Agar 2216 scratch formula with peptone, yeast extract,
+      ferric citrate, salts, agar, and distilled water per liter, and says to omit agar for broth medium.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:marine_broth_2216
+  ontology_label: Marine broth 2216
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Minted under the #288 named-preparation convention (#260): the broth twin of Marine Agar 2216,
+      already in the corpus as an UNMAPPED record. Minted alongside its agar rather than left unmapped:
+      the two differ only by the gelling agent, and splitting them would be arbitrary. Cross-reference:
+      CultureMech:008094. A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+      CURIE or a registry mint — so it is carried here as evidence.'

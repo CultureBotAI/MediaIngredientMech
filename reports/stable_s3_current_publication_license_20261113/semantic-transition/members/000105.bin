@@ -1,0 +1,89 @@
+identifier: cas:2013-26-5
+preferred_term: 2-oxobutyric acid sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:30831
+  ontology_label: 2-oxobutanoic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 2013-26-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='2-oxobutyric acid
+      sodium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'SUPERSEDED (#312): narrowMatch parent CHEBI:26714 (''sodium salt'') ->
+      CHEBI:16763 (''2-oxobutanoate''). The previous parent was the class of all sodium
+      salts: it retained the counterion and discarded the compound, collapsing unrelated
+      ingredients onto one node. Chosen because it is ChEBI has no ''2-oxobutanoic
+      acid'' term, so the anion is the nearest available parent for the sodium salt.
+      The record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent
+      moves.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+      acid''). Section 3: for a salt the broadMatch parent follows the label, and
+      ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no ''2-oxobutanoic
+      acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym ''2-Oxobutyric
+      acid''. The anion CHEBI:16763 was the fallback for a false premise. cas: identity
+      unchanged.'
+synonyms:
+- synonym_text: Sodium 2-oxobutyrate
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:2013-26-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.770406+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.904807+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:37:05.511022+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:16763 '2-oxobutanoate'
+    (#322); ChEBI has no '2-oxobutanoic acid' term, so the anion is the nearest available
+    parent for the sodium salt.
+  llm_assisted: false
+- timestamp: '2026-09-22T23:25:51.023682+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+    acid'') (#312). Section 3: for a salt the broadMatch parent follows the label,
+    and ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no ''2-oxobutanoic
+    acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym ''2-Oxobutyric acid''.
+    The anion CHEBI:16763 was the fallback for a false premise. cas: identity unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties:
+  cas_rn: 2013-26-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: SINGLE_INGREDIENT

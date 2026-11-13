@@ -1,0 +1,45 @@
+identifier: kgmicrobe.ingredient:dsmz_1566_glucose_10_percent_from_alpha_monohydrate
+preferred_term: DSMZ 1566 glucose 10% stock from alpha-D-glucose monohydrate
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_1566_glucose_10_percent_from_alpha_monohydrate
+  ontology_label: DSMZ 1566 glucose 10% stock from alpha-D-glucose monohydrate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://mediadive.dsmz.de/rest/medium/1566
+    notes: Source-defined whole stock; no component identity mapping.
+components:
+- component_name: alpha-D-Glucose monohydrate
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: PERCENT
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/medium/1566
+    source_record: DSMZ 1566 glucose 10% stock from alpha-D-glucose monohydrate
+    supports: SUPPORT
+    notes: Source recipe_order22 explicitly specifies10% in H2O, added1ml from a sterile stock. Percent
+      basis is unstated and is not converted to g/L. The solid starting reagent is alpha-D monohydrate;
+      anomeric purity after aqueous equilibration is not asserted. This stock is distinct from the NCIT
+      solid identity.
+  notes: Literal source batch quantities and unresolved child forms retained; no normalization using flattened
+    parent recipe volume.
+notes: Source recipe_order22 explicitly specifies10% in H2O, added1ml from a sterile stock. Percent basis
+  is unstated and is not converted to g/L. The solid starting reagent is alpha-D monohydrate; anomeric
+  purity after aqueous equilibration is not asserted. This stock is distinct from the NCIT solid identity.
+curation_history:
+- timestamp: '2026-11-08T05:36:28.285714+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Propose DSMZ 1566 glucose 10% stock from alpha-D-glucose monohydrate with recipe-specific scope.
+    Proposal only; all source and publication holds retained.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,35 @@
+from pathlib import Path
+import copy, hashlib, io, json, os, subprocess, sys, tarfile, types
+import yaml
+D=Path(__file__).resolve().parent;C=D.parents[1];R=C.parents[1];A=C/'integration/ancillary1258-worktree';F=D/'native-review-fixture'
+def sha(b):return hashlib.sha256(b).hexdigest()
+check=json.loads((D/'independent-checks.json').read_text());base={}
+raw=subprocess.check_output(['git','--no-optional-locks','-C',str(A),'archive','84241993a278a7a413422ef89a52c0b47dc57831','data/ingredients'])
+with tarfile.open(fileobj=io.BytesIO(raw)) as tf:
+ for x in tf.getmembers():
+  if x.isfile() and x.name.endswith('.yaml'):base[x.name]=yaml.safe_load(tf.extractfile(x).read())
+old=copy.deepcopy(base);new=copy.deepcopy(base)
+for x in check['records']:
+ p=x['source_record'];name=Path(p).name;old[p]=yaml.safe_load((F/'predecessors'/name).read_bytes());new[p]=yaml.safe_load((F/'candidates'/name).read_bytes())
+index={x['destination']:x for x in json.loads((C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json').read_text())['files']}
+for op in check['required_unchanged_UW_operations']:
+ p=Path(index[op['after_capture']['path']]['source']);v=yaml.safe_load(p.read_bytes());old[op['source_record']]=v;new[op['source_record']]=v
+kg=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz');assert sha(kg.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+producer=R/'.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py';assert sha(producer.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+os.environ.update(OPENCLAW_WORKSPACE=str(D/'projection-workspace'),MEDIAINGREDIENTMECH_ROOT=str(A),KGMICROBE_ROOT=str(kg.parents[1]))
+native=types.ModuleType('independent_four_projection');native.__file__=str(producer);sys.modules[native.__name__]=native;exec(compile(producer.read_bytes(),str(producer),'exec'),native.__dict__)
+ks=native.load_kgm_source_index(kg);kl=native.load_kgm_labels(kg)
+labels={new[x['source_record']]['ontology_mapping']['ontology_id']:new[x['source_record']]['ontology_mapping']['ontology_label'] for x in check['records']}
+owners=[native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in data.items() if '/mapped/' in p}) for data in [old,new]]
+rows=[]
+for x in check['records']:
+ p=x['source_record'];result=[]
+ for i,dat in enumerate([old,new]):result.append(native._row_from_yaml(A/p,{},ks,kl,labels,record=dat[p],owners=owners[i],suppressions=[]))
+ assert len(result[0])==len(result[1])==1;before,after=result[0][0],result[1][0];delta={k:{'before':before[k],'after':after[k]} for k in before if before[k]!=after[k]}
+ if p.endswith('/Na2seo3.yaml'):
+  assert set(delta)<={'other','source','mapping_date'};assert set(before['other'].split('|'))-set(after['other'].split('|'))=={'Na2Se2O3'};assert set(after['other'].split('|'))-set(before['other'].split('|'))==set();assert 'Na2SeO3 (anhydrous)' in after['other'].split('|')
+ else:
+  assert set(delta)<={'mapping_justification','confidence','source','mapping_date'};assert after['mapping_justification']=='semapv:ManualMappingCuration';assert before['mapping_justification']=='semapv:LexicalMatching';assert before['confidence']=='0.99' and after['confidence']=='0.9'
+ assert after['predicate_id']=='skos:exactMatch';rows.append({'operation_id':x['operation_id'],'before':before,'after':after,'delta':delta})
+out={'status':'PASS','scope':'Actual native per-owner projection with full authentic A plus four owners and three unchanged UW dependencies. Real KG gzip; official captured labels. No network providers, global generation, canonical publication, stamp/override replay or final row approval.','producer':{'path':str(producer),'sha256':sha(producer.read_bytes())},'kg':{'path':str(kg),'sha256':sha(kg.read_bytes())},'rows':rows}
+(D/'independent-native-rows.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({'status':'PASS','rows':len(rows),'diffs':{x['operation_id']:list(x['delta']) for x in rows}},indent=2))

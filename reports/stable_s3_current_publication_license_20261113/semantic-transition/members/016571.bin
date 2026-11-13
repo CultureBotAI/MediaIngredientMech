@@ -1,0 +1,70 @@
+identifier: CHEBI:17965
+preferred_term: Isoorientin
+ontology_mapping:
+  ontology_id: CHEBI:17965
+  ontology_label: isoorientin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:isoorientin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:isoorientin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001363; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C21H20O11
+  smiles: O=c1cc(-c2ccc(O)c(O)c2)oc2cc(O)c([C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)c12
+  inchi: InChI=1S/C21H20O11/c22-6-14-17(27)19(29)20(30)21(32-14)16-11(26)5-13-15(18(16)28)10(25)4-12(31-13)7-1-2-8(23)9(24)3-7/h1-5,14,17,19-24,26-30H,6H2/t14-,17-,19+,20-,21+/m1/s1
+  molecular_weight: 448.38
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:28:05.094918+00:00'
+mim_id: MIM:0001363
+legacy_identifiers:
+- MIM:Isoorientin
+- CHEBI:17965

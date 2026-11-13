@@ -1,0 +1,131 @@
+identifier: CHEBI:189432
+preferred_term: alpha-Lactose
+ontology_mapping:
+  ontology_id: CHEBI:189432
+  ontology_label: Alpha-lactose monohydrate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:36219 (''alpha-lactose'') -> CHEBI:189432
+      (''Alpha-lactose monohydrate''). The record''s own cas_rn 5989-81-1 is registered
+      by ChEBI against CHEBI:189432, which is the monohydrate of the term the record
+      previously carried. Curation decision on #320: where the CAS names a more specific
+      FORM than the label, the CAS governs — the recipe is taken to mean the substance
+      actually weighed out. These surfaced as ''unrelated'' in the ancestry triage
+      only because ChEBI does not model salt-of / hydrate-of / racemate-of as subsumption,
+      the same gap #342 recorded for hydrates.'
+synonyms:
+- synonym_text: beta-D-galactopyranosyl-(1->4)-alpha-D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: 4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Anhydrous lactose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Milk sugar
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: beta-D-Galp-(1->4)-alpha-D-Glcp
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=5989-81-1); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.134375+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.957534+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H22O11; inchi=InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3);
+    smiles=OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.411833+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.245219+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-04T05:38:59.200417+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:36219 -> CHEBI:189432 'Alpha-lactose monohydrate'
+    (#320); the record's CAS 5989-81-1 denotes the monohydrate. mapping_quality ->
+    SYNONYM_MATCH.
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 5 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose'';
+    ''4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose''; ''Anhydrous lactose'';
+    ''Milk sugar''; ''beta-D-Galp-(1->4)-alpha-D-Glcp''. Tokens already present on
+    the kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000303; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 5989-81-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C12H22O11
+  inchi: InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5+,6+,7-,8-,9-,10-,11+,12+/m1/s1
+  smiles: OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@H]1O
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.
+mim_id: MIM:0000303
+legacy_identifiers:
+- MIM:Alpha-Lactose
+- CHEBI:189432

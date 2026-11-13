@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:citric_monohydrate_48gl_stock
+preferred_term: Citric acid monohydrate 4.8 g/L stock (TOGO M2231)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:citric_monohydrate_48gl_stock
+  ontology_label: Citric acid monohydrate 4.8 g/L stock (TOGO M2231)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: Source-bound worker03 review
+    notes: Distinct concentration-qualified stock; component identity is not whole-stock
+      grounding.
+components:
+- component_name: Citric acid x H2O
+  component_id: CHEBI:31404
+  reference_scope: MIM_CATALOG
+  concentration_value: '4.8'
+  concentration_unit: G_PER_L
+- component_name: Deionized water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+  source: Source input per stock preparation; no pure-water identity claim for supplied
+    deionized grade.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: culturemech
+    source_record: Citric acid·H2O (4.8 g/L)
+    notes: 'TOGO M2231 complete stock subsection: specified solute grams and deionized
+      water input 1 litre. No volume additivity or final receiving-medium concentration
+      inferred.'
+notes: Source-qualified stock proposal. The source input dose belongs to its recipe
+  occurrence, not to stock composition. Source water input is retained as an input
+  amount, not a measured final stock volume.
+synonyms:
+- synonym_text: Citric acid·H2O (4.8 g/L)
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[77] case_id=CM_NAME:96498a82cd6229d9a2e17e3b012f985bb719729491803128794ff89135811dd2;
+    source=culturemech; source_case_id=Citric acid·H2O (4.8 g/L); CultureMech:008820
+    ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231'
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_STOCK_PROPOSAL
+  changes: 'Propose distinct stock with explicit source concentration and typed has-part;
+    no exact or broad mapping to solute. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[77] case_id=CM_NAME:96498a82cd6229d9a2e17e3b012f985bb719729491803128794ff89135811dd2;
+    source=culturemech; source_case_id=Citric acid·H2O (4.8 g/L); CultureMech:008820
+    ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.520870+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-159. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

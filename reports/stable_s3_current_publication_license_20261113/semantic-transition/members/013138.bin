@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:jcm1051_l_cysteine_hydrochloride_monohydrate_01m_stock
+preferred_term: JCM1051 L-cysteine hydrochloride monohydrate0.1M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1051_l_cysteine_hydrochloride_monohydrate_01m_stock
+  ontology_label: JCM1051 L-cysteine hydrochloride monohydrate0.1M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1051
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'JCM1051 adds10ml of the0.1M anaerobic stock. Named solute form is explicit;
+  solvent composition and stock preparation not independently quantified. Raw assigned
+  source label: 0.1 M L--Cysteine・HCl・H2O. Quantities in notes preserve source preparation
+  and are not final-medium concentrations. No global synonym is added for this context-dependent
+  label.'
+solution_type: OTHER
+components:
+- component_name: L-cysteine hydrochloride monohydrate
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1051
+    source_record: JCM1051 L-cysteine hydrochloride monohydrate0.1M stock
+    notes: JCM1051 adds10ml of the0.1M anaerobic stock. Named solute form is explicit;
+      solvent composition and stock preparation not independently quantified.
+  notes: Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    JCM1051 adds10ml of the0.1M anaerobic stock. Named solute form is explicit; solvent
+    composition and stock preparation not independently quantified.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.142026+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

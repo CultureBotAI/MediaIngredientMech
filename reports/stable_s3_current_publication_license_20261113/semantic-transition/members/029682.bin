@@ -1,0 +1,61 @@
+identifier: CHEBI:74661
+preferred_term: Parabanic Acid
+ontology_mapping:
+  ontology_id: CHEBI:74661
+  ontology_label: parabanic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_carbon, FEBA_nitrogen.'
+synonyms:
+- synonym_text: imidazolidine-2,4,5-trione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=120-89-8); Imported
+    from CultureBotHT. FEBA/Hans80 panels: FEBA_carbon, FEBA_nitrogen.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.706753+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.817849+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H2N2O3; inchi=InChI=1S/C3H2N2O3/c6-1-2(7)5-3(8)4-1/h(H2,4,5,6,7,;
+    smiles=O=C1NC(=O)C(=O)N1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.642095+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002000; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 120-89-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C3H2N2O3
+  inchi: InChI=1S/C3H2N2O3/c6-1-2(7)5-3(8)4-1/h(H2,4,5,6,7,8)
+  smiles: O=C1NC(=O)C(=O)N1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002000
+legacy_identifiers:
+- MIM:Parabanic_Acid
+- CHEBI:74661

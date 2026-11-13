@@ -1,0 +1,64 @@
+identifier: CHEBI:28786
+preferred_term: Paraquat dichloride
+ontology_mapping:
+  ontology_id: CHEBI:28786
+  ontology_label: paraquat dichloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+synonyms:
+- synonym_text: Paraquat
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: 1,1'-dimethyl-[4,4'-bipyridin]-1,1'-diium dichloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=1910-42-5); Imported
+    from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.711070+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.821681+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H14N2.2Cl; inchi=InChI=1S/C12H14N2.2ClH/c1-13-7-3-11(4-8-13)12-5-9-;
+    smiles=C[n+]1ccc(-c2cc[n+](C)cc2)cc1.[Cl-].[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.648413+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002002; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1910-42-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C12H14N2.2Cl
+  inchi: InChI=1S/C12H14N2.2ClH/c1-13-7-3-11(4-8-13)12-5-9-14(2)10-6-12;;/h3-10H,1-2H3;2*1H/q+2;;/p-2
+  smiles: C[n+]1ccc(-c2cc[n+](C)cc2)cc1.[Cl-].[Cl-]
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002002
+legacy_identifiers:
+- MIM:Paraquat_Dichloride
+- CHEBI:28786

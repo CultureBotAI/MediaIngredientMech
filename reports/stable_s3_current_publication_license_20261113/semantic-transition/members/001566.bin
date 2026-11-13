@@ -1,0 +1,60 @@
+identifier: CHEBI:135874
+preferred_term: Lucimycin
+ontology_mapping:
+  ontology_id: CHEBI:135874
+  ontology_label: lucimycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:lucimycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:lucimycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C36H53NO13
+  smiles: CCCCC1C/C=C/C=C/C=C/C=C/C(O[C@@H]2O[C@H](C)[C@@H](O)[C@H](N)[C@@H]2O)CC2OC(O)(CC(O)CC3OC3/C=C/C(=O)O1)CC(O)C2C(=O)O
+  inchi: InChI=1S/C36H53NO13/c1-3-4-12-23-13-10-8-6-5-7-9-11-14-24(48-35-33(42)31(37)32(41)21(2)46-35)18-28-30(34(43)44)25(39)20-36(45,50-28)19-22(38)17-27-26(49-27)15-16-29(40)47-23/h5-11,14-16,21-28,30-33,35,38-39,41-42,45H,3-4,12-13,17-20,37H2,1-2H3,(H,43,44)/b6-5+,9-7+,10-8+,14-11+,16-15+/t21-,22?,23?,24?,25?,26?,27?,28?,30?,31+,32-,33+,35+,36?/m1/s1
+  molecular_weight: 707.814
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:28:26.882266+00:00'

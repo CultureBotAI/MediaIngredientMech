@@ -1,0 +1,118 @@
+identifier: kgmicrobe.ingredient:mediadive_3774_vfa_solution
+preferred_term: MediaDive 3774 VFA solution
+synonyms:
+- synonym_text: VFA solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:013996;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: CARBON_SOURCE_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_3774_vfa_solution
+  ontology_label: MediaDive 3774 VFA solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/solution/3774
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Acetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '17'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: Propionic acid
+  reference_scope: UNMAPPED
+  concentration_value: '6'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: n-Butyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: iso-Butyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: n-Valeric acid
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: iso-Valeric acid
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: DL-alpha-Methylbutyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/3774
+    source_record: MediaDive 3774 VFA solution; complete named stock table and preparation
+      notes
+    notes: Source seven liquid input amounts sum31mL; units retain original batch
+      amounts without assuming additive final volume or introducing solvent. No neat-acid
+      purity or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body
+      supplies this source-defined formula. Seven source liquid inputs are17,6,4,1,1,1,1mL.
+      Their arithmetic sum31mL and API volume do not establish additive final volume;
+      units express only each literal input. No solvent is introduced.
+  notes: 'Seven source liquid inputs are17,6,4,1,1,1,1mL. Their arithmetic sum31mL
+    and API volume do not establish additive final volume; units express only each
+    literal input. No solvent is introduced. Source-local raw labels are REJECTED_LABEL:
+    they are preserved for provenance and occurrence-specific decisions but native
+    resolution must not expose them as global synonyms. The source-qualified preferred
+    term denotes this exact preparation. No unsupported roles, mechanisms, vendor,
+    grade or release approval are asserted. Any UNMAPPED part retains its literal
+    source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'Source seven liquid input amounts sum31mL; units retain original batch amounts
+  without assuming additive final volume or introducing solvent. No neat-acid purity
+  or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body supplies
+  this source-defined formula. Seven source liquid inputs are17,6,4,1,1,1,1mL. Their
+  arithmetic sum31mL and API volume do not establish additive final volume; units
+  express only each literal input. No solvent is introduced. Source-local raw labels
+  are REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions
+  but native resolution must not expose them as global synonyms. The source-qualified
+  preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+  vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal
+  source identity; component grounding is separate from established whole-stock recipe
+  identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.840661+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 121. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.583114+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Seven source liquid
+    inputs are17,6,4,1,1,1,1mL. Their arithmetic sum31mL and API volume do not establish
+    additive final volume; units express only each literal input. No solvent is introduced.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.591531+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

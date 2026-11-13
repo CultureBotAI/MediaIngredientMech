@@ -1,0 +1,60 @@
+identifier: CHEBI:29582
+preferred_term: Ascomycin
+ontology_mapping:
+  ontology_id: CHEBI:29582
+  ontology_label: ascomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:ascomycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:ascomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C43H69NO12
+  smiles: '[H][C@@]12O[C@@](O)(C(=O)C(=O)N3CCCC[C@H]3C(=O)O[C@H](/C(C)=C/[C@@H]3CC[C@@H](O)[C@H](OC)C3)[C@H](C)[C@@H](O)CC(=O)[C@H](CC)/C=C(C)C[C@H](C)C[C@@H]1OC)[C@H](C)C[C@@H]2OC'
+  inchi: InChI=1S/C43H69NO12/c1-10-30-18-24(2)17-25(3)19-36(53-8)39-37(54-9)21-27(5)43(51,56-39)40(48)41(49)44-16-12-11-13-31(44)42(50)55-38(28(6)33(46)23-34(30)47)26(4)20-29-14-15-32(45)35(22-29)52-7/h18,20,25,27-33,35-39,45-46,51H,10-17,19,21-23H2,1-9H3/b24-18+,26-20+/t25-,27+,28+,29-,30+,31-,32+,33-,35+,36-,37-,38+,39+,43+/m0/s1
+  molecular_weight: 792.02
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:25:23.824149+00:00'

@@ -1,0 +1,76 @@
+identifier: cas:9067-32-7
+preferred_term: Hyaluronic acid sodium salt from Streptococcus equi
+ontology_mapping:
+  ontology_id: CHEBI:201433
+  ontology_label: Hyaluronic acid sodium
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 9067-32-7 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Hyaluronic acid
+      sodium salt from Streptococcus equi'
+synonyms:
+- synonym_text: not filter sterilized
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: sodium;(2S,3S,4R,5R,6R)-3-[(2S,3R,5S,6R)-3-acetamido-5-hydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-4,5,6-trihydroxyoxane-2-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:9067-32-7 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.997871+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:31.216990+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C28H44N2NaO23+; smiles=CC(=O)NC1C(C(C(OC1O)CO)O)OC2C(C(C(C(O2)C(=O)O)OC3C;
+    inchi=InChI=1S/C28H44N2O23.Na/c1-5(33)29-9-18(11(35)7(3-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.013564+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:50:09.263771+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:201433 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001304; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9067-32-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C28H44N2NaO23+
+  smiles: CC(=O)NC1C(C(C(OC1O)CO)O)OC2C(C(C(C(O2)C(=O)O)OC3C(C(C(C(O3)CO)O)OC4C(C(C(C(O4)C(=O)O)O)O)O)NC(=O)C)O)O.[Na+]
+  inchi: InChI=1S/C28H44N2O23.Na/c1-5(33)29-9-18(11(35)7(3-31)47-25(9)46)49-28-17(41)15(39)20(22(53-28)24(44)45)51-26-10(30-6(2)34)19(12(36)8(4-32)48-26)50-27-16(40)13(37)14(38)21(52-27)23(42)43;/h7-22,25-28,31-32,35-41,46H,3-4H2,1-2H3,(H,29,33)(H,30,34)(H,42,43)(H,44,45);/q;+1/t7-,8-,9-,10-,11-,12-,13+,14+,15-,16-,17-,18-,19-,20+,21+,22+,25-,26+,27-,28-;/m1./s1
+  pubchem_cid: 3084049
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001304
+legacy_identifiers:
+- MIM:Hyaluronic_Acid_Sodium_Salt_From_Streptococcus_Equi
+- cas:9067-32-7

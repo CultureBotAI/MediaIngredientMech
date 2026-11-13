@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:atcc_1257_sodium_carbonate_4_percent_stock
+preferred_term: ATCC 1257 sodium carbonate 4% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1257_sodium_carbonate_4_percent_stock
+  ontology_label: ATCC 1257 sodium carbonate 4% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx
+    source_record: ATCC 1257 sodium carbonate 4% stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: ATCC 1257 names freshly prepared, filter-sterilized 4% Na2CO3 and adds 10
+    ml as a separate supplement. PERCENT preserves the unspecified percent basis without
+    conversion to w/v, w/w, g/L or molarity. No carbonate-stock carrier is stated;
+    basal-medium water and the explicitly different ethanol/water solutions do not
+    establish it. Starting hydrate, solvent identity and grade, and stock preparation
+    volume remain unknown.
+notes: 'ATCC 1257 names freshly prepared, filter-sterilized 4% Na2CO3 and adds 10
+  ml as a separate supplement. PERCENT preserves the unspecified percent basis without
+  conversion to w/v, w/w, g/L or molarity. No carbonate-stock carrier is stated; basal-medium
+  water and the explicitly different ethanol/water solutions do not establish it.
+  Starting hydrate, solvent identity and grade, and stock preparation volume remain
+  unknown. Raw source label retained for this occurrence only: ''4% Na2CO3''. Generic
+  wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: REMOVED_UNSUPPORTED_COMPONENT
+  changes: 'Issue 1217 W09 residual 001: removed unsupported Water component and current
+    water-inference notes after stock-specific primary-source review. Retained the
+    exact printed solute/strength, UNKNOWN completeness, source scope and all prior
+    history. Report-only proposal; no owner or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

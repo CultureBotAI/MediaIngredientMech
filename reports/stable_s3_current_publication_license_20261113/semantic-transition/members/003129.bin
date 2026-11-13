@@ -1,0 +1,137 @@
+commit 026d4401322be01c449ccf29bf04ad6842b56ba6
+Author: marcin p. joachimiak <4625870+realmarcin@users.noreply.github.com>
+Date:   Thu Jun 18 15:12:06 2026 -0700
+
+    Salt dedup (batch 5): merge 7 garbled typo-duplicates; enrich 2 deferred
+    
+    Resolves the "no-source-confirmation" garbled salts from NEXT_TASKS item 3 using
+    Edison deep research + MediaDive recipe context + a PK-collision check. Recipe
+    context (each appears among trace metals; the correctly-spelled salt appears in
+    sibling recipes) plus the existing mapped records showed these 0-occurrence
+    orphans are typo-duplicates of compounds ALREADY mapped in MIM — so they were
+    merged (absorbed as RAW_TEXT synonyms + MERGED_FROM_UNMAPPED_DUPLICATE history),
+    not freshly mapped. A merge asserts no new SSSOM row, which honors Edison's
+    "don't exactMatch a malformed label" caution.
+    
+    Merged (7):
+    - Na2Mo4 / Na2MoO7 / Na2MoO7O4 x 2 H2O -> Na2MoO4 x 2 H2O (CHEBI:75213)
+    - Na2WO2 x 2 H2O -> Na2WO4 x 2 H2O (CHEBI:63939)
+    - Na2Se2O3 -> Na2SeO3 (CHEBI:48843)
+    - Na2S2SO3 -> Na2S2O3 (CHEBI:132112)
+    - MnCl4 x 4 H2O -> MnCl2 x 4 H2O (CHEBI:86368)
+    
+    Enriched in place, left UNMAPPED (Edison findings + reason):
+    - Fe(SO4)3 x n H2O -> iron(III) sulfate hydrate (candidate CHEBI:131387, closeMatch);
+      malformed + unspecified hydrate, Fe sulfate hydrates are distinct CAS substances.
+    - MnCl4 x 6 H2O -> manganese(II) chloride; non-standard hexahydrate, no CHEBI term.
+    
+    unmapped 390 -> 383. Gates green: reconcile GAP/ORPHAN/STALE 0, SSSOM invariants
+    A/B1/B2/B3, validate-products (id<->label ✅), validate-strict 0 ERROR rows.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+diff --git a/NEXT_TASKS.md b/NEXT_TASKS.md
+index 895bb84ec..d18ebddb2 100644
+--- a/NEXT_TASKS.md
++++ b/NEXT_TASKS.md
+@@ -161,12 +161,26 @@ flavonoids, natural products, element placeholders, and mixtures.
+     (`cas:13446-18-9`, `kgmicrobe.compound:magnesium_nitrate_hexahydrate`). Source: MediaDive
+     ingredient 1763 CAS 13446-18-9. Gates green (reconcile GAP 0, invariants A/B1/B2/B3,
+     validate-products, validate-strict).
+-  - **Deferred — no source confirmation** (MediaDive `CAS-RN`+`formula`+`ChEBI` all
+-    null; only the garbled name, so unverifiable per this pass's bar even though
+-    chemically guessable): `Na2Mo4`/`Na2MoO7`/`Na2MoO7O4 x 2 H2O` (sodium molybdate?),
+-    `Na2WO2 x 2 H2O` (sodium tungstate?), `Na2Se2O3` (sodium selenite?), `Na2S2SO3`
+-    (sodium thiosulfate?), `MnCl4 x 4/6 H2O` (manganese(II) chloride hydrate?),
+-    `Fe(SO4)3 x n H2O` (iron(III) sulfate?).
++  - **~~Deferred — no source confirmation~~ → RESOLVED 2026-06-16** (Batch 5,
++    `feat/mim-salt-dedup-merges`): Edison deep research + MediaDive **recipe context**
++    (the decisive new evidence — each appears among trace metals, and the correctly-spelled
++    salt appears in sibling recipes) + a **PK-collision check** showed these garbled,
++    0-occurrence orphans are **typo-duplicates of compounds already mapped in MIM**, so
++    they were **merged** (absorbed as RAW_TEXT synonyms + `MERGED_FROM_UNMAPPED_DUPLICATE`
++    history), not freshly mapped (which honors Edison's "don't exactMatch a malformed
++    label" caution — a merge asserts no new SSSOM row):
++    - `Na2Mo4` / `Na2MoO7` / `Na2MoO7O4 x 2 H2O` → `Na2MoO4 x 2 H2O` (CHEBI:75213 sodium molybdate dihydrate)
++    - `Na2WO2 x 2 H2O` → `Na2WO4 x 2 H2O` (CHEBI:63939 sodium tungstate dihydrate)
++    - `Na2Se2O3` → `Na2SeO3` (CHEBI:48843 disodium selenite)
++    - `Na2S2SO3` → `Na2S2O3` (CHEBI:132112 sodium thiosulfate)
++    - `MnCl4 x 4 H2O` → `MnCl2 x 4 H2O` (CHEBI:86368 manganese(II) chloride tetrahydrate)
++    (unmapped 390 → 383.)
++  - **Still deferred (enriched in place with Edison findings, left UNMAPPED):**
++    - `Fe(SO4)3 x n H2O` (UNMAPPED_0385) — iron(III) sulfate hydrate (candidate CHEBI:131387,
++      closeMatch); label malformed (Fe2(SO4)3) + hydrate `n` unspecified, and Fe sulfate
++      hydrates are distinct CAS substances — unsafe to assert exact identity.
++    - `MnCl4 x 6 H2O` (UNMAPPED_0450) — manganese(II) chloride, but `x 6 H2O` is a
++      non-standard hydrate with no CHEBI term; left unmapped (cf. the tetrahydrate, merged).
+   - **Deferred — ambiguous source:** `Se-acid` (UNMAPPED_0517) — MediaDive CAS
+     7783-08-6 = selen**ous** acid (CHEBI:26642) but its `formula` field `H2O4Se` =
+     selen**ic** acid; the conflict blocks a confident call.
+diff --git a/data/ingredients/mapped/Na2seo3.yaml b/data/ingredients/mapped/Na2seo3.yaml
+index f62cc226e..c270f3703 100644
+--- a/data/ingredients/mapped/Na2seo3.yaml
++++ b/data/ingredients/mapped/Na2seo3.yaml
+@@ -50,6 +50,9 @@ synonyms:
+ - synonym_text: selenious acid, sodium salt (1:2)
+   synonym_type: EXACT_SYNONYM
+   source: kg_microbe
++- synonym_text: Na2Se2O3
++  synonym_type: RAW_TEXT
++  source: merge_from_UNMAPPED_0473
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 109
+@@ -107,6 +110,16 @@ curation_history:
+   action: CORRECTED
+   changes: 'ontology_label ''Na2SeO3'' -> ''disodium selenite'': synced to canonical
+     CHEBI label (preferred_term ''Na2SeO3'' unchanged).'
++- timestamp: '2026-06-16T00:00:00+00:00'
++  curator: merge_duplicate_unmapped
++  action: MERGED_FROM_UNMAPPED_DUPLICATE
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  changes: Absorbed duplicate UNMAPPED_0473 "Na2Se2O3". Edison deep research (literature)
++    + MediaDive recipe context + local OAK CHEBI confirm this is a garbled spelling
++    of 'Na2SeO3' (already mapped to CHEBI:48843); promotion would PK-collide, so absorbed
++    here as a synonym.
+ chemical_properties:
+   cas_rn: 26970-82-1
+   data_source: CultureBotHT compounds_to_cas.csv
+diff --git a/data/ingredients/unmapped/Na2Se2O3.yaml b/data/ingredients/unmapped/Na2Se2O3.yaml
+deleted file mode 100644
+index 605222f16..000000000
+--- a/data/ingredients/unmapped/Na2Se2O3.yaml
++++ /dev/null
+@@ -1,31 +0,0 @@
+-identifier: UNMAPPED_0473
+-preferred_term: Na2Se2O3
+-synonyms:
+-- synonym_text: Na2Se2O3
+-  synonym_type: RAW_TEXT
+-  source: mim-queue
+-mapping_status: UNMAPPED
+-occurrence_statistics:
+-  total_occurrences: 0
+-  media_count: 0
+-curation_history:
+-- timestamp: '2026-04-30T18:43:03.698454+00:00'
+-  curator: audit_import_ingredients[mim-queue]
+-  action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:804); no CAS-RN
+-    or CHEBI/NCIT match. Curator review needed.
+-  new_status: UNMAPPED
+-  llm_assisted: false
+-- timestamp: '2026-05-11T08:07:24Z'
+-  curator: mediaingredientmech-agentic-curation
+-  action: REVIEWED_FORMULA_AMBIGUITY
+-  changes: Classified as a single inorganic selenium oxyanion salt surface form and
+-    left unmapped because Na2Se2O3 does not match local disodium selenite or selenite
+-    hydrate stoichiometry.
+-  previous_status: UNMAPPED
+-  new_status: UNMAPPED
+-  llm_assisted: true
+-notes: Imported from mim-queue (source_id=mediadive.ingredient:804); no CAS-RN or
+-  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
+-  selenium oxyanion salt formula; not merged to disodium selenite.
+-ingredient_type: SINGLE_INGREDIENT

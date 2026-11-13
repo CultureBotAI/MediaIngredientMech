@@ -1,0 +1,88 @@
+identifier: kgmicrobe.ingredient:jcm510_methane_air_50_50
+preferred_term: JCM 510 methane-air 50:50 blend
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm510_methane_air_50_50
+  ontology_label: JCM 510 methane-air 50:50 blend
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=510
+    notes: JCM 510 declared methane-air(50:50) cultivation gas blend. Registry preparation
+      identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: JCM 510 declared methane-air(50:50) cultivation gas blend. The two immediate
+  gases are explicit in the primary recipe. The ratio basis is not specified, so 50:50
+  is retained literally in identity/protocol notes without inventing mass, mole or
+  volume fractions. Air is not expanded into guessed gases. This is the supplied gas
+  blend, not the whole growth medium or a neat-methane synonym. Use as the cultivation
+  atmosphere per JCM 510; temperature/pressure and humidity are not specified.  Raw
+  source labels remain source-scoped in the decisions; no generic label is published
+  as a global synonym. Quantified components use the literal preparation batch unless
+  explicitly marked MG_PER_L. Component names retain source specificity without inferred
+  vitamer, hydrate or stereoisomer IDs. Occurrence counts remain zero pending source-specific
+  integration. No roles or downstream hold release is proposed.
+components:
+- component_name: Methane
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:16183
+  source: 'Literal source component: Methane. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Methane; the inspected active catalog and
+    primary ontology identity CHEBI:16183 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Air
+  reference_scope: MIM_CATALOG
+  component_id: ENVO:00002005
+  source: 'Literal source component: Air. Issue 1227 IR003 component-specific adjudication:
+    JCM510 explicitly names air as a constituent of the methane-air blend. The air
+    entity is referenced without invented internal gas fractions.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=510
+    source_record: JCM 510 declared methane-air(50:50) cultivation gas blend.
+    notes: Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. The two immediate gases are explicit in the primary recipe. The
+      ratio basis is not specified, so 50:50 is retained literally in identity/protocol
+      notes without inventing mass, mole or volume fractions. Air is not expanded
+      into guessed gases. This is the supplied gas blend, not the whole growth medium
+      or a neat-methane synonym.
+curation_history:
+- timestamp: '2026-11-08T05:57:32.934884+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-qualified preparation proposal after issue1201 reassessment.
+    JCM510 declared methane-air(50:50) cultivation gas blend. The two immediate gases
+    are explicit in the primary recipe. The ratio basis is not specified, so 50:50
+    is retained literally in identity/protocol notes without inventing mass, mole
+    or volume fractions. Air is not expanded into guessed gases. This is the supplied
+    gas blend, not the whole growth medium or a neat-methane synonym.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.108003+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 2 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

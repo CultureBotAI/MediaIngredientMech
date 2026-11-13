@@ -1,0 +1,106 @@
+id: CultureMech:009858
+name: potato_carrot_agar
+original_name: Potato-Carrot Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Potato, peeled and cut
+  concentration:
+    value: '300'
+    unit: G_PER_L
+  source: JCM Medium 54
+  notes: JCM Medium 54 lists Potato, peeled and cut in the potato-carrot decoction
+    before boiling and cheesecloth filtration.
+- preferred_term: Carrot, peeled and cut
+  concentration:
+    value: '25'
+    unit: G_PER_L
+  source: JCM Medium 54
+  notes: JCM Medium 54 lists Carrot, peeled and cut in the potato-carrot decoction
+    before boiling and cheesecloth filtration.
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: JCM Medium 54
+  notes: JCM Medium 54 lists agar as the solidifying component.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: JCM Medium 54
+  notes: JCM Medium 54 lists 1.0 L distilled water to bring the recipe to volume.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M46
+  term:
+    id: TOGO:M46
+    label: Potato-Carrot Agar
+notes: 'Source: https://togomedium.org/medium/M46
+
+  Original source: JCM - JCM_M54
+
+  Original URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:55.099331Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M46'
+- timestamp: '2026-01-28T19:48:13.695150Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:09.431182Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009858'
+- timestamp: '2026-03-17T06:29:54.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:28.401805+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Potato-Carrot Agar" to "potato_carrot_agar" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:41.649708+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_potato_carrot_agar_family_score15.py
+  action: RESOLVED_POTATO_CARROT_AGAR_FAMILY
+  source: https://togomedium.org/medium/M46; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54
+  notes: 'TOGO M46 mirrors JCM Medium 54: 300 g potato, 25 g carrot, 15 g agar, and
+    1.0 L distilled water, with pH unadjusted.'
+variant_children:
+- path: data/normalized_yaml/bacterial/TOGO_M47_1_10_Potato-Carrot_Agar.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:009866
+  name: 1_10_potato_carrot_agar
+  notes: Carrot decreases from 25 g/L to 2.5 g/L and potato decreases from 300 g/L
+    to 30 g/L; agar remains 15 g/L.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M46
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54

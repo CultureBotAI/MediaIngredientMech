@@ -1,0 +1,78 @@
+identifier: CHEBI:41688
+preferred_term: Crystal Violet
+ontology_mapping:
+  ontology_id: CHEBI:41688
+  ontology_label: crystal violet
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. Used in 7 CultureBot media; samples: Ralstonia_antibiotic_mix,
+      Ralstonia_antibiotic_mix_minus_Bacitracin, Ralstonia_antibiotic_mix_minus_Chloramphenicol….'
+synonyms:
+- synonym_text: 4-{bis[4-(dimethylamino)phenyl]methylene}-N,N-dimethylcyclohexa-2,5-dien-1-iminium
+    chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=548-62-9); Imported
+    from CultureBotHT. Used in 7 CultureBot media; samples: Ralstonia_antibiotic_mix,
+    Ralstonia_antibiotic_mix_minus_Bacitracin, Ralstonia_antibiotic_mix_minus_Chloramphenicol….'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.934704+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.827698+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C25H30N3.Cl; inchi=InChI=1S/C25H30N3.ClH/c1-26(2)22-13-7-19(8-14-22)2;
+    smiles=CN(C)c1ccc(C(=C2C=CC(=[N+](C)C)C=C2)c2ccc(N(C)C)cc
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.573701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247843+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-27T03:16:39.518633+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 7/7 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 548-62-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C25H30N3.Cl
+  inchi: InChI=1S/C25H30N3.ClH/c1-26(2)22-13-7-19(8-14-22)25(20-9-15-23(16-10-20)27(3)4)21-11-17-24(18-12-21)28(5)6;/h7-18H,1-6H3;1H/q+1;/p-1
+  smiles: CN(C)c1ccc(C(=C2C=CC(=[N+](C)C)C=C2)c2ccc(N(C)C)cc2)cc1.[Cl-]
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

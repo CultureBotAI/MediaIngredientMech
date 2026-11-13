@@ -1,0 +1,112 @@
+identifier: CHEBI:16238
+preferred_term: FAD
+ontology_mapping:
+  ontology_id: CHEBI:16238
+  ontology_label: FAD
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Adenosine 5'-(trihydrogen pyrophosphate), 5'-5'-ester with riboflavine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: FLAVIN-ADENINE DINUCLEOTIDE
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Riboflavin 5'-(trihydrogen diphosphate), 5'-5'-ester with adenosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Riboflavin 5'-adenosine diphosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: adenosine 5'-(3-{D-ribo-5-[7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl]-2,3,4-trihydroxypentyl}
+    dihydrogen diphosphate)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: adenosine 5'-[3-(riboflavin-5'-yl) dihydrogen diphosphate]
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 8
+  media_count: 8
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:03.040388+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:146-14-5 from PubChem API via name lookup (FAD)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Adenosine 5''-(trihydrogen
+    pyrophosphate), 5''-5''-ester with riboflavine, FLAVIN-ADENINE DINUCLEOTIDE, Riboflavin
+    5''-(trihydrogen diphosphate), 5''-5''-ester with adenosine, Riboflavin 5''-adenosine
+    diphosphate, adenosine 5''-(3-{D-ribo-5-[7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl]-2,3,4-trihydroxypentyl}
+    dihydrogen diphosphate), ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.501803+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.478218+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C27H33N9O15P2; inchi=InChI=1S/C27H33N9O15P2/c1-10-3-12-13(4-11(10)2)35(;
+    smiles=Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.336112+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.413548+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518807+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 6/6 -> 8/8 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 146-14-5
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:52:03.040339+00:00'
+  molecular_formula: C27H33N9O15P2
+  inchi: InChI=1S/C27H33N9O15P2/c1-10-3-12-13(4-11(10)2)35(24-18(32-12)25(42)34-27(43)33-24)5-14(37)19(39)15(38)6-48-52(44,45)51-53(46,47)49-7-16-20(40)21(41)26(50-16)36-9-31-17-22(28)29-8-30-23(17)36/h3-4,8-9,14-16,19-21,26,37-41H,5-7H2,1-2H3,(H,44,45)(H,46,47)(H2,28,29,30)(H,34,42,43)/t14-,15+,16+,19-,20+,21+,26+/m0/s1
+  smiles: Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O)COP(=O)(O)OP(=O)(O)OC[C@H]3O[C@@H](n4cnc5c(N)ncnc54)[C@H](O)[C@@H]3O)c2cc1C
+kg_microbe_node_id: CHEBI:16238
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229
+      (vitamin (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

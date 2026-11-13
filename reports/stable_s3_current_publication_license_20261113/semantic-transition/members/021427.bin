@@ -1,0 +1,86 @@
+identifier: CHEBI:17489
+preferred_term: Adenosine 3,5-Cyclic Monophosphate
+ontology_mapping:
+  ontology_id: CHEBI:17489
+  ontology_label: 3',5'-cyclic AMP
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: Adenosine 3',5'-phosphate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: adenosine 3',5'-(hydrogen phosphate)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=60-92-4; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.067061+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.893110+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H12N5O6P; inchi=InChI=1S/C10H12N5O6P/c11-8-5-9(13-2-12-8)15(3-14-5;
+    smiles=Nc1ncnc2c1ncn2[C@@H]1O[C@@H]2COP(=O)(O)O[C@H]2[C@H
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.320709+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label "3',5'-cyclic AMP"; it matches the ChEBI
+    synonym "adenosine 3',5'-cyclic monophosphate" on CHEBI:17489. The schema defines
+    EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known
+    synonym, so the recorded grade overstated. ontology_id is unchanged — the term
+    is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 60-92-4 uniquely resolves
+    by ChEBI xref to CHEBI:17489 "3',5'-cyclic AMP". CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000277; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 60-92-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C10H12N5O6P
+  inchi: InChI=1S/C10H12N5O6P/c11-8-5-9(13-2-12-8)15(3-14-5)10-6(16)7-4(20-10)1-19-22(17,18)21-7/h2-4,6-7,10,16H,1H2,(H,17,18)(H2,11,12,13)/t4-,6-,7-,10-/m1/s1
+  smiles: Nc1ncnc2c1ncn2[C@@H]1O[C@@H]2COP(=O)(O)O[C@H]2[C@H]1O
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000277
+legacy_identifiers:
+- MIM:Adenosine_35-Cyclic_Monophosphate
+- CHEBI:17489

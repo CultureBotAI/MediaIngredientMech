@@ -1,0 +1,41 @@
+{
+  "index": 162,
+  "case_id": "KG_CASE:8032279c82c1d0d9d78ae19ae77174ecfebe13732bc8a591119e456e38aaddd0",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "grisamine",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "grisamine",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Grisamine.yaml:1:identifier: kgmicrobe.compound:grisamine\ndata/ingredients/mapped/Grisamine.yaml:2:preferred_term: Grisamine\ndata/ingredients/mapped/Grisamine.yaml:4:  ontology_id: kgmicrobe.compound:grisamine\ndata/ingredients/mapped/Grisamine.yaml:5:  ontology_label: Grisamine\ndata/ingredients/mapped/Grisamine.yaml:23:  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:grisamine;\ndata/ingredients/mapped/Grisamine.yaml:42:    or normalized local duplicate supports promotion from kgmicrobe.compound:grisamine\n",
+  "label_index_stdout": "4583:Grisamine,preferred_term,kgmicrobe.compound:grisamine,Grisamine,kgmicrobe.compound:grisamine,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "KG_CASE:8032279c82c1d0d9d78ae19ae77174ecfebe13732bc8a591119e456e38aaddd0",
+      "label": "grisamine",
+      "proposal_ids": []
+    }
+  ]
+}

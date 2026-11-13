@@ -1,0 +1,68 @@
+identifier: CHEBI:32032
+preferred_term: Potassium Gluconate
+ontology_mapping:
+  ontology_id: CHEBI:32032
+  ontology_label: Potassium gluconate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:potassium_gluconate; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 31
+  media_count: 31
+  source_occurrences:
+  - source: microbedecoder
+    count: 59
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:potassium_gluconate; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520250+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 31/31 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C6H11O7.K
+  smiles: O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO.[K+]
+  inchi: InChI=1S/C6H12O7.K/c7-1-2(8)3(9)4(10)5(11)6(12)13;/h2-5,7-11H,1H2,(H,12,13);/q;+1/p-1/t2-,3-,4+,5-;/m1./s1
+  molecular_weight: 234.245
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:35.699018+00:00'

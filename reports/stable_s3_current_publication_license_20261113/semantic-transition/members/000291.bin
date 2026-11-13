@@ -1,0 +1,60 @@
+identifier: CHEBI:16708
+preferred_term: Adenine
+ontology_mapping:
+  ontology_id: CHEBI:16708
+  ontology_label: adenine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. Used in 2 CultureBot media; samples: Ying_Nucleobase14,
+      Ying_all64.'
+synonyms:
+- synonym_text: 9H-purin-6-amine
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=73-24-5); Imported
+    from CultureBotHT. Used in 2 CultureBot media; samples: Ying_Nucleobase14, Ying_all64.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.055792+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.883021+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H5N5; inchi=InChI=1S/C5H5N5/c6-4-3-5(9-1-7-3)10-2-8-4/h1-2H,(H;
+    smiles=Nc1ncnc2ncnc12
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.306203+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518303+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 73-24-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C5H5N5
+  inchi: InChI=1S/C5H5N5/c6-4-3-5(9-1-7-3)10-2-8-4/h1-2H,(H3,6,7,8,9,10)
+  smiles: Nc1ncnc2ncnc12
+ingredient_type: SINGLE_INGREDIENT

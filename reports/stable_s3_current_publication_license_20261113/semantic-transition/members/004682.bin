@@ -1,0 +1,134 @@
+id: CultureMech:009553
+name: hgam
+original_name: HGAM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.3
+aeration: N2 atmosphere during anaerobic liquid dispensing
+ingredients:
+- preferred_term: Nissui Modified GAM Broth
+  concentration:
+    value: '41.7'
+    unit: G_PER_L
+  source: TOGO M3040 / NBRC Medium 1509
+  notes: TOGO M3040 / NBRC Medium 1509 lists 41.7 g/L Nissui Modified GAM Broth; this
+    commercial medium product is retained as an opaque complex component.
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: TOGO M3040 / NBRC Medium 1509
+  notes: TOGO M3040 / NBRC Medium 1509 lists 1.0 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M3040
+  term:
+    id: TOGO:M3040
+    label: HGAM
+notes: NBRC Medium 1509 HGAM lists 41.7 g Nissui Modified GAM Broth and 1.0 L distilled
+  water at pH 7.3; for anaerobic liquid medium it directs dispensing under an N2 atmosphere
+  into butyl-stoppered culture vessels before autoclaving at 115 C for 15 min. TOGO
+  M3040 imports this liquid anaerobic form from NBRC M1509-2.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend 41.7 g Nissui Modified GAM Broth in 1.0 L distilled water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 7.3.
+- step_number: 3
+  action: ALIQUOT
+  description: Dispense anaerobic liquid medium into suitable culture vessels under
+    an N2 atmosphere and seal with butyl rubber stoppers.
+- step_number: 4
+  action: AUTOCLAVE
+  description: Autoclave at 115 C for 15 min.
+  temperature:
+    value: 115.0
+    unit: CELSIUS
+  duration: 15 min
+sterilization:
+  method: AUTOCLAVE
+  temperature:
+    value: 115.0
+    unit: CELSIUS
+  duration: 15 min
+  notes: NBRC Medium 1509 directs anaerobic liquid HGAM to be dispensed under N2 and
+    autoclaved at 115 C for 15 min.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:59.223579Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M3040'
+- timestamp: '2026-01-28T19:48:29.390340Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: N2'
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-03-09T08:04:48.816622+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:20:06.857671Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009553'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:27.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:25.882835+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "HGAM" to "hgam" for consistent matching
+- timestamp: '2026-05-16T09:03:16.545606+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2
+- timestamp: '2026-06-05T07:40:39.812704+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_togo_m3039_m3040_hgam_score15.py
+  action: RESOLVED_TOGO_M3040_HGAM_SCORE15
+  source: https://togomedium.org/medium/M3040; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1509
+  notes: Restored the opaque Nissui Modified GAM Broth component from NBRC Medium
+    1509, corrected the imported water unit to 1.0 L, moved N2 from a pseudo-ingredient
+    to the aeration/preparation description, added pH 7.3 and 115 C for 15 min anaerobic-liquid
+    sterilization, and linked TOGO M3039 as the solid HGAM parent.
+parent_media:
+  path: data/normalized_yaml/bacterial/hgam.yaml
+  relationship: PHYSICAL_STATE_VARIANT
+  id: CultureMech:009551
+  name: hgam
+  notes: TOGO M3040 is the anaerobic liquid form of NBRC Medium 1509 HGAM.
+variant_relationship: PHYSICAL_STATE_VARIANT
+variant_modifications:
+- Omits optional agar from TOGO M3039 and follows NBRC's anaerobic liquid dispensing
+  instruction under an N2 atmosphere.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M3040
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1509

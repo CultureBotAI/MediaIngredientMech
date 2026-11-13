@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:mediadive_1852_sodium_resazurin_01_percent_stock
+preferred_term: Sodium resazurin 0.1% w/v stock (MediaDive 1852 frozen context)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CREATED
+  changes: Propose source-qualified nominal stock from frozen source attributes and
+    matching primary recipe; unresolved preparation details remain explicit.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.304850+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_1852_sodium_resazurin_01_percent_stock
+  ontology_label: Sodium resazurin 0.1% w/v stock (MediaDive 1852 frozen context)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf
+    notes: The frozen ingredient1852 row is0.5mL of0.1%w/v sodium-resazurin stock,
+      corroborated by DSMZ330. Raw source label Sodium resazurin does not identify
+      this whole preparation globally. The salt differs from neutral CHEBI:8806; solvent
+      is not specified, so list completeness is UNKNOWN. Other ingredient1852 recipe
+      contexts require their own attributes, not automatic stock reuse. Local registry
+      identity preserves this source-defined formulation; no exact chemical or unverified
+      external medium mapping is asserted.
+components:
+- component_name: Sodium resazurin
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: PERCENT_WV
+  source: Frozen source attribute explicitly0.1%w/v; DSMZ330 corroborates0.5mL of0.1%w/v
+    sodium-resazurin stock. No exact salt identifier is inferred from the neutral
+    Resazurin owner.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf
+    notes: The frozen ingredient1852 row is0.5mL of0.1%w/v sodium-resazurin stock,
+      corroborated by DSMZ330. Raw source label Sodium resazurin does not identify
+      this whole preparation globally. The salt differs from neutral CHEBI:8806; solvent
+      is not specified, so list completeness is UNKNOWN. Other ingredient1852 recipe
+      contexts require their own attributes, not automatic stock reuse.
+  - evidence_type: CURATED_DATASET
+    source: reports/all_unmatched_20261107/worker-07/parts/c-input.json
+    source_record: cases[27].original_kg_entry.source_record; mediadive.ingredient:1852
+    notes: Frozen exact source attributes define the scoped stock case; live ingredient
+      identity API does not contain these preparation amounts. Raw label is preserved
+      here and in the decision, not added as a global stock synonym.
+notes: ' The frozen ingredient1852 row is0.5mL of0.1%w/v sodium-resazurin stock, corroborated
+  by DSMZ330. Raw source label Sodium resazurin does not identify this whole preparation
+  globally. The salt differs from neutral CHEBI:8806; solvent is not specified, so
+  list completeness is UNKNOWN. Other ingredient1852 recipe contexts require their
+  own attributes, not automatic stock reuse.'

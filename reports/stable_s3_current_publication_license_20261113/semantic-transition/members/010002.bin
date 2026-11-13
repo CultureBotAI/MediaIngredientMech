@@ -1,0 +1,169 @@
+identifier: kgmicrobe.ingredient:jcm_13_bl_agar
+preferred_term: BL agar (JCM13 finished preparation)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_13_bl_agar
+  ontology_label: BL agar (JCM13 finished preparation)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=13
+    notes: MediaDive ingredient1757 usage points to JCM418, whose primary recipe explicitly
+      calls BL Agar see Medium13. This authenticates JCM13 as the referenced finished
+      glucose-blood-liver agar. Promote the existing generic BL owner to this source
+      formulation, preserving historical labels only as provenance. Nissui dry BL
+      base is separately proposed in the predecessor and lacks the finished-medium
+      horse-blood addition; the JCM note that commercial BL is available does not
+      prove product-formula equivalence. Source components are recorded at their literal
+      batch amounts, without silently normalizing the stated liquid volumes to1L.
+notes: 'MediaDive ingredient1757 usage points to JCM418, whose primary recipe explicitly
+  calls BL Agar see Medium13. This authenticates JCM13 as the referenced finished
+  glucose-blood-liver agar. Promote the existing generic BL owner to this source formulation,
+  preserving historical labels only as provenance. Nissui dry BL base is separately
+  proposed in the predecessor and lacks the finished-medium horse-blood addition;
+  the JCM note that commercial BL is available does not prove product-formula equivalence.
+  Source components are recorded at their literal batch amounts, without silently
+  normalizing the stated liquid volumes to1L. Raw source labels and optional/use instructions
+  are retained in source-case evidence, not installed as global resolving aliases.
+  Existing source/owner/export holds remain; no maintained or release approval. Prior
+  labels and curation provenance: [{"synonym_text": "BL Agar", "synonym_type": "RAW_TEXT",
+  "source": "extracted_from_agar_yaml"}]. These historical source labels are retained
+  here; no generic label is asserted as an exact source formulation synonym.'
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'BL Agar' is a complete media formulation, not
+    a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely
+    FOODON complex medium, or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named agar medium/base preparation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/BL_Agar-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended mapping status:** `UNMAPPED`. CURIEs
+    discussed: CHEBI:2509. Recorded as provenance only — no grounding applied from
+    this run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:04:20.089567+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: MAPPED_TO_REGISTRY
+  changes: MediaDive ingredient1757 usage points to JCM418, whose primary recipe explicitly
+    calls BL Agar see Medium13. This authenticates JCM13 as the referenced finished
+    glucose-blood-liver agar. Promote the existing generic BL owner to this source
+    formulation, preserving historical labels only as provenance. Nissui dry BL base
+    is separately proposed in the predecessor and lacks the finished-medium horse-blood
+    addition; the JCM note that commercial BL is available does not prove product-formula
+    equivalence. Source components are recorded at their literal batch amounts, without
+    silently normalizing the stated liquid volumes to1L. Isolated successor proposal
+    only; published artifacts and maintained data unchanged.
+  llm_assisted: true
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:47:37.592076+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+components:
+- component_name: Lab-Lemco powder (Oxoid)
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: g per source batch
+- component_name: Proteose peptone No.3 (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: g per source batch
+- component_name: Trypticase peptone (BD-BBL)
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: g per source batch
+- component_name: Phytone peptone (BD-BBL)
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: g per source batch
+- component_name: Yeast extract (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: g per source batch
+- component_name: Liver extract (JCM13 preparation)
+  reference_scope: UNMAPPED
+  concentration_value: '150'
+  concentration_unit: ml per source batch
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: g per source batch
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: g per source batch
+- component_name: Solution A (JCM13 phosphate stock)
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ml per source batch
+- component_name: Solution B (JCM13 metal-salt stock)
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: ml per source batch
+- component_name: Tween80
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: g per source batch
+- component_name: Bacto agar (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '15'
+  concentration_unit: g per source batch
+- component_name: 5% L-cysteine hydrochloride monohydrate solution
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ml per source batch
+- component_name: Horse blood
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: ml per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '825'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=13
+    notes: All15 named main-batch inputs transcribed; PARTIAL because pH adjustment
+      reagent/amount and several subordinate preparation compositions are not flattened
+      or asserted complete. Liver extract is made from10g liver powder in170ml water
+      with heat and filtration; SolutionA contains10g each K2HPO4/KH2PO4 per100ml
+      water; SolutionB contains4g MgSO4·7H2O and0.2g each NaCl,FeSO4·7H2O,MnSO4·xH2O
+      per100ml water. These stocks remain named source inputs; no hydrate substitution.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0

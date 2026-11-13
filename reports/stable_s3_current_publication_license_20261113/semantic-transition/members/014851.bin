@@ -1,0 +1,181 @@
+identifier: CHEBI:4735
+preferred_term: EDTA
+ontology_mapping:
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#319/#320)
+    notes: 'identifier/ontology_id CHEBI:64755 (''EDTA(2-)'') -> CHEBI:4735 (''ethylenediaminetetraacetic
+      acid''); mapping_quality -> SYNONYM_MATCH. ChEBI''s live definition of CHEBI:64755
+      is ''a tetracarboxylic acid anion formed by deprotonation of TWO of the four
+      carboxy groups'' — a specific charge state this record''s label never asserts.
+      Under #319''s rule a specific definition means descend, unlike the ''at least
+      one'' wording that keeps the anion. Absorbed ''EDTA (acid form)'', which held
+      the free-acid term with ZERO occurrences and already carried ''EDTA'' as a synonym.
+      The corpus keeps separate Na2-EDTA records for the salt, so plain ''EDTA'' denoting
+      the free acid is consistent with how the rest of the family is modelled.'
+synonyms:
+- synonym_text: 'Properties: Defined component, Organic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Simple component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Organic compound, Simple component, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Simple component, Defined component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Simple component, Organic compound, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiazaniumyl)tetraacetate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: EDTA (acid form)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:4735
+- synonym_text: EDTA (chelating agent)
+  synonym_type: RAW_TEXT
+  source: semantic_review_merge
+- synonym_text: EDTA (chelating agent)
+  synonym_type: RAW_TEXT
+  source: communitymech-unmapped
+- synonym_text: Ethlyene Diamine Tetraacetate
+  synonym_type: RAW_TEXT
+  source: CultureMech source-case CM_NAME:ce55622b867580a0ffb9a382e9f5a671378a16a3eec866eefcc6909adf571b67
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 569
+  media_count: 568
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:59.318028+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:60-00-4 from PubChem API via name lookup (EDTA)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: 2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate,
+    2,2'',2'''',2''''''-(ethane-1,2-diyldiazaniumyl)tetraacetate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.417523+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.391714+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H14N2O8; inchi=InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12;
+    smiles=O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.219795+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.388851+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.759866+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''EDTA'' -> ''EDTA(2-)'': synced to canonical CHEBI label
+    (preferred_term ''EDTA'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'EDTA(2-)'; it matches the ChEBI synonym
+    "2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate" on CHEBI:64755. The schema
+    defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+    to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+    — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_edta_thiamine
+  action: MERGED_FROM
+  changes: identifier/ontology_id CHEBI:64755 -> CHEBI:4735; absorbed 'EDTA (acid
+    form)' (0 occurrences). Occurrences 446/50 -> 446/50 (#319/#320).
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518790+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/446 -> 568/569 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:64755 -> CHEBI:4735 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed Edta_Chelating_Agent. The source explicitly names EDTA; the parenthetical
+    function does not turn the substance into the generic class of chelators. Synonym
+    dispositions and role evidence retained. Counts recomputed from distinct recipe
+    membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:59:53.063990+00:00'
+  curator: all_unmatched_worker10_successor_source_review
+  action: ADDED_SYNONYMS
+  changes: The original ATCC37 PDF was recovered. Its Heavy Metal Solution prints
+    the misspelled Ethlyene Diamine Tetraacetate and immediately instructs Dissolve
+    EDTA first, explicitly linking the source spelling to EDTA. The existing Edta
+    owner preserves the repository-reviewed free-acid naming convention and separate
+    disodium owners. A bounded spelling-alias proposal is supported without inventing
+    an EDTA salt, charge state, hydrate, stock equivalence or procurement specification.
+    Isolated proposal only; no owner, mapping-output or role release.
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 60-00-4
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:59.317982+00:00'
+  molecular_formula: C10H14N2O8
+  inchi: InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20)/p-2
+  smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-]
+kg_microbe_node_id: CHEBI:4735
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: CHELATOR
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+merged:
+- NCIT:C360

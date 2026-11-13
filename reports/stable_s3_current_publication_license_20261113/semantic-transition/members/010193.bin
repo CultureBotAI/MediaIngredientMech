@@ -1,0 +1,174 @@
+{
+  "searched_at": "2026-11-08T05:58:44.641143+00:00",
+  "ignored_files_included": true,
+  "method": "pathlib recursive traversal of maintained records and explicit full published63 proposal payloads/full188 frozen shard; label index full read",
+  "pattern": "Chocolate",
+  "case_index": 86,
+  "baseline_owner_count_searched": 2956,
+  "published_proposals_searched": 63,
+  "frozen_cases_searched": 188,
+  "label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "matching_label_index_rows": [
+    "chocolate agar,preferred_term,MICRO:0000591,chocolate agar,MICRO:0000591,MAPPED,unique"
+  ],
+  "matching_full_owners": [
+    {
+      "path": "data/ingredients/mapped/Chocolate_agar.yaml",
+      "sha256": "298972ff0308eefab29fd59a28d21e2f25c1498aaf4c128ed20ee11593107002",
+      "raw_yaml": "identifier: MICRO:0000591\npreferred_term: chocolate agar\nontology_mapping:\n  ontology_id: MICRO:0000591\n  ontology_label: chocolate agar\n  ontology_source: MICRO\n  mapping_quality: EXACT_MATCH\n  match_level: EXACT\n  evidence:\n  - evidence_type: LEXICAL_MATCH\n    source: culturemech:output/ingredient_occurrences.tsv\n    notes: Surface form appears in CultureMech's occurrence table and was grounded\n      to MICRO:0000591 on an exact match against the ontology label. Restored from\n      the record's own creation history (#541); the residual importer wrote this provenance\n      only into the published SSSOM.\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 2\n  media_count: 2\ncuration_history:\n- timestamp: '2026-08-30T10:35:03.361102+00:00'\n  curator: claude_culturemech_residual_grounding\n  action: CREATED_FROM_CULTUREMECH_RESIDUAL\n  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (2\n    mentions across 2 recipes). Grounded to MICRO:0000591 (''chocolate agar'') on\n    an exact match of the canonical label to the query ''chocolate agar''. Source:\n    culturemech:output/ingredient_occurrences.tsv.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-09-06T07:34:56.956907+00:00'\n  curator: claude_restore_culturemech_evidence\n  action: CORRECTED\n  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table\n    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL\n    history entry but absent from the structured field the SSSOM builder reads, so\n    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published\n    row (#541).\n  llm_assisted: false\n",
+      "record": {
+        "identifier": "MICRO:0000591",
+        "preferred_term": "chocolate agar",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0000591",
+          "ontology_label": "chocolate agar",
+          "ontology_source": "MICRO",
+          "mapping_quality": "EXACT_MATCH",
+          "match_level": "EXACT",
+          "evidence": [
+            {
+              "evidence_type": "LEXICAL_MATCH",
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "notes": "Surface form appears in CultureMech's occurrence table and was grounded to MICRO:0000591 on an exact match against the ontology label. Restored from the record's own creation history (#541); the residual importer wrote this provenance only into the published SSSOM."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 2,
+          "media_count": 2
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-30T10:35:03.361102+00:00",
+            "curator": "claude_culturemech_residual_grounding",
+            "action": "CREATED_FROM_CULTUREMECH_RESIDUAL",
+            "changes": "Created from a CultureMech recipe ingredient MIM held no record for (2 mentions across 2 recipes). Grounded to MICRO:0000591 ('chocolate agar') on an exact match of the canonical label to the query 'chocolate agar'. Source: culturemech:output/ingredient_occurrences.tsv.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-06T07:34:56.956907+00:00",
+            "curator": "claude_restore_culturemech_evidence",
+            "action": "CORRECTED",
+            "changes": "Added ontology_mapping.evidence recording the CultureMech occurrence table as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published row (#541).",
+            "llm_assisted": false
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_published_payloads": [
+    {
+      "proposal_id": "media-product-bd_228950_gc_agar_base",
+      "owner_path": "data/ingredients/mapped/BD_228950_GC_Agar_Base.yaml",
+      "after_sha256": "0372144e888937706c0c71cbca4a4c2ee04a4c3729dab6281f520e1e35a4e6e2",
+      "case_ids": [
+        "CM_NAME:5fe3f1b4d88f962548f45dd148fc3025edf986ec3a2a6a6ed1c861da0b5e5be0"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:bd_228950_gc_agar_base",
+        "preferred_term": "GC Medium Base (BD228950)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:bd_228950_gc_agar_base",
+          "ontology_label": "GC Medium Base (BD228950)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://imgcdn.mckesson.com/CumulusWeb/Click_and_learn/SDS_BBL_MEDIA_AGAR_GC_MED_BASE_500G.pdf",
+              "notes": "BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC Medium), corroborating the source GC base catalog. Opaque product identity is sufficient; the SDS lists only selected hazardous ingredients, so no full formulation or supplemented-medium composition is inferred."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "NAMED_MEDIUM",
+        "notes": "BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC Medium), corroborating the source GC base catalog. Opaque product identity is sufficient; the SDS lists only selected hazardous ingredients, so no full formulation or supplemented-medium composition is inferred. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:32:29.548252+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "CREATED",
+            "changes": "BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC Medium), corroborating the source GC base catalog. Opaque product identity is sufficient; the SDS lists only selected hazardous ingredients, so no full formulation or supplemented-medium composition is inferred. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "GC Medium Base (BD228950)",
+            "supplier": "BD Difco",
+            "form": "dehydrated basal medium",
+            "catalog_number": "228950"
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_frozen_cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:8fb0b2cde3d035c7fe12aca133b0e6e1565351631a2a25174f0eab93ccdc2318",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chocolate_agar_plates_supplemented_with_1_isovitalex.yaml",
+          "native_name": "Chocolate agar plates",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:0aa8a9189ec10ce8e55ceed978d270664f502c2f99221b4607542c12f5e84e61",
+          "raw_component": {
+            "concentration": {
+              "unit": "VARIABLE",
+              "value": "variable"
+            },
+            "notes": "TOGO M2975 lists chocolate agar plates but does not disclose the plate formulation or amount.",
+            "preferred_term": "Chocolate agar plates",
+            "source": "TOGO M2975"
+          },
+          "raw_preferred_term": "Chocolate agar plates",
+          "recipe_id": "CultureMech:009498",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009498"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2975"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/chocolate_agar_plates_supplemented_with_1_isovitalex.yaml",
+          "source_file_sha256": "8fabf21ebcff89bdb9ea8ac3d3658cb4759b28dac7ba8c5eeaf1a9897e3d310f",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3330,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009498",
+        "ingredient_name": "Chocolate agar plates",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Chocolate agar plates",
+      "source": "culturemech",
+      "source_case_id": "Chocolate agar plates",
+      "source_identity_claimed": false,
+      "source_label": "Chocolate agar plates"
+    }
+  ]
+}

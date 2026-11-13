@@ -1,0 +1,128 @@
+id: CultureMech:002754
+name: acidic_oatmeal_agar_ph_5_0
+original_name: ACIDIC OATMEAL AGAR (pH 5.0)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 5.0
+media_term:
+  preferred_term: JCM Medium J398
+  term:
+    id: mediadive.medium:J398
+    label: ACIDIC OATMEAL AGAR (pH 5.0)
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=398'
+ingredients:
+- preferred_term: Oatmeal
+  concentration:
+    value: '19.98'
+    unit: G_PER_L
+  notes: Copied from referenced JCM Medium 50
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '17.982'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  notes: Copied from referenced JCM Medium 50
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Prepare Oatmeal agar (ISP-3) (see Medium No. 50) and adjust pH to 5.0.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:16.504535Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J398'
+- timestamp: '2026-02-03T11:26:54.802186'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:19:15.492578Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002754'
+- timestamp: '2026-03-17T19:45:28.897919+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "ACIDIC OATMEAL AGAR (pH 5.0)" to "acidic_oatmeal_agar_ph_5_0"
+    for consistent matching
+- timestamp: '2026-04-04T21:48:41.173517'
+  curator: resolve_option_c_references
+  action: RESOLVED_REFERENCE
+  changes: Copied composition from referenced medium (5 ingredients)
+  source: CultureMech:002860
+  notes: Resolved reference by copying from oatmeal_agar_isp_3 (CultureMech:002860)
+- timestamp: '2026-04-04T21:51:44.219816'
+  curator: resolve_option_c_references
+  action: RESOLVED_REFERENCE
+  changes: Copied composition from referenced medium (5 ingredients)
+  source: CultureMech:002860
+  notes: Resolved reference by copying from oatmeal_agar_isp_3 (CultureMech:002860)
+- timestamp: '2026-05-16T08:57:22.161017+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(2 keys) -> list(1 entries)
+- timestamp: '2026-06-05T07:40:47.161232+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-13T07:04:21.821236+00:00'
+  curator: apply_cocktail_nesting.py
+  action: NESTED_FLATTENED_COCKTAIL
+  notes: 'Moved 3 stock-strength component(s) out of ingredients into 1 solution(s):
+    3 -> ''Trace salt solution'' @ 1 ml/l. Each moved component matched the MediaDive
+    stock by name AND value; bulk ingredients sharing a name were left in place (#150).'
+  changes: Nested 3 ingredient(s) under 1 solution(s); ingredients 5 -> 2
+data_quality_flags:
+- resolved_reference
+solutions:
+- preferred_term: Trace salt solution
+  composition:
+  - preferred_term: FeSO4 x 7 H2O
+    term:
+      id: CHEBI:75836
+      label: iron(2+) sulfate heptahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:75836
+      label: iron(2+) sulfate heptahydrate
+    notes: Copied from referenced JCM Medium 50
+  - preferred_term: MnCl2 x 4 H2O
+    term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+    notes: Copied from referenced JCM Medium 50
+  - preferred_term: ZnSO4 x 7 H2O
+    term:
+      id: CHEBI:32312
+      label: zinc sulfate heptahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:32312
+      label: zinc sulfate heptahydrate
+    notes: Copied from referenced JCM Medium 50
+  concentration:
+    value: '1'
+    unit: ML_PER_L
+  preparation_notes: Stock prepared in 100 ml; added at 1 ml per litre of medium.
+    Composition and volume read from https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium84.pdf
+    (#150).

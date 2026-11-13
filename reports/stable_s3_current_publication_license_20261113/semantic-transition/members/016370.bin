@@ -1,0 +1,78 @@
+identifier: ENVO:00002263
+preferred_term: Garden soil
+synonyms:
+- synonym_text: Garden soil
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 5
+  media_count: 5
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2159); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T18:12:21.456371+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_ENVO
+  changes: primary UNMAPPED_0392 → ENVO:00002263 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.643642+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soil')
+  llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-08-27T03:16:39.518918+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 15/15 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T08:17:02.834323+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: occurrence_statistics 15/15 -> 5/5 (media_count/total_occurrences), recomputed
+    from culturemech_recipe_membership.tsv after exact air-dried garden soil source
+    rows were reassigned from ENVO:00002263 to kgmicrobe.ingredient:air-dried_garden_soil
+    (#548). [source=ingredient_occurrences.tsv culturemech_rev=8c79a66fec edges=191616
+    recipes=15254 mim_records=801]
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001162; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2159); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00002263
+  ontology_label: garden soil
+  ontology_source: ENVO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: ENVO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0392'; match=label-exact
+ingredient_type: UNDEFINED_MIXTURE
+environmental_context:
+- environment_term: ENVO:00002263
+  environment_label: garden soil
+  relevance: NATURAL_SOURCE
+  notes: Ingredient is garden soil itself; sourced directly from this environment.
+mim_id: MIM:0001162
+legacy_identifiers:
+- MIM:Garden_Soil
+- ENVO:00002263

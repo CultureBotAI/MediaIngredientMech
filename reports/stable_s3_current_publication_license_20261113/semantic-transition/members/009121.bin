@@ -1,0 +1,74 @@
+identifier: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+preferred_term: Reinforced clostridial medium (Oxoid CM0149)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149
+  ontology_label: Reinforced clostridial medium (Oxoid CM0149)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      NBRC902 explicitly names OxoidCM0149 at38g as the purchased medium. It does
+      not establish a historical formula revision. Water1L and optional additional
+      agar15g are receiving-medium ingredients, not inferred dry-product constituents.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Create the separately deduplicated named OxoidCM0149 product; do not merge it
+      with authentic original1769 Difco, Sigma agar, or generic Dehydrated_RCM_Medium.
+      Exact historical composition remains unknown.
+synonyms:
+- synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+supplied_form:
+- name: Reinforced clostridial medium (Oxoid CM0149)
+  supplier: Oxoid
+  catalog_number: CM0149
+  form: dehydrated named-medium product
+  notes: NBRC902 identifies the catalog product, but not the formula revision or package
+    size. Current IFU0539 distinguishes CM0149B/T semi-solid medium from CM0151 agar.
+    The current CM0149 table lists yeast extract13g/L and agar0.5g/L without beef
+    extract; that current-version information is not retroactively asserted for the
+    historical NBRC902 product. No B/T package or lot is inferred.
+notes: 'New source-qualified product candidate under #1224. The exact historical NBRC902
+  formulation revision is unresolved. No components are asserted on this revision-unspecified
+  owner: doing so from the current IFU would silently backdate composition. The current
+  IFU remains source-versioned provenance, not the recipe of every occurrence. No
+  generic RCM, uncatalogued Oxoid, BD-Difco, Sigma agar or mixed-supplier alias is
+  minted. The original W03 full payload and history remain intact in the trace and
+  the authentic existing RCM owner''s historical lineage; they are not represented
+  as pre-existing history of this genuinely new owner. No source membership/count
+  is fabricated. https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364'
+curation_history:
+- timestamp: '2026-11-08T07:05:36.702541+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: CREATED
+  changes: 'Create a separately deduplicated OxoidCM0149 named-product candidate for
+    the exact W03/NBRC902 source case, retaining historical formula uncertainty and
+    its original provenance without moving or merging a maintained record. Conclusion:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364.
+    Isolated candidate only; no maintained write, role approval, inherited support,
+    membership transfer or release approval. Exact whole-candidate independent review
+    remains required.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:13:06.049005+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only newly authored coordinator MappingEvidence MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226.
+    Preserve all original source URLs, interpretations, scientific fields and the
+    complete first-publication history prefix. The original private publication remains
+    immutable. No historical human evidence or ComponentEvidenceType is changed; no
+    scientific approval, inherited support or maintained application.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

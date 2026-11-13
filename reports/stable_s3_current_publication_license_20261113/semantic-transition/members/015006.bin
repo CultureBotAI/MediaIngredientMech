@@ -1,0 +1,50 @@
+identifier: kgmicrobe.ingredient:fbs_flow_56c_30min_m2888
+preferred_term: Flow fetal bovine serum heated at 56 C for 30 min (TOGO M2888)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: NCIT:C113696
+  ontology_label: Fetal Bovine Serum
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2888
+    notes: M2888 prose specifies56C30min heat treatment and Flow fetal-bovine serum
+      for non-immunization preparations. The separately described Flow horse serum
+      alternative is not merged into this owner. Broader material parent only; distinct
+      local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.565584+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: M2888 prose specifies56C30min heat treatment and Flow fetal-bovine serum
+    for non-immunization preparations. The separately described Flow horse serum alternative
+    is not merged into this owner. Isolated successor proposal only; original published
+    review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.855617+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Fetal bovine serum
+  supplier: Flow Laboratories
+  notes: Source-specific product prior to stated heat treatment; catalog unspecified.
+notes: 'M2888 prose specifies56C30min heat treatment and Flow fetal-bovine serum for
+  non-immunization preparations. The separately described Flow horse serum alternative
+  is not merged into this owner. Source labels retained as nonresolving provenance:
+  [{"case_id": "CM_NAME:464faf71d170c371faa0051b61d8e3d204c3947b98dd8bb0277cb513cdd060e5",
+  "raw_label": "Fetal bovine serum (Flow), heat-inactivated"}]. No global generic
+  alias, supplier equivalence, role approval or complete publication approval is conferred.
+  Receiving-medium dose and unit repairs remain separate. Existing native holds and
+  rejected labels are preserved.'

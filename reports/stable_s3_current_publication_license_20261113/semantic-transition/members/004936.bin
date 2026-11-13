@@ -1,0 +1,111 @@
+id: CultureMech:003345
+name: car_bacillus_medium
+original_name: CAR BACILLUS MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: JCM Medium J996
+  term:
+    id: mediadive.medium:J996
+    label: CAR BACILLUS MEDIUM
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=996
+
+  Composition verified against https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=996
+  on 2026-08-25 (SHA-256 f34523ccdcd09c53e60a2ebc7b2ab2bde7ded8af0626f0d2b052aaf654e233e2).'
+ingredients: []
+preparation_steps:
+- step_number: 1
+  action: HEAT
+  description: Heat-inactivate fetal bovine serum at 56 C for 30 minutes.
+- step_number: 2
+  action: MIX
+  description: Supplement IMDM (GlutaMAX) with 10% heat-inactivated FBS.
+- step_number: 3
+  action: MIX
+  description: Incubate Vero E6 cells (ATCC CRL-1586) in the supplemented medium at
+    37 C under 5% CO2.
+- step_number: 4
+  action: MIX
+  description: After cell cultivation, centrifuge the culture medium and retain the
+    clarified supernatant fluid.
+- step_number: 5
+  action: MIX
+  description: Cultivate the microorganism in the supernatant in the specified ultra-low-attachment
+    75 cm2 flask at 37 C under 5% CO2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:18.262022Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J996'
+- timestamp: '2026-02-03T11:26:56.941571'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:19:19.685736Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:003345'
+- timestamp: '2026-03-17T19:45:33.725498+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CAR BACILLUS MEDIUM" to "car_bacillus_medium" for consistent
+    matching
+- timestamp: '2026-04-05T17:20:25.593903'
+  curator: mark_unavailable_media
+  action: MARKED_UNAVAILABLE
+  changes: Marked as source_information_unavailable
+  notes: 'Source database has no composition data. Category: UNKNOWN. Page exists
+    but no clear composition format'
+- timestamp: '2026-05-16T08:57:25.415238+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(2 keys) -> list(2 entries)
+- timestamp: '2026-08-06T07:56:36.088654+00:00'
+  curator: curate_placeholder_composition.py
+  action: REMOVED_PLACEHOLDER_INGREDIENT
+  notes: Removed the 'See source for composition' placeholder ingredient; the record
+    carries no imported composition and is flagged incomplete (#175).
+  changes: Dropped placeholder ingredient 'See source for composition'
+- timestamp: '2026-08-25T00:00:00-07:00'
+  curator: repair_jcm_car_bacillus.py
+  action: RESTORED_JCM_996_CONDITIONED_MEDIUM
+  changes: ingredients 0 -> 0; solutions 0 -> 1
+  notes: Represented the final medium as clarified Vero E6-conditioned IMDM plus 10%
+    FBS. Vero cells remain preparation agents, not final ingredients; the NCIT-backed
+    FBS identity was verified in the MIM SSSOM and retained in notes because the schema
+    does not admit it.
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_curated_sparse_flags_score40.py
+  action: MARKED_CURATED_SPARSE_SCORE40_GRAPH
+  changes: Tagged reviewed sparse formulation for score-40 ranking
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=996
+  notes: Preserved the reviewed CAR bacillus recipe and marked its sparse conditioned-medium
+    composition as manually curated with unmapped product identities.
+solutions:
+- preferred_term: Clarified Vero E6 cell culture supernatant fluid
+  composition:
+  - preferred_term: Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)
+    concentration:
+      value: '90'
+      unit: PERCENT_V_V
+    notes: Life Technologies Cat. No. 31980030. No defensible identity object is present
+      in the reviewed MIM SSSOM.
+  - preferred_term: Fetal bovine serum
+    concentration:
+      value: '10'
+      unit: PERCENT_V_V
+    notes: Heat-inactivate at 56 C for 30 minutes before use. MIM maps this label
+      to NCIT:C113696 (Fetal Bovine Serum), but the current ingredient-term schema
+      does not admit NCIT CURIEs.
+  concentration:
+    value: '100'
+    unit: PERCENT_V_V
+  notes: The final CAR bacillus medium consists entirely of the clarified supernatant
+    after Vero E6 conditioning.
+data_quality_flags:
+- ingredients_curated
+- has_unmapped_ingredients

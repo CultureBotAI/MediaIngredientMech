@@ -1,0 +1,51 @@
+identifier: CHEBI:6377
+preferred_term: Lapachol
+ontology_mapping:
+  ontology_id: CHEBI:6377
+  ontology_label: lapachol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 2-hydroxy-3-(3-methylbut-2-en-1-yl)naphthalene-1,4-dione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=84-79-7); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.486385+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.509167+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C15H14O3; inchi=InChI=1S/C15H14O3/c1-9(2)7-8-12-13(16)10-5-3-4-6-1;
+    smiles=CC(C)=CCC1=C(O)C(=O)c2ccccc2C1=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.711404+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 84-79-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C15H14O3
+  inchi: InChI=1S/C15H14O3/c1-9(2)7-8-12-13(16)10-5-3-4-6-11(10)14(17)15(12)18/h3-7,18H,8H2,1-2H3
+  smiles: CC(C)=CCC1=C(O)C(=O)c2ccccc2C1=O
+ingredient_type: SINGLE_INGREDIENT

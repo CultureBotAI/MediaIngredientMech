@@ -1,0 +1,34 @@
+{
+  "researcher": "/root/primary_context",
+  "fetches": [
+    {
+      "file": "captures/ijsem-001745-crossref-link.html",
+      "url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/ijsem.0.001745?crawler=true",
+      "accessed_at": "2026-11-08T04:19:07.824614+00:00",
+      "finished_at": "2026-11-08T04:19:07.887499+00:00",
+      "command": [
+        "curl",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-time",
+        "40",
+        "--retry",
+        "2",
+        "--output",
+        "reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/ijsem-001745-crossref-link.html",
+        "--dump-header",
+        ".temp/all-unmatched-worker-01/shard/named_stocks/headers/ijsem-001745-crossref-link.html.headers",
+        "--write-out",
+        "%{http_code}\n%{url_effective}\n",
+        "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/ijsem.0.001745?crawler=true"
+      ],
+      "exit_code": 0,
+      "http": "403\nhttps://www.microbiologyresearch.org/content/journal/ijsem/10.1099/ijsem.0.001745?crawler=true",
+      "stderr": "",
+      "sha256": "6cd71dda87a1b35ae7189c46a76dc4cd43579cdaa3bcb5324e3a1ff119d76159",
+      "header_sha256": "a4a020b983032b3a23421e79e3a18c2b942740154516911e6d7dadb39520d575",
+      "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+    }
+  ]
+}

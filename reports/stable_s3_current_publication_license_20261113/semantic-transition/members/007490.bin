@@ -1,0 +1,118 @@
+{
+  "baseline_outcome": "native_no_mim_match",
+  "campaign_requirement": "complete_source_bound_review",
+  "case_id": "CM_NAME:cee55a1ecd667108005a7827a46e00d64120a35eb23a71efbcfae86b991170d0",
+  "native_match_result": {
+    "effective_term_id": "mediadive.compound:2013",
+    "matched": false,
+    "resolved_record": null
+  },
+  "native_occurrence_count": 2,
+  "occurrences": [
+    {
+      "component_path": "composition/5",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5240_Trace_element_solution.yaml",
+      "native_name": "Ca(NO3)2 x 6 H2O",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:16cc74cf875d969210427b7ddc619039de78bc7126b2afb2ba4b4ac8a3ccc30f",
+      "raw_component": {
+        "chebi_term": {
+          "id": "CHEBI:64205",
+          "label": "calcium nitrate",
+          "match_type": "manual_curated"
+        },
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.0494"
+        },
+        "evidence": [
+          {
+            "explanation": "Concentration evidence for composition[5].concentration (Ca(NO3)2 x 6 H2O) in MediaDive solution 5240; locator=$.data.recipe[5] (compound_id=2013). Provider explicitly reports g_l=0.0494. Arithmetic check: 49.4 mg * 0.001 g/mg / (1000 ml / 1000 ml per L) = 0.0494 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:52:36.379642+00:00; response SHA256=68e5979087a7d26af33da5d2808945378f63193521488cdd9740c7e0dd905c2d.",
+            "reference": "https://mediadive.dsmz.de/rest/solution/5240",
+            "snippet": "{\n                \"recipe_order\": 6,\n                \"compound\": \"Ca(NO3)2 x 6 H2O\",\n                \"compound_id\": 2013,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 49.4,\n                \"unit\": \"mg\",\n                \"g_l\": 0.0494,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+            "supports": "SUPPORT"
+          }
+        ],
+        "preferred_term": "Ca(NO3)2 x 6 H2O",
+        "term": {
+          "id": "mediadive.compound:2013",
+          "label": "Ca(NO3)2 x 6 H2O"
+        }
+      },
+      "raw_preferred_term": "Ca(NO3)2 x 6 H2O",
+      "recipe_id": "CultureMech:014152",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:014152"
+        },
+        {
+          "path": "/term/id",
+          "value": "mediadive.solution:5240"
+        }
+      ],
+      "record_shape": "SolutionRecipe",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5240_Trace_element_solution.yaml",
+      "source_file_sha256": "f5a81dacbdbb539cd75238197a84221036cbb4ab26b5c52f63077fba60ffcddf",
+      "source_identifiers": [
+        {
+          "path": "/term/id",
+          "value": "mediadive.compound:2013"
+        },
+        {
+          "path": "/chebi_term/id",
+          "value": "CHEBI:64205"
+        }
+      ]
+    },
+    {
+      "component_path": "ingredients/17",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/roseibaca_calidilacus_medium.yaml",
+      "native_name": "Ca(NO3)2 x 6 H2O",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:f0ef89f81ceb2b5f5313f3e610e9200a04b6648400f4fad22660bde2c9af6f5a",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.0494"
+        },
+        "preferred_term": "Ca(NO3)2 x 6 H2O"
+      },
+      "raw_preferred_term": "Ca(NO3)2 x 6 H2O",
+      "recipe_id": "CultureMech:002310",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:002310"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "mediadive.medium:J1137"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/roseibaca_calidilacus_medium.yaml",
+      "source_file_sha256": "d31b74ec4784d3a5bae7574d12d97ef8134a14b60313eeeefe84a3347bf1e1d0",
+      "source_identifiers": []
+    }
+  ],
+  "original_unified_position": 2368,
+  "original_unified_row": {
+    "cas_rn": "",
+    "chebi_id": "",
+    "culturemech_term_id": "mediadive.compound:2013",
+    "example_media": "CultureMech:002310; CultureMech:014152",
+    "ingredient_name": "Ca(NO3)2 x 6 H2O",
+    "kg_microbe_node_id": "",
+    "mapping_status": "TERM_ID_NO_MIM",
+    "mim_id": "",
+    "occurrence_count": "2",
+    "synonyms": ""
+  },
+  "prior_dependency": "PR1158 candidate baseline, not merged",
+  "raw_source_label": "Ca(NO3)2 x 6 H2O",
+  "source": "culturemech",
+  "source_case_id": "Ca(NO3)2 x 6 H2O",
+  "source_identity_claimed": false,
+  "source_label": "Ca(NO3)2 x 6 H2O"
+}

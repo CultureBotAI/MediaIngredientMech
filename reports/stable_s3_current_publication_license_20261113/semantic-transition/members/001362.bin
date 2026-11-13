@@ -1,0 +1,121 @@
+identifier: CHEBI:17596
+preferred_term: Inosine
+ontology_mapping:
+  ontology_id: CHEBI:17596
+  ontology_label: inosine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 58-63-9
+    notes: ChEBI ID CHEBI:17596 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: (2R,3S,4R,5R)-2-(hydroxymethyl)-5-(6-hydroxy-9H-purin-9-yl)tetrahydrofuran-3,4-diol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9-(beta-D-ribofuranosyl)-9H-purin-6-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9-beta-D-ribofuranosyl-9H-purin-6-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9-beta-D-ribofuranosylhypoxanthine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Inosin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: hypoxanthine D-riboside
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: hypoxanthosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: inosina
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: inosinum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 36
+  media_count: 36
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:25.525494+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:58-63-9 from PubChem API via name lookup (Inosin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:19:31.952116+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:17596
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: (2R,3S,4R,5R)-2-(hydroxymethyl)-5-(6-hydroxy-9H-purin-9-yl)tetrahydrofuran-3,4-diol,
+    9-(beta-D-ribofuranosyl)-9H-purin-6-ol, 9-beta-D-ribofuranosyl-9H-purin-6-ol,
+    9-beta-D-ribofuranosylhypoxanthine, Inosin, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: (2R,3S,4R,5R)-2-(hydroxymethyl)-5-(6-hydroxy-9H-purin-9-yl)tetrahydrofuran-3,4-diol,
+    9-(beta-D-ribofuranosyl)-9H-purin-6-ol, 9-beta-D-ribofuranosyl-9H-purin-6-ol,
+    9-beta-D-ribofuranosylhypoxanthine, hypoxanthine D-riboside, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Inosin.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.063832+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.047687+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H12N4O5; inchi=InChI=1S/C10H12N4O5/c15-1-4-6(16)7(17)10(19-4)14-3;
+    smiles=OC[C@H]1O[C@@H](n2cnc3c(O)ncnc32)[C@H](O)[C@@H]1O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.111976+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519012+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 27/27 -> 36/36 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Created from FEBA ontology enrichment workflow. Used in 14 FEBA media formulations.
+chemical_properties:
+  cas_rn: 58-63-9
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:19:31.952126+00:00'
+  molecular_formula: C10H12N4O5
+  inchi: InChI=1S/C10H12N4O5/c15-1-4-6(16)7(17)10(19-4)14-3-13-5-8(14)11-2-12-9(5)18/h2-4,6-7,10,15-17H,1H2,(H,11,12,18)/t4-,6-,7-,10-/m1/s1
+  smiles: OC[C@H]1O[C@@H](n2cnc3c(O)ncnc32)[C@H](O)[C@@H]1O
+ingredient_type: SINGLE_INGREDIENT

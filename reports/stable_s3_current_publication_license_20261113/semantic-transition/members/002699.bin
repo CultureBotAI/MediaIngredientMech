@@ -1,0 +1,129 @@
+identifier: CHEBI:16494
+preferred_term: α-lipoic acid
+ontology_mapping:
+  ontology_id: CHEBI:16494
+  ontology_label: lipoic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#454)
+    notes: The source label names generic or racemic lipoic/thioctic acid. No source
+      occurrence asserts an R- or S-only enantiomer, so CHEBI:16494 is the supported
+      ChEBI target.
+synonyms:
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (S)-(-)-lipoic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: (S)-1,2-dithiolane-3-pentanoic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: (S)-alpha-lipoic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: 5-[(3S)-1,2-dithiolan-3-yl]pentanoic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: D,L-6,8-Thioctic Acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-1,2-dithiolane 3-valeric acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: L-6,8-thioctic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: L-6-thioctic acid
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: S-LA
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: SLA
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: thioctic acid l-form
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:47:17.271583+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1077-27-6 from PubChem API (ontology label) via name preprocessing
+    (α-lipoic acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: (S)-(-)-lipoic acid,
+    (S)-1,2-dithiolane-3-pentanoic acid, (S)-alpha-lipoic acid, 5-[(3S)-1,2-dithiolan-3-yl]pentanoic
+    acid, D,L-6,8-Thioctic Acid, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:37.007470+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:33.104330+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H14O2S2; inchi=InChI=1S/C8H14O2S2/c9-8(10)4-2-1-3-7-5-6-11-12-7/h;
+    smiles=O=C(O)CCCC[C@H]1CCSS1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.397241+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.754161+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.520188+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 11/11 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-11T14:49:05.979520+00:00'
+  curator: fix_lipoic_stereochemistry
+  action: MERGED_INTO
+  changes: Merged into CHEBI:16494 '(DL)-alpha-Lipoic acid'; the old CHEBI:43796 target
+    was an unsupported enantiomer-specific grounding. Occurrences were transferred
+    to the generic lipoic acid record and SSSOM rows were dropped (#454), and 10 R/S-only
+    target synonym(s) were retained as REJECTED_LABEL provenance (#454/#634).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
+chemical_properties: {}
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+representative: CHEBI:16494

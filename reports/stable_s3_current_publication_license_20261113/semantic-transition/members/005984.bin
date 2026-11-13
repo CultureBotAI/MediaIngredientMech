@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-08T11:33:20.067337+00:00",
+  "status": "PASS",
+  "count": 10,
+  "results": [
+    {
+      "name": "commercial_scope_UNKNOWN_not_new_nominal_COMPLETE",
+      "result": "PASS",
+      "filename": "Marine_agar_2216.yaml"
+    },
+    {
+      "name": "complete_history_evidence_prefix_native_idempotence",
+      "result": "PASS",
+      "filename": "Marine_agar_2216.yaml",
+      "payload_sha256": "355f0f593c84cabc8c10fbf3e72af8415725b94602dd6e660f1b82985703cfcc"
+    },
+    {
+      "name": "unknown_schema_field_Marine_agar_2216.yaml",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "ValidationFailedError",
+      "message": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/late-scientific-successors-1126-v1/marine-agar/controls/bad-schema-Marine_agar_2216.yaml\n  - Additional properties are not allowed ('invented_approval' was unexpected) in /"
+    },
+    {
+      "name": "invalid_grade_Marine_agar_2216.yaml",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "ValidationFailedError",
+      "message": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/late-scientific-successors-1126-v1/marine-agar/controls/bad-grade-Marine_agar_2216.yaml\n  - 'UNRECOGNIZED' is not one of ['EXACT_MATCH', 'SYNONYM_MATCH', 'CLOSE_MATCH', 'MANUAL_CURATION', 'LLM_ASSISTED', 'PROVISIONAL', 'NARROW_MATCH', 'BROAD_MATCH', 'LEXICAL_MATCH', 'CAS_RN_LOOKUP', 'FALLBAC"
+    },
+    {
+      "name": "occupied_output_preserved",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "FileExistsError",
+      "message": "[Errno 17] File exists: 'occupied'"
+    },
+    {
+      "name": "symlink_proof_refused",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "ValueError",
+      "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/late-scientific-successors-1126-v1/marine-agar/controls/proof-link"
+    },
+    {
+      "name": "hardlink_proof_refused",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "ValueError",
+      "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/late-scientific-successors-1126-v1/marine-agar/controls/proof"
+    },
+    {
+      "name": "late_input_drift_no_publication",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "ValueError",
+      "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/late-scientific-successors-1126-v1/marine-agar/controls/proof"
+    },
+    {
+      "name": "late_input_member_added_no_publication",
+      "result": "REFUSED_AS_REQUIRED",
+      "error_type": "RuntimeError",
+      "message": "Exact proof membership changed"
+    },
+    {
+      "name": "native_scientific_mapping_cells_unchanged",
+      "result": "PASS",
+      "rows": 1
+    }
+  ],
+  "all_input_pins_rechecked": true,
+  "source_or_canonical_application": false,
+  "independent_review": false
+}

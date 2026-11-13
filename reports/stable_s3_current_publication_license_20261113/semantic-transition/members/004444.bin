@@ -1,0 +1,353 @@
+id: CultureMech:007468
+name: '1275'
+original_name: '1275'
+category: bacterial
+description: 1275. NBRC 1274.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 6.8
+media_term:
+  preferred_term: NBRC Medium 1274
+  term:
+    id: nbrc.medium:1274
+    label: NBRC Medium 1274
+ingredients:
+- preferred_term: NaCl
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: K2HPO4
+  concentration:
+    value: '0.14'
+    unit: G_PER_L
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: CaCl2·2H2O
+  concentration:
+    value: '0.14'
+    unit: G_PER_L
+  term:
+    id: CHEBI:86158
+    label: CaCl2 x 2 H2O
+- preferred_term: NH4Cl
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: MgSO4·7H2O
+  concentration:
+    value: '3.4'
+    unit: G_PER_L
+- preferred_term: MgCl2·6H2O
+  concentration:
+    value: '4.2'
+    unit: G_PER_L
+  term:
+    id: CHEBI:86345
+    label: MgCl2 x 6 H2O
+- preferred_term: KCl
+  concentration:
+    value: '0.33'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: Fe(NH4)2(SO4)2·6H2O
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  term:
+    id: CHEBI:76181
+    label: Fe(NH4)2(SO4)2 x 6 H2O
+- preferred_term: Bacto Yeast Extract (Difco)
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: Trace elements solution*
+  concentration:
+    value: '10'
+    unit: ML_PER_L
+- preferred_term: Vitamin solution**
+  concentration:
+    value: '2'
+    unit: ML_PER_L
+- preferred_term: NaHCO3
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32139
+    label: sodium hydrogencarbonate
+- preferred_term: Sulfur (powder)
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  term:
+    id: CHEBI:33403
+    label: elemental sulfur
+- preferred_term: Resazurin
+  concentration:
+    value: '1'
+    unit: MG_PER_L
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+- preferred_term: Na2S·9H2O
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix ingredients except for vitamin solution, sulfur, and Na2S·9H2O.
+- step_number: 2
+  action: ALIQUOT
+  description: Dispense the medium into culture vessels under a stream of N2/CO2 (80/20)
+    and seal with butyl rubber stoppers.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 minutes.
+- step_number: 4
+  action: AUTOCLAVE
+  description: Separately neutralize and autoclave Na2S·9H2O as a 5% solution under
+    N2.
+- step_number: 5
+  action: FILTER_STERILIZE
+  description: Filter-sterilize the vitamin solution.
+- step_number: 6
+  action: AUTOCLAVE
+  description: Sterilize sulfur by autoclaving for 60 minutes at 105 C on each of
+    3 successive days.
+- step_number: 7
+  action: MIX
+  description: Before inoculation, aseptically and anaerobically add vitamin solution,
+    sulfur, and Na2S·9H2O.
+curation_history:
+- timestamp: '2026-02-20T00:22:36.048069Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 1274, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=1274.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-09T08:05:08.121412+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T03:09:39.854218Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 92 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.177288Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007468'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.621925+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.712372+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 1274 composition table from the preserved scrape;
+    16 ingredient(s) restored, 2 stock solution(s) nested rather than flattened, 1
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:15.853895+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 19 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-08-26T02:12:32.890619+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1274
+  notes: Preserved the recovered NBRC Medium 1274 composition table.
+solutions:
+- preferred_term: Trace elements solution
+  composition:
+  - preferred_term: Nitrilotriacetic acid (NTA)
+    concentration:
+      value: '12.8'
+      unit: G_PER_L
+  - preferred_term: FeCl3·6H2O
+    concentration:
+      value: '1.35'
+      unit: G_PER_L
+  - preferred_term: MnCl2·4H2O
+    concentration:
+      value: '0.1'
+      unit: G_PER_L
+  - preferred_term: CoCl2·6H2O
+    concentration:
+      value: '0.024'
+      unit: G_PER_L
+  - preferred_term: CaCl2·2H2O
+    concentration:
+      value: '0.1'
+      unit: G_PER_L
+    term:
+      id: CHEBI:86158
+      label: CaCl2 x 2 H2O
+  - preferred_term: ZnCl2
+    concentration:
+      value: '0.1'
+      unit: G_PER_L
+    term:
+      id: CHEBI:49976
+      label: zinc dichloride
+  - preferred_term: CuCl2·2H2O
+    concentration:
+      value: '0.025'
+      unit: G_PER_L
+  - preferred_term: H3BO3
+    concentration:
+      value: '0.01'
+      unit: G_PER_L
+    term:
+      id: CHEBI:33118
+      label: boric acid
+  - preferred_term: Na2MoO4·2H2O
+    concentration:
+      value: '0.024'
+      unit: G_PER_L
+  - preferred_term: NaCl
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    term:
+      id: CHEBI:26710
+      label: sodium chloride
+  - preferred_term: NiCl2·6H2O
+    concentration:
+      value: '0.12'
+      unit: G_PER_L
+  - preferred_term: Na2SeO4
+    concentration:
+      value: '0.8'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:77775
+      label: sodium selenate
+  - preferred_term: Na2WO4
+    concentration:
+      value: '0.8'
+      unit: MG_PER_L
+  - preferred_term: KAl(SO4)2·12H2O
+    concentration:
+      value: '4'
+      unit: MG_PER_L
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Trace elements solution
+- preferred_term: Vitamin solution
+  composition:
+  - preferred_term: Biotin
+    concentration:
+      value: '2'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:15956
+      label: biotin
+  - preferred_term: Folic acid
+    concentration:
+      value: '2'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:27470
+      label: folic acid
+  - preferred_term: Pyridoxine-HCl
+    concentration:
+      value: '10'
+      unit: MG_PER_L
+  - preferred_term: Thiamine-HCl
+    concentration:
+      value: '5'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:49105
+      label: thiamine hydrochloride
+  - preferred_term: Riboflavin
+    concentration:
+      value: '5'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:17015
+      label: riboflavin
+  - preferred_term: Nicotinic acid
+    concentration:
+      value: '5'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:15940
+      label: nicotinic acid
+  - preferred_term: Ca-pantothenate
+    concentration:
+      value: '5'
+      unit: MG_PER_L
+  - preferred_term: p-Aminobenzoic acid
+    concentration:
+      value: '1'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:30753
+      label: 4-aminobenzoic acid
+  - preferred_term: Vitamin B12
+    concentration:
+      value: '0.01'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:176843
+      label: vitamin B12
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Vitamin solution
+notes: 'Source: NBRC Medium 1274 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1274
+
+
+  The NBRC Modified MJYS medium table lists final pH 6.8, two nested stock solutions,
+  separate filtration of the vitamin solution, separate neutralization and autoclaving
+  of Na2S, and tyndallization of sulfur before inoculation.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1274

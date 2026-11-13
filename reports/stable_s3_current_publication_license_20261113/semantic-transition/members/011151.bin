@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:organic_peat
+preferred_term: Organic Peat
+synonyms:
+- synonym_text: Organic Peat
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T18:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as peat-derived organic material and left unmapped pending source/composition
+    curation rather than identity mapping to a generic parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Organic_Peat-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Organic Peat` is
+    an **ambiguous natural-material mixture**, not a single chemical, salt/hydrate,
+    buffer, or demonstrated standardized formulation. Peat is plant-derived organic
+    material whose botanical inputs, degree of decomposition, elemental composition,
+    and organic functional-group distribution vary. A peat core study, for example,
+    identified inputs including * No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:53:56.979017+00:00'
+  curator: worker05/materials_research skeptical remediation1193
+  action: CORRECTED
+  changes: Promote the existing organic-peat raw-material owner to its own local registry
+    identity with direct UTEX preparation-input evidence; retain SAG peat-soil process
+    context without forcing exact input equality or creating another peat owner. Exact
+    isolated proposal. Preserve all prior source and export holds.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Isolated proposal only; no maintained data or source membership
+    change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as peat-derived organic
+  material pending source/composition curation. Correction1193: Primary UTEX Soilwater:
+  Peat Medium explicitly uses0.5tsp Organic Peat separately from1.5tsp Green House
+  Soil and200mlwater; later steaming prepares the medium and is not a property of
+  the raw peat input. SAG18 independently describes peat soil of medium/not-too-great
+  humus without fertilizers or plant-protection agents for peat extract. These source
+  forms are curated as provenance; an exact SAG Peat soil alias to this owner is not
+  asserted, and a second generic peat owner is not minted. Natural variability is
+  not a reason to leave the existing known peat material without a registry identity.
+  Preserve every source/native/export hold; no standardized composition, substrate-usage
+  role or complete owner approval.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:organic_peat
+  ontology_label: Organic Peat
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://web.biosci.utexas.edu/utex/Media%20PDF/soilwater-peat-medium.pdf
+    notes: Distinct variable natural peat material already represented by existing
+      owner; no precise molecular or environmental-class exact identity inferred.
+supplied_form:
+- name: Organic peat (UTEX raw input)
+  notes: 'Source material used before preparation of Soilwater: Peat Medium, separate
+    from greenhouse soil; dose0.5teaspoon is source input, not mass or concentration.
+    Botanical type/decomposition not specified.'

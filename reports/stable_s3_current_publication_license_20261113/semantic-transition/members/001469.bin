@@ -1,0 +1,69 @@
+identifier: CHEBI:35235
+preferred_term: L-cysteine zwitterion
+ontology_mapping:
+  ontology_id: CHEBI:35235
+  ontology_label: L-cysteine zwitterion
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: hydrate_sibling_proposal
+    notes: 'Auto-created to receive hydration-routing synonyms re-routed from: Cysteine-hcl_X_H2o.yaml,
+      L-cysteine-hcl_X_H2o.yaml, L-cysteine-hcl_X_H2o_2.yaml'
+synonyms:
+- synonym_text: L-cysteine zwitterion
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: (2R)-2-ammonio-3-sulfanylpropanoate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T06:49:08.236669+00:00'
+  curator: audit_hydrate_sibling_creator
+  action: CREATED_FROM_HYDRATE_SIBLING_PROPOSAL
+  changes: Created new MIM record for CHEBI:35235 (L-cysteine zwitterion); seeded
+    with 3 synonyms from P4.4 UNRESOLVED hydration-mismatch queue
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.337198+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.343490+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H7NO2S; inchi=InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,;
+    smiles=[NH3+][C@@H](CS)C(=O)[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.495084+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.743430+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C3H7NO2S
+  inchi: InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1
+  smiles: '[NH3+][C@@H](CS)C(=O)[O-]'
+  data_source: CHEBI sqlite (oaklib)
+nutritional_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

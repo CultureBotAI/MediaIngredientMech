@@ -1,0 +1,70 @@
+identifier: CHEBI:68590
+preferred_term: Fidaxomicin
+ontology_mapping:
+  ontology_id: CHEBI:68590
+  ontology_label: fidaxomicin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:fidaxomicin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:fidaxomicin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001094; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C52H74Cl2O18
+  smiles: CCc1c(Cl)c(O)c(Cl)c(O)c1C(=O)O[C@H]1[C@H](O)[C@H](OC)[C@H](OC/C2=CC=CC[C@H](O)/C(C)=C/[C@H](CC)[C@@H](O[C@@H]3OC(C)(C)[C@@H](OC(=O)C(C)C)[C@H](O)[C@@H]3O)/C(C)=C/C(C)=C/CC([C@@H](C)O)OC2=O)O[C@@H]1C
+  inchi: InChI=1S/C52H74Cl2O18/c1-13-30-22-26(6)33(56)18-16-15-17-31(23-66-51-45(65-12)42(61)44(29(9)67-51)69-49(64)35-32(14-2)36(53)39(58)37(54)38(35)57)48(63)68-34(28(8)55)20-19-25(5)21-27(7)43(30)70-50-41(60)40(59)46(52(10,11)72-50)71-47(62)24(3)4/h15-17,19,21-22,24,28-30,33-34,40-46,50-51,55-61H,13-14,18,20,23H2,1-12H3/b16-15+,25-19+,26-22+,27-21+,31-17+/t28-,29-,30+,33+,34?,40-,41+,42+,43+,44-,45+,46+,50-,51-/m1/s1
+  molecular_weight: 1058.052
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:27:20.626353+00:00'
+mim_id: MIM:0001094
+legacy_identifiers:
+- MIM:Fidaxomicin
+- CHEBI:68590

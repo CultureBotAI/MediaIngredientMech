@@ -1,0 +1,66 @@
+identifier: UNMAPPED_0167
+preferred_term: dextran, Mw ~1,270
+synonyms:
+- synonym_text: dextran, Mw ~1,270
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:14:56Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_POLYMER_FRACTION
+  changes: Classified as a single polymer ingredient and left unmapped because the
+    source specifies a molecular-weight dextran fraction while local exact mapping
+    evidence exists only for broader dextran.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dextran_Mw_1270-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **molecular-weight-defined
+    dextran preparation/fraction**, more specifically a low-molar-mass **oligomeric
+    dextran mixture**, rather than a single molecular species, hydrate, salt, buffer,
+    extract, or complete commercial formulation. No ontology CURIE was proposed. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: REVERTED_PARENT_CONTEXT
+  changes: 'Removed the CHEBI:52071 dextran parent this tool had recorded. The term
+    and its label are correct in the local ChEBI build, but the CURIE appears nowhere
+    in the Edison report the entry cited as evidence — it came from a lookup I ran
+    after reading the report''s prose. Keeping it would have credited that lookup
+    to the literature agent, and left two contradicting events one day apart on this
+    record: one saying no CURIE was proposed, one sourcing a CURIE to the same run.
+    Re-proposing it is fine, with its own evidence; see #294.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002770; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a Mw-specific
+  dextran fraction; not identity-mapped to generic Dextran.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002770
+legacy_identifiers:
+- MIM:Dextran_Mw_1270
+- UNMAPPED_0167

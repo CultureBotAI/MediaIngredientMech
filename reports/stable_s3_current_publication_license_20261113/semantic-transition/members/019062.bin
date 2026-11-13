@@ -1,0 +1,61 @@
+identifier: cas:19741-14-1
+preferred_term: DAMPA
+ontology_mapping:
+  ontology_id: cas:19741-14-1
+  ontology_label: DAMPA
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 19741-14-1 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:19741-14-1 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.166004+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:45.091775+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C15H15N7O2; smiles=CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O);
+    inchi=InChI=1S/C15H15N7O2/c1-22(10-4-2-8(3-5-10)14(23)24
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.882292+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000879; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 19741-14-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C15H15N7O2
+  smiles: CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)O
+  inchi: InChI=1S/C15H15N7O2/c1-22(10-4-2-8(3-5-10)14(23)24)7-9-6-18-13-11(19-9)12(16)20-15(17)21-13/h2-6H,7H2,1H3,(H,23,24)(H4,16,17,18,20,21)
+  pubchem_cid: 72441
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000879
+legacy_identifiers:
+- MIM:DAMPA
+- cas:19741-14-1

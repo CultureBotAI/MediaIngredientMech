@@ -1,0 +1,45 @@
+identifier: kgmicrobe.ingredient:nissui_potato_dextrose_agar
+preferred_term: Potato Dextrose Agar (Nissui)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nissui_potato_dextrose_agar
+  ontology_label: Potato Dextrose Agar (Nissui)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=930
+    notes: NBRC930 directly names Nissui Potato Dextrose Agar39g/L as a purchased
+      dehydrated medium. The source binds a supplier-product identity even without
+      a formula/catalog number. No composition from another vendor is borrowed; decomposition
+      remains unspecified.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: NBRC930 directly names Nissui Potato Dextrose Agar39g/L as a purchased dehydrated
+  medium. The source binds a supplier-product identity even without a formula/catalog
+  number. No composition from another vendor is borrowed; decomposition remains unspecified.
+  Raw source labels remain in campaign case evidence; no unqualified global alias
+  is added. This isolated proposal does not clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: NBRC930 directly names Nissui Potato Dextrose Agar39g/L as a purchased
+    dehydrated medium. The source binds a supplier-product identity even without a
+    formula/catalog number. No composition from another vendor is borrowed; decomposition
+    remains unspecified. Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.496435+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: Potato Dextrose Agar (Nissui)
+  supplier: Nissui
+  form: dehydrated potato dextrose agar

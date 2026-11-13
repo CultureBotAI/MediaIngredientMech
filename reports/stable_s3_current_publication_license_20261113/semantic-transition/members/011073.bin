@@ -1,0 +1,125 @@
+identifier: kgmicrobe.ingredient:ethanol_95_preparation_dsmz_78
+preferred_term: 95% ethanol preparation (DSMZ 78)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ethanol_95_preparation_dsmz_78
+  ontology_label: 95% ethanol preparation (DSMZ 78)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf
+    notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
+      solvent balance, denaturants and historical product specification are unreported.
+      Different source accessions or receiving stocks prove neither equal nor different
+      supplied preparations. A shared bounded nominal representation is a possible
+      coordinator outcome; exact historical formulation equality and a final owner
+      choice remain unresolved under #1237. This identifier is retained only as a
+      conditional historical proposal handle. Do not install all four candidates as
+      proven distinct substances. Retain all 17 precise occurrence routes and the
+      original source lineages. CHEBI:16236 grounds the named ethanol component only;
+      NCIT:C185110 is not approved because it specifically requires aqueous 95% by
+      volume. No numerical component percentage, water balance or whole-stock molecular
+      identity is inferred. All inherited holds remain.'
+synonyms: []
+notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
+  solvent balance, denaturants and historical product specification are unreported.
+  Different source accessions or receiving stocks prove neither equal nor different
+  supplied preparations. A shared bounded nominal representation is a possible coordinator
+  outcome; exact historical formulation equality and a final owner choice remain unresolved
+  under #1237. This identifier is retained only as a conditional historical proposal
+  handle. Do not install all four candidates as proven distinct substances. Retain
+  all 17 precise occurrence routes and the original source lineages. CHEBI:16236 grounds
+  the named ethanol component only; NCIT:C185110 is not approved because it specifically
+  requires aqueous 95% by volume. No numerical component percentage, water balance
+  or whole-stock molecular identity is inferred. All inherited holds remain. Source-specific
+  context: DSMZ 78 defines vitamin K1 stock with 0.1 ml vitamin K1 and 20 ml nominal
+  95% ethanol; its vitamin K3 instructions dissolve menadione at 5 mg/ml in that ethanol
+  and then dilute to 0.05 mg/ml with water. DSMZ 104 and 212a explicitly refer to
+  medium 78 for K1. The captured current DSMZ 110 representation links the shared
+  MediaDive K1 solution 125 and K3 solution 5540. Preserve all twelve routed occurrences
+  and distinguish the subsequent K3 water dilution from the unspecified balance of
+  supplied 95% ethanol.'
+components:
+- component_name: Ethanol
+  component_id: CHEBI:16236
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf
+    notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
+      solvent balance, denaturants and historical product specification are unreported.
+      Different source accessions or receiving stocks prove neither equal nor different
+      supplied preparations. A shared bounded nominal representation is a possible
+      coordinator outcome; exact historical formulation equality and a final owner
+      choice remain unresolved under #1237. This identifier is retained only as a
+      conditional historical proposal handle. Do not install all four candidates as
+      proven distinct substances. Retain all 17 precise occurrence routes and the
+      original source lineages. CHEBI:16236 grounds the named ethanol component only;
+      NCIT:C185110 is not approved because it specifically requires aqueous 95% by
+      volume. No numerical component percentage, water balance or whole-stock molecular
+      identity is inferred. All inherited holds remain. Component inputs and quantities
+      remain transcribed from this entry’s cited source.'
+  notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
+    solvent balance, denaturants and historical product specification are unreported.
+    Different source accessions or receiving stocks prove neither equal nor different
+    supplied preparations. A shared bounded nominal representation is a possible coordinator
+    outcome; exact historical formulation equality and a final owner choice remain
+    unresolved under #1237. This identifier is retained only as a conditional historical
+    proposal handle. Do not install all four candidates as proven distinct substances.
+    Retain all 17 precise occurrence routes and the original source lineages. CHEBI:16236
+    grounds the named ethanol component only; NCIT:C185110 is not approved because
+    it specifically requires aqueous 95% by volume. No numerical component percentage,
+    water balance or whole-stock molecular identity is inferred. All inherited holds
+    remain. The transcribed components are source assertions, not evidence of cross-source
+    disjointness.'
+curation_history:
+- timestamp: '2026-11-08T06:09:05.291788+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_QUALIFIED_PREPARATION
+  changes: DSMZ78 vitamin K1/K3 preparations name95% ethanol. DSMZ104 and212a explicitly
+    source the K1 stock from78; live DSMZ110 shares K1 solution125 and K3 solution5540
+    with78. The eleven lower-case TOGO occurrences and sole DSMZ212a occurrence reuse
+    this source lineage. Doses and subsequent dilutions belong to receiving vitamin
+    stocks, not to the composition of this95% solvent. Whole source-named solvent
+    preparation is curated independently of incomplete composition. The literal95%
+    has no stated v/v,w/w orother basis; no numerical component concentration, water
+    balance, denaturant status, supplier, lot, whole-stock CAS or molecular formula
+    is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by volume and
+    is therefore an unapproved candidate, not an exact/close/broad mapping. CHEBI:16236
+    identifies only the supported ethanol component. Cross-source equivalence is unestablished;
+    source qualification is an identity boundary, not proof of different chemistry.
+    Generic raw95% labels remain in this note and the frozen ledger, not active resolver
+    aliases. All source, unit, role, owner and export holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:48:36.679445+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Preserve the exact source-specific receiving-stock inputs and occurrence
+    lineage alongside the conditional family assessment. This adds no percentage-basis,
+    balance, distinctness or winning-owner inference.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

@@ -1,0 +1,102 @@
+id: CultureMech:001251
+name: low_carbon_agar_lca
+original_name: Low Carbon Agar-LCA
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: DSMZ Medium 1818
+  term:
+    id: mediadive.medium:1818
+    label: Low Carbon Agar-LCA
+notes: 'Source: DSMZ'
+ingredients:
+- preferred_term: D(+)-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: KH2PO4
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Mg(SO4) x 7 H2O
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+- preferred_term: KCl
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: NaNO3
+  term:
+    id: CHEBI:63005
+    label: sodium nitrate
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  mediaingredientmech_term:
+    id: MediaIngredientMech:000171
+    label: NaNO3
+- preferred_term: Yeast extract
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '9'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.491467Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1818'
+- timestamp: '2026-03-13T06:19:02.559997Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001251'
+- timestamp: '2026-03-17T06:29:43.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:14.399677+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Low Carbon Agar-LCA" to "low_carbon_agar_lca" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:11.388488+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:47:00.578155+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.

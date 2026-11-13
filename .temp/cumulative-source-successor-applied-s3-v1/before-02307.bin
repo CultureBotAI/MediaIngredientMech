@@ -1,0 +1,130 @@
+identifier: cas:145224-92-6
+preferred_term: Sodium deoxycholate monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:9177
+  ontology_label: sodium deoxycholate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 145224-92-6 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+      Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI adds the
+      term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Sodium deoxycholate
+      monohydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:9177 (''sodium deoxycholate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'SourceD5670/CAS145224-92-6/mass432.57, primarysupplierandPubChem23679071agree
+      ononewater sodiumdeoxycholate. See the complete identity, mapping, chemistry
+      and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+      owner selector data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml.
+      Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/9177/;
+      https://www.ebi.ac.uk/ols4/api/search?q=Sodium%20deoxycholate%20monohydrate&ontology=chebi,ncit&rows=100;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/145224-92-6/JSON; https://www.sigmaaldrich.com/US/en/product/sigma/d5670;
+      https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes and
+      scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
+synonyms:
+- synonym_text: Sodim deoxycholate monohydrate
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:145224-92-6 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.245453+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:14.482553+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C24H41NaO5; smiles=CC(CCC(=O)[O-])C1CCC2C1(C(CC3C2CCC4C3(CCC(C4)O)C)O;
+    inchi=InChI=1S/C24H40O4.Na.H2O/c1-14(4-9-22(27)28)18-7-8
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.361860+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:00:40.355835+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:9177 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate''.
+    Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002306; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 145224-92-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C24H41NaO5
+  smiles: CC(CCC(=O)[O-])C1CCC2C1(C(CC3C2CCC4C3(CCC(C4)O)C)O)C.O.[Na+]
+  inchi: InChI=1S/C24H40O4.Na.H2O/c1-14(4-9-22(27)28)18-7-8-19-17-6-5-15-12-16(25)10-11-23(15,2)20(17)13-21(26)24(18,19)3;;/h14-21,25-26H,4-13H2,1-3H3,(H,27,28);;1H2/q;+1;/p-1/t14-,15-,16-,17+,18-,19+,20+,21+,23+,24-;;/m1../s1
+  pubchem_cid: 23679071
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002306
+legacy_identifiers:
+- MIM:Sodium_Deoxycholate_Monohydrate
+- cas:145224-92-6

@@ -1,0 +1,128 @@
+"""Three issue-1201 private method successors; no maintained write or acceptance."""
+from pathlib import Path
+import copy, datetime, hashlib, json, os, subprocess, sys
+
+D=Path(__file__).absolute().parent; C=D.parents[1]; M=C.parents[1]
+J=C/'integration/curation-worktree'; A=C/'integration/ancillary1258-worktree'
+TR=C/'preflight/w09-method-findings-triage-v1'
+sys.path.insert(0,str(J/'src'))
+import yaml
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient
+
+def digest(b):return hashlib.sha256(b).hexdigest()
+def encoded(v):return (json.dumps(v,indent=2,ensure_ascii=False)+'\n').encode()
+def put(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ if p.exists():
+  assert p.is_file() and not p.is_symlink() and p.read_bytes()==b,p
+  return
+ with p.open('xb') as f:f.write(b)
+def obj(p,v):put(p,encoded(v))
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+
+pins={}; captures=[]
+def read(p,h=None):
+ p=Path(p).absolute();f=FrozenFile.capture(p)
+ if h is not None:assert digest(f.content)==h,(p,h,digest(f.content))
+ pins[p]=f;return f.content
+def capture(p,dest,h=None):
+ b=read(p,h);q=D/'inputs'/dest;put(q,b)
+ captures.append({'original_path':str(Path(p).absolute()),'captured_path':str(q.relative_to(D)),'sha256':digest(b),'bytes':len(b)})
+ return b
+def recheck():
+ for p in pins.values():p.verify()
+
+NOW=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ISSUE='https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6724230173'
+P=C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json'
+plan=json.loads(read(P,'cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'))
+idx=json.loads(read(P.parent/'materialization-index.draft.json','1143b4eed8c0f27ee967da9a518961fcbf8c7f45a987c728a47b7e31e0db05fd'))
+files={x['destination']:x for x in idx['files']};bindings={x['binding_id']:x for x in plan['bindings']}
+assert plan['baseline_commit']=='84241993a278a7a413422ef89a52c0b47dc57831'
+pub=C/'preflight/w09-method-findings-publication-v1'
+for name in ['publication-00.json','readback-00.json','issue-1201-comment.md']:
+ capture(pub/name,'issue/'+name)
+assert json.loads((D/'inputs/issue/readback-00.json').read_text())['html_url']==ISSUE
+for name in ['planned-bindings.json','source-decisions.json','original-author-decisions.json','source-core-git-bridge.json','primary-references.json','DISPOSITIONS.json','ASSESSMENT.md','recipe-readback.json','HANDOFF.json','MANIFEST.json']:
+ capture(TR/name,'triage/'+name)
+selected=[x for x in json.loads((D/'inputs/triage/planned-bindings.json').read_text()) if 'Benzene_1_2_4_triol' not in x['record']['source_record']]
+assert len(selected)==3
+for x in selected:assert x['record']==next(r for r in plan['records'] if r['operation_id']==x['record']['operation_id'])
+obj(D/'inputs/plan-source.json',{'path':str(P),'sha256':digest(pins[P].content),'baseline_commit':plan['baseline_commit'],'records':[x['record'] for x in selected],'index':{'path':str(P.parent/'materialization-index.draft.json'),'sha256':digest(pins[P.parent/'materialization-index.draft.json'].content)}})
+
+# Full cached primary captures, including the real As2O3 synonym query, not a claim of absent lookup.
+primary=json.loads((D/'inputs/triage/primary-references.json').read_text())
+primary=[x for x in primary if x['evidence_id']!='RS-043-PRIMARY-002']
+for n,x in enumerate(primary):x['private_capture']='inputs/primary/'+str(n).zfill(2)+'-'+Path(x['actual_path']).name;capture(x['actual_path'],Path(x['private_capture']).relative_to('inputs'),x['capture']['sha256'])
+obj(D/'primary-index.json',primary)
+W=C/'workers/w01/worktree/reports/all_unmatched_20261107/worker-01'
+# Extra original recipe/identity captures named by the already-read evidence ledger.
+for f in ['2256f29f0929d1070cfc.pdf','5dada06913515377f52a.pdf']:
+ capture(W/'shard/root_substances/captures/primary'/f,'primary/'+f)
+
+originproof=[]; cached={}
+for entry in selected:
+ r=entry['record'];name=Path(r['source_record']).name
+ old=capture(entry['materialization']['source'],'before/'+name,r['after_capture']['sha256'])
+ if r['before_source_record'] is not None:
+  raw=git(A,'show',plan['baseline_commit']+':'+r['before_source_record']);assert digest(raw)==r['before_yaml_sha256'];put(D/'inputs/baseline'/name,raw)
+ for o in r['origins']:
+  slot='w'+o['worker_slot'].split('-')[1];w=C/'workers'/slot/'worktree';b=bindings[o['proposal_binding']];pb=bindings[o['payload_binding']]
+  refs=[]
+  for x in [b,pb,bindings[slot+'-decisions']]:
+   key=x['binding_id'];fs=files[x['path']]
+   if key not in cached:
+    raw=capture(fs['source'],'published/'+slot+'/'+Path(x['published_path']).name+'-'+key+'.capture',x['sha256'])
+    actual=git(w,'show',x['published_head']+':'+x['published_path']);assert actual==raw,key
+    cached[key]=raw
+   refs.append(copy.deepcopy(x))
+  proposal=next(p for p in json.loads(cached[b['binding_id']])['proposals'] if p['proposal_id']==o['proposal_id'])
+  assert proposal['after_capture']['sha256']==pb['sha256']
+  decisions=json.loads(cached[slot+'-decisions'])['decisions'];chosen=[]
+  for cid,ch in o['case_hashes'].items():
+   d=next(d for d in decisions if d['case_id']==cid);assert d['case_input_sha256']==ch;chosen.append(d)
+  originproof.append({'operation_id':r['operation_id'],'origin':o,'proposal':proposal,'decisions':chosen,'binding_proofs':refs,'published_git_bytes_exact':True})
+obj(D/'origin-proof.json',originproof)
+
+producer_paths=[J/'MAPPING_SEMANTICS.md',J/'src/mediaingredientmech/validation/write_validated.py',J/'src/mediaingredientmech/curate/curation_event.py',J/'src/mediaingredientmech/curate/publication_guard.py',J/'src/mediaingredientmech/ingredient_bundle_refresh.py',J/'src/mediaingredientmech/sssom_grading.py',J/'scripts/record_review.py',J/'schema/record_review.yaml']+sorted((J/'src/mediaingredientmech/schema').glob('*.yaml'))
+for p in producer_paths:capture(p,Path('producers')/p.relative_to(J))
+builder=M/'.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py'
+capture(builder,'producers/build_mim_ingredient_sssom.py','38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc')
+read(Path(__file__))
+
+notes={
+'Na2b4o7_X_10_H2o.yaml':(
+ 'https://journals.iucr.org/e/issues/2008/05/00/wm2174/wm2174.pdf',
+ 'Method correction under #1201 comment6724230173, retaining the established #318 identity. Selection of CHEBI:38888 required comparing conventional Na2B4O7·10H2O with the primary borax structure Na2[B4O5(OH)4]·8H2O and the official ChEBI structure/mass; it was not established by a primary-label lexical match. MANUAL_CURATION records that substantive adjudication, with this new evidence explicitly LLM-authored. Preserve the conventional decahydrate aliases, CAS and structural properties, unchanged exact own-identifier relation, and the separate DSMZ770 0.1% stock/source-routing hold. No new human verification, role or export approval.'),
+'Sulfur.yaml':(
+ 'https://github.com/CultureBotAI/MediaIngredientMech/issues/368',
+ 'Method correction under #1201 comment6724230173. The preserved #368 event and CURATOR_JUDGMENT evidence establish elemental sulfur CHEBI:33403 by a material-versus-atom adjudication, including rejected atom/polysulfur-only labels; the generic preferred term Sulfur alone is not the establishing primary-label method. MANUAL_CURATION records that existing decision. This new explanatory assessment is LLM-authored and does not relabel any historical author or evidence. All source-powder aliases, rejection history, unknown allotrope/lot details, counts, roles and release holds remain unchanged.'),
+'Diarsenic_Trioxide.yaml':(
+ 'https://www.ebi.ac.uk/chebi/backend/api/public/compound/30621/',
+ 'Method correction under #1201 comment6724230173. The actual OLS exact As2O3 query (captured SHA256 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d) returns the defining CHEBI:30621 target and remains valid synonym evidence; no missing-search claim is made. The recorded final proposal nevertheless depended on resolving the empirical As2O3 versus molecular As4O6 depiction using the ChEBI 2:3 definition and PubChem formula. MANUAL_CURATION records that decisive representation judgment, without weakening the exact oxide identity. This LLM-authored note does not certify a human review, polymorph, vendor, lot, molecular weight, alkaline stock or resulting arsenite identity; CCAP quantity/stock holds remain unchanged.')}
+(D/'candidates').mkdir(exist_ok=False)
+groups=[];deltas=[]
+for entry in selected:
+ r=entry['record'];name=Path(r['source_record']).name;before=yaml.safe_load((D/'inputs/before'/name).read_bytes());after=copy.deepcopy(before)
+ assert before['ontology_mapping']['mapping_quality']=='EXACT_MATCH'
+ after['ontology_mapping']['mapping_quality']='MANUAL_CURATION'
+ src,note=notes[name];after['ontology_mapping']['evidence'].append({'evidence_type':'LLM_SUGGESTION','source':src,'notes':note})
+ record_curation_event(after,curator='Codex /root/step7d_science_c',action='CORRECTED_MAPPING_METHOD',timestamp=NOW,previous_status=before['mapping_status'],new_status=before['mapping_status'],llm_assisted=True,llm_model='gpt-6',changes='Private successor for #1201 comment6724230173: change ontology_mapping.mapping_quality from EXACT_MATCH to MANUAL_CURATION to describe the recorded identity adjudication, and append one truthful LLM_SUGGESTION method note. '+note+' Preserve every original history event, evidence object and all other fields. No maintained application or independent successor approval; distinct full-payload and complete-row review remains required.')
+ assert not validate_ingredient(after)
+ assert after['curation_history'][:-1]==before['curation_history']
+ assert after['ontology_mapping']['evidence'][:-1]==before['ontology_mapping']['evidence']
+ check=copy.deepcopy(after);check['ontology_mapping']['mapping_quality']='EXACT_MATCH';check['ontology_mapping']['evidence'].pop();check['curation_history'].pop();assert check==before
+ render=D/'native-render-v2'/name;write_validated_ingredient(after,render);raw=render.read_bytes();assert yaml.safe_load(raw)==after
+ oldrender=D/'native-render-v2'/'prior'/name;write_validated_ingredient(before,oldrender)
+ recheck();dest=D/'candidates'/name
+ publish_new_files([(dest,raw)],recheck);recheck()
+ groups.append({'operation_id':r['operation_id'],'kind':r['kind'],'before_source_record':r['before_source_record'],'source_record':r['source_record'],'before_yaml_sha256':r['before_yaml_sha256'],'previous_payload':{'path':str(Path(entry['materialization']['source'])),'sha256':r['after_capture']['sha256']},'payload':{'path':str(dest.relative_to(D)),'sha256':digest(raw)},'origins':copy.deepcopy(r['origins']),'issue':ISSUE,'independent_review':None,'scientific_approval':False,'application_authorized':False,'unchanged_original_operation':copy.deepcopy(r)})
+ deltas.append({'operation_id':r['operation_id'],'before_sha256':r['after_capture']['sha256'],'after_sha256':digest(raw),'fields':[{'path':'ontology_mapping.mapping_quality','before':'EXACT_MATCH','after':'MANUAL_CURATION'},{'path':'ontology_mapping.evidence','prefix_count':len(before['ontology_mapping']['evidence']),'appended':[after['ontology_mapping']['evidence'][-1]]},{'path':'curation_history','prefix_count':len(before['curation_history']),'appended':[after['curation_history'][-1]]}],'inverse_exact':True,'original_serialization_native_exact':oldrender.read_bytes()==(D/'inputs/before'/name).read_bytes()})
+obj(D/'field-deltas.json',deltas)
+obj(D/'SELECTOR.json',{'schema_version':1,'status':'PRIVATE_THREE_METHOD_SUCCESSORS_PENDING_DISTINCT_REVIEW','created_at':NOW,'issue':ISSUE,'original_plan_sha256':digest(pins[P].content),'baseline_commit':plan['baseline_commit'],'groups':groups,'retention':'All three original operations, six source proposals and eight source cases remain; no new origin or source outcome. No original plan or maintained file changed.','authorship':'C authored these corrections and previously composed Sulfur; native author review is self_review only.','independent_review':None,'application_authorized':False,'export_approval':False})
+obj(D/'CAPTURE-MAP.json',captures)
+obj(D/'INPUT-RECHECK.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'all_frozen_inputs_unchanged':True,'inputs':[{'path':str(p),'sha256':digest(f.content)} for p,f in pins.items()],'baseline_source':'Exact accepted Git tree84241993; partial B never read as an after-state.'})
+print(json.dumps({'status':'PRIVATE_CANDIDATES_WRITTEN','groups':[{k:g[k] for k in ['operation_id','payload']} for g in groups],'origins':len(originproof),'cases':len({cid for g in groups for o in g['origins'] for cid in o['case_hashes']})},indent=2))

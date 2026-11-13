@@ -1,0 +1,127 @@
+identifier: kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate
+preferred_term: DL-Isocitric acid trisodium salt hydrate
+ontology_mapping:
+  ontology_id: CHEBI:172950
+  ontology_label: Isocitric acid, DL-
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
+      mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:172950
+      ('Isocitric acid, DL-') and was sharing that term's identifier — the identity
+      collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:172950 (''Isocitric acid, DL-'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+synonyms:
+- synonym_text: trisodium;1-hydroxypropane-1,2,3-tricarboxylate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=1637-73-6; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.188987+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.121543+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H5O7.3Na; inchi=InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;
+    smiles=O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.914941+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.585348+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
+    mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+    {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+    exactly match the parent ontology. Thermo official specification205010050, primary/thermo-isocitrate.pdf
+    No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+    repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+    removal concerns unqualified whole-record fields, not a claim the supplier is
+    wrong. Original chemical_properties={"cas_rn": "1637-73-6", "data_source": "CultureBotHT
+    compounds_to_cas.csv", "inchi": "InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3",
+    "molecular_formula": "C6H5O7.3Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+    "smiles": "O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]"}. Preserved
+    identifier, ontology mapping and grade, roles, synonyms, counts, status and original
+    history. No mapping, role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml; before_sha256=16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000890; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1637-73-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000890
+legacy_identifiers:
+- MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate
+- kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate

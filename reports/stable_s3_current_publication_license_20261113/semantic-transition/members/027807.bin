@@ -1,0 +1,107 @@
+identifier: CHEBI:16411
+preferred_term: 3-Indolyl acetic acid
+ontology_mapping:
+  ontology_id: CHEBI:16411
+  ontology_label: indole-3-acetic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: cbclaw_kg_microbe_sweep
+    notes: Corrected from CHEBI:87514 (ethyl 2-hexenoate — unrelated compound) to
+      CHEBI:16411 (indole-3-acetic acid). CAS-RN 87-51-4 confirms CHEBI:16411.
+synonyms:
+- synonym_text: ethyl 2-hexenoate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: ethyl hex-2-enoate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: 1H-indol-3-ylacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:50:55.053332+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:87-51-4 from PubChem API via name lookup (3-Indolyl acetic
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:87514 (ethyl 2-hexenoate) → CHEBI:16411 (indole-3-acetic
+    acid). Original CHEBI was an unrelated compound; CAS-RN 87-51-4 confirms CHEBI:16411.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: ethyl 2-hexenoate, ethyl
+    hex-2-enoate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:31.848084+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.661535+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H9NO2; inchi=InChI=1S/C10H9NO2/c12-10(13)5-7-6-11-9-4-2-1-3-8(7;
+    smiles=O=C(O)Cc1cnc2ccccc12
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.010785+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518261+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 6/6 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 2 synonym(s) non-resolving: [''ethyl 2-hexenoate'', ''ethyl hex-2-enoate''].
+    ChEBI gives these names to CHEBI:87514, not to this record''s CHEBI:16411 -- indole-3-acetic
+    acid is not ethyl 2-hexenoate. Kept as REJECTED_LABEL so a rebuild cannot restore
+    them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000135; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 87-51-4
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:50:55.053314+00:00'
+  molecular_formula: C10H9NO2
+  inchi: InChI=1S/C10H9NO2/c12-10(13)5-7-6-11-9-4-2-1-3-8(7)9/h1-4,6,11H,5H2,(H,12,13)
+  smiles: O=C(O)Cc1cnc2ccccc12
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000135
+legacy_identifiers:
+- MIM:3-indolyl_Acetic_Acid
+- CHEBI:16411

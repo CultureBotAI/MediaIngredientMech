@@ -1,0 +1,70 @@
+identifier: CHEBI:3371
+preferred_term: Capreomycin
+ontology_mapping:
+  ontology_id: CHEBI:3371
+  ontology_label: capreomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:capreomycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 6
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity|BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:capreomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000579; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C25H43N14O7R
+  smiles: '[1*]C[C@H]1NC(=O)[C@@H](N)CNC(=O)[C@]([H])([C@@]2([H])CC=NC(N)N2)NC(=O)/C(=C/NC(N)=O)NC(=O)[C@@H](CN[2*])NC1=O'
+  inchi: InChI=1S/C25H44N14O8.C25H44N14O7/c26-4-1-2-11(27)6-17(41)32-8-14-20(43)35-15(9-34-25(30)47)21(44)39-18(13-3-5-31-24(29)38-13)23(46)33-7-12(28)19(42)37-16(10-40)22(45)36-14;1-11-19(41)36-15(9-32-17(40)7-12(27)3-2-5-26)21(43)37-16(10-34-25(30)46)22(44)39-18(14-4-6-31-24(29)38-14)23(45)33-8-13(28)20(42)35-11/h9,11-14,16,18,40H,1-8,10,26-28H2,(H,32,41)(H,33,46)(H,35,43)(H,36,45)(H,37,42)(H,39,44)(H3,29,31,38)(H3,30,34,47);10-15,18H,2-9,26-28H2,1H3,(H,32,40)(H,33,45)(H,35,42)(H,36,41)(H,37,43)(H,39,44)(H3,29,31,38)(H3,30,34,46)/b15-9+;16-10+/t11-,12-,13+,14-,16-,18-;11-,12-,13-,14+,15-,18-/m00/s1
+  molecular_weight: 522.519
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:25:56.854517+00:00'
+mim_id: MIM:0000579
+legacy_identifiers:
+- MIM:Capreomycin
+- CHEBI:3371

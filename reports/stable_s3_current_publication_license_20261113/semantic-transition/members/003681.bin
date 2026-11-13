@@ -1,0 +1,34 @@
+from pathlib import Path
+import datetime,hashlib,importlib.util,json,sys
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];F=D/'native-author-fixture';ISS=C/'preflight/cysteine-author-transport-finding-publication-v1'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def write(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+def save(p,x):write(p,(json.dumps(x,indent=2,ensure_ascii=False)+'\n').encode())
+oldreceipt=json.loads((D/'NATIVE-AUTHOR-RECEIPT.json').read_text());oldmap=json.loads((D/'NATIVE-INPUT-TRANSPORT.json').read_text());oldh=sha(D/'HANDOFF.json');oldmanifest=sha(D/'MANIFEST.json')
+assert oldh=='838800886d02025dfac81c439ea5ceb44e62bfc0ff78a2d69ea17c4ea751f0b1'
+issue=json.loads((ISS/'readback-00.json').read_text());assert issue['id']==6724951644
+spec=importlib.util.spec_from_file_location('cys_author_review_v2',F/'scripts/record_review.py');rr=importlib.util.module_from_spec(spec);spec.loader.exec_module(rr)
+old=rr.read_review(F,str(Path(oldreceipt['pair']['yaml']).relative_to(F)));excluded=['evidence/save-author.stdout','evidence/save-author.stderr'];assert all(p in old['source']['inputs'] for p in excluded)
+historical=[];current=[]
+for e in oldmap:
+ if e['fixture_path'] in excluded:
+  original=Path(e['original_path']);assert sha(F/e['fixture_path'])==e['sha256']=='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';b=original.read_bytes();q=F/'evidence/completed-author-logs'/original.name;write(q,b);assert original.read_bytes()==b
+  historical.append({**e,'meaning':'Exact empty startup snapshot, preserved historical source-input bytes; this edge is not a current equality assertion against the completed outer log.','completed_current_log':{'path':str(original),'sha256':sha(original),'bytes':len(b),'fixture_path':str(q.relative_to(F))}})
+  current.append({'original_path':str(original),'fixture_path':str(q.relative_to(F)),'sha256':sha(q),'bytes':len(b),'meaning':'Completed neutral author-save log, not a scientific judgment.'})
+ else:
+  assert sha(e['original_path'])==e['sha256'] and sha(F/e['fixture_path'])==e['sha256'];current.append(e)
+qualification={'issue':issue['html_url'],'original_native_pair_preserved':oldreceipt['pair'],'original_transport':{'path':str(D/'NATIVE-INPUT-TRANSPORT.json'),'sha256':sha(D/'NATIVE-INPUT-TRANSPORT.json'),'scope':'Historical startup capture map; two edges not current-path assertions.'},'historical_startup_edges':historical,'new_native_pair_policy':'Exclude both unneeded startup log inputs; add exact completed neutral log snapshots and this qualification. Never rewrite original native pair or pretend old original paths remained empty.','candidate_unchanged':{'path':str(D/'candidates/L-Cysteine_X_HCl_X_H2O_Solution.yaml'),'sha256':'1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2'},'no_scientific_or_payload_change':True}
+assert sha(qualification['candidate_unchanged']['path'])==qualification['candidate_unchanged']['sha256'];save(D/'TRANSPORT-QUALIFICATION-v2.json',qualification);write(F/'evidence/TRANSPORT-QUALIFICATION-v2.json',(D/'TRANSPORT-QUALIFICATION-v2.json').read_bytes());write(F/'evidence/transport-finding-readback.json',(ISS/'readback-00.json').read_bytes())
+for path in [D/'TRANSPORT-QUALIFICATION-v2.json',ISS/'readback-00.json']:
+ name='TRANSPORT-QUALIFICATION-v2.json' if path.parent==D else 'transport-finding-readback.json';current.append({'original_path':str(path),'fixture_path':'evidence/'+name,'sha256':sha(path),'bytes':path.stat().st_size})
+paths=[p for p in old['source']['inputs'] if p not in excluded]+[r['fixture_path'] for r in current if r['fixture_path'] not in old['source']['inputs']]
+ins=rr.inspect_source(F,old['targets'],paths);now=datetime.datetime.now(datetime.UTC);at=now.isoformat().replace('+00:00','Z');new=dict(old);new['review_id']=now.strftime('%Y%m%dT%H%M%SZ')+'-c-cysteine-stock-author-response-v2';new['started_at']=at;new['finished_at']=at;new['source']=ins['source'];new['title']=old['title']+' — qualified transport successor';new['summary']=old['summary']+' New native save excludes the two unnecessary live-startup log inputs and binds completed neutral logs; original pair remains historical.';new['limitations']=old['limitations']+['Original author pair includes two exact immutable empty startup log copies. It remains valid against its fixture but its outer transport paths cannot be treated as current equality assertions. This successor excludes those inputs and binds completed logs; all original artifacts remain preserved.'];new['evidence']=old['evidence']+[{'evidence_id':'E-TRANSPORT-V2','kind':'record_content','reference':'evidence/TRANSPORT-QUALIFICATION-v2.json','snapshot_sha256':sha(D/'TRANSPORT-QUALIFICATION-v2.json'),'accessed_at':at,'support':'context','summary':'Filed1254 qualification preserves original startup snapshots and completed neutral logs with explicit temporal source distinction.'}]
+rr.validate_review(new);yp=rr.save_review(F,new);assert rr.read_review(F,str(yp.relative_to(F)))==new;mp=yp.with_name('review.md');receipt={'status':'NATIVE_AUTHOR_SELF_REVIEW_V2_SAVED_STRICT_READBACK','source_root':str(F),'fixture_git_revision':ins['source']['git_revision'],'pair':{'yaml':str(yp),'yaml_sha256':sha(yp),'markdown':str(mp),'markdown_sha256':sha(mp)},'inputs':len(ins['source']['inputs']),'supersedes_for_current_transport_only':oldreceipt['pair'],'independent_approval':False,'application_authorized':False}
+save(D/'NATIVE-AUTHOR-RECEIPT-v2.json',receipt);save(D/'NATIVE-INPUT-TRANSPORT-v2.json',{'current_edges':current,'excluded_historical_startup_edges':historical,'original_pair':oldreceipt['pair'],'active_pair':receipt['pair'],'scope':'Current edges rehashed; excluded two original log snapshots are historical evidence only. Both actual native pairs remain immutable.'})
+assert sha(D/'HANDOFF.json')==oldh and sha(D/'MANIFEST.json')==oldmanifest
+members=[{'path':str(p.relative_to(D)),'sha256':sha(p),'bytes':p.stat().st_size} for p in sorted(D.rglob('*')) if p.is_file() and '.git' not in p.relative_to(D).parts]
+save(D/'MANIFEST-v2.json',{'members':members,'scope':'Append-only author transport qualification; all earlier science/payload/checks exact.'});save(D/'HANDOFF-v2.json',{'status':'SEALED_PRIVATE_CYSTEINE_SUCCESSOR_AUTHOR_TRANSPORT_QUALIFIED','predecessor':{'path':'HANDOFF.json','sha256':oldh},'manifest':{'path':'MANIFEST-v2.json','sha256':sha(D/'MANIFEST-v2.json'),'members':len(members)},'payload':qualification['candidate_unchanged'],'native_author':receipt,'transport':{'path':'NATIVE-INPUT-TRANSPORT-v2.json','sha256':sha(D/'NATIVE-INPUT-TRANSPORT-v2.json')},'qualification':{'path':'TRANSPORT-QUALIFICATION-v2.json','sha256':sha(D/'TRANSPORT-QUALIFICATION-v2.json')},'application_authorized':False})
+print(json.dumps({'handoff':sha(D/'HANDOFF-v2.json'),'manifest':sha(D/'MANIFEST-v2.json'),'receipt':receipt},indent=2))

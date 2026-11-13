@@ -1,0 +1,78 @@
+identifier: CHEBI:27504
+preferred_term: Mitomycin C
+ontology_mapping:
+  ontology_id: CHEBI:27504
+  ontology_label: mitomycin C
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: '[(1aS,8S,8aR,8bS)-6-amino-8a-methoxy-5-methyl-4,7-dioxo-1,1a,2,4,7,8,8a,8b-octahydroazirino[2'',3'':3,4]pyrrolo[1,2-a]indol-8-yl]methyl
+    carbamate'
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=50-07-7); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.816044+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.860027+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C15H18N4O5; inchi=InChI=1S/C15H18N4O5/c1-5-9(16)12(21)8-6(4-24-14(17;
+    smiles=[H][C@]12N[C@@]1([H])CN1C3=C(C(=O)C(N)=C(C)C3=O)[C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.508067+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.391337+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001700; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 50-07-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C15H18N4O5
+  inchi: InChI=1S/C15H18N4O5/c1-5-9(16)12(21)8-6(4-24-14(17)22)15(23-2)13-7(18-13)3-19(15)10(8)11(5)20/h6-7,13,18H,3-4,16H2,1-2H3,(H2,17,22)/t6-,7+,13+,15-/m1/s1
+  smiles: '[H][C@]12N[C@@]1([H])CN1C3=C(C(=O)C(N)=C(C)C3=O)[C@@H](COC(N)=O)[C@]12OC'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001700
+legacy_identifiers:
+- MIM:Mitomycin_C
+- CHEBI:27504

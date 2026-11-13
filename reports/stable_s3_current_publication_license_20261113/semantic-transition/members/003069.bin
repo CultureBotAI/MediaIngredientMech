@@ -1,0 +1,51 @@
+"""Finish metadata-only lineage/representative tables; no config or copy."""
+from pathlib import Path
+from collections import defaultdict,Counter
+import json,hashlib
+D=Path(__file__).absolute().parent;C=D.parents[1];V1=D.parent/'corrected-evidence-closure-inventory-v1'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def save(name,v):
+ with (D/name).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+old=json.loads((V1/'FILES.json').read_text());now=json.loads((D/'FILES.json').read_text());by_path={r['path']:r for r in now}
+for item in old:
+ new=by_path[item['path']];assert item['sha256']==new['sha256'] and item['bytes']==new['bytes'];assert all(m in new['memberships'] for m in item['memberships'])
+for filename in ['NATIVE-INPUT-MAP.json','CAPTURE-LINEAGE-MAP.json']:
+ prev=json.loads((V1/filename).read_text());cur=json.loads((D/filename).read_text());assert all(e in cur for e in prev)
+v1_manifest=json.loads((V1/'MANIFEST.json').read_text())
+for m in v1_manifest['files']:assert sha(V1/m['path'])==m['sha256']
+save('V1-PRESERVATION.json',{'handoff_sha256':sha(V1/'HANDOFF.json'),'manifest_sha256':sha(V1/'MANIFEST.json'),'all20_members_exact':len(v1_manifest['files'])==20,'all512_original_paths_and_memberships_retained':len(old)==512,'all457_native_input_edges_retained':True,'all100_capture_edges_retained':True,'new_original_paths':len(now)-len(old)})
+packets={p['packet']:p for p in json.loads((D/'PACKETS.json').read_text())}
+identity={'na-author':'Codex /root/next23_context','methods-author':'Codex /root/step7d_science_c','na-independent':'Codex /root/step7d_science_c','method-delta-independent':'Codex /root/next23_context','whole-four-independent':'Codex /root/step7d_independent_review'}
+native=json.loads((D/'NATIVE-INPUT-MAP.json').read_text());captures=json.loads((D/'CAPTURE-LINEAGE-MAP.json').read_text());mapped=json.loads((D/'ORIGINAL-TO-MATERIALIZED-MAP.json').read_text());mapby={x['original_path']:x for x in mapped}
+by_physical=defaultdict(list)
+for r in now:by_physical[(r['sha256'],Path(r['path']).name)].append(r)
+reserved=set()
+for rel in ['integration/selenite718-alias-successor-v1/candidates/Na2seo3.yaml','integration/selenite718-alias-successor-v1/stock-deferral-bridge.json','integration/w09-method-successors-v1/candidates/Sulfur.yaml','integration/w09-method-successors-v1/candidates/Na2b4o7_X_10_H2o.yaml','integration/w09-method-successors-v1/candidates/Diarsenic_Trioxide.yaml']:reserved.add(str(C/rel))
+for r in json.loads((D/'JUDGMENT-ARTIFACTS.json').read_text())['records']:
+ reserved.add(r['authoritative_document']['path']);reserved.add(r['paired_markdown_support']['path'])
+original_sources={x['original_path'] for x in captures}
+representatives=[]
+for (h,name),rows in sorted(by_physical.items()):
+ priority=[r for r in rows if r['path'] in reserved]
+ assert len(priority)<=1,(h,name,priority)
+ representative=priority[0] if priority else sorted(rows,key=lambda r:(r['path'] not in original_sources,len(r['path']),r['path']))[0]
+ logical=[]
+ for r in rows:
+  for membership in r['memberships']:
+   p=packets[membership['packet']]
+   logical.append({'path':r['path'],'sha256':h,'bytes':r['bytes'],'packet_origin':{'path':str(Path(p['root'])/'HANDOFF.json'),'sha256':p['handoff_sha256']},'attribution':{'identity':identity[membership['packet']],'role':('candidate-author evidence context; original creator/acquisition attribution remains in the artifact and capture map' if p['role']=='author_support' else 'independent-review evidence/capture context; not a claim of original source or candidate authorship')},'locator':'packet='+membership['packet']+'; membership='+membership['reason']+'; original_evidence_role='+membership['evidence_origin_role']})
+  for edge in native:
+   if edge['original_path']==r['path']:
+    p=packets[edge['packet']]
+    logical.append({'path':r['path'],'sha256':h,'bytes':r['bytes'],'packet_origin':{'path':str(Path(p['root'])/'HANDOFF.json'),'sha256':p['handoff_sha256']},'attribution':{'identity':identity[edge['packet']],'role':'declared native input context; original reviewer/source identity is preserved, not a new review at the materialized root'},'locator':json.dumps({'native_source_root':edge['source_root'],'historical_declared_path':edge['historical_declared_path'],'native_git_revision':edge['native_git_revision'],'native_state':edge['native_state'],'native_role':edge['native_role']},sort_keys=True)})
+ representatives.append({'physical':{'path':representative['path'],'sha256':h,'bytes':representative['bytes']},'logical_sources':logical,'representative_basis':'Existing actual selected payload/bridge/pair source reserved' if priority else 'Original capture source preferred, then shortest literal path and lexicographic order; physical bytes only, never identity preference','current_constructor_destination_suffix':h[:20]+'-'+name,'actual_materialized_destination':None,'existing_original_index_destinations':mapby[representative['path']]['existing_materialized_destinations'],'not_a_configuration':True})
+save('TRANSPORT-REPRESENTATIVES.json',{'status':'DETERMINISTIC_ACTUAL_SOURCE_REPRESENTATIVES_AND_COMPLETE_LOGICAL_CONTEXT_NOT_ROOT_SELECTION','scope':'One exact source per fullhash/basename physical destination. Same source must be reused for an active payload/judgment and support to avoid unchanged strict destination collision.','representatives':representatives,'all_original_paths':len(now),'physical_groups':len(representatives),'logical_attribution_edges':sum(len(r['logical_sources']) for r in representatives),'native_edges_separately_bound':len(native),'capture_edges_separately_bound':len(captures),'future_constructor_prefix':None,'root_selection':None})
+# Complete original/capture identity edges remain separately linked to the exact selected byte source.
+physical_by_path={p['path']:r['physical'] for r in representatives for p in r['logical_sources']}
+edges=[]
+for e in captures:
+ assert e['original_path'] in physical_by_path and e['captured_path'] in physical_by_path
+ edges.append({**e,'original_physical_representative':physical_by_path[e['original_path']],'captured_physical_representative':physical_by_path[e['captured_path']],'same_bytes_do_not_mean_same_acquisition':True})
+save('SOURCE-ACQUISITION-EDGE-MAP.json',edges)
+save('COMPLETION.json',{'status':'COMPLETE_FIVE_PACKET_ACTUAL_CLOSURE_METADATA_ONLY','packets':5,'manifest_members':[21,202,89,35,284],'original_paths':len(now),'distinct_contents':len({r['sha256'] for r in now}),'physical_hash_basename_groups':len(representatives),'logical_attribution_edges':sum(len(r['logical_sources']) for r in representatives),'source_capture_edges':len(captures),'native_input_edges':len(native),'strict_native_pairs':4,'independent_judgment_documents_available':3,'author_self_review_documents_evidence_only':1,'config_created':False,'root_acceptance':False,'native_prepare':False,'notes':['Original sample-selection script failed after completing all4 strict pair checks and the complete collision proof because an expected review.yaml same-basename collision did not exist. That failure and all outputs remain. Separate exact examples use actual table entries; no gate/source/manifest correction was made.','Original acquired identities, source roots/revisions and native declared paths remain in maps. Physical equal-content reuse is not a new acquisition or an independent scientific vote.']})
+print(json.dumps({'physical_groups':len(representatives),'logical_attribution_edges':sum(len(r['logical_sources']) for r in representatives),'native_input_edges':len(native),'source_capture_edges':len(captures)}))

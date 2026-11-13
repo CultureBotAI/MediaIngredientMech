@@ -1,0 +1,48 @@
+identifier: CHEBI:67410
+preferred_term: p-Hydroxybenzyl alcohol
+ontology_mapping:
+  ontology_id: CHEBI:67410
+  ontology_label: p-hydroxybenzyl alcohol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  match_level: EXACT
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech:output/ingredient_occurrences.tsv
+    notes: Surface form appears in CultureMech's occurrence table and was grounded
+      to CHEBI:67410 on an exact match against the ontology label. Restored from the
+      record's own creation history (#541); the residual importer wrote this provenance
+      only into the published SSSOM.
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (2
+    mentions across 2 recipes). Grounded to CHEBI:67410 (''p-hydroxybenzyl alcohol'')
+    on an exact match of the canonical label to the query ''p-hydroxybenzyl alcohol''.
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-06T07:34:56.956907+00:00'
+  curator: claude_restore_culturemech_evidence
+  action: CORRECTED
+  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table
+    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL
+    history entry but absent from the structured field the SSSOM builder reads, so
+    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
+    row (#541).
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001966; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+mim_id: MIM:0001966
+legacy_identifiers:
+- MIM:P-Hydroxybenzyl_alcohol
+- CHEBI:67410

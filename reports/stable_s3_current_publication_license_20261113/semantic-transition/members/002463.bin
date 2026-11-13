@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:tyg_salts_solution
+preferred_term: TYG salts solution
+synonyms:
+- synonym_text: TYG salts solution
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.932648+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'salts
+    solution')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0295 -> kgmicrobe.ingredient:tyg_salts_solution "TYG
+    salts solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
+    row added.
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator
+  review needed.'
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tyg_salts_solution
+  ontology_label: TYG salts solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'TYG salts solution is a named, recurring multi-component preparation (2
+      media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym with
+      normalisation: no term denotes it, and none could -- it is a lab preparation
+      rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
+      mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
+      mix does not narrow to any single compound (#114).'

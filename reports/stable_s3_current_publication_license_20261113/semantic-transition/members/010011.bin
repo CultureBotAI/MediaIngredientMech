@@ -1,0 +1,125 @@
+identifier: kgmicrobe.ingredient:nissui_bl_agar_base
+preferred_term: BL Agar base (Nissui)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nissui_bl_agar_base
+  ontology_label: BL Agar base (Nissui)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.diagnostics-eu.shimadzu.com/wp-content/uploads/2024/08/culture-media-catalogue.pdf
+    notes: NBRC848 specifies Nissui58g dry BL base before adding horse blood. Successor
+      supplier catalogue p7 independently confirms58g/L powder and separate5% horse
+      blood. This product is distinct from the JCM13 finished blood-containing medium
+      and generic BL_Agar owner.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: NBRC848 specifies Nissui58g dry BL base before adding horse blood. Successor
+  supplier catalogue p7 independently confirms58g/L powder and separate5% horse blood.
+  This product is distinct from the JCM13 finished blood-containing medium and generic
+  BL_Agar owner. Raw source labels remain in campaign case evidence; no unqualified
+  global alias is added. This isolated proposal does not clear inherited owner publication
+  holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: NBRC848 specifies Nissui58g dry BL base before adding horse blood. Successor
+    supplier catalogue p7 independently confirms58g/L powder and separate5% horse
+    blood. This product is distinct from the JCM13 finished blood-containing medium
+    and generic BL_Agar owner. Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.485340+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: BL Agar base (Nissui)
+  supplier: Nissui / Shimadzu Diagnostics
+  form: dehydrated BL agar base
+components:
+- component_name: Meat Extract
+  reference_scope: UNMAPPED
+  concentration_value: '2.4'
+  concentration_unit: G_PER_L
+- component_name: Proteose Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Soya Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L
+- component_name: Yeast Extract
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Liver Extract
+  reference_scope: UNMAPPED
+  concentration_value: '3.2'
+  concentration_unit: G_PER_L
+- component_name: Dextrose
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: Soluble Starch
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Magnesium Sulfate
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: Ferrous sulfate
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Manganese sulftae
+  reference_scope: UNMAPPED
+  concentration_value: '0.007'
+  concentration_unit: G_PER_L
+- component_name: Polysorbate 80
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L
+- component_name: L-Cysteine Hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '15'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.diagnostics-eu.shimadzu.com/wp-content/uploads/2024/08/culture-media-catalogue.pdf
+    notes: Current nominal product recipe at58g/L. Partial transcription excludes
+      two source phosphate rows both labelled the same monopotassium/dihydrogen species
+      at1g and the undefined0.2g antifoam (source spelling Bubblke absorbong agent
+      (Silicon)); source does not establish their exact identities. Horse blood is
+      added separately and not included. Sulfate hydration forms remain unspecified;
+      original Manganese sulftae spelling preserved.
+  notes: Current nominal product recipe at58g/L. Partial transcription excludes two
+    source phosphate rows both labelled the same monopotassium/dihydrogen species
+    at1g and the undefined0.2g antifoam (source spelling Bubblke absorbong agent (Silicon));
+    source does not establish their exact identities. Horse blood is added separately
+    and not included. Sulfate hydration forms remain unspecified; original Manganese
+    sulftae spelling preserved.

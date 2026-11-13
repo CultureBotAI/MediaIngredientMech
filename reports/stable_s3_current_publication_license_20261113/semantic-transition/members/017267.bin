@@ -1,0 +1,68 @@
+identifier: cas:5285-18-7
+preferred_term: Piperic acid
+ontology_mapping:
+  ontology_id: mesh:C017637
+  ontology_label: piperic acid
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 5285-18-7 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Piperic acid'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:5285-18-7 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.810722+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:30.613517+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C12H10O4; smiles=C1OC2=C(O1)C=C(C=C2)C=CC=CC(=O)O; inchi=InChI=1S/C12H10O4/c13-12(14)4-2-1-3-9-5-6-10-11(7-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.785168+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:55:47.728784+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_MESH
+  changes: set ontology_mapping parent=mesh:C017637 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002059; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 5285-18-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C12H10O4
+  smiles: C1OC2=C(O1)C=C(C=C2)C=CC=CC(=O)O
+  inchi: InChI=1S/C12H10O4/c13-12(14)4-2-1-3-9-5-6-10-11(7-9)16-8-15-10/h1-7H,8H2,(H,13,14)
+  pubchem_cid: 94305
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002059
+legacy_identifiers:
+- MIM:Piperic_Acid
+- cas:5285-18-7

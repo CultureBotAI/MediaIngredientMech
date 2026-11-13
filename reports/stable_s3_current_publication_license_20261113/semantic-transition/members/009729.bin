@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-08T07:45:50.022983+00:00",
+  "ignored_inclusive": true,
+  "commands": [
+    {
+      "command": [
+        "rg",
+        "-uu",
+        "-n",
+        "^identifier: kgmicrobe.ingredient:oatmeal$|FOODON:00001189",
+        "data/ingredients",
+        "docs/data/label_index.csv",
+        "reports/all_unmatched_20261107/worker-04/proposals",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/proposals"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "rg",
+        "-uu",
+        "-n",
+        "95% strength|Filtered 95%|CCAP.*PE|Plymouth Erdshreiber",
+        "data/ingredients",
+        "reports/all_unmatched_20261107/worker-04/proposals",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/proposals"
+      ],
+      "exit": 0,
+      "stdout": "reports/all_unmatched_20261107/worker-04/proposals/biological/Filtered_Seawater.yaml:7:- synonym_text: Natural seawater (filtered, 95% strength)\nreports/all_unmatched_20261107/worker-04/proposals/biological/Filtered_Seawater.yaml:49:  changes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM\nreports/all_unmatched_20261107/worker-04/proposals/biological/Filtered_Seawater.yaml:50:    (#260): the filtered-seawater term with a dilution stated. `95% strength` is a\nreports/all_unmatched_20261107/worker-04/proposals/biological/Filtered_Seawater.yaml:93:    notes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM\nreports/all_unmatched_20261107/worker-04/proposals/biological/Filtered_Seawater.yaml:94:      (#260): the filtered-seawater term with a dilution stated. `95% strength` is\ndata/ingredients/mapped/Filtered_Seawater.yaml:7:- synonym_text: Natural seawater (filtered, 95% strength)\ndata/ingredients/mapped/Filtered_Seawater.yaml:43:  changes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM\ndata/ingredients/mapped/Filtered_Seawater.yaml:44:    (#260): the filtered-seawater term with a dilution stated. `95% strength` is a\ndata/ingredients/mapped/Filtered_Seawater.yaml:80:    notes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM\ndata/ingredients/mapped/Filtered_Seawater.yaml:81:      (#260): the filtered-seawater term with a dilution stated. `95% strength` is\n",
+      "stderr": ""
+    }
+  ]
+}

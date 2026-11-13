@@ -1,0 +1,114 @@
+from pathlib import Path
+import copy, datetime, hashlib, io, json, os, subprocess, sys, tarfile, types
+import yaml
+
+D=Path(__file__).resolve().parent; C=D.parents[1]; R=C.parents[1]
+P=C/'integration/w09-method-successors-v1'; N=C/'integration/selenite718-alias-successor-v1'
+A=C/'integration/ancillary1258-worktree'; J=C/'integration/curation-worktree'
+F=D/'native-review-fixture'; F.mkdir(exist_ok=False)
+sys.path.insert(0,str(J/'src'))
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+def sha(b): return hashlib.sha256(b).hexdigest()
+def put(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+def js(p,x):put(p,(json.dumps(x,indent=2,ensure_ascii=False)+'\n').encode())
+def read(p):return json.loads(Path(p).read_text())
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+transport={}
+def capture(p,rel=None):
+ p=Path(p).absolute();raw=p.read_bytes();key=str(p)
+ if key in transport:return transport[key]['fixture_path']
+ rel=rel or 'evidence/'+sha(str(p).encode())[:16]+'-'+p.name
+ put(F/rel,raw);transport[key]={'original_path':key,'fixture_path':rel,'sha256':sha(raw),'bytes':len(raw)};return rel
+plan=read(C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json')
+ops={v['operation_id']:v for v in plan['records']};bindings={v['binding_id']:v for v in plan['bindings']}
+idx={v['destination']:v for v in read(C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json')['files']}
+def bound(binding):
+ b=bindings[binding];f=idx[b['path']];p=Path(f['source']);assert sha(p.read_bytes())==f['sha256']==b['sha256'];capture(p);return p
+sel=read(P/'SELECTOR.json');line=read(N/'candidate-lineage.json');bridge=read(N/'stock-deferral-bridge.json')
+groups=sel['groups']+[{'operation_id':line['original_operation_exact']['operation_id'],'source_record':line['original_operation_exact']['source_record'],'before_yaml_sha256':line['authentic_operation_before_sha256'],'payload':line['candidate'],'previous_payload':line['selected_predecessor'],'origins':line['original_operation_exact']['origins']}]
+rows=[];before={};after={};targets=[]
+for g in groups:
+ id=g['operation_id'];op=ops[id];name=Path(g['source_record']).name
+ p=Path(g['payload']['path']);p=p if p.is_absolute() else P/p
+ raw=p.read_bytes();assert sha(raw)==g['payload']['sha256'];v=yaml.safe_load(raw)
+ oldp=Path(g['previous_payload']['path']);oldraw=oldp.read_bytes();assert sha(oldraw)==g['previous_payload']['sha256']==op['after_capture']['sha256'];old=yaml.safe_load(oldraw)
+ assert g['origins']==op['origins'];assert g['before_yaml_sha256']==op['before_yaml_sha256']
+ if op['before_source_record']:
+  authentic=git(A,'show',plan['baseline_commit']+':'+op['before_source_record']);assert sha(authentic)==op['before_yaml_sha256'];put(F/'before'/name,authentic)
+ assert not validate_ingredient(v);render=D/'native-render'/name;render.parent.mkdir(exist_ok=True);write_validated_ingredient(v,render);assert render.read_bytes()==raw
+ assert v['curation_history'][:-1]==old['curation_history'];assert v['ontology_mapping']['evidence'][:-1]==old['ontology_mapping']['evidence'];assert v['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION';assert v['curation_history'][-1]['llm_assisted'] is True
+ inverse=copy.deepcopy(v);inverse['curation_history'].pop();inverse['ontology_mapping']['evidence'].pop()
+ if name=='Na2seo3.yaml':
+  hits=[i for i,x in enumerate(inverse['synonyms']) if x['synonym_text']=='Na2Se2O3'];assert len(hits)==1;i=hits[0];assert inverse['synonyms'][i]['synonym_type']=='REJECTED_LABEL';inverse['synonyms'][i]['synonym_type']='RAW_TEXT';delta=['synonyms/'+str(i)+'/synonym_type','ontology_mapping/evidence/+','curation_history/+']
+ else:
+  assert inverse['ontology_mapping']['mapping_quality']=='MANUAL_CURATION';inverse['ontology_mapping']['mapping_quality']='EXACT_MATCH';delta=['ontology_mapping/mapping_quality','ontology_mapping/evidence/+','curation_history/+']
+ assert inverse==old
+ assert all('/root/step7d_independent_review' not in x.get('curator','') for x in v['curation_history'])
+ before[g['source_record']]=old;after[g['source_record']]=v
+ target=capture(p,'candidates/'+name);capture(oldp,'predecessors/'+name)
+ targets.append({'target_id':id,'path':target,'kind':'source','label':v['preferred_term'],'record_class':'IngredientRecord','ownership_note':'Complete private source successor; original operation/origins and authentic maintained destination '+g['source_record']+'. Reviewer authored infrastructure and constructor, not this owner payload.'})
+ rows.append({'operation_id':id,'source_record':g['source_record'],'candidate_sha256':sha(raw),'predecessor_sha256':sha(oldraw),'authentic_before_sha256':op['before_yaml_sha256'],'exact_changed_fields':delta,'old_history_count':len(old['curation_history']),'new_history_count':len(v['curation_history']),'all_prior_history_and_evidence_exact':True,'all_other_fields_exact':True,'history_curators':sorted({x.get('curator','') for x in v['curation_history']}),'whole_top_level_fields':list(v)})
+origin_rows=[]
+origin_docs=read(P/'origin-proof.json')
+for r in origin_docs:
+ op=ops[r['operation_id']];o=r['origin'];assert o in op['origins'];w=C/'workers'/o['worker_slot'].replace('worker-','w')/'worktree'
+ for b in r['binding_proofs']:
+  raw=git(w,'show',b['published_head']+':'+b['published_path']);assert sha(raw)==b['sha256'];assert raw==bound(b['binding_id']).read_bytes()
+ ps=read(bound(o['proposal_binding']))['proposals'];assert r['proposal'] in ps;assert r['proposal']['proposal_id']==o['proposal_id']
+ decisions=read(bound(o['worker_slot'].replace('worker-','w')+'-decisions'))['decisions']
+ for decision in r['decisions']:
+  assert decision in decisions;assert decision['case_input_sha256']==o['case_hashes'][decision['case_id']]
+ origin_rows.append({'operation_id':r['operation_id'],'origin':o,'exact_proposal_and_decisions':True,'published_bindings_verified':len(r['binding_proofs'])})
+for op in bridge['deferred_operations_exact']:assert op==ops[op['operation_id']]
+assert len(bridge['deferred_operations_exact'])==3 and len(bridge['original_case_objects_exact'])==4
+decisions=read(bound('w01-decisions'))['decisions'];ps=read(bound('w01-proposals'))['proposals']
+for obj in bridge['original_case_objects_exact']:assert obj in decisions
+for obj in bridge['original_proposals_exact']:assert obj in ps
+assert line['original_case_exact'] in decisions and line['original_proposal_exact'] in ps
+for o in line['original_operation_exact']['origins']:
+ for bid in [o['proposal_binding'],o['payload_binding']]:
+  b=bindings[bid];assert sha(git(C/'workers/w01/worktree','show',o['head_sha']+':'+b['published_path']))==b['sha256'];bound(bid)
+assert bridge['source_decisions_changed'] is False and bridge['not_a_merge_or_retarget'] is True
+targets.append({'target_id':'three-stock-deferral-bridge','path':capture(N/'stock-deferral-bridge.json','deferrals/stock-deferral-bridge.json'),'kind':'source','label':'Three unresolved installation dispositions with four unchanged original cases','ownership_note':'Operation deferral only; neither source-case rejection nor new owner/merge/retarget authorization.'})
+# Authentic baseline overlay, never the cancelled partial B owner tree.
+inventory={};base={}
+with tarfile.open(fileobj=io.BytesIO(git(A,'archive',plan['baseline_commit'],'data/ingredients'))) as tf:
+ for x in tf.getmembers():
+  if x.isfile() and x.name.endswith('.yaml'):
+   raw=tf.extractfile(x).read();base[x.name]=yaml.safe_load(raw);inventory[x.name]=sha(raw)
+assert len(base)==2956
+overlay=copy.deepcopy(base);overlay.update(after)
+partial=list(validate_component_partonomy(overlay.values()));assert len(partial)==3 and all(x.code=='UNRESOLVED_MIM_REFERENCE' and 'CHEBI:131366' in x.message for x in partial)
+coupled=[]
+for op in plan['records']:
+ if op['operation_id'].startswith('ORIGINAL-w01::KG26-PROP-175-UW-CONCENTRATED-BASE'):
+  p=Path(idx[op['after_capture']['path']]['source']);assert sha(p.read_bytes())==op['after_capture']['sha256'];overlay[op['source_record']]=yaml.safe_load(p.read_bytes());capture(p,'coupled/'+p.name);coupled.append(op)
+assert len(coupled)==3;assert not list(validate_component_partonomy(overlay.values()))
+# All original evidence capture paths remain explicit; no root/path rewriting.
+for x in read(D/'sulfur-evidence-joins.json'):
+ if 'actual_capture' in x:capture(x['actual_capture']['source'])
+for x in read(C/'preflight/w09-selected-chemical-triage-v1/source-index.json')['references']:
+ p=Path(x['path']);assert sha(p.read_bytes())==x['sha256'];capture(p)
+for q in (P/'inputs/primary').iterdir():capture(q)
+for q in [N/'HANDOFF.json',N/'MANIFEST.json',N/'candidate-lineage.json',N/'checks.json',N/'diagnostic-projection.json',N/'input-pins.json',N/'primary-evidence-locators.json',P/'HANDOFF.json',P/'MANIFEST.json',P/'SELECTOR.json',P/'origin-proof.json',P/'field-deltas.json',P/'coupled-dependencies.json',P/'verification.json',P/'native-row-diagnostic.json',P/'NATIVE-AUTHOR-RECEIPT.json',P/'CAPTURE-MAP.json',P/'README.md',D/'manifest-verification.json',D/'sulfur-evidence-joins.json',R/'MAPPING_SEMANTICS.md',R/'docs/record-reviews.md',R/'docs/record-review-profile.md']:
+ capture(q)
+for q in sorted((P/'inputs/triage').rglob('*')):
+ if q.is_file():capture(q)
+for q in sorted((P/'inputs/issue').rglob('*')):
+ if q.is_file():capture(q)
+for q in [C/'preflight/w09-method-findings-triage-v1/live/368-issue.json',C/'preflight/w09-method-findings-triage-v1/live/368-comments.json']:
+ capture(q)
+author=read(P/'NATIVE-AUTHOR-RECEIPT.json')
+for k in ['yaml','markdown']:capture(author['pair'][k])
+result={'status':'PASS_WITH_EXPLICIT_DEPENDENCIES','records':rows,'published_origins':origin_rows,'deferrals':{'operation_count':3,'case_count':4,'original_objects_exact':True,'source_decisions_changed':False},'native_schema_and_byte_idempotence':4,'baseline_owner_count':len(base),'overlay_owner_count':len(overlay),'known_standalone_Borax_errors':[vars(e) for e in partial],'required_unchanged_UW_operations':coupled,'coupled_overlay_errors':[],'source_application':False,'new_scientific_approval_for_inherited_roles':False}
+js(D/'independent-checks.json',result);capture(D/'independent-checks.json','evidence/independent-checks.json');js(D/'baseline-inventory.json',inventory)
+capture(R/'scripts/record_review.py','scripts/record_review.py');capture(R/'schema/record_review.yaml','schema/record_review.yaml')
+js(F/'transport-map.json',list(transport.values()));js(D/'INPUT-TRANSPORT.json',list(transport.values()));js(D/'targets.json',{'targets':targets})
+for args in [('init',),('remote','add','origin','https://github.com/CultureBotAI/MediaIngredientMech.git'),('add','--all'),('-c','user.name=Codex review fixture','-c','user.email=review-fixture@invalid','-c','commit.gpgsign=false','commit','-m','Capture exact independent four-owner review inputs; private fixture only')]:git(F,*args)
+rr=types.ModuleType('four_owner_native_review');rr.__file__=str(F/'scripts/record_review.py');sys.modules[rr.__name__]=rr;exec(compile(Path(rr.__file__).read_bytes(),rr.__file__,'exec'),rr.__dict__)
+extras=[str(p.relative_to(F)) for p in F.rglob('*') if p.is_file() and '.git' not in p.relative_to(F).parts]
+inspection=rr.inspect_source(F,targets,extras);js(D/'native-inspection.json',inspection)
+print(json.dumps({'status':result['status'],'records':4,'origins':len(origin_rows)+1,'deferrals':3,'inputs':len(inspection['source']['inputs']),'fixture_head':inspection['source']['git_revision']},indent=2))

@@ -1,0 +1,70 @@
+identifier: CHEBI:17876
+preferred_term: Rifamycin B
+ontology_mapping:
+  ontology_id: CHEBI:17876
+  ontology_label: rifamycin B
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:rifamycin_b; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Antibiotic_sensitivity
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:rifamycin_b; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002203; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C39H49NO14
+  smiles: CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(cc(OCC(=O)O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C
+  inchi: InChI=1S/C39H49NO14/c1-17-11-10-12-18(2)38(49)40-24-15-26(51-16-27(42)43)28-29(34(24)47)33(46)22(6)36-30(28)37(48)39(8,54-36)52-14-13-25(50-9)19(3)35(53-23(7)41)21(5)32(45)20(4)31(17)44/h10-15,17,19-21,25,31-32,35,44-47H,16H2,1-9H3,(H,40,49)(H,42,43)/b11-10+,14-13+,18-12-/t17-,19+,20+,21+,25-,31-,32+,35+,39-/m0/s1
+  molecular_weight: 755.814
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:53.072385+00:00'
+mim_id: MIM:0002203
+legacy_identifiers:
+- MIM:Rifamycin_B
+- CHEBI:17876

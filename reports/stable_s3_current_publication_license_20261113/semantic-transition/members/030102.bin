@@ -1,0 +1,84 @@
+identifier: cas:59-40-5
+preferred_term: Sulfaquinoxaline
+ontology_mapping:
+  ontology_id: CHEBI:94719
+  ontology_label: 4-amino-N-(2-quinoxalinyl)benzenesulfonamide
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 59-40-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5338'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#326)
+    notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+      is identical to CHEBI:94719''s, and a ''parent'' with an identical formula is
+      not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref and filed
+      it as one. Identity confirmed by InChIKey: the record''s own cas_rn, written
+      from CultureBotHT compounds_to_cas.csv at creation and so independent of this
+      mapping, resolves in PubChem to the same key ChEBI records for the term. ontology_id
+      is unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:59-40-5 as primary identifier; no CHEBI entry exists for
+    this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.491289+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:32.773390+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C14H12N4O2S; smiles=C1=CC=C2C(=C1)N=CC(=N2)NS(=O)(=O)C3=CC=C(C=C3)N;
+    inchi=InChI=1S/C14H12N4O2S/c15-10-5-7-11(8-6-10)21(19,20
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.682932+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:02:42.635396+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:94719 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_identical_formula_parents
+  action: REGRADED_PARENT_TO_IDENTITY
+  changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch parent
+    is the same substance, confirmed by InChIKey via the record's own CAS.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002417; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 59-40-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C14H12N4O2S
+  smiles: C1=CC=C2C(=C1)N=CC(=N2)NS(=O)(=O)C3=CC=C(C=C3)N
+  inchi: InChI=1S/C14H12N4O2S/c15-10-5-7-11(8-6-10)21(19,20)18-14-9-16-12-3-1-2-4-13(12)17-14/h1-9H,15H2,(H,17,18)
+  pubchem_cid: 5338
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002417
+legacy_identifiers:
+- MIM:Sulfaquinoxaline
+- cas:59-40-5

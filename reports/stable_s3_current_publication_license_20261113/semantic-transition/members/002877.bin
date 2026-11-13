@@ -1,0 +1,56 @@
+identifier: UNMAPPED_0459
+preferred_term: N-Z-Case
+synonyms:
+- synonym_text: N-Z-Case
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: N-Z-Case (Wako)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1829); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as an N-Z-Case casein hydrolysate/preparation and left unmapped
+    pending product-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/N-Z-Case-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** N-Z-Case is a **commercial/legacy
+    hydrolyzed-casein preparation used as a complex nitrogen source in culture media**,
+    not a single chemical, salt, hydrate, buffer, complete medium, or chemically defined
+    formulation. A 1962 methods section identifies the punctuation-normalized label
+    **“NZ Case”** as hydrolyzed casein supplied by **Sheffield** and uses it at 0.2%
+    in a No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''N-Z-Case (Wako)'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1829); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a casein hydrolysate/preparation pending
+  product-level curation.
+ingredient_type: UNDEFINED_MIXTURE

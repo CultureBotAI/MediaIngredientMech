@@ -1,0 +1,586 @@
+schema_version: 1.0.0
+review_id: 20261108T043148Z-w01-selenite431-registry-v2
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: JCM431 stock registry promotion and source recipe partonomy proposal v2
+started_at: '2026-11-08T04:31:48Z'
+finished_at: '2026-11-08T04:31:48Z'
+reviewer:
+  identity: Codex /root/primary_context
+  kind: agent
+  independence: self_review
+  independence_basis: This agent researched the sources and authored the isolated
+    proposal. A separate in-process reviewer performs independent review; this native
+    bundle does not substitute for it.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+scientific_review: true
+summary: Whole-stock identity, exact registry slug, complete four-component recipe
+  and eleven source-bound occurrences are supported. The isolated proposal promotes
+  the existing owner, preserves historical content, and retains unrelated release
+  restrictions; this is not approval of complete component-owner records.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: ad752dc70127edd2b4d073c3ff42d136b89d605a9b5a9151922ffe01d8f873d3
+    role: context
+  - path: data/ingredients/mapped/Distilled_Water.yaml
+    sha256: 458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56
+    role: context
+  - path: data/ingredients/mapped/Na2seo35h2o.yaml
+    sha256: 889d9d25040aba6b22659bbb6ef5cd372966b448997258423ce5aa8b1864966b
+    role: context
+  - path: data/ingredients/mapped/Na2seo3_X_5_H2o.yaml
+    sha256: 1b808f46bbf0b43885b37fbd0a3e46ce00c363d18d934110c4ff5d36bddcb911
+    role: context
+  - path: data/ingredients/mapped/Na2wo4_X_2_H2o.yaml
+    sha256: b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9
+    role: context
+  - path: data/ingredients/mapped/Naoh.yaml
+    sha256: b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31
+    role: context
+  - path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+    role: target
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+    sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+    sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.json
+    sha256: 67cab181805873501a43f2c22e00ad507a1d34b7a7ac9726ecb51f5243fd4197
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html
+    sha256: 471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json
+    sha256: 5d3a08620ca3c55f349ba024978ee098004393533a0fc3fe29f874ff069e2184
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/historical-artifact-search.json
+    sha256: 0fcd640d1d11c704d00791ed2a3dd38aef7b3e429a216d5be4a9e9b78dfae462
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+    sha256: d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json
+    sha256: e87ba85097f2794b83e7ec955208bf3280c6adeb1d2d683dabc4a126d5612021
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json
+    sha256: de59110524e81e73734fd32a9957c9fb447e3cf1fe7c7c781ba3e10046b57157
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json
+    sha256: fcd6427c3952dcdda78bb868629a737f94e4b905e1959ecb1aafe7712b7d22bc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+    sha256: 643fefa89a2c0afeb2a00a0dd6149dbbf86cc4824369c58bde1c6ea6d4316d10
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    sha256: de9102073c3761a24130636f90e898445dce83eb118592609a618bf61149ff4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+    sha256: 2373bbcef187826c692b5378554daa4d799085002aa8616ff418e067655027b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+    sha256: 987144fa0342502834f116860a4b4f71696f62c18e7b701301667c15e588562a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+    sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+    sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml
+    sha256: 878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposals.json
+    sha256: 0364aebcc101cc68ff7945b9c0b33b22c3f2ac39650104d3fb7554d598b7d671
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json
+    sha256: aeb4102d7f92eba664cef10a8c0e7a77089d6ed230411457f22f606dce1e6a1e
+    role: context
+  - path: reports/yaml_record_review/20261001T044950Z-Selenite-tungstate_Solution_See_Medium_No_431.md
+    sha256: 962adf6c5a0e07f3b5f17598c8a7a161db91e282abe3635a35c62df4390149bc
+    role: context
+  - path: reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml
+    sha256: bc994c5c4c37a86250ed79af8035a0a9c8f1bf0c578947f07ac1a1234aac685e
+    role: context
+  - path: scripts/validate_sssom_invariants.py
+    sha256: 3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: All fields of existing UNMAPPED_0519 owner and exact v2 proposed bytes;
+    four case labels and eleven occurrences; four constituent identities and source
+    quantities.
+  selection: Existing owner bound through imported MediaDive1921/JCM887/JCM431; NBRC1257/1321
+    all-component formula equivalence explicitly compared.
+  coverage: partial
+  population_size: 1
+  reviewed_target_ids:
+  - record-df44e1ccc45aea36
+  exclusions:
+  - target: Unrelated roles, synonyms and mechanistic claims of component owner records
+    reason: Only constituent identity and references are asserted by this stock proposal;
+      full component-owner approval is not inferred.
+  - target: Supported-release ledger approval
+    reason: Registry identity is separate from release eligibility; no native APPROVED
+      assertion or issue closure is made.
+  - target: Worker03 source1921 case disposition
+    reason: Source used as provenance only, not claimed as completed cross-shard work.
+targets:
+- target_id: record-df44e1ccc45aea36
+  path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+  label: Selenite-tungstate solution see Medium No. 431
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: maintained individual IngredientRecord
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: matching aggregate ingredients entry identifier=UNMAPPED_0519
+checks:
+- check_id: inspect
+  name: Native exact-input inspection
+  status: passed
+  required: true
+  summary: Inspected current owner, immutable v1, v2 exact payload, all source and
+    component identity evidence, schema and mapping rules.
+  target_ids:
+  - record-df44e1ccc45aea36
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/record_review.py
+    inspect --targets .temp/all-unmatched-worker-01/shard/named_stocks/review-targets.yaml
+    --input MAPPING_SEMANTICS.md --input data/curated/unmapped_ingredients.yaml --input
+    data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml --input
+    mappings/ingredient_mappings.sssom.tsv --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/historical-artifact-search.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json
+    --input reports/yaml_record_review/20261001T044950Z-Selenite-tungstate_Solution_See_Medium_No_431.md
+    --input reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml
+    --input src/mediaingredientmech/schema/mediaingredientmech.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposals.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+    --input data/ingredients/mapped/Distilled_Water.yaml --input data/ingredients/mapped/Na2seo35h2o.yaml
+    --input data/ingredients/mapped/Naoh.yaml --input data/ingredients/mapped/Na2wo4_X_2_H2o.yaml
+    --input data/ingredients/mapped/Na2seo3_X_5_H2o.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html
+    --input .claude/skills/add-media/SKILL.md --input scripts/validate_sssom_invariants.py
+  exit_code: 0
+  evidence_ids:
+  - owner
+  - proposal-v2
+- check_id: strict-v2
+  name: Guarded writer, strict schema and partonomy
+  status: passed
+  required: true
+  summary: Exact proposed payload passed guarded schema and native strict validation;
+    proposed-parent component partonomy had zero violations with full active catalog.
+    Proposed identifier and path have no existing collision in ignored-inclusive direct
+    corpus enumeration.
+  target_ids:
+  - record-df44e1ccc45aea36
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python .temp/all-unmatched-worker-01/shard/named_stocks/build_stock431_v2.py
+  exit_code: 0
+  evidence_ids:
+  - validation-v2
+- check_id: source-boundary
+  name: Full recipe and constituent identity inspection
+  status: passed
+  required: true
+  summary: Read full JCM431 formula, NBRC1257/1321 matching formulae, all eleven occurrence
+    objects, original1921 binding, official ontology labels/formulae and all five
+    current component-owner payloads (two records share selenium identifier).
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - jcm431
+  - frozen1921
+  - applicability-v2
+  - terms-v2
+  - components-v2
+- check_id: release-gates
+  name: Maintained integration and release validation
+  status: not_applicable
+  required: false
+  summary: Proposal only; synchronization, SSSOM generation and release gates belong
+    to integration. They are not missing scientific identity evidence.
+  target_ids:
+  - record-df44e1ccc45aea36
+- check_id: historical-provider
+  name: Historical Edison artifact reassessment
+  status: unavailable
+  required: false
+  summary: Previously documented ignored-inclusive search did not find historical
+    full report. Historical source notes remain unchanged and are not treated as new
+    positive evidence.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - historical-search
+evidence:
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+  locator: Entire YAML, including every history event, synonyms, counts, notes and
+    ingredient_type
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: partial
+  summary: Existing source1921 pointer; no ontology mapping, roles, components or
+    biological assertions. Current NAMED_MEDIUM conflicts with source-defined mineral
+    stock; retained UNMAPPED and historical no-grounding provenance. Occurrence counts0/0
+    are maintained historical statistics, not recomputed by this review.
+  snapshot_sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+- evidence_id: jcm431
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+  locator: 'Selenite-tungstate solution table: NaOH0.4g,Na2SeO3·5H2O6mg,Na2WO4·2H2O8mg,water1L'
+  accessed_at: '2026-11-08T04:06:18.315343Z'
+  support: supports
+  summary: Explicit defined stock establishes classification and full recipe reference.
+    It is distinct from JCM1365 stock and other Se/W recipes.
+  snapshot_sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+- evidence_id: live1921
+  kind: database
+  reference: https://mediadive.dsmz.de/ingredients/1921
+  locator: JSON data id1921 and name; no ontology/CAS/formula fields
+  accessed_at: '2026-11-08T04:07:15.492873Z'
+  support: supports
+  summary: Current ingredient accession retains the explicit Medium431 stock name.
+    This label alone is supplemented by the full frozen original recipe/source trace.
+  snapshot_sha256: b8b4a72985669dc6d73fd74d74d0f096e63796ebfbd596add849001e87618c01
+- evidence_id: frozen1921
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/medium/J887
+  locator: data.medium.source=JCM; data.solutions[1].recipe[6],compound_id1921,solution4878
+  accessed_at: '2026-11-05T06:25:08.436992Z'
+  support: supports
+  summary: Exact imported source is an explicit Medium431 stock reference within JCM887
+    Basal minerals; preserved full original response and source-generation hashes.
+    One row is duplicated across medium/solution exports; helper count is not used.
+  snapshot_sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+- evidence_id: cm-aliases
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json
+  locator: Allocation indices1,137,144; all9 occurrences and explicit431 labels
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: supports
+  summary: The two non-hyphen label occurrences, one starred and six hyphenated occurrences
+    all explicitly reference JCM431 in their full frozen recipes and captured receiving
+    JCM source pages.
+  snapshot_sha256: de59110524e81e73734fd32a9957c9fb447e3cf1fe7c7c781ba3e10046b57157
+- evidence_id: proposal
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+  locator: Complete exact isolated proposed IngredientRecord
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: partial
+  summary: Immutable v1 classification/alias-only proposal, retained as history; superseded
+    for current proposal scope by v2.
+  snapshot_sha256: d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929
+- evidence_id: validation
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-validation.json
+  locator: Before/after guarded schema, hashes, aggregate equality and exact-subject
+    SSSOM rows
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: supports
+  summary: Current owner schema and guarded proposed write pass; aggregate has one
+    equal owner row and no exact-subject SSSOM rows. Native strict command separately
+    checked both payloads with0 ERROR rows.
+  snapshot_sha256: e87ba85097f2794b83e7ec955208bf3280c6adeb1d2d683dabc4a126d5612021
+- evidence_id: inherited
+  kind: prior_review
+  reference: reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml
+  locator: Entire review, especially rec-f-unmapped-df44e1ccc45aea36 and issue718
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: partial
+  summary: Historical deferred identity/decomposition and release hold. V2 now supplies
+    source identity, recipe and constituent identities; historical finding is not
+    silently retired and unsupported release claims remain excluded.
+  snapshot_sha256: bc994c5c4c37a86250ed79af8035a0a9c8f1bf0c578947f07ac1a1234aac685e
+- evidence_id: historical-search
+  kind: search
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/historical-artifact-search.json
+  locator: Ignored-inclusive path search and exact Edison report path check
+  accessed_at: '2026-11-08T04:16:04Z'
+  support: unknown
+  summary: The referenced Edison report is absent in this worktree, including ignored-file
+    filename search. Its historical no-CURIE summary is preserved as provenance; provider
+    findings are not revalidated.
+  snapshot_sha256: 0fcd640d1d11c704d00791ed2a3dd38aef7b3e429a216d5be4a9e9b78dfae462
+  search_scope: rg --files --no-ignore --hidden -g *Selenite*tungstate* across this
+    worktree, plus exact path is_file. Not a search outside this worktree.
+- evidence_id: proposal-v2
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml
+  locator: Complete artifact and referenced exact hashes
+  accessed_at: '2026-11-08T04:31:48Z'
+  support: supports
+  summary: Complete exact successor payload; source-bound registry identity and four-part
+    recipe, four raw aliases, all original source/history/counts retained.
+  snapshot_sha256: 878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806
+- evidence_id: validation-v2
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/validation.json
+  locator: Complete artifact and referenced exact hashes
+  accessed_at: '2026-11-08T04:31:48Z'
+  support: supports
+  summary: Guarded/schema and proposed-parent partonomy checks pass; no existing identifier/path
+    collision.
+  snapshot_sha256: aeb4102d7f92eba664cef10a8c0e7a77089d6ed230411457f22f606dce1e6a1e
+- evidence_id: applicability-v2
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/applicability.json
+  locator: Complete artifact and referenced exact hashes
+  accessed_at: '2026-11-08T04:31:48Z'
+  support: supports
+  summary: Four cases, eleven full occurrence bindings. NBRC1257/1321 and JCM431 agree
+    on all four forms and preparation amounts; preparation workflows remain source-specific.
+    Receiving CultureMech media are not standalone stock equivalents.
+  snapshot_sha256: fcd6427c3952dcdda78bb868629a737f94e4b905e1959ecb1aafe7712b7d22bc
+- evidence_id: components-v2
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+  locator: Complete artifact and referenced exact hashes
+  accessed_at: '2026-11-08T04:31:48Z'
+  support: supports
+  summary: Complete five owner payloads retained; two selenium records share CHEBI131361.
+    Identity references only; unrelated component-owner assertions are not approved.
+  snapshot_sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+- evidence_id: terms-v2
+  kind: authority
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+  locator: Complete artifact and referenced exact hashes
+  accessed_at: '2026-11-08T04:31:48Z'
+  support: supports
+  summary: 'Official OLS captures: active CHEBI32145 sodium hydroxide HO.Na;131361
+    disodium selenite pentahydrate 5H2O.2Na.O3Se;63939 sodium tungstate dihydrate
+    2H2O.2Na.O4W;15377 water H2O. Exact stock-name lookup returned zero current results;
+    bounded lookup only.'
+  snapshot_sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+assessments:
+- assessment_id: whole-stock
+  area: identity
+  topic: Resolved source formulation and registry identity
+  outcome: supported
+  summary: Primary formula and frozen imported provenance resolve existing owner to
+    JCM431 stock. MAPPING_SEMANTICS and add-media permit a kgmicrobe.ingredient fallback
+    registry identity; no cross-shard allocation permission is a chemical-identity
+    prerequisite. A normalized filename gives exact matching lowercase registry slug.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - owner
+  - jcm431
+  - frozen1921
+  - proposal-v2
+- assessment_id: aliases
+  area: scope
+  topic: Four exact case labels with occurrence-scoped applicability
+  outcome: supported
+  summary: Nine explicit JCM431 receiving rows plus two NBRC rows whose complete formulae
+    match JCM431 support four raw labels. Generic star-free names or JCM1365 formula
+    are excluded. Dose differences do not change stock identity.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - applicability-v2
+  - jcm431
+- assessment_id: parts
+  area: grounding
+  topic: Complete primary recipe with exact constituent identities
+  outcome: supported
+  summary: NaOH 0.4 g, Na2SeO3·5H2O 6 mg, Na2WO4·2H2O 8 mg and distilled water 1 L
+    are transcribed with exact hydrated terms verified from official ontology. No
+    whole-stock broadMatch to a component. Partonomy references match active MIM labels
+    and identifiers; unrelated owner claims remain unapproved.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - proposal-v2
+  - terms-v2
+  - components-v2
+  - validation-v2
+- assessment_id: history
+  area: provenance
+  topic: Preserved original record and historical review boundaries
+  outcome: supported
+  summary: Original raw label, source import, history, statistics and notes are preserved.
+    Stock classification and new mapping are explicit successor proposals. Old missing-identity
+    rationale is answered by new evidence, but no implicit retirement of release or
+    unrelated component/role holds occurs. Historical provider artifact was unavailable;
+    its old note is retained as provenance.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - owner
+  - inherited
+  - historical-search
+  - proposal-v2
+- assessment_id: integration-state
+  area: consistency
+  topic: Current maintained record still needs proposed update
+  outcome: concern
+  summary: Current maintained owner remains UNMAPPED/NAMED_MEDIUM because this author
+    is authorized for isolated proposals only. Exact reviewed integration is workflow
+    work; the source stock identity and formula are resolved.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - owner
+  - proposal-v2
+  - validation-v2
+findings:
+- finding_id: stock-classification
+  issue_key: mim-w01-unmapped0519-stock-classification
+  category: representation
+  severity: major
+  status: open
+  certainty: confirmed
+  title: JCM431 mineral stock is classified as NAMED_MEDIUM
+  description: Current owner is still classified NAMED_MEDIUM and UNMAPPED despite
+    exact primary-stock identity and supported registry/decomposition proposal. V2
+    proposes the complete correction; maintained bytes are unchanged.
+  target_ids:
+  - record-df44e1ccc45aea36
+  field_paths:
+  - ingredient_type
+  - solution_type
+  - synonyms
+  evidence_ids:
+  - owner
+  - jcm431
+  - proposal-v2
+  - validation-v2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: maintained individual IngredientRecord
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: matching aggregate ingredients entry identifier=UNMAPPED_0519
+- finding_id: retained-grounding-hold
+  issue_key: mim-reconciliation-unresolved-identity-df44e1ccc45aea36
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: Retain component/registry grounding and release hold
+  description: Historical issue718 includes identity/decomposition and release restrictions.
+    V2 establishes the whole-stock registry identity and exact four-part source recipe;
+    the remaining deferred scope is explicit reconciliation and unsupported release/component-owner/role
+    claims, not scientific ignorance of the stock.
+  disposition_reason: No promotion or component mappings are proposed; maintain the
+    predecessor hold pending separate complete grounding/representation review.
+  target_ids:
+  - record-df44e1ccc45aea36
+  field_paths:
+  - mapping_status
+  - ontology_mapping
+  - components
+  evidence_ids:
+  - inherited
+  - proposal-v2
+  - terms-v2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: maintained individual IngredientRecord
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: matching aggregate ingredients entry identifier=UNMAPPED_0519
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261017T083000Z-selenite-tungstate-solution-see-medium-no-431
+    finding_id: rec-f-unmapped-df44e1ccc45aea36
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions:
+- action_id: integrate-v2
+  description: Independently review exact v2 proposal, then promote/move existing
+    owner and synchronize aggregate/SSSOM surfaces; do not apply obsolete v1 as final
+    scope.
+  finding_ids:
+  - stock-classification
+  target_ids:
+  - record-df44e1ccc45aea36
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: maintained individual IngredientRecord
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: matching aggregate ingredients entry identifier=UNMAPPED_0519
+  acceptance_checks:
+  - Verify exact proposed SHA and eleven original occurrence bindings.
+  - Generate own-identifier exactMatch with same normalized registry slug; no component
+    broadMatch.
+  - Run applicable integration gates and explicitly reconcile historical holds without
+    granting unsupported release claims.
+limitations:
+- Author self-review; independent reviewer must assess exact v2 bytes.
+- 'Partial scope for component-owner records: only component identity and reference
+  claims examined, not unrelated roles/synonyms or release approval.'
+- No standalone CultureMech stock recipe ID established among selected receiving full-media
+  records; no false typed recipe-equivalence link invented.
+- All maintained inputs remain unchanged.
+- Historical full Edison artifact unavailable; primary recipe and official ontology
+  evidence independently supply current identity/decomposition.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261017T083000Z-selenite-tungstate-solution-see-medium-no-431
+  relationship: Retains existing deferred grounding hold and adds a bounded source-stock
+    classification observation.
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T041604Z-w01-ns-selenite431-proposal
+  relationship: Expanded successor proposal; v1 immutable bytes retained. Whole-stock
+    registry and partonomy now assessed, beyond earlier classification/alias-only
+    scope.
+tags:
+- worker01
+- named-stocks
+- proposal
+- partial-scientific-review

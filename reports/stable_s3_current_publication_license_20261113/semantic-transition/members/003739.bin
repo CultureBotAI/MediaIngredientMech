@@ -1,0 +1,42 @@
+from pathlib import Path
+import hashlib, json, os, subprocess, sys
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'integration/ancillary1258-worktree'
+sys.path.insert(0,str(A/'src'))
+import yaml
+from mediaingredientmech.utils.culturemech_occurrences import SOURCE_LABEL_IDENTIFIER_OVERRIDES,_source_label_key,membership_counts
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(n,v):
+ with (D/n).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+pins=[]
+def read(p):
+ b=p.read_bytes();pins.append({'path':str(p),'sha256':sha(b),'bytes':len(b)});return b
+def capture(p,n):
+ b=read(p);q=D/'inputs'/n;q.parent.mkdir(parents=True,exist_ok=True)
+ with q.open('xb') as f:f.write(b)
+ return b
+for n in [758,901]:capture(C/f'preflight/predicate-specific-term-dedup-v1/issue-{n}.json',f'issue-{n}.json')
+for n in ['scripts/move_nah2po4_hydrate_labels.py','src/mediaingredientmech/utils/culturemech_occurrences.py']:
+ capture(A/n,'native/'+n)
+Q=C/'integration/final-native-intake-after-ancillary-v1';plan=json.loads(read(Q/'owner-plan.draft.json'));idx={x['destination']:x for x in json.loads(read(Q/'materialization-index.draft.json'))['files']}
+relevant=[r for r in plan['records'] if r['source_record'] in ['data/ingredients/mapped/Nah2po4_X_2_H2o.yaml','data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml','data/ingredients/mapped/Nah2po4.yaml']]
+assert [x['operation_id'] for x in relevant]==['TARGET-023','ORIGINAL-w08::if-reject-monohydrate-on-dihydrate']
+records=[]
+for r in relevant:
+ e=idx[r['after_capture']['path']];b=capture(Path(e['source']),r['operation_id'].replace(':','_')+'.yaml');assert sha(b)==r['after_capture']['sha256'];records.append(yaml.safe_load(b))
+membership=A/'mappings/culturemech_recipe_membership.tsv';read(membership);counts=membership_counts(membership)
+owners=[]
+for slug in ['Nah2po4','Nah2po4_X_2_H2o','Sodium_phosphate_monobasic_monohydrate']:
+ p=A/f'data/ingredients/mapped/{slug}.yaml';r=yaml.safe_load(capture(p,'coupled-baseline/'+p.name));owners.append({'path':str(p),'identifier':r['identifier'],'sha256':sha(p.read_bytes()),'stored_statistics':r.get('occurrence_statistics'),'current_membership_counts_media_total':counts.get(r['identifier']),'complete_original_record':r})
+labels=['NaH2PO4 x H2O','NaH2PO4·H2O','NaH2PO4・H2O','NaH2PO4 x 2H2O','NaH2PO4·2H2O','NaH2PO4・2H2O']
+overrides=[{'label':x,'normalized_key':_source_label_key(x),'actual_override':SOURCE_LABEL_IDENTIFIER_OVERRIDES.get(_source_label_key(x))} for x in labels];assert all(x['actual_override'] is None for x in overrides)
+propspath=C/'integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1237-mc-dependent-v1/proposals.json'
+props=json.loads(read(propspath))['proposals'];selected=[x for x in props if x['proposal_id'] in {'if-add-mono-source-spelling','if-reject-monohydrate-on-dihydrate'}];assert len(selected)==2
+for x in selected:assert 'BLOCKED AS ISOLATED APPLICATION' in x['publication_review_obligations']
+core=next(b for b in plan['bindings'] if b.get('binding_id')=='w07-proposals') if isinstance(plan['bindings'],list) else None
+# Genuine independent W07 origin already exists in the source ledger; do not fabricate a replacement proposal.
+w07path=C/'integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w07/reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/proposals.json'
+w07=json.loads(read(w07path));w07=w07 if isinstance(w07,list) else w07['proposals'];w07original=next(x for x in w07 if x['proposal_id']=='B-PROPOSAL-Sodium_phosphate_monobasic_monohydrate')
+save('COUPLING.json',{'scope':'Read-only actual A842 native routing/membership and immutable cdff original selected operations. Historical issue36/40 recipe counts are not refreshed here. No B/B2 native execution.','published_w08_fragments':selected,'original_independent_w07_proposal':w07original,'selected_coupled_operations':relevant,'full_operation_count_checked':len(plan['records']),'anhydrous_operation_selected':False,'six_overrides':overrides,'current_owners':owners,'recommendation':'Defer both W08 staged contributions and their preserved case obligations until full758 coupled transaction. Do not install the TARGET023 combined bytes unchanged. If retaining the separate W07 same-substance alias is selected, use and distinctly review its genuine source proposal as a new bounded selection, preserving old union/history in immutable evidence. No source rejection or case deletion follows deferral.'})
+save('COUPLING-INPUT-PINS.json',pins)
+print(json.dumps({'coupled_operations':[x['operation_id'] for x in relevant],'missing_exact_overrides':len(overrides),'stored_and_membership':[{'owner':x['path'],'stored':x['stored_statistics'],'actual_membership':x['current_membership_counts_media_total']} for x in owners]},indent=2))

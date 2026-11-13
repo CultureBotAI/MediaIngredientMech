@@ -1,0 +1,69 @@
+identifier: kgmicrobe.ingredient:atcc_173_middlebrook_7h10_agar_base
+preferred_term: ATCC 173 Middlebrook 7H10 agar base
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_173_middlebrook_7h10_agar_base
+  ontology_label: ATCC 173 Middlebrook 7H10 agar base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/E44FDED36A7940E3B4078EA6A49B7199.ashx
+    notes: ATCC173 and TOGO M2399 list 19 g Middlebrook 7H10 agar as a separate input
+      from 5 mL glycerol, 100 mL OADC and 900 mL water. This source-qualified identity
+      denotes that base input. NCIT:C85509 describes the enriched complete medium,
+      including OADC and glycerol, and cannot be asserted as its exact identity. The
+      unqualified source label is retained only as non-resolving REJECTED_LABEL. Manufacturer,
+      complete base formulation, component IDs and roles are not established and are
+      not invented.
+synonyms:
+- synonym_text: Middlebrook 7H10
+  synonym_type: REJECTED_LABEL
+  source: TOGO:M2399; ATCC173 input only; not a globally resolving complete-medium
+    alias
+notes: ATCC173 and TOGO M2399 list 19 g Middlebrook 7H10 agar as a separate input
+  from 5 mL glycerol, 100 mL OADC and 900 mL water. This source-qualified identity
+  denotes that base input. NCIT:C85509 describes the enriched complete medium, including
+  OADC and glycerol, and cannot be asserted as its exact identity. The unqualified
+  source label is retained only as non-resolving REJECTED_LABEL. Manufacturer, complete
+  base formulation, component IDs and roles are not established and are not invented.
+  Exact source-qualified stock/product identity is supported independently of a full
+  decomposition. Existing complete-medium owner remains unchanged; cross-shard owner
+  reconciliation is required before integration. The unqualified raw source label
+  is retained as REJECTED_LABEL solely for provenance because RAW_TEXT also resolves
+  globally in the native matcher. The exact source occurrence may bind to this source-qualified
+  preparation after coordinator integration; no global same-label binding is proposed.
+curation_history:
+- timestamp: '2026-11-08T04:44:02.163027+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: 'IR-SHARD-ARTIFACT-8: replace the unsupported enriched-medium alias proposal
+    with the distinct source-qualified base-input identity. Isolated proposal only.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:45:12.617124+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: 'IR-SHARD-ARTIFACT-9: make ambiguous source-local label provenance non-resolving
+    under the actual native matcher. Whole source-qualified identity unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T04:45:52.752168+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: Align source-scope explanatory prose with the actual non-resolving REJECTED_LABEL
+    type following independent re-review.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.961592+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

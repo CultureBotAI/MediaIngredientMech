@@ -1,0 +1,4390 @@
+{
+  "schema_version": "independent-source-review-v1",
+  "review_id": "bio-review-of-buffers-v1",
+  "reviewer": "/root/bio_research",
+  "author": "/root/buffers_research",
+  "reviewed_at": "2026-11-08T05:20:28.728092+00:00",
+  "scope": {
+    "case_count": 43,
+    "complete_frozen_occurrence_contexts": 135,
+    "proposal_count": 8,
+    "shard_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+    "review_type": "independent skeptical primary-capture and exact proposed-payload review",
+    "excluded": "No maintained records changed, no owner roles/mechanisms or final release certification, no external research session."
+  },
+  "initial_author_snapshot": "reviews/bio-buffers-v1-inputs/manifest.json",
+  "final_author_snapshot": [
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/decisions.json",
+      "sha256": "3b9c696e4f01a80f6540fadb59e2aa67ac3a8c2a39308fae66d09c97fde0304a"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/evidence.json",
+      "sha256": "e0b1d6742fad4ea84b5e27187c8668b7b2eb6665f0dde2e86af0ac73b1e50a8a"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposals.json",
+      "sha256": "804e5dee9235830ccf52f17491692be2903c5fc303f878ad7f819bedd97b28b8"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+      "sha256": "e2f6e61eb8c1ebace26f66b815b859010dc833f407e4049253349db843290edd"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Hepes.yaml",
+      "sha256": "94839addc0148ff58983e980db87181058d0322230d78e5e8acca57e9b771bb2"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Phosphate_Buffer_TOGO_M3225.yaml",
+      "sha256": "79f688c60912f8c413e037028fc68a3faa0a7f06be5f657ceda7e1f21ccaddc5"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Phosphate_Buffer_JCM_1142_1143.yaml",
+      "sha256": "e12f0e155792415828c729e2796949b86bbd2b04c5d1cadf2d3abdb55b13ae9a"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/KP_Buffer_NBRC_857_936.yaml",
+      "sha256": "7cf2506752f7e05fe2a1302755c4f748cdcb6c8be43311d3510912cc61728566"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Phosphate_Buffer_JCM_822.yaml",
+      "sha256": "c2f559cedecb1270bce19cc07dac43ed19ed2f8efb53efc2efeb903204c73f8c"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Riboflavin_Solution_See_Medium_No_462.yaml",
+      "sha256": "ffed69e850b8974fcdd0996cad28759c706fcc0d0aa309efcd8a6c6db3cc442a"
+    },
+    {
+      "path": "reviews/bio-buffers-v1-final-inputs/proposed_owners/Antifoam_SI_Wako.yaml",
+      "sha256": "0a5f0b3b3c581aa152adbc41d6b76da92348f245981c7faddf6fa2c0b48c61e8"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "bio-buffers-F1",
+      "severity": "blocking_for_initial_proposals",
+      "status": "resolved_in_rereviewed_payloads",
+      "finding": "Four generic phosphate/KP raw labels would become global resolving synonyms for specific formulations. Source strings in synonym provenance do not constrain exported lookup semantics.",
+      "affected_proposals": [
+        "buffers-phosphate-m3225",
+        "buffers-phosphate-jcm1142",
+        "buffers-kp-nbrc857",
+        "buffers-phosphate-jcm822"
+      ],
+      "remedy_verified": "All four active synonym entries absent in final bytes; exact raw labels retained in provenance notes and source-qualified preferred labels retained."
+    },
+    {
+      "finding_id": "bio-buffers-F2",
+      "severity": "blocking_for_initial_proposal",
+      "status": "resolved_in_rereviewed_payload",
+      "finding": "Promoting the riboflavin owner would newly publish its inherited unqualified Medium No.462 navigation alias as well as the newly proposed spelling. The JCM namespace is necessary.",
+      "affected_proposals": [
+        "buffers-riboflavin-jcm462"
+      ],
+      "remedy_verified": "Both navigation labels removed from active synonyms and preserved as provenance-only notes; source-qualified preferred label remains."
+    },
+    {
+      "finding_id": "bio-buffers-F3",
+      "severity": "evidence_completeness",
+      "status": "resolved_in_rereviewed_manifest",
+      "finding": "Case107 originally attached TOGO M1101 but omitted the already-captured JCM1036 definition needed to follow its SolutionB reference.",
+      "remedy_verified": "Case107 now attaches buffers-primary-366c648a332e35b4 and its evidence case backlink identifies case107."
+    },
+    {
+      "finding_id": "bio-buffers-F4",
+      "severity": "evidence_completeness",
+      "status": "resolved_in_rereviewed_manifest",
+      "finding": "Case65 initially omitted direct primary evidence for TOGO M2186/M2708/M3181 beyond the NBRC group.",
+      "remedy_verified": "All three exact primary captures are now bound with original timestamps and validated hashes. M2186 uses 3 mL in chelated iron, M2708 1.5 mL in chelated iron, and M3181 0.25 mL/L in trace metals. None states an exact HCl strength."
+    }
+  ],
+  "case_reviews": [
+    {
+      "shard_index": 0,
+      "case_id": "CM_NAME:01dd93e5cf4b30e8b25b7c4321d92baee3e00ecb16efc03b2b691e1c469214f8",
+      "case_input_sha256": "90d052ecc671efbc9339b695fb636d2e9ce708f371053603043b96e4043722d1",
+      "occurrence_ids": [
+        "CM_OCC:9c9da291ccdec2b874624459795e34c17556257b277e23e935b30d54b119f670",
+        "CM_OCC:f03d68a215394b4c05d7cc8e5a6e3294be69f44acdb0c0236588919cdd6f04ed",
+        "CM_OCC:595aa02c7e383777c090f21f5195a9519685c9bf19f92de86f12db997e043e06"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "DSMZ833 explicitly places the 0.1 M, pH 7.5 preparation in Solution B and uses 10 mL. The three frozen occurrences keep 0.1 M in the concentration field despite omitting it from the label. No phosphate acid/base ratio is supplied; the prepared buffer cannot inherit a single salt identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-0",
+        "buffers-primary-8a790ec4cd07467f",
+        "buffers-recipe-0-0",
+        "buffers-recipe-0-1",
+        "buffers-recipe-0-2",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-8a790ec4cd07467f"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 1,
+      "case_id": "CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6",
+      "case_input_sha256": "258e3d941b0f41e1f5da0270b3c869d75a636f3d9c7a6efa069f8765730c0474",
+      "occurrence_ids": [
+        "CM_OCC:f5b1318224eefbc80be099061d03969fbe12235aad421e19b12f4a891513ed7e",
+        "CM_OCC:50013a2c3458b1e518a661b64d1c5ffde0365f3c8cfea83f25acd7b092f8c7e2"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM995 and JCM900 both list a 50 mL Tris-HCl stock. The JCM900 agar instruction changes its stock pH to 8.5, so even a common 0.1 M label does not establish a universal preparation owner. The frozen 50 G_PER_L values conflict with primary volumes.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-1",
+        "buffers-primary-afed65308f937d6d",
+        "buffers-primary-cb3de946b9eb429a",
+        "buffers-primary-d78eaec3d48cf38b",
+        "buffers-recipe-1-0",
+        "buffers-recipe-1-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-afed65308f937d6d",
+        "buffers-primary-cb3de946b9eb429a",
+        "buffers-primary-d78eaec3d48cf38b"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 2,
+      "case_id": "CM_NAME:03d699039590d9ae0fcc9a25a67237f63ee6851f2c1405f8b8f90e5a906f9c0d",
+      "case_input_sha256": "2ab160541a69843dba7eb604ae4b7a10c19e35a339a6c1100fa049c42e2d157e",
+      "occurrence_ids": [
+        "CM_OCC:47298a7669f8dc75e5f50c3cf8e43b35b509282c0dc48282506dfd21592632ac"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M3225 supplies the actual 47 g KH2PO4, 113 g K2HPO4 and 1 L water stock table. A source-qualified owner can preserve those input amounts and the source nominal 1 M description without inventing final-volume molarity. Generic raw alias removal was required and verified.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "evidence_ids_checked": [
+        "buffers-case-2",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-712c306afd311885",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-2-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-712c306afd311885",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-m3225"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 7,
+      "case_id": "CM_NAME:0a185d93e165ad3aaa6a1ff9dc08fb8010d4663c3691673b2e7da472771352f1",
+      "case_input_sha256": "181adbe60a04957476acbfecd9984f831588f450a15699e12195a40cbf0205f7",
+      "occurrence_ids": [
+        "CM_OCC:c4f8de49343aa7e20513ff027ec486681a1139dc9196ddbec51935d010da5fc2"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM149 lists a 40 mL mixed Na2HPO4/KH2PO4 stock at 1 M and pH 6.8. This is neither a dry salt nor proof of a mixing ratio. The nested recipe and source quantity justify the preparation hold.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-7",
+        "buffers-primary-9c2e840069cb8057",
+        "buffers-primary-d41064a5ad70acb9",
+        "buffers-recipe-7-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-9c2e840069cb8057",
+        "buffers-primary-d41064a5ad70acb9"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 8,
+      "case_id": "CM_NAME:10ae9613291d16a03d5e59cad87fe836d9885ac4917422a5244a7833493f4b4f",
+      "case_input_sha256": "c56d0805b73d986eb672b503ae6141b0c6245d3e850a37304d07ce23ae1bb516",
+      "occurrence_ids": [
+        "CM_OCC:f3f541cf25125ce703d137e29a4f3d42fd24644c16c32d7f42085a7f34cc9e72"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "The JCM1100 10 mM phosphate entry is the 100 mL solvent in vitamin solution A (1000x). The frozen flat 100 G_PER_L does not preserve that nesting. Reagent identity cannot be assigned from the buffer family alone.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-8",
+        "buffers-primary-692f41af8d398680",
+        "buffers-primary-6b4bfed4b4c00d2f",
+        "buffers-recipe-8-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-692f41af8d398680",
+        "buffers-primary-6b4bfed4b4c00d2f"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 11,
+      "case_id": "CM_NAME:1756d7568bc5fccde680b5e66c0cd507c9f01316038ae2a1cda4d137ffb0202d",
+      "case_input_sha256": "f56f9a07029a94c67fc21b3bb471c572682cb494f80c76b03fefd118d7ca415f",
+      "occurrence_ids": [
+        "CM_OCC:ee03cef5ecaec4b759a35b9def1db39d5e1c8d9ad7372bd952e7ccce1e6b8b2e"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM194 puts 500 mL of 20 mM potassium phosphate, pH 7.8, in Solution II; later combined medium pH 7.7-7.8 is a different instruction. No constituent ratio is printed. Hold is specific to this prepared stock.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-11",
+        "buffers-primary-54e6db3ad5db014f",
+        "buffers-primary-b029597753af131b",
+        "buffers-recipe-11-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-54e6db3ad5db014f",
+        "buffers-primary-b029597753af131b"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 16,
+      "case_id": "CM_NAME:232f2cc81a44bcae4debd4d5f2b0a8a8f26346774a73f840e1bf872a31cdd9ff",
+      "case_input_sha256": "53a1cd76019ba2f865d687ba11e9e2c67d17c9e034f60bf786888080826fd640",
+      "occurrence_ids": [
+        "CM_OCC:e02d61978801bd592a17dd8090eaddc5366fd316ae2320c3d201f82c35c85d96"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC372 prints 500 mL of 20 mM potassium phosphate and pH 7.8 separately in the stock table. The abbreviated source label therefore does not authorize a generic pure-phosphate alias or a merged final-medium identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-16",
+        "buffers-primary-67571e41287e97f2",
+        "buffers-primary-9a8768ce3646b844",
+        "buffers-recipe-16-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-67571e41287e97f2",
+        "buffers-primary-9a8768ce3646b844"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 21,
+      "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+      "case_input_sha256": "d93c3e9449958e0834ae3df292dbbff10b287ec57cde8b07510433d9241d6fda",
+      "occurrence_ids": [
+        "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M202 identifies a 4% sodium-carbonate/CO2 preparation added by volume. This is not solid Na2CO3. The unavailable linked JCM209 page supplies no additional support, and the percentage basis and gassing/preparation specification remain unresolved.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-21",
+        "buffers-primary-2b7e3ee4d3ec3dfb",
+        "buffers-recipe-21-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-2b7e3ee4d3ec3dfb"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 24,
+      "case_id": "CM_NAME:30d535bf6e7b33c8e1f49d1271b5232d9cf24cbc7e96a022cebe18b0734a4789",
+      "case_input_sha256": "dd5cd2f30107e075d4ee9dbd4053c749cb8e30015906b229af89d3187efa0b49",
+      "occurrence_ids": [
+        "CM_OCC:cbcc276ecce07d9de5237808f63ef5864962c266f90109c21fe23d19e10e3651",
+        "CM_OCC:110916ad324a26009de29da0d3e24ab5ee92f9fbf3b436c4e3ca96e0bb2856e6"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "The JCM1036 and JCM296 tables place 2 mL of 0.5 M Na2HPO4/NaH2PO4 pH 7.3 within distinct vitamin/iron preparations. Both support the buffer boundary, without specifying the acid/base ratio or proving cross-source formulation equivalence.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-24",
+        "buffers-primary-366c648a332e35b4",
+        "buffers-primary-3799e4c66cccca65",
+        "buffers-primary-3f06aa56925a7b79",
+        "buffers-recipe-24-0",
+        "buffers-recipe-24-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-366c648a332e35b4",
+        "buffers-primary-3799e4c66cccca65",
+        "buffers-primary-3f06aa56925a7b79"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 31,
+      "case_id": "CM_NAME:38510e80f455bcaf5c39b9b3ca38de457604c9b5747ce37c5ed4473d291067d7",
+      "case_input_sha256": "212046ab0e511d6008f560aa59ef29ad826c5225e2337537f4da8b1257a5017a",
+      "occurrence_ids": [
+        "CM_OCC:3edef55e49caf0cb94614c02e4312440f0c4e75a9e3c73b07678644a0a4d0566",
+        "CM_OCC:8ce1d4ff0223309c7c720652c7b6754312522714a40913b1a4e533ba5f377bd6"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM1142 and JCM1143 each print the same 12.5 g KH2PO4, 20 g K2HPO4 and 1 L water stock. This supports a joint source-qualified preparation proposal; the generic navigation alias was removed after skeptical review.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "evidence_ids_checked": [
+        "buffers-case-31",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-4a5f971eaf6f8d2e",
+        "buffers-primary-6ff059d8503fe1ef",
+        "buffers-primary-a546f19a345acc25",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-31-0",
+        "buffers-recipe-31-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-4a5f971eaf6f8d2e",
+        "buffers-primary-6ff059d8503fe1ef",
+        "buffers-primary-a546f19a345acc25",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-jcm1142"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 48,
+      "case_id": "CM_NAME:5a7b862b150c97f5af04c60734dc9c5c76b2724fe04f4c93dc16bb084ae7cb1f",
+      "case_input_sha256": "6fb7891123b9dc85ff8c5861da1101434812ee212246270121a86b211d5e758a",
+      "occurrence_ids": [
+        "CM_OCC:3c53b355454a715715edbb7371589f12bd06cbf7f9030c0d6c82bff5fe987d50"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M3163 prints a 100x reducing stock containing NaOH, cysteine hydrochloride, sodium sulfide and anaerobic water. The sulfide mass/concentration/60 weight-percent wording is not safe to silently harmonize. The unresolved decision retains the ambiguity instead of asserting a complete stoichiometric recipe.",
+      "disposition_reviewed": "unresolved",
+      "evidence_ids_checked": [
+        "buffers-case-48",
+        "buffers-primary-411ee2f348a3eea9",
+        "buffers-recipe-48-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-411ee2f348a3eea9"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 49,
+      "case_id": "CM_NAME:5fe9c425c5b961fd152aeb859617db55f9daa8addbd938da2fd142aef3a8bf95",
+      "case_input_sha256": "4e635bb9e52e6d4b5b150fa380708749398c1e70d3852a1cff8723e593f27cdf",
+      "occurrence_ids": [
+        "CM_OCC:93bced76f98dddd83a2dacb75696e8da84810a255dac1d1ca8f1c6cf55334957"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC944 explicitly lists 100 mM NaHCO3 and 100 mM Na2CO3 as the pH 10 medium solvent. JCM1452 instead dilutes a stock labelled 1 M to a stated final 100 mM. Shared pH and component names do not erase that concentration distinction.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-49",
+        "buffers-primary-c0c62579f3d1a063",
+        "buffers-recipe-49-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-c0c62579f3d1a063"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 50,
+      "case_id": "CM_NAME:64f0b65d9c6ae9614992ee9eec4e10fc8302aadf1c120feb1593f8d50be9bb3e",
+      "case_input_sha256": "1d0d2634a6fea4960caeb1d688b2355dcee40efd326160c1c49ecbddaab99546",
+      "occurrence_ids": [
+        "CM_OCC:b2113af73e7abb64a1f692f885c4aa87bce2162906b23c942655103672816268",
+        "CM_OCC:c3d4afe92e95d45c09c21dc12823ff27ab346f9433f5bfe9e49da2c6e832cede"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC857 and NBRC936 both specify 119 g KH2PO4, 21 g K2HPO4 and 1 L water, with N2 autoclaving. The source-qualified stock preserves these inputs; KP buffer* remains only provenance because it cannot globally select this formulation.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "evidence_ids_checked": [
+        "buffers-case-50",
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-340a73a127cf12b1",
+        "buffers-primary-88d4946dae9a79f1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-50-0",
+        "buffers-recipe-50-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-08f1bb7b954b8b0f",
+        "buffers-primary-340a73a127cf12b1",
+        "buffers-primary-88d4946dae9a79f1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e"
+      ],
+      "proposal_ids": [
+        "buffers-kp-nbrc857"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 51,
+      "case_id": "CM_NAME:683c7c6d4c20497f0d41c08de82c151baab05feff6f164e54f712ccd78903d90",
+      "case_input_sha256": "8ce67cb55db12155af2497db73b4204a1032f7612cd161710f09cc1d52edbfa7",
+      "occurrence_ids": [
+        "CM_OCC:52fd7e53c72c405eb7821768a139178fc29a1313f818a413b0fc3e08bddeb2b4"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "The chain JCM772 to JCM462 is explicit. JCM462 defines 2.5 mg riboflavin in 100 mL water. This supports promoting the source-specific solution owner, with no exact equivalence to pure riboflavin and neither unqualified Medium No.462 navigation alias exported.",
+      "disposition_reviewed": "supplied_form_correction",
+      "evidence_ids_checked": [
+        "buffers-case-51",
+        "buffers-owner-Riboflavin_Solution_See_Medium_No_462",
+        "buffers-primary-19f06f111fc4fdb0",
+        "buffers-primary-bc000a84b25fe466",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-primary-e8f4562866a418fc",
+        "buffers-recipe-51-0",
+        "buffers-retrieval-log",
+        "buffers-web-jcm462"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-19f06f111fc4fdb0",
+        "buffers-primary-bc000a84b25fe466",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-primary-e8f4562866a418fc",
+        "buffers-web-jcm462"
+      ],
+      "proposal_ids": [
+        "buffers-riboflavin-jcm462"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 55,
+      "case_id": "CM_NAME:6b90aad5835c3226489c1d9e25193c7daa32737b11a64fac1938830bb76b542a",
+      "case_input_sha256": "67231ba84ef68fcef8a11cb82051c9db91064f193a156239ded30fcc9ce612da",
+      "occurrence_ids": [
+        "CM_OCC:69ba6381fb53b1e8f7daa17369b00a74af6f351bdd603ba7aae9a7c791e967d0"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC400 and TOGO M1591 name a 100000 U/mL penicillin G preparation and add 2.5 mL. They do not name a counterion or solvent. The stock cannot be replaced by a mass amount or by an assumed sodium/potassium salt owner.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-55",
+        "buffers-primary-b008f99181e22e67",
+        "buffers-primary-e8abd935a388517e",
+        "buffers-recipe-55-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-b008f99181e22e67",
+        "buffers-primary-e8abd935a388517e"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 56,
+      "case_id": "CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd",
+      "case_input_sha256": "a66cd6ec3a316bf4ebb13c702ef0a623729e7c5df3640257eec6da04999796f9",
+      "occurrence_ids": [
+        "CM_OCC:4bdb47ec3d40143602286ce7a32cba3b90e4175f795251f6f174b592943aed3a",
+        "CM_OCC:4736319b8877c1424d45939dc9f44b4791dfc4d16ad06fa46a44d1d865fef763"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM979 and TOGO M1032 retain 50 mL of 0.1 M Tris-HCl at pH 7.5. One frozen occurrence already preserves ML_PER_L while another flattens to G_PER_L; both remain source-bound prepared buffers, not Tris base aliases.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-56",
+        "buffers-primary-7994c01631f9607b",
+        "buffers-primary-f166d1f9c21f8bb8",
+        "buffers-recipe-56-0",
+        "buffers-recipe-56-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-7994c01631f9607b",
+        "buffers-primary-f166d1f9c21f8bb8"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 57,
+      "case_id": "CM_NAME:6eaa1db1cbb641a0ecfe9c716337000c8bb518e60b4bb5a7686656ad58f07be2",
+      "case_input_sha256": "4a29544c6796d3ff62e14534e1b69f2ac19702d79806b4baf6c587e97e99939e",
+      "occurrence_ids": [
+        "CM_OCC:395969b7b93f3344871751dcd407179807162c9872c3aed9295767fed241288c",
+        "CM_OCC:41a75a25c673e792e1e901d706fc5566031c36b2f79568e2b805745a74089340"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC1366 and NBRC1469 weigh 10 g ACES buffer as a reagent. Manufacturer and ChEBI evidence distinguish the unchanged acid owner from the broad tautomer class CHEBI:39061. The added reagent aliases are supported here; this does not approve arbitrary aqueous ACES stocks.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "evidence_ids_checked": [
+        "buffers-case-57",
+        "buffers-owner-N-_2-acetamido-2-aminoethanesulfonic_Acid",
+        "buffers-primary-44b408da97422913",
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-78d54fc76828ec0b",
+        "buffers-primary-797f589513511f25",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-recipe-57-0",
+        "buffers-recipe-57-1",
+        "buffers-retrieval-log",
+        "buffers-web-aces-supplier"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-44b408da97422913",
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-78d54fc76828ec0b",
+        "buffers-primary-797f589513511f25",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-web-aces-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-aces-aliases"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 60,
+      "case_id": "CM_NAME:7483eaa7f39a065d133f8474f96eb831330dc913e50eab9adaf0a81a5e983f12",
+      "case_input_sha256": "f43123ef9c7036189c5c69c45b52d69bd91cfb8cc162536e90a1ec685e205a9e",
+      "occurrence_ids": [
+        "CM_OCC:788702190bd2a369860b747313382804d45722577221fa4f5121b66d55e70a69",
+        "CM_OCC:15225b3e5439e39fe5b5fcba5596b90d533359161d890405125dea83fde18fbe",
+        "CM_OCC:f230cba112e612e9fe753e2bd9bd69056f6940c0ffe6a6cb1dd078758f5c0809",
+        "CM_OCC:4dcd5d9576f5f57736aed2232abbad879f5ed5b30f7b80d88e6065782282e5af",
+        "CM_OCC:c4645f6907b2b74a8f4a0d322dc5717e18e6b2254a66e749f62c5ea471c951a3",
+        "CM_OCC:8ed4fdf734ab8d36688d329b6c5e333f02fa3c5957a5b6d00fbf0fed3295cfb4",
+        "CM_OCC:5038c49f07ff474dff42519cf8a1063e712c232c0c2817871e77f204f7a9a7bc",
+        "CM_OCC:fd172d621c8a45f53117743824283b540a833dbafa3f64b63320fe6792b426ae",
+        "CM_OCC:d959a1ac29404f8dbacf63032c0f09d75183858ea522ebfaced611c80557a3a7",
+        "CM_OCC:342e8e8a661d9e323fa3ce9d5ba970212e6e18afe5f59eb4520f48806a33c571",
+        "CM_OCC:dd24bd75fbfce419535031f144047813917c0454ea4e756995942269c599bdfa",
+        "CM_OCC:a43962738c49d266ded7ab12454b26593e900a12dd7a7d4903337dbe707e0e8f",
+        "CM_OCC:ed0209151bd649f33bc688edc5c8673c0acb24b665ac4da2cd9e8dba831d40c4",
+        "CM_OCC:fe909df5f1d1586b3dc33b48491c9c67834de35500a219d29d4f2682c3ba50a6",
+        "CM_OCC:0ef8169caa7c9c97df92837a6794b0e21dc5eeb34539cd512c54e6de2523b554",
+        "CM_OCC:7dade2d6ff549acbcb94b2a6a5035a469e53e0e37fc53b729607804441d449ba",
+        "CM_OCC:343cf0c3a3537e74d770841045f32309afbdf1023855554a1907152969168a99",
+        "CM_OCC:d41a4721e3956043748df50da976122efcb3cd3a0419a83429eb7c9e4bac5d0c",
+        "CM_OCC:2cd31c917d4c4c875f4735b9794beacb26aca5ea8b96db4928c11ed5b85397d2",
+        "CM_OCC:230f39d6e0f9d069f21dfec13582934b34fa5893e89e38b06312730e7c906da8",
+        "CM_OCC:2ed9c80e53ad76689279de10f3e2bf59fe15b080cda717436bc51faf654588e8",
+        "CM_OCC:afa6c8c4162d0faf43c59348f3e60ff925b6c2d132556c32c6eb43987dfa8a68",
+        "CM_OCC:5b50596379eea98dc680aa24401007678974a254f5e0d53799d4ce96019edca5",
+        "CM_OCC:273074d9f46e42c45723bfc75947164a2e1eedd227c13fac474be8c0b4a3a144",
+        "CM_OCC:5a068b59d0fcae2284f96d7111fb3bd5e0058fb1af5cc559fcb6764fc476b13d",
+        "CM_OCC:3581df16b1ba570665d2ebe9cc41a31b66829f46815799c927ad0bf3bd8fea74",
+        "CM_OCC:5e4e2dee366f7066896cb0a8305c91c41a007220f0f70f42608f36b64e519069",
+        "CM_OCC:424ba7b7d78e00e4a33ef5133e137715a5b9ce34245fbe03f0c4252f404114e4",
+        "CM_OCC:b46e34ada7722d6ca119ea90cf0338ac01501d874891df870c2de6c907868f68",
+        "CM_OCC:243ff22273b929f276251fc42b2b5faf51c1a69950638507f1c7807c11b01d05",
+        "CM_OCC:cb28a5a6a95ee9d7ed341745aab62a7964a5e30994743acb9a565d449f393a27",
+        "CM_OCC:2c18f891ce65a5c9bf1cfe54fb70e433107a6b63e74b543227512f2888312993",
+        "CM_OCC:d565585bc51ca7f0332fd5d14218a81e7bc5d5e374c2356c3fab98da8344c96c",
+        "CM_OCC:9f6ab6dd6ac4faec7c7258a3fb940e7efc1b85f0ac93622efcec6e73e45fff22",
+        "CM_OCC:3b352202a92b9b68027dd75a7d224086240daf1dc32cb9c3d6d9ebbc8a0447f3",
+        "CM_OCC:2e219f5dad100a13ba5ba0f815d91dc4c69d1f0e704b0a31ecba65284b11a5a7",
+        "CM_OCC:eb2af63f6448a1260fd54b102705fb08f09f8a42184dc43933c8ba4e47b1fb9b",
+        "CM_OCC:bc48f21c2cd4b5a471c2f51fa90b9db538d123b57721daa72250f000c9dd2229",
+        "CM_OCC:2ddce348c93aaaeb84460f9fae679cc14ce0241b03e54cfaacb673ff956a7e29",
+        "CM_OCC:0a55b292c352a355141f0e2680539ba39e7d5151abf4ee9e6eceb855726b9dba",
+        "CM_OCC:48557e27d37be3bc325d653fb5943ad5530dec08ebccf7ae519ec3c77fb4e496",
+        "CM_OCC:80c9d34c0f7e4596d97d2137893aabd3ddb9e46fe2252956a0895e755e904f80",
+        "CM_OCC:c1e9c36db4244891198a54dee1497b96a56e115ecb436e79a17f3c48a3f59c3d",
+        "CM_OCC:ff47715dabd1a085461d42aa15c5f01de45a9880c476c96c5ea5e18cee7a4ba9",
+        "CM_OCC:a8b6abd55a558622d42a7b8abdcf74af4b7366d728e3d40f80ef3831d75afb8a",
+        "CM_OCC:3694ca9c36b3d0840cf81ca57d343ab1f21d9d9a83839ad526142e621dcb7f34",
+        "CM_OCC:85df8aad5d0862bb74dd07c49ad38252ca4b945cbc45f8ebfd25f9ea5616a4dc",
+        "CM_OCC:a9711be9483b01c11cb3b7b658f0e62c53de92749f24ec4c87cf8f7a96906bf2",
+        "CM_OCC:299ab4fafea6373c6dac80730fad4367036f6603112502e5066c14472c55878a",
+        "CM_OCC:8a966fa538f5a60aecfd7a57e3c1c1db3e14f9dc61be43f8c88f5df2d3df5114",
+        "CM_OCC:383cbd1949fe4cf019a2f40cb441a6167ef2ff34277f7cfec7ee10bf9a091ac7",
+        "CM_OCC:5ac960dfa8720503c572f2f684a87420ddf3279b7883809cf2d60d2de10d6613",
+        "CM_OCC:46b61e4422e6d6a66a8349f98c663725de7c03e2c22650166401e8d367dd1d1d",
+        "CM_OCC:1793078c7e809a73635d68c4152201e3f796222b8df9269b4ce05836394b4f4c",
+        "CM_OCC:6e1ebac1a88773d9771fdaead25274390d2d9f112e1a8b2063afa93f31bda414",
+        "CM_OCC:8c9d6cdbca6446e8c690ffdce39f82a95b52c5448c810b3c2d276136115e43f9",
+        "CM_OCC:7ca35b96ac8558da19df818138382043c62d1c64c749d4ddcfa28aa36d16c2a8",
+        "CM_OCC:f95df108fe19e1881f1ba4ef6391ec880e44612a59767884332e015a0440deb8",
+        "CM_OCC:b5f968a8c42337a61a4e2c81938432204d95336b6cf5b5deeab2291205bf01d7",
+        "CM_OCC:993b4b4b879216c3e1f92874264b1567ced1f6545cb26437047d259494b2833e",
+        "CM_OCC:4ff10be122c2398c50918ba12616994230a4ea8bb4a1ed5a56f6cf179f8a0d11",
+        "CM_OCC:749fec76c8679f6d1ac527992d1b64d0c5cf42d4c536c778bbab3b111b8c2a55",
+        "CM_OCC:4d1ce10136eddf10fa5baf4bebb3af00944e25f56ab8e35c22f80cf863e4b01d",
+        "CM_OCC:3061ec032d92ce59331f874e2d4893278123196b12d2c0dd51017b8ad4857ffe",
+        "CM_OCC:3ed7d0e4cbeedc4dc03f1861a8d3a88b90c40758659ccf8564bfb88d737adc58",
+        "CM_OCC:478ac6ef6887c00b52728b2675d96ec5de2552f898145907bb26cc19a3c98b30",
+        "CM_OCC:8d07bb869b930710e6ad732f772038bb88e929921337807a92200b881eceff0e",
+        "CM_OCC:6921f3cd5d5abcf06a42792b1449f4399617f825b81a9c5b750eee0c137e80c7"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "All 68 frozen occurrences were bound to their full recipes and target paths. UTEX B12, biotin and thiamine directions prepare 200 mL of HEPES buffer and adjust pH to 7.8 before adding vitamins. The table 2.4 g/200 mL and 50 mM stock describe a buffered solvent, so the acid supplier catalog cannot justify globally equating these pH-qualified stocks with pure HEPES.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-60",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-recipe-60-0",
+        "buffers-recipe-60-1",
+        "buffers-recipe-60-10",
+        "buffers-recipe-60-11",
+        "buffers-recipe-60-12",
+        "buffers-recipe-60-13",
+        "buffers-recipe-60-14",
+        "buffers-recipe-60-15",
+        "buffers-recipe-60-16",
+        "buffers-recipe-60-17",
+        "buffers-recipe-60-18",
+        "buffers-recipe-60-19",
+        "buffers-recipe-60-2",
+        "buffers-recipe-60-20",
+        "buffers-recipe-60-21",
+        "buffers-recipe-60-22",
+        "buffers-recipe-60-23",
+        "buffers-recipe-60-24",
+        "buffers-recipe-60-25",
+        "buffers-recipe-60-26",
+        "buffers-recipe-60-27",
+        "buffers-recipe-60-28",
+        "buffers-recipe-60-29",
+        "buffers-recipe-60-3",
+        "buffers-recipe-60-30",
+        "buffers-recipe-60-31",
+        "buffers-recipe-60-32",
+        "buffers-recipe-60-33",
+        "buffers-recipe-60-34",
+        "buffers-recipe-60-35",
+        "buffers-recipe-60-36",
+        "buffers-recipe-60-37",
+        "buffers-recipe-60-38",
+        "buffers-recipe-60-39",
+        "buffers-recipe-60-4",
+        "buffers-recipe-60-40",
+        "buffers-recipe-60-41",
+        "buffers-recipe-60-42",
+        "buffers-recipe-60-43",
+        "buffers-recipe-60-44",
+        "buffers-recipe-60-45",
+        "buffers-recipe-60-46",
+        "buffers-recipe-60-47",
+        "buffers-recipe-60-48",
+        "buffers-recipe-60-49",
+        "buffers-recipe-60-5",
+        "buffers-recipe-60-50",
+        "buffers-recipe-60-51",
+        "buffers-recipe-60-52",
+        "buffers-recipe-60-53",
+        "buffers-recipe-60-54",
+        "buffers-recipe-60-55",
+        "buffers-recipe-60-56",
+        "buffers-recipe-60-57",
+        "buffers-recipe-60-58",
+        "buffers-recipe-60-59",
+        "buffers-recipe-60-6",
+        "buffers-recipe-60-60",
+        "buffers-recipe-60-61",
+        "buffers-recipe-60-62",
+        "buffers-recipe-60-63",
+        "buffers-recipe-60-64",
+        "buffers-recipe-60-65",
+        "buffers-recipe-60-66",
+        "buffers-recipe-60-67",
+        "buffers-recipe-60-7",
+        "buffers-recipe-60-8",
+        "buffers-recipe-60-9",
+        "buffers-retrieval-log",
+        "buffers-web-hepes-supplier",
+        "buffers-web-utex-b12",
+        "buffers-web-utex-biotin",
+        "buffers-web-utex-thiamine"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-web-hepes-supplier",
+        "buffers-web-utex-b12",
+        "buffers-web-utex-biotin",
+        "buffers-web-utex-thiamine"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 62,
+      "case_id": "CM_NAME:7515e27a95e6262c56a3b2489af7b22e0413d7911c7ce0302ccc88b17bfaf6c4",
+      "case_input_sha256": "78a4531da477e39834a5ab83ea1035e884c846bf05ede85adc7d169626cf87f0",
+      "occurrence_ids": [
+        "CM_OCC:345ab6e9588e9409fb8ebcb93a2406fdaf2452053071bc8f6a7123e0e8343f7e"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM753 directs adding 10 mL of 0.1 M potassium phosphate pH 7.5 from an anaerobic stock; DSMZ833 provides a related source context but no mixing ratio. No exact cross-owner merge follows from matching the family, pH and nominal concentration.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-62",
+        "buffers-primary-05295ed25f148c27",
+        "buffers-primary-8a790ec4cd07467f",
+        "buffers-primary-b45eb20b19e61138",
+        "buffers-recipe-62-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-05295ed25f148c27",
+        "buffers-primary-8a790ec4cd07467f",
+        "buffers-primary-b45eb20b19e61138"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 64,
+      "case_id": "CM_NAME:80adb38b0894cb8f5c9c9be2fd5d4ffb98a0b83eface75534fa1b619afd144a2",
+      "case_input_sha256": "1a1b869c5201c6599faef352ca7d2be2b9026d9e2bb1064d9e0dd0f2d3eaa01b",
+      "occurrence_ids": [
+        "CM_OCC:bf22445b2fbf249e27774304877ffb6904be6e304af1ecb6c262ff8bda5662be"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "DSMZ403 Solution A weighs 6 g HEPES acid H3375 and subsequently adjusts pH with NaOH. Manufacturer acid identity and CHEBI:42334 support this catalog alias. This is materially different from the pH-qualified HEPES solution cases.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "evidence_ids_checked": [
+        "buffers-case-64",
+        "buffers-owner-Hepes",
+        "buffers-primary-0601c054fc0b3983",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-b7d9d34bf3d8036e",
+        "buffers-recipe-64-0",
+        "buffers-retrieval-log",
+        "buffers-web-hepes-supplier"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-0601c054fc0b3983",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-b7d9d34bf3d8036e",
+        "buffers-web-hepes-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-hepes-acid-alias"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 65,
+      "case_id": "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d",
+      "case_input_sha256": "63c2dde71e0d6be449f56a0d9647219a303224e10f81ea69c5ffb7ef5e2bd869",
+      "occurrence_ids": [
+        "CM_OCC:a9a9cba2d7fee305379ca1951a6a9c16542a85009957d70c52bc1ff8d2e64046",
+        "CM_OCC:238b33c03ed3a21162867efa7bc1b87cb9a1a4814a3d08712c6238b06cfd90cd",
+        "CM_OCC:ff1996a4eebebfb7024d98194e96c34c80f85d9ee52119cf18b505e716f9ae50",
+        "CM_OCC:0862ab4cbb5a833a1bcafea8bbeaebf0805a4bbd315598ab57cea61265948e32",
+        "CM_OCC:cc7ac5abc8e19325fbb8f49abcd6258103594091bbdcfc82448a24bfc0fd92f5",
+        "CM_OCC:6f7b290e09c1b00f8a53a8ddb40fdc6399ef0e05babd05618a6e688919fadc80",
+        "CM_OCC:46f5fbcb21d14fec3498797dbd720bdbdc08907d84253213a2dfa272c91ce5a5"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "All seven frozen occurrences were checked, including the NBRC1195/1196/1200 group and TOGO M2186/M2708/M3181. The NBRC primary pages conflict in 51.3 microlitre versus 51.3 millilitre; source-specific concentrated HCl amounts must remain separate. Concentrated does not supply an exact strength or percentage basis.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-65",
+        "buffers-final-M2186",
+        "buffers-final-M2708",
+        "buffers-final-M3181",
+        "buffers-primary-03edca67ae96a682",
+        "buffers-primary-ba7a82033a7b9478",
+        "buffers-primary-f41f350dc810b643",
+        "buffers-recipe-65-0",
+        "buffers-recipe-65-1",
+        "buffers-recipe-65-2",
+        "buffers-recipe-65-3",
+        "buffers-recipe-65-4",
+        "buffers-recipe-65-5",
+        "buffers-recipe-65-6",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-final-M2186",
+        "buffers-final-M2708",
+        "buffers-final-M3181",
+        "buffers-primary-03edca67ae96a682",
+        "buffers-primary-ba7a82033a7b9478",
+        "buffers-primary-f41f350dc810b643"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 75,
+      "case_id": "CM_NAME:9a0bcb1be7b9fb2ddc124ee4cccd91d41c2b78bb63f6f4db3e3f52276a1daeb5",
+      "case_input_sha256": "a4561e85dfd0e3eb30cfa546ab13e2a37fb0d475ba6bb75b24f52d2e5ebf81c3",
+      "occurrence_ids": [
+        "CM_OCC:774b3ef6f97b5c71a4f76339ea2e7b676f4c24268bbcbffeb90e870b9be3a25e"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M2760 supplies equal 10 mL inputs of 1 M KH2PO4 and 1 M Na2HPO4 and labels the buffer pH 7.2. The scaled salt proportions resemble the proposed JCM822 preparation, but JCM822 does not state this stock pH. Retaining a bounded preparation/equivalence question is preferable to asserting a cross-source identity or creating an unreviewed duplicate. The publication retrieval limitations are explicit.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-75",
+        "buffers-primary-2dca2ffb29c8ce04",
+        "buffers-recipe-75-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-2dca2ffb29c8ce04"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 80,
+      "case_id": "CM_NAME:a18f98ca48aca47e78ff9cbc03d48e4bff39eef21b2fee380c09b74eaf865230",
+      "case_input_sha256": "082d1b2a5f99136d5391c29fb8c1985c72f199b5d4ba6bba61a7747f1bed2deb",
+      "occurrence_ids": [
+        "CM_OCC:caf04745c1e4aaad7023d28ea9e57f7d5efe0eaf740d3d3d475d723b29371ec5"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "DSMZ273 adds 250 mL of 0.2 M Tris-HCl pH 7.5 alongside 750 mL sea water. The stock concentration is distinct from final medium concentration. The frozen ML_PER_L value is appropriately retained, with no dry Tris owner assignment.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-80",
+        "buffers-primary-f8881b46c26d0843",
+        "buffers-recipe-80-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-f8881b46c26d0843"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 81,
+      "case_id": "CM_NAME:a1b254a2a6ee3f53d1db2da3427921398d434cdd53e48f831f00aa9b6129ba95",
+      "case_input_sha256": "d8cd4b1cfccba98303070f7f2fcf8e9d8879dc6bfb3dd41ff839b69cdf3f83b0",
+      "occurrence_ids": [
+        "CM_OCC:1e63b207287c31a6fc6ad5fc914572eee327ba9d90bf6826c7051dd8c6afbdc3",
+        "CM_OCC:79ab2e19b1be370c99d043777e823e4be995ebff2e4ebacd2a703e42daf79c2a",
+        "CM_OCC:504b81aaa1be4f13d3f4a79ae2673bc704e86c0984dd0838b4d7258a4eff118a",
+        "CM_OCC:3ab9342e83c8018eb2a325325750f4d1b442b27a568713efd105f6f1b5c542f7"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM1430, 1431, 915 and 918 all add 1.8 mL of a 0.5 M potassium phosphate pH 7.0 preparation. Two frozen occurrences preserve volume units and two do not. These observations establish prepared-buffer scope, not an unstated phosphate ratio.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-81",
+        "buffers-primary-6d72693fd96023c1",
+        "buffers-primary-b760a63b742c75a6",
+        "buffers-primary-e1ddc8bac4c87b3a",
+        "buffers-primary-f7ada6c0c960aa48",
+        "buffers-recipe-81-0",
+        "buffers-recipe-81-1",
+        "buffers-recipe-81-2",
+        "buffers-recipe-81-3",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-6d72693fd96023c1",
+        "buffers-primary-b760a63b742c75a6",
+        "buffers-primary-e1ddc8bac4c87b3a",
+        "buffers-primary-f7ada6c0c960aa48"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 84,
+      "case_id": "CM_NAME:a694665ba4984428f9b60e248e040370a36a6248ba3e05881a34d7edd54a2636",
+      "case_input_sha256": "01937451798fe780c71c73e8bf11296b4a128029916ef97be1156bf04dca1e81",
+      "occurrence_ids": [
+        "CM_OCC:aa75af76ab90313adb28f15d916e1e1540e98cafc0c8bd64f71b24a9d7232514"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM822 explicitly mixes 50 mL each of the two 1 M phosphate salt solutions. The proposed components remain unresolved stock solutions rather than being typed as dry salts. Source-qualified naming and removal of the generic see-below alias resolve the skeptical finding.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "evidence_ids_checked": [
+        "buffers-case-84",
+        "buffers-primary-a88471724f63d66b",
+        "buffers-primary-b04109d959a9a0a6",
+        "buffers-primary-bfc194cd7d38c7d1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e",
+        "buffers-recipe-84-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-a88471724f63d66b",
+        "buffers-primary-b04109d959a9a0a6",
+        "buffers-primary-bfc194cd7d38c7d1",
+        "buffers-primary-cd27e4bd3d0e5ce2",
+        "buffers-primary-e87b95b30f760d9e"
+      ],
+      "proposal_ids": [
+        "buffers-phosphate-jcm822"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 87,
+      "case_id": "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f",
+      "case_input_sha256": "565f80ba5cc18317961c162fcfc2243acc6e4e7b3e83b5a409aa8d945c9417e4",
+      "occurrence_ids": [
+        "CM_OCC:8b301b8884da9722a128723d3f1b41c1f1b807a3d57ecd3453c1690c98733ac1"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M3216 locates 10 mL of 35% HCl in a trace-element solution. The percentage basis is not printed; a concentrated acid stock is not pure hydrogen chloride or the final medium addition. The hold preserves both concentration ambiguity and stock nesting.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-87",
+        "buffers-primary-ded69954ea792c68",
+        "buffers-recipe-87-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-ded69954ea792c68"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 94,
+      "case_id": "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd",
+      "case_input_sha256": "cbc195e89853f66b36840aee7a4d209a03549be76ad0f23685af638f34e24f8f",
+      "occurrence_ids": [
+        "CM_OCC:6fcf99e4a0da721b6a132c6acb830d53f661801ecc5f9c3496f4f3bcf49a0215"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM770 specifies 1 mL of 32% HCl in its trace-metal solution, corroborated by TOGO M798. No weight/volume basis is stated. The decision correctly avoids equating this aqueous concentration-specific preparation with a generic molecular identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-94",
+        "buffers-primary-b756bb7cb9a632e8",
+        "buffers-primary-d03fb1b0aa631950",
+        "buffers-recipe-94-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-b756bb7cb9a632e8",
+        "buffers-primary-d03fb1b0aa631950"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 100,
+      "case_id": "CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9",
+      "case_input_sha256": "27b9c8acaa76423283b215a79cad707af1c247eb19d65cf7ff2f2a2b4a017afd",
+      "occurrence_ids": [
+        "CM_OCC:700aa270224cf039dc505adeede7317e744cfac07aa0232604b370f9d82f781a"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "DSMZ600 lists 50 mL of 0.1 M Tris/HCl pH 7.5 in the complete broth recipe. TOGO M2346 agrees with the volume. The frozen G_PER_L flattening cannot support a pure-solute owner, and the acid/base preparation ratio remains unspecified.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-100",
+        "buffers-primary-094c5b650a091f4a",
+        "buffers-primary-d307d207abd04fea",
+        "buffers-recipe-100-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-094c5b650a091f4a",
+        "buffers-primary-d307d207abd04fea"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 101,
+      "case_id": "CM_NAME:c3670da453732681e6eba32d3fdf0d4ea5e4c7afbabf8aa46ee2f2e863dccdd2",
+      "case_input_sha256": "37b636d9d738664128ab1288e6ffcfc4b1e492c633b95606a0202c9eb332bcd2",
+      "occurrence_ids": [
+        "CM_OCC:182962d97a4f35550e71983757d3d7e06aa1b17726eec2b338a6a95ed290f2e2"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM144 explicitly builds TPP/VFA from a thiamine-pyrophosphate solution, a VFA stock and water. Its VFA instructions bring four acids plus NaOH solution to 100 mL. This is a hierarchical mixture; no single compound or inferred salt form can stand for the whole.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-101",
+        "buffers-primary-d282bb942d513790",
+        "buffers-primary-e8590f04c1945824",
+        "buffers-recipe-101-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-d282bb942d513790",
+        "buffers-primary-e8590f04c1945824"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 102,
+      "case_id": "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd",
+      "case_input_sha256": "8f7cd6646c80fcaa50e453f3f7c07128d4a5aa00194f3188f7cb10d755f33e2c",
+      "occurrence_ids": [
+        "CM_OCC:38989dc728f37eae111d076594dd5dec3dcbf2af729e8bc41a6047a69e134b75",
+        "CM_OCC:836abf2fb49317a625bb625da256797566f1510199001b08d95e44d88d5c6043"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM431 and JCM899 both name 25% HCl but use different volumes in distinct trace-element preparations. JCM899 also specifies dissolving the iron salt in acid first. Missing percentage basis and exact product strength are concrete limitations, not grounds for collapsing to pure HCl.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-102",
+        "buffers-primary-a7277ddb9aa30cb4",
+        "buffers-primary-a95d21757d9f5e59",
+        "buffers-primary-f7a675e1c6976e01",
+        "buffers-recipe-102-0",
+        "buffers-recipe-102-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-a7277ddb9aa30cb4",
+        "buffers-primary-a95d21757d9f5e59",
+        "buffers-primary-f7a675e1c6976e01"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 107,
+      "case_id": "CM_NAME:c913149f291090dbd1a988198e9564ece146c9a85eca72b3def86a0bb333e673",
+      "case_input_sha256": "0b6b843a72dbf2defc679597c81364f7e78e9a5046d9c6c6b1bd1e083c7beb80",
+      "occurrence_ids": [
+        "CM_OCC:540b7a813ee19064c45de035968aabf788210cb1f63e159450a0f9c3ffa3f25b",
+        "CM_OCC:e96b91e185c10b669388f91ad23757ecfdcf8318a89263979f56f3b7de84db05"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M1101 points to Solution B in M1100; JCM1036 supplies the actual 2 mL phosphate-buffer component. Skeptical review required explicitly attaching that already-captured JCM1036 evidence to this case. Both frozen M1101/M1102 recipe paths retain the nested stock and volume units.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-107",
+        "buffers-primary-2cd71a0cecaa19bd",
+        "buffers-primary-366c648a332e35b4",
+        "buffers-recipe-107-0",
+        "buffers-recipe-107-1",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-2cd71a0cecaa19bd",
+        "buffers-primary-366c648a332e35b4"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 112,
+      "case_id": "CM_NAME:ced1adce1e3db79484e82ca60266f7aa51b1992c9a311172dca3fbac280b7981",
+      "case_input_sha256": "ce6a66ad291a332642aba97eda5b4a9ee4d624ffb42377841b72c7e3556f778e",
+      "occurrence_ids": [
+        "CM_OCC:2e528fc040a37d0f96a4da06a4075e42660bf2bf74633d66bbefb6dac85f79ea"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M3155 specifies a 0.5 mL addition of a 2 g/L resazurin preparation, not 0.5 g/L resazurin in the medium. Its salt form and solvent are not identified. The stock hold is supported by the primary table and narrative.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-112",
+        "buffers-primary-578bad19e849e0fe",
+        "buffers-recipe-112-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-578bad19e849e0fe"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 114,
+      "case_id": "CM_NAME:d219f28b63c5dc11a89719386012001ac1d379480663e81ec70de592b52cf5e7",
+      "case_input_sha256": "54a8d4730f357a0dc97bc366901781e13b26b7e7032ee832b3cfd1e1bad17b5a",
+      "occurrence_ids": [
+        "CM_OCC:c3a20a01401bb29e1797bc0c49b613fcb77c8fdd10e5bca0c94784302866ff5c"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM1205 and TOGO M1291 specify 5.6 mL of 0.25 M potassium phosphate pH 7.0. This differs in concentration from the 0.5 M cases. Neither supplies a mixing ratio, so source-context retention is justified.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-114",
+        "buffers-primary-0bcac7f38d202632",
+        "buffers-primary-b224b75d33d77081",
+        "buffers-recipe-114-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-0bcac7f38d202632",
+        "buffers-primary-b224b75d33d77081"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 115,
+      "case_id": "CM_NAME:d93f46c2300415c7ab93a2928153794062e60f6f63132b610c81fac7ac190337",
+      "case_input_sha256": "7be6aed610606eca7123e1ef34175bbf443afebbad805fc7b83611a06eb21d94",
+      "occurrence_ids": [
+        "CM_OCC:5ddd237841cd89df24af751bd2228ef6147da51d1cbac3bdfa658b52581458e6"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M2927 defines a nominal 100 mg/mL flucloxacillin preparation using 100 mg and 1 mL water and adds 25 microlitre. No exact supplied salt/hydrate is named. Neither the 25 G_PER_L frozen value nor an assumed pure-acid identity is acceptable.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-115",
+        "buffers-primary-429b78763024f2f9",
+        "buffers-recipe-115-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-429b78763024f2f9"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 119,
+      "case_id": "CM_NAME:e247c1c5cd79b6fb7ff18406a6b8d73ea248d7fb661876f2be9fb34e11909380",
+      "case_input_sha256": "543966c62b5408a481e87bc3248d52ac3e590b7c9f574bce26d5899740d1998b",
+      "occurrence_ids": [
+        "CM_OCC:c9b6ae2e5cc01850ca44b241acb983631e7099d40970084aeb00dca5f10aca39"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M2927 separately defines azlocillin with the same nominal stock strength and 25 microlitre addition. Distinct antibiotic identity is retained; the missing supplied salt prevents an exact molecular owner assignment. The stock is not interchangeable with flucloxacillin.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-119",
+        "buffers-primary-429b78763024f2f9",
+        "buffers-recipe-119-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-429b78763024f2f9"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 121,
+      "case_id": "CM_NAME:e477f61317bf39561d26ec48a120308fe1a695b63d62907fac95c552c75850ff",
+      "case_input_sha256": "fddfc8ab6d683009a70355a5c0adba422f6a3eb66d6da4fe51e98b9859a9be8a",
+      "occurrence_ids": [
+        "CM_OCC:11dab1c854e34bebf12b315823f08573a9fcb4e5593f035c087b762b8cedff09"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC1596 weighs 10 g ACES Buffer and separately 2.8 g KOH before mixing. This directly supports a reagent-level alias on the existing acid owner rather than an inferred preadjusted buffer stock. Prior acid/class identity decisions remain intact.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "evidence_ids_checked": [
+        "buffers-case-121",
+        "buffers-owner-N-_2-acetamido-2-aminoethanesulfonic_Acid",
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-71a35a9c2b95030a",
+        "buffers-primary-bdb6a20baf71b757",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-recipe-121-0",
+        "buffers-retrieval-log",
+        "buffers-web-aces-supplier"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-5d64dd0d169e092f",
+        "buffers-primary-71a35a9c2b95030a",
+        "buffers-primary-bdb6a20baf71b757",
+        "buffers-primary-c2fcf60f29239e64",
+        "buffers-web-aces-supplier"
+      ],
+      "proposal_ids": [
+        "buffers-aces-aliases"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 123,
+      "case_id": "CM_NAME:e533c74f6a51e498259ba29feb1d8c7490c669ab2068ea2f317152ffe577b15f",
+      "case_input_sha256": "205691933b9e5a9f168fd3a24af627a8125c2d5f5c388fdfa98a0a41f7695470",
+      "occurrence_ids": [
+        "CM_OCC:179d3dc8280137728b092ade8c30177e0476d61f74e9fdaccca6c5d2972b3617"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Both JCM556 and TOGO M560 print 28 mL plus 78 mL and call the result 100 mL. The numerical inconsistency is primary-source content. It must not be repaired to 72 mL or merged with JCM822 by intuition; unresolved is justified.",
+      "disposition_reviewed": "unresolved",
+      "evidence_ids_checked": [
+        "buffers-case-123",
+        "buffers-primary-4dad67facb543532",
+        "buffers-primary-a5a4ec5e544b62f0",
+        "buffers-recipe-123-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-4dad67facb543532",
+        "buffers-primary-a5a4ec5e544b62f0"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 124,
+      "case_id": "CM_NAME:e665b825fbda7fa942884bbe313e925d87d37d27dfb29d2c32ed270eb2d70131",
+      "case_input_sha256": "3cb974e208819a8e79b9593e3b08e15462645bd534444e4ee200ee28e6063e99",
+      "occurrence_ids": [
+        "CM_OCC:107bad1714763ae5565752ac63abeb0ec3168db5bd4423ffb6ce231233520d2d"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "TOGO M2185 distinguishes the BBM basal medium from separately added nitrate and acetate. The basal medium is a multi-component recipe with unresolved cited vitamin/mineral definitions, not bicarbonate itself. Failed or abstract-only publication retrievals do not establish a complete formulation.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-124",
+        "buffers-primary-912d33270672f032",
+        "buffers-recipe-124-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-912d33270672f032"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 125,
+      "case_id": "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0",
+      "case_input_sha256": "0433762c684ef31b340751c4e6deb69c68a7072c415c3d5fcfab4417e6ea63dd",
+      "occurrence_ids": [
+        "CM_OCC:51b1ee8e8f86684d1dd12b5c1b09d01a4af34cfd0f6e088cd88a5de66a862840"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC1116 places 0.3 mL concentrated HCl inside a 100 mL chelated-iron stock. The source does not name an exact HCl strength. The decision preserves this hierarchy and does not treat the flat amount as final-medium mass.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-125",
+        "buffers-primary-45ae719b1421974f",
+        "buffers-primary-76e91583349d0f75",
+        "buffers-recipe-125-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-45ae719b1421974f",
+        "buffers-primary-76e91583349d0f75"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 126,
+      "case_id": "CM_NAME:e88d9dba7b6c89f143d72d69e57c72390ec19461c2bb1456f248e761559e41cd",
+      "case_input_sha256": "d84d0ce8802bf404d4682c1c0e06889e99fd240201784eaeaaaefb151f51c72a",
+      "occurrence_ids": [
+        "CM_OCC:bbfd66f438bf915118c20aac0ab29fa70d74bfc8c8835a17da3cac1ce47f8bf0",
+        "CM_OCC:31b59ca8a4036400359b17a70dc58930d7ea33719cfbfe56075c52336d1923af",
+        "CM_OCC:80e8ae7028814b1f332cde1a5cca190d087e39c60fb39cc531e3eda1c90047d9",
+        "CM_OCC:ead0bccae529f4f6b5b09cfdc567136cb70f0630743d15efc8c69de9d128a12c"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "DSMZ601 and NBRC1183 explicitly prepare artificial sea water from aquarium salt mixtures. Four frozen occurrences refer to these source families. A brand, salt dose and full mixture composition are absent; natural sea-water or NaCl exact identity would be unsupported.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-126",
+        "buffers-primary-5939a819cce95c5d",
+        "buffers-primary-6490b59a55812105",
+        "buffers-recipe-126-0",
+        "buffers-recipe-126-1",
+        "buffers-recipe-126-2",
+        "buffers-recipe-126-3",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-5939a819cce95c5d",
+        "buffers-primary-6490b59a55812105"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 127,
+      "case_id": "CM_NAME:ed9f9e1aa81d1195cbfd9d276dd29428dd9906541cc7c2d53dd6f5b95f79fff9",
+      "case_input_sha256": "242b5576f7dc1e0195b018051d823e8c624534fd3bb0ed9e46c19877da626ed6",
+      "occurrence_ids": [
+        "CM_OCC:56ba24c33a9cc67361ae087a0df688f6cc819ab0def0dae7334b83ad00550a99",
+        "CM_OCC:6193aba293dc3c4347fef18943fc4d7f581595c1ae05d6a28e9af2b4b4b22e2c"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "NBRC1574 and TOGO M3045 distinguish the Wako product (1 mL) from water (9 mL) and from the 2.5 mL working-stock addition. Both frozen M3044/M3045 occurrences point to NBRC1574. Current Wako documentation supports an opaque silicone-type product, not a polydimethylsiloxane molecule or asserted historic lot composition.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "evidence_ids_checked": [
+        "buffers-case-127",
+        "buffers-primary-10024d40ccec0315",
+        "buffers-primary-35c2182b244f2c26",
+        "buffers-recipe-127-0",
+        "buffers-recipe-127-1",
+        "buffers-retrieval-log",
+        "buffers-web-wako-antifoam"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-10024d40ccec0315",
+        "buffers-primary-35c2182b244f2c26",
+        "buffers-web-wako-antifoam"
+      ],
+      "proposal_ids": [
+        "buffers-antifoam-wako"
+      ],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 130,
+      "case_id": "CM_NAME:f1b0ce9481ab30567b063060b381e0e1ea5e61d0b72e3feba04d8798c5427f4f",
+      "case_input_sha256": "db57a5c3562307eb25d097ab7635cf5e0617f49a346719252bf5ad875ca7c081",
+      "occurrence_ids": [
+        "CM_OCC:eef02fd2fd681a19ce643af3647158c9eccf5599a9b2eda07117c016c3c8aac5"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM1452 adds 100 mL of a 1 M NaHCO3/Na2CO3 pH 10 stock to 900 mL water and explicitly states final 100 mM. This is not the NBRC944 stock labelled 100 mM of each salt. Retain the nominal source concentrations without assuming a ratio.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-130",
+        "buffers-primary-947e5eff24deb387",
+        "buffers-recipe-130-0",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-947e5eff24deb387"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    },
+    {
+      "shard_index": 135,
+      "case_id": "CM_NAME:ff120d19b0c8b8a01c2e0ca8fd970242da364171932d36a9b4d8fdbbacf5e1b0",
+      "case_input_sha256": "4f4142c4f74eb643aa2a3667dba25e3b853360ab5630da43800809119990c3cc",
+      "occurrence_ids": [
+        "CM_OCC:d7362723e27c2bc568a58ebd95e63329482eca660b454dfe7c0aa95dfce448a8",
+        "CM_OCC:a7463d673fa8fe272664ec7410ca01d6e56729833bc6bd5ca7adea83dd653f8a",
+        "CM_OCC:c0220dcd34e9981fbb5e79eea42245c274fe0592ecace708dc6160273bbbba37"
+      ],
+      "reviewer": "/root/bio_research",
+      "author": "/root/buffers_research",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM1200 and JCM556 specify 5 mL of 2 M HEPES pH 7.0 stock, separately sterilized. All three frozen G_PER_L occurrences lose the original volume context. A stock at a specified pH cannot be an exact alias of H3375 acid.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "evidence_ids_checked": [
+        "buffers-case-135",
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-44445462ffa7bfa8",
+        "buffers-primary-a5a4ec5e544b62f0",
+        "buffers-primary-d4b7335ac7808d9d",
+        "buffers-recipe-135-0",
+        "buffers-recipe-135-1",
+        "buffers-recipe-135-2",
+        "buffers-retrieval-log"
+      ],
+      "source_primary_evidence_ids": [
+        "buffers-primary-27d42a63e9fa8926",
+        "buffers-primary-44445462ffa7bfa8",
+        "buffers-primary-a5a4ec5e544b62f0",
+        "buffers-primary-d4b7335ac7808d9d"
+      ],
+      "proposal_ids": [],
+      "limitation": "This confirms the source-bound decision and listed proposal scope, not whole-owner roles, mechanisms, automatic source-name resolution or downstream publication."
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "buffers-aces-aliases",
+      "case_ids": [
+        "CM_NAME:6eaa1db1cbb641a0ecfe9c716337000c8bb518e60b4bb5a7686656ad58f07be2",
+        "CM_NAME:e477f61317bf39561d26ec48a120308fe1a695b63d62907fac95c552c75850ff"
+      ],
+      "owner_path": "data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+        "sha256": "e2f6e61eb8c1ebace26f66b815b859010dc833f407e4049253349db843290edd"
+      },
+      "before_sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Existing CHEBI:39060 acid identity, two weighed-reagent aliases, and relevant prior merge history are retained. No class or tautomer reassignment. Bounded alias evidence does not approve every inherited role or synonym."
+    },
+    {
+      "proposal_id": "buffers-hepes-acid-alias",
+      "case_ids": [
+        "CM_NAME:80adb38b0894cb8f5c9c9be2fd5d4ffb98a0b83eface75534fa1b619afd144a2"
+      ],
+      "owner_path": "data/ingredients/mapped/Hepes.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Hepes.yaml",
+        "sha256": "94839addc0148ff58983e980db87181058d0322230d78e5e8acca57e9b771bb2"
+      },
+      "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Specific H3375 acid catalog alias is supported by weighed-reagent source and manufacturer data. Inherited stock-like HEPES aliases remain a separate owner-review/release obligation; this review does not approve them."
+    },
+    {
+      "proposal_id": "buffers-phosphate-m3225",
+      "case_ids": [
+        "CM_NAME:03d699039590d9ae0fcc9a25a67237f63ee6851f2c1405f8b8f90e5a906f9c0d"
+      ],
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_TOGO_M3225.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_TOGO_M3225.yaml",
+        "sha256": "79f688c60912f8c413e037028fc68a3faa0a7f06be5f657ceda7e1f21ccaddc5"
+      },
+      "before_sha256": null,
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Exact printed salt/water inputs preserved without an inferred final molarity. Generic 1 M Phosphate buffer resolving synonym removed. Source-qualified registry owner is supported as a distinct preparation proposal."
+    },
+    {
+      "proposal_id": "buffers-phosphate-jcm1142",
+      "case_ids": [
+        "CM_NAME:38510e80f455bcaf5c39b9b3ca38de457604c9b5747ce37c5ed4473d291067d7"
+      ],
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_JCM_1142_1143.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_1142_1143.yaml",
+        "sha256": "e12f0e155792415828c729e2796949b86bbd2b04c5d1cadf2d3abdb55b13ae9a"
+      },
+      "before_sha256": null,
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Both source recipes agree on printed inputs; source-qualified registry identity is appropriate. Generic Phosphate buffer (see below) resolving synonym removed; raw string retained in notes."
+    },
+    {
+      "proposal_id": "buffers-kp-nbrc857",
+      "case_ids": [
+        "CM_NAME:64f0b65d9c6ae9614992ee9eec4e10fc8302aadf1c120feb1593f8d50be9bb3e"
+      ],
+      "owner_path": "data/ingredients/mapped/KP_Buffer_NBRC_857_936.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/KP_Buffer_NBRC_857_936.yaml",
+        "sha256": "7cf2506752f7e05fe2a1302755c4f748cdcb6c8be43311d3510912cc61728566"
+      },
+      "before_sha256": null,
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Both NBRC sources agree on component masses and water input. Generic KP buffer* resolving synonym removed and N2/autoclave preparation preserved in provenance."
+    },
+    {
+      "proposal_id": "buffers-phosphate-jcm822",
+      "case_ids": [
+        "CM_NAME:a694665ba4984428f9b60e248e040370a36a6248ba3e05881a34d7edd54a2636"
+      ],
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_JCM_822.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_822.yaml",
+        "sha256": "c2f559cedecb1270bce19cc07dac43ed19ed2f8efb53efc2efeb903204c73f8c"
+      },
+      "before_sha256": null,
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Mixture of two defined-concentration input solutions, with UNMAPPED component references, preserves stock/solute boundaries. Generic navigation synonym removed. Does not claim JCM556 or M2760 equivalence."
+    },
+    {
+      "proposal_id": "buffers-riboflavin-jcm462",
+      "case_ids": [
+        "CM_NAME:683c7c6d4c20497f0d41c08de82c151baab05feff6f164e54f712ccd78903d90"
+      ],
+      "owner_path": "data/ingredients/unmapped/Riboflavin_Solution_See_Medium_No_462.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Riboflavin_Solution_See_Medium_No_462.yaml",
+        "sha256": "ffed69e850b8974fcdd0996cad28759c706fcc0d0aa309efcd8a6c6db3cc442a"
+      },
+      "before_sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b",
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "JCM source chain resolves navigation namespace and concentration. Both inherited and new unqualified Medium462 aliases removed before promotion; raw labels retained in provenance. Cross-partition kg case179/source1893 must be joined by coordinator before integration; registry own-identity only."
+    },
+    {
+      "proposal_id": "buffers-antifoam-wako",
+      "case_ids": [
+        "CM_NAME:ed9f9e1aa81d1195cbfd9d276dd29428dd9906541cc7c2d53dd6f5b95f79fff9"
+      ],
+      "owner_path": "data/ingredients/mapped/Antifoam_SI_Wako.yaml",
+      "reviewed_after_capture": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Antifoam_SI_Wako.yaml",
+        "sha256": "0a5f0b3b3c581aa152adbc41d6b76da92348f245981c7faddf6fa2c0b48c61e8"
+      },
+      "before_sha256": null,
+      "verdict": "supported_with_stated_limits",
+      "independent_assessment": "Opaque named supplier product remains distinct from its 1:9 working dilution and any silicone molecule. No unsupported constituent list or historic-lot identity is inferred."
+    }
+  ],
+  "evidence_integrity_checks": [
+    {
+      "evidence_id": "buffers-case-0",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-0-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_833_DEHALOSPIRILLUM_medium.yaml",
+        "sha256": "0622008bd0c00e4fd01c5c675fe53920a1517f426243d92ceb379e3818260ebd"
+      },
+      "actual_sha256": "0622008bd0c00e4fd01c5c675fe53920a1517f426243d92ceb379e3818260ebd",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-0-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2455_Dehalospirillum_Medium.yaml",
+        "sha256": "aac7cfe2d6b98f67229d6b80fa2feaa370cde384a1ca2f4c47ca30135f899305"
+      },
+      "actual_sha256": "aac7cfe2d6b98f67229d6b80fa2feaa370cde384a1ca2f4c47ca30135f899305",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-0-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/dehalospirillum_medium.yaml",
+        "sha256": "0bf0deb07d0bb3e2c0012ac66d87ab3eb89d19b3935068ba8bab7d0fc4e7748c"
+      },
+      "actual_sha256": "0bf0deb07d0bb3e2c0012ac66d87ab3eb89d19b3935068ba8bab7d0fc4e7748c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-1",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-1-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1049_M30.yaml",
+        "sha256": "b6e3ff4281a9113d98d452a3776904aba0c0b8e4e338af84f16d8f3efb37ffaf"
+      },
+      "actual_sha256": "b6e3ff4281a9113d98d452a3776904aba0c0b8e4e338af84f16d8f3efb37ffaf",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-1-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M941_M13a_Medium.yaml",
+        "sha256": "6e83db57bb1190aefb7dc0ecf9b9d272d1959916db08989f3d92c27e9911a6a7"
+      },
+      "actual_sha256": "6e83db57bb1190aefb7dc0ecf9b9d272d1959916db08989f3d92c27e9911a6a7",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-2",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-2-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/defined_medium.yaml",
+        "sha256": "81692e1e06bc07896c8dc570e90771a2bd842f3244a9b5067c0a3e1e68a02b34"
+      },
+      "actual_sha256": "81692e1e06bc07896c8dc570e90771a2bd842f3244a9b5067c0a3e1e68a02b34",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-7",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-7-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M140_Tetramethyl_Ammonium_Medium.yaml",
+        "sha256": "3638f7f62dccab3daa46fd96697f84ff4a4222d82bd7f6b71756c23455e2bc92"
+      },
+      "actual_sha256": "3638f7f62dccab3daa46fd96697f84ff4a4222d82bd7f6b71756c23455e2bc92",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-8",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-8-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1173_CTM_Medium.yaml",
+        "sha256": "1a6894b1a0f1182db7e88840740c25f7446119cae3acbeb48813cebbd5882a20"
+      },
+      "actual_sha256": "1a6894b1a0f1182db7e88840740c25f7446119cae3acbeb48813cebbd5882a20",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-11",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-11-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M187_Mmys-II_Medium.yaml",
+        "sha256": "f3a1bdde2907bdd9b981ca22806c47e700ff0af0dd0d63f2256100d9e6f6ec67"
+      },
+      "actual_sha256": "f3a1bdde2907bdd9b981ca22806c47e700ff0af0dd0d63f2256100d9e6f6ec67",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-16",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-16-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1569_MMYS-II_Medium.yaml",
+        "sha256": "fcbdaf23dd17109fe723be6fc4cd4acad813dc846b49691a4fdba2730e4ddf6e"
+      },
+      "actual_sha256": "fcbdaf23dd17109fe723be6fc4cd4acad813dc846b49691a4fdba2730e4ddf6e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-21",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-21-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M202_M98-5.yaml",
+        "sha256": "dfc73af4d07d4e76f7cda294e59299358bdbf411cdafe3a6c9acc4826462b90e"
+      },
+      "actual_sha256": "dfc73af4d07d4e76f7cda294e59299358bdbf411cdafe3a6c9acc4826462b90e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-24",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-24-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1100_EGGC_Liquid_Medium.yaml",
+        "sha256": "182026b26432d94cdb5d9a044bbd9a1e0485fcc8978dbc943797fdd7f02be0a7"
+      },
+      "actual_sha256": "182026b26432d94cdb5d9a044bbd9a1e0485fcc8978dbc943797fdd7f02be0a7",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-24-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M290_EGGC_Medium.yaml",
+        "sha256": "4f37c7b3db4f1ea3869f7e7b3b976a217eb8b200e52a92834934c7f634890963"
+      },
+      "actual_sha256": "4f37c7b3db4f1ea3869f7e7b3b976a217eb8b200e52a92834934c7f634890963",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-31",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-31-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1224_Tepidibacillus_Decaturensis_Medium.yaml",
+        "sha256": "98e209f3c316fc5119c671cccda87bb60c960628d59b7f55546de50c2bf671f1"
+      },
+      "actual_sha256": "98e209f3c316fc5119c671cccda87bb60c960628d59b7f55546de50c2bf671f1",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-31-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1225_Orenia_Metallireducens_Medium.yaml",
+        "sha256": "4c9def264df9d1c8c58854147d7141cf0f2837fcfa3afdc0809c29f85de4b6d1"
+      },
+      "actual_sha256": "4c9def264df9d1c8c58854147d7141cf0f2837fcfa3afdc0809c29f85de4b6d1",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-48",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-48-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/standard_petc_medium.yaml",
+        "sha256": "abc2311e88cd525eabe56e81b22b1fd13f3cc8a42453241e71a90ffe5284ec9c"
+      },
+      "actual_sha256": "abc2311e88cd525eabe56e81b22b1fd13f3cc8a42453241e71a90ffe5284ec9c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-49",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-49-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/peptone_yeast_extract_alkaline_medium_nbrc_944.yaml",
+        "sha256": "7e622f3c6e7fe5278c2c64132e82b93e06007acbb0aa53c73885af32eb38ee87"
+      },
+      "actual_sha256": "7e622f3c6e7fe5278c2c64132e82b93e06007acbb0aa53c73885af32eb38ee87",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-50",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-50-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_859.yaml",
+        "sha256": "a32eecd5033944828b2921ee09b1b71edbb6248a65875efac35f1ac34418bd68"
+      },
+      "actual_sha256": "a32eecd5033944828b2921ee09b1b71edbb6248a65875efac35f1ac34418bd68",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-50-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_937.yaml",
+        "sha256": "fe554d3ff944b99a02add19a5b63aad816f0fed4247ff0a2c142bd608b7aeb54"
+      },
+      "actual_sha256": "fe554d3ff944b99a02add19a5b63aad816f0fed4247ff0a2c142bd608b7aeb54",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-51",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-51-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4719_Main_sol_J772.yaml",
+        "sha256": "deb5e286597c977df665a85643cd39665daf16c09f783345d9cfaa618ce8fa06"
+      },
+      "actual_sha256": "deb5e286597c977df665a85643cd39665daf16c09f783345d9cfaa618ce8fa06",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-55",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-55-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/m1d_medium.yaml",
+        "sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e"
+      },
+      "actual_sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-56",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-56-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1032_M13_Medium.yaml",
+        "sha256": "7e3c3db12b39a984fcfd1f346df6ba47c90c9197b7778c921817078ea358e848"
+      },
+      "actual_sha256": "7e3c3db12b39a984fcfd1f346df6ba47c90c9197b7778c921817078ea358e848",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-56-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1050_M30.yaml",
+        "sha256": "6b36dddf6465e371a20c7f2283c83916ebde7b7e4a169af3566102acd49625eb"
+      },
+      "actual_sha256": "6b36dddf6465e371a20c7f2283c83916ebde7b7e4a169af3566102acd49625eb",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-57",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-57-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml",
+        "sha256": "5e9cd1cd3846e830d2051522b9bf73462ddcd926f6ec2d655c06d56b1fbf1a33"
+      },
+      "actual_sha256": "5e9cd1cd3846e830d2051522b9bf73462ddcd926f6ec2d655c06d56b1fbf1a33",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-57-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml",
+        "sha256": "a562ed4485b1c39ca980c37a6d6698fde59ab7efb8bc6a67854810d4effabb42"
+      },
+      "actual_sha256": "a562ed4485b1c39ca980c37a6d6698fde59ab7efb8bc6a67854810d4effabb42",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-60",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/1_F_2_Medium.yaml",
+        "sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f"
+      },
+      "actual_sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/1_F_2_Medium.yaml",
+        "sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f"
+      },
+      "actual_sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/1_F_2_Medium.yaml",
+        "sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f"
+      },
+      "actual_sha256": "041e467e82893b4472a4f01354535f17737d58f1329f60a7e0fb9f5d1c59a70f",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-3",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/2x_erdschreibers_medium.yaml",
+        "sha256": "51ef7d493b12cfb90d6a5675e4a91b02cc96c9f83b5f2a548df299c31f3c69e2"
+      },
+      "actual_sha256": "51ef7d493b12cfb90d6a5675e4a91b02cc96c9f83b5f2a548df299c31f3c69e2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-4",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/5_F_2_Medium.yaml",
+        "sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece"
+      },
+      "actual_sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-5",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/5_F_2_Medium.yaml",
+        "sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece"
+      },
+      "actual_sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-6",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/5_F_2_Medium.yaml",
+        "sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece"
+      },
+      "actual_sha256": "1b75259959dfb02014ee28e29ba3583b86281f842ed647eb6b18ca8ea37deece",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-7",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/8_ppt_F_2_Medium.yaml",
+        "sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053"
+      },
+      "actual_sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-8",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/8_ppt_F_2_Medium.yaml",
+        "sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053"
+      },
+      "actual_sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-9",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/8_ppt_F_2_Medium.yaml",
+        "sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053"
+      },
+      "actual_sha256": "3cb7d590da5c86d9761d80cc7ec9111a01bba2c91679f366681573b0298b2053",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-10",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Artificial_Seawater_Medium.yaml",
+        "sha256": "373e49b2f6512d894e0278f6c6cfcec054733d46abb373928e638d4a53bbbe01"
+      },
+      "actual_sha256": "373e49b2f6512d894e0278f6c6cfcec054733d46abb373928e638d4a53bbbe01",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-11",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Bold_1NV_Medium.yaml",
+        "sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b"
+      },
+      "actual_sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-12",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Bold_1NV_Medium.yaml",
+        "sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b"
+      },
+      "actual_sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-13",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Bold_1NV_Medium.yaml",
+        "sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b"
+      },
+      "actual_sha256": "96814452bc738b1b38607f90f9a07e521f73f7c2e048aa9af17aed331ee27a8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-14",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Bold_3N_Medium.yaml",
+        "sha256": "8c5befe113b65f94de4074720895021d5033a28db7e75726fc0e705294aa0185"
+      },
+      "actual_sha256": "8c5befe113b65f94de4074720895021d5033a28db7e75726fc0e705294aa0185",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-15",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYIII_Medium.yaml",
+        "sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2"
+      },
+      "actual_sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-16",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYIII_Medium.yaml",
+        "sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2"
+      },
+      "actual_sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-17",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYIII_Medium.yaml",
+        "sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2"
+      },
+      "actual_sha256": "5f5cbc2cb8966e31b051e700940256909904a9ddac552dd5ca111a93c4e697e2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-18",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYV_Medium.yaml",
+        "sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b"
+      },
+      "actual_sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-19",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYV_Medium.yaml",
+        "sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b"
+      },
+      "actual_sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-20",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/DYV_Medium.yaml",
+        "sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b"
+      },
+      "actual_sha256": "13ad82ebc21ebce80e32f4b7d5defe91751d2c6fb0c514b6fe33281ed255bc8b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-21",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_10_Enriched_Seawater_Medium.yaml",
+        "sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c"
+      },
+      "actual_sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-22",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_10_Enriched_Seawater_Medium.yaml",
+        "sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c"
+      },
+      "actual_sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-23",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_10_Enriched_Seawater_Medium.yaml",
+        "sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c"
+      },
+      "actual_sha256": "b1102b00ef5bf372ff3ff4629f9a1398dd2e7f1dbb2ed2cd279ede0f3cac298c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-24",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_2_Enriched_Seawater_Medium.yaml",
+        "sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916"
+      },
+      "actual_sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-25",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_2_Enriched_Seawater_Medium.yaml",
+        "sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916"
+      },
+      "actual_sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-26",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_2_Enriched_Seawater_Medium.yaml",
+        "sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916"
+      },
+      "actual_sha256": "9f13c617c439f6158ac8fe20712c36195b10a6d97d7523a09ad96b30f647c916",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-27",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_4_Enriched_Seawater_Medium.yaml",
+        "sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948"
+      },
+      "actual_sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-28",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_4_Enriched_Seawater_Medium.yaml",
+        "sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948"
+      },
+      "actual_sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-29",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/ES_4_Enriched_Seawater_Medium.yaml",
+        "sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948"
+      },
+      "actual_sha256": "ca9015bdd54aa3fd1bc38675837bd49d8fe0dd682b68f8e24b6d7708ad8df948",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-30",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Enriched_Seawater_Medium.yaml",
+        "sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2"
+      },
+      "actual_sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-31",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Enriched_Seawater_Medium.yaml",
+        "sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2"
+      },
+      "actual_sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-32",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Enriched_Seawater_Medium.yaml",
+        "sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2"
+      },
+      "actual_sha256": "4e07fc5d0e4b7b8990571d2bd11a9c4b5b9c077a72e0474a369a66b0924ab8b2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-33",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/F_2_Medium.yaml",
+        "sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf"
+      },
+      "actual_sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-34",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/F_2_Medium.yaml",
+        "sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf"
+      },
+      "actual_sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-35",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/F_2_Medium.yaml",
+        "sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf"
+      },
+      "actual_sha256": "68ba6e487cab812d01936c081e684c573c93e80554e4f3a63ab54c46423a84cf",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-36",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/HEPES_Medium.yaml",
+        "sha256": "56957a8841fbf22841d3036402ed1fbfe33e473694bc7069fe609d9afaeac0d5"
+      },
+      "actual_sha256": "56957a8841fbf22841d3036402ed1fbfe33e473694bc7069fe609d9afaeac0d5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-37",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/HEPES_Medium.yaml",
+        "sha256": "56957a8841fbf22841d3036402ed1fbfe33e473694bc7069fe609d9afaeac0d5"
+      },
+      "actual_sha256": "56957a8841fbf22841d3036402ed1fbfe33e473694bc7069fe609d9afaeac0d5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-38",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/LDM_Medium.yaml",
+        "sha256": "35b7e709d817d731414c2a264e133d46b9028643b23cf2ebfaeb81e01d98120e"
+      },
+      "actual_sha256": "35b7e709d817d731414c2a264e133d46b9028643b23cf2ebfaeb81e01d98120e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-39",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/LDM_Medium.yaml",
+        "sha256": "35b7e709d817d731414c2a264e133d46b9028643b23cf2ebfaeb81e01d98120e"
+      },
+      "actual_sha256": "35b7e709d817d731414c2a264e133d46b9028643b23cf2ebfaeb81e01d98120e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-40",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Artificial_Seawater_Medium.yaml",
+        "sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2"
+      },
+      "actual_sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-41",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Artificial_Seawater_Medium.yaml",
+        "sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2"
+      },
+      "actual_sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-42",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Artificial_Seawater_Medium.yaml",
+        "sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2"
+      },
+      "actual_sha256": "86d3f55f1dc87448bee9f11e08137ebea787289b903069051a466c0cf1237ee2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-43",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Bolds_3N_Medium.yaml",
+        "sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae"
+      },
+      "actual_sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-44",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Bolds_3N_Medium.yaml",
+        "sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae"
+      },
+      "actual_sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-45",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_Bolds_3N_Medium.yaml",
+        "sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae"
+      },
+      "actual_sha256": "68d2554a9fdf5a8fc5e27b2f97951701aa31174709c304626d5ee46d1a92b9ae",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-46",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_COMBO_Medium.yaml",
+        "sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0"
+      },
+      "actual_sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-47",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_COMBO_Medium.yaml",
+        "sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0"
+      },
+      "actual_sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-48",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Modified_COMBO_Medium.yaml",
+        "sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0"
+      },
+      "actual_sha256": "ecc3577278372efbc247f2199ead49d2aa08e0d13b0a55ece66ab988d3d690b0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-49",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/N_20_Medium.yaml",
+        "sha256": "faf8c6b3103d5a7e656b218ca5043df1bac72adedbb0fce4589fb285485ca57d"
+      },
+      "actual_sha256": "faf8c6b3103d5a7e656b218ca5043df1bac72adedbb0fce4589fb285485ca57d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-50",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/N_20_Medium.yaml",
+        "sha256": "faf8c6b3103d5a7e656b218ca5043df1bac72adedbb0fce4589fb285485ca57d"
+      },
+      "actual_sha256": "faf8c6b3103d5a7e656b218ca5043df1bac72adedbb0fce4589fb285485ca57d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-51",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/P49_Medium.yaml",
+        "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a"
+      },
+      "actual_sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-52",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/P49_Medium.yaml",
+        "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a"
+      },
+      "actual_sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-53",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/P49_Medium.yaml",
+        "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a"
+      },
+      "actual_sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-54",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Spirulina_Medium.yaml",
+        "sha256": "a96c3df375c1c181fd525d974411d7c5af9bf624bb9119b783c17c2603d961af"
+      },
+      "actual_sha256": "a96c3df375c1c181fd525d974411d7c5af9bf624bb9119b783c17c2603d961af",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-55",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Volvox_Medium.yaml",
+        "sha256": "0020b8cb596b4295e9b203785516d4a80282101350deeb7c45ec3a074a78cbd4"
+      },
+      "actual_sha256": "0020b8cb596b4295e9b203785516d4a80282101350deeb7c45ec3a074a78cbd4",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-56",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/Volvox_Medium.yaml",
+        "sha256": "0020b8cb596b4295e9b203785516d4a80282101350deeb7c45ec3a074a78cbd4"
+      },
+      "actual_sha256": "0020b8cb596b4295e9b203785516d4a80282101350deeb7c45ec3a074a78cbd4",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-57",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC+_Medium.yaml",
+        "sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64"
+      },
+      "actual_sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-58",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC+_Medium.yaml",
+        "sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64"
+      },
+      "actual_sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-59",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC+_Medium.yaml",
+        "sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64"
+      },
+      "actual_sha256": "76de1b06b32faad6e26354afc0a5f4813f84e06c94d76cbe63feaa3e48a0ad64",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-60",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC_Medium.yaml",
+        "sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9"
+      },
+      "actual_sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-61",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC_Medium.yaml",
+        "sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9"
+      },
+      "actual_sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-62",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/WC_Medium.yaml",
+        "sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9"
+      },
+      "actual_sha256": "1bf256e1834de63b5cda60a344cb14cdab4bcb0152896a37280f065a58c85ed9",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-63",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/erdschreibers_medium.yaml",
+        "sha256": "62011d1ee2c6295ce496180151de7377be278b6b90775a1f71ce35704807b928"
+      },
+      "actual_sha256": "62011d1ee2c6295ce496180151de7377be278b6b90775a1f71ce35704807b928",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-64",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/mes_volvox_medium.yaml",
+        "sha256": "2829419e0d3e7284d6673c262d8ea3b169a613dd7c06ffcda1e40638a7779c1b"
+      },
+      "actual_sha256": "2829419e0d3e7284d6673c262d8ea3b169a613dd7c06ffcda1e40638a7779c1b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-65",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/mes_volvox_medium.yaml",
+        "sha256": "2829419e0d3e7284d6673c262d8ea3b169a613dd7c06ffcda1e40638a7779c1b"
+      },
+      "actual_sha256": "2829419e0d3e7284d6673c262d8ea3b169a613dd7c06ffcda1e40638a7779c1b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-66",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/volvox_dextrose_medium.yaml",
+        "sha256": "102db6ef05b23472e2e1f2e42e15c730f4685fd080384134b27b1df5f75428c8"
+      },
+      "actual_sha256": "102db6ef05b23472e2e1f2e42e15c730f4685fd080384134b27b1df5f75428c8",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-60-67",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/algae/volvox_dextrose_medium.yaml",
+        "sha256": "102db6ef05b23472e2e1f2e42e15c730f4685fd080384134b27b1df5f75428c8"
+      },
+      "actual_sha256": "102db6ef05b23472e2e1f2e42e15c730f4685fd080384134b27b1df5f75428c8",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-62",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-62-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M778_Dehalospirillum_Medium.yaml",
+        "sha256": "8e56758abbd0ecab04fa399e3bb0cf1f511c1d7b3623851415e65b3d82812b09"
+      },
+      "actual_sha256": "8e56758abbd0ecab04fa399e3bb0cf1f511c1d7b3623851415e65b3d82812b09",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-64",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-64-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2366_BSK-Medium.yaml",
+        "sha256": "4a9be7a5fae3fc883204700360fcc8b9e73bfd2bf1602590739039db877670ba"
+      },
+      "actual_sha256": "4a9be7a5fae3fc883204700360fcc8b9e73bfd2bf1602590739039db877670ba",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-65",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1197.yaml",
+        "sha256": "4a643017b6861de12be6a13268adf1470eeddb16b54d2706006f00f9a8e529b5"
+      },
+      "actual_sha256": "4a643017b6861de12be6a13268adf1470eeddb16b54d2706006f00f9a8e529b5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1933_W-medium.yaml",
+        "sha256": "44dc70a381acf2efcb500b7e1ad421911e8abe7334a5e236714ada3e47720bf5"
+      },
+      "actual_sha256": "44dc70a381acf2efcb500b7e1ad421911e8abe7334a5e236714ada3e47720bf5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2186_CENS_medium.yaml",
+        "sha256": "af21352b679a9c965745e6992a49a1a398b6b85109f59de848c2c3282a6c6fa5"
+      },
+      "actual_sha256": "af21352b679a9c965745e6992a49a1a398b6b85109f59de848c2c3282a6c6fa5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-3",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2708_PYE_Medium.yaml",
+        "sha256": "ab11b798e23faaa928358787185fb27cd38ca803a839f5d4e94690ecd43d3e3b"
+      },
+      "actual_sha256": "ab11b798e23faaa928358787185fb27cd38ca803a839f5d4e94690ecd43d3e3b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-4",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+        "sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85"
+      },
+      "actual_sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-5",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_w_medium.yaml",
+        "sha256": "14bcf09093e3569d937686f75f6ba3bfb16713d298bd855ac24b93d032d2d63d"
+      },
+      "actual_sha256": "14bcf09093e3569d937686f75f6ba3bfb16713d298bd855ac24b93d032d2d63d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-65-6",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/terephthalate_medium_nbrc_1195.yaml",
+        "sha256": "35e349f848286a742c1b6c6fc9b4bdefc5c45c74433f8f5bfcb4b440c0efc2f5"
+      },
+      "actual_sha256": "35e349f848286a742c1b6c6fc9b4bdefc5c45c74433f8f5bfcb4b440c0efc2f5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-75",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-75-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/phosphate_buffered_basal_medium_pbbm.yaml",
+        "sha256": "06dfe8179c47c90ec49073e1d2f49caf41ca5f27a442a37c3bab5cdbfae76714"
+      },
+      "actual_sha256": "06dfe8179c47c90ec49073e1d2f49caf41ca5f27a442a37c3bab5cdbfae76714",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-80",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-80-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/spirochaeta_isovalerica_medium.yaml",
+        "sha256": "9ba9b7e0cc62670da4016da35ee7f51db2bb3d9c271196c3a5b34796d85b6411"
+      },
+      "actual_sha256": "9ba9b7e0cc62670da4016da35ee7f51db2bb3d9c271196c3a5b34796d85b6411",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-81",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-81-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1430_SEMI_SOLID_HETEROTROPHIC_GROWTH_MEDIUM_FOR_ALPHAPROTEOBACTERIA.yaml",
+        "sha256": "5172e4c7d8ec3245079affdeeff8ec50297fa984e466dd5b3b815195b07ea7b3"
+      },
+      "actual_sha256": "5172e4c7d8ec3245079affdeeff8ec50297fa984e466dd5b3b815195b07ea7b3",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-81-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1431_SEMI_SOLID_AUTOTROPHIC_GROWTH_MEDIUM_FOR_GAMMAPROTEOBACTERIA.yaml",
+        "sha256": "40f3a44e508c3503a723d97373f71f84371e2f55a3b7da72b2b31d0e5231ebd6"
+      },
+      "actual_sha256": "40f3a44e508c3503a723d97373f71f84371e2f55a3b7da72b2b31d0e5231ebd6",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-81-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M961_Semi-Solid_Autotrophic_Growth_Medium_For_Magnetococcus_Marinus.yaml",
+        "sha256": "25a8300948a6d376e9a2477d6e966a4e9fd1ce14e643eefeaca5c8ad21b03ac9"
+      },
+      "actual_sha256": "25a8300948a6d376e9a2477d6e966a4e9fd1ce14e643eefeaca5c8ad21b03ac9",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-81-3",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M964_Desulfamplus_Medium.yaml",
+        "sha256": "f18b89f5a39e5781277abc18633692a2812399458606d2cbdd1a2bfa4791f886"
+      },
+      "actual_sha256": "f18b89f5a39e5781277abc18633692a2812399458606d2cbdd1a2bfa4791f886",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-84",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-84-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M857_Fermentative_Cellulolytic_Anaerobes_Medium.yaml",
+        "sha256": "cda6c768dd3702e08fcf47def0ac33847a1798c1efe5fdca9f9a8c069a76d712"
+      },
+      "actual_sha256": "cda6c768dd3702e08fcf47def0ac33847a1798c1efe5fdca9f9a8c069a76d712",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-87",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-87-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/liquid_fermentation_medium.yaml",
+        "sha256": "3bdd856975af4f597eac7796eebea173d4c71c3ffa42b4c2507b615c2664dee1"
+      },
+      "actual_sha256": "3bdd856975af4f597eac7796eebea173d4c71c3ffa42b4c2507b615c2664dee1",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-94",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-94-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M798_Betaine_bicarbonate_Buffered_Medium.yaml",
+        "sha256": "45173c47513c1c8b4fabda704ae6407128d276cbe0fd8548bec9025956f549ab"
+      },
+      "actual_sha256": "45173c47513c1c8b4fabda704ae6407128d276cbe0fd8548bec9025956f549ab",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-100",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-100-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2346_M14_Pirellula_Marina_Medium.yaml",
+        "sha256": "673fbb590c55be66e6774ca9dab4d50181eca7caed875dff36c51cc513506674"
+      },
+      "actual_sha256": "673fbb590c55be66e6774ca9dab4d50181eca7caed875dff36c51cc513506674",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-101",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-101-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M135_Modified_NOS_Medium.yaml",
+        "sha256": "91db2299c5939106f818bc3f93be621c9c54a1fe925a3b33eadc097d283ef219"
+      },
+      "actual_sha256": "91db2299c5939106f818bc3f93be621c9c54a1fe925a3b33eadc097d283ef219",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-102",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-102-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M431_BN3_Medium.yaml",
+        "sha256": "35c2b3264b82cf435135a02583fb7e004fe58bc46d6c0906db454950ea333cdc"
+      },
+      "actual_sha256": "35c2b3264b82cf435135a02583fb7e004fe58bc46d6c0906db454950ea333cdc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-102-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M940_Thermobacter_Roseum_Medium.yaml",
+        "sha256": "c1ceeaa10137bc48e7cc7ee584f964ba6f38189c776b21f4db2fda3f8a3a393a"
+      },
+      "actual_sha256": "c1ceeaa10137bc48e7cc7ee584f964ba6f38189c776b21f4db2fda3f8a3a393a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-107",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-107-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1101_MPYCY_Agar_Medium.yaml",
+        "sha256": "8836b6bce07a6118bc132cb69ba7454462dac531835433d3235b8c40ced8838c"
+      },
+      "actual_sha256": "8836b6bce07a6118bc132cb69ba7454462dac531835433d3235b8c40ced8838c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-107-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1102_MPYCY_Agar_Medium.yaml",
+        "sha256": "101e43b78c7e95bda05b0e08afc24fd121d925ac604b987734d596f7edea7776"
+      },
+      "actual_sha256": "101e43b78c7e95bda05b0e08afc24fd121d925ac604b987734d596f7edea7776",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-112",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-112-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/petc_mes_medium.yaml",
+        "sha256": "882d40b488a4282ae5f6c4d3879d133dbc95f93d69ec3df9590a9a9b12d5bf6c"
+      },
+      "actual_sha256": "882d40b488a4282ae5f6c4d3879d133dbc95f93d69ec3df9590a9a9b12d5bf6c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-114",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-114-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/fundidesulfovibrio_magnetotactcus_medium.yaml",
+        "sha256": "b2a0a2f8f91206762ee530c06fbaca1c78146b0fb9ed67fc9b8ae515d3b8f339"
+      },
+      "actual_sha256": "b2a0a2f8f91206762ee530c06fbaca1c78146b0fb9ed67fc9b8ae515d3b8f339",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-115",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-115-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+        "sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295"
+      },
+      "actual_sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-119",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-119-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+        "sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295"
+      },
+      "actual_sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-121",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-121-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/bcye_2216e.yaml",
+        "sha256": "cc45db39d21fa081575e3039998ca5b6ea4cf0b9ede76ffd6b6ef9e8cb5a4dfb"
+      },
+      "actual_sha256": "cc45db39d21fa081575e3039998ca5b6ea4cf0b9ede76ffd6b6ef9e8cb5a4dfb",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-123",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-123-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M560_Methylosoma_Difficile_Medium.yaml",
+        "sha256": "f8544d6c4019c09d827fd2e3a91dc129d5bba3413d4e44cdce3e4a0584a0a1a5"
+      },
+      "actual_sha256": "f8544d6c4019c09d827fd2e3a91dc129d5bba3413d4e44cdce3e4a0584a0a1a5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-124",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-124-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/anoxic_bicarbonate_buffered_basal_medium_bbm_with_10_mm_sodium_nitrate_and_various_concentrations_of_sodium_acetate.yaml",
+        "sha256": "3e77c811a62725484b5e90f23fd28166f3fb22da5370b44b5da297e2bd63d9a0"
+      },
+      "actual_sha256": "3e77c811a62725484b5e90f23fd28166f3fb22da5370b44b5da297e2bd63d9a0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-125",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-125-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/nitrate_mineral_salts_medium_nms_0_01_tryptone.yaml",
+        "sha256": "3025ce915b3af823d116a56d04f20a5331d2721813de8b82c37fa01b6b0b3324"
+      },
+      "actual_sha256": "3025ce915b3af823d116a56d04f20a5331d2721813de8b82c37fa01b6b0b3324",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-126",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-126-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1185.yaml",
+        "sha256": "68c75a5a50abad7b6cff1359fbf2be52a3e55cfa014736e53877070fb8922394"
+      },
+      "actual_sha256": "68c75a5a50abad7b6cff1359fbf2be52a3e55cfa014736e53877070fb8922394",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-126-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/marine_caulobacter_medium.yaml",
+        "sha256": "dd4dee73563ec7ea6e5a944f0880b98aa186dbdd54a17c4218521fc917137df6"
+      },
+      "actual_sha256": "dd4dee73563ec7ea6e5a944f0880b98aa186dbdd54a17c4218521fc917137df6",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-126-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1919.yaml",
+        "sha256": "53c88902fdd25877948f934ee8e3e16e5eb9dccb0fa18626e89c5d01d022d5ca"
+      },
+      "actual_sha256": "53c88902fdd25877948f934ee8e3e16e5eb9dccb0fa18626e89c5d01d022d5ca",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-126-3",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/specialized/marine_caulobacter_medium.yaml",
+        "sha256": "f5cde25722471a277d527a1c2a5840da00138d5dec4d979ff1d0d8c9d843d091"
+      },
+      "actual_sha256": "f5cde25722471a277d527a1c2a5840da00138d5dec4d979ff1d0d8c9d843d091",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-127",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-127-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3045_Brain_Heart_Infusion_BHI_with_Sodium_Acetate.yaml",
+        "sha256": "e2053b872dd911ea706ddfee6aaf880a0dc6d57cfdba5696beb8d30cad5856ac"
+      },
+      "actual_sha256": "e2053b872dd911ea706ddfee6aaf880a0dc6d57cfdba5696beb8d30cad5856ac",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-127-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_bhi_with_sodium_acetate.yaml",
+        "sha256": "33c0f1eb0d389758a56de092691d53cdd4865a29c8c92800cf0cd795a6c24e0e"
+      },
+      "actual_sha256": "33c0f1eb0d389758a56de092691d53cdd4865a29c8c92800cf0cd795a6c24e0e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-130",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-130-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1452_PYA_MEDIUM.yaml",
+        "sha256": "d38c3998135d7f93679711b342ed2e5c9e97211943754849ed3ed02c61b250cd"
+      },
+      "actual_sha256": "d38c3998135d7f93679711b342ed2e5c9e97211943754849ed3ed02c61b250cd",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-case-135",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-10.json",
+        "sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc"
+      },
+      "actual_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-135-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1285_ELBE_Methanotroph_Medium.yaml",
+        "sha256": "457dd14a51d3dde92c7a37d97eee80088e14cfaf7342503e3139202d97966d0f"
+      },
+      "actual_sha256": "457dd14a51d3dde92c7a37d97eee80088e14cfaf7342503e3139202d97966d0f",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-135-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1286_ELBE_Methanotroph_Medium.yaml",
+        "sha256": "b62aa8a8c63e8bd6e42d348a1d68627a0340d5afd3361f92eb55ec789f7ed395"
+      },
+      "actual_sha256": "b62aa8a8c63e8bd6e42d348a1d68627a0340d5afd3361f92eb55ec789f7ed395",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-recipe-135-2",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M560_Methylosoma_Difficile_Medium.yaml",
+        "sha256": "f8544d6c4019c09d827fd2e3a91dc129d5bba3413d4e44cdce3e4a0584a0a1a5"
+      },
+      "actual_sha256": "f8544d6c4019c09d827fd2e3a91dc129d5bba3413d4e44cdce3e4a0584a0a1a5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-8a790ec4cd07467f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/8a790ec4cd07467f4a44.pdf",
+        "sha256": "35bf0077611e781af17c24f3786b51fc5ac8719df60ea06d8eb4d754d0f2fc33"
+      },
+      "actual_sha256": "35bf0077611e781af17c24f3786b51fc5ac8719df60ea06d8eb4d754d0f2fc33",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-cb3de946b9eb429a",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/cb3de946b9eb429a0a0b.html",
+        "sha256": "c3447acc4aef7396dd71c11e19f3694d0bbc0037f50327ed5629d79389cfd7ef"
+      },
+      "actual_sha256": "c3447acc4aef7396dd71c11e19f3694d0bbc0037f50327ed5629d79389cfd7ef",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-afed65308f937d6d",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/afed65308f937d6de43a.json",
+        "sha256": "5a7a2295e70f34def32334aa28f71e7d582977ac8fbaa5009e92e7bd9694330d"
+      },
+      "actual_sha256": "5a7a2295e70f34def32334aa28f71e7d582977ac8fbaa5009e92e7bd9694330d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d78eaec3d48cf38b",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d78eaec3d48cf38b5934.html",
+        "sha256": "a933ef7d21a623d1371164611e7eb6105851a197dcbaf72bed68341a52a0b8eb"
+      },
+      "actual_sha256": "a933ef7d21a623d1371164611e7eb6105851a197dcbaf72bed68341a52a0b8eb",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-712c306afd311885",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/712c306afd311885f785.json",
+        "sha256": "a9b018b6ee0064a40625ecd881f41e2c2bd5b71ffcfb3c8513823faf341f809a"
+      },
+      "actual_sha256": "a9b018b6ee0064a40625ecd881f41e2c2bd5b71ffcfb3c8513823faf341f809a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-9c2e840069cb8057",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/9c2e840069cb805794c8.html",
+        "sha256": "7489686c0f8b4a1fadd428de69fde4f0eaf5a7eebbbd7d60ac725684d49b7490"
+      },
+      "actual_sha256": "7489686c0f8b4a1fadd428de69fde4f0eaf5a7eebbbd7d60ac725684d49b7490",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d41064a5ad70acb9",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d41064a5ad70acb9968f.json",
+        "sha256": "2d65200988cd53b3bee7a9c4f733b47299a732b8741d11302f63d22e9f6b12f3"
+      },
+      "actual_sha256": "2d65200988cd53b3bee7a9c4f733b47299a732b8741d11302f63d22e9f6b12f3",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-692f41af8d398680",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/692f41af8d3986806ba9.html",
+        "sha256": "7e1ae66a4acd07cf352b24f044396fd192c8135f001f2cd1c9a120da1c4bcd37"
+      },
+      "actual_sha256": "7e1ae66a4acd07cf352b24f044396fd192c8135f001f2cd1c9a120da1c4bcd37",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-6b4bfed4b4c00d2f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/6b4bfed4b4c00d2fed8b.json",
+        "sha256": "e7819152f9392cafebb2405c1ecce11bc67bf5c886e4d99cf485f25ba708e6a1"
+      },
+      "actual_sha256": "e7819152f9392cafebb2405c1ecce11bc67bf5c886e4d99cf485f25ba708e6a1",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b029597753af131b",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b029597753af131b5217.html",
+        "sha256": "909f5d1473569b21459b9392770864690767e2de010299e8d4245ad24e30673e"
+      },
+      "actual_sha256": "909f5d1473569b21459b9392770864690767e2de010299e8d4245ad24e30673e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-54e6db3ad5db014f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/54e6db3ad5db014fcb25.json",
+        "sha256": "28ccbf29179c979a8bd18f9821588722b46f999277ea335bd897f6297a26b889"
+      },
+      "actual_sha256": "28ccbf29179c979a8bd18f9821588722b46f999277ea335bd897f6297a26b889",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-67571e41287e97f2",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/67571e41287e97f2017a.html",
+        "sha256": "63d9b6fc0fa321432138d2e5e6e5eb005785b211730fc0c02e3ed1d587280188"
+      },
+      "actual_sha256": "63d9b6fc0fa321432138d2e5e6e5eb005785b211730fc0c02e3ed1d587280188",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-9a8768ce3646b844",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/9a8768ce3646b844d041.json",
+        "sha256": "59cf8eb83d25bbbd768548e3565cb3cc1a3197d6a43b49639d58fd97516b9e15"
+      },
+      "actual_sha256": "59cf8eb83d25bbbd768548e3565cb3cc1a3197d6a43b49639d58fd97516b9e15",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-2b7e3ee4d3ec3dfb",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/2b7e3ee4d3ec3dfb08be.json",
+        "sha256": "b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a"
+      },
+      "actual_sha256": "b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-366c648a332e35b4",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/366c648a332e35b4e2ce.html",
+        "sha256": "b50c448cb435eda7dd35bb52c171e56db259c40f097332035990ec931d8ea22d"
+      },
+      "actual_sha256": "b50c448cb435eda7dd35bb52c171e56db259c40f097332035990ec931d8ea22d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-3f06aa56925a7b79",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/3f06aa56925a7b79e9a7.json",
+        "sha256": "8fa8b7f367b4984e06c41a88c1627cf56fd504d70dde33bf025a2044a30c56ac"
+      },
+      "actual_sha256": "8fa8b7f367b4984e06c41a88c1627cf56fd504d70dde33bf025a2044a30c56ac",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-3799e4c66cccca65",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/3799e4c66cccca65ba2b.html",
+        "sha256": "5762f71318df11a6a57094c87027ff45fe4719c39703aa058155ced6313821ba"
+      },
+      "actual_sha256": "5762f71318df11a6a57094c87027ff45fe4719c39703aa058155ced6313821ba",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-4a5f971eaf6f8d2e",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/4a5f971eaf6f8d2ea752.html",
+        "sha256": "ac034681f994b52b265a9f7c96c50fb3485fb62da9e0b161ef6465e55da73b88"
+      },
+      "actual_sha256": "ac034681f994b52b265a9f7c96c50fb3485fb62da9e0b161ef6465e55da73b88",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-a546f19a345acc25",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/a546f19a345acc254d61.json",
+        "sha256": "7810752304191f135669072ed72270f51a436c9934976bab665a28a0a6db3bb0"
+      },
+      "actual_sha256": "7810752304191f135669072ed72270f51a436c9934976bab665a28a0a6db3bb0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-6ff059d8503fe1ef",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/6ff059d8503fe1efd70c.html",
+        "sha256": "d980bb9fe598ebb9997188e90039d56c3476f1dd5093361c0677db0eaad65de5"
+      },
+      "actual_sha256": "d980bb9fe598ebb9997188e90039d56c3476f1dd5093361c0677db0eaad65de5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-411ee2f348a3eea9",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/411ee2f348a3eea94fc6.json",
+        "sha256": "3de9eb3e5193305d99ca6465797ee15dc23f0d4265d7d45ce173c40b9d010bb2"
+      },
+      "actual_sha256": "3de9eb3e5193305d99ca6465797ee15dc23f0d4265d7d45ce173c40b9d010bb2",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-c0c62579f3d1a063",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/c0c62579f3d1a063a7e1.html",
+        "sha256": "bc795a3eb25a28dbe2df63e934ed7e498d399ad6b948be52fc90255df927de3e"
+      },
+      "actual_sha256": "bc795a3eb25a28dbe2df63e934ed7e498d399ad6b948be52fc90255df927de3e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-340a73a127cf12b1",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/340a73a127cf12b1ad39.html",
+        "sha256": "535c17a3456e7949cd468d7c7a5408ff8b2a20adac51c85a00330e620bb1a7ff"
+      },
+      "actual_sha256": "535c17a3456e7949cd468d7c7a5408ff8b2a20adac51c85a00330e620bb1a7ff",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-88d4946dae9a79f1",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/88d4946dae9a79f126c3.html",
+        "sha256": "4efb4081a6af82d62a1ce253d6d17e31e422c0b8bdb08907b71b240d363a4d88"
+      },
+      "actual_sha256": "4efb4081a6af82d62a1ce253d6d17e31e422c0b8bdb08907b71b240d363a4d88",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-e8abd935a388517e",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/e8abd935a388517e97ae.html",
+        "sha256": "8fefb7e7e2dbd4c2e23c69aec8921b925cf03a03d87074c9b1b0c9113c776056"
+      },
+      "actual_sha256": "8fefb7e7e2dbd4c2e23c69aec8921b925cf03a03d87074c9b1b0c9113c776056",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b008f99181e22e67",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b008f99181e22e67fd8b.json",
+        "sha256": "e162f2a7183e49990a2d8fc5050668a7ad7da609a50fed133354af91a5d283a9"
+      },
+      "actual_sha256": "e162f2a7183e49990a2d8fc5050668a7ad7da609a50fed133354af91a5d283a9",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-7994c01631f9607b",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/7994c01631f9607bbbe7.html",
+        "sha256": "e916f2c4d87a5b98eb7cae7655caf95677f1bb7a4e24a9e8adfd453135901eeb"
+      },
+      "actual_sha256": "e916f2c4d87a5b98eb7cae7655caf95677f1bb7a4e24a9e8adfd453135901eeb",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-f166d1f9c21f8bb8",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/f166d1f9c21f8bb87655.json",
+        "sha256": "0267237320ade791d1c515ae12d3de855d9cd5a4f0d3baba585b36337b638e0e"
+      },
+      "actual_sha256": "0267237320ade791d1c515ae12d3de855d9cd5a4f0d3baba585b36337b638e0e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-797f589513511f25",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/797f589513511f250837.json",
+        "sha256": "30853a7568211d3cbf2995f7433667b8187a66e2c54612e279772e7bdd1384dd"
+      },
+      "actual_sha256": "30853a7568211d3cbf2995f7433667b8187a66e2c54612e279772e7bdd1384dd",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-44b408da97422913",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/44b408da97422913f236.html",
+        "sha256": "426048816cf842d6453bb931bfe5da9578f73277b6b69628646c3d6c62a61f93"
+      },
+      "actual_sha256": "426048816cf842d6453bb931bfe5da9578f73277b6b69628646c3d6c62a61f93",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b45eb20b19e61138",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b45eb20b19e61138ca03.html",
+        "sha256": "951b851e297e5b1db5efc4475d36f682c16518ee5fb8d9224b20a1d75ffdf972"
+      },
+      "actual_sha256": "951b851e297e5b1db5efc4475d36f682c16518ee5fb8d9224b20a1d75ffdf972",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-05295ed25f148c27",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/05295ed25f148c27b58f.json",
+        "sha256": "c34e533cfe13bb683af5d2f0964b0c926a9aaf22a3051f151a61894a7af5a1f4"
+      },
+      "actual_sha256": "c34e533cfe13bb683af5d2f0964b0c926a9aaf22a3051f151a61894a7af5a1f4",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b7d9d34bf3d8036e",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b7d9d34bf3d8036e3752.pdf",
+        "sha256": "8053bfa9ef5ee989f52bc670e76bf85544eeae2142917643c06d99b629a222ef"
+      },
+      "actual_sha256": "8053bfa9ef5ee989f52bc670e76bf85544eeae2142917643c06d99b629a222ef",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-0601c054fc0b3983",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/0601c054fc0b398343a4.json",
+        "sha256": "62df37a7bf7acbabde3a471c07843e57d3bf4d7945a0d148b0bf139d8b9f24ad"
+      },
+      "actual_sha256": "62df37a7bf7acbabde3a471c07843e57d3bf4d7945a0d148b0bf139d8b9f24ad",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-03edca67ae96a682",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/03edca67ae96a682b0a2.html",
+        "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df"
+      },
+      "actual_sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-ba7a82033a7b9478",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/ba7a82033a7b94780277.html",
+        "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71"
+      },
+      "actual_sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-f41f350dc810b643",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/f41f350dc810b64364ff.html",
+        "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b"
+      },
+      "actual_sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-2dca2ffb29c8ce04",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/2dca2ffb29c8ce0417a0.json",
+        "sha256": "2c91de3de940acb6207a43a518368821f20ed15003293de791e738fc98885540"
+      },
+      "actual_sha256": "2c91de3de940acb6207a43a518368821f20ed15003293de791e738fc98885540",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-6d72693fd96023c1",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/6d72693fd96023c1d34b.html",
+        "sha256": "1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48"
+      },
+      "actual_sha256": "1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-e1ddc8bac4c87b3a",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/e1ddc8bac4c87b3a5e6f.html",
+        "sha256": "5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb"
+      },
+      "actual_sha256": "5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-f7ada6c0c960aa48",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/f7ada6c0c960aa48ae60.html",
+        "sha256": "a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82"
+      },
+      "actual_sha256": "a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b760a63b742c75a6",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b760a63b742c75a67291.html",
+        "sha256": "97d082984c917edc0a6864dea816d0d1012eecff2f2a2a29d0888fd494e5ba7d"
+      },
+      "actual_sha256": "97d082984c917edc0a6864dea816d0d1012eecff2f2a2a29d0888fd494e5ba7d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-a88471724f63d66b",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/a88471724f63d66b9b7d.html",
+        "sha256": "cb0a97140c09b1895332b6e4278b102c36abe60fdb8bcb2dc71a45eda4663757"
+      },
+      "actual_sha256": "cb0a97140c09b1895332b6e4278b102c36abe60fdb8bcb2dc71a45eda4663757",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-bfc194cd7d38c7d1",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/bfc194cd7d38c7d1a2b3.json",
+        "sha256": "5b9f338aad376db87344c7c918711f920729d3f28e3f1310879e94e7b840a64c"
+      },
+      "actual_sha256": "5b9f338aad376db87344c7c918711f920729d3f28e3f1310879e94e7b840a64c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-ded69954ea792c68",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/ded69954ea792c688922.json",
+        "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc"
+      },
+      "actual_sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b756bb7cb9a632e8",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b756bb7cb9a632e8fdf9.html",
+        "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b"
+      },
+      "actual_sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d03fb1b0aa631950",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d03fb1b0aa63195064e4.json",
+        "sha256": "a292d49ef0f96bf5addfc7a7909bb59d3e762b3de4cd7d91db5d183bad9caacd"
+      },
+      "actual_sha256": "a292d49ef0f96bf5addfc7a7909bb59d3e762b3de4cd7d91db5d183bad9caacd",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-094c5b650a091f4a",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/094c5b650a091f4a9acd.pdf",
+        "sha256": "c3c7dedb8a87b25088fc5f55383ff8867faea35550923681196b8be5408790b7"
+      },
+      "actual_sha256": "c3c7dedb8a87b25088fc5f55383ff8867faea35550923681196b8be5408790b7",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d307d207abd04fea",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d307d207abd04feab481.json",
+        "sha256": "37ed45bb796d35d5c81e7b87473ab562da0afcd9acbd1f35bf7daf83ea997ae7"
+      },
+      "actual_sha256": "37ed45bb796d35d5c81e7b87473ab562da0afcd9acbd1f35bf7daf83ea997ae7",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d282bb942d513790",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d282bb942d513790c792.html",
+        "sha256": "739c6331ab94d6a06234660832c41f932f2a33926296eef994d5b3baa741e75e"
+      },
+      "actual_sha256": "739c6331ab94d6a06234660832c41f932f2a33926296eef994d5b3baa741e75e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-e8590f04c1945824",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/e8590f04c19458245329.json",
+        "sha256": "22f64cfd7e8ebfb5261f842f7fa5b3f4b94967ce762047262700b74221ee953a"
+      },
+      "actual_sha256": "22f64cfd7e8ebfb5261f842f7fa5b3f4b94967ce762047262700b74221ee953a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-a7277ddb9aa30cb4",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/a7277ddb9aa30cb4aef1.html",
+        "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50"
+      },
+      "actual_sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-f7a675e1c6976e01",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/f7a675e1c6976e018ff5.json",
+        "sha256": "e906db1342c998a25b7fc6a9b8e9168bed218838aefdb9ef9c8398251c3ec570"
+      },
+      "actual_sha256": "e906db1342c998a25b7fc6a9b8e9168bed218838aefdb9ef9c8398251c3ec570",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-a95d21757d9f5e59",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/a95d21757d9f5e59edeb.html",
+        "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+      },
+      "actual_sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-2cd71a0cecaa19bd",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/2cd71a0cecaa19bdfe3e.json",
+        "sha256": "97f04e6a1b315abd48e5c9997e726eb7c1e18916b385221596f29690cca5fc1a"
+      },
+      "actual_sha256": "97f04e6a1b315abd48e5c9997e726eb7c1e18916b385221596f29690cca5fc1a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-578bad19e849e0fe",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/578bad19e849e0fe53c2.json",
+        "sha256": "40cd8eac51ed9b8273911b94971469722a6df62198d2398a8654653be060866e"
+      },
+      "actual_sha256": "40cd8eac51ed9b8273911b94971469722a6df62198d2398a8654653be060866e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-0bcac7f38d202632",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/0bcac7f38d202632d525.html",
+        "sha256": "ad05acabe14d2ef7c94458b6bf766bd3cc01b9d2aec78987162593128d63cd44"
+      },
+      "actual_sha256": "ad05acabe14d2ef7c94458b6bf766bd3cc01b9d2aec78987162593128d63cd44",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b224b75d33d77081",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b224b75d33d77081720a.json",
+        "sha256": "63f0c119faa4a0b4998efecfb137dc8177ec2c730d1a6cb5672c5e419af32420"
+      },
+      "actual_sha256": "63f0c119faa4a0b4998efecfb137dc8177ec2c730d1a6cb5672c5e419af32420",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-429b78763024f2f9",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/429b78763024f2f9203f.json",
+        "sha256": "e7040fcd88bb2eddd5d07aadd2c2049943474d691bddcc3c635a01e28e49278d"
+      },
+      "actual_sha256": "e7040fcd88bb2eddd5d07aadd2c2049943474d691bddcc3c635a01e28e49278d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-bdb6a20baf71b757",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/bdb6a20baf71b757c51b.html",
+        "sha256": "5da88e63ce52715bd2500d86144cf08b3a5ccb2d550ddbaae374a1bffa10043d"
+      },
+      "actual_sha256": "5da88e63ce52715bd2500d86144cf08b3a5ccb2d550ddbaae374a1bffa10043d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-71a35a9c2b95030a",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/71a35a9c2b95030ae3b6.json",
+        "sha256": "517b94acce6798588b8b4fbff25136af2a0624b6dca9005bd08511c566b04179"
+      },
+      "actual_sha256": "517b94acce6798588b8b4fbff25136af2a0624b6dca9005bd08511c566b04179",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-a5a4ec5e544b62f0",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/a5a4ec5e544b62f0112f.html",
+        "sha256": "8d1a45f14e72031f0dc3c8465461353af1d8a289fcbb42baaef616a8e2c61d68"
+      },
+      "actual_sha256": "8d1a45f14e72031f0dc3c8465461353af1d8a289fcbb42baaef616a8e2c61d68",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-4dad67facb543532",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/4dad67facb5435321502.json",
+        "sha256": "52530bcab8f9004a9490b1a312fc68d1ab4d24e01c9edaebe47aa1fdbd1676a6"
+      },
+      "actual_sha256": "52530bcab8f9004a9490b1a312fc68d1ab4d24e01c9edaebe47aa1fdbd1676a6",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-912d33270672f032",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/912d33270672f032e2ee.json",
+        "sha256": "593aedcdd9f904902f4679110cf6fda26ab7668e28d61732bcb2eb2cdaa57902"
+      },
+      "actual_sha256": "593aedcdd9f904902f4679110cf6fda26ab7668e28d61732bcb2eb2cdaa57902",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-76e91583349d0f75",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/76e91583349d0f75f784.html",
+        "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a"
+      },
+      "actual_sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-45ae719b1421974f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/45ae719b1421974f0f1f.json",
+        "sha256": "6751d62c0a1b9c1bc4b6f589bdfd7d38b96d66828f12fe40522c481687ab609c"
+      },
+      "actual_sha256": "6751d62c0a1b9c1bc4b6f589bdfd7d38b96d66828f12fe40522c481687ab609c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-5939a819cce95c5d",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/5939a819cce95c5d6bb5.html",
+        "sha256": "568bc48ede882d9d7b37b93c1fb34cc2527039d4aa39cabbb1469346b57cfa97"
+      },
+      "actual_sha256": "568bc48ede882d9d7b37b93c1fb34cc2527039d4aa39cabbb1469346b57cfa97",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-10024d40ccec0315",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/10024d40ccec03159d2a.html",
+        "sha256": "f6e2914ef2d02cfe0133ac2914685079eca0e1352b5cea36ac881dc648db83a4"
+      },
+      "actual_sha256": "f6e2914ef2d02cfe0133ac2914685079eca0e1352b5cea36ac881dc648db83a4",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-35c2182b244f2c26",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/35c2182b244f2c264aa3.json",
+        "sha256": "d5d44e3634a1b6db80729004fcde85f5a897d105eaf3489983f2d37e96c14593"
+      },
+      "actual_sha256": "d5d44e3634a1b6db80729004fcde85f5a897d105eaf3489983f2d37e96c14593",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-947e5eff24deb387",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/947e5eff24deb3878f3b.html",
+        "sha256": "8b381e8f3cf1be142df06bcc53113623ef4a446060b510e4c3870145e6db9433"
+      },
+      "actual_sha256": "8b381e8f3cf1be142df06bcc53113623ef4a446060b510e4c3870145e6db9433",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-44445462ffa7bfa8",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/44445462ffa7bfa8f3a5.html",
+        "sha256": "f29deedeee69ccae81017babc33b8450a719834aed7134337338078bf8adb003"
+      },
+      "actual_sha256": "f29deedeee69ccae81017babc33b8450a719834aed7134337338078bf8adb003",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-d4b7335ac7808d9d",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/d4b7335ac7808d9dc40d.json",
+        "sha256": "a1142e715cfbf389735d8466bb705f33e449fa5de370f9e84dbe327e23954527"
+      },
+      "actual_sha256": "a1142e715cfbf389735d8466bb705f33e449fa5de370f9e84dbe327e23954527",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-27d42a63e9fa8926",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/27d42a63e9fa89264fe1.json",
+        "sha256": "774ea7698abc18817181c20aca2447a7bdac6566afacf3337b01bc27ebf26d98"
+      },
+      "actual_sha256": "774ea7698abc18817181c20aca2447a7bdac6566afacf3337b01bc27ebf26d98",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-c2fcf60f29239e64",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/c2fcf60f29239e6419c9.json",
+        "sha256": "94a36fa082dd852ce1cffb8f0b328a51922dd5d0a52b6bfe2b3d73d738cdee2c"
+      },
+      "actual_sha256": "94a36fa082dd852ce1cffb8f0b328a51922dd5d0a52b6bfe2b3d73d738cdee2c",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-5d64dd0d169e092f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/5d64dd0d169e092fd9a5.json",
+        "sha256": "2544e63b2cb034749293f3b847463753f46e56c4656edc0ea2c51436ec16e4b0"
+      },
+      "actual_sha256": "2544e63b2cb034749293f3b847463753f46e56c4656edc0ea2c51436ec16e4b0",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-6490b59a55812105",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/6490b59a55812105a5ed.pdf",
+        "sha256": "534eb705b29b2968ee8d90858241028c6cab8cfe78f9e3db647fdd6a4fd03a88"
+      },
+      "actual_sha256": "534eb705b29b2968ee8d90858241028c6cab8cfe78f9e3db647fdd6a4fd03a88",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-f8881b46c26d0843",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/f8881b46c26d0843d107.pdf",
+        "sha256": "ee788f0a554faacf718ba6e2ccaa0cf17def72c0306ae06ce5f9d2010935ef44"
+      },
+      "actual_sha256": "ee788f0a554faacf718ba6e2ccaa0cf17def72c0306ae06ce5f9d2010935ef44",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-e8f4562866a418fc",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/e8f4562866a418fc90ae.html",
+        "sha256": "f824e6c7456b91f82b3b1992eb4682240e53da6cd80cce2426edc328b28d0340"
+      },
+      "actual_sha256": "f824e6c7456b91f82b3b1992eb4682240e53da6cd80cce2426edc328b28d0340",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-19f06f111fc4fdb0",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/19f06f111fc4fdb0435c.html",
+        "sha256": "f83e48dc8aed960fef18f023c1506a478ebb7de028f3ac58ea8cce3a24113334"
+      },
+      "actual_sha256": "f83e48dc8aed960fef18f023c1506a478ebb7de028f3ac58ea8cce3a24113334",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-78d54fc76828ec0b",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/78d54fc76828ec0b26ed.html",
+        "sha256": "ec18da2aa986ea3b1ccdb92e6584c59d165e16069a4f0d6227dfbf6828055686"
+      },
+      "actual_sha256": "ec18da2aa986ea3b1ccdb92e6584c59d165e16069a4f0d6227dfbf6828055686",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-cd27e4bd3d0e5ce2",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/cd27e4bd3d0e5ce2069f.json",
+        "sha256": "e3561b8092c2ecaa262db9d7e25e03958bdfcdd9ea38bef037667176ca4983b5"
+      },
+      "actual_sha256": "e3561b8092c2ecaa262db9d7e25e03958bdfcdd9ea38bef037667176ca4983b5",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-08f1bb7b954b8b0f",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/08f1bb7b954b8b0f44fc.json",
+        "sha256": "4e44d9a7953c3878b2e9b9be2ac35754818797ae90e1ca28a0129ca124c0603e"
+      },
+      "actual_sha256": "4e44d9a7953c3878b2e9b9be2ac35754818797ae90e1ca28a0129ca124c0603e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-b04109d959a9a0a6",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/b04109d959a9a0a67be3.json",
+        "sha256": "c25cc9f7fe2f678a4383cbc13bec93266677e30be71557665982c963a360174e"
+      },
+      "actual_sha256": "c25cc9f7fe2f678a4383cbc13bec93266677e30be71557665982c963a360174e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-bc000a84b25fe466",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/bc000a84b25fe466cf80.json",
+        "sha256": "38a7980dd8ff6a8c74155e0bd90404c770d9773b4f5d3d235316eb00d1aa4ce7"
+      },
+      "actual_sha256": "38a7980dd8ff6a8c74155e0bd90404c770d9773b4f5d3d235316eb00d1aa4ce7",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-primary-e87b95b30f760d9e",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/e87b95b30f760d9edb0c.json",
+        "sha256": "e711e2d3081d9ff52feea86dffa29ab2c0c74f762b366a4ff18af75be223fb19"
+      },
+      "actual_sha256": "e711e2d3081d9ff52feea86dffa29ab2c0c74f762b366a4ff18af75be223fb19",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-hepes-supplier",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-hepes-supplier.json",
+        "sha256": "ca01ec62cb5d66640cee7787c08b36136cc05f07b9820cc9c2e0160210ca405d"
+      },
+      "actual_sha256": "ca01ec62cb5d66640cee7787c08b36136cc05f07b9820cc9c2e0160210ca405d",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-aces-supplier",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-aces-supplier.json",
+        "sha256": "3b3ee7f9b6bfe0c0d08499f84006aa1b5c4648b7ebf2544c1794e56d725fae73"
+      },
+      "actual_sha256": "3b3ee7f9b6bfe0c0d08499f84006aa1b5c4648b7ebf2544c1794e56d725fae73",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-utex-b12",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-utex-b12.json",
+        "sha256": "cabfd1b321d3d4897ad9ff6bd7e64913b1c94fe25000ba75354bc5e45905a186"
+      },
+      "actual_sha256": "cabfd1b321d3d4897ad9ff6bd7e64913b1c94fe25000ba75354bc5e45905a186",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-utex-biotin",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-utex-biotin.json",
+        "sha256": "a7aa451d7137c1fae78ac67e842d4772133bdf137a70ed66ac14df52f58fd801"
+      },
+      "actual_sha256": "a7aa451d7137c1fae78ac67e842d4772133bdf137a70ed66ac14df52f58fd801",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-utex-thiamine",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-utex-thiamine.json",
+        "sha256": "cdcde86e9e017eb8cae6373daf98242772ddc90cd4cd7a7c79678ada61ddddfd"
+      },
+      "actual_sha256": "cdcde86e9e017eb8cae6373daf98242772ddc90cd4cd7a7c79678ada61ddddfd",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-jcm462",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-jcm462.json",
+        "sha256": "15240c67f9c06d6b15ba343ffda9bf7b9eb9728a28a4d4f30a5c6815c8a93856"
+      },
+      "actual_sha256": "15240c67f9c06d6b15ba343ffda9bf7b9eb9728a28a4d4f30a5c6815c8a93856",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-web-wako-antifoam",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/web-wako-antifoam.json",
+        "sha256": "a324ec9cfb37dac5e70521de6f8d8c80c7ec80e8f446a1907c365dd6fb216fb8"
+      },
+      "actual_sha256": "a324ec9cfb37dac5e70521de6f8d8c80c7ec80e8f446a1907c365dd6fb216fb8",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-retrieval-log",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/retrievals.json",
+        "sha256": "e062cb7d063ff150be1343acfb7911274137fa94f91a85ff09d391c00de1663e"
+      },
+      "actual_sha256": "e062cb7d063ff150be1343acfb7911274137fa94f91a85ff09d391c00de1663e",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-owner-N-_2-acetamido-2-aminoethanesulfonic_Acid",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/owners/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+        "sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41"
+      },
+      "actual_sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-owner-Hepes",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/owners/Hepes.yaml",
+        "sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+      },
+      "actual_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-owner-Riboflavin_Solution_See_Medium_No_462",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/owners/Riboflavin_Solution_See_Medium_No_462.yaml",
+        "sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b"
+      },
+      "actual_sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-final-M2708",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/final-M2708.json",
+        "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28"
+      },
+      "actual_sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-final-M3181",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/final-M3181.json",
+        "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f"
+      },
+      "actual_sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+      "matches": true
+    },
+    {
+      "evidence_id": "buffers-final-M2186",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/reused-worker10-M2186.json",
+        "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5"
+      },
+      "actual_sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+      "matches": true
+    }
+  ],
+  "source_recipe_inspection": {
+    "path": "reviews/bio-buffers-frozen-recipe-inspection.json",
+    "sha256": "c0397deeaeb75e2dbfbfcc2a4c5ce6a09e7097235979e9cc3a02b235a8a77bf4",
+    "method": "Parsed every complete snapshot, verified frozen full-file hash, navigated exact component path, checked exact equality with raw_component, inspected enclosing stock/recipe structure and compared the relevant primary source."
+  },
+  "overall_verdict": "supported_with_stated_limits_after_remediation",
+  "remaining_publication_obligations": [
+    "Coordinator native complete-owner review and release ledger; existing HEPES/Tris unsafe aliases are not approved by this source review.",
+    "Join cross-partition riboflavin source1893/case179 with source-specific proposal before integration.",
+    "Keep CultureMech volume/unit findings and JCM556 inconsistent formulation unresolved; no automatic quantity repair.",
+    "Published source-case associations require source context; provenance-only labels deliberately remain nonresolving."
+  ]
+}

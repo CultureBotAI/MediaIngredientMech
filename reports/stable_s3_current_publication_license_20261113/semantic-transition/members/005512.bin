@@ -1,0 +1,107 @@
+id: CultureMech:002743
+name: middlebrook_7h10_agar_with_oadc_enrichment
+original_name: MIDDLEBROOK 7H10 AGAR WITH OADC ENRICHMENT
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: JCM Medium J386
+  term:
+    id: mediadive.medium:J386
+    label: MIDDLEBROOK 7H10 AGAR WITH OADC ENRICHMENT
+notes: 'Source: JCM Medium 386 | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386
+
+
+  The JCM Middlebrook 7H10 Agar with OADC Enrichment table lists Middlebrook 7H10
+  agar, glycerol, distilled water, and a 100 ml/L aseptic addition of Middlebrook
+  OADC Enrichment.'
+ingredients:
+- preferred_term: Middlebrook 7H10 agar (BD-Difco)
+  concentration:
+    value: '19'
+    unit: G_PER_L
+  notes: JCM Medium 386 lists this commercial BD-Difco medium base as supplied.
+- preferred_term: Glycerol
+  concentration:
+    value: '5'
+    unit: ML_PER_L
+  term:
+    id: CHEBI:17754
+    label: glycerol
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17754
+    label: glycerol
+  notes: JCM Medium 386 lists glycerol as 5 ml/L.
+- preferred_term: Distilled water
+  concentration:
+    value: '895'
+    unit: ML_PER_L
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+  notes: JCM Medium 386 uses 895 ml/L distilled water before OADC addition.
+- preferred_term: Middlebrook OADC Enrichment (BD-BBL)
+  concentration:
+    value: '100'
+    unit: ML_PER_L
+  notes: JCM Medium 386 aseptically adds this commercial BD-BBL enrichment.
+preparation_steps:
+- step_number: 1
+  action: AUTOCLAVE
+  description: Sterilize the Middlebrook 7H10 agar, glycerol, and distilled water
+    at 121 C for 10 min.
+- step_number: 2
+  action: COOL
+  description: Cool to 50-55 C.
+- step_number: 3
+  action: MIX
+  description: Aseptically add 100 ml/L Middlebrook OADC Enrichment (BD-BBL) and mix
+    thoroughly.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:16.472084Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J386'
+- timestamp: '2026-03-13T06:19:15.424569Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002743'
+- timestamp: '2026-03-17T06:30:02.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:28.820479+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MIDDLEBROOK 7H10 AGAR WITH OADC ENRICHMENT" to "middlebrook_7h10_agar_with_oadc_enrichment"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:33.901166+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_jcm_middlebrook_hemin_score20.py
+  action: RESOLVED_JCM_MIDDLEBROOK_HEMIN_SCORE20
+  changes: Resolved JCM Medium 386/714 Middlebrook-hemin composition
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386
+  notes: Rebuilt the recipe from live JCM Medium 386 and 714 pages.
+variant_children:
+- path: data/normalized_yaml/bacterial/JCM_J714_HEMIN_MEDIUM_FOR_MYCOBACTERIUM.yaml
+  relationship: SUPPLEMENTED_VARIANT
+  id: CultureMech:003061
+  name: hemin_medium_for_mycobacterium
+  notes: Adds 60 micromol/L hemin solubilized with 1 N NaOH.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386

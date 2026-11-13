@@ -1,0 +1,51 @@
+identifier: CHEBI:28093
+preferred_term: Borneol
+ontology_mapping:
+  ontology_id: CHEBI:28093
+  ontology_label: borneol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=507-70-0); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.445483+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.259306+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H18O; inchi=InChI=1S/C10H18O/c1-9(2)7-4-5-10(9,3)8(11)6-7/h7-8;
+    smiles=CC1(C)C2CCC1(C)C(O)C2
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.873315+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 507-70-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C10H18O
+  inchi: InChI=1S/C10H18O/c1-9(2)7-4-5-10(9,3)8(11)6-7/h7-8,11H,4-6H2,1-3H3
+  smiles: CC1(C)C2CCC1(C)C(O)C2
+ingredient_type: SINGLE_INGREDIENT

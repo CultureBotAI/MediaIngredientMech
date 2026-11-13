@@ -1,0 +1,162 @@
+identifier: kgmicrobe.compound:cefsulodin_sodium_salt_hydrate
+preferred_term: Cefsulodin sodium salt hydrate
+ontology_mapping:
+  ontology_id: CHEBI:31380
+  ontology_label: Cefsulodin sodium
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:31380 -> kgmicrobe.compound:cefsulodin_sodium_salt_hydrate;
+      mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:31380
+      ('Cefsulodin sodium') and was sharing that term's identifier — the identity
+      collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:31380 (''Cefsulodin sodium'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Historical C8145 and current supplier describe the same source-defined
+      cefsulodin sodium salt hydrate xH2O. Retain local hydrate identity; CAS52152-93-9
+      resolves to the water-free salt and is not selected as exact hydrate primary.
+      CHEBI31380 is the verified water-free sodium salt and the closest inspected
+      parent. NARROW_MATCH exports broadMatch; do not select NCITC98228 as exact hydrate
+      because it describes the same water-free salt. Dry structures were already removed
+      in7b. Move the remaining procurement CAS out of unqualified chemical_properties.cas_rn
+      into supplied_form; preserve source/retrieval metadata and full old history.
+      Primary source references: https://www.sigmaaldrich.com/US/en/product/sigma/c8145;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/substance/sourceid/Sigma-Aldrich/C8145_SIGMA/JSON;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/52152-93-9/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/31380/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=52152-93-9; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.688643+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.516630+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C22H19N4O8S2.Na; inchi=InChI=1S/C22H20N4O8S2.Na/c23-18(27)13-6-8-25(9-7-1;
+    smiles=[H][C@]12SCC(C[n+]3ccc(C(N)=O)cc3)=C(C(=O)[O-])N1C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.224555+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.387360+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:31380 -> kgmicrobe.compound:cefsulodin_sodium_salt_hydrate;
+    mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles, chemical_properties.molecular_formula. Set fields:
+    {}. Whole hydrate has unspecified water content; current unqualified structures/formula
+    exactly match the parent ontology. Sigma C8145 official full page, primary/web-primary-3.txt
+    No fixed hydration count, new CAS, new formula, supplier assignment or mapping
+    repair. Suppliers sometimes publish dry/anhydrous descriptors for hydrate products;
+    removal concerns unqualified whole-record fields, not a claim the supplier is
+    wrong. Original chemical_properties={"cas_rn": "52152-93-9", "data_source": "CultureBotHT
+    compounds_to_cas.csv", "inchi": "InChI=1S/C22H20N4O8S2.Na/c23-18(27)13-6-8-25(9-7-13)10-14-11-35-21-15(20(29)26(21)16(14)22(30)31)24-19(28)17(36(32,33)34)12-4-2-1-3-5-12;/h1-9,15,17,21H,10-11H2,(H4-,23,24,27,28,30,31,32,33,34);/q;+1/p-1/t15-,17-,21-;/m1./s1",
+    "molecular_formula": "C22H19N4O8S2.Na", "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+    "smiles": "[H][C@]12SCC(C[n+]3ccc(C(N)=O)cc3)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@@H](c1ccccc1)S(=O)(=O)[O-].[Na+]"}.
+    Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+    and original history. No mapping, role or release approval. Exact preimage and
+    evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml; before_sha256=248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","cas_rn"],"before":"52152-93-9","after":null},{"op":"set","path":["supplied_form"],"before":null,"after":[{"name":"Cefsulodin
+    sodium salt hydrate","cas_rn":"52152-93-9","form":"sodium salt hydrate (xH2O;
+    unspecified water stoichiometry)","supplier":"Sigma-Aldrich","catalog_number":"C8145","notes":"CultureBotHT
+    historical compounds_to_cas.csv source catalogue C8145; current supplier page
+    confirms xH2O and procurement CAS52152-93-9. This CAS also identifies the water-free
+    sodium salt and is not the exact identifier of this local hydrate owner. Catalogue
+    association is not a purchased-lot claim."}]}]. Original values are preserved
+    here and in the immutable source preimages. Appended scoped mapping evidence.
+    NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt
+    identity serializes skos:exactMatch. Preserved prior history, roles, status and
+    occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/;
+    primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Cefsulodin sodium salt hydrate
+  cas_rn: 52152-93-9
+  form: sodium salt hydrate (xH2O; unspecified water stoichiometry)
+  supplier: Sigma-Aldrich
+  catalog_number: C8145
+  notes: CultureBotHT historical compounds_to_cas.csv source catalogue C8145; current
+    supplier page confirms xH2O and procurement CAS52152-93-9. This CAS also identifies
+    the water-free sodium salt and is not the exact identifier of this local hydrate
+    owner. Catalogue association is not a purchased-lot claim.

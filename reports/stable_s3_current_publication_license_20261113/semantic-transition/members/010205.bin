@@ -1,0 +1,1377 @@
+{
+  "searched_at": "2026-11-08T05:58:44.641143+00:00",
+  "ignored_files_included": true,
+  "method": "pathlib recursive traversal of maintained records and explicit full published63 proposal payloads/full188 frozen shard; label index full read",
+  "pattern": "Bordet",
+  "case_index": 173,
+  "baseline_owner_count_searched": 2956,
+  "published_proposals_searched": 63,
+  "frozen_cases_searched": 188,
+  "label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "matching_label_index_rows": [
+    "Bordet-Gengou Agar Base (BD 248200),synonym,UNMAPPED_0341,Bordet-Gengou-Agar-Base,,UNMAPPED,unique",
+    "Bordet-Gengou-Agar-Base,preferred_term,UNMAPPED_0341,Bordet-Gengou-Agar-Base,,UNMAPPED,unique"
+  ],
+  "matching_full_owners": [
+    {
+      "path": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+      "sha256": "f0c7d3cbe473d0feba72e981abcf5cbff714a241eca1621a0412a62231686ba4",
+      "raw_yaml": "identifier: UNMAPPED_0341\npreferred_term: Bordet-Gengou-Agar-Base\nsynonyms:\n- synonym_text: Bordet-Gengou-Agar-Base\n  synonym_type: RAW_TEXT\n  source: mim-queue\n- synonym_text: Bordet-Gengou Agar Base (BD 248200)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: UNMAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-30T18:43:03.698454+00:00'\n  curator: audit_import_ingredients[mim-queue]\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN\n    or CHEBI/NCIT match. Curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-11T19:05:00Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CLASSIFIED_UNDEFINED_MIXTURE\n  changes: Classified as a Bordet-Gengou agar base preparation and left unmapped pending\n    product- or recipe-level curation.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n- timestamp: '2026-07-05T00:00:00+00:00'\n  curator: cbclaw_media_modeling_114\n  action: RECLASSIFY_INGREDIENT_TYPE\n  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete\n    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: edison_literature_identity\n  action: ANNOTATED\n  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bordet-Gengou-Agar-Base-edison-literature.md\n    (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather\n    than linked). Report verdict: **Recommended identity:** a named **culture-medium\n    agar-base formulation**, not a single chemical, salt, hydrate, buffer, or chemically\n    defined substance. The source terminology distinguishes \u201cBordet-Gengou Agar,\u201d\n    \u201cBordet-Gengou Medium,\u201d and a selective medium prepared \u201cwith Bordet-Gengou Agar\n    Base,\u201d supporting a meaningful boundary between the base and finished or supplemented\n    media. The same han No ontology CURIE was proposed. Recorded as provenance only\n    \u2014 no grounding applied from this run. Edison''s recommendations are deliberately\n    conservative, and a plausible identifier promoted by a mechanism that never decided\n    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s\n    to accept or reject.'\n  llm_assisted: true\n- timestamp: '2026-08-30T06:20:04.233651+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''Bordet-Gengou Agar Base (BD 248200)'' (x1 CultureMech mentions).\n    Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\n- timestamp: '2026-06-16T00:00:00+00:00'\n  curator: promote_resolved_unmapped\n  action: PROMOTED_TO_MAPPED\n  previous_status: UNMAPPED\n  new_status: MAPPED\n  llm_assisted: false\n  changes: Promoted UNMAPPED_0341 -> MICRO:0002398 \"Bordet Gengou Agar Base\" (SYNONYM_MATCH);\n    mapping_status UNMAPPED -> MAPPED, SSSOM row added.\n- timestamp: '2026-08-30T08:20:52.193944+00:00'\n  curator: claude_culturemech_residual_grounding\n  action: DEMOTED_TO_UNMAPPED\n  changes: 'Returned to UNMAPPED: MICRO:0002398 is `is_defining_ontology=false` in\n    OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002398.\n    MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe''s ontology\n    transform would not produce the term and the published row would dangle. curie.py\n    gates these behind MICRO_VERIFIED and this id is deliberately not on it. The medium\n    is real and the label matches; only this accession is unusable.'\n  previous_status: MAPPED\n  new_status: UNMAPPED\n  llm_assisted: false\nnotes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN or\n  CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending product-\n  or recipe-level curation.\ningredient_type: NAMED_MEDIUM\n",
+      "record": {
+        "identifier": "UNMAPPED_0341",
+        "preferred_term": "Bordet-Gengou-Agar-Base",
+        "synonyms": [
+          {
+            "synonym_text": "Bordet-Gengou-Agar-Base",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Bordet-Gengou Agar Base (BD 248200)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:05:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a Bordet-Gengou agar base preparation and left unmapped pending product- or recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-07-05T00:00:00+00:00",
+            "curator": "cbclaw_media_modeling_114",
+            "action": "RECLASSIFY_INGREDIENT_TYPE",
+            "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bordet-Gengou-Agar-Base-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended identity:** a named **culture-medium agar-base formulation**, not a single chemical, salt, hydrate, buffer, or chemically defined substance. The source terminology distinguishes \u201cBordet-Gengou Agar,\u201d \u201cBordet-Gengou Medium,\u201d and a selective medium prepared \u201cwith Bordet-Gengou Agar Base,\u201d supporting a meaningful boundary between the base and finished or supplemented media. The same han No ontology CURIE was proposed. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Bordet-Gengou Agar Base (BD 248200)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-16T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0341 -> MICRO:0002398 \"Bordet Gengou Agar Base\" (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          },
+          {
+            "timestamp": "2026-08-30T08:20:52.193944+00:00",
+            "curator": "claude_culturemech_residual_grounding",
+            "action": "DEMOTED_TO_UNMAPPED",
+            "changes": "Returned to UNMAPPED: MICRO:0002398 is `is_defining_ontology=false` in OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002398. MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe's ontology transform would not produce the term and the published row would dangle. curie.py gates these behind MICRO_VERIFIED and this id is deliberately not on it. The medium is real and the label matches; only this accession is unusable.",
+            "previous_status": "MAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending product- or recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      }
+    }
+  ],
+  "matching_full_published_payloads": [
+    {
+      "proposal_id": "media-product-difco_bordet_gengou_agar_base",
+      "owner_path": "data/ingredients/mapped/Difco_Bordet_Gengou_Agar_Base.yaml",
+      "after_sha256": "98bcd2a33a7fa1fac7be83dc7b1039187adbb562d2c77b4515f0021da5b0e180",
+      "case_ids": [
+        "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:difco_bordet_gengou_agar_base",
+        "preferred_term": "Bordet-Gengou agar base (Difco)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:difco_bordet_gengou_agar_base",
+          "ontology_label": "Bordet-Gengou agar base (Difco)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.bd.com/en-us/products-and-solutions/products/product-page.248200",
+              "notes": "The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately; manufacturer248200 identifies the named base product. This source-bound opaque base is not the finished blood agar and does not restore the existing generic owner malformed MICRO accession. Current package number is corroboration, not inferred historical procurement."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "NAMED_MEDIUM",
+        "notes": "The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately; manufacturer248200 identifies the named base product. This source-bound opaque base is not the finished blood agar and does not restore the existing generic owner malformed MICRO accession. Current package number is corroboration, not inferred historical procurement. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:32:29.548252+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "CREATED",
+            "changes": "The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately; manufacturer248200 identifies the named base product. This source-bound opaque base is not the finished blood agar and does not restore the existing generic owner malformed MICRO accession. Current package number is corroboration, not inferred historical procurement. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "Bordet-Gengou agar base (Difco)",
+            "supplier": "BD Difco",
+            "form": "dehydrated Bordet-Gengou agar base"
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_frozen_cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "native_match_result": {
+        "effective_term_id": "mediadive.compound:1606",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 28,
+      "occurrences": [
+        {
+          "component_path": "ingredients/2",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_129_POTATO_DEXTROSE_AGAR.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:8e9525233bb7d9c8616616d5b9b3caec83f979894fdf8f72d7c0f9ab2feab6c0",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:004047",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:004047"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:129"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/KOMODO_129_POTATO_DEXTROSE_AGAR.yaml",
+          "source_file_sha256": "e20a0c8e4d0ffe0537860a60458516ff1c2c870d26272f4879bcd8e456963f9b",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_411_CLOSTRIDIUM_ACETOBUTYLICUM_medium.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:26ffc1b62981254eade3e73ed1d42edbeb1b6fe236599adcc73c3fd991d2d80a",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:005233",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:005233"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:411"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/KOMODO_411_CLOSTRIDIUM_ACETOBUTYLICUM_medium.yaml",
+          "source_file_sha256": "e322d3cdf8fd10aee848006830523a4b198d25a6e4454267e62b47002933ff89",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M328_Potato-Sucrose_Agar.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:28ff6820b0d387aa52e5612cef17ea67bfa1ebc5f6659deae611f0869c81f6c2",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:009702",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009702"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M328"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M328_Potato-Sucrose_Agar.yaml",
+          "source_file_sha256": "273ad96659065d06e3a45f03f5bc3390811de1438a8316fb0060754fd142760c",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "solutions/0/composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bordet_gengou_broth_medium.yaml",
+          "native_name": "Potato",
+          "native_scope": "inline_stock",
+          "occurrence_id": "CM_OCC:6406cc558686fa27a66e5662535196aa4564abe3bdd0d32f8cc2a6a0b1ad27b3",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "125.0"
+            },
+            "notes": "ATCC Medium 35 boils 125 g potato while preparing Bordet-Gengou Broth Base.",
+            "preferred_term": "Potato",
+            "source": "ATCC Medium 35"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:008894",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008894"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2308"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/bordet_gengou_broth_medium.yaml",
+          "source_file_sha256": "b1c84a9510ede7dc69e5c5499fcfacfaea743d235ae2e6fdf8fbabf6bb8d7514",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/clostridium_acetobutylicum_medium.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:08eec3b8ae4b392b3ca22353c714b8a66bd5e2246ec06fccb84b6fc3a5e7c3e2",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:001520",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001520"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:411"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/clostridium_acetobutylicum_medium.yaml",
+          "source_file_sha256": "f3376b4bdf60b96bb202254f656d7b39df947369e777dec9ea63bff30e8a1d87",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/jcm_medium_no_116.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:683402b3d16bc50bfda37945a045a5b0fe50dc3cded65094d3f3f8ed180ac283",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " ( peeled and cut)",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:002342",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002342"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J116"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/jcm_medium_no_116.yaml",
+          "source_file_sha256": "7893e91cf91c9aea3916ee314c0539a4bee37a8181cba35b273c0082baed63a0",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "composition/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_227_Potato_infusion.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:d59d20792661cfe899bbebe86c117ee3e135196b1b7b27040c4d006c6ba69aec",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[1].concentration (Potato) in MediaDive solution 227; locator=$.data.recipe[1] (compound_id=1606). Provider explicitly reports g_l=200. Arithmetic check: 200 g * 1 g/g / (1000 ml / 1000 ml per L) = 200 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T08:21:31.377604+00:00; response SHA256=61b12e8356219610fca291522bcd7ccad4173802e2e6e8efb075b3ca868adc3c.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/227",
+                "snippet": "{\n                \"recipe_order\": 2,\n                \"compound\": \"Potato\",\n                \"compound_id\": 1606,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 200,\n                \"unit\": \"g\",\n                \"g_l\": 200,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:011664",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011664"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:227"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_227_Potato_infusion.yaml",
+          "source_file_sha256": "2fe309e8fc0d4c37c17496eff75148852b6d64151cd0970e704a707b0f948469",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3653_Main_sol_J30.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:ed76dff352e05227311e8c18d431c798321773a144a9b958bc3b6a59ffb40948",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " peeled and cut",
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:012734",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012734"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3653"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_3653_Main_sol_J30.yaml",
+          "source_file_sha256": "033610236f35fb47fde4d26d88afa0f87e79f23e34d248af8f90aa08cc136104",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3678_Main_sol_J54.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:6a9934d69026a5cf61209116b3e16841e5b6d04ac995d45430d62cc6a09dce7f",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "300"
+            },
+            "notes": " peeled and cut",
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:012760",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012760"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3678"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_3678_Main_sol_J54.yaml",
+          "source_file_sha256": "37585d179428fad60d0fae715b72d1d805a79abfdb9e1b8694c0c3ac6ec1c79a",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3679_Main_sol_J55.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:a4981d1c979d0f1bff3fdfb626892870f9b75f231c5eeec0aa5e12c819702565",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "30"
+            },
+            "notes": " peeled and cut",
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:012761",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012761"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3679"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_3679_Main_sol_J55.yaml",
+          "source_file_sha256": "427fa7602cb9d1559a73df562b5fded3d23fa7ac187cf31089fee11a1239e801",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3754_Main_sol_J116.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:9c258da181482fc144b8454f85408ff395c9e78ed8fca9c9de147af5d7916393",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " peeled and cut",
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:012831",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012831"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3754"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_3754_Main_sol_J116.yaml",
+          "source_file_sha256": "9977b34c496135f4b567c948bc8bf64d6f3881a3f684c8cde9a3ddcf8269399a",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4051_Main_sol_J333.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:d49d715ef6a5fc521f0434d16e2489a012fc599068efe88c977a73db0a8a3c2d",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[0].concentration (Potato) in MediaDive solution 4051; locator=$.data.recipe[0] (compound_id=1606). Provider explicitly reports g_l=200. Arithmetic check: 200 g * 1 g/g / (1000 ml / 1000 ml per L) = 200 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:40:03.113550+00:00; response SHA256=c792ad11b47e022e9c18898b0f33909078a3a9763b8103df5abc56ecde5df4fd.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/4051",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Potato\",\n                \"compound_id\": 1606,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 200,\n                \"unit\": \"g\",\n                \"g_l\": 200,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:013105",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:013105"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:4051"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_4051_Main_sol_J333.yaml",
+          "source_file_sha256": "bb6bae4779ab455593e2793dfadb891e22a0e2835aa7b9422d74271c1fffb8f3",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4879_Main_sol_J888.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:3a04e58fef7e6a8247b28adf49b0c2bf53842450d56349732339e1283d92e348",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " peeled and cut",
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:013811",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:013811"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:4879"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_4879_Main_sol_J888.yaml",
+          "source_file_sha256": "405719c0de819c4f1e12b705e6e5741526b05f4b5b856983743989c5eea2612f",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5502_Main_sol_1765.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:61c9db4f3bf9c18e7edf9c7e8d0f8e1f81b0b2feec7b30d07a4a3cef87089f6e",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "150"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[0].concentration (Potato) in MediaDive solution 5502; locator=$.data.recipe[0] (compound_id=1606). Provider explicitly reports g_l=150. Arithmetic check: 150 g * 1 g/g / (1000 ml / 1000 ml per L) = 150 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:55:41.057067+00:00; response SHA256=ecc68b874baace37062e4ca86d2e06040eb1070e9fda40b20373e33bf5ec8b4b.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5502",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Potato\",\n                \"compound_id\": 1606,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 150,\n                \"unit\": \"g\",\n                \"g_l\": 150,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:014407",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:014407"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:5502"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5502_Main_sol_1765.yaml",
+          "source_file_sha256": "73fc2a808392c75245215af4b49fa02114ee1a00b7665c629e2b38b2b107ac66",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_840_Main_sol_411.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:d4d04d303fec92d2b27f7a729a56f979ece483f07a3f8969d180ebcfc692ba09",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "preferred_term": "Potato",
+            "term": {
+              "id": "mediadive.compound:1606",
+              "label": "Potato"
+            }
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:015206",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:015206"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:840"
+            }
+          ],
+          "record_shape": "SolutionRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_840_Main_sol_411.yaml",
+          "source_file_sha256": "d8082e88ecf99569069623b4a8afcb203a69a10fa4c5dd956cdb65967c15ce7c",
+          "source_identifiers": [
+            {
+              "path": "/term/id",
+              "value": "mediadive.compound:1606"
+            }
+          ]
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/pda_hygromycin_medium.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:e62c913f3df7c860bb544b0d976adb260f3d821c9f21215c4cea9c8c359241d3",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:008534",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008534"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1954"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/pda_hygromycin_medium.yaml",
+          "source_file_sha256": "ea045122155d9ffc6563c196ae013a38225d4b10c999e9ad2cb4e4654134fae7",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/pda_ph_3_0.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:25b296be73c020c5b9e6a800ec2bc68ce9669c4be8d8b648d2f667ec24bb1d68",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:008445",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008445"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1870"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/pda_ph_3_0.yaml",
+          "source_file_sha256": "252fab49c53d1d9461f3e720e350ae0e78af72cedb8be3ef448258470f32ff83",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_carrot_agar.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:6a002e62221e7ffecb9ff2ec698c239e0ec3bfc7bfb2788b65e7240aabdca890",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "150"
+            },
+            "notes": "MediaDive Medium 1765 lists this ingredient in the potato-carrot decoction before the boil, cheesecloth filtration, volume adjustment, and agar addition.",
+            "preferred_term": "Potato",
+            "source": "MediaDive Medium 1765"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:001233",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001233"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1765"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_carrot_agar.yaml",
+          "source_file_sha256": "6631a8cb4999517e0f97926aa4b1ad3d371984b5893a799207943c378b07a685",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_carrot_agar_pca.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:d66b07aaf55725688458f59318ca5c1bab1ae56a8890eb5292bbcf158e32ae5a",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007943",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007943"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1407"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_carrot_agar_pca.yaml",
+          "source_file_sha256": "22a1a2cea3fb246b4e11cd6049ff5b5c71f9bbec36a8b636223627681c907960",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_dextrose_agar.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:9a0ad051bd860fa27fa3240bf13f8f565454ae096b66db5c4ed7d30220c74545",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " ( peeled and cut)",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:002667",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002667"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J30"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_dextrose_agar.yaml",
+          "source_file_sha256": "5b857fb92502874be59dd77070ec65fdf8483b52ece439daba302c5518444fc3",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_dextrose_agar_pda.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:0e015c82a6f6f01ac01b63f1cb906450e097135cd00db32b6201352418921764",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:008210",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008210"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1653"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_dextrose_agar_pda.yaml",
+          "source_file_sha256": "c75e77ddd665521bc76cf4e4149e9fecff37182071c98136c3bf427d08f1f3c1",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_sucrose_agar.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:c5b3103e46ce7c5f72edb02831f9dca49bbdcabb943c49f64a821743c5b27753",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:002692",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002692"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J333"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_sucrose_agar.yaml",
+          "source_file_sha256": "592feb62523942b67bdcd4d46f70db86196db436b89fac7c2ec02dc8f24dbf62",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_sucrose_agar_psa.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:f188f90cef20eff2f38a63aeeca5a03107988413455e204a5d0294e8916eb7f2",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007942",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007942"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1406"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/potato_sucrose_agar_psa.yaml",
+          "source_file_sha256": "fd043a5f3e7d4a2c54353b6605f180fb81188cddd3fb3bebe86dcf69eb3a4f9b",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/salt_potato_dextrose_agar_spda.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:bcc0dae04722c8f7272934854dd18219ebc0dcac8df4652a3f01a5eb94fd862c",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": " ( peeled and cut)",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:003236",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003236"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J888"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/salt_potato_dextrose_agar_spda.yaml",
+          "source_file_sha256": "52bfa712c16c8c0ae996c2305d783e9a8737867c2aef7a8a18cafae34a64573b",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/4",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1408.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:0516c67daf38f8a5aadf0f38438dd1100b22a3c65713c1a43cd39da0343c6b1c",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007944",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007944"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1408"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/togo_medium_m1408.yaml",
+          "source_file_sha256": "eebb66198653fbef71c0c294efa2dbe3a757d3665bd4257b4ed27a4807dc4582",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/4",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1409.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:cf286088dfbceeb92c079c4416e1a0975d187453601265c8061e28e8b8a949b5",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Properties: Undefined component",
+            "preferred_term": "Potato"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007945",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007945"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1409"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/togo_medium_m1409.yaml",
+          "source_file_sha256": "112bba2ac43f1fdfc3bd188971f0842b606b72a1ecfe62357b3c4553d4ea5d3c",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1441.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:13bac35184a3236a1fe27a9e6f578e1ed9797198f5b648a5252827111a2ffee4",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "NBRC Medium 201 lists 200 g/L potato; the source footnote says to gently boil sliced potatoes in 500 ml water for 30 min and remove solids by filtration through cloth.",
+            "preferred_term": "Potato",
+            "source": "NBRC Medium 201"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007981",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007981"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1441"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/togo_medium_m1441.yaml",
+          "source_file_sha256": "8cb28c03f83d888de3184025d9440e42805834f034e60f5e784a34e80f8f432f",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1442.yaml",
+          "native_name": "Potato",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:0481e9842624521b4a8dadf19e1b9ea67478424c1d2f077fdec4443b43eade73",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "NBRC Medium 202 lists 200 g/L potato; the source footnote says to gently boil sliced potatoes in 500 ml water for 30 min and remove solids by filtration through cloth.",
+            "preferred_term": "Potato",
+            "source": "NBRC Medium 202"
+          },
+          "raw_preferred_term": "Potato",
+          "recipe_id": "CultureMech:007982",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007982"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1442"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/togo_medium_m1442.yaml",
+          "source_file_sha256": "942c9a1ebc9a926304560b9d4740c0a5f165607498e29a1d7bc01b40a0e8f076",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 498,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "mediadive.compound:1606",
+        "example_media": "CultureMech:004047; CultureMech:005233; CultureMech:009702",
+        "ingredient_name": "Potato",
+        "kg_microbe_node_id": "",
+        "mapping_status": "TERM_ID_NO_MIM",
+        "mim_id": "",
+        "occurrence_count": "28",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Potato",
+      "source": "culturemech",
+      "source_case_id": "Potato",
+      "source_identity_claimed": false,
+      "source_label": "Potato"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bordet_gengou_agar_supplemented_with_15_defibrinated_horse_blood.yaml",
+          "native_name": "Bordet Gengou agar (Difco)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:fe9c1bb1538edad86c4c3326b0159c5883bf92f4cb5b57c029d220e1a71a8132",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "notes": "TOGO M2851 lists 1 L Difco Bordet Gengou agar; the source does not spell out the agar base composition.",
+            "preferred_term": "Bordet Gengou agar (Difco)",
+            "source": "TOGO M2851"
+          },
+          "raw_preferred_term": "Bordet Gengou agar (Difco)",
+          "recipe_id": "CultureMech:009394",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009394"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2851"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/bordet_gengou_agar_supplemented_with_15_defibrinated_horse_blood.yaml",
+          "source_file_sha256": "d338d950ff380fadb61ef5961aec4db31047695b66bdf59aa2acdd5106e9014d",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3250,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009394",
+        "ingredient_name": "Bordet Gengou agar (Difco)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Bordet Gengou agar (Difco)",
+      "source": "culturemech",
+      "source_case_id": "Bordet Gengou agar (Difco)",
+      "source_identity_claimed": false,
+      "source_label": "Bordet Gengou agar (Difco)"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:d549b316bb338403523ec8262144e4fdac6ab8f92c348d232e14b2f14ad456b9",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bordet_gengou_agar_supplemented_with_15_sheep_s_blood.yaml",
+          "native_name": "Bordet-Gengou agar",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:d1f589d04e50676a7a24f17fc4fcff6e02179fa79e406425540c3061aa9e963f",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "notes": "TOGO M2850 lists 1 L Bordet-Gengou agar; the source does not spell out the agar base composition.",
+            "preferred_term": "Bordet-Gengou agar",
+            "source": "TOGO M2850"
+          },
+          "raw_preferred_term": "Bordet-Gengou agar",
+          "recipe_id": "CultureMech:009393",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009393"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2850"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/bordet_gengou_agar_supplemented_with_15_sheep_s_blood.yaml",
+          "source_file_sha256": "c42018bb887d5f25ff4760f7ac56287e333e525dded97fbbacd6936e932b619c",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3252,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009393",
+        "ingredient_name": "Bordet-Gengou agar",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Bordet-Gengou agar",
+      "source": "culturemech",
+      "source_case_id": "Bordet-Gengou agar",
+      "source_identity_claimed": false,
+      "source_label": "Bordet-Gengou agar"
+    },
+    {
+      "baseline_outcome": "current_source_placeholder_preserved",
+      "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+      "case_id": "KG_CASE:b5c99b57b57a7930758c8a1afba953eb4ca34d8f4ec92c48fb7e8d25aeb87fb6",
+      "original_kg_entry": {
+        "candidate_id": "b5c99b57b57a7930758c8a1afba953eb4ca34d8f4ec92c48fb7e8d25aeb87fb6",
+        "category": "biolink:ComplexMolecularMixture",
+        "consumed_name_hits": [],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "source_label",
+            "kind": "preferred_term",
+            "label": "Bordet-Gengou-Agar-Base",
+            "owner": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "source_label",
+            "kind": "synonym",
+            "label": "Bordet-Gengou-Agar-Base",
+            "owner": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "mim-queue",
+              "synonym_text": "Bordet-Gengou-Agar-Base",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "preferred_term",
+            "label": "Bordet-Gengou-Agar-Base",
+            "owner": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Bordet-Gengou-Agar-Base",
+            "owner": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "mim-queue",
+              "synonym_text": "Bordet-Gengou-Agar-Base",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "UNMAPPED_0341",
+            "mapping_status": "UNMAPPED",
+            "native_review_rows": [],
+            "ontology_mapping": null,
+            "path": "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml",
+            "preferred_term": "Bordet-Gengou-Agar-Base",
+            "sha256": "f0c7d3cbe473d0feba72e981abcf5cbff714a241eca1621a0412a62231686ba4",
+            "subject_id": "MIM:Bordet-Gengou-Agar-Base"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Bordet-Gengou-Agar-Base",
+        "resolving_owner_paths": [
+          "data/ingredients/unmapped/Bordet-Gengou-Agar-Base.yaml"
+        ],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:2112",
+        "source_label": "Bordet-Gengou-Agar-Base",
+        "source_record": {
+          "amount": 1000,
+          "compound": "Bordet-Gengou-Agar-Base",
+          "compound_id": 2112,
+          "optional": 0,
+          "recipe_order": 1,
+          "unit": "ml"
+        },
+        "triage_flags": [
+          "MATCHED_UNMAPPED_OWNER",
+          "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+        ]
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Bordet-Gengou-Agar-Base",
+      "source": "mediadive",
+      "source_case_id": "mediadive.ingredient:2112",
+      "source_identity_claimed": false,
+      "source_label": "Bordet-Gengou-Agar-Base"
+    }
+  ]
+}

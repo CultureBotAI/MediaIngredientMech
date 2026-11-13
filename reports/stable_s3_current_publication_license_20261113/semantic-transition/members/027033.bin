@@ -1,0 +1,59 @@
+identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+preferred_term: N'-disuccinic Acid (EDDS)
+synonyms:
+- synonym_text: N'-disuccinic Acid (EDDS)
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Parse fragment: the leading portion of ethylenediamine-N,N''-disuccinic
+    acid was lost. Probably the other half of the ''Ethylenediamine-N'' fragment in
+    the same batch; a curator should confirm and rejoin them. Searched CHEBI, NCIT,
+    FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus
+    exact queries across all of live OLS4.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: MERGED_INTO
+  changes: 'Merged into kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid "Ethylenediamine-N,N''-disuccinic
+    acid (EDDS)": this record is the other half of a comma-split label, not an ingredient.
+    Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+    Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid` split
+    at its only comma — the surviving `(EDDS)` on the second fragment confirms the
+    reading. ChEBI has no term for EDDS (searched the local build and live at OLS4),
+    so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes a registry
+    mint. The ingest strips commas from every chemical label, so a name containing
+    one arrives as separate fragment records — the same mechanism that produced the
+    `D` record resolved in #346.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002861; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+mim_id: MIM:0002861
+legacy_identifiers:
+- MIM:N-disuccinic_Acid_~28EDDS~29
+- kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid

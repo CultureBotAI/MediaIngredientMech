@@ -1,0 +1,128 @@
+identifier: kgmicrobe.ingredient:gyp_sodium_acetate_mineral_salts_broth_jcm68
+preferred_term: GYP-sodium acetate-mineral salts broth
+synonyms:
+- synonym_text: GYP-sodium acetate-mineral salts broth
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1618); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.616482+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth
+    formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/GYP-sodium_Acetate-mineral_Salts_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: | Recommended mapping status | **UNMAPPED** | Retain UNMAPPED | Evidence supports a real
+    formulation, but not a stable exact external ontology identity for the whole medium | (peet2015microbialgrowthunder
+    pages 2-2, peet2015microbialgrowthunder pages 2-3) | No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263
+    exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Transcribe JCM68 GYP-sodium acetate-mineral salts broth composition, retaining NAMED_MEDIUM
+    and UNMAPPED status. Isolated proposal only; integration requires fresh native review of changed bytes
+    and retains all source and export holds.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:44:17.566820+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_DEFINED_REGISTRY_PROPOSAL
+  changes: Resolve exact JCM68 named-broth identity with local formulation registry; existing UNMAPPED
+    retention had no remaining formulation evidence gap. Keep full source/owner/export review obligations
+    and exclude JCM69 addedNaCl.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1618); no CAS-RN or CHEBI/NCIT match.
+  Curator review needed.
+
+  Source-defined JCM68 broth, pH6.8. Components retain unspecified MnSO4 hydrate and commercial peptone/yeast
+  products. JCM69 salt supplementation belongs to its separate medium variant. The pH6.8 adjustment has
+  an unnamed titrant; retain UNKNOWN component closure.'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: g
+- component_name: Yeast extract (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: g
+- component_name: Bacto peptone (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: g
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: g
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: mg
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: mg
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: mg
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=68
+    source_record: JCM68 entire medium table
+    supports: SUPPORT
+    notes: JCM69 references this broth and adds50g NaCl separately; that addition is not a component of
+      the base broth. Mn hydration remains x.
+  notes: Amounts are source batch quantities, not computed medium concentrations. Component identifiers
+    remain unassigned; named has-part constituents are not whole-mixture identity mappings. JCM68 instructs
+    adjustment to pH6.8 without naming the titrant; its identity and amount remain unknown, so the listed
+    nine inputs do not close the complete formulation.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:gyp_sodium_acetate_mineral_salts_broth_jcm68
+  ontology_label: GYP-sodium acetate-mineral salts broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=68
+    notes: Exact source-defined JCM68 broth used as an ingredient in JCM69. Full recipe transcription
+      establishes formulation identity, not a single-compound ontology equivalence. MnSO4 hydration remains
+      source-literal x.

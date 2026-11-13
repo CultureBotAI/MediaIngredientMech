@@ -1,0 +1,79 @@
+identifier: CHEBI:3483
+preferred_term: Cefazolin sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:3483
+  ontology_label: cefazolin sodium
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+synonyms:
+- synonym_text: sodium 3-{[(5-methyl-1,3,4-thiadiazol-2-yl)sulfanyl]methyl}-7beta-[(1H-tetrazol-1-ylacetyl)amino]-3,4-didehydrocepham-4-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=27164-46-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.680335+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.506026+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C14H13N8O4S3.Na; inchi=InChI=1S/C14H14N8O4S3.Na/c1-6-17-18-14(29-6)28-4-7;
+    smiles=[H][C@]12SCC(CSc3nnc(C)s3)=C(C(=O)[O-])N1C(=O)[C@H
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.210608+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.387348+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 27164-46-1 uniquely
+    resolves by ChEBI xref to CHEBI:3483 'cefazolin sodium'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 27164-46-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C14H13N8O4S3.Na
+  inchi: InChI=1S/C14H14N8O4S3.Na/c1-6-17-18-14(29-6)28-4-7-3-27-12-9(11(24)22(12)10(7)13(25)26)16-8(23)2-21-5-15-19-20-21;/h5,9,12H,2-4H2,1H3,(H,16,23)(H,25,26);/q;+1/p-1/t9-,12-;/m1./s1
+  smiles: '[H][C@]12SCC(CSc3nnc(C)s3)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)Cn1cnnn1.[Na+]'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

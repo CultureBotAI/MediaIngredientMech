@@ -1,0 +1,84 @@
+{
+  "positive": {
+    "status": "PASS_BOUNDED_REPRESENTATION",
+    "proposals": 1,
+    "global_ledger_cases": 1879,
+    "W03_assignment": false,
+    "W05_assignment": true,
+    "new_observations": 0,
+    "new_occurrences": 0,
+    "exact_scientific_payload": "fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1",
+    "native_operator_semantic_enforcement_claimed": false
+  },
+  "negative_controls": [
+    {
+      "control": "wrong_causal_hash",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "wrong causal case hash",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "wrong_before",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "real maintained preimage required",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "wrong_payload",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "wrong payload reference",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_assigned_W03",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "false source/observation/occurrence membership: assigned_W03_case_ids",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_native_core",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "foreign case falsely claimed native W03 core",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_GYPS_observation",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "false source/observation/occurrence membership: observed_GYPS_case_ids",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_occurrence",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "false source/observation/occurrence membership: added_occurrence_ids",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_assigned_flag",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "false assignment/observation assertion",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "false_backlink",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "invented foreign backlink",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "foreign_author_changed",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "foreign author changed",
+      "native_refusal_claimed": false
+    },
+    {
+      "control": "second_origin_duplication",
+      "result": "PRIVATE_REPRESENTATION_CHECK_REFUSED",
+      "message": "exactly one additive GYPS proposal required",
+      "native_refusal_claimed": false
+    }
+  ],
+  "negative_count": 11,
+  "payload_or_ledger_writes": false,
+  "scope": "Checks inspect actual global/shard membership and original Git bridge. Separate actualnativeprepare controls are in technical-review. This is not an operator or gate change."
+}

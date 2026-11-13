@@ -1,0 +1,72 @@
+identifier: kgmicrobe.ingredient:phosphate_buffer_jcm_1142_1143
+preferred_term: Phosphate buffer stock (JCM 1142 and 1143)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:phosphate_buffer_jcm_1142_1143
+  ontology_label: Phosphate buffer stock (JCM 1142 and 1143)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1142
+    notes: Source-defined stock with preserved composition. No exact ontology identity
+      established; local preparation identity avoids conflating it with any individual
+      phosphate salt.
+components:
+- component_name: KH2PO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63036
+  source: Source batch input12.5g
+- component_name: K2HPO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131527
+  source: Source batch input20.0g
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  source: Source batch solvent1.0L; final volume not stated.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1142
+    source_record: Phosphate buffer stock (JCM 1142 and 1143)
+    notes: JCM1142 and JCM1143 independently print identical phosphate stock tables:12.5gKH2PO4,20.0gK2HPO4,1.0L
+      distilled water. Component quantities are batch-input provenance, not converted
+      to final-volume concentrations. Both frozen occurrences use5mL of this stock.
+  notes: Constituent list is complete as printed. This does not assert supply-form
+    chemistry for unspecified hydration or certify the entire CultureMech recipe.
+notes: 'JCM1142 and JCM1143 independently print identical phosphate stock tables:12.5gKH2PO4,20.0gK2HPO4,1.0L
+  distilled water. Component quantities are batch-input provenance, not converted
+  to final-volume concentrations. Both frozen occurrences use5mL of this stock. Provenance-only
+  raw label: ''Phosphate buffer (see below)'' (frozen case CM_NAME:38510e80f455bcaf5c39b9b3ca38de457604c9b5747ce37c5ed4473d291067d7).
+  This generic source-local text is deliberately excluded from resolving synonyms;
+  the source-qualified preferred term identifies this formulation. This stock is a
+  component of the cited medium, not the whole medium; no EXACT_FORMULATION link to
+  the parent recipe is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: CREATED
+  changes: Created distinct source-defined stock identity in isolated proposal; preserved
+    the original label only as nonresolving provenance and retained recipe-owned component
+    evidence.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.
+- timestamp: '2026-11-08T07:45:24.705473+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

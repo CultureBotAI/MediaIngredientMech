@@ -1,0 +1,88 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: MICRO:0001736
+preferred_term: Pfennig's medium II (DSMZ29)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0001736
+  ontology_label: DSMZ Medium 29
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    notes: MICRO0001736 definition-source reproduces the same DSMZ29 staged recipe.
+      Excludes the marine/estuarine alternative and periodic feeding. DSMZ40 adds1%NaCl
+      to this base; that variant is not the base identity. Whole supplied preparation
+      identified independently of component CURIE availability. Existing owner and
+      exact named/numbered ontology searches are captured in successor evidence.
+notes: ' Correction1193: MICRO0001736 definition-source reproduces the same DSMZ29
+  staged recipe. Excludes the marine/estuarine alternative and periodic feeding. DSMZ40
+  adds1%NaCl to this base; that variant is not the base identity. Isolated proposal
+  only. All inherited source-case, owner and export holds remain. Raw generic source
+  labels are qualified to these source occurrences and confer no global resolving
+  synonym or release approval. No optional later supplement or atmosphere is inferred
+  as an ingredient. Verbatim source-only labels retained as provenance, excluded from
+  globally resolving aliases: ["Medium 29"].'
+components:
+- component_name: DSMZ29 solution A
+  reference_scope: UNMAPPED
+  source: 46 ml per bottle; calcium chloride/yeast extract aqueous preparation
+- component_name: DSMZ29 solution B
+  reference_scope: UNMAPPED
+  source: 4 ml sulfide stock per bottle
+- component_name: DSMZ29 solution C
+  reference_scope: UNMAPPED
+  source: 50 ml bicarbonate preparation mixed with D and E
+- component_name: DSMZ29 solution D
+  reference_scope: UNMAPPED
+  source: 450 ml water plus0.5 ml0.1% resazurin stock; combined with C and E
+- component_name: DSMZ29 solution E
+  reference_scope: UNMAPPED
+  source: 25 ml water with named salts, glucose, pyruvate and SL10B stock; combined
+    with C and D
+- component_name: DSMZ29 solution F
+  reference_scope: UNMAPPED
+  source: 0.1 ml vitaminB12 stock per bottle
+- component_name: Sodium carbonate solution (1 M)
+  reference_scope: UNMAPPED
+  source: pH adjustment amount unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    source_record: Pfennig's medium II (DSMZ29)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. MICRO0001736 definition-source
+      reproduces the same DSMZ29 staged recipe. Excludes the marine/estuarine alternative
+      and periodic feeding. DSMZ40 adds1%NaCl to this base; that variant is not the
+      base identity.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Pfennig''s
+    medium II (DSMZ29). MICRO0001736 definition-source reproduces the same DSMZ29
+    staged recipe. Excludes the marine/estuarine alternative and periodic feeding.
+    DSMZ40 adds1%NaCl to this base; that variant is not the base identity. Independent
+    correction: Remove newly added ambiguous global aliases; preserve exact raw labels
+    in source ledger and notes. Isolated proposal only; all source and release holds
+    remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

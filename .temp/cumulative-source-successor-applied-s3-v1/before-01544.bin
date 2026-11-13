@@ -1,0 +1,78 @@
+identifier: CHEBI:6518
+preferred_term: Lomefloxacin hydrochloride
+ontology_mapping:
+  ontology_id: CHEBI:6518
+  ontology_label: lomefloxacin hydrochloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+synonyms:
+- synonym_text: 1-ethyl-6,8-difluoro-7-(3-methylpiperazin-1-yl)-4-oxo-1,4-dihydroquinoline-3-carboxylic
+    acid hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=98079-52-8); Imported
+    from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.540222+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.568522+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C17H19F2N3O3.HCl; inchi=InChI=1S/C17H19F2N3O3.ClH/c1-3-21-8-11(17(24)25)16;
+    smiles=CCn1cc(C(=O)O)c(=O)c2cc(F)c(N3CCNC(C)C3)c(F)c21.Cl
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.847840+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.390818+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001543; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 98079-52-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C17H19F2N3O3.HCl
+  inchi: InChI=1S/C17H19F2N3O3.ClH/c1-3-21-8-11(17(24)25)16(23)10-6-12(18)15(13(19)14(10)21)22-5-4-20-9(2)7-22;/h6,8-9,20H,3-5,7H2,1-2H3,(H,24,25);1H
+  smiles: CCn1cc(C(=O)O)c(=O)c2cc(F)c(N3CCNC(C)C3)c(F)c21.Cl
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001543
+legacy_identifiers:
+- MIM:Lomefloxacin_Hydrochloride
+- CHEBI:6518

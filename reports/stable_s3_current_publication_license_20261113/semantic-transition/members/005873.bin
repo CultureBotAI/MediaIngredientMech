@@ -1,0 +1,111 @@
+id: CultureMech:000610
+name: yps_medium
+original_name: YPS MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: DSMZ Medium 1168
+  term:
+    id: mediadive.medium:1168
+    label: YPS MEDIUM
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1168.pdf'
+ingredients:
+- preferred_term: Yeast extract
+  concentration:
+    value: '4.0'
+    unit: G_PER_L
+  source: DSMZ Medium 1168
+  notes: DSMZ Medium 1168 lists 4.0 g yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+- preferred_term: Peptone
+  concentration:
+    value: '2.0'
+    unit: G_PER_L
+  source: DSMZ Medium 1168
+  notes: DSMZ Medium 1168 lists 2.0 g peptone.
+  term:
+    id: MICRO:0000178
+    label: peptone
+- preferred_term: Sea Salt
+  concentration:
+    value: '25.0'
+    unit: G_PER_L
+  source: DSMZ Medium 1168
+  notes: DSMZ Medium 1168 lists 25.0 g Sea Salts from Sigma.
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: DSMZ Medium 1168
+  notes: DSMZ Medium 1168 lists 1000.0 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Agar
+  concentration:
+    value: '15.0'
+    unit: G_PER_L
+  source: DSMZ Medium 1168
+  notes: DSMZ Medium 1168 says agar may be added at 15 g/L to solidify the medium.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Add 15 g/L agar to solidify DSMZ Medium 1168 when needed.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:13.577773Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1168'
+- timestamp: '2026-03-13T06:18:56.799164Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000610'
+- timestamp: '2026-03-17T06:30:18.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:07.913213+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "YPS MEDIUM" to "yps_medium" for consistent matching
+- timestamp: '2026-06-05T07:41:55.874496+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_dsmz_1168_yps_score15.py
+  action: RESOLVED_DSMZ_1168_YPS_SCORE15
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1168.pdf
+  notes: DSMZ Medium 1168 lists yeast extract, peptone, Sigma Sea Salts, and distilled
+    water; agar is optional at 15 g/L to solidify the medium.
+kg_microbe_match: mediadive.medium:12
+variant_children:
+- path: data/normalized_yaml/bacterial/KOMODO_1168_YPS_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:003886
+  name: yps_medium
+  notes: KOMODO record is an exact source duplicate of DSMZ Medium 1168; local ingredient
+    and concentration signatures match.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1168.pdf

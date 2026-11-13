@@ -1,0 +1,125 @@
+id: CultureMech:008074
+name: togo_medium_m1528
+original_name: (Unnamed medium)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.3
+ingredients:
+- preferred_term: Bacto Todd Hewitt Broth (Difco)
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  source: NBRC Medium 315
+  notes: NBRC Medium 315 lists 30 g/L Bacto Todd Hewitt Broth from Difco; this commercial
+    broth is retained as an opaque complex component.
+- preferred_term: Horse serum
+  concentration:
+    value: '5'
+    unit: ML_PER_L
+  source: NBRC Medium 315
+  notes: NBRC Medium 315 lists 5 ml/L Horse serum sterilized separately by filtration.
+  term:
+    id: MICRO:0001235
+    label: Horse serum
+- preferred_term: Distilled water
+  concentration:
+    value: '1.0'
+    unit: L
+  source: NBRC Medium 315
+  notes: NBRC Medium 315 lists 1.0 L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1528
+  term:
+    id: TOGO:M1528
+    label: TOGO Medium M1528
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve 30 g/L Bacto Todd Hewitt Broth (Difco) in 1 L distilled water.
+- step_number: 2
+  action: FILTER_STERILIZE
+  description: Sterilize Horse serum separately by filtration.
+- step_number: 3
+  action: MIX
+  description: Add 5 ml/L filter-sterilized Horse serum.
+- step_number: 4
+  action: ADJUST_PH
+  description: Adjust pH to 7.3.
+notes: TOGO M1528 imports NBRC Medium 315, which lists 30 g/L Bacto Todd Hewitt Broth
+  (Difco), 5 ml/L Horse serum, and 1 L Distilled water at pH 7.3. The horse serum
+  is sterilized separately by filtration.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.800461Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1528'
+- timestamp: '2026-01-28T19:48:18.961201Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:04:31.418283+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:19:53.366833Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008074'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:05.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:11.894088+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "TOGO Medium M1528" to "togo_medium_m1528" for consistent
+    matching
+- timestamp: '2026-05-16T09:04:36.374777+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:52.653333+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_nbrc_315_score15.py
+  action: RESOLVED_NBRC_315_SCORE15
+  source: https://togomedium.org/medium/M1528; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=315
+  notes: Curated TOGO:M1528 from TOGO and NBRC Medium 315; corrected Distilled water
+    from a mass-like 1 g/L import to 1 L, moved Horse serum from a migrated G_PER_L
+    solution to a 5 ml/L filter-sterilized ingredient, added pH 7.3, grounded Horse
+    serum and water, and retained Bacto Todd Hewitt Broth as a sourced opaque component.
+parent_media:
+  path: data/normalized_yaml/bacterial/TOGO_M1524_Todd_Hewitt_Medium.yaml
+  relationship: SUPPLEMENTED_VARIANT
+  id: CultureMech:008070
+  name: todd_hewitt_medium
+  notes: Adds 5 ml/L filter-sterilized Horse serum to NBRC Medium 311 Todd Hewitt
+    Medium.
+variant_relationship: SUPPLEMENTED_VARIANT
+variant_modifications:
+- Adds 5 ml/L filter-sterilized Horse serum to NBRC Medium 311 Todd Hewitt Medium.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1528
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=315

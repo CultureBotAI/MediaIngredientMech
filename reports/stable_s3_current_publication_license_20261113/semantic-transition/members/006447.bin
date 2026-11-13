@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-08T04:53:40Z",
+  "old_ccap": {
+    "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/CCAP_PE_Salt_Solution_Stock.yaml",
+    "sha256": "a48a7a149cd6e3aafa4628ba1861918ff5b5966457c9340d41ea9c126c173f27"
+  },
+  "new_ccap": {
+    "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml",
+    "sha256": "2ec4c2a0281df23021f000d07bb515de43a148e65ffec4ef3a6ea079b4ef61a1"
+  },
+  "scope": "Only3activeprosementionsofRAW_TEXTcorrected; allsourceformula/aliasfieldsunchanged. CanonicalMetal44v3correctscomparisonproseonly; itsidentifier/componentsareunchanged,soHutnerpayloadunchanged.",
+  "canonical_inputs": [
+    {
+      "root": "artifact",
+      "path": "shard/concentration_stocks/proposals/NBRC1339_Phenanthrene_DMSO_Stock-v2.yaml",
+      "sha256": "3cb65a45ac4b2ba9a0a8e3b4a4d42b864bcf206ce2973f6aa4a7bfb2a9eeb750"
+    },
+    {
+      "root": "artifact",
+      "path": "shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v3.yaml",
+      "sha256": "9eb2584dd9655546783024395041cb99c0d1eb7923b6b7749d32b34ea09bfd4e"
+    },
+    {
+      "root": "artifact",
+      "path": "shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+      "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+    },
+    {
+      "root": "artifact",
+      "path": "shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+      "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+    }
+  ],
+  "strict": {
+    "command": [
+      ".temp/all-unmatched-worker-01/shard-venv/bin/python",
+      "scripts/validate_strict.py",
+      "reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/CCAP_PE_Salt_Solution_Stock.yaml",
+      "--out",
+      "reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/ccap-strict.tsv"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Validating 1 files with 17 workers; schema=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\n=== validate-strict summary ===\n  files scanned:      1\n  files with ERROR:   0\n  total ERROR rows:   0\n  TSV:                reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v5/ccap-strict.tsv\n"
+  },
+  "native_alias_projection": [
+    {
+      "text": "Salt solution stock",
+      "resolves": false
+    }
+  ],
+  "partonomy_violations": []
+}

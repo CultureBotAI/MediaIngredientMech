@@ -1,0 +1,308 @@
+id: CultureMech:000143
+name: waris_h
+category: algae
+sources:
+- database: CCAP
+  database_id: Waris_H
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for freshwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: Waris_H, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.641321'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.278064Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000143'
+- timestamp: '2026-03-17T19:45:04.224980+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Waris-H" to "waris_h" for consistent matching
+- timestamp: '2026-04-04T12:54:55.039363'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 18 curated ingredients from CCAP
+  source: CCAP Medium MR_Waris_H.pdf
+- timestamp: '2026-05-16T08:57:02.880667+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:57.119928+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-08-17T17:31:49.220112+00:00'
+  curator: repair_subscript_stripped_names.py
+  action: REPAIRED_SUBSCRIPT_STRIPPED_NAME
+  notes: 'Restored digits lost from formula ingredient name(s) by an upstream encoding
+    step (#276): H BO -> H3BO3; MnSO .H O -> MnSO4.H2O. The corrupted original is
+    preserved in each ingredient''s notes.'
+  changes: 2 preferred_term(s) repaired
+- timestamp: '2026-08-25T00:00:00-07:00'
+  curator: repair_ccap_instruction_rows.py
+  action: REPAIRED_CCAP_INSTRUCTION_ROWS
+  changes: ingredients 18 -> 17
+  notes: Repaired preparation text and nested-recipe flattening against CCAP MR_Waris_H.pdf.
+    Moved process statements to preparation_steps and restored source-asserted components
+    or constituent-medium references where applicable.
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:Waris_H; https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:Waris_H
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf
+ingredients:
+- preferred_term: Dissolve
+  notes: Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification
+  concentration:
+    value: '1.04'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+- preferred_term: Dissolve
+  notes: Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification
+  concentration:
+    value: '2.74'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+- preferred_term: KOH
+  term:
+    id: CHEBI:32035
+    label: potassium hydroxide
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039322'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.04'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Na EDTA.2H2O
+  notes: Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification
+  concentration:
+    value: '4.08'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+- preferred_term: FeSO4 x 7H2O
+  term:
+    id: CHEBI:75836
+    label: iron(2+) sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039334'
+    ontology_source: CHEBI
+  concentration:
+    value: '2.74'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Na EDTA
+  term:
+    id: CHEBI:64734
+    label: EDTA disodium salt (anhydrous)
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039337'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.0'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: H3BO3
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039339'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.12'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: 'From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification Name repaired (#276): the source string `H BO` had lost its subscript
+    digits; restored to `H3BO3` — grounded to boric acid (CHEBI:33118).'
+- preferred_term: MnSO4.H2O
+  notes: 'Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification Name repaired (#276): the source
+    string `MnSO .H O` had lost its subscript digits; restored to `MnSO4.H2O` — manganese(II)
+    sulfate monohydrate.'
+  concentration:
+    value: '0.12'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+- preferred_term: ZnSO4 x 7 H2O
+  term:
+    id: CHEBI:32312
+    label: zinc sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039342'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.022'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: CoSO .7H2O
+  notes: Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification
+  concentration:
+    value: '0.005'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039345'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039347'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.0001'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Cyanocobalamin
+  term:
+    id: CHEBI:17439
+    label: cyanocob(III)alamin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039349'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.00002'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Niacinamide
+  notes: Ontology mapping not yet available; From CCAP Medium MR_Waris_H.pdf; Curated
+    from CCAP Medium MR_Waris_H.pdf specification
+  concentration:
+    value: '0.00001'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  term:
+    id: CHEBI:17154
+    label: nicotinamide
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039351'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Cyanocobalamin
+  term:
+    id: CHEBI:17439
+    label: cyanocob(III)alamin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039353'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.002'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+- preferred_term: Niacin
+  term:
+    id: CHEBI:15940
+    label: nicotinic acid
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.039355'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.001'
+    unit: G_PER_L
+  source: CCAP Medium MR_Waris_H.pdf
+  notes: From CCAP Medium MR_Waris_H.pdf; Curated from CCAP Medium MR_Waris_H.pdf
+    specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: Waris-H
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Bring to 1 L with deionised water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 7.0 with 1 M NaOH or 1 M HCl before autoclaving.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 15 psi for 15 minutes.

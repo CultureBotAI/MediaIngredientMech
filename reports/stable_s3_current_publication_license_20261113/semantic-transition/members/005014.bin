@@ -1,0 +1,221 @@
+id: CultureMech:007099
+name: deshpande_medium_with_met_asp_fang_et_al
+original_name: Deshpande medium with Met, Asp; Fang et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: L-Aspartate
+  concentration:
+    value: '15.0263'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:asp-L'
+  term:
+    id: CHEBI:29991
+    label: L-aspartate(1-)
+- preferred_term: L-Methionine
+  term:
+    id: CHEBI:16643
+    label: L-methionine
+  concentration:
+    value: '2.68078'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:met-L'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:16643
+    label: L-methionine
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.00450512'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '80.3673'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '44.0898'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Cobalt chloride
+  concentration:
+    value: '8.40583e-05'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:35696
+    label: cobalt dichloride
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.00061931'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.000313803'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '4.00481e-05'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+- preferred_term: Sodium citrate
+  term:
+    id: CHEBI:53258
+    label: sodium citrate
+  concentration:
+    value: '15.5003'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:53258
+    label: sodium citrate
+- preferred_term: Iron(III) chloride
+  concentration:
+    value: '0.000123305'
+    unit: MILLIMOLAR
+- preferred_term: Sodium borate
+  concentration:
+    value: '0.000235991'
+    unit: MILLIMOLAR
+- preferred_term: Molybdic acid ammonium salt tetrahydrate
+  concentration:
+    value: '3.23661e-05'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:91249
+    label: ammonium molybdate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:44.435695Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 206, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:46.129394Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007099'
+- timestamp: '2026-03-17T06:30:48.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:04.262909+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Deshpande medium with Met, Asp; Fang et al" to "deshpande_medium_with_met_asp_fang_et_al"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:55.733349+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-20T19:01:38.952017+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-08-31T04:06:13.387518+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:206's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-10-13T13:47:14.449687+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper citation with archived primary abstract and Markdown,
+    exact excerpts, qualified organism taxonomy and unresolved formulation details.
+    Preserved all amounts, existing links, preparation and history; no new growth,
+    concentration evidence or resolved variant.
+  source: doi:10.1007/BF00264002
+media_term:
+  preferred_term: MediaDB Medium 206
+  term:
+    id: MEDIADB:206
+    label: Deshpande medium with Met, Asp; Fang et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: doi:10.1007/BF00264002
+  title: A new chemically-defined medium for RAC-certified and other strains of Bacillus
+    subtilis
+  authors: Fang, AiQi; Demain, Arnold L.
+  year: 1989
+  notes: source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; owner=MEDIADB:206; discovery_sourceID=76; source_access=publisher_summary_only.
+    Publication identity verified against the historical source title/year/first author
+    and primary metadata. The imported Deshpande base includes methionine and aspartate
+    supplements. These are descriptions of the existing record, not primary-paper
+    certifications. The summary does not enumerate these exact bases, supplement doses
+    or assay assignments. Deshpande and new-medium formulations must not be combined;
+    the cited Deshpande 1980 base protocol was not inspected. No resolved variant
+    or base-protocol inheritance is justified by its bibliography title. Publisher
+    Summary; exact excerpt='BGSC-1S53'. Reported organism=Bacillus subtilis BGSC-1S53;
+    canonical scientific name=Bacillus subtilis subsp. subtilis str. 168; NCBITaxon:224308;
+    actual rank=strain; taxonomy_match=parent_rank_only; role=asporogenous HV-1 derivative
+    of 168; exact derivative node unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=224308&retmode=xml.
+    Publisher Summary; exact excerpt='prototrophic 168 strain'. Reported organism=Bacillus
+    subtilis 168; canonical scientific name=Bacillus subtilis subsp. subtilis str.
+    168; NCBITaxon:224308; actual rank=strain; taxonomy_match=exact strain; role=reported
+    parent/comparator; the taxonomy match does not establish the paper's prototrophic
+    phenotype. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=224308&retmode=xml.
+    Publisher Summary; exact excerpt='a triple auxotroph of 168'. Reported organism=Bacillus
+    subtilis unnamed triple auxotroph of 168; canonical scientific name=Bacillus subtilis
+    subsp. subtilis str. 168; NCBITaxon:224308; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=distinct unnamed derivative, no invented strain designation. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=224308&retmode=xml.
+    Publisher Summary; exact excerpt='BGSC 1S76'. Reported organism=Bacillus subtilis
+    BGSC 1S76; canonical scientific name=Bacillus subtilis subsp. subtilis str. 168;
+    NCBITaxon:224308; actual rank=strain; taxonomy_match=parent_rank_only; role=HV-2
+    168 derivative; growth-factor-dependent context, not the parent. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=224308&retmode=xml.
+    Publisher Summary; exact excerpt='W-23'. Reported organism=Bacillus subtilis W-23;
+    canonical scientific name=Bacillus spizizenii str. W23; NCBITaxon:655816; actual
+    rank=strain; taxonomy_match=exact strain historical synonym; role=unrelated-to-168
+    comparator; current NCBI name Bacillus spizizenii str. W23. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=655816&retmode=xml.
+    Required growth factors and derivative-specific results remain separate. Bounded
+    taxonomy searches did not establish exact derivative nodes; this is not an exhaustive
+    absence claim. Publisher Summary; exact excerpt='no components requiring separate
+    sterilization'. That study preparation statement does not verify the imported
+    generic filtration steps. PMID not resolved by bounded lookup, not established
+    absent. Raw publisher summary=references_cache/papers/primary_html/fang-1989-publisher-abstract.html;
+    source_markdown=references_cache/papers/primary_html/fang-1989-publisher-abstract.md.
+    All original ingredients, amounts, preparation and parent/child links preserved,
+    not newly certified by this abstract. No new positive native growth association,
+    quantitative metric or resolved variant. Organism inventory is limited to the
+    inspected abstract's medium-relevant passages. Taxonomy alone does not prove cultivation.
+    Taxonomy archives=references_cache/papers/taxonomy/holland-fang-cocaign-20261013.*
+    and fang-w23-20261013.*.

@@ -1,0 +1,121 @@
+identifier: kgmicrobe.ingredient:ebios
+preferred_term: EBIOS dried-yeast tablets
+synonyms:
+- synonym_text: EBIOS
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+- synonym_text: EBIOS tablets (Asahi)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/
+- synonym_text: EBIOS dried-yeast tablets (Asahi)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:42:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named commercial preparation and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain
+    the local named-mixture record. Do not create an SSSOM row at present. A future
+    verified ontology term for **brewer’s yeast extract** could potentially receive
+    `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS
+    P2G unless that ontology term explicitly denotes this product. A generic yeast-extract
+    term would be a broad No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T04:34:34.027281+00:00'
+  curator: worker01_add_media_identity
+  action: PROMOTED_TO_MAPPED
+  changes: 'Isolated proposal: promote existing source-linked owner UNMAPPED_0380
+    to kgmicrobe.ingredient:ebios. JCM969 explicitly specifies Asahi EBIOS dried-yeast
+    tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G
+    yeast extract discussed in historical research. Current official tablet ingredients
+    are evidence for the present product only; the historical source establishes dried-yeast
+    tablet form but not excipient quantities or unchanged composition across time.
+    Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally
+    resolve P2G or other EBIOS products to this tablet owner. Preserve original history
+    and occurrence counts; no maintained data are changed.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.142701+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked
+  owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical
+  research. Current official tablet ingredients are evidence for the present product
+  only; the historical source establishes dried-yeast tablet form but not excipient
+  quantities or unchanged composition across time. Bare EBIOS is retained as a rejected
+  unqualified brand label so it cannot globally resolve P2G or other EBIOS products
+  to this tablet owner.
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: EBIOS tablets
+  supplier: Asahi Group Foods
+  form: dried-yeast tablets
+  notes: Primary JCM969 tablet footnote. Current product page lists dried yeast plus
+    lactose hydrate, calcium hydrogen phosphate, anhydrous silica and hardened oil;
+    no historical-lot equivalence asserted.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ebios
+  ontology_label: EBIOS dried-yeast tablets
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/
+    notes: JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked
+      owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical
+      research. Current official tablet ingredients are evidence for the present product
+      only; the historical source establishes dried-yeast tablet form but not excipient
+      quantities or unchanged composition across time. Bare EBIOS is retained as a
+      rejected unqualified brand label so it cannot globally resolve P2G or other
+      EBIOS products to this tablet owner.
+components:
+- component_name: Dried yeast
+  reference_scope: UNMAPPED
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/
+    source_record: EBIOS dried-yeast tablets
+    notes: Named material classes only; no full molecular decomposition or historical
+      quantitative composition asserted.
+  notes: Complex biological/polymer preparation. Component identifiers remain unassigned
+    instead of guessing exact ontology entities. Current supplier supports general
+    product class; historical lot variability retained.

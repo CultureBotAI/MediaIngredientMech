@@ -1,0 +1,90 @@
+identifier: UNMAPPED_0734
+preferred_term: Tetrazolium
+synonyms:
+- synonym_text: Tetrazolium
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: Class-level label. MeSH:D013778 'Tetrazolium Salts' is the closest term
+    and is plausibly what this means in a medium (TTC and relatives), but 'tetrazolium'
+    is NOT a registered synonym of it, so grounding would be inference rather than
+    evidence. Needs a granularity decision. Searched CHEBI, NCIT, FOODON, ENVO, MeSH,
+    BTO and UBERON by label and synonym with normalisation, plus exact queries across
+    all of live OLS4.
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Tetrazolium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** the bare label **“Tetrazolium”
+    is an ambiguous chemical-family label, not a uniquely specified media ingredient.**
+    The literature describes multiple mono- and ditetrazolium salts with materially
+    different substituents, counterions, solubility, membrane permeability, reduction
+    behavior, and biological effects. Examples include TTC, MTT, INT, CTC, XTT, MTS,
+    WST-1, NBT CURIEs discussed: MESH:D013754. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: RETIRED_NOT_AN_INGREDIENT
+  previous_status: NEEDS_EXPERT
+  new_status: REJECTED
+  changes: 'Retired as an ingredient record (#213/#308): a bare family name reporting
+    a reduction readout. ChEBI has no generic tetrazolium class — only specific salts
+    — and MicrO models the readout as MICRO:0000270 ''tetrazolium reduction assay''.
+    The salt actually used in bacterial media, TTC, is already a record: `2,3,5-Triphenyltetrazolium
+    chloride` (CHEBI:78019). Grounding the bare family name to one of its members
+    is the error #368 records for sulfur. Not mapped, because every substrate CURIE
+    it could be grounded to is already the primary key of a live record — in MIM the
+    identifier IS the ontology CURIE, so a mapping here would mint a duplicate rather
+    than add coverage. No synonym is folded onto those records either: this label
+    names a reaction or a splice, not the substance, and asserting the synonymy would
+    make label_index resolve it to something it does not denote.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002919; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record (#213/#308):
+  a bare family name reporting a reduction readout. ChEBI has no generic tetrazolium
+  class — only specific salts — and MicrO models the readout as MICRO:0000270 ''tetrazolium
+  reduction assay''. The salt actually used in bacterial media, TTC, is already a
+  record: `2,3,5-Triphenyltetrazolium chloride` (CHEBI:78019). Grounding the bare
+  family name to one of its members is the error #368 records for sulfur. Not mapped,
+  because every substrate CURIE it could be grounded to is already the primary key
+  of a live record — in MIM the identifier IS the ontology CURIE, so a mapping here
+  would mint a duplicate rather than add coverage. No synonym is folded onto those
+  records either: this label names a reaction or a splice, not the substance, and
+  asserting the synonymy would make label_index resolve it to something it does not
+  denote.'
+mim_id: MIM:0002919
+legacy_identifiers:
+- MIM:Tetrazolium
+- UNMAPPED_0734

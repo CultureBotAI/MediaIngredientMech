@@ -1,0 +1,217 @@
+{
+  "at": "2026-11-12T10:58:55.163812+00:00",
+  "status": "PRIVATE_GUARDED_PROPOSAL_NOT_APPLIED_NOT_NATIVE_APPROVAL",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1377",
+  "source_path": "data/ingredients/mapped/Apidaecin_IB.yaml",
+  "mim_id": "MIM:0000359",
+  "TC_HEAD": "57bbdcf656d7bde80ed0bb8bac1cbd096c7ea915",
+  "before_sha256": "dac2bd72743518ee6bb30beeeae508bab9badcc62ce9b70f1baeaeeec3bdc97c",
+  "after_sha256": "436c2c697b50f271facb2df72463280ce33b7933da0353ea63c2318e57dceff3",
+  "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/postadoption-apidaecin1377-proposal-v1/proposed/data/ingredients/mapped/Apidaecin_IB.yaml",
+  "changed_fields": {
+    "identifier": {
+      "before": "mesh:C061361",
+      "after": "mesh:M0170179"
+    },
+    "ontology_mapping": {
+      "before": {
+        "ontology_id": "mesh:C061361",
+        "ontology_label": "apidaecin",
+        "ontology_source": "MESH",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "OAK/OLS exact audit",
+            "notes": "OLS audit matched Apidaecin IB to MESH:C061361 apidaecin through exact synonym apidaecin Ib."
+          }
+        ]
+      },
+      "after": {
+        "ontology_id": "mesh:M0170179",
+        "ontology_label": "apidaecin Ib",
+        "ontology_source": "MESH",
+        "mapping_quality": "MANUAL_CURATION",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://id.nlm.nih.gov/mesh/M0170179",
+            "notes": "#1377: official NLM2026 RDF declares apidaecin Ib as Concept M0170179 with preferred term T200184. Generic apidaecin M0170180 is the preferred concept of C061361 and explicitly has narrower Ib, Ia and II concepts. Capture SHA256 c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28. This resolves the named Ib concept locally from the pinned official archive, not by flattening all SCR terms into exact synonyms."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "CultureBotHT compounds_to_cas.csv row 578; https://www.anaspec.com/en/catalog/apidaecin-ib-1-mg~cd4f5992-8c02-4a24-bac1-91b3cfbe0e96",
+            "notes": "#1377: original source explicitly names Apidaecin IB and AnaSpec AS-62044, with no CAS. The inspected manufacturer page identifies that catalog product as Apidaecin IB. Select the exact Ib concept, preserving source and preparation limits; do not infer CAS, sequence, formula, quantity, lot, purity, activity or source-binding approval from this mapping correction."
+          }
+        ]
+      }
+    },
+    "curation_history": {
+      "before": [
+        {
+          "timestamp": "2026-04-29T06:51:33.117170+00:00",
+          "curator": "audit_add_remaining_culturebotht",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-05-11T07:04:00Z",
+          "curator": "mediaingredientmech-agentic-curation",
+          "action": "CURATED_MESH_EXACT_MATCH",
+          "changes": "Mapped to MESH:C061361 apidaecin using OAK/OLS exact synonym evidence for Apidaecin IB.",
+          "previous_status": "UNMAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T22:01:42+00:00",
+          "curator": "codex",
+          "action": "ASSIGNED_MIM_ID",
+          "changes": "#1265: assigned permanent MIM:0000359; retained mapping identifier and legacy aliases.",
+          "llm_assisted": true
+        }
+      ],
+      "after": [
+        {
+          "timestamp": "2026-04-29T06:51:33.117170+00:00",
+          "curator": "audit_add_remaining_culturebotht",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-05-11T07:04:00Z",
+          "curator": "mediaingredientmech-agentic-curation",
+          "action": "CURATED_MESH_EXACT_MATCH",
+          "changes": "Mapped to MESH:C061361 apidaecin using OAK/OLS exact synonym evidence for Apidaecin IB.",
+          "previous_status": "UNMAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T22:01:42+00:00",
+          "curator": "codex",
+          "action": "ASSIGNED_MIM_ID",
+          "changes": "#1265: assigned permanent MIM:0000359; retained mapping identifier and legacy aliases.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-12T10:58:55.163812+00:00",
+          "curator": "codex_postadoption_source_proposal",
+          "action": "PROPOSED_SOURCE_CORRECTION",
+          "changes": "#1377: replace the false exact generic SCR identity mesh:C061361 with reviewed exact subtype Concept mesh:M0170179 (apidaecin Ib), established by official NLM2026 hierarchy and the explicit original Ib source/product. Mapping method MANUAL_CURATION records this scope adjudication; an own-identifier SSSOM relation remains exact under MAPPING_SEMANTICS section 0. Remove the stale generic kg_microbe_node_id pointer without inventing a new imported KG node. Remove only the rejected generic external identity from resolving legacy_identifiers under conditional reviewed D2 policy; preserve MIM:0000359, MIM:Apidaecin_IB, all source synonyms, occurrences, earlier events and scientific holds. Do not mint, merge, split, add CAS/sequence/chemistry/procurement/roles/subclass claims, retire holds or claim native application. Not applicable until final reviewed owner-rejection policy and native successor are accepted. Rejected complete original assertion: {\"identifier\":\"mesh:C061361\",\"kg_microbe_node_id\":\"mesh:C061361\",\"legacy_identifiers\":[\"MIM:Apidaecin_IB\",\"mesh:C061361\"],\"ontology_mapping\":{\"evidence\":[{\"evidence_type\":\"DATABASE_MATCH\",\"notes\":\"OLS audit matched Apidaecin IB to MESH:C061361 apidaecin through exact synonym apidaecin Ib.\",\"source\":\"OAK/OLS exact audit\"}],\"mapping_quality\":\"EXACT_MATCH\",\"ontology_id\":\"mesh:C061361\",\"ontology_label\":\"apidaecin\",\"ontology_source\":\"MESH\"}}. NLM capture SHA256 c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    },
+    "notes": {
+      "before": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11.",
+      "after": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11. Current private proposal #1377 corrects the former generic apidaecin exact mapping to the explicitly named Ib NLM Concept mesh:M0170179. The generic mesh:C061361 association is rejected only as this owner identity and remains fully preserved in history; it must not remain a resolving alias or KG-node pointer. Permanent MIM:0000359 and the original filename alias remain. No source binding, sequence, CAS, supplied-form, role or export approval is granted. Application depends on the finally reviewed native successor and explicit owner-rejection policy."
+    },
+    "kg_microbe_node_id": {
+      "before": "mesh:C061361",
+      "after": null
+    },
+    "legacy_identifiers": {
+      "before": [
+        "MIM:Apidaecin_IB",
+        "mesh:C061361"
+      ],
+      "after": [
+        "MIM:Apidaecin_IB"
+      ]
+    }
+  },
+  "rejected_identifiers": [
+    "mesh:C061361"
+  ],
+  "rejected_labels": [],
+  "conditional_policy": "D2 reviewed design; final reviewed native owner-rejection policy and successor still required",
+  "closed_schema": "PASS",
+  "stable_and_slug_resolution": "PASS",
+  "generic_identity_alias_rejection": "PASS",
+  "other_owner_collision_count": 0,
+  "maintained_TC_and_eight_proposals_unchanged": true,
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/Apidaecin_IB.yaml",
+      "sha256": "dac2bd72743518ee6bb30beeeae508bab9badcc62ce9b70f1baeaeeec3bdc97c",
+      "bytes": 1670
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/primary-scientific-packet-skeptic-v1/APIDAECIN-NLM-CONCEPTS.json",
+      "sha256": "c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28",
+      "bytes": 7928
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/primary-scientific-packet-skeptic-v1/CAPTURE-RECEIPT.json",
+      "sha256": "eaaac030925f43a8ee71f2bbd6b470c535ded21966dfbe070fb3265d450f4cf4",
+      "bytes": 1158
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureBotHT/CultureBotHT/data/raw/google_sheets/compounds_to_cas.csv",
+      "sha256": "76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9",
+      "bytes": 76308
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/postadoption-apidaecin1377-proposal-v1/SUPPLIER-WEB-CAPTURE.json",
+      "sha256": "87cd46449f62e42f69aa118928795188c39827ac744b5a20ba39d25791ca8957",
+      "bytes": 6483
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/registry1189-independent-code-review-v1/successor1373-design-review-v1/REVIEW.md",
+      "sha256": "63acc89f9707752fb91afd77df53584155985d3939616495cbaa5eed10a56183",
+      "bytes": 5126
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/apidaecin-scope-issue-v1/readback.json",
+      "sha256": "50b160f9498ac6cece86df015d51d754217783e236021783e5589920e59ff483",
+      "bytes": 2885
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/MAPPING_SEMANTICS.md",
+      "sha256": "76dbbbbc4dd0d729dbba4521505bade4f2f2a53d4ee144ac9bca0fcda8b29015",
+      "bytes": 76741
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "77a57aaaa1a968dec077b13851b28350701b0952d672417f26e514bebfd0f392",
+      "bytes": 105365
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "bytes": 5014
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+      "bytes": 4699
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/stable_ids.py",
+      "sha256": "9261173f4a9f5d9ed52f034d5a27308e1a44978aa58a9b47aa5a2294c2ce1e1b",
+      "bytes": 17945
+    }
+  ],
+  "script": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/postadoption-apidaecin1377-proposal-v1/prepare_apidaecin.py",
+    "sha256": "9a4aa498bce1c126ac3b887fad9b336478d9e200c220f9a7ab5e0da6ca35d47e",
+    "bytes": 13192
+  },
+  "remaining": [
+    "Separate independent exact afterimage review",
+    "Native successor and source-context gates",
+    "Actual regenerated SSSOM plus complete-row paired review and full native validation"
+  ],
+  "limitations": [
+    "No source binding, lot/procurement, sequence, CAS, chemistry, role, quantity or export approval",
+    "No guessed new KG node or parent/subclass edge",
+    "Official local RDF resolution is verified; configured OAK product gate not run because no existing mesh DB was located"
+  ]
+}

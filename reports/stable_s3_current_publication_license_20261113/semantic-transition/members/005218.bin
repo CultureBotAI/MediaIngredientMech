@@ -1,0 +1,219 @@
+id: CultureMech:010917
+preferred_term: Main sol. 694
+term:
+  id: mediadive.solution:1445
+  label: Main sol. 694
+composition:
+- preferred_term: NaNH4HPO4 x 4 H2O
+  concentration:
+    value: '3.5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:665
+    label: NaNH4HPO4 x 4 H2O
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1445
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 1,
+                      "compound": "NaNH4HPO4 x 4 H2O",
+                      "compound_id": 665,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 3.5,
+                      "unit": "g",
+                      "g_l": 3.5,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[0].concentration (NaNH4HPO4
+      x 4 H2O) in MediaDive solution 1445; locator=$.data.recipe[0] (compound_id=665).
+      Provider explicitly reports g_l=3.5. Arithmetic check: 3.5 g * 1 g/g / (1000
+      ml / 1000 ml per L) = 3.5 g/L, consistent with the reported value at its precision.
+      Evidence supports the provider-declared concentration within this solution,
+      not a concentration in a receiving medium or an independently measured final
+      volume. Water addition alone is not used to infer a final volume. Additional
+      exact excerpt at $.data.volume: "volume": 1000. Retrieved 2026-10-07T08:52:47.766175+00:00;
+      response SHA256=e22ec8673481aa3d9460da1dcf5907cc9ce94e754cbd428702f3dc51617bdc61.'
+- preferred_term: K2HPO4 x 3 H2O
+  concentration:
+    value: '7.5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:244
+    label: K2HPO4 x 3 H2O
+  chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1445
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 2,
+                      "compound": "K2HPO4 x 3 H2O",
+                      "compound_id": 244,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 7.5,
+                      "unit": "g",
+                      "g_l": 7.5,
+                      "mmol_l": 43.0599,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[1].concentration (K2HPO4
+      x 3 H2O) in MediaDive solution 1445; locator=$.data.recipe[1] (compound_id=244).
+      Provider explicitly reports g_l=7.5. Arithmetic check: 7.5 g * 1 g/g / (1000
+      ml / 1000 ml per L) = 7.5 g/L, consistent with the reported value at its precision.
+      Evidence supports the provider-declared concentration within this solution,
+      not a concentration in a receiving medium or an independently measured final
+      volume. Water addition alone is not used to infer a final volume. Additional
+      exact excerpt at $.data.volume: "volume": 1000. Retrieved 2026-10-07T08:52:47.766175+00:00;
+      response SHA256=e22ec8673481aa3d9460da1dcf5907cc9ce94e754cbd428702f3dc51617bdc61.'
+- preferred_term: KH2PO4
+  concentration:
+    value: '3.7'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:11
+    label: KH2PO4
+  chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/1445
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 3,
+                      "compound": "KH2PO4",
+                      "compound_id": 11,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 3.7,
+                      "unit": "g",
+                      "g_l": 3.7,
+                      "mmol_l": 27.1889,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[2].concentration (KH2PO4)
+      in MediaDive solution 1445; locator=$.data.recipe[2] (compound_id=11). Provider
+      explicitly reports g_l=3.7. Arithmetic check: 3.7 g * 1 g/g / (1000 ml / 1000
+      ml per L) = 3.7 g/L, consistent with the reported value at its precision. Evidence
+      supports the provider-declared concentration within this solution, not a concentration
+      in a receiving medium or an independently measured final volume. Water addition
+      alone is not used to infer a final volume. Additional exact excerpt at $.data.volume:
+      "volume": 1000. Retrieved 2026-10-07T08:52:47.766175+00:00; response SHA256=e22ec8673481aa3d9460da1dcf5907cc9ce94e754cbd428702f3dc51617bdc61.'
+- preferred_term: MgSO4 x 7 H2O
+  concentration:
+    value: '0.246476'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:8
+    label: MgSO4 x 7 H2O
+  chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Thiamine
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:666
+    label: Thiamine
+  chebi_term:
+    id: CHEBI:18385
+    label: thiamine(1+)
+    confidence: 0.9
+    match_type: corpus_consensus
+- preferred_term: Tap water
+  concentration:
+    value: '1000'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:322
+    label: Tap water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: Adjust pH to 7.0. n-Octane is evaporated in a desiccator as sole
+  source of carbon.
+curation_history:
+- timestamp: '2026-06-14T07:03:53.728571+00:00'
+  curator: kg-fallback-cleanup-v1.0
+  action: Cleaned residual kg_fallback chebi_terms
+  notes: 'Cleaned 1 low-confidence kg_fallback chebi_term(s): 0 re-grounded via OAK, 1 de-grounded (unverifiable id).'
+- timestamp: '2026-03-13T06:20:16.359356Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:010917'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:19.007529'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:00.065430'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:42.962207+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:16.098675+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 4 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:45:30.082903+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-10-07T09:01:17.963098+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/1445
+  changes: 'composition[0].concentration: {"unit": "G_PER_L", "value": "3.5"} -> {"unit":
+    "G_PER_L", "value": "3.5"} (evidence_only); composition[1].concentration: {"unit":
+    "G_PER_L", "value": "7.5"} -> {"unit": "G_PER_L", "value": "7.5"} (evidence_only);
+    composition[2].concentration: {"unit": "G_PER_L", "value": "3.7"} -> {"unit":
+    "G_PER_L", "value": "3.7"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/1445
+  title: 'MediaDive solution 1445: Main sol. 694'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=e22ec8673481aa3d9460da1dcf5907cc9ce94e754cbd428702f3dc51617bdc61;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

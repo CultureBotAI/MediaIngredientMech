@@ -1,0 +1,423 @@
+{
+  "case_index": 25,
+  "case_id": "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212",
+  "query_label": "Rabbit serum heat--inactivated at 56C for 1 hr",
+  "family_terms": [
+    "serum"
+  ],
+  "ignored_files_included": true,
+  "method": "Path.rglob of all native per-record YAML includes ignored paths; native is_resolving_synonym policy applied; independent exact casefold/whitespace lookup over every CSV label-index row. No fuzzy hit treated as identity.",
+  "native_catalog_files_scanned": 2956,
+  "generated_label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "exact_resolving_native_matches": [],
+  "exact_index_rows": [],
+  "family_candidates": [
+    {
+      "path": "data/ingredients/mapped/Bovine_Calf_Serum.yaml",
+      "sha256": "3303d83e01c861d0344266c6f5ecc3f34f8ab6f79c7e649c203ea01b0c651857",
+      "identifier": "MICRO:0001709",
+      "preferred_term": "Bovine calf serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Bovine calf serum",
+        "Bovine calf serum",
+        "Calf serum (Gibco)"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Bovine calf serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        },
+        {
+          "synonym_text": "Calf serum (Gibco)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0001709",
+        "ontology_label": "calf serum",
+        "ontology_source": "MICRO",
+        "mapping_quality": "LEXICAL_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)",
+            "notes": "Auto-upgraded from UNMAPPED_0343; matched via 'Bovine calf serum'; stem-substring"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "identifier": "NCIT:C85253",
+      "preferred_term": "bovine serum albumin",
+      "mapping_status": "MAPPED",
+      "names": [
+        "bovine serum albumin"
+      ],
+      "all_synonyms": [],
+      "supplied_form": [
+        {
+          "name": "Bovine Serum Albumin",
+          "cas_rn": "9048-46-8",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A7030",
+          "form": "lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially globulin free",
+          "notes": "Original CultureBotHT product; supplier page confirms CAS and preparation. Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+        },
+        {
+          "name": "Bovine serum albumin fraction V",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A9647",
+          "notes": "Explicit product in CultureMech:015191 preparation note; preserved from the original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+        },
+        {
+          "name": "BSA solution",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A7409",
+          "form": "solution",
+          "notes": "Alternative product explicitly named in CultureMech:015191; no concentration or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+        }
+      ],
+      "ontology_mapping": {
+        "ontology_id": "NCIT:C85253",
+        "ontology_label": "Bovine Serum Albumin",
+        "ontology_source": "NCIT",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "NCIT via OLS (label-exact)",
+            "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='bovine serum albumin'"
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+            "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Digested_Serum.yaml",
+      "sha256": "66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35",
+      "identifier": "MICRO:0001362",
+      "preferred_term": "Digested serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Digested serum",
+        "Digested serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Digested serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturebotht"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0001362",
+        "ontology_label": "digested serum",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0244; matched via 'Digested serum' (name normalization); label-exact"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Fetal_Bovine_Serum.yaml",
+      "sha256": "adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f",
+      "identifier": "NCIT:C113696",
+      "preferred_term": "Fetal bovine serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Fetal bovine serum",
+        "Fetal bovine serum",
+        "FBS",
+        "Fetal Bovine Serum (ATCC 30-2020)"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Fetal bovine serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturebotht"
+        },
+        {
+          "synonym_text": "FBS",
+          "synonym_type": "RAW_TEXT",
+          "source": "merged_from_unmapped_duplicate_review_2026_05_11"
+        },
+        {
+          "synonym_text": "Fetal Bovine Serum (ATCC 30-2020)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "NCIT:C113696",
+        "ontology_label": "Fetal Bovine Serum",
+        "ontology_source": "NCIT",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "NCIT via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name normalization); label-exact"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Horse_Serum.yaml",
+      "sha256": "82f2dcc3c661aaa4ebe3cd39c378e06999dfe68aaf9f8c5d5597dc94ea19060c",
+      "identifier": "MICRO:0001235",
+      "preferred_term": "Horse serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Horse serum",
+        "Horse serum",
+        "Horse Serum (Gibco)*",
+        "Horse Serum (RM1239)",
+        "Horse Serum (not inactivated)",
+        "Horse serum (Invitrogen)",
+        "Horse serum (Oxoid)"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Horse serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        },
+        {
+          "synonym_text": "Horse Serum (Gibco)*",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Horse Serum (RM1239)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Horse Serum (not inactivated)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Horse serum (Invitrogen)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Horse serum (Oxoid)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0001235",
+        "ontology_label": "horse serum",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0403; matched via 'Horse serum' (name normalization); label-exact"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Porcine_Serum.yaml",
+      "sha256": "55db34244beed3a4065dba84ff2c4dba1d41c4434948bbf85834b86cc2f3b131",
+      "identifier": "MICRO:0001238",
+      "preferred_term": "Porcine serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Porcine serum",
+        "Porcine serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Porcine serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0001238",
+        "ontology_label": "porcine serum",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0495; matched via 'Porcine serum' (name normalization); label-exact"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Rabbit_Serum.yaml",
+      "sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "identifier": "MICRO:0002392",
+      "preferred_term": "Rabbit serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Rabbit serum",
+        "Rabbit serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Rabbit serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0002392",
+        "ontology_label": "rabbit serum",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "fix_micro_malformed_iris",
+            "notes": "SUPERSEDED by source-backed review #759: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has no well-formed exact OBO term, so this record keeps a local identity and anchors to the blood serum parent."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "src/mediaingredientmech/ontology_sources/micro/manifest.json",
+            "notes": "Restore MICRO:0002392 'rabbit serum' from the pinned KG-Microbe MICRO KGX (#759). Both node snapshots contain this exact class label; current KGX parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392. This supersedes #137's canonical-IRI-only rejection; it does not claim OLS defining-ontology status. No verified CAS RN is supplied for this material."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Serum.yaml",
+      "sha256": "bad2776abd495bb123b9f2bc5e13c4f8eea1c943cefd43e719ff20f2f4dc4e57",
+      "identifier": "UBERON:0001977",
+      "preferred_term": "Serum",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Serum"
+      ],
+      "all_synonyms": [],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "UBERON:0001977",
+        "ontology_label": "blood serum",
+        "ontology_source": "UBERON",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "LEXICAL_MATCH",
+            "source": "kgm-metatraits",
+            "notes": "Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:serum; "
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/Bovine_Serum.yaml",
+      "sha256": "31c09e4c6df658ccb66e0eedfcee3f9337dfb754dd6a72c48d254e1684002227",
+      "identifier": "UNMAPPED_0345",
+      "preferred_term": "Bovine serum",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Bovine serum",
+        "Bovine serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Bovine serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    },
+    {
+      "path": "data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+      "sha256": "39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077",
+      "identifier": "UNMAPPED_0740",
+      "preferred_term": "CMC + PY + Horse Serum",
+      "mapping_status": "AMBIGUOUS",
+      "names": [
+        "CMC + PY + Horse Serum",
+        "CMC + PY + Horse Serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "CMC + PY + Horse Serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    },
+    {
+      "path": "data/ingredients/unmapped/Sterile_Serum.yaml",
+      "sha256": "29287e70537f3ceaa457f2e6eb178e12ca9fbb7bbe135e0d1b10047bd5f8183a",
+      "identifier": "UNMAPPED_0534",
+      "preferred_term": "Sterile serum",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Sterile serum",
+        "Sterile serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Sterile serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    },
+    {
+      "path": "data/ingredients/unmapped/Swine_Serum.yaml",
+      "sha256": "856b3f7388b406ffb2b0095a9faa5fb9942b78b41bdb0c5124ba3171a90df981",
+      "identifier": "UNMAPPED_0536",
+      "preferred_term": "Swine serum",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Swine serum",
+        "Swine serum"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Swine serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    }
+  ]
+}

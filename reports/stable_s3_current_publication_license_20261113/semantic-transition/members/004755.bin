@@ -1,0 +1,77 @@
+id: CultureMech:009923
+name: thioglycollate_medium
+original_name: Thioglycollate Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SEMISOLID
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: TOGO M530
+  notes: TOGO M530 lists 1.0 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Thioglycollate medium (Sigma)
+  concentration:
+    value: '29.8'
+    unit: G_PER_L
+  source: TOGO M530
+  notes: TOGO M530 lists 29.8 g/L Thioglycollate medium from Sigma.
+media_term:
+  preferred_term: TOGO Medium M530
+  term:
+    id: TOGO:M530
+    label: Thioglycollate Medium
+notes: TOGO M530 records 29.8 g/L Thioglycollate medium from Sigma in distilled water
+  and describes the medium as semisolid.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:55.241645Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M530'
+- timestamp: '2026-01-28T19:48:30.750137Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:09.989031Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009923'
+- timestamp: '2026-03-17T06:30:30.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:28.930997+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Thioglycollate Medium" to "thioglycollate_medium" for
+    consistent matching
+- timestamp: '2026-06-05T07:40:42.247989+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_togo_sparse_score20.py
+  action: RESOLVED_TOGO_SPARSE_SCORE20
+  changes: Resolved sparse score-20 TOGO product record
+  source: https://togomedium.org/medium/M530; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=529
+  notes: TOGO M530 records 29.8 g/L Thioglycollate medium from Sigma in distilled
+    water and describes the medium as semisolid.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M530
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=529

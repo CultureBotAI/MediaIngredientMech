@@ -1,0 +1,3020 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "b-proposal-chopped-filtrate",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f"
+      ],
+      "description": "Create a source-defined filtered broth identity and retain the frozen850g/L versus primary850mL discrepancy.",
+      "evidence_ids": [
+        "b-case-001",
+        "b-recipe-001-00",
+        "b-attempt-4133d52220",
+        "b-primary-59f8051613",
+        "b-primary-422da52aba",
+        "b-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-chopped-filtrate.yaml",
+        "sha256": "d1b0ba5989f8f28e4c99712976811f1ade025813a5712fc78bd83ed7a4ceaa73"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "No final chemical composition is asserted: beef andNaOH are extraction inputs. Broad source wording retained as REJECTED_LABEL must remain nonresolving; no whole cooked-meat owner merge.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "d1b0ba5989f8f28e4c99712976811f1ade025813a5712fc78bd83ed7a4ceaa73",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-chopped-filtrate].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-gam_broth_mod_powder",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:0f98ac8ee0be9236ffe828de0033a6575596bfd51508040cf68eada29599f72c",
+        "KG_CASE:6dd452fb96e1daeadcea71f69836929e216ee930de8fbca6f974a2b1133a7e99"
+      ],
+      "description": "DSMZ1715 and MediaDive1564 identify modified HyServe GAM at41.7g/L. Standard59g/L GAM is a different product. Product composition is not inferred from whole recipient medium.",
+      "evidence_ids": [
+        "b-case-010",
+        "b-recipe-010-00",
+        "b-primary-adef656188",
+        "b-primary-9a8556e34b",
+        "b-primary-7838e87259",
+        "b-primary-e38e219bd2",
+        "b-owner-1ef3b024692b",
+        "b-owner-search",
+        "b-case-147",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/GAM_Broth_Mod_Powder.yaml",
+      "before_sha256": "f5a5ac22fdcdb9431b535af9c8094422d795304389e40207c7a92c9509885100",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-gam_broth_mod_powder.yaml",
+        "sha256": "fbc7535284e5d3c1086419ff3c0b81381b000ad7a3de65ebc5b618b24f12e2c2"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/GAM_Broth_Mod_Powder.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "fbc7535284e5d3c1086419ff3c0b81381b000ad7a3de65ebc5b618b24f12e2c2",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-gam_broth_mod_powder].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-veal_infusion_broth",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:11b418f26a4c90acf659eede5516c7959d9450e6430fbe215a2332f577681ad3",
+        "KG_CASE:4b6258ce9bd4afc08fc7c057e2526b3980840958f0c4b92d90363356ab8993e4"
+      ],
+      "description": "DSMZ577 and MediaDive579 identify Difco0344 veal infusion broth25g/L; separate yeast extract5g/L belongs to VY medium, not this product.",
+      "evidence_ids": [
+        "b-case-012",
+        "b-recipe-012-00",
+        "b-primary-e272c77ddb",
+        "b-primary-32e08fa264",
+        "b-primary-ed74c6f621",
+        "b-owner-d696765732ca",
+        "b-owner-search",
+        "b-case-137",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/Veal_Infusion_Broth.yaml",
+      "before_sha256": "bffea3c81ac3205bae12a13f73650ba13b531fdb1b5449185ab7b239e8e98980",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-veal_infusion_broth.yaml",
+        "sha256": "2012841336c778c7a16626f7ba6195f485f50f2cf926a62c5c911c3ce68c4325"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/Veal_Infusion_Broth.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "2012841336c778c7a16626f7ba6195f485f50f2cf926a62c5c911c3ce68c4325",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-veal_infusion_broth].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-gam_broth_powder",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:cf539bfd33030279a2fb12a232d2b83ec9e6069812a44ab50465c4738baf4afe",
+        "KG_CASE:d537c4dc4d79c2a90fcd6c4f674012c8320d5768ebc8a84144d3fe4b934f6716"
+      ],
+      "description": "DSMZ1713 and MediaDive1563 identify standard HyServe GAM59g/L. Modified41.7g/L GAM remains a distinct owner.",
+      "evidence_ids": [
+        "b-case-105",
+        "b-recipe-105-00",
+        "b-primary-0e4d996895",
+        "b-primary-e436f28ec0",
+        "b-primary-e3720103c0",
+        "b-primary-5c1bd07c71",
+        "b-owner-770946c3aa6c",
+        "b-owner-search",
+        "b-case-178",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/GAM_Broth_Powder.yaml",
+      "before_sha256": "d9eeda5b7a94703f7558850a36191cb8300ada8f0303eff2228595e1b202a4e4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-gam_broth_powder.yaml",
+        "sha256": "1bb7892f70748469bf9bc5e6399affa070f875da5ba21b24e35424c08c916de4"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Promotion preserves the existing stem and complete historical payload. Before integration verify the entire owner against native rules; no standard/modified or cross-supplier GAM merger, generic extract equality, new components, or roles are asserted.",
+      "intended_destination": "data/ingredients/mapped/GAM_Broth_Powder.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "1bb7892f70748469bf9bc5e6399affa070f875da5ba21b24e35424c08c916de4",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-gam_broth_powder].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-marine-aliases",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "CM_NAME:72d64f7dd0660a0a455b73d2894ce4406d2312603df80a9069db2b2a35261162",
+        "CM_NAME:d9085dff2d131a78163c05f749137a635269ff7c6020a86da15d4f6294de2116",
+        "KG_CASE:178d52ff74234c25075500cc4f8c37d1bfc44a33ceb8586b9596dac16564bda3"
+      ],
+      "description": "Add two source-qualified Difco Marine2216 aliases; keep existing native hold and component-review obligations.",
+      "evidence_ids": [
+        "b-case-062",
+        "b-recipe-062-00",
+        "b-primary-d83a3b0218",
+        "b-primary-edb754e2bf",
+        "b-primary-93bbadf7f8",
+        "b-primary-e14886a2e4",
+        "b-primary-93eb62ac9b",
+        "b-primary-5879f6e0dd",
+        "b-primary-d56eed7ab8",
+        "b-primary-09dee74068",
+        "b-primary-9f0f8c5104",
+        "b-primary-f843cc2325",
+        "b-primary-7b22c063a5",
+        "b-primary-636784203d",
+        "b-primary-ea8cb32bda",
+        "b-primary-8dbcf0f44e",
+        "b-owner-7df4af4ea4b2",
+        "b-case-108",
+        "b-recipe-108-00",
+        "b-recipe-108-01",
+        "b-recipe-108-02",
+        "b-recipe-108-03",
+        "b-recipe-108-04",
+        "b-recipe-108-05",
+        "b-recipe-108-06",
+        "b-recipe-108-07",
+        "b-recipe-108-08",
+        "b-recipe-108-09",
+        "b-recipe-108-10",
+        "b-recipe-108-11",
+        "b-recipe-108-12",
+        "b-recipe-108-13",
+        "b-case-124"
+      ],
+      "owner_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+      "before_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Marine_Broth_2216.yaml",
+        "sha256": "bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Separate Difco_Marine_Broth and Marine_Broth owners are not merged. Inherited component IDs and complete assertion are preserved without scientific approval; the duplicated frozen514a decomposition must not justify them.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-broths"
+        ],
+        "reviewer": "/root/materials",
+        "reviewed_after_sha256": "bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-bd211065",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:95f9422185431596c32f30629437bf1d87aca516ae0579cb9645a6e9990b232d"
+      ],
+      "description": "Concrete BD211065 BBL BHI agar candidate; incompatible current heart-only owner must be reconciled before application.",
+      "evidence_ids": [
+        "b-case-076",
+        "b-recipe-076-00",
+        "b-attempt-b44b5921b3",
+        "b-attempt-64f16b7f8e",
+        "b-primary-5d95551806",
+        "b-primary-9754daf045",
+        "b-primary-a379cc7b6d",
+        "b-bd-211065",
+        "b-owner-d7087ebb9588",
+        "b-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Brain_Heart_Infusion_Agar_BD_211065.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-bd211065.yaml",
+        "sha256": "9cdbdd9664825f9376bc32992ebe635113c3642efc17e3f8a1d8311eceda0860"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Blocking competing-owner reconciliation: Heart_Infusion_Agar_BD_211065.yaml falsely carries211065 but real heart-only Difco/Eiken aliases. Catalog identity is established; no full component formula or generic BHI/heart-agar alias scope is approved.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "9cdbdd9664825f9376bc32992ebe635113c3642efc17e3f8a1d8311eceda0860",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-bd211065].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-daigo-r2a",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:a3e7d9526bde2d749400a66aec74cb5a13f6df165903bcdb40ea5976f738d3a1",
+        "CM_NAME:a41b91de88fc5cb3802feb87ae64d2176f47d0453595c9605a1c43ba0840494f"
+      ],
+      "description": "Create DAIGO R2A broth candidate with full JCM839 formula, separately from R2Aagar.",
+      "evidence_ids": [
+        "b-case-086",
+        "b-recipe-086-00",
+        "b-recipe-086-01",
+        "b-primary-6a2793e0be",
+        "b-primary-3a4e42c821",
+        "b-primary-bb33a25307",
+        "b-primary-fccd04379c",
+        "b-primary-3988924f4f",
+        "b-owner-search",
+        "b-case-087",
+        "b-recipe-087-00",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/R2A_Broth_DAIGO.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-daigo-r2a.yaml",
+        "sha256": "702e7e26aa73ea24b188c4fe820f0a95f85012bc331140b6b6952e7cc1209215"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Component list is literal source transcription, with component identities unresolved. No roles or organism-specific capabilities asserted. Manufacturer-name history does not authorize new vendor aliases beyond cited exact product sources.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "702e7e26aa73ea24b188c4fe820f0a95f85012bc331140b6b6952e7cc1209215",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-daigo-r2a].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-mem-p0440",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62"
+      ],
+      "description": "Annotate the exact P0440 powder/exclusion scope while retaining the generic owner UNMAPPED.",
+      "evidence_ids": [
+        "b-case-128",
+        "b-primary-c5ab410faa",
+        "b-primary-9935ebc560",
+        "b-primary-0ace8e29b4",
+        "b-primary-54aa03cc97",
+        "b-owner-d7ba06f5bdc2"
+      ],
+      "owner_path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+      "before_sha256": "53bef2ebf4a08858099277f59554eb8d7563fc00ccc4415399f2b68294ed5008",
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/MEM_Alpha_Modification.yaml",
+        "sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "This is bounded ingredient identity/form evidence, not a complete scientific review of inherited roles, component identifiers, synonyms, or whole published record payload.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-broths"
+        ],
+        "reviewer": "/root/materials",
+        "reviewed_after_sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-pplo-255420",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:2f7aca975038ba6cb3dddc22acf13a74fe119ff1e74a987ddf6d91a22a888495",
+        "CM_NAME:3ecee0af186aebeeace31722f00694b3229ffe6b276e6ceb8c2947262c6bfe5f",
+        "CM_NAME:bf1329ba7b8fe301d91ed5e53e7591ead38f3ffea10be09b635be2d1def61694"
+      ],
+      "description": "Separate catalog-specific255420 basal broth identity; no generic PPLO alias merge.",
+      "evidence_ids": [
+        "b-case-034",
+        "b-recipe-034-00",
+        "b-attempt-74f8795e5f",
+        "b-attempt-ec7d49a8ec",
+        "b-primary-fd81c1e8f3",
+        "b-primary-e85b425df2",
+        "b-primary-2f1381032d",
+        "b-bd-255420",
+        "b-primary-e9b458b61d",
+        "b-primary-7142688cdb",
+        "b-owner-a46244c663aa",
+        "b-owner-e71603bc1594",
+        "b-owner-search",
+        "b-case-038",
+        "b-recipe-038-00",
+        "b-case-099",
+        "b-recipe-099-00",
+        "b-attempt-22e24da80d",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Difco_PPLO_Broth_BD_255420.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-pplo-255420.yaml",
+        "sha256": "366e7d33f7217b698ded324c49762e94fa3a138f675fa8eafc70201abba281d1"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Competing generic PPLO_Broth/PPLO_medium ownership requires reconciliation; no maintained aliases are removed here. Formula revision/lot is not documented; only source/catalog product identity is proposed. Native new-owner admission remains blocked by1165 until coordinator integration prerequisites land.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "366e7d33f7217b698ded324c49762e94fa3a138f675fa8eafc70201abba281d1",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-pplo-255420].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-pplo-211458",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:113cd45f4ab9c9013f63232dbaecb0b1669baa8cc3a2e9b0557aadaec9ce263f"
+      ],
+      "description": "Separate catalog-specific211458 basal broth identity; no generic PPLO alias merge.",
+      "evidence_ids": [
+        "b-case-011",
+        "b-recipe-011-00",
+        "b-attempt-83015025d7",
+        "b-attempt-1454663ee6",
+        "b-primary-5f33fdf488",
+        "b-primary-98cf5ce6c6",
+        "b-primary-2f1381032d",
+        "b-bd-211458",
+        "b-owner-a46244c663aa",
+        "b-owner-e71603bc1594",
+        "b-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Mycoplasma_Broth_Base_BD_211458.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-pplo-211458.yaml",
+        "sha256": "4f9753dfc6da30117aadf5e1bc10ccdd2346022ab18d9c02ebe4e730c4cd6d76"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Competing generic PPLO_Broth/PPLO_medium ownership requires reconciliation; no maintained aliases are removed here. Formula revision/lot is not documented; only source/catalog product identity is proposed. Native new-owner admission remains blocked by1165 until coordinator integration prerequisites land.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "4f9753dfc6da30117aadf5e1bc10ccdd2346022ab18d9c02ebe4e730c4cd6d76",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-pplo-211458].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-kyokuto-551024807",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:06f4c57e4787f45cd6ed6d346d398abb419407583bd0996b69e6b448c8eed3f7"
+      ],
+      "description": "NBRC1296 explicitly identifies Kyokuto551-02480-7 nutrient broth powder at6g, with pyruvate and optional agar separate. This catalog-bound preparation does not inherit Difco or Oxoid nutrient-broth equivalence. The vendor formulation is not disclosed; no components are invented.",
+      "evidence_ids": [
+        "b-case-003",
+        "b-recipe-003-00",
+        "b-primary-073839eb28",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Kyokuto_Nutrient_Broth_Powder_551_02480_7.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-kyokuto-551024807.yaml",
+        "sha256": "741dc3dda8dc21710911d861e9ee8d56c0247086acf275ddd9b2498cf5418a2d"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Catalog source identity supported by NBRC1296. Historical product formulation is undisclosed; no formula or equivalence to another vendor is approved.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "741dc3dda8dc21710911d861e9ee8d56c0247086acf275ddd9b2498cf5418a2d",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-kyokuto-551024807].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-bd211443",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:6f9d6fd16c8bfeaaf6f90a71eb17eac764279eef96a193beeb972ada13595c99"
+      ],
+      "description": "TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately. Manufacturer-submitted GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially discontinued in the UnitedStates in2022. This historical catalog remains a stable source identity; it is not cation-adjusted MuellerHintonII nor the serum-supplemented final medium.",
+      "evidence_ids": [
+        "b-case-060",
+        "b-recipe-060-00",
+        "b-primary-5b1cdb35fc",
+        "b-targeted-627e3868239f",
+        "b-targeted-d5be897e3535",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/BBL_Mueller_Hinton_Broth_BD_211443.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-bd211443.yaml",
+        "sha256": "48d42e4316a6837b3ef67889dbbf29920a6502936123f7902b4414d51d990630"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "No full composition transcribed because retrieved product record is identity/label evidence. Historical distribution status does not invalidate recipe identity. No new organism or susceptibility claims.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "48d42e4316a6837b3ef67889dbbf29920a6502936123f7902b4414d51d990630",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-bd211443].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-liver-filtrate",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:92444879ebc0639bb25a86bef3d2e3e10f5d8a80d2224a4fedd1671fd821ad69"
+      ],
+      "description": "Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater, gentle boiling30minutes, cloth filtration to remove solids. The species and recovered volume are not specified. Starting liver mass is not final extract concentration, and no dried-extract equivalence is claimed.",
+      "evidence_ids": [
+        "b-case-074",
+        "b-recipe-074-00",
+        "b-recipe-074-01",
+        "b-primary-97d7aa21af",
+        "b-primary-7f6380f245",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Liver_Infusion_Filtrate_NBRC201_202.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-liver-filtrate.yaml",
+        "sha256": "1ac6ebfa023b4b04ad6bdbf9a65af68ec580fe97a5d74a2a26b3bd5d828e6b59"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Specific preparation scope only. Tissue species and final filtrate yield remain unspecified; no formula, dry weight or global LiverInfusion resolving alias is asserted.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "1ac6ebfa023b4b04ad6bdbf9a65af68ec580fe97a5d74a2a26b3bd5d828e6b59",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-liver-filtrate].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-oxoid-cm0077",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:e0ca2cc61a12c519fef7e005971945a435683d434835f03d7a0b393289fb754e"
+      ],
+      "description": "DSMZ77 names OxoidCM77 LiverBroth. Official CM0077 specification identifies the product and four-part typical formula, including30g/L extracted liver tissue in addition to23g/L infusion. This particulate broth is not the filtered NBRC liver infusion.",
+      "evidence_ids": [
+        "b-case-114",
+        "b-recipe-114-00",
+        "b-primary-95a3b55f7a",
+        "b-targeted-28f8dc70ebee",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Oxoid_Liver_Broth_CM0077.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-oxoid-cm0077.yaml",
+        "sha256": "ff7936d0b06de26e1bd3105165f358fc62ea59ff44db79aff131668e49348b30"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Typical formula from current supplier specification, adjusted as required for performance. Source does not identify animal species or potassium-phosphate protonation; components remain literal and unmapped.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "ff7936d0b06de26e1bd3105165f358fc62ea59ff44db79aff131668e49348b30",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-oxoid-cm0077].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-columbia-m2256",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:e175abbfd940158b681b2230fa79cf66f46cfc66b96356d7dc2feb75f7aa5a03"
+      ],
+      "description": "TOGO M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula. NAD0.01% andCaCl225mM are parent supplements and excluded here. This record denotes the source-defined basal formulation, not every product named Columbia broth.",
+      "evidence_ids": [
+        "b-case-115",
+        "b-recipe-115-00",
+        "b-primary-9279ade8e1",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Columbia_Broth_BBL_TOGO_M2256.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-columbia-m2256.yaml",
+        "sha256": "03bc5b35e3c2d8fc79dd356fa68edf8ca133c4ef6329ebadac865895c29186fe"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Complete source-defined basal formula, with literal component references. Generic ColumbiaBroth alias remains nonresolving. No catalog/version equivalence beyond TOGOM2256 is asserted.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "03bc5b35e3c2d8fc79dd356fa68edf8ca133c4ef6329ebadac865895c29186fe",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-columbia-m2256].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-standard-i",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:4503f76ee4092e816c3f4ede149525c3dc9252aed6d263141800c2a789b70d9e"
+      ],
+      "description": "Original source630 is Merck StandardI broth in DSMZ637. Official Merck12thEdition manual identifies1.07882 StandardI nutrientbroth and its15/3/6/1g/L formula,25g/L preparation. Malt extract,CaCO3 andagar inDSMZ637 are separate supplements.",
+      "evidence_ids": [
+        "b-case-134",
+        "b-primary-0bbacc2686",
+        "b-owner-08e1f1af3574",
+        "b-targeted-5152a71c8ee6",
+        "b-targeted-f94f0cbbe13e",
+        "b-targeted-2477f35d954e",
+        "b-targeted-web-134",
+        "b-targeted-owner-search",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/Standard_I_Broth.yaml",
+      "before_sha256": "8a7bcc3877867d52bee41ea2f5bf731f52df07229706cd9fd0295e3ae8b190e9",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-standard-i.yaml",
+        "sha256": "f6a40c5e28a052c73f785603d5a9356fee7dbfe1c3c058854748dd0dd011e6ab"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Full inherited owner still requires native review; no cross-vendorStandardI alias or finalDSMZ637 identity is asserted.",
+      "intended_destination": "data/ingredients/mapped/Standard_I_Broth.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "f6a40c5e28a052c73f785603d5a9356fee7dbfe1c3c058854748dd0dd011e6ab",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-standard-i].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-bd238400",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:675ced62305720f2502c2b6c35b4c90ddee2a995ef2908e763bb1c373f56a4de"
+      ],
+      "description": "Original MediaDive1460 explicitly identifiesBD238400; BD catalog confirmsDifco HeartInfusionBroth. ATCC254 gives25g/L and10g beef-heart infusion solids from500g tissue,10g tryptose,5gNaCl, with agar omitted for broth. This is distinct from BHI and heartinfusionagar.",
+      "evidence_ids": [
+        "b-case-146",
+        "b-primary-3a63c570bf",
+        "b-owner-e3f63141d666",
+        "b-targeted-784a6dfd368f",
+        "b-targeted-627e3868239f",
+        "b-targeted-web-146",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/Bacto_Heart_Infusion_Broth.yaml",
+      "before_sha256": "4889d8a364518c3129c985d62d5e2af079aad76f5c5a09270bfd053a6885b72d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-bd238400.yaml",
+        "sha256": "2692a780ec91a7d095c5edcd807a6134f520e09d5819d843690d2265e4c92f18"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Separate generic Heart_Infusion_Broth owner is not automatically merged; source1104 cases must be individually reconciled. Tissue500g is starting material, not final component concentration.",
+      "intended_destination": "data/ingredients/mapped/Bacto_Heart_Infusion_Broth.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "2692a780ec91a7d095c5edcd807a6134f520e09d5819d843690d2265e4c92f18",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-bd238400].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "b-proposal-difco-nutrient",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:2c8b3abaf7a513b61b1d528f40c98d823a8bba43cb1e2d5d5446da3d9978ab5a"
+      ],
+      "description": "NBRC885 names Difco BactoNutrientBroth8g/L; ATCC3 identifies correspondingDifcoBD2340008g/L and3g beefextract+5gpeptone. Sodiumcarbonate inNBRC885 andagar inATCC3 are excluded. Current Nutrient_Broth_No_2 incorrectly combines the distinctOxoidCM0067 product withDifco aliases and must be reconciled before applying this powder-product proposal.",
+      "evidence_ids": [
+        "b-case-031",
+        "b-recipe-031-00",
+        "b-primary-eb54843d3e",
+        "b-primary-628bb01683",
+        "b-owner-458c89206b9d",
+        "b-targeted-4363a2722faa",
+        "b-targeted-web-31",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Difco_Nutrient_Broth_NBRC885.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-difco-nutrient.yaml",
+        "sha256": "3e6d42d7f8daeef51a40aac7f5ed1d1ef88e50898ef49a07bc9642304013a17c"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Catalog234000 is primary comparator, not silently added toNBRC885. Integration must resolve competing Nutrient_Broth_No_2 aliases and decide exact/broad ontology relation for the supplier powder before release; registry candidate is source-specific, not a new generic nutrientbroth concept.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "3e6d42d7f8daeef51a40aac7f5ed1d1ef88e50898ef49a07bc9642304013a17c",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-difco-nutrient].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "w03-oxoid-cm0149-product-1224-v1",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "description": "Genuine source-qualified Oxoid CM0149 product for the exact NBRC902 case; byte-exact coordinator v4 payload. This is a new product origin, not a rewritten mixed-owner edit.",
+      "evidence_ids": [
+        "b-case-029",
+        "b-recipe-029-00",
+        "b-primary-b80f9ee369",
+        "b-attempt-c569af5bb2",
+        "b-owner-a8d0e9cbeed2",
+        "b-targeted-d5c1626805eb",
+        "b-targeted-151c34f3bf1a",
+        "b-targeted-b087f0859f30",
+        "w03-oxoid-v4-trace",
+        "w03-oxoid-scope-decision",
+        "w03-oxoid-origin-issue",
+        "w03-oxoid-provenance-issue",
+        "w03-oxoid-retirement",
+        "w03-oxoid-cm149-alias-primary",
+        "w03-oxoid-w01-final-review",
+        "w03-oxoid-w01-final-skeptic",
+        "w03-oxoid-w03-preflight-skeptic",
+        "w03-oxoid-w03-preflight-native",
+        "w03-oxoid-w01-prerequisite-comment"
+      ],
+      "owner_path": "data/ingredients/mapped/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1224-v1/candidate/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+        "sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Historical Oxoid CM0149 formula revision and purchased package/lot remain unknown. Do not infer B/T, unconditional modern components, or generic/mixed-supplier membership. Coordinator source partition/admission, retained native/source/role/export holds and guarded maintained integration remain required. Catalog identity does not require inventing these missing facts. No W05 Difco, whole-owner or supported-export approval follows.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-oxoid-w01-final-review",
+          "w03-oxoid-w01-final-skeptic",
+          "w03-oxoid-w03-preflight-skeptic",
+          "w03-oxoid-w03-preflight-native"
+        ],
+        "reviewer": "OpenAI Codex worker01 independent review team and /root/oxoid_successor_review",
+        "reviewed_after_sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+        "scope_note": "Exact full product payload and bounded source conclusion reviewed; additional final complete-core review is detached in final HANDOFF. No whole-owner/role/export approval."
+      },
+      "authorship": {
+        "candidate_payload_author": "/root/next23_context",
+        "candidate_payload_sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+        "worker03_contribution": "source-case origin binding, retirement and complete successor accounting only; no new payload history event or reassigned scientific authorship"
+      },
+      "retired_predecessor_proposal_id": "b-proposal-cm0149-form"
+    },
+    {
+      "proposal_id": "b-proposal-cm0643",
+      "kind": "edit_existing_owner",
+      "case_ids": [
+        "KG_CASE:a2074d7903a380725c9c46ef830c1815846ef9b9a98876179c1d6aeea718c61a",
+        "KG_CASE:dd045ae013815309d3a00a71375b712d0d40db7094073a8e940a1569fe488358"
+      ],
+      "description": "Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias and source2140 explicitCM643 identify the same catalog family. OfficialCM0643 specification supplies nine constituents. Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent source2140provenance and must be reconciled before integration.",
+      "evidence_ids": [
+        "b-case-161",
+        "b-primary-6c6118c8d5",
+        "b-owner-5fc2da890594",
+        "b-owner-c15eb6b5d119",
+        "b-targeted-092d0e2abd71",
+        "b-targeted-b897a833d2ce",
+        "b-case-179",
+        "b-primary-c400138c48",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+      "before_sha256": "22d4e4be05de3a308f5aacebd8e6fb4b871577ae7612de08cd3a44f46f6cf0dd",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/b-proposal-cm0643.yaml",
+        "sha256": "bea581a9e9612b3a346d1208a52659083d28b202823f746cfae1f4d3a5e154da"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "Apply only after provenance-preserving reconciliation withWilkins_Chalgrene_Anaerobe_Broth.yaml; this payload neither deletes that record nor silently copies its aliases/history. The source1000mLpreparedbroth remains an occurrence amount, not33g inferred productdose.",
+      "intended_destination": "data/ingredients/mapped/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "bea581a9e9612b3a346d1208a52659083d28b202823f746cfae1f4d3a5e154da",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=b-proposal-cm0643].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-vanadate-alias",
+      "case_ids": [
+        "CM_NAME:053d9db831df41c7936ae34acf3a915cfdf097612bab87e50cb19ac7ed8e9a19"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-0",
+        "c-fetch-46",
+        "c-frozen-2",
+        "c-recipe-2-0",
+        "c-web-0"
+      ],
+      "owner_path": "data/ingredients/mapped/Na3vo4.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "414bd8739268155f11bcba2cd9f19df9e4e3600634190a93fd701d311f3b3350",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/vanadate-alias.yaml",
+        "sha256": "d831e09ad4dc57fbbd1ac2342d7c06e86a91c17a08c0b95f2a42cf6d334a2201"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "d831e09ad4dc57fbbd1ac2342d7c06e86a91c17a08c0b95f2a42cf6d334a2201"
+      }
+    },
+    {
+      "proposal_id": "c-copper-trihydrate-alias",
+      "case_ids": [
+        "CM_NAME:13ab279707b97daf2383076a1eebab4366cbbd8e77d32193999d6667cf3570e4"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-attempt-93",
+        "c-fetch-53",
+        "c-fetch-91",
+        "c-frozen-13",
+        "c-recipe-13-0"
+      ],
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/copper-trihydrate-alias.yaml",
+        "sha256": "58f5e346f53c18d5285ae91ddade0a65d4fe1736eade03b84d9c9b43d1150986"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "58f5e346f53c18d5285ae91ddade0a65d4fe1736eade03b84d9c9b43d1150986"
+      }
+    },
+    {
+      "proposal_id": "c-phosphate-dodecahydrate",
+      "case_ids": [
+        "CM_NAME:1993b45691a9f82b985ea194f256c98b873dffd2d4b36228f42ea0f685e0d732"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. Correct hydrate structure from exact ChEBI term.",
+      "evidence_ids": [
+        "c-fetch-6",
+        "c-fetch-68",
+        "c-frozen-21",
+        "c-recipe-21-0",
+        "c-web-1"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/phosphate-dodecahydrate.yaml",
+        "sha256": "6a31d80feef598f83c13c6cff4a64a3b79a667aadad900e005ed6c8357c07ebd"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "6a31d80feef598f83c13c6cff4a64a3b79a667aadad900e005ed6c8357c07ebd"
+      }
+    },
+    {
+      "proposal_id": "c-cobalt-heptahydrate",
+      "case_ids": [
+        "CM_NAME:2c217c36bf80b6dd437869bd28fd77efe1f3e40c539ea3e9926f93bd7c326709"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. Correct hydrate structure from exact ChEBI term.",
+      "evidence_ids": [
+        "c-attempt-10",
+        "c-attempt-97",
+        "c-fetch-108",
+        "c-fetch-11",
+        "c-fetch-69",
+        "c-frozen-30",
+        "c-recipe-30-0",
+        "c-recipe-30-1",
+        "c-web-13",
+        "c-web-3"
+      ],
+      "owner_path": "data/ingredients/mapped/Coso4_X_7_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "3e14e4d57dab11eb3974f45db2894b12bd71aa7a761d823ae8ce401300ceba8d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/cobalt-heptahydrate.yaml",
+        "sha256": "e923ecf9243a53ed1f084953b5cd1c24540dac2c219e3db10685c68635e12f5c"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "e923ecf9243a53ed1f084953b5cd1c24540dac2c219e3db10685c68635e12f5c"
+      }
+    },
+    {
+      "proposal_id": "c-calcium-dihydrate",
+      "case_ids": [
+        "CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4",
+        "CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-attempt-77",
+        "c-fetch-100",
+        "c-fetch-12",
+        "c-fetch-33",
+        "c-frozen-116",
+        "c-frozen-32",
+        "c-recipe-116-0",
+        "c-recipe-32-0"
+      ],
+      "owner_path": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/calcium-dihydrate.yaml",
+        "sha256": "7964a10623b311704ab0b077c4ece8b728ec5f7e962ee461fb392dad08c1407c"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "7964a10623b311704ab0b077c4ece8b728ec5f7e962ee461fb392dad08c1407c"
+      }
+    },
+    {
+      "proposal_id": "c-isobutyrate-alias",
+      "case_ids": [
+        "CM_NAME:4f98d9bb98d2d1b4b259c595ed4a209fc0de207301fc421d5ed0361bf660be82",
+        "CM_NAME:f6b9a042c7e910c065bf1b4b1e2c934975efb42208caf4f0bfa1a966bb4f7be8"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-14",
+        "c-fetch-15",
+        "c-fetch-16",
+        "c-fetch-17",
+        "c-fetch-57",
+        "c-fetch-58",
+        "c-fetch-71",
+        "c-frozen-122",
+        "c-frozen-44",
+        "c-recipe-122-0",
+        "c-recipe-44-0",
+        "c-recipe-44-1",
+        "c-recipe-44-2",
+        "c-recipe-44-3"
+      ],
+      "owner_path": "data/ingredients/mapped/Isobutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/isobutyrate-alias.yaml",
+        "sha256": "bed52b0ea1a90c9dd0aceca3d44cbf3c2d5b0e1570c636003cb784238133358a"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "bed52b0ea1a90c9dd0aceca3d44cbf3c2d5b0e1570c636003cb784238133358a"
+      }
+    },
+    {
+      "proposal_id": "c-hepes-freeacid",
+      "case_ids": [
+        "CM_NAME:637edac40fcbf588526a8d556a971228a71b80b2ac02426e79115e09b388d883"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-18",
+        "c-fetch-52",
+        "c-frozen-59",
+        "c-recipe-59-0"
+      ],
+      "owner_path": "data/ingredients/mapped/Hepes.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/hepes-freeacid.yaml",
+        "sha256": "7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2"
+      }
+    },
+    {
+      "proposal_id": "c-iron-hexahydrate",
+      "case_ids": [
+        "CM_NAME:812926707601b18cb0f6a9eaaac1d8895d8d1d8fc3795df9305b1719d7cd0622"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-19",
+        "c-fetch-70",
+        "c-frozen-66",
+        "c-recipe-66-0"
+      ],
+      "owner_path": "data/ingredients/mapped/Fecl3_X_6_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "a77cd844d1d5ec5f1deb35d0ca1eff1ee5b73b17cd140be3524fc057f0f30979",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/iron-hexahydrate.yaml",
+        "sha256": "1fed3231b6c3b777c4c469d3d4e2b87be02df38e9923424eb8fe71865417fff6"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "1fed3231b6c3b777c4c469d3d4e2b87be02df38e9923424eb8fe71865417fff6"
+      }
+    },
+    {
+      "proposal_id": "c-activated-charcoal",
+      "case_ids": [
+        "CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-109",
+        "c-fetch-22",
+        "c-fetch-23",
+        "c-frozen-70",
+        "c-recipe-70-0",
+        "c-recipe-70-1"
+      ],
+      "owner_path": "data/ingredients/mapped/Activated_Charcoal.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/activated-charcoal.yaml",
+        "sha256": "a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54"
+      }
+    },
+    {
+      "proposal_id": "c-butyric-acid",
+      "case_ids": [
+        "CM_NAME:b8338c4b155a2bff20a41a8210ba5004bc7967def36e6cf4496015fe648b75da"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-72",
+        "c-frozen-95",
+        "c-recipe-95-0",
+        "c-recipe-95-1"
+      ],
+      "owner_path": "data/ingredients/mapped/Butyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/butyric-acid.yaml",
+        "sha256": "9cfca18863426d73b8c357c95f4ab928685bb8435d0ab8842ce3c12ffc26652a"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "9cfca18863426d73b8c357c95f4ab928685bb8435d0ab8842ce3c12ffc26652a"
+      }
+    },
+    {
+      "proposal_id": "c-coenzyme-m",
+      "case_ids": [
+        "CM_NAME:d9efff2555033aab5f7a242c01e29d250203409c1ffe5a9a60fef3b6cd19dd54"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-32",
+        "c-fetch-75",
+        "c-frozen-109",
+        "c-recipe-109-0",
+        "c-web-7"
+      ],
+      "owner_path": "data/ingredients/mapped/2-mercaptoethanesulfonate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/coenzyme-m.yaml",
+        "sha256": "3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78"
+      }
+    },
+    {
+      "proposal_id": "c-dl-methylbutyric",
+      "case_ids": [
+        "CM_NAME:df45fafbf7a4e8f10a144321b964f1872687a0d4fdc05582d7199aa403af21e0"
+      ],
+      "description": "Add source-verified surface form(s) while retaining supplied identity and inherited full-payload review obligations. ",
+      "evidence_ids": [
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-73",
+        "c-frozen-113",
+        "c-recipe-113-0",
+        "c-recipe-113-1",
+        "c-web-8"
+      ],
+      "owner_path": "data/ingredients/mapped/Dl-2-methylbutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "86d91038be691420f3748192b215a9f6f5fc92cfad5b729bddab9dd4dd5c18ce",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/dl-methylbutyric.yaml",
+        "sha256": "3703b4c5f4dbb1a4810b44f596c032a710acdbdf3a53164b0e23efdfe4f53910"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "3703b4c5f4dbb1a4810b44f596c032a710acdbdf3a53164b0e23efdfe4f53910"
+      }
+    },
+    {
+      "proposal_id": "c-citric-monohydrate-boundary",
+      "case_ids": [
+        "KG_CASE:3f818e36a8ba5a1e0e15da3ac90ebbe54008a59dff5363df7d7ee38240cf3bd8"
+      ],
+      "description": "Retype monovalent citrate names as provenance-only REJECTED_LABEL; neutral citric acid monohydrate is not citrate(1-). Preserve original source metadata and unrelated claims for full-payload review.",
+      "evidence_ids": [
+        "c-attempt-87",
+        "c-fetch-151",
+        "c-fetch-156",
+        "c-fetch-157",
+        "c-fetch-160",
+        "c-fetch-161",
+        "c-fetch-164",
+        "c-fetch-49",
+        "c-frozen-133"
+      ],
+      "owner_path": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/citric-monohydrate-boundary.yaml",
+        "sha256": "0e8fa07f892b40b7713674373854f3a473285fe7d5c7a246a96bace627f76679"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "0e8fa07f892b40b7713674373854f3a473285fe7d5c7a246a96bace627f76679"
+      }
+    },
+    {
+      "proposal_id": "c-sulfate-malformed-alias",
+      "case_ids": [
+        "KG_CASE:c856991d15fde0c056753101242e0681c00b899cb6a7a9bc51bc9a01674a45ca"
+      ],
+      "description": "Quarantine active exact alias (NH4)2S4 as nonresolving REJECTED_LABEL. Original JCM826 row1 repeats this literal oxygen-free formula and does not prove ammonium sulfate; retain raw source provenance and current sulfate identity, chemistry and inherited holds.",
+      "evidence_ids": [
+        "c-attempt-131",
+        "c-attempt-84",
+        "c-fetch-113",
+        "c-fetch-134",
+        "c-fetch-137",
+        "c-fetch-138",
+        "c-fetch-143",
+        "c-fetch-144",
+        "c-frozen-175"
+      ],
+      "owner_path": "data/ingredients/mapped/Nh42so4.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "1806053b7d0adc25bd2d1a84f0aeae92185a69f84d2db46abe816c75c21db48d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/sulfate-malformed-alias.yaml",
+        "sha256": "7aaabd05f14689648005b5557134ac022227b304e104831469cc1c74e9648ee6"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "7aaabd05f14689648005b5557134ac022227b304e104831469cc1c74e9648ee6"
+      }
+    },
+    {
+      "proposal_id": "c-naoh-1m-stock",
+      "case_ids": [
+        "CM_NAME:0cfacee74dd7a7cfb91d23ebf9f180404be16eb577fa84af5005dd7392d931df",
+        "CM_NAME:18e51c990d219350b38ee3d6bb6658167caa3e874c5c149957cda0e6ea9b4ff1",
+        "CM_NAME:907bb2fe736ba37d3a5087e8fbe3a8be2b99fb4150cfc042fb9cc8942bf4d3f8"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-fetch-1",
+        "c-fetch-24",
+        "c-fetch-5",
+        "c-fetch-50",
+        "c-frozen-20",
+        "c-frozen-7",
+        "c-frozen-73",
+        "c-recipe-20-0",
+        "c-recipe-7-0",
+        "c-recipe-73-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/naoh_1m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-naoh-1m-stock.yaml",
+        "sha256": "d6e626e5da55f08710b3fa8c72a04a4091a59fd8e330961358a7498c9a4796ef"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "d6e626e5da55f08710b3fa8c72a04a4091a59fd8e330961358a7498c9a4796ef",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-naoh-1m-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-naoh-01m-stock",
+      "case_ids": [
+        "CM_NAME:b39790f7066493e3d1377fb754b214cb4e9713522f01df6a1aaf7fbc127e3daa"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-fetch-24",
+        "c-fetch-50",
+        "c-frozen-92",
+        "c-recipe-92-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/naoh_01m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-naoh-01m-stock.yaml",
+        "sha256": "bcdce1adb23ab1b84ff01543f6e1de7ccf4de33eb4c27ff365aed3a01c813402"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "bcdce1adb23ab1b84ff01543f6e1de7ccf4de33eb4c27ff365aed3a01c813402",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-naoh-01m-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-naoh-10m-stock",
+      "case_ids": [
+        "CM_NAME:c5a361c0ca2066fec6275de9709cf1e6b0334ab2b04a840a26c038c8546d6d6a"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-fetch-31",
+        "c-fetch-50",
+        "c-frozen-100",
+        "c-recipe-100-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/naoh_10m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-naoh-10m-stock.yaml",
+        "sha256": "4f5fc837d89f052a20ed02c643d31a982979aa997b2877073b91251362d52f82"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "4f5fc837d89f052a20ed02c643d31a982979aa997b2877073b91251362d52f82",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-naoh-10m-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-hcl-01n-stock",
+      "case_ids": [
+        "CM_NAME:23a657b35e3667931a84c9f08129bad5c4efb8bd542a8a90e959b891fdc5606e"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-attempt-51",
+        "c-fetch-65",
+        "c-fetch-7",
+        "c-fetch-8",
+        "c-frozen-23",
+        "c-recipe-23-0",
+        "c-recipe-23-1",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/hcl_01n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-hcl-01n-stock.yaml",
+        "sha256": "91fbc818e2ba0959c11ba6d8c668640c3d768a7e9b88e6149966c8f991cbdb3d"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "91fbc818e2ba0959c11ba6d8c668640c3d768a7e9b88e6149966c8f991cbdb3d",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-hcl-01n-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-hcl-6n-stock",
+      "case_ids": [
+        "CM_NAME:2e7c6115c4ca5f3fd063003cc951f94ee409fd7df1390ddc0230df64be2a6703",
+        "CM_NAME:e6492d46250dd1b2dd55942803568f25fa93fc984007baa7b90191e86326addc"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-attempt-51",
+        "c-fetch-13",
+        "c-fetch-34",
+        "c-fetch-65",
+        "c-frozen-119",
+        "c-frozen-33",
+        "c-recipe-119-0",
+        "c-recipe-33-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/hcl_6n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-hcl-6n-stock.yaml",
+        "sha256": "807dafed5b46b7e17845eb426ab02e91122e1102a53a7291ea7acb9d223f47fa"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "807dafed5b46b7e17845eb426ab02e91122e1102a53a7291ea7acb9d223f47fa",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-hcl-6n-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-hcl-1n-stock",
+      "case_ids": [
+        "CM_NAME:9e01e104b2466ebf1384fa319d57b756336a17b72949a706790fce05b416e6f4"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-attempt-51",
+        "c-fetch-25",
+        "c-fetch-26",
+        "c-fetch-27",
+        "c-fetch-28",
+        "c-fetch-29",
+        "c-fetch-65",
+        "c-fetch-8",
+        "c-frozen-79",
+        "c-recipe-79-0",
+        "c-recipe-79-1",
+        "c-recipe-79-2",
+        "c-recipe-79-3",
+        "c-recipe-79-4",
+        "c-recipe-79-5",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/hcl_1n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-hcl-1n-stock.yaml",
+        "sha256": "fed352f8d2a87b882d22f957be635ea915d67e17299c23664fad2a1db6a3321b"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "fed352f8d2a87b882d22f957be635ea915d67e17299c23664fad2a1db6a3321b",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-hcl-1n-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-selenate-1mm-stock",
+      "case_ids": [
+        "CM_NAME:bb2f95e190ff084cf09d7fdbdbe322a68fc0768001da33db37c0b38cb6e6900c"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-attempt-78",
+        "c-fetch-101",
+        "c-fetch-30",
+        "c-fetch-79",
+        "c-frozen-96",
+        "c-recipe-96-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/selenate_1mm_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-selenate-1mm-stock.yaml",
+        "sha256": "39253ebdb3c684874e88a71ad57179e1f1b7d6b41497a5125dbf5ebd2760e7a6"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "39253ebdb3c684874e88a71ad57179e1f1b7d6b41497a5125dbf5ebd2760e7a6",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-selenate-1mm-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-silicate-nonahydrate-464gl-stock",
+      "case_ids": [
+        "CM_NAME:17b3ba649696608dd7507f0833344f58699c908b9b6b084a13d94d5f1bb4fcfe"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-fetch-102",
+        "c-fetch-4",
+        "c-fetch-80",
+        "c-frozen-18",
+        "c-recipe-18-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/silicate_nonahydrate_464gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-silicate-nonahydrate-464gl-stock.yaml",
+        "sha256": "dba986c1be7e828f887d7ab54736500f00948f893f3ed4f6f5a07214144671a6"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "dba986c1be7e828f887d7ab54736500f00948f893f3ed4f6f5a07214144671a6",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-silicate-nonahydrate-464gl-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-citric-monohydrate-48gl-stock",
+      "case_ids": [
+        "CM_NAME:96498a82cd6229d9a2e17e3b012f985bb719729491803128794ff89135811dd2"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-fetch-4",
+        "c-fetch-49",
+        "c-frozen-77",
+        "c-recipe-77-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/citric_monohydrate_48gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-citric-monohydrate-48gl-stock.yaml",
+        "sha256": "b2e6087cda4519ef7a58adc509566a85d4ea93f69c36b778db93657fbbfb00e1"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "b2e6087cda4519ef7a58adc509566a85d4ea93f69c36b778db93657fbbfb00e1",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-citric-monohydrate-48gl-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-silicate-pentahydrate-212gl-stock",
+      "case_ids": [
+        "KG_CASE:ee007a0d70e088ab96b3b7099f19b465d879bce4c31d7fec54afb5417d6f02fd"
+      ],
+      "description": "Create source-qualified stock with concentration preserved; no solute identity collapse.",
+      "evidence_ids": [
+        "c-attempt-120",
+        "c-attempt-133",
+        "c-attempt-85",
+        "c-fetch-103",
+        "c-fetch-136",
+        "c-fetch-141",
+        "c-fetch-142",
+        "c-fetch-147",
+        "c-fetch-148",
+        "c-fetch-149",
+        "c-fetch-150",
+        "c-frozen-184",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/silicate_pentahydrate_212gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-silicate-pentahydrate-212gl-stock.yaml",
+        "sha256": "8bb4ddb6bc45d6e680dbc67f90beedc36123ce33ec310a6f08814b6282ceb4af"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "8bb4ddb6bc45d6e680dbc67f90beedc36123ce33ec310a6f08814b6282ceb4af",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-silicate-pentahydrate-212gl-stock].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-ammonium-metavanadate",
+      "case_ids": [
+        "CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289",
+        "CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6"
+      ],
+      "description": "Create exact distinct substance from source and primary identity evidence; broader class only when exact ontology term was not found.",
+      "evidence_ids": [
+        "c-attempt-98",
+        "c-fetch-112",
+        "c-fetch-20",
+        "c-fetch-21",
+        "c-fetch-38",
+        "c-fetch-81",
+        "c-fetch-83",
+        "c-fetch-9",
+        "c-fetch-99",
+        "c-frozen-28",
+        "c-frozen-69",
+        "c-recipe-28-0",
+        "c-recipe-69-0",
+        "c-recipe-69-1",
+        "c-web-12",
+        "c-web-2",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Ammonium_metavanadate.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-ammonium-metavanadate.yaml",
+        "sha256": "33a18af336f4b904ccd6546c7648b89cf32d5b540dedda0934b2a1bc6f7d5621"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "33a18af336f4b904ccd6546c7648b89cf32d5b540dedda0934b2a1bc6f7d5621",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-ammonium-metavanadate].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-resorcinol",
+      "case_ids": [
+        "CM_NAME:8fe511e08a2c6b069194f03325bb221aec48b9384739b61d09dee9e219f381e0"
+      ],
+      "description": "Create exact distinct substance from source and primary identity evidence; broader class only when exact ontology term was not found.",
+      "evidence_ids": [
+        "c-attempt-153",
+        "c-attempt-168",
+        "c-fetch-154",
+        "c-fetch-155",
+        "c-fetch-166",
+        "c-fetch-167",
+        "c-fetch-35",
+        "c-fetch-47",
+        "c-frozen-72",
+        "c-recipe-72-0",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Resorcinol.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-resorcinol.yaml",
+        "sha256": "72fcec0dae79b7f15c179232f0eb38f7930153de3ee5cc76e0862220e3a7dab4"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "72fcec0dae79b7f15c179232f0eb38f7930153de3ee5cc76e0862220e3a7dab4",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-resorcinol].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-5-hydroxyectoine",
+      "case_ids": [
+        "CM_NAME:9afe0c8e863f4b300533068d901ca5f4ae343be302bbe439ac508def08873d1a"
+      ],
+      "description": "Create exact distinct substance from source and primary identity evidence; broader class only when exact ontology term was not found.",
+      "evidence_ids": [
+        "c-attempt-95",
+        "c-fetch-36",
+        "c-fetch-48",
+        "c-fetch-55",
+        "c-frozen-78",
+        "c-recipe-78-0",
+        "c-recipe-78-1",
+        "c-recipe-78-2",
+        "c-recipe-78-3",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/5_Hydroxyectoine.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-5-hydroxyectoine.yaml",
+        "sha256": "189a37245cad882a4e75dc219c4b0188ceba72b2f2d47b9a57e78b220a5935d7"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "189a37245cad882a4e75dc219c4b0188ceba72b2f2d47b9a57e78b220a5935d7",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-5-hydroxyectoine].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-eddha-free-acid",
+      "case_ids": [
+        "CM_NAME:584bd7436389f092715019959743bc12d63245d64d4e5caaee04c2f52203f4e9"
+      ],
+      "description": "Create EDDHA free-acid CAS1170-02-1 with broad dicarboxylic-acid grounding; both source papers explicitly expand the abbreviation.",
+      "evidence_ids": [
+        "c-attempt-114",
+        "c-attempt-130",
+        "c-fetch-128",
+        "c-fetch-129",
+        "c-fetch-37",
+        "c-fetch-56",
+        "c-fetch-64",
+        "c-fetch-82",
+        "c-frozen-50",
+        "c-recipe-50-0",
+        "c-recipe-50-1",
+        "c-web-21",
+        "c-web-22",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Ethylenediamine_di_o_hydroxyphenyl_acetic_Acid.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-eddha-free-acid.yaml",
+        "sha256": "ac8c27e28a389c7a9bc041631944dd2b11cd5b34c83835fde4740e977caad60b"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "ac8c27e28a389c7a9bc041631944dd2b11cd5b34c83835fde4740e977caad60b",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-eddha-free-acid].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-r-polymer-identity",
+      "case_ids": [
+        "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef"
+      ],
+      "description": "Atomically promote cas:29435-48-1 R-specific polymer to CHEBI:131525 and merge UNMAPPED_0494; replace monomer grounding and finite-trimer chemistry with repeating polymer representation. Preserve provisional roles without release approval.",
+      "evidence_ids": [
+        "c-attempt-40",
+        "c-attempt-88",
+        "c-attempt-92",
+        "c-fetch-66",
+        "c-frozen-172",
+        "c-web-4",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-r-polymer-identity.yaml",
+        "sha256": "ef3db5d9297e6363f3b7ea4668307f9de1ceb320a4de2771d44a7722746ca5e7"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "ef3db5d9297e6363f3b7ea4668307f9de1ceb320a4de2771d44a7722746ca5e7",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-r-polymer-identity].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "c-r-polymer-tombstone",
+      "case_ids": [
+        "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef"
+      ],
+      "description": "Retire duplicate UNMAPPED_0494 only atomically with corrected R-specific CHEBI:131525 owner; no merge into generic polymer.",
+      "evidence_ids": [
+        "c-attempt-40",
+        "c-attempt-88",
+        "c-attempt-92",
+        "c-fetch-66",
+        "c-frozen-172",
+        "c-web-4"
+      ],
+      "owner_path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/r-polymer-tombstone.yaml",
+        "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+      }
+    },
+    {
+      "proposal_id": "c-generic-polymer-alias",
+      "case_ids": [
+        "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba"
+      ],
+      "description": "Retain stereochemically unspecified polymer CHEBI:53389, add source beta-polymer surface form, reject Role: Carbon source as identity alias, and absorb only UNMAPPED_0493. No R-specific claim.",
+      "evidence_ids": [
+        "c-attempt-89",
+        "c-fetch-152",
+        "c-fetch-158",
+        "c-fetch-159",
+        "c-fetch-162",
+        "c-fetch-163",
+        "c-fetch-165",
+        "c-fetch-41",
+        "c-fetch-67",
+        "c-frozen-173",
+        "c-web-5"
+      ],
+      "owner_path": "data/ingredients/mapped/Poly_3-hydroxybutyrate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "756a84a31ed953b782a4ddc31b346401ddceb3d12260d39d32e9fabb8c88310d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/generic-polymer-alias.yaml",
+        "sha256": "d78d47931757585415d9afa72a2963a88a44eff8bbd511060fafd4846ad6955f"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "d78d47931757585415d9afa72a2963a88a44eff8bbd511060fafd4846ad6955f"
+      }
+    },
+    {
+      "proposal_id": "c-generic-polymer-tombstone",
+      "case_ids": [
+        "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba"
+      ],
+      "description": "Retire generic beta-polymer duplicate UNMAPPED_0493 atomically with CHEBI:53389 owner alias update; retain distinction from R-specific polymer.",
+      "evidence_ids": [
+        "c-attempt-89",
+        "c-fetch-152",
+        "c-fetch-158",
+        "c-fetch-159",
+        "c-fetch-162",
+        "c-fetch-163",
+        "c-fetch-165",
+        "c-fetch-41",
+        "c-fetch-67",
+        "c-frozen-173",
+        "c-web-5"
+      ],
+      "owner_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/generic-polymer-tombstone.yaml",
+        "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+      }
+    },
+    {
+      "proposal_id": "c-cephamycin-parent-chemistry",
+      "case_ids": [
+        "KG_CASE:e7b098420353431e3ddf43c82bd76e81c9c4813e6ff8e6ccdd07b2e578e3f602"
+      ],
+      "description": "Remove copied cephamycin-class R-group formula/SMILES from cephamycin A. Primary isolation paper distinguishes A from B and C; no A-specific structure is invented. Broad CHEBI:55429 relation and provisional role stay held for complete-payload review.",
+      "evidence_ids": [
+        "c-attempt-115",
+        "c-attempt-63",
+        "c-fetch-107",
+        "c-fetch-110",
+        "c-fetch-111",
+        "c-frozen-181",
+        "c-web-15"
+      ],
+      "owner_path": "data/ingredients/mapped/Cephamycin_A.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/cephamycin-parent-chemistry.yaml",
+        "sha256": "705c3fb16a7cf8b593bc48230832bd3e39a9491d294c65ced79961480db2233a"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-chemicals"
+        ],
+        "reviewer": "/root/broths",
+        "reviewed_after_sha256": "705c3fb16a7cf8b593bc48230832bd3e39a9491d294c65ced79961480db2233a"
+      }
+    },
+    {
+      "proposal_id": "c-ardacin-a-cas",
+      "case_ids": [
+        "KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c"
+      ],
+      "description": "Promote registry identity to A-specific CAS95935-21-0 from official GSRS; supersede former NCIT Ardacin complex target with broader molecular class CHEBI:24396 glycopeptide. No factor B/C or whole-complex synonym added; external source-ID redirect must be coordinated.",
+      "evidence_ids": [
+        "c-attempt-123",
+        "c-fetch-122",
+        "c-fetch-125",
+        "c-fetch-126",
+        "c-fetch-127",
+        "c-fetch-45",
+        "c-fetch-90",
+        "c-frozen-185",
+        "c-web-19",
+        "c-web-20",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Ardacin_A.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/c-ardacin-a-cas.yaml",
+        "sha256": "ec6e62d2de812314c11cda0e845b4c2ab82ae515542cfe76e5fd8e224db7b774"
+      },
+      "publication_obligations": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+      "identity_and_predicate_consequence": "Preserve exact supplied form. Registry stock identity never maps to a component. Identity promotions and tombstones must be integrated atomically with SSSOM and references where specified.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "ec6e62d2de812314c11cda0e845b4c2ab82ae515542cfe76e5fd8e224db7b774",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=c-ardacin-a-cas].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm1404_cellobiose_solution_10pct",
+      "case_ids": [
+        "CM_NAME:0d736c762ccd8b6f8a4e6af5c567d5dff1fd93e77e456ec459e44065f52629ba"
+      ],
+      "description": "JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml. Percent basis and solvent are unspecified. Retain the literal percentage in this note; do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.",
+      "evidence_ids": [
+        "m-jcm-1404",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm1404_cellobiose_solution_10pct.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm1404_cellobiose_solution_10pct.yaml",
+        "sha256": "f0a5f05261f7171c7cbbca16ebfa90b0abe2c79716fd2e69d402bd85d448e150"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml. Percent basis and solvent are unspecified. Retain the literal percentage in this note; do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "f0a5f05261f7171c7cbbca16ebfa90b0abe2c79716fd2e69d402bd85d448e150",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm1404_cellobiose_solution_10pct].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-togo_m2596_anaerobic_sludge_supernatant",
+      "case_ids": [
+        "CM_NAME:096b6808ce08382d9ea8264b1eb5cb53111cd5f2a4e711c04d92a56eff66bef5"
+      ],
+      "description": "Source-defined Ithaca Area Wastewater Treatment Facility digester-sludge preparation. Clarify30min at10400g, freeze at-20C, thaw and clarify30min at39000g; adjustpH7 with1MHCl, prefilter0.8µm, purgeN2 and sterile-filter through0.8–0.2µm membranes under anaerobic conditions. Sludge and acid are processing inputs, not asserted final components. Source explicitly adds25%(v/v); optional lyophilized material is not equated by a growth-performance observation. Distinct from DSMZ119 yeast-treated sludge fluid.",
+      "evidence_ids": [
+        "m-togo-data-2596",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/togo_m2596_anaerobic_sludge_supernatant.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-togo_m2596_anaerobic_sludge_supernatant.yaml",
+        "sha256": "34121252f89191dd256fa5a198203a828080f68e53cb0c0fae85756f68114973"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Source-defined Ithaca Area Wastewater Treatment Facility digester-sludge preparation. Clarify30min at10400g, freeze at-20C, thaw and clarify30min at39000g; adjustpH7 with1MHCl, prefilter0.8µm, purgeN2 and sterile-filter through0.8–0.2µm membranes under anaerobic conditions. Sludge and acid are processing inputs, not asserted final components. Source explicitly adds25%(v/v); optional lyophilized material is not equated by a growth-performance observation. Distinct from DSMZ119 yeast-treated sludge fluid.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "34121252f89191dd256fa5a198203a828080f68e53cb0c0fae85756f68114973",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-togo_m2596_anaerobic_sludge_supernatant].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm133_salt_solution_i",
+      "case_ids": [
+        "CM_NAME:633c7fc241861e69fcbda5b7af25616475ee0db2400677c1d9e1048c3ee7be11",
+        "KG_CASE:5c5fe7ef6f3ecf34a969a0c5f3c88dc09cb6964cd17232b9afff94dfdf52808d"
+      ],
+      "description": "Source-specific JCM133 salt solution No.1. Components are source batch additions, not inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only to avoid unrelated-numbered-stock collisions.",
+      "evidence_ids": [
+        "m-jcm-133",
+        "m-mediadive-solution-4084",
+        "m-mediadive-solution-5072",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm133_salt_solution_i.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm133_salt_solution_i.yaml",
+        "sha256": "365ac2c8e58af57c2108b7f20111801371e3379ffff94a5bc35af36f73b2bfb4"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Source-specific JCM133 salt solution No.1. Components are source batch additions, not inferred final-volume concentrations. Raw generic Salt Solution I is provenance-only to avoid unrelated-numbered-stock collisions.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "365ac2c8e58af57c2108b7f20111801371e3379ffff94a5bc35af36f73b2bfb4",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm133_salt_solution_i].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm1199_phosphates_solution",
+      "case_ids": [
+        "CM_NAME:4664d5f5ef483e152f8f8b2ef2dde380a273603d397082dc3d0804bf139213b0",
+        "KG_CASE:a64bd5c62e3a2e633891b9ef9eb9f584614fce02b6d8a00e8443dde07ccdd6b4"
+      ],
+      "description": "JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct from the receiving mineral medium and its100ml addition; no source-derived flattened rate is adopted.",
+      "evidence_ids": [
+        "m-jcm-1199",
+        "m-mediadive-solution-5318",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm1199_phosphates_solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm1199_phosphates_solution.yaml",
+        "sha256": "d2ebf3d2cddcebc86e4c57ccda599ea35c9bbdce6061d6656e44018e25996ce8"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct from the receiving mineral medium and its100ml addition; no source-derived flattened rate is adopted.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "d2ebf3d2cddcebc86e4c57ccda599ea35c9bbdce6061d6656e44018e25996ce8",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm1199_phosphates_solution].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm1229_1272_solution_a",
+      "case_ids": [
+        "CM_NAME:80e5c7a588b15ce98b46cc30b94a6fa2d25a940ecc71ba04170bfb85ef58961f",
+        "KG_CASE:ac86285e735a1fbe85d3e405260aba228a279205ab264a40635d07caab6be3a3"
+      ],
+      "description": "Identical source-specific Solution A components in MediaDive S5359/S5414. Keep source batch amounts and reject the generic display name as a global resolving synonym.",
+      "evidence_ids": [
+        "m-mediadive-solution-5359",
+        "m-mediadive-solution-5414",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm1229_1272_solution_a.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm1229_1272_solution_a.yaml",
+        "sha256": "8f09736b7c330159de79fbcf9270def057b0f241270f5ca2d72362e88cc3d7be"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Identical source-specific Solution A components in MediaDive S5359/S5414. Keep source batch amounts and reject the generic display name as a global resolving synonym.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "8f09736b7c330159de79fbcf9270def057b0f241270f5ca2d72362e88cc3d7be",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm1229_1272_solution_a].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm687_methanol_solution",
+      "case_ids": [
+        "CM_NAME:606affef587ae82fbc1e2facd239d116a6bde1b08f7a1890f9ce14a67f4f8184",
+        "KG_CASE:9323fac188d298c472186217daf59a7ce3f8ef448bcc384eabad54757cddb173"
+      ],
+      "description": "JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687 source use.",
+      "evidence_ids": [
+        "m-jcm-687",
+        "m-mediadive-solution-4591",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm687_methanol_solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm687_methanol_solution.yaml",
+        "sha256": "9240935daef46ec61f0cc107d6ff790baa687f2d7f2cdb420791bbe48b32680c"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687 source use.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "9240935daef46ec61f0cc107d6ff790baa687f2d7f2cdb420791bbe48b32680c",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm687_methanol_solution].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm431_selenite_tungstate_solution",
+      "case_ids": [
+        "CM_NAME:7af57ea537b7e7a3a0e90c926bc62a599ba905329b046dfd8f311a2ebca109ab",
+        "KG_CASE:aa90b6b77f1a663fb5586f7b823e46b7037b9838ff6f881eb339966cd909872b",
+        "CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df"
+      ],
+      "description": "JCM431 formulation only;4 direct components retained. Promote the existing source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names require occurrence routing. Both Medium No.431 source-pointer spellings, including the inherited mim-queue label, are REJECTED_LABEL and require provider/recipe routing.",
+      "evidence_ids": [
+        "m-jcm-431",
+        "m-mediadive-solution-4878",
+        "m-jcm-1081",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm431_selenite_tungstate_solution.yaml",
+        "sha256": "6f00f8ed02e50bf899defdd9e3e19816331ef8c81d807ada2320718c5f3939b3"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM431 formulation only;4 direct components retained. Promote the existing source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names require occurrence routing. Both Medium No.431 source-pointer spellings, including the inherited mim-queue label, are REJECTED_LABEL and require provider/recipe routing.",
+      "intended_owner_path_after_integration": "data/ingredients/mapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "6f00f8ed02e50bf899defdd9e3e19816331ef8c81d807ada2320718c5f3939b3",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm431_selenite_tungstate_solution].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-dsmz_s777_selenite_tungstate_solution",
+      "case_ids": [
+        "CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df"
+      ],
+      "description": "DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is not lifted.",
+      "evidence_ids": [
+        "m-mediadive-solution-777",
+        "m-mediadive-solution-446",
+        "m-mediadive-solution-453",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/dsmz_s777_selenite_tungstate_solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-dsmz_s777_selenite_tungstate_solution.yaml",
+        "sha256": "6f14fbdad982370cd43c59facc6fd7b1e874208ea1de00b2f2b2898b7ad1f42c"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is not lifted.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "6f14fbdad982370cd43c59facc6fd7b1e874208ea1de00b2f2b2898b7ad1f42c",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-dsmz_s777_selenite_tungstate_solution].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm852_se_w_solution",
+      "case_ids": [
+        "CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df",
+        "KG_CASE:5f2bca14ac1099323f6fd9d78e58180bd53c8b26eeb0ebc2c3c9aebf314d9e06"
+      ],
+      "description": "JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88 citronellol remains rejected.",
+      "evidence_ids": [
+        "m-jcm-852",
+        "m-mediadive-solution-5270",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm852_se_w_solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm852_se_w_solution.yaml",
+        "sha256": "6db98a53a6738341011c51aa34b9a9fd32f61157cb2d4e6ad6b68689d3f37cc3"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88 citronellol remains rejected.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "6db98a53a6738341011c51aa34b9a9fd32f61157cb2d4e6ad6b68689d3f37cc3",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm852_se_w_solution].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm537_sugar_solution_250mm",
+      "case_ids": [
+        "KG_CASE:abc1616e7755bfd211934d5dd7d9116e1e50981eb3c4fe8f6cd481a6c5ecedec"
+      ],
+      "description": "JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml medium separately. Do not route generic Sugar globally, and retain its material quarantine.",
+      "evidence_ids": [
+        "m-jcm-537",
+        "m-mediadive-ingredient-1795",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm537_sugar_solution_250mm.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm537_sugar_solution_250mm.yaml",
+        "sha256": "2b51641b483aa3169d8ef114f322501cb9e027cff4daa74239f58dbc00ef44b9"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml medium separately. Do not route generic Sugar globally, and retain its material quarantine.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "2b51641b483aa3169d8ef114f322501cb9e027cff4daa74239f58dbc00ef44b9",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm537_sugar_solution_250mm].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-jcm1231_bg_fpc",
+      "case_ids": [
+        "CM_NAME:287416c04202852582ead36b6e03a848e0cb09cdd2201bbf189e91edcd472d66"
+      ],
+      "description": "JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a nested named constituent, not flattened into receiving medium. Batch input volume is not a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.",
+      "evidence_ids": [
+        "m-jcm-1231",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm1231_bg_fpc.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-jcm1231_bg_fpc.yaml",
+        "sha256": "35bf26cc3d414615f1be69635c7d0b5f2cae54baaa4d769ae7e00019a7ea0086"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a nested named constituent, not flattened into receiving medium. Batch input volume is not a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "35bf26cc3d414615f1be69635c7d0b5f2cae54baaa4d769ae7e00019a7ea0086",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-jcm1231_bg_fpc].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-dsmz1245_sugar_stock_s5688",
+      "case_ids": [
+        "CM_NAME:09425422bf6f2b0272f897b60becd790003ebf354d175363effbe78ad3c5c152"
+      ],
+      "description": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition.",
+      "evidence_ids": [
+        "m-mediadive-solution-5688",
+        "m-dsmz-1245",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/dsmz1245_sugar_stock_s5688.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-dsmz1245_sugar_stock_s5688.yaml",
+        "sha256": "8a2822fefe25e6ead0042daa19d50f908854f9b9431a3255d0802c3ddd888174"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "8a2822fefe25e6ead0042daa19d50f908854f9b9431a3255d0802c3ddd888174",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-dsmz1245_sugar_stock_s5688].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-tryptic_digest_of_beef_heart",
+      "case_ids": [
+        "CM_NAME:2470d3e862d2d7bfaae284c1d8ed68217620196ba9aeea1b5f25c11f706360c0",
+        "CM_NAME:a12008c32afcfbe79a064472f43034a05d626eadd98d83e386d16ff2652efd3f",
+        "KG_CASE:afe662a4ecdc143ab8b82d6f649c7fb2cb4079ddef964b2157953343c4cd7309"
+      ],
+      "description": "Animal-tissue digest specified by beef-heart substrate and tryptic digestion in Columbia formulations. Distinct from heart infusion and whole broth; no exact molecular constituent or fixed supplier formulation is inferred.",
+      "evidence_ids": [
+        "m-dsmz-687",
+        "m-dsmz-1331",
+        "m-mediadive-ingredient-662",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/tryptic_digest_of_beef_heart.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-tryptic_digest_of_beef_heart.yaml",
+        "sha256": "9165427d8e72226f24da90a371ed8bfed6b141abf9fc7f968cf27bc356b057db"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Animal-tissue digest specified by beef-heart substrate and tryptic digestion in Columbia formulations. Distinct from heart infusion and whole broth; no exact molecular constituent or fixed supplier formulation is inferred.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "9165427d8e72226f24da90a371ed8bfed6b141abf9fc7f968cf27bc356b057db",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-tryptic_digest_of_beef_heart].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-casitone_catalog_alias",
+      "case_ids": [
+        "CM_NAME:2981d40273a02dd3d797e382cff8b55963bef8e6fdf6fcaeb5d5ec16c2f4326c"
+      ],
+      "description": "Add exact CCAP catalog225930 surface form to Casitone. No equivalence to tryptone products, roles or inherited complete payload approval.",
+      "evidence_ids": [
+        "m-ccap-MC",
+        "m-supplier-casitone",
+        "m-ontology-micro-0000606"
+      ],
+      "owner_path": "data/ingredients/mapped/Casitone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed-owners/casitone_catalog_alias.yaml",
+        "sha256": "3a374aad6be3f58551a10ffa66acc524aff10b210ac3411e1e738dd340859dac"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Add exact CCAP catalog225930 surface form to Casitone. No equivalence to tryptone products, roles or inherited complete payload approval.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-materials"
+        ],
+        "reviewer": "/root/chemicals",
+        "reviewed_after_sha256": "3a374aad6be3f58551a10ffa66acc524aff10b210ac3411e1e738dd340859dac"
+      }
+    },
+    {
+      "proposal_id": "m-arabinan_source_alias",
+      "case_ids": [
+        "CM_NAME:b7090f12b13a2d567fe1e3962a3ce2907e42826a7f4b588f70d9b78b1eccbae6"
+      ],
+      "description": "Add botanical-source-preserving arabinan(sugar beet) alias. Preserve CAS11078-27-6 identity and CHEBI22590 asymmetric parent from #312; no Megazyme grade asserted.",
+      "evidence_ids": [
+        "m-arabinan-supplier",
+        "m-ontology-arabinan"
+      ],
+      "owner_path": "data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "0f7efcf2d026ed5ad88d0b062e4cb3553a2a4b3eb44ffc9c1f5ce1d1c1e42aa2",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed-owners/arabinan_source_alias.yaml",
+        "sha256": "0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Add botanical-source-preserving arabinan(sugar beet) alias. Preserve CAS11078-27-6 identity and CHEBI22590 asymmetric parent from #312; no Megazyme grade asserted.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-materials"
+        ],
+        "reviewer": "/root/chemicals",
+        "reviewed_after_sha256": "0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd"
+      }
+    },
+    {
+      "proposal_id": "m-metals44_source_aliases",
+      "case_ids": [
+        "CM_NAME:a6e208f605caf46b65f9a1a1a59f4fdc932fa99f2eda3152cb614b0d75aa2b54",
+        "CM_NAME:dd759eba8ada7b3e6aa498104056de938ddf68f3a132837431aaec01a06f2d7b"
+      ],
+      "description": "Add punctuation variants bound through JCM149 source references and MICRO0000456 exact synonyms; no arbitrary trace-metal formulation substitution.",
+      "evidence_ids": [
+        "m-jcm-149",
+        "m-jcm-304",
+        "m-jcm-900",
+        "m-ontology-micro-0000456"
+      ],
+      "owner_path": "data/ingredients/mapped/Metals_44_see_below.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ee92a39088715243e53ac6affea258f3b88f19dab8eda2489dac99d4b2372ce7",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed-owners/metals44_source_aliases.yaml",
+        "sha256": "9154cd4815df6c7cd368fb77dd4f034edaee7cae4f0c799cb8dcdc0bd70621d9"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Add punctuation variants bound through JCM149 source references and MICRO0000456 exact synonyms; no arbitrary trace-metal formulation substitution.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-materials"
+        ],
+        "reviewer": "/root/chemicals",
+        "reviewed_after_sha256": "9154cd4815df6c7cd368fb77dd4f034edaee7cae4f0c799cb8dcdc0bd70621d9"
+      }
+    },
+    {
+      "proposal_id": "m-desiccated_ox_bile_label",
+      "case_ids": [
+        "CM_NAME:dde7aedb87c8cbe3a8ee2c895bd1bc57bf06f833138d09fbba441bedbbd58def"
+      ],
+      "description": "Correct Desicatted Ox-bile spelling and add Desiccated ox bile source form. Remain UNMAPPED pending cross-owner bile scope reconciliation; no merge or grounding promotion.",
+      "evidence_ids": [
+        "m-jcm-1449",
+        "m-supplier-oxgall-alpha"
+      ],
+      "owner_path": "data/ingredients/unmapped/Desicatted_Ox-bile.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "aa7a189593271ca93c76c9f538d85db908736eb542dc01b16bc0b0059ee01663",
+      "after_capture": {
+        "root": "artifact",
+        "path": "materials/proposed-owners/desiccated_ox_bile_label.yaml",
+        "sha256": "a9920ad9e47fcd5a4b43eba2df8d53892ee7bd742bbf14f9172446fb02a4b26c"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Correct Desicatted Ox-bile spelling and add Desiccated ox bile source form. Remain UNMAPPED pending cross-owner bile scope reconciliation; no merge or grounding promotion.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-materials"
+        ],
+        "reviewer": "/root/chemicals",
+        "reviewed_after_sha256": "a9920ad9e47fcd5a4b43eba2df8d53892ee7bd742bbf14f9172446fb02a4b26c"
+      }
+    },
+    {
+      "proposal_id": "m-sugar_beet_molasses_identity",
+      "case_ids": [
+        "KG_CASE:1a6656cf3993232e8ecb72099874b08672ee59d89b7cdc5c77f717f37a8e3f99"
+      ],
+      "description": "Replace erroneous root identity with exact sugar-beet molasses term; preserve historical curation and require new content-bound mapping review.",
+      "evidence_ids": [
+        "m-ontology-foodon-03543005",
+        "m-ontology-foodon-00003412",
+        "m-mediadive-ingredient-346",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/Sugar_Beet_Molasses.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "64a35d50a0df41bf8097f57af5a581c730d26e2895e82396df10d7aadf817ca5",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-sugar_beet_molasses_identity.yaml",
+        "sha256": "cc810fca6594ee82deb1c09f56eb59f2fcf0263e1c9c05a6fe3e4f48ca7769c0"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Replace erroneous root identity with exact sugar-beet molasses term; preserve historical curation and require new content-bound mapping review.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "cc810fca6594ee82deb1c09f56eb59f2fcf0263e1c9c05a6fe3e4f48ca7769c0",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-sugar_beet_molasses_identity].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-double_distilled_water",
+      "case_ids": [
+        "CM_NAME:542bcb7906d3e7b505234f1f1f21e24df8439cddbaed833fea25ea52a4626069",
+        "KG_CASE:a7586381b4a8cdecd6dd067c3f49195e03577deba5715f29d907d4379803ac71"
+      ],
+      "description": "Water preparation grade produced by double distillation, retained distinct from the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the water ingredient and does not assert an exact purity specification. Chemical water is only a broad parent; do not import filtered/anaerobic/tap-water variants.",
+      "evidence_ids": [
+        "m-mediadive-ingredient-1021",
+        "m-ontology-chebi-15377",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/double_distilled_water.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-double_distilled_water.yaml",
+        "sha256": "29db3b6251f857902788ea665f323e0d9f765fd3ead244fafca78cf99bf880cc"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Water preparation grade produced by double distillation, retained distinct from the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the water ingredient and does not assert an exact purity specification. Chemical water is only a broad parent; do not import filtered/anaerobic/tap-water variants.",
+      "sssom_consequences": "Require distinct registry exactMatch sibling and skos:broadMatch to CHEBI15377; do not remove existing rejected alias.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "29db3b6251f857902788ea665f323e0d9f765fd3ead244fafca78cf99bf880cc",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-double_distilled_water].original_proposal.independent_review"
+      }
+    },
+    {
+      "proposal_id": "m-oxoid_lp0027_liver_digest",
+      "case_ids": [
+        "CM_NAME:bea2e3317eb75071d036f3149b10993facf75005d43e101c07afa7579794db14"
+      ],
+      "description": "Catalog-specific neutralized papaic ox-liver digest; generic liver digest is a broader material, not exact formulation identity. No cross-brand equivalence or fixed molecular composition inferred.",
+      "evidence_ids": [
+        "m-liver-spec",
+        "m-ccap-MC",
+        "m-ontology-micro-0001668",
+        "w03-prov-1226-payload-bridge",
+        "w03-prov-1226-independent-review",
+        "w03-prov-1246-controls"
+      ],
+      "owner_path": "data/ingredients/mapped/oxoid_lp0027_liver_digest.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue1226-v1/payloads/m-oxoid_lp0027_liver_digest.yaml",
+        "sha256": "fd8c40b03771ed5430b576924dd2adedd23c55b567afdee1bc29728caaaa9af7"
+      },
+      "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+      "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+      "identity_alias_consequences": "Catalog-specific neutralized papaic ox-liver digest; generic liver digest is a broader material, not exact formulation identity. No cross-brand equivalence or fixed molecular composition inferred.",
+      "sssom_consequences": "Require local registry exactMatch plus skos:broadMatch MICRO0001668, without generic digest alias.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "w03-prov-1226-independent-review",
+          "w03-prov-1246-controls"
+        ],
+        "reviewer": "/root/provenance_review",
+        "technical_reviewer": "/root/provenance_controls",
+        "primary_author": "/root (codex-worker03)",
+        "reviewed_after_sha256": "fd8c40b03771ed5430b576924dd2adedd23c55b567afdee1bc29728caaaa9af7",
+        "scientific_review": false,
+        "review_scope": "Exact provenance-only successor: full object/parent/beforeimage/authorship binding; one evidence enum replacement and one appended history event; all scientific fields and holds retained. No new science, whole-owner, role or export approval.",
+        "historical_review_locator": "payload-bridge.json entries[proposal_id=m-oxoid_lp0027_liver_digest].original_proposal.independent_review"
+      }
+    }
+  ]
+}

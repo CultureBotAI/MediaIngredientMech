@@ -1,0 +1,102 @@
+identifier: CHEBI:27418
+preferred_term: 1,4-Naphthoquinone
+ontology_mapping:
+  ontology_id: CHEBI:27418
+  ontology_label: 1,4-naphthoquinone
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Growth factor'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 1,4-NQ
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1,4-Naphthalenedione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1,4-dihydro-1,4-diketonaphthalene
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[1,4]naphthoquinon'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: alpha-naphthoquinone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: naphthalene-1,4-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: naphthoquinone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: p-naphthoquinone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 9
+  media_count: 9
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:50:49.352676+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:130-15-4 from PubChem API via name lookup (1,4-Naphthoquinone)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: 1,4-NQ, 1,4-Naphthalenedione,
+    1,4-dihydro-1,4-diketonaphthalene, [1,4]naphthoquinon, alpha-naphthoquinone, ...
+    (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:31.688843+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.486022+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H6O2; inchi=InChI=1S/C10H6O2/c11-9-5-6-10(12)8-4-2-1-3-7(8)9/h;
+    smiles=O=C1C=CC(=O)c2ccccc21
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.798645+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.705608+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''1,4-Naphthoquinone'' -> ''1,4-naphthoquinone'': synced
+    to canonical CHEBI label (preferred_term ''1,4-Naphthoquinone'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.518235+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 6/6 -> 9/9 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 130-15-4
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:50:49.352666+00:00'
+  molecular_formula: C10H6O2
+  inchi: InChI=1S/C10H6O2/c11-9-5-6-10(12)8-4-2-1-3-7(8)9/h1-6H
+  smiles: O=C1C=CC(=O)c2ccccc21
+kg_microbe_node_id: CHEBI:27418
+ingredient_type: SINGLE_INGREDIENT

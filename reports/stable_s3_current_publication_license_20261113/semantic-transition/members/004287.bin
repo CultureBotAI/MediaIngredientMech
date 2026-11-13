@@ -1,0 +1,103 @@
+id: CultureMech:008340
+name: 1_10_marine_broth_agar
+original_name: 1/10 Marine Broth (Agar)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  notes: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
+    Simple component'
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Agar  (if needed)
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: TOGO M1774
+  notes: 'Role: Solidifying component; TOGO M1774 lists agar only as an optional solidifying
+    agent.'
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Bacto Marine Broth 2216 (Difco)
+  concentration:
+    value: '3.7'
+    unit: G_PER_L
+  notes: 'Properties: Undefined component, Complex component'
+media_term:
+  preferred_term: TOGO Medium M1774
+  term:
+    id: TOGO:M1774
+    label: 1/10 Marine Broth (Agar)
+notes: 'Source: https://togomedium.org/medium/M1774
+
+  Original source: NBRC - NBRC_M990
+
+  Original URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=990'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:58.331809Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1774'
+- timestamp: '2026-01-28T19:48:28.814670Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:55.877269Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008340'
+- timestamp: '2026-03-17T06:30:26.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:14.421815+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "1/10 Marine Broth (Agar)" to "1_10_marine_broth_agar"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:15.377741+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_marine_broth_dilutions_score15.py
+  action: RESOLVED_TOGO_MARINE_BROTH_DILUTION_SCORE15
+  source: https://togomedium.org/medium/M1774; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=990
+  notes: TOGO M1774 mirrors NBRC Medium 990 and lists agar only as the optional solidifying
+    agent; Bacto Marine Broth 2216 remains a source-disclosed opaque Difco product.
+    TOGO states pH unadjusted.
+parent_media:
+  path: data/normalized_yaml/bacterial/1_2_marine_broth_agar.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:008758
+  name: 1_2_marine_broth_agar
+  notes: Both records are TOGO/NBRC diluted Marine Broth/Agar formulations with explicit
+    1/2 and 1/10 strength names and matching Marine Broth 2216 base.
+variant_relationship: CONCENTRATION_VARIANT
+variant_modifications:
+- 1/10 Marine Broth (Agar) decreases Bacto Marine Broth 2216 from 18.7 g/L to 3.7
+  g/L while agar remains 15 g/L.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1774
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=990

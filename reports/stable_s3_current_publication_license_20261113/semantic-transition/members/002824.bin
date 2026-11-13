@@ -1,0 +1,72 @@
+identifier: UNMAPPED_0817
+preferred_term: Glycyl-L-bromosuccinic Glutamic Acid
+synonyms:
+- synonym_text: Glycyl-L-bromosuccinic Glutamic Acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Parse artefact: reads as two run-together dipeptide/reagent names rather
+    than one compound. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by
+    label and synonym with normalisation, plus exact queries across all of live OLS4.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Glycyl-L-bromosuccinic_Glutamic_Acid-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** this raw string
+    is **not supported as the name of a single chemical, salt, hydrate, mixture, buffer,
+    extract, or commercial formulation**. It is most plausibly a malformed concatenation
+    or token-merging artifact derived from a Biolog substrate list. No ontology CURIE
+    was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: RETIRED_NOT_AN_INGREDIENT
+  previous_status: NEEDS_EXPERT
+  new_status: REJECTED
+  changes: 'Retired as an ingredient record (#213/#308): a splice of TWO Biolog panel
+    substrates run together by the #308 ingest: `glycyl-L-glutamic acid` and `bromosuccinic
+    acid`. Both are already records — `Gly-Glu` (CHEBI:73801) and `Bromosuccinate`
+    (CHEBI:73706) — so there is nothing left to ground once the splice is recognised.
+    Not mapped, because every substrate CURIE it could be grounded to is already the
+    primary key of a live record — in MIM the identifier IS the ontology CURIE, so
+    a mapping here would mint a duplicate rather than add coverage. No synonym is
+    folded onto those records either: this label names a reaction or a splice, not
+    the substance, and asserting the synonymy would make label_index resolve it to
+    something it does not denote.'
+  llm_assisted: false
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record
+  (#213/#308): a splice of TWO Biolog panel substrates run together by the #308 ingest:
+  `glycyl-L-glutamic acid` and `bromosuccinic acid`. Both are already records — `Gly-Glu`
+  (CHEBI:73801) and `Bromosuccinate` (CHEBI:73706) — so there is nothing left to ground
+  once the splice is recognised. Not mapped, because every substrate CURIE it could
+  be grounded to is already the primary key of a live record — in MIM the identifier
+  IS the ontology CURIE, so a mapping here would mint a duplicate rather than add
+  coverage. No synonym is folded onto those records either: this label names a reaction
+  or a splice, not the substance, and asserting the synonymy would make label_index
+  resolve it to something it does not denote.'

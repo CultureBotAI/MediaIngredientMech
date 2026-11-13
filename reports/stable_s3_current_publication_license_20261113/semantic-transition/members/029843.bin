@@ -1,0 +1,73 @@
+identifier: CHEBI:45165
+preferred_term: Pyromelitic acid
+synonyms:
+- synonym_text: Pyromelitic acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1148); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:31:08Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_LEXICAL_AMBIGUITY
+  changes: Classified as a single aromatic acid-like ingredient and left unmapped
+    because the source spelling "Pyromelitic" was not locally verified as exact pyromellitic
+    acid identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0504 -> CHEBI:45165 "pyromellitic acid" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-27T03:16:39.518218+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002161; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1148); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11; retained as unmapped pending exact spelling
+  and identity evidence.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:45165
+  ontology_label: pyromellitic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient name + local OAK CHEBI exact-label verification
+    notes: '''Pyromelitic acid'' = pyromellitic acid (misspelling); OAK CHEBI:45165.'
+chemical_properties:
+  molecular_formula: C10H6O8
+  smiles: O=C(O)c1cc(C(=O)O)c(C(=O)O)cc1C(=O)O
+  inchi: InChI=1S/C10H6O8/c11-7(12)3-1-4(8(13)14)6(10(17)18)2-5(3)9(15)16/h1-2H,(H,11,12)(H,13,14)(H,15,16)(H,17,18)
+  molecular_weight: 254.15
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:16:06.067198+00:00'
+mim_id: MIM:0002161
+legacy_identifiers:
+- MIM:Pyromelitic_Acid
+- CHEBI:45165

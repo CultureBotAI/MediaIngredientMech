@@ -1,0 +1,66 @@
+identifier: UNMAPPED_0500
+preferred_term: Proteose yeastolate
+synonyms:
+- synonym_text: Proteose yeastolate
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Proteose yeastolate (TC) (DIFCO 5577-15)
+  synonym_type: RAW_TEXT
+  source: DSMZ403 exact product label; CultureMech frozen shard06 CM_NAME:5e27f0e4c1524fe9512a10e58f8f2357c877793c77652f54684fb2b016836153
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:460); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T20:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a yeastolate/protein hydrolysate preparation and left unmapped pending product-level
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Proteose_yeastolate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: **Recommended interpretation:** an **ambiguous raw label for a complex yeast-derived preparation**,
+    not a single chemical, salt, hydrate, buffer, or chemically defined formulation. The defensible ingredient
+    class remains `UNDEFINED_MIXTURE`. No ontology CURIE was proposed. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo.
+    Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:23.124907+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: ANNOTATED
+  changes: Added primary-source-linked TC/Difco5577-15 catalogue qualification and exact raw source label
+    to the existing MediaDive460-derived owner. Retained UNMAPPED and UNDEFINED_MIXTURE; no component
+    composition, successor equivalence or release approval.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:460); no CAS-RN or CHEBI/NCIT match. Reviewed
+  on 2026-05-11 as a yeastolate/protein hydrolysate preparation pending product-level curation. Primary
+  DSMZ403 SolutionA explicitly names Proteose yeastolate (TC) (DIFCO5577-15) at1.0g. The baseline owner
+  was imported from MediaDive ingredient460, and the captured primary ingredient460 entry links only medium403,
+  establishing source continuity for this bounded catalogue-qualified annotation. This does not assign
+  unknown molecular composition, lot invariance or a current successor to the historical catalogue product.
+  In particular, no equivalence to BD-Difco TCYeastolate255772, generic yeast extract, a pure protein/chemical
+  or a complete culture medium is asserted. Source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium403.pdf
+  ; https://mediadive.dsmz.de/rest/ingredient/460 .'
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Proteose yeastolate TC, Difco5577-15
+  form: commercial TC yeastolate preparation
+  notes: Catalogue/form qualification is source-bound to DSMZ403. Weighed1g source ingredient is retained
+    separately from receiving-medium concentrations; no powder state, processing chemistry or successor
+    product is invented.

@@ -1,0 +1,80 @@
+identifier: CHEBI:495056
+preferred_term: Gamma-cyclodextrin
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 4
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:gamma_cyclodextrin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:495056
+  notes: CHEBI:495056 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-04T17:55:33.979619+00:00'
+  curator: microbedecoder-import-review
+  action: RESTORED_AFTER_FALSE_POSITIVE
+  changes: restored ontology_mapping CHEBI:495056; UNMAPPED -> PENDING_REVIEW
+  notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+    curation history is append-only. CHEBI:495056 is a real ChEBI term that resolves
+    locally as ''gamma-cyclodextrin''; it was demoted for exceeding the CHEBI:300000
+    ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+    than MAPPED: it has never had a substantive review, and the batch review that
+    promoted its cohort was itself tautological (#203). See #198.'
+  llm_assisted: true
+- timestamp: '2026-08-06T02:16:55+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter, its canonical
+    label exact-matches the record ontology_label (case-insensitive), AND it passed
+    the specificity check (#203) — not a broad class-level term, and no strictly more
+    specific sibling label exists. Promoted PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001161; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: CHEBI:495056
+  ontology_label: gamma-cyclodextrin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: microbedecoder import via ols-label-exact
+    notes: Restored after a false-positive demotion; CHEBI:495056 resolves to 'gamma-cyclodextrin'.
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C48H80O40
+  smiles: OC[C@H]1O[C@@H]2O[C@H]3[C@H](O)[C@@H](O)[C@@H](O[C@H]4[C@H](O)[C@@H](O)[C@@H](O[C@H]5[C@H](O)[C@@H](O)[C@@H](O[C@H]6[C@H](O)[C@@H](O)[C@@H](O[C@H]7[C@H](O)[C@@H](O)[C@@H](O[C@H]8[C@H](O)[C@@H](O)[C@@H](O[C@H]9[C@H](O)[C@@H](O)[C@@H](O[C@H]1[C@H](O)[C@H]2O)O[C@@H]9CO)O[C@@H]8CO)O[C@@H]7CO)O[C@@H]6CO)O[C@@H]5CO)O[C@@H]4CO)O[C@@H]3CO
+  inchi: InChI=1S/C48H80O40/c49-1-9-33-17(57)25(65)41(73-9)82-34-10(2-50)75-43(27(67)19(34)59)84-36-12(4-52)77-45(29(69)21(36)61)86-38-14(6-54)79-47(31(71)23(38)63)88-40-16(8-56)80-48(32(72)24(40)64)87-39-15(7-55)78-46(30(70)22(39)62)85-37-13(5-53)76-44(28(68)20(37)60)83-35-11(3-51)74-42(81-33)26(66)18(35)58/h9-72H,1-8H2/t9-,10-,11-,12-,13-,14-,15-,16-,17-,18-,19-,20-,21-,22-,23-,24-,25-,26-,27-,28-,29-,30-,31-,32-,33-,34-,35-,36-,37-,38-,39-,40-,41-,42-,43-,44-,45-,46-,47-,48-/m1/s1
+  molecular_weight: 1297.128
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:31:10.017101+00:00'
+mim_id: MIM:0001161
+legacy_identifiers:
+- MIM:Gamma-cyclodextrin
+- CHEBI:495056

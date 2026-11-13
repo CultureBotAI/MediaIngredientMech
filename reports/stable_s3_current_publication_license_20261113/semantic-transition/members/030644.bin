@@ -1,0 +1,16 @@
+# Reviewed historical invalid-CAS diagnostics
+
+Claw #1193 and MIM #1383 add an opt-in diagnostic contract. It preserves the default refusal of malformed or contradicted historical CAS assertions. It neither corrects a registry number nor approves an ingredient or external mapping.
+
+The native stable publication generator accepts paired `--cas-dispositions` and `--cas-dispositions-sha256` arguments. The selected request binds immutable claims and two genuine native scientific review bundles. Each target is a complete claims entry, hashed with the established `sha256-canonical-json-v1` convention: sorted keys, compact JSON separators, UTF-8, no appended newline. The request, claims, complete old rows, current owners, native report/schema inputs and all evidence enter the generator's captured input closure and exact replay. Absence is explicit in new producer manifests; historical producer replay remains unchanged.
+
+Two actions are supported:
+
+- `RETIRE_INVALID_CAS` selects an exact old CAS object with an invalid check digit. The identifier must be absent from active owner assertions and resolving aliases. MIM additionally requires the genuinely selected completed source-correction endpoint to contain the exact reviewed owner afterimage and rejected identifier. The diagnostic omission is not canonical retirement approval: the full old row still requires the ordinary native `REMOVE_WITH_HISTORY` primary, skeptical and prepared-set review route.
+- `RETAIN_INVALID_CAS_WITHHOLD` preserves an exact historical row and unchanged current owner. The row may have an invalid CAS object, or a valid ontology object with invalid CAS annotations. Its exhaustive `invalid_tokens` list identifies exact tokens in `object_id`, `other` and `xref`; full row and token payloads are retained. The native publication selection mandates `INSTALL_WITHHOLD`, independently of later votes. When a source-correction endpoint is selected, each held owner must equal its preserved adoption predecessor and cannot also be corrected by that successor.
+
+Every selected token must have ordinary ASCII CAS syntax and an invalid check digit. A valid CAS or a valid ontology target cannot be retired by this capability. Unselected invalid assertions or annotations refuse whenever the capability is selected. No namespace, placeholder or permanent ID is invented. An unresolved identity such as the held #753 record remains unresolved.
+
+After native canonical installation, an ordinary mapping review must bind current generation/publication provenance, the original generation receipt, the complete diagnostic request and native review input closure, and actual retained bytes of the historical canonical table. It must retain every forced-held row in its WITHHOLD partition. The existing positive CAS assertion/annotation checks and normalized companion identifier checks remain unchanged. A diagnostic report is never a positive release review, and a rewritten vote or rehashed product does not clear a hold.
+
+The synthetic test fixtures exercise actual native parser/writer, producer CLI, captured replay, canonical publication and ordinary partition boundaries. They are implementation evidence, not campaign scientific approval. Actual source changes and diagnostic claims require their own current native primary and separate skeptical reviews.

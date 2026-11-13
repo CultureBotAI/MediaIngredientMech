@@ -1,0 +1,194 @@
+identifier: CHEBI:17790
+preferred_term: Methanol
+ontology_mapping:
+  ontology_id: CHEBI:17790
+  ontology_label: methanol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: (alternative)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Cross-references: KEGG:meoh'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Defined component, Organic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CH3OH
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MeOH
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Methyl alcohol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Methylalkohol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: carbinol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: spirit of wood
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: wood alcohol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: wood naphtha
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: wood spirit
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Methanol*
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Methanol (10%)
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Methanol**
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 251
+  media_count: 251
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:55.825604+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:67-56-1 from PubChem API via name lookup (Methanol)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.334018+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:67-56-1 from CultureBotHT compounds_to_cas.csv (matched:
+    methanol)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: CH3OH, MeOH, Methyl
+    alcohol, Methylalkohol, carbinol, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Methanol_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.685309+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.722431+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=CH4O; inchi=InChI=1S/CH4O/c1-2/h2H,1H3; smiles=CO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.322412+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111833+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.794657+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Methanol'' -> ''methanol'': synced to canonical CHEBI
+    label (preferred_term ''Methanol'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role SALT: legacy media_roles SALT assignment dropped
+    during the #128 facet migration: this ingredient is not a salt contributing ionic
+    strength or osmotic balance, so the assignment was a mis-curation rather than
+    a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT only if
+    warranted.'
+- timestamp: '2026-08-27T03:16:39.519282+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 55/178 -> 251/251 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Methanol*'' (x3 CultureMech mentions); ''Methanol (10%)''
+    (x1 CultureMech mentions); ''Methanol**'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:17:21.919974+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: CORRECTED
+  changes: Original ATCC2883 broth and agar recipes specify Methanol (filter sterilized),
+    3 ml added after autoclaving. This establishes a source-qualified treatment of
+    the methanol input, not a new mixture identity. No assay, solvent, dilution, filter
+    pore size or universal grade equivalence is inferred. The raw source wording remains
+    in this provenance note rather than an automatically resolving alias. The existing
+    Methanol (10%) label is a concentration-qualified recipe label; its exact original
+    stock-strength versus receiving-medium-dose context has not been established,
+    and either interpretation is unsuitable as an unrestricted molecular-identity
+    alias; it is retained as REJECTED_LABEL on the pure molecular methanol owner.
+    This bounded provenance amendment does not approve the whole inherited owner or
+    its remaining aliases.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 67-56-1
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:52:55.825558+00:00'
+  molecular_formula: CH4O
+  inchi: InChI=1S/CH4O/c1-2/h2H,1H3
+  smiles: CO
+kg_microbe_node_id: CHEBI:17790
+ingredient_type: SINGLE_INGREDIENT
+notes: Original ATCC2883 broth and agar recipes specify Methanol (filter sterilized),
+  3 ml added after autoclaving. This establishes a source-qualified treatment of the
+  methanol input, not a new mixture identity. No assay, solvent, dilution, filter
+  pore size or universal grade equivalence is inferred. The raw source wording remains
+  in this provenance note rather than an automatically resolving alias. The existing
+  Methanol (10%) label is a concentration-qualified recipe label; its exact original
+  stock-strength versus receiving-medium-dose context has not been established, and
+  either interpretation is unsuitable as an unrestricted molecular-identity alias;
+  it is retained as REJECTED_LABEL on the pure molecular methanol owner. All inherited
+  source, ingredient, full-owner and downstream publication holds remain.
+supplied_form:
+- name: Methanol (filter sterilized)
+  form: filter sterilized
+  notes: ATCC2883 source-qualified input. Assay and solvent are unstated; this is
+    a preparation treatment, not a separate identity.

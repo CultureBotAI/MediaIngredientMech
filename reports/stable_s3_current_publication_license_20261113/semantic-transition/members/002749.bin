@@ -1,0 +1,56 @@
+identifier: UNMAPPED_0345
+preferred_term: Bovine serum
+synonyms:
+- synonym_text: Bovine serum
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SERUM_SPECIFICITY
+  changes: Reviewed OAK/OLS audit candidate MICRO:0001709 calf serum; left unmapped
+    because bovine serum does not locally specify calf, fetal, or adult source and
+    should not be collapsed into a more specific serum record.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as an animal serum material while preserving the prior decision
+    not to identity-map to calf, fetal, adult, or generic serum without source specificity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bovine_serum-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **age-unspecified,
+    bovine-derived blood-serum mixture** used as a culture-medium supplement. It is
+    not a single chemical, salt, hydrate, buffer, or chemically fixed formulation.
+    Serum is produced through blood clotting and separation from cells/clot; consequently,
+    it is compositionally distinct from plasma. Coagulation consumes fibrinogen and
+    other factors while  CURIEs discussed: MICRO:0001709. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
+  for the specific bovine serum type. Classified as an animal serum material while
+  preserving unmapped identity status.
+ingredient_type: UNDEFINED_MIXTURE

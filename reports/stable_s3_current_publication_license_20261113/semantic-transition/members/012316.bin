@@ -1,0 +1,134 @@
+{
+  "author": "Codex /root/research_a",
+  "at": "2026-11-08T06:36:24.206519+00:00",
+  "finding_id": "W06-IR-002",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+  "proposal_id": "R-P-MODIFIED-VITAMINS",
+  "input_selection": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json",
+    "sha256": "4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a"
+  },
+  "before_proposed_payload": {
+    "root": "artifact",
+    "path": "research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml",
+    "sha256": "ee25e3cc8c5849c63e08d32a5abcc0644e625561168f97651ec2928765de6141"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v3/research-a/payloads/R-P-MODIFIED-VITAMINS.yaml",
+    "sha256": "89aa1bb6656afd6e7c6cb53d7b68f43fce6813ba69d7e55b93f317365bc1eb81"
+  },
+  "maintained_owner_before_sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c",
+  "owner_path": "data/ingredients/mapped/Modified_Trace_Vitamins.yaml",
+  "case_ids": [
+    "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f"
+  ],
+  "scientific_reason": "JCM1158 supplies ten vitamins including DL-calcium pantothenate plus KH2PO4 and water. Modified trace vitamins and its see-below variant do not independently name that formulation; JCM1353 uses a different phosphate-buffered parent. Qualify the preferred and registry-self labels while retaining ingredient2017 provenance and the whole-owner/other-context hold.",
+  "primary_evidence": [
+    {
+      "evidence_id": "R-jcm-final-1158",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-1158.body",
+        "sha256": "a6b4bbb782d46582f3ea17fdcce391e9822d5d28efecf68ff218b949182d411e"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1158",
+      "original_accessed_at": "2026-11-08T05:11:03.284978+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-medium-J1158",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1158.body",
+        "sha256": "0458eb90158b40b2e1061a5591ba564c4668c139452795641b28c328bca8b94f"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J1158",
+      "original_accessed_at": "2026-11-08T05:09:44.783493+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-ingredient-2017",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2017.body",
+        "sha256": "03b6c295170bc2bb18f8befaef4f8524d2b35b3163211c66e023fe7a262b120d"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/2017",
+      "original_accessed_at": "2026-11-08T05:08:43.539722+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-104",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/c464e732b34c9c65.raw",
+        "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+      "original_accessed_at": "2026-11-08T05:06:57.211128+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "field": "synonyms/0",
+      "before": {
+        "synonym_text": "Modified trace vitamins",
+        "synonym_type": "RAW_TEXT",
+        "source": "mim-queue"
+      },
+      "after": {
+        "synonym_text": "Modified trace vitamins",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "mim-queue"
+      },
+      "source_context_reason": "JCM1158 supplies ten vitamins including DL-calcium pantothenate plus KH2PO4 and water. Modified trace vitamins and its see-below variant do not independently name that formulation; JCM1353 uses a different phosphate-buffered parent. Qualify the preferred and registry-self labels while retaining ingredient2017 provenance and the whole-owner/other-context hold.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "field": "synonyms/1",
+      "before": {
+        "synonym_text": "Modified trace vitamins (see below)",
+        "synonym_type": "RAW_TEXT",
+        "source": "culturemech:output/ingredient_occurrences.tsv"
+      },
+      "after": {
+        "synonym_text": "Modified trace vitamins (see below)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "culturemech:output/ingredient_occurrences.tsv"
+      },
+      "source_context_reason": "JCM1158 supplies ten vitamins including DL-calcium pantothenate plus KH2PO4 and water. Modified trace vitamins and its see-below variant do not independently name that formulation; JCM1353 uses a different phosphate-buffered parent. Qualify the preferred and registry-self labels while retaining ingredient2017 provenance and the whole-owner/other-context hold.",
+      "before_resolves": true,
+      "after_resolves": false
+    }
+  ],
+  "canonical_label_change": {
+    "before_preferred": "Modified trace vitamins",
+    "after_preferred": "JCM 1158 modified trace vitamins",
+    "before_ontology_label": "Modified trace vitamins",
+    "after_ontology_label": "JCM 1158 modified trace vitamins",
+    "external_id_label_preserved": true
+  },
+  "unchanged_fields": [
+    "identifier",
+    "mapping_status",
+    "ontology_id",
+    "mapping_quality",
+    "components",
+    "component_assertion",
+    "supplied_form if present",
+    "all raw synonym text and source",
+    "all prior history",
+    "source holds"
+  ],
+  "applicability_limit": "Existing occurrence-scoped formulation support only. No collection is inferred from a bare medium number; C/root separately correct W06-IR-010 and W06-IR-008. Existing unrelated scientific claims are not recertified.",
+  "independent_review": {
+    "status": "pending"
+  },
+  "maintained_write": false,
+  "source_owner_export_approval": false
+}

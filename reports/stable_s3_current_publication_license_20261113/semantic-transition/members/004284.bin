@@ -1,0 +1,199 @@
+id: CultureMech:002439
+name: 0_01_lb_seawater_medium
+original_name: 0.01% LB SEAWATER MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 8.0
+media_term:
+  preferred_term: JCM Medium J1273
+  term:
+    id: mediadive.medium:J1273
+    label: 0.01% LB SEAWATER MEDIUM
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1273
+
+
+  Commercial Product: LB Medium (Luria-Bertani, Miller formulation)
+
+  Supplier: Multiple suppliers (Difco, Sigma, etc.)
+
+  Catalog: Multiple (L3522 Sigma, 244520 BD)
+
+  Source: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/
+
+  Accessed: 2026-03-28
+
+
+  Constituent composition researched from product specification.'
+ingredients:
+- preferred_term: NaNO3
+  term:
+    id: CHEBI:63005
+    label: sodium nitrate
+  concentration:
+    value: '0.12'
+    unit: G_PER_L
+  mediaingredientmech_term:
+    id: MediaIngredientMech:000171
+    label: NaNO3
+- preferred_term: K2HPO4
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+  concentration:
+    value: '0.005'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Vitamin B12
+  term:
+    id: CHEBI:176843
+    label: vitamin B12
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:176843
+    label: vitamin B12
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15956
+    label: biotin
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  concentration:
+    value: '100'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+- preferred_term: Fe(III)-EDTA
+  term:
+    id: CHEBI:30729
+    label: ethylenediaminetetraacetatoferrate(1-)
+  concentration:
+    value: '259'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:30729
+    label: ethylenediaminetetraacetatoferrate(1-)
+- preferred_term: Mn(II) x EDTA
+  concentration:
+    value: '332'
+    unit: G_PER_L
+- preferred_term: Tris(hydroxymethyl)aminomethane
+  term:
+    id: CHEBI:9754
+    label: tris
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:9754
+    label: tris
+- preferred_term: Tryptone
+  term:
+    id: MICRO:0000182
+    label: tryptone
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  supplier_catalog:
+    supplier_name: Multiple suppliers (Difco, Sigma, etc.) LB Medium (Luria-Bertani,
+      Miller formulation)
+    catalog_number: Multiple (L3522 Sigma, 244520 BD)
+    product_url: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/
+  notes: Pancreatic digest of casein providing amino acids, peptides, and nitrogen;
+    Constituent of LB Medium (Luria-Bertani, Miller formulation) commercial product
+  synonyms:
+  - synonym_text: pancreatic digest of casein
+    synonym_type: EXACT
+  - synonym_text: casein peptone
+    synonym_type: EXACT
+- preferred_term: Yeast extract
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  supplier_catalog:
+    supplier_name: Multiple suppliers (Difco, Sigma, etc.) LB Medium (Luria-Bertani,
+      Miller formulation)
+    catalog_number: Multiple (L3522 Sigma, 244520 BD)
+    product_url: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/
+  notes: Autodigest of Saccharomyces cerevisiae providing vitamins, amino acids, and
+    trace elements; Constituent of LB Medium (Luria-Bertani, Miller formulation) commercial
+    product
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  supplier_catalog:
+    supplier_name: Multiple suppliers (Difco, Sigma, etc.) LB Medium (Luria-Bertani,
+      Miller formulation)
+    catalog_number: Multiple (L3522 Sigma, 244520 BD)
+    product_url: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/
+  notes: Maintains osmotic equilibrium (Miller formulation); Constituent of LB Medium
+    (Luria-Bertani, Miller formulation) commercial product
+  synonyms:
+  - synonym_text: NaCl
+    synonym_type: EXACT
+  - synonym_text: table salt
+    synonym_type: EXACT
+- preferred_term: Sea water
+  concentration:
+    value: '1000'
+    unit: G_PER_L
+preparation_steps:
+- step_number: 1
+  action: AUTOCLAVE
+  description: Mix components thoroughly, adjust pH to 8.0 with HCl and autoclave.
+- step_number: 2
+  action: MIX
+  description: 'Comment: Artificial sea water (such as artificial sea water in Medium
+    No. 1118) can be used instead of natural sea water.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:19.251848Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J1273'
+- timestamp: '2026-03-13T06:19:13.321778Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002439'
+- timestamp: '2026-03-17T06:30:24.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:26.425634+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "0.01% LB SEAWATER MEDIUM" to "0_01_lb_seawater_medium"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:15.238806+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 6 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:46:42.430860+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+high_metal: true

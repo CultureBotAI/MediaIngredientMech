@@ -1,0 +1,113 @@
+identifier: cas:23537-25-9
+preferred_term: L-Cysteic acid monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:17285
+  ontology_label: L-cysteic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 23537-25-9 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='L-Cysteic acid
+      monohydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:17285 (''L-cysteic acid'') — a subsumption ChEBI itself denies: it
+      files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogueline1338 CAS23537-25-9/FW187.17 and PubChemCID12308854 establish
+      L-cysteic acid monohydrate, including the L-specific stereochemical InChI. CHEBI17285
+      is L-cysteicacid without water. No exacthydrate candidate found; retainCAS and
+      broadMatch plus separate B1registry. See the complete identity, mapping, chemistry
+      and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml. Primary
+      source references: https://github.com/CultureBotAI/CultureBotHT; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/23537-25-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/17285/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:23537-25-9 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.254309+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:40.720349+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C3H9NO6S; smiles=C(C(C(=O)O)N)S(=O)(=O)O.O; inchi=InChI=1S/C3H7NO5S.H2O/c4-2(3(5)6)1-10(7,8)9;/h2H,1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.380127+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:50:44.920967+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:17285 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001415; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 23537-25-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C3H9NO6S
+  smiles: C(C(C(=O)O)N)S(=O)(=O)O.O
+  inchi: InChI=1S/C3H7NO5S.H2O/c4-2(3(5)6)1-10(7,8)9;/h2H,1,4H2,(H,5,6)(H,7,8,9);1H2/t2-;/m0./s1
+  pubchem_cid: 12308854
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001415
+legacy_identifiers:
+- MIM:L-Cysteic_Acid_Monohydrate
+- cas:23537-25-9

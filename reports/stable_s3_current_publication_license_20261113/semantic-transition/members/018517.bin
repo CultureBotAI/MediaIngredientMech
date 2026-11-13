@@ -1,0 +1,155 @@
+identifier: CHEBI:2682
+preferred_term: Amphotericin B
+ontology_mapping:
+  ontology_id: CHEBI:2682
+  ontology_label: amphotericin B
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-33-[(3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-14,39-dioxabicyclo[33.3.1]nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic
+    acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: AMPH-B
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Amphotericine B
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Liposomal Amphotericin B
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: amfotericina B
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: amphotericinum B
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Antimicrobial agent'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Amphotericin B (5 mg/ml DMSO)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:06.810459+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1397-89-3 from PubChem API via name lookup (Amphotericin B)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:24.942700+00:00'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:170451-78-2 from NCI CACTUS via name lookup (amphotericin
+    B)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-33-[(3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-14,39-dioxabicyclo[33.3.1]nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic
+    acid, AMPH-B, Amphotericine B, Liposomal Amphotericin B, amfotericina B, ... (1
+    more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Amphotericin_B_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (1397-89-3|170451-78-2) resolved via
+    OAK canonical xref: 1397-89-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.174073+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.997127+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C47H73NO17; inchi=InChI=1S/C47H73NO17/c1-27-17-15-13-11-9-7-5-6-8-10;
+    smiles=[H][C@]12C[C@@H](O[C@@H]3O[C@H](C)[C@@H](O)[C@H](N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.470756+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386176+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.723794+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Amphotericin B'' -> ''amphotericin B'': synced to canonical
+    CHEBI label (preferred_term ''Amphotericin B'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-27T03:16:39.518351+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Amphotericin B (5 mg/ml DMSO)'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000335; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1397-89-3
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:06.810414+00:00'
+  molecular_formula: C47H73NO17
+  inchi: InChI=1S/C47H73NO17/c1-27-17-15-13-11-9-7-5-6-8-10-12-14-16-18-34(64-46-44(58)41(48)43(57)30(4)63-46)24-38-40(45(59)60)37(54)26-47(61,65-38)25-33(51)22-36(53)35(52)20-19-31(49)21-32(50)23-39(55)62-29(3)28(2)42(27)56/h5-18,27-38,40-44,46,49-54,56-58,61H,19-26,48H2,1-4H3,(H,59,60)/b6-5+,9-7+,10-8+,13-11+,14-12+,17-15+,18-16+/t27-,28-,29-,30+,31+,32+,33-,34-,35+,36+,37-,38-,40+,41-,42+,43+,44-,46-,47+/m0/s1
+  smiles: '[H][C@]12C[C@@H](O[C@@H]3O[C@H](C)[C@@H](O)[C@H](N)[C@@H]3O)/C=C/C=C/C=C/C=C/C=C/C=C/C=C/[C@H](C)[C@@H](O)[C@@H](C)[C@H](C)OC(=O)C[C@H](O)C[C@H](O)CC[C@@H](O)[C@H](O)C[C@H](O)C[C@](O)(C[C@H](O)[C@H]1C(=O)O)O2'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000335
+legacy_identifiers:
+- MIM:Amphotericin_B
+- CHEBI:2682

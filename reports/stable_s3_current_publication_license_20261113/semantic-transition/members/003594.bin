@@ -1,0 +1,61 @@
+--- selected-d181/Menadione.yaml
++++ private-successor/Menadione.yaml
+@@ -9,6 +9,27 @@
+   - evidence_type: DATABASE_MATCH
+     source: CultureMech
+     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
++  - evidence_type: LLM_SUGGESTION
++    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374
++    notes: Claim-specific inherited-label assessment by Codex /root/step7d_science_c
++      under https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374.
++      The unqualified kg_microbe Hemodal entry is not a unique identity-bearing name
++      for this neutral menadione owner. Santa Cruz sc-205990 sections1/3 (https://datasheets.scbt.com/sc-205990.pdf)
++      use Hemodal for menadione CAS58-27-5, while sc-215295 sections1/3 (https://datasheets.scbt.com/sc-215295.pdf)
++      use it for menadione sodium bisulfite CAS130-37-0. Exact browser-extracted primary
++      sections are retained in W02 research/c/search-07.json; failed direct HTTP bodies
++      are separate. The Bayer advertisement in Coimbra Medica February1945 PDF page22
++      separately identifies a derivative tablet and sodium-bisulfite injection (https://am.uc.pt/romulo/download/wqnDk8Kjw5jDjsOQwpJpaGNtbGFuwpzClsKZwp9nwpM%3D/UCRC-Coimbra-Medica-1945-02.pdf;
++      complete PDF SHA256 691a9d0f916fca89f5d97b4f72e3c028d66e5d650915c895c74d9bd04c1028ca;
++      visual page SHA256 2a1a5d83ca40a51ed5e52c61cbd314377b53bf945cfe33a0ca4aa91469a1d107).
++      This affirmative form ambiguity justifies only the unqualified entry's nonresolving
++      REJECTED_LABEL disposition under MAPPING_SEMANTICS section3. Positive neutral-menadione
++      usage in NIST (https://webbook.nist.gov/cgi/cbook.cgi?ID=C58275&Units=SI), ChEBI
++      and sc-205990 remains valid contextual evidence; not every Hemodal use is false.
++      Preserve its spelling/source/history, supported Aquakay/Aquinone/Kappaxin chemical-name
++      senses, known CHEBI28869/CAS58-27-5 identity, and the ATCC1257 50mg solute versus
++      separate ethanol/water stock boundary and unvalidated flattened dose. No replacement
++      identity, product equivalence, role or export approval is inferred.
+ synonyms:
+ - synonym_text: 'Cross-references: KEGG:mndn'
+   synonym_type: RAW_TEXT
+@@ -49,7 +70,7 @@
+   synonym_type: EXACT_SYNONYM
+   source: kg_microbe
+ - synonym_text: Hemodal
+-  synonym_type: EXACT_SYNONYM
++  synonym_type: REJECTED_LABEL
+   source: kg_microbe
+ - synonym_text: Kappaxin
+   synonym_type: EXACT_SYNONYM
+@@ -187,6 +208,21 @@
+     aliases with exact primary recipe/product identifier and URL. Existing aliases
+     and identity/component claims are unchanged. Isolated successor proposal only.'
+   llm_assisted: true
++- timestamp: '2026-11-08T17:34:28.828536+00:00'
++  curator: Codex /root/step7d_science_c
++  action: REJECTED_AMBIGUOUS_INHERITED_ALIAS
++  changes: 'Private successor to selected d18105cf under https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374:
++    change only bare Hemodal synonym_type from EXACT_SYNONYM to REJECTED_LABEL and
++    append this claim-specific LLM evidence/history. Preserve kg_microbe source, positive
++    neutral-name evidence, all other complete fields and historical prefixes. The
++    same token also names distinct bisulfite/derivative materials; no universal false-name
++    claim or replacement identity. ATCC1257 solute/stock and flattened-dose holds
++    remain. No maintained application, independent approval or change to original
++    source proposals/cases.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 58-27-5
+   data_source: PubChem API

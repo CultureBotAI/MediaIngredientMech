@@ -1,0 +1,167 @@
+id: CultureMech:007000
+name: m9zb_with_malate
+original_name: M9zb with malate
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: (S)-Malate
+  concentration:
+    value: '30.0'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:mal-L'
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.1'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Dibasic sodium phosphate
+  concentration:
+    value: '43.0'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '8.6'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '22.0'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '2.0'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Ammonium chloride
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '19.0'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:43.610321Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 113, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:45.524564Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007000'
+- timestamp: '2026-03-17T06:30:27.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:03.607359+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "M9zb with malate" to "m9zb_with_malate" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:12.318761+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T04:06:25.521531+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:113's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-10-13T12:48:01.534993+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATIONS_AND_SCOPED_EVIDENCE
+  notes: Added 1 verified paper citations with archived abstracts/Markdown, qualified
+    organism taxonomy and formulation limitations. No concentration evidence added.
+    Preserved all amounts, existing variant links, preparation and prior history;
+    no new native growth association or resolved variant.
+  source: doi:10.1007/BF00170231
+media_term:
+  preferred_term: MediaDB Medium 113
+  term:
+    id: MEDIADB:113
+    label: M9zb with malate
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: doi:10.1007/BF00170231
+  title: Characterization and evaluation of a pta (phosphotransacetylase) negative
+    mutant of Escherichia coli HB101 as production host of foreign lipase.
+  authors: Hahm DH; Pan J; Rhee JS
+  year: 1994
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; owner=MEDIADB:113; discovery_sourceID=31. PMID:7765811;
+    raw_abstract=references_cache/papers/PMID_7765811.xml; abstract_markdown=references_cache/papers/PMID_7765811.md.
+    source_access=Verified raw PubMed abstract; complete body not inspected. Bibliographic
+    identity verified from primary PubMed metadata and source cross-reference. No
+    notice in inspected PubMed entry; not an exhaustive notice audit. Historical MediaDB
+    title uses HBI01; verified PubMed/publisher title uses HB101. The explicit PMID,
+    year, first author and remaining title establish identity; immutable source not
+    rewritten. Publisher abstract=references_cache/papers/primary_html/hahm-1994-publisher-abstract.*.
+    The imported M9ZB owner contains seven direct ingredients and no NZ-amine entry.
+    The abstract describes distinct M9 carbon-source assays and modified M9 with NZ-amine;
+    it does not assign complete formulations, doses or genotypes to this exact imported
+    owner. PubMed abstract; exact excerpt=''the pta(-) mutant HB101''. Reported organism=Escherichia
+    coli HB101; canonical scientific name=Escherichia coli HB101; NCBITaxon:634468;
+    actual rank=strain; taxonomy_match=exact strain; role=reported parent strain;
+    not identical to its engineered pta derivative. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=634468&retmode=xml.
+    Reported organism=Escherichia coli HB101 pta(-); canonical scientific name=Escherichia
+    coli HB101; NCBITaxon:634468; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=engineered derivative; verified HB101 strain parent only. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=634468&retmode=xml.
+    PubMed abstract; exact excerpt=''M9 minimal media containing glucose, mannose
+    or glycerol''. PubMed abstract; exact excerpt=''modified M9 media including a
+    gluconeogenic carbon source and NZ-amine''. Parent versus pta mutant, carbon source,
+    NZ-amine supplementation, menadione exposure and heterologous-gene assays must
+    remain separate. Relative growth changes are not complete quantitative growth
+    observations for this record. PubMed abstract; exact excerpt=''lactate dehydrogenase
+    gene from Lactobacillus casei''. Reported organism=Lactobacillus casei; canonical
+    scientific name=Lacticaseibacillus casei; NCBITaxon:1582; actual rank=species;
+    taxonomy_match=exact species synonym; role=gene donor, currently Lacticaseibacillus
+    casei; not a medium growth target. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1582&retmode=xml.
+    Reported pseudomonad lipase donor remains scientifically unnamed at species level;
+    taxonomy_match=unresolved, no invented taxon from bibliography titles. Protein-expression
+    yield is not a growth measurement. All existing amounts and preparation remain
+    unchanged and unverified by this abstract. Organism inventory is abstract-scoped.No
+    positive native target organism, quantitative growth metric or resolved new variant
+    added. Taxonomy alone is not cultivation evidence. Taxonomy archives=references_cache/papers/taxonomy/ecoli-bl21-hb101-20261013.*
+    and ecoli-hahm-paliy-additional-20261013.*. '

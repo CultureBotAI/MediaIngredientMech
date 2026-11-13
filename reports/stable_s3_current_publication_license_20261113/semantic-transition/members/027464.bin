@@ -1,0 +1,3324 @@
+{
+  "state": "SOURCE_FINDINGS_SUPPLEMENT_NOT_NATIVE_OR_RELEASE_APPROVAL",
+  "reviewer": "Codex /root/s2_publication_skeptic (independent AI reviewer)",
+  "timestamp": "2026-11-12T17:24:38.054598+00:00",
+  "selection": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/.temp/cumulative-source-publication-inspect-s2-v1/UNASSESSED-SELECTION.json",
+    "sha256": "f22db186c88fe5e558fa3b8bbcce3331a3b27991fcc36ac25d5204e31570b007"
+  },
+  "semantics": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/MAPPING_SEMANTICS.md",
+    "sha256": "ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3"
+  },
+  "unchanged_previous_findings": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-actual-selection-v2/CURRENT-METHOD-FINDINGS.json",
+    "sha256": "c331978b26c3bdd72d09feccc759eb7a23b579678514df2415723da981ad1792"
+  },
+  "new_confirmed_finding": {
+    "fingerprint": "s2-atrazine-explicit-synonym-route-grade",
+    "severity": "P2",
+    "entry_id": "row-000082",
+    "owner": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml",
+      "sha256": "5ecb662b3045fef41147307a121f467c6b62a39a51e517b9080be3f7a26d09fe"
+    },
+    "complete_current_record": {
+      "identifier": "CHEBI:15930",
+      "preferred_term": "2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:15930",
+        "ontology_label": "atrazine",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "local kg-microbe CHEBI transform",
+            "notes": "Local CHEBI labels atrazine with exact synonym 2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine."
+          }
+        ]
+      },
+      "synonyms": [
+        {
+          "synonym_text": "2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        },
+        {
+          "synonym_text": "2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "local_chebi_exact_alias_review_2026_05_11"
+        },
+        {
+          "synonym_text": "atrazine",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "local_chebi_exact_alias_review_2026_05_11"
+        },
+        {
+          "synonym_text": "6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        },
+        {
+          "synonym_text": "2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Atrazin",
+          "synonym_type": "RAW_TEXT",
+          "source": "semantic_review_merge"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 1,
+        "media_count": 1
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-04-30T18:43:03.698454+00:00",
+          "curator": "audit_import_ingredients[mim-queue]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2120); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-05-11T04:22:30Z",
+          "curator": "mediaingredientmech-agentic-curation",
+          "action": "CURATED_CHEBI_EXACT_MATCH",
+          "changes": "Mapped to CHEBI:15930 atrazine using local CHEBI exact synonym evidence for the long-form triazine label.",
+          "previous_status": "UNMAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-27T03:16:39.518239+00:00",
+          "curator": "refresh_occurrence_statistics",
+          "action": "CORRECTED",
+          "changes": "occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+        },
+        {
+          "timestamp": "2026-08-30T04:48:06.233536+00:00",
+          "curator": "claude_culturemech_alias_backfill",
+          "action": "ADDED_SYNONYMS",
+          "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: '2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-09-21T21:33:25.379198+00:00",
+          "curator": "mim_semantic_review_20260921",
+          "action": "MERGED_FROM_DUPLICATES",
+          "changes": "Absorbed Atrazin. Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9 was erroneous. Survivor already has the exact atrazine ontology identity. Synonym dispositions and role evidence retained. Counts recomputed from distinct recipe membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        },
+        {
+          "timestamp": "2026-11-08T22:01:42+00:00",
+          "curator": "codex",
+          "action": "ASSIGNED_MIM_ID",
+          "changes": "#1265: assigned permanent MIM:0000068; retained mapping identifier and legacy aliases.",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2120); curated to CHEBI:15930 atrazine by local CHEBI exact synonym review on 2026-05-11.",
+      "kg_microbe_node_id": "CHEBI:15930",
+      "ingredient_type": "SINGLE_INGREDIENT",
+      "chemical_properties": {
+        "inchi": "InChI=1S/C8H14ClN5/c1-4-10-7-12-6(9)13-8(14-7)11-5(2)3/h5H,4H2,1-3H3,(H2,10,11,12,13,14)",
+        "molecular_weight": 215.688,
+        "data_source": "ChEBI+PubChem",
+        "retrieval_date": "2026-05-23T08:30:44.653698+00:00"
+      },
+      "merged": [
+        "cas:1924-24-9"
+      ],
+      "mim_id": "MIM:0000068",
+      "legacy_identifiers": [
+        "MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine",
+        "CHEBI:15930"
+      ]
+    },
+    "complete_selection_entry": {
+      "entry_id": "row-000082",
+      "candidate_position": 82,
+      "owner": "data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml",
+      "owner_sha256": "5ecb662b3045fef41147307a121f467c6b62a39a51e517b9080be3f7a26d09fe",
+      "before_rows": [
+        {
+          "position": 80,
+          "row": {
+            "subject_id": "MIM:0000068",
+            "subject_label": "2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:15930",
+            "object_label": "atrazine",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:curator=mim_semantic_review_20260921",
+            "mapping_date": "2026-09-21",
+            "confidence": "0.99",
+            "comment": "Absorbed Atrazin. Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9 was erroneous. Survivor already has the exact atrazine ontology identity. Synonym dispositions and role evidence retained. Counts recomputed from distinct recipe membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930",
+            "other": "2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine|2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine|2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine|6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine|Atrazin|atrazine",
+            "validation_method": "manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"
+          }
+        }
+      ],
+      "candidate_row": {
+        "subject_id": "MIM:0000068",
+        "subject_label": "2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:15930",
+        "object_label": "atrazine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:local kg-microbe CHEBI transform|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine|6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine|2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine|Atrazin",
+        "validation_method": ""
+      },
+      "proposed_row": {
+        "subject_id": "MIM:0000068",
+        "subject_label": "2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:15930",
+        "object_label": "atrazine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:curator=mim_semantic_review_20260921|MIM:local kg-microbe CHEBI transform|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Absorbed Atrazin. Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9 was erroneous. Survivor already has the exact atrazine ontology identity. Synonym dispositions and role evidence retained. Counts recomputed from distinct recipe membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930",
+        "other": "2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine|6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine|2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine|Atrazin",
+        "validation_method": ""
+      },
+      "disposition": null,
+      "reason": null
+    },
+    "captured_primary_evidence": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/.temp/publication-chebi-capture-s2-v1/capture/facts.json",
+      "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9"
+    },
+    "matched_synonym_statement": [
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine"
+      }
+    ],
+    "target_statements": [
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "IAO:0000115",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "A diamino-1,3,5-triazine that is 1,3,5-triazine-2,4-diamine substituted by a chloro group at position 6 while one of hydrogens of each amino group is replaced respectively by an ethyl and a propan-2-yl group."
+      },
+      {
+        "datatype": "xsd:integer",
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:charge",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "0"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:generalized_empirical_formula",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "C8H14ClN5"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:inchi_key_string",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "MXWJVTOOROXGIU-UHFFFAOYSA-N"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:inchi_string",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "InChI=1S/C8H14ClN5/c1-4-10-7-12-6(9)13-8(14-7)11-5(2)3/h5H,4H2,1-3H3,(H2,10,11,12,13,14)"
+      },
+      {
+        "datatype": "xsd:decimal",
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:mass",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "215.688"
+      },
+      {
+        "datatype": "xsd:decimal",
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:monoisotopic_mass",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "215.09377"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "chemrof:smiles_string",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CCNc1nc(Cl)nc(NC(C)C)n1"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasAlternativeId",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CHEBI:13865"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasAlternativeId",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CHEBI:22672"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasAlternativeId",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CHEBI:2916"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasAlternativeId",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CHEBI:49479"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "cas:1912-24-9"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "drugbank:DB07392"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "hmdb:HMDB0041830"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "kegg.compound:C06551"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "lincs.smallmolecule:LSM-18990"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "metacyc.compound:ATRAZINE"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "pdb-ccd:ATZ"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "ppdb:43"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "pubmed:24211529"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "pubmed:24239819"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "pubmed:24246238"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "reaxys:612020"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "umbbd.compound:c0002"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasDbXref",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "wikipedia.en:Atrazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasExactSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasOBONamespace",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "chebi_ontology"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-CHLORO-4-ISOPROPYLAMINO-6-ETHYLAMINO-1,3,5-TRIAZINE"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-chloro-4-(ethylamino)-6-(isopropylamino)-1,3,5-triazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-chloro-4-ethylamino-6-isopropylamino-s-triazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "2-ethylamino-4-isopropylamino-6-chloro-s-triazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "6-chloro-N-ethyl-N'-(1-methylethyl)-1,3,5-triazine-2,4-diamine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "6-chloro-N-ethyl-N'-isopropyl-1,3,5-triazine-2,4-diamine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "Atrazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "atrazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:id",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "CHEBI:15930"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "obo:chebi/3_STAR",
+        "predicate": "oio:inSubset",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "owl:Class",
+        "predicate": "rdf:type",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "rdfs:label",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": "atrazine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "CHEBI:38168",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "CHEBI:38170",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "_:riog00265229",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "_:riog00265230",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "_:riog00265231",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": "_:riog00265232",
+        "predicate": "rdfs:subClassOf",
+        "stanza": "CHEBI:15930",
+        "subject": "CHEBI:15930",
+        "value": null
+      }
+    ],
+    "conclusion": "Confirmed grade defect: current May 11 history, ontology evidence and notes explicitly establish CHEBI:15930 through the long-name synonym. The current primary label is atrazine; captured ChEBI classifies the long name as a related synonym, not a primary label. The full chemical structure, current InChI and the prior #317 assessment corroborate identity. This conclusion does not follow merely from label inequality.",
+    "minimal_fix": "Set ontology_mapping.mapping_quality to SYNONYM_MATCH through the native reviewed writer and append attributed history. Keep CHEBI:15930, skos:exactMatch on the own-identifier row, permanent MIM:0000068, aliases, merged tombstone and all historical/source holds. Record the ontology related-synonym scope accurately in new provenance; do not rewrite old history.",
+    "non_basis": "The later Atrazin merge and its retired erroneous CAS are not evidence of a new CAS-first grounding route."
+  },
+  "ten_bounded_method_assessments": [
+    {
+      "name": "Anabasine_Hydrochloride",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+        "sha256": "1b6512299e5b633fe363b554f077fb70bb3d3d2da2d07b54c197cd4b73e75351"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C216370",
+        "preferred_term": "Anabasine Hydrochloride",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C216370",
+          "ontology_label": "Anabasine Hydrochloride",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 53912-89-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Anabasine Hydrochloride'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:53912-89-3 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.190434+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:51:50.919243+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C10H15ClN2; smiles=C1CCNC(C1)C2=CN=CC=C2.Cl; inchi=InChI=1S/C10H14N2.ClH/c1-2-7-12-10(5-1)9-4-3-6-11-",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.490375+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:40:14.931532+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C216370 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.876708+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000341; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "53912-89-3",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z",
+          "molecular_formula": "C10H15ClN2",
+          "smiles": "C1CCN[C@@H](C1)C2=CN=CC=C2.Cl",
+          "inchi": "InChI=1S/C10H14N2.ClH/c1-2-7-12-10(5-1)9-4-3-6-11-8-9;/h3-4,6,8,10,12H,1-2,5,7H2;1H/t10-;/m0./s1",
+          "pubchem_cid": 3041330
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+        "mim_id": "MIM:0000341",
+        "legacy_identifiers": [
+          "MIM:Anabasine_Hydrochloride",
+          "NCIT:C216370"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+        "sha256": "9eb9c44a594ba93b72bc22e26de3559d84697b04f23343b36669236fd03aa42f",
+        "record": {
+          "identifier": "cas:53912-89-3",
+          "preferred_term": "Anabasine Hydrochloride",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C216370",
+            "ontology_label": "Anabasine Hydrochloride",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 53912-89-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Anabasine Hydrochloride'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:53912-89-3 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.190434+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T02:51:50.919243+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+              "changes": "molecular_formula=C10H15ClN2; smiles=C1CCNC(C1)C2=CN=CC=C2.Cl; inchi=InChI=1S/C10H14N2.ClH/c1-2-7-12-10(5-1)9-4-3-6-11-",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:12.490375+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T04:40:14.931532+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C216370 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "53912-89-3",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+            "molecular_formula": "C10H15ClN2",
+            "smiles": "C1CCNC(C1)C2=CN=CC=C2.Cl",
+            "inchi": "InChI=1S/C10H14N2.ClH/c1-2-7-12-10(5-1)9-4-3-6-11-8-9;/h3-4,6,8,10,12H,1-2,5,7H2;1H/t10-;/m0./s1",
+            "pubchem_cid": 3041330
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Anabasine Hydrochloride'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-000387",
+          "candidate_position": 387,
+          "owner": "data/ingredients/mapped/Anabasine_Hydrochloride.yaml",
+          "owner_sha256": "1b6512299e5b633fe363b554f077fb70bb3d3d2da2d07b54c197cd4b73e75351",
+          "before_rows": [
+            {
+              "position": 383,
+              "row": {
+                "subject_id": "MIM:0000341",
+                "subject_label": "Anabasine Hydrochloride",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C216370",
+                "object_label": "Anabasine Hydrochloride",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0000341",
+            "subject_label": "Anabasine Hydrochloride",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C216370",
+            "object_label": "Anabasine Hydrochloride",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:53912-89-3",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0000341",
+            "subject_label": "Anabasine Hydrochloride",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C216370",
+            "object_label": "Anabasine Hydrochloride",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES; no free base or other salt is substituted.",
+            "other": "CAS:53912-89-3",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Stereospecific monohydrochloride; original and current InChI already agree. SMILES alignment does not authorize free base or other salts."
+    },
+    {
+      "name": "Bovine_Serum_Albumin",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+        "sha256": "9f72c43eea59fd2b4b9ee18ead27632e27465b68ef56b17e73fdcfe4d773cd20"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C85253",
+        "preferred_term": "bovine serum albumin",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C85253",
+          "ontology_label": "Bovine Serum Albumin",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='bovine serum albumin'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 7,
+          "media_count": 7
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:9048-46-8 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.447453+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.878089+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:42:26.939508+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C85253 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518443+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 1/1 -> 7/7 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.880128+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000522; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9048-46-8",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "supplied_form": [
+          {
+            "name": "Bovine Serum Albumin",
+            "cas_rn": "9048-46-8",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A7030",
+            "form": "lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially globulin free",
+            "notes": "Original CultureBotHT product; supplier page confirms CAS and preparation. Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+          },
+          {
+            "name": "Bovine serum albumin fraction V",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A9647",
+            "notes": "Explicit product in CultureMech:015191 preparation note; preserved from the original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+          },
+          {
+            "name": "BSA solution",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A7409",
+            "form": "solution",
+            "notes": "Alternative product explicitly named in CultureMech:015191; no concentration or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+          }
+        ],
+        "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+        "mim_id": "MIM:0000522",
+        "legacy_identifiers": [
+          "MIM:Bovine_Serum_Albumin",
+          "NCIT:C85253"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+        "sha256": "7ecc32dc73554cc43983799ebe63081b4a50285971ff6b9e8ec65cfc93ffd9b6",
+        "record": {
+          "identifier": "cas:9048-46-8",
+          "preferred_term": "bovine serum albumin",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C85253",
+            "ontology_label": "Bovine Serum Albumin",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='bovine serum albumin'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 7,
+            "media_count": 7
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:9048-46-8 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.447453+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:12.878089+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T04:42:26.939508+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C85253 (label-exact)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.518443+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 1/1 -> 7/7 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9048-46-8",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='bovine serum albumin'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-000590",
+          "candidate_position": 590,
+          "owner": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+          "owner_sha256": "9f72c43eea59fd2b4b9ee18ead27632e27465b68ef56b17e73fdcfe4d773cd20",
+          "before_rows": [
+            {
+              "position": 582,
+              "row": {
+                "subject_id": "MIM:0000522",
+                "subject_label": "bovine serum albumin",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C85253",
+                "object_label": "Bovine Serum Albumin",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=refresh_occurrence_statistics|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0000522",
+            "subject_label": "bovine serum albumin",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C85253",
+            "object_label": "Bovine Serum Albumin",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:9048-46-8",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0000522",
+            "subject_label": "bovine serum albumin",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C85253",
+            "object_label": "Bovine Serum Albumin",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=refresh_occurrence_statistics|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+            "other": "CAS:9048-46-8",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Generic bovine albumin and FDA GENERIC (FAMILY) CAS only. Preserve Sigma A7030, other products/fractions, seven historical recipe memberships and preparation qualifiers; no product or concentration equivalence."
+    },
+    {
+      "name": "Cotarnine_Chloride",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Cotarnine_Chloride.yaml",
+        "sha256": "7c61b3cdc8de21dda0ca29621d43d1c3516ad503c4ec9c38d407cb43b6e5a2b5"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C79997",
+        "preferred_term": "Cotarnine Chloride",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C79997",
+          "ontology_label": "Cotarnine Chloride",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 10018-19-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Cotarnine Chloride'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:10018-19-6 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.899859+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.525898+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:44:01.268435+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C79997 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.883058+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000756; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "10018-19-6",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+        "mim_id": "MIM:0000756",
+        "legacy_identifiers": [
+          "MIM:Cotarnine_Chloride",
+          "NCIT:C79997"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+        "sha256": "09e9f1b848eeee6d7a10e92b38f7b7941b6f3342c4b00f7181b90c4c7c6b2863",
+        "record": {
+          "identifier": "cas:10018-19-6",
+          "preferred_term": "Cotarnine Chloride",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C79997",
+            "ontology_label": "Cotarnine Chloride",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 10018-19-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Cotarnine Chloride'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:10018-19-6 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.899859+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:13.525898+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T04:44:01.268435+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C79997 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "10018-19-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Cotarnine Chloride'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-000836",
+          "candidate_position": 836,
+          "owner": "data/ingredients/mapped/Cotarnine_Chloride.yaml",
+          "owner_sha256": "7c61b3cdc8de21dda0ca29621d43d1c3516ad503c4ec9c38d407cb43b6e5a2b5",
+          "before_rows": [
+            {
+              "position": 823,
+              "row": {
+                "subject_id": "MIM:0000756",
+                "subject_label": "Cotarnine Chloride",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C79997",
+                "object_label": "Cotarnine Chloride",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0000756",
+            "subject_label": "Cotarnine Chloride",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C79997",
+            "object_label": "Cotarnine Chloride",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:10018-19-6",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0000756",
+            "subject_label": "Cotarnine Chloride",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C79997",
+            "object_label": "Cotarnine Chloride",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt. Preserve that salt, not free cotarnine or its isolated cation.",
+            "other": "CAS:10018-19-6",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "One-to-one cotarninium chloride only; not free cotarnine or isolated cation."
+    },
+    {
+      "name": "Locust_Bean_Gum",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Locust_Bean_Gum.yaml",
+        "sha256": "63225b3da85bf3286cdee870339844ffda79375334d423d17e0e006ba85e8f37"
+      },
+      "complete_current_record": {
+        "identifier": "FOODON:03413132",
+        "preferred_term": "Locust bean gum",
+        "ontology_mapping": {
+          "ontology_id": "FOODON:03413132",
+          "ontology_label": "locust bean gum",
+          "ontology_source": "FOODON",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9000-40-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "FOODON via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Locust bean gum'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:9000-40-2 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.538250+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:15.844271+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:51:51.608434+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_FOODON",
+            "changes": "set ontology_mapping parent=FOODON:03413132 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T05:36:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLEANED_PROCESS_SYNONYMS",
+            "changes": "Removed process-only exact synonym \"autoclaved\".",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.886428+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001541; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9000-40-2",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "supplied_form": [
+          {
+            "name": "Locust bean gum",
+            "cas_rn": "9000-40-2",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "G0753",
+            "form": "Ceratonia siliqua seed-derived powder",
+            "notes": "Original CultureBotHT synonym field says 'Locust bean gum; autoclaved'. Autoclaved remains a preparation qualifier, not an exact synonym. Source does not specify clarified gum. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+          }
+        ],
+        "notes": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+        "mim_id": "MIM:0001541",
+        "legacy_identifiers": [
+          "MIM:Locust_Bean_Gum",
+          "FOODON:03413132"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+        "sha256": "f2a0a6b6de77bf5012b7d53c6809b4e44ac89b0e1e5b43202f5ab65673ceeca0",
+        "record": {
+          "identifier": "cas:9000-40-2",
+          "preferred_term": "Locust bean gum",
+          "ontology_mapping": {
+            "ontology_id": "FOODON:03413132",
+            "ontology_label": "locust bean gum",
+            "ontology_source": "FOODON",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 9000-40-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "FOODON via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Locust bean gum'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:9000-40-2 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:34.538250+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:15.844271+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T04:51:51.608434+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_FOODON",
+              "changes": "set ontology_mapping parent=FOODON:03413132 (label-exact)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-11T05:36:00Z",
+              "curator": "mediaingredientmech-agentic-curation",
+              "action": "CLEANED_PROCESS_SYNONYMS",
+              "changes": "Removed process-only exact synonym \"autoclaved\".",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9000-40-2",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "FOODON via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Locust bean gum'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-001742",
+          "candidate_position": 1742,
+          "owner": "data/ingredients/mapped/Locust_Bean_Gum.yaml",
+          "owner_sha256": "63225b3da85bf3286cdee870339844ffda79375334d423d17e0e006ba85e8f37",
+          "before_rows": [
+            {
+              "position": 1727,
+              "row": {
+                "subject_id": "MIM:0001541",
+                "subject_label": "Locust bean gum",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "FOODON:03413132",
+                "object_label": "locust bean gum",
+                "object_source": "obo:foodon.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=mediaingredientmech-agentic-curation|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0001541",
+            "subject_label": "Locust bean gum",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413132",
+            "object_label": "locust bean gum",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:9000-40-2",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0001541",
+            "subject_label": "Locust bean gum",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413132",
+            "object_label": "locust bean gum",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=mediaingredientmech-agentic-curation|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form notes; it is not an exact synonym or evidence for clarified gum.",
+            "other": "CAS:9000-40-2",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Generic Ceratonia seed gum. Supplier and autoclaving remain supplied-form evidence, not clarified-gum or process aliases."
+    },
+    {
+      "name": "Pretomanid",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Pretomanid.yaml",
+        "sha256": "7285d269cc8ef2cc5ea34e7ea530fb38ce0fe0cbc234a5bb1d385eaceb71e2f8"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C166606",
+        "preferred_term": "Pretomanid",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C166606",
+          "ontology_label": "Pretomanid",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 187235-37-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Pretomanid'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:187235-37-6 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.897718+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:54:46.589745+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C14H12F3N3O5; smiles=C1C(COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F; inchi=InChI=1S/C14H12F3N3O5/c15-14(16,17)25-10-3-1-9(2-4",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.890584+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:57:50.643100+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C166606 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.892883+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002118; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "187235-37-6",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z",
+          "molecular_formula": "C14H12F3N3O5",
+          "smiles": "C1[C@@H](COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F)(F)F",
+          "inchi": "InChI=1S/C14H12F3N3O5/c15-14(16,17)25-10-3-1-9(2-4-10)7-23-11-5-19-6-12(20(21)22)18-13(19)24-8-11/h1-4,6,11H,5,7-8H2/t11-/m0/s1",
+          "pubchem_cid": 456199
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "mim_id": "MIM:0002118",
+        "legacy_identifiers": [
+          "MIM:Pretomanid",
+          "NCIT:C166606"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Pretomanid.yaml",
+        "sha256": "8e100fd9d25e0204509097995204a57604d124d99bb72e613376f38733d4cfea",
+        "record": {
+          "identifier": "cas:187235-37-6",
+          "preferred_term": "Pretomanid",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C166606",
+            "ontology_label": "Pretomanid",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 187235-37-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Pretomanid'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:187235-37-6 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:35.897718+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T02:54:46.589745+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+              "changes": "molecular_formula=C14H12F3N3O5; smiles=C1C(COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F; inchi=InChI=1S/C14H12F3N3O5/c15-14(16,17)25-10-3-1-9(2-4",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:17.890584+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T04:57:50.643100+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C166606 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "187235-37-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+            "molecular_formula": "C14H12F3N3O5",
+            "smiles": "C1C(COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F)(F)F",
+            "inchi": "InChI=1S/C14H12F3N3O5/c15-14(16,17)25-10-3-1-9(2-4-10)7-23-11-5-19-6-12(20(21)22)18-13(19)24-8-11/h1-4,6,11H,5,7-8H2/t11-/m0/s1",
+            "pubchem_cid": 456199
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Pretomanid'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-002385",
+          "candidate_position": 2385,
+          "owner": "data/ingredients/mapped/Pretomanid.yaml",
+          "owner_sha256": "7285d269cc8ef2cc5ea34e7ea530fb38ce0fe0cbc234a5bb1d385eaceb71e2f8",
+          "before_rows": [
+            {
+              "position": 2366,
+              "row": {
+                "subject_id": "MIM:0002118",
+                "subject_label": "Pretomanid",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C166606",
+                "object_label": "Pretomanid",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002118",
+            "subject_label": "Pretomanid",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C166606",
+            "object_label": "Pretomanid",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:187235-37-6",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002118",
+            "subject_label": "Pretomanid",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C166606",
+            "object_label": "Pretomanid",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+            "other": "CAS:187235-37-6",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "S identity already specified by original CAS and InChI. Aligning a formerly unstereospecific SMILES does not infer additional forms."
+    },
+    {
+      "name": "Sodium_Adipate",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Sodium_Adipate.yaml",
+        "sha256": "fb6e148dbd7cd55bc01b45bb2a602c5a1e14ddc2b7d5dbf7d0a8d021c660f4bb"
+      },
+      "complete_current_record": {
+        "identifier": "FOODON:03413240",
+        "preferred_term": "Sodium adipate",
+        "ontology_mapping": {
+          "ontology_id": "FOODON:03413240",
+          "ontology_label": "sodium adipate",
+          "ontology_source": "FOODON",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 7486-38-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "FOODON via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Sodium adipate'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:7486-38-6 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.208869+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:55:07.797511+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C6H8Na2O4; smiles=C(CCC(=O)[O-])CC(=O)[O-].[Na+].[Na+]; inchi=InChI=1S/C6H10O4.2Na/c7-5(8)3-1-2-4-6(9)10;;/h1-4H",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.307838+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:00:14.595935+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_FOODON",
+            "changes": "set ontology_mapping parent=FOODON:03413240 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.897994+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002291; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "7486-38-6",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z",
+          "molecular_formula": "C6H8Na2O4",
+          "smiles": "C(CCC(=O)[O-])CC(=O)[O-].[Na+].[Na+]",
+          "inchi": "InChI=1S/C6H10O4.2Na/c7-5(8)3-1-2-4-6(9)10;;/h1-4H2,(H,7,8)(H,9,10);;/q;2*+1/p-2",
+          "pubchem_cid": 24073
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+        "mim_id": "MIM:0002291",
+        "legacy_identifiers": [
+          "MIM:Sodium_Adipate",
+          "FOODON:03413240"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Sodium_Adipate.yaml",
+        "sha256": "0fa341283044d05b8d0e2d990101d3503100e4b7e92d709d3322afd310c99eae",
+        "record": {
+          "identifier": "cas:7486-38-6",
+          "preferred_term": "Sodium adipate",
+          "ontology_mapping": {
+            "ontology_id": "FOODON:03413240",
+            "ontology_label": "sodium adipate",
+            "ontology_source": "FOODON",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 7486-38-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "FOODON via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Sodium adipate'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:7486-38-6 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.208869+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T02:55:07.797511+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+              "changes": "molecular_formula=C6H8Na2O4; smiles=C(CCC(=O)[O-])CC(=O)[O-].[Na+].[Na+]; inchi=InChI=1S/C6H10O4.2Na/c7-5(8)3-1-2-4-6(9)10;;/h1-4H",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.307838+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T05:00:14.595935+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_FOODON",
+              "changes": "set ontology_mapping parent=FOODON:03413240 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "7486-38-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+            "molecular_formula": "C6H8Na2O4",
+            "smiles": "C(CCC(=O)[O-])CC(=O)[O-].[Na+].[Na+]",
+            "inchi": "InChI=1S/C6H10O4.2Na/c7-5(8)3-1-2-4-6(9)10;;/h1-4H2,(H,7,8)(H,9,10);;/q;2*+1/p-2",
+            "pubchem_cid": 24073
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "FOODON via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Sodium adipate'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-002576",
+          "candidate_position": 2576,
+          "owner": "data/ingredients/mapped/Sodium_Adipate.yaml",
+          "owner_sha256": "fb6e148dbd7cd55bc01b45bb2a602c5a1e14ddc2b7d5dbf7d0a8d021c660f4bb",
+          "before_rows": [
+            {
+              "position": 2557,
+              "row": {
+                "subject_id": "MIM:0002291",
+                "subject_label": "Sodium adipate",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "FOODON:03413240",
+                "object_label": "sodium adipate",
+                "object_source": "obo:foodon.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002291",
+            "subject_label": "Sodium adipate",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413240",
+            "object_label": "sodium adipate",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:7486-38-6",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002291",
+            "subject_label": "Sodium adipate",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413240",
+            "object_label": "sodium adipate",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium form or hydrate is inferred.",
+            "other": "CAS:7486-38-6",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Disodium adipate supported by original formula/InChI and INS 356; no monosodium or hydration inference."
+    },
+    {
+      "name": "Sunflower_Oil",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Sunflower_Oil.yaml",
+        "sha256": "f6f58450a7d8a769da9283cbddf6df0de0d0ab58f418baf4e45cd6535afad6ea"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C1241",
+        "preferred_term": "Sunflower oil",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C1241",
+          "ontology_label": "Sunflower Oil",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 8001-21-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Sunflower oil'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:8001-21-6 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.520383+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.719591+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:02:49.001715+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C1241 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.900972+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002432; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "8001-21-6",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+        "mim_id": "MIM:0002432",
+        "legacy_identifiers": [
+          "MIM:Sunflower_Oil",
+          "NCIT:C1241"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Sunflower_Oil.yaml",
+        "sha256": "e6c9fc15fd6db6830947885b77c770a2e0070372aaf71e9d1c9b293b5ae66c35",
+        "record": {
+          "identifier": "cas:8001-21-6",
+          "preferred_term": "Sunflower oil",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C1241",
+            "ontology_label": "Sunflower Oil",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 8001-21-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Sunflower oil'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:8001-21-6 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.520383+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.719591+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T05:02:49.001715+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C1241 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "8001-21-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Sunflower oil'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-002741",
+          "candidate_position": 2741,
+          "owner": "data/ingredients/mapped/Sunflower_Oil.yaml",
+          "owner_sha256": "f6f58450a7d8a769da9283cbddf6df0de0d0ab58f418baf4e45cd6535afad6ea",
+          "before_rows": [
+            {
+              "position": 2722,
+              "row": {
+                "subject_id": "MIM:0002432",
+                "subject_label": "Sunflower oil",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C1241",
+                "object_label": "Sunflower Oil",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002432",
+            "subject_label": "Sunflower oil",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C1241",
+            "object_label": "Sunflower Oil",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:8001-21-6",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002432",
+            "subject_label": "Sunflower oil",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C1241",
+            "object_label": "Sunflower Oil",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original generic name/CAS agrees with NCIT and FDA 3W1JG795YI for sunflower seed oil. The source has no processing/grade qualifier; no hydrogenated, refined or high-oleic preparation is inferred.",
+            "other": "CAS:8001-21-6",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Generic sunflower seed oil; no processing, grade, hydrogenation or high-oleic assertion."
+    },
+    {
+      "name": "Sutezolid",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Sutezolid.yaml",
+        "sha256": "3480f4dc33bb5a4d72698ac8a5c71aac585031f2d008b751be975502c3286484"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C152482",
+        "preferred_term": "Sutezolid",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C152482",
+          "ontology_label": "Sutezolid",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 168828-58-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Sutezolid'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:168828-58-8 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.526824+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:55:37.963209+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C16H20FN3O3S; smiles=CC(=O)NCC1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F; inchi=InChI=1S/C16H20FN3O3S/c1-11(21)18-9-13-10-20(16(22",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.727897+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:02:54.728131+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C152482 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.904526+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002435; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "168828-58-8",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z",
+          "molecular_formula": "C16H20FN3O3S",
+          "smiles": "CC(=O)NC[C@H]1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F",
+          "inchi": "InChI=1S/C16H20FN3O3S/c1-11(21)18-9-13-10-20(16(22)23-13)12-2-3-15(14(17)8-12)19-4-6-24-7-5-19/h2-3,8,13H,4-7,9-10H2,1H3,(H,18,21)/t13-/m0/s1",
+          "pubchem_cid": 465951
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+        "mim_id": "MIM:0002435",
+        "legacy_identifiers": [
+          "MIM:Sutezolid",
+          "NCIT:C152482"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Sutezolid.yaml",
+        "sha256": "e4a2b4acd3df4c427cdd0f2be88d93c9ec2cea249f0cc86ae34a7c176a880ef4",
+        "record": {
+          "identifier": "cas:168828-58-8",
+          "preferred_term": "Sutezolid",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C152482",
+            "ontology_label": "Sutezolid",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 168828-58-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Sutezolid'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:168828-58-8 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.526824+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T02:55:37.963209+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+              "changes": "molecular_formula=C16H20FN3O3S; smiles=CC(=O)NCC1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F; inchi=InChI=1S/C16H20FN3O3S/c1-11(21)18-9-13-10-20(16(22",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.727897+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T05:02:54.728131+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C152482 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "168828-58-8",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+            "molecular_formula": "C16H20FN3O3S",
+            "smiles": "CC(=O)NCC1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F",
+            "inchi": "InChI=1S/C16H20FN3O3S/c1-11(21)18-9-13-10-20(16(22)23-13)12-2-3-15(14(17)8-12)19-4-6-24-7-5-19/h2-3,8,13H,4-7,9-10H2,1H3,(H,18,21)/t13-/m0/s1",
+            "pubchem_cid": 465951
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Sutezolid'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-002745",
+          "candidate_position": 2745,
+          "owner": "data/ingredients/mapped/Sutezolid.yaml",
+          "owner_sha256": "3480f4dc33bb5a4d72698ac8a5c71aac585031f2d008b751be975502c3286484",
+          "before_rows": [
+            {
+              "position": 2726,
+              "row": {
+                "subject_id": "MIM:0002435",
+                "subject_label": "Sutezolid",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C152482",
+                "object_label": "Sutezolid",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002435",
+            "subject_label": "Sutezolid",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C152482",
+            "object_label": "Sutezolid",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:168828-58-8",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002435",
+            "subject_label": "Sutezolid",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C152482",
+            "object_label": "Sutezolid",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.",
+            "other": "CAS:168828-58-8",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "S identity already specified by original CAS and InChI; no additional stereoisomer approval."
+    },
+    {
+      "name": "Tara_Gum",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Tara_Gum.yaml",
+        "sha256": "84c038b701e48477e7eb6093d5e01eb76bf49aa0c395424cf370b25c9ff51a8b"
+      },
+      "complete_current_record": {
+        "identifier": "FOODON:03413299",
+        "preferred_term": "Tara gum",
+        "ontology_mapping": {
+          "ontology_id": "FOODON:03413299",
+          "ontology_label": "tara gum",
+          "ontology_source": "FOODON",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 39300-88-4 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "FOODON via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Tara gum'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:39300-88-4 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.544830+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.753127+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:03:10.512464+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_FOODON",
+            "changes": "set ontology_mapping parent=FOODON:03413299 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.907686+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002451; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "39300-88-4",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "supplied_form": [
+          {
+            "name": "Tara gum",
+            "cas_rn": "39300-88-4",
+            "supplier": "Biosynth",
+            "catalog_number": "YT58656",
+            "notes": "Original CultureBotHT catalog reference confirmed by supplier. No particular viscosity grade is assigned. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+          }
+        ],
+        "notes": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+        "mim_id": "MIM:0002451",
+        "legacy_identifiers": [
+          "MIM:Tara_Gum",
+          "FOODON:03413299"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Tara_Gum.yaml",
+        "sha256": "9750394387dd61246cfc6b32e8ab77225cdb3d2c200fb2fcb997da452893daab",
+        "record": {
+          "identifier": "cas:39300-88-4",
+          "preferred_term": "Tara gum",
+          "ontology_mapping": {
+            "ontology_id": "FOODON:03413299",
+            "ontology_label": "tara gum",
+            "ontology_source": "FOODON",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 39300-88-4 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "FOODON via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Tara gum'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:39300-88-4 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.544830+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.753127+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T05:03:10.512464+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_FOODON",
+              "changes": "set ontology_mapping parent=FOODON:03413299 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "39300-88-4",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "FOODON via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Tara gum'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-002763",
+          "candidate_position": 2763,
+          "owner": "data/ingredients/mapped/Tara_Gum.yaml",
+          "owner_sha256": "84c038b701e48477e7eb6093d5e01eb76bf49aa0c395424cf370b25c9ff51a8b",
+          "before_rows": [
+            {
+              "position": 2744,
+              "row": {
+                "subject_id": "MIM:0002451",
+                "subject_label": "Tara gum",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "FOODON:03413299",
+                "object_label": "tara gum",
+                "object_source": "obo:foodon.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002451",
+            "subject_label": "Tara gum",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413299",
+            "object_label": "tara gum",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:39300-88-4",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002451",
+            "subject_label": "Tara gum",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "FOODON:03413299",
+            "object_label": "tara gum",
+            "object_source": "obo:foodon.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.",
+            "other": "CAS:39300-88-4",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Tara seed-endosperm gum with source product provenance; no viscosity-grade inference."
+    },
+    {
+      "name": "Zymosan",
+      "current_owner": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/data/ingredients/mapped/Zymosan.yaml",
+        "sha256": "86c56fd3cbe13b7f5ae15fd502547b647fea24780194e5bdd818e8e1e86c32f6"
+      },
+      "complete_current_record": {
+        "identifier": "NCIT:C183132",
+        "preferred_term": "Zymosan",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C183132",
+          "ontology_label": "Zymosan",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9010-72-4 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Zymosan'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:9010-72-4 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.973491+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:19.351100+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:05:19.276665+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C183132 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.910608+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002676; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9010-72-4",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+        "mim_id": "MIM:0002676",
+        "legacy_identifiers": [
+          "MIM:Zymosan",
+          "NCIT:C183132"
+        ]
+      },
+      "captured_before_record": {
+        "path": "data/ingredients/mapped/Zymosan.yaml",
+        "sha256": "efaae694249ba096f2a57452d068add076b83b30fde6b9f6a40aacaf3bdcd7de",
+        "record": {
+          "identifier": "cas:9010-72-4",
+          "preferred_term": "Zymosan",
+          "ontology_mapping": {
+            "ontology_id": "NCIT:C183132",
+            "ontology_label": "Zymosan",
+            "ontology_source": "NCIT",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 9010-72-4 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "NCIT via OLS (label-exact)",
+                "notes": "Parent class identified via label-exact; matched_via='Zymosan'"
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:9010-72-4 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.973491+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:19.351100+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T05:05:19.276665+00:00",
+              "curator": "backfill_parent_terms",
+              "action": "BACKFILL_PARENT_NCIT",
+              "changes": "set ontology_mapping parent=NCIT:C183132 (label-exact)",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9010-72-4",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      "recorded_original_route": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "NCIT via OLS (label-exact)",
+          "notes": "Parent class identified via label-exact; matched_via='Zymosan'"
+        }
+      ],
+      "complete_selection_entries": [
+        {
+          "entry_id": "row-003011",
+          "candidate_position": 3011,
+          "owner": "data/ingredients/mapped/Zymosan.yaml",
+          "owner_sha256": "86c56fd3cbe13b7f5ae15fd502547b647fea24780194e5bdd818e8e1e86c32f6",
+          "before_rows": [
+            {
+              "position": 2992,
+              "row": {
+                "subject_id": "MIM:0002676",
+                "subject_label": "Zymosan",
+                "predicate_id": "skos:exactMatch",
+                "object_id": "NCIT:C183132",
+                "object_label": "Zymosan",
+                "object_source": "obo:ncit.owl",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+                "mapping_date": "2026-09-24",
+                "confidence": "0.99",
+                "comment": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+                "other": "",
+                "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+              }
+            }
+          ],
+          "candidate_row": {
+            "subject_id": "MIM:0002676",
+            "subject_label": "Zymosan",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C183132",
+            "object_label": "Zymosan",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "CAS:9010-72-4",
+            "validation_method": ""
+          },
+          "proposed_row": {
+            "subject_id": "MIM:0002676",
+            "subject_label": "Zymosan",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "NCIT:C183132",
+            "object_label": "Zymosan",
+            "object_source": "obo:ncit.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan preparation. This does not equate arbitrary purified beta-glucan or a single molecule with zymosan.",
+            "other": "CAS:9010-72-4",
+            "validation_method": ""
+          },
+          "disposition": null,
+          "reason": null
+        }
+      ],
+      "disposition": "NO_ADDITIONAL_MANDATORY_MANUAL_SOURCE_FIX_ESTABLISHED",
+      "rationale": "The recorded OLS primary-label resolution is an explicit historical method assertion separate from a CultureMech DIRECT_MATCH default. Target, primary ontology label and original source CAS remain unchanged. The subsequent review confirms material/form scope without establishing a different ontology target or replacing the original source registry identity. Boilerplate superseded-grounding wording alone is insufficient to prove that the original route must be replaced by MANUAL_CURATION. This is a bounded method assessment, not full-row support or a claim that lexical agreement alone proves chemistry.",
+      "preserved_scope_and_holds": "Named yeast-cell-wall preparation, not arbitrary beta-glucan or one molecular entity."
+    }
+  ],
+  "primary_packet_pins": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json",
+      "sha256": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json",
+      "sha256": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json",
+      "sha256": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json",
+      "sha256": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json",
+      "sha256": "91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7"
+    }
+  ],
+  "live_prior_decision_reads": [
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/CultureBotAI/MediaIngredientMech/issues/comments/5384919367"
+      ],
+      "exit_status": 0,
+      "response": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-method-supplement-v2/issue-317-comment-5384919367.json",
+        "sha256": "a690f5f4b7dc93c32d53bb0c51a7696d9c213602866b6ade1b54e9aec096c1fb"
+      },
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/317#issuecomment-5384919367",
+      "created_at": "2026-08-23T07:50:27Z",
+      "updated_at": "2026-08-23T07:50:27Z"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/CultureBotAI/MediaIngredientMech/issues/comments/5383754233"
+      ],
+      "exit_status": 0,
+      "response": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-method-supplement-v2/issue-317-comment-5383754233.json",
+        "sha256": "805fad2fc069add59e2b390f63736c7927df3516cf885b02dfdb54eda2ed1464"
+      },
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/317#issuecomment-5383754233",
+      "created_at": "2026-08-23T02:15:08Z",
+      "updated_at": "2026-08-23T02:15:08Z"
+    }
+  ],
+  "nta_qualification": {
+    "disposition": "METHOD_UNRESOLVED_NOT_MANDATORY_MANUAL_NOT_PROVEN_LEXICAL",
+    "preserved_erratum": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-current-scrutiny-v2/nta-method-finding-erratum.json",
+      "sha256": "c187cc77961f2bff96d87751351ca99050f17c5ad8067556cfcfbcbbb40e1ee7"
+    },
+    "preserved_original": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-current-scrutiny-v2/nta-premerge-original-owner-9b77fb6e.yaml",
+      "sha256": "1459133180470fe082e8d3be03c885a6aa09cd974aa79e5c0182b39a3ce4994c"
+    },
+    "conclusion": "The original pre-merge blob proves the same CHEBI:132766 grounding existed before the later CAS addition, defeating the prior mandatory-manual inference. It does not prove a genuine primary-label route: #317 records that CultureMech DIRECT_MATCH was a default assumption translated to EXACT_MATCH at import. I have no verified pre-aggregate matching-route evidence. Preserve current identity evidence and all stock/source holds; do not promote inherited grade into fresh lexical-method support."
+  },
+  "guardrails": "No owner/source edits, native phases, tests, provider research, Git/PR mutations or scientific approvals were performed. The two older findings stay byte-identical. All changed bytes need fresh review after the root-owned correction; all five mandatory CAS holds and both complete historical obligations remain."
+}

@@ -1,0 +1,91 @@
+"""Bounded exact-delta checks and native row diagnostics; never source-apply."""
+from pathlib import Path
+import copy, datetime, hashlib, importlib.util, io, json, os, subprocess, sys, tarfile
+D=Path(__file__).absolute().parent;C=D.parents[1];M=C.parents[1];J=C/'integration/curation-worktree';A=C/'integration/ancillary1258-worktree';CLAW=M/'.temp/kgm-unmapped-20261107/claw'
+sys.path.insert(0,str(J/'src'))
+import yaml
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,ValidationFailedError,validate_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(p,v):
+ with p.open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(A),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+def exact_delta(before,after):
+ assert after['ontology_mapping']['mapping_quality']=='MANUAL_CURATION'
+ assert len(after['ontology_mapping']['evidence'])==len(before['ontology_mapping']['evidence'])+1
+ assert len(after['curation_history'])==len(before['curation_history'])+1
+ assert after['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION'
+ assert after['curation_history'][-1]['llm_assisted'] is True
+ assert after['curation_history'][-1]['curator']=='Codex /root/step7d_science_c'
+ clone=copy.deepcopy(after);clone['ontology_mapping']['mapping_quality']='EXACT_MATCH';clone['ontology_mapping']['evidence'].pop();clone['curation_history'].pop();assert clone==before
+K=D/'controls';K.mkdir(exist_ok=False);controls=[]
+def refuses(name,func):
+ try:func()
+ except (AssertionError,ValueError,OSError,ValidationFailedError) as e:controls.append({'name':name,'status':'expected_refusal','exception':type(e).__name__,'detail':str(e)});return
+ raise AssertionError(name+' unexpectedly accepted')
+s=json.loads((D/'SELECTOR.json').read_text());old={};new={}
+for g in s['groups']:
+ path=g['source_record'];name=Path(path).name;raw=(D/g['payload']['path']).read_bytes();assert sha(raw)==g['payload']['sha256']
+ old[path]=yaml.safe_load((D/'inputs/before'/name).read_bytes());new[path]=yaml.safe_load(raw);exact_delta(old[path],new[path]);assert not validate_ingredient(new[path])
+ rt=K/name;write_validated_ingredient(new[path],rt);assert rt.read_bytes()==raw
+ controls.append({'name':name+' exact closed-schema/native-serialization/delta','status':'PASS'})
+ exemplar=copy.deepcopy(new[path]);exemplar['ontology_mapping']['evidence'][0]['evidence_type']='MANUAL_CURATION'
+ refuses(name+' prior evidence rewrite',lambda b=old[path],a=exemplar:exact_delta(b,a))
+ exemplar=copy.deepcopy(new[path]);exemplar['identifier']='CHEBI:9999999'
+ refuses(name+' unrelated identity change',lambda b=old[path],a=exemplar:exact_delta(b,a))
+ exemplar=copy.deepcopy(new[path]);exemplar['curation_history'][0]['curator']='invented-human'
+ refuses(name+' historical authorship rewrite',lambda b=old[path],a=exemplar:exact_delta(b,a))
+bad=copy.deepcopy(next(iter(new.values())));bad['ontology_mapping']['mapping_quality']='INVENTED'
+refuses('invalid native mapping grade',lambda:write_validated_ingredient(bad,K/'invalid-enum.yaml'));assert not (K/'invalid-enum.yaml').exists()
+bad=copy.deepcopy(next(iter(new.values())));bad['invented_approval']=True
+refuses('closed schema approval field',lambda:write_validated_ingredient(bad,K/'invalid-field.yaml'));assert not (K/'invalid-field.yaml').exists()
+occupied=K/'occupied';occupied.write_bytes(b'original');refuses('exclusive native publication',lambda:publish_new_files([(occupied,b'replace')],lambda:None));assert occupied.read_bytes()==b'original'
+
+# Read the authentic immutable baseline, never the cancelled partially written B.
+tarbytes=git('archive',s['baseline_commit'],'data/ingredients');records={};inventory=[]
+with tarfile.open(fileobj=io.BytesIO(tarbytes)) as tar:
+ for member in tar.getmembers():
+  if not member.isfile() or not member.name.endswith('.yaml'):continue
+  raw=tar.extractfile(member).read();records[member.name]=yaml.safe_load(raw);inventory.append({'path':member.name,'sha256':sha(raw)})
+assert len(records)==2956
+before=copy.deepcopy(records);after=copy.deepcopy(records)
+before.update(old);after.update(new)
+assert len(before)==len(after)
+assert list(validate_component_partonomy(before.values()))==list(validate_component_partonomy(after.values()))==[]
+controls.append({'name':'whole baseline-plus-three partonomy unchanged','status':'PASS','owner_count':len(after)})
+
+KG=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107')
+os.environ.update({'KGMICROBE_ROOT':str(KG),'MEDIAINGREDIENTMECH_ROOT':str(A),'OPENCLAW_WORKSPACE':str(D/'diagnostic-workspace')})
+kgpath=KG/'mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz';kg=FrozenFile.capture(kgpath);assert sha(kg.content)=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+producer=CLAW/'scripts/build_mim_ingredient_sssom.py';assert sha(producer.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+spec=importlib.util.spec_from_file_location('method_successor_native_rows',producer);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;exec(compile(producer.read_bytes(),str(producer),'exec'),native.__dict__)
+kg_sources=native.load_kgm_source_index(kgpath);kg_labels=native.load_kgm_labels(kgpath)
+# These are the cached official labels already verified in the scientific triage.
+labels={v['ontology_mapping']['ontology_id']:v['ontology_mapping']['ontology_label'] for v in new.values()}
+owner_before=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in before.items() if '/mapped/' in p})
+owner_after=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in after.items() if '/mapped/' in p})
+assert owner_before==owner_after
+results=[]
+for g in s['groups']:
+ p=g['source_record'];ob=[];nb=[]
+ oldrows=native._row_from_yaml(A/p,{},kg_sources,kg_labels,labels,record=old[p],owners=owner_before,suppressions=ob)
+ newrows=native._row_from_yaml(A/p,{},kg_sources,kg_labels,labels,record=new[p],owners=owner_after,suppressions=nb)
+ assert len(oldrows)==len(newrows)==1
+ x,y=oldrows[0],newrows[0];diff={k:{'before':x.get(k),'after':y.get(k)} for k in set(x)|set(y) if x.get(k)!=y.get(k)}
+ assert set(diff)<={'mapping_justification','confidence','source','mapping_date'}
+ assert x['mapping_justification']=='semapv:LexicalMatching' and y['mapping_justification']=='semapv:ManualMappingCuration'
+ assert x['confidence']=='0.99' and y['confidence']=='0.9'
+ assert x['predicate_id']==y['predicate_id']=='skos:exactMatch' and y['object_id']==new[p]['identifier']
+ assert x['other']==y['other'] and x['comment']==y['comment']
+ assert ob==nb
+ results.append({'operation_id':g['operation_id'],'before':x,'after':y,'changed_cells':diff,'all_other_cells_exact':True,'suppression_before':[vars(z) for z in ob],'suppression_after':[vars(z) for z in nb]})
+ controls.append({'name':Path(p).name+' native complete-row differential','status':'PASS','changed_columns':sorted(diff)})
+native._check_producer_bindings();kg.verify()
+for item in json.loads((D/'INPUT-RECHECK.json').read_text())['inputs']:
+ assert sha(Path(item['path']).read_bytes())==item['sha256'],item['path']
+save(D/'baseline-inventory.json',inventory)
+save(D/'native-row-diagnostic.json',{'scope':'Pinned native per-owner projection with full authentic A842 catalog plus exactly these three planned records and actual read-only KG gzip. Cached verified official labels, no provider calls, no residual override or prior-stamp application. This is not a full corrected campaign generation, canonical publication or export approval.','baseline':s['baseline_commit'],'kg_input':{'path':str(kgpath),'sha256':sha(kg.content)},'producer':{'path':str(producer),'sha256':sha(producer.read_bytes())},'producer_graph':{str(p):sha(b) for p,b in native._IMPORTED_PRODUCER_BYTES.items()},'rows':results,'record_context_count':len(after),'unchanged_alias_owner_index':True,'cached_labels':labels})
+save(D/'verification.json',{'status':'PASS_WITH_LIMITATIONS','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'controls':controls,'candidate_count':len(new),'origin_count':sum(len(g['origins']) for g in s['groups']),'case_count':len({cid for g in s['groups'] for o in g['origins'] for cid in o['case_hashes']}),'source_inputs_unchanged':True,'no_partial_B_reads':True,'independent_review':False,'full_campaign_generation':False,'application_authorized':False,'original_attempt':'compose.py refused at native publication because its private candidate parent directory did not exist. No candidate was published. Original script/log/render remain; compose-v2 creates the parent and reuses only byte-identical frozen inputs.'})
+print(json.dumps({'status':'PASS_WITH_LIMITATIONS','controls':len(controls),'native_rows':len(results),'verification_sha256':sha((D/'verification.json').read_bytes())}))

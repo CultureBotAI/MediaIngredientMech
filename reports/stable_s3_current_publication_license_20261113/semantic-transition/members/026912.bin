@@ -1,0 +1,55 @@
+identifier: UNMAPPED_0229
+preferred_term: Calprotectin S1
+synonyms:
+- synonym_text: Calprotectin S1
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:12:15Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_BIOLOGICAL_REAGENT
+  changes: Classified as a single biological reagent term and left unmapped because
+    no exact local ontology identity for the Calprotectin S1 form was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Calprotectin_S1-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **ambiguous biological-reagent
+    label**, not a single chemical. The retrieved literature does not establish **“Calprotectin
+    S1”** as the accepted name of an independently defined protein, salt, formulation,
+    or commercial product. In structural calprotectin literature, **S1 means transition-metal-binding
+    site 1**, a His₃Asp site at the interface of S100A8 and S100A No ontology CURIE
+    was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002739; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a specific
+  calprotectin reagent/form; not identity-mapped to a generic protein family.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002739
+legacy_identifiers:
+- MIM:Calprotectin_S1
+- UNMAPPED_0229

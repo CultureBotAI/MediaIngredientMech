@@ -1,0 +1,52 @@
+identifier: UNMAPPED_0122
+preferred_term: Glycerol-asparagine agar
+synonyms:
+- synonym_text: Glycerol-asparagine agar
+  synonym_type: RAW_TEXT
+  source: extracted_from_agar_yaml
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'Glycerol-asparagine agar' is a complete media
+    formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator
+    re-mapping (likely FOODON complex medium, or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named glycerol-asparagine agar medium/formulation and left
+    unmapped pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Glycerol-asparagine_Agar-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ### Recommended synonyms — - `ISP medium 5` — supported
+    synonym. CURIEs discussed: CHEBI:2509. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002805; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
+  a named medium/formulation, not agar identity.
+ingredient_type: NAMED_MEDIUM
+mim_id: MIM:0002805
+legacy_identifiers:
+- MIM:Glycerol-asparagine_Agar
+- UNMAPPED_0122

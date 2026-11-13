@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-12T16:22:40.076843+00:00",
+  "decision": "BLOCKED_ATTRIBUTION_FINDING",
+  "head": "d6053822669d38d3b5dced6173a811948ec5c900",
+  "endpoint": {
+    "path": ".temp/cumulative-source-successor-endpoint-s2-v1/ENDPOINT.json",
+    "sha256": "9a13860b0e740f7c966764f36ccad773d77f4e850d13b899325abb24892d567b"
+  },
+  "proposal": {
+    "path": ".temp/stable-registry-retirement1189-proposal-s2-v1/PROPOSAL.json",
+    "sha256": "85ccbbac7a318ff3b0f0fc099e4fb7e72ba749ee752fdab7edf83439b33e57cb"
+  },
+  "reviewer": {
+    "identity": "Codex /root/source_successor_prepared_technical_review",
+    "independence": "independent",
+    "independence_basis": "Separate from the original proposal author, copy-procedure author and executing coordinator; inspected exact completed bytes and native receipt pins without editing them."
+  },
+  "scope": "Actual exact-copy and provenance binding only; no new scientific/canonical retirement approval.",
+  "copy_execution": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-endpoint-stock-copy-execution-v1/RESULT.json",
+    "sha256": "abb1053466597c403ba489f0b624018370674b08e3e2e17ff3521a33de4d8492"
+  },
+  "checks": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-stock-copy-independent-v1/COPY-CHECKS.json",
+    "sha256": "f18774d5f1b47b3eb2a37b975825e652706a0ce80e939251f6fae91e925c3749"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "low",
+      "blocking_for_this_exact_copy_acceptance": true,
+      "category": "incorrect_execution_provenance",
+      "title": "S2 stock-copy provenance names the procedure author as the executing copier",
+      "observed": {
+        "helper": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/prepare_s2_endpoint_stock_copy_v1.py",
+          "sha256": "350fb7dc703104a114e50c4762f47ce6c74c15ee72a52799a13c51c34ebc075d"
+        },
+        "helper_line": 184,
+        "provenance": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target/.temp/stable-registry-retirement1189-proposal-s2-v1/S2-COPY-PROVENANCE.json",
+          "sha256": "de11726aaf1dfe2bcec617b5baabb13767bb89187fbe0e99d54945b45ed34738"
+        },
+        "field": "copier",
+        "value": "Codex /root/actual_candidate_science_primary"
+      },
+      "operator_confirmation": {
+        "source": "Parent /root task message in this review turn",
+        "actual_executing_operator": "/root",
+        "procedure_author": "/root/actual_candidate_science_primary",
+        "statement": "Actual executing operator was /root: I invoked prepare_s2_endpoint_stock_copy_v1.py directly via my own exec_command; the primary agent authored the prepared copy procedure but did not execute this copy."
+      },
+      "impact": "The unpublished proposal hash-binds a false actor attribution. Source, endpoint, owner, row, original evidence and held/diagnostic scope remain intact; generation has not been approved by this audit.",
+      "recommendation": "Preserve v1 and create a fresh immutable successor provenance/proposal package separating actual /root executing operator, primary procedure author, and historical original proposal author. Retain all original evidence bytes and stock payload, reuse the completed endpoint, and update only exact successor references/hashes in the private consumer after review. No source application/verification rerun is warranted solely for this metadata correction.",
+      "issue_status": "Parent owns deduplicated issue filing before repair; no issue link invented."
+    }
+  ],
+  "unresolved_findings": [
+    "F1"
+  ],
+  "finding_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-stock-copy-independent-v1/FINDING.json",
+    "sha256": "2d1c0f909cc347c585f16665612f936b84ea2e1f0dfd11cbb72c362b6cbb35de"
+  },
+  "scientific_approval_added": false,
+  "native_phase_invoked": false,
+  "tests_run": false,
+  "source_or_Git_mutation": false,
+  "network_used": false,
+  "audit_script": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-stock-copy-independent-v1/audit.py",
+    "sha256": "c8622472dd07772d0d762e554cac4ebac02f4a45fc9f9fff861413695e4fdac1"
+  }
+}

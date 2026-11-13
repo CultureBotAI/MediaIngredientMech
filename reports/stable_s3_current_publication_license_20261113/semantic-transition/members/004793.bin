@@ -1,0 +1,85 @@
+id: CultureMech:010075
+name: modified_gam_agar
+original_name: Modified GAM Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: GAM agar, modified (Nissui)
+  concentration:
+    value: '56.7'
+    unit: G_PER_L
+  source: JCM Medium 655
+  notes: JCM Medium 655 lists 56.7 g GAM agar, modified (Nissui).
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: JCM Medium 655
+  notes: JCM Medium 655 lists 1.0 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M671
+  term:
+    id: TOGO:M671
+    label: Modified GAM Agar
+notes: 'TOGO M671 mirrors JCM Medium 655: 56.7 g GAM agar, modified (Nissui), in 1.0
+  L distilled water.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:55.505312Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M671'
+- timestamp: '2026-01-28T19:48:21.664929Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:11.136971Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:010075'
+- timestamp: '2026-03-17T06:30:11.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:30.062692+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Modified GAM Agar" to "modified_gam_agar" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:43.448847+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_jcm_parent_wrappers_score20.py
+  action: RESOLVED_JCM_PARENT_WRAPPER_SCORE20
+  source: https://togomedium.org/medium/M671; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=655
+  notes: 'TOGO M671 mirrors JCM Medium 655: 56.7 g GAM agar, modified (Nissui), in
+    1.0 L distilled water.'
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend 56.7 g GAM agar, modified (Nissui), in 1.0 L distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M671
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=655

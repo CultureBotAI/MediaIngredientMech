@@ -1,0 +1,74 @@
+identifier: cas:30462-35-2
+preferred_term: Theaflavin Digallate
+ontology_mapping:
+  ontology_id: CHEBI:185495
+  ontology_label: 2-{1-[5,7-dihydroxy-3-(3,4,5-trihydroxybenzoyloxy)-3,4-dihydro-2H-1-benzopyran-2-yl]-3,4,6-trihydroxy-5-oxo-5H-benzo[7]annulen-8-yl}-5,7-dihydroxy-3,4-dihydro-2H-1-benzopyran-3-yl
+    3,4,5-trihydroxybenzoate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 30462-35-2 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 135536164'
+synonyms:
+- synonym_text: '[2-[1-[5,7-dihydroxy-3-(3,4,5-trihydroxybenzoyl)oxy-3,4-dihydro-2H-chromen-2-yl]-3,4,5-trihydroxy-6-oxobenzo[7]annulen-8-yl]-5,7-dihydroxy-3,4-dihydro-2H-chromen-3-yl]
+    3,4,5-trihydroxybenzoate'
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:30462-35-2 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.584940+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:45.322467+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C43H32O20; smiles=C1C(C(OC2=CC(=CC(=C21)O)O)C3=CC4=C(C(=C(C=C4C5C(CC;
+    inchi=InChI=1S/C43H32O20/c44-17-7-23(46)21-12-33(62-42(5
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.807736+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:03:45.169848+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:185495 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002484; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 30462-35-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C43H32O20
+  smiles: C1C(C(OC2=CC(=CC(=C21)O)O)C3=CC4=C(C(=C(C=C4C5C(CC6=C(C=C(C=C6O5)O)O)OC(=O)C7=CC(=C(C(=C7)O)O)O)O)O)C(=O)C(=C3)O)OC(=O)C8=CC(=C(C(=C8)O)O)O
+  inchi: InChI=1S/C43H32O20/c44-17-7-23(46)21-12-33(62-42(58)15-3-25(48)36(54)26(49)4-15)40(60-31(21)9-17)14-1-19-20(11-30(53)39(57)35(19)38(56)29(52)2-14)41-34(13-22-24(47)8-18(45)10-32(22)61-41)63-43(59)16-5-27(50)37(55)28(51)6-16/h1-11,33-34,40-41,44-51,53-55,57H,12-13H2,(H,52,56)
+  pubchem_cid: 135536164
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002484
+legacy_identifiers:
+- MIM:Theaflavin_Digallate
+- cas:30462-35-2

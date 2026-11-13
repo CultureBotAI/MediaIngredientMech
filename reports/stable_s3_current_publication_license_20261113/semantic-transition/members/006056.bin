@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-08T11:55:07.089717Z",
+  "status": "PASS_NATIVE_REVIEW_PAIR",
+  "review_id": "20261108T115505Z-crosswalk-v5-independent-technical-final",
+  "candidate_verdict": "pass_with_limitations",
+  "scientific_review": false,
+  "inputs": 379,
+  "evidence": 21,
+  "yaml_sha256": "b3472d896362fb27530b63c7b87434c975aaf0e5ce69dc96f83f28565a82db8b",
+  "markdown_sha256": "79841495e95486bd2408d71db9af39148bfe10a6eb2109914f5c475a2aed7994",
+  "previous_pair_yaml_sha256": "e9cfe77534027fa40c0c25721cc6bf222ffccb0fc31fd329e8d631dd6ac98f04",
+  "changed_top_level_fields": [
+    "review_id",
+    "finished_at",
+    "related_reviews",
+    "limitations"
+  ],
+  "exact_unchanged_fields": [
+    "source",
+    "targets",
+    "evidence",
+    "checks",
+    "assessments",
+    "findings",
+    "verdict",
+    "completion"
+  ],
+  "reason": "Final skeptical assembly caught ambiguous inherited this-reviewer wording; explicit per-agent execution attribution replaces it, with no technical result change.",
+  "negative_controls": [
+    {
+      "label": "resolved_without_previous",
+      "refused": true,
+      "error": "ReviewError: closed dispositions require an explicit previous finding"
+    },
+    {
+      "label": "passing_open_major",
+      "refused": true,
+      "error": "ReviewError: a passing verdict cannot conceal unresolved major/blocker findings or failed required checks"
+    },
+    {
+      "label": "stale_bound_input",
+      "refused": true,
+      "error": "ReviewError: reviewed input changed: .temp/crosswalk-v5-independent-v1/REPORT.md"
+    }
+  ],
+  "canonical_saver_or_registration": false
+}

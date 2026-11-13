@@ -1,0 +1,290 @@
+id: CultureMech:004981
+name: vr_salts_b
+original_name: VR salts B
+category: bacterial
+record_kind: SOLUTION
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+notes: Rogosa 1969 defines VR salts solution B as a one-liter stock made from magnesium,
+  calcium, iron, zinc, manganese, cobalt, vanadium, molybdate, and copper salts, HCl,
+  nitrilotriacetic acid, distilled water, and 10 N NaOH to dissolve the NTA. KOMODO
+  imported only the NaOH pH-buffer note for this submedium.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve the magnesium, calcium, iron, zinc, manganese, cobalt, vanadium,
+    molybdate, and copper salts in about 700 ml water by applying heat and adding
+    2 ml HCl.
+- step_number: 2
+  action: ADJUST_PH
+  description: Separately add nitrilotriacetic acid to 300 ml distilled water with
+    stirring and add 10 N NaOH until the pH tends to stabilize at 7.0 to 7.4 and the
+    NTA dissolves.
+- step_number: 3
+  action: MIX
+  description: Slowly add the NTA solution to the stirred mixed-salts solution until
+    the stock becomes fairly clear.
+- step_number: 4
+  action: MIX
+  description: Adjust the volume of VR salts solution B to 1 liter.
+- step_number: 5
+  action: FILTER
+  description: Filter VR salts solution B through paper.
+- step_number: 6
+  action: STORE
+  description: Refrigerate the filtered VR salts solution B stock.
+media_term:
+  preferred_term: KOMODO Medium 3133
+  term:
+    id: komodo.medium:3133
+    label: VR salts B
+ingredients:
+- preferred_term: MgSO4 x 7 H2O
+  concentration:
+    value: '24.0'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 24.0 g/L MgSO4 x 7 H2O.
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: CaCl2 x 2 H2O
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.5 g/L CaCl2 x 2 H2O.
+  term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+- preferred_term: FeSO4 x 7 H2O
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.5 g/L FeSO4 x 7 H2O.
+  term:
+    id: CHEBI:75836
+    label: iron(2+) sulfate heptahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:75836
+    label: iron(2+) sulfate heptahydrate
+- preferred_term: ZnSO4
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists anhydrous ZnSO4 at 0.25 g/L.
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: MnSO4 x H2O
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.25 g/L MnSO4 x H2O.
+  term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+- preferred_term: CoCl2 x 6 H2O
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.25 g/L CoCl2 x 6 H2O and allows Co(C2H3O2)2
+    x 4 H2O as an alternative cobalt source.
+  term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+- preferred_term: VSO4 x 7 H2O
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.25 g/L VSO4 x 7 H2O and allows NH4VO3
+    as an alternative vanadium source.
+- preferred_term: Na2MoO4 x 2 H2O
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.25 g/L Na2MoO4 x 2 H2O.
+  term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+- preferred_term: CuSO4 x 5 H2O
+  concentration:
+    value: '0.125'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 0.125 g/L CuSO4 x 5 H2O.
+  term:
+    id: CHEBI:31440
+    label: copper(II) sulfate pentahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31440
+    label: copper(II) sulfate pentahydrate
+- preferred_term: HCl
+  concentration:
+    value: '2.0'
+    unit: ML_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B adds 2 ml HCl while heating the salts; the
+    HCl concentration is not stated.
+  term:
+    id: CHEBI:17883
+    label: hydrogen chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17883
+    label: hydrogen chloride
+- preferred_term: Nitrilotriacetic acid
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B lists 5.0 g/L Nitrilotriacetic acid.
+  term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+  mediaingredientmech_chebi_term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+- preferred_term: NaOH
+  concentration:
+    value: variable
+    unit: VARIABLE
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B adds 10 N NaOH until the NTA solution tends
+    to stabilize at pH 7.0 to 7.4.
+  term:
+    id: CHEBI:32145
+    label: sodium hydroxide
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32145
+    label: sodium hydroxide
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: Rogosa 1969 VR salts solution B
+  notes: Rogosa 1969 VR salts solution B makes the stock up to one liter after dissolving
+    salts in about 700 ml water and NTA in 300 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:02.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 3133'
+- timestamp: '2026-03-13T06:19:29.300574Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:004981'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: NaOH'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:09.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:44.856499+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "VR salts B" to "vr_salts_b" for consistent matching
+- timestamp: '2026-05-16T09:04:38.676514+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:55.196395+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_komodo_3133_vr_salts_b_score15.py
+  action: RESOLVED_KOMODO_3133_VR_SALTS_B_SCORE15
+  source: https://pmc.ncbi.nlm.nih.gov/articles/PMC284882/
+  notes: Replaced the NaOH-only pH-buffer import with Rogosa's VR salts solution B
+    stock recipe, choosing the first listed cobalt and vanadium source alternatives
+    and leaving VSO4 x 7 H2O ungrounded.
+- timestamp: '2026-10-14T01:06:41.461765+00:00'
+  curator: codex
+  action: CURATED_PAPER_CITATIONS_AND_PROVENANCE
+  notes: Added or enriched verified paper citations and source archive/Markdown links;
+    recorded bounded formulation and organism assessments, corrected alias/correction
+    dispositions, and consolidated only verified duplicate bibliography entries. Preserved
+    prior recipe fields, evidence, links and history. No new growth, concentration
+    or resolved-variant claim. Whitchurch review is non-operational identity only.
+  source: https://pmc.ncbi.nlm.nih.gov/articles/PMC284882/; https://doi.org/10.1128/jb.98.2.756-766.1969
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://pmc.ncbi.nlm.nih.gov/articles/PMC284882/
+  title: Acidaminococcus gen. n., Acidaminococcus fermentans sp. n., anaerobic gram-negative
+    diplococci using amino acids as the sole energy source for growth.
+  authors: Rogosa M
+  year: 1969
+  notes: source_type=journal_article; discovery_mode=existing_source_identity_followup;
+    accessed_on=2026-10-14; source_access=PubMed_abstract_not_full_text; doi=10.1128/jb.98.2.756-766.1969;
+    pmid=5784223; pmcid=PMC284882; raw=references_cache/papers/PMID_5784223.xml; markdown=references_cache/papers/PMID_5784223.md;  PubMed
+    abstract, species description; exact excerpt="Acidaminococcus fermentans". Reported
+    organism/group=Acidaminococcus fermentans; canonical scientific name=Acidaminococcus
+    fermentans; NCBITaxon:905; actual rank=species; taxonomy_match=exact_species;
+    role=species studied, not growth on an isolated stock solution. Lookup_on=2026-10-14;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=905&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/bibliographic-url-leads-20261014.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/bibliographic-url-leads-20261014.md.
+    Reported organism/group=Acidaminococcus; canonical scientific name=Acidaminococcus;
+    NCBITaxon:904; actual rank=genus; taxonomy_match=exact_genus; role=taxonomic description/comparison,
+    not a genus-wide cultivation assertion. Lookup_on=2026-10-14; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=904&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/citation-frontier-20261014.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/citation-frontier-20261014.md.
+    Reported organism/group=Veillonella; canonical scientific name=Veillonella; NCBITaxon:29465;
+    actual rank=genus; taxonomy_match=exact_genus; role=taxonomic description/comparison,
+    not a genus-wide cultivation assertion. Lookup_on=2026-10-14; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=29465&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/citation-frontier-20261014.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/citation-frontier-20261014.md.
+    Reported organism/group=Peptococcus; canonical scientific name=Peptococcus; NCBITaxon:2740;
+    actual rank=genus; taxonomy_match=exact_genus; role=taxonomic description/comparison,
+    not a genus-wide cultivation assertion. Lookup_on=2026-10-14; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=2740&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/citation-frontier-20261014.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/citation-frontier-20261014.md.
+    The existing DOI and PMC URLs are verified aliases. This owner is record_kind=SOLUTION;
+    VR salts B must not become a complete growth medium. The abstract does not enumerate
+    the stock's chemical forms or amounts. Existing formulation and preparation are
+    preserved but not reverified; full-text access returned a challenge/API error.
+    Correction/retraction coverage is limited to inspected publication metadata and
+    identified notices, not an exhaustive audit. No new native growth assertion, concentration
+    evidence or resolved variant. Prior ingredients, preparation, evidence, links
+    and history are preserved, not newly certified. Verified alternate native URL=https://doi.org/10.1128/jb.98.2.756-766.1969.
+    Duplicate bibliography entry consolidated.

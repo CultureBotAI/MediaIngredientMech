@@ -1,0 +1,50 @@
+identifier: kgmicrobe.ingredient:nbrc19_usb_peptic_pepton
+preferred_term: NBRC19 USB Peptic Pepton
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms: []
+notes: NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material
+  can have an opaque product record without an invented substrate, digestion process
+  or catalog number. The complete rust-fungi medium and primary NBRC19 recipe support
+  this material. No equivalence to meat peptone, soy peptone or a different supplier
+  is asserted. The source spelling is kept in notes without a global product alias.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc19_usb_peptic_pepton
+  ontology_label: NBRC19 USB Peptic Pepton
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=19
+    notes: NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material
+      can have an opaque product record without an invented substrate, digestion process
+      or catalog number.
+supplied_form:
+- name: Peptic Pepton
+  supplier: USB
+  notes: The complete rust-fungi medium and primary NBRC19 recipe support this material.
+    No equivalence to meat peptone, soy peptone or a different supplier is asserted.
+    The source spelling is kept in notes without a global product alias.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material
+    can have an opaque product record without an invented substrate, digestion process
+    or catalog number. Isolated proposal only; all native holds remain preserved in
+    source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to LLM_SUGGESTION:
+    An agent proposes an opaque source-qualified USB material from NBRC19; no inferred
+    digestion substrate or catalog identity. Isolated successor proposal only; all
+    inherited source, role and export holds remain. Historical evidence and predecessor
+    files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

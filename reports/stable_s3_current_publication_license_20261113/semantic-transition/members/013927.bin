@@ -1,0 +1,3251 @@
+{
+  "captured_at": "2026-11-08T05:12:06.095135+00:00",
+  "owners": [
+    {
+      "path": "data/ingredients/mapped/Tertiomycin_A.yaml",
+      "sha256": "78cc4f58e50f0be6af20f18852d731e266842ed24373ecbf285265349a62d57a",
+      "payload": {
+        "identifier": "kgmicrobe.compound:tertiomycin_a",
+        "preferred_term": "Tertiomycin A",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:tertiomycin_a",
+          "ontology_label": "Tertiomycin A",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:199303(A83094A), CHEBI:199353(A-90289 A), CHEBI:199611(A32390A). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:tertiomycin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.554696+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.766228+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were not label/synonym identity matches, so kgmicrobe.compound:tertiomycin_a was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.394546+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Racemomycin_E.yaml",
+      "sha256": "da451fa75decffab222bf5609caa734bb00c5b345e999c2c086e4ed33269a592",
+      "payload": {
+        "identifier": "kgmicrobe.compound:racemomycin_e",
+        "preferred_term": "Racemomycin E",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C019594",
+          "ontology_label": "racemomycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:60826(streptothricin acid), CHEBI:175891((E,E,E)-Sylvatine), CHEBI:46762((E,E,E)-geranylgeraniol). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS (label-exact)",
+              "notes": "Parent class identified via label-exact; matched_via='Racemomycin'"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:racemomycin_e; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.031394+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.065466+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:18:25.591558+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_MESH",
+            "changes": "set ontology_mapping parent=mesh:C019594 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.393194+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Collinomycin.yaml",
+      "sha256": "2ca670278f8a16bed0e1fe3a3c94fc492eecc6c7c8d2bd185645dc0b62e55dcc",
+      "payload": {
+        "identifier": "kgmicrobe.compound:collinomycin",
+        "preferred_term": "Collinomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:collinomycin",
+          "ontology_label": "Collinomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:collinomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.875971+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.492489+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:collinomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387762+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Carcinomycin.yaml",
+      "sha256": "bf6974d3f7308398297d2e5d57d341beaee53543d68c1f46cc251f794ce35d21",
+      "payload": {
+        "identifier": "kgmicrobe.compound:carcinomycin",
+        "preferred_term": "Carcinomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:carcinomycin",
+          "ontology_label": "Carcinomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:carcinomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.616242+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.112948+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:carcinomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387211+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Azureomycin.yaml",
+      "sha256": "7526eae4b8d62730cd4ac486066b7f92919695d5db8b90688b66a9cd3327d727",
+      "payload": {
+        "identifier": "kgmicrobe.compound:azureomycin",
+        "preferred_term": "Azureomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:azureomycin",
+          "ontology_label": "Azureomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:azureomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.309558+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.655537+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:azureomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.386478+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Phoslactomycin.yaml",
+      "sha256": "668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d",
+      "payload": {
+        "identifier": "kgmicrobe.compound:phoslactomycin",
+        "preferred_term": "Phoslactomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:phoslactomycin",
+          "ontology_label": "Phoslactomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=4 candidates; top OLS candidates: CHEBI:207967(Phoslactomycin H), CHEBI:218976(Phoslactomycin I), CHEBI:219060(Phoslactomycin E). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:phoslactomycin; OLS search across CHEBI+NCIT returned LOW-confidence (4 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.781545+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.745842+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific phoslactomycin variants while the source label is family-level, so kgmicrobe.compound:phoslactomycin was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.392570+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bafilomycin.yaml",
+      "sha256": "814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773",
+      "payload": {
+        "identifier": "kgmicrobe.compound:bafilomycin",
+        "preferred_term": "Bafilomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:bafilomycin",
+          "ontology_label": "Bafilomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:198365(Bafilomycin J), CHEBI:201422(Bafilomycin D), CHEBI:205456(Bafilomycin H). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:bafilomycin; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.340977+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.703719+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific bafilomycin variants while the source label is family-level, so kgmicrobe.compound:bafilomycin was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.386593+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Danubomycin.yaml",
+      "sha256": "0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c",
+      "payload": {
+        "identifier": "kgmicrobe.compound:danubomycin",
+        "preferred_term": "Danubomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:danubomycin",
+          "ontology_label": "Danubomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:danubomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.202403+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.932861+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:40:01+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:danubomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.388384+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Danomycin.yaml",
+      "sha256": "20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd",
+      "payload": {
+        "identifier": "kgmicrobe.compound:danomycin",
+        "preferred_term": "Danomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:danomycin",
+          "ontology_label": "Danomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:danomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.200190+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.930172+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:danomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.388379+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Pactamycin.yaml",
+      "sha256": "8c7b1a30c72b7edc30cc0e3cbd86ce2ba03d294e2d566c328f2a2be8a3b70afb",
+      "payload": {
+        "identifier": "mesh:D010142",
+        "preferred_term": "Pactamycin",
+        "ontology_mapping": {
+          "ontology_id": "mesh:D010142",
+          "ontology_label": "Pactamycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS search",
+              "notes": "Auto-upgraded from 'kgmicrobe.compound:pactamycin'; match=label-exact"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:pactamycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.678516+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T20:15:06.203428+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_UPGRADE_TO_MESH",
+            "changes": "primary kgmicrobe.compound:pactamycin \u2192 mesh:D010142 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.392316+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Achromoviromycin.yaml",
+      "sha256": "d6d488697656261cb8807a251449d55226dd6d0571b46762d0b0a0dd84c94b6f",
+      "payload": {
+        "identifier": "kgmicrobe.compound:achromoviromycin",
+        "preferred_term": "Achromoviromycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:achromoviromycin",
+          "ontology_label": "Achromoviromycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:achromoviromycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.035956+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.278894+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:achromoviromycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.385909+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Camphomycin.yaml",
+      "sha256": "33b792f6f861b6f2d03a399fc9409ceeba5f594cfb02e16be3cfe56db15edf23",
+      "payload": {
+        "identifier": "kgmicrobe.compound:camphomycin",
+        "preferred_term": "Camphomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:camphomycin",
+          "ontology_label": "Camphomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:camphomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.567359+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.048269+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:camphomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387113+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Pluramycin_A.yaml",
+      "sha256": "032b55fd9f1dbabfcc795f04f6426413ea0f23718f269b736e8888e260507317",
+      "payload": {
+        "identifier": "kgmicrobe.compound:pluramycin_a",
+        "preferred_term": "Pluramycin A",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C003169",
+          "ontology_label": "pluramycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:199303(A83094A), CHEBI:199353(A-90289 A), CHEBI:199611(A32390A). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS (label-exact)",
+              "notes": "Parent class identified via label-exact; matched_via='Pluramycin'"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:pluramycin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.835546+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.811046+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:17:49.410949+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_MESH",
+            "changes": "set ontology_mapping parent=mesh:C003169 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.392704+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Champamycin_B.yaml",
+      "sha256": "9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580",
+      "payload": {
+        "identifier": "kgmicrobe.compound:champamycin_b",
+        "preferred_term": "Champamycin B",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:champamycin_b",
+          "ontology_label": "Champamycin B",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:216555(B-5354b), CHEBI:201526(Eprinomectin B1b), CHEBI:209530(Maltacine B2b). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:champamycin_b; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.738379+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.298500+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were not label/synonym identity matches, so kgmicrobe.compound:champamycin_b was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387425+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Glebomycin.yaml",
+      "sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed",
+      "payload": {
+        "identifier": "NCIT:C90636",
+        "preferred_term": "Glebomycin",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C90636",
+          "ontology_label": "Bluensomycin",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=MEDIUM; rationale=single lexical candidate; top OLS candidates: NCIT:C90636(Bluensomycin). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via EBI OLS exact synonym search",
+              "notes": "Promoted from kgmicrobe.compound:glebomycin after OLS returned NCIT:C90636 with exact synonym \"Glebomycin\"."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:glebomycin; OLS search across CHEBI+NCIT returned MEDIUM-confidence (single lexical candidate). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.778074+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.688624+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-06T00:00:00+00:00",
+            "curator": "unknown_term_placeholder_ols_review",
+            "action": "PROMOTED_FROM_KGM_PLACEHOLDER",
+            "changes": "primary kgmicrobe.compound:glebomycin \u2192 NCIT:C90636 after EBI OLS exact synonym match to \"Glebomycin\".",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.389507+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Caryomycin.yaml",
+      "sha256": "9ad2852bdd6c6a8de3a38eeccdb308a3fd16ee4f51b8e489d0a07a929e1da2a9",
+      "payload": {
+        "identifier": "kgmicrobe.compound:caryomycin",
+        "preferred_term": "Caryomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:caryomycin",
+          "ontology_label": "Caryomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:caryomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.626465+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.127767+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:caryomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387248+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Aburamycin_A.yaml",
+      "sha256": "1e8bbe2d44aa052f9611807ae18068c5c80de30eafbd1ceafa8246cc499b7601",
+      "payload": {
+        "identifier": "kgmicrobe.compound:aburamycin_a",
+        "preferred_term": "Aburamycin A",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:aburamycin_a",
+          "ontology_label": "Aburamycin A",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:199303(A83094A), CHEBI:199353(A-90289 A), CHEBI:199611(A32390A). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:aburamycin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:31.999469+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.230852+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were not exact label/synonym identity matches, so kgmicrobe.compound:aburamycin_a was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.385834+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Angustmycin.yaml",
+      "sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+      "payload": {
+        "identifier": "CHEBI:8612",
+        "preferred_term": "Angustmycin",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:8612",
+          "ontology_label": "psicofuranin",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "SYNONYM_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "CURATOR_CONFIRMED_SYNONYM",
+              "source": "kgmicrobe.compound:angustmycin",
+              "notes": "angustmycin A is a historical/trade name for the antibiotic psicofuranin \u2014 same molecule (curator-confirmed synonym)."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Psicofuranine",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          },
+          {
+            "synonym_text": "produces: angustmycin",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-19T08:07:30.238506+00:00",
+            "curator": "audit_propose_chebi_for_unmapped",
+            "action": "CREATED_FROM_UNMAPPED_QUEUE",
+            "changes": "Created new ingredient from kgmicrobe.compound:angustmycin with auto-curated CHEBI CHEBI:8612 (psicofuranin)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-19T08:07:47.438922+00:00",
+            "curator": "user_approved_curator_synonym",
+            "action": "CURATOR_CONFIRMED_CHEBI",
+            "changes": "angustmycin A is a historical/trade name for the antibiotic psicofuranin \u2014 same molecule (curator-confirmed synonym).",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.201588+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:28.022793+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C11H15N5O5; inchi=InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6; smiles=Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.504313+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.386226+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          },
+          {
+            "timestamp": "2026-08-06T07:14:29.509994+00:00",
+            "curator": "issue_213_grounding",
+            "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+            "changes": "Absorbed UNMAPPED_0839 'Psicofuranine' as a RAW_TEXT synonym -- Psicofuranine is a registered synonym of CHEBI:8612 psicofuranin, held by the Angustmycin record; angustmycin C and psicofuranine are the same nucleoside antibiotic (#213). No new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-10T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_EXACT_TO_SYNONYM",
+            "changes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label does not equal the term's primary label 'psicofuranin'; it matches the ChEBI synonym 'psicofuranine' on CHEBI:8612. The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated. ontology_id is unchanged \u2014 the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T17:40:44.716277+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'produces: angustmycin'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-22T06:14:49.563933+00:00",
+            "curator": "claude",
+            "action": "REJECTED_TRAIT_SYNONYMS",
+            "changes": "Retyped activity/assay phrases as provenance-only REJECTED_LABEL because they describe a process or organism trait, not an ingredient name (#703): 'produces: angustmycin'. Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.",
+            "llm_assisted": true
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "chemical_properties": {
+          "molecular_formula": "C11H15N5O5",
+          "inchi": "InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6)11(2-18)8(20)7(19)5(1-17)21-11/h3-5,7-8,17-20H,1-2H2,(H2,12,13,14)/t5-,7-,8-,11-/m1/s1",
+          "smiles": "Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O",
+          "data_source": "CHEBI sqlite (oaklib)"
+        },
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Vulgamycin.yaml",
+      "sha256": "a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe",
+      "payload": {
+        "identifier": "mesh:C012306",
+        "preferred_term": "Vulgamycin",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C012306",
+          "ontology_label": "enterocin",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via EBI OLS exact synonym search",
+              "notes": "Promoted from kgmicrobe.compound:vulgamycin after OLS returned mesh:C012306 with exact synonym \"Vulgamycin\"."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:vulgamycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.893104+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:19.239366+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-06T00:00:00+00:00",
+            "curator": "unknown_term_placeholder_ols_review",
+            "action": "PROMOTED_FROM_KGM_PLACEHOLDER",
+            "changes": "primary kgmicrobe.compound:vulgamycin \u2192 mesh:C012306 after EBI OLS exact synonym match to \"Vulgamycin\".",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.395366+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Geomycin.yaml",
+      "sha256": "fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda",
+      "payload": {
+        "identifier": "mesh:D010118",
+        "preferred_term": "Geomycin",
+        "ontology_mapping": {
+          "ontology_id": "mesh:D010118",
+          "ontology_label": "Oxytetracycline",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=3 candidates; top OLS candidates: CHEBI:214854(Geomycin B), CHEBI:214876(Geomycin A), CHEBI:218077(Geomycin C). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via EBI OLS exact synonym search",
+              "notes": "Promoted from kgmicrobe.compound:geomycin after OLS returned mesh:D010118 with exact synonym \"Geomycin\"."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:geomycin; OLS search across CHEBI+NCIT returned LOW-confidence (3 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.765582+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.671670+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-06T00:00:00+00:00",
+            "curator": "unknown_term_placeholder_ols_review",
+            "action": "PROMOTED_FROM_KGM_PLACEHOLDER",
+            "changes": "primary kgmicrobe.compound:geomycin \u2192 mesh:D010118 after EBI OLS exact synonym match to \"Geomycin\".",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.389479+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Cinerubin_A.yaml",
+      "sha256": "2787c4a160827e7ced2ad055be24e36ceb14ec8591f25d4e157fc83a9b22326a",
+      "payload": {
+        "identifier": "kgmicrobe.compound:cinerubin_a",
+        "preferred_term": "Cinerubin A",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:cinerubin_a",
+          "ontology_label": "Cinerubin A",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:214436(Cinerubin R), CHEBI:218086(Cinerubin B), CHEBI:224126(Cinerubin Y). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:cinerubin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.796280+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.382580+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were different cinerubin variants, so kgmicrobe.compound:cinerubin_a was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label."
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bandamycin.yaml",
+      "sha256": "66c03a35e873d35bc17029c8e348e60ac778cee2ac143f69dbc2b844a0580bed",
+      "payload": {
+        "identifier": "kgmicrobe.compound:bandamycin",
+        "preferred_term": "Bandamycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:bandamycin",
+          "ontology_label": "Bandamycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:bandamycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.347041+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.715570+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:bandamycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.386612+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Cladomycin.yaml",
+      "sha256": "5538fe10debac7cef481d1cc669ac21f4dc7718edb62beb3a2af55766768180a",
+      "payload": {
+        "identifier": "kgmicrobe.compound:cladomycin",
+        "preferred_term": "Cladomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:cladomycin",
+          "ontology_label": "Cladomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:cladomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.816092+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.412536+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:cladomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387686+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Destomycin.yaml",
+      "sha256": "c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09",
+      "payload": {
+        "identifier": "kgmicrobe.compound:destomycin",
+        "preferred_term": "Destomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:destomycin",
+          "ontology_label": "Destomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=2 candidates; top OLS candidates: CHEBI:224010(Destomycin C), CHEBI:4454(Destomysin). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "EBI OLS CHEBI search via OAK/curl (2026-05-10)",
+              "notes": "OLS returned CHEBI:224010 Destomycin C and CHEBI:4454 Destomysin for Destomycin. The returned labels/synonyms do not establish exact identity for the unqualified source label Destomycin, so the kgmicrobe placeholder was retained.",
+              "confidence_score": 0.8
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:destomycin; OLS search across CHEBI+NCIT returned LOW-confidence (2 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.225491+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.966482+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:39:17+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed OAK/OLS CHEBI candidates CHEBI:224010 and CHEBI:4454. Candidate labels resolve to Destomycin C and Destomysin rather than unqualified Destomycin; no exact identity promotion was made.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.388476+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 OAK/OLS review: CHEBI search returns CHEBI:224010 Destomycin C and CHEBI:4454 Destomysin, but does not establish an exact identity for the unqualified source label Destomycin. Retain kgmicrobe.compound:destomycin as the primary placeholder mapping pending stronger identity evidence.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Staphylomycin_M1.yaml",
+      "sha256": "04785e91917d2e9a1a1e670e3dd871cc6745b43eed0f75d32c41f1e83061a431",
+      "payload": {
+        "identifier": "NCIT:C1295",
+        "preferred_term": "Staphylomycin M1",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C1295",
+          "ontology_label": "Streptogramin A",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:34826(M1), CHEBI:181755(Soyasapogenol M1), CHEBI:198029(Leptosin M1). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via EBI OLS exact synonym search",
+              "notes": "Promoted from kgmicrobe.compound:staphylomycin_m1 after OLS returned NCIT:C1295 with exact synonym \"Staphylomycin M1\". OLS also returned mesh:D025364 for the same label; NCIT was preferred as the external primary."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:staphylomycin_m1; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.435190+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.608846+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-06T00:00:00+00:00",
+            "curator": "unknown_term_placeholder_ols_review",
+            "action": "PROMOTED_FROM_KGM_PLACEHOLDER",
+            "changes": "primary kgmicrobe.compound:staphylomycin_m1 \u2192 NCIT:C1295 after EBI OLS exact synonym match to \"Staphylomycin M1\"; NCIT selected over duplicate MeSH candidate.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.394282+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bis-4-nitrophenyl-phenyl_Phosphonate.yaml",
+      "sha256": "c07e1129039269c0e1e21be9a2b80e108d0f85a12683846b2041b773c71d03de",
+      "payload": {
+        "identifier": "kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate",
+        "preferred_term": "Bis-4-nitrophenyl-phenyl Phosphonate",
+        "synonyms": [
+          {
+            "synonym_text": "Bis-4-nitrophenyl-phenyl Phosphonate",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 4,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0697 -> kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate \"Bis-4-nitrophenyl-phenyl Phosphonate\" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate",
+          "ontology_label": "Bis-4-nitrophenyl-phenyl Phosphonate",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#213)",
+              "notes": "Searched every ontology available to this repo -- CHEBI, NCIT, FOODON, ENVO, BTO, UBERON by label and synonym with normalisation, plus live OLS4 -- and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by 82 existing records: a self-referential kgmicrobe.compound: mint, rather than a narrowMatch to a functional-group class, which would be the class-level over-claim #270 tracks (#213)."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Rhodomycin_A.yaml",
+      "sha256": "0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80",
+      "payload": {
+        "identifier": "kgmicrobe.compound:rhodomycin_a",
+        "preferred_term": "Rhodomycin A",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C004977",
+          "ontology_label": "rhodomycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:32096(rhodomycin D), CHEBI:81879(beta-Rhodomycin), CHEBI:77073(rhodomycin D(1+)). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS (label-exact)",
+              "notes": "Parent class identified via label-exact; matched_via='Rhodomycin'"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:rhodomycin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.062845+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.106781+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:18:41.576825+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_MESH",
+            "changes": "set ontology_mapping parent=mesh:C004977 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.393276+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Eurocidin.yaml",
+      "sha256": "1b8ae1f6ad3b5ca36af9af94fd7a2a80d20c8d1adbdcde8a3ac546f93467b0db",
+      "payload": {
+        "identifier": "kgmicrobe.compound:eurocidin",
+        "preferred_term": "Eurocidin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:eurocidin",
+          "ontology_label": "Eurocidin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=2 candidates; top OLS candidates: CHEBI:224646(Eurocidin E), CHEBI:224651(Eurocidin D). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:eurocidin; OLS search across CHEBI+NCIT returned LOW-confidence (2 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.489582+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.319872+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific eurocidin variants while the source label is family-level, so kgmicrobe.compound:eurocidin was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label."
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Durhamycin.yaml",
+      "sha256": "0f1ab3359b879b2a9917cd713f8683634c6c22395f616fc44030eed83e42ae9e",
+      "payload": {
+        "identifier": "kgmicrobe.compound:durhamycin",
+        "preferred_term": "Durhamycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:durhamycin",
+          "ontology_label": "Durhamycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=2 candidates; top OLS candidates: CHEBI:65814(durhamycin A), CHEBI:65815(durhamycin B). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:durhamycin; OLS search across CHEBI+NCIT returned LOW-confidence (2 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.397534+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.191195+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific durhamycin variants while the source label is family-level, so kgmicrobe.compound:durhamycin was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.388784+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Ascosin.yaml",
+      "sha256": "204b3e136eb16b317c8e8c24a3dd1f9ebebc3eb1f6c3141a10d8a31540016b05",
+      "payload": {
+        "identifier": "kgmicrobe.compound:ascosin",
+        "preferred_term": "Ascosin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:ascosin",
+          "ontology_label": "Ascosin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:ascosin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.271477+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.598163+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:ascosin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bis-4-nitrophenyl-phosphorylcholine.yaml",
+      "sha256": "6245a936eaa047ee787fbfa5e6d2ff6aaefe36855383c1bfbd9e4c534733507f",
+      "payload": {
+        "identifier": "kgmicrobe.compound:bis-4-nitrophenyl-phosphorylcholine",
+        "preferred_term": "Bis-4-nitrophenyl-phosphorylcholine",
+        "synonyms": [
+          {
+            "synonym_text": "Bis-4-nitrophenyl-phosphorylcholine",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 5,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phosphorylcholine); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0691 -> kgmicrobe.compound:bis-4-nitrophenyl-phosphorylcholine \"Bis-4-nitrophenyl-phosphorylcholine\" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phosphorylcholine); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:bis-4-nitrophenyl-phosphorylcholine",
+          "ontology_label": "Bis-4-nitrophenyl-phosphorylcholine",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#213)",
+              "notes": "Searched every ontology available to this repo -- CHEBI, NCIT, FOODON, ENVO, BTO, UBERON by label and synonym with normalisation, plus live OLS4 -- and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by 82 existing records: a self-referential kgmicrobe.compound: mint, rather than a narrowMatch to a functional-group class, which would be the class-level over-claim #270 tracks (#213)."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Hitachimycin.yaml",
+      "sha256": "c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903",
+      "payload": {
+        "identifier": "mesh:C031780",
+        "preferred_term": "Hitachimycin",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C031780",
+          "ontology_label": "stubomycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via EBI OLS exact synonym search",
+              "notes": "Promoted from kgmicrobe.compound:hitachimycin after OLS returned mesh:C031780 with exact synonym \"Hitachimycin\"."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:hitachimycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.987957+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.994109+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-06T00:00:00+00:00",
+            "curator": "unknown_term_placeholder_ols_review",
+            "action": "PROMOTED_FROM_KGM_PLACEHOLDER",
+            "changes": "primary kgmicrobe.compound:hitachimycin \u2192 mesh:C031780 after EBI OLS exact synonym match to \"Hitachimycin\".",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.389907+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Phyllomycin.yaml",
+      "sha256": "8eaeb70e9ff49504cb58f68eac6d86fcd7710fb7bf71d1ef9d855df9ed9f35b2",
+      "payload": {
+        "identifier": "kgmicrobe.compound:phyllomycin",
+        "preferred_term": "Phyllomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:phyllomycin",
+          "ontology_label": "Phyllomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:phyllomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.790410+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.756203+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:40:01+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:phyllomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.392609+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Actinomycin_A.yaml",
+      "sha256": "a2282b994636d7203ac5d614c8c25ebbe8ff5b0c6a52e4372a44246eb483eafe",
+      "payload": {
+        "identifier": "kgmicrobe.compound:actinomycin_a",
+        "preferred_term": "Actinomycin A",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:15369",
+          "ontology_label": "actinomycin",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:206917(Neo-actinomycin A), CHEBI:15369(actinomycin), CHEBI:206013(Actinomycin Zp). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CHEBI via OLS (label-exact)",
+              "notes": "Parent class identified via label-exact; matched_via='Actinomycin'"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "produces: actinomycin A",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:actinomycin_a; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.047708+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.295558+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:08:13.545493+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_CHEBI",
+            "changes": "set ontology_mapping parent=CHEBI:15369 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.385938+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          },
+          {
+            "timestamp": "2026-09-02T17:40:44.716277+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'produces: actinomycin A'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-22T06:14:49.563933+00:00",
+            "curator": "claude",
+            "action": "REJECTED_TRAIT_SYNONYMS",
+            "changes": "Retyped activity/assay phrases as provenance-only REJECTED_LABEL because they describe a process or organism trait, not an ingredient name (#703): 'produces: actinomycin A'. Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.",
+            "llm_assisted": true
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Tertiomycin_B.yaml",
+      "sha256": "6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4",
+      "payload": {
+        "identifier": "kgmicrobe.compound:tertiomycin_b",
+        "preferred_term": "Tertiomycin B",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:tertiomycin_b",
+          "ontology_label": "Tertiomycin B",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:216555(B-5354b), CHEBI:201526(Eprinomectin B1b), CHEBI:209530(Maltacine B2b). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:tertiomycin_b; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.556870+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.768725+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were not label/synonym identity matches, so kgmicrobe.compound:tertiomycin_b was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.394551+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Flavensomycin.yaml",
+      "sha256": "a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382",
+      "payload": {
+        "identifier": "kgmicrobe.compound:flavensomycin",
+        "preferred_term": "Flavensomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:flavensomycin",
+          "ontology_label": "Flavensomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:flavensomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.647653+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.517892+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:40:01+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:flavensomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.389254+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Grasseriomycin.yaml",
+      "sha256": "76030b1e22ebcbc1dadadc907f1b1f446b0da2304f30c1f6312acdbb09489b2e",
+      "payload": {
+        "identifier": "kgmicrobe.compound:grasseriomycin",
+        "preferred_term": "Grasseriomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:grasseriomycin",
+          "ontology_label": "Grasseriomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:grasseriomycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.873116+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.829905+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:40:01+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:grasseriomycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.389700+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Candimycin.yaml",
+      "sha256": "69aa2fbd292fd485d514c1e3fb6cc74a81b19f485ee82cd0fb1fc09fbc91fcbb",
+      "payload": {
+        "identifier": "kgmicrobe.compound:candimycin",
+        "preferred_term": "Candimycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:candimycin",
+          "ontology_label": "Candimycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:candimycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.575115+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.059618+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-09T19:06:23+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local duplicate supports promotion from kgmicrobe.compound:candimycin to an external ontology identifier.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.387127+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "notes": "2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

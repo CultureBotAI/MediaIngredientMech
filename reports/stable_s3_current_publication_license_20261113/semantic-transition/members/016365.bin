@@ -1,0 +1,61 @@
+identifier: CHEBI:30778
+preferred_term: Gallic Acid
+ontology_mapping:
+  ontology_id: CHEBI:30778
+  ontology_label: gallic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+synonyms:
+- synonym_text: 3,4,5-Trihydroxybenzoic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=149-91-7); Imported
+    from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.731749+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.698470+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C7H6O5; inchi=InChI=1S/C7H6O5/c8-4-1-3(7(11)12)2-5(9)6(4)10/h1-2;
+    smiles=O=C(O)c1cc(O)c(O)c(O)c1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.627688+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001157; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 149-91-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C7H6O5
+  inchi: InChI=1S/C7H6O5/c8-4-1-3(7(11)12)2-5(9)6(4)10/h1-2,8-10H,(H,11,12)
+  smiles: O=C(O)c1cc(O)c(O)c(O)c1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001157
+legacy_identifiers:
+- MIM:Gallic_Acid
+- CHEBI:30778

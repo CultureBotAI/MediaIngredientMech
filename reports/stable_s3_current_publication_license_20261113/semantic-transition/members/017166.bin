@@ -1,0 +1,70 @@
+identifier: CHEBI:220394
+preferred_term: Oxamicetin
+ontology_mapping:
+  ontology_id: CHEBI:220394
+  ontology_label: Oxamicetin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:oxamicetin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:oxamicetin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001958; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C29H42N6O10
+  smiles: CC1OC(n2ccc(NC(=O)c3ccc(NC(=O)C(C)(N)CO)cc3)nc2=O)CC(O)C1OC1OC(C)C(N(C)C)C(O)C1O
+  inchi: InChI=1S/C29H42N6O10/c1-14-21(34(4)5)22(38)23(39)26(44-14)45-24-15(2)43-20(12-18(24)37)35-11-10-19(33-28(35)42)32-25(40)16-6-8-17(9-7-16)31-27(41)29(3,30)13-36/h6-11,14-15,18,20-24,26,36-39H,12-13,30H2,1-5H3,(H,31,41)(H,32,33,40,42)
+  molecular_weight: 634.687
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:19.468626+00:00'
+mim_id: MIM:0001958
+legacy_identifiers:
+- MIM:Oxamicetin
+- CHEBI:220394

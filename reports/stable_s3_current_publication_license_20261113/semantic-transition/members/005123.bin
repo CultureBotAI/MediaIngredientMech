@@ -1,0 +1,92 @@
+id: CultureMech:001099
+name: isp_7_medium
+original_name: ISP 7 MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1619
+  term:
+    id: mediadive.medium:1619
+    label: ISP 7 MEDIUM
+notes: DSMZ Medium 1619 contains 23.74 g ISP 7 Medium (Himedia), 15.00 ml glycerol,
+  and 1000.00 ml distilled water.
+ingredients:
+- preferred_term: ISP 7 Medium (Himedia)
+  concentration:
+    value: '23.74'
+    unit: G_PER_L
+  source: DSMZ Medium 1619
+  notes: DSMZ Medium 1619 lists 23.74 g ISP 7 Medium (Himedia).
+- preferred_term: Glycerol
+  concentration:
+    value: '15.00'
+    unit: ML_PER_L
+  source: DSMZ Medium 1619
+  notes: DSMZ Medium 1619 lists 15.00 ml glycerol.
+  term:
+    id: CHEBI:17754
+    label: glycerol
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17754
+    label: glycerol
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.00'
+    unit: ML_PER_L
+  source: DSMZ Medium 1619
+  notes: DSMZ Medium 1619 lists 1000.00 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.025329Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1619'
+- timestamp: '2026-03-13T06:19:01.180495Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001099'
+- timestamp: '2026-03-17T06:30:03.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:12.870562+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "ISP 7 MEDIUM" to "isp_7_medium" for consistent matching
+- timestamp: '2026-06-05T07:41:09.696002+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_official_simple_score20.py
+  action: RESOLVED_OFFICIAL_SIMPLE_SCORE20
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1619.pdf
+  notes: DSMZ Medium 1619 contains 23.74 g ISP 7 Medium (Himedia), 15.00 ml glycerol,
+    and 1000.00 ml distilled water.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve 23.74 g ISP 7 Medium (Himedia) and 15.00 ml glycerol in 1000.00
+    ml distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min unless otherwise stated.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1619.pdf

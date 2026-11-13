@@ -1,0 +1,122 @@
+"""Read-only exact W07 origins and whole residual; private native diagnostics only."""
+from pathlib import Path
+import copy, hashlib, io, json, os, subprocess, sys, tarfile, types
+import yaml
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+R = C.parents[1]
+A = C / 'integration/ancillary1258-worktree'
+J = C / 'integration/curation-worktree'
+T = R / '.temp/kgm-unmapped-20261107'
+W = C / 'workers/w07/worktree'
+H = '84241993a278a7a413422ef89a52c0b47dc57831'
+def sha(b): return hashlib.sha256(b).hexdigest()
+def load(p): return json.loads(p.read_bytes())
+def put(p, b):
+    p.parent.mkdir(parents=True, exist_ok=True)
+    if p.exists():
+        assert p.read_bytes() == b
+    else:
+        with p.open('xb') as f: f.write(b)
+def save(n, v): put(D/n, (json.dumps(v, indent=2, ensure_ascii=False)+'\n').encode())
+def git(root, *args):
+    return subprocess.check_output(['git','--no-optional-locks','--literal-pathspecs','-C',str(root),*args], env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+def module(name,p):
+    m=types.ModuleType(name);m.__file__=str(p);sys.modules[name]=m
+    exec(compile(p.read_bytes(),str(p),'exec'),m.__dict__);return m
+planpath=C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json'
+assert sha(planpath.read_bytes())=='cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'
+plan=load(planpath)
+bindings={x['binding_id']:x for x in plan['bindings']}
+index={x['destination']:x for x in load(planpath.with_name('materialization-index.draft.json'))['files']}
+result={}
+for key,oid,pid in [('cysteine','ORIGINAL-w07::C-P04','C-P04'),('monohydrate','TARGET-023','B-PROPOSAL-Sodium_phosphate_monobasic_monohydrate')]:
+    op=next(x for x in plan['records'] if x['operation_id']==oid)
+    origin=next(x for x in op['origins'] if x['proposal_id']==pid)
+    assert origin['worker_slot']=='worker-07'
+    before=git(A,'show',H+':'+op['source_record'])
+    assert sha(before)==op['before_yaml_sha256']
+    put(D/'inputs/before'/Path(op['source_record']).name,before)
+    joins=[]
+    for bid in [origin['proposal_binding'],origin['payload_binding'],'w07-decisions']:
+        b=bindings[bid];e=index[b['path']]
+        captured=Path(e['source']).read_bytes()
+        assert captured==git(W,'show',origin['head_sha']+':'+b['published_path'])
+        assert sha(captured)==e['sha256']==b['sha256']
+        joins.append({'binding':b,'source':e['source'],'sha256':sha(captured),'bytes':len(captured)})
+        if bid==origin['proposal_binding']:
+            proposal=next(x for x in json.loads(captured)['proposals'] if x['proposal_id']==pid)
+        elif bid==origin['payload_binding']:
+            payload=captured
+            put(D/'inputs/published'/Path(b['published_path']).name,captured)
+        else:
+            decisions=[x for x in json.loads(captured)['decisions'] if x['case_id'] in origin['case_hashes']]
+    assert proposal['before_sha256']==op['before_yaml_sha256']
+    assert proposal['after_capture']['sha256']==sha(payload)
+    assert set(proposal['case_ids'])==set(origin['case_hashes'])
+    assert len(decisions)==len(origin['case_hashes'])==1
+    assert all(x['case_input_sha256']==origin['case_hashes'][x['case_id']] for x in decisions)
+    result[key]={'historical_operation':op,'retained_original_origin':origin,'proposal':proposal,'decisions':decisions,'published_joins':joins,'authentic_before_sha256':sha(before),'payload_sha256':sha(payload)}
+save('ORIGINAL-W07-CONTEXT.json',result)
+newpath=D/'inputs/published/b-Sodium_phosphate_monobasic_monohydrate.yaml'
+raw=newpath.read_bytes();new=yaml.safe_load(raw)
+old=yaml.safe_load((D/'inputs/before/Sodium_phosphate_monobasic_monohydrate.yaml').read_bytes())
+inverse=copy.deepcopy(new);alias=inverse['synonyms'].pop();event=inverse['curation_history'].pop();assert inverse==old
+assert alias['synonym_text']=='Sodium dihydrogen orthophosphate monohydrate'
+assert alias['synonym_type']=='RAW_TEXT' and event['llm_assisted'] is True
+excluded=['NaH2PO4 x H2O','NaH2PO4·H2O','NaH2PO4・H2O']
+assert all(x not in [s['synonym_text'] for s in new['synonyms']] for x in excluded)
+primary={}
+for name in ['b-primary-77a6bc96916200e7.json','b-ontology-CHEBI-114249.json','c-jcm-680.html']:
+    p=W/'reports/all_unmatched_20261107/worker-07/captures'/name;b=p.read_bytes()
+    assert b==git(W,'show',result['monohydrate']['retained_original_origin']['head_sha']+':'+p.relative_to(W).as_posix())
+    put(D/'inputs/primary'/name,b);primary[name]={'path':str(p),'sha256':sha(b),'bytes':len(b)}
+term=load(D/'inputs/primary/b-ontology-CHEBI-114249.json')['_embedded']['terms'][0]
+assert term['obo_id']==new['identifier']==new['ontology_mapping']['ontology_id']=='CHEBI:114249'
+assert not term['is_obsolete']
+chem=new['chemical_properties'];ann=term['annotation']
+assert all(chem[k]==ann[a][0] for k,a in [('molecular_formula','generalized_empirical_formula'),('inchi','inchi_string'),('smiles','smiles_string')])
+assert 'cas:'+chem['cas_rn'] in ann['database_cross_reference']
+source=load(D/'inputs/primary/b-primary-77a6bc96916200e7.json')
+item=next(x for block in source['components'] for x in block['items'] if x['component_name']==alias['synonym_text'])
+assert item['volume']==20 and item['unit']=='g'
+sys.path.insert(0,str(J/'src'))
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+assert not validate_ingredient(new)
+render=D/'native-render/Sodium_phosphate_monobasic_monohydrate.yaml'
+assert yaml.safe_load(render.read_bytes())==new
+second=D/'native-render-second/Sodium_phosphate_monobasic_monohydrate.yaml';second.parent.mkdir()
+write_validated_ingredient(yaml.safe_load(render.read_bytes()),second)
+assert render.read_bytes()==second.read_bytes()
+base={}
+with tarfile.open(fileobj=io.BytesIO(git(A,'archive',H,'data/ingredients'))) as tf:
+    for m in tf.getmembers():
+        if m.isfile() and m.name.endswith('.yaml'):base[m.name]=yaml.safe_load(tf.extractfile(m).read())
+assert len(base)==2956
+owner=result['monohydrate']['historical_operation']['source_record']
+before=copy.deepcopy(base);after=copy.deepcopy(base);before[owner]=old;after[owner]=new
+assert not list(validate_component_partonomy(after.values()))
+producer=T/'claw/scripts/build_mim_ingredient_sssom.py'
+assert sha(producer.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+kg=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz')
+assert sha(kg.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+os.environ.update(OPENCLAW_WORKSPACE=str(D/'projection-workspace'),MEDIAINGREDIENTMECH_ROOT=str(A),KGMICROBE_ROOT=str(kg.parents[1]))
+native=module('independent_w07_residual_projection',producer)
+ks=native.load_kgm_source_index(kg);kl=native.load_kgm_labels(kg);rows=[];events=[]
+for records in [before,after]:
+    owners=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in records.items() if '/mapped/' in p})
+    suppressed=[]
+    rr=native._row_from_yaml(A/owner,{},ks,kl,{term['obo_id']:term['label']},record=records[owner],owners=owners,suppressions=suppressed)
+    assert len(rr)==1;rows.append(rr[0]);events.append(suppressed)
+delta={k:{'before':rows[0][k],'after':rows[1][k]} for k in rows[0] if rows[0][k]!=rows[1][k]}
+assert set(delta)<={'source','other'}
+assert rows[1]['object_id']=='CHEBI:114249' and rows[1]['predicate_id']=='skos:exactMatch'
+assert alias['synonym_text'] in rows[1]['other'].split('|')
+assert set(rows[1]['other'].split('|'))-set(rows[0]['other'].split('|')) <= {alias['synonym_text']}
+assert not set(rows[0]['other'].split('|'))-set(rows[1]['other'].split('|'))
+assert events[0]==events[1]
+save('W07-INDEPENDENT-CHECKS.json',{'status':'PASS','original_payload_sha256':sha(raw),'native_render_sha256':sha(render.read_bytes()),'native_render_selected':False,'original_vs_native_byte_equal':raw==render.read_bytes(),'whole_parsed_object_equal':True,'native_render_idempotent':True,'inverse_complete_before_equal':True,'added_alias':alias,'added_history':event,'excluded_W08_aliases':excluded,'primary_git_joins':primary,'literal_source_item':item,'chemical_fields_match':True,'native_schema_errors':0,'full_A_overlay_owners':len(after),'partonomy_errors':0,'inherited_role':'BUFFER0.6 COMPUTATIONAL_PREDICTION preserved, not new approval','historical_counts':'50/50 plus FEBA46 note retained, not recounted','source_application':False})
+save('W07-INDEPENDENT-PROJECTION.json',{'before':rows[0],'after':rows[1],'delta':delta,'suppression_events_unchanged':True,'events':events[1],'producer':str(producer),'producer_sha256':sha(producer.read_bytes()),'actual_KG_gzip':str(kg),'actual_KG_sha256':sha(kg.read_bytes()),'limits':'Per-owner native primitive with real KG input, authentic fullA842 context and inspected cached official label. No full generator/provider call, future final row or release approval.'})
+print(json.dumps({'status':'PASS','targets':'Original genuine W07 origins + whole monohydrate residual','row_delta':list(delta),'native_render':sha(render.read_bytes())}))

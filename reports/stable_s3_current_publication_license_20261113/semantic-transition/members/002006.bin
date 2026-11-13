@@ -1,0 +1,57 @@
+identifier: mesh:D010142
+preferred_term: Pactamycin
+ontology_mapping:
+  ontology_id: mesh:D010142
+  ontology_label: Pactamycin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
+      MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
+      Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:pactamycin'; match=label-exact
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:pactamycin;
+    OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept
+    as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.678516+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:15:06.203428+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:pactamycin → mesh:D010142 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.392316+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

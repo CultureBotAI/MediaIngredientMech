@@ -1,0 +1,285 @@
+id: CultureMech:000139
+name: tap_medium
+category: algae
+sources:
+- database: CCAP
+  database_id: TAP
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for freshwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  timestamp: '2026-01-28'
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: TAP, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf'
+- curator: schema-defaulter-v1.0
+  timestamp: '2026-02-03T11:23:39.722396'
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+- timestamp: '2026-02-03T11:26:43.633751'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.266556Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000139'
+- timestamp: '2026-03-17T19:45:04.214267+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "TAP Medium" to "tap_medium" for consistent matching
+- timestamp: '2026-04-04T12:54:54.780497'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  notes: Replaced placeholder with 11 curated ingredients from CCAP Medium MR_TAP.pdf.
+- timestamp: '2026-05-09T19:07:13Z'
+  curator: culturemech-agentic-curation
+  action: ADDED_GROWTH_EVIDENCE
+  notes: Added Chlorella vulgaris UTEX 395 TAP growth evidence with NCBI Taxonomy,
+    BioSample, and GenBank genome-project identifiers in references.
+- timestamp: '2026-05-16T08:57:01.884460+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:55.919190+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: category->lowercase=1
+- timestamp: '2026-05-24T04:38:33.182473+00:00'
+  curator: backfill_source_environment.py
+  action: BACKFILLED_SOURCE_ENVIRONMENT
+  notes: added=2 env(s) from CommunityMech
+  source: CommunityMech (environment_term + culturemech_id linkage)
+- timestamp: '2026-08-06T00:58:02.505628+00:00'
+  curator: curate_organism_culture_type.py
+  action: SET_ORGANISM_CULTURE_TYPE
+  notes: 'Inferred isolate: 1 specific strain(s) named, no community signal (#142)'
+  changes: Set organism_culture_type=isolate (was unset)
+- timestamp: '2026-08-17T17:31:47.888710+00:00'
+  curator: repair_subscript_stripped_names.py
+  action: REPAIRED_SUBSCRIPT_STRIPPED_NAME
+  notes: 'Restored digits lost from formula ingredient name(s) by an upstream encoding
+    step (#276): H BO -> H3BO3. The corrupted original is preserved in each ingredient''s
+    notes.'
+  changes: 1 preferred_term(s) repaired
+- timestamp: '2026-08-25T00:00:00-07:00'
+  curator: repair_ccap_instruction_rows.py
+  action: REPAIRED_CCAP_INSTRUCTION_ROWS
+  changes: ingredients 11 -> 10
+  notes: Repaired preparation text and nested-recipe flattening against CCAP MR_TAP.pdf.
+    Moved process statements to preparation_steps and restored source-asserted components
+    or constituent-medium references where applicable.
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:TAP; https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:TAP
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf
+- reference: PMID:39168352
+  title: Influence of growth medium on the species-specific interactions between algae
+    and bacteria
+  authors: Lastauskienė, E. et al.
+  year: 2024
+  notes: Primary source supporting Chlorella vulgaris UTEX 395 cultivation and growth
+    comparison in TAP medium.
+- reference: GenBank:LDKB00000000.1
+  title: Chlorella vulgaris strain UTEX 395, whole genome shotgun sequencing project
+  year: 2015
+  notes: NCBI nucleotide master record for the Chlorella vulgaris UTEX 395 genome
+    project.
+- reference: BioSample:SAMN03453227
+  title: Plant sample from Chlorella vulgaris
+  year: 2015
+  notes: BioSample record for Chlorella vulgaris strain UTEX 395.
+ingredients:
+- preferred_term: CaCl 2H O
+  notes: Ontology mapping not yet available; From CCAP Medium MR_TAP.pdf; Curated
+    from CCAP Medium MR_TAP.pdf specification
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+- preferred_term: MgSO 7H O
+  notes: Ontology mapping not yet available; From CCAP Medium MR_TAP.pdf; Curated
+    from CCAP Medium MR_TAP.pdf specification
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+- preferred_term: KH PO
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780465'
+    ontology_source: CHEBI
+  concentration:
+    value: '5.6'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+- preferred_term: Na EDTA.2H O
+  notes: Ontology mapping not yet available; From CCAP Medium MR_TAP.pdf; Curated
+    from CCAP Medium MR_TAP.pdf specification
+  concentration:
+    value: '50'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+- preferred_term: ZnSO4 x 7 H2O
+  term:
+    id: CHEBI:32312
+    label: zinc sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780479'
+    ontology_source: CHEBI
+  concentration:
+    value: '22'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+- preferred_term: H3BO3
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780481'
+    ontology_source: CHEBI
+  concentration:
+    value: '11.4'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: 'From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+    Name repaired (#276): the source string `H BO` had lost its subscript digits;
+    restored to `H3BO3` — grounded to boric acid (CHEBI:33118).'
+- preferred_term: MnCl2 x 4 H2O
+  term:
+    id: CHEBI:86368
+    label: manganese(II) chloride tetrahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780483'
+    ontology_source: CHEBI
+  concentration:
+    value: '5.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+- preferred_term: FeSO4 x 7H2O
+  term:
+    id: CHEBI:75836
+    label: iron(2+) sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780485'
+    ontology_source: CHEBI
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+- preferred_term: CoCl2 x 6 H2O
+  term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780487'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.6'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+- preferred_term: CuSO4 x 5 H2O
+  term:
+    id: CHEBI:31440
+    label: copper(II) sulfate pentahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.780489'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.16'
+    unit: G_PER_L
+  source: CCAP Medium MR_TAP.pdf
+  notes: From CCAP Medium MR_TAP.pdf; Curated from CCAP Medium MR_TAP.pdf specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: TAP Medium
+organism_culture_type: isolate
+target_organisms:
+- preferred_term: Chlorella vulgaris
+  term:
+    id: NCBITaxon:3077
+    label: Chlorella vulgaris
+  strain: UTEX 395
+  genome_assembly_id:
+  - SAMN03453227
+  growth_metrics:
+  - measurement_conditions: TAP medium laboratory co-culture condition comparing Chlorella
+      vulgaris growth with and without Delftia sp.
+    evidence:
+    - reference: PMID:39168352
+      supports: SUPPORT
+      snippet: Under laboratory conditions, we found that Delftia sp. had a negative
+        effect on C. vulgaris growth when co-cultured in a TAP medium.
+      explanation: The source explicitly reports Chlorella vulgaris growth behavior
+        in TAP medium under laboratory culture conditions.
+  evidence:
+  - reference: PMID:39168352
+    supports: SUPPORT
+    snippet: Chlorella vulgaris and bacteria of the genus Delftia
+    explanation: The source studied Chlorella vulgaris UTEX 395 growth in TAP medium
+      and compared algal growth with and without Delftia sp. co-culture.
+source_environment:
+- preferred_term: laboratory bioreactor
+  term:
+    id: ENVO:01001405
+    label: laboratory environment
+- preferred_term: freshwater environment
+  term:
+    id: ENVO:01000306
+    label: freshwater environment
+  notes: 'Natural algae-bacteria association from freshwater habitat, maintained in
+    laboratory culture to study nitrogen stress responses and mutualistic interactions.
+    The consortium demonstrates stable co-occurrence and metabolic cooperation under
+    nutrient limitation.
+
+    '
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Bring to 1 L with deionised water.
+- step_number: 2
+  action: ADD_AGAR
+  description: For an agar formulation, add 15 g/L Bacteriological Agar.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 15 psi for 15 minutes.

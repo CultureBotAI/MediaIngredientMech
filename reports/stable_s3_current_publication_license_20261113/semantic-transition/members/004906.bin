@@ -1,0 +1,241 @@
+id: CultureMech:007289
+name: bg11_0_015_mm_iron_shcolnick_2006
+original_name: BG11, 0.015 mM Iron (Shcolnick 2006)
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Cobalt nitrate
+  concentration:
+    value: '0.0001697'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:86209
+    label: cobalt dinitrate
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '0.0003164'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+- preferred_term: Sodium nitrate
+  term:
+    id: CHEBI:63005
+    label: sodium nitrate
+  concentration:
+    value: '10.03'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63005
+    label: sodium nitrate
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.009145'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.04626'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.001616'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.0007721'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Fe(III)dicitrate
+  concentration:
+    value: '0.015'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:fe3dcit'
+- preferred_term: Citrate
+  concentration:
+    value: '0.03123'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:cit'
+  term:
+    id: CHEBI:16947
+    label: citrate(3-)
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '0.3043'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '0.2239'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: EDTA
+  term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+  concentration:
+    value: '0.003422'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+- preferred_term: sodium silicate
+  term:
+    id: CHEBI:60720
+    label: sodium silicate
+  concentration:
+    value: '0.2041'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:60720
+    label: sodium silicate
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.2433'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Sodium carbonate
+  concentration:
+    value: '0.1887'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:29377
+    label: sodium carbonate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:29377
+    label: sodium carbonate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:46.106083Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 385, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:07.188182Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:47.439889Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007289'
+- timestamp: '2026-03-17T06:29:40.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:05.665526+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "'BG11, 0.015 mM Iron (Shcolnick 2006" to "bg11_0_015_mm_iron_shcolnick_2006"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:50.812118+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T04:06:09.746297+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:385's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-08-31T06:17:21.826287+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored the medium's own name in media_term.term.label, original_name. The
+    MediaDB SQL parser truncated every value containing a parenthesis at that parenthesis;
+    recovered from media_database.07Oct2015.sql.
+- timestamp: '2026-10-13T16:00:31.974764+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper bibliography, archived abstract/Markdown provenance,
+    exact excerpts and qualified scientific-name/NCBI mappings. Preserved formulation,
+    assay and metadata limits. Existing recipe fields and history unchanged; no new
+    native growth, concentration evidence or resolved variant.
+  source: PMID:17234153
+media_term:
+  preferred_term: MediaDB Medium 385
+  term:
+    id: MEDIADB:385
+    label: BG11, 0.015 mM Iron (Shcolnick 2006)
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:17234153
+  title: A role for mrgA, a DPS family protein, in the internal transport of Fe in
+    the cyanobacterium Synechocystis sp. PCC6803.
+  authors: Shcolnick S; Shaked Y; Keren N
+  year: 2007
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=PubMed_abstract_only; alternate_identifier=doi:10.1016/j.bbabio.2006.11.015;
+    owner=MEDIADB:385; discovery_sourceID=135; source_url=https://pubmed.ncbi.nlm.nih.gov/17234153/;
+    raw_abstract=references_cache/papers/PMID_17234153.xml; source_markdown=references_cache/papers/PMID_17234153.md.
+    PubMed abstract; exact excerpt="Synechocystis sp. PCC6803". PubMed abstract; exact
+    excerpt="Fe replete to Fe depleted medium". The three imported owners are distinct:
+    YBG11 with 0.006 mM iron chloride, YBG11 omitting iron chloride, and BG11 with
+    0.015 mM iron dicitrate. The third also differs in phosphate, nitrate, chelator,
+    buffer, silicate and other amounts; it is not merely a one-ingredient iron-dose
+    variant. These are local record comparisons, not quantities certified by the abstract.
+    Exact study-to-formulation assignment remains unresolved. Reported organism=Synechocystis
+    sp. PCC6803; canonical scientific name=Synechocystis sp. PCC 6803; NCBITaxon:1148;
+    actual rank=species; taxonomy_match=verified species node; role=study organism;
+    the NCBI node has species rank despite its strain-like label. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1148&retmode=xml.
+    Reported organism=Synechocystis sp. PCC6803 mrgA disruption mutant (slr1894; DeltamrgA);
+    canonical scientific name=Synechocystis sp. PCC 6803; NCBITaxon:1148; actual rank=species;
+    taxonomy_match=parent_rank_only; role=experimental mutant distinguished from wild
+    type; exact derivative node unresolved in bounded lookup. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1148&retmode=xml.
+    Intracellular iron quotas and chlorophyll fluorescence are not medium doses; the
+    qualitative growth-rate decrease is not a scalar growth metric. Use the 2007 print
+    year for this bibliography; PubMed records electronic publication in 2006, consistent
+    with the historical recipe name. Taxonomy archive=references_cache/papers/taxonomy/cyanobacterial-studies-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/cyanobacterial-studies-20261013.md.
+    Bounded lookup misses do not prove taxon absence. Organism inventory is limited
+    to inspected abstract passages, not the inaccessible full paper. Correction/retraction
+    coverage is limited to inspected publication metadata. Existing related-media
+    candidates were checked without asserting exact formulation equivalence. All prior
+    ingredients, quantities, preparation and history remain unchanged and uncertified
+    by this citation. No new native growth assertion, concentration evidence or resolved
+    variant.'

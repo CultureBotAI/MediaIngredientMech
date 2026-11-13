@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:prepared_difco_0045_blood_agar_base_dsmz_646
+preferred_term: Prepared Difco0045 Blood Agar Base (DSMZ646)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:prepared_difco_0045_blood_agar_base_dsmz_646
+  ontology_label: Prepared Difco0045 Blood Agar Base (DSMZ646)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium646.pdf
+    notes: DSMZ646 explicitly prepares Difco0045 Blood Agar Base at40g/L, sterilizes
+      and cools it before separately adding5% sterile defibrinated rabbit OR sheep
+      blood. This owner is that prepared base before blood addition. Complete historical
+      powder composition and water specification are absent; the known dry-product
+      contribution is retained as a partial assertion without selecting an animal
+      blood supplement.
+synonyms: []
+notes: DSMZ646 explicitly prepares Difco0045 Blood Agar Base at40g/L, sterilizes and
+  cools it before separately adding5% sterile defibrinated rabbit OR sheep blood.
+  This owner is that prepared base before blood addition. Complete historical powder
+  composition and water specification are absent; the known dry-product contribution
+  is retained as a partial assertion without selecting an animal blood supplement.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: DSMZ646 explicitly prepares Difco0045 Blood Agar Base at40g/L, sterilizes
+    and cools it before separately adding5% sterile defibrinated rabbit OR sheep blood.
+    This owner is that prepared base before blood addition. Complete historical powder
+    composition and water specification are absent; the known dry-product contribution
+    is retained as a partial assertion without selecting an animal blood supplement.
+    Proposal only; inherited publication/role/source holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.240638+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+components:
+- component_name: Difco0045 Blood Agar Base (dehydrated product)
+  reference_scope: UNMAPPED
+  concentration_value: '40'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium646.pdf
+    notes: Known dry product amount per prepared-base litre; preparation water specification
+      and internal powder formulation not stated.

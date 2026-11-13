@@ -1,0 +1,72 @@
+identifier: kgmicrobe.ingredient:carbonate_paired100mm_ph10_nbrc944
+preferred_term: 100 mM NaHCO3 / 100 mM Na2CO3 buffer, pH 10 (NBRC 944)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:carbonate_paired100mm_ph10_nbrc944
+  ontology_label: 100 mM NaHCO3 / 100 mM Na2CO3 buffer, pH 10 (NBRC 944)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=944
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. NBRC
+      944 lists 1 L of a buffer labelled 100 mM NaHCO3 / 100 mM Na2CO3 at pH 10. The
+      paired source concentrations are retained literally, without treating them as
+      a verified 200 mM total or deriving a mixing ratio. This is not equated to the
+      1 M stock added in JCM 1452.
+components:
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  source: Source label prints 100 mM; ratio and mixing basis unspecified.
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  source: Source label prints 100 mM; hydration and mixing basis unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=944
+    source_record: 100 mM NaHCO3 / 100 mM Na2CO3 buffer, pH 10 (NBRC 944)
+    notes: NBRC 944 lists 1 L of a buffer labelled 100 mM NaHCO3 / 100 mM Na2CO3 at
+      pH 10. The paired source concentrations are retained literally, without treating
+      them as a verified 200 mM total or deriving a mixing ratio. This is not equated
+      to the 1 M stock added in JCM 1452.
+  notes: Slash notation does not establish stock mixing volumes, total carbonate concentration,
+    solvent or titrant. Source-named parts remain UNMAPPED where supplied form or
+    stock identity is not established. MIM_CATALOG references identify only the supported
+    constituent, not approval of that complete owner.
+notes: NBRC 944 lists 1 L of a buffer labelled 100 mM NaHCO3 / 100 mM Na2CO3 at pH
+  10. The paired source concentrations are retained literally, without treating them
+  as a verified 200 mM total or deriving a mixing ratio. This is not equated to the
+  1 M stock added in JCM 1452. Slash notation does not establish stock mixing volumes,
+  total carbonate concentration, solvent or titrant. Provenance-only source text '100
+  mM NaHCO3/100 mM Na2CO3 buffer (pH 10)' (case CM_NAME:5fe9c425c5b961fd152aeb859617db55f9daa8addbd938da2fd142aef3a8bf95).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.987976+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

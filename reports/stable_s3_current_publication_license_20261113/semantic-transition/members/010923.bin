@@ -1,0 +1,343 @@
+{
+  "case_indices": [
+    56,
+    181
+  ],
+  "search_regex": "cooked.?meat|robertson",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/mapped/Modified_Cooked_Meat_Medium.yaml",
+      "sha256": "85ab9042f8e67c7ec43210a485b7a9f872d43fc769dc315887fd5d8c1cdacf97",
+      "record": {
+        "identifier": "kgmicrobe.ingredient:modified_cooked_meat_medium",
+        "preferred_term": "Modified Cooked Meat Medium",
+        "synonyms": [
+          {
+            "synonym_text": "Modified Cooked Meat Medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "bergey:substrates"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-05T00:01:30.894952+00:00",
+            "curator": "microbedecoder-residual-dispositions",
+            "action": "FLAGGED_NEEDS_EXPERT",
+            "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+            "previous_status": "UNMAPPED",
+            "new_status": "NEEDS_EXPERT",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Modified_Cooked_Meat_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Recommended record updates — **Status:** retain `UNMAPPED` and `NEEDS_EXPERT`. This is not a failed chemical lookup; it is a named-medium record requiring source-level recipe identification and eventual decomposition. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-14T00:00:00+00:00",
+            "curator": "apply_curated_decompositions",
+            "action": "DECOMPOSED_FROM_CURATED_RESEARCH",
+            "previous_status": "NEEDS_EXPERT",
+            "new_status": "MAPPED",
+            "changes": "UNMAPPED_0763 -> kgmicrobe.ingredient:modified_cooked_meat_medium (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium): it is a named medium and these are what the recipe contains. 1 constituent(s), 1 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-15T00:00:00+00:00",
+            "curator": "move_mapped_out_of_unmapped_collection",
+            "action": "MOVED_TO_MAPPED_COLLECTION",
+            "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-24T00:00:00+00:00",
+            "curator": "migrate_component_partonomy",
+            "action": "TYPED_COMPONENT_PARTONOMY",
+            "changes": "#369: added method/evidence/completeness and explicit reference scope to 1 existing component(s) (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "components": [
+          {
+            "component_name": "meat (cooked)",
+            "component_id": "FOODON:03305103",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          }
+        ],
+        "component_assertion": {
+          "method": "CURATED_INTERPRETATION",
+          "completeness": "PARTIAL",
+          "evidence": [
+            {
+              "evidence_type": "CURATED_DATASET",
+              "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+              "source_record": "Modified Cooked Meat Medium",
+              "notes": "Reviewed row: strategy=map_to_medium, confidence=high; Robertson's cooked-meat anaerobe medium; repo 'Cooked meat medium' already grounds to FOODON:03305103. Undefined parts: beef-heart granules, peptone, glucose."
+            }
+          ],
+          "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:modified_cooked_meat_medium",
+          "ontology_label": "Modified Cooked Meat Medium",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "MIM curation (#213/#308)",
+              "notes": "Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium): it is a named medium and these are what the recipe contains. 1 constituent(s), 1 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none."
+            }
+          ]
+        }
+      },
+      "names": [
+        "Modified Cooked Meat Medium",
+        "kgmicrobe.ingredient:modified_cooked_meat_medium",
+        "Modified Cooked Meat Medium"
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Cooked_Meat_Medium.yaml",
+      "sha256": "518ebaf0c08461cf8c33a8599406efd69aa30594f6a531dde9ff37af21ca06cc",
+      "record": {
+        "identifier": "FOODON:03305103",
+        "preferred_term": "Cooked meat medium",
+        "synonyms": [
+          {
+            "synonym_text": "Cooked meat medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Cooked meat medium (Oxoid)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 2,
+          "media_count": 2
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T17:59:59.284679+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_UPGRADE_TO_FOODON",
+            "changes": "primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.512701+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'meat')",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518602+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Cooked meat medium (Oxoid)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "FOODON:03305103",
+          "ontology_label": "meat (cooked)",
+          "ontology_source": "FOODON",
+          "mapping_quality": "LEXICAL_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "FOODON via OLS search",
+              "notes": "Auto-upgraded from 'UNMAPPED_0364'; match=fuzzy-top"
+            }
+          ]
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      },
+      "names": [
+        "Cooked meat medium",
+        "FOODON:03305103",
+        "Cooked meat medium",
+        "Cooked meat medium (Oxoid)"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:002953",
+      "recipe_label": "cooked_meat_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/cooked_meat_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Cooked meat medium (Oxoid)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "FOODON:03305103",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Cooked meat medium",
+      "mim_matched_label": "Cooked meat medium (Oxoid)",
+      "mim_match_type": "synonym",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03305103",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "55.0",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"55.0\"},\"notes\":\"JCM Medium 605 lists 55.0 g/L Cooked meat medium from Oxoid without disclosing the product composition.\",\"preferred_term\":\"Cooked meat medium (Oxoid)\",\"source\":\"JCM Medium 605\"}"
+    },
+    {
+      "recipe_id": "CultureMech:009341",
+      "recipe_label": "robertson_cooked_meat_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/robertson_cooked_meat_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Robertson cooked meat medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "1000",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"1000\"},\"notes\":\"TOGO M2793 lists one liter of Robertson cooked meat medium.\",\"preferred_term\":\"Robertson cooked meat medium\",\"source\":\"TOGO M2793\"}"
+    },
+    {
+      "recipe_id": "CultureMech:010012",
+      "recipe_label": "cooked_meat_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/TOGO_M612_Cooked_Meat_Medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "2",
+      "preferred_term": "Cooked meat medium (Oxoid)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "FOODON:03305103",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Cooked meat medium",
+      "mim_matched_label": "Cooked meat medium (Oxoid)",
+      "mim_match_type": "synonym",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03305103",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "55",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"55\"},\"notes\":\"Properties: Undefined component, Complex component\",\"preferred_term\":\"Cooked meat medium (Oxoid)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:013442",
+      "recipe_label": "Main sol. J605",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_4463_Main_sol_J605.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "Cooked meat medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "FOODON:03305103",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1824",
+      "mim_preferred_term": "Cooked meat medium",
+      "mim_matched_label": "Cooked meat medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03305103",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "55",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"55\"},\"preferred_term\":\"Cooked meat medium\",\"term\":{\"id\":\"mediadive.compound:1824\",\"label\":\"Cooked meat medium\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/TOGO_M612_Cooked_Meat_Medium.yaml",
+      "sha256": "c3e718828059b7169695b662a657864f8a29d30f4180f5fb3c662529eb37e014",
+      "frozen_input_manifest_hash": "c3e718828059b7169695b662a657864f8a29d30f4180f5fb3c662529eb37e014",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/cooked_meat_medium.yaml",
+      "sha256": "ac42c38e5562b5e2fa89a383b219b37683fa42cc5a59189e527a10fd49707204",
+      "frozen_input_manifest_hash": "ac42c38e5562b5e2fa89a383b219b37683fa42cc5a59189e527a10fd49707204",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_4463_Main_sol_J605.yaml",
+      "sha256": "19b485ab920b251a33d8724260fddd9b5c778f2b8c86d222a413a0e277bd4a4b",
+      "frozen_input_manifest_hash": "19b485ab920b251a33d8724260fddd9b5c778f2b8c86d222a413a0e277bd4a4b",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/robertson_cooked_meat_medium.yaml",
+      "sha256": "1c2679bea5dcd9f6ef22adf9aed822ba8b1a656d886cb858007436844ccfe516",
+      "frozen_input_manifest_hash": "1c2679bea5dcd9f6ef22adf9aed822ba8b1a656d886cb858007436844ccfe516",
+      "matches_frozen": true
+    }
+  ]
+}

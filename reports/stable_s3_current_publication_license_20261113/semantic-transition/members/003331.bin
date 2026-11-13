@@ -1,0 +1,28 @@
+from pathlib import Path
+import hashlib,json,os,subprocess,sys
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'integration/ancillary1258-worktree';sys.path.insert(0,str(A/'src'))
+import yaml
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient
+
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(n,x):
+ p=D/n;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+p=json.loads((C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json').read_text());op=next(x for x in p['records'] if x['operation_id']=='TARGET-023');o=next(x for x in op['origins'] if x['worker_slot']=='worker-07');b=next(x for x in p['bindings'] if x['binding_id']==o['payload_binding']);idx=json.loads((C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json').read_text());item=next(x for x in idx['files'] if x['destination']==b['path']);source=FrozenFile.capture(Path(item['source']));assert sha(source.content)==b['sha256']=='b58cdefabd6bc38c3659b7ed5998bafd969d1dff8b240eb0a704555aa717715b'
+W=C/'workers/w07/worktree';blob=subprocess.check_output(['git','--no-optional-locks','-C',str(W),'show',b['published_head']+':'+b['published_path']],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'});assert blob==source.content
+before=subprocess.check_output(['git','--no-optional-locks','-C',str(A),'show','84241993a278a7a413422ef89a52c0b47dc57831:'+op['before_source_record']],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'});assert sha(before)==op['before_yaml_sha256']
+record=yaml.safe_load(blob);base=yaml.safe_load(before);assert not validate_ingredient(record)
+x=json.loads(json.dumps(record));extra=x['synonyms'].pop();event=x['curation_history'].pop();assert extra['synonym_text']=='Sodium dihydrogen orthophosphate monohydrate';assert x==base
+for label,raw in [('published-w07-b58c.yaml',blob),('authentic-before-e116.yaml',before)]:
+ path=D/'inputs'/label;path.parent.mkdir(parents=True,exist_ok=True)
+ with path.open('xb') as f:f.write(raw)
+render=D/'native-render'/Path(op['source_record']).name;render.parent.mkdir();write_validated_ingredient(record,render);raw=render.read_bytes();assert sha(raw)=='6555960fab227438878110a401a843e9e9ba03ad40bde86c8cba6ebd83013b96';assert yaml.safe_load(raw)==record
+rt=render.with_name('roundtrip.yaml');write_validated_ingredient(record,rt);assert rt.read_bytes()==raw
+candidate=D/'candidates'/Path(op['source_record']).name;candidate.parent.mkdir();publish_new_files([(candidate,raw)],source.verify);source.verify()
+producers=[A/'src/mediaingredientmech/validation/write_validated.py',A/'src/mediaingredientmech/ingredient_bundle_refresh.py',A/'src/mediaingredientmech/curate/publication_guard.py']+sorted((A/'src/mediaingredientmech/schema').glob('*.yaml'))
+receipt={'status':'GUARDED_SERIALIZATION_OF_AUTHENTIC_W07_RESIDUAL_NOT_NEW_SCIENCE','source_original':{'path':str(source.path),'sha256':sha(blob),'published_head':b['published_head'],'published_path':b['published_path']},'candidate':{'path':str(candidate),'sha256':sha(raw)},'authentic_before_sha256':sha(before),'complete_typed_object_equal':True,'history_evidence_lists_exact':True,'idempotent':True,'no_new_history_because_no_semantic_change':True,'original_origin_exact':o,'superseded_private_union_context':op,'deferred_peer_origin':next(z for z in op['origins'] if z['worker_slot']=='worker-08'),'producers':[{'path':str(z),'sha256':sha(z.read_bytes())} for z in producers],'independent_review_pending':True,'application_authorized':False}
+save('SERIALIZATION-BRIDGE.json',receipt);save('SOURCE-DELTA.json',{'original_published_source_vs_authentic_before':{'added_synonym':extra,'appended_history':event},'all_other_objects_equal':True,'dependency_on_W08_alias_transfer':False,'scope':'This independence is established by exact inverse comparison and authentic original proposal; source/case scientific review remains distinct.'})
+members=[{'path':str(z.relative_to(D)),'sha256':sha(z.read_bytes()),'bytes':z.stat().st_size} for z in sorted(D.rglob('*')) if z.is_file() and z.name not in ['stdout','stderr']];save('MANIFEST.json',{'members':members});save('HANDOFF.json',{'status':receipt['status'],'manifest':{'path':'MANIFEST.json','sha256':sha((D/'MANIFEST.json').read_bytes()),'members':len(members)},'bridge':{'path':'SERIALIZATION-BRIDGE.json','sha256':sha((D/'SERIALIZATION-BRIDGE.json').read_bytes())},'candidate':receipt['candidate'],'application_authorized':False});print(json.dumps({'HANDOFF':sha((D/'HANDOFF.json').read_bytes()),'bridge':sha((D/'SERIALIZATION-BRIDGE.json').read_bytes()),'candidate':receipt['candidate']},indent=2))

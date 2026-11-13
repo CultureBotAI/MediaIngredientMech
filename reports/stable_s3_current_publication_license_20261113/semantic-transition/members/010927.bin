@@ -1,0 +1,769 @@
+{
+  "case_indices": [
+    54,
+    78,
+    168
+  ],
+  "search_regex": "\\bmem\\b|eagle",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+      "sha256": "53bef2ebf4a08858099277f59554eb8d7563fc00ccc4415399f2b68294ed5008",
+      "record": {
+        "identifier": "UNMAPPED_0437",
+        "preferred_term": "MEM alpha Modification",
+        "synonyms": [
+          {
+            "synonym_text": "MEM alpha Modification",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "MEM alpha Modification (BioWest)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1923); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:52:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named complete MEM alpha medium formulation and left unmapped rather than identity-mapping to a single component or generic medium parent.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MEM_alpha_Modification-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Curation recommendation — **Recommended status: `UNMAPPED`.** Retain `ingredient_type: DEFINED_MEDIUM`. The current record has a well-supported identity at the label/formulation level, but no verified stable ontology identifier. Therefore, create **no SSSOM row at present**. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'MEM alpha Modification (BioWest)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1923); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete MEM alpha medium formulation pending formulation-specific curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "MEM alpha Modification",
+        "UNMAPPED_0437",
+        "MEM alpha Modification",
+        "MEM alpha Modification (BioWest)"
+      ]
+    },
+    {
+      "path": "data/ingredients/unmapped/MEM-Medium.yaml",
+      "sha256": "a1feb42caa10276eb10b06e00df60f6b7b4e3e24d4c2ab988fcbe27ff80ff865",
+      "record": {
+        "identifier": "UNMAPPED_0438",
+        "preferred_term": "MEM-Medium",
+        "synonyms": [
+          {
+            "synonym_text": "MEM-Medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1377); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:52:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named complete MEM formulation and left unmapped rather than identity-mapping to a single component or generic medium parent.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MEM-Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** `MEM-Medium` is not a single chemical, salt, hydrate, buffer, or extract. It is an under-specified label for a named synthetic mammalian cell-culture medium, most likely **Minimum Essential Medium**, also written **Minimal Essential Medium**, **Eagle’s Minimum/Minimal Essential Medium**, **MEM**, or **EMEM**. A modern review describes EMEM as Harry Eagle’s synthetic No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1377); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete MEM formulation pending formulation-specific curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "MEM-Medium",
+        "UNMAPPED_0438",
+        "MEM-Medium"
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Meropenem.yaml",
+      "sha256": "0671ff83f0965ce8731e1e98dd382c5c19cb6d4f43f12aac9d0dd9ed421c0b6b",
+      "record": {
+        "identifier": "CHEBI:6770",
+        "preferred_term": "Meropenem",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:6770",
+          "ontology_label": "meropenem trihydrate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "SYNONYM_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#320)",
+              "notes": "identifier/ontology_id CHEBI:43968 ('meropenem') -> CHEBI:6770 ('meropenem trihydrate'). The record's own cas_rn 119478-56-7 is registered by ChEBI against CHEBI:6770, which is the trihydrate of the term the record previously carried. Curation decision on #320: where the CAS names a more specific FORM than the label, the CAS governs — the recipe is taken to mean the substance actually weighed out. These surfaced as 'unrelated' in the ancestry triage only because ChEBI does not model salt-of / hydrate-of / racemate-of as subsumption, the same gap #342 recorded for hydrates."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "(6S)-2-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]sulfanyl}-6-[(1R)-1-hydroxyethyl]-1beta-methyl-2,3-didehydro-1-carbapenam-3-carboxylic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          },
+          {
+            "synonym_text": "(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC ACID",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic acid",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "Antibiotic SM 7338",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "MEM",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "MEPM",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "meropenem anhydrous",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "meropenemum",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=119478-56-7); Imported from CultureBotHT.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.666531+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:30.702479+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C17H25N3O5S; inchi=InChI=1S/C17H25N3O5S/c1-7-12-11(8(2)21)16(23)20(12; smiles=[H][C@]12[C@@H](C)C(S[C@@H]3CN[C@H](C(=O)N(C)C)C3)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:16.295257+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.391043+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "reground_cas_specific_form",
+            "action": "REGROUNDED_TO_CAS_SPECIFIC_FORM",
+            "changes": "identifier/ontology_id CHEBI:43968 -> CHEBI:6770 'meropenem trihydrate' (#320); the record's CAS 119478-56-7 denotes the trihydrate. mapping_quality -> SYNONYM_MATCH.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T17:40:44.716277+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: '(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC ACID'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T22:41:49.137449+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 6 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: '(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic acid'; 'Antibiotic SM 7338'; 'MEM'; 'MEPM'; 'meropenem anhydrous'; 'meropenemum'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "119478-56-7",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:04:17.380972+00:00",
+          "molecular_formula": "C17H25N3O5S",
+          "inchi": "InChI=1S/C17H25N3O5S/c1-7-12-11(8(2)21)16(23)20(12)13(17(24)25)14(7)26-9-5-10(18-6-9)15(22)19(3)4/h7-12,18,21H,5-6H2,1-4H3,(H,24,25)/t7-,8-,9+,10+,11-,12-/m1/s1",
+          "smiles": "[H][C@]12[C@@H](C)C(S[C@@H]3CN[C@H](C(=O)N(C)C)C3)=C(C(=O)O)N1C(=O)[C@]2([H])[C@@H](C)O"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      },
+      "names": [
+        "Meropenem",
+        "CHEBI:6770",
+        "(6S)-2-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]sulfanyl}-6-[(1R)-1-hydroxyethyl]-1beta-methyl-2,3-didehydro-1-carbapenam-3-carboxylic acid",
+        "(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC ACID",
+        "(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic acid",
+        "Antibiotic SM 7338",
+        "MEM",
+        "MEPM",
+        "meropenem anhydrous",
+        "meropenemum"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:000973",
+      "recipe_label": "cultivation_medium_for_chlamydophila_pecorum",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/cultivation_medium_for_chlamydophila_pecorum.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "MEM-Medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1377",
+      "mim_preferred_term": "MEM-Medium",
+      "mim_matched_label": "MEM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "891.089109",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"891.089109\"},\"notes\":\"DSMZ Medium 1503 lists 45.0 ml MEM-Medium in a 50.5 ml CACO-2 cell-culture medium batch.\",\"preferred_term\":\"MEM-Medium\",\"source\":\"DSMZ Medium 1503\",\"term\":{\"id\":\"mediadive.compound:1377\",\"label\":\"MEM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:001122",
+      "recipe_label": "minimum_essential_medium_mem",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/minimum_essential_medium_mem.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "MEM (1x) Gibco 31095-029",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "variable",
+      "concentration_unit": "VARIABLE",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"VARIABLE\",\"value\":\"variable\"},\"notes\":\"DSMZ Medium 1638 lists MEM (1x), Gibco 31095-029, without stating an amount.\",\"preferred_term\":\"MEM (1x) Gibco 31095-029\",\"source\":\"DSMZ Medium 1638\"}"
+    },
+    {
+      "recipe_id": "CultureMech:001238",
+      "recipe_label": "chlamydia_serpentis_poikilotherma_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/chlamydia_serpentis_poikilotherma_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "MEM-Medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "MEM-Medium",
+      "mim_matched_label": "MEM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "500",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"500\"},\"preferred_term\":\"MEM-Medium\"}"
+    },
+    {
+      "recipe_id": "CultureMech:001256",
+      "recipe_label": "bskii_medium_borrelia",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/bskii_medium_borrelia.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "10",
+      "preferred_term": "MEM alpha Modification",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "MEM alpha Modification",
+      "mim_matched_label": "MEM alpha Modification",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "8.9",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"8.9\"},\"evidence\":[{\"explanation\":\"ingredients[10].concentration: Original final volume is 100 ml = 0.1 L: 0.89 g / 0.1 L = 8.9 G_PER_L. This is the receiving-medium rate, not a mass interpretation of a liquid input. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=data.solutions[0].recipe[10]; accessed=2026-10-08T22:21:55.994207+00:00; capture SHA256=697c769d31d726f5b7e965402b9291bbb8b288f67daad777509eef51a2b25116.\\n\\nAdditional exact excerpt: {\\n                        \\\"recipe_order\\\": 12,\\n                        \\\"compound\\\": \\\"MEM alpha Modification\\\",\\n                        \\\"compound_id\\\": 1923,\\n                        \\\"attribute\\\": \\\"BioWest Cat No. P0440\\\",\\n                        \\\"amount\\\": 0.89,\\n                        \\\"unit\\\": \\\"g\\\",\\n                        \\\"g_l\\\": 8.9,\\n                        \\\"optional\\\": 0\\n                    }\\ningredients[10].notes: Preserve the exact product/fraction qualifier. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=data.solutions[0].recipe[10]; accessed=2026-10-08T22:21:55.994207+00:00; capture SHA256=697c769d31d726f5b7e965402b9291bbb8b288f67daad777509eef51a2b25116.\",\"reference\":\"https://mediadive.dsmz.de/rest/medium/1829\",\"snippet\":\"{\\n                        \\\"recipe_order\\\": 12,\\n                        \\\"compound\\\": \\\"MEM alpha Modification\\\",\\n                        \\\"compound_id\\\": 1923,\\n                        \\\"attribute\\\": \\\"BioWest Cat No. P0440\\\",\\n                        \\\"amount\\\": 0.89,\\n                        \\\"unit\\\": \\\"g\\\",\\n                        \\\"g_l\\\": 8.9,\\n                        \\\"optional\\\": 0\\n                    }\",\"supports\":\"SUPPORT\"},{\"explanation\":\"ingredients[10].concentration: Original recipe row corroborates the source-specific ingredient, batch amount and unit; preparation scope is retained. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=original recipe text; accessed=2026-10-08T22:23:34.264038+00:00; capture SHA256=315505d8d0ff7d6eb251e2f07754db41cb014aca014de719da507e45e1aa2ab2.\\n\\nAdditional exact excerpt: Final volume: 100 ml\\ningredients[10].concentration: Original final volume is 100 ml = 0.1 L: 0.89 g / 0.1 L = 8.9 G_PER_L. This is the receiving-medium rate, not a mass interpretation of a liquid input. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=original recipe text; accessed=2026-10-08T22:23:34.264038+00:00; capture SHA256=315505d8d0ff7d6eb251e2f07754db41cb014aca014de719da507e45e1aa2ab2.\",\"reference\":\"https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1829.pdf\",\"snippet\":\"MEM alpha Modification (BioWest Cat No. P0440)                     0.89          g\",\"supports\":\"SUPPORT\"}],\"notes\":\"Original source component specification: BioWest Cat No. P0440.\",\"preferred_term\":\"MEM alpha Modification\"}"
+    },
+    {
+      "recipe_id": "CultureMech:001271",
+      "recipe_label": "cultivation_medium_for_sf1ep_cells_for_treponema_pallidum",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/cultivation_medium_for_sf1ep_cells_for_treponema_pallidum.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Eagle's MEM",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "884.956",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"884.956\"},\"notes\":\"DSMZ Medium 1850 lists 500 ml Eagle's MEM (Sigma M4655) in a 565 ml Sf1Ep medium batch.\",\"preferred_term\":\"Eagle's MEM\",\"source\":\"DSMZ Medium 1850\",\"supplier_catalog\":{\"catalog_number\":\"M4655\",\"supplier_name\":\"Sigma\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:001271",
+      "recipe_label": "cultivation_medium_for_sf1ep_cells_for_treponema_pallidum",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/cultivation_medium_for_sf1ep_cells_for_treponema_pallidum.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "MEM Non-Essential Amino Acids",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "8.84956",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"8.84956\"},\"notes\":\"DSMZ Medium 1850 lists 5 ml MEM Non-Essential Amino Acids (Gibco 11140-050) in a 565 ml Sf1Ep medium batch.\",\"preferred_term\":\"MEM Non-Essential Amino Acids\",\"source\":\"DSMZ Medium 1850\",\"supplier_catalog\":{\"catalog_number\":\"11140-050\",\"supplier_name\":\"Gibco\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:003244",
+      "recipe_label": "modified_bsk_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/modified_bsk_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "6",
+      "preferred_term": "MEM alpha Modification",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "MEM alpha Modification",
+      "mim_matched_label": "MEM alpha Modification",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "8.90411",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"8.90411\"},\"evidence\":[{\"explanation\":\"Correction of ingredients[6].concentration (MEM alpha Modification (BioWest)): source batch amount 5.2 g / (584 ml / 1000 ml per L) = 8.90411 g/L. Normalized arithmetic is rounded to six significant digits for storage, not increased experimental precision; original stated inputs are retained in the exact quotes. No mass/volume conversion or density is assumed. Locator=ingredient table, row 7. Additional exact final-volume quote: \\\"fill up to 584 ml with distilled water\\\"; locator=preparation following the ingredient table. Final volume 584 ml = 0.584 L. The imported 40 ml denominator counts serum alone and is not the final volume. Original JCM 896 recipe; accessed 2026-10-07; capture SHA256=c6e814a8bff1580ddd42179b7d401a204ae19469786fdafd140408d1522f03c8. HTML entities decoded and display whitespace normalized; inline chemical digits preserved. Existing ontology mappings and growth claims are not validated here.\",\"reference\":\"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=896\",\"snippet\":\"MEM alpha Modification (BioWest) 5.2 g\",\"supports\":\"SUPPORT\"}],\"preferred_term\":\"MEM alpha Modification\"}"
+    },
+    {
+      "recipe_id": "CultureMech:009389",
+      "recipe_label": "eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "3",
+      "preferred_term": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "1",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"1\"},\"preferred_term\":\"Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:010359",
+      "recipe_label": "modified_bsk_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/TOGO_M937_Modified_BSK_Medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "10",
+      "preferred_term": "MEM alpha Modification (BioWest)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "MEM alpha Modification",
+      "mim_matched_label": "MEM alpha Modification (BioWest)",
+      "mim_match_type": "synonym",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "5.2",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"5.2\"},\"notes\":\"Properties: Defined component, Complex component\",\"preferred_term\":\"MEM alpha Modification (BioWest)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:012331",
+      "recipe_label": "Main sol. 1503",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_3111_Main_sol_1503.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "MEM-Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1377",
+      "mim_preferred_term": "MEM-Medium",
+      "mim_matched_label": "MEM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "900.0",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"900.0\"},\"preferred_term\":\"MEM-Medium\",\"term\":{\"id\":\"mediadive.compound:1377\",\"label\":\"MEM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:012542",
+      "recipe_label": "Main sol. 1638",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_3402_Main_sol_1638.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "MEM-Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1377",
+      "mim_preferred_term": "MEM-Medium",
+      "mim_matched_label": "MEM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "1",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"1\"},\"preferred_term\":\"MEM-Medium\",\"term\":{\"id\":\"mediadive.compound:1377\",\"label\":\"MEM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:013819",
+      "recipe_label": "Main sol. J896",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_4890_Main_sol_J896.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "6",
+      "preferred_term": "MEM alpha Modification",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1923",
+      "mim_preferred_term": "MEM alpha Modification",
+      "mim_matched_label": "MEM alpha Modification",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "130",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"130\"},\"preferred_term\":\"MEM alpha Modification\",\"term\":{\"id\":\"mediadive.compound:1923\",\"label\":\"MEM alpha Modification\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:014705",
+      "recipe_label": "Main sol. 1793",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_5951_Main_sol_1793.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "MEM-Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1377",
+      "mim_preferred_term": "MEM-Medium",
+      "mim_matched_label": "MEM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "823.7232289950576",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"823.7232289950576\"},\"preferred_term\":\"MEM-Medium\",\"term\":{\"id\":\"mediadive.compound:1377\",\"label\":\"MEM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:015005",
+      "recipe_label": "M 1829",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_6374_M_1829.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "10",
+      "preferred_term": "MEM alpha Modification",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1923",
+      "mim_preferred_term": "MEM alpha Modification",
+      "mim_matched_label": "MEM alpha Modification",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "8.9",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"8.9\"},\"preferred_term\":\"MEM alpha Modification\",\"term\":{\"id\":\"mediadive.compound:1923\",\"label\":\"MEM alpha Modification\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:015909",
+      "recipe_label": "pplo_broth_for_mycoplasma_arginini_nbrc_1407",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/pplo_broth_for_mycoplasma_arginini_nbrc_1407.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "6",
+      "preferred_term": "100X MEM Vitamins (Gibco)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "1",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"1\"},\"preferred_term\":\"100X MEM Vitamins (Gibco)\"}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/TOGO_M937_Modified_BSK_Medium.yaml",
+      "sha256": "bdf4eebf07d22ecde191a4a359433415bab7b4b2612315b8dc8798ad0638811c",
+      "frozen_input_manifest_hash": "bdf4eebf07d22ecde191a4a359433415bab7b4b2612315b8dc8798ad0638811c",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/bskii_medium_borrelia.yaml",
+      "sha256": "379780575d32d323e45ba7dbc18c182c7342cc5bb5704c82b30a5120b4c7ad13",
+      "frozen_input_manifest_hash": "379780575d32d323e45ba7dbc18c182c7342cc5bb5704c82b30a5120b4c7ad13",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/chlamydia_serpentis_poikilotherma_medium.yaml",
+      "sha256": "c96c6f997cd3fccbf47c838aee1c3283097a7b14722c9ec8a59e8ed51edf684f",
+      "frozen_input_manifest_hash": "c96c6f997cd3fccbf47c838aee1c3283097a7b14722c9ec8a59e8ed51edf684f",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/cultivation_medium_for_chlamydophila_pecorum.yaml",
+      "sha256": "4aaebea5123937963df89a51b50716aefc25d625db222904faedd3addaadb2ce",
+      "frozen_input_manifest_hash": "4aaebea5123937963df89a51b50716aefc25d625db222904faedd3addaadb2ce",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/cultivation_medium_for_sf1ep_cells_for_treponema_pallidum.yaml",
+      "sha256": "b4d50521d6d0259511dfad22aec0549b8b24441c94f168f6e10b0950fbe2b87b",
+      "frozen_input_manifest_hash": "b4d50521d6d0259511dfad22aec0549b8b24441c94f168f6e10b0950fbe2b87b",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum.yaml",
+      "sha256": "4be8965c8e38452bb88c559428a31c1dabb943ba60daf205a3d4fd69fabb2185",
+      "frozen_input_manifest_hash": "4be8965c8e38452bb88c559428a31c1dabb943ba60daf205a3d4fd69fabb2185",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_3111_Main_sol_1503.yaml",
+      "sha256": "5f75b98492b0529b5f846e4f6186a75ea542c6d08a94c79a62e6ee9fc0a85c3e",
+      "frozen_input_manifest_hash": "5f75b98492b0529b5f846e4f6186a75ea542c6d08a94c79a62e6ee9fc0a85c3e",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_3402_Main_sol_1638.yaml",
+      "sha256": "1b0d66806c7782f16c2ad9e125df7ce9b494d643b248676e2b3e0c3c4672b4ea",
+      "frozen_input_manifest_hash": "1b0d66806c7782f16c2ad9e125df7ce9b494d643b248676e2b3e0c3c4672b4ea",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_4890_Main_sol_J896.yaml",
+      "sha256": "169e5ee4b454bd0b3e260422ecdb0b69e550cc5b2e1a5ddfba156b7270c6b7a0",
+      "frozen_input_manifest_hash": "169e5ee4b454bd0b3e260422ecdb0b69e550cc5b2e1a5ddfba156b7270c6b7a0",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_5951_Main_sol_1793.yaml",
+      "sha256": "1b4cf296762a7ce96d95d30e9407f3cfdeec75d137e55bbab7c02f50377d4200",
+      "frozen_input_manifest_hash": "1b4cf296762a7ce96d95d30e9407f3cfdeec75d137e55bbab7c02f50377d4200",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_6374_M_1829.yaml",
+      "sha256": "5847898d448ca43336517b820139e0869b7f37e8c3722a58077c3cc5d550e06d",
+      "frozen_input_manifest_hash": "5847898d448ca43336517b820139e0869b7f37e8c3722a58077c3cc5d550e06d",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/minimum_essential_medium_mem.yaml",
+      "sha256": "71a8efd4cefb0a8ba73956136de3e523624fe5c0944e07033df0ebd5123b3233",
+      "frozen_input_manifest_hash": "71a8efd4cefb0a8ba73956136de3e523624fe5c0944e07033df0ebd5123b3233",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/modified_bsk_medium.yaml",
+      "sha256": "9be116c770107a7623d83de3208a6ecaf5c5fb72bc6e62011247d90e1359ceeb",
+      "frozen_input_manifest_hash": "9be116c770107a7623d83de3208a6ecaf5c5fb72bc6e62011247d90e1359ceeb",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/pplo_broth_for_mycoplasma_arginini_nbrc_1407.yaml",
+      "sha256": "ab082c00fcfa43c5f979555dc64fc5e31d3a49181df27d3a56f3153caa78d643",
+      "frozen_input_manifest_hash": "ab082c00fcfa43c5f979555dc64fc5e31d3a49181df27d3a56f3153caa78d643",
+      "matches_frozen": true
+    }
+  ]
+}

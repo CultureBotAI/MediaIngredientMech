@@ -1,0 +1,90 @@
+identifier: MICRO:0000606
+preferred_term: Casitone
+ontology_mapping:
+  ontology_id: MICRO:0000606
+  ontology_label: casitone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_foodon_promotion
+    notes: Commercial food mixture - FOODON is correct parent ontology. Casitone (BD/Difco)
+      is a pancreatic (enzymatic) digest of casein; equivalent in composition to tryptone.
+      Mapped to FOODON parent 'mammalian milk protein (hydrolyzed)' since no exact FOODON
+      term exists. CLOSE_MATCH.
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual review of MICRO ontology coverage
+    notes: Casitone (BBL) is a pancreatic digest of casein. MICRO has the precise term; FOODON:03315719
+      was the parent class.
+synonyms:
+- synonym_text: Casitone
+  synonym_type: EXACT_SYNONYM
+  source: manual
+- synonym_text: Casitone (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Bacto Casitone (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Casitone (BD-BBL)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Casitone (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+- synonym_text: Casein digest (Casitone, cat. no. 225930)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 282
+  media_count: 282
+curation_history:
+- timestamp: '2026-04-18T04:19:36+00:00'
+  curator: foodon_promotion_cbclaw
+  action: CREATED
+  changes: Created new mapped entry for casitone family with FOODON:03315719 (mammalian milk
+    protein, hydrolyzed).
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.644178+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+- timestamp: '2026-05-02T01:19:04.352049+00:00'
+  curator: manual_micro_specificity_pass
+  action: UPGRADE_FOODON_PARENT_TO_MICRO_SPECIFIC
+  changes: FOODON:03315719 → MICRO:0000606 (more specific MICRO term)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.736928+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518523+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 282/282 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came
+    from the importer retired in #453, whose media_count counted a list truncated to 50 examples
+    (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Add exact CCAP catalog225930 surface form to Casitone. No equivalence to tryptone
+    products, roles or inherited complete payload approval.
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

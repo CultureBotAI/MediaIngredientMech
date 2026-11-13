@@ -1,0 +1,133 @@
+identifier: CHEBI:33403
+preferred_term: Sulphur
+ontology_mapping:
+  ontology_id: CHEBI:33403
+  ontology_label: elemental sulfur
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#368)
+    notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+      weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Sulfur, precipitated
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: polysulfur
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: sulfur, homopolymer
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Sulfur
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:59.519325+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-722-6 from PubChem API via name lookup (Sulphur)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 12597-03-4 from PubChem (via CHEBI:17909)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: Sulfur, precipitated,
+    polysulfur, sulfur, homopolymer'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.517491+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.593150+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=(S)n.S2; inchi=InChI=1S/S3/c1-3-2; smiles=S=S=S
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.716056+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113121+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.840780+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sulphur'' -> ''polysulfur'': synced to canonical CHEBI
+    label (preferred_term ''Sulphur'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_wrong_compound_cas
+  action: CORRECTED_WRONG_COMPOUND_CAS
+  changes: cas_rn '12597-03-4' -> '7704-34-9' (#320). The recorded value denotes trisulfur
+    specifically, not polysulfur — a different compound, not a different form of this
+    one. Replaced with ChEBI's hasDbXref on CHEBI:17909, the term this record is already
+    mapped to, so the new value comes from the existing mapping rather than a fresh
+    lookup.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519931+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 5/5 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-11T13:41:33.694587+00:00'
+  curator: fix_sulfur_family
+  action: MERGED_INTO
+  changes: Merged into CHEBI:33403 'Sulfur'; occurrences transferred to the surviving
+    elemental sulfur record and SSSOM rows dropped. The old record CHEBI:17909 split
+    a spelling or supplied powder form from the same weighable sulfur substance (#368).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002431; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties: {}
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: SULFUR_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
+representative: CHEBI:33403
+mim_id: MIM:0002431
+legacy_identifiers:
+- MIM:Sulphur
+- CHEBI:33403

@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:nbrc_seawater_2pct
+preferred_term: NBRC seawater at stated 2 percent salinity
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_seawater_2pct
+  ontology_label: NBRC seawater at stated 2 percent salinity
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1418;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1419; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1425;
+      https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1071; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=15;
+      https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=16; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=22;
+      https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=24
+    notes: NBRC 15/16/22/24/1071 source inputs retain a 2% salinity qualifier. Cases
+      101/105 support only a common salinity-qualified material class; neither absence
+      of stated origin nor equal salinity proves shared chemical composition or a
+      shared preparation. This isolated class proposal makes no resolved source-to-owner
+      binding and no selection of natural versus artificial preparation. No pure NaCl
+      concentration or artificial formula is inferred. Case 22 explicitly offers alternative
+      preparations and retains its branch-choice hold.
+notes: '#1201 isolated proposal: NBRC 15/16/22/24/1071 source inputs retain a 2% salinity
+  qualifier. Cases 101/105 support only a common salinity-qualified material class;
+  neither absence of stated origin nor equal salinity proves shared chemical composition
+  or a shared preparation. This isolated class proposal makes no resolved source-to-owner
+  binding and no selection of natural versus artificial preparation. No pure NaCl
+  concentration or artificial formula is inferred. Case 22 explicitly offers alternative
+  preparations and retains its branch-choice hold. Salinity basis, source composition
+  and cross-source preparation equivalence remain unresolved. The proposal preserves
+  only the disclosed material-class constraint, not exact identity of all occurrences.
+  Raw source spellings are retained in case evidence and this source scope; no new
+  globally resolving source-local alias is added. Full-owner publication approval
+  and all source-specific holds remain pending.'
+curation_history:
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: NBRC 15/16/22/24/1071 source inputs retain a 2% salinity qualifier. Cases
+    101/105 support only a common salinity-qualified material class; neither absence
+    of stated origin nor equal salinity proves shared chemical composition or a shared
+    preparation. This isolated class proposal makes no resolved source-to-owner binding
+    and no selection of natural versus artificial preparation. No pure NaCl concentration
+    or artificial formula is inferred. Case 22 explicitly offers alternative preparations
+    and retains its branch-choice hold.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.096085+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

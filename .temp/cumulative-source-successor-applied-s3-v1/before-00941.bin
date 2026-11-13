@@ -1,0 +1,78 @@
+identifier: MICRO:0001362
+preferred_term: Digested serum
+synonyms:
+- synonym_text: Digested serum
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in
+    3 CultureBot media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping
+    available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.395780+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0244 → MICRO:0001362 via name normalization to 'Digested
+    serum'
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247874+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum')
+    (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518736+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000940; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 3 CultureBot
+  media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping available;
+  curator review needed.'
+ontology_mapping:
+  ontology_id: MICRO:0001362
+  ontology_label: digested serum
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0244; matched via 'Digested serum' (name normalization);
+      label-exact
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+ingredient_type: UNDEFINED_MIXTURE
+mim_id: MIM:0000940
+legacy_identifiers:
+- MIM:Digested_Serum
+- MICRO:0001362

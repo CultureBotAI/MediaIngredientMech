@@ -1,0 +1,72 @@
+identifier: UNMAPPED_0191
+preferred_term: Khayasin C
+synonyms:
+- synonym_text: Khayasin C
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T06:35:49.730740+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:185858 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:53.667910+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C32H42O8; inchi=InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-2;
+    smiles=[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3
+  llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and left unmapped
+    because the exact audit found no Khayasin C ontology identity; the existing CHEBI
+    KHAYASIN row is retained only as a broader related parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Khayasin_C-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommendation: retain `UNMAPPED`.** “Khayasin
+    C” is best treated provisionally as the name of a **single, letter-designated
+    natural-product-like small molecule**, not as a buffer, extract, medium formulation,
+    hydrate, salt, or commercial mixture. However, the exact chemical identity could
+    not be verified: exact-name searches for **Khayasin C** and **Khayasin-C**, including
+    searches by the suppl CURIEs discussed: CHEBI:185858. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact Khayasin C identity.
+ontology_mapping:
+  ontology_id: CHEBI:185858
+  ontology_label: KHAYASIN
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Khayasin'
+chemical_properties:
+  molecular_formula: C32H42O8
+  inchi: InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-21(32(6,26(20)35)23(30(28,3)4)15-24(33)37-7)9-11-31(5)22(19)14-25(34)39-27(31)18-10-12-38-16-18/h10,12,16-17,20-21,23,27-28H,8-9,11,13-15H2,1-7H3/t17?,20-,21?,23+,27+,28?,31-,32-/m1/s1
+  smiles: '[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3[C@@](C)(C1=O)[C@@H](CC(=O)OC)C(C)(C)C2OC(=O)C(C)CC'
+  data_source: CHEBI sqlite (oaklib)
+ingredient_type: SINGLE_INGREDIENT

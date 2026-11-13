@@ -1,0 +1,125 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1207",
+  "published_parent_commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+  "original_proposals_ledger": {
+    "path": "reports/all_unmatched_20261107/worker-06/proposals.json",
+    "sha256": "fc838985c5b79ef4cef5a502efe3242cdc1b87c8baf805e9b7f56e96de4ed61f",
+    "count": 100
+  },
+  "successor_proposal_id": "V2-P-NBRC1308-1356-TRACE",
+  "successor_author": "/root",
+  "original_proposals": [
+    {
+      "author": "/root/research_a",
+      "proposal_object": {
+        "proposal_id": "A-P-NBRC1308-TRACE",
+        "case_ids": [
+          "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b"
+        ],
+        "description": "Propose NBRC 1308 trace elements solution at the explicitly recorded source scope.",
+        "evidence_ids": [
+          "A-E-19-S00",
+          "A-E-19-S01",
+          "A-E-19-S02",
+          "A-E-CAPTURE-145",
+          "A-E-CAPTURE-149",
+          "A-E-CAPTURE-157",
+          "A-E-NATIVE-OWNER-DEDUP"
+        ],
+        "owner_path": "data/ingredients/mapped/nbrc_1308_trace_elements_solution.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research-a/payloads/nbrc_1308_trace_elements_solution.yaml",
+          "sha256": "6a8f4ebc4562e888207270f5fce1dfdc425c581494d9183bd6b8aed5e896a2aa"
+        },
+        "before_sha256": null,
+        "applicable_occurrence_ids": [
+          "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5"
+        ],
+        "excluded_occurrence_ids": [
+          "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+          "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+        ],
+        "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+        "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+        "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+      },
+      "proposal_object_sha256": "7256b3e85d3613733049d6ba0e2a6b3fc0a5f8a0aefe108700de308d95fa86a9",
+      "original_identifier": "kgmicrobe.ingredient:nbrc_1308_trace_elements_solution",
+      "original_curation_history": [
+        {
+          "timestamp": "2026-11-08T05:39:31.366018+00:00",
+          "curator": "all_unmatched_20261107_worker06_research_a",
+          "action": "CREATED",
+          "changes": "Propose source-qualified identity with literal primary preparation/material limits. No maintained data or source-release state changed.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ],
+      "prior_independent_review": {
+        "root": "artifact",
+        "path": "independent/root-review-a/final-review-v2.json",
+        "sha256": "298769ce427a77c5dede04e26637203fe973140828fcb1ab08278e510b076ed0"
+      },
+      "successor_selection_status": "superseded_uninstalled_proposal_only"
+    },
+    {
+      "author": "/root/research_c",
+      "proposal_object": {
+        "proposal_id": "C-P-NBRC1356-TRACE",
+        "case_ids": [
+          "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+        ],
+        "description": "Dissolve NTA first and adjust to pH 6.5 with NaOH before adding minerals; final pH 7.0. The named NaOH constituent is included with an unspecified amount. Listed source batch quantities and variable titrant are preserved; component CURIEs and unstated hydrate forms are not guessed. NBRC1356 includes sodium selenate and sodium tungstate but no alum. It differs from NBRC1169 and from NBRC857/936; the four-star label is a local footnote only.",
+        "evidence_ids": [
+          "C-E-133-SOURCE-1",
+          "C-E-nbrc-1356"
+        ],
+        "owner_path": "data/ingredients/mapped/nbrc_1356_trace_elements_stock.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research-c/after/nbrc_1356_trace_elements_stock.yaml",
+          "sha256": "5894ab52e5e649cee09bcd3d149d3723ed42cca6661848dcceaf30078bc170cb"
+        },
+        "before_sha256": null,
+        "integration_obligations": [
+          "Preserve every source hold and malformed source unit/nesting pending source correction.",
+          "Use occurrence-specific linkage only; no global generic stock synonym.",
+          "Independent skeptical review of exact after bytes and native formal owner validation required before guarded application."
+        ]
+      },
+      "proposal_object_sha256": "f87540cbef75750632b96bba1c64d0c86dc4ad8435acfbc3636d9a058eb2072d",
+      "original_identifier": "kgmicrobe.ingredient:nbrc_1356_trace_elements_stock",
+      "original_curation_history": [
+        {
+          "timestamp": "2026-11-08T05:36:49.390055+00:00",
+          "curator": "all-unmatched-20261107-worker06-research-c",
+          "action": "CREATED",
+          "changes": "Proposed NBRC 1356 trace elements stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+          "llm_assisted": true
+        }
+      ],
+      "prior_independent_review": {
+        "root": "artifact",
+        "path": "research-b/review-c/review-final.json",
+        "sha256": "06c6ec89b395069f8d1e2e50be689fc9b87305ee619e75bb4b9d5cac1797db99"
+      },
+      "successor_selection_status": "superseded_uninstalled_proposal_only"
+    }
+  ],
+  "identity_decision": "Full source composition and preparation equality establish one nominal formulation; different recipe numbers, labels, identifiers, payload hashes, completeness and NaOH encodings do not establish two substances. Shared name/identifier chosen after that comparison, with both accessions, not by retaining a filename/hash winner.",
+  "existing_owner_search": {
+    "root": "artifact",
+    "path": "successor-v2/research-c/existing-owner-search.json",
+    "sha256": "ae5dd4d820e402fddc4868c9f1cc1f345ec361439c6d34db8f3d705da4ae5aca"
+  },
+  "primary_comparison": {
+    "root": "artifact",
+    "path": "successor-v2/research-a/nbrc1308-1356-comparison.json",
+    "sha256": "ab26374ea8cd9cec47a645c33f366b22cf851df727eac35270270bb2c0b2bcf0"
+  },
+  "maintained_merge": false,
+  "original_source_timestamps_preserved": true
+}

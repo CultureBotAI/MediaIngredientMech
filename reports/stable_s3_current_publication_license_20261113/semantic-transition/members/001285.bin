@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:hans_100x_vitamins
+preferred_term: Hans 100x vitamins
+synonyms:
+- synonym_text: Hans 100x vitamins
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a concentrated vitamin stock/pre-mix and left unmapped pending
+    component-level recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0147 -> kgmicrobe.ingredient:hans_100x_vitamins "Hans
+    100x vitamins" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
+    added.
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available. Reviewed on 2026-05-11 as a concentrated vitamin stock/pre-mix
+  pending component-level recipe curation.
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hans_100x_vitamins
+  ontology_label: Hans 100x vitamins
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#288)
+    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+      and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'

@@ -1,0 +1,70 @@
+identifier: cas:480-14-8
+preferred_term: Izalpinin
+ontology_mapping:
+  ontology_id: cas:480-14-8
+  ontology_label: Izalpinin
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 480-14-4 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: 'PubChem CID 5318691; MedChemExpress Izalpinin; MIM correction #753'
+    notes: 'PubChem CID 5318691 names Izalpinin and lists CAS 480-14-8; the inspected
+      MedChemExpress identity entry corroborates that name/CAS pair. This corrects
+      the existing invalid 480-14-4 assertion, not merely its computed check digit.
+      The primary LIPID MAPS record LMPK12111656 and nonobsolete OLS class agree with
+      PubChem on CID, formula, InChI and InChIKey. That exact candidate is known,
+      but current native source/prefix contracts do not support it. Final primary
+      identity and source eligibility remain OPEN; retain WITHHOLD. This note supersedes
+      the historical global-absence wording without deleting it. The failed authenticated
+      CAS lookup is retained; this is not CAS Registry certification. The manufacturer
+      is not inferred to have supplied the original CultureBotHT material, and its
+      marketing chemical-class wording is not adopted. Sources: https://pubchem.ncbi.nlm.nih.gov/compound/5318691
+      ; https://www.medchemexpress.com/us/en/izalpinin.html ; https://www.lipidmaps.org/databases/lmsd/LMPK12111656
+      .'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:480-14-4 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.123972+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.195477+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-11-02T02:10:58.160946+00:00'
+  curator: claude
+  action: CORRECTED_EXISTING_CAS_VALUE
+  changes: 'Corrected existing invalid CAS 480-14-4 to source-backed 480-14-8 in identifier,
+    CAS mapping target and chemical CAS property; updated only its active CAS provenance/retrieval
+    timestamp and appended claim-specific evidence. Preserved all prior evidence/history,
+    synonyms, counts, roles and other chemistry. Verified exact LIPIDMAPS:LMPK12111656
+    is a known candidate with native source eligibility and final primary-identity
+    policy OPEN. Retain WITHHOLD: this partial registry-value repair grants no final
+    CAS fallback or scientific approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 480-14-8
+  data_source: 'PubChem CID 5318691; MedChemExpress Izalpinin; MIM correction #753'
+  retrieval_date: '2026-11-02T02:10:58.160946+00:00'
+ingredient_type: SINGLE_INGREDIENT

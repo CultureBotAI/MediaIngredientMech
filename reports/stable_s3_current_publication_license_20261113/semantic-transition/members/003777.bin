@@ -1,0 +1,21 @@
+from pathlib import Path
+import json,hashlib,importlib.util,sys
+M=Path(__file__).resolve().parents[4];C=M/'.temp/all-unmatched-20261107';A=C/'integration/ancillary1258-worktree';D=Path(__file__).resolve().parent;P=C/'integration/w09-method-successors-v1';Q=C/'preflight/w09-method-findings-triage-v1';W=C/'workers/w09/worktree/.temp/conditional-full-row-review-v1'
+sp=importlib.util.spec_from_file_location('native_review',A/'scripts/record_review.py');rr=importlib.util.module_from_spec(sp);sys.modules[sp.name]=rr;sp.loader.exec_module(rr)
+h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+expected={'Sulfur.yaml':'77f91533abf4c4e13aa1a52b77208b23150d365cc44476d0930165f9da914104','Na2b4o7_X_10_H2o.yaml':'6f82c79419773eaa0cc6b8961892761b9ec8003f83f764eff2af252c571a9f2f','Diarsenic_Trioxide.yaml':'aa045024f5c010ba7f827a5f8c6428929dc50503cbcb3ee106a3a6ae7bea751c'}
+targets=[]
+for n,digest in expected.items():
+ p=P/'candidates'/n;assert h(p)==digest;targets.append({'target_id':p.stem,'path':str(p.relative_to(M)),'kind':'source','label':p.stem,'record_class':'IngredientRecord','ownership_note':'Private C-authored whole-owner method successor. This reviewer did not author the new delta. Sulfur earlier union authorship limits this review to new method and full preservation, not fresh whole-Sulfur approval.'})
+inputs=list(Q.glob('*'))+[P/n for n in ['SELECTOR.json','field-deltas.json','origin-proof.json']]+[C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json']
+for name in ['primary-references.json','recipe-readback.json']:
+ for r in json.loads((Q/name).read_text()):
+  if r['evidence_id'].startswith('RS-043'):continue
+  p=Path(r['actual_path']);assert h(p)==r['capture']['sha256'];inputs.append(p)
+inputs += [A/n for n in ['MAPPING_SEMANTICS.md','scripts/record_review.py','schema/record_review.yaml','scripts/validate_strict.py','src/mediaingredientmech/schema/mediaingredientmech.yaml','src/mediaingredientmech/schema/mech_shared.yaml','src/mediaingredientmech/validation/write_validated.py','src/mediaingredientmech/curate/publication_guard.py','src/mediaingredientmech/ingredient_bundle_refresh.py','src/mediaingredientmech/sssom_grading.py']]
+inputs += [W/n for n in ['HANDOFF.json','FINDINGS.json','DECISIONS.json','science/materials/decisions.json','science/materials/findings.json','skeptical-methods/ADJUDICATION.json']]
+inputs += [C/'preflight/w09-method-findings-publication-v1'/n for n in ['readback-00.json','publication-00.json']]
+inputs += [M/n for n in ['docs/record-reviews.md','docs/record-review-profile.md','.claude/skills/review-yaml-record/SKILL.md']]
+inputs += list((D/'primary-readback').glob('*'))+[D/'START.json',Path(__file__)]
+inputs=sorted({p for p in inputs if p.is_file()})
+out=rr.inspect_source(M,targets,[str(p.relative_to(M)) for p in inputs]);(D/'native-inspection-v1.json').write_text(json.dumps(out,indent=2)+'\n');(D/'native-targets.json').write_text(json.dumps({'targets':targets},indent=2)+'\n');print(len(targets),'targets',len(out['source']['inputs']),'inputs',out['source']['git_revision'])

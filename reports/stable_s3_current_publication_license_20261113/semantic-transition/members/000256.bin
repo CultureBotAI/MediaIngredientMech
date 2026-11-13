@@ -1,0 +1,51 @@
+identifier: CHEBI:28987
+preferred_term: Abietic Acid
+ontology_mapping:
+  ontology_id: CHEBI:28987
+  ontology_label: abietic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: abieta-7,13-dien-18-oic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=514-10-3); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.995592+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.826788+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C20H30O2; inchi=InChI=1S/C20H30O2/c1-13(2)14-6-8-16-15(12-14)7-9-1;
+    smiles=[H][C@@]12CC=C3C=C(C(C)C)CC[C@]3([H])[C@@]1(C)CCC[
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.224655+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 514-10-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C20H30O2
+  inchi: InChI=1S/C20H30O2/c1-13(2)14-6-8-16-15(12-14)7-9-17-19(16,3)10-5-11-20(17,4)18(21)22/h7,12-13,16-17H,5-6,8-11H2,1-4H3,(H,21,22)/t16-,17+,19+,20+/m0/s1
+  smiles: '[H][C@@]12CC=C3C=C(C(C)C)CC[C@]3([H])[C@@]1(C)CCC[C@@]2(C)C(=O)O'
+ingredient_type: SINGLE_INGREDIENT

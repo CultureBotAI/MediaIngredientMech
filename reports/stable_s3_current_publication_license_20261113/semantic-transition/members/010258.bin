@@ -1,0 +1,1273 @@
+{
+  "author": "/root",
+  "at": "2026-11-08T09:32:11.167655+00:00",
+  "base_head": "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+  "rows": [
+    {
+      "finding_id": "W05-FINAL-SKEPTIC-CHEM-001",
+      "original_finding": {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-001",
+        "recorded_at": "2026-11-08T07:55:19.208505+00:00",
+        "reviewer": "/root/materials_research",
+        "status": "open",
+        "severity": "minor",
+        "scope": "Report scientific conclusion; selected payloads are correct on this point.",
+        "targets": [
+          "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "R1193-P-bottom-628",
+          "R1193-P-bottom-629"
+        ],
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/primary-case-conclusions-v1.json",
+          "sha256": "e85905051cc8614d894b3baeba8ea8646d204722b1f621cb486e93131c67c323",
+          "locator": "case_reviews[0].assessment"
+        },
+        "observed": "The assessment says the preparations are FeS/agarose versus zero-valent iron/agarose. JCM 629 instead explicitly reuses Medium 628 with artificial saltwater replacing Modified Wolfe mineral solution. Both bottom preparations contain the washed FeS preparation.",
+        "evidence": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-628.txt",
+            "sha256": "7cd452a96e76ee4375fb42f73d882a044ba92fef4d14ff1426193eb70c84076b"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-629.txt",
+            "sha256": "861f590a9c267933f3879baa1160f52a28deb4283025d2f4aa73f1f6081b967c"
+          }
+        ],
+        "bounded_fix": "Preserve this initial finding and the original report. Issue a successor primary-conclusions file correcting the distinguishing fact to Modified Wolfe mineral solution versus artificial saltwater, with FeS and agarose in both. Do not change either correct selected payload.",
+        "review_limit": "This finding does not yet disposition the remaining cases or payloads."
+      },
+      "original_finding_sha256": "c5bf7830bedb9e2d870c1de854ba08d932fb863b83962c0b6fc8714b8aab306a",
+      "status": "verified_already_correct_no_duplicate_payload_edit",
+      "assessment": "Both bottom preparations contain washed FeS preparation and agarose. JCM629 explicitly substitutes artificial saltwater for the Modified Wolfe mineral solution used by628; there is no zero-valent-iron substitution.",
+      "case_ids": [
+        "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "R1193-P-bottom-628",
+          "case_ids": [
+            "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+          ],
+          "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+          "evidence_ids": [
+            "ROOT-jcm-628",
+            "R1193-owner-preflight",
+            "R1193-current-occurrence-comparison",
+            "R1193-final-owner-preflight",
+            "R1193-synonym-policy"
+          ],
+          "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM628.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml",
+            "sha256": "8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab"
+          },
+          "identity_consequence": "Source-qualified whole preparation registry identity",
+          "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+          "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+          "replaces_proposal_ids": [],
+          "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string.",
+          "prior_candidate_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM628.yaml",
+            "sha256": "3794b57cea9dd1338d017a5792c14f7ec8b59e21a523cacca151aa9ba70c7da1"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111"
+          ],
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/Bottom_Layer_JCM628.yaml",
+            "sha256": "0b217f0558855b8e08c0a72ae85c28b1d3c85f5ed3d983f8fb606a60a199d68c"
+          },
+          "final_correction": {
+            "author": "Codex worker05 /root/chemicals_research final report correction",
+            "timestamp": "2026-11-08T07:40:53.320531+00:00",
+            "changes": [
+              "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types."
+            ],
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "prior_proposal_object_sha256": "88916ba1711885b14ead137fdf1b7f3f8f3694ce34afa2a299ca1453dfeb513f",
+            "predecessor_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v1/Bottom_Layer_JCM628.diff",
+              "sha256": "51fbf085b51c772cbefa0132914c89cf77064f48a3ac6bfbfb7b35f70fe21b4b"
+            },
+            "v1_after_capture": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/proposed-v1/Bottom_Layer_JCM628.yaml",
+              "sha256": "8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab"
+            },
+            "v2_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v2/Bottom_Layer_JCM628.diff",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        },
+        {
+          "proposal_id": "R1193-P-bottom-629",
+          "case_ids": [
+            "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+          ],
+          "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+          "evidence_ids": [
+            "ROOT-jcm-629",
+            "R1193-owner-preflight",
+            "R1193-current-occurrence-comparison",
+            "R1193-final-owner-preflight",
+            "R1193-synonym-policy"
+          ],
+          "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM629.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml",
+            "sha256": "a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd"
+          },
+          "identity_consequence": "Source-qualified whole preparation registry identity",
+          "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+          "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+          "replaces_proposal_ids": [],
+          "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string.",
+          "prior_candidate_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM629.yaml",
+            "sha256": "ca77327570d06bd9376858d7c0e7c6d4814839f44cb7c43777f900c16cb01d11"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+          ],
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/Bottom_Layer_JCM629.yaml",
+            "sha256": "2d55368262d4641fddaa496cc44cbba49e58dc964e6191ddafcb221cdf253fdf"
+          },
+          "final_correction": {
+            "author": "Codex worker05 /root/chemicals_research final report correction",
+            "timestamp": "2026-11-08T07:40:53.320531+00:00",
+            "changes": [
+              "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types."
+            ],
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "prior_proposal_object_sha256": "bebf37d725ef37e73f03b7c9450592552beedd5f5a9c39e4a1219c7f4545d9f4",
+            "predecessor_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v1/Bottom_Layer_JCM629.diff",
+              "sha256": "573a7c7c6142eeb73f34e400615c0f7ba4d10ef54482ffda21c9cfb6c03261f0"
+            },
+            "v1_after_capture": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/proposed-v1/Bottom_Layer_JCM629.yaml",
+              "sha256": "a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd"
+            },
+            "v2_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v2/Bottom_Layer_JCM629.diff",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      ],
+      "corrected_historical_report_bindings": [
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "21da73134ddff95ed143c3e457c9ed18072caf1b35ac88614f502da6bec863ba",
+          "assessment": "JCM628 bottom layer contains 50 ml washed FeS preparation, 50 ml Modified Wolfe mineral solution and 1 g agarose. JCM629 explicitly reuses Medium628 with artificial saltwater replacing Modified Wolfe mineral solution. Both therefore contain the FeS preparation and agarose; the demonstrated distinguishing input is mineral solution versus artificial saltwater. Preserve receiving-layer and top-layer boundaries, processing and exact occurrence routing; neither bottom layer is neat FeS or a zero-valent iron preparation.",
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "21da73134ddff95ed143c3e457c9ed18072caf1b35ac88614f502da6bec863ba",
+          "assessment": "JCM628 bottom layer contains 50 ml washed FeS preparation, 50 ml Modified Wolfe mineral solution and 1 g agarose. JCM629 explicitly reuses Medium628 with artificial saltwater replacing Modified Wolfe mineral solution. Both therefore contain the FeS preparation and agarose; the demonstrated distinguishing input is mineral solution versus artificial saltwater. Preserve receiving-layer and top-layer boundaries, processing and exact occurrence routing; neither bottom layer is neat FeS or a zero-valent iron preparation.",
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "e7b756ba27fed535cda376728bafb184fe93b5c8a7c68a2c6e1c0c8e7d203ce3",
+          "assessment": "Both JCM bottom layers contain washed FeS preparation and agarose. JCM629 replaces the Modified Wolfe mineral solution of JCM628 with artificial saltwater. The two bounded candidates preserve that positive difference, rather than the original report's false zero-valent-iron distinction; top layers remain separate.",
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "bcf1cd083bcb9b03b691aefad21fbf710564cddb258ea7dea7fa273c7941ea78",
+          "assessment": "JCM628 bottom layer contains washed FeS preparation, Modified Wolfe mineral solution and agarose. Its source-qualified name and exact occurrence subset are supported; top-layer material is excluded.",
+          "case_id": null,
+          "proposal_id": "R1193-P-bottom-628",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "e545f988c83ed80fa78e8d5e3b31f6bab62f191a7721c507a3822d11cd639b27",
+          "assessment": "JCM629 expressly replaces the JCM628 mineral solution with artificial saltwater while retaining FeS and agarose. This positively distinguishes the recipe; it is not a zero-valent-iron formulation.",
+          "case_id": null,
+          "proposal_id": "R1193-P-bottom-629",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "finding_dispositions",
+          "object_sha256": "46d5f4152e9404ac2ca12261b5acb0059973a42ba4ec7f9b3465cf751429129a",
+          "assessment": "The amended source conclusion now states FeS and agarose in both bottom layers and distinguishes Modified Wolfe mineral solution from artificial saltwater. Both original payloads already had this correct boundary.",
+          "case_id": null,
+          "proposal_id": null,
+          "finding_id": "W05-FINAL-SKEPTIC-CHEM-001"
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-FINAL-SKEPTIC-CHEM-002",
+      "original_finding": {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-002",
+        "recorded_at": "2026-11-08T07:58:34.535610+00:00",
+        "reviewer": "/root/materials_research",
+        "status": "open",
+        "severity": "minor",
+        "scope": "Report scientific attribution only; the selected MKP payload correctly cites MediaDive 1895.",
+        "input": {
+          "path": ".temp/w05-final-correction-v1/chemicals/primary-case-conclusions-v1.json",
+          "sha256": "e85905051cc8614d894b3baeba8ea8646d204722b1f621cb486e93131c67c323",
+          "locator": "case_reviews[5].assessment"
+        },
+        "observed": "The MKP salt preparation is traced to the complete JCM source and its exact batch inputs. Preserve the named preparation and its component stages; no name-only generic salt mixture or final-medium concentration is substituted.",
+        "evidence": {
+          "path": ".temp/w05-final-correction-v1/chemicals/read-text/ROOT-md-1895.txt",
+          "sha256": "2051630656c07a8309ab51a655b09bdd8c13f565dca8199a545ce9a619860390",
+          "fact": "The primary MediaDive medium record identifies source DSMZ, medium 1895, solution 6635. MKP is a multicomponent medium base including CMRL-1066, Neopeptone, HEPES and glucose; the record is not a JCM source."
+        },
+        "bounded_fix": "Append an attributed correction to the primary-case conclusion identifying MediaDive/DSMZ 1895 and its complete medium base, instead of JCM and salt preparation. Preserve the sealed original report and correct payload."
+      },
+      "original_finding_sha256": "743de4a821d081e38a3ed3743e0a6cedd0218661395d3c9176a43fc6af2c0456",
+      "status": "verified_already_correct_no_duplicate_payload_edit",
+      "assessment": "MKP is the MediaDive/DSMZ1895 solution6635 multicomponent medium base; HS-RFB solution6636 separately adds human serum and albumin. It is not a JCM salt preparation.",
+      "case_ids": [
+        "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "R1193-P-mkp",
+          "case_ids": [
+            "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"
+          ],
+          "description": "Correction1193: propose distinct source-qualified preparation MKP medium (MediaDive1895 solution6635). Source solution6635 is the MKP base; HS-RFB solution6636 separately combines MKP, human serum and albumin. Do not infer CMRL1066 stock strength from an unrelated product.",
+          "evidence_ids": [
+            "ROOT-md-1895",
+            "R1193-owner-preflight",
+            "R1193-current-occurrence-comparison",
+            "R1193-final-owner-preflight",
+            "R1193-synonym-policy"
+          ],
+          "owner_path": "data/ingredients/mapped/MKP_Medium_MediaDive1895.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml",
+            "sha256": "346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7"
+          },
+          "identity_consequence": "Source-qualified whole preparation registry identity",
+          "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+          "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+          "replaces_proposal_ids": [],
+          "prior_candidate_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed/MKP_Medium_MediaDive1895.yaml",
+            "sha256": "7ed67a8b14363c2c1bcb2942e3b4fddec39177f5acdefe641c64232d8f6849bc"
+          },
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/MKP_Medium_MediaDive1895.yaml",
+            "sha256": "b1ea2a874ed2959c68ac39395744c04d60082e56112bd31abb9eafb91e5e0490"
+          },
+          "final_correction": {
+            "author": "Codex worker05 /root/chemicals_research final report correction",
+            "timestamp": "2026-11-08T07:40:53.320531+00:00",
+            "changes": [
+              "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types."
+            ],
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "prior_proposal_object_sha256": "b4c15151ffca6ea5e166cf47c6d5cba5994132a97f67b591a5d4dc960dd85005",
+            "predecessor_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v1/MKP_Medium_MediaDive1895.diff",
+              "sha256": "840e4f11ed287fa56e4c8df692a5c7f7d9b5401c5b51e9fd0a7182375d796af5"
+            },
+            "v1_after_capture": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/proposed-v1/MKP_Medium_MediaDive1895.yaml",
+              "sha256": "346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7"
+            },
+            "v2_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v2/MKP_Medium_MediaDive1895.diff",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      ],
+      "corrected_historical_report_bindings": [
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "4c979f9ea4cf8a7b05dfba68b18b1255759f28d703f3856cd115f4131e1c0350",
+          "assessment": "MediaDive medium1895 explicitly identifies DSMZ as its source. Solution6635 is the MKP multicomponent medium base containing CMRL1066, Neopeptone, HEPES, sodium citrate, glucose, sodium pyruvate, N-acetylglucosamine and sodium bicarbonate, followed by pH7.6 adjustment with 5 M NaOH, 0.45 micrometre filtration and making up to1000 ml with distilled water. Solution6636 separately combines this MKP base with heat-inactivated human serum and bovine serum albumin. Preserve these preparation stages and exact input quantities; do not infer CMRL1066 stock strength from an unrelated product.",
+          "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "4c979f9ea4cf8a7b05dfba68b18b1255759f28d703f3856cd115f4131e1c0350",
+          "assessment": "MediaDive medium1895 explicitly identifies DSMZ as its source. Solution6635 is the MKP multicomponent medium base containing CMRL1066, Neopeptone, HEPES, sodium citrate, glucose, sodium pyruvate, N-acetylglucosamine and sodium bicarbonate, followed by pH7.6 adjustment with 5 M NaOH, 0.45 micrometre filtration and making up to1000 ml with distilled water. Solution6636 separately combines this MKP base with heat-inactivated human serum and bovine serum albumin. Preserve these preparation stages and exact input quantities; do not infer CMRL1066 stock strength from an unrelated product.",
+          "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "784cb7828acddfc3d86964c451c38b3d0aa28abbead5d22a6a0aa1ab016a32e3",
+          "assessment": "DSMZ MediaDive1895 solution6635 is the MKP complex base with eight listed material inputs and pH, filtration and water-makeup instructions. Solution6636 adds human serum and BSA separately. The candidate respects those stages; CMRL1066 stock strength remains unestablished. The amended source conclusion corrects the original JCM/salt-only description.",
+          "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "bba69def989c6074b8377980aa6c7471ed1971c54c20eccc05518b1d6e438769",
+          "assessment": "The candidate transcribes the MKP6635 complex base and its process. Receiving solution6636's serum/BSA remains separate, and unknown CMRL strength is not filled from another catalog.",
+          "case_id": null,
+          "proposal_id": "R1193-P-mkp",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "finding_dispositions",
+          "object_sha256": "d3822ea17548f0ff65ba8b218071c31db23116c46fd4528d5308b80ca939a327",
+          "assessment": "The amended source conclusion now identifies DSMZ1895, all eight MKP6635 inputs and its process, separately from receiving solution6636 serum/BSA. The uncertainty in CMRL strength remains.",
+          "case_id": null,
+          "proposal_id": null,
+          "finding_id": "W05-FINAL-SKEPTIC-CHEM-002"
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-FINAL-SKEPTIC-CHEM-003",
+      "original_finding": {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-003",
+        "at": "2026-11-08T08:08:08.085458+00:00",
+        "reviewer": "/root/materials_research",
+        "raised_by": "/root/materials_research/chemical_primary_crosscheck",
+        "status": "reported_to_root_before_fix",
+        "severity": "completeness blocker for declaring these two decisions finished",
+        "selected_decisions": {
+          "path": ".temp/w05-final-correction-v1/remediation/chemical-report-v2/decisions-v3.json",
+          "sha256": "0e7fa229d4650efc3ffce31fe60ad5b85e5a2c10c3b22b8a1ffbaa96c37dcbdd"
+        },
+        "cases": [
+          {
+            "lane_index": 10,
+            "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+            "decision_object_sha256": "53b4e3edb54002c8d7ed0534fc5518edeb2cf22e0005e6e2eeb0815f173578d1",
+            "field_pointers": [
+              "no_change_reason",
+              "missing_requirement",
+              "correction_reassessment.scientific_gap"
+            ],
+            "original_values": {
+              "reasoning": "NBRC1550,1443,1444,1445 and1447 explicitly name Thiamine-HCl·H2O in their vitamin preparations. The named monohydrate must not become CHEBI:49105 thiamine hydrochloride or CHEBI:132751 dihydrate as an exact identity. The exact OLS monohydrate query returned zero results, which is bounded search evidence only.",
+              "no_change_reason": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
+              "missing_requirement": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
+              "owner_records": []
+            }
+          },
+          {
+            "lane_index": 48,
+            "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+            "decision_object_sha256": "1542944bd97b78afbd64ab16809510f442ce95347591311a2031a2cf5af6ddcd",
+            "field_pointers": [
+              "no_change_reason",
+              "missing_requirement",
+              "correction_reassessment.scientific_gap"
+            ],
+            "original_values": {
+              "reasoning": "NBRC1507 independently confirms Thiamine-HCl⋅H2O in its vitamin solution. The one-water literal is not equivalent to the existing two-water thiamine-hydrochloride owner.",
+              "no_change_reason": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
+              "missing_requirement": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
+              "owner_records": []
+            }
+          }
+        ],
+        "primary_bindings": [
+          {
+            "evidence_id": "CHEM-CAP-f0c1b4928af89872",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f0c1b4928af89872.html",
+              "sha256": "0b98d375f1aaf36e27e933d1c1b8cbd95998daf2610c9bcd0642721b089836f3"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1550",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+            ],
+            "accessed_at": "2026-11-08T05:07:38.412633+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-1fc151e426d45042",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-1fc151e426d45042.html",
+              "sha256": "9bab8639541ec3af6b10a325495f0ade0b519d8eebce8e1d456a900aab655182"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1443",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+            ],
+            "accessed_at": "2026-11-08T05:07:46.833626+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-aa10057ea2c6f012",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-aa10057ea2c6f012.html",
+              "sha256": "203a7d512a41c329ec25b900b8014439c5435dfb13faa32dff721ffa03fb24dc"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1444",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+            ],
+            "accessed_at": "2026-11-08T05:07:46.991545+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-f55e3a4d1efb7d51",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f55e3a4d1efb7d51.html",
+              "sha256": "5e90ac547db061bcfa9c5673198f546cb0616fd64ebcd0ed585b7c4c1a0f3eec"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1445",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+            ],
+            "accessed_at": "2026-11-08T05:07:47.582501+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-77de000b5fa8d1a6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-77de000b5fa8d1a6.html",
+              "sha256": "33778f3cb21ac6275df22b6586e4fa5adeb12921ea31adb413a58b8e3657e239"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1447",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+            ],
+            "accessed_at": "2026-11-08T05:07:47.807694+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-74b89743eed1808f",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-74b89743eed1808f.html",
+              "sha256": "8e5a72a3575d26a2cca776b196f56d680ff5ca9c207be096da58508ad7a974a0"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 117. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+            "case_ids": [
+              "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"
+            ],
+            "accessed_at": "2026-11-08T05:09:04.470486+00:00"
+          }
+        ],
+        "reproduction": "Six direct NBRC recipes positively print the one-water thiamine-HCl supplied-material label. Both decisions have no proposal and cite missing CAS, exact molecular structure and chloride/protonation stoichiometry, without a documented competing same-form owner or other obstruction to bounded local material curation. These details prevent an exact molecular grounding, but MAPPING_SEMANTICS section3 permits a local source-defined identity without invented CAS or structure. The current rationale conflates those two levels.",
+        "bounded_remedy": "Reassess a bounded source-defined monohydrate material candidate after ignored-inclusive duplicate/owner checks, preserving the six exact occurrences and all original holds. Do not assert formula, CAS, chloride stoichiometry, an exact parent relation, generic thiamine equivalence, or a separate owner per source number. Alternatively identify an actual unresolved material/owner ambiguity that prevents this scoped representation. Preserve originals and obtain independent re-review of exact successor bytes.",
+        "related_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "delegated_receipt": {
+          "path": ".temp/w05-final-correction-v1/review-chemicals/source-crosscheck/review-v1.json",
+          "sha256": "a5308688c41554fbd781fcf0063de8fdc64ef4efcc5f2e4221881ab0d71e494e"
+        },
+        "no_payload_changed_by_reviewer": true
+      },
+      "original_finding_sha256": "763d8abb1b3e7a972f9b3e463865ec7e5352b465cf42a79b62b810cf82fd2096",
+      "status": "verified_already_correct_no_duplicate_payload_edit",
+      "assessment": "Six direct NBRC recipes positively name one-water Thiamine-HCl. The existing shared source-defined monohydrate proposal is retained unchanged; exact molecular formula, CAS, chloride stoichiometry and supplier remain unverified. Missing molecular grounding does not block this bounded material identity.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+        "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-thiamine-hcl-monohydrate",
+          "case_ids": [
+            "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+            "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"
+          ],
+          "description": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation.",
+          "evidence_ids": [
+            "CHEM-CAP-f0c1b4928af89872",
+            "CHEM-CAP-1fc151e426d45042",
+            "CHEM-CAP-aa10057ea2c6f012",
+            "CHEM-CAP-f55e3a4d1efb7d51",
+            "CHEM-CAP-77de000b5fa8d1a6",
+            "CHEM-CAP-74b89743eed1808f",
+            "CHEM-CAP-14f6b2b7770adbee",
+            "CHEM-CAP-ba668efabffad3e5",
+            "CHEM-CAP-12d6346a73c5dd24",
+            "CHEM-C1193-ols-search-3",
+            "CHEM-C1193-ols2-thiamine",
+            "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
+            "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
+            "FINAL-CHEM-SUPPLEMENT-DISCOVERY"
+          ],
+          "owner_path": "data/ingredients/mapped/Thiamine_Hcl_Monohydrate.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml",
+            "sha256": "15861ae70999bed905cfe24576f2004ea0985da541023ef07a56935d1b28705b"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:750ca6e602619153bc2d9d97925f9cfe29b1faab5283067e75d49f8b0770fb51",
+            "CM_OCC:3b8df504b3fea449da7cb5de638db5e6102c008a346ea7c8babe1b53cc9514cb",
+            "CM_OCC:e88296a7c96873bbbdbd2ee0b767815c0d4345c674957212c3bd225be8e22010",
+            "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a",
+            "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef",
+            "CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"
+          ],
+          "identity_consequence": "One local source-defined Thiamine-HCl monohydrate material for the six explicit one-water occurrences; no source-number split.",
+          "predicate_consequence": "Registry identity only. No exact CHEBI:49105 or CHEBI:132751 identity or parent relation is inferred. A specific molecular parent remains a separate unresolved grounding task.",
+          "publication_obligations": "Preserve all source/owner/observation/export holds. Coordinator performs complete integrated native review, checks future same-form owner overlap and synchronizes only after integration authorization. This private candidate is not installed.",
+          "replaces_proposal_ids": [],
+          "occurrence_application_note": "All six exact occurrence IDs listed here name the same one-water reagent. The five middle-dot spellings and one dot-operator spelling are retained. The 5 mg source quantity belongs to each nested vitamin stock and is not adopted as neat reagent concentration.",
+          "final_correction": {
+            "author": "/root/chemicals_research",
+            "timestamp": "2026-11-08T08:14:37.644756+00:00",
+            "finding_id": "W05-FINAL-SKEPTIC-CHEM-003",
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "changes": [
+              "Create one bounded local source-defined monohydrate material after actual same-form owner checks. No predecessor owner or existing payload is overwritten."
+            ]
+          }
+        }
+      ],
+      "corrected_historical_report_bindings": [
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "522ea7de74acc08a2488efdf9e3918928b4821302ff2295df44c928bc10e7562",
+          "assessment": "The five NBRC contexts explicitly use a one-water thiamine-HCl spelling. The exact chloride/protonation stoichiometry, reagent identifier and structure remain unresolved. An existing anhydrous or dihydrate record cannot absorb these labels as an exact form solely from the shared thiamine name.",
+          "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "a81916ed8fb1a6eb6c593e23069dc8e9cc352889a332cbd4b508fc09463e8a6f",
+          "assessment": "NBRC 1507 independently prints Thiamine-HCl·H2O. Its unresolved chloride/protonation and supplier identity is assessed separately from the other NBRC monohydrate occurrences. The literal is retained rather than silently normalized to anhydrous thiamine hydrochloride or the dihydrate.",
+          "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "69ed3ea9e9b99fbafab626e4b7bebe97bf72434e2386f29b3545c95ace8f2054",
+          "assessment": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation. The exact source-form evidence supports feasible local curation under section 3. Lack of CAS or molecular structure does not justify retaining a no-change disposition for this bounded material. The five NBRC 1550/1443/1444/1445/1447 frozen occurrences explicitly name a one-water Thiamine-HCl reagent. Preserve the original literal, occurrence IDs and frozen flattened quantities as source context. Each primary recipe lists 5 mg within its vitamin preparation; this is not a single-solute stock or a claim that the frozen g/L normalization is correct. One shared local material candidate serves both source spelling cases.",
+          "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "23378d6a9cff9045d0285c9e1e91a22f3b3eba12d328a9e34d1588e0114a420c",
+          "assessment": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation. The exact source-form evidence supports feasible local curation under section 3. Lack of CAS or molecular structure does not justify retaining a no-change disposition for this bounded material. The NBRC 1507 frozen occurrence explicitly name a one-water Thiamine-HCl reagent. Preserve the original literal, occurrence IDs and frozen flattened quantities as source context. Each primary recipe lists 5 mg within its vitamin preparation; this is not a single-solute stock or a claim that the frozen g/L normalization is correct. One shared local material candidate serves both source spelling cases.",
+          "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "e3d1ca0e0c7fa6eadc8b9620a66b5dece5522317c8d687d162e3f4b844da58bc",
+          "assessment": "NBRC 1550, 1443, 1444, 1445 and 1447 each explicitly name the one-water Thiamine-HCl reagent. One shared local source-defined material is supported together with the companion spelling case. The exact six occurrence routes and both raw spellings are preserved. The 5 mg input and 1 L water belong to a multivitamin recipe, not a single-solute stock or this material's chemical properties. The new record correctly asserts no CAS, formula, structure, chloride stoichiometry, supplier, parent relation or material components. Independent maintained/frozen/coordinator owner checks found no existing same-form owner in that bounded inventory. Molecular grounding and all source/export holds remain unresolved; they do not block this partial material representation.",
+          "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "013e64a2ab2e978da33f9fcfefb5e776c52ffc06297d3374b1a5d0dac76e82c0",
+          "assessment": "NBRC 1507 independently names the one-water Thiamine-HCl reagent within its nested vitamin preparation. One shared local source-defined material is supported together with the companion spelling case. The exact six occurrence routes and both raw spellings are preserved. The 5 mg input and 1 L water belong to a multivitamin recipe, not a single-solute stock or this material's chemical properties. The new record correctly asserts no CAS, formula, structure, chloride stoichiometry, supplier, parent relation or material components. Independent maintained/frozen/coordinator owner checks found no existing same-form owner in that bounded inventory. Molecular grounding and all source/export holds remain unresolved; they do not block this partial material representation.",
+          "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "aa52e840dd2d434d7acf48dd8adf5cc8a56f2d719414347ce35bc386be2347e2",
+          "assessment": "The complete new record preserves one source-defined Thiamine-HCl monohydrate material for six explicit NBRC reagent occurrences. Both raw spellings remain sourced synonyms. Registry-only identity, SINGLE_INGREDIENT scope and six assigned occurrences are supported; no historical lot equivalence, molecular CAS/formula, parent, supplier, role or partonomy is invented. All six source recipes name 5 mg within multivitamin stocks, so their water, pH and doses correctly remain recipe context. Duplicate checks include ignored files, all maintained owners, frozen 981 payloads and the actual 37 pending coordinator payloads. No existing same-form owner was identified in those inventories. The six new mapping judgments are correctly attributed LLM_SUGGESTION, and the history records the actual author.",
+          "case_id": null,
+          "proposal_id": "FINAL-CHEM-P-thiamine-hcl-monohydrate",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "finding_dispositions",
+          "object_sha256": "ba7f526cf0f9ec25d65e89e4da4f81b4f3bd3c01362a1681524c74ab772c015e",
+          "assessment": "The independently checked supplement adds one bounded local monohydrate material, shared by the two source spelling cases and six exact occurrences. It preserves the positive one-water source identity without CAS, structure, chloride stoichiometry, supplier or parent claims. All original holds remain. The other 57 payloads and 525 evidence objects are unchanged.",
+          "case_id": null,
+          "proposal_id": null,
+          "finding_id": "W05-FINAL-SKEPTIC-CHEM-003"
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-FINAL-SKEPTIC-CHEM-004",
+      "original_finding": {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-004",
+        "reviewer": "/root/materials_research",
+        "at": "2026-11-08T08:12:55.325528+00:00",
+        "status": "reported_before_fix",
+        "kind": "review_report_prose_count",
+        "source_path": ".temp/w05-final-correction-v1/review-chemicals/main-review-v1.json",
+        "source_sha256": "9c46f53b9d4cc8eae9439e381c4b4f94a005c0852ace18331e4d6e1afa13a2a6",
+        "field_pointer": "/payload_reviews/53/assessment",
+        "observed": "DSMZ78's nominal 95% ethanol handle preserves eleven routes and receiving-stock facts. Neither aqueous95%v/v ontology identity nor a different product is established.",
+        "reproduction": {
+          "matrix_path": ".temp/w05-final-correction-v1/chemicals/conditional-family-matrix-v1.json",
+          "matrix_sha256": "940b81f35eaeff5beb8cba71feac6457f034345e75652a7743c6d0ed2b1d1572",
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "applicable_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "count": 12,
+          "case_scope": [
+            {
+              "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+              "assessment": "The eleven DSMZ-derived ethanol occurrences share the published vitamin-K preparation lineage but do not establish percentage basis or product balance. Their route grouping is supported; it supplies no evidence that their ethanol differs from ATCC's nominal 95% reagent."
+            },
+            {
+              "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+              "assessment": "DSMZ212a explicitly uses 20 ml of 95% ethanol in its vitamin-K1 stock. It supports the preparation context but does not resolve the same percent-basis/product questions as the other nominal ethanol sources; neither a neat-ethanol equivalence nor a new disjoint product is inferred."
+            }
+          ]
+        },
+        "bounded_fix": "In a successor review, replace eleven with twelve applicable source occurrences: eleven flat occurrences plus the DSMZ 212a occurrence. Preserve original v1 and all exact source/payload bindings. This count correction establishes no product equivalence or difference and releases no conditional family hold.",
+        "reported_to_root_before_fix": true
+      },
+      "original_finding_sha256": "deedc3617f6a5699a1651995aba84842f1462491c5a30fb812aae1146904e01e",
+      "status": "verified_already_correct_no_duplicate_payload_edit",
+      "assessment": "The exact applicable occurrence set has twelve members: eleven flattened DSMZ routes plus the nested DSMZ212a route. This report count correction establishes neither equal nor distinct supplied formulations, and does not establish95%v/v or solvent balance.",
+      "case_ids": [
+        "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+        "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "case_ids": [
+            "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+            "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"
+          ],
+          "description": "The source names a nominal 95% ethanol preparation. The percentage basis, solvent balance, denaturants and historical product specification are unreported. Different source accessions or receiving stocks prove neither equal nor different supplied preparations. A shared bounded nominal representation is a possible coordinator outcome; exact historical formulation equality and a final owner choice remain unresolved under #1237. This identifier is retained only as a conditional historical proposal handle. Do not install all four candidates as proven distinct substances. Retain all 17 precise occurrence routes and the original source lineages. CHEBI:16236 grounds the named ethanol component only; NCIT:C185110 is not approved because it specifically requires aqueous 95% by volume. No numerical component percentage, water balance or whole-stock molecular identity is inferred. All inherited holds remain. Source-specific context: DSMZ 78 defines vitamin K1 stock with 0.1 ml vitamin K1 and 20 ml nominal 95% ethanol; its vitamin K3 instructions dissolve menadione at 5 mg/ml in that ethanol and then dilute to 0.05 mg/ml with water. DSMZ 104 and 212a explicitly refer to medium 78 for K1. The captured current DSMZ 110 representation links the shared MediaDive K1 solution 125 and K3 solution 5540. Preserve all twelve routed occurrences and distinguish the subsequent K3 water dilution from the unspecified balance of supplied 95% ethanol.",
+          "evidence_ids": [
+            "CHEM-C1193-ETHANOL-DISCOVERY",
+            "CHEM-C1193-ETHANOL-OWNER",
+            "CHEM-C1193-ETHANOL-RECONCILIATION",
+            "CHEM-C1193-REINSPECTION",
+            "CHEM-C1193-ethanol-med110",
+            "CHEM-C1193-ethanol-med78",
+            "CHEM-C1193-ethanol-ncit",
+            "CHEM-C1193-ethanol-ncit-evs",
+            "CHEM-C1193-ethanol-ols-2",
+            "CHEM-C1193-ethanol-ols-3",
+            "CHEM-C1193-togo-2522",
+            "CHEM-C1193-togo-2523",
+            "CHEM-C1193-togo-2524",
+            "CHEM-C1193-togo-2525",
+            "CHEM-C1193-togo-2534",
+            "CHEM-C1193-togo-2535",
+            "CHEM-C1193-togo-2536",
+            "CHEM-C1193-togo-2537",
+            "CHEM-C1193-togo-2585",
+            "CHEM-C1193-togo-2744",
+            "CHEM-C1193-togo-3072",
+            "CHEM-CAP-5299c9a510c6ec5b",
+            "CHEM-CAP-713173ae3904548b",
+            "CHEM-CAP-9b35c1d4f58911cf",
+            "CHEM-CAP-e050890a98d1c10c",
+            "CHEM-CAP-e0c65da722d0c440",
+            "CHEM-FAIL-03748f8ae4f1",
+            "CHEM-FAIL-13a27ae6e9f2",
+            "CHEM-FAIL-1b08ca19d49a",
+            "CHEM-FAIL-64f727257453",
+            "CHEM-FAIL-726c647c6df3",
+            "CHEM-FAIL-82a765ac4575",
+            "CHEM-FAIL-ba6e72f40fcb",
+            "CHEM-FAIL-c3ba69d0e771",
+            "CHEM-FAIL-dd16f71bb244",
+            "CHEM-FAIL-ee59039ab231",
+            "CHEM-FAIL-f38c1f1168b0",
+            "CHEM-RECIPE-111-01",
+            "CHEM-RECIPE-111-02",
+            "CHEM-RECIPE-111-03",
+            "CHEM-RECIPE-111-04",
+            "CHEM-RECIPE-111-05",
+            "CHEM-RECIPE-111-06",
+            "CHEM-RECIPE-111-07",
+            "CHEM-RECIPE-111-08",
+            "CHEM-RECIPE-111-09",
+            "CHEM-RECIPE-111-10",
+            "CHEM-RECIPE-111-11",
+            "CHEM-RECIPE-124-01",
+            "CHEM-SRC-111",
+            "CHEM-SRC-124"
+          ],
+          "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "sha256": "2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85"
+          },
+          "identity_consequence": "Conditional historical candidate only; coordinator family identity decision pending.",
+          "predicate_consequence": "No family-owner installation or released identity row is approved by this conditional candidate.",
+          "publication_obligations": "Coordinator must reconcile all proposal destination and identifier overlaps, use guarded new-record writes, synchronize individual/aggregate/SSSOM and run native full QC before integration. No source/export hold is released.",
+          "applies_to_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "integration_disposition": "PENDING_COORDINATOR_FAMILY_DECISION",
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "sha256": "5718e7de2922144c0e8b8bc519b6fddb637989975d99f0d7737dc4335ac96a9d"
+          },
+          "final_correction": {
+            "author": "Codex worker05 /root/chemicals_research final report correction",
+            "timestamp": "2026-11-08T07:40:53.320531+00:00",
+            "changes": [
+              "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+              "Withdraw unsupported inference of distinct preparation identity from accession number or missing qualifiers. Retain exact candidate/source/occurrence lineage for conditional family reconciliation under #1237."
+            ],
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "prior_proposal_object_sha256": "fc8ce7fde1eda3ef5c8655041d643e94171c9470bb2b067e929172c27df64f54",
+            "predecessor_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v1/Ethanol_95_Preparation_DSMZ_78.diff",
+              "sha256": "3ab54e3091d879af270665b9288b15c110266e9e5e1bd0714a4d46fe3319da92"
+            },
+            "v1_after_capture": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/proposed-v1/Ethanol_95_Preparation_DSMZ_78.yaml",
+              "sha256": "f8bc0f88afcbb7797383f8f25d0213ae8c4b630aad90a5a68df5990c81bb25e4"
+            },
+            "v2_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v2/Ethanol_95_Preparation_DSMZ_78.diff",
+              "sha256": "22f3b7775cbe455e947d180672481183043dc71d21af325d0cc18b24c9f31bc9"
+            }
+          }
+        }
+      ],
+      "corrected_historical_report_bindings": [
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "fad7e463482add99a909a8cd63bdf62aaa9ffd7d78202e35873762eb5455cdd2",
+          "assessment": "The eleven TOGO DSMZ ethanol contexts trace K1 and K3 uses to DSMZ 78/104/110; the nested 212a case is the twelfth route. The common nominal 95% name is retained without a v/v or aqueous-balance assertion. Receiving dilution and variant medium recipes do not prove separate supplied ethanols.",
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "cfb3f31cbddcf01f09c53cc579d14eb9e5f8849620703d2a5919991655c6e4a0",
+          "assessment": "DSMZ 212a explicitly defines K1 with 0.1 ml vitamin and 20 ml nominal 95% ethanol. Preserve this nested occurrence as the twelfth DSMZ route. Neither subsequent medium assembly volumes nor water in other stocks identifies the supplied ethanol balance.",
+          "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "fad7e463482add99a909a8cd63bdf62aaa9ffd7d78202e35873762eb5455cdd2",
+          "assessment": "The eleven TOGO DSMZ ethanol contexts trace K1 and K3 uses to DSMZ 78/104/110; the nested 212a case is the twelfth route. The common nominal 95% name is retained without a v/v or aqueous-balance assertion. Receiving dilution and variant medium recipes do not prove separate supplied ethanols.",
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "cfb3f31cbddcf01f09c53cc579d14eb9e5f8849620703d2a5919991655c6e4a0",
+          "assessment": "DSMZ 212a explicitly defines K1 with 0.1 ml vitamin and 20 ml nominal 95% ethanol. Preserve this nested occurrence as the twelfth DSMZ route. Neither subsequent medium assembly volumes nor water in other stocks identifies the supplied ethanol balance.",
+          "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "16c759041f7640376f253d2568d29d24eeca84e4bd6cd66f7fc65f342b711f6e",
+          "assessment": "The eleven DSMZ-derived ethanol occurrences share the published vitamin-K preparation lineage but do not establish percentage basis or product balance. Their route grouping is supported; it supplies no evidence that their ethanol differs from ATCC's nominal 95% reagent.",
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "70a4634391d172ccda0c40172c8454fff4a957bb2785acc15a06c42fb21d6f53",
+          "assessment": "DSMZ212a explicitly uses 20 ml of 95% ethanol in its vitamin-K1 stock. It supports the preparation context but does not resolve the same percent-basis/product questions as the other nominal ethanol sources; neither a neat-ethanol equivalence nor a new disjoint product is inferred.",
+          "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "1c8ead728f0e437898a1755fee056a6c7b067b4305d1e6247f1a619cac227ae6",
+          "assessment": "The DSMZ 78 nominal 95% ethanol handle preserves twelve applicable source occurrences: eleven flat occurrences plus the DSMZ 212a occurrence. The receiving-stock facts and exact routes are retained. Neither aqueous 95% v/v ontology identity nor a different product is established; the conditional family hold remains.",
+          "case_id": null,
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "finding_dispositions",
+          "object_sha256": "8205487304111c8dc80298692d6125ea1d50f349fe8d5e7777bd460f3b8f14de",
+          "assessment": "The final review now states twelve DSMZ ethanol routes, explicitly eleven flat occurrences plus the DSMZ 212a context. Exact matrix and case bindings were already correct. This corrects only review prose and asserts no family equivalence or difference.",
+          "case_id": null,
+          "proposal_id": null,
+          "finding_id": "W05-FINAL-SKEPTIC-CHEM-004"
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-FINAL-SKEPTIC-CHEM-005",
+      "original_finding": {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-005",
+        "reviewer": "/root/materials_research",
+        "at": "2026-11-08T08:15:08.359456+00:00",
+        "status": "reported_before_fix",
+        "kind": "review_report_grade_predicate_wording",
+        "source_path": ".temp/w05-final-correction-v1/review-chemicals/main-review-v1.json",
+        "source_sha256": "9c46f53b9d4cc8eae9439e381c4b4f94a005c0852ace18331e4d6e1afa13a2a6",
+        "field_pointers": [
+          "/payload_reviews/44/assessment",
+          "/finding_dispositions/11/assessment"
+        ],
+        "observed": [
+          "Solid Tris hydrochloride CAS1185-53-1 is separate from free Tris. Native BROAD_MATCH semantics produce a broad-parent row plus CAS and local registry identity rows; no export is performed.",
+          "Solid Tris hydrochloride retains CAS1185-53-1 and receives native BROAD_MATCH to Tris, with CAS and local identity rows both present. The grade correction is separate from nominal buffer components."
+        ],
+        "reproduction": [
+          {
+            "path": ".temp/w05-final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+            "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+          },
+          {
+            "path": ".temp/w05-final-correction-v1/chemicals/native-projections-v3.json",
+            "sha256": "a1568768e95019a2e1033a8903758d9fe69eb102300fbad2406ae502e58fbc29"
+          }
+        ],
+        "actual": "The exact final YAML stores ontology_mapping.mapping_quality=NARROW_MATCH. The pinned native builder emits skos:broadMatch to CHEBI:9754 plus exact CAS and local registry identity rows. The two review sentences incorrectly use the enum spelling BROAD_MATCH instead of distinguishing the emitted predicate.",
+        "bounded_fix": "Preserve v1; correct only these two sentences in the successor review to state stored NARROW_MATCH and emitted skos:broadMatch. No payload, projection, chemical identity, or installation conclusion changes.",
+        "reported_to_root_before_fix": true
+      },
+      "original_finding_sha256": "67e145bf2ea1755396d29ccc7996bb4e3c3c89cad493f298195017c7b64403fc",
+      "status": "verified_already_correct_no_duplicate_payload_edit",
+      "assessment": "The selected exact CAS1185-53-1 salt stores NARROW_MATCH to CHEBI:9754. Native semantics emit skos:broadMatch plus CAS identity and B1 compound identity; the earlier review incorrectly named the enum BROAD_MATCH. This report verification changes neither payload nor source identity.",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "case_ids": [
+            "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+          ],
+          "description": "Tris hydrochloride is the completely neutralized crystalline1:1hydrochloride salt, CAS1185-53-1, C4H11NO3.HCl. DSMZ927/802 use a weighed12g reagent; stock-buffer occurrences require separate owners. Supplier sheet establishes substance chemistry, not historical supplier/catalog. CHEBI46097 is only the protonated cation and cannot exactly denote salt. Tris free base9754 is only asymmetric form-of parent.",
+          "evidence_ids": [
+            "CHEM-C1193-OWNER-Tris_Base",
+            "CHEM-C1193-REINSPECTION",
+            "CHEM-C1193-WEB-1",
+            "CHEM-C1193-WEB-3",
+            "CHEM-C1193-complete-owner-context-inspection",
+            "CHEM-C1193-nta-ols",
+            "CHEM-C1193-ols-search-0",
+            "CHEM-C1193-ols2-tris-cas",
+            "CHEM-C1193-ols3-tris1061",
+            "CHEM-C1193-ols3-tris1137",
+            "CHEM-C1193-ols3-tris394",
+            "CHEM-C1193-owner-occurrence-table-inspection",
+            "CHEM-C1193-tris-hcl-ols",
+            "CHEM-C1193-tris-pis",
+            "CHEM-CAP-1da688425060d238",
+            "CHEM-CAP-45911559f6556094",
+            "CHEM-CAP-61217b46be42b027",
+            "CHEM-CAP-b5fc743d359ea6a4",
+            "CHEM-CAP-ca0c0dd760014335",
+            "CHEM-CAP-d38c10241cb6daa0",
+            "CHEM-CAP-d8ba59dcb901ea12",
+            "CHEM-CAP-e5cca8a3bc6f121e",
+            "CHEM-RECIPE-076-01",
+            "CHEM-RECIPE-076-02",
+            "CHEM-RECIPE-076-03",
+            "CHEM-RECIPE-076-04",
+            "CHEM-RECIPE-076-05",
+            "CHEM-RECIPE-076-06",
+            "CHEM-RECIPE-076-07",
+            "CHEM-RECIPE-076-08",
+            "CHEM-RECIPE-076-09",
+            "CHEM-RECIPE-076-10",
+            "CHEM-RECIPE-076-11",
+            "CHEM-RECIPE-076-12",
+            "CHEM-RECIPE-076-13",
+            "CHEM-RECIPE-076-14",
+            "CHEM-RECIPE-076-15",
+            "CHEM-RECIPE-076-16",
+            "CHEM-SRC-076"
+          ],
+          "owner_path": "data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+            "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+          },
+          "publication_obligations": "Coordinator must guard exact baseline before bytes, reconcile cross-shard owners, apply via guarded writer, synchronize individual/aggregate/SSSOM, and pass native full QC. Preserve every WITHHOLD/REJECTED/source-material/export decision. These isolated proposals confer no release or full-owner approval.",
+          "identity_consequence": "Tris hydrochloride is the completely neutralized crystalline1:1hydrochloride salt, CAS1185-53-1, C4H11NO3.HCl. DSMZ927/802 use a weighed12g reagent; stock-buffer occurrences require separate owners. Supplier sheet establishes substance chemistry, not historical supplier/catalog. CHEBI46097 is only the protonated cation and cannot exactly denote salt. Tris free base9754 is only asymmetric form-of parent.",
+          "predicate_consequence": "NARROW_MATCH emits skos:broadMatch to the stated parent, with exact CAS display and local registry identity rows; isolated projection is not export approval.",
+          "applies_to_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+          ],
+          "predecessor_after_capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed/Tris_Hydrochloride_Salt.yaml",
+            "sha256": "945bd8da0c00306c5e0d9ad2c3eaead1fb3af33e89cdc2e3440e729ec5763c58"
+          },
+          "final_correction": {
+            "author": "Codex worker05 /root/chemicals_research final report correction",
+            "timestamp": "2026-11-08T07:40:53.320531+00:00",
+            "changes": [
+              "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+              "Filed #1238: the exact CAS 1185-53-1 salt has the broader tris free-base parent CHEBI:9754. Set NARROW_MATCH so the pinned native builder emits skos:broadMatch for the parent instead of the previous closeMatch. Preserve the exact CAS display and all source/identity holds. The complete native before/after projection is separately recorded; no global grade replacement is implied."
+            ],
+            "native_guarded_write": "PASS",
+            "independent_review": "pending",
+            "prior_proposal_object_sha256": "f6f37934eefc0ff7f67daee9d9c0d3a9ec7216aa0591235672d2516e11ecd201",
+            "predecessor_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v1/Tris_Hydrochloride_Salt.diff",
+              "sha256": "db8a371d8167b64634a6dbd1ae8696af8695b2a6ec482a09b08c5fbd55a988c2"
+            },
+            "v1_after_capture": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/proposed-v1/Tris_Hydrochloride_Salt.yaml",
+              "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+            },
+            "v2_diff": {
+              "root": "artifact",
+              "path": "final-correction-v1/chemicals/diffs-v2/Tris_Hydrochloride_Salt.diff",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      ],
+      "corrected_historical_report_bindings": [
+        {
+          "report": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+          "report_sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+          "field": "case_reviews",
+          "object_sha256": "96ce6db71c4c78429a2d34c675c98cd45870a739029b529dc4dbb9ec3d9a1bdc",
+          "assessment": "Sixteen Tris-HCl occurrences split into seven weighed salt contexts, six 1 M pH 7.5 stocks, two 0.5 M pH 8.0 stocks and one final-medium 50 mM pH 7.8 context. The solid salt receives the filed #1238 grade correction. NEW-03 removes inferred material components from the two buffer stocks; their positive concentration/pH specifications remain.",
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+          "report_sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+          "field": "case_reviews",
+          "object_sha256": "96ce6db71c4c78429a2d34c675c98cd45870a739029b529dc4dbb9ec3d9a1bdc",
+          "assessment": "Sixteen Tris-HCl occurrences split into seven weighed salt contexts, six 1 M pH 7.5 stocks, two 0.5 M pH 8.0 stocks and one final-medium 50 mM pH 7.8 context. The solid salt receives the filed #1238 grade correction. NEW-03 removes inferred material components from the two buffer stocks; their positive concentration/pH specifications remain.",
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "case_reviews",
+          "object_sha256": "83603227bee2ca61f729ee2e7ca682ec54f2bb4a4eb58a1157ac5d7638afca26",
+          "assessment": "The sixteen Tris contexts include weighed base, solid hydrochloride and nominal buffer stocks. They require the separate supplied-form treatments in the candidates; pH or the string Tris-HCl does not authorize inferred buffer components or collapse the solid salt into free Tris.",
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "proposal_id": null,
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "payload_reviews",
+          "object_sha256": "0d90795fa4d814bdde8f9789ef8401a4f985976ef5a8bd50786ab797f51e3c54",
+          "assessment": "Solid Tris hydrochloride CAS 1185-53-1 remains separate from free Tris. The exact YAML stores NARROW_MATCH; the pinned native builder emits skos:broadMatch to CHEBI:9754 plus the CAS and local registry identity rows. All three rows were inspected. No export or installation is approved.",
+          "case_id": null,
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "finding_id": null
+        },
+        {
+          "report": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+          "report_sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+          "field": "finding_dispositions",
+          "object_sha256": "6f8522e737c599185a4e7c9dbd1d506e1e2404dad4a485ddae293ad56a20d984",
+          "assessment": "The two final review sentences now distinguish stored NARROW_MATCH from emitted skos:broadMatch. Exact candidate YAML and the complete three-row projection already had the supported values; only review prose changed.",
+          "case_id": null,
+          "proposal_id": null,
+          "finding_id": "W05-FINAL-SKEPTIC-CHEM-005"
+        }
+      ]
+    }
+  ],
+  "context_finding_006": {
+    "finding_id": "W05-FINAL-SKEPTIC-CHEM-006",
+    "reviewer": "/root/materials_research",
+    "at": "2026-11-08T08:15:48.016176+00:00",
+    "status": "reported_before_fix",
+    "kind": "supplement_outcome_disposition_enum",
+    "input": {
+      "path": ".temp/w05-final-correction-v1/chemical-supplement-v1/decisions-v1.json",
+      "sha256": "ed425aa6d0925c8ca5fd73568220c3d18562078d3af065f4e760347f99d80c14"
+    },
+    "auditor": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+      "sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+      "allowed_dispositions_from_actual_AST": [
+        "broad_parent_relation_only",
+        "existing_identity_or_alias",
+        "malformed_or_nonchemical_token",
+        "new_distinct_ingredient_proposal",
+        "stock_product_mixture_context",
+        "supplied_form_correction",
+        "unresolved"
+      ]
+    },
+    "reproduction_scope": "Exact membership check against the unmodified auditor AST; this is not a claim that the whole 188-case campaign validator was executed by this reviewer.",
+    "invalid_cases": [
+      {
+        "lane_index": 10,
+        "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+        "disposition": "curation_proposal",
+        "proposal_ids": [
+          "FINAL-CHEM-P-thiamine-hcl-monohydrate"
+        ]
+      },
+      {
+        "lane_index": 48,
+        "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+        "disposition": "curation_proposal",
+        "proposal_ids": [
+          "FINAL-CHEM-P-thiamine-hcl-monohydrate"
+        ]
+      }
+    ],
+    "bounded_fix": "Preserve original supplement v1. Change only these two disposition values to new_distinct_ingredient_proposal and update exact source-conclusion decision hash bindings and ancestry. Preserve all scientific reasoning, raw cases, primary evidence, holds, proposal and complete YAML bytes.",
+    "scientific_limit": "The proposed source-defined monohydrate material is supported within its explicit molecular-grounding limits. This finding concerns report shape only.",
+    "reported_to_root_before_fix": true
+  },
+  "context_006_status": "Both current dispositions verified new_distinct_ingredient_proposal; inherited native outcome correction retained.",
+  "chronology": {
+    "original_finding_reports": [
+      {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-001",
+        "recorded_at": "2026-11-08T07:55:19.208505+00:00"
+      },
+      {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-002",
+        "recorded_at": "2026-11-08T07:58:34.535610+00:00"
+      },
+      {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-003",
+        "recorded_at": "2026-11-08T08:08:08.085458+00:00"
+      },
+      {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-004",
+        "recorded_at": "2026-11-08T08:12:55.325528+00:00"
+      },
+      {
+        "finding_id": "W05-FINAL-SKEPTIC-CHEM-005",
+        "recorded_at": "2026-11-08T08:15:08.359456+00:00"
+      }
+    ],
+    "formal_filed_comment": {
+      "url": "https://api.github.com/repos/CultureBotAI/MediaIngredientMech/issues/comments/6719161955",
+      "html_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719161955",
+      "issue_url": "https://api.github.com/repos/CultureBotAI/MediaIngredientMech/issues/1193",
+      "id": 6719161955,
+      "node_id": "IC_kwDORhCjFc8AAAABkH5GYw",
+      "user": {
+        "login": "realmarcin",
+        "id": 4625870,
+        "node_id": "MDQ6VXNlcjQ2MjU4NzA=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/4625870?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/realmarcin",
+        "html_url": "https://github.com/realmarcin",
+        "followers_url": "https://api.github.com/users/realmarcin/followers",
+        "following_url": "https://api.github.com/users/realmarcin/following{/other_user}",
+        "gists_url": "https://api.github.com/users/realmarcin/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/realmarcin/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/realmarcin/subscriptions",
+        "organizations_url": "https://api.github.com/users/realmarcin/orgs",
+        "repos_url": "https://api.github.com/users/realmarcin/repos",
+        "events_url": "https://api.github.com/users/realmarcin/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/realmarcin/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "created_at": "2026-11-08T08:16:17Z",
+      "updated_at": "2026-11-08T08:16:17Z",
+      "body": "Record five additional findings from Worker05's independent review of its unpublished correction draft. These are `W05-FINAL-SKEPTIC-CHEM-001` through `005`. Original findings and failed/intermediate drafts remain evidence; this comment does not claim that every diagnostic report correction was made after GitHub filing. No maintained ingredient change has been applied.\n\n1. **001, bottom-layer explanation:** the primary-conclusions draft incorrectly contrasts FeS with zero-valent iron. JCM629 explicitly reuses JCM628 with artificial saltwater replacing Modified Wolfe mineral solution; both bottom layers retain the FeS preparation and agarose. Correct the report explanation while preserving the already-correct selected payloads. Root verified the complete captured JCM628/629 texts.\n2. **002, MKP attribution:** the primary-conclusions draft calls MKP a JCM salt preparation. The complete MediaDive record identifies DSMZ medium1895 and MKP solution6635, a multicomponent medium base including CMRL1066, Neopeptone, HEPES and glucose. Correct report attribution and scope; the selected payload already cites MediaDive1895.\n3. **003, thiamine-HCl monohydrate completeness:** six NBRC recipes1550/1443/1444/1445/1447/1507 explicitly print the one-water label. Root rehashed and read all six primary captures. Missing CAS, fixed molecular structure or chloride/protonation detail prevents exact molecular grounding; it does not alone rule out a bounded source-defined material under MAPPING_SEMANTICS§3. Reassess one shared nominal monohydrate candidate after ignored-inclusive owner/proposal checks, retaining all six occurrences and both source cases. Do not infer CAS, formula, chloride stoichiometry, supplier, anhydrous/dihydrate equivalence, an exact parent relation, or a separate owner per source number. If an actual owner-boundary ambiguity prevents that representation, document it precisely. The exact successor still requires independent review; this finding is not an identity approval.\n4. **004, reviewer prose count:** the DSMZ95% ethanol grouping has twelve applicable occurrence IDs: eleven flat occurrences plus DSMZ212a. The exact occurrence list was already correct; change the review's “eleven” wording while retaining its predecessor. This supplies no new percentage basis or product-equivalence decision.\n5. **005, reviewer grade wording:** the Tris hydrochloride payload stores `NARROW_MATCH`, and the pinned native projection emits `skos:broadMatch` plus CAS and local identity rows. Two review sentences incorrectly say the stored grade is `BROAD_MATCH`. Correct those sentences; retain the already-correct payload and projection. This is a report correction within the separately filed#1238 decision, not a grade-rule change.\n\nThe bounded source-completion task remains under this issue. Retain each finding's real timestamps, original severity and before/after evidence; do not recast earlier internal report revisions as post-filing repairs. Independently review final selected bytes, complete case/proposal retention and every unchanged scientific hold before publication. Private root readback and complete original findings are in `.temp/all-unmatched-20261107/preflight/w05-review-followups-triage-v1/`. There is no new role, whole-owner or supported-export approval.\n",
+      "author_association": "MEMBER",
+      "pin": null,
+      "reactions": {
+        "url": "https://api.github.com/repos/CultureBotAI/MediaIngredientMech/issues/comments/6719161955/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "performed_via_github_app": null,
+      "minimized": null
+    },
+    "limit": "Historical internal report/candidate corrections predate the formal filed comment. Preserve real authors and recorded times; do not retrospectively claim the formal GitHub filing preceded private corrections. All corrected objects were already published in5156d92 before this verification. Original reports remain authoritative historical artifacts, not overwritten."
+  },
+  "reused_report_authorship": [
+    {
+      "path": "final-correction-v1/remediation/chemical-report-v3/primary-case-conclusions-v3.json",
+      "sha256": "09ea6d0f40d10f023f8032d8ae379c41327ae137f118975f015ec2d0674918d6",
+      "author": "/root/chemicals_research",
+      "at": "2026-11-08T07:52:03.631116+00:00"
+    },
+    {
+      "path": "final-correction-v1/chemical-supplement-v1/primary-case-conclusions-v2.json",
+      "sha256": "6e5133773ef681de527dae189cd7ec5115a6f6a8f93c535483a5da2fd1f874d4",
+      "author": "/root/chemicals_research",
+      "at": "2026-11-08T07:52:03.631116+00:00"
+    },
+    {
+      "path": "final-correction-v1/reviews/chemicals/main-review-v2.json",
+      "sha256": "ea8182a6ef05176a4652682c4a20324682d534462aaeaf1478d0ba426a5c0beb",
+      "author": "/root/materials_research",
+      "at": "2026-11-08T08:18:15.813569+00:00"
+    }
+  ],
+  "scope": "New report verification only: unchanged six full payloads, original evidence/acquisition timestamps/history retained, all source/owner/role/export and family holds retained."
+}

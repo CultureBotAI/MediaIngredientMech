@@ -1,0 +1,10 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/w09-method-successors-v1/save_author_review.py", line 44, in <module>
+    rr.validate_review(review,F/'schema/record_review.yaml');yp=rr.save_review(F,review,F/'schema/record_review.yaml');actual=rr.read_review(F,str(yp.relative_to(F)),F/'schema/record_review.yaml');assert actual==review
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/w09-method-successors-v1/native-author-fixture/scripts/record_review.py", line 208, in validate_review
+    raise ReviewError("; ".join(
+    ...<2 lines>...
+    ))
+method_author_native.ReviewError: targets.0.kind: 'record' is not one of ['maintained', 'generated', 'snapshot_row', 'source']; targets.1.kind: 'record' is not one of ['maintained', 'generated', 'snapshot_row', 'source']; targets.2.kind: 'record' is not one of ['maintained', 'generated', 'snapshot_row', 'source']

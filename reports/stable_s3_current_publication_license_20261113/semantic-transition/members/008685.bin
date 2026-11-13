@@ -1,0 +1,3159 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="DSMZ cultivation media database">
+    <meta name="author" content="Julia Koblitz">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://mediadive.dsmz.de" />
+    <meta property="og:type" content="database" />
+    <meta property="og:title" content="195: DESULFOBACTER CURVATUS MEDIUM | Media | MediaDive" />
+    <meta property="og:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains." />
+    <meta property="og:image" content="/img/mediadive_logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mediadive.dsmz.de">
+    <meta property="twitter:title" content="MediaDive — the cultivation media database">
+    <meta property="twitter:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains.">
+    <meta property="twitter:image" content="/img/mediadive_avatar.png">
+
+    <link rel="icon" href="/img/favicon_256x256.png">
+    <title>195: DESULFOBACTER CURVATUS MEDIUM | Media | MediaDive</title>
+
+    <!-- Phosphoricons and individual D3 icons -->
+    <link href="/css/phosphoricons/regular/style.css?v=2" rel="stylesheet" />
+    <link href="/css/phosphoricons/fill/style.css?v=2" rel="stylesheet" />
+    <link href="/css/d3icons/style.css?v=3" rel="stylesheet" />
+
+    <link href="/css/digidive.css?v=4" rel="stylesheet" />
+    <link href="/css/shepherd.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/style.css?1758698096" rel="stylesheet">
+
+    <script>
+        // define global constants
+        const ROOTPATH = "";
+    </script>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Requires digidive.js for the dropdowns -->
+    <!-- <script src="/js/digidive.js"></script> -->
+    <script src="/js/digidive.js?v=4"></script>
+    <script src="/js/script.js?1722402400"></script>
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "https://piwik.dsmz.de/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '15']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript>
+            <p><img src="https://piwik.dsmz.de/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p>
+        </noscript>
+        <!-- End Matomo Code -->
+    </head>
+
+<body style="position: relative">
+    <!-- Modals go here -->
+    <!-- <div class="modal modal-lg" id="settings" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-400 mw-full">
+            <a href="#" class="btn float-right" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title"><i class="ph ph-gear text-primary"></i> Settings</h5>
+
+            <form action="#" method="get">
+                <input type="hidden" name="dsmz" value="4661">
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select name="language" id="language" class="form-control">
+                        <option value="en" selected>English</option>
+                        <option value="de" >Deutsch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="transitions" name="transitions" value="true" >
+                        <label for="transitions">Motion-sickness mode</label><br>
+                        <small class="text-muted">This mode reduces motion and animations on the page.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="dyslexia" name="dyslexia" value="true" >
+                        <label for="dyslexia">Dyslexia mode</label><br>
+                        <small class="text-muted">
+                            The web page uses a special font to increase readibility for user with dyslexia.                        </small>
+                    </div>
+                </div>
+                <p>
+                    We use browser cookies to save your preferences.                </p>
+                <button class="btn primary">Apply</button>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="modal modal-lg" id="ingredient-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('ingredient-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Ingredient name</h5>
+            <div id="ingredient-content"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-lg" id="universal-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('universal-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <div id="universal-content" class="content"></div>
+        </div>
+    </div>
+</div>    <div class="loader">
+        <span></span>
+    </div>
+    <div class="popup-bg" onclick="hidePopups();"></div>
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper 
+            ">
+        <!-- data-sidebar-hidden to hide sidebar on start -->
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts">
+                    </div>
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="digidive.toggleSidebar()"></div>
+
+        <!-- Navbar start -->
+        <div class="navbar navbar-top">
+            <div class="container">
+                <!-- here goes your database logo -->
+
+                <a href="/" class="navbar-brand position-relative">
+                                            <img class="" src="/img/mediadive_logo.svg?v=2" alt="MediaDive" style="width: 30rem;">
+                                        
+                </a>
+
+                <a href="//hub.dsmz.de/" class="navbar-brand ml-auto d-none d-sm-block">
+                    <!-- DSMZ Logo is mandatory -->
+                    <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity">
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <!-- Button to toggle sidebar -->
+            <div class="container">
+                <button class="btn btn-action active" type="button" onclick="digidive.toggleSidebar(this);"></button>
+
+                <ul class="navbar-nav">
+                    
+                        <nav aria-label="MediaDive breadcrumbs">
+                            <ul class="breadcrumb m-0">
+                                <li><a href="/">Home</a></li><li><a href="/media">Media</a></li><li class="active" aria-current="page"><a href="javascript:void(0)">195: DESULFOBACTER CURVATUS MEDIUM</a></li>                            </ul>
+                        </nav>
+                                    </ul>
+
+                <div class="dropdown">
+                    <button class="btn primary circle square mr-10" data-toggle="dropdown" type="button" id="accessibility-menu" aria-haspopup="true" aria-expanded="false">
+                        <i class="ph ph-person-simple"></i>
+                        <span class="sr-only">Accessibility Options</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-center w-300" aria-labelledby="accessibility-menu">
+                        <h6 class="header text-primary">Accessibility</h6>
+                        <form action="#" method="get" class="content">
+                            <input type="hidden" name="accessibility[check]">
+
+                            <input type="hidden" name="redirect" value="/medium/195?dsmz=4661">
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select name="accessibility[language]" id="language" class="form-control">
+                                    <option value="en" selected>English</option>
+                                    <option value="de" >Deutsch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-contrast" name="accessibility[contrast]" value="high-contrast" >
+                                    <label for="set-contrast">High contrast</label><br>
+                                    <small class="text-muted">
+                                        Enhance the contrast of the web page for better readability.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-transitions" name="accessibility[transitions]" value="without-transitions" >
+                                    <label for="set-transitions">Reduce motion</label><br>
+                                    <small class="text-muted">
+                                        Reduce motion and animations on the page.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-dyslexia" name="accessibility[dyslexia]" value="dyslexia" >
+                                    <label for="set-dyslexia">Dyslexia mode</label><br>
+                                    <small class="text-muted">
+                                        Use a special font to increase readability for users with dyslexia.                                    </small>
+                                </div>
+                            </div>
+                            <button class="btn primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <form id="medium-search" action="/media" method="get" class="nav-search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" autocomplete="off" placeholder="Search medium">
+                        <div class="input-group-append">
+                            <button class="btn primary"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="suggestions"></div>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+
+            <nav class="sidebar-topnav">
+                <ul>
+                    <li><a href="/docs"><i class="ph ph-book"></i>Manual</a></li>
+                    <li><a href="/contact" title="Support"><i class="ph ph-headset"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-menu">
+
+                
+                <!-- Sidebar links (with icons) and titles -->
+                <h5 class="title">Content</h5>
+
+                <a href="/media" class="with-icon primary active">
+                    <i class="ph ph-flask" aria-hidden="true"></i>
+
+                    Media                </a>
+                <a href="/solutions" class="with-icon secondary ">
+                    <i class="ph ph-test-tube" aria-hidden="true"></i>
+
+                    Solutions                </a>
+                <a href="/ingredients" class="with-icon success ">
+                    <i class="ph ph-mortar-pestle" aria-hidden="true"></i>
+
+                    Ingredients                </a>
+
+                <a href="/strains" class="with-icon signal ">
+                    <!-- text-white bg-dark text-dark-dm bg-light-dm -->
+                    <i class="ph ph-microbes" aria-hidden="true"></i>
+
+                    Strains                </a>
+
+                <a href="/steps" class="with-icon ">
+                    <i class="ph ph-list-checks" aria-hidden="true"></i>
+
+                    Steps                </a>
+                <a href="/gas" class="with-icon ">
+                    <i class="ph ph-gas" aria-hidden="true"></i>
+                    Gas
+                </a>
+
+
+                <h5 class="title">Search</h5>
+
+                <a href="/finder" class="with-icon ">
+                    <i class="ph ph-target" aria-hidden="true"></i>
+                    Medium finder
+                </a>
+                <a href="/solution-finder" class="with-icon ">
+                    <i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i>
+                    Solution finder
+                </a>
+                <a href="/taxonomy" class="with-icon ">
+                    <i class="ph ph-taxonomy" aria-hidden="true"></i>
+                    Taxonomy search                </a>
+                <a href="/isolation-sources" class="with-icon ">
+                    <i class="ph ph-map-pin-line" aria-hidden="true"></i>
+                    Isolation sources                </a>
+
+
+                <h5 class="title">Tools</h5>
+                                    <a href="/medium-builder" class="with-icon ">
+                        <i class="ph ph-flask-pen" aria-hidden="true"></i>
+                        Medium builder
+                    </a>
+                                <!-- sparql -->
+                <a href="https://sparql.dsmz.de/mediadive" class="with-icon">
+                    <i class="ph ph-rdf" aria-hidden="true"></i>
+                    SPARQL endpoint
+                </a>
+                <a href="/unit-converter" class="with-icon ">
+                    <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+
+                    Unit converter                </a>
+                <a href="/compare-media" class="with-icon ">
+                    <i class="ph ph-flask-vial" aria-hidden="true"></i>
+
+                    Compare media                </a>
+                <a href="/compare-solutions" class="with-icon ">
+                    <i class="ph ph-vials" aria-hidden="true"></i>
+
+                    Compare solutions                </a>
+                
+
+
+                <a href="/prediction" class="with-icon ">
+                    <i class="ph ph-chip-ai" aria-hidden="true"></i>
+
+                    Prediction <span class="badge badge-primary ml-5">SOON</span>
+                </a>
+
+
+                
+                <div class="sidebar-content text-muted d-block d-sm-none">
+                    <!-- brought to you by -->
+                    <a href="//www.dsmz.de/" class="navbar-brand ml-auto pb-10">
+
+                        <!-- DSMZ Logo is mandatory -->
+                        <img src="/img/dsmz_full.svg" alt="DSMZ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <!-- <div class="modal" id="comment-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#/" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Leave a comment</h5>
+
+            <form id="add-comment" class="d-block" onsubmit="return addComment(event, this)">
+                <input type="hidden" name="medium_id" value="195">
+                <div class="form-group mb-10">
+                    <label for="comment-name">Your name (optional)</label>
+                    <input type="text" name="name" id="comment-name" class="form-control" placeholder="Anonymous">
+                </div>
+                <div class="form-group mb-10">
+                    <label for="comment-mail">Your mail address (optional)</label>
+                    <input type="mail" name="mail" id="comment-mail" class="form-control" placeholder="anonymous@example.com">
+                    <small class="text-muted">
+                        Your mail address will not be made public, but allows out team to contact you regarding your comment.                    </small>
+                </div>
+                <div class="form-group mb-10">
+                    <textarea name="comment" id="new-comment" class="form-control" placeholder="Write a comment!" rows="2" required></textarea>
+                </div>
+                <button class="btn"><i class="ph ph-paper-plane-tilt"></i> Publish comment</button>
+            </form>
+            <br>
+
+            <div class="title">Comments for this medium</div>
+
+
+            <div id="comment-list">
+                                        <div class="content">
+                            <p class="text-muted">No comments for this medium.</p>
+                        </div>
+                                </div>
+
+            <div class="text-right mt-20">
+                <a href="#/" class="btn mr-5" role="button">Close</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="title-bar viewer" role="toolbar" aria-label="Medium toolbar" id="medium-toolbar">
+    <div class="h-spacer ml-5"></div>
+   
+
+    <!-- DOWNLOAD -->
+    <div class="dropdown with-arrow">
+        <button class="btn mx-5 toolbar-btn" data-toggle="dropdown" type="button" id="download-btn" aria-haspopup="true" aria-expanded="false">
+            <!-- <span class="tooltip">Download </span> -->
+            <i class="ph ph-download ph-lg"></i> <span class="toolbar-label">Download <i class="ph ph-caret-down"></i></span>
+        </button>
+        <div class="dropdown-menu w-200 w-sm-250 w-md-300" aria-labelledby="download-btn">
+
+            <div class="content">
+                <form action="/pdf/195" method="get" target="_blank">
+                    <b>Adjust volume (optional)</b>
+                    <div class="form-row row-eq-spacing-sm mb-0">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="volume">Multiply </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="volume" value="1" autocomplete="off" step="0.01">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="main-volume">Main sol. </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="main-volume" autocomplete="off" step="1" placeholder="1000">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                            <div class="form-group">
+                            <label for="ccno"><b>Strain modification</b></label>
+                            <select class="form-control" name="ccno">
+                                <option value="none">Show no strain mods at all.</option>
+                                <option value="all">Show all strain mods at the end of file.</option>
+                                                                    <option  value="DSM 28787">Limnochorda pilosa DSM 28787</option>
+                                                            </select>
+                        </div>
+                    
+                    <button class="btn primary block" type="submit">
+                        <i class="ph ph-lg mr-5 ph-file-pdf"></i>
+                        Create PDF</button>
+                </form>
+            </div>
+            <div class="divider"></div>
+            <a class="item" href="javascript:void(0)" onclick="$(this).next().toggle()">
+                Other formats <i class="ph ph-caret-down"></i>
+            </a>
+            <div class="content mt-0" style="display: none;">
+                <a class="btn block mb-5 download-link" href="/text/195" target="_blank"><i class="ph ph-lg mr-5 ph-file-text"></i> Text</a>
+                <a class="btn block download-link" href="/download/medium/195/json" target="_blank"><i class="ph ph-lg mr-5 ph-file-code"></i> JSON</a>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- <a class="btn mx-5  toolbar-btn" href="#comment-modal">
+            <i class="ph ph-lg mr-5 ph-chat-dots"></i> <span class="toolbar-label">Comments</span>
+            (count($comments))
+        </a> -->
+        <a href="/contact?medium=195" class="btn toolbar-btn">
+        <i class="ph ph-lg mr-5 ph-paper-plane-tilt"></i>
+        Feedback
+    </a>
+        <div class="d-none d-sm-block">
+            <button class="btn mx-5  toolbar-btn" onclick="mediumTour()">
+                <!-- <span class="tooltip">Guided tour</span> -->
+                <i class="ph ph-lg mr-5 ph-signpost"></i> <span class="toolbar-label">Guided tour</span>
+            </button>
+        </div>
+    </div>            <div class="content-container">
+
+                <a id="top"></a>
+                <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Dataset",
+        "@type": "CreativeWork"
+    },
+    "identifier": [
+        {
+            "@type": "PropertyValue",
+            "name": "URI",
+            "value": "https://identifiers.org/mediadive.medium:195"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "DSMZ Medium Number",
+            "value": "195"
+        }
+    ],
+    "name": "DESULFOBACTER CURVATUS MEDIUM",
+    "url": "https://mediadive.dsmz.de/medium/195",
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "MediaDive"
+    },
+    "description": "Medium 195: DESULFOBACTER CURVATUS MEDIUM",
+    "keywords": [
+        "Culture medium",
+        "Bacteria"
+    ],
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/195/csv",
+            "fileFormat": "CSV"
+        },
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/195/json",
+            "fileFormat": "JSON"
+        }
+    ],
+    "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "MediaDive",
+        "description": "The Cultivation Media Database ",
+        "url": "https://mediadive.dsmz.de/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Leibniz-Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH",
+            "telephone": "+49 (0) 531-2616-0",
+            "faxNumber": "+49 (0) 531-2616-418",
+            "url": "https://dsmz.de/",
+            "vatID": "DE 114815269",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Inhoffenstra\u00dfe 7 B",
+                "postalCode": "38124",
+                "addressLocality": "Braunschweig, Germany"
+            }
+        }
+    }
+}</script><style>
+    .list {
+        counter-reset: list-counter calc(var(--start) - 1);
+    }
+</style>
+
+    <div id="to-mobile">
+        <a href="?dsmz=4661&mobile=1" class="btn primary filled">
+            <i class="ph ph-cooking-pot"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+<div class="content mx-0 mx-md-5">
+
+            <a href="javascript:void(0)" onclick="favMedium(this, '195')" class="btn large square float-right favourite text-signal" title="Add to favourites">
+                            <i class="ph ph-star animate__animated"></i>
+                    </a>
+        <h1 class="medium-name mt-0">
+            <span id="medium-title">
+                <img src="/img/logos/dsmz_simple.svg" alt="DSMZ" title="DSMZ Medium" style="height:2.5rem">                <div id="medium-id" class="hidden">195</div>
+                <span>
+                    195                </span>.
+                <span>DESULFOBACTER CURVATUS MEDIUM</span>
+            </span>
+        </h1>
+    
+    <p class="text-muted">
+        <i class="ph ph-lg ph-seal-check text-success mr-10"></i><b>Official DSMZ medium</b>: This medium was manually curated by experts from the DSMZ.    </p>
+
+    
+</div>
+
+<div class="row w-full" id="medium">
+    <div class="col-lg-7 col-12">
+
+        <div id="validation" class="alert" style="display: none;">
+            <div id="validation-running">
+                <h5 class="title">Validation is running ...</h5>
+                <div class="text-center">
+                    <i class="ph ph-3x ph-circle-notch ph-spin text-primary"></i>
+                </div>
+            </div>
+            <div id="validation-complete" style="display: none;">
+                <h5 class="title">Validation is complete.</h5>
+                <ul class="fa-ul">
+
+                </ul>
+                You may need to <a href='/medium-editor/195'>refresh the page</a> or go to the <a href='/medium/195'>viewing page</a> to see the results.            </div>
+        </div>
+
+        <div id="content" class="mw-full "><style>
+    a.link:not(.btn).text-danger::after {
+        color: var(--danger-color);
+    }
+</style>
+
+<h3 class="mt-md-0" id="title-recipe">Culture medium recipe</h3>
+<div class="d-flex justify-content-between">
+    <form action="" method="get" class="mw-full w-350">
+                    <div class="input-group m-0 mb-5">
+                                    <select name="ccno" id="ccno-select" class="form-control">
+                        <option value="" disabled selected>
+                            Select a strain (optional)                        </option>
+                        <option value="">Standard medium</option>
+                                                    <option value="DSM 3379" >Desulfobacter curvatus DSM 3379</option>
+                                                    <option value="DSM 11383" >Desulfobacter halotolerans DSM 11383</option>
+                                                    <option value="DSM 3380" >Desulfobacter hydrogenophilus DSM 3380</option>
+                                                    <option value="DSM 3381" >Desulfobacter latus DSM 3381</option>
+                                                    <option value="DSM 17155" >Desulfobacter psychrotolerans DSM 17155</option>
+                                                    <option value="DSM 13037" >Desulfobacter sp. DSM 13037</option>
+                                                    <option value="DSM 2035" >Desulfobacter sp. DSM 2035</option>
+                                                    <option value="DSM 2057" >Desulfobacter sp. DSM 2057</option>
+                                                    <option value="DSM 8776" >Desulfobacter vibrioformis DSM 8776</option>
+                                                    <option value="DSM 16918" >Halodesulfovibrio sp. DSM 16918</option>
+                                                    <option value="DSM 28787" >Limnochorda pilosa DSM 28787</option>
+                                            </select>
+                                <div class="input-group-append">
+                    <button class="btn" type="submit" title="Show strain-specific medium">
+                        <i class="ph ph-flask-bacterium text-danger"></i>
+                    </button>
+                </div>
+            </div>
+            </form>
+    <div>
+        <div id="volume-adjustment" class="input-group mw-full w-150">
+            <div class="input-group-prepend">
+                <span class="input-group-text text-decoration-none" data-toggle="tooltip" data-title="Adjust final volume on this page by factor." data-placement="bottom">
+                    Vol.
+                </span>
+            </div>
+            <input class="form-control" type="number" name="volume" value="1" onchange="adjustVolume(this)" autocomplete="off">
+            <div class="input-group-append">
+                <span class="input-group-text">&times;</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="solution-container" id="recipe-container">
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Main sol. 195",
+    "url": "https://mediadive.dsmz.de/solutions/367",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": {
+        "244": "Autoclave",
+        "1827": "Gassing station",
+        "2102": "Hungate tubes",
+        "3651": "Filter"
+    },
+    "protocolPurpose": "Prepare the solution Main sol. 195 for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 1001,
+            "step_id": 6174,
+            "step_order": 1,
+            "step": "Solution A is sparged with 80% N2 and 20% CO2 gas mixture to reach a pH below 6 (at least 30 min), then distributed under the same gas atmosphere in anoxic Hungate-type tubes or serum vials and autoclaved. Solutions C and E are autoclaved separately under 100% N2 gas. Solution B is autoclaved under 80% N2 and 20% CO2 gas atmosphere. Solution D is prepared under 100% N2 gas atmosphere and sterilized by filtration. To complete the medium appropriate amounts of solutions B to E are added to the sterile solution A in the sequence as indicated. Final pH of the medium should be 7.1 - 7.4.",
+            "raw": "Solution A is sparged with 80% N2 and 20% CO2 gas mixture to reach a pH below 6 (at least 30 min), then distributed under the same gas atmosphere in anoxic Hungate-type tubes or serum vials and autoclaved. Solutions C and E are autoclaved separately under 100% N2 gas. Solution B is autoclaved under 80% N2 and 20% CO2 gas atmosphere. Solution D is prepared under 100% N2 gas atmosphere and sterilized by filtration. To complete the medium appropriate amounts of solutions B to E are added to the sterile solution A in the sequence as indicated. Final pH of the medium should be 7.1 - 7.4.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2022-08-19 14:16:54"
+        },
+        {
+            "recipe_order": 1001,
+            "step_id": 6175,
+            "step_order": 1,
+            "step": "Note: Addition of 10 - 20 mg sodium dithionite per liter (e.g. from 5% (w/v) solution, freshly prepared under N2 and filter-sterilized) may stimulate growth of some strains at the beginning. For transfers use 5 - 10% (v/v) inoculum.",
+            "raw": "Note: Addition of 10 - 20 mg sodium dithionite per liter (e.g. from 5% (w/v) solution, freshly prepared under N2 and filter-sterilized) may stimulate growth of some strains at the beginning. For transfers use 5 - 10% (v/v) inoculum.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-11-12 15:41:15"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1 solution-main" id="sol-367">
+            <a id="solution-367" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                                                    <span data-toggle="tooltip" data-title="Main solution for this medium">
+                                <i class="ph ph-flask mr-10"></i>
+                            </span>
+                        
+                        <a href="/solutions/367" class="hyperlink colorless">
+                            Main sol. 195                        </a>
+                                                                        <a href="#solution-367" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <div class="input-group input-group-sm" style="max-width: 10rem;">
+                                    <input data-volume='1003' class="form-control" step="1" type="number" id="main-sol-vol" value="1003" onchange="adjustVolumeAbsolute(this)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+
+                                                    
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                <div class="p-10"> Equipment needed:                         <span class="badge badge-pill">Autoclave</span>
+                                        <span class="badge badge-pill">Gassing station</span>
+                                        <span class="badge badge-pill">Hungate tubes</span>
+                                        <span class="badge badge-pill">Filter</span>
+                </div>
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-24048" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-368'><span class='solutionRef'>Solution A</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='952'>
+
+                952            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-24050" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-370'><span class='solutionRef'>Solution B</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='30'>
+
+                30            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-24051" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-371'><span class='solutionRef'>Solution C</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-24052" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-372'><span class='solutionRef'>Solution D</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-24053" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-373'><span class='solutionRef'>Solution E</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                Solution A is sparged with 80% N<sub>2</sub> and 20% CO<sub>2</sub> gas mixture to reach a pH below 6 (at least 30 min), then distributed under the same gas atmosphere in anoxic Hungate-type tubes or serum vials and autoclaved. Solutions C and E are autoclaved separately under 100% N<sub>2</sub> gas. Solution B is autoclaved under 80% N<sub>2</sub> and 20% CO<sub>2</sub> gas atmosphere. Solution D is prepared under 100% N<sub>2</sub> gas atmosphere and sterilized by filtration. To complete the medium appropriate amounts of solutions B to E are added to the sterile solution A in the sequence as indicated. Final pH of the medium should be 7.1 - 7.4.                            </td>
+        </tr>
+                <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">2</span>
+                                Note: Addition of 10 - 20 mg sodium dithionite per liter (e.g. from 5% (w/v) solution, freshly prepared under N<sub>2</sub> and filter-sterilized) may stimulate growth of some strains at the beginning. For transfers use 5 - 10% (v/v) inoculum.                            </td>
+        </tr>
+                            </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Solution A",
+    "url": "https://mediadive.dsmz.de/solutions/368",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Solution A for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2SO4",
+            "url": "https://mediadive.dsmz.de/ingredients/110",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "KH2PO4",
+            "url": "https://mediadive.dsmz.de/ingredients/11",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NH4Cl",
+            "url": "https://mediadive.dsmz.de/ingredients/42",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NaCl",
+            "url": "https://mediadive.dsmz.de/ingredients/43",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "MgCl2 x 6 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/79",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "KCl",
+            "url": "https://mediadive.dsmz.de/ingredients/61",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "CaCl2 x 2 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/7",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Sodium resazurin",
+            "url": "https://mediadive.dsmz.de/ingredients/1852",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1" id="sol-368">
+            <a id="solution-368" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/368" class="hyperlink colorless">
+                            Solution A                        </a>
+                                                                        <a href="#solution-368" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='952' title="Final volume of this solution">952</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(368)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-2082" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/110" class="hyperlink colorless">
+                            Na<sub>2</sub>SO<sub>4</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='3'>
+
+                3.00            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                3.151            </td>
+            <td class="text-right">
+                22.186            </td>
+        </tr>
+
+            <tr id="recipe-2083" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/11" class="hyperlink colorless">
+                            KH<sub>2</sub>PO<sub>4</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.2'>
+
+                0.20            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.21            </td>
+            <td class="text-right">
+                1.544            </td>
+        </tr>
+
+            <tr id="recipe-2084" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/42" class="hyperlink colorless">
+                            NH<sub>4</sub>Cl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.3'>
+
+                0.30            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.315            </td>
+            <td class="text-right">
+                5.891            </td>
+        </tr>
+
+            <tr id="recipe-2085" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/43" class="hyperlink colorless">
+                            NaCl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='21'>
+
+                21.00            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                22.059            </td>
+            <td class="text-right">
+                377.461            </td>
+        </tr>
+
+            <tr id="recipe-2086" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/79" class="hyperlink colorless">
+                            MgCl<sub>2</sub> x 6 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='3'>
+
+                3.00            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                3.151            </td>
+            <td class="text-right">
+                15.5            </td>
+        </tr>
+
+            <tr id="recipe-2087" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/61" class="hyperlink colorless">
+                            KCl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.5'>
+
+                0.50            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.525            </td>
+            <td class="text-right">
+                7.045            </td>
+        </tr>
+
+            <tr id="recipe-2088" class="recipe-row-7">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/7" class="hyperlink colorless">
+                            CaCl<sub>2</sub> x 2 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.15'>
+
+                0.15            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.158            </td>
+            <td class="text-right">
+                1.072            </td>
+        </tr>
+
+            <tr id="recipe-42805" class="recipe-row-8">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-595'><span class='solutionRef'>Trace element solution SL-10</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1.00            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-2089" class="recipe-row-9">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-777'><span class='solutionRef'>Selenite-tungstate solution</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1.00            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-2090" class="recipe-row-10">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/1852" class="hyperlink colorless">
+                            Sodium resazurin                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(0.1% w/v)</small>                            </td>
+            <td class="amount text-right" data-volume='0.5'>
+
+                0.50            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                5.3e-4            </td>
+            <td class="text-right">
+                0.002            </td>
+        </tr>
+
+            <tr id="recipe-2091" class="recipe-row-11">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='950'>
+
+                950.00            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Solution B",
+    "url": "https://mediadive.dsmz.de/solutions/370",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Solution B for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2CO3",
+            "url": "https://mediadive.dsmz.de/ingredients/32",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1" id="sol-370">
+            <a id="solution-370" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/370" class="hyperlink colorless">
+                            Solution B                        </a>
+                                                                        <a href="#solution-370" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='30' title="Final volume of this solution">30</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(370)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-2093" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/32" class="hyperlink colorless">
+                            Na<sub>2</sub>CO<sub>3</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1.5'>
+
+                1.5            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                50            </td>
+            <td class="text-right">
+                471.752            </td>
+        </tr>
+
+            <tr id="recipe-2094" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='30'>
+
+                30.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Solution C",
+    "url": "https://mediadive.dsmz.de/solutions/371",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Solution C for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na-acetate x 3 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/294",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1" id="sol-371">
+            <a id="solution-371" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/371" class="hyperlink colorless">
+                            Solution C                        </a>
+                                                                        <a href="#solution-371" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='10' title="Final volume of this solution">10</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(371)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-2095" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/294" class="hyperlink colorless">
+                            Na-acetate x 3 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='2.5'>
+
+                2.5            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                250            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-2096" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Solution D",
+    "url": "https://mediadive.dsmz.de/solutions/372",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Solution D for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1" id="sol-372">
+            <a id="solution-372" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/372" class="hyperlink colorless">
+                            Solution D                        </a>
+                                                                        <a href="#solution-372" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='1' title="Final volume of this solution">1</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(372)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-42999" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-5980'><span class='solutionRef'>Wolin's vitamin solution (10x)</span></a>                                
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Solution E",
+    "url": "https://mediadive.dsmz.de/solutions/373",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Solution E for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2S x 9 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/54",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-1" id="sol-373">
+            <a id="solution-373" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/373" class="hyperlink colorless">
+                            Solution E                        </a>
+                                                                        <a href="#solution-373" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='10' title="Final volume of this solution">10</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(373)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-2098" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/54" class="hyperlink colorless">
+                            Na<sub>2</sub>S x 9 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.4'>
+
+                0.4            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                40            </td>
+            <td class="text-right">
+                166.54            </td>
+        </tr>
+
+            <tr id="recipe-2099" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Selenite-tungstate solution",
+    "url": "https://mediadive.dsmz.de/solutions/777",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Selenite-tungstate solution for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NaOH",
+            "url": "https://mediadive.dsmz.de/ingredients/256",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2SeO3 x 5 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/107",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2WO4 x 2 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/249",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-179" id="sol-777">
+            <a id="solution-777" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/777" class="hyperlink colorless">
+                            Selenite-tungstate solution                        </a>
+                                                                        <a href="#solution-777" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='1000' title="Final volume of this solution">1000</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(777)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/777">178</a>
+                        other media (first defined in                         <a href="/medium/385">Medium 385</a>).
+                    </div>
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-4382" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/256" class="hyperlink colorless">
+                            NaOH                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.5'>
+
+                0.5            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.5            </td>
+            <td class="text-right">
+                12.501            </td>
+        </tr>
+
+            <tr id="recipe-4383" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/107" class="hyperlink colorless">
+                            Na<sub>2</sub>SeO<sub>3</sub> x 5 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='3'>
+
+                3.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.003            </td>
+            <td class="text-right">
+                0.011            </td>
+        </tr>
+
+            <tr id="recipe-4384" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/249" class="hyperlink colorless">
+                            Na<sub>2</sub>WO<sub>4</sub> x 2 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='4'>
+
+                4.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.004            </td>
+            <td class="text-right">
+                0.012            </td>
+        </tr>
+
+            <tr id="recipe-4385" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1000'>
+
+                1000.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Trace element solution SL-10",
+    "url": "https://mediadive.dsmz.de/solutions/595",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Trace element solution SL-10 for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 1001,
+            "step_id": 740,
+            "step_order": 1,
+            "step": "First dissolve FeCl2 in the HCl, then dilute in water, add and dissolve the other salts. Finally make up to 1000.00 ml.",
+            "raw": "First dissolve FeCl2 in the HCl, then dilute in water, add and dissolve the other salts. Finally make up to 1000.00 ml.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2022-02-01 13:51:08"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "HCl",
+            "url": "https://mediadive.dsmz.de/ingredients/68",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "FeCl2 x 4 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/260",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "ZnCl2",
+            "url": "https://mediadive.dsmz.de/ingredients/64",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "MnCl2 x 4 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/36",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "H3BO3",
+            "url": "https://mediadive.dsmz.de/ingredients/37",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "CoCl2 x 6 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/38",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "CuCl2 x 2 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/39",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NiCl2 x 6 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/40",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Na2MoO4 x 2 H2O",
+            "url": "https://mediadive.dsmz.de/ingredients/9",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-266" id="sol-595">
+            <a id="solution-595" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/595" class="hyperlink colorless">
+                            Trace element solution SL-10                        </a>
+                                                                        <a href="#solution-595" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='1000' title="Final volume of this solution">1000</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(595)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/595">265</a>
+                        other media (first defined in                         <a href="/medium/320">Medium 320</a>).
+                    </div>
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-3404" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/68" class="hyperlink colorless">
+                            HCl                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(25%)</small>                            </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                2.5            </td>
+            <td class="text-right">
+                68.568            </td>
+        </tr>
+
+            <tr id="recipe-3405" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/260" class="hyperlink colorless">
+                            FeCl<sub>2</sub> x 4 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1.5'>
+
+                1.5            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                1.5            </td>
+            <td class="text-right">
+                7.545            </td>
+        </tr>
+
+            <tr id="recipe-3406" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/64" class="hyperlink colorless">
+                            ZnCl<sub>2</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='70'>
+
+                70.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.07            </td>
+            <td class="text-right">
+                0.514            </td>
+        </tr>
+
+            <tr id="recipe-3407" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/36" class="hyperlink colorless">
+                            MnCl<sub>2</sub> x 4 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='100'>
+
+                100.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.1            </td>
+            <td class="text-right">
+                0.505            </td>
+        </tr>
+
+            <tr id="recipe-3408" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/37" class="hyperlink colorless">
+                            H<sub>3</sub>BO<sub>3</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='6'>
+
+                6.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.006            </td>
+            <td class="text-right">
+                0.097            </td>
+        </tr>
+
+            <tr id="recipe-3409" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/38" class="hyperlink colorless">
+                            CoCl<sub>2</sub> x 6 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='190'>
+
+                190.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.19            </td>
+            <td class="text-right">
+                1.463            </td>
+        </tr>
+
+            <tr id="recipe-3410" class="recipe-row-7">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/39" class="hyperlink colorless">
+                            CuCl<sub>2</sub> x 2 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='2'>
+
+                2.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.002            </td>
+            <td class="text-right">
+                0.012            </td>
+        </tr>
+
+            <tr id="recipe-3411" class="recipe-row-8">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/40" class="hyperlink colorless">
+                            NiCl<sub>2</sub> x 6 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='24'>
+
+                24.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.024            </td>
+            <td class="text-right">
+                0.185            </td>
+        </tr>
+
+            <tr id="recipe-3412" class="recipe-row-9">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/9" class="hyperlink colorless">
+                            Na<sub>2</sub>MoO<sub>4</sub> x 2 H<sub>2</sub>O                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='36'>
+
+                36.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.036            </td>
+            <td class="text-right">
+                0.149            </td>
+        </tr>
+
+            <tr id="recipe-3413" class="recipe-row-10">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='990'>
+
+                990.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                First dissolve FeCl<sub>2</sub> in the HCl, then dilute in water, add and dissolve the other salts. Finally make up to 1000.00 ml.                            </td>
+        </tr>
+                            </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Wolin's vitamin solution (10x)",
+    "url": "https://mediadive.dsmz.de/solutions/5980",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Wolin's vitamin solution (10x) for the cultivation of microorganisms.",
+    "steps": [],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Biotin",
+            "url": "https://mediadive.dsmz.de/ingredients/46",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Folic acid",
+            "url": "https://mediadive.dsmz.de/ingredients/138",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Pyridoxine hydrochloride",
+            "url": "https://mediadive.dsmz.de/ingredients/519",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Thiamine HCl",
+            "url": "https://mediadive.dsmz.de/ingredients/1207",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Riboflavin",
+            "url": "https://mediadive.dsmz.de/ingredients/136",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Nicotinic acid",
+            "url": "https://mediadive.dsmz.de/ingredients/139",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Calcium D-(+)-pantothenate",
+            "url": "https://mediadive.dsmz.de/ingredients/1512",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Vitamin B12",
+            "url": "https://mediadive.dsmz.de/ingredients/18",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "p-Aminobenzoic acid",
+            "url": "https://mediadive.dsmz.de/ingredients/47",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "(DL)-alpha-Lipoic acid",
+            "url": "https://mediadive.dsmz.de/ingredients/252",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-308" id="sol-5980">
+            <a id="solution-5980" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/5980" class="hyperlink colorless">
+                            Wolin's vitamin solution (10x)                        </a>
+                                                                        <a href="#solution-5980" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='1000' title="Final volume of this solution">1000</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(5980)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/5980">307</a>
+                        other media (first defined in                         <a href="/medium/120">Medium 120</a>).
+                    </div>
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-45400" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/46" class="hyperlink colorless">
+                            Biotin                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='20'>
+
+                20            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.02            </td>
+            <td class="text-right">
+                0.082            </td>
+        </tr>
+
+            <tr id="recipe-45401" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/138" class="hyperlink colorless">
+                            Folic acid                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='20'>
+
+                20            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.02            </td>
+            <td class="text-right">
+                0.045            </td>
+        </tr>
+
+            <tr id="recipe-45402" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/519" class="hyperlink colorless">
+                            Pyridoxine hydrochloride                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='100'>
+
+                100            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.1            </td>
+            <td class="text-right">
+                0.486            </td>
+        </tr>
+
+            <tr id="recipe-45403" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/1207" class="hyperlink colorless">
+                            Thiamine HCl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.148            </td>
+        </tr>
+
+            <tr id="recipe-45404" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/136" class="hyperlink colorless">
+                            Riboflavin                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.133            </td>
+        </tr>
+
+            <tr id="recipe-45405" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/139" class="hyperlink colorless">
+                            Nicotinic acid                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.406            </td>
+        </tr>
+
+            <tr id="recipe-45406" class="recipe-row-7">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/1512" class="hyperlink colorless">
+                            Calcium D-(+)-pantothenate                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.21            </td>
+        </tr>
+
+            <tr id="recipe-45407" class="recipe-row-8">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/18" class="hyperlink colorless">
+                            Vitamin B<sub>12</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                1.0e-3            </td>
+            <td class="text-right">
+                7.4e-4            </td>
+        </tr>
+
+            <tr id="recipe-45408" class="recipe-row-9">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/47" class="hyperlink colorless">
+                            p-Aminobenzoic acid                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.365            </td>
+        </tr>
+
+            <tr id="recipe-45409" class="recipe-row-10">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/252" class="hyperlink colorless">
+                            (DL)-alpha-Lipoic acid                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                0.242            </td>
+        </tr>
+
+            <tr id="recipe-45410" class="recipe-row-11">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1000'>
+
+                1000            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</div>
+<div class="col-lg-5">
+
+    <div class="content mt-0">
+        
+        <h3 id="title-metadata" class="mt-md-0">
+            Metadata        </h3>
+
+        <table class="table small" id="metadata-box">
+            
+            
+            <tr>
+                <td>Last modified:</td>
+                <td>
+                    05.09.24                </td>
+            </tr>
+            <tr>
+                <td>Source:</td>
+                <td>
+                                            <a href="https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium195.pdf" target="_blank">DSMZ <i class="ph ph-arrow-square-out"></i></a>
+                                    </td>
+            </tr>
+                            <tr>
+                    <td>Synonyms:</td>
+
+
+                    <td>
+                        DESULFOBACTER MEDIUM                    </td>
+                </tr>
+            
+                                <tr>
+                        <td>Taxonomic range:</td>
+                        <td><i class="ph ph-lg ph-streptococcus text-danger"></i>&nbsp;Bacteria</td>
+                    </tr>
+            
+            <tr>
+                <td>Medium type:</td>
+                <td>
+                    Defined medium                </td>
+            </tr>
+            <tr>
+                <td>Final pH:</td>
+                <td>
+                    <span id="pH-value">7.1 - 7.4</span>
+                </td>
+            </tr>
+                            <tr>
+                    <td>Equipment needed:</td>
+                    <td>
+                        Autoclave, Filter, Gassing station, Hungate tubes                    </td>
+                </tr>
+                                                                <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                                                <button class="btn" onclick="showQR('https%3A%2F%2Fmediadive.dsmz.de%2Fmedium%2F195%3Fdsmz%3D4661')" id="qrcode">
+                            <i class="ph ph-qr-code ph-lg mr-10 ph-fw"></i>
+                            Show QR code for mobile                        </button>
+                    </td>
+                </tr>
+                <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                        <a href="/medium-builder?medium=195" class="btn" id="medium-builder">
+                            <!-- <i class="ph ph-note-pencil ph-lg mr-10"></i> -->
+                            <i class="ph ph-flask-pen ph-lg mr-5 ph-fw" aria-hidden="true"></i>
+                            Edit in Medium builder                        </a>
+                    </td>
+                </tr>
+                    </table>
+
+                    <div class="box">
+                <h4 class="header" id="title-gas">Gas composition</h4>
+                <ul class="h-list mb-0 mt-10" id="gas-list">
+                                            <li id="gas-N2" class="">
+                            80 % N2                        </li>
+                                            <li id="gas-CO2" class="">
+                            20 % CO2                        </li>
+                                    </ul>
+                <p class="mx-10">
+                    Detailed instructions for the cultivation of anaerobes including important warnings can be found in the                     <a class="link" href="/docs/cultivation/anaerobes" target="_blank" rel="noopener noreferrer">
+                        cultivation instructions                    </a>.
+                </p>
+            </div>
+        
+
+                <div class="box" id="strain-box">
+            <h4 id="title-strains" class="header justify-content-between">
+                <span>Associated strains</span>
+                <a class="" href="/docs/website#strains"><i class="ph ph-book" aria-hidden="true"></i></a>
+            </h4>
+
+            <table class="table simple">
+                
+                    <tr>
+                        <td>
+                            All strains for this medium:
+                        </td>
+                        <td>
+                                                            <a href="/strains/medium/195">
+                                    <i class="ph ph-microbes"></i>
+                                    11                                </a>
+                                                    </td>
+                    </tr>
+                    <!-- Modifications -->
+
+                                            <tr style="border-bottom-width: 0px;">
+                            <td>
+                                Strains with modifications:
+                            </td>
+                            <td>
+                                <a href="/modifications/195">
+                                    <i class="ph ph-flask-bacterium"></i>
+                                    1                                </a>
+                            </td>
+                        </tr>
+                                    
+            </table>
+
+
+            
+
+        </div>
+
+
+        
+                    <div class="box" id="related-media-box">
+                <h4 id="title-related-media" class="header">Related media for DESULFOBACTER MEDIUM</h4>
+                <table class="table small simple">
+                                            <tr id="others-197" class="">
+                            <td class="text-right">
+                                <a href="/medium/193">
+                                    193                                </a>
+                            </td>
+                            <td>DESULFOBACTER MEDIUM</td>
+                        </tr>
+                                            <tr id="others-198" class="">
+                            <td class="text-right">
+                                <a href="/medium/193a">
+                                    a                                </a>
+                            </td>
+                            <td>PHB/PYRUVATE MEDIUM</td>
+                        </tr>
+                                            <tr id="others-199" class="">
+                            <td class="text-right">
+                                <a href="/medium/193b">
+                                    b                                </a>
+                            </td>
+                            <td>DESULFOFABA MEDIUM</td>
+                        </tr>
+                                            <tr id="others-202" class="secondary">
+                            <td class="text-right">
+                                <a href="/medium/195">
+                                    195                                </a>
+                            </td>
+                            <td>DESULFOBACTER CURVATUS MEDIUM</td>
+                        </tr>
+                                            <tr id="others-203" class="">
+                            <td class="text-right">
+                                <a href="/medium/195a">
+                                    a                                </a>
+                            </td>
+                            <td>DESULFUROMUSA MEDIUM</td>
+                        </tr>
+                                            <tr id="others-204" class="">
+                            <td class="text-right">
+                                <a href="/medium/195b">
+                                    b                                </a>
+                            </td>
+                            <td>DESULFOBULBUS SP. MEDIUM (MARINE)</td>
+                        </tr>
+                                            <tr id="others-205" class="">
+                            <td class="text-right">
+                                <a href="/medium/195c">
+                                    c                                </a>
+                            </td>
+                            <td>DESULFOBACTER SP. MEDIUM (LACTATE)</td>
+                        </tr>
+                                            <tr id="others-206" class="">
+                            <td class="text-right">
+                                <a href="/medium/195d">
+                                    d                                </a>
+                            </td>
+                            <td>KNH MEDIUM</td>
+                        </tr>
+                                    </table>
+            </div>
+                
+
+                    <div class="box" id="medium-composition-box">
+                <h4 id="title-medium-comp" class="header">Molecular composition                                    </h4>
+                <div class="table-responsive">
+                    <table class="table simple" id="composition-table">
+                        <tbody>
+                            <tr>
+                                <th>Compound</th>
+                                <th>Conc. [g/L]</th>
+                                <th>Conc. [mM]</th>
+                            </tr>
+                                                            <tr id="comp-156124" class="">
+                                    <td>
+                                        NaCl                                                                            </td>
+                                    <td>
+                                        20.937                                    </td>
+                                    <td>
+                                        358.268                                    </td>
+                                </tr>
+                                                            <tr id="comp-156121" class="">
+                                    <td>
+                                        Na<sub>2</sub>SO<sub>4</sub>                                                                            </td>
+                                    <td>
+                                        2.991                                    </td>
+                                    <td>
+                                        21.058                                    </td>
+                                </tr>
+                                                            <tr id="comp-156125" class="">
+                                    <td>
+                                        MgCl<sub>2</sub> x 6 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        2.991                                    </td>
+                                    <td>
+                                        14.712                                    </td>
+                                </tr>
+                                                            <tr id="comp-156143" class="">
+                                    <td>
+                                        Na-acetate x 3 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        2.493                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-156142" class="">
+                                    <td>
+                                        Na<sub>2</sub>CO<sub>3</sub>                                                                            </td>
+                                    <td>
+                                        1.496                                    </td>
+                                    <td>
+                                        14.11                                    </td>
+                                </tr>
+                                                            <tr id="comp-156126" class="hiddenrows hidden ">
+                                    <td>
+                                        KCl                                                                            </td>
+                                    <td>
+                                        0.499                                    </td>
+                                    <td>
+                                        6.687                                    </td>
+                                </tr>
+                                                            <tr id="comp-156154" class="hiddenrows hidden ">
+                                    <td>
+                                        Na<sub>2</sub>S x 9 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        0.399                                    </td>
+                                    <td>
+                                        1.66                                    </td>
+                                </tr>
+                                                            <tr id="comp-156123" class="hiddenrows hidden ">
+                                    <td>
+                                        NH<sub>4</sub>Cl                                                                            </td>
+                                    <td>
+                                        0.299                                    </td>
+                                    <td>
+                                        5.592                                    </td>
+                                </tr>
+                                                            <tr id="comp-156122" class="hiddenrows hidden ">
+                                    <td>
+                                        KH<sub>2</sub>PO<sub>4</sub>                                                                            </td>
+                                    <td>
+                                        0.199                                    </td>
+                                    <td>
+                                        1.465                                    </td>
+                                </tr>
+                                                            <tr id="comp-156127" class="hiddenrows hidden ">
+                                    <td>
+                                        CaCl<sub>2</sub> x 2 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        0.15                                    </td>
+                                    <td>
+                                        1.017                                    </td>
+                                </tr>
+                                                            <tr id="comp-156133" class="hiddenrows hidden ">
+                                    <td>
+                                        HCl                                                                            </td>
+                                    <td>
+                                        0.002                                    </td>
+                                    <td>
+                                        0.068                                    </td>
+                                </tr>
+                                                            <tr id="comp-156134" class="hiddenrows hidden ">
+                                    <td>
+                                        FeCl<sub>2</sub> x 4 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        0.001                                    </td>
+                                    <td>
+                                        0.008                                    </td>
+                                </tr>
+                                                            <tr id="comp-156128" class="hiddenrows hidden ">
+                                    <td>
+                                        NaOH                                                                            </td>
+                                    <td>
+                                        5.0e-4                                    </td>
+                                    <td>
+                                        0.012                                    </td>
+                                </tr>
+                                                            <tr id="comp-156132" class="hiddenrows hidden ">
+                                    <td>
+                                        Sodium resazurin                                                                            </td>
+                                    <td>
+                                        5.0e-4                                    </td>
+                                    <td>
+                                        0.002                                    </td>
+                                </tr>
+                                                            <tr id="comp-156138" class="hiddenrows hidden ">
+                                    <td>
+                                        CoCl<sub>2</sub> x 6 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        1.9e-4                                    </td>
+                                    <td>
+                                        0.001                                    </td>
+                                </tr>
+                                                            <tr id="comp-156136" class="hiddenrows hidden ">
+                                    <td>
+                                        MnCl<sub>2</sub> x 4 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        1.0e-4                                    </td>
+                                    <td>
+                                        5.0e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156146" class="hiddenrows hidden ">
+                                    <td>
+                                        Pyridoxine hydrochloride                                                                            </td>
+                                    <td>
+                                        1.0e-4                                    </td>
+                                    <td>
+                                        4.8e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156135" class="hiddenrows hidden ">
+                                    <td>
+                                        ZnCl<sub>2</sub>                                                                            </td>
+                                    <td>
+                                        7.0e-5                                    </td>
+                                    <td>
+                                        5.1e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156149" class="hiddenrows hidden ">
+                                    <td>
+                                        Nicotinic acid                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        4.0e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156152" class="hiddenrows hidden ">
+                                    <td>
+                                        p-Aminobenzoic acid                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        3.6e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156153" class="hiddenrows hidden ">
+                                    <td>
+                                        (DL)-alpha-Lipoic acid                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        2.4e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156150" class="hiddenrows hidden ">
+                                    <td>
+                                        Calcium D-(+)-pantothenate                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        2.1e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156147" class="hiddenrows hidden ">
+                                    <td>
+                                        Thiamine HCl                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        1.5e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156148" class="hiddenrows hidden ">
+                                    <td>
+                                        Riboflavin                                                                            </td>
+                                    <td>
+                                        5.0e-5                                    </td>
+                                    <td>
+                                        1.3e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156141" class="hiddenrows hidden ">
+                                    <td>
+                                        Na<sub>2</sub>MoO<sub>4</sub> x 2 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        3.6e-5                                    </td>
+                                    <td>
+                                        1.5e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156140" class="hiddenrows hidden ">
+                                    <td>
+                                        NiCl<sub>2</sub> x 6 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        2.4e-5                                    </td>
+                                    <td>
+                                        1.8e-4                                    </td>
+                                </tr>
+                                                            <tr id="comp-156144" class="hiddenrows hidden ">
+                                    <td>
+                                        Biotin                                                                            </td>
+                                    <td>
+                                        2.0e-5                                    </td>
+                                    <td>
+                                        8.2e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156145" class="hiddenrows hidden ">
+                                    <td>
+                                        Folic acid                                                                            </td>
+                                    <td>
+                                        2.0e-5                                    </td>
+                                    <td>
+                                        4.5e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156137" class="hiddenrows hidden ">
+                                    <td>
+                                        H<sub>3</sub>BO<sub>3</sub>                                                                            </td>
+                                    <td>
+                                        6.0e-6                                    </td>
+                                    <td>
+                                        9.7e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156130" class="hiddenrows hidden ">
+                                    <td>
+                                        Na<sub>2</sub>WO<sub>4</sub> x 2 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        4.0e-6                                    </td>
+                                    <td>
+                                        1.2e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156129" class="hiddenrows hidden ">
+                                    <td>
+                                        Na<sub>2</sub>SeO<sub>3</sub> x 5 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        3.0e-6                                    </td>
+                                    <td>
+                                        1.1e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156139" class="hiddenrows hidden ">
+                                    <td>
+                                        CuCl<sub>2</sub> x 2 H<sub>2</sub>O                                                                            </td>
+                                    <td>
+                                        2.0e-6                                    </td>
+                                    <td>
+                                        1.2e-5                                    </td>
+                                </tr>
+                                                            <tr id="comp-156151" class="hiddenrows hidden ">
+                                    <td>
+                                        Vitamin B<sub>12</sub>                                                                            </td>
+                                    <td>
+                                        1.0e-6                                    </td>
+                                    <td>
+                                        7.4e-7                                    </td>
+                                </tr>
+                                                            <tr id="comp-156131" class="hiddenrows hidden ">
+                                    <td>
+                                        Distilled water                                                                            </td>
+                                    <td>
+                                        -                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                                                        <tr>
+                                    <td class="text-center p-0" colspan="3">
+                                        <a href="javascript:void(0)" onclick="showTableRows(this)" class=" d-block p-5">
+                                            <span class="hiddenrows">Show more</span>
+                                            <span class="hiddenrows hidden">Show less</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                <div class="m-10 text-right">
+                    <div class="input-group input-group-sm d-inline-flex w-auto" role="group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ph ph-download"></i></span>
+                        </div>
+                        <div class="input-group-append">
+                            <a href="/download/composition/195/csv" class="btn composition-download"><span>CSV</span></a>
+                        </div>
+                        <div class="input-group-append">
+                            <a href="/download/composition/195/json" class="btn composition-download"><span>JSON</span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+
+                    <div class="box" id="bacdive-box">
+                <h4 id="title-cultivation" class="header">
+                    Cultivation metadata from 11 strains                    <a href="https://bacdive.dsmz.de" target="_blank" rel="noopener noreferrer">
+                        <img src="/img/bacdive_small.svg" alt="BacDive" class="w-100">
+                    </a>
+                </h4>
+                <div class="table-responsive">
+                    <table class="table small simple">
+                                                    <tr class="">
+                                <td>pH</td>
+                                <td>6 - 8</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=pH&filter-group[0][filters][3][field-option]=range&filter-group[0][filters][3][field-value]=6+-+8&filter-group[0][filters][3][field-validation]=culture_pH-pH-3" target="_blank" rel="noopener noreferrer">
+                                        1                                        strain                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>phyla</td>
+                                <td>2</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Phylum&filter-group[0][filters][3][field-option]=contains&filter-group[0][filters][3][field-value]=*&filter-group[0][filters][3][field-validation]=strains-phylum-1" target="_blank" rel="noopener noreferrer">
+                                        11                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>oxygen</td>
+                                <td>anaerobe</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Oxygen+tolerance&filter-group[0][filters][3][field-value]=anaerobe&filter-group[0][filters][3][field-validation]=oxygen_tolerance-oxygen_tol-4" target="_blank" rel="noopener noreferrer">
+                                        11                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>temperature</td>
+                                <td>mesophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Temperature+range&filter-group[0][filters][3][field-value]=mesophilic&filter-group[0][filters][3][field-validation]=culture_temp-temperature_range-3" target="_blank" rel="noopener noreferrer">
+                                        8                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>temperature</td>
+                                <td>psychrophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Temperature+range&filter-group[0][filters][3][field-value]=psychrophilic&filter-group[0][filters][3][field-validation]=culture_temp-temperature_range-3" target="_blank" rel="noopener noreferrer">
+                                        2                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>temperature</td>
+                                <td>thermophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F195&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Temperature+range&filter-group[0][filters][3][field-value]=thermophilic&filter-group[0][filters][3][field-validation]=culture_temp-temperature_range-3" target="_blank" rel="noopener noreferrer">
+                                        1                                        strain                                    </a>
+                                </td>
+                            </tr>
+                                                                            <tr>
+                                <td class="text-center p-0" colspan="3">
+                                    <a href="javascript:void(0)" onclick="showTableRows(this)" class=" d-block p-5">
+                                        <span class="hiddenrows">Show more</span>
+                                        <span class="hiddenrows hidden">Show less</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+
+        <!--  -->
+
+
+
+
+    </div>
+</div>
+</div>  <div class="position-absolute top-0 right-0 z-30" id="cookieWarning">
+    <div class="alert primary filled-dm w-300 w-sm-500 w-md-600" role="alert">
+      <div class="row align-items-center">
+        <div class="col-sm-2">
+          <div class="w-100 h-100 d-flex align-items-center rounded-circle bg-white mx-auto">
+            <div class="m-auto">
+              <i class="ph ph-cookie ph-4x" aria-hidden="true" style="color: #6F4E37;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-1 py-10">
+          <h4 class="title">Have some cookies!</h4>
+          We are using cookies to improve the user experience. We save the following information: user preferences for language, accessibility, help features and medium favourites. Unfortunately, you cannot use this site if you don't agree.
+          <div class="mb-10 text-right">
+            <button class="btn alt-dm" onclick="acceptCookies();">
+              I agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="page-footer">
+
+  <div class="footer text-center">
+
+    <div class="w-500 mw-full mx-auto my-20">
+      <h3 class="mt-0">
+        Not found what you were looking for?      </h3>
+
+      <p>
+        Search within all databases of the
+        <a href="https://hub.dsmz.de/" target="_blank" class="link">
+          DSMZ Digital Diversity
+        </a>
+      </p>
+
+      <form id="d3search" onsubmit="d3searchFunction()">
+        <div class="input-group">
+          <input type="search" name="search" id="hub-search" class="form-control" placeholder="Search across all DSMZ Digital Diversity databases">
+          <div class="input-group-append">
+            <button class="btn"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        function d3searchFunction() {
+          event.preventDefault();
+          var val = $('#hub-search').val();
+          // url encode the search term
+          var search = encodeURIComponent(val);
+          var action_src = "https://hub.dsmz.de/#/search/" + search;
+          window.open(action_src, '_blank');
+
+        }
+      </script>
+
+      <div class="">
+        <p class="font-size-12">provided to you by</p>
+        <a href="https://hub.dsmz.de/" target="_blank" title="DSMZ Digital Diversity">
+          <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity" height="70">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="link-parade">
+    <div class="row">
+      <div class="col-md">
+        <h3>Media<em>Dive</em></h3>
+        <a href="/about">About</a>
+        <a href="/news">News</a>
+        <a href="http://dx.doi.org/10.1093/nar/gkac803" target="_blank">Cite</a>
+        <a href="/stats">Statistics</a>
+
+        <!-- <a href="/registry">MediaRegistry</a> -->
+
+      </div>
+      <div class="col-md">
+        <h3>Help</h3>
+        <a href="/docs/website">Website</a>
+        <a href="/docs/medium-builder">Medium builder</a>
+        <a href="/doc/index.html">API reference</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col-md">
+        <h3>Social Media</h3>
+        <a href="https://www.linkedin.com/company/dsmzd3" target="_blank">
+          <span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+          Linkedin
+        </a>
+        <a href="https://www.youtube.com/channel/UCZxfaPawuEmsNNInlIf1Pbw" target="_blank">
+          <span class="icon"><i class="ph ph-youtube-logo"></i></span>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="logo-parade d-flex align-items-center">
+    <a href="https://www.denbi.de/" target="_blank" data-v-f5dfcaf0=""><img src="/img/logos/denbi.svg" alt="de.NBI" data-v-f5dfcaf0=""></a>
+    <div>
+      <small>
+        If Media<em>Dive</em> was useful to you,<br> please participate in this 2-minute survey:      </small><br>
+      <a href="https://de.surveymonkey.com/r/denbi-service?sc=db-node&tool=mediadive" target="_blank">
+        Survey      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <span>
+      &copy; DSMZ 2026    </span>
+    <a href="/imprint">Imprint</a>
+    <a href="/imprint#privacy">Privacy Statement</a>
+    <a href="/imprint#license">
+      <img src="/img/cc.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      <img src="/img/by.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      License    </a>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
+
+</div>
+
+</div>
+<!-- <div class="swipe-area"></div> -->
+
+<script>
+  function acceptCookies() {
+    digidive.createCookie("bacmedia-cookie-seen", true)
+    $("#cookieWarning").hide()
+  }
+</script>
+
+
+
+<script src="/js/tour/popper.min.js"></script><script src="/js/tour/shepherd.min.js"></script><script src="/js/tour/tour.js?1722402400"></script><script src="/js/tour/tour_medium.js?1722402400"></script></body>

@@ -1,0 +1,80 @@
+identifier: FOODON:03315720
+preferred_term: Soya peptone
+ontology_mapping:
+  ontology_id: FOODON:03315720
+  ontology_label: vegetable protein, hydrolyzed
+  ontology_source: FOODON
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: 'Registry->ontology upgrade: soya peptone is an enzymatic hydrolysate of
+      soybean protein. Promoted from the cas:91079-46-8 fallback to FOODON:03315720
+      (vegetable protein, hydrolyzed), mirroring sibling Soy_Peptone. CAS 91079-46-8
+      retained in chemical_properties as a registry cross-reference.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1089
+  media_count: 833
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:91079-46-8 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.401382+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:25.187540+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C290H252N8O72; smiles=CCC1(OC(=C(C(=O)O1)C=CC=CC=C2C(=O)OC3(CCC4(CC3)OC(;
+    inchi=InChI=1S/C44H48O16.C40H40O16.C36H36O16.4C34H24N2O2
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.561730+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.751461+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: MAPPED
+  changes: 'Registry->ontology upgrade: identifier cas:91079-46-8 (FALLBACK_REGISTRY)
+    -> FOODON:03315720 (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling
+    Soy_Peptone. Removed bogus PubChem structure backfill (molecular_formula C290H252N8O72
+    / smiles / inchi / pubchem_cid 167312541 resolved from a wrong CID); ingredient_type
+    SINGLE_INGREDIENT -> UNDEFINED_MIXTURE. CAS 91079-46-8 retained.'
+  llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519898+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 833/1089 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 91079-46-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -1,0 +1,69 @@
+identifier: CHEBI:156543
+preferred_term: ammonium persulfate
+ontology_mapping:
+  ontology_id: CHEBI:156543
+  ontology_label: ammonium persulfate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: diammonium [(sulfonatoperoxy)sulfonyl]oxidanide
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=7727-54-0); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.159311+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.984012+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2H4N.O6S2; inchi=InChI=1S/2H3N.H2O6S2/c;;1-7(2)5-6-8(3)4/h2*1H3;(H,;
+    smiles=O=S([O-])OOS(=O)[O-].[NH4+].[NH4+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.450373+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.248969+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+    nutritional_roles.NITROGEN_SOURCE'
+chemical_properties:
+  cas_rn: 7727-54-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: 2H4N.O6S2
+  inchi: InChI=1S/2H3N.H2O6S2/c;;1-7(2)5-6-8(3)4/h2*1H3;(H,1,2)(H,3,4)
+  smiles: O=S([O-])OOS(=O)[O-].[NH4+].[NH4+]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: NITROGEN_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:24839
+      (inorganic ammonium salt)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

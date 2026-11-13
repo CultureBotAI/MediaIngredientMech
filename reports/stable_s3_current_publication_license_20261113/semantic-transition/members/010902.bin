@@ -1,0 +1,133 @@
+{
+  "case_indices": [
+    148
+  ],
+  "search_regex": "tnm.?fh",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/TNM-FH_Medium.yaml",
+      "sha256": "191a29935cb55058b40cb41e40c689abbf5b4da4bc7e8b18d6fc5595ba9bd045",
+      "record": {
+        "identifier": "UNMAPPED_0543",
+        "preferred_term": "TNM-FH Medium",
+        "synonyms": [
+          {
+            "synonym_text": "TNM-FH Medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:50:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named TNM-FH medium/formulation and left unmapped pending recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TNM-FH_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommendation | Mapping semantics/confidence | Rationale | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "TNM-FH Medium",
+        "UNMAPPED_0543",
+        "TNM-FH Medium"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:001033",
+      "recipe_label": "bm7_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/bm7_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "5",
+      "preferred_term": "TNM-FH Medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "TNM-FH Medium",
+      "mim_matched_label": "TNM-FH Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "300",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"300\"},\"preferred_term\":\"TNM-FH Medium\"}"
+    },
+    {
+      "recipe_id": "CultureMech:012414",
+      "recipe_label": "Main sol. 1556",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_3214_Main_sol_1556.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "6",
+      "preferred_term": "TNM-FH Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1413",
+      "mim_preferred_term": "TNM-FH Medium",
+      "mim_matched_label": "TNM-FH Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "300",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"300\"},\"preferred_term\":\"TNM-FH Medium\",\"term\":{\"id\":\"mediadive.compound:1413\",\"label\":\"TNM-FH Medium\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/bm7_medium.yaml",
+      "sha256": "ebaefacd409afaf34d782ca4a7a2cab56318aee15c7227293342aeadd93d9526",
+      "frozen_input_manifest_hash": "ebaefacd409afaf34d782ca4a7a2cab56318aee15c7227293342aeadd93d9526",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_3214_Main_sol_1556.yaml",
+      "sha256": "aac216f59dccf407659eaff4a8c67b131594c76e8c52b2f5ebc1868b8766e6bc",
+      "frozen_input_manifest_hash": "aac216f59dccf407659eaff4a8c67b131594c76e8c52b2f5ebc1868b8766e6bc",
+      "matches_frozen": true
+    }
+  ]
+}

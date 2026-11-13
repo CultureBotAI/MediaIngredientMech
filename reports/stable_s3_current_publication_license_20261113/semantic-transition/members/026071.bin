@@ -1,0 +1,178 @@
+identifier: CHEBI:53504
+preferred_term: NiSO4 x 7 H2O
+ontology_mapping:
+  ontology_id: CHEBI:53504
+  ontology_label: nickel sulfate heptahydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'Ni.O4S' -> 'Ni.O4S.7H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:53001's
+      ChEBI formula ('Ni.O4S') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#374/#334)
+    notes: 'Promoted from CHEBI:53001 (''nickel sulfate'') to the specific hydrate
+      term CHEBI:53504 (''nickel sulfate heptahydrate'') — MAPPING_SEMANTICS §3 step
+      1: the label names a hydrate, ChEBI has the term, so nothing needs minting and
+      no closeMatch question arises. The previous term carried no water while the
+      label states it. Found by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
+synonyms:
+- synonym_text: NiSO4 . 6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: NiSO4 x 6 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: NiSO4·6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: NiSO4・6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: NiSO4・7H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: nickel(2+) sulfate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 9
+  media_count: 9
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 10101-97-0 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: NiSO4 . 6H2O, NiSO4
+    x 6 H2O, NiSO4·6H2O, NiSO4・6H2O, NiSO4・7H2O'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:35.574359+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.675666+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ni.O4S; inchi=InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
+    smiles=O=S(=O)([O-])[O-].[Ni+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.464768+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.392094+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.813483+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NiSO4 x 7 H2O'' -> ''nickel sulfate'': synced to canonical
+    CHEBI label (preferred_term ''NiSO4 x 7 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_scrambled_hydrate_cas
+  action: WITHDREW_WRONG_CAS
+  changes: 'cas_rn ''10101-97-0'' removed (#320/#334). It denotes nickel sulfate hexahydrate,
+    which contradicts the hydration state this record''s label states — the #334 scrambling,
+    where one CAS is applied across a salt family regardless of hydration. No verified
+    replacement is available: the record''s term CHEBI:53001 is generic nickel sulfate,
+    so its xref 7786-81-4 is the anhydrous CAS — wrong for a heptahydrate. Cleared
+    rather than substituted, because swapping in a second wrong number would read
+    as a correction while still publishing a false identifier.'
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'Ni.O4S' -> 'Ni.O4S.7H2O' (#321); the label states 7
+    water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:53001's ChEBI formula ('Ni.O4S') — the mark of a value inherited
+    from the parent rather than measured for this record. Water appended in ChEBI's
+    own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: 'identifier/ontology_id CHEBI:53001 -> CHEBI:53504; Promoted from CHEBI:53001
+    (''nickel sulfate'') to the specific hydrate term CHEBI:53504 (''nickel sulfate
+    heptahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a hydrate, ChEBI
+    has the term, so nothing needs minting and no closeMatch question arises. The
+    previous term carried no water while the label states it. Found by cross-checking
+    CultureBotAI/CultureMech#272 (#374/#334).'
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519628+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 6/6 -> 9/9 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''NiSO4 . 6H2O'', ''NiSO4 x 6 H2O'',
+    ''NiSO4·6H2O'', ''NiSO4・6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''nickel(2+) sulfate''.
+    Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001898; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  data_source: CultureBotHT/compounds_to_cas.csv
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: Ni.O4S.7H2O
+  inchi: InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
+  smiles: O=S(=O)([O-])[O-].[Ni+2]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001898
+legacy_identifiers:
+- MIM:Niso4_X_7_H2o
+- CHEBI:53504

@@ -1,0 +1,132 @@
+id: CultureMech:015914
+name: mannitol_soya_flour_medium
+original_name: Mannitol soya flour medium (MS, SFM, SF&M)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: MediaDive Medium 1894
+  term:
+    id: mediadive.medium:1894
+    label: Mannitol soya flour medium (MS, SFM, SF&M)
+notes: 'Source: MediaDive | Link: https://mediadive.dsmz.de/rest/medium/1894'
+ingredients:
+- preferred_term: Soya flour
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:2443
+    label: Soya flour
+  notes: from supermarket
+- preferred_term: Mannitol
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:6
+    label: Mannitol
+- preferred_term: Agar
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:3
+    label: Agar
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Due to the insolubility of most components, the required amount of
+    each ingredient is added as powder to the final container, and then the necessary
+    volume of water poured into it. Use a container with at least twice the volume
+    capacity than medium. E.g. add 5 g of each soya flour, mannitol and agar to a
+    500 ml Duran bottle and pour 250 ml of tap water.
+- step_number: 2
+  action: MIX
+  description: 'Use tap water, NOT deionised water. It is not necessary to be drinking
+    water. Tip: adding very hot tap-water facilitates initial suspension and partial
+    solution of components.'
+- step_number: 3
+  action: MIX
+  description: The medium must be autoclaved twice. After the first round and while
+    the medium is still quite hot (mind using heat-protection gloves) with the lid
+    still slightly open swirl the bottle while allowing to release the pressure possibly
+    remaining inside the bottle; close well the lid, and mix thoroughly by swirling
+    the bottle; open the lid slightly (mind possible steam coming out) and autoclave
+    again.
+- step_number: 4
+  action: MIX
+  description: 'Relevant references: Original recipe published in "Hobbs, Frazer,
+    Gardner, Cullum, Oliver. “Dispersed Growth of Streptomyces in Liquid Culture.”
+    Applied Microbiology and Biotechnology 31, no. 3 (September 1, 1989): 272–77.
+    https://doi.org/10.1007/BF00258408". Most common recipe and that described here,
+    published in "Kieser, Bibb, Buttner, Chater, Hopwood. Practical Streptomyces Genetics.
+    Norwich: The John Innes Foundation, 2000." https://www.dsmz.de/research/publications/41184'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-10-01T04:00:20.794363+00:00'
+  curator: mediadive-live-gap-import
+  action: Imported from live MediaDive API
+  source: https://mediadive.dsmz.de/rest/medium/1894
+  notes: Direct import from MediaDive medium 1894. Recipe rows captured from the live
+    API detail payload.
+- timestamp: '2026-10-01T04:04:39Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:015914'
+- timestamp: '2026-10-13T15:16:39.365769+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper bibliography with archived primary source and Markdown,
+    exact excerpts, scientific names and qualified NCBI taxonomy. Preserved recipe
+    differences and access/formulation limits; all prior quantities, links, preparation
+    and history unchanged. No new native growth or resolved variant.
+  source: doi:10.1007/BF00258408
+references:
+- reference: https://mediadive.dsmz.de/rest/medium/1894
+- reference: doi:10.1007/BF00258408
+  title: Dispersed growth of Streptomyces in liquid culture
+  authors: Glyn Hobbs; Catherine M. Frazer; David C J Gardner; John A. Cullum; Stephen
+    G. Oliver
+  year: 1989
+  notes: 'source_type=journal_article; discovery_mode=existing_DOI_mention_and_collection_attribution;
+    accessed_on=2026-10-13; source_access=author_institution_abstract_and_collection_attribution;
+    alternate_identifier=doi:10.1007/BF00258408. Author-institution abstract; exact
+    excerpt="Streptomyces". This citation records the original-recipe attribution
+    explicitly made by MediaDive 1894, not an exact certification of the current SFM
+    formulation from the paper. The collection separately attributes its current recipe
+    to Kieser et al., Practical Streptomyces Genetics (2000). The Hobbs abstract concerns
+    dispersed liquid cultures and does not enumerate the solid soya-flour/mannitol/agar
+    recipe. Existing API reference, all three 20 g/L quantities, tap-water requirement
+    and double-autoclave steps are preserved; SFM is not equated to defined HMM/Junlon
+    recipes. Reported organism=Streptomyces; collection streptomycetes; canonical
+    scientific name=Streptomyces; NCBITaxon:1883; actual rank=genus; taxonomy_match=reported
+    genus; collection common-group usage qualified; role=abstract genus and collection
+    cultivation group, not a species/strain-wide new growth assertion. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1883&retmode=xml.
+    Reported organism=Escherichia coli; canonical scientific name=Escherichia coli;
+    NCBITaxon:562; actual rank=species; taxonomy_match=exact species; role=collection
+    describes a conjugation donor; not a Hobbs abstract growth claim. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml.
+    collection_source=https://mediadive.dsmz.de/rest/medium/1894; locator=medium.description
+    and solutions[0].steps[3]; collection_raw=references_cache/papers/collection_sources/mediadive-1894-20261013.json;
+    collection_markdown=references_cache/papers/collection_sources/mediadive-1894-20261013.md.
+    raw_abstract=references_cache/papers/primary_html/hobbs-1989-manchester-abstract.html;
+    source_markdown=references_cache/papers/primary_html/hobbs-1989-manchester-abstract.md.
+    PMID unresolved by prior bounded lookup, not established absent. Taxonomy archives=references_cache/papers/taxonomy/fungal-studies-20261013.*
+    and lu-sfm-additional-20261013.*. Bounded taxonomy lookup failures are not proof
+    of taxon absence. Organism inventory covers inspected medium-relevant passages,
+    not inaccessible full text. Correction/retraction coverage is limited to inspected
+    publication metadata. All prior recipe fields and history preserved, not newly
+    certified. No new ingredient-concentration evidence, resolved variant, native
+    growth association or quantitative metric. '
+description: 'General culture medium for growth and sporulation of streptomycetes.
+  Culture medium of choice for intergenic conjugation of plasmids with Escherichia
+  coli as donor. Original recipe published in "Hobbs, Frazer, Gardner, Cullum, Oliver.
+  “Dispersed Growth of Streptomyces in Liquid Culture.” Applied Microbiology and Biotechnology
+  31, no. 3 (September 1, 1989): 272–77. https://doi.org/10.1007/BF00258408". Most
+  common recipe and that described here, published in "Kieser, Bibb, Buttner, Chater,
+  Hopwood. Practical Streptomyces Genetics. Norwich: The John Innes Foundation, 2000."
+  https://www.dsmz.de/research/publications/41184'

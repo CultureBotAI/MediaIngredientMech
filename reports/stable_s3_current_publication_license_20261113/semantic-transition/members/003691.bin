@@ -1,0 +1,11 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/inherited-form-predicate-triage-v1/seal_cysteine_v2.py", line 25, in <module>
+    rr.validate_review(review);yp=rr.save_review(F,review);assert rr.read_review(F,str(yp.relative_to(F)))==review
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/cysteine-stock-predicate-assessment-v1/native-review-fixture/scripts/record_review.py", line 303, in validate_review
+    _owners(finding, f"finding {finding['finding_id']}")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/cysteine-stock-predicate-assessment-v1/native-review-fixture/scripts/record_review.py", line 182, in _owners
+    raise ReviewError(f"{label} requires maintained owner paths or an explicit ownership limit")
+cys_review.ReviewError: finding CYS-PRED-001 requires maintained owner paths or an explicit ownership limit

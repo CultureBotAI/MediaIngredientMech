@@ -1,0 +1,51 @@
+identifier: CHEBI:30816
+preferred_term: Vanillic Acid
+ontology_mapping:
+  ontology_id: CHEBI:30816
+  ontology_label: vanillic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 4-Hydroxy-3-methoxybenzoic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=121-34-6); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.841252+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.927779+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H8O4; inchi=InChI=1S/C8H8O4/c1-12-7-4-5(8(10)11)2-3-6(7)9/h2-4;
+    smiles=COc1cc(C(=O)O)ccc1O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.166458+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 121-34-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C8H8O4
+  inchi: InChI=1S/C8H8O4/c1-12-7-4-5(8(10)11)2-3-6(7)9/h2-4,9H,1H3,(H,10,11)
+  smiles: COc1cc(C(=O)O)ccc1O
+ingredient_type: SINGLE_INGREDIENT

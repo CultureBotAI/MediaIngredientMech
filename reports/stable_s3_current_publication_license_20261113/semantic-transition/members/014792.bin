@@ -1,0 +1,140 @@
+{
+  "case_index": 69,
+  "case_id": "CM_NAME:9218e0ff43d7799ca554c048ab8f71bc9a048c50d149cccc25da31fbf4dc8819",
+  "query_label": "phytone (BBL)",
+  "family_terms": [
+    "phytone",
+    "soy peptone",
+    "vegetable protein"
+  ],
+  "ignored_files_included": true,
+  "method": "Path.rglob of all native per-record YAML includes ignored paths; native is_resolving_synonym policy applied; independent exact casefold/whitespace lookup over every CSV label-index row. No fuzzy hit treated as identity.",
+  "native_catalog_files_scanned": 2956,
+  "generated_label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "exact_resolving_native_matches": [],
+  "exact_index_rows": [],
+  "family_candidates": [
+    {
+      "path": "data/ingredients/mapped/Phytone.yaml",
+      "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+      "identifier": "FOODON:03315720",
+      "preferred_term": "Phytone",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Phytone",
+        "Phytone"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Phytone",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "FOODON:03315720",
+        "ontology_label": "vegetable protein, hydrolyzed",
+        "ontology_source": "FOODON",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "cbclaw_followups_114",
+            "notes": "Phytone is BD's papaic digest of soybean meal (a soy peptone); mapped to FOODON:03315720 (vegetable protein, hydrolyzed), mirroring sibling Soy_Peptone."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+      "identifier": "FOODON:03315720",
+      "preferred_term": "Soy peptone",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Soy peptone",
+        "Soy peptone",
+        "Soybean peptone",
+        "Peptone from soymeal",
+        "Phytone peptone",
+        "Phytone peptone (BD-BBL)",
+        "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+        "Soytone",
+        "Bacto Soytone",
+        "Peptic digest of soybean meal"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Soy peptone",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Soybean peptone",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Peptone from soymeal",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Phytone peptone",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Phytone peptone (BD-BBL)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Properties: Undefined component",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Soytone",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Bacto Soytone",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "merge_from_CHEBI:8150"
+        },
+        {
+          "synonym_text": "Peptic digest of soybean meal",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "CultureMech label unresolvable via label_index (#260)"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "FOODON:03315720",
+        "ontology_label": "vegetable protein, hydrolyzed",
+        "ontology_source": "FOODON",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "cbclaw_foodon_promotion",
+            "notes": "Commercial food mixture - FOODON is correct parent ontology. Soy peptone is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH."
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#260)",
+            "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone — the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+          }
+        ]
+      }
+    }
+  ]
+}

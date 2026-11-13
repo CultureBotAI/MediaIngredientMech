@@ -1,0 +1,70 @@
+identifier: CHEBI:203663
+preferred_term: Nocardimicin I
+ontology_mapping:
+  ontology_id: CHEBI:203663
+  ontology_label: Nocardimicin I
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:nocardimicin_i; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:nocardimicin_i; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001914; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C44H71N5O10
+  smiles: CCCCCCCCCCCCCCCCCC(OC(=O)C(CCCCN(O)C=O)NC(=O)C1COC(c2ccccc2O)=N1)C(C)C(=O)NC1CCCCN(O)C1=O
+  inchi: InChI=1S/C44H71N5O10/c1-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-28-39(33(2)40(52)45-35-25-21-23-30-49(57)43(35)54)59-44(55)36(26-20-22-29-48(56)32-50)46-41(53)37-31-58-42(47-37)34-24-18-19-27-38(34)51/h18-19,24,27,32-33,35-37,39,51,56-57H,3-17,20-23,25-26,28-31H2,1-2H3,(H,45,52)(H,46,53)
+  molecular_weight: 830.077
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:06.761410+00:00'
+mim_id: MIM:0001914
+legacy_identifiers:
+- MIM:Nocardimicin_I
+- CHEBI:203663

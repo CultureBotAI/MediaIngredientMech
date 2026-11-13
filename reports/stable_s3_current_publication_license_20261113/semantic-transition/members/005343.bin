@@ -1,0 +1,165 @@
+id: CultureMech:013742
+preferred_term: Main sol. J837
+term:
+  id: mediadive.solution:4801
+  label: Main sol. J837
+composition:
+- preferred_term: Sea salts (Sigma)
+  concentration:
+    value: '35.0'
+    unit: G_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 35.0 g/L Sea salts (Sigma).
+- preferred_term: Wolfe's mineral elixir
+  concentration:
+    value: '1.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 1.0 ml/L Wolfe's mineral elixir.
+  culturemech_term:
+    id: CultureMech:013242
+    label: Wolfe's mineral elixir
+- preferred_term: Yeast extract (BD-Difco)
+  concentration:
+    value: '1.0'
+    unit: G_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 1.0 g/L Yeast extract (BD-Difco).
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+  nutritional_roles:
+  - PROTEIN_SOURCE
+  - VITAMIN_SOURCE
+- preferred_term: Resazurin
+  concentration:
+    value: '0.5'
+    unit: MG_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 0.5 mg/L Resazurin.
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+  mediaingredientmech_chebi_term:
+    id: CHEBI:8806
+    label: Resazurin
+  physicochemical_roles:
+  - REDOX_INDICATOR
+- preferred_term: Distilled water
+  concentration:
+    value: '925.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 925.0 ml/L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: 1 M Sodium acetate solution
+  concentration:
+    value: '20.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 20.0 ml/L 1 M Sodium acetate
+    solution.
+  term:
+    id: CHEBI:32954
+    label: sodium acetate
+- preferred_term: 1 M Sodium fumarate solution
+  concentration:
+    value: '20.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 20.0 ml/L 1 M Sodium fumarate
+    solution.
+  term:
+    id: CHEBI:115156
+    label: disodium fumarate
+- preferred_term: Trace vitamins
+  concentration:
+    value: '10.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 10.0 ml/L Trace vitamins.
+  culturemech_term:
+    id: CultureMech:012935
+    label: Trace vitamins
+- preferred_term: 8% NaHCO3 solution
+  concentration:
+    value: '25.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 25.0 ml/L 8% NaHCO3 solution.
+  term:
+    id: CHEBI:32139
+    label: sodium hydrogencarbonate
+- preferred_term: 5% Na2S x 9 H2O solution
+  concentration:
+    value: '6.0'
+    unit: ML_PER_L
+  source: MediaDive solution 4801 / JCM Medium 837
+  notes: MediaDive solution 4801 / JCM Medium 837 lists 6.0 ml/L 5% Na2S x 9 H2O solution.
+  term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+preparation_notes: Mix components thoroughly and autoclave under an N2 atmosphere.
+  Add the sodium acetate, sodium fumarate, Trace vitamins, NaHCO3, and Na2S x 9 H2O
+  solutions from sterile anaerobic stocks.
+notes: MediaDive solution 4801 represents the main solution for JCM Medium 837. Stock-solution
+  additions are kept as asserted ml/L solution rows because this SolutionRecipe record
+  cannot nest the source stock compositions inline.
+curation_history:
+- timestamp: '2026-03-13T06:20:33.208820Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:013742'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:38.405569'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:05.293499'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:04:01.041030+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:34.190896+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 3 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:48:49.053120+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:21.821352+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '2 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_m873_syfac_score15.py
+  action: RESOLVED_MEDIADIVE_4801_MAIN_SOL_J837
+  source: https://mediadive.dsmz.de/medium/J837
+  notes: Restored the MediaDive J837 source-level direct component and stock-solution
+    additions, corrected water and stock additions from false percent-volume values
+    to ml/L, corrected resazurin to 0.5 mg/L, and removed the placeholder top-level
+    ingredient.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/medium/J837

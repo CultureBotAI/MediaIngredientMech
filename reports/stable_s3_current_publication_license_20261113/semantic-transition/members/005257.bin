@@ -1,0 +1,127 @@
+id: CultureMech:011626
+preferred_term: Main sol. 1113
+term:
+  id: mediadive.solution:2234
+  label: Main sol. 1113
+composition:
+- preferred_term: Leptospira Medium Base EMJH
+  concentration:
+    value: '2.3'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:990
+    label: Leptospira Medium Base EMJH
+- preferred_term: Agarose
+  concentration:
+    value: '1.5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:991
+    label: Agarose
+  chebi_term:
+    id: CHEBI:2511
+    label: agarose
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/2234
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 2,
+                      "compound": "Agarose",
+                      "compound_id": 991,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1.5,
+                      "unit": "g",
+                      "g_l": 1.5,
+                      "mmol_l": 2.37906,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[1].concentration (Agarose)
+      in MediaDive solution 2234; locator=$.data.recipe[1] (compound_id=991). Provider
+      explicitly reports g_l=1.5. Arithmetic check: 1.5 g * 1 g/g / (1000 ml / 1000
+      ml per L) = 1.5 g/L, consistent with the reported value at its precision. Evidence
+      supports the provider-declared concentration within this solution, not a concentration
+      in a receiving medium or an independently measured final volume. Water addition
+      alone is not used to infer a final volume. Additional exact excerpt at $.data.volume:
+      "volume": 1000. Retrieved 2026-10-07T09:10:27.866317+00:00; response SHA256=4399b9acdca25145df883dbcc8dd3d7af20328b3223a01e8d1784f72cc4a4d67.'
+- preferred_term: Water
+  concentration:
+    value: '900'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:754
+    label: Water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Leptospira Enrichment EMJH
+  concentration:
+    value: '100'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:992
+    label: Leptospira Enrichment EMJH
+preparation_notes: Dissolve the agarose in water by boiling. Add the Leptospira base
+  and dissolve completely. Autoclave at 121°C for 15 min. Allow the medium to cool
+  to 50-55°C. Warm the Leptospira Enrichment to approximately 25°C and add to the
+  warm medium. Mix uniformly and dispense aseptically into sterile tubes as requested.
+  Final pH is 7.5 at 25°C.
+curation_history:
+- timestamp: '2026-03-13T06:20:20.882485Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:011626'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:24.196715'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:04.049685'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:47.639726+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:56:08.906649+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '1 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-10-07T09:15:06.636792+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/2234
+  changes: 'composition[1].concentration: {"unit": "G_PER_L", "value": "1.5"} -> {"unit":
+    "G_PER_L", "value": "1.5"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/2234
+  title: 'MediaDive solution 2234: Main sol. 1113'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=4399b9acdca25145df883dbcc8dd3d7af20328b3223a01e8d1784f72cc4a4d67;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

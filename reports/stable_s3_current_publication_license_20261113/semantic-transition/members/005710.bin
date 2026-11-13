@@ -1,0 +1,147 @@
+id: CultureMech:009649
+name: sl7_solid_medium
+original_name: SL7 solid medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  notes: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
+    Simple component'
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: CaCl2 × 2 H2O
+  concentration:
+    value: '0.14'
+    unit: MILLIMOLAR
+  notes: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+  term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+- preferred_term: MgSO4 × 7 H2O
+  concentration:
+    value: '0.8'
+    unit: MILLIMOLAR
+  notes: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+    component'
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: NH4Cl
+  concentration:
+    value: '18.7'
+    unit: MILLIMOLAR
+  notes: 'Role: Nitrogen source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: Na2HPO4 × 12 H2O
+  concentration:
+    value: '25'
+    unit: MILLIMOLAR
+  notes: 'Role: Buffer; Properties: Inorganic compound, Simple component, Defined
+    component'
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Fe(III)NH4-Citrate
+  concentration:
+    value: '4.6'
+    unit: MICROMOLAR
+  notes: 'Role: Nitrogen source; Properties: Organic compound, Simple component, Defined
+    component'
+- preferred_term: Chloramphenicol
+  concentration:
+    value: '50'
+    unit: G_PER_L
+  notes: 'Role: Antimicrobial agent; Properties: Simple component, Organic compound,
+    Defined component'
+  term:
+    id: CHEBI:17698
+    label: chloramphenicol
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  notes: 'Role: Solidifying component'
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: sodium gluconate
+  concentration:
+    value: '0.4'
+    unit: G_PER_L
+  notes: 'Properties: Defined component, Organic compound, Simple component'
+  term:
+    id: CHEBI:84997
+    label: sodium gluconate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:84997
+    label: sodium gluconate
+media_term:
+  preferred_term: TOGO Medium M3209
+  term:
+    id: TOGO:M3209
+    label: SL7 solid medium
+notes: 'Source: https://togomedium.org/medium/M3209'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.598053Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M3209'
+- timestamp: '2026-01-28T19:48:30.355843Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:07.882748Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009649'
+- timestamp: '2026-03-17T06:30:29.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:26.889737+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "SL7 solid medium" to "sl7_solid_medium" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:45.899238+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T06:58:32.287362+00:00'
+  curator: mgso4-heptahydrate-term-fix-v1.0
+  action: Corrected MgSO4·7H2O primary term grounding to heptahydrate
+  notes: Re-grounded 1 heptahydrate-labelled ingredient(s) from CHEBI:32599 (generic
+    magnesium sulfate) to CHEBI:31795 (magnesium sulfate heptahydrate). Generic/hexahydrate
+    labels untouched.
+- timestamp: '2026-06-10T07:47:11.509302+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+- timestamp: '2026-08-20T19:03:06.616003+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).

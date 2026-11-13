@@ -1,0 +1,64 @@
+identifier: CHEBI:15226
+preferred_term: Tetrathionate
+synonyms:
+- synonym_text: Tetrathionate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+  source_occurrences:
+  - source: microbedecoder
+    count: 23
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrathionate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0647 -> CHEBI:15226 "tetrathionate(2-)" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518198+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrathionate); no
+  CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:15226
+  ontology_label: tetrathionate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI verification
+    notes: Edison identity research recommends CHEBI:15226; 'tetrathionate' is a ChEBI
+      synonym of tetrathionate(2-).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: O6S4
+  smiles: O=S(=O)([O-])SSS(=O)(=O)[O-]
+  inchi: InChI=1S/H2O6S4/c1-9(2,3)7-8-10(4,5)6/h(H,1,2,3)(H,4,5,6)/p-2
+  molecular_weight: 224.262
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:30.586026+00:00'

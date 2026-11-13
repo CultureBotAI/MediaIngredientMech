@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_b",
+  "status": "approve",
+  "scope_index": 166,
+  "case_id": "KG_CASE:9a7243968b0f9f01eb918168d74dcb21b28c38bb6c46824355cbd7ef8514d370",
+  "case_input_sha256": "7e528d8d5ff2f1f9dd23f78d6540118d16ebebc3d1625cf04c19d38c4c83d83c",
+  "decision_canonical_sha256": "d83f1dfde97ab63163196a1bcd3c984e331b92a649b0c2a3e3964d76879beba8",
+  "checked_evidence_ids": [
+    "c-frozen-case-166",
+    "c-mediadive-1722",
+    "c-chebi-86463",
+    "c-chebi-86465",
+    "c-owner-Alk_So42"
+  ],
+  "checked_proposal_ids": [
+    "a-proposal-anhydrous-alum"
+  ],
+  "checked_proposals": [
+    {
+      "proposal_id": "a-proposal-anhydrous-alum",
+      "before_sha256": "eb7149b3301b2f405c59d0463b04bf6db774703bb3e914d125ffe9086ac717ed",
+      "after_capture": {
+        "root": "artifact",
+        "path": "a/proposed-owners/Alk_So42.yaml",
+        "sha256": "8b74660fe96d2e9cc2eaeb36ad1e995a6d86f548f817041541959f754f2c60ce"
+      }
+    }
+  ],
+  "reasoning": "I read the complete frozen source record and consumed WITHHOLD row331, live MediaDive1722 and both alum ontology comparisons. Source CAS10043-67-1 and mass258.205 agree with anhydrous KAl(SO4)2/CHEBI86463, not the dodecahydrate. I inspected the complete baseline owner and exact A after diff: an explicitly anhydrous source alias is added, while chemically unrelated Na SiO .9H O and ZnSO .7H O are retained with their original sources as REJECTED_LABEL. The producer label KAlSO42 is not added as a resolving formula. The native helper count1 is not recipe frequency. This is bounded source/proposal approval; no complete owner or consumed-export hold is released.",
+  "input_files": [
+    {
+      "path": "c/decisions.json",
+      "sha256": "e2e2244c9aefc82516260c3eb566530386a51877a3e7f30ce2152d428c2d7deb"
+    },
+    {
+      "path": "a/proposals.json",
+      "sha256": "063efb9c76053852734f1540dee3d8f7be68ac126c26af8d8594ad1511471990"
+    }
+  ],
+  "reviewed_at": "2026-11-08T05:34:33.400582+00:00"
+}

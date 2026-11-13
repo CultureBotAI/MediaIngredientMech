@@ -1,0 +1,2320 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/antibiotics",
+  "primary_author": "/root/materials",
+  "reviewed_at": "2026-11-08T05:24:40.823146+00:00",
+  "review_status": "complete",
+  "scope": "All60 assigned materials cases, all82 CultureMech occurrences in78 full frozen recipe files, all9 full KG entries, all10 proposals, cited actual primary captures and owner bytes. Proposal acceptance does not release inherited publication holds.",
+  "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+  "scientific_payload_hash_method": "SHA256 UTF-8 canonical JSON (sort_keys=True, ensure_ascii=False, separators comma/colon) of full decision with only independent_review removed. No other field omitted.",
+  "input_hashes": {
+    "decisions.json": "f7a3a4e9ed0194f53e12dd5e2ed6c6348f494088c411bc121e9c5e9ec99b77f8",
+    "proposals.json": "ab8a1e3c47cff341adb349a9ffc1c89bf7e6ab281191a28d2e2288496624fbf8",
+    "evidence.json": "11c2005ffdcb68ad7301ed45ba42064c24ec2284b2ecb71ad0bc175a18aa6f0c",
+    "assigned-cases.json": "50556299d1371932f2fde94d3cd72c33aa010e4f334b7f50664987bc07f4d855"
+  },
+  "after_hashes": {
+    "ma-new-rr_butane_2_3_diol": {
+      "path": "materials/proposals/rr_butane_2_3_diol.yaml",
+      "sha256": "44837ab91cdb6c1f969e053ccaa1bd9647214e541f817e8807ae02d1f8ed88f8"
+    },
+    "ma-new-methyl_cellulose": {
+      "path": "materials/proposals/methyl_cellulose.yaml",
+      "sha256": "16a7c5d44940f513c16ea94a851111eea6341f910c583f6229f4843791f164c0"
+    },
+    "ma-new-sodium_syringate": {
+      "path": "materials/proposals/sodium_syringate.yaml",
+      "sha256": "d769944b33e90747c307bf6acc60a816c66be4a05dbadc070b3c73a75ca65c42"
+    },
+    "ma-alias-tryptone": {
+      "path": "materials/proposals/Tryptone.yaml",
+      "sha256": "16da9c5645e3cdb3f6645546a1e0707173d4aa62bd8ab470ccf687593818eac6"
+    },
+    "ma-alias-casamino_acids_vitamin_assay": {
+      "path": "materials/proposals/Casamino_Acids_Vitamin_Assay.yaml",
+      "sha256": "576aff9e9c7f1fb2ccbf0ce83bfb3c6d806e81b9d2c44508ad8f49150018e6ea"
+    },
+    "ma-alias-lecithin": {
+      "path": "materials/proposals/Lecithin.yaml",
+      "sha256": "129d1d626c4a53bb259ddc854ce99ad63e065c63333e7fb588b108a1b9bb1546"
+    },
+    "ma-alias-n-_2-acetamido-2-aminoethanesulfonic_acid": {
+      "path": "materials/proposals/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+      "sha256": "a9ad00dcf2bd1b1cd8b15af804d326e4d7d45edd6c1afae174dabeb80544a135"
+    },
+    "ma-casamino-distinct": {
+      "path": "materials/proposals/Casamino_Acids.yaml",
+      "sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5"
+    },
+    "ma-stock-jcm_226_czapek_concentrate": {
+      "path": "materials/proposals/jcm_226_czapek_concentrate.yaml",
+      "sha256": "dc2d4e4b4fac9a26717d6464220152a3f9094b54586b2a101fb4f74c67874272"
+    },
+    "ma-stock-jcm_629_artificial_saltwater": {
+      "path": "materials/proposals/jcm_629_artificial_saltwater.yaml",
+      "sha256": "2e646a2e10ac8a5c0ce1519f30dea010fc1b8a9234a68abd6fbcf6458fdf3e46"
+    }
+  },
+  "initial_observation": {
+    "decisions_sha256": "cba58198d5c25b5a857f226bcd74a4489978d033ee70bbf9fd8329a5010fff5d",
+    "evidence_sha256": "776bfca268fd865d123b9cb97c6aee0a111a920271079a02899b285786512fb0",
+    "proposals_sha256": "eeb7b4adda3b263d016d405a3b97e8c6f03b034c1ff780a4dce78552642b91ad",
+    "preservation_limit": "These hashes were recorded while reading the initial files. The author regenerated them before the reviewer copied full bytes. Do not misrepresent these hash-only observations as preserved original snapshots. Subsequent exact input files and all10 after payloads are preserved under round2; author separately preserved MA-SR-02-before bytes. The first finding and author response below are an explicitly reconstructed review ledger from this conversation, not an untouched original file."
+  },
+  "findings": [
+    {
+      "finding_id": "MA-SR-01",
+      "severity": "scientific_revision_required",
+      "proposal_id": "ma-casamino-distinct",
+      "initial_finding": "Ordinary Casamino Acids was proposed as kgmicrobe.ingredient plus broad FOODON parent without evaluating an existing exact ontology term. Official active MeSH C017721 defines acid-hydrolyzed casein. MAPPING_SEMANTICS Step1 must be evaluated before registry fallback.",
+      "independent_evidence": [
+        "nlm-C017721.json",
+        "nlm-C017721.metadata.json",
+        "mesh-C017721.json",
+        "mesh-C017721.metadata.json",
+        "casamino-primary-check.json"
+      ],
+      "author_response": "Author independently captured official NLM term and agreed exact material identity supersedes the unnecessarily broad registry proposal. Separate vitamin-assay and tryptone identities remain unchanged.",
+      "resolution": "Changed ordinary owner proposal to identifier mesh:C017721 with exact ontology mapping; source aliases, original history and withheld whole-row obligations retained. CAS65072-00-6 is retained as sourced metadata, not used as exact-form evidence or a demand to mint CAS identity: independent FDA capture shows that CAS spans more than one casein hydrolysate description.",
+      "reviewer_rereview": "Inspected revised proposal and all nine ordinary Casamino decisions; direct NLM scope, exact label and existing separate vitamin-assay owner are coherent.",
+      "status": "resolved"
+    },
+    {
+      "finding_id": "MA-SR-02",
+      "severity": "scientific_revision_required",
+      "proposal_id": "ma-casamino-distinct",
+      "initial_finding": "New REJECTED_LABEL classification for inherited Casamino Acids (0.01 % was justified as preventing stock-to-dry-digest equivalence without claim-specific evidence that the fragment denotes a separately supplied stock. A percent suffix can express final-medium dose. Current owner history explicitly records prior #213 same-ingredient parsing disposition. MAPPING_SEMANTICS requires claim-specific evidence for new rejection.",
+      "author_response": "Author first clarified that text was preserved, then accepted that raw-text preservation and scientifically rejecting identity are different. No recovered primary occurrence proves the concentration fragment false as an ordinary digest name.",
+      "resolution": "Restored original RAW_TEXT synonym and provenance. Added explicit deferred source-specific review and retained whole-row hold. Carbocerate, metadata nonname and vitamin-assay-grade fragment rejections remain separately supported rather than lumped with the concentration fragment.",
+      "reviewer_rereview": "Inspected revised Casamino after YAML, original #213 curation event, new curation event and revised ordinary decisions. The concentration fragment is again RAW_TEXT and source cases remain byte-preserved.",
+      "status": "resolved"
+    }
+  ],
+  "open_findings": [],
+  "proposal_reviews": [
+    {
+      "proposal_id": "ma-new-rr_butane_2_3_diol",
+      "assessment": "Exact source R,R stereochemistry and active CHEBI16982 agree. New owner preserves raw source label and records proposal history; no generic/meso/S,S identity substitution. Accept."
+    },
+    {
+      "proposal_id": "ma-new-methyl_cellulose",
+      "assessment": "CHEBI53448 is the named polymer, and the source occurrence is the solute inside a nested stock. No substitution pattern, degree of polymerization or carrier composition is added. Accept as solute owner only."
+    },
+    {
+      "proposal_id": "ma-new-sodium_syringate",
+      "assessment": "CHEBI132110 is sodium syringate; live OLS capture and independent read-only local label agree. Archived source explicitly names sodium material. Exact solute identity does not authorize normalizing the whole6% stock to it. Accept."
+    },
+    {
+      "proposal_id": "ma-alias-tryptone",
+      "assessment": "Three added spellings are compatible with pancreatic casein digest in their frozen source contexts and manufacturer evidence. Existing broader/related aliases and held rows are not globally approved. Cross-shard worker03 Pancreatic digest of casein overlap requires coordinator review before whole-owner publication. Accept with existing holds/dependency retained."
+    },
+    {
+      "proposal_id": "ma-alias-casamino_acids_vitamin_assay",
+      "assessment": "Explicit Difco Vitamin Assay source material belongs to the separate grade owner with broad relation to generic Casamino acids. Do not merge with ordinary MeSH-exact owner. Existing history/provenance preserved; accept bounded alias addition."
+    },
+    {
+      "proposal_id": "ma-alias-lecithin",
+      "assessment": "French-style Lecithine spelling is supported by NBRC1498 source. Target CHEBI61995 denotes lipid mixture, not one phosphatidylcholine structure. Accept bounded alias addition; no unrelated inherited row release."
+    },
+    {
+      "proposal_id": "ma-alias-n-_2-acetamido-2-aminoethanesulfonic_acid",
+      "assessment": "Expanded source name specifies acid CHEBI39060; generic ACES CHEBI39061 is broader tautomer grouping. Existing exact owner and original history are preserved; rejected Aces duplicate stays separate. Accept."
+    },
+    {
+      "proposal_id": "ma-casamino-distinct",
+      "assessment": "Initial registry+FOODON proposal corrected under MA-SR-01 to exact active MeSHC017721. MA-SR-02 restored concentration-fragment RAW_TEXT pending source-specific review. Final payload preserves original history, separates vitamin-assay grade, rejects only supported false/non-name/grade tokens and retains whole-row holds. Rereview accepted."
+    },
+    {
+      "proposal_id": "ma-stock-jcm_226_czapek_concentrate",
+      "assessment": "Independently checked all seven source constituents, exact hydrated salt labels and stated batch masses against official JCM226.100 mL is water addition, not verified final volume;10 mL dose remains source context. No global ambiguous Czapek alias or whole-medium equivalence. Complete constituent assertion is justified."
+    },
+    {
+      "proposal_id": "ma-stock-jcm_629_artificial_saltwater",
+      "assessment": "Independently checked all nine constituents and batch masses against official JCM629. Exact CaCl2dihydrate CHEBI86158 is valid; ungrounded named MgCl2hexahydrate does not reduce completeness of disclosed constituent list. Frozen150 G_PER_L merged amount is not imported into composition; no whole-medium equivalence. Accept source-specific stock."
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d",
+      "source_label": "Casamino acids (BD--Difco)",
+      "raw_source_label": "Casamino acids (BD--Difco)",
+      "case_input_sha256": "f41e473a657389ec5ff9ba6a8a337d25a788f928a8e8691d02bea11ae66ee127",
+      "scientific_payload_sha256": "f07d0914af51f4819e8a6a48fda041509497231d140aa4c6bc8728a2d8b43e20",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Compared 5x R2A source 2.5 g/L BD--Difco material with acid hydrolysate scope, not pancreatic digest; ordinary grade has no vitamin-assay qualifier. Exact MeSH correction MA-SR-01 applies.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-ba6c80d033eb2b2c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:e2af8507d06227fc1e8dd776dc3bad0567748ae3a02dd88b1b6c02929f3da918"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:01f4ba7f41067e00d166f17c6a759fc9afc22b1e13872397f7219c1e742e34cf",
+      "source_label": "Casamino acids (Difco)",
+      "raw_source_label": "Casamino acids (Difco)",
+      "case_input_sha256": "52bd3a757915c257d2ec511758a429a659d91c93dc9333d4dff40a6aba5b98b5",
+      "scientific_payload_sha256": "09e93d16e978c96525a338b7dd10fafcabcfb539395e1186899ee3d748e2a53f",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Checked all three frozen occurrences (halobaculum and two Payne-Seghal variants); dose changes 1 versus 7.5 g/L do not change the ordinary Difco digest identity. Preserve each occurrence separately.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-f9880e137a7b37aa",
+        "ma-recipe-5f0268a44f712c46",
+        "ma-recipe-89d905dbd4ea9983",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:834d4bb458b0692e7676bed0102860debd60467c1940c197b1e27d3930de3c91",
+        "CM_OCC:854a7e478909d5cecc951ad5b85c4bf01b78f2e37690f668f10d13c34ee45e78",
+        "CM_OCC:a7c2dc3a2f7b16561dc64584747dd2e117b291b24772e0da5525b40e82b89be2"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:028fee9db84b8aa16a26a2890127791408c004c9fda2b1e567de99dd19d88b40",
+      "source_label": "0.1% Resazurin",
+      "raw_source_label": "0.1% Resazurin",
+      "case_input_sha256": "bda31acc7c5880bbe5179ff00f561505f84770b50296ee95604f7f2bf5ec25af",
+      "scientific_payload_sha256": "60fae163f2a6bddba1201ec1ed2eacf2b7c20327d7b6dc2ef6874fa63da5d938",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Methanogen recipe explicitly calls this a solution. The 0.1% text and imported 0.4 G_PER_L do not establish a carrier, percentage basis or sodium/free resazurin form; retaining stock scope is justified.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-22c7e651942c67a6",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:4fb5193b8d4dca780b11bcbcb344ffbfba18ff99166f0c8f6c81c244698ce342"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:07ba6eb43bb53f403cc19101d2bcb26599ac4e25b0c93d3da14d30df04b01431",
+      "source_label": "2% casamino acid",
+      "raw_source_label": "2% casamino acid",
+      "case_input_sha256": "f833ef32afe74f562a968130aba84a5e5183b923383686f289db6c17098b8798",
+      "scientific_payload_sha256": "3d63d7f7f7d47471bbba79f1e1175b6fafbc992a4c03a0f52f52246ae8a6424b",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "M9 labels 2% casamino acid as a solution while reporting 10 G_PER_L. Checked that no dry Casamino alias is added and no percentage-to-dose interpretation is invented.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-a0bd5e5d256aff1e",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-search-primary-mixed-10",
+        "ma-togo-M2790-reused",
+        "ma-togo-attempts",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:e0bab5cbb6ad90f5ddd4146c604aaa819559676c9a72730eaf5ac7533bfd4927"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:082350a252f39b2d4a93766fe7b0dc40a0ac1494cbf51d78b118d9dc04f9304b",
+      "source_label": "Tryptone (BD-Difico)",
+      "raw_source_label": "Tryptone (BD-Difico)",
+      "case_input_sha256": "ea97043cf632104f0ab38c2fafe67f4a4431e707040a3ccd36cd5cf9eb359905",
+      "scientific_payload_sha256": "879433cd65634e508c8397412c3ec971c688960d3a13357b27b92daae5a0f353",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "JCM1445 independently names tryptone and Casamino acids as separate inputs. Manufacturer pancreatic digestion supports the source typo BD-Difico as tryptone; it does not support merging the two digests.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-tryptone"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-9dd7847a6e8cd265",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-tryptone",
+        "ma-jcm1445",
+        "ma-cross-shard-owners",
+        "ma-owner-2d4142f88d854838"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:bf0cf60fdb71de7732a58a3793f18e6b3f9bfe2359af1f70d1b9ebf42bbd530e"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Tryptone.yaml",
+          "sha256": "2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:0cd91346725f5f8c764a213a8dfb293435776d4949ca90c46968b51fa314846d",
+      "source_label": "Sea water*",
+      "raw_source_label": "Sea water*",
+      "case_input_sha256": "ef4accd4d2bb70ce2b8923615de0f2f1be3a242a560c266f4963b2573e706e32",
+      "scientific_payload_sha256": "28646972ecfef5055e1ef0f79cf5646d56fe567e00f57c51789114a48c421d6c",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Frozen NBRC_869 filename explicitly records source NBRC868. Official868 footnote allows filtered aged seawater OR Daigo artificial seawater, so neither natural seawater nor one manufactured salt mix can be selected for all occurrences.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-0909f0c675c3988f",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-nite868"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:535fbfc78ea9caa09701699575a02d031fd823cacc7ac87c9f034aebc74ab66d"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:0e2f27b0689d68b7a76ca1e17800a644acd456a9a64216d1d85bd44ceef4677d",
+      "source_label": "casamino acid (BD Difco)",
+      "raw_source_label": "casamino acid (BD Difco)",
+      "case_input_sha256": "fe587c827fba54006b46074ddc76dcacea3938ea77a73bdf6a0b00915d2ecb3c",
+      "scientific_payload_sha256": "79acc45394630e01d62b2c69fe757c4d1320fa12ec767bee7d4f724a00959a1d",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "NCG lists ordinary BD Difco casamino acid at 0.5% as a recipe concentration, without vitamin-depletion qualifier. Preserve that concentration as an occurrence value while applying ordinary acid-hydrolysate identity.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-87120b3e577e1add",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:c4664196e8137704813f52469718f1d021d5d771fe370b93ec8988013dbc04e5"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:0ff6d1eb7745a1250948f6020672cfec737a9eabcbc67d90417296d1ed73a5bc",
+      "source_label": "Casamino acids (BD Bacto)",
+      "raw_source_label": "Casamino acids (BD Bacto)",
+      "case_input_sha256": "26566a52922a3a00bbf318d1480dab063ebb633e6fb63bf2f27dec6868b13764",
+      "scientific_payload_sha256": "3aa7a0eacacaabdd38e1338bdf72851ccfdd7fe2dde37bc6b66dcf0cf4df54ab",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Pseudoclostridium source BD Bacto ordinary material at 0.03 g/L has no stock or vitamin-assay qualifier. Manufacturer acid-hydrolysate evidence is applicable; exact MeSH correction applies.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-305a2b01d8349ce4",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:9a03c26026c3bc1ca3d131ec710ecb51a779b9615931816792c923b464867bc4"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:17097add641c00886b6ea9a529d98fbc5d0c8b7f75f9909ece6434b2607e6897",
+      "source_label": "NZ amine",
+      "raw_source_label": "NZ amine",
+      "case_input_sha256": "490464eb2e5238d51fbd71124865a6bc0207e227d73aa05027668c705ab4fc69",
+      "scientific_payload_sha256": "e072783378d7d088bff657760d49df47ea8de10f5f23c00b8f63e7fd58f6a215",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "N-Z-Amine manufacturer evidence distinguishes EKC, A and AS products. Frozen NZCYM source supplies no grade. Family-level enzyme digest evidence cannot select one named grade or acid Casamino identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-a4a19ed4f64e2253",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-nz",
+        "ma-casein"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:53123fa6331c535a084dd941efd3f0e28d409f4d01c1a78ce01ad47c1a912e36"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:1e2d17d1e7de485cab2f1d756d625ebd6dc9b6aa424801d8be6fb82c382bf187",
+      "source_label": "Antifoam C",
+      "raw_source_label": "Antifoam C",
+      "case_input_sha256": "5c32399cedb62206f4fbb0f7c41ee470faa5c7d6f4c66c7060ab3dec20d29d2d",
+      "scientific_payload_sha256": "6cea266ec9084cbbc77dede8529f37689309f27fe2e2355367259d7fe7495bd5",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Supplier A8011 contains silicone and emulsifiers and can be diluted. Frozen Antifoam C does not specify manufacturer/catalog or stock basis; no pure-silicone identity or arbitrary 30% source concentration is inferred.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-704a0ace988fea66",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-antifoam"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:2ae4010c873b040e8e6642159aedbeaefe88d20c7fe6f153bb50a1f7bbca0077"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:23ea0ea92206f0d868b220cde4cd9618099ba8e9bf20f7660b93696fea23fdad",
+      "source_label": "M17 media (Oxoid LOT2216165)",
+      "raw_source_label": "M17 media (Oxoid LOT2216165)",
+      "case_input_sha256": "041681d16e0d8bccf98b55e85e4bd99f15a22f5ffb503efbe66c6825568a636e",
+      "scientific_payload_sha256": "24b72aa6622b4a755d3660a13038b61af6dd7c3bd98d912be9b74dbeae58a607",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Frozen GM17 uses one liter of Oxoid M17 lot2216165 plus glucose. Current CM0817 broth specification is relevant product context but does not prove historical lot formulation; whole supplied medium stays distinct from components.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-ff83b8215de3d215",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-m17"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:7e76da97ee0caafb2e8597a55b8b15c2097e690c96dc62cfff13a1097510e769"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:28e1bdb376291cd9dfbd2befaa3e126ed3ff24360b6e4cbbec472f225dd25ab9",
+      "source_label": "Dissolve",
+      "raw_source_label": "Dissolve",
+      "case_input_sha256": "bcc8e07494f25b57c3d2b4015f8415a26e6481e5f615bf4cc60d57de9a242c1a",
+      "scientific_payload_sha256": "909dcf35906075adb4c3de17eddd817742f43183fa74d1931a39765409d5b620",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Primary CCAP Waris H gives two preparation verbs attached to 1.04 g KOH and 2.74 g iron sulfate heptahydrate. Frozen two Dissolve occurrences must be reconciled with existing ingredient rows and stock6, not minted or blindly renamed as duplicate ingredients.",
+      "disposition_reviewed": "malformed_or_nonchemical_token",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-6b84f51622f463c7",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-waris"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:d8be0a46e9d37d36241eb1b6eb223a0fa5d28fd75be4e67a2b2a117f59e91005",
+        "CM_OCC:bbfb7173dc810504d227a01bcaa362dece538809a47ff1dff9b08229a5758192"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:30d0e9a44a4bf06ddf351d2e4c0a2395d6469119838987c2f506ffa0aecac776",
+      "source_label": "Bacto Casamino acids (Difco)",
+      "raw_source_label": "Bacto Casamino acids (Difco)",
+      "case_input_sha256": "629176cfffe5edee363307774820300efbe763d384b5446c4a4f9846bfb51540",
+      "scientific_payload_sha256": "b565765cb1db511220ae2ad95b93767281bf330732d9bb37e64cef8698860970",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "All three AS168 variants explicitly name Bacto Casamino acids (Difco); different doses and medium variants do not imply a changed material grade. Ordinary acid digest mapping is supported after MA-SR-01.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-311bcedadd6985d8",
+        "ma-recipe-69188f625db02926",
+        "ma-recipe-92927b76e7d878b3",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:ac8272787e1c9ab5aefed092cb214b53797771cd2c2bf6c3e615a356f35e672d",
+        "CM_OCC:951cd64d3b3fcd27d74e71e73d8c47fe9e49c07d4fa03f8ab23b02e0451bf9d9",
+        "CM_OCC:dab25d42ba757e6f57fa90cd53a7cd9282b782202cb30e8209a67f1f67c6bef9"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:3601b087a9e4bce8da9d8296488253b0c5cdcbcd798047cd693f108722cb0f44",
+      "source_label": "Casamino acids (BD BBL)",
+      "raw_source_label": "Casamino acids (BD BBL)",
+      "case_input_sha256": "0de41215abf3d7038c90734a8942b6ce35a88cf518e3b25bb2c718f764e331e2",
+      "scientific_payload_sha256": "87e3d821cbffcc6cd5406672cb587d7d3260b303857c10a5e1db9b410d2071fb",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Both BD BBL occurrences explicitly specify ordinary Casamino acids, in otherwise different formulations. No vitamin-assay or enzymatic qualifier is present; do not infer sameness of entire recipes.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-d81757d0e993110d",
+        "ma-recipe-39788c20ae2ca427",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:6032aab51c234a86f9aedfc86cd7b773d20f1b615dca12214c3e49f7ac1a47f6",
+        "CM_OCC:33a6050a5e5abaa20f629a45148b9bd71cbe7dd2ed21aae786041c0cc6f83da3"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:38a7ddb8ef476638740adc13bc7a8652efea3138809d5e9c445e8dfbc670cc95",
+      "source_label": "Casamino acids (BD-Difico)",
+      "raw_source_label": "Casamino acids (BD-Difico)",
+      "case_input_sha256": "f424528e9ad220d207eaa167e3702e415d1dffa8479cad18c9158fc8a912fe04",
+      "scientific_payload_sha256": "2061f841ca7dd281bff2ff5bbd7d609dfb1363c8ff63a9e2c46c974fb75ef160",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Official JCM1445 directly corroborates 0.5 g Casamino acids alongside 1.5 g tryptone. BD-Difico typo is not a new preparation; exact acid-hydrolysate identity is appropriate.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-9dd7847a6e8cd265",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:15f873bfc726ee3b10ab53f2c5ef88271a2134b92bd506d842a73159631b615c"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:3d0caad72e5b315a3c43597834e1f92212c8e7961dfe98ff1c376ddd79c75c36",
+      "source_label": "Trypton",
+      "raw_source_label": "Trypton",
+      "case_input_sha256": "5f1ebde25be3f20252c296bf534ce752f2a5eed1438c8a989c70e74bda903e99",
+      "scientific_payload_sha256": "56951ad6b3eada83fdfb3732ae0a3f9ccd73f97b0cb390bb95b1218524adc2c8",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Three Trypton occurrences are peptone-like source inputs without distinct grade/form qualifier. Spelling normalization to tryptone is supported by manufacturer identity; no claim that every inherited Tryptone alias or held row is correct.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-tryptone"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-000213ee134c7650",
+        "ma-recipe-cd73cba9579f973b",
+        "ma-recipe-b588c07365cf79f1",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-tryptone",
+        "ma-jcm1445",
+        "ma-cross-shard-owners",
+        "ma-owner-2d4142f88d854838"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:aeffc18c25b21ac73142a9f6a58e0d35aa16fb9c143d5726f54dd54e2aebd82e",
+        "CM_OCC:10afbbe2980d3183b628cc9c2836bd0799ef8b9b07bddc47305fcaae76ef51e2",
+        "CM_OCC:f72605901d0df541fe79cca95b525535021d31af9215dda5de64b5878b7d0e1a"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Tryptone.yaml",
+          "sha256": "2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:41725f5363a7c116a0261078053efa86283390b807412e81c7d21d8e71cfa8b9",
+      "source_label": "Artificial saltwater (see below)",
+      "raw_source_label": "Artificial saltwater (see below)",
+      "case_input_sha256": "83ca9ead69fa02da963dd89236079fed57c4f3b3a137a82e96943f25265895af",
+      "scientific_payload_sha256": "61278b29a959d2b599bb67f4cd1acc000fa91439ab63a7adbe672edb75f17c31",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Official JCM629 provides nine stock constituents including exact hydrated salts and water. Checked all components and raw batch quantities; frozen merged150 G_PER_L is not adopted. Whole stock is not a salt component or exact whole-medium formulation.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "proposal_ids": [
+        "ma-stock-jcm_629_artificial_saltwater"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-a2d32d72985e7804",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-jcm629"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:830bf6b6ceb58bba00230af54acb879c1af53a6bdff7f665907f7601544c4627"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:47c56828602c75184262000c440ca203129cbf39969e77643e5029f58bfc347c",
+      "source_label": "Soytone (BD 243620)",
+      "raw_source_label": "Soytone (BD 243620)",
+      "case_input_sha256": "ef1c22b99c0d02b387cbe83ce59a501476b7703a7dfcfc429f7e9084e580aa89",
+      "scientific_payload_sha256": "1b9d0fe81dcf607287846ada8ac5e4577c3eb79f290f9526a11ebf1d17d3274d",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Catalog243620 directly identifies Bacto Soytone, an enzymatic soy digest. Existing Bacto Soytone tombstone and SoyPeptone/Phytone shared broader parent require owner reconciliation; catalog evidence does not justify automatic merge.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-af21352b679a9c96",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-243620",
+        "ma-soy",
+        "ma-owner-b9c7e1b675da46d8",
+        "ma-owner-54575fd2ae67a2e8",
+        "ma-owner-785d55067681c80d"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:c5dc8e4f61fe8a824f44b29b6e49964a9d153761cfc1c03844daa6704b8a8dee"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Bacto_Soytone.yaml",
+          "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535"
+        },
+        {
+          "path": "data/ingredients/mapped/Soy_Peptone.yaml",
+          "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+        },
+        {
+          "path": "data/ingredients/mapped/Phytone.yaml",
+          "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:4986dfdb98fc74ec00f50fe15010e6e6f4d3aa3d80f00883572984e04cbaa5f6",
+      "source_label": "4 N KOH",
+      "raw_source_label": "4 N KOH",
+      "case_input_sha256": "baef7284e3b9b705cc5bb200cfc5c4a2cc313cced349cdd9212857e26350bbc0",
+      "scientific_payload_sha256": "1ac276c3e729270fb8db1c504eeb32c910a36073e85b367fd1303aa08d5f901b",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "LC source supplies variable-dose 4 N KOH solution. Normality and pH adjustment are not solid KOH identity or final medium concentration. Preserve source stock scope.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-4264a7754d038c9d",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-wees"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:d416da9ac52571933d7158d177665a18b3b4a036968302bf9b0e5fe4f1a272b9"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:49880c5c78951119414b42f6f38d108ce773821430dd5ccfe8ec51e3416326a1",
+      "source_label": "Bacto Vitamin Assay Casamino Acids (Difco)",
+      "raw_source_label": "Bacto Vitamin Assay Casamino Acids (Difco)",
+      "case_input_sha256": "5e2cf978a79fadce9192597881ff107c251aafa6b6fd68f5341b89bce445b407",
+      "scientific_payload_sha256": "9b2bde3ee38fd5fe44edea6a9bb5d397d2740a6f94452b0e24b0dc4b0c3df1f5",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Both NBRC402 and284 occurrences explicitly name Difco Vitamin Assay grade. Manufacturer documents special vitamin reduction; alias belongs to the separate vitamin-assay owner and not ordinary MeSH-exact Casamino owner.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-casamino_acids_vitamin_assay"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-910841e72207b532",
+        "ma-recipe-58f592abacffc27d",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-owner-4a2fcdff99d8afac"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:70566f5ed85f66514eba044a2dcb7c3632f86caee7f7617b1c705dc51d511bac",
+        "CM_OCC:b67ae7d99817d563508de79f97dc16ebb78a53f118d6a124747e34488f739043"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml",
+          "sha256": "4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:4d099b22831c81dab8c1b45b6e828f4bb8a7dcc241566b1797a132069acb5373",
+      "source_label": "Bacto Tyrptone (Difco)",
+      "raw_source_label": "Bacto Tyrptone (Difco)",
+      "case_input_sha256": "a4b77f8060d1ed5313a7720f292c265dd71a49e4ff0e5b754a4da286173e54b8",
+      "scientific_payload_sha256": "b3fb1001afedf3c7140ec51a205599f1bbf35e06c43d5502872cfcdf32c10b73",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "All three NBRC LB variants explicitly use Bacto Tyrptone (Difco), with antibiotics in separate stocks. Typographic correction to tryptone does not merge antibiotic stocks or grant approval to inherited held synonyms.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-tryptone"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-62be9067184d4ac0",
+        "ma-recipe-c2fb99ca5eafd207",
+        "ma-recipe-1446afa364c920e4",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-tryptone",
+        "ma-jcm1445",
+        "ma-cross-shard-owners",
+        "ma-owner-2d4142f88d854838"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:e184d331dcf6b747bef2a5f93cb84408631e837bd0dd06c02f7674f84164e296",
+        "CM_OCC:814beba0ec24346de2389697eefb98d58451badf378709497e537eb14fbb3dcc",
+        "CM_OCC:c5c0504025a28a060f46d5d8e9008c1a706b1f9381c7d27ac76ebf619e0acc56"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Tryptone.yaml",
+          "sha256": "2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:4e10166ca878420d25daabb8d11b70b49d24a28d7af9ac6f335f9dec82d71db3",
+      "source_label": "(R,R)-Butane-2,3-diol",
+      "raw_source_label": "(R,R)-Butane-2,3-diol",
+      "case_input_sha256": "0bfebb5343c896ba4f81033f184953f1c111b56023c99b61fb51717ccd0208bd",
+      "scientific_payload_sha256": "897607ae8f7221f2efb8484e1c9faf95700defdd21e2abd612dcd8d3d422d65e",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Frozen source explicitly specifies R,R stereochemistry at25 mM. Independently checked CHEBI16982 canonical label; using the exact stereoisomer is supported without relying on ambiguous D- naming in the medium title.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "proposal_ids": [
+        "ma-new-rr_butane_2_3_diol"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-fdfbb3ff4bf249d6",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-chemicals",
+        "ma-local-ontology"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:268346762a047a4f95882c8b5710642b4734be87deafdaf6c060902f7b68163c"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:4f2f27588c75935a327a8ac16544fd9c4bd45958488e6d1697120d12fba25a11",
+      "source_label": "Methyl-cellulose",
+      "raw_source_label": "Methyl-cellulose",
+      "case_input_sha256": "a015c57f58242a343fbbb2e15f509ae26b06532dcab24ff8e3917950db2652a7",
+      "scientific_payload_sha256": "778d00572baee55f28ba014207e02050e4f0a61f7fe904e6ce7407894f4e6b1d",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Nested P5 methyl-cellulose stock has20.4 g/L solute and separately modeled carrier/stages. Exact polymer term CHEBI53448 matches stated identity; no degree of substitution, viscosity, molecular weight or whole-stock identity is inferred.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "proposal_ids": [
+        "ma-new-methyl_cellulose"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-cb5a972f2d1da8e1",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-chemicals",
+        "ma-local-ontology",
+        "ma-direct-dsmzP5",
+        "ma-chebi-53448"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:40c31ffe8b4268b24bc6b781627559f57558394a0c0fd2e42f780880587dd276"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:56008d7a62e3ae73e442a53454333f825a234824fc68274387414d3235ae6c42",
+      "source_label": "HCl (conc.)",
+      "raw_source_label": "HCl (conc.)",
+      "case_input_sha256": "464f6d463b5d24a8be873b691de95ca07e38305113316945ab858446fcf687fe",
+      "scientific_payload_sha256": "66fa9ed7b4ffc0e7244c8dcd47aaccf2e1fb51089dd71036c3b7ca3d3554c1b5",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "JCM1148-linked source uses concentrated HCl as a solvating input. Imported2.5 G_PER_L is not evidence of pure HCl or exact stock concentration; current unresolved stock disposition avoids that error.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-944891f621c75991",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:49189ad1af7ccf5b6a015f84bce9d1ebe808d4527c0e9775bd09c117d5f7da4b"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:5beefacee498ae527bbd921bbea92dda5bf4d89ef4aea80f2496f9e7f7f1b610",
+      "source_label": "conc. HCl (~12.5M)",
+      "raw_source_label": "conc. HCl (~12.5M)",
+      "case_input_sha256": "f44ea67d8f3144f449507d7cee23bc43944dbb0138f976aefce570bb458b8b02",
+      "scientific_payload_sha256": "51e1394a25f01ae5d9af8f395d1766bfa5eee8155eb29ceb252d8e806533686f",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Approximately12.5 M explicitly identifies concentrated hydrochloric solution but cannot turn imported8 G_PER_L into a verified dose. The whole preparation remains separate from hydrogen chloride molecule.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-8a9aba27694b6fc8",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:191a7175d5b3ef4df79353e5abc27d88086d0e17e608f84c59cbba0ceb79f1c6"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:613f02a2ff62d6c75a4efa1c9fb26c51dfb7239f1f653e9541211c7ef3838759",
+      "source_label": "Stock A",
+      "raw_source_label": "Stock A",
+      "case_input_sha256": "761999a881c3b13461ad0e958f021a0c23213de5550c606431ddc8a6a229fb58",
+      "scientific_payload_sha256": "ae63be98addec56056ae8ea686e9543a1a1be1b7932071207e7d64d884c33f3d",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full Friis source contains flattened stock A/B and unrelated researched BHI metadata. Related Hanks recipes cannot establish this exact Stock A composition; direct source recovery/hierarchy reconciliation remains required.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-eba4cc2e8d252663",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-primary-mixed-10",
+        "ma-togo-attempts"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:a8d43fe3097407c2019d078cf5a49d02de35d791a96604e0d29137c11e4f4023"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:659d84a7117311501a228b7a288caf11adee80435be7ff9f123094772661ff2e",
+      "source_label": "DW",
+      "raw_source_label": "DW",
+      "case_input_sha256": "6a757a5e36f0498f59fb2294565cd69ee07c80c131337a1d4c0611a286b94dbb",
+      "scientific_payload_sha256": "acf72ce231775a34d7fd841eb3c21f90f5ac75c62758e54609ff6d427876bbb0",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Both GYA records use DW as solvent and show implausible1 G_PER_L import. Water identity is plausible, but the abbreviation does not establish distilled versus deionized processing; no unwarranted Distilled Water alias is added.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-8872c1891412ce17",
+        "ma-recipe-f26ad6b938404409",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-nite1139",
+        "ma-owner-458e87161555bb11"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:22d77452a57dd77724cbcd6efe82b240b574ad0dea338302777c27ea8e2188d2",
+        "CM_OCC:ada8e21e6d5c03778d2df8b3be08630c6ce3bce482fe65f304fabc1278bb8691"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Distilled_Water.yaml",
+          "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:6b5d5dc18d6c9299be575c473148ee4032924b43c37cf612082787e7f5aaafaa",
+      "source_label": "Casamino Acids (Difco)",
+      "raw_source_label": "Casamino Acids (Difco)",
+      "case_input_sha256": "70e63dfa44a4216e2dde3f73a5ff88d517a9cd18e6b099da944aa862b2625349",
+      "scientific_payload_sha256": "c5e791369d70ce8ac019f852bec5466878b37d2d1873d289f28deb1a049be0a9",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "All three Difco ordinary Casamino occurrences retain their recipe identities, including NBRC913 duplicates from different imports. Source material can resolve to acid hydrolysate while duplicate source rows stay traceable.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-903acf58833ada39",
+        "ma-recipe-ed4a1bb08cbf6d28",
+        "ma-recipe-47e053654ee780b9",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:df093e320ea92df629bf70f0b8c416a469b62c087432702fe7fec51a202ea216",
+        "CM_OCC:26df4c268e940e9a1bea1d89c5b788b3e025f1c8d8115fcb1695326b2b3c75ea",
+        "CM_OCC:541041284bbc6c42d87eda572ae315be6a6e0ca072030e646ed539427d66885d"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:6ec378b0143c943654248611b3ea8ec5aa9a52d9c096ff6a17411b28b1d1acf3",
+      "source_label": "Czapek concentrate (see below)",
+      "raw_source_label": "Czapek concentrate (see below)",
+      "case_input_sha256": "bce7d7a898dd5ed4b5662bd94bda0a38032d46b5940dfa078f91b90183b3c71b",
+      "scientific_payload_sha256": "df53464a712c6eb875fd93dfa84b027eaf3de0564e36687bbbc984652e4aba63",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Official JCM226 identifies seven stock constituents and100 mL added water. Checked30/5/5/0.1/0.1/0.05 g amounts, hydrated forms and10 mL medium addition; no final-volume concentration is invented.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "proposal_ids": [
+        "ma-stock-jcm_226_czapek_concentrate"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-968ecdc748e00ad0",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-jcm226"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:4eed21da730e1f2dbfad1193217564efbd9af3dbbb7ba598644714c8cdb2b3e6"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:709bbaaaa023323b85e52d1c2ce7843c452f720ed20eca82a792c26136dd6b1d",
+      "source_label": "Metal mixture (see below)",
+      "raw_source_label": "Metal mixture (see below)",
+      "case_input_sha256": "70c6b0cdb30ece9845f634fbe865b273192d3e44380ac8c154f5fae1d74a5025",
+      "scientific_payload_sha256": "9a3131f3a83af5abe9612219b239e8b0d9ab30f487cd59749190de78c78b9c49",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Official JCM1118 actually prints unusual MnCl2 hexahydrate and a missing ammonium stoichiometric coefficient in molybdate. Suspected typographic defects are not authority to silently substitute familiar tetrahydrate/hexaammonium formulas.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-d3a040468ed8f664",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-jcm1118"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:87c98929e9e154490a4a010f08e1ec974117439dd9f20a41e2531d94f0c88ce6"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:7f1cbb5bc76797a73ecd40fd59390fcaa30589c1cef8fbcccc94008833be08a9",
+      "source_label": "Bacto Casamino Acid (Difco)",
+      "raw_source_label": "Bacto Casamino Acid (Difco)",
+      "case_input_sha256": "dd52006a65d39eebc256aafc73e246680d96d7b479d99f886cac36613163b5df",
+      "scientific_payload_sha256": "f586fe76ff0e324269f5e0b1758967b3ba96aa2ee325be02decadd908c4a7db9",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Both NBRC1553 and1405 source labels are ordinary Bacto Casamino Acid (Difco), with0.5 and5 g/L doses. Singular Acid spelling does not establish a pure amino acid or a different digest.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-casamino-distinct"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-9946b76d9e7a5c97",
+        "ma-recipe-e06f0d27bab4832c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-casein",
+        "ma-bacto",
+        "ma-jcm1445",
+        "ma-direct-mesh-C017721",
+        "ma-issue213",
+        "ma-owner-1aa97fc00f9cd361"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:86c6a594b8d9c853b207168547341ead005faac27967f014e8b32e599b454ca1",
+        "CM_OCC:a3fd8c3ab9c42d70f32bfb4ff2507c8f478c02af6aac8bb995dc2e7d50ea76ef"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [
+        "MA-SR-01",
+        "MA-SR-02"
+      ],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:8037a7893e2bf59652de97596f646765b541dd662256657dd6d71e491038964e",
+      "source_label": "Man-Rogosa-Sharpe (MRS) (Beijing Land Bridge Technology CM187)",
+      "raw_source_label": "Man-Rogosa-Sharpe (MRS) (Beijing Land Bridge Technology CM187)",
+      "case_input_sha256": "35d1d4d688edcd176ba2a55f2b2d9524d59ffaa28064fb229da0f343cd2c9c57",
+      "scientific_payload_sha256": "dbb4cc401c1071f541f466e73fb982d8ee80142f20a2660da4a55204837c7560",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Frozen source explicitly identifies Beijing Land Bridge CM187 whole MRS medium. A nearby CM188 agar product or generic MRS recipe cannot replace this specific broth without a product-source link.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-5587164f65afec15",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-primary-mixed-09",
+        "ma-search-primary-mixed-10",
+        "ma-togo-attempts"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:54649402989f7cbb5d50411920ed9a884ca8f20b1268c49c5877f8999e634e1b"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:8841d512a6f4a3df2a1592d269fbbc2827ab04da71d4349539b6c71205de5fa1",
+      "source_label": "0.025% Resazurin",
+      "raw_source_label": "0.025% Resazurin",
+      "case_input_sha256": "add2f5e470e79d0dd8ba2496e1246611da9163dd9e94ec991b05ab36a8e4a783",
+      "scientific_payload_sha256": "827af656f64d9512681dad581ffc62b7222ad90550e22d8bb7983f13dc8bec65",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "All four0.025% Resazurin occurrences are explicitly solutions at imported4 G_PER_L. Reviewed each ATCC-linked context; no carrier, form or percentage basis can be recovered from those frozen components alone.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-d7af564a8ed3e0c9",
+        "ma-recipe-fd1be3c67130bb75",
+        "ma-recipe-17b9f16c92a9a907",
+        "ma-recipe-21bef329dcbe2b68",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:db40be6b9920c018479a53d3a7ce8608e890051bc60b29291657a88500c91ec9",
+        "CM_OCC:906f3957b6048ea6bf349a30e2a7a1bc41dd30ecc5a28d2a4f4da0f42aed7676",
+        "CM_OCC:781a1b74e8d099959704a744361b4af9dedcdfc55cae4e1df26876d94d30f6f0",
+        "CM_OCC:e2d1e69625b003e8d1bd734cf779ee3fdaf4504a0c5a7101abb9b2ace6ec6093"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:8ac0efce4a267aa90b8e1c0fd79c10cf28107c3c38d7071dd59df9e8273c3658",
+      "source_label": "α-Ketoglutarate",
+      "raw_source_label": "α-Ketoglutarate",
+      "case_input_sha256": "e4fbf173aa4b648d9ffdc31b99b235e72111ed664af62d3c21fecfe04503fb5c",
+      "scientific_payload_sha256": "709af094fc26e82ecd06f3e201ed715e0e45b039395887daa1520e06ced95bb6",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Three bare alpha-ketoglutarate sources do not identify acid, monosalt or disalt. Rejected ambiguous disodium-owner aliases and known alternative acid owner are real competing routes, so no child form is selected.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-5e9cd1cd3846e830",
+        "ma-recipe-cc45db39d21fa081",
+        "ma-recipe-a562ed4485b1c39c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-local-ontology",
+        "ma-owner-0ee10fb6f9aacd89",
+        "ma-owner-cc852c586e35a3ff"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:937abecdb69e4f1f39194b54f8a4f9c5299da7fdd9e66ecf97c48bbc114c9977",
+        "CM_OCC:17d5d665e4ce3793f83e0c065a84f59ec52681f2cc4e88e2e4f2f8aa5454a3bc",
+        "CM_OCC:0fc11e2d339b28275e88697f5c8c8a823fc23a90062423b8332b4dfff76b029b"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+          "sha256": "0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d"
+        },
+        {
+          "path": "data/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml",
+          "sha256": "cc852c586e35a3ffa025ce9446da05dc235a6df8a7c0e7c2fa4c4d6ee18d371d"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:8c5938891660018b76726fdc67022785a1e2659b949987eb6f28a776a16a84c9",
+      "source_label": "Tryptone yeast extract salt broth",
+      "raw_source_label": "Tryptone yeast extract salt broth",
+      "case_input_sha256": "79f44bba67ab900e040cf8959dc25a33311ac534e1666cc11d45bc7717b92604",
+      "scientific_payload_sha256": "2290583a1c42cf31466070a8c21eb48049098f537afae721085a31a07f74fcf7",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "TOGO2821 frozen source specifies one liter of TYES broth without internal formulation. Failed direct recovery is documented; acronym expansion alone cannot provide a complete formulation or exact existing medium identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-c1ff916174b0e7df",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-primary-mixed-09",
+        "ma-search-primary-mixed-10",
+        "ma-togo-attempts"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:340f86e8da91f94407ad844a28bb86a11dfffe8020776518e1e953ee4104f019"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:95cd2a247743d8144c3cea789aaaa74f5f116e044ecbf9db6cbccc5d03312f76",
+      "source_label": "Vitamin-free casamino acids",
+      "raw_source_label": "Vitamin-free casamino acids",
+      "case_input_sha256": "bf71061a7edf16b4da966c797759521a4b19498e609708a1123a9c900110fc8c",
+      "scientific_payload_sha256": "1be5dcc78e3fed2dfe6b595dbb54e71286e613fe9d8b721b182492f0d0e6ad6c",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "All three DSMZ668-related occurrences agree on vitamin-free material1 g/L, including exact MediaDive solution1410 provenance. Manufacturer's branded Vitamin Assay process is relevant but supplier linkage is absent; no automatic brand-grade equivalence.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-e7df8db10651057a",
+        "ma-recipe-dcb9974bba422d5c",
+        "ma-recipe-90de0a7d31e82324",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-668",
+        "ma-casein",
+        "ma-owner-1aa97fc00f9cd361",
+        "ma-owner-4a2fcdff99d8afac"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:a0a85a4407ce2509a1410fe559214ca15e39f1299de748a03ef6e894360fca03",
+        "CM_OCC:5e6a06d6f3066e0c10096302ef7d9a39c28c99bfa7c4259a284e7d86e15c9fed",
+        "CM_OCC:6e53a01ded91222539e0a410e2b3389aa42015a7962b05235d7783e5d2ecef15"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids.yaml",
+          "sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7"
+        },
+        {
+          "path": "data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml",
+          "sha256": "4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:9985e112003091fba434ac19f81def9acb5a620a6ca4f407f6d8c990cafb1d06",
+      "source_label": "2-3 N KOH",
+      "raw_source_label": "2-3 N KOH",
+      "case_input_sha256": "84d077b97e3ab22cd9eeac65c15e68009beec426c7ce479c503e024e69ae0681",
+      "scientific_payload_sha256": "7d107b869237de2ef91ecea916dd7ef2c95fb1a57c85c0e3b5e88d2b8f5244fc",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Both Clostridium sources specify a2–3 N range and variable addition. A single concentration or solid KOH alias would erase explicit source variability; retaining unresolved preparation scope is correct.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-693548ba2284b840",
+        "ma-recipe-7dc863ff5b8ac1b9",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-wees"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:6f7e34f39a15555158c1fd457630a40726dded4346bb141e8fd148e3c8f8a0d0",
+        "CM_OCC:401602a33cbe82a01860161e8293a94b543d397f64da31c1ff34b59a0825f931"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:a0604fd40a58b2fb49d04eb908988742b8f97fb408f017a39475feb72ccb3872",
+      "source_label": "Volvic water",
+      "raw_source_label": "Volvic water",
+      "case_input_sha256": "29b97f7827d9b49ff4e39dc1163530f224e5c7828fd41ca0268395fb7ef4ad77",
+      "scientific_payload_sha256": "6a07bf0adf2ef41f266c0b84c513d4143b868fcd75bf5404372c18f9ba0949d3",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Volvic manufacturer's composition confirms mineral water as a material with dissolved minerals. Frozen1 G_PER_L does not convert it to pure water or a measured formulation; brand and source preparation stay distinct.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-570b5b95a05e1449",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-volvic"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:48db59d2d11fe3086d2f1e2c9ad89db2a49262e1bb8ad85d0daa9b1c4fb7a0fd"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:b3a22aa312c1820b6089571329af3857802279cee6e1d718e7cd98c23867b2da",
+      "source_label": "sulfidic ore",
+      "raw_source_label": "sulfidic ore",
+      "case_input_sha256": "ccf2c9d80ac65e0db923bfefbdfad293d6821f7e6046fb5a911dfc958963f854",
+      "scientific_payload_sha256": "512b18f088698d5a393303f56ccba998d872d3a6fb2f64f9f372f68bf22258ef",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Official NBRC929 gives alternative sulfur powder, sulfidic ore or yeast extract additions. Ore mineralogy and source are unspecified; no pyrite or elemental sulfur identity is licensed.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-29e204ab016d4f9c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-nite929"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:808669b159389d241585c2e7d00941a2a35adfec444b885baefa468df22dfc1c"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:bdc354b202a26258b2881cac5f4f51195ff048e4260ff45ed2b2c20d1b44fdbd",
+      "source_label": "HCl(conc)",
+      "raw_source_label": "HCl(conc)",
+      "case_input_sha256": "6cc21f7b7ee78d4ab8adf0e78ee4b5b0d7c189e5348c9936ef1543011a09d731",
+      "scientific_payload_sha256": "6e57b90a1a4d0eb3dcc12f5f4c6bc55707d94df00d55039d35008d639c23ab34",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Nitrosolobus source concentrated HCl has imported0.3 G_PER_L with no verified stock strength. Same concentration/form boundary as other HCl cases, evaluated for this separate occurrence.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-51106457d57f7677",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:1e7fa7372f33ef8b63fd2783065f42791b10fc21977b0418e5a4c4593238fa1b"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:c078f2813920121a85ed8fb2935cbb4aaa669b364db5023958b24162ab6881f9",
+      "source_label": "Lecithine",
+      "raw_source_label": "Lecithine",
+      "case_input_sha256": "bf1c9a264201b6324faa3442fe807fd6ad7d9e2868e8d0640e58830405d40949",
+      "scientific_payload_sha256": "770e06fa5b6bbfb858b07bb662e6dc9ce3fa6ad26f41a1635c8e205737ee89e9",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Official NBRC1498 confirms Lecithine1 g; CHEBI61995 is a mixture, unlike phosphatidylcholine molecular terms. Spelling alias is appropriate and does not imply purified individual lipid identity.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-lecithin"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-e1e8ea9f6f87937c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-nite1498",
+        "ma-chemicals",
+        "ma-local-ontology",
+        "ma-chebi-61995",
+        "ma-owner-1243821e423d01ea"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f97bf5eccdc295f0970f2f80d354919ed13c02adee78a1c55ab06c96e221c762"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Lecithin.yaml",
+          "sha256": "1243821e423d01eae341649cae77f2dd0b4daa55513e3f0f3ccce1de6379024e"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:c7917a6a1b14a56f681fdb0695f29b448ef833f39c4a7c0d1f12650eeb107d4d",
+      "source_label": "1 N KOH",
+      "raw_source_label": "1 N KOH",
+      "case_input_sha256": "bfd5f5a0d42dec178ad536002c4cb82628601fe87ac245eabea1a64407c5ee47",
+      "scientific_payload_sha256": "e836f3ac768406d3c1cb8100f0431be30613c676b28a9b91e5c24cb850151ace",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Primary WEES recipe supports5.4 mL1 N KOH per100 mL Fe-EDTA batch. Frozen54 mL/L is stock-stage normalization, not final medium dose or pure KOH. Existing CHEBI field does not erase supplied-solution scope.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-a2680abc0f7883ce",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-wees"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:55df2392319afb709f3bc4cbedb995599796aca6a4a5e48a93a6d50a819f3903"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:d7c970289ce42377c194e1130632ca66bb9942b807fd16a4d5929e1c2bbf7f74",
+      "source_label": "Lysine-HCl",
+      "raw_source_label": "Lysine-HCl",
+      "case_input_sha256": "26cb6a8ae30793d8b52ec90fecde7a8fa417115dcf24488e37c1a368ec7e9d9f",
+      "scientific_payload_sha256": "f36280bb5c4f093c723789f15e75afd57227a3ea15421b84c01cecbfcb1f3af1",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Reviewed all eight MediaDB Lysine-HCl occurrences. Neither organism nor millimolar amounts prove L stereochemistry or hydration; source-specific original references are needed before selecting an L-hydrochloride owner.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-880d388577afcbf6",
+        "ma-recipe-6059fcb6511eb218",
+        "ma-recipe-e3879076d8e43e9f",
+        "ma-recipe-29eda3f5b5a054dd",
+        "ma-recipe-f874b38ced2ec1c8",
+        "ma-recipe-2d3e28217c23c1bf",
+        "ma-recipe-cdff3cc88fc50aa4",
+        "ma-recipe-e76451c09ec522d1",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:028e06f222a4dda912d9f94fc4b76ea8834be6803d4a5dd98fdd9909e423f65b",
+        "CM_OCC:269ec874b131a508ca8f5cbb6f6cae8031c55c8ae0eb97108442d5d2a72d6ea6",
+        "CM_OCC:e9125a608aafa33f362f3778226e348a6928f815d9a1a3e691a8f52ca6110f88",
+        "CM_OCC:8a72be076e5c21d726d4bb5ae94c6251694e00601c9eb4c271e386db2af3dd97",
+        "CM_OCC:a166889f195b4bd8aeb579c00798114e68ef55e2e6376a74ceb321624d4f98dd",
+        "CM_OCC:a4c160e620cb8266a51cff28fe41958bcc232c902bf1c17700db332cd7cc7cbd",
+        "CM_OCC:12973763a432c312687e1a4d9f9ed943db3ac8aed9db0211e00eae19ad843203",
+        "CM_OCC:64dfd0df8e78e0ae1aebb397c58fd0c51c98aa6e814789d0d59ed90d27f73580"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:dcf87a8525771d088c4ec6834153ca7162a72c7e6813ba5eb68743d8945eb7b4",
+      "source_label": "ACES (N-(2-Acetamido)-2-aminoethanesulfonic acid)",
+      "raw_source_label": "ACES (N-(2-Acetamido)-2-aminoethanesulfonic acid)",
+      "case_input_sha256": "55bfae2207bb6fdbb6191eca521f20a5fad7a9e17a1c37b4cdcb884408371619",
+      "scientific_payload_sha256": "10d55e4b930c8d77b1e6701dd73a69ea36e94edd9ae52222118169d30a17addd",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Source spells out neutral ACES acid, while frozen generic CHEBI39061 includes tautomeric grouping. Independent CHEBI39060 definition/label and current owner support precise acid identity; rejected duplicate Aces owner stays unreleased.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [
+        "ma-alias-n-_2-acetamido-2-aminoethanesulfonic_acid"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-8c67c36d01b4a5ca",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-chemicals",
+        "ma-local-ontology",
+        "ma-chebi-39060",
+        "ma-owner-b3cc5464f6b134d5"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:b817d5bd074bb2cff6a8579a2bb20d9407537c5f11aa2b497ef3433ebb1f1721"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+          "sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:dd2c3494e9655e7ee88e98b1b52ec49db284b904a146c3cf00939784653db2d2",
+      "source_label": "Fungizone (Bristol-Myers Squibb Co.)",
+      "raw_source_label": "Fungizone (Bristol-Myers Squibb Co.)",
+      "case_input_sha256": "2f8a6f6390f59138fbd1929dcb3c5a3b4873855330051bc332c9d2c8622561e8",
+      "scientific_payload_sha256": "2699117fba76872a86591e4d474214b79fcfe29776645ae4895876e9d9d1097b",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Manufacturer Fungizone label establishes amphotericin-containing formulation, not pure amphotericin. Frozen Bernarde-source5 mg/mL is retained as source text; no product presentation or corrected final dose is invented from current label.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-284e60952695e1a7",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-fungizone"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f2b62f86b2bd551942d4d8276fa100edfda9e68be5d4b20fc34ff7f34369ff64"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:e85e94865473b54da306af750081ccd8dca220dfaa68c856bf6e47e051f5f347",
+      "source_label": "CM-Cellulose",
+      "raw_source_label": "CM-Cellulose",
+      "case_input_sha256": "a3f2f5344a7597e3aebd656ced19f664b766d40a3b897a3429a83b98af340bd9",
+      "scientific_payload_sha256": "0e908b8fbb701b61271ad61ff06ea522816fb69ffffbcd1947494d42a0c384d8",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "NBRC887 supplies CM-Cellulose without sodium qualification. Existing sodium CMC owner evidence from other recipes cannot determine this occurrence's counterion; generic polymer evidence is insufficient for exact sodium product alias.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-18d8963dcd65bef5",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-nite887",
+        "ma-owner-39c13e1211c19e89"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:39a466c7d90f564249fb983e63bbd8b9670416b2b349cd6d6bdd58cb3d7fad71"
+      ],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Carboxymethyl_Cellulose.yaml",
+          "sha256": "39c13e1211c19e8973469abed34afb21c2b4b42fdb90abaabebb2f6c1a77a0d8"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:eb8b81737632b88e37f65acbbbd7811c8371af73ff212d409dc37fc75fbb68de",
+      "source_label": "Na-syringate",
+      "raw_source_label": "Na-syringate",
+      "case_input_sha256": "0128b587c6173bb432a7e368c648fc58c4769fbd217f97e847320c8f74d84f5d",
+      "scientific_payload_sha256": "d0c1667c5db5c2e789160dd924aaefefab36df85528fe87af036d95b051245b3",
+      "status": "complete",
+      "outcome": "accepted_proposal_only",
+      "assessment": "Archived DSMZ787 specifies Na-syringate stock; exact sodium-salt CHEBI132110 is independently label-checked. Proposed owner denotes solute only;0.15 mL6% stock and final aliquot calculation remain occurrence context.",
+      "disposition_reviewed": "new_distinct_ingredient_proposal",
+      "proposal_ids": [
+        "ma-new-sodium_syringate"
+      ],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-d837f3985581422c",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-syringate",
+        "ma-local-ontology"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:e697fe13cc4f3ea3be3b470bcb9531a1b6f1bea6971c4c21d13d836afade7533"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:ec04d4760d1d8052791fec5d8a6f5222dab447b30e1b16617fbd48daddf9c088",
+      "source_label": "Lysine HCl",
+      "raw_source_label": "Lysine HCl",
+      "case_input_sha256": "a561d1a702523885ebce572011a377fb443ba7ba44e8826d4708558f1d422fff",
+      "scientific_payload_sha256": "f5c4a254aa06785a5def8ba8d652204b61c685eb9f7674d013c837923bbdcbc3",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "P5 nested Sigma MEM50X component names Lysine HCl at3.63 g/L and lacks exact catalog linkage. Do not infer L stereochemistry from the common MEM convention or multiply50X a second time.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-cb5a972f2d1da8e1",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-dsmzP5",
+        "ma-search-web-search-04"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:5f32d36d8cda1d0159b82254b88d20a95ee6a86cf2bb435d48552fa0b627c668"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:ed5d40a2bdb4fe0a2cdde9c375a20a1d07171cec8d902157aaad9ed05e2d20a8",
+      "source_label": "hopped beer",
+      "raw_source_label": "hopped beer",
+      "case_input_sha256": "6f7c594e2090b2b5b377aaec9e60482731105909f746094a340a37d47d4911a1",
+      "scientific_payload_sha256": "39605b627e39d081a1efdf51d2c54a591c5308b4e1385d26a3ef94edadfd3394",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "JCM426 source directly replaces water with normally hopped beer. Both imports preserve beer material, but one has a unit defect1 G_PER_L versus1 L. No exact beer formulation or pure constituent grounding is warranted.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-26776127a3b06407",
+        "ma-recipe-3248d6f6fef06002",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-beer"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:598facfea1e3b5af4009308f3cdb2ce103f8168c5b60f4c59094cd57d7561506",
+        "CM_OCC:82c4b42d6751f7f449c29092e3733282bda67850c1b09a7217d22367785fce3e"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:f5abc4c1747d31cb6cde5f9d28490134fed6c086ab375149452795faaee11153",
+      "source_label": "Cellulose (or Cellobiose)",
+      "raw_source_label": "Cellulose (or Cellobiose)",
+      "case_input_sha256": "79beea2470c386b7d3ba6e1500160682f3e059d7a04d8693a81b1cc976327090",
+      "scientific_payload_sha256": "68236e032507a8d168bf6ed2b94ea5888b41b283c3feff3786567dfee8ddaa88",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "NBRC905 source disjunction is cellulose OR cellobiose, a polymer versus a disaccharide. Neither lexical first-choice nor a combined molecular identity is valid; recipe alternatives must remain explicit.",
+      "disposition_reviewed": "malformed_or_nonchemical_token",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-33eaf3fb58d64200",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-direct-nite905"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:9d007ebb0a4fb59ca2c549fd94cedaa66ba003fd5b2ce4e2985d044fdff0e197"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "CM_NAME:f9cedd9c2786bc916c0ffd1fb12bbe3394d241c1c5648dea25c0b3ab14f05815",
+      "source_label": "Stock B",
+      "raw_source_label": "Stock B",
+      "case_input_sha256": "d48ca65eeb227aa93d76e2a109cce1b3049f49f7f0a8f523f572e0ea72a01746",
+      "scientific_payload_sha256": "a907f7e87192a766ecc15af6dfb76a9f3a6d1455bb95c0e2586cf037957fb99a",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Friis Stock B is separately scoped from Stock A. Frozen flattened recipe and BHI notes do not establish B composition; generic Hanks formulations cannot be substituted without direct source linkage.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-recipe-eba4cc2e8d252663",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-primary-mixed-10",
+        "ma-togo-attempts"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:94b6eb34d11449cd6b9125bb584e27a3c83ca8d14e99f8f1ac5b385c686ea716"
+      ],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:04e9e465b834a3ff297e014bcd2f1829be97008962589e9f3b9e85c268084b8e",
+      "source_label": "Vancomycin x HCl",
+      "raw_source_label": "Vancomycin x HCl",
+      "case_input_sha256": "780f192c1b855417115fb14ddaa6dac469ed21ac81e2e2282d1de31db71c9c5e",
+      "scientific_payload_sha256": "fe2f1f056b22d7c970a73a5d52e776d6656bd6fa81f3d001c582929580fc38f4",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG raw assertion is10 mL of10 mg/mL vancomycin hydrochloride stock. CHEBI9932 matches solute, but row2911 is inherited WITHHOLD and stock carrier remains unspecified; reviewed both consumed-name hits without releasing row.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-51",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-chemicals",
+        "ma-chebi-9932",
+        "ma-owner-1ec3918aaaebfd97"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml",
+          "sha256": "1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b"
+        }
+      ],
+      "inherited_native_review_rows_checked": [
+        {
+          "owner": "data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2911",
+              "owner_record": "data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval.",
+              "row_sha256": "c84a6d89a7db298683dd651e4226dab0e0eeda7f10ec13231bbe88b38d2fbeef",
+              "source_position": 2911
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:9932",
+              "object_label": "Vancomycin hydrochloride",
+              "object_source": "obo:chebi.owl",
+              "other": "Vancomycin x HCl|CAS:1404-93-9",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureBotHT|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+              "subject_label": "Vancomycin Hydrochloride from Streptomyces orientalis",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            }
+          }
+        }
+      ],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:0e12b20c3efd4c92451e0e3895cda508280c5c7a89c5d615f8a4669dbdea6aa4",
+      "source_label": "Probumin Universal Grade",
+      "raw_source_label": "Probumin Universal Grade",
+      "case_input_sha256": "f8d6cc12889ead7cdb86709cd0978a3f45ac78119261b53015067f51f345b482",
+      "scientific_payload_sha256": "c5119d6b4d1b64773dfa6c3549d008970140f1a3ac06b0115cfdb6fa5cb73ddc",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Raw source explicitly names Millipore Probumin Universal Grade and25 g. Manufacturer describes BSA heat-shock purification with caprylic-acid stabilizer; product identity should retain processing/composition scope.625 g/L import is not used as proof of molecular identity.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-52",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-probumin",
+        "ma-owner-e4f2811fa995811b"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/unmapped/Probumin_Universal_Grade.yaml",
+          "sha256": "e4f2811fa995811b29fc83f14443021e0254f46ca65c0627b7c669ec48b4b9ec"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:1530d57a473e38f2205071b87d43ec3019d34988334ee3781ef6f53d04ed2c12",
+      "source_label": "Toray silicone SH 5535",
+      "raw_source_label": "Toray silicone SH 5535",
+      "case_input_sha256": "b4b1796376bd79d51d304c0ad957771e94f787111c546d86bed093daf098aeba",
+      "scientific_payload_sha256": "37febf3efecc2593c0ffa9c7bcde280d0f7940bcfa8d175ba734a4691dabe422",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG raw source is5 mL10% ToraySH5535; JCM133 corroborates brand/stock. Generic MeSH Toray Silicone stem match cannot prove exact formulation, and held row2821 remains held.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-53",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-toray",
+        "ma-owner-fad816f40678c2be"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Toray_Silicone_SH_5535.yaml",
+          "sha256": "fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae"
+        }
+      ],
+      "inherited_native_review_rows_checked": [
+        {
+          "owner": "data/ingredients/mapped/Toray_Silicone_SH_5535.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2821",
+              "owner_record": "data/ingredients/mapped/Toray_Silicone_SH_5535.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "The source grounding grade is LEXICAL_MATCH; identity with its own identifier does not substantiate an exact ontology equivalence. A source-scoped exact-relation review is required. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The MeSH CURIE exists, but the Toray silicone SH 5535 exact match is only a stem-substring match to broader Toray Silicone.",
+              "row_sha256": "3c5bb0ec909a480d60c748372a919e6c275f2e88fa4bd479b1bdbc48ed439309",
+              "source_position": 2821
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "mesh:C069668",
+              "object_label": "Toray Silicone",
+              "object_source": "registry:mesh",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MESH via OLS (resolve_unmapped_v2 strategy=stem-match)|MIM:curator=refresh_occurrence_statistics",
+              "subject_id": "MIM:Toray_Silicone_SH_5535",
+              "subject_label": "Toray silicone SH 5535",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            }
+          }
+        }
+      ],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:2cfa1c8344d8ea82637e07bc1d97c889e90c7460415f3232c5eef9fe8b19cd0d",
+      "source_label": "Co-carboxylase",
+      "raw_source_label": "Co-carboxylase",
+      "case_input_sha256": "5d456cc360bde1b665bcd7750f552a6a567188a478a34c56bf0d3426ce3e5009",
+      "scientific_payload_sha256": "41b7f1110845decc4627a8edd9d03c521ca4ef71c79c39fae22def812fb3fbff",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Read full cation owner and shared primary evidence for thiamine diphosphate. Source0.1 microgram co-carboxylase lacks counterion; CAS136-09-4 and chloride154-87-0 must not be conflated. Cross-worker correction and #319/#320/#268 remain prerequisites.",
+      "disposition_reviewed": "unresolved",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-54",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-search-web-search-04",
+        "ma-thiamine-0",
+        "ma-thiamine-1",
+        "ma-thiamine-2",
+        "ma-thiamine-3",
+        "ma-shared-provenance",
+        "ma-owner-627c0ae9eea1d884"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+          "sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad"
+        }
+      ],
+      "inherited_native_review_rows_checked": [
+        {
+          "owner": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2792",
+              "owner_record": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Current other still carries chloride-specific names and CAS inherited from the earlier salt grounding, despite the chloride-free target; the original report explicitly flags this mismatch.",
+              "row_sha256": "8e119b6968d03dd53fe33808c035436f11626ed1ae618d7bde9ed7b9276ff775",
+              "source_position": 2792
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:9532",
+              "object_label": "thiamine(1+) diphosphate",
+              "object_source": "obo:chebi.owl",
+              "other": "3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-diphosphoethyl)-4-methyl-1,3-thiazolium chloride|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium chloride|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium chloride|Coenzymate|Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide|cocarboxilasa|cocarboxylase|cocarboxylase chloride|cocarboxylasum|thiamine diphosphate chloride|thiamine diphosphoric acid ester chloride|thiamine(1+) diphosphate chloride|thiaminium diphosphoric acid ester chloride|thiaminium pyrophosphate chloride|thiaminium pyrophosphoric acid ester chloride|vitamin B1 pyrophosphate chloride|Co Carboxylase|thiamine pyrophosphate chloride|TPP|Co-carboxylase|CAS:136-09-4",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:MIM curation (#319/#320)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:primary_mappings[kegg_compound]",
+              "subject_id": "MIM:Thiamine_pyrophosphate",
+              "subject_label": "Thiamine pyrophosphate",
+              "validation_method": "OLS:chebi|SYNONYM_ENRICH|2026-09-02"
+            }
+          }
+        }
+      ],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:366f62e4b2233e1b1695ecd500569d3d6890ad7f73f26cb01c3c30bea7c8163d",
+      "source_label": "Phytone",
+      "raw_source_label": "Phytone",
+      "case_input_sha256": "8025b1024ece47198ce32784ed5f37e6b7852c82f12f038f7b46e658abbbbce3",
+      "scientific_payload_sha256": "d62ab054d04e2e9c966207150037349f43b15beebfa5f7c6bc561008a88ad641",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG Phytone source names BBL. Manufacturer guide separates Phytone and Soytone manufacturing/product identity despite shared soy origin and broader FOODON target. Held owner collision cannot be resolved by treating them as synonyms.",
+      "disposition_reviewed": "broad_parent_relation_only",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-55",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-soy",
+        "ma-local-ontology",
+        "ma-owner-785d55067681c80d"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Phytone.yaml",
+          "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b"
+        }
+      ],
+      "inherited_native_review_rows_checked": [
+        {
+          "owner": "data/ingredients/mapped/Phytone.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2275",
+              "owner_record": "data/ingredients/mapped/Phytone.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "The source grounding grade is CLOSE_MATCH; identity with its own identifier does not substantiate an exact ontology equivalence. A source-scoped exact-relation review is required. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: this product-specific active duplicate reuses FOODON:03315720 as its primary identifier.",
+              "row_sha256": "8f24166d8e1136bbcd0db38763d8cceb48eed3da14c89440daf47866625b45a9",
+              "source_position": 2275
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.9",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "FOODON:03315720",
+              "object_label": "vegetable protein, hydrolyzed",
+              "object_source": "obo:foodon.owl",
+              "other": "",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:cbclaw_followups_114|MIM:curator=refresh_occurrence_statistics",
+              "subject_id": "MIM:Phytone",
+              "subject_label": "Phytone",
+              "validation_method": "OLS:foodon|SYNONYM_ENRICH|2026-07-07"
+            }
+          }
+        }
+      ],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:4ab77b8be46f9537967c448a652e353caaa5cf5070a7509369334484616b4b3b",
+      "source_label": "Vitamin-free casamino acids",
+      "raw_source_label": "Vitamin-free casamino acids",
+      "case_input_sha256": "f67a4b068485faaa834de9f353aafeb28d08c5de5b28a5db52289b0c0a5b9767",
+      "scientific_payload_sha256": "a65a77e30eeb51a0057bcecbae0cb2be1020e79bb228aa353744ce3636c8b2e1",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG vitamin-free acid hydrolysate has two separately captured downstream routes to unrelated C8-10 glycerides. Both quarantine obligations and retained source placeholder remain; lack of supplier link also blocks exact Difco Vitamin Assay alias.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-56",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-668",
+        "ma-casein"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [
+        {
+          "row": {
+            "authority_label": "Glycerides, C8-10 mono-and di-",
+            "authority_uri": "https://pubchem.ncbi.nlm.nih.gov/compound/167312541",
+            "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/compound_mappings_strict_hydrate.tsv",
+            "candidate_input_sha256": "d2bc349ae31990cf54ef308a14826c756be0e0ee874d35a0a6068d75ef04b3a3",
+            "candidate_record": "{\"base_chebi_formula\":\"\",\"base_chebi_id\":\"\",\"base_chebi_label\":\"\",\"base_compound\":\"Vitamin-free casamino acids\",\"base_compound_for_mapping\":\"\",\"base_formula\":\"Vitamin-freecasaminoacids\",\"base_molecular_weight\":\"100.0\",\"chebi_formula\":\"\",\"chebi_id\":\"\",\"chebi_label\":\"\",\"chebi_match\":\"\",\"chebi_original_name\":\"\",\"concentration\":\"\",\"corrected_mmol_l\":\"10.0\",\"hydrate_formula\":\"Vitamin-freecasaminoacids\",\"hydrate_mapping_source\":\"\",\"hydrated_chebi_id\":\"\",\"hydrated_chebi_label\":\"\",\"hydrated_molecular_weight\":\"100.0\",\"hydration_confidence\":\"high\",\"hydration_number\":\"0\",\"hydration_parsing_method\":\"no_hydration\",\"hydration_state\":\"\",\"mapped\":\"PubChem:167312541\",\"mapping_quality\":\"good\",\"mapping_status\":\"original_only\",\"match_confidence\":\"\",\"matching_method\":\"\",\"medium_id\":\"dsmz_668_composition\",\"mmol_l\":\"\",\"normalized_compound\":\"\",\"optional\":\"\",\"original\":\"Vitamin-free casamino acids\",\"similarity_score\":\"\",\"source\":\"json\",\"unit\":\"g\",\"value\":\"1.0\",\"water_molecular_weight\":\"0.0\",\"water_molecules\":\"\"}",
+            "candidate_record_locator": "record=8094;line_end=8099",
+            "candidate_route": "micromediaparam_hydrate",
+            "candidate_target": "PubChem:167312541",
+            "disposition": "quarantined_grounding_candidate",
+            "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+            "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+            "qualifier_evidence": "{}",
+            "reason": "digest_material_not_demonstrated_structural_identity",
+            "retained_target": "mediadive.ingredient:654",
+            "source_assertion_id": "mediadive.solution:1410#recipe/2",
+            "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+            "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+            "source_record": "{\"amount\":1,\"compound\":\"Vitamin-free casamino acids\",\"compound_id\":654,\"g_l\":1,\"optional\":0,\"recipe_order\":2,\"unit\":\"g\"}",
+            "source_record_sha256": "01876886bc470e13f998d3d60347c72db852cc65f046d9a78f84e018ed406c7f"
+          },
+          "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+        },
+        {
+          "row": {
+            "authority_label": "Glycerides, C8-10 mono-and di-",
+            "authority_uri": "https://pubchem.ncbi.nlm.nih.gov/compound/167312541",
+            "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/compound_mappings_strict.tsv",
+            "candidate_input_sha256": "7e100314f1a62f675154aef7537be5b72ed2db9fbb8e8b1785198103aff31c71",
+            "candidate_record": "{\"base_chebi_formula\":\"\",\"base_chebi_id\":\"\",\"base_chebi_label\":\"\",\"base_compound\":\"Vitamin-free casamino acids\",\"base_compound_for_mapping\":\"\",\"base_formula\":\"Vitamin-freecasaminoacids\",\"base_molecular_weight\":\"100.0\",\"chebi_formula\":\"\",\"chebi_id\":\"\",\"chebi_label\":\"\",\"chebi_match\":\"\",\"chebi_original_name\":\"\",\"concentration\":\"\",\"corrected_mmol_l\":\"10.0\",\"hydrate_formula\":\"Vitamin-freecasaminoacids\",\"hydrated_molecular_weight\":\"100.0\",\"hydration_confidence\":\"high\",\"hydration_number\":\"0\",\"hydration_parsing_method\":\"no_hydration\",\"hydration_state\":\"\",\"mapped\":\"PubChem:167312541\",\"mapping_quality\":\"good\",\"mapping_status\":\"original_only\",\"match_confidence\":\"\",\"matching_method\":\"\",\"medium_id\":\"dsmz_668_composition\",\"mmol_l\":\"\",\"normalized_compound\":\"\",\"optional\":\"\",\"original\":\"Vitamin-free casamino acids\",\"similarity_score\":\"\",\"source\":\"json\",\"unit\":\"g\",\"value\":\"1.0\",\"water_molecular_weight\":\"0.0\",\"water_molecules\":\"\"}",
+            "candidate_record_locator": "record=8094;line_end=8099",
+            "candidate_route": "micromediaparam_strict",
+            "candidate_target": "PubChem:167312541",
+            "disposition": "quarantined_grounding_candidate",
+            "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+            "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+            "qualifier_evidence": "{}",
+            "reason": "digest_material_not_demonstrated_structural_identity",
+            "retained_target": "mediadive.ingredient:654",
+            "source_assertion_id": "mediadive.solution:1410#recipe/2",
+            "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+            "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+            "source_record": "{\"amount\":1,\"compound\":\"Vitamin-free casamino acids\",\"compound_id\":654,\"g_l\":1,\"optional\":0,\"recipe_order\":2,\"unit\":\"g\"}",
+            "source_record_sha256": "01876886bc470e13f998d3d60347c72db852cc65f046d9a78f84e018ed406c7f"
+          },
+          "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+        }
+      ],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:7e8a163944d806fb4712b5b7c18f836c07cb31a5852aa62722839b51a97ca7bd",
+      "source_label": "Na2 alpha-ketoglutarate",
+      "raw_source_label": "Na2 alpha-ketoglutarate",
+      "case_input_sha256": "af63333a5d72052b84cfda7c4d3dcb94a3d6b184b9769783f00bdbdb1e911c06",
+      "scientific_payload_sha256": "b527b5db9c16365583a26c9a925c862a49ad44a6635f6a705def09a6d45ab678",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG explicitly states Na2, while g/L divided by mmol/L implies an inconsistent mass. Existing disodium registry plus acid parent correctly preserves form; rejected bare aliases and both inherited row holds remain, with no inferred hydration.",
+      "disposition_reviewed": "existing_identity_or_alias",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-57",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-local-ontology",
+        "ma-owner-0ee10fb6f9aacd89"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+          "sha256": "0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d"
+        }
+      ],
+      "inherited_native_review_rows_checked": [
+        {
+          "owner": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2007",
+              "owner_record": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The historical report validates a parent or nearby target but this focused review has not independently established the actual broadMatch/closeMatch relation with the required supplied-form or material scope. No nonexact relation is promoted from mapping grade or term existence alone.",
+              "row_sha256": "604115dd7d217cd9fa8e8ec9b7a5457c4cbb4e99f9f3a8695ef2f2bc5d9c748c",
+              "source_position": 2007
+            },
+            "row": {
+              "comment": "Local kgmicrobe.compound identity retained because no exact ontology term for Na2 alpha-ketoglutarate was verified; CHEBI:30915 is the nearest ChEBI parent (#315). [#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-20",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:30915",
+              "object_label": "2-oxoglutaric acid",
+              "object_source": "obo:chebi.owl",
+              "other": "Na2 α-ketoglutarate",
+              "predicate_id": "skos:broadMatch",
+              "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[kegg_compound]|MIM:curator=fix_salt_ion_identity_overclaims",
+              "subject_id": "MIM:Na2_Alpha-ketoglutarate",
+              "subject_label": "Na2 alpha-ketoglutarate",
+              "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+            }
+          }
+        },
+        {
+          "owner": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+          "row": {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2008",
+              "owner_record": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "The available report does not individually document every current other token as a same-subject synonym. Identity-level or general final-row agreement is insufficient to approve the complete payload; token-level review remains required.",
+              "row_sha256": "25bceabdf1fb42ca58c397d0348415e2eab631024dcb848ab4110c24ee738403",
+              "source_position": 2008
+            },
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.compound:na2_alpha-ketoglutarate alongside parent CHEBI:30915.",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-11",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:na2_alpha-ketoglutarate",
+              "object_label": "Na2 alpha-ketoglutarate",
+              "object_source": "kgm:compound",
+              "other": "Na2 α-ketoglutarate",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[kegg_compound]|MIM:curator=fix_salt_ion_identity_overclaims",
+              "subject_id": "MIM:Na2_Alpha-ketoglutarate",
+              "subject_label": "Na2 alpha-ketoglutarate",
+              "validation_method": ""
+            }
+          }
+        }
+      ],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:bab4ac584cbc7622a8afdc93358602db1d86bb243c3b69bb42b3f7b9192b5682",
+      "source_label": "Cellulose MN 300",
+      "raw_source_label": "Cellulose MN 300",
+      "case_input_sha256": "3123edec64627c88965fc8f8292de7f17fce6a97e9e9513d596a23e14cce1029",
+      "scientific_payload_sha256": "87495619546e10bb807e53b9db627c3256e9f784ff958965e4f334d865f21af3",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Manufacturer identifies MN300 native fibrous cellulose distinct from MN400 microcrystalline grade. Captured TLC plates include support/binder and cannot prove composition of15 g bulk powder source; no binder or plate identity is imported.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-58",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-mn300",
+        "ma-owner-0c8d8ea63c1b8474"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/unmapped/Cellulose_MN_300.yaml",
+          "sha256": "0c8d8ea63c1b847439e43b42784385cb5b0245ea41f97a651014ab43550e64cb"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    },
+    {
+      "case_id": "KG_CASE:ff9e07aeedb7d33d78e75e5df81f86f9a0c64a40566fa77592c8717868d07b0b",
+      "source_label": "Cereal leaves",
+      "raw_source_label": "Cereal leaves",
+      "case_input_sha256": "ef3f41d722fb46b18402af982cfbf7ec8f0679d6027a998758e3da56322e1485",
+      "scientific_payload_sha256": "6f284e242c9bed8db4c24d0def46b549343c2676317bd91cc335d04a2c07d29e",
+      "status": "complete",
+      "outcome": "accepted_source_scoped_disposition",
+      "assessment": "Full KG Cerophyll attribute and primary CCAP preparation support cereal-leaf biomass/infusion. Neither a single plant species nor cellulose chemical identity follows; source-grade and botanical uncertainty are explicitly retained.",
+      "disposition_reviewed": "stock_product_mixture_context",
+      "proposal_ids": [],
+      "author_evidence_ids_reviewed": [
+        "ma-kg-59",
+        "ma-source-inspection",
+        "ma-owner-search",
+        "ma-cereal",
+        "ma-owner-f6c3584ff828b32a"
+      ],
+      "occurrence_ids_reviewed": [],
+      "owner_records_reviewed": [
+        {
+          "path": "data/ingredients/unmapped/Cereal_Leaves.yaml",
+          "sha256": "f6c3584ff828b32a718c7767070c17108388645934d3aef3515b3ff734242616"
+        }
+      ],
+      "inherited_native_review_rows_checked": [],
+      "downstream_holds_checked": [],
+      "findings": [],
+      "withheld_rows_released": false
+    }
+  ],
+  "reviewer_artifacts": {
+    "case-scrutiny.json": "26b407d8d94b97ff7cf3955b25b8234ffd738f7c46c55ecc01b1fa7c0affddf5",
+    "proposal-scrutiny.json": "c081757d1ec0c01e7b3f8ef369e6e1145491ab3cf632549a72fe666866f378c9",
+    "findings.json": "c12f282c7598b17e87229dd914990e14dd12d41c4442a2d6428735926f020174",
+    "local-chebi-check.json": "90d325d5c8a9ba69f290b6ba558df812230300682cd6649989578aaf9c4eb3f1",
+    "provenance-audit.json": "e748f94fb024ad92a43c036ca753ea65ab7e855de1cecbaa1451f21a1dee8e8d",
+    "nlm-C017721.json": "0dc8bb38d31585f4a0ac7c3a42b1a7c1d91043124b20ad7decc2f4f8a6d9c4ff",
+    "nlm-C017721.metadata.json": "cc7829ce8a1ce4366a53a26c41dab7cf1346369ff06d6159b7fbbf534bf05660",
+    "mesh-C017721.json": "6aeb71911ec44587d6636a237f9c58b195cb3a5205cd55fc3bdc96c728c2667b",
+    "mesh-C017721.metadata.json": "bb396eea1af6055dbc4d2b4c2b4b35e1e450c95a5b771709d4a1c0e203c5fa36",
+    "casamino-primary-check.json": "a6f15456d429ef36b0f94f3298cf3abcabb43a08fb2716dbd9965f9d9bc916f9"
+  },
+  "limits": [
+    "Native whole-record publication approval and cross-shard coordinator integration are separate. No maintained YAML, SSSOM, downstream build or merge performed.",
+    "Initial pre-MA-SR-01 files were observed and hashed but overwritten by the author before full-byte preservation; this limit is explicit. Round2 and final inputs are preserved exactly.",
+    "Current source placeholders, raw labels, rejected routes and prior hold predicates stay intact; accepted unresolved dispositions identify remaining source-specific requirements."
+  ]
+}

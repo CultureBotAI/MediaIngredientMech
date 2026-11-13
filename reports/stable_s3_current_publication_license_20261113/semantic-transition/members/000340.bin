@@ -1,0 +1,44 @@
+identifier: kgmicrobe.compound:aminovalerate
+preferred_term: Aminovalerate
+synonyms:
+- synonym_text: Aminovalerate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:aminovalerate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0738 -> kgmicrobe.compound:aminovalerate "Aminovalerate"
+    (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:aminovalerate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:aminovalerate
+  ontology_label: Aminovalerate
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Searched every ontology available to this repo -- CHEBI, NCIT, FOODON,
+      ENVO, MeSH, BTO, UBERON by label and synonym with normalisation, plus an exact
+      query across all of live OLS4 -- and no term denotes this substance. Takes the
+      FALLBACK_REGISTRY shape used by 82 existing records (#213).

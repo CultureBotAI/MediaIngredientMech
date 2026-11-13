@@ -1,0 +1,170 @@
+{
+  "index": 172,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:626dbdfa8a1835914c632173fe43c6b031a0182467f9d9de83ef05c12c7e2697",
+    "original_kg_entry": {
+      "candidate_id": "626dbdfa8a1835914c632173fe43c6b031a0182467f9d9de83ef05c12c7e2697",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "EBIOS",
+          "owner": "data/ingredients/unmapped/EBIOS.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "EBIOS",
+          "owner": "data/ingredients/unmapped/EBIOS.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "EBIOS",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "EBIOS",
+          "owner": "data/ingredients/unmapped/EBIOS.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "EBIOS",
+          "owner": "data/ingredients/unmapped/EBIOS.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "EBIOS",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "UNMAPPED_0380",
+          "mapping_status": "UNMAPPED",
+          "native_review_rows": [],
+          "ontology_mapping": null,
+          "path": "data/ingredients/unmapped/EBIOS.yaml",
+          "preferred_term": "EBIOS",
+          "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+          "subject_id": "MIM:EBIOS"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "EBIOS",
+      "resolving_owner_paths": [
+        "data/ingredients/unmapped/EBIOS.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:1953",
+      "source_label": "EBIOS",
+      "source_record": {
+        "amount": 10,
+        "attribute": "dried yeast tablets, *",
+        "compound": "EBIOS",
+        "compound_id": 1953,
+        "g_l": 10,
+        "optional": 0,
+        "recipe_order": 1,
+        "unit": "g"
+      },
+      "triage_flags": [
+        "MATCHED_UNMAPPED_OWNER",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "EBIOS",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1953",
+    "source_identity_claimed": false,
+    "source_label": "EBIOS"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/unmapped/EBIOS.yaml",
+      "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+      "record": {
+        "identifier": "UNMAPPED_0380",
+        "preferred_term": "EBIOS",
+        "synonyms": [
+          {
+            "synonym_text": "EBIOS",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:42:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a named commercial preparation and left unmapped pending source-backed composition or product-specific ontology curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain the local named-mixture record. Do not create an SSSOM row at present. A future verified ontology term for **brewer’s yeast extract** could potentially receive `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS P2G unless that ontology term explicitly denotes this product. A generic yeast-extract term would be a broad No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending product-specific composition curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/unmapped/EBIOS.yaml",
+      "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+      "matched_labels": [
+        "EBIOS",
+        "EBIOS"
+      ],
+      "preferred_term": "EBIOS",
+      "identifier": "UNMAPPED_0380",
+      "status": "UNMAPPED",
+      "mapping": null,
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending product-specific composition curation.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

@@ -1,0 +1,78 @@
+identifier: CHEBI:221124
+preferred_term: alanosine
+ontology_mapping:
+  ontology_id: CHEBI:221124
+  ontology_label: L-alanosine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgmicrobe.compound:alanosine
+    notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
+synonyms:
+- synonym_text: '[(2S)-2-amino-2-carboxyethyl]-hydroxyimino-oxidoazanium'
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: alanosine'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T08:04:25.996476+00:00'
+  curator: audit_propose_chebi_for_unmapped
+  action: CREATED_FROM_UNMAPPED_QUEUE
+  changes: Created new ingredient from kgmicrobe.compound:alanosine with auto-curated
+    CHEBI CHEBI:221124 (L-alanosine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.091613+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.913059+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H7N3O4; inchi=InChI=1S/C3H7N3O4/c4-2(3(7)8)1-6(10)5-9/h2,9H,1,4H;
+    smiles=N[C@@H](C[N+]([O-])=NO)C(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.354779+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    alanosine''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    alanosine''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000288; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C3H7N3O4
+  inchi: InChI=1S/C3H7N3O4/c4-2(3(7)8)1-6(10)5-9/h2,9H,1,4H2,(H,7,8)/t2-/m0/s1
+  smiles: N[C@@H](C[N+]([O-])=NO)C(=O)O
+  data_source: CHEBI sqlite (oaklib)
+mim_id: MIM:0000288
+legacy_identifiers:
+- MIM:Alanosine
+- CHEBI:221124

@@ -1,0 +1,278 @@
+identifier: kgmicrobe.ingredient:tnm_fh_sigma_t3285
+preferred_term: TNM-FH insect medium1x (Sigma T3285)
+synonyms:
+- synonym_text: TNM-FH Medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named TNM-FH medium/formulation and left unmapped pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TNM-FH_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: | Recommendation | Mapping semantics/confidence | Rationale | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:50:37.806762+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
+    this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142.
+    The source liquid product now has exact whole identity despite unresolved interpretation of one manufacturer-listed
+    tyrosine amount. Isolated proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match.
+  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193:
+  Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
+  this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142. The
+  source liquid product now has exact whole identity despite unresolved interpretation of one manufacturer-listed
+  tyrosine amount. Manufacturer PDF tyrosine0.7202g/L is documented but not adopted numerically pending
+  clarification. Existing300g/L or300% source exports are separate unit errors, not obstacles to whole-product
+  curation.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tnm_fh_sigma_t3285
+  ontology_label: TNM-FH insect medium1x (Sigma T3285)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/195/157/t3285for.pdf
+    notes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
+      this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142.
+      The source liquid product now has exact whole identity despite unresolved interpretation of one
+      manufacturer-listed tyrosine amount.
+supplied_form:
+- name: TNM-FH insect medium1x
+  form: liquid
+  supplier: Sigma-Aldrich
+  catalog_number: T3285
+  notes: Sterile-filtered, with L-glutamine and sodium bicarbonate; serum supplementation is external.
+components:
+- component_name: Calcium chloride dihydrate
+  reference_scope: UNMAPPED
+  concentration_value: '1.3246'
+  concentration_unit: G_PER_L
+- component_name: Magnesium chloride hexahydrate
+  reference_scope: UNMAPPED
+  concentration_value: '2.28'
+  concentration_unit: G_PER_L
+- component_name: Magnesium sulfate
+  reference_scope: UNMAPPED
+  concentration_value: '1.357856'
+  concentration_unit: G_PER_L
+- component_name: Potassium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '2.24'
+  concentration_unit: G_PER_L
+- component_name: Sodium bicarbonate
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L
+- component_name: Sodium dihydrogen phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.876923'
+  concentration_unit: G_PER_L
+- component_name: beta-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '.2'
+  concentration_unit: G_PER_L
+- component_name: L-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '.225'
+  concentration_unit: G_PER_L
+- component_name: L-Arginine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.7'
+  concentration_unit: G_PER_L
+- component_name: L-Asparagine
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L
+- component_name: L-Aspartic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L
+- component_name: L-Cystine dihydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.025'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.6'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamine
+  reference_scope: UNMAPPED
+  concentration_value: '.6'
+  concentration_unit: G_PER_L
+- component_name: Glycine
+  reference_scope: UNMAPPED
+  concentration_value: '.65'
+  concentration_unit: G_PER_L
+- component_name: L-Histidine hydrochloride monohydrate
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: L-Isoleucine
+  reference_scope: UNMAPPED
+  concentration_value: '.05'
+  concentration_unit: G_PER_L
+- component_name: L-Leucine
+  reference_scope: UNMAPPED
+  concentration_value: '.075'
+  concentration_unit: G_PER_L
+- component_name: L-Lysine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.625'
+  concentration_unit: G_PER_L
+- component_name: L-Methionine
+  reference_scope: UNMAPPED
+  concentration_value: '.05'
+  concentration_unit: G_PER_L
+- component_name: L-Phenylalanine
+  reference_scope: UNMAPPED
+  concentration_value: '.15'
+  concentration_unit: G_PER_L
+- component_name: L-Proline
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L
+- component_name: L-Serine
+  reference_scope: UNMAPPED
+  concentration_value: '.55'
+  concentration_unit: G_PER_L
+- component_name: L-Threonine
+  reference_scope: UNMAPPED
+  concentration_value: '.175'
+  concentration_unit: G_PER_L
+- component_name: L-Tryptophan
+  reference_scope: UNMAPPED
+  concentration_value: '.1'
+  concentration_unit: G_PER_L
+- component_name: L-Tyrosine disodium salt
+  reference_scope: UNMAPPED
+- component_name: L-Valine
+  reference_scope: UNMAPPED
+  concentration_value: '.1'
+  concentration_unit: G_PER_L
+- component_name: D-Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '.00001'
+  concentration_unit: G_PER_L
+- component_name: Choline chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.0002'
+  concentration_unit: G_PER_L
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: myo-Inositol
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: Niacin
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: D-Pantothenic acid hemicalcium salt
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: Pyridoxine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: Thiamine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.00002'
+  concentration_unit: G_PER_L
+- component_name: Dextrose anhydrous
+  reference_scope: UNMAPPED
+  concentration_value: '.7'
+  concentration_unit: G_PER_L
+- component_name: D-(-)-Fructose
+  reference_scope: UNMAPPED
+  concentration_value: '.4'
+  concentration_unit: G_PER_L
+- component_name: Fumaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '.055'
+  concentration_unit: G_PER_L
+- component_name: alpha-Ketoglutaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '.37'
+  concentration_unit: G_PER_L
+- component_name: Lactalbumin hydrolysate
+  reference_scope: UNMAPPED
+  concentration_value: '3.3333'
+  concentration_unit: G_PER_L
+- component_name: L-Malic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.67'
+  concentration_unit: G_PER_L
+- component_name: Succinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '.06'
+  concentration_unit: G_PER_L
+- component_name: D-(+)-Sucrose
+  reference_scope: UNMAPPED
+  concentration_value: '26.68'
+  concentration_unit: G_PER_L
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '3.3333'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/195/157/t3285for.pdf
+    notes: Manufacturer PDF T3285 middle column. Tyrosine disodium amount is printed0.7202g/L while adjacent
+      related formulas print approximately0.072; retain named part without quantity rather than silently
+      correct a possible decimal error. All other printed nonzero T3285 constituents transcribed; no water
+      amount inferred.

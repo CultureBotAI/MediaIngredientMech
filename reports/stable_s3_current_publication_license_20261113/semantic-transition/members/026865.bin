@@ -1,0 +1,69 @@
+identifier: UNMAPPED_0180
+preferred_term: 5-methoxybenzimidazolyl cobamide
+synonyms:
+- synonym_text: 5-methoxybenzimidazolyl cobamide
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: Factor IIIm
+  synonym_type: COMMON_NAME
+  source: edison_deep_research
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:12:15Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_COBAMIDE_VARIANT
+  changes: Classified as a single cobamide-family ingredient and left unmapped because
+    no exact local ontology identity for the 5-methoxybenzimidazolyl lower-ligand
+    variant was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-17T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: a real, discrete cobamide variant (lower
+    ligand = 5-methoxybenzimidazole; legacy name "Factor IIIm"), but no stable exact
+    CHEBI/CAS identifier; label may cover multiple upper-ligand forms. Do NOT exact-map
+    to cobalamin/vitamin B12 (different lower ligand). Kept UNMAPPED.'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/5-methoxybenzimidazolyl_Cobamide-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a genuine benzimidazolyl
+    cobamide variant defined primarily by its **5-methoxybenzimidazole lower ligand**,
+    historically called **Factor IIIm** (also written factor IIIₘ or factor 3m) and
+    commonly abbreviated **[5-OMeBza]Cba** or **5-OMeBza-Cba**. It is a single-ingredient
+    cobamide type, not a buffer, extract, mixture, or commercial formulation. *Moorella
+    thermoacet No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002692; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a specific
+  cobamide variant; not identity-mapped to generic cobamide or cobalamin.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002692
+legacy_identifiers:
+- MIM:5-methoxybenzimidazolyl_Cobamide
+- UNMAPPED_0180

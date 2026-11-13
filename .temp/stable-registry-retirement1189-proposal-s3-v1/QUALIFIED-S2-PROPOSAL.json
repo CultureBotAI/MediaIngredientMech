@@ -1,0 +1,75 @@
+{
+  "author": "codex:/root",
+  "canonical": {
+    "path": "mappings/ingredient_mappings.sssom.tsv",
+    "sha256": "3d9f1ac412209266034319542f225918b78b4e6a8e0658b53ee0689b4fb4dafe"
+  },
+  "capability": "stable-registry-retirement-proposal-v1",
+  "entries": [
+    {
+      "evidence": [
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/COPY-PROVENANCE.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/exact-current-rows.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/github-decisions.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/independent-route-audit.md",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/issue1189.md",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/primary-route-audit.md",
+        "MAPPING_SEMANTICS.md",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/original-MAPPING_SEMANTICS.md",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/ORIGINAL-PROPOSAL.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/ADAPTATION-PROVENANCE.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/SOURCE-S-PROPOSAL.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/S2-COPY-PROVENANCE.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/PREDECESSOR-COPY-PROVENANCE.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/PREDECESSOR-PROPOSAL.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/BLOCKED-V1-AUDIT.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/FINDING-FILED.json",
+        ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/source-S-MAPPING_SEMANTICS.md"
+      ],
+      "owner": {
+        "mim_id": "MIM:0002332",
+        "path": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+        "sha256": "0558076ce9eaf3fc1a4b87756bf51018be3e952ed560e21a52bea81aa6ebb111"
+      },
+      "reason": "Propose omitting only the historical parent-inferred kgmicrobe.compound stock handle documented in Claw #684. The existing current STOCK_SOLUTION owner explicitly retains kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29 and CHEBI:63005 only as a broader solute mapping. Keep that curated identity, the complete original canonical row and all source/comment/validation history. Do not invent a replacement handle, grant mapping support or alter the canonical table. Any eventual REMOVE_WITH_HISTORY requires genuine paired scientific review and independent exact-set technical acceptance under the native publication workflow.",
+      "row": {
+        "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:sodium_nitrate_070_m_stock alongside parent CHEBI:63005.",
+        "confidence": "0.99",
+        "mapping_date": "2026-08-27",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "object_id": "kgmicrobe.compound:sodium_nitrate_070_m_stock",
+        "object_label": "Sodium nitrate (0.70 M stock)",
+        "object_source": "kgm:compound",
+        "other": "",
+        "predicate_id": "skos:exactMatch",
+        "source": "MIM:culturemech-pending|MIM:sssom_synonym_enrich_review_2026_05_10|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped]",
+        "subject_id": "MIM:0002332",
+        "subject_label": "Sodium nitrate (0.70 M stock)",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_position": 2604
+    }
+  ],
+  "evidence_inputs": {
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/ADAPTATION-PROVENANCE.json": "bf7ff359d9c71a56bb1db03604c155b79249126e3b1d006a54f34be941cab75f",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/COPY-PROVENANCE.json": "bfeb679b9857ef9df1173cbcd467297d08cacbedd6cd0fe96c575b7b10f829b3",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/ORIGINAL-PROPOSAL.json": "bd31cab4537c3dac48844477ef3f89f84d77aad74da986c3c90af2b52a5f5958",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/exact-current-rows.json": "29abdbfc11209fa5a5fd37a70c2c44b698a1eb604200da753f6e4042deb40087",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/github-decisions.json": "f636414d3aa90d58693ea4c6fb3feef1d1a74faae0a8f1d4e0e57429e4270f19",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/independent-route-audit.md": "6c6b8c77d4609c5b813b57e84bb59b0c8ad10b33b88d36f639480b9c2d3dbb15",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/issue1189.md": "564cde88884670d2c2e6cb3ed6fbe06de6ca0fb9d3281dd37355796bf1af46b8",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/original-MAPPING_SEMANTICS.md": "76dbbbbc4dd0d729dbba4521505bade4f2f2a53d4ee144ac9bca0fcda8b29015",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/primary-route-audit.md": "952965034d7f69b6b63207c57e80cf52f819c2b3ef395ed39c76e22e869cf519",
+    "MAPPING_SEMANTICS.md": "ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/SOURCE-S-PROPOSAL.json": "2e7475753971fde8ee76806bdaa187789e8fc760df8fac730d19cd28dd4a4f93",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/S2-COPY-PROVENANCE.json": "cced028527d2ddfdf4254fc2fa8012412a19964e45be5fded418251b7cde4bac",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/PREDECESSOR-COPY-PROVENANCE.json": "de11726aaf1dfe2bcec617b5baabb13767bb89187fbe0e99d54945b45ed34738",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/PREDECESSOR-PROPOSAL.json": "85ccbbac7a318ff3b0f0fc099e4fb7e72ba749ee752fdab7edf83439b33e57cb",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/BLOCKED-V1-AUDIT.json": "7f4822a86ba98d85b588b322434899f95858a7201dd5d2a2faf03b883e23c4ca",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/FINDING-FILED.json": "c6e4a5980a5f6c6a2e0dc1b32d435180347e41f02b5199a3ad91f274aefc6e6a",
+    ".temp/stable-registry-retirement1189-proposal-s2-v2/evidence/source-S-MAPPING_SEMANTICS.md": "ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3"
+  },
+  "schema_version": 1,
+  "scientific_approval": false,
+  "scope": "diagnostic_candidate_only"
+}

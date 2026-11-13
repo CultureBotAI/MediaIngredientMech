@@ -1,0 +1,99 @@
+identifier: NCIT:C113696
+preferred_term: Fetal bovine serum
+synonyms:
+- synonym_text: Fetal bovine serum
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: FBS
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: Fetal Bovine Serum (ATCC 30-2020)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Foetal calf serum
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:f8dfc1320a2b71fd71dd2bceae3486e8e677ded030a52389f7afdeb0e3a3e505
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 122
+  media_count: 122
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
+    media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned, RPMI
+    with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.403009+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_NCIT
+  changes: primary UNMAPPED_0183 → NCIT:C113696 via name normalization to 'Fetal bovine serum'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.501662+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-11T07:04:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record FBS.yaml (UNMAPPED_0382); OAK/OLS audit supports
+    NCIT:C113696 Fetal Bovine Serum as the media-context expansion of FBS.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-09T04:56:30.247910+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518878+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 8/8 -> 122/122 (media_count/total_occurrences), derived from
+    distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from
+    the importer retired in #453, whose media_count counted a list truncated to 50 examples
+    (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s published
+    label but were absent from MIM''s label index, so CultureMech could not resolve them: ''Fetal
+    Bovine Serum (ATCC 30-2020)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:12:55.505566+00:00'
+  curator: all_unmatched_worker_10_bio_review
+  action: ADDED_SYNONYMS
+  changes: 'Proposed reviewed source-material aliases: [''Foetal calf serum'']. Preserve occurrence
+    quantities and preparation stages; alias review does not approve roles or complete publication
+    payload.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
+  media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned, RPMI with
+  Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review needed. Absorbed
+  FBS source surface on 2026-05-11.'
+ontology_mapping:
+  ontology_id: NCIT:C113696
+  ontology_label: Fetal Bovine Serum
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name normalization);
+      label-exact
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

@@ -1,0 +1,61 @@
+identifier: mesh:D002174
+preferred_term: Levorin
+ontology_mapping:
+  ontology_id: mesh:D002174
+  ontology_label: Candicidin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
+      MIM''s pipeline; confidence=MEDIUM; rationale=single lexical candidate; top
+      OLS candidates: CHEBI:3349(candicidin D). Pending curator promotion to a CHEBI/NCIT
+      primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:levorin after OLS returned mesh:D002174
+      with exact synonym "Levorin".
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:levorin;
+    OLS search across CHEBI+NCIT returned MEDIUM-confidence (single lexical candidate).
+    Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT
+    primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.510539+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.750701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:levorin → mesh:D002174 after EBI OLS exact synonym
+    match to "Levorin".
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001521; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001521
+legacy_identifiers:
+- MIM:Levorin
+- mesh:D002174

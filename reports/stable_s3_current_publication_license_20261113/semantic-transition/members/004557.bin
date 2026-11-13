@@ -1,0 +1,138 @@
+id: CultureMech:008172
+name: gyp_sodium_acetate_mineral_salts_broth
+original_name: GYP-Sodium Acetate-Mineral Salts Broth
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  notes: 'Role: Solvating media; Properties: Defined component, Simple component,
+    Inorganic compound'
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: MgSO4·7H2O
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  notes: 'Role: Mineral source; Properties: Inorganic compound, Simple component,
+    Defined component'
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: NaCl
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Role: Mineral source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: FeSO4·7H2O
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+  term:
+    id: CHEBI:75836
+    label: iron(2+) sulfate heptahydrate
+- preferred_term: Sodium acetate
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Role: Buffer; Properties: Simple component, Organic compound, Defined component'
+  term:
+    id: CHEBI:32954
+    label: sodium acetate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32954
+    label: sodium acetate
+- preferred_term: MnSO4·xH2O
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+- preferred_term: Glucose
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Role: Carbon source; Properties: Organic compound, Simple component, Defined
+    component'
+  term:
+    id: CHEBI:17234
+    label: glucose
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Bacto Yeast Extract (Difco)
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Properties: Undefined component'
+- preferred_term: Bacto Peptone (Difco)
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  notes: 'Properties: Undefined component'
+media_term:
+  preferred_term: TOGO Medium M1618
+  term:
+    id: TOGO:M1618
+    label: GYP-Sodium Acetate-Mineral Salts Broth
+notes: 'Source: https://togomedium.org/medium/M1618
+
+  Original source: NBRC - NBRC_M818
+
+  Original URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=818'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.965615Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1618'
+- timestamp: '2026-01-28T19:48:29.615049Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:54.140935Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008172'
+- timestamp: '2026-03-17T06:30:28.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:12.714809+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "GYP-Sodium Acetate-Mineral Salts Broth" to "gyp_sodium_acetate_mineral_salts_broth"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:33.581502+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 5 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T06:57:23.733219+00:00'
+  curator: mgso4-heptahydrate-term-fix-v1.0
+  action: Corrected MgSO4·7H2O primary term grounding to heptahydrate
+  notes: Re-grounded 1 heptahydrate-labelled ingredient(s) from CHEBI:32599 (generic
+    magnesium sulfate) to CHEBI:31795 (magnesium sulfate heptahydrate). Generic/hexahydrate
+    labels untouched.

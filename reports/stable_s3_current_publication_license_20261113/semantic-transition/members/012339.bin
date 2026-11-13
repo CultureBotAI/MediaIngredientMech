@@ -1,0 +1,113 @@
+identifier: kgmicrobe.ingredient:ebios
+preferred_term: Asahi EBIOS dried-yeast tablets
+synonyms:
+- synonym_text: EBIOS
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+- synonym_text: EBIOS* (dried yeast tablets)
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=969
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:42:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named commercial preparation and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain
+    the local named-mixture record. Do not create an SSSOM row at present. A future
+    verified ontology term for **brewer’s yeast extract** could potentially receive
+    `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS
+    P2G unless that ontology term explicitly denotes this product. A generic yeast-extract
+    term would be a broad No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:40:36.183483+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: IDENTITY_RECONCILED
+  changes: Bound existing imported owner to the source-linked Asahi EBIOS dried-yeast
+    tablet family; promote local registry identity, preserve all historical events,
+    reject ambiguous raw labels, and record unknown excipients. Source evidence supports
+    product identity without a complete formula. Cross-shard overlap filed as issue1221
+    before this proposal.
+  llm_assisted: true
+  new_status: MAPPED
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T06:43:42.126021+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: CORRECTED
+  changes: Independent reviewer A distinguished the product/form-qualified EBIOS*
+    (dried yeast tablets) from bare EBIOS. Preserve the exact qualified raw label
+    as resolving RAW_TEXT after checking its Asahi footnote; keep bare EBIOS rejected.
+    Tablet excipients and historical/current lot equivalence remain unknown. Initial
+    authored bytes are retained in author-attempt-1.
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending
+  product-specific composition curation. Successor-v3 source reconciliation: the original
+  MediaDive1953 import source explicitly says dried yeast tablets, and the assigned
+  JCM969 source identifies Asahi Food & Healthcare. Identity is the bounded historical
+  EBIOS tablet family. Prior P2G research remains historical evidence and is not adopted
+  as exact identity. Bare EBIOS is rejected as ambiguous provenance. The exact product-and-form-qualified
+  raw label EBIOS* (dried yeast tablets) is retained as RAW_TEXT after checking the
+  Asahi manufacturer footnote; the asterisk alone is not grounds for rejection. This
+  tablet-family alias does not establish exact yeast-extract/baker''s-yeast or historical
+  quantitative formulation equivalence. Excipients, lot/version and quantitative formulation
+  are unknown. Cross-shard proposed owner selections in workers01/02 are recorded
+  in issue1221 and require coordinator reconciliation; no other-worker proposal is
+  applied or recertified.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ebios
+  ontology_label: Asahi EBIOS dried-yeast tablets
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=969
+    notes: JCM969 EBIOS-glucose agar, table and manufacturer footnote. Bounded source-defined
+      preparation identity, not an exact identity to an individual constituent or
+      an unqualified generic product.
+supplied_form:
+- name: Historical EBIOS tablet preparation named by JCM969
+  supplier: Asahi Food & Healthcare Co. Ltd., Tokyo, Japan
+  form: dried yeast tablets
+  notes: Source-era product family only; no catalogue number, tablet excipient list,
+    tablet mass or current formulation equivalence established.
+components:
+- component_name: Dried yeast
+  reference_scope: UNMAPPED
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=969
+    source_record: JCM969 EBIOS* (dried yeast tablets),10g; manufacturer footnote
+    notes: Dried yeast is explicitly named within the tablet preparation. No mass
+      fraction, strain, yeast-extract equivalence or excipient identity is supplied.
+  notes: The tablet is a supplied preparation; the dried-yeast description does not
+    establish that the tablet contains only yeast.

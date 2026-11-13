@@ -1,0 +1,116 @@
+identifier: cas:1030365-02-6
+preferred_term: potassium citramalate monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:15584
+  ontology_label: citramalic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 1030365-02-6 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: potassium citramalate monohydrate is a hydrate/salt with its own CAS and
+      no exact ChEBI term; anchored to the parent CHEBI:15584 'citramalic acid' by
+      narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt monohydrate
+      of citramalic acid
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:15584 (''citramalic acid'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'SourceCAS1030365-02-6/name/mass242.31 are independently corroborated by
+      primarySigma27455monohydrate. PreserveCAS and unspecific preferred label; do
+      not assert a single enantiomer. See the complete identity, mapping, chemistry
+      and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+      owner selector data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml.
+      Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/15584/;
+      https://www.ebi.ac.uk/ols4/api/search?q=potassium%20citramalate%20monohydrate&ontology=chebi,ncit&rows=100;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1030365-02-6/JSON; https://www.sigmaaldrich.com/US/en/product/aldrich/27455;
+      https://github.com/CultureBotAI/CultureBotHT. Captures, exact input hashes and
+      scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:1030365-02-6 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.869339+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:38.385291+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C5H6K2O5; smiles=CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+];
+    inchi=InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.855004+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15584 ''citramalic acid''
+    and registry kgmicrobe.compound:potassium_citramalate_monohydrate. identifier
+    cas:1030365-02-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+    potassium salt monohydrate of citramalic acid'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C5H6K2O5","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"CC(CC(=O)[O-])(C(=O)[O-])O.[K+].[K+]","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C5H8O5.2K/c1-5(10,4(8)9)2-3(6)7;;/h10H,2H2,1H3,(H,6,7)(H,8,9);;/q;2*+1/p-2","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":16211775,"after":null}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002101; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1030365-02-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002101
+legacy_identifiers:
+- MIM:Potassium_Citramalate_Monohydrate
+- cas:1030365-02-6

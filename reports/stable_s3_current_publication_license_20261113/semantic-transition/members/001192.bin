@@ -1,0 +1,66 @@
+identifier: CHEBI:747127
+preferred_term: Gepotidacin
+ontology_mapping:
+  ontology_id: CHEBI:747127
+  ontology_label: gepotidacin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: CHEBI dbxref (OAK CHEBI sqlite)
+    cas_rn: 1075236-89-3
+    notes: ChEBI ID CHEBI:747127 found via unique CAS-RN→CHEBI dbxref (oio:hasDbXref
+      cas:1075236-89-3); CHEBI label 'gepotidacin' is label-exact with the ingredient.
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (label-exact)
+    notes: Prior narrow parent NCIT:C170025 (superseded by exact CHEBI primary); matched_via='Gepotidacin'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:1075236-89-3 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.767696+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:14.663403+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C24H28N6O3; smiles=C1CC2=CC(=NC=C2OC1)CNC3CCN(CC3)CC4CN5C(=O)C=CC6=C5;
+    inchi=InChI=1S/C24H28N6O3/c31-22-4-3-20-24-29(22)15-19(3
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.674734+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:48:41.570952+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C170025 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-07-05T10:06:57.852475+00:00'
+  curator: cbclaw_chebi_grounding_tier2
+  action: AUTO_GROUND_TO_CHEBI
+  changes: primary cas:1075236-89-3 → CHEBI:747127 (gepotidacin) via unique CAS-RN→CHEBI
+    dbxref match (skos:exactMatch); prior NCIT:C170025 narrow parent superseded.
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 1075236-89-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C24H28N6O3
+  smiles: C1CC2=CC(=NC=C2OC1)CNC3CCN(CC3)CC4CN5C(=O)C=CC6=C5N4C(=O)C=N6
+  inchi: InChI=1S/C24H28N6O3/c31-22-4-3-20-24-29(22)15-19(30(24)23(32)13-27-20)14-28-7-5-17(6-8-28)25-11-18-10-16-2-1-9-33-21(16)12-26-18/h3-4,10,12-13,17,19,25H,1-2,5-9,11,14-15H2/t19-/m1/s1
+  pubchem_cid: 25101874
+ingredient_type: SINGLE_INGREDIENT

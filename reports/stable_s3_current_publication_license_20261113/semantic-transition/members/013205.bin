@@ -1,0 +1,66 @@
+identifier: kgmicrobe.ingredient:nbrc989_sodium_lactate_50percent_stock
+preferred_term: Sodium lactate 50% stock (NBRC 989)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc989_sodium_lactate_50percent_stock
+  ontology_label: Sodium lactate 50% stock (NBRC 989)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+    notes: Nominal source-qualified preparation registry identity only. No exact pure-solute
+      ontology equivalence is asserted.
+components:
+- component_name: Sodium lactate (stereochemistry unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: PERCENT
+  source: Literal stock-strength label; percentage basis unspecified in this source.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+    source_record: 'Composition table: 50% Sodium lactate, 25 ml'
+    notes: NBRC 989 specifies 25 mL of 50% sodium lactate stock. The two frozen occurrences
+      have conflicting ML_PER_L and G_PER_L units; both remain in the decision with
+      the primary volume as context. Percentage basis, solvent and sodium lactate
+      stereochemistry are unreported. No L or DL pure-salt identity is selected. This
+      is a nominal source-qualified preparation, not a fully resolved chemical formulation.
+      PERCENT preserves the unspecified source percent basis; it is not PERCENT_WV
+      or PERCENT_WW. UNKNOWN component-list completeness records the unreported solvent/preparation
+      inputs. No generic raw source label is made a global resolving synonym and no
+      inherited hold is removed.
+notes: NBRC 989 specifies 25 mL of 50% sodium lactate stock. The two frozen occurrences
+  have conflicting ML_PER_L and G_PER_L units; both remain in the decision with the
+  primary volume as context. Percentage basis, solvent and sodium lactate stereochemistry
+  are unreported. No L or DL pure-salt identity is selected. This is a nominal source-qualified
+  preparation, not a fully resolved chemical formulation. PERCENT preserves the unspecified
+  source percent basis; it is not PERCENT_WV or PERCENT_WW. UNKNOWN component-list
+  completeness records the unreported solvent/preparation inputs. No generic raw source
+  label is made a global resolving synonym and no inherited hold is removed.
+curation_history:
+- timestamp: '2026-11-08T05:29:10.357663+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: SOURCE_QUALIFIED_NOMINAL_STOCK_PROPOSED
+  changes: Address independent integration finding INTEGRATION-03 with an isolated
+    nominal stock proposal while retaining chemical and quantity uncertainty. NBRC
+    989 specifies 25 mL of 50% sodium lactate stock. The two frozen occurrences have
+    conflicting ML_PER_L and G_PER_L units; both remain in the decision with the primary
+    volume as context. Percentage basis, solvent and sodium lactate stereochemistry
+    are unreported. No L or DL pure-salt identity is selected.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.312401+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

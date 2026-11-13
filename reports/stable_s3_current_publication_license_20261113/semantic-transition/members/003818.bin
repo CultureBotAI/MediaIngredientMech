@@ -1,0 +1,49 @@
+from pathlib import Path
+import json,hashlib,datetime,subprocess,yaml
+D=Path(__file__).resolve().parent;F=D/'native-review-fixture';C=D.parents[1];A=C/'integration/ancillary1258-worktree'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def js(p,x):
+ with p.open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+r=json.loads((D/'NATIVE-REVIEW-RECEIPT.json').read_text());v=yaml.safe_load(Path(r['yaml']).read_text());by={x['fixture_path']:x for x in json.loads((D/'INPUT-TRANSPORT-v2.json').read_text())};closure=[]
+for x in v['source']['inputs']:
+ p=F/x['path'];assert sha(p)==x['sha256'];e={'native_declared_path':x['path'],'actual_native_input_path':str(p),'sha256':x['sha256'],'bytes':p.stat().st_size,'native_role':x.get('role')}
+ if x['path'] in by:original=Path(by[x['path']]['original_path']);e['transport']='exact_regular_copy'
+ elif x['path'].startswith('before/'):
+  original=A/'data/ingredients/mapped'/Path(x['path']).name;e['transport']='authentic_git_beforeimage';e['git_commit']='84241993a278a7a413422ef89a52c0b47dc57831';e['git_path']=str(original.relative_to(A));raw=subprocess.check_output(['git','--no-optional-locks','-C',str(A),'show',e['git_commit']+':'+e['git_path']]);assert hashlib.sha256(raw).hexdigest()==x['sha256']
+ else:
+  original={'transport-map.json':D/'INPUT-TRANSPORT.json','transport-map-v2.json':D/'INPUT-TRANSPORT-v2.json','evidence/author-native-pair-readback.json':D/'author-native-pair-readback.json','evidence/whole-owner-field-matrix.json':D/'whole-owner-field-matrix.json'}[x['path']];e['transport']='review_generated_exact_copy'
+ assert sha(original)==x['sha256'];e['literal_original_path']=str(original);closure.append(e)
+js(D/'NATIVE-INPUT-CLOSURE.json',{'scope':'Exact179 native inputs; preserve literal original paths and private fixture identity. Materialized copies are not a new native source root. Private Git internals are not portable evidence.','source_root':str(F),'fixture_git_head':r['fixture_git_head'],'inputs':closure})
+checks=json.loads((D/'independent-checks.json').read_text());author=json.loads((D/'author-native-pair-readback.json').read_text());check=json.loads((D/'native-check.stdout').read_text());assert check['valid_reviews']==1
+limits=['No root acceptance/source application or actual full-campaign row approval.','No inherited role, environment, occurrence or supported-export approval.','Borax requires the three authentic unchanged UW child corrections; DSMZ770 stock/global MediaDive196 hold remains.','Na2Se2O3 original reagent remains unresolved; no inferred replacement.','Three stock deferrals retain four original source cases and nominal facts, without equal/distinct owner assertions.','Sulfur historical #368 canonical comment decision remains separate from owner correction.','Reviewer authored infrastructure/corrected constructor, not these source payloads; constructor excluded.']
+assessment={'status':'INDEPENDENT_SOURCE_SUCCESSORS_SUPPORTED_WITH_LIMITATIONS','native_review':r,'complete_owner_count':4,'deferral_operations':3,'preserved_deferral_cases':4,'candidate_bindings':checks['records'],'new_findings':0,'native_schema_idempotence_count':4,'native_per_owner_projection_count':4,'coupled_overlay_owner_count':checks['overlay_owner_count'],'coupled_partonomy_errors':0,'required_unchanged_UW_operations':checks['required_unchanged_UW_operations'],'author_pair_inputs_rehashed':author['source_input_count'],'native_saved_review_inputs_rehashed':len(closure),'limits':limits,'review_selection_guidance':'This actual native YAML/Markdown pair is ONE independent scoped observation. Manifests, captures, self-review and handoff are supporting evidence, not additional votes. Carry all literal179-input mappings and original fixture provenance.'}
+js(D/'ASSESSMENT.json',assessment)
+text='''# Independent four-owner successor review
+
+The complete four source successors and three installation deferrals are supported with limitations. No new confirmed finding. The saved native YAML/Markdown pair is the authoritative independent assessment.
+
+- Na2seo3: exact56b2 retains CHEBI48843 and valid anhydrous alias; preserves Na2Se2O3 as rejected raw source text. DSMZ863/MediaDive804 reagent remains unresolved.
+- Borax: exact6f82 preserves the conventional decahydrate, structurally Na2[B4O5(OH)4]·8H2O, supported by IUCr/ChEBI/supplier. Method records adjudication. Three UW dependencies and the separate DSMZ770 stock hold remain.
+- Diarsenic trioxide: exactaa045 preserves oxide input and real As2O3 query, recording empirical/molecular adjudication. No alkaline stock, quantity, polymorph or final-species inference.
+- Sulfur: exact77f915 full four-origin/six-case union supports generic elemental material; atom/polysulfur and other rejected labels remain nonresolving. Source-specific powder/process/quantity facts do not become universal properties. #368 canonical comment retention is a separate row decision.
+- Exactd403 defers three creates without rewriting four original cases or rejecting supported nominal recipes. Unreported hydration/process/finalvolume proves neither equality nor distinctness. The genuine generic84g/L edit remains separate.
+
+Independent checks:21+202 sealed author members; all four complete-object deltas and original histories/evidence; seven published original origins; four native schema/idempotence checks; authentic2957-owner overlay with three required UW corrections and zero partonomy errors; four actual native per-owner projections with real KG gzip. Method rows change only justification/source/confidence; Na removes only Na2Se2O3 plus source attribution. These are not full-campaign generated-row approvals.
+
+The author native pair and91 original inputs were verified as self-review. This independent native pair has179 exact inputs and passed native check --require-reviews. INPUT-TRANSPORT-v2.json and NATIVE-INPUT-CLOSURE.json retain literal originals, actual Git beforeimages and private-fixture paths. The fixture commit is review-only provenance, not a campaign commit or relocated worker source root. Support artifacts and duplicate captures are not separate votes.
+
+All role/environment/count/quantity/release holds remain. No source acceptance, source apply, maintained/worker/shared-Git/GitHub/control action occurred. Prior operator/constructor authorship is disclosed; that constructor is outside this independent verdict. Original author packets/failures and prior reviews remain immutable. Exploratory format reads were corrected before assessment; an initial closure enumeration omitted the three explicitly Git-derived beforeimages and was completed here without changing any native pair/input/candidate bytes.
+'''
+with (D/'README.md').open('x') as f:f.write(text)
+for name,key in [('selenite718-alias-successor-v1','members'),('w09-method-successors-v1','files')]:
+ p=C/'integration'/name
+ for x in json.loads((p/'MANIFEST.json').read_text())[key]:assert sha(p/x['path'])==x['sha256'] and (p/x['path']).stat().st_size==x['bytes']
+for x in closure:assert sha(x['actual_native_input_path'])==sha(x['literal_original_path'])==x['sha256']
+js(D/'FINAL-RECHECK.json',{'time':datetime.datetime.now(datetime.timezone.utc).isoformat(),'author_members':223,'native_inputs':179,'result':'ALL_EXACT','A_head':subprocess.check_output(['git','--no-optional-locks','-C',str(A),'rev-parse','HEAD'],text=True).strip(),'A_status':subprocess.check_output(['git','--no-optional-locks','-C',str(A),'status','--porcelain=v1'],text=True),'native_check':check})
+files=[]
+for p in sorted(D.rglob('*')):
+ if '.git' in p.relative_to(D).parts or not p.is_file():continue
+ assert not p.is_symlink();files.append({'path':str(p.relative_to(D)),'sha256':sha(p),'bytes':p.stat().st_size})
+js(D/'MANIFEST.json',{'scope':'All regular private review files except this manifest/handoff; private Git internals excluded. All original packets preserved.','files':files})
+js(D/'HANDOFF.json',{'status':assessment['status'],'created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'assessment':{'path':'ASSESSMENT.json','sha256':sha(D/'ASSESSMENT.json')},'manifest':{'path':'MANIFEST.json','sha256':sha(D/'MANIFEST.json'),'members':len(files)},'native_review':r,'input_closure':{'path':'NATIVE-INPUT-CLOSURE.json','sha256':sha(D/'NATIVE-INPUT-CLOSURE.json')},'author_packets':json.loads((D/'manifest-verification.json').read_text()),'findings':0,'source_application':False,'role_export_approval':False,'constructor_independent_approval':False})
+print(json.dumps({'handoff':sha(D/'HANDOFF.json'),'manifest':sha(D/'MANIFEST.json'),'members':len(files),'assessment':sha(D/'ASSESSMENT.json'),'yaml':r['yaml_sha256'],'markdown':r['markdown_sha256'],'closure':sha(D/'NATIVE-INPUT-CLOSURE.json')},indent=2))

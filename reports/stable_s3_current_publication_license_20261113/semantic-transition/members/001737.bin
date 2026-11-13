@@ -1,0 +1,84 @@
+identifier: CHEBI:201539
+preferred_term: monazomycin
+ontology_mapping:
+  ontology_id: CHEBI:201539
+  ontology_label: Monazomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgmicrobe.compound:monazomycin
+    notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
+synonyms:
+- synonym_text: (13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: monazomycin'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T06:10:55.017713+00:00'
+  curator: audit_propose_chebi_for_unmapped
+  action: CREATED_FROM_UNMAPPED_QUEUE
+  changes: Created new ingredient from kgmicrobe.compound:monazomycin with auto-curated
+    CHEBI CHEBI:201539 (Monazomycin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.878908+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.928620+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C72H133NO22; inchi=InChI=1S/C72H133NO22/c1-39-22-19-20-25-55(79)46(8);
+    smiles=CC1=CC(C)C(O)C(C)=CC(OC2OC(CO)C(O)C(O)C2O)C(O)C(C)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.610730+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.391403+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    monazomycin''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    monazomycin''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C72H133NO22
+  inchi: InChI=1S/C72H133NO22/c1-39-22-19-20-25-55(79)46(8)54(78)24-17-15-18-26-62(84)95-71(42(4)23-16-13-14-21-31-73)50(12)59(83)37-53(77)36-58(82)48(10)66(88)47(9)56(80)34-51(75)29-27-40(2)63(85)41(3)28-30-52(76)35-57(81)49(11)67(89)60(33-45(7)65(87)44(6)32-43(5)64(39)86)93-72-70(92)69(91)68(90)61(38-74)94-72/h19,22,28,30,32-33,39-42,44,46-61,63-72,74-83,85-92H,13-18,20-21,23-27,29,31,34-38,73H2,1-12H3
+  smiles: CC1=CC(C)C(O)C(C)=CC(OC2OC(CO)C(O)C(O)C2O)C(O)C(C)C(O)CC(O)C=CC(C)C(O)C(C)CCC(O)CC(O)C(C)C(O)C(C)C(O)CC(O)CC(O)C(C)C(C(C)CCCCCCN)OC(=O)CCCCCC(O)C(C)C(O)CCC=CC(C)C1O
+  data_source: CHEBI sqlite (oaklib)
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

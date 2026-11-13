@@ -1,0 +1,309 @@
+{
+  "case_indices": [
+    12,
+    144
+  ],
+  "search_regex": "mueller|muller.?hinton",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+      "sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f",
+      "record": {
+        "identifier": "UNMAPPED_0128",
+        "preferred_term": "Mueller Hinton II agar",
+        "synonyms": [
+          {
+            "synonym_text": "Mueller Hinton II agar",
+            "synonym_type": "RAW_TEXT",
+            "source": "extracted_from_agar_yaml"
+          },
+          {
+            "synonym_text": "Mueller Hinton II agar (BD-BBL)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_COMPLEX_MEDIUM",
+            "changes": "Extracted from Agar.yaml — 'Mueller Hinton II agar' is a complete media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely FOODON complex medium, or split into per-component ingredients).",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:35:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a Mueller Hinton II agar medium/base preparation and left unmapped pending recipe- or product-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-07-05T00:00:00+00:00",
+            "curator": "cbclaw_media_modeling_114",
+            "action": "RECLASSIFY_INGREDIENT_TYPE",
+            "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mueller_Hinton_II_Agar-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | recommendation | CURIEs discussed: CHEBI:2509. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Mueller Hinton II agar (BD-BBL)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as a Mueller Hinton II agar medium/base preparation, not agar identity.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "Mueller Hinton II agar",
+        "UNMAPPED_0128",
+        "Mueller Hinton II agar",
+        "Mueller Hinton II agar (BD-BBL)"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:002855",
+      "recipe_label": "mueller_hinton_ii_agar_with_1_glucose_and_1_glycerol",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mueller_hinton_ii_agar_with_1_glucose_and_1_glycerol.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Mueller Hinton II agar",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "CHEBI:2509",
+      "source_compound_id": "",
+      "mim_preferred_term": "Mueller Hinton II agar",
+      "mim_matched_label": "Mueller Hinton II agar",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "38",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"38\"},\"mediaingredientmech_chebi_term\":{\"id\":\"CHEBI:2509\",\"label\":\"agar\"},\"preferred_term\":\"Mueller Hinton II agar\",\"term\":{\"id\":\"CHEBI:2509\",\"label\":\"agar\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:009151",
+      "recipe_label": "mueller_hinton_medium_with_10_rabbit_serum",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mueller_hinton_medium_with_10_rabbit_serum.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "Mueller Hinton Broth (BD 211443)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "22",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"22\"},\"notes\":\"TOGO M2583 lists 22 g Mueller Hinton Broth from BD catalog 211443 without disclosing the broth composition.\",\"preferred_term\":\"Mueller Hinton Broth (BD 211443)\",\"source\":\"TOGO M2583\"}"
+    },
+    {
+      "recipe_id": "CultureMech:009468",
+      "recipe_label": "mueller_hinton_mh_broth",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mueller_hinton_mh_broth.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "Mueller-Hinton broth",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "1000",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"1000\"},\"notes\":\"TOGO M2937 lists 1 L of Mueller-Hinton broth.\",\"preferred_term\":\"Mueller-Hinton broth\",\"source\":\"TOGO M2937\"}"
+    },
+    {
+      "recipe_id": "CultureMech:009472",
+      "recipe_label": "mueller_hinton_mh_agar",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mueller_hinton_mh_agar.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Mueller Hinton (MH) agar",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "1",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"1\"},\"notes\":\"Properties: Undefined component, Complex component\",\"preferred_term\":\"Mueller Hinton (MH) agar\"}"
+    },
+    {
+      "recipe_id": "CultureMech:009896",
+      "recipe_label": "mueller_hinton_ii_agar_with_1_glucose_and_1_glycerol",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/TOGO_M506_Mueller_Hinton_II_Agar_With_1_Glucose_And_1_Glycerol.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "3",
+      "preferred_term": "Mueller Hinton II agar (BD-BBL)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Mueller Hinton II agar",
+      "mim_matched_label": "Mueller Hinton II agar (BD-BBL)",
+      "mim_match_type": "synonym",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "38",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"38\"},\"notes\":\"Properties: Undefined component\",\"preferred_term\":\"Mueller Hinton II agar (BD-BBL)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:011092",
+      "recipe_label": "Main sol. 804",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_1635_Main_sol_804.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "Mueller-Hinton broth",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:748",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "21",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"21\"},\"evidence\":[{\"explanation\":\"Concentration evidence for composition[0].concentration (Mueller-Hinton broth) in MediaDive solution 1635; locator=$.data.recipe[0] (compound_id=748). Provider explicitly reports g_l=21. Arithmetic check: 21 g * 1 g/g / (1000 ml / 1000 ml per L) = 21 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \\\"volume\\\": 1000. Retrieved 2026-10-07T08:54:53.995594+00:00; response SHA256=c683a5d0099723e8ffa83bbe5d14ff0382d2e63faf8398ab59522a790c7d967d.\",\"reference\":\"https://mediadive.dsmz.de/rest/solution/1635\",\"snippet\":\"{\\n                \\\"recipe_order\\\": 1,\\n                \\\"compound\\\": \\\"Mueller-Hinton broth\\\",\\n                \\\"compound_id\\\": 748,\\n                \\\"solution\\\": null,\\n                \\\"solution_id\\\": null,\\n                \\\"condition\\\": null,\\n                \\\"attribute\\\": null,\\n                \\\"amount\\\": 21,\\n                \\\"unit\\\": \\\"g\\\",\\n                \\\"g_l\\\": 21,\\n                \\\"mmol_l\\\": null,\\n                \\\"optional\\\": 0\\n            }\",\"supports\":\"SUPPORT\"}],\"preferred_term\":\"Mueller-Hinton broth\",\"term\":{\"id\":\"mediadive.compound:748\",\"label\":\"Mueller-Hinton broth\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:013289",
+      "recipe_label": "Main sol. J505",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_4280_Main_sol_J505.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "Mueller Hinton II agar",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1775",
+      "mim_preferred_term": "Mueller Hinton II agar",
+      "mim_matched_label": "Mueller Hinton II agar",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "38",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"38\"},\"preferred_term\":\"Mueller Hinton II agar\",\"term\":{\"id\":\"mediadive.compound:1775\",\"label\":\"Mueller Hinton II agar\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/TOGO_M506_Mueller_Hinton_II_Agar_With_1_Glucose_And_1_Glycerol.yaml",
+      "sha256": "974417ecde358755f75605dd44f40b0783363386cd95d378584551e12ab71415",
+      "frozen_input_manifest_hash": "974417ecde358755f75605dd44f40b0783363386cd95d378584551e12ab71415",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_1635_Main_sol_804.yaml",
+      "sha256": "cd0cfbccadb716153de688800cd3dcd06c15e03e38c2d00ab7843f0fdc687b2e",
+      "frozen_input_manifest_hash": "cd0cfbccadb716153de688800cd3dcd06c15e03e38c2d00ab7843f0fdc687b2e",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_4280_Main_sol_J505.yaml",
+      "sha256": "72c2c2a5f948d4de2cefb084900986997e7e635c64cae557c6e79e9c3fc47786",
+      "frozen_input_manifest_hash": "72c2c2a5f948d4de2cefb084900986997e7e635c64cae557c6e79e9c3fc47786",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mueller_hinton_ii_agar_with_1_glucose_and_1_glycerol.yaml",
+      "sha256": "bb06cb41e385a5a4c26418f53a00b2e49f1f2fa9eb87e447727d32da62ce4192",
+      "frozen_input_manifest_hash": "bb06cb41e385a5a4c26418f53a00b2e49f1f2fa9eb87e447727d32da62ce4192",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mueller_hinton_medium_with_10_rabbit_serum.yaml",
+      "sha256": "3cff30ae79a2a3d95691b525e8f2e24e745c8874c6ff0d0570649cabcbb8e52d",
+      "frozen_input_manifest_hash": "3cff30ae79a2a3d95691b525e8f2e24e745c8874c6ff0d0570649cabcbb8e52d",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mueller_hinton_mh_agar.yaml",
+      "sha256": "28c8f4a133e969ccbf027bf0aa05893d0286f6dd51bb7386d6d882d51836439c",
+      "frozen_input_manifest_hash": "28c8f4a133e969ccbf027bf0aa05893d0286f6dd51bb7386d6d882d51836439c",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mueller_hinton_mh_broth.yaml",
+      "sha256": "2c47255e967f4e51635731fcc9716a668ca037840b07d59a056efcf74acea78f",
+      "frozen_input_manifest_hash": "2c47255e967f4e51635731fcc9716a668ca037840b07d59a056efcf74acea78f",
+      "matches_frozen": true
+    }
+  ]
+}

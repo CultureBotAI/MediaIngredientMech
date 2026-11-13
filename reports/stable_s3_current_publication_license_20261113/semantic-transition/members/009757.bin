@@ -1,0 +1,76 @@
+id: CultureMech:001529
+name: oatmeal_agar
+original_name: OATMEAL AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_range:
+  min: 7.0
+  max: 7.2
+media_term:
+  preferred_term: DSMZ Medium 425
+  term:
+    id: mediadive.medium:425
+    label: OATMEAL AGAR
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium425.pdf'
+ingredients:
+- preferred_term: Oat flakes
+  concentration:
+    value: '10'
+    unit: G_PER_L
+- preferred_term: Oatmeal
+  concentration:
+    value: '10'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 7.0 - 7.2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:11.096712Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 425'
+- timestamp: '2026-03-13T06:19:04.986017Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001529'
+- timestamp: '2026-03-17T06:30:01.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:17.067537+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "OATMEAL AGAR" to "oatmeal_agar" for consistent matching
+- timestamp: '2026-05-20T06:02:01.409605+00:00'
+  curator: migrate_ph_range.py
+  action: MIGRATED_PH_RANGE
+  notes: 'ph_range ''7-7.2'' -> {''min'': 7.0, ''max'': 7.2}'
+- timestamp: '2026-06-05T07:41:40.293520+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+kg_microbe_match: mediadive.medium:12
+variant_children:
+- path: data/normalized_yaml/bacterial/KOMODO_425_OATMEAL_AGAR.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:005249
+  name: oatmeal_agar
+  notes: Same ingredient and concentration signature; KOMODO record copied from the
+    matching DSMZ medium source.

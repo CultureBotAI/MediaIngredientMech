@@ -1,0 +1,166 @@
+id: CultureMech:008010
+name: togo_medium_m1468
+original_name: (Unnamed medium)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Bacto PPLO Broth (Difco)
+  concentration:
+    value: '21'
+    unit: G_PER_L
+  source: NBRC Medium 246
+  notes: NBRC Medium 246 lists 21 g/L Bacto PPLO Broth from Difco; this commercial
+    broth is retained as an opaque complex component.
+- preferred_term: Active horse serum
+  concentration:
+    value: '200'
+    unit: ML_PER_L
+  source: NBRC Medium 246
+  notes: NBRC Medium 246 lists 200 ml/L Active horse serum sterilized by filtration.
+- preferred_term: Distilled water
+  concentration:
+    value: '700'
+    unit: ML_PER_L
+  source: NBRC Medium 246
+  notes: NBRC Medium 246 lists 700 ml/L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1468
+  term:
+    id: TOGO:M1468
+    label: TOGO Medium M1468
+notes: TOGO M1468 imports NBRC Medium 246, which lists 21 g/L Bacto PPLO Broth (Difco),
+  200 ml/L Active horse serum, 100 ml/L Fresh baker's yeast extract (25% solution),
+  and 700 ml/L Distilled water. The 25% yeast extract is prepared by boiling 250 g
+  dried baker's yeast suspended in 1 L distilled water for 30 min, removing yeast
+  cells by centrifugation, and sterilizing by filtration.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.713373Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1468'
+- timestamp: '2026-01-28T19:48:29.618732Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:04:49.210529+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T03:09:20.345280Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 1 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:52.971061Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008010'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:28.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:11.466351+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "TOGO Medium M1468" to "togo_medium_m1468" for consistent
+    matching
+- timestamp: '2026-05-16T09:04:36.072229+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:52.320068+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_nbrc_246_score15.py
+  action: RESOLVED_NBRC_246_SCORE15
+  source: https://togomedium.org/medium/M1468; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=246
+  notes: Curated TOGO:M1468 from TOGO and NBRC Medium 246; corrected Active horse
+    serum, Fresh baker's yeast extract, and Distilled water from mass-like imports
+    to ml/L volume additions, moved dried baker's yeast to the nested 25% Fresh baker's
+    yeast extract, and retained Active horse serum and Bacto PPLO Broth as sourced
+    unmapped components.
+solutions:
+- preferred_term: Fresh baker's yeast extract (25% solution)
+  concentration:
+    value: '100'
+    unit: ML_PER_L
+  source: NBRC Medium 246
+  notes: NBRC Medium 246 adds 100 ml/L 25% Fresh baker's yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+  preparation_notes: Boil 250 g of dried baker's yeast suspended in 1 L of distilled
+    water for 30 min, remove yeast cells by centrifugation, and sterilize by filtration.
+  composition:
+  - preferred_term: dried baker's yeast
+    concentration:
+      value: '250'
+      unit: G_PER_L
+    source: NBRC Medium 246
+    notes: NBRC Medium 246 prepares 25% Fresh baker's yeast extract from 250 g/L dried
+      baker's yeast.
+    term:
+      id: FOODON:03413797
+      label: Baker's yeast
+  - preferred_term: Distilled water
+    concentration:
+      value: '1000'
+      unit: ML_PER_L
+    source: NBRC Medium 246
+    notes: NBRC Medium 246 prepares 25% Fresh baker's yeast extract with 1 L Distilled
+      water.
+    term:
+      id: CHEBI:15377
+      label: water
+    mediaingredientmech_chebi_term:
+      id: CHEBI:15377
+      label: water
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Prepare the basal medium with 21 g/L Bacto PPLO Broth (Difco) and 700
+    ml/L Distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave the PPLO broth base and cool it.
+- step_number: 3
+  action: HEAT
+  description: Boil 250 g dried baker's yeast suspended in 1 L distilled water for
+    30 min to prepare 25% Fresh baker's yeast extract.
+- step_number: 4
+  action: FILTER
+  description: Remove yeast cells from the boiled 25% Fresh baker's yeast extract
+    by centrifugation.
+- step_number: 5
+  action: FILTER_STERILIZE
+  description: Sterilize Active horse serum and 25% Fresh baker's yeast extract by
+    filtration.
+- step_number: 6
+  action: MIX
+  description: Add 200 ml/L filter-sterilized Active horse serum and 100 ml/L filter-sterilized
+    Fresh baker's yeast extract (25% solution) to the autoclaved and cooled PPLO broth
+    base.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1468
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=246

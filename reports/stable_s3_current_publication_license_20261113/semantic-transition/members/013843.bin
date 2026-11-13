@@ -1,0 +1,82 @@
+identifier: NCIT:C90636
+preferred_term: Glebomycin
+ontology_mapping:
+  ontology_id: NCIT:C90636
+  ontology_label: Bluensomycin
+  ontology_source: NCIT
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into MIM''s pipeline;
+      confidence=MEDIUM; rationale=single lexical candidate; top OLS candidates: NCIT:C90636(Bluensomycin).
+      Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:glebomycin after OLS returned NCIT:C90636 with exact synonym
+      "Glebomycin".
+  - evidence_type: LITERATURE
+    source: https://doi.org/10.1128/jb.172.10.5844-5851.1990
+    notes: Independent1990 biosynthetic research explicitly identifies Bluensomycin(glebomycin), corroborating
+      NCIT:C90636. This supplies chemical identity evidence that the prior hold lacked. Propose evidence
+      enrichment and SYNONYM_MATCH grade, preserving all inherited release holds until fresh full-payload
+      review. Exact primary-source capture and live ontology record are in worker09 antibiotic evidence;
+      this proposal does not clear publication holds.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:glebomycin; OLS search across
+    CHEBI+NCIT returned MEDIUM-confidence (single lexical candidate). Identifier kept as kgmicrobe.compound:
+    until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.778074+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.688624+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:glebomycin → NCIT:C90636 after EBI OLS exact synonym match to "Glebomycin".
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.389507+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Enrich existing mapping with independent chemical synonym evidence and correct quality to SYNONYM_MATCH.
+    Proposal only; original mapping evidence preserved in before capture. No role, whole-record, hold-removal
+    or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: '2026-11-08 proposal: Enrich existing mapping with independent chemical synonym evidence and correct
+  quality to SYNONYM_MATCH. Prior no-hit statements are historical search results; original history is
+  preserved. Fresh complete-payload review is required before publication.'

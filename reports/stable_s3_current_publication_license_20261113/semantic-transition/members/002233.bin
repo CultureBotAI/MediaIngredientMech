@@ -1,0 +1,51 @@
+identifier: CHEBI:72346
+preferred_term: Roseoflavin
+ontology_mapping:
+  ontology_id: CHEBI:72346
+  ontology_label: roseoflavin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 1-deoxy-1-[8-(dimethylamino)-7-methyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl]-D-ribitol
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=51093-55-1); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.091159+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.180144+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C18H23N5O6; inchi=InChI=1S/C18H23N5O6/c1-8-4-9-11(5-10(8)22(2)3)23(6;
+    smiles=Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.144063+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 51093-55-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C18H23N5O6
+  inchi: InChI=1S/C18H23N5O6/c1-8-4-9-11(5-10(8)22(2)3)23(6-12(25)15(27)13(26)7-24)16-14(19-9)17(28)21-18(29)20-16/h4-5,12-13,15,24-27H,6-7H2,1-3H3,(H,21,28,29)/t12-,13+,15-/m0/s1
+  smiles: Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O)CO)c2cc1N(C)C
+ingredient_type: SINGLE_INGREDIENT

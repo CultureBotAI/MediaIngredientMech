@@ -1,0 +1,47 @@
+{
+  "finding_id": "INTAKE-V2-CONDITIONAL-REF-001",
+  "scope": "Private conditional crosswalk packaging, not a source statement or native gate defect",
+  "at": "2026-11-08T12:05:01.255345+00:00",
+  "status": "CONFIRMED_BEFORE_SUCCESSOR_CORRECTION",
+  "source": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v2/resolution-crosswalk.conditional.json",
+    "sha256": "b8184bedf6848e93e161b30e91281f0542ca5ad031496dac4e88bf81227d5c30"
+  },
+  "field": "[112].evidence_refs[0]",
+  "origin_id": "w02::a2-proposal-nbrc1132-asahi-ebios-tablets",
+  "before": {
+    "path": ".temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/successors/ebios-no-install-v1/source-origin-retirement.json",
+    "sha256": "8ab8cb596290c6ff6657c51daf1a0def7e19e2d3e17f67ca0471b7650901c91c",
+    "published_path": "reports/all_unmatched_20261107/worker-02/successors/ebios-no-install-v1/source-origin-retirement.json"
+  },
+  "proposed_after": {
+    "path": ".temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/successors/ebios-no-install-v1/source-origin-retirement.json",
+    "sha256": "8ab8cb596290c6ff6657c51daf1a0def7e19e2d3e17f67ca0471b7650901c91c"
+  },
+  "unchanged_publication_proof": {
+    "capture": {
+      "path": ".temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/successors/ebios-no-install-v1/source-origin-retirement.json",
+      "sha256": "8ab8cb596290c6ff6657c51daf1a0def7e19e2d3e17f67ca0471b7650901c91c",
+      "published_path": "reports/all_unmatched_20261107/worker-02/successors/ebios-no-install-v1/source-origin-retirement.json"
+    },
+    "published_head": "c91ccac1f91417ce376a2a83e871d6f6bf90912f"
+  },
+  "actual_statement_sha256": "8ab8cb596290c6ff6657c51daf1a0def7e19e2d3e17f67ca0471b7650901c91c",
+  "native_refusal": {
+    "exception": "ValueError",
+    "message": "file reference: unknown/missing fields"
+  },
+  "helper": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/crosswalk-v5-independent-v1/author/runtime/crosswalk.py",
+    "sha256": "290d87f86a0ebde9b255776a2858e54a17df6891ecf3fbec69748b7d6bb300de"
+  },
+  "native_operator": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/src/mediaingredientmech/curate/campaign_owner_apply.py",
+    "sha256": "21ced557b3ff36bb3db2ac8d092b0af3d46bff1db6045221bdeabb128d4b9022"
+  },
+  "actual_K_head": "21061aa532401398db70c59a596debf330f70744",
+  "impact": "Unmodified full conditional crosswalk would fail at this reference before reaching retirement publication checks. No production preparation or application ran; genuine c91 empty-successor retirement is unaffected.",
+  "bounded_correction": "In a new successor only, remove published_path from this evidence_refs file reference; retain it unchanged in retirement_bridge.capture. No scientific, identity, origin, statement, native code, guard or accepted state changes.",
+  "correction_applied": false,
+  "actual_proof_method": "Called unchanged actual v5 Proofs.refs on the real inherited row, with actual M evidence root and current K native module. No monkeypatch, synthetic acceptance or fixture retirement."
+}

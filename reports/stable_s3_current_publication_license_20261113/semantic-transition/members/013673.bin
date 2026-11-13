@@ -1,0 +1,54 @@
+identifier: cas:7783-13-3
+preferred_term: Sodium ammonium hydrogenphosphate tetrahydrate
+ingredient_type: SINGLE_INGREDIENT
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: CHEBI:37586
+  ontology_label: sodium phosphate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.thermofisher.com/order/catalog/product/040320.22
+    notes: Supplier CAS7783-13-3/formula H13NNaO8P supports exact mixed-cation tetrahydrate;
+      CHEBI:37586 is an asymmetric class parent only. Local ChEBI255/NCIt26.02d bounded
+      lookup found no exact term; current separate OLS ChEBI/NCIt CAS and mixed-salt-name
+      searches also found no exact term; NCIT C29288 is an unrelated potassium/sodium
+      phosphate preparation. See shared-primary/retrievals-v4.json and v5.json.
+synonyms:
+- synonym_text: NaNH4HPO4 . 4H2O
+  synonym_type: RAW_TEXT
+  source: Frozen source culturemech NaNH4HPO4 . 4H2O; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium694.pdf
+- synonym_text: NaNH4HPO4 x 4 H2O
+  synonym_type: RAW_TEXT
+  source: Frozen source culturemech NaNH4HPO4 x 4 H2O; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium694.pdf
+chemical_properties:
+  cas_rn: 7783-13-3
+  molecular_formula: H13NNaO8P
+  molecular_weight: 209.067
+  data_source: https://www.thermofisher.com/order/catalog/product/040320.22
+  retrieval_date: '2026-11-08T05:08:47.015262+00:00'
+curation_history:
+- timestamp: '2026-11-08T05:15:32.683727+00:00'
+  curator: Codex worker08 /root/inorganics
+  action: CREATED
+  changes: Isolated source-review proposal for tetrahydrate CAS7783-13-3 from DSMZ694
+    and Thermo040320.22. Asymmetric CHEBI37586 class anchor; no occurrence transfer,
+    role approval or release approval. Local and current OLS exact-term searches are
+    bounded negative evidence; native complete-payload and closest-parent review required
+    before application.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Bind CAS/formula supplier
+    evidence to full Thermo batch7 capture at its original 2026-11-08T05:08:47.015262+00:00
+    access time; batch6 was incomplete. Preserve the proposed CAS identity and asymmetric
+    parent predicate. All inherited history, scientific/source/role/export holds and
+    original before hash remain preserved. This is a proposal, pending independent
+    whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

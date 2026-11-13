@@ -1,0 +1,858 @@
+{
+  "schema_version": "1.0.0",
+  "review_id": "w10-successor-v6-independent-scientific-review-v1",
+  "reviewer": "OpenAI Codex /root/preparation_skeptic",
+  "reviewer_type": "AI",
+  "author_independent": true,
+  "candidate_author": "Codex worker10 /root",
+  "independence_disclosure": "I did not author these five original payloads or the successor-v6 candidates. I previously served as W10 independent reviewer, including the successor-v3 HCl/Difco source corrections; that earlier review did not identify these active method/completeness errors. This is a fresh author-independent claim review, not a claim of no prior involvement. The original residual finding IDs belong to the W09 review; the subsequent qualified split triage is not my authored finding.",
+  "status": "PASS_BOUNDED_CORRECTION",
+  "verdict": "pass_with_limitations",
+  "completion": "completed",
+  "scientific_review": true,
+  "scientific_review_scope": "Fresh source-relative component method/completeness and necessary explanation for five exact complete candidate payloads, plus exact six-case/five-proposal dependency changes. Other scientific fields are checked for preservation, not renewed approval.",
+  "local_read_confirmation_at": "2026-11-08T08:50:05.717204+00:00",
+  "timing_note": "The exact earlier first reading time was not separately recorded. Local source/payload examination preceded the independent checker; checker timestamps in support identify that execution only. Report time is not a fabricated total-review start.",
+  "source_head": "3e190a0f6c5a978ca8ed7e3bc7b6a2d66935548b",
+  "invoking_skill": "review-yaml-category",
+  "skill_path": ".claude/skills/review-yaml-category/SKILL.md",
+  "payload_assessments": [
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "before": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml",
+        "sha256": "b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml",
+        "sha256": "e35684c8a476aeb0fd9048a3fefa0ffa3522147c6c7c00b85e6f42534ff9e871"
+      },
+      "before_object_sha256": "0afdb42be8a2d027c7a462a50c6eaa11e03d7746983fd7023a0957ee9145bab1",
+      "after_object_sha256": "48f48339b6ff94e2e2b25e8290592bed2a39fd4181dcaf6d016a274114a5597f",
+      "assertion_changes": [
+        {
+          "field": "/completeness",
+          "before": "PARTIAL",
+          "after": "COMPLETE"
+        },
+        {
+          "field": "/method",
+          "before": "LABEL_ENUMERATION",
+          "after": "CURATED_INTERPRETATION"
+        },
+        {
+          "field": "/notes",
+          "before": "Seven named constituents only, scoped to the nominal 2009 Difco manufacturer formulation. PARTIAL is retained for the source-qualified JCM1270 input: exact historical lot and any performance-related adjustments are unverified. No blood or reconstitution water is a dry-base component.",
+          "after": "CURATED_INTERPRETATION covers the seven immediate ingredient names in the nominal Difco Columbia Blood Agar Base formula published in the BD Difco & BBL Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE applies only to that nominal constituent-name list: all seven listed immediate ingredients are represented. This is not a complete molecular composition, an exact historical JCM1270 lot formulation, or a quantitative recipe transcription. The manufacturer performance-adjustment/supplementation footnote and unknown actual JCM lot remain explicit limitations. Component quantities and dry-mass ratios are not asserted. Blood and reconstitution water are not dry-base components. Existing mixed-owner partition and owner/role/export holds remain."
+        }
+      ],
+      "appended_history": {
+        "timestamp": "2026-11-08T08:46:08.560117+00:00",
+        "curator": "Codex worker10 /root",
+        "action": "CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION",
+        "changes": "Issue #1201, W09-W10-SKEPTIC-DIFCO-COMPONENT-METHOD, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component assertion fields component_assertion.method, component_assertion.completeness, component_assertion.notes. CURATED_INTERPRETATION covers the seven immediate ingredient names in the nominal Difco Columbia Blood Agar Base formula published in the BD Difco & BBL Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE applies only to that nominal constituent-name list: all seven listed immediate ingredients are represented. This is not a complete molecular composition, an exact historical JCM1270 lot formulation, or a quantitative recipe transcription. The manufacturer performance-adjustment/supplementation footnote and unknown actual JCM lot remain explicit limitations. Component quantities and dry-mass ratios are not asserted. Blood and reconstitution water are not dry-base components. Existing mixed-owner partition and owner/role/export holds remain. Preserved all component objects, names, identities, quantities, sources, original history, supplied-form and source-case scope, and every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative assertion correction, not human scientific review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "original_history_count": 3,
+      "independent_assessment": {
+        "case_indices": [
+          178
+        ],
+        "method": "CURATED_INTERPRETATION",
+        "completeness": "COMPLETE",
+        "assessment": "The source product label names a dry medium base, not its constituents. The genuine BD second-edition manual gives a discrete seven-entry Difco formula under Formulae, separately from BBL and EH. Every immediate ingredient name in that expressly nominal formula is present. Names-only interpretation is not a transcription of constituent quantities. COMPLETE is supportable only for that nominal list; the manufacturer adjustment/supplementation footnote and unknown historical JCM lot remain limitations. JCM1270 separately adds 44 g base, 50 mL sheep blood and 950 mL water. Neither blood nor reconstitution water belongs among the seven dry-base parts.",
+        "precise_read_scope": "Independent local PDF signature check, raster of cover and PDF page 170 (printed158), complete Columbia section printed155–159 extracted and read; complete JCM1270 HTML recipe body. The rest of the manual was hashed, not scientifically reviewed.",
+        "nominal_names": [
+          "Pancreatic digest of casein",
+          "Proteose Peptone No.3",
+          "Yeast extract",
+          "Beef heart infusion",
+          "Corn starch",
+          "Sodium chloride",
+          "Agar"
+        ],
+        "source_quantities_context_only": [
+          "10 g",
+          "5 g",
+          "5 g",
+          "3 g (infusion from500g)",
+          "1 g",
+          "5 g",
+          "15 g"
+        ],
+        "remaining_holds": "No actual-lot equivalence, complete molecular inventory, quantitative component ratios, BBL/EH equivalence, owner partition, global alias, role or export approval."
+      },
+      "conclusion": "PASS_BOUNDED_CORRECTION"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "before": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "6330cf4d79ef4809ff27b6efd6b5577dfff8e40cb4d82319c843651596d7c8f1"
+      },
+      "before_object_sha256": "edfc779e91d941ed48a2e64abd0d3053d80b4e1daad27caa2f9e0dc7148d0cb8",
+      "after_object_sha256": "c9e99332653cd7afc63c6a6a97781dfca6c7739206b328e894dfb969ad7e75d0",
+      "assertion_changes": [
+        {
+          "field": "/completeness",
+          "before": "PARTIAL",
+          "after": "UNKNOWN"
+        },
+        {
+          "field": "/notes",
+          "before": "No percentage, molarity, aqueous solvent, supplier, grade, excipients or exact equivalence between source lots is established. This bounded qualitative preparation supports source association only; quantitative stock reconstruction and equivalence to a specified acid product remain unapproved. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected.",
+          "after": "No percentage, molarity, aqueous solvent, supplier, grade, excipients or exact equivalence between source lots is established. This bounded qualitative preparation supports source association only; quantitative stock reconstruction and equivalence to a specified acid product remain unapproved. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier."
+        }
+      ],
+      "appended_history": {
+        "timestamp": "2026-11-08T08:46:08.682458+00:00",
+        "curator": "Codex worker10 /root",
+        "action": "CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION",
+        "changes": "Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component assertion fields component_assertion.completeness, component_assertion.notes. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier. Preserved all component objects, names, identities, quantities, sources, original history, supplied-form and source-case scope, and every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative assertion correction, not human scientific review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "original_history_count": 3,
+      "independent_assessment": {
+        "case_indices": [
+          65,
+          125
+        ],
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN",
+        "assessment": "All seven bound NBRC/TOGO recipe bodies name concentrated HCl as a volume-dosed input but give neither a complete reagent formulation nor an explicit declaration of omitted reagent constituents. The one retained HCl part follows the label; water and salts listed for the receiving medium or chelated-iron/trace-metal stock do not define the supplied acid carrier. Thus UNKNOWN is supported and PARTIAL is unsupported.",
+        "positive_context": "NBRC1195/1196 print51.3 microlitres while NBRC1200 prints51.3mL; NBRC1116 chelated-iron stock uses0.3mL with100mL separately listed water. TOGOM2186/M2708 chelated-iron contexts use3mL/1.5mL; M3181 trace-metal context uses0.25mL. No dose or unit repair is part of this correction.",
+        "remaining_holds": "Qualitative concentrated is not a numerical assay, exact product or disjointness claim. All prior strength/carrier/source-overlap and occurrence holds remain."
+      },
+      "conclusion": "PASS_BOUNDED_CORRECTION"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "before": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "0cff593a94e9e563e08db52d9af3f2e87a0f43f0c086b7c09debaaf594e07aa6"
+      },
+      "before_object_sha256": "29665da68814a65f49d7c8d55c3c7e1fe7bb7ad466fcfb8e5180cdccec394552",
+      "after_object_sha256": "e51a7fcc293a19cd0335d6647f07bded7aa1b10408353c4f1b3ad56d59a5b53b",
+      "assertion_changes": [
+        {
+          "field": "/completeness",
+          "before": "PARTIAL",
+          "after": "UNKNOWN"
+        },
+        {
+          "field": "/notes",
+          "before": "Percent basis, solvent and supplied grade remain unknown. Different receiving-stock addition volumes are not evidence of different acid concentrations. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected.",
+          "after": "Percent basis, solvent and supplied grade remain unknown. Different receiving-stock addition volumes are not evidence of different acid concentrations. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier."
+        }
+      ],
+      "appended_history": {
+        "timestamp": "2026-11-08T08:46:08.696668+00:00",
+        "curator": "Codex worker10 /root",
+        "action": "CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION",
+        "changes": "Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component assertion fields component_assertion.completeness, component_assertion.notes. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier. Preserved all component objects, names, identities, quantities, sources, original history, supplied-form and source-case scope, and every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative assertion correction, not human scientific review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "original_history_count": 3,
+      "independent_assessment": {
+        "case_indices": [
+          102
+        ],
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN",
+        "assessment": "The complete JCM431 and899 recipe bodies name25%HCl, with12.5mL and5mL in different trace stocks. Their receiving water and salts do not establish the acid reagent formulation. JCM899 explicitly dissolves the iron salt in25%HCl first and then dilutes with water, reinforcing the reagent/receiving-stock distinction. No common percentage basis, carrier or explicit omitted-constituent declaration is given. UNKNOWN preserves exactly that epistemic limit.",
+        "remaining_holds": "Both distinct receiving recipes and all original occurrence IDs remain; nominal25% does not certify exact product equivalence or comparable strength versus32%/35%."
+      },
+      "conclusion": "PASS_BOUNDED_CORRECTION"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "before": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+        "sha256": "ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+        "sha256": "f36656a1a3e2d979ae59c787cbe27bd70c967699c9fa95bcaa5a0a3ee6db8155"
+      },
+      "before_object_sha256": "8dcaaf47fbf76c27e9d2d6a3a254f0744c4b607a96f5e31bf94f6a9afbda35d2",
+      "after_object_sha256": "e862be0f109b8a0bf8a8dc9df503295766e2f89e63c7d926998ae72d19ad87bf",
+      "assertion_changes": [
+        {
+          "field": "/completeness",
+          "before": "PARTIAL",
+          "after": "UNKNOWN"
+        },
+        {
+          "field": "/notes",
+          "before": "Percent basis, solvent and supplied grade are unknown; no w/w, w/v, density or molarity is asserted. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected.",
+          "after": "Percent basis, solvent and supplied grade are unknown; no w/w, w/v, density or molarity is asserted. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier."
+        }
+      ],
+      "appended_history": {
+        "timestamp": "2026-11-08T08:46:08.705414+00:00",
+        "curator": "Codex worker10 /root",
+        "action": "CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION",
+        "changes": "Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component assertion fields component_assertion.completeness, component_assertion.notes. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier. Preserved all component objects, names, identities, quantities, sources, original history, supplied-form and source-case scope, and every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative assertion correction, not human scientific review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "original_history_count": 3,
+      "independent_assessment": {
+        "case_indices": [
+          94
+        ],
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN",
+        "assessment": "The complete JCM770 recipe lists1mL32%HCl inside Trace metal solution along with separately listed distilled water and salts. It does not give the supplied reagent recipe or percentage basis and does not explicitly document additional omitted reagent parts. UNKNOWN is correct for the retained one-name HCl list.",
+        "remaining_holds": "No inferred solvent, w/w, w/v, density, molarity, exact acid product or comparison against another nominal strength."
+      },
+      "conclusion": "PASS_BOUNDED_CORRECTION"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "before": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"
+      },
+      "after": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "c8034c07ddd1d103ec871f3cdd0bfae1b8e26a1d1d7fe8cc49d2c9a0a084bc17"
+      },
+      "before_object_sha256": "8b3a3f5de830ef4b4ff4033d211c1c13328f95391f54ec897b480543c8693cb8",
+      "after_object_sha256": "aabd459980b567b13215e0cdee9148a04699e390d49b7d93024993a741128317",
+      "assertion_changes": [
+        {
+          "field": "/completeness",
+          "before": "PARTIAL",
+          "after": "UNKNOWN"
+        },
+        {
+          "field": "/notes",
+          "before": "Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v, molarity or density is inferred. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected.",
+          "after": "Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v, molarity or density is inferred. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier."
+        }
+      ],
+      "appended_history": {
+        "timestamp": "2026-11-08T08:46:08.713242+00:00",
+        "curator": "Codex worker10 /root",
+        "action": "CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION",
+        "changes": "Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component assertion fields component_assertion.completeness, component_assertion.notes. Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier. Preserved all component objects, names, identities, quantities, sources, original history, supplied-form and source-case scope, and every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative assertion correction, not human scientific review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      "original_history_count": 2,
+      "independent_assessment": {
+        "case_indices": [
+          87
+        ],
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN",
+        "assessment": "The full TOGOM3216 JSON, including comments and nested component groups, names10mL35%HCl in the trace-element stock. A separately listed1L water belongs to that receiving stock. Neither the concentration label nor the receiving-stock description establishes the full acid formulation or explicitly states omitted reagent constituents. UNKNOWN is therefore supported.",
+        "remaining_holds": "The raw35% and10mL context remains; no percentage basis, solvent, density, exact HCl product or cross-strength relation is newly inferred."
+      },
+      "conclusion": "PASS_BOUNDED_CORRECTION"
+    }
+  ],
+  "case_indices": [
+    65,
+    87,
+    94,
+    102,
+    125,
+    178
+  ],
+  "case_differences_evidence": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/candidate-verification-v1.json",
+    "sha256": "f30f09ea2f26b1357cae913d96512528ff3c81d76dd1d00430f59be161c02c0b"
+  },
+  "coverage": {
+    "selected_payloads": 127,
+    "changed_payloads": 5,
+    "retained_payloads": 122,
+    "cases": 188,
+    "changed_cases": 6,
+    "retained_cases": 182,
+    "old_evidence": 1212,
+    "new_evidence": 3,
+    "target_cm_occurrence_ids": 12,
+    "whole_core_unique_cm_occurrence_ids": 304,
+    "primary_bodies": 13,
+    "html_recipe_bodies": 8,
+    "json_recipe_bodies": 4,
+    "pdf_documents": 1,
+    "pdf_read_scope": "cover and complete Columbia section printed155–159; visual table check printed158/PDF170",
+    "fresh_scientific_payloads": 5,
+    "retained_payloads_without_renewed_science": 122
+  },
+  "original_findings": [
+    {
+      "finding_id": "W09-W10-SKEPTIC-DIFCO-COMPONENT-METHOD",
+      "native_severity": "minor",
+      "candidate_disposition": "Supported correction to CURATED_INTERPRETATION for the existing seven names-only interpretation.",
+      "native_terminal_disposition_claimed": false
+    },
+    {
+      "finding_id": "W09-W10-SKEPTIC-COMPONENT-CLOSURE",
+      "native_severity": "minor",
+      "candidate_disposition": "Unsupported PARTIAL corrected in all five targets; four HCl UNKNOWN, Difco COMPLETE only for the explicit nominal2009 seven-name list. Original all-five UNKNOWN recommendation remains historically visible and is qualified, not silently adopted.",
+      "native_terminal_disposition_claimed": false
+    }
+  ],
+  "new_unexpected_findings": [],
+  "historical_current_distinction": "All five HCl-linked case completion_reassessment objects remain exact, with the pre-existing true historical marker checked. Each current component_assertion_successor explicitly says UNKNOWN and states that old PARTIAL wording is historical. Active proposal description/hold text was corrected; no global replacement rewrote history. Difco case178 changes only the active PARTIAL sentence plus review/evidence/successor metadata.",
+  "preservation": "All full payload objects become their exact authentic predecessors after rollback of allowed assertion fields and removal of one appended event. Raw original history text prefixes are preserved. Components, MappingEvidence, ComponentEvidence, identifiers, supplied forms, quantities, labels and original notes outside assertion notes are exact. All188 case IDs/order,304 CM occurrence IDs and127 proposal IDs remain;182 other decision objects and122 other proposal/payload objects remain exact. All1212 prior evidence objects are retained;3 new evidence rows append.",
+  "checks": [
+    {
+      "name": "Independent candidate/core/hash verifier",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/all-unmatched-worker-10/successor-v6/skeptic/verify_candidate_v1.py",
+      "exit_code": 0,
+      "checks": 864,
+      "failures": [],
+      "receipt": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/candidate-verification-v1.json",
+        "sha256": "f30f09ea2f26b1357cae913d96512528ff3c81d76dd1d00430f59be161c02c0b"
+      }
+    },
+    {
+      "name": "Independent five-record closed schema validation",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-10/venv/bin/python .temp/all-unmatched-worker-10/successor-v6/skeptic/verify_native_readonly_v1.py",
+      "exit_code": 0,
+      "records": 5,
+      "receipt": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/native-readonly-verification-v1.json",
+        "sha256": "d232d990ef35e70d2c35b5463d635da393f9397af01ea1edf475328835096555"
+      }
+    },
+    {
+      "name": "Root native writer/overlay validation, reviewed evidence only",
+      "executed_by": "Codex worker10 /root; not rerun by this reviewer",
+      "reported_exit_code": 0,
+      "scope": "Five schema/guarded byte-roundtrips;3037-record predecessor/successor overlays with zero partonomy violations and unchanged identity/alias/component projections. Root implementation and exact input/receipt bindings read.",
+      "receipt": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/validation/narrow-native.json",
+        "sha256": "656e0bf65bcbecdccdf9e711aa5cf58e3a320e134fcb682699ad3034f4b71172"
+      },
+      "command_receipt": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/validation/command.json",
+        "sha256": "e1316a45f16b6583670d5c3bed63943873135be8e6194df70232275a679252db"
+      },
+      "script": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/scripts/validate_narrow.py",
+        "sha256": "d122d7d6b91b5fd3fa51577bbd8bb5507db20683755776ad2d8e1c17f750b42a"
+      }
+    }
+  ],
+  "attempt_disclosure": {
+    "reviewer": "OpenAI Codex /root/preparation_skeptic",
+    "attempt": "Earlier read-only inline decision-diff inspection",
+    "error": "KeyError: 'case_index'",
+    "cause": "The inspection used case_index instead of the actual source_index field. It stopped before producing its first changed-case output.",
+    "effect": "No source, payload, report core, Git or GitHub mutation. Subsequent inspection used the actual source_index field; the independent verification script checks all 188 rows.",
+    "original_script_file": "No file: shell here-document inspection, not a saved checker.",
+    "correction": "verify_candidate_v1.py and candidate-verification-v1.json; the initial failure is disclosed rather than represented as a successful run."
+  },
+  "input_bindings": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-freeze.json",
+      "sha256": "c8e44ee61f052751f7c77205d3ca52b33ae98c7f85cc04fb814f0cbd1280955b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/source-assessment.json",
+      "sha256": "c2e910fcb164396882f99f175a68dc231d7f1551d14cf1460f077d843bfde280"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/payload-change-proof.json",
+      "sha256": "3df28f1e71574d519da875f6eda2de6ee354a59da1af8b4728d8977ddd72912d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/decisions.json",
+      "sha256": "0eaf5e96d30cedacf27b231ef061f3458add76479b2ccaa33284d3eec576fc1c"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/proposals.json",
+      "sha256": "f2df74777c066799dfdc9776f2facfeb1288f997f969eafb6db1c66055b3a4f7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/evidence.json",
+      "sha256": "9b73980af88bd8b0742215e74505e4353fc95ff1d1733dd65a34bdc50c7b6f53"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/HANDOFF.json",
+      "sha256": "0e9eb39e24a259ecdfd1ad0c405b6aac7a38dcb3aca99f72d557452a5c57ce88"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/MANIFEST.json",
+      "sha256": "271b343e5c7a9174286c1706e5438b858d931f28c8abc6021fc5bff682631989"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/TRIAGE-v2.json",
+      "sha256": "fcbb46e63cabc15e4d74fcf0a44cf86d6cb43edee5e634e16aa83ac7b3c3e05b"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/AUTHOR-TASK-v2.md",
+      "sha256": "60b9d5493fbf1d90449449d2e9a1d304b9f83cf4dcb855510d1f6a7473f86ad6"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/5ca025e1662a1103a7603e572370677efa65174cc59fabf833bd62be64012dda",
+      "sha256": "5ca025e1662a1103a7603e572370677efa65174cc59fabf833bd62be64012dda"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "docs/stock_components.md",
+      "sha256": "62a8a5393db91e943f6f3903bd624a00e3567f6f0a2ca2391742e97dc0c19d49"
+    },
+    {
+      "path": ".claude/skills/review-yaml-category/SKILL.md",
+      "sha256": "154758ee4b3bd401e19c89d488ff648014c5ec4282c6c1b710de5093ce36c101"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/inputs/issue1201-filed-finding.json",
+      "sha256": "dacabf396ae9703671b524bca6ab85e7c41323f486f4e67ab5ef7322b052d0fb"
+    }
+  ],
+  "source_bindings": [
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+      "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+      "snapshot": "blobs/6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "sv3-hm-sv1-kg-jcm-1270",
+        "kind": "primary_source",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270",
+        "original_accessed_at": "2026-11-08T05:54:01.074503+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+          "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+        "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+        "locator": "Complete captured response; inspected fields/recipe steps/concepts noted per case",
+        "supports_or_contradicts": "Source-specific evidence; applicability and limits are explicitly assessed in the linked successor case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin"
+    },
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+      "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+      "snapshot": "blobs/e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "sv3-hm-bio-new-bd-second-edition-nmsu",
+        "kind": "primary_source",
+        "url": "https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf",
+        "original_accessed_at": "2026-11-08T06:55:09.048187+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+          "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+        "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+        "locator": "Manufacturer-authored2009 second edition hosted by NMSU; title/copyright and complete Columbia sectionpp155–159 inspected; p158 table visually checked against PDFpage170. Difco,BBL,EH formulas and powder doses distinct.",
+        "supports_or_contradicts": "Actual 2009 second-edition PDF supports only its nominal printed formulation; older edition is version context and HTTP404 bodies are failed attempts. No historical lot equivalence."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html",
+      "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+      "snapshot": "blobs/c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-03edca67ae96a682",
+        "kind": "primary_source",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196",
+        "original_accessed_at": "2026-11-08T05:07:23.448655+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/03edca67ae96a682b0a2.html",
+          "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html",
+        "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html",
+      "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+      "snapshot": "blobs/7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-ba7a82033a7b9478",
+        "kind": "primary_source",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1200",
+        "original_accessed_at": "2026-11-08T05:07:23.934477+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/ba7a82033a7b94780277.html",
+          "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html",
+        "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html",
+      "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+      "snapshot": "blobs/afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-f41f350dc810b643",
+        "kind": "primary_source",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1195",
+        "original_accessed_at": "2026-11-08T05:07:24.472469+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/f41f350dc810b64364ff.html",
+          "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html",
+        "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html",
+      "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+      "snapshot": "blobs/1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-76e91583349d0f75",
+        "kind": "primary_source",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116",
+        "original_accessed_at": "2026-11-08T05:07:33.932562+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/76e91583349d0f75f784.html",
+          "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html",
+        "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json",
+      "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+      "snapshot": "blobs/ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-final-M2708",
+        "kind": "primary_source",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2708",
+        "original_accessed_at": "2026-11-08T05:19:06.952451+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/final-M2708.json",
+          "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json",
+        "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+        "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+        "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json",
+      "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+      "snapshot": "blobs/71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-final-M3181",
+        "kind": "primary_source",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181",
+        "original_accessed_at": "2026-11-08T05:19:06.952695+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/final-M3181.json",
+          "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json",
+        "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+        "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+        "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json"
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json",
+      "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+      "snapshot": "blobs/d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-final-M2186",
+        "kind": "primary_source",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2186",
+        "original_accessed_at": "2026-11-08T05:08:24.795803+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/reused-worker10-M2186.json",
+          "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json",
+        "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+        "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+        "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html",
+      "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+      "snapshot": "blobs/cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-a7277ddb9aa30cb4",
+        "kind": "primary_source",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431",
+        "original_accessed_at": "2026-11-08T05:07:27.346307+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/a7277ddb9aa30cb4aef1.html",
+          "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html",
+        "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html",
+      "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+      "snapshot": "blobs/2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-a95d21757d9f5e59",
+        "kind": "primary_source",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899",
+        "original_accessed_at": "2026-11-08T05:07:27.974437+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/a95d21757d9f5e59edeb.html",
+          "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html",
+        "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html",
+      "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+      "snapshot": "blobs/30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-b756bb7cb9a632e8",
+        "kind": "primary_source",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770",
+        "original_accessed_at": "2026-11-08T05:07:26.017310+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/b756bb7cb9a632e8fdf9.html",
+          "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html",
+        "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json",
+      "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+      "snapshot": "blobs/97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+      "kind": "primary_source",
+      "source_metadata": {
+        "evidence_id": "buffers-primary-ded69954ea792c68",
+        "kind": "primary_source",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216",
+        "original_accessed_at": "2026-11-08T05:07:25.915354+00:00",
+        "original_capture": {
+          "root": "artifact",
+          "path": "buffers/captures/ded69954ea792c688922.json",
+          "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc"
+        },
+        "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json",
+        "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+        "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+        "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+      },
+      "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json"
+    }
+  ],
+  "support_copy_receipts": [
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/verify_candidate_v1.py",
+        "sha256": "2b547ec1b51ec985c7cb5419ca7112ee13ad8ca76e3593256856bf43b9ca1eb3"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/verify_candidate_v1.py",
+        "sha256": "2b547ec1b51ec985c7cb5419ca7112ee13ad8ca76e3593256856bf43b9ca1eb3"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/candidate-verification-v1.json",
+        "sha256": "f30f09ea2f26b1357cae913d96512528ff3c81d76dd1d00430f59be161c02c0b"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/candidate-verification-v1.json",
+        "sha256": "f30f09ea2f26b1357cae913d96512528ff3c81d76dd1d00430f59be161c02c0b"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/verify_native_readonly_v1.py",
+        "sha256": "38838c3ddb46c97b440b3365c10ea758d6aee2de4f79a65c545f75ea135dcb17"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/verify_native_readonly_v1.py",
+        "sha256": "38838c3ddb46c97b440b3365c10ea758d6aee2de4f79a65c545f75ea135dcb17"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/native-readonly-verification-v1.json",
+        "sha256": "d232d990ef35e70d2c35b5463d635da393f9397af01ea1edf475328835096555"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/native-readonly-verification-v1.json",
+        "sha256": "d232d990ef35e70d2c35b5463d635da393f9397af01ea1edf475328835096555"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/inspection-attempt-v0.json",
+        "sha256": "5f986972ffa063044aeae7309c3b814a4e950c04144337b3e0d8a79137574574"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/inspection-attempt-v0.json",
+        "sha256": "5f986972ffa063044aeae7309c3b814a4e950c04144337b3e0d8a79137574574"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/bd2009-p158.png",
+        "sha256": "643567ab1ace9e6d42bc190c5afa93ddf16ada7a0f9331809454ea5185062054"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/bd2009-p158.png",
+        "sha256": "643567ab1ace9e6d42bc190c5afa93ddf16ada7a0f9331809454ea5185062054"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/bd2009-title.png",
+        "sha256": "224c26aef30a24e985e8e5b57e18ffd11d5f67c1f57914ab6caaed5ddc9f0ea0"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/bd2009-title.png",
+        "sha256": "224c26aef30a24e985e8e5b57e18ffd11d5f67c1f57914ab6caaed5ddc9f0ea0"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/bd2009-title.txt",
+        "sha256": "7060584c3e59f0b2f12f34aa0b40faadf4aa5790a0459f3319852bcd63262cbb"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/bd2009-title.txt",
+        "sha256": "7060584c3e59f0b2f12f34aa0b40faadf4aa5790a0459f3319852bcd63262cbb"
+      }
+    },
+    {
+      "private_original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/skeptic/bd2009-columbia-pages.txt",
+        "sha256": "58f350a99511a96b4f5a9eb061da9b0e73f9fe1c9593d059e01bbf44ee4fbe23"
+      },
+      "public_identical_copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/support/bd2009-columbia-pages.txt",
+        "sha256": "58f350a99511a96b4f5a9eb061da9b0e73f9fe1c9593d059e01bbf44ee4fbe23"
+      }
+    }
+  ],
+  "limitations": [
+    "No complete-owner, source installation, role, alias, SSSOM/export, merge or release approval.",
+    "No renewed scientific review of122 unchanged payloads or unrelated scientific fields; preservation checks do not transfer approval.",
+    "HCl common-product/strength relations and mixed Columbia owner partition remain unresolved exactly as before; nominal list completeness does not settle either.",
+    "This review examines frozen local authentic captures, without new HTTP queries or GitHub state mutations; original source access times are retained separately from local re-examination.",
+    "The original W09 findings are preserved. This report is evidence for the bounded correction and does not close an old canonical review finding or a GitHub issue.",
+    "Final authoritative core, canonical native review and handoff require a separate exact assembly binding review. No future published-head approval is claimed."
+  ]
+}

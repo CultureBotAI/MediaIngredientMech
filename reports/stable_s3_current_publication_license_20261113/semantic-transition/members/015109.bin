@@ -1,0 +1,99 @@
+identifier: kgmicrobe.ingredient:heat_inactivated_swine_serum_dsmz_1076b
+preferred_term: Heat-inactivated swine serum (DSMZ1076b; MediaDive960)
+synonyms:
+- synonym_text: Swine serum
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:960); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T20:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as swine serum biological material and left unmapped pending
+    material-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Swine_serum-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended mapping
+    status: `UNMAPPED`.** Retain `ingredient_type: UNDEFINED_MIXTURE`. The identity
+    is sufficiently clear for a local definition, but the available evidence does
+    not establish a verified external ontology class that exactly denotes porcine
+    blood serum. No ontology CURIE was proposed. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: PROMOTED
+  changes: 'BIO-F02 source-bound successor correction: Reconcile the authentic MediaDive
+    ingredient960 lineage through existing Swine_Serum/UNMAPPED_0536. MediaDive lists1076b,
+    and DSMZ1076b names heat-inactivated swine serum17ml separately from fetal bovine
+    serum. The17ml is a receiving-medium dose, not a stock concentration. Heating
+    temperature/time and supplier remain unstated. All original owner history is preserved.
+    The separate Porcine_Serum/MD967 record is not declared untreated, merged or repurposed;
+    the relationship of its unspecified processing to this preparation remains unresolved.
+    Prior isolated proposal sv1-kg-swine-serum1076b remains immutable; this event
+    records proposal authorship only. Earlier history is retained verbatim, including
+    superseded wording.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:960); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as biological material pending material-level
+  curation. Reconcile the authentic MediaDive ingredient960 lineage through existing
+  Swine_Serum/UNMAPPED_0536. MediaDive lists1076b, and DSMZ1076b names heat-inactivated
+  swine serum17ml separately from fetal bovine serum. The17ml is a receiving-medium
+  dose, not a stock concentration. Heating temperature/time and supplier remain unstated.
+  All original owner history is preserved. The separate Porcine_Serum/MD967 record
+  is not declared untreated, merged or repurposed; the relationship of its unspecified
+  processing to this preparation remains unresolved. The inherited raw Swine serum
+  synonym is preserved as genuine source history, not newly certified as a universal
+  heat-inactivated alias. Application and export are held pending source-specific
+  owned-name/routing review; do not silently activate this broader label. Source-qualified
+  naming is not proof of a distinct preparation. Preserve unresolved cross-source
+  relationships and evaluate a common named partial scope or exact product/protocol
+  bridge before simultaneous installation. No role/export or whole-owner approval;
+  all inherited holds remain.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:heat_inactivated_swine_serum_dsmz_1076b
+  ontology_label: Heat-inactivated swine serum (DSMZ1076b; MediaDive960)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf
+    notes: Reconcile the authentic MediaDive ingredient960 lineage through existing
+      Swine_Serum/UNMAPPED_0536. MediaDive lists1076b, and DSMZ1076b names heat-inactivated
+      swine serum17ml separately from fetal bovine serum. The17ml is a receiving-medium
+      dose, not a stock concentration. Heating temperature/time and supplier remain
+      unstated. All original owner history is preserved. The separate Porcine_Serum/MD967
+      record is not declared untreated, merged or repurposed; the relationship of
+      its unspecified processing to this preparation remains unresolved.
+supplied_form:
+- name: Heat-inactivated swine serum (DSMZ1076b)
+  form: heat-inactivated serum
+  notes: Reconcile the authentic MediaDive ingredient960 lineage through existing
+    Swine_Serum/UNMAPPED_0536. MediaDive lists1076b, and DSMZ1076b names heat-inactivated
+    swine serum17ml separately from fetal bovine serum. The17ml is a receiving-medium
+    dose, not a stock concentration. Heating temperature/time and supplier remain
+    unstated. All original owner history is preserved. The separate Porcine_Serum/MD967
+    record is not declared untreated, merged or repurposed; the relationship of its
+    unspecified processing to this preparation remains unresolved.

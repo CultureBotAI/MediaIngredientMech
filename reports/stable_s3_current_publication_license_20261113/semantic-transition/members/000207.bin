@@ -1,0 +1,60 @@
+identifier: CHEBI:90146
+preferred_term: 4-nitrophenyl Beta-D-glucuronide
+ontology_mapping:
+  ontology_id: CHEBI:90146
+  ontology_label: 4-nitrophenyl beta-D-glucuronide
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_glucuronide; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_glucuronide; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C12H13NO9
+  smiles: O=C(O)[C@H]1O[C@@H](Oc2ccc([N+](=O)[O-])cc2)[C@H](O)[C@@H](O)[C@@H]1O
+  inchi: InChI=1S/C12H13NO9/c14-7-8(15)10(11(17)18)22-12(9(7)16)21-6-3-1-5(2-4-6)13(19)20/h1-4,7-10,12,14-16H,(H,17,18)/t7-,8-,9+,10-,12+/m0/s1
+  molecular_weight: 315.234
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:24:44.808209+00:00'

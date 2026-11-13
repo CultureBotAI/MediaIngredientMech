@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:jcm1231_bg_fpc
+preferred_term: JCM1231 BG-FPC stock
+synonyms:
+- synonym_text: BG-FPC (see below)
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:287416c04202852582ead36b6e03a848e0cb09cdd2201bbf189e91edcd472d66;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1231_bg_fpc
+  ontology_label: JCM1231 BG-FPC stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1231
+    notes: JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a
+      nested named constituent, not flattened into receiving medium. Batch input volume
+      is not a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.
+notes: JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a nested
+  named constituent, not flattened into receiving medium. Batch input volume is not
+  a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a
+    nested named constituent, not flattened into receiving medium. Batch input volume
+    is not a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.559590+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-177. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+components:
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  concentration_value: '149.6'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '7.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.6'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: EDTA·2Na
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: JCM1231 trace minerals
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1231
+    source_record: JCM1231 BG-FPC stock
+    notes: JCM1231 BG-FPC immediate-part stock structure. Trace minerals remains a
+      nested named constituent, not flattened into receiving medium. Batch input volume
+      is not a measured final volume. Source input is10ml, unlike frozen TOGO10G_PER_L.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and
+    source batch units are transcribed without lexical identity promotion.

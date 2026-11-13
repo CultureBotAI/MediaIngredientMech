@@ -1,0 +1,163 @@
+id: CultureMech:010102
+name: brucella_blood_agar_with_hemin_menadione
+original_name: Brucella Blood Agar With Hemin Menadione
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Brucella agar (BD-BBL)
+  concentration:
+    value: '43.0'
+    unit: G_PER_L
+  source: JCM Medium 677
+  notes: JCM Medium 677 lists 43.0 g Brucella agar (BD-BBL).
+- preferred_term: Horse blood
+  concentration:
+    value: '50.0'
+    unit: ML_PER_L
+  source: JCM Medium 677
+  notes: JCM Medium 677 lists 50.0 ml horse blood.
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: JCM Medium 677
+  notes: JCM Medium 677 lists 1000 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M696
+  term:
+    id: TOGO:M696
+    label: Brucella Blood Agar With Hemin Menadione
+notes: 'TOGO M696 mirrors JCM Medium 677: 43.0 g Brucella agar (BD-BBL), 50.0 ml horse
+  blood, 10.0 ml hemin solution, 10.0 ml menadione solution, and 1.0 L distilled water.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:55.549212Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M696'
+- timestamp: '2026-01-28T19:48:40.576917Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:05:08.390129+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 2 solution(s) from ingredients
+- timestamp: '2026-03-13T06:20:11.322760Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:010102'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name; Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:52.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:30.252553+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Brucella Blood Agar With Hemin Menadione" to "brucella_blood_agar_with_hemin_menadione"
+    for consistent matching
+- timestamp: '2026-05-16T09:03:20.142429+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:40:43.652457+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_official_simple_score20.py
+  action: RESOLVED_OFFICIAL_SIMPLE_SCORE20
+  source: https://togomedium.org/medium/M696; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=677;
+    https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=469
+  notes: 'TOGO M696 mirrors JCM Medium 677: 43.0 g Brucella agar (BD-BBL), 50.0 ml
+    horse blood, 10.0 ml hemin solution, 10.0 ml menadione solution, and 1.0 L distilled
+    water.'
+solutions:
+- preferred_term: Hemin solution
+  concentration:
+    value: '10.0'
+    unit: ML_PER_L
+  notes: JCM Medium 677 lists 10.0 ml/L Hemin solution from JCM Medium 469.
+  composition:
+  - preferred_term: Hemin
+    concentration:
+      value: '0.5'
+      unit: G_PER_L
+    term:
+      id: CHEBI:50385
+      label: hemin
+    mediaingredientmech_chebi_term:
+      id: CHEBI:50385
+      label: hemin
+  - preferred_term: 1 N NaOH
+    concentration:
+      value: '10.0'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:32145
+      label: sodium hydroxide
+    mediaingredientmech_chebi_term:
+      id: CHEBI:32145
+      label: sodium hydroxide
+- preferred_term: Menadione solution
+  concentration:
+    value: '10.0'
+    unit: ML_PER_L
+  notes: JCM Medium 677 lists 10.0 ml/L Menadione solution from JCM Medium 469.
+  composition:
+  - preferred_term: Menadione
+    concentration:
+      value: '0.05'
+      unit: G_PER_L
+    term:
+      id: CHEBI:28869
+      label: menadione
+    mediaingredientmech_chebi_term:
+      id: CHEBI:28869
+      label: menadione
+  - preferred_term: Ethanol
+    concentration:
+      value: '10.0'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:16236
+      label: ethanol
+    mediaingredientmech_chebi_term:
+      id: CHEBI:16236
+      label: ethanol
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend 43.0 g Brucella agar (BD-BBL) in 1.0 L distilled water.
+- step_number: 2
+  action: MIX
+  description: Add 50.0 ml/L horse blood, 10.0 ml/L hemin solution, and 10.0 ml/L
+    menadione solution.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min unless otherwise stated.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M696
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=677
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=469

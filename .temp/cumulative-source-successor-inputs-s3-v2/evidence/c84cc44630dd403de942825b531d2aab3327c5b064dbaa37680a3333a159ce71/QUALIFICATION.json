@@ -1,0 +1,111 @@
+{
+  "state": "APPENDED_METHOD_UNCERTAINTY_QUALIFICATION_NOT_APPROVAL",
+  "reviewer": "Codex /root/seven_cas_current_primary",
+  "at": "2026-11-12T17:24:41.165618+00:00",
+  "prior_observations_preserved": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-primary-method-provenance-review-v1/FINDINGS.json",
+      "sha256": "963a940407f8fd27e5599f2d8aa5c3c8c697a614580053f19391203687f97766"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-primary-method-provenance-review-v2/FINDINGS.json",
+      "sha256": "c0970b25b970dd14bb63979449bb908bebf7212d6ced7f72355727e16c518319"
+    }
+  ],
+  "verified_read_observations": [
+    {
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/317#issuecomment-5384919367",
+      "command": "gh api repos/CultureBotAI/MediaIngredientMech/issues/comments/5384919367",
+      "exit_code": 0,
+      "tool_chunk": "48aabe",
+      "observed_updated_at": "2026-08-23T07:50:27Z",
+      "observation": "Comment explicitly documents aggregate DIRECT_MATCH as default and MIM direct translation to EXACT_MATCH; it distinguishes method grade from own-identifier identity predicate."
+    },
+    {
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/317#issuecomment-5383754233",
+      "command": "gh api repos/CultureBotAI/MediaIngredientMech/issues/comments/5383754233 --jq {id,html_url,created_at,updated_at,body}",
+      "exit_code": 0,
+      "tool_chunk": "ffa3ec",
+      "observed_updated_at": "2026-08-23T02:15:08Z",
+      "observation": "Comment specifically identifies long-name triazine/atrazine CHEBI:15930 as a genuine identity supported by a related synonym, not an exact synonym assertion."
+    },
+    {
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/799",
+      "command": "gh api repos/CultureBotAI/MediaIngredientMech/issues/799 --jq {number,title,state,body,html_url}",
+      "exit_code": 0,
+      "tool_chunk": "347dd5",
+      "observation": "Observed state closed; tombstone targets/history must remain intact."
+    }
+  ],
+  "raw_api_capture_available": false,
+  "raw_api_limitation": "Fresh API responses were read in the tool output. Optional later raw-response persistence failed before producing a file; this artifact records observations, not an invented raw response hash. Exact historical executable source blobs independently substantiate the default-grade finding.",
+  "historical_code": [
+    {
+      "repository_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cumulative-source-canary-target",
+      "commit": "9b77fb6e2454c066b5eb157b1972288632f6fba6",
+      "path": "scripts/import_from_culturemech.py",
+      "git_blob": "5bed8cd7aa5de2a785338c66b7a4e2e2130e7e8c",
+      "artifact": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-primary-method-provenance-review-v3/mim-historical-importer.py",
+        "sha256": "855e51949b0afe6aa042e050aa13fc5e7ae1ec2efd28afb82145c082d4f4e7c0",
+        "bytes": 8455
+      }
+    },
+    {
+      "repository_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+      "commit": "a402f4c1c4497fa07f5194dc909fc13c33336f1b",
+      "path": "scripts/aggregate_mapped_ingredients.py",
+      "git_blob": "4399b419830d9e741bb6878c4ae7c9a6380d02bf",
+      "artifact": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-primary-method-provenance-review-v3/culturemech-historical-aggregator.py",
+        "sha256": "e8af92f44ab808ff261c36bdec0b65937453a47bb2b0e3a4cb632b5ec808088f",
+        "bytes": 14631
+      }
+    }
+  ],
+  "historical_code_limit": "Exact historical implementations demonstrate that DIRECT_MATCH is not route proof. They are not a newly invented fully pinned execution lineage for the original March9 ingredient import.",
+  "qualifications": [
+    {
+      "subject_id": "MIM:0001903",
+      "entry_id": "row-002139",
+      "status": "METHOD_UNRESOLVED",
+      "withdrawn_claim": "The original same-target CultureMech DIRECT_MATCH import establishes a genuine lexical grounding route.",
+      "corrected_conclusion": "The historical owner proves prior presence of CHEBI:132766, not the matching procedure. Historical CultureMech aggregation unconditionally emits DIRECT_MATCH as a default assumption and the MIM importer maps it to EXACT_MATCH, also defaulting missing source grade. No pre-aggregate primary-label, synonym or weaker matching route has been inspected for this NTA record. The restoration-only mandatory-MANUAL_CURATION inference remains unjustified; aggregate DIRECT_MATCH is not sufficient proof of lexical establishment either.",
+      "identity_scope": "The current ChEBI 3:1 sodium:nitrilotriacetate definition and retained structure still support trisodium identity. Do not merge/interchange the separate 0.5 M disodium stock. Permanent MIM:0001903 and all inherited holds remain.",
+      "next_allowed_resolution": "Recover actual pre-aggregate route evidence, or explicitly propose a new independently reviewed current grounding using exact source and ontology evidence. Do not present an inferred historical route as fact or misattribute a new review as the original method."
+    },
+    {
+      "subject_id": "MIM:0001805",
+      "entry_id": "row-002035",
+      "status": "COUNTEREXAMPLE_CLAIM_QUALIFIED_NOT_NEW_FIX",
+      "withdrawn_claim": "Na2hpo4 is a proven original lexical-route control solely because its CultureMech evidence says DIRECT_MATCH.",
+      "corrected_conclusion": "The same aggregate default caveat applies to that evidence. No replacement grade or new phosphate identity/form decision is inferred here. Rifamycin SV and Polymyxin B remain distinct controls because their histories explicitly record label-exact matching independent of an aggregate default."
+    }
+  ],
+  "triazine_confirmation": "Fresh #317 comment5383754233 corroborates the narrow triazine SYNONYM_MATCH recommendation. Its long chemical name is captured as oio:hasRelatedSynonym, with source identity and structure supporting this particular alias; never relabel the ontology assertion as hasExactSynonym.",
+  "tombstone_contract": "#799 observed closed and untouched; no tombstone identity/history edit authorized or performed.",
+  "failed_reads_preserved": [
+    {
+      "command": "gh issue view 799 --repo CultureBotAI/MediaIngredientMech --json number,title,state,body,comments,url",
+      "exit_code": 1,
+      "stderr": "error connecting to api.github.com\ncheck your internet connection or https://githubstatus.com\n",
+      "later_success_chunk": "347dd5"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/CultureBotAI/MediaIngredientMech/issues/comments/5384919367"
+      ],
+      "exit_code": 1,
+      "stderr": "error connecting to api.github.com\ncheck your internet connection or https://githubstatus.com\n",
+      "effect": "Optional raw-capture attempt aborted before any file was written; prior successful read48aabe remains valid."
+    }
+  ],
+  "scope_limits": [
+    "No source edits, Git mutation, native phases, tests, provider acquisition or issue mutation.",
+    "No final publication or release approval.",
+    "Earlier observations remain byte-identical; qualification is appended.",
+    "Original 1879 cases/1022 origins and every scientific hold preserved."
+  ]
+}

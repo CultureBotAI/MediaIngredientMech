@@ -1,0 +1,61 @@
+identifier: CHEBI:17276
+preferred_term: Phloretin
+ontology_mapping:
+  ontology_id: CHEBI:17276
+  ontology_label: phloretin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 3-(4-hydroxyphenyl)-1-(2,4,6-trihydroxyphenyl)propan-1-one
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=60-82-2); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.777587+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.891701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C15H14O5; inchi=InChI=1S/C15H14O5/c16-10-4-1-9(2-5-10)3-6-12(18)15;
+    smiles=O=C(CCc1ccc(O)cc1)c1c(O)cc(O)cc1O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.740099+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002039; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 60-82-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C15H14O5
+  inchi: InChI=1S/C15H14O5/c16-10-4-1-9(2-5-10)3-6-12(18)15-13(19)7-11(17)8-14(15)20/h1-2,4-5,7-8,16-17,19-20H,3,6H2
+  smiles: O=C(CCc1ccc(O)cc1)c1c(O)cc(O)cc1O
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002039
+legacy_identifiers:
+- MIM:Phloretin
+- CHEBI:17276

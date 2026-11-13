@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:dsmz161_acidified_ferrous_sulfate_stock
+preferred_term: DSMZ 161 acidified 0.1% w/v ferrous sulfate heptahydrate stock
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz161_acidified_ferrous_sulfate_stock
+  ontology_label: DSMZ 161 acidified 0.1% w/v ferrous sulfate heptahydrate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf\n\nSuperseded
+    notes: DSMZ161 specifies 2 ml of FeSO4 x 7 H2O at 0.1% w/v in 0.1 N H2SO4. Both
+      stated concentrations belong to the stock, not the receiving-medium dose. Solvent
+      composition is not separately supplied. No verified exact eligible ontology
+      term or existing whole-preparation owner was established by the bounded source/owner
+      review. This self-registry mapping represents the preparation, not its individual
+      constituents.
+synonyms: []
+notes: DSMZ161 specifies 2 ml of FeSO4 x 7 H2O at 0.1% w/v in 0.1 N H2SO4. Both stated
+  concentrations belong to the stock, not the receiving-medium dose. Solvent composition
+  is not separately supplied. Raw source labels and original occurrence IDs remain
+  in the evidence ledger; no recipe-local label is activated as a global synonym.
+  All inherited release holds remain.
+solution_type: OTHER
+components:
+- component_name: FeSO4 x 7 H2O
+  component_id: CHEBI:75836
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: PERCENT_W_V
+- component_name: H2SO4
+  component_id: CHEBI:26836
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf
+    source_record: DSMZ 161 acidified 0.1% w/v ferrous sulfate heptahydrate stock
+    notes: DSMZ161 specifies 2 ml of FeSO4 x 7 H2O at 0.1% w/v in 0.1 N H2SO4. Both
+      stated concentrations belong to the stock, not the receiving-medium dose. Solvent
+      composition is not separately supplied.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf\n\nSuperseded
+    source_record: DSMZ 161 acidified 0.1% w/v ferrous sulfate heptahydrate stock
+    notes: DSMZ161 specifies 2 ml of FeSO4 x 7 H2O at 0.1% w/v in 0.1 N H2SO4. Both
+      stated concentrations belong to the stock, not the receiving-medium dose. Solvent
+      composition is not separately supplied.
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: DSMZ161 specifies 2 ml of FeSO4 x 7 H2O at 0.1% w/v in 0.1 N H2SO4. Both
+    stated concentrations belong to the stock, not the receiving-medium dose. Solvent
+    composition is not separately supplied.
+  new_status: MAPPED
+  llm_assisted: true

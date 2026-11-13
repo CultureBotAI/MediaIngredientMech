@@ -1,0 +1,89 @@
+identifier: CHEBI:51864
+preferred_term: Azlocillin sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:51864
+  ontology_label: azlocillin sodium
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, Hans80metals.'
+synonyms:
+- synonym_text: sodium 2,2-dimethyl-6beta-[(2R)-2-{[(2-oxoimidazolidin-1-yl)carbonyl]amino}-2-phenylacetamido]penam-3alpha-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=37091-65-9; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.305072+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.121112+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C20H22N5O6S.Na; inchi=InChI=1S/C20H23N5O6S.Na/c1-20(2)13(17(28)29)25-15(;
+    smiles=[H][C@](NC(=O)N1CCNC1=O)(C(=O)N[C@@H]1C(=O)N2[C@@H
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.649157+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386471+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'azlocillin sodium'; it matches the ChEBI
+    synonym 'azlocillin sodium salt' on CHEBI:51864. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 37091-65-9 uniquely
+    resolves by ChEBI xref to CHEBI:51864 'azlocillin sodium'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 37091-65-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C20H22N5O6S.Na
+  inchi: InChI=1S/C20H23N5O6S.Na/c1-20(2)13(17(28)29)25-15(27)12(16(25)32-20)22-14(26)11(10-6-4-3-5-7-10)23-19(31)24-9-8-21-18(24)30;/h3-7,11-13,16H,8-9H2,1-2H3,(H,21,30)(H,22,26)(H,23,31)(H,28,29);/q;+1/p-1/t11-,12-,13+,16-;/m1./s1
+  smiles: '[H][C@](NC(=O)N1CCNC1=O)(C(=O)N[C@@H]1C(=O)N2[C@@H](C(=O)[O-])C(C)(C)S[C@]12[H])c1ccccc1.[Na+]'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

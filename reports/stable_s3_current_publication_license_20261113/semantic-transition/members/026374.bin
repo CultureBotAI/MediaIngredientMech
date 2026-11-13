@@ -1,0 +1,126 @@
+identifier: CHEBI:28077
+preferred_term: Rifampicin
+ontology_mapping:
+  ontology_id: CHEBI:28077
+  ontology_label: rifampicin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Antimicrobial agent; Properties: Simple component, Defined
+    component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (7S,9E,11S,12R,13S,14R,15R,16R,17S,18S,19E,21Z)-2,15,17,27,29-pentahydroxy-11-methoxy-3,7,12,14,16,18,22-heptamethyl-26-{(E)-[(4-methylpiperazin-1-yl)imino]methyl}-6,23-dioxo-8,30-dioxa-24-azatetracyclo[23.3.1.1(4,7).0(5,28)]triaconta-1(28),1(29),2,4,9,19,21,25,27-nonaen-13-yl
+    acetate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3-(((4-Methyl-1-piperazinyl)imino)methyl)rifamycin SV
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: RFP
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Rifampin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: rifamcin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: rifampicina
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: rifampicinum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:49.599989+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:13292-46-1 from PubChem API via name lookup (Rifampicin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (7S,9E,11S,12R,13S,14R,15R,16R,17S,18S,19E,21Z)-2,15,17,27,29-pentahydroxy-11-methoxy-3,7,12,14,16,18,22-heptamethyl-26-{(E)-[(4-methylpiperazin-1-yl)imino]methyl}-6,23-dioxo-8,30-dioxa-24-azatetracyclo[23.3.1.1(4,7).0(5,28)]triaconta-1(28),1(29),2,4,9,19,21,25,27-nonaen-13-yl
+    acetate, 3-(((4-Methyl-1-piperazinyl)imino)methyl)rifamycin SV, RFP, Rifampin,
+    rifamcin, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.081267+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.171286+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C43H58N4O12; inchi=InChI=1S/C43H58N4O12/c1-21-12-11-13-22(2)42(55)45-;
+    smiles=CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(c(/C=N/N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.128942+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112752+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.827641+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Rifampicin'' -> ''rifampicin'': synced to canonical CHEBI
+    label (preferred_term ''Rifampicin'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-27T03:16:39.519807+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002201; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 13292-46-1
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:53:49.599972+00:00'
+  molecular_formula: C43H58N4O12
+  inchi: InChI=1S/C43H58N4O12/c1-21-12-11-13-22(2)42(55)45-33-28(20-44-47-17-15-46(9)16-18-47)37(52)30-31(38(33)53)36(51)26(6)40-32(30)41(54)43(8,59-40)57-19-14-29(56-10)23(3)39(58-27(7)48)25(5)35(50)24(4)34(21)49/h11-14,19-21,23-25,29,34-35,39,49-53H,15-18H2,1-10H3,(H,45,55)/b12-11+,19-14+,22-13-,44-20+/t21-,23+,24+,25+,29-,34-,35+,39+,43-/m0/s1
+  smiles: CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(c(/C=N/N5CCN(C)CC5)c(O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Selective Agent'
+mim_id: MIM:0002201
+legacy_identifiers:
+- MIM:Rifampicin
+- CHEBI:28077

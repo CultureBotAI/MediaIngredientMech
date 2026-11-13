@@ -1,0 +1,60 @@
+identifier: CHEBI:201652
+preferred_term: Amphomycin
+ontology_mapping:
+  ontology_id: CHEBI:201652
+  ontology_label: Amphomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:amphomycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:amphomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C58H91N13O20
+  smiles: CCC(C)CCCCCC=CCC(=O)NC(CC(=O)O)C(=O)NC(C(=O)NC(CC(=O)O)C(=O)NCC(=O)NC(CC(=O)O)C(=O)NCC(=O)NC(C(=O)NC(C(=O)N1CCCC1C(=O)NC(C)C1NC(=O)C2CCCCN2C1=O)C(C)C)C(C)N)C(C)C(=O)O
+  inchi: InChI=1S/C58H91N13O20/c1-8-30(4)18-13-11-9-10-12-14-21-39(72)63-36(26-44(79)80)51(83)68-46(31(5)58(90)91)54(86)65-35(25-43(77)78)50(82)60-27-40(73)64-34(24-42(75)76)49(81)61-28-41(74)66-47(32(6)59)55(87)67-45(29(2)3)56(88)71-23-17-20-38(71)52(84)62-33(7)48-57(89)70-22-16-15-19-37(70)53(85)69-48/h12,14,29-38,45-48H,8-11,13,15-28,59H2,1-7H3,(H,60,82)(H,61,81)(H,62,84)(H,63,72)(H,64,73)(H,65,86)(H,66,74)(H,67,87)(H,68,83)(H,69,85)(H,75,76)(H,77,78)(H,79,80)(H,90,91)
+  molecular_weight: 1290.437
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:25:15.044433+00:00'

@@ -1,0 +1,35 @@
+{
+  "finding_id": "W02-FC-CHEM-NEW-MALATE-SUPPLIER-STEREO",
+  "status": "reported_to_root_before_property_fix",
+  "reported_at": "2026-11-08T08:06:00.207006+00:00",
+  "target": "data/ingredients/mapped/L-Malic_Acid_Disodium_Salt_Monohydrate.yaml",
+  "existing_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1243",
+  "claim": "Supplier CAS/stereochemical naming conflict distinct from the already-known one-sodium/water-free structure error. Sigma233935 names the L/(S) disodium monohydrate and explicitly supplies a chiral SMILES; Aladdin D302750C lotK2103464 names DL-disodium malate monohydrate under the same CAS207511-06-6.",
+  "supporting_sources": [
+    {
+      "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/233935",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/sigma-malate-web-extract.json",
+        "sha256": "3182d7aa22e724b3565f7b05100982eaf32c337dcc6d57cf7cebbb9eaf1da5ce"
+      },
+      "accessed_at": "2026-11-08T08:05:48+00:00",
+      "capture_kind": "primary supplier page web extraction; direct raw request timeout retained"
+    },
+    {
+      "name": "aladdin-malate-coa",
+      "url": "https://aladdinsci-bucket.s3.ap-northeast-2.amazonaws.com/coa/D302750C.pdf",
+      "accessed_at": "2026-11-08T08:04:32.258948+00:00",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://aladdinsci-bucket.s3.ap-northeast-2.amazonaws.com/coa/D302750C.pdf",
+      "path": "final-corrections-v1/chemistry/captures/fetch-v2/aladdin-malate-coa.body",
+      "sha256": "c5a8ba3e72c05b656010dd56953cde05e2e960355fdaa181034b3c0e4f974d44",
+      "bytes": 62867,
+      "completed_at": "2026-11-08T08:04:33.093890+00:00"
+    }
+  ],
+  "dedup_scope": "Compared the assigned #1243 body and W04 inherited-property finding. No new global issue search performed by chemistry author; root owns live dedup and publication.",
+  "impact": "No supplier identity winner, original procurement claim, CAS reassignment or stereochemical conversion. Existing L-owner properties may only be corrected against explicit L/(S) form evidence; conflict remains a separate hold.",
+  "proposed_disposition": "Retain conflict visibly and request registry/depositor provenance or supplier correction before any general supplier-form equivalence; no role or source occurrence approval."
+}

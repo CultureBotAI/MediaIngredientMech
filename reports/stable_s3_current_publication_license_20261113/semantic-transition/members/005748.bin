@@ -1,0 +1,101 @@
+id: CultureMech:000425
+name: tcg_medium
+original_name: TCG MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1009
+  term:
+    id: mediadive.medium:1009
+    label: TCG MEDIUM
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf'
+ingredients:
+- preferred_term: Tryptone
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  source: DSMZ Medium 1009
+  notes: DSMZ Medium 1009 lists tryptone as an undefined digest; it is not reducible
+    to one ChEBI molecule.
+- preferred_term: Casitone
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: DSMZ Medium 1009
+  notes: DSMZ Medium 1009 lists Casitone as an undefined digest; it is not reducible
+    to one ChEBI molecule.
+- preferred_term: Glucose
+  concentration:
+    value: '4'
+    unit: G_PER_L
+  source: DSMZ Medium 1009
+  notes: DSMZ Medium 1009 lists 4 g glucose.
+  term:
+    id: CHEBI:17234
+    label: glucose
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Seawater (see below)
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: DSMZ Medium 1009
+  notes: DSMZ Medium 1009 lists 1.0 L seawater and defines artificial seawater as
+    32 g sea salt in 1000 mL distilled water.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Artifical seawater (ASW, eg., Instant Ocean) = 32 g seasalt disolved
+    in 1000 ml distilled water.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:13.073069Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1009'
+- timestamp: '2026-03-13T06:18:55.147019Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000425'
+- timestamp: '2026-03-17T06:30:37.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:06.175881+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "TCG MEDIUM" to "tcg_medium" for consistent matching
+- timestamp: '2026-06-05T07:41:48.750444+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_tcg_a1_seawater_score15.py
+  action: RESOLVED_TCG_A1_SEAWATER_SCORE15
+  source: http://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf
+  notes: DSMZ Medium 1009 lists 3 g tryptone, 5 g Casitone, 4 g glucose, 1 L seawater,
+    and defines artificial seawater as 32 g sea salt in 1000 mL distilled water; it
+    does not include the imported 20 g/L agar row.
+variant_children:
+- path: data/normalized_yaml/bacterial/JCM_J720_TCG_MEDIUM.yaml
+  relationship: SUPPLEMENTED_VARIANT
+  id: CultureMech:003065
+  name: tcg_medium
+  notes: JCM Medium 720 adds 15 g/L agar to DSMZ Medium 1009's liquid base.
+- path: data/normalized_yaml/bacterial/KOMODO_1009_TCG_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:003514
+  name: tcg_medium
+  notes: KOMODO Medium 1009 points to the same DSMZ Medium 1009 formulation.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: http://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf

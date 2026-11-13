@@ -1,0 +1,168 @@
+identifier: CHEBI:132767
+preferred_term: Ferric pyrophosphate
+ontology_mapping:
+  ontology_id: CHEBI:132767
+  ontology_label: ferric pyrophosphate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:132767
+    notes: The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3,
+      structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as
+      its preferred label. Correct the preferred label and retain the old string as
+      rejected provenance. This repair does not establish what the malformed source
+      occurrence intended.
+synonyms:
+- synonym_text: Ferric pyrophosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Iron pyrophosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Iron(3+) pyrophosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Iron(III) diphosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Iron(III) pyrophosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Tetrairon tris(pyrophosphate)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ferric diphosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: iron(3+) diphosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: iron(3+) diphosphate (4/3)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: tetrairon tris(diphosphate)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Fe4(PO4)2
+  synonym_type: REJECTED_LABEL
+  source: Original preferred label imported from CultureMech; MediaDive ingredient583
+    https://mediadive.dsmz.de/ingredients/583
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 10
+  media_count: 10
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:19:25.662649+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:132767
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 10058-44-3 from PubChem (via CHEBI:132767)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: Ferric pyrophosphate,
+    Iron pyrophosphate, Iron(3+) pyrophosphate, Iron(III) diphosphate, Iron(III) pyrophosphate,
+    ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: Fe4(PO4)2, Iron pyrophosphate,
+    Iron(3+) pyrophosphate, Iron(III) diphosphate, Iron(III) pyrophosphate, ... (5
+    more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Ferric_pyrophosphate.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.515093+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.492374+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=4Fe.3O7P2; inchi=InChI=1S/4Fe.3H4O7P2/c;;;;3*1-8(2,3)7-9(4,5)6/h;;;;
+    smiles=O=P([O-])([O-])OP(=O)([O-])[O-].O=P([O-])([O-])OP(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.352820+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.763039+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Fe4(PO4)2'' -> ''ferric pyrophosphate'': synced to canonical
+    CHEBI label (preferred_term ''Fe4(PO4)2'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.518814+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 5/5 -> 10/10 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3,
+    structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its
+    preferred label. Correct the preferred label and retain the old string as rejected
+    provenance. This repair does not establish what the malformed source occurrence
+    intended. Isolated proposal only; all native holds remain preserved in source-case
+    decisions.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[1] from MANUAL_CURATION to LLM_SUGGESTION:
+    This assertion records the agent naming/rejected-label repair from exact ferric-pyrophosphate
+    chemistry while retaining the malformed source hold. Isolated successor proposal
+    only; all inherited source, role and export holds remain. Historical evidence
+    and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+chemical_properties:
+  cas_rn: 10058-44-3
+  data_source: PubChem (via CHEBI:132767)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 4Fe.3O7P2
+  inchi: InChI=1S/4Fe.3H4O7P2/c;;;;3*1-8(2,3)7-9(4,5)6/h;;;;3*(H2,1,2,3)(H2,4,5,6)/q4*+3;;;/p-12
+  smiles: O=P([O-])([O-])OP(=O)([O-])[O-].O=P([O-])([O-])OP(=O)([O-])[O-].O=P([O-])([O-])OP(=O)([O-])[O-].[Fe+3].[Fe+3].[Fe+3].[Fe+3]
+ingredient_type: SINGLE_INGREDIENT
+notes: The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3,
+  structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its
+  preferred label. Correct the preferred label and retain the old string as rejected
+  provenance. This repair does not establish what the malformed source occurrence
+  intended.

@@ -1,0 +1,92 @@
+identifier: kgmicrobe.compound:ristocetin_b
+preferred_term: Ristocetin B
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:ristocetin_b
+  ontology_label: Ristocetin B
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/90478637/property/InChI,InChIKey,IUPACName,MolecularFormula/JSON
+    notes: RistocetinB CID90478637 C84H92N8O35 differs from CHEBI85129 C95H110N8O44.
+      Retain local B identity; remove unsupported molecular parent and parent-derived
+      chemistry. PubChem CAS synonym not promoted as certified registry identity.
+synonyms:
+- synonym_text: 'produces: ristocetin B'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:ristocetin_b;
+    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
+    kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.084452+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.133011+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:18:52.604642+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:85129 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.691801+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C95H110N8O44; inchi=InChI=1S/C95H110N8O44/c1-30-47(109)18-37-20-49(30);
+    smiles=[H][C@]1(C(=O)OC)NC(=O)[C@H]2NC(=O)[C@H](NC(=O)[C@
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    ristocetin B''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    ristocetin B''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Remove erroneous parent-derived formula/InChI/SMILES and unsupported CHEBI85129
+    molecule parent; preserve local ristocetinB identity with fallback registry mapping
+    and rejected trait synonym.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.776883+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+notes: 'Primary chemical-property correction: previous C95H110N8O44/InChI/SMILES came
+  from CHEBI85129, not ristocetinB. No new chemistry copied until independent structure/identity
+  review; rejected trait phrase remains rejected.'

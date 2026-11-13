@@ -1,0 +1,71 @@
+{
+  "index": 31,
+  "case_id": "CM_NAME:316c14d7210e09731f9d01ae186f1ff064edb484a704082de68777ae64b71b70",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "citrate.*5|citrate.*penta|6858-44-2",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "citrate.*5|citrate.*penta|6858-44-2",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "reports/all_unmatched_20261107/worker-04/proposals/chemistry/Ferric_Ammonium_Citrate.after.yaml:131:  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: ''Ferric ammmonium citrate''. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).'\ndata/ingredients/unmapped/Esculin_Hydrolysate.yaml:72:  Ferric Citrate`; the released aglycone esculetin is CHEBI:490095. Not mapped, because\nreports/all_unmatched_20261107/worker-04/proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.after.yaml:14:    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock equivalence is asserted. TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.\nreports/all_unmatched_20261107/worker-04/proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.after.yaml:39:    notes: TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.\nreports/all_unmatched_20261107/worker-04/proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.after.yaml:41:notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving provenance so this specific formulation cannot capture other preparations. TOGO2809 comments paragraph16 gives these three stock additions. Nitrogen is the preparation atmosphere and is not asserted as a quantified dissolved constituent. These are formulation inputs; Ti/citrate speciation and the final reacted composition/volume are not claimed. The source5ml addition to LS4D must not become5g/L.\ndata/ingredients/mapped/Na2-citrate.yaml:11:    notes: 'Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2,\ndata/ingredients/mapped/Na2-citrate.yaml:36:    Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7,\ndata/ingredients/mapped/Ca_No32.yaml:16:      observed in Ferric_Citrate_Monohydrate.yaml. CAS-RN 10124-37-5 confirms calcium\ndata/ingredients/mapped/Trisodium_Citrate.yaml:194:    disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7), a different\ndata/ingredients/mapped/Mg-citrate.yaml:57:    dibasic, Magnesium hydrogen citrate, magnesium 3-carboxy-3-hydroxypentanedioate'\ndata/ingredients/mapped/Trisodium_Citrate_X_2_H2o.yaml:165:    (EXACT_SYNONYM): the anhydrous trisodium citrate CHEBI:53258 name on the sodium\ndata/ingredients/mapped/Fe_Iii_Citrate.yaml:119:    Fe(NH3)citrate, Ferric iron citrate, KRX-0502, ... (3 more)'\ndata/ingredients/mapped/Fe_Iii_Citrate.yaml:133:    new label: ''iron(III) citrate''). Reason: Previous CHEBI:55553 was a nucleotide.\ndata/ingredients/mapped/Na3-citrate_X_2_H2o.yaml:159:    ChEBI against CHEBI:32142 'sodium citrate dihydrate'. Occurrences 14/14 + 51/51\ndata/ingredients/mapped/Sodium_Citrate.yaml:15:      \"Sodium Citrate\" name maps to the anhydrous parent CHEBI:53258 (matches sibling\ndata/ingredients/mapped/Sodium_Citrate.yaml:120:  changes: CHEBI:32142 (sodium citrate dihydrate) → CHEBI:53258 (sodium citrate);\ndata/ingredients/mapped/Sodium_Citrate.yaml:167:    (EXACT_SYNONYM): the anhydrous trisodium citrate CHEBI:53258 name on the sodium\n",
+  "label_index_stdout": "2959:citric acid trisodium salt,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,unique\n6463:Na3-citrate,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,unique\n7807:Sodium citrate,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,resolved:owned\n8513:Tri-sodium citrate,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,unique\n8598:\"trisodium 2-hydroxypropane-1,2,3-tricarboxylate\",synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,unique\n8602:Trisodium citrate,preferred_term,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,resolved:owned\n8603:trisodium citrate,ontology_label,mesh:C514290,Trisodium citrate x H2O,mesh:C514290,MAPPED,resolved:owned\n8609:Trisodium citrate x 3 H2O,preferred_term,UNMAPPED_0852,Trisodium citrate x 3 H2O,,UNMAPPED,unique\n8610:Trisodium citrate x H2O,preferred_term,mesh:C514290,Trisodium citrate x H2O,mesh:C514290,MAPPED,unique\n8613:Trisodium citrate·3H2O,synonym,UNMAPPED_0852,Trisodium citrate x 3 H2O,,UNMAPPED,unique\n8615:Trisodium citrate・3H2O,synonym,UNMAPPED_0852,Trisodium citrate x 3 H2O,,UNMAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [
+    {
+      "proposal_id": "w04-chem-proposal-ferric-ammonium-citrate",
+      "owner_path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "case_ids": [
+        "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/Ferric_Ammonium_Citrate.after.yaml",
+        "sha256": "f55993b7b4a2c8a30bd46f8d39e1abfb25c5b563f5a914fbf4cfa4707153916e"
+      }
+    },
+    {
+      "proposal_id": "w04-chem-proposal-togo2809-titanium-citrate",
+      "owner_path": "data/ingredients/mapped/TOGO_2809_Titanium_Citrate_Stock.yaml",
+      "case_ids": [
+        "CM_NAME:d5c2ddbc1084d1ed44abdf16a9b3813a68ee1e3463aa7c54b0943c95cff5eb8a"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.after.yaml",
+        "sha256": "fad9e9c1dd82f87ce50f3b52b916c99a9128d2c258ca7bdd284989df0afb09d9"
+      }
+    }
+  ],
+  "related_original_cases": [
+    {
+      "case_id": "CM_NAME:316c14d7210e09731f9d01ae186f1ff064edb484a704082de68777ae64b71b70",
+      "label": "Na3-citrate x 5 H2O",
+      "proposal_ids": []
+    },
+    {
+      "case_id": "KG_CASE:3a9df6a72a9d3baaa08a8132b3a8fac314b8e691af805429aa70fdb79b2d871b",
+      "label": "Na3-citrate x 5 H2O",
+      "proposal_ids": []
+    }
+  ]
+}

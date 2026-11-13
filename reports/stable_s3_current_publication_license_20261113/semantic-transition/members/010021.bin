@@ -1,0 +1,87 @@
+identifier: kgmicrobe.compound:actinomycetin
+preferred_term: Actinomycetin
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:actinomycetin
+  ontology_label: Actinomycetin
+  ontology_source: kgmicrobe.compound
+  mapping_quality: PLACEHOLDER
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
+      MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
+      Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://pmc.ncbi.nlm.nih.gov/articles/PMC518278/ (Maurice Welsch, Actinomycetin,
+      Journal of Bacteriology 53(1):101–102, 1947; PMID:16561239)
+    notes: Primary preparation description contradicts automatic SINGLE_INGREDIENT
+      classification; no exact compound or formulation promotion.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:actinomycetin;
+    OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept
+    as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.045805+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.293129+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-09T19:06:23+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate
+    or normalized local duplicate supports promotion from kgmicrobe.compound:actinomycetin
+    to an external ontology identifier.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CORRECTED
+  changes: The inspected Welsch1947 original pages identify actinomycetin as crude
+    culture filtrate potentially containing multiple active agents. This is sufficient
+    to repair the existing placeholder owner from auto-classified SINGLE_INGREDIENT
+    to UNDEFINED_MIXTURE now. It is not sufficient to promote a molecular identifier
+    or assert one exact product formulation; both independent source cases remain
+    attached. Isolated successor proposal only; no maintained surfaces, roles, source
+    bytes or publication holds changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:04:03.943442+00:00'
+  curator: worker04_root_independent_finding_correction_proposal
+  action: CORRECTED
+  changes: Correct the active Welsch citation to the actual inspected Journal of Bacteriology
+    article, PMC518278 pp101–102; the earlier Bacteriological Reviews11:99–148 citation
+    named a different article. Preserve the supported crude-filtrate/complex-mixture
+    interpretation and all prior events. Isolated proposal only; all source, role,
+    whole-owner and export holds remain.
+  llm_assisted: true
+notes: '2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier;
+  no exact OLS candidate and no normalized local mapped duplicate were found in the
+  UNKNOWN_TERM no-hit review. Primary Welsch1947 pp101–102 defines crude culture filtrate,
+  possibly containing more than one active agent. Correct type only; legacy placeholder
+  identity, source holds and lack of exact formulation remain.'
+ingredient_type: UNDEFINED_MIXTURE

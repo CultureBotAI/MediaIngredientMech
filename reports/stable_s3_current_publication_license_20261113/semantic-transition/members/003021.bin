@@ -1,0 +1,44 @@
+"""Fourteen authorized independent private byte captures, seven exact C reuses."""
+from pathlib import Path
+import datetime,hashlib,json,os,stat
+D=Path(__file__).absolute().parent;C=D.parents[1];V=C/'preflight/corrected-evidence-closure-inventory-v2'
+def digest(raw):return hashlib.sha256(raw).hexdigest()
+def info(s):return {k:getattr(s,k) for k in ['st_dev','st_ino','st_mode','st_size','st_mtime_ns','st_ctime_ns','st_nlink']}
+def read(p,expected):
+ p=Path(p);before=p.lstat();assert stat.S_ISREG(before.st_mode) and not p.is_symlink()
+ fd=os.open(p,os.O_RDONLY|os.O_NOFOLLOW)
+ try:
+  first=os.fstat(fd);assert info(first)==info(before)
+  with os.fdopen(os.dup(fd),'rb') as f:raw=f.read()
+  assert info(os.fstat(fd))==info(first)
+ finally:os.close(fd)
+ assert info(p.lstat())==info(before);assert digest(raw)==expected
+ return raw,info(before)
+reps=json.loads((V/'TRANSPORT-REPRESENTATIVES.json').read_text())['representatives'];files=json.loads((V/'FILES.json').read_text());results=[]
+for row in reps:
+ src=Path(row['physical']['path'])
+ if src.is_relative_to(C):continue
+ h=row['physical']['sha256'];raw,before=read(src,h)
+ matches=[f['path'] for f in files if Path(f['path']).is_relative_to(C) and f['sha256']==h and Path(f['path']).name==src.name]
+ matches=[p for p in matches if ('/native-fixture/' in p or '/native-author-fixture/' in p or '/native-review-fixture/' in p or '/inputs/producers/' in p)]
+ if matches:
+  chosen=Path(sorted(matches,key=lambda p:('/inputs/producers/' not in p,len(p),p))[0]);mode='existing_C_same_basename_capture'
+ elif src.name=='Na2seo3.md' and h=='98187c42b3cd99d0cafbdaec7dd827c839557537ff8cebd1e6020b1eb80c0b60':
+  chosen=C/'preflight/selenite718-alias-successor-independent-v1/native-fixture/evidence/historical-Na2seo3-review.md';mode='existing_C_explicit_renamed_equal_byte_capture'
+ else:
+  chosen=D/'captured-external'/h/src.name;chosen.parent.mkdir(parents=True,exist_ok=True)
+  fd=os.open(chosen,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)
+  try:
+   with os.fdopen(os.dup(fd),'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
+  finally:os.close(fd)
+  mode='new_independent_regular_private_capture'
+ copied,after=read(chosen,h);assert copied==raw and after['st_nlink']==1 and (before['st_dev'],before['st_ino'])!=(after['st_dev'],after['st_ino'])
+ _,original_after=read(src,h);assert before==original_after
+ results.append({'original':row['physical'],'original_stat_before':before,'original_stat_after':original_after,'selected_physical':{'path':str(chosen),'sha256':h,'bytes':len(raw)},'selected_stat':after,'mode':mode,'original_logical_sources':row['logical_sources'],'new_acquisition':False,'native_source_identity_rewritten':False})
+assert len(results)==21
+assert sum(x['mode']=='new_independent_regular_private_capture' for x in results)==14
+assert sum(x['mode']=='existing_C_same_basename_capture' for x in results)==6
+assert sum(x['mode']=='existing_C_explicit_renamed_equal_byte_capture' for x in results)==1
+out={'status':'EXACT21_EXTERNAL_REPRESENTATIVES_CAPTURED_OR_REUSED_NO_CONFIG','created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'inventory_selector_sha256':digest((V/'TRANSPORT-REPRESENTATIVES.json').read_bytes()),'new_regular_captures':14,'existing_same_basename':6,'existing_renamed_equal_bytes':1,'source_bytes_and_stat_unchanged':True,'root_authorization':'Root selected14new+6same-basename+1explicitrenamed equal-byte capture; prior7same-basename description was a manual counting error. No path or science rewrite.','rows':results,'configuration_created':False,'constructor_executed':False}
+with (D/'EXTERNAL-CAPTURE-RECEIPT.json').open('x') as f:json.dump(out,f,indent=2,ensure_ascii=False);f.write('\n')
+print(json.dumps({'status':out['status'],'new':14,'same_basename_reuse':6,'renamed_reuse':1,'receipt_sha256':digest((D/'EXTERNAL-CAPTURE-RECEIPT.json').read_bytes())}))

@@ -1,0 +1,157 @@
+identifier: CHEBI:32586
+preferred_term: Na2SO4 x 10 H2O
+ontology_mapping:
+  ontology_id: CHEBI:32586
+  ontology_label: sodium sulfate decahydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: Na2SO4.10H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: sodium sulfate decahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
+- synonym_text: sodium sulfate--water (1/10)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: sodium sulfate, anhydrous
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: Glauber's salt
+  synonym_type: EXACT_SYNONYM
+  source: sssom_other_backfill
+- synonym_text: Glaubersalz
+  synonym_type: EXACT_SYNONYM
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7727-73-3 from PubChem (via CHEBI:32586)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Na2SO4.10H2O'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T06:53:30.746148+00:00'
+  curator: audit_chebi_collision_routing
+  action: ADDED_SYNONYMS_VIA_CHEBI_COLLISION_ROUTING
+  changes: 'Added 1 synonyms routed to this record because it already has the proposed
+    CHEBI and its hydration state matches the candidates (sources: Na2so4_X_10_H2o.yaml):
+    sodium sulfate decahydrate'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.303072+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.377590+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=10H2O.2Na.O4S; inchi=InChI=1S/2Na.H2O4S.10H2O/c;;1-5(2,3)4;;;;;;;;;;/h;;
+    smiles=O=S(=O)([O-])[O-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.128513+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.391914+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.808404+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2SO4 x 10 H2O'' -> ''sodium sulfate decahydrate'':
+    synced to canonical CHEBI label (preferred_term ''Na2SO4 x 10 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+- timestamp: '2026-07-20T20:01:42.981644+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Added nutritional role(s) MINERAL_SOURCE missed by the initial #128 migration:
+    the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
+    which dropped the bulk cation from salts whose other role describes the anion
+    (e.g. MgSO4).'
+- timestamp: '2026-08-27T03:16:39.519511+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 6/6 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''sodium
+    sulfate, anhydrous''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: sodium sulfate, anhydrous
+    (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: 'Added ''Glauber''s salt'' and ''Glaubersalz'' (EXACT_SYNONYM), moved from
+    the anhydrous Na2SO4 record: both name sodium sulfate decahydrate, and ChEBI lists
+    them on CHEBI:32586 (#899).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001829; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7727-73-3
+  data_source: PubChem (via CHEBI:32586)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 10H2O.2Na.O4S
+  inchi: InChI=1S/2Na.H2O4S.10H2O/c;;1-5(2,3)4;;;;;;;;;;/h;;(H2,1,2,3,4);10*1H2/q2*+1;;;;;;;;;;;/p-2
+  smiles: O=S(=O)([O-])[O-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: SULFUR_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- role: MINERAL_SOURCE
+  confidence: 0.8
+  evidence: []
+mim_id: MIM:0001829
+legacy_identifiers:
+- MIM:Na2so4_X_10_H2o
+- CHEBI:32586

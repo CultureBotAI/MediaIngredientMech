@@ -1,0 +1,88 @@
+identifier: NCIT:C386
+preferred_term: Colistin Sulfate
+synonyms:
+- synonym_text: Colistin sulfate salt
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:37943
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: BacDive_Antibiotic_resistance
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:colistin_sulfate; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:759883
+  notes: CHEBI:759883 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted CHEBI:759883 -> NCIT:C386 "Colistin Sulfate" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: curator_ruling_2026_08_07
+  action: CURATOR_RULING
+  changes: Ruling recorded; no mapping changed. NCIT:C386 'Colistin Sulfate' is an
+    exact label match and resolves locally.
+  new_status: MAPPED
+  llm_assisted: false
+  notes: 'Curator ruling (#207): this grounding is FINAL, not a stopgap. CHEBI:759883
+    is a valid live ChEBI accession that is absent from the local semsql build (252
+    vs ChEBI 253), and it does exist in kg-microbe''s own ChEBI — so a future sync
+    against the consumer''s ontology may look like an invitation to restore it. It
+    is not. A term this repo can resolve and label-check is the better published mapping,
+    and that judgement does not expire when the build catches up. Do not re-ground
+    to CHEBI:759883 without a new curator decision.'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: MERGED_FROM
+  changes: Absorbed 'Colistin sulfate salt' from the CultureBotHT CAS-selected CHEBI:37943
+    duplicate. The losing ChEBI target denoted colistin without sulfate; existing
+    NCIT:C386 denotes Colistin Sulfate exactly. Raw label and CAS 1264-72-8 kept (#455).
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000739; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: NCIT:C386
+  ontology_label: Colistin Sulfate
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Exact NCIT label match; CHEBI:759883 is live upstream but absent from
+      the local build (#249, #213).'
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+chemical_properties:
+  cas_rn: 1264-72-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-09-12T00:00:00+00:00'
+mim_id: MIM:0000739
+legacy_identifiers:
+- MIM:Colistin_Sulfate
+- NCIT:C386

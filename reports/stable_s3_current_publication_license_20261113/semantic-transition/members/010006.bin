@@ -1,0 +1,101 @@
+identifier: kgmicrobe.ingredient:mem_nonessential_amino_acids_100x_gibco11140
+preferred_term: MEM non-essential amino acids solution, 100x (Gibco 11140)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mem_nonessential_amino_acids_100x_gibco11140
+  ontology_label: MEM non-essential amino acids solution, 100x (Gibco 11140)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.165.html
+    notes: DSMZ1850 explicitly specifies Gibco11140-050. The manufacturer11140 formula
+      identifies the seven amino-acid100x stock. This registry identity is product-bound;
+      no exact equivalence to whole MEM basal medium is asserted.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: AMINO_ACID_MIX
+curation_history:
+- timestamp: '2026-11-08T05:18:48.447621+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: DSMZ1850 explicitly specifies Gibco11140-050. The manufacturer11140 formula
+    identifies the seven amino-acid100x stock. This registry identity is product-bound;
+    no exact equivalence to whole MEM basal medium is asserted. Isolated proposal
+    only; no maintained owner was changed and no publication hold is released.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.418451+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: MEM Non-Essential Amino Acids Solution (100x)
+  supplier: Gibco / Thermo Fisher Scientific
+  catalog_number: 11140-050
+  form: aqueous 100x amino-acid supplement
+  notes: Manufacturer formula identifier11140; DSMZ1850 source catalog11140-050. The
+    unqualified raw source name is not installed as a global synonym because other
+    formulations can share that name.
+components:
+- component_name: Glycine
+  component_id: CHEBI:15428
+  reference_scope: MIM_CATALOG
+  concentration_value: '750.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Alanine
+  component_id: CHEBI:16977
+  reference_scope: MIM_CATALOG
+  concentration_value: '890.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Asparagine
+  component_id: CHEBI:17196
+  reference_scope: MIM_CATALOG
+  concentration_value: '1320.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Aspartic acid
+  component_id: CHEBI:17053
+  reference_scope: MIM_CATALOG
+  concentration_value: '1330.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Glutamic acid
+  component_id: CHEBI:16015
+  reference_scope: MIM_CATALOG
+  concentration_value: '1470.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Proline
+  component_id: CHEBI:17203
+  reference_scope: MIM_CATALOG
+  concentration_value: '1150.0'
+  concentration_unit: MG_PER_L
+- component_name: L-Serine
+  component_id: CHEBI:17115
+  reference_scope: MIM_CATALOG
+  concentration_value: '1050.0'
+  concentration_unit: MG_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: Manufacturer11140050 product FAQ explicitly identifies distilled water as
+    the solvent; amount is not specified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.165.html
+    source_record: 11140 formulation table
+    notes: Seven listed amino acids at10mM each; the formulation table does not explicitly
+      assert exhaustiveness of all solvent/adjustment constituents.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.thermofisher.com/order/catalog/product/11140050
+    source_record: Product specifications and solvent FAQ
+    notes: 100X supplement with distilled water solvent. No solvent quantity or adjustment
+      reagent is inferred.
+  notes: No water quantity or pH-adjustment constituent is invented. Mass concentrations
+    are copied from the source table; no whole-medium equivalence is asserted.

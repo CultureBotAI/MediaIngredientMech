@@ -1,0 +1,86 @@
+id: CultureMech:008819
+name: m17_medium_supplemented_with_20_g_l_of_lactose
+original_name: M17 medium supplemented with 20 g/L of lactose
+category: bacterial
+media_term:
+  preferred_term: TOGO Medium M2230
+  term:
+    id: TOGO:M2230
+    label: M17 medium supplemented with 20 g/L of lactose
+notes: TOGO M2230 lists M17 medium from Scharlau supplemented with 20 g/L lactose
+  and cultivated anaerobically at 42 C.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:56.184984Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M2230'
+- timestamp: '2026-01-28T19:48:35.105756Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:00.484557Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008819'
+- timestamp: '2026-03-17T06:30:39.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:19.158687+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "M17 medium supplemented with 20 g/L of lactose" to
+    "m17_medium_supplemented_with_20_g_l_of_lactose" for consistent matching
+- timestamp: '2026-06-05T07:41:11.756556+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_togo_m17_bhi_score20.py
+  action: RESOLVED_TOGO_M17_BHI_SCORE20
+  changes: Resolved score-20 TOGO M17/BHI sugar-supplement wrapper
+  source: https://togomedium.org/medium/M2230
+  notes: TOGO M2230 lists M17 medium from Scharlau supplemented with 20 g/L lactose
+    and cultivated anaerobically at 42 C.
+kg_microbe_match: mediadive.medium:J697
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+temperature_value: 42.0
+ingredients:
+- preferred_term: Lactose
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  source: TOGO M2230
+  notes: TOGO M2230 lists lactose added at 20 g/L.
+  term:
+    id: CHEBI:36218
+    label: beta-lactose
+  mediaingredientmech_chebi_term:
+    id: CHEBI:36218
+    label: beta-lactose
+- preferred_term: M17 medium (Scharlau)
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: TOGO M2230
+  notes: TOGO M2230 lists one liter of M17 medium (Scharlau) without disclosing the
+    internal formulation.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Supplement one liter of M17 medium (Scharlau) with 20 g/L lactose.
+- step_number: 2
+  action: MIX
+  description: Cultivate anaerobically at 42 C.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M2230

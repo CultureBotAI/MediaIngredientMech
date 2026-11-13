@@ -1,0 +1,930 @@
+{
+  "searched_at": "2026-11-08T05:58:44.641143+00:00",
+  "ignored_files_included": true,
+  "method": "pathlib recursive traversal of maintained records and explicit full published63 proposal payloads/full188 frozen shard; label index full read",
+  "pattern": "Mueller|Hinton",
+  "case_index": 117,
+  "baseline_owner_count_searched": 2956,
+  "published_proposals_searched": 63,
+  "frozen_cases_searched": 188,
+  "label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "matching_label_index_rows": [
+    "Mueller Hinton II agar,preferred_term,UNMAPPED_0128,Mueller Hinton II agar,,UNMAPPED,unique",
+    "Mueller Hinton II agar (BD-BBL),synonym,UNMAPPED_0128,Mueller Hinton II agar,,UNMAPPED,unique"
+  ],
+  "matching_full_owners": [
+    {
+      "path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+      "sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f",
+      "raw_yaml": "identifier: UNMAPPED_0128\npreferred_term: Mueller Hinton II agar\nsynonyms:\n- synonym_text: Mueller Hinton II agar\n  synonym_type: RAW_TEXT\n  source: extracted_from_agar_yaml\n- synonym_text: Mueller Hinton II agar (BD-BBL)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: UNMAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-19T07:49:33.169103+00:00'\n  curator: audit_extract_complex_media_from_agar\n  action: EXTRACTED_COMPLEX_MEDIUM\n  changes: Extracted from Agar.yaml \u2014 'Mueller Hinton II agar' is a complete media\n    formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator\n    re-mapping (likely FOODON complex medium, or split into per-component ingredients).\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-11T19:35:00Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CLASSIFIED_UNDEFINED_MIXTURE\n  changes: Classified as a Mueller Hinton II agar medium/base preparation and left\n    unmapped pending recipe- or product-level curation.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n- timestamp: '2026-07-05T00:00:00+00:00'\n  curator: cbclaw_media_modeling_114\n  action: RECLASSIFY_INGREDIENT_TYPE\n  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete\n    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: edison_literature_identity\n  action: ANNOTATED\n  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mueller_Hinton_II_Agar-edison-literature.md\n    (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather\n    than linked). Report verdict: | recommendation | CURIEs discussed: CHEBI:2509.\n    Recorded as provenance only \u2014 no grounding applied from this run. Edison''s recommendations\n    are deliberately conservative, and a plausible identifier promoted by a mechanism\n    that never decided anything is what #203 and #263 exist to undo. Any CURIE above\n    is a curator''s to accept or reject.'\n  llm_assisted: true\n- timestamp: '2026-08-30T06:20:04.233651+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''Mueller Hinton II agar (BD-BBL)'' (x1 CultureMech mentions).\n    Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\nnotes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as\n  a Mueller Hinton II agar medium/base preparation, not agar identity.\ningredient_type: NAMED_MEDIUM\n",
+      "record": {
+        "identifier": "UNMAPPED_0128",
+        "preferred_term": "Mueller Hinton II agar",
+        "synonyms": [
+          {
+            "synonym_text": "Mueller Hinton II agar",
+            "synonym_type": "RAW_TEXT",
+            "source": "extracted_from_agar_yaml"
+          },
+          {
+            "synonym_text": "Mueller Hinton II agar (BD-BBL)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_COMPLEX_MEDIUM",
+            "changes": "Extracted from Agar.yaml \u2014 'Mueller Hinton II agar' is a complete media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely FOODON complex medium, or split into per-component ingredients).",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:35:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a Mueller Hinton II agar medium/base preparation and left unmapped pending recipe- or product-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-07-05T00:00:00+00:00",
+            "curator": "cbclaw_media_modeling_114",
+            "action": "RECLASSIFY_INGREDIENT_TYPE",
+            "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mueller_Hinton_II_Agar-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | recommendation | CURIEs discussed: CHEBI:2509. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Mueller Hinton II agar (BD-BBL)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as a Mueller Hinton II agar medium/base preparation, not agar identity.",
+        "ingredient_type": "NAMED_MEDIUM"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Agar.yaml",
+      "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+      "raw_yaml": "identifier: CHEBI:2509\npreferred_term: Agar\nontology_mapping:\n  ontology_id: CHEBI:2509\n  ontology_label: agar\n  ontology_source: CHEBI\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureMech\n    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH\n  - evidence_type: LITERATURE\n    source: PubMed search ('Agar')\n    pmid: '38905279'\n    supports: SUPPORT\n    snippet: 'The optimal medium composition was established as follows: wheat starch\n      5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71\n      g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.'\n    explanation: Auto-proposed; curator should rephrase or remove.\nsynonyms:\n- synonym_text: ( Noble)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (alternative)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (for solid medium)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (for solid medium, alternative)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (if appropriate)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: Agar\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: Bacteriological Agar\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: 'Role: Solidifying component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: 'Properties: Undefined component, Complex component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: ( modified)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: Agar (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: agar (BD-Difco)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Molecular Genetics)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar  (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (BD)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Difco)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Purified)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (if needed)*\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar* (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 4456\n  media_count: 4079\ncuration_history:\n- timestamp: '2026-03-09T06:54:18.022301+00:00'\n  curator: import_from_culturemech\n  action: IMPORTED\n  changes: Initial import from CultureMech pipeline\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T19:50:59.360851+00:00'\n  curator: fetch_cas_rn_from_pubchem\n  action: ADDED_CAS_RN\n  changes: Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T21:48:44.699359+00:00'\n  curator: fetch_cas_rn_from_culturebot_csv\n  action: ADDED_CAS_RN\n  changes: 'Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched:\n    agar)'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL\n    Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,\n    BL Agar, Bacteriological Agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar,\n    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,\n    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-19T07:39:23.955331+00:00'\n  curator: audit_mim_merge\n  action: MERGED_FROM_DUPLICATES\n  changes: 'Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml,\n    Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml,\n    R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml,\n    Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml,\n    Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml,\n    Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml.\n    Synonyms, curation_history, and occurrence counts were unioned/summed; winner\n    selected by highest occurrence count with preferred_term readability tie-break.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-19T07:49:33.169103+00:00'\n  curator: audit_extract_complex_media_from_agar\n  action: EXTRACTED_CONTAMINATING_SYNONYMS\n  changes: Extracted 20 complex-medium synonyms that were wrongly absorbed during\n    duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/.\n    Agar.yaml retains only pure chemical-agar synonyms.\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:32.078331+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:09:47.747803+00:00'\n  curator: auto_classify_ingredient_type\n  action: APPLY_EVIDENCE_PROPOSAL\n  changes: added pmid=38905279 from propose-evidence batch\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:12.332732+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-06-03T02:06:01.734333+00:00'\n  curator: infer_roles_from_name_lists\n  action: ANNOTATED\n  changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 0.80)'\n- timestamp: '2026-06-09T05:23:46.718919+00:00'\n  curator: correct_stale_ontology_labels.py\n  action: CORRECTED\n  changes: 'ontology_label ''Agar'' -> ''agar'': synced to canonical CHEBI label (preferred_term\n    ''Agar'' unchanged).'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT ->\n    physicochemical_roles.SOLIDIFYING_AGENT'\n- timestamp: '2026-08-27T03:16:39.518308+00:00'\n  curator: refresh_occurrence_statistics\n  action: CORRECTED\n  changes: 'occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences),\n    derived from distinct CultureMech recipe ids in the #337 occurrence table. The\n    prior values came from the importer retired in #453, whose media_count counted\n    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08\n    rows=194137 distinct_recipes=15257]'\n- timestamp: '2026-08-30T04:48:06.233536+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''Agar (if needed)'' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\n- timestamp: '2026-08-30T04:48:06.233536+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''agar (BD-Difco)'' (x4 CultureMech mentions); ''Agar (Molecular\n    Genetics)'' (x3 CultureMech mentions); ''Agar  (if needed)'' (x2 CultureMech mentions);\n    ''Agar (BD)'' (x1 CultureMech mentions); ''Agar (Difco)'' (x1 CultureMech mentions);\n    ''Agar (Purified)'' (x1 CultureMech mentions); ''Agar (if needed)*'' (x1 CultureMech\n    mentions); ''Agar* (if needed)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\nchemical_properties:\n  cas_rn: 9002-18-0\n  data_source: PubChem API\n  retrieval_date: '2026-04-05T19:50:59.360831+00:00'\nkg_microbe_node_id: CHEBI:2509\ningredient_type: SINGLE_INGREDIENT\nphysicochemical_roles:\n- role: SOLIDIFYING_AGENT\n  confidence: 0.8\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n    reference_text: Inferred from curated media-role name pattern\n    curator_note: Provisional role from a curated name-pattern rule; review recommended.\n",
+      "record": {
+        "identifier": "CHEBI:2509",
+        "preferred_term": "Agar",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:2509",
+          "ontology_label": "agar",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "LITERATURE",
+              "source": "PubMed search ('Agar')",
+              "pmid": "38905279",
+              "supports": "SUPPORT",
+              "snippet": "The optimal medium composition was established as follows: wheat starch 5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71 g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.",
+              "explanation": "Auto-proposed; curator should rephrase or remove."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "( Noble)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium, alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(if appropriate)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Bacteriological Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Solidifying component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Undefined component, Complex component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "( modified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "agar (BD-Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Molecular Genetics)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar  (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (BD)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Purified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (if needed)*",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar* (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4456,
+          "media_count": 4079
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:50:59.360851+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:44.699359+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched: agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, BL Agar, Bacteriological Agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml, Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml, R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml, Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml, Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml, Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_CONTAMINATING_SYNONYMS",
+            "changes": "Extracted 20 complex-medium synonyms that were wrongly absorbed during duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/. Agar.yaml retains only pure chemical-agar synonyms.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.078331+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:09:47.747803+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "APPLY_EVIDENCE_PROPOSAL",
+            "changes": "added pmid=38905279 from propose-evidence batch",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.332732+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-03T02:06:01.734333+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SOLIDIFYING_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.718919+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Agar' -> 'agar': synced to canonical CHEBI label (preferred_term 'Agar' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT -> physicochemical_roles.SOLIDIFYING_AGENT"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518308+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Agar (if needed)' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 8 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'agar (BD-Difco)' (x4 CultureMech mentions); 'Agar (Molecular Genetics)' (x3 CultureMech mentions); 'Agar  (if needed)' (x2 CultureMech mentions); 'Agar (BD)' (x1 CultureMech mentions); 'Agar (Difco)' (x1 CultureMech mentions); 'Agar (Purified)' (x1 CultureMech mentions); 'Agar (if needed)*' (x1 CultureMech mentions); 'Agar* (if needed)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9002-18-0",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:50:59.360831+00:00"
+        },
+        "kg_microbe_node_id": "CHEBI:2509",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SOLIDIFYING_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_published_payloads": [
+    {
+      "proposal_id": "media-alias-optional-agar",
+      "owner_path": "data/ingredients/mapped/Agar.yaml",
+      "after_sha256": "d319886649a75f387ad38b54ff602896a9685f00325381535f364dbb1eb1ea6b",
+      "case_ids": [
+        "CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166",
+        "CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b"
+      ],
+      "payload": {
+        "identifier": "CHEBI:2509",
+        "preferred_term": "Agar",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:2509",
+          "ontology_label": "agar",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "LITERATURE",
+              "source": "PubMed search ('Agar')",
+              "pmid": "38905279",
+              "supports": "SUPPORT",
+              "snippet": "The optimal medium composition was established as follows: wheat starch 5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71 g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.",
+              "explanation": "Auto-proposed; curator should rephrase or remove."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "( Noble)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium, alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(if appropriate)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Bacteriological Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Solidifying component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Undefined component, Complex component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "( modified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "agar (BD-Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Molecular Genetics)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar  (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (BD)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Purified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (if needed)*",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar* (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech frozen worker04 case CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166"
+          },
+          {
+            "synonym_text": "Agar if required",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech frozen worker04 case CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4456,
+          "media_count": 4079
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:50:59.360851+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:44.699359+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched: agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, BL Agar, Bacteriological Agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml, Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml, R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml, Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml, Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml, Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_CONTAMINATING_SYNONYMS",
+            "changes": "Extracted 20 complex-medium synonyms that were wrongly absorbed during duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/. Agar.yaml retains only pure chemical-agar synonyms.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.078331+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:09:47.747803+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "APPLY_EVIDENCE_PROPOSAL",
+            "changes": "added pmid=38905279 from propose-evidence batch",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.332732+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-03T02:06:01.734333+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SOLIDIFYING_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.718919+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Agar' -> 'agar': synced to canonical CHEBI label (preferred_term 'Agar' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT -> physicochemical_roles.SOLIDIFYING_AGENT"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518308+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Agar (if needed)' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 8 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'agar (BD-Difco)' (x4 CultureMech mentions); 'Agar (Molecular Genetics)' (x3 CultureMech mentions); 'Agar  (if needed)' (x2 CultureMech mentions); 'Agar (BD)' (x1 CultureMech mentions); 'Agar (Difco)' (x1 CultureMech mentions); 'Agar (Purified)' (x1 CultureMech mentions); 'Agar (if needed)*' (x1 CultureMech mentions); 'Agar* (if needed)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T05:18:48.447621+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Add the complete source labels ['Agar (alternative)', 'Agar if required']. Identity/formulation boundary verified only as described in the media evidence; existing unrelated payload is not newly approved. Isolated proposal only; no maintained owner was changed and no publication hold is released.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9002-18-0",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:50:59.360831+00:00"
+        },
+        "kg_microbe_node_id": "CHEBI:2509",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SOLIDIFYING_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "proposal_id": "media-product-mueller_hinton_ii_agar",
+      "owner_path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+      "after_sha256": "d064bc3b3133dd2dcf50eba09a0c4d62a04dbaa777eb5a9bd61653742be230af",
+      "case_ids": [
+        "KG_CASE:369a898c223d9e1689697ccaa9deb6f072d8c30cba98e39760fc2ef4dbb3491f"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:mueller_hinton_ii_agar",
+        "preferred_term": "Mueller Hinton II agar (BD-BBL)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:mueller_hinton_ii_agar",
+          "ontology_label": "Mueller Hinton II agar (BD-BBL)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.bd.com/en-us/products-and-solutions/products/product-page.211438",
+              "notes": "The raw KG source expressly identifies BD-BBL Mueller Hinton II agar38g/L and the manufacturer211438 product corroborates the II product identity. Promote the existing II owner to its own registry rather than generic MH or a guessed ontology. Internal cation/thymidine specifications and formulation are not invented."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "NAMED_MEDIUM",
+        "notes": "The raw KG source expressly identifies BD-BBL Mueller Hinton II agar38g/L and the manufacturer211438 product corroborates the II product identity. Promote the existing II owner to its own registry rather than generic MH or a guessed ontology. Internal cation/thymidine specifications and formulation are not invented. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds. Historical generic labels remain preserved in curation history/source evidence without global resolving aliases. Existing prior review holds persist until independent coordinator disposition.",
+        "curation_history": [
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_COMPLEX_MEDIUM",
+            "changes": "Extracted from Agar.yaml \u2014 'Mueller Hinton II agar' is a complete media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely FOODON complex medium, or split into per-component ingredients).",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:35:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a Mueller Hinton II agar medium/base preparation and left unmapped pending recipe- or product-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-07-05T00:00:00+00:00",
+            "curator": "cbclaw_media_modeling_114",
+            "action": "RECLASSIFY_INGREDIENT_TYPE",
+            "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mueller_Hinton_II_Agar-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | recommendation | CURIEs discussed: CHEBI:2509. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Mueller Hinton II agar (BD-BBL)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T05:32:29.548252+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "MAPPED_TO_REGISTRY",
+            "changes": "The raw KG source expressly identifies BD-BBL Mueller Hinton II agar38g/L and the manufacturer211438 product corroborates the II product identity. Promote the existing II owner to its own registry rather than generic MH or a guessed ontology. Internal cation/thymidine specifications and formulation are not invented. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true,
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED"
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "Mueller Hinton II agar (BD-BBL)",
+            "supplier": "BD BBL",
+            "form": "dehydrated Mueller Hinton II agar"
+          }
+        ],
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        }
+      }
+    }
+  ],
+  "matching_full_frozen_cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:e5d138ead4dbe387334ad78774a8dcbbfdcc510f046a82e969004f43b26c0ffc",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mueller_hinton_mh_agar.yaml",
+          "native_name": "Mueller Hinton (MH) agar",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:1a58dede9cc277fe37c33af4ef7753c8fbe5b1bedc38b1614a116b548e718522",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Properties: Undefined component, Complex component",
+            "preferred_term": "Mueller Hinton (MH) agar"
+          },
+          "raw_preferred_term": "Mueller Hinton (MH) agar",
+          "recipe_id": "CultureMech:009472",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009472"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2942"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mueller_hinton_mh_agar.yaml",
+          "source_file_sha256": "28c8f4a133e969ccbf027bf0aa05893d0286f6dd51bb7386d6d882d51836439c",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3763,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009472",
+        "ingredient_name": "Mueller Hinton (MH) agar",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Mueller Hinton (MH) agar",
+      "source": "culturemech",
+      "source_case_id": "Mueller Hinton (MH) agar",
+      "source_identity_claimed": false,
+      "source_label": "Mueller Hinton (MH) agar"
+    },
+    {
+      "baseline_outcome": "current_source_placeholder_preserved",
+      "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+      "case_id": "KG_CASE:369a898c223d9e1689697ccaa9deb6f072d8c30cba98e39760fc2ef4dbb3491f",
+      "original_kg_entry": {
+        "candidate_id": "369a898c223d9e1689697ccaa9deb6f072d8c30cba98e39760fc2ef4dbb3491f",
+        "category": "biolink:ComplexMolecularMixture",
+        "consumed_name_hits": [],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "source_label",
+            "kind": "preferred_term",
+            "label": "Mueller Hinton II agar",
+            "owner": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "source_label",
+            "kind": "synonym",
+            "label": "Mueller Hinton II agar",
+            "owner": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "extracted_from_agar_yaml",
+              "synonym_text": "Mueller Hinton II agar",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "preferred_term",
+            "label": "Mueller Hinton II agar",
+            "owner": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+            "resolving": true
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Mueller Hinton II agar",
+            "owner": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "extracted_from_agar_yaml",
+              "synonym_text": "Mueller Hinton II agar",
+              "synonym_type": "RAW_TEXT"
+            },
+            "synonym_type": "RAW_TEXT"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "UNMAPPED_0128",
+            "mapping_status": "UNMAPPED",
+            "native_review_rows": [],
+            "ontology_mapping": null,
+            "path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+            "preferred_term": "Mueller Hinton II agar",
+            "sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f",
+            "subject_id": "MIM:Mueller_Hinton_II_Agar"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Mueller Hinton II agar",
+        "resolving_owner_paths": [
+          "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml"
+        ],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:1775",
+        "source_label": "Mueller Hinton II agar",
+        "source_record": {
+          "amount": 38,
+          "attribute": "BD-BBL",
+          "compound": "Mueller Hinton II agar",
+          "compound_id": 1775,
+          "g_l": 38,
+          "optional": 0,
+          "recipe_order": 1,
+          "unit": "g"
+        },
+        "triage_flags": [
+          "MATCHED_UNMAPPED_OWNER",
+          "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+        ]
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Mueller Hinton II agar",
+      "source": "mediadive",
+      "source_case_id": "mediadive.ingredient:1775",
+      "source_identity_claimed": false,
+      "source_label": "Mueller Hinton II agar"
+    }
+  ]
+}

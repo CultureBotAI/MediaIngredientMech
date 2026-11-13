@@ -1,0 +1,115 @@
+identifier: kgmicrobe.ingredient:larchwood_xylan
+preferred_term: Larchwood xylan
+synonyms:
+- synonym_text: Larchwood xylan
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Larchwood xylan (Sigma)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1624); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:42:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a source-specific xylan substrate/fraction and left unmapped
+    pending polymer source, composition, and exact ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Larchwood_xylan-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** *Larchwood xylan*
+    is not a single small molecule, salt, hydrate, buffer, or fixed formulation. It
+    is a **source-specific, heterogeneous plant polysaccharide preparation**, most
+    appropriately retained as `UNDEFINED_MIXTURE` (or a polymer/material class, if
+    that type becomes available). No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: REVERTED_PARENT_CONTEXT
+  changes: 'Removed the CHEBI:37166 xylan parent this tool had recorded. The term
+    and its label are correct in the local ChEBI build, but the CURIE appears nowhere
+    in the Edison report the entry cited as evidence — it came from a lookup I ran
+    after reading the report''s prose. Keeping it would have credited that lookup
+    to the literature agent, and left two contradicting events one day apart on this
+    record: one saying no CURIE was proposed, one sourcing a CURIE to the same run.
+    Re-proposing it is fine, with its own evidence; see #294.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Larchwood xylan (Sigma)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: JCM 99 names larchwood xylan (Sigma) as a material input; MediaDiveingredient
+    1624 identifies the existing owner. Promote this original owner to a botanical-preparation
+    registry identity, retaining prior history including#294. The prior CHEBI parent
+    was removed for misattributed provenance; newly reviewed CHEBI 37166 still defines
+    a generic xylan polymer, not an exact complete preparation. No exact chemical
+    parent, CAS or purity is needed for this bounded promotion.
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T07:50:08.106139+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1624); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a larchwood-derived xylan substrate/fraction
+  pending polymer source and composition curation.
+
+
+  #1201 isolated proposal: JCM 99 names larchwood xylan (Sigma) as a material input;
+  MediaDiveingredient 1624 identifies the existing owner. Promote this original owner
+  to a botanical-preparation registry identity, retaining prior history including#294.
+  The prior CHEBI parent was removed for misattributed provenance; newly reviewed
+  CHEBI 37166 still defines a generic xylan polymer, not an exact complete preparation.
+  No exact chemical parent, CAS or purity is needed for this bounded promotion. Product
+  catalog and purity remain unspecified; source-specific publication holds persist.
+  Raw source spellings are retained in case evidence and this source scope; no new
+  globally resolving source-local alias is added. Full-owner publication approval
+  and all source-specific holds remain pending.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:larchwood_xylan
+  ontology_label: Larchwood xylan
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://bacmedia.dsmz.de/pdf/J99; https://mediadive.dsmz.de/finder/Larchwood+xylan///;
+      https://mediadive.dsmz.de/ingredients/1624
+    notes: JCM 99 names larchwood xylan (Sigma) as a material input; MediaDiveingredient
+      1624 identifies the existing owner. Promote this original owner to a botanical-preparation
+      registry identity, retaining prior history including#294. The prior CHEBI parent
+      was removed for misattributed provenance; newly reviewed CHEBI 37166 still defines
+      a generic xylan polymer, not an exact complete preparation. No exact chemical
+      parent, CAS or purity is needed for this bounded promotion.

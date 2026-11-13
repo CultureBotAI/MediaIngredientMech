@@ -1,0 +1,180 @@
+identifier: CHEBI:31695
+preferred_term: Indigocarmine
+ontology_mapping:
+  ontology_id: CHEBI:31695
+  ontology_label: indigo carmine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: Acid blue 74
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. 73015
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. 75781
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. Acid Blue 74
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. Food Blue 1
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. Food Blue 1, disodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: C.I. Natural Blue 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Disodium 3,3'-dioxo-(delta2,2'-biindoline)-5,5'-disulfonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Disodium 5,5'-disulfoindigo
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Disodium 5,5'-indigotin disulfonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Disodium indigo-5,5-disulfonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: E 132
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: FD and C Blue No. 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: FD&C Blue No. 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Indigo carmine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Indigotin-5,5'-disulfonic acid disodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Indigotindisulfonate sodium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Natural blue 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium 5,5'-indigotindisulfonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium indigo-5,5'-bisulfonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: pH indicator; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: disodium (2E)-3-oxo-2-(3-oxo-5-sulfonato-1,3-dihydro-2H-indol-2-ylidene)-2,3-dihydro-1H-indole-5-sulfonate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:24.988736+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:860-22-0 from PubChem API via name lookup (Indigo carmine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 860-22-0 from PubChem (via CHEBI:31695)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 20 synonyms from kg-microbe P4.4 enrichment: Acid blue 74, C.I.
+    73015, C.I. 75781, C.I. Acid Blue 74, C.I. Food Blue 1, ... (15 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Indigo_Carmine.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.043606+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.028401+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C16H8N2O8S2.2Na; inchi=InChI=1S/C16H10N2O8S2.2Na/c19-15-9-5-7(27(21,22)23;
+    smiles=O=C1/C(=C2Nc3ccc(S(=O)(=O)[O-])cc3C2=O)Nc2ccc(S(=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.081406+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111423+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: PH_INDICATOR (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.776614+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Indigocarmine'' -> ''indigo carmine'': synced to canonical
+    CHEBI label (preferred_term ''Indigocarmine'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PH_INDICATOR -> physicochemical_roles.PH_INDICATOR'
+- timestamp: '2026-08-27T03:16:39.519009+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 14/14 -> 19/19 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001332; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+kg_microbe_node_id: CHEBI:31695
+chemical_properties:
+  cas_rn: 860-22-0
+  data_source: PubChem (via CHEBI:31695)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: C16H8N2O8S2.2Na
+  inchi: InChI=1S/C16H10N2O8S2.2Na/c19-15-9-5-7(27(21,22)23)1-3-11(9)17-13(15)14-16(20)10-6-8(28(24,25)26)2-4-12(10)18-14;;/h1-6,17-18H,(H,21,22,23)(H,24,25,26);;/q;2*+1/p-2/b14-13+;;
+  smiles: O=C1/C(=C2Nc3ccc(S(=O)(=O)[O-])cc3C2=O)Nc2ccc(S(=O)(=O)[O-])cc21.[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: PH_INDICATOR
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Ph Indicator'
+mim_id: MIM:0001332
+legacy_identifiers:
+- MIM:Indigocarmine
+- CHEBI:31695

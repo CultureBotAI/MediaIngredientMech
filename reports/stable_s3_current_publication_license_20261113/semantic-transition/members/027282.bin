@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:lysozyme
+preferred_term: Lysozyme
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:lysozyme
+  ontology_label: Lysozyme
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 2650-88-3 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: FOODON via OLS (label-exact)
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Lysozyme'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Preserve unresolved source material locally. The original CultureBotHT
+      row provides no supplier/catalog or preparation evidence. Reject invalid CAS
+      2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3
+      nor exact FOODON:03413135 identity is assigned without original material evidence.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:2650-88-3 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.553816+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.868797+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:51:53.213309+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_FOODON
+  changes: set ontology_mapping parent=FOODON:03413135 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.889384+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Preserve unresolved source material locally. The original CultureBotHT
+    row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3
+    from active identifiers, properties and annotations. Neither 12650-88-3 nor exact
+    FOODON:03413135 identity is assigned without original material evidence.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001555; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-12T10:24:59.438113+00:00'
+  curator: codex_postadoption_source_proposal
+  action: PROPOSED_SOURCE_CORRECTION
+  changes: '#1375: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
+    The current grounding is established by the recorded contextual curator decision,
+    not the superseded lexical grounding. Retain the existing primary identifier,
+    own-identifier exact predicate, all evidence/history, original source scope and
+    unresolved scientific holds. This proposal grants no new scientific, source-binding,
+    role, quantity or export approval. A later regenerated deterministic confidence
+    grade is method provenance, not a measured probability.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
+chemical_properties:
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
+ingredient_type: SINGLE_INGREDIENT
+notes: Preserve unresolved source material locally. The original CultureBotHT row
+  provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3
+  from active identifiers, properties and annotations. Neither 12650-88-3 nor exact
+  FOODON:03413135 identity is assigned without original material evidence.
+mim_id: MIM:0001555
+legacy_identifiers:
+- MIM:Lysozyme
+- kgmicrobe.ingredient:lysozyme

@@ -1,0 +1,565 @@
+[
+  {
+    "source_position": 1,
+    "source_id": "MIMCMREFv1:0028e43510a497c429a50e2cd4441f72611113f4ddda39b024eae14fd44a73bb",
+    "current_owner": {
+      "path": "data/ingredients/unmapped/Barley_Grains.yaml",
+      "sha256": "9b67625b200611ab3de5253ef1035195f0af983b6f6417700aa2bc781391c35a",
+      "mim_id": "MIM:0002720",
+      "identifier": "UNMAPPED_0096",
+      "mapping_status": "UNMAPPED"
+    },
+    "proposal_reason": "Explicit whole-material proposal: the entire source scope contains one grain input before autoclaving, and current MIM:0002720 denotes barley grains while retaining UNMAPPED status. This proposal selects that owner instead of the separate autoclaved owner; it does not derive identity from singular/plural spelling alone. No concrete unresolved source identity or source-dose conflict was identified in the inspected complete case, original decision and captured CCAP source. Empty holds is not an approval, and all original scope exclusions remain bound.",
+    "substantive_native_holds": [],
+    "original_preparation_operation": "ORIGINAL-w10::bio-proposal-Barley_Grains",
+    "original_preparation_retained_holds_complete": [
+      {
+        "literal": "Preserve one grain per25mL, VARIABLE representation and pre-autoclave addition; do not invent mass, cultivar, sterility or processing specifications.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "No external identity to generic barley organism/food and no role or full-recipe approval.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "The full normalized recipe contains other inherited annotations outside this material identity question; they are not endorsed by this review.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      }
+    ],
+    "original_complete_source_decision": {
+      "context_selector": "/origin_cores/w10-decisions/decisions/45",
+      "complete_original_decision": {
+        "case_id": "CM_NAME:566286c20382cebb3e42565a64638064693efbfea338f814e38d9c9715a7e827",
+        "case_input_sha256": "de0fe45920857a619b06365bfbaa5fff9b531788687ee2df62dfe6a862e3928f",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Barley grain",
+          "source_label": "Barley grain",
+          "raw_source_label": "Barley grain"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f398429fc1201a96fd12b9bacc9d52a054271c4866a42e1175cd3a2e0f7d1fb8"
+        ],
+        "disposition": "existing_identity_or_alias",
+        "reasoning": "CCAP ASW+Barley explicitly adds one grain of barley per25 ml before autoclaving. The ingredient occurrence denotes the unprocessed grain input, matching the existing UNMAPPED Barley grains material; autoclaving is a subsequent recipe operation. The separate Barley grains autoclaved owner must not absorb this raw-input spelling. A singular/plural alias does not establish an ontology mapping.",
+        "applicability": "Reviewed this exact case 'Barley grain', its 1 frozen occurrence(s), and each enclosing recipe at the listed component/stock path. Primary evidence is attached only for the source recipes, definitions and processing contrasts relevant to this case. The proposed singular alias preserves UNMAPPED status and does not transfer an autoclaved-material identity or claim taxonomic/food ontology equivalence.",
+        "evidence_ids": [
+          "bio-case-45",
+          "bio-primary-bb1ddbfc113f52b2",
+          "bio-snapshot-45-0",
+          "bio-owner-Barley_Grains"
+        ],
+        "proposal_ids": [
+          "bio-proposal-Barley_Grains"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [
+          {
+            "path": "data/ingredients/unmapped/Barley_Grains.yaml",
+            "sha256": "1a954879e6f48dfdd8d079fef24cf5737fdac6b757c9925df7b5e41e99994721"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-bio"
+          ]
+        },
+        "review_authorship": "Codex in-process /root/bio_research; primary assessment, separate skeptical review pending",
+        "publication_approval": false,
+        "existing_holds_preserved": true,
+        "source_index": 45
+      }
+    },
+    "publication_and_role_scope": "No new scientific role, quantity, component, external-row, production or KG approval. Original owner/publication obligations remain preserved in complete original context; unperformed gates are not falsely reported as completed.",
+    "final_source_vote": null,
+    "complete_original_proposal": {
+      "context_selector": "/origin_cores/w10-proposals/proposals/25",
+      "object": {
+        "proposal_id": "bio-proposal-Barley_Grains",
+        "case_ids": [
+          "CM_NAME:566286c20382cebb3e42565a64638064693efbfea338f814e38d9c9715a7e827"
+        ],
+        "description": "Proposed reviewed source-material aliases: ['Barley grain']. Preserve occurrence quantities and preparation stages; alias review does not approve roles or complete publication payload.",
+        "evidence_ids": [
+          "bio-case-45",
+          "bio-primary-bb1ddbfc113f52b2",
+          "bio-snapshot-45-0",
+          "bio-owner-Barley_Grains"
+        ],
+        "owner_path": "data/ingredients/unmapped/Barley_Grains.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "1a954879e6f48dfdd8d079fef24cf5737fdac6b757c9925df7b5e41e99994721",
+        "after_capture": {
+          "root": "artifact",
+          "path": "bio/owners/Barley_Grains.after.yaml",
+          "sha256": "938d835dbcd435a5ad769c2f58cd866a59114d4e1cfc1a073f5e8754fa75618b"
+        },
+        "identity_consequences": "Retain original primary identifier and material/source specificity; no merge, concentration normalization or role approval.",
+        "predicate_consequences": "Mannan only: replace NCIT organism parent with CHEBI:28808 broadMatch; preserve CAS exact identity and require registry sibling. Other proposals do not alter mapping predicates.",
+        "publication_review_obligations": [
+          "Withdraw inherited support for any changed owner bytes.",
+          "Perform native guarded integration, synchronization and full content-bound published-payload review.",
+          "Preserve all existing WITHHOLD, REJECTED and source-material holds until their exact obligations receive separate review.",
+          "All recipe occurrence concentrations remain outside these MIM owner edits."
+        ],
+        "cross_shard_conflicts": "Before-owner hashes are pinned to the frozen baseline. Coordinator must reconcile any proposal against these same owners from other shards; no proposed bytes from another worker were adopted.",
+        "other_shard_owner_references": {
+          "shards": [],
+          "meaning": "Lexical/candidate references only; coordinator must inspect actual other-worker proposals before choosing owner bytes. No identity or conflict resolution inferred."
+        }
+      }
+    }
+  },
+  {
+    "source_position": 2,
+    "source_id": "MIMCMREFv1:8a39cb14d6f63005c13bbcd6ab4c218abc8d8625b5df7c9edba2ecde7b5358c6",
+    "current_owner": {
+      "path": "data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml",
+      "sha256": "b183ff837af1ddd351b1927e402fd9da7854f0cfb7589e2969081d59fdc55c9d",
+      "mim_id": "MIM:0000366",
+      "identifier": "cas:11078-27-6",
+      "mapping_status": "MAPPED"
+    },
+    "proposal_reason": "Explicit whole-material proposal: the complete sole source occurrence and current MIM:0000366 both preserve sugar-beet arabinan. Primary manufacturer evidence corroborates that material scope, not a particular supplier lot, P-ARAB/P-LARB interchangeability or linear preparation. The distinct CHEBI:22590 broad mapping is not source identity. No concrete unresolved whole-source identity or dose conflict was identified; botanical/grade/role/export limits remain explicit exclusions and separate release obligations.",
+    "substantive_native_holds": [],
+    "original_preparation_operation": "ORIGINAL-w03::m-arabinan_source_alias",
+    "original_preparation_retained_holds_complete": [
+      {
+        "literal": "Do not equate botanical-qualified material to the generic parent or another botanical source.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "Manufacturer webtool capture is archived extracted content, not a freshly fetched raw PDF. Shared CAS does not prove P-ARAB/P-LARB or catalogue-grade identity.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "Source concentration/biological role and complete external publication remain separate.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      }
+    ],
+    "original_complete_source_decision": {
+      "context_selector": "/origin_cores/w03-decisions/decisions/94",
+      "complete_original_decision": {
+        "case_id": "CM_NAME:b7090f12b13a2d567fe1e3962a3ce2907e42826a7f4b588f70d9b78b1eccbae6",
+        "case_input_sha256": "77c2f96bbedcdc6c9369231a33ad45179988658663005cbe914cfe319d78928e",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "arabinan (sugar beet)",
+          "source_label": "arabinan (sugar beet)",
+          "raw_source_label": "arabinan (sugar beet)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:19ddddc3e7f21efb8b88615471f983c6a9844388024b25139de2663c5ad776e5"
+        ],
+        "disposition": "existing_identity_or_alias",
+        "reasoning": "The source explicitly qualifies arabinan by sugar-beet origin. The current Arabinan_From_Sugar_Beet owner preserves that source and CAS11078-27-6 with an asymmetric CHEBI22590 arabinan parent; manufacturer P-ARAB independently corroborates the botanical material and CAS. Add the parenthesized source-qualified alias without erasing origin or changing the resolved #312 parent decision. This does not assert a specific Megazyme product/grade was used in M2313. Togo M2313 original prose explicitly identifies the sugar-beet arabinan option at0.2%; its other carbon sources are alternatives, not co-components.",
+        "applicability": "Applies to exact culturemech source case 'arabinan (sugar beet)', raw label 'arabinan (sugar beet)'. All 1 frozen occurrences were read, including full recipe context; the source IDs, doses, nested stock paths and preparation qualifiers remain in the bound input and occurrence assessment. The source explicitly qualifies arabinan by sugar-beet origin. The current Arabinan_From_Sugar_Beet owner preserves that source and CAS11078-27-6 with an asymmetric CHEBI22590 arabinan parent; manufacturer P-ARAB independently corroborates the botanical material and CAS. Add the parenthesized source-qualified alias without erasing origin or changing the resolved #312 parent decision. This does not assert a specific Megazyme product/grade was used in M2313. Current primary Togo API recipe inspected where referenced; raw names outrank inferred GMO annotations and nested preparation structure is retained.",
+        "evidence_ids": [
+          "m-frozen-shard",
+          "m-recipe-a1c2ef58d6c02968",
+          "m-arabinan-supplier",
+          "m-ontology-arabinan",
+          "m-togo-2313",
+          "m-togo-data-2313"
+        ],
+        "proposal_ids": [
+          "m-arabinan_source_alias"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml",
+            "sha256": "0f7efcf2d026ed5ad88d0b062e4cb3553a2a4b3eb44ffc9c1f5ce1d1c1e42aa2"
+          }
+        ],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/312",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1196"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "root-independent-materials"
+          ],
+          "reviewer": "/root/chemicals",
+          "primary_author": "/root/materials",
+          "capture_sha256": "538eaf7b66609279db6e4d6544b53d4a87a3aa469fab256bfa81dc1fcbde70af"
+        },
+        "researcher": "/root/materials in-process Codex subagent",
+        "retained_holds": {
+          "downstream_holds": [],
+          "consumed_name_hits": [],
+          "native_owner_review_rows": [],
+          "interpretation": "All original downstream and consumed/native mapping decisions are retained. Empty downstream_holds alone does not mean no hold; no native or source-material hold is lifted by this proposal."
+        },
+        "scope_limitations": "Identity/source-context review only. No roles, mechanisms, complete inherited owner payload or release status is approved.",
+        "occurrence_assessments": [
+          {
+            "occurrence_id": "CM_OCC:19ddddc3e7f21efb8b88615471f983c6a9844388024b25139de2663c5ad776e5",
+            "recipe_id": "CultureMech:008900",
+            "path": "ingredients/17",
+            "raw_component": {
+              "concentration": {
+                "unit": "PERCENT_W_V",
+                "value": "0.2"
+              },
+              "notes": "TOGO M2313 lists arabinan from sugar beet as an alternative carbon source; this source-qualified polysaccharide remains intentionally unmapped.",
+              "preferred_term": "arabinan (sugar beet)",
+              "source": "TOGO M2313"
+            },
+            "assessment": "Source literal, source IDs, exact dose units and preparation qualifiers preserved; identity applicability is bounded by this decision. No receiving-medium dose or stock concentration inferred."
+          }
+        ]
+      }
+    },
+    "publication_and_role_scope": "No new scientific role, quantity, component, external-row, production or KG approval. Original owner/publication obligations remain preserved in complete original context; unperformed gates are not falsely reported as completed.",
+    "final_source_vote": null,
+    "complete_original_proposal": {
+      "context_selector": "/origin_cores/w03-proposals/proposals/68",
+      "object": {
+        "proposal_id": "m-arabinan_source_alias",
+        "case_ids": [
+          "CM_NAME:b7090f12b13a2d567fe1e3962a3ce2907e42826a7f4b588f70d9b78b1eccbae6"
+        ],
+        "description": "Add botanical-source-preserving arabinan(sugar beet) alias. Preserve CAS11078-27-6 identity and CHEBI22590 asymmetric parent from #312; no Megazyme grade asserted.",
+        "evidence_ids": [
+          "m-arabinan-supplier",
+          "m-ontology-arabinan"
+        ],
+        "owner_path": "data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "0f7efcf2d026ed5ad88d0b062e4cb3553a2a4b3eb44ffc9c1f5ce1d1c1e42aa2",
+        "after_capture": {
+          "root": "artifact",
+          "path": "materials/proposed-owners/arabinan_source_alias.yaml",
+          "sha256": "0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd"
+        },
+        "publication_obligations": "Proposal only: coordinator must resolve cross-shard owners, apply guarded writes, regenerate synchronized YAML/SSSOM, withdraw inherited owner/payload support and obtain content-bound mapping review. All negative source holds remain until separately adjudicated. No role/mechanism approval.",
+        "cross_shard_conflicts": "Coordinator must search other shard proposals for the same source-scoped formulation/owner before integration; original baseline hashes are retained.",
+        "identity_alias_consequences": "Add botanical-source-preserving arabinan(sugar beet) alias. Preserve CAS11078-27-6 identity and CHEBI22590 asymmetric parent from #312; no Megazyme grade asserted.",
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "root-independent-materials"
+          ],
+          "reviewer": "/root/chemicals",
+          "reviewed_after_sha256": "0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd"
+        }
+      }
+    }
+  },
+  {
+    "source_position": 3,
+    "source_id": "MIMCMREFv1:c20a5e3289820416dac8db39a0b5c3fae9f92b3407490aecaeea594f3c15ea62",
+    "current_owner": {
+      "path": "data/ingredients/mapped/17beta-Estradiol.yaml",
+      "sha256": "b75068dc78421aad7e5d4458300f98dfceda40b2f29cde0b0ffe9af38267b38d",
+      "mim_id": "MIM:0002957",
+      "identifier": "CHEBI:16469",
+      "mapping_status": "MAPPED"
+    },
+    "proposal_reason": "Current MIM:0002957 is the adopted 17beta-estradiol concept, with active registry identity and CHEBI:16469 chemistry. The frozen source still says 1 g/L while NBRC says 1 mg with 1 L water. The exact combined historical quantity/assay-role/export hold is retained in native holds. Choosing a current owner for a held candidate is not approval of that source assertion, quantity or growth-factor note.",
+    "substantive_native_holds": [
+      "NBRC1181 prints1mg whereas frozen normalization says1g/L; no quantity, assay-role or export approval."
+    ],
+    "original_preparation_operation": "ORIGINAL-w10::chem-proposal-99",
+    "original_preparation_retained_holds_complete": [
+      {
+        "literal": "Preserve17beta stereochemistry and captured CHEBI16469 identity.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "NBRC1181 prints1mg whereas frozen normalization says1g/L; no quantity, assay-role or export approval.",
+        "classification": "substantive_unresolved_obligation_retained_literally_in_native_holds"
+      },
+      {
+        "literal": "This is scientific assessment of the exact diagnostic row, not native assertion admission. Existing WITHHOLD, owner-chain, release and unsupported-role obligations remain in force.",
+        "classification": "prior_admission_and_existing_hold_boundary_preserved_not_a_new_independent_identity_defect"
+      },
+      {
+        "literal": "Historical conditional-review statement (not current legacy application status): Actual B generation, exact equality bridge and separate publication acceptance are pending; no publication authority is granted. Actual captured legacy application is complete and transfers no scientific/mapping approval.",
+        "classification": "historical_generation_application_boundary_preserved_without_reasserting_old_pending_state"
+      },
+      {
+        "literal": "NBRC source is 1 mg whereas the frozen normalized recipe says 1 g/L; the row does not approve that source quantity.",
+        "classification": "same_unresolved_dose_conflict_retained_by_literal_combined_hold_not_resolved"
+      },
+      {
+        "literal": "No source-specific biological role or publication approval.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "All exact source forms, quantities, preparation qualifiers, original evidence and history remain; this concept decision grants no source routing, mapping, role, export, adoption or publication approval.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      }
+    ],
+    "original_complete_source_decision": {
+      "context_selector": "/origin_cores/w10-decisions/decisions/99",
+      "complete_original_decision": {
+        "case_id": "CM_NAME:bf95441dfe84a25316206b45e2b482da582422f4309fc061b7603038dfe73894",
+        "case_input_sha256": "3b8e8257265f55f7fe2588834ef51257d6739a752b105f7221f5ce6c88e01970",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "17β-Estradiol",
+          "source_label": "17β-Estradiol",
+          "raw_source_label": "17β-Estradiol"
+        },
+        "occurrence_ids": [
+          "CM_OCC:dd56c9117517ff09515406661f89e9759d3eb3e87f9b3a60d8837f19eaa4178e"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is preserved rather than choosing generic estradiol or17alpha. The frozen1g/L value contradicts the primary1mg input and is not imported into MIM.",
+        "applicability": "Applies to exact source label '17β-Estradiol'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+        "evidence_ids": [
+          "chem-case-99",
+          "chem-recipe-99-0",
+          "chem-nb-1181",
+          "chem-detail-16469"
+        ],
+        "proposal_ids": [
+          "chem-proposal-99"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-chemicals"
+          ]
+        },
+        "author": "Codex /root (worker10 primary chemical reviewer)",
+        "occurrence_contexts": [
+          {
+            "occurrence_id": "CM_OCC:dd56c9117517ff09515406661f89e9759d3eb3e87f9b3a60d8837f19eaa4178e",
+            "recipe_id": "CultureMech:008495",
+            "component_path": "ingredients/1",
+            "snapshot_sha256": "5acdbafc9ba20a9e4335cf36f78fca1e319138e2b1c81db2263346188e22ce8e",
+            "source_ids": [
+              {
+                "path": "/id",
+                "value": "CultureMech:008495"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M1917"
+              }
+            ],
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1"
+              },
+              "notes": "Role: Growth factor; Properties: Defined component, Simple component, Organic compound",
+              "preferred_term": "17β-Estradiol"
+            }
+          }
+        ],
+        "unavailable_primary_capture_keys": [],
+        "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+        "source_index": 99
+      }
+    },
+    "publication_and_role_scope": "No new scientific role, quantity, component, external-row, production or KG approval. Original owner/publication obligations remain preserved in complete original context; unperformed gates are not falsely reported as completed.",
+    "final_source_vote": null,
+    "complete_original_proposal": {
+      "context_selector": "/origin_cores/w10-proposals/proposals/10",
+      "object": {
+        "proposal_id": "chem-proposal-99",
+        "case_ids": [
+          "CM_NAME:bf95441dfe84a25316206b45e2b482da582422f4309fc061b7603038dfe73894"
+        ],
+        "description": "Create distinct source ingredient with exact identity; do not transfer approval from a broader or related owner. NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is preserved rather than choosing generic estradiol or17alpha. The frozen1g/L value contradicts the primary1mg input and is not imported into MIM.",
+        "evidence_ids": [
+          "chem-case-99",
+          "chem-recipe-99-0",
+          "chem-nb-1181",
+          "chem-detail-16469",
+          "sv3-provenance-claim-dispositions",
+          "sv3-provenance-change-proof",
+          "sv3-provenance-negative-controls"
+        ],
+        "owner_path": "data/ingredients/mapped/17beta-Estradiol.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "successor-v3/enum/proposed/chem-proposal-99.yaml",
+          "sha256": "4dacd21277fac9a62c75482ddc47e99c84e9f6dacdfd9adc62b9a2f33e2830a8"
+        },
+        "before_sha256": null,
+        "identity_consequences": "New primary CHEBI:16469; target CHEBI:16469.",
+        "predicate_consequences": "Own-identifier skos:exactMatch under RuleD.",
+        "publication_review_obligations": "Coordinator must resolve owner conflicts, validate proposed payload, withdraw inherited support on changed owner bytes, perform native content-bound mapping/form/full synonym review, use guarded writer, synchronize and regenerate exports. No role or whole-record approval.",
+        "cross_shard_conflict": "Owner may be proposed elsewhere; coordinator must reconcile all proposals against this frozen before hash. No other worker bytes adopted.",
+        "publication_holds": [
+          "Full proposed owner payload has not been approved for publication; roles, unrelated aliases, stock context and inherited scientific holds require coordinator review."
+        ],
+        "other_shard_owner_references": {
+          "shards": [],
+          "meaning": "Lexical/candidate references only; coordinator must inspect actual other-worker proposals before choosing owner bytes. No identity or conflict resolution inferred."
+        },
+        "provenance_successor": {
+          "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+          "previous_capture": {
+            "root": "artifact",
+            "path": "chemicals/proposed/17beta-Estradiol.yaml",
+            "sha256": "2362f7198a15b561a9060059d368cabe94b3e26102e1e98bc4542ac4f3defe7d"
+          },
+          "exact_claim_indices": [
+            0
+          ],
+          "scope": "MappingEvidence type and one appended truthful history event only; source science retained."
+        },
+        "prior_independent_review": null,
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "sv3-independent-source-provenance"
+          ]
+        },
+        "review_status_explanation": "Exact final payload separately reviewed: claim-specific provenance/context, with inherited scientific judgments preserved rather than reapproved. Author-stage pending-review text remains historical. Coordinator whole-owner/source/role/export acceptance remains pending."
+      }
+    }
+  },
+  {
+    "source_position": 4,
+    "source_id": "mediadive.ingredient:1923",
+    "current_owner": {
+      "path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+      "sha256": "0f7e0957a5604459078cc0b82bfc3382b6954bbd83dd19b1cfc9c457ea5b65e3",
+      "mim_id": "MIM:0002840",
+      "identifier": "UNMAPPED_0437",
+      "mapping_status": "UNMAPPED"
+    },
+    "proposal_reason": "Current MIM:0002840 is retained as the proposed existing owner for an explicitly held candidate because its complete record directly records import from mediadive.ingredient:1923; this is an intentional proposed correspondence, not automatic name matching. Whole-source identity remains unresolved: one occurrence names P0440 and the second only BioWest; the generic owner itself leaves formulation-specific curation pending. It is not selected as a scientifically established same-material owner, and neither occurrence may be omitted or individually approved.",
+    "substantive_native_holds": [
+      "Whole mediadive.ingredient:1923 to current generic owner identity remains unendorsed; this is not inferred solely from absent catalogue wording."
+    ],
+    "original_preparation_operation": "ORIGINAL-w03::b-proposal-mem-p0440",
+    "original_preparation_retained_holds_complete": [
+      {
+        "literal": "Whole mediadive.ingredient:1923 to current generic owner identity remains unendorsed; this is not inferred solely from absent catalogue wording.",
+        "classification": "substantive_unresolved_obligation_retained_literally_in_native_holds"
+      },
+      {
+        "literal": "Do not infer all MEM-alpha uses are P0440 or equate bicarbonate/glutamine/form variants.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "No ontology/CAS match is supplied; preserve UNMAPPED and no external mapping.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "Preserve raw 0.89g/8.9g_l and 5.2g/130g_l plus original solution contexts; do not infer transitive dilution, equal recipes or erroneous quantity corrections.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      },
+      {
+        "literal": "Manufacturer reconstitution instructions do not supersede microbial recipe amounts. complex_compound=0 is not evidence of a single chemical.",
+        "classification": "scope_exclusion_or_claim_boundary_preserved_not_reinterpreted_as_clearance"
+      }
+    ],
+    "original_complete_source_decision": {
+      "context_selector": "/origin_cores/w03-decisions/decisions/128",
+      "complete_original_decision": {
+        "case_id": "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62",
+        "case_input_sha256": "c321ef560a4f3dc27e0871830c15643164ebbb9e3a83acf870de42e547dde41f",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1923",
+          "source_label": "MEM alpha Modification",
+          "raw_source_label": "MEM alpha Modification"
+        },
+        "occurrence_ids": [],
+        "disposition": "supplied_form_correction",
+        "reasoning": "The frozen MediaDive1923 attribute explicitly identifies BioWestP0440. The manufacturer's technical sheet confirms powder MEM-alpha with Earle salts and L-glutamine, WITHOUT sodium bicarbonate. The source's complex_compound=0 conflicts with this multicomponent preparation; annotate exact supplied form while retaining the generic owner's unmapped status pending its scope reconciliation.",
+        "applicability": "Exact frozen mediadive case 'mediadive.ingredient:1923'; raw label preserved as 'MEM alpha Modification'. The complete KG raw record, source identifier, candidate owners and downstream holds were read. Its occurrence value is a helper constant, not a measured recipe frequency; an empty occurrence-ID list does not mean no observations. The frozen MediaDive1923 attribute explicitly identifies BioWestP0440. The manufacturer's technical sheet confirms powder MEM-alpha with Earle salts and L-glutamine, WITHOUT sodium bicarbonate. The source's complex_compound=0 conflicts with this multicomponent preparation; annotate exact supplied form while retaining the generic owner's unmapped status pending its scope reconciliation.",
+        "evidence_ids": [
+          "b-case-128",
+          "b-primary-c5ab410faa",
+          "b-primary-9935ebc560",
+          "b-primary-0ace8e29b4",
+          "b-primary-54aa03cc97",
+          "b-owner-d7ba06f5bdc2"
+        ],
+        "proposal_ids": [
+          "b-proposal-mem-p0440"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "This is bounded ingredient identity/form evidence, not a complete scientific review of inherited roles, component identifiers, synonyms, or whole published record payload.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+            "sha256": "53bef2ebf4a08858099277f59554eb8d7563fc00ccc4415399f2b68294ed5008"
+          }
+        ],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1196"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "root-independent-broths"
+          ],
+          "reviewer": "/root/materials",
+          "primary_author": "/root/broths",
+          "capture_sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8"
+        },
+        "frozen_index": 128,
+        "review_scope": "source-bound identity/form/formulation applicability; no native full-record scientific release",
+        "preserved_original_kg_entry_downstream_holds": [],
+        "native_owner_review_rows": [
+          {
+            "owner": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+            "native_review_rows": []
+          }
+        ],
+        "hold_scope_note": "The original downstream_holds array alone is not a native export verdict; complete owner native_review_rows and consumed_name_hits remain bound by original case digest. Empty arrays never clear a hold."
+      }
+    },
+    "publication_and_role_scope": "No new scientific role, quantity, component, external-row, production or KG approval. Original owner/publication obligations remain preserved in complete original context; unperformed gates are not falsely reported as completed.",
+    "final_source_vote": null,
+    "complete_original_proposal": {
+      "context_selector": "/origin_cores/w03-proposals/proposals/7",
+      "object": {
+        "proposal_id": "b-proposal-mem-p0440",
+        "kind": "edit_existing_owner",
+        "case_ids": [
+          "KG_CASE:26c6907beea5e48ccf9ae1064cee49172456cb4a5852e2625374d3d3a67e1c62"
+        ],
+        "description": "Annotate the exact P0440 powder/exclusion scope while retaining the generic owner UNMAPPED.",
+        "evidence_ids": [
+          "b-case-128",
+          "b-primary-c5ab410faa",
+          "b-primary-9935ebc560",
+          "b-primary-0ace8e29b4",
+          "b-primary-54aa03cc97",
+          "b-owner-d7ba06f5bdc2"
+        ],
+        "owner_path": "data/ingredients/unmapped/MEM_Alpha_Modification.yaml",
+        "before_sha256": "53bef2ebf4a08858099277f59554eb8d7563fc00ccc4415399f2b68294ed5008",
+        "after_capture": {
+          "root": "artifact",
+          "path": "broths/proposed/MEM_Alpha_Modification.yaml",
+          "sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954"
+        },
+        "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+        "limitations": "This is bounded ingredient identity/form evidence, not a complete scientific review of inherited roles, component identifiers, synonyms, or whole published record payload.",
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "root-independent-broths"
+          ],
+          "reviewer": "/root/materials",
+          "reviewed_after_sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954"
+        }
+      }
+    }
+  }
+]

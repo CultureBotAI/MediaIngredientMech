@@ -1,0 +1,57 @@
+identifier: UNMAPPED_0164
+preferred_term: Cholinium alpha ketoglutarate
+synonyms:
+- synonym_text: Cholinium alpha ketoglutarate
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:01:28Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_CHOLINIUM_SALT
+  changes: Classified as a single cholinium organic-acid salt and left unmapped because
+    no exact local ontology term for cholinium alpha-ketoglutarate was verified; component
+    mappings to choline or alpha-ketoglutarate would not preserve salt identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Cholinium_alpha_ketoglutarate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **cholinium organic-acid
+    salt used as a “bionic” ionic liquid**, not a buffer, extract, medium family,
+    or conventional defined-medium formulation. The strongest primary source calls
+    it **choline α-ketoglutarate**, abbreviates it **[Ch][α-Kg]**, and prepares it
+    by mixing aqueous choline hydroxide with aqueous α-ketoglutaric acid. It was then
+    used as a 40 wt% aqueou CURIEs discussed: CHEBI:15354, CHEBI:16810. Recorded as
+    provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002747; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a cholinium
+  alpha-ketoglutarate salt; not identity-mapped to component parents.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002747
+legacy_identifiers:
+- MIM:Cholinium_Alpha_Ketoglutarate
+- UNMAPPED_0164

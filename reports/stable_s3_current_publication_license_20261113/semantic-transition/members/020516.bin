@@ -1,0 +1,74 @@
+identifier: CHEBI:63005
+preferred_term: Sodium nitrate (nitrogen source)
+synonyms:
+- synonym_text: Sodium nitrate (nitrogen source)
+  synonym_type: RAW_TEXT
+  source: communitymech-unmapped
+- synonym_text: sodium trioxidonitrate(1-)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-05-01T02:37:08.074047+00:00'
+  curator: audit_import_ingredients[communitymech-unmapped]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_nitrate_(nitrogen_source));
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.457995+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0614 → CHEBI:63005 via name normalization to 'Sodium nitrate'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.462248+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.915560+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=NO3.Na; inchi=InChI=1S/NO3.Na/c2-1(3)4;/q-1;+1; smiles=O=[N+]([O-])[O-].[Na+]
+  llm_assisted: false
+- timestamp: '2026-08-05T06:57:51.098548+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:63005 'NaNO3'; occurrences transferred. Tombstoned REJECTED,
+    SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+    (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002333; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_nitrate_(nitrogen_source));
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:63005
+  ontology_label: sodium nitrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0614; matched via 'Sodium nitrate' (name normalization);
+      label-exact
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: NO3.Na
+  inchi: InChI=1S/NO3.Na/c2-1(3)4;/q-1;+1
+  smiles: O=[N+]([O-])[O-].[Na+]
+  data_source: CHEBI sqlite (oaklib)
+kg_microbe_node_id: CHEBI:63005
+mim_id: MIM:0002333
+legacy_identifiers:
+- MIM:Sodium_Nitrate_Nitrogen_Source
+- CHEBI:63005

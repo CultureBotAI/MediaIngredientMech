@@ -1,0 +1,73 @@
+identifier: kgmicrobe.ingredient:kp_buffer_nbrc_857_936
+preferred_term: KP buffer stock (NBRC 857 and 936)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:kp_buffer_nbrc_857_936
+  ontology_label: KP buffer stock (NBRC 857 and 936)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=857
+    notes: Source-defined stock with preserved composition. No exact ontology identity
+      established; local preparation identity avoids conflating it with any individual
+      phosphate salt.
+components:
+- component_name: KH2PO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63036
+  source: Source batch input119g
+- component_name: K2HPO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131527
+  source: Source batch input21g
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  source: Source batch solvent1L; final volume not stated.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=857
+    source_record: KP buffer stock (NBRC 857 and 936)
+    notes: NBRC857 and NBRC936 both define KP buffer as119gKH2PO4 plus21gK2HPO4 and1L
+      distilled water, autoclaved underN2. The gas/sterilization procedure remains
+      source recipe context; components preserve exact batch amounts without estimating
+      molarity.
+  notes: Constituent list is complete as printed. This does not assert supply-form
+    chemistry for unspecified hydration or certify the entire CultureMech recipe.
+notes: 'NBRC857 and NBRC936 both define KP buffer as119gKH2PO4 plus21gK2HPO4 and1L
+  distilled water, autoclaved underN2. The gas/sterilization procedure remains source
+  recipe context; components preserve exact batch amounts without estimating molarity.
+  Provenance-only raw label: ''KP buffer*'' (frozen case CM_NAME:64f0b65d9c6ae9614992ee9eec4e10fc8302aadf1c120feb1593f8d50be9bb3e).
+  This generic source-local text is deliberately excluded from resolving synonyms;
+  the source-qualified preferred term identifies this formulation. This stock is a
+  component of the cited medium, not the whole medium; no EXACT_FORMULATION link to
+  the parent recipe is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: CREATED
+  changes: Created distinct source-defined stock identity in isolated proposal; preserved
+    the original label only as nonresolving provenance and retained recipe-owned component
+    evidence.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.
+- timestamp: '2026-11-08T07:45:24.710089+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

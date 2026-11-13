@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:dsmz_29_40_sodium_carbonate_1m_stock
+preferred_term: DSMZ 29/40 sodium carbonate 1 M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_29_40_sodium_carbonate_1m_stock
+  ontology_label: DSMZ 29/40 sodium carbonate 1 M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    source_record: DSMZ 29/40 sodium carbonate 1 M stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: DSMZ 29 uses filter-sterilized 1 M Na2CO3 to adjust the receiving medium
+    to pH 6.8–7.1; DSMZ 40 inherits medium 29 with 1% NaCl. No carbonate-stock carrier
+    is stated. Water in Solutions A–F and sulfide preparation is not evidence for
+    this stock. Starting carbonate hydrate, solvent identity and grade, preparation
+    volume, and dissolved-gas amount remain unknown. The pH target belongs to the
+    receiving medium, not the stock.
+notes: 'DSMZ 29 uses filter-sterilized 1 M Na2CO3 to adjust the receiving medium to
+  pH 6.8–7.1; DSMZ 40 inherits medium 29 with 1% NaCl. No carbonate-stock carrier
+  is stated. Water in Solutions A–F and sulfide preparation is not evidence for this
+  stock. Starting carbonate hydrate, solvent identity and grade, preparation volume,
+  and dissolved-gas amount remain unknown. The pH target belongs to the receiving
+  medium, not the stock. Raw source label retained for this occurrence only: ''1M
+  Na2CO3''. Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: REMOVED_UNSUPPORTED_COMPONENT
+  changes: 'Issue 1217 W09 residual 001: removed unsupported Water component and current
+    water-inference notes after stock-specific primary-source review. Retained the
+    exact printed solute/strength, UNKNOWN completeness, source scope and all prior
+    history. Report-only proposal; no owner or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

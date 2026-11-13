@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:magnesium_sulfate_1m_togo_m2790
+preferred_term: 1 M MgSO4 stock (TOGO M2790 M9)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:magnesium_sulfate_1m_togo_m2790
+  ontology_label: 1 M MgSO4 stock (TOGO M2790 M9)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790
+    notes: The primary M2790 M9 table explicitly adds200µL of1MMgSO4 in a recipe with100mLsource
+      basis. Frozen200G_PER_L is incorrect and remains a source-data hold. The1M stock
+      is independently representable; hydration and solvent are unreported and are
+      not guessed. Component completeness is UNKNOWN. Unstated solvent, hydration,
+      assay and final volume are not invented. This is the named preparation at the
+      cited source scope; no full-formulation equivalence with other products is asserted.
+notes: The primary M2790 M9 table explicitly adds200µL of1MMgSO4 in a recipe with100mLsource
+  basis. Frozen200G_PER_L is incorrect and remains a source-data hold. The1M stock
+  is independently representable; hydration and solvent are unreported and are not
+  guessed. Component completeness is UNKNOWN. Unstated solvent, hydration, assay and
+  final volume are not invented. This is the named preparation at the cited source
+  scope; no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: The primary M2790 M9 table explicitly adds200µL of1MMgSO4 in a recipe with100mLsource
+    basis. Frozen200G_PER_L is incorrect and remains a source-data hold. The1M stock
+    is independently representable; hydration and solvent are unreported and are not
+    guessed. Component completeness is UNKNOWN. Unstated solvent, hydration, assay
+    and final volume are not invented. This is the named preparation at the cited
+    source scope; no full-formulation equivalence with other products is asserted.
+    Isolated proposal, pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.201035+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: MgSO4 (hydration unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790
+    source_record: 1M MgSO4
+    notes: The primary M2790 M9 table explicitly adds200µL of1MMgSO4 in a recipe with100mLsource
+      basis. Frozen200G_PER_L is incorrect and remains a source-data hold. The1M stock
+      is independently representable; hydration and solvent are unreported and are
+      not guessed.

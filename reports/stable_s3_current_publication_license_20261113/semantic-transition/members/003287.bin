@@ -1,0 +1,69 @@
+from pathlib import Path
+import json,hashlib,subprocess,re
+import yaml
+C=Path(__file__).resolve().parents[2];D=Path(__file__).resolve().parent
+A=C/'integration/ancillary1258-worktree'
+def sha(b):return hashlib.sha256(b).hexdigest()
+def pin(p):
+ b=p.read_bytes();return {'path':str(p),'sha256':sha(b),'bytes':len(b)}
+def save(n,o):
+ with (D/n).open('x') as f:json.dump(o,f,indent=2,ensure_ascii=False);f.write('\n')
+def walk(x,p=''):
+ if isinstance(x,dict):
+  for k,v in x.items():yield from walk(v,p+'/'+str(k))
+ elif isinstance(x,list):
+  for k,v in enumerate(x):yield from walk(v,p+'/'+str(k))
+ elif isinstance(x,str):yield p,x
+inv=json.loads((D/'ORIGINAL-PROPOSAL-INVENTORY.json').read_bytes())
+P=Path(inv['plan']['path']);plan=json.loads(P.read_bytes());I=Path(inv['index']['path'])
+assert pin(P)['sha256']==inv['plan']['sha256'];assert pin(I)['sha256']==inv['index']['sha256']
+im={x['destination']:x for x in json.loads(I.read_bytes())['files']}
+decisioncores={};casejoins=[]
+for b in plan['bindings']:
+ if b['role']!='decision':continue
+ cap=im[b['path']];raw=Path(cap['source']).read_bytes();assert sha(raw)==cap['sha256']==b['sha256']
+ slot='worker-'+b['binding_id'][1:3]
+ if slot in decisioncores:continue
+ repo=C/'workers'/b['binding_id'][:3]/'worktree'
+ assert subprocess.check_output(['git','--no-optional-locks','-C',str(repo),'show',b['published_head']+':'+b['published_path']])==raw
+ d=json.loads(raw);rows=d if isinstance(d,list) else d['decisions']
+ decisioncores[slot]={'binding':b,'capture':cap,'decisions':{x['case_id']:(j,x) for j,x in enumerate(rows)}}
+for r in inv['records']:
+ core=decisioncores[r['worker_slot']];joins=[]
+ for cid in r['case_ids']:
+  j,case=core['decisions'][cid]
+  for op in r['selected_operations']:assert op['origin']['case_hashes'][cid]==case['case_input_sha256']
+  joins.append({'selector':'/decisions/'+str(j),'case_input_sha256':case['case_input_sha256'],'case_object_sha256':sha(json.dumps(case,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()),'case':case})
+ casejoins.append({'worker_slot':r['worker_slot'],'proposal_id':r['proposal_id'],'selected_operation_ids':[o['operation_id'] for o in r['selected_operations']],'decision_core':core['capture'],'cases':joins})
+assert len(casejoins)==1022
+save('ALL-ORIGINAL-CASE-JOINS.json',{'scope':'All1022 original proposal case tuples joined to authentic current published decision cores; no altered outcomes or approvals.', 'cores':[{'slot':k,'binding':v['binding'],'capture':v['capture'],'case_count':len(v['decisions'])} for k,v in decisioncores.items()],'rows':casejoins})
+
+names={'sv3-hm-concentrated_hcl_nbrc_togo_source_reagent','sv3-hm-hcl_nominal35percent_togo_m3216','sv3-hm-hcl_nominal32percent_jcm770','sv3-hm-hcl_nominal25percent_jcm431_899','sv3-serums-swine-serum1076b','b-proposal-bd211065','b-proposal-difco-nutrient','b-proposal-cm0643','RS-035-PRODUCT','sv1-kg-cerophyll'}
+rr=[r for r in inv['records'] if r['proposal_id'] in names];assert len(rr)==10
+ops={o['operation_id']:next(p for p in plan['records'] if p['operation_id']==o['operation_id']) for r in rr for o in r['selected_operations']}
+assert len(ops)==10
+targets={};out=[]
+for r in rr:
+ op=ops[r['selected_operations'][0]['operation_id']];cap=im[op['after_capture']['path']];raw=Path(cap['source']).read_bytes();assert sha(raw)==op['after_capture']['sha256']
+ y=yaml.load(raw,Loader=yaml.CSafeLoader);targets[y['identifier']]=op['operation_id']
+ before=None
+ if op['before_source_record']:
+  path=A/op['before_source_record'];before=pin(path);assert before['sha256']==op['before_yaml_sha256']
+  assert subprocess.check_output(['git','--no-optional-locks','-C',str(A),'show','HEAD:'+op['before_source_record']])==path.read_bytes()
+ out.append({'origin':r,'native_operation':op,'selected_payload':cap,'identifier':y['identifier'],'preferred_term':y.get('preferred_term'),'synonyms':y.get('synonyms'), 'authentic_before':before,'case_join':next(j for j in casejoins if j['worker_slot']==r['worker_slot'] and j['proposal_id']==r['proposal_id'])})
+catalog=json.loads((D/'CATALOG-INPUT-PINS.json').read_bytes())
+refs=[]
+for r in catalog['prospective']:
+ path=Path(r['path']);raw=path.read_bytes();assert sha(raw)==r['sha256']
+ y=yaml.load(raw,Loader=yaml.CSafeLoader)
+ for field,value in walk(y):
+  if value in targets:
+   refs.append({'owner':r['owner'],'owner_sha256':r['sha256'],'operation_id':r['operation_id'],'field':field,'value':value,'target_operation_id':targets[value],'same_owner':r['operation_id']==targets[value]})
+inbound=[r for r in refs if not r['same_owner'] and r['field'].startswith(('/components/','/ingredients/'))]
+counterparts=[]
+for rel in ['data/ingredients/mapped/Heart_Infusion_Agar_BD_211065.yaml','data/ingredients/mapped/Nutrient_Broth_No_2.yaml','data/ingredients/unmapped/Wilkins_Chalgrene_Anaerobe_Broth.yaml','data/ingredients/unmapped/PPLO_Broth.yaml','data/ingredients/mapped/PPLO_medium.yaml']:
+ p=A/rel;raw=p.read_bytes();assert subprocess.check_output(['git','--no-optional-locks','-C',str(A),'show','HEAD:'+rel])==raw
+ y=yaml.load(raw,Loader=yaml.CSafeLoader)
+ counterparts.append({'owner':rel,'input':pin(p),'identifier':y['identifier'],'preferred_term':y.get('preferred_term'),'mapping_status':y['mapping_status'],'synonyms':y.get('synonyms'),'selected_operations':[r['operation_id'] for r in plan['records'] if rel in (r['source_record'],r['before_source_record'])],'full_owner':y})
+save('TEN-OPERATION-DISPOSITION-JOINS.json',{'status':'ROOT_SELECTED_DEFERRAL_RECOMMENDATION_NOT_A_CHANGED_PLAN','scope':'Exact10 additional source-application precondition dispositions; original proposal/case objects are preserved, not altered source decisions. This packet neither changes the old934 plan nor constructs the final successor.','plan':pin(P),'counts':{'operations':len(ops),'creates':sum(r['kind']=='create' for r in ops.values()),'promotions':sum(r['kind']=='promote' for r in ops.values()),'case_tuples':len({(r['worker_slot'],c) for r in rr for c in r['case_ids']})},'rows':out,'counterparts':counterparts,'prospective_full_catalog_count':len(catalog['prospective']),'all_exact_identifier_matches':refs,'incoming_component_or_ingredient_references':inbound,'catalog_pin_receipt':pin(D/'CATALOG-INPUT-PINS.json')})
+print(json.dumps({'all_proposals_joined':len(casejoins),'decision_cores':len(decisioncores),'cases':sum(len(v['decisions']) for v in decisioncores.values()),'target_operations':len(ops),'kinds':{k:sum(r['kind']==k for r in ops.values()) for k in ['create','promote']},'inbound':len(inbound),'inbound_refs':inbound}))

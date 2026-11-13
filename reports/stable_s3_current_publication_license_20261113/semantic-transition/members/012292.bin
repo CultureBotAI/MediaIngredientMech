@@ -1,0 +1,64 @@
+identifier: kgmicrobe.compound:xanthocidin
+preferred_term: Xanthocidin
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:xanthocidin
+  ontology_label: Xanthocidin
+  ontology_source: kgmicrobe.compound
+  mapping_quality: PLACEHOLDER
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into MIM''s pipeline;
+      confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT
+      primary identifier.'
+  - evidence_type: LITERATURE
+    source: https://www.jstage.jst.go.jp/article/bbb1961/34/2/34_2_325/_pdf
+    notes: 1970 primary structure report identifies Xanthocidin, C11H16O5, as a substituted cyclopentanone.
+      Supports distinct named compound; does not resolve an exact external ontology term or approve the
+      placeholder mapping.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:xanthocidin; OLS search
+    across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until
+    upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.908051+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.264298+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-10T04:40:01+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Reviewed UNKNOWN_TERM placeholder queue artifact; no exact OLS candidate or normalized local
+    duplicate supports promotion from kgmicrobe.compound:xanthocidin to an external ontology identifier.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Attach primary structure evidence for xanthocidin while retaining local identity and unresolved
+    exact ontology grounding. Isolated proposal only; integration requires fresh native review of changed
+    bytes and retains all source and export holds.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+notes: '2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier; no exact OLS candidate
+  and no normalized local mapped duplicate were found in the UNKNOWN_TERM no-hit review.
+
+  Primary1970 structure report supports the named xanthocidin substance, distinct from similarly spelled
+  antibiotics; no activity is transferred from2014 derivatives.'

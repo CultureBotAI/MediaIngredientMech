@@ -1,0 +1,509 @@
+{
+  "status": "REAL_FINDINGS_AND_NARROW_FIX_PROPOSALS_NOT_NATIVE_APPROVAL",
+  "pc_specificity": {
+    "entry_id": "row-001626",
+    "description": "Fresh source MediaDive2082 names generic L-alpha-phosphatidylcholine, CAS8002-43-5, complex_compound=1 and no molecular formula/ChEBI. CHEBI:86658 is a defined C42H80NO8P 16:0/(9E,12E)18:2 molecule. Prior label/MW/Greek-alias review did not establish this acyl identity; the new structural alias makes the over-specificity explicit. No guessed replacement.",
+    "primary_evidence": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-skeptic-v1/primary/chebi-86658.json",
+        "sha256": "758571566f4bdb29350beea32d25b0a0d9aa40a27ec4de159bc3619e615b3886",
+        "kind": "primary_source",
+        "acquired_by": "separate skeptical reviewer; actual bytes independently inspected by this primary reviewer"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-skeptic-v1/scope-and-cas/mediadive-2082.json",
+        "sha256": "be23a8b1370b44a7b3578e0d2395a6f85ee7da30b99906511d6088e055bc4c61",
+        "kind": "primary_source",
+        "acquired_by": "separate skeptical reviewer; actual bytes independently inspected by this primary reviewer"
+      }
+    ],
+    "required_action": "File/deduplicate the owner/source specificity finding; quarantine or withhold transparently through supported native workflow, preserve old support as history, and do not guess a new external target."
+  },
+  "method_provenance": {
+    "entries": [
+      "row-001753",
+      "row-002475",
+      "row-002658"
+    ],
+    "source_contract": "MAPPING_SEMANTICS.md section0: mapping_quality records how grounding was established; identity predicate is independent.",
+    "minimal_fix": "Guarded source-grade correction EXACT_MATCH -> MANUAL_CURATION for each demonstrably curator-established mapping, with append-only evidence/history. No blanket CURATOR_JUDGMENT detection, no prose SUPERSEDED heuristic, no copying historical methods without source review.",
+    "tests": [
+      "Rifamycin stays CHEBI:26580 family exact identity, no SV/CAS inference, emits ManualMappingCuration.",
+      "Lysozyme keeps exact local registry identity; invalid CAS/FOODON external identity is not restored.",
+      "Sorbitan Monooleate keeps exact unresolved local identity; NCIT/CHEBI/Tween/CAS alternatives remain withheld.",
+      "An unrelated active lexical mapping with nondecisive curator evidence stays lexical.",
+      "Identity/predicate and exact old evidence/history are unchanged except explicit method correction and new append-only event."
+    ],
+    "known_issue": "MIM#1263 for Rifamycin; parent must verify/deduplicate other records before mutation.",
+    "limits": "No blanket ruling that all26 manual-to-lexical changes are defective; remaining cases retain explicit pending method review."
+  },
+  "exact_rows": [
+    {
+      "entry_id": "row-001626",
+      "owner": "data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml",
+      "owner_sha256": "4e951f39e1c8890eb0f6f260dcb7e28edfd18a5b57a191fcb6ef0290507c3be2",
+      "class": "matched",
+      "owner_unchanged_from_old_review": true,
+      "candidate_position": 1626,
+      "before_position": 1614,
+      "prior_decision": {
+        "source_position": 1614,
+        "row_sha256": "6ad59107f36e31bab8cc5a439b29f86824c1b909c898b287fd8c8ef86acaf1ac",
+        "owner_record": "data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml",
+        "disposition": "SUPPORTED",
+        "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+        "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+        "evidence_key": "1614"
+      },
+      "inherited_evidence": {
+        "row_sha256": "6ad59107f36e31bab8cc5a439b29f86824c1b909c898b287fd8c8ef86acaf1ac",
+        "owner_record": "data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml",
+        "owner_record_sha256": "4e951f39e1c8890eb0f6f260dcb7e28edfd18a5b57a191fcb6ef0290507c3be2",
+        "disposition": "SUPPORTED",
+        "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+        "identity_projection": {
+          "kind": "mim-inherited-identity-projection/v1",
+          "manifest": "reports/stable_ids_1265_20261108/migration.json",
+          "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+          "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+          "original_report": "reports/sssom_completion_20260921/review.json",
+          "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+          "scientific_approval_added": false,
+          "original_decision": {
+            "source_position": 1614,
+            "row_sha256": "dc49cadbc70f1b9cde1b6c52a9d8c6752ce58716d1073254c201359c7a32550b",
+            "owner_record": "data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml",
+            "disposition": "SUPPORTED",
+            "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "evidence_key": "1614"
+          },
+          "original_owner_sha256": "273758aed880ff90315916ddcf9b3ea5176301f6d1dc33e6e635bdff4d1c0001"
+        }
+      },
+      "original_evidence": {
+        "row_sha256": "dc49cadbc70f1b9cde1b6c52a9d8c6752ce58716d1073254c201359c7a32550b",
+        "owner_record": "data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml",
+        "owner_record_sha256": "273758aed880ff90315916ddcf9b3ea5176301f6d1dc33e6e635bdff4d1c0001",
+        "disposition": "SUPPORTED",
+        "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+        "basis": {
+          "baseline_position": 1614,
+          "previous_decision": {
+            "assertion_id": "MIM.review:3360f75ef2f1136d22e7304537f4f813cfb88d49d5096dd0a14e5bc4fdf2f02d",
+            "source_record": "mappings/ingredient_mappings.sssom.tsv",
+            "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+            "assertion_type": "mapping",
+            "source_position": "1614",
+            "assertion_sha256": "007c76a2a288778392bdd36899742c33d427fb3c17bdddbbc6b2fb330a19d4bd",
+            "resolution_status": "APPROVED",
+            "review_reason": "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+            "review_evidence": "reports/semantic_review_20260921/resolution/historical-review-evidence.json"
+          },
+          "historical_record_review": "reports/yaml_record_review/L-alpha-Phosphatidylcholine.md"
+        }
+      },
+      "diff": {
+        "mapping_date": {
+          "before": "2026-08-27",
+          "after": "2026-11-08"
+        },
+        "other": {
+          "before": "L-α-Phosphatidylcholine",
+          "after": "[(2R)-3-hexadecanoyloxy-2-[(9E,12E)-octadeca-9,12-dienoyl]oxy-propyl] 2-(trimethylammonio)ethyl phosphate|L-α-Phosphatidylcholine"
+        },
+        "source": {
+          "before": "MIM:EBI OLS exact search|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]",
+          "after": "MIM:EBI OLS exact search|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|MIM:curator=codex|kgm:native_ontology:chebi"
+        },
+        "validation_method": {
+          "before": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07",
+          "after": ""
+        }
+      },
+      "proposed_row": {
+        "subject_id": "MIM:0001438",
+        "subject_label": "L-alpha-Phosphatidylcholine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86658",
+        "object_label": "L-alpha-Phosphatidylcholine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:EBI OLS exact search|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|MIM:curator=codex|kgm:native_ontology:chebi",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "[(2R)-3-hexadecanoyloxy-2-[(9E,12E)-octadeca-9,12-dienoyl]oxy-propyl] 2-(trimethylammonio)ethyl phosphate|L-α-Phosphatidylcholine",
+        "validation_method": ""
+      },
+      "before_row": {
+        "subject_id": "MIM:0001438",
+        "subject_label": "L-alpha-Phosphatidylcholine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86658",
+        "object_label": "L-alpha-Phosphatidylcholine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:EBI OLS exact search|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "L-α-Phosphatidylcholine",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      }
+    },
+    {
+      "entry_id": "row-001753",
+      "owner": "data/ingredients/mapped/Lysozyme.yaml",
+      "owner_sha256": "149eda7e851924447adcbfaf8a97b89479fc9db4c8bbbf00592827b47c38a9a9",
+      "class": "matched",
+      "owner_unchanged_from_old_review": true,
+      "candidate_position": 1753,
+      "before_position": 1741,
+      "prior_decision": {
+        "source_position": 1741,
+        "row_sha256": "7080f779669794395805d4bf9328934f4372fa6c7b1f0da60e31d9312dce7640",
+        "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+        "disposition": "SUPPORTED",
+        "review_reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+        "evidence_key": "1741"
+      },
+      "inherited_evidence": {
+        "row_sha256": "7080f779669794395805d4bf9328934f4372fa6c7b1f0da60e31d9312dce7640",
+        "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+        "owner_record_sha256": "149eda7e851924447adcbfaf8a97b89479fc9db4c8bbbf00592827b47c38a9a9",
+        "disposition": "SUPPORTED",
+        "review_reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "identity_projection": {
+          "kind": "mim-inherited-identity-projection/v1",
+          "manifest": "reports/stable_ids_1265_20261108/migration.json",
+          "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+          "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+          "original_report": "reports/sssom_completion_20260921/review.json",
+          "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+          "scientific_approval_added": false,
+          "original_decision": {
+            "source_position": 1741,
+            "row_sha256": "da3383e885ccf6c6c41775d26eba72fc1b097bdb58b834139fe0545654cd3eab",
+            "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+            "disposition": "SUPPORTED",
+            "review_reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "evidence_key": "1741"
+          },
+          "original_owner_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f"
+        }
+      },
+      "original_evidence": {
+        "row_sha256": "da3383e885ccf6c6c41775d26eba72fc1b097bdb58b834139fe0545654cd3eab",
+        "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+        "owner_record_sha256": "797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f",
+        "disposition": "SUPPORTED",
+        "review_reason": "Approve this complete row after original-source, material, salt/structure and registry-status review. Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "basis": {
+          "baseline_position": 1745,
+          "previous_decision": {
+            "assertion_id": "MIM.review:0cf3ebaa5cf07cae2bdd53c44bb0a7301f73109497b8a5731aeb6505e0100ad4",
+            "source_record": "mappings/ingredient_mappings.sssom.tsv",
+            "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+            "assertion_type": "mapping",
+            "source_position": "1745",
+            "assertion_sha256": "22a05d6b8d5fecd184884df26a41a8b700d2b8393af5262b9a97fd6820a85cbf",
+            "resolution_status": "APPROVED",
+            "review_reason": "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+            "review_evidence": "reports/semantic_review_20260921/resolution/historical-review-evidence.json"
+          },
+          "historical_record_review": "reports/yaml_record_review/Lysozyme.md",
+          "mapping_change": "ingredient-identities-20260924",
+          "mapping_followup": {
+            "file": "mapping_review/kgmicrobe-followup.json",
+            "row_sha256": "da3383e885ccf6c6c41775d26eba72fc1b097bdb58b834139fe0545654cd3eab",
+            "identity_review": "Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence."
+          }
+        }
+      },
+      "diff": {
+        "mapping_date": {
+          "before": "2026-09-24",
+          "after": "2026-11-08"
+        },
+        "mapping_justification": {
+          "before": "semapv:ManualMappingCuration",
+          "after": "semapv:LexicalMatching"
+        },
+        "source": {
+          "before": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+          "after": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex"
+        },
+        "validation_method": {
+          "before": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24",
+          "after": ""
+        }
+      },
+      "proposed_row": {
+        "subject_id": "MIM:0001555",
+        "subject_label": "Lysozyme",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:lysozyme",
+        "object_label": "Lysozyme",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "other": "",
+        "validation_method": ""
+      },
+      "before_row": {
+        "subject_id": "MIM:0001555",
+        "subject_label": "Lysozyme",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:lysozyme",
+        "object_label": "Lysozyme",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+        "mapping_date": "2026-09-24",
+        "confidence": "0.99",
+        "comment": "Preserve unresolved source material locally. The original CultureBotHT row provides no supplier/catalog or preparation evidence. Reject invalid CAS 2650-88-3 from active identifiers, properties and annotations. Neither 12650-88-3 nor exact FOODON:03413135 identity is assigned without original material evidence.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+      }
+    },
+    {
+      "entry_id": "row-002475",
+      "owner": "data/ingredients/mapped/Rifamycin.yaml",
+      "owner_sha256": "4e971cec7029a881832201d2bd17bfd4c797e00030341d6dfe457cf539aba1c8",
+      "class": "matched",
+      "owner_unchanged_from_old_review": true,
+      "candidate_position": 2475,
+      "before_position": 2459,
+      "prior_decision": {
+        "source_position": 2459,
+        "row_sha256": "89f3855653136871b8c583c5eddcfd50b7fbbec9dd857da5b760640d96fc0905",
+        "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+        "disposition": "SUPPORTED",
+        "review_reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+        "evidence_key": "2459"
+      },
+      "inherited_evidence": {
+        "row_sha256": "89f3855653136871b8c583c5eddcfd50b7fbbec9dd857da5b760640d96fc0905",
+        "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+        "owner_record_sha256": "4e971cec7029a881832201d2bd17bfd4c797e00030341d6dfe457cf539aba1c8",
+        "disposition": "SUPPORTED",
+        "review_reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "identity_projection": {
+          "kind": "mim-inherited-identity-projection/v1",
+          "manifest": "reports/stable_ids_1265_20261108/migration.json",
+          "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+          "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+          "original_report": "reports/sssom_completion_20260921/review.json",
+          "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+          "scientific_approval_added": false,
+          "original_decision": {
+            "source_position": 2459,
+            "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+            "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+            "disposition": "SUPPORTED",
+            "review_reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "evidence_key": "2459"
+          },
+          "original_owner_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e"
+        }
+      },
+      "original_evidence": {
+        "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+        "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+        "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+        "disposition": "SUPPORTED",
+        "review_reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "basis": {
+          "baseline_position": 2470,
+          "previous_decision": {
+            "assertion_id": "MIM.review:69e6854f629d1f556d2fc8a00f8880c29bae431031f03cc376f21e2e05b536ff",
+            "source_record": "mappings/ingredient_mappings.sssom.tsv",
+            "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+            "assertion_type": "mapping",
+            "source_position": "2470",
+            "assertion_sha256": "b0d1751c51fd75909af9b0c318ec80a1505846dc6602a509f9437d2af110a43c",
+            "resolution_status": "APPROVED",
+            "review_reason": "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+            "review_evidence": "reports/semantic_review_20260921/resolution/historical-review-evidence.json"
+          },
+          "historical_record_review": "reports/yaml_record_review/Rifamycin.md",
+          "mapping_change": "chemical-scopes-20260923",
+          "mapping_followup": {
+            "file": "mapping_review/kgmicrobe-followup.json",
+            "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+            "identity_review": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family."
+          }
+        }
+      },
+      "diff": {
+        "mapping_date": {
+          "before": "2026-09-23",
+          "after": "2026-11-08"
+        },
+        "mapping_justification": {
+          "before": "semapv:ManualMappingCuration",
+          "after": "semapv:LexicalMatching"
+        },
+        "source": {
+          "before": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+          "after": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi"
+        },
+        "validation_method": {
+          "before": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "after": ""
+        }
+      },
+      "proposed_row": {
+        "subject_id": "MIM:0002202",
+        "subject_label": "Rifamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:26580",
+        "object_label": "rifamycins",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "other": "",
+        "validation_method": ""
+      },
+      "before_row": {
+        "subject_id": "MIM:0002202",
+        "subject_label": "Rifamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:26580",
+        "object_label": "rifamycins",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      }
+    },
+    {
+      "entry_id": "row-002658",
+      "owner": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+      "owner_sha256": "515170be9297b049e5a2e3ae8335e7d2290ffeedd17c12b050708db9cb512c99",
+      "class": "matched",
+      "owner_unchanged_from_old_review": true,
+      "candidate_position": 2658,
+      "before_position": 2642,
+      "prior_decision": {
+        "source_position": 2642,
+        "row_sha256": "3fbb01905ee76aaec07fc44938c40f4f7bd96ad64576b06d4be377f8eabfa98a",
+        "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+        "disposition": "SUPPORTED",
+        "review_reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+        "evidence_key": "2642"
+      },
+      "inherited_evidence": {
+        "row_sha256": "3fbb01905ee76aaec07fc44938c40f4f7bd96ad64576b06d4be377f8eabfa98a",
+        "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+        "owner_record_sha256": "515170be9297b049e5a2e3ae8335e7d2290ffeedd17c12b050708db9cb512c99",
+        "disposition": "SUPPORTED",
+        "review_reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "identity_projection": {
+          "kind": "mim-inherited-identity-projection/v1",
+          "manifest": "reports/stable_ids_1265_20261108/migration.json",
+          "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+          "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+          "original_report": "reports/sssom_completion_20260921/review.json",
+          "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+          "scientific_approval_added": false,
+          "original_decision": {
+            "source_position": 2642,
+            "row_sha256": "19f6ebd3a00a42ad9684fc8f6aac4ad44f3af0bf9067f392186a0b942648c2da",
+            "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+            "disposition": "SUPPORTED",
+            "review_reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "evidence_key": "2642"
+          },
+          "original_owner_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083"
+        }
+      },
+      "original_evidence": {
+        "row_sha256": "19f6ebd3a00a42ad9684fc8f6aac4ad44f3af0bf9067f392186a0b942648c2da",
+        "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+        "owner_record_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+        "disposition": "SUPPORTED",
+        "review_reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "basis": {
+          "baseline_position": null,
+          "mapping_change": "chemical-scopes-20260923",
+          "mapping_followup": {
+            "file": "mapping_review/kgmicrobe-followup.json",
+            "row_sha256": "19f6ebd3a00a42ad9684fc8f6aac4ad44f3af0bf9067f392186a0b942648c2da",
+            "identity_review": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation."
+          }
+        }
+      },
+      "diff": {
+        "mapping_date": {
+          "before": "2026-09-23",
+          "after": "2026-11-08"
+        },
+        "mapping_justification": {
+          "before": "semapv:ManualMappingCuration",
+          "after": "semapv:LexicalMatching"
+        },
+        "source": {
+          "before": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review",
+          "after": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=codex"
+        },
+        "validation_method": {
+          "before": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23",
+          "after": ""
+        }
+      },
+      "proposed_row": {
+        "subject_id": "MIM:0002360",
+        "subject_label": "Sorbitan Monooleate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:sorbitan_monooleate",
+        "object_label": "Sorbitan Monooleate",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review|MIM:reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md|MIM:curator=codex",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "other": "",
+        "validation_method": ""
+      },
+      "before_row": {
+        "subject_id": "MIM:0002360",
+        "subject_label": "Sorbitan Monooleate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:sorbitan_monooleate",
+        "object_label": "Sorbitan Monooleate",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      }
+    }
+  ],
+  "cas_finding_handoff": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/CAS-HANDOFF.json",
+    "sha256": "f1e454a7686549be830b6cada1e0db95314d432a60ba8b32cf6af044fd33f525",
+    "issue": "https://github.com/CultureBotAI/culturebotai-claw/issues/1192"
+  }
+}

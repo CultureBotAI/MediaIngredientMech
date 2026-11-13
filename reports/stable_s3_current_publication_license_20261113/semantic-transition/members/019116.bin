@@ -1,0 +1,61 @@
+identifier: CHEBI:23681
+preferred_term: Dibenzothiophene
+ontology_mapping:
+  ontology_id: CHEBI:23681
+  ontology_label: dibenzothiophene
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80Anti.'
+synonyms:
+- synonym_text: dibenzo[b,d]thiophene
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=132-65-0); Imported
+    from CultureBotHT. FEBA/Hans80 panels: Hans80Anti.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.258307+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.193717+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H8S; inchi=InChI=1S/C12H8S/c1-3-7-11-9(5-1)10-6-2-4-8-12(10)1;
+    smiles=c1ccc2c(c1)sc1ccccc12
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.007076+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000933; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 132-65-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C12H8S
+  inchi: InChI=1S/C12H8S/c1-3-7-11-9(5-1)10-6-2-4-8-12(10)13-11/h1-8H
+  smiles: c1ccc2c(c1)sc1ccccc12
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000933
+legacy_identifiers:
+- MIM:Dibenzothiophene
+- CHEBI:23681

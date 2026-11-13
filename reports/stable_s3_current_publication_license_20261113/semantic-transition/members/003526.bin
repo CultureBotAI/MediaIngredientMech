@@ -1,0 +1,113 @@
+"""Independent exact owner/delta/deferral checks; reads immutable captures, not partial B."""
+from pathlib import Path
+import copy, datetime, hashlib, importlib.util, io, json, os, subprocess, sys, tarfile
+D=Path(__file__).absolute().parent;C=D.parents[1];M=C.parents[1];P=C/'integration/selenite718-alias-successor-v1';J=C/'integration/curation-worktree';A=C/'integration/ancillary1258-worktree';W=C/'workers/w01/worktree';F=D/'native-fixture'
+sys.path.insert(0,str(J/'src'))
+import yaml
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+def sha(b):return hashlib.sha256(b).hexdigest()
+def put(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+def js(p,v):put(p,(json.dumps(v,indent=2,ensure_ascii=False)+'\n').encode())
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+F.mkdir(exist_ok=False);refs=[]
+def capture(p,rel,h=None):
+ p=Path(p);raw=p.read_bytes()
+ if h is not None:assert sha(raw)==h,p
+ q=F/rel
+ if q.exists():assert q.read_bytes()==raw
+ else:put(q,raw)
+ refs.append({'original_path':str(p),'fixture_path':str(rel),'sha256':sha(raw),'bytes':len(raw)});return raw
+manifest=json.loads(capture(P/'MANIFEST.json','evidence/author/MANIFEST.json','61e14ce23084a2b160f336fb0fe3d4d964d8861553b528be0dd8ee1504b35f22'))
+capture(P/'HANDOFF.json','evidence/author/HANDOFF.json','695d72332fc4a3760d6f2303d702f946b2aeefb2f10f47d701e9a076a7be05df')
+for item in manifest['members']:capture(P/item['path'],Path('evidence/author')/item['path'],item['sha256'])
+external=json.loads((P/'input-pins.json').read_text());ext=[]
+for item in external:
+ p=Path(item['path']);raw=p.read_bytes();assert sha(raw)==item['sha256'],p
+ ext.append({'path':str(p),'sha256':sha(raw),'bytes':len(raw)})
+candidate=yaml.safe_load((P/'candidates/Na2seo3.yaml').read_bytes());before=yaml.safe_load((P/'inputs/selected-predecessor.yaml').read_bytes())
+assert not validate_ingredient(candidate)
+write_validated_ingredient(candidate,D/'native-roundtrip.yaml');assert (D/'native-roundtrip.yaml').read_bytes()==(P/'candidates/Na2seo3.yaml').read_bytes()
+assert before['synonyms'][12]=={'synonym_text':'Na2Se2O3','synonym_type':'RAW_TEXT','source':'merge_from_UNMAPPED_0473'}
+assert candidate['synonyms'][12]=={**before['synonyms'][12],'synonym_type':'REJECTED_LABEL'}
+inv=copy.deepcopy(candidate);inv['synonyms'][12]['synonym_type']='RAW_TEXT';ev=inv['ontology_mapping']['evidence'].pop();hist=inv['curation_history'].pop();assert inv==before
+assert ev['evidence_type']=='LLM_SUGGESTION' and hist['llm_assisted'] is True
+assert not is_resolving_synonym(candidate['synonyms'][12])
+valid=next(x for x in candidate['synonyms'] if x['synonym_text']=='Na2SeO3 (anhydrous)');assert is_resolving_synonym(valid)
+lineage=json.loads((P/'candidate-lineage.json').read_text());bridge=json.loads((P/'stock-deferral-bridge.json').read_text())
+planp=C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json';plan=json.loads(capture(planp,'evidence/owner-plan.draft.json','cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'))
+ops={x['operation_id']:x for x in plan['records']};bindings={x['binding_id']:x for x in plan['bindings']}
+op=lineage['original_operation_exact'];assert op==ops[op['operation_id']]
+base=git(A,'show',plan['baseline_commit']+':'+op['before_source_record']);assert sha(base)==op['before_yaml_sha256'];put(F/'evidence/maintained-before.yaml',base)
+ledger={}
+for bid in ['w01-decisions','w01-proposals','w01-evidence-core']:
+ b=bindings[bid];raw=git(W,'show',b['published_head']+':'+b['published_path']);assert sha(raw)==b['sha256'];put(F/'evidence/published'/Path(b['published_path']).name,raw);ledger[bid]=json.loads(raw)
+proposals={x['proposal_id']:x for x in ledger['w01-proposals']['proposals']};decisions={x['case_id']:x for x in ledger['w01-decisions']['decisions']}
+assert lineage['original_proposal_exact']==proposals['RS-009-ALIAS']
+for k in ['original_case_exact','related_unresolved_case_exact']:
+ v=lineage[k];assert v==decisions[v['case_id']]
+assert len(lineage['original_case_exact']['occurrence_ids'])==4
+assert len(bridge['deferred_operations_exact'])==3 and len(bridge['original_case_objects_exact'])==4
+for x in bridge['deferred_operations_exact']:assert x==ops[x['operation_id']] and x['kind']=='create' and x['before_yaml_sha256'] is None
+for x in bridge['original_case_objects_exact']:assert x==decisions[x['case_id']]
+for x in bridge['original_proposals_exact']:assert x==proposals[x['proposal_id']]
+assert set(bridge['case_ids_retained'])=={x['case_id'] for x in bridge['original_case_objects_exact']}
+assert bridge['source_decisions_changed'] is False and bridge['not_a_merge_or_retarget'] is True
+assert bridge['future_plan_sha256'] is None and bridge['future_operation_count'] is None
+other=bridge['generic84gL_operation_remains_separate'];assert other==ops[other['operation_id']]
+
+# Exact original scientific captures, not a new source retrieval or inferred typo correction.
+loc=json.loads((P/'primary-evidence-locators.json').read_text());root=W/'reports/all_unmatched_20261107/worker-01'
+primary=[]
+for e in loc['unchanged_original_evidence_objects']:
+ cp=e['capture'];p=root/cp['path'];dest=Path('evidence/primary')/p.name;capture(p,dest,cp['sha256']);primary.append({'evidence':e,'fixture_path':str(dest)})
+primaryby={x['evidence']['capture']['sha256']:x for x in primary}
+md=json.loads((F/primaryby['fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839']['fixture_path']).read_text())
+chebi=json.loads((F/primaryby['cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872']['fixture_path']).read_text())
+pdf=F/primaryby['312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912']['fixture_path']
+pd=subprocess.run(['/opt/homebrew/bin/pdftotext','-layout',str(pdf),'-'],capture_output=True);assert pd.returncode==0
+put(F/'evidence/DSMZ863-extracted.txt',pd.stdout)
+assert 'Na2Se2O3' in pd.stdout.decode() and '0.100' in pd.stdout.decode()
+historical=git(A,'show','026d4401322be01c449ccf29bf04ad6842b56ba6','--','NEXT_TASKS.md','data/ingredients/mapped/Na2seo3.yaml','data/ingredients/unmapped/Na2Se2O3.yaml');put(F/'evidence/historical-merge-026d44013.txt',historical)
+assert b"don't exactMatch a malformed" in historical and b'RAW_TEXT' in historical
+put(F/'evidence/historical-unmapped-before.yaml',git(A,'show','026d4401322be01c449ccf29bf04ad6842b56ba6^:data/ingredients/unmapped/Na2Se2O3.yaml'))
+capture(M/'reports/yaml_record_review/Na2seo3.md','evidence/historical-Na2seo3-review.md','98187c42b3cd99d0cafbdaec7dd827c839557537ff8cebd1e6020b1eb80c0b60')
+TR=C/'preflight/w09-selected-chemical-triage-v1'
+capture(TR/'ASSESSMENT.md','evidence/prior-triage.md')
+texts=json.loads(capture(TR/'primary-text-extracts.json','evidence/primary-text-extracts.json'))
+for item in texts:capture(item['reference']['path'],'evidence/primary/'+Path(item['reference']['path']).name,item['reference']['sha256'])
+# Generic owner and J451 frozen official API comparator used in the continuity finding.
+for item in external:
+ if any(t in item['path'] for t in ['84_GL_NaHCO3_Solution.yaml','medium-J451','medium-jcm451']):capture(item['path'],'evidence/comparators/'+Path(item['path']).name,item['sha256'])
+for p in sorted((D/'live-success').glob('*.json')):capture(p,Path('evidence/live')/p.name)
+capture(J/'MAPPING_SEMANTICS.md','evidence/MAPPING_SEMANTICS.md','6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062')
+for p in [J/'scripts/record_review.py',J/'schema/record_review.yaml']:capture(p,p.relative_to(J))
+
+# Exact producer behavior, including a real KG supplement that may contain old aliases.
+CLAW=M/'.temp/kgm-unmapped-20261107/claw';kgroot=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107');kgpath=kgroot/'mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz'
+assert sha(kgpath.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+os.environ.update({'MEDIAINGREDIENTMECH_ROOT':str(A),'KGMICROBE_ROOT':str(kgroot),'OPENCLAW_WORKSPACE':str(D/'diagnostic-workspace')})
+bp=CLAW/'scripts/build_mim_ingredient_sssom.py';assert sha(bp.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+spec=importlib.util.spec_from_file_location('independent_na718_builder',bp);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;exec(compile(bp.read_bytes(),str(bp),'exec'),native.__dict__)
+ks=native.load_kgm_source_index(kgpath);kl=native.load_kgm_labels(kgpath)
+tarbytes=git(A,'archive',plan['baseline_commit'],'data/ingredients');records={}
+with tarfile.open(fileobj=io.BytesIO(tarbytes)) as tar:
+ for m in tar.getmembers():
+  if m.isfile() and m.name.endswith('.yaml') and '/mapped/' in m.name:records[m.name]=yaml.safe_load(tar.extractfile(m).read())
+path='data/ingredients/mapped/Na2seo3.yaml';records[path]=candidate
+owners=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in records.items()});results=[]
+for mode,labels in [('actual-KG',kl),('counterfactual-KG-token-reintroduction',{**kl,'CHEBI:48843':('disodium selenite',['Na2Se2O3'])})]:
+ ob=[];nb=[];oldrow=native._row_from_yaml(A/path,{},ks,labels,{'CHEBI:48843':'disodium selenite'},record=before,owners=owners,suppressions=ob)[0];newrow=native._row_from_yaml(A/path,{},ks,labels,{'CHEBI:48843':'disodium selenite'},record=candidate,owners=owners,suppressions=nb)[0]
+ assert 'Na2Se2O3' in oldrow['other'].split('|') and 'Na2Se2O3' not in newrow['other'].split('|')
+ assert 'Na2SeO3 (anhydrous)' in newrow['other'].split('|')
+ diff={k:{'before':oldrow[k],'after':newrow[k]} for k in oldrow if oldrow[k]!=newrow[k]};assert set(diff)=={'source','other'}
+ assert set(oldrow['other'].split('|'))-set(newrow['other'].split('|'))=={'Na2Se2O3'}
+ assert not (set(newrow['other'].split('|'))-set(oldrow['other'].split('|')))
+ results.append({'mode':mode,'before':oldrow,'after':newrow,'diff':diff})
+native._check_producer_bindings();assert sha(kgpath.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+result={'status':'PASS_WITH_LIMITATIONS','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'author_manifest_members_verified':len(manifest['members']),'external_pins_verified':len(ext),'candidate_sha256':sha((P/'candidates/Na2seo3.yaml').read_bytes()),'inverse_delta_exact':True,'native_roundtrip_exact':True,'authentic_preimage':op['before_yaml_sha256'],'positive_source_occurrences':4,'original_source_and_related_hold_cases_exact':True,'deferrals':3,'retained_deferral_cases':4,'root_published_dispositions_verified':True,'native_rows':results,'native_projection_scope':'Real KG gzip, complete authentic A842 mapped owner index plus exact candidate, cached official label, no provider calls/residual/stamp/full-campaign generation.','historical_scope':'Full original merge commit explicitly distinguishes a probable typo merge from an exact mapping of the malformed label; contemporary native alias export turns RAW_TEXT into a resolving synonym. Candidate preserves that history and holds only the unsupported global resolution, without asserting a different reagent.','scientific_limits':['No fresh full role/occurrence/export approval.','Stock deferrals preserve literal source formulations and all four source cases; no inferred equivalence, distinctness, retarget or denominator repair.','The underlying Edison research report was not independently re-researched. Actual historical commit and current primary/issue evidence support this narrow resolver-exposure assessment.'],'partial_B_used_as_after_state':False,'source_apply':False}
+js(D/'RESULT.json',result);capture(D/'RESULT.json','evidence/RESULT.json');js(D/'external-pin-verification.json',ext);capture(D/'external-pin-verification.json','evidence/external-pin-verification.json');js(F/'evidence/CAPTURE-MAP.json',refs)
+js(D/'CAPTURE-RECEIPT.json',{'source_root':str(F),'references':len(refs),'files':len([p for p in F.rglob('*') if p.is_file()]),'map_sha256':sha((F/'evidence/CAPTURE-MAP.json').read_bytes())})
+print(json.dumps({'result':sha((D/'RESULT.json').read_bytes()),'manifest_members':len(manifest['members']),'external_pins':len(ext),'candidate':result['candidate_sha256'],'deferrals':3}))

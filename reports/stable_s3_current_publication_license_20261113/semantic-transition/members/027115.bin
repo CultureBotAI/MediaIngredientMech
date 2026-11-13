@@ -1,0 +1,69 @@
+identifier: UNMAPPED_0575
+preferred_term: water distilled or tapwater
+synonyms:
+- synonym_text: water distilled or tapwater
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: water (distilled or tapwater)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: UNMAPPED
+ingredient_type: UNDEFINED_MIXTURE
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2389); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_AMBIGUOUS_WATER_TERM
+  changes: Set ingredient_type=UNDEFINED_MIXTURE and left unmapped because the label
+    conflates distilled water with tapwater, which is not an exact substitute for
+    the local distilled water identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Water_distilled_or_tapwater-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **ambiguous,
+    disjunctive source-choice label**, not a single chemical, salt/hydrate, fixed
+    mixture, commercial formulation, or buffer. It means that the source method permits
+    either **distilled water** or **tap water**. Those alternatives share water as
+    their principal constituent but differ in production history and potentially in
+    dissolved, suspended, and biolo CURIEs discussed: CHEBI:15377. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''water (distilled or tapwater)'' (x2 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002943; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2389); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because "distilled or
+  tapwater" is a source-choice expression, not an exact identity with distilled water
+  or generic water.
+mim_id: MIM:0002943
+legacy_identifiers:
+- MIM:Water_Distilled_Or_Tapwater
+- UNMAPPED_0575

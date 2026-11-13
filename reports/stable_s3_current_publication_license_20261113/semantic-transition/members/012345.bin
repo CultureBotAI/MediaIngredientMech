@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:jcm_977_glucose_20_percent_wv_stock
+preferred_term: JCM 977 glucose 20% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_977_glucose_20_percent_wv_stock
+  ontology_label: JCM 977 glucose 20% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977
+    source_record: JCM 977 glucose 20% w/v stock
+    notes: The source explicitly states glucose at 20% (w/v), stock autoclaving and
+      the 100 ml receiving dose. It does not state the solvent of that stock. Only
+      the named glucose component and explicit mass concentration are transcribed;
+      its exact child identity remains UNMAPPED.
+  notes: JCM977 adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled
+    VNG base. The source does not identify the stock solvent or preparation volume;
+    basal distilled water belongs to the receiving medium. Water is omitted from components,
+    and closure remains UNKNOWN. The solute label does not specifyanomer, chirality
+    or hydrate; these are deliberately not assigned.
+notes: 'JCM977 adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled
+  VNG base. The source does not identify the stock solvent or preparation volume;
+  basal distilled water belongs to the receiving medium. Water is omitted from components,
+  and closure remains UNKNOWN. The solute label does not specifyanomer, chirality
+  or hydrate; these are deliberately not assigned. Raw source labels retained without
+  global resolving aliases: ["20% (w/v) Glucose"]. Occurrence-specific linkage is
+  required; identical generic words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true

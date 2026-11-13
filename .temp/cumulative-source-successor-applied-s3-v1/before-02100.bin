@@ -1,0 +1,72 @@
+identifier: cas:74978-20-4
+preferred_term: Potassium aluminum chloride
+ontology_mapping:
+  ontology_id: NCIT:C83530
+  ontology_label: Aluminum Chloride
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 74978-20-4 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 2 CultureBot
+      media; samples: M63 no sulfur, Sulfur free mineral mix. Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Potassium aluminum
+      chloride'
+synonyms:
+- synonym_text: AlKCl2
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:74978-20-4 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.866957+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.852155+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:56:47.812821+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C83530 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519724+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002099; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 74978-20-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002099
+legacy_identifiers:
+- MIM:Potassium_Aluminum_Chloride
+- cas:74978-20-4

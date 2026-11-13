@@ -1,0 +1,84 @@
+identifier: kgmicrobe.ingredient:jcm_1209_basal_salts_solution
+preferred_term: JCM1209 basal salts solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1209_basal_salts_solution
+  ontology_label: JCM1209 basal salts solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1209
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: NH4NO3
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: MgCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '8.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: SiO2
+  reference_scope: UNMAPPED
+  concentration_value: '7.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '4.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '4.2'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Methylene blue
+  reference_scope: UNMAPPED
+  concentration_value: '4.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.8'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1209
+    source_record: JCM1209 basal salts solution
+    notes: Exact original JCM1209 stock,10ml added in finalrecipe. MnSO4.xH2O hydration
+      and methyleneblue salt/hydrate remain unresolved. Allseven namedsolute inputs
+      and1Lwater are retained without inferred productidentity.
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Exact original JCM1209 stock,10ml added in finalrecipe. MnSO4.xH2O hydration
+  and methyleneblue salt/hydrate remain unresolved. Allseven namedsolute inputs and1Lwater
+  are retained without inferred productidentity. Raw source labels retained in linked
+  frozen cases: [''Basal salts solution'']. Generic labels are not global resolving
+  synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.237673+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

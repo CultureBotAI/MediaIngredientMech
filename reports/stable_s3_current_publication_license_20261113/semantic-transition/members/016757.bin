@@ -1,0 +1,61 @@
+identifier: CHEBI:17781
+preferred_term: Lumichrome
+ontology_mapping:
+  ontology_id: CHEBI:17781
+  ontology_label: lumichrome
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 7,8-dimethylbenzo[g]pteridine-2,4(1H,3H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=1086-80-2); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.547940+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.578258+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H10N4O2; inchi=InChI=1S/C12H10N4O2/c1-5-3-7-8(4-6(5)2)14-10-9(13-;
+    smiles=Cc1cc2nc3nc(=O)nc(=O)c3nc2cc1C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.860258+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001549; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1086-80-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C12H10N4O2
+  inchi: InChI=1S/C12H10N4O2/c1-5-3-7-8(4-6(5)2)14-10-9(13-7)11(17)16-12(18)15-10/h3-4H,1-2H3,(H2,14,15,16,17,18)
+  smiles: Cc1cc2nc3nc(=O)nc(=O)c3nc2cc1C
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001549
+legacy_identifiers:
+- MIM:Lumichrome
+- CHEBI:17781

@@ -1,0 +1,48 @@
+identifier: MICRO:0000591
+preferred_term: chocolate agar
+ontology_mapping:
+  ontology_id: MICRO:0000591
+  ontology_label: chocolate agar
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  match_level: EXACT
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech:output/ingredient_occurrences.tsv
+    notes: Surface form appears in CultureMech's occurrence table and was grounded
+      to MICRO:0000591 on an exact match against the ontology label. Restored from
+      the record's own creation history (#541); the residual importer wrote this provenance
+      only into the published SSSOM.
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (2
+    mentions across 2 recipes). Grounded to MICRO:0000591 (''chocolate agar'') on
+    an exact match of the canonical label to the query ''chocolate agar''. Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-06T07:34:56.956907+00:00'
+  curator: claude_restore_culturemech_evidence
+  action: CORRECTED
+  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table
+    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL
+    history entry but absent from the structured field the SSSOM builder reads, so
+    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
+    row (#541).
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000686; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+mim_id: MIM:0000686
+legacy_identifiers:
+- MIM:Chocolate_agar
+- MICRO:0000591

@@ -1,0 +1,90 @@
+identifier: CHEBI:39063
+preferred_term: Tricine
+ontology_mapping:
+  ontology_id: CHEBI:39063
+  ontology_label: N-tris(hydroxymethyl)methylglycine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: MOPS
+      Rich Defined media noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal
+      media Glucose noNitrogen….'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#704); chebi.db
+    notes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+      mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+      with a label and nothing else (no formula, InChIKey or definition); its children
+      are the neutral CHEBI:39063, which owns the structure, the systematic names
+      and the xref cas:5704-04-1 (the record''s own CAS, on no other term), and the
+      zwitterion CHEBI:46759. Section 3: the most specific stable identifier (#704).'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 44
+  media_count: 44
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=5704-04-1); Imported
+    from CultureBotHT. Used in 10 CultureBot media; samples: MOPS Rich Defined media
+    noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal media Glucose noNitrogen….'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.699915+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.970882+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.752992+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-27T03:16:39.520003+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 10/10 -> 44/44 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:48:22.788923+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+    mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+    with a label and nothing else (no formula, InChIKey or definition); its children
+    are the neutral CHEBI:39063, which owns the structure, the systematic names and
+    the xref cas:5704-04-1 (the record''s own CAS, on no other term), and the zwitterion
+    CHEBI:46759. Section 3: the most specific stable identifier (#704). (#704)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties:
+  cas_rn: 5704-04-1
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:39063
+    (#704)
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C6H13NO5
+  inchi: InChI=1S/C6H13NO5/c8-2-6(3-9,4-10)7-1-5(11)12/h7-10H,1-4H2,(H,11,12)
+  smiles: O=C(O)CNC(CO)(CO)CO
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: BUFFER
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

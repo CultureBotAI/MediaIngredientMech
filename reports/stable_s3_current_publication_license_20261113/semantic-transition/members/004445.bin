@@ -1,0 +1,119 @@
+id: CultureMech:007470
+name: NBRC Medium 1296
+original_name: NBRC Medium 1296
+category: bacterial
+description: 1298. NBRC 1296.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: NBRC Medium 1296
+  term:
+    id: nbrc.medium:1296
+    label: NBRC Medium 1296
+ph_value: 7.0
+ingredients:
+- preferred_term: Nutrient Broth Powder (Kyokuto*)
+  concentration:
+    value: '6'
+    unit: G_PER_L
+  source: NBRC Medium 1296
+  notes: NBRC Medium 1296 lists 6 g Nutrient Broth Powder from Kyokuto Pharmaceutical
+    Industrial Co., LTD., Code 551-02480-7.
+- preferred_term: Pyruvic acid sodium salt
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  source: NBRC Medium 1296
+  notes: NBRC Medium 1296 lists 1 g pyruvic acid sodium salt.
+  term:
+    id: CHEBI:50144
+    label: sodium pyruvate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:50144
+    label: sodium pyruvate
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  source: NBRC Medium 1296
+  notes: NBRC Medium 1296 lists 1 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: NBRC Medium 1296
+  notes: NBRC Medium 1296 lists 15 g agar if needed.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve Nutrient Broth Powder, pyruvic acid sodium salt, and agar
+    if needed in 1 L distilled water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 7.0.
+curation_history:
+- timestamp: '2026-02-20T00:22:36.053461Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 1296, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=1296.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:08:46.763759Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 6 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.182736Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007470'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Nutrient Broth Powder (Kyokuto*)6gPyruvic
+    acid sodium salt1gDistilled water1LAgar (if needed)15gpH 7.0*Kyokuto Pharmaceutical
+    Industrial Co., LTD., Code; 551-02480-7'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.631668+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-05-17T07:06:16.028719+00:00'
+  curator: cleanup_residual_errors.py
+  action: CLEANUP_RESIDUAL_ERRORS
+  notes: R01_flatten_synonym_text=2
+- timestamp: '2026-08-19T21:54:22.732836+00:00'
+  curator: recover_nbrc_composition.py
+  action: Removed corrupt rows, kept curated composition
+  notes: Record already held a grounded ingredient list, so the NBRC medium 1296 page
+    was NOT used — it lists only the commercial premix. Dropped the empty-name row
+    and 0 unparsed solution blob(s) (#299).
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_nbrc_1298_score15.py
+  action: RESOLVED_NBRC_1298_SCORE15
+  changes: Replaced misidentified MacConkey expansion with NBRC 1296
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1296
+  notes: Replaced MacConkey Agar constituent rows with NBRC Medium 1296's Nutrient
+    Broth Powder, pyruvic acid sodium salt, water, optional agar, and pH 7.0 formula.
+notes: 'Source: NBRC Medium 1296 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1296
+
+
+  NBRC lists 6 g Nutrient Broth Powder from Kyokuto Pharmaceutical Industrial Co.,
+  LTD. (Code 551-02480-7), 1 g pyruvic acid sodium salt, 1 L distilled water, optional
+  agar, and pH 7.0.'
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1296

@@ -1,0 +1,95 @@
+identifier: CHEBI:35358
+preferred_term: Sulfonamide
+ontology_mapping:
+  ontology_id: CHEBI:35358
+  ontology_label: sulfonamide
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:sulfonamide; '
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#308/#313)
+    notes: 'Repaired a comma-split label (#308/#313): not a comma split; the label
+      matches CHEBI:35358 `sulfonamide` exactly and the record had been left at PENDING_REVIEW.
+      The ingest strips commas from every chemical label, so a name containing one
+      arrives as separate fragment records — the same mechanism that produced the
+      `D` record resolved in #346.'
+synonyms:
+- synonym_text: Sulfonamide
+  synonym_type: RAW_TEXT
+  source: comma-split fragment (#308/#313)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 3
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:sulfonamide; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-04T07:11:49.634299+00:00'
+  curator: microbedecoder-import-review
+  action: HELD_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW; SSSOM row withdrawn
+  notes: 'Wrong-sense grounding. CHEBI:35358 ''sulfonamide'' is the structural functional-group
+    class (2976 direct subclasses, spanning diuretics and herbicides). This record''s
+    provenance is kgmicrobe.trait:sulfonamide, an antibiotic-resistance trait, so
+    the intended target is almost certainly CHEBI:87228 ''sulfonamide antibiotic''
+    (24 subclasses). Publishing skos:exactMatch to the functional group would license
+    kg-microbe to collapse sulfonamide-resistance edges onto it, making furosemide
+    a sibling of sulfamethoxazole under an asserted identity. Held for a curator;
+    see #203.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: REPAIRED_COMMA_SPLIT_LABEL
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'preferred_term ''Sulfonamide'' -> ''Sulfonamide''; CHEBI:35358 -> CHEBI:35358.
+    Repaired a comma-split label (#308/#313): not a comma split; the label matches
+    CHEBI:35358 `sulfonamide` exactly and the record had been left at PENDING_REVIEW.
+    The ingest strips commas from every chemical label, so a name containing one arrives
+    as separate fragment records — the same mechanism that produced the `D` record
+    resolved in #346.'
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: NO2SR3
+  smiles: '[1*]S(=O)(=O)N([2*])[3*]'
+  inchi: InChI=1S/C6H8N2O2S/c7-5-1-3-6(4-2-5)11(8,9)10/h1-4H,7H2,(H2,8,9,10)
+  molecular_weight: 78.071
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:30:27.710628+00:00'

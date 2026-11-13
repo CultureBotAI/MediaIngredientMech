@@ -1,0 +1,106 @@
+id: CultureMech:000109
+name: pc
+category: algae
+sources:
+- database: CCAP
+  database_id: PC
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_PC.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for freshwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_PC.pdf
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: PC, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_PC.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.577579'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.185269Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000109'
+- timestamp: '2026-03-17T19:45:04.137886+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "PC" to "pc" for consistent matching
+- timestamp: '2026-04-04T12:54:55.087239'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 3 curated ingredients from CCAP
+  source: CCAP Medium MR_PC.pdf
+- timestamp: '2026-05-16T08:57:02.632085+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:56.840408+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:PC; https://www.ccap.ac.uk/wp-content/uploads/MR_PC.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:PC
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_PC.pdf
+ingredients:
+- preferred_term: KCl
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.087221'
+    ontology_source: CHEBI
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: CCAP Medium MR_PC.pdf
+  notes: From CCAP Medium MR_PC.pdf; Curated from CCAP Medium MR_PC.pdf specification
+- preferred_term: CaCl
+  notes: Ontology mapping not yet available; From CCAP Medium MR_PC.pdf; Curated from
+    CCAP Medium MR_PC.pdf specification
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  source: CCAP Medium MR_PC.pdf
+- preferred_term: NaCl
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:55.087234'
+    ontology_source: CHEBI
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  source: CCAP Medium MR_PC.pdf
+  notes: From CCAP Medium MR_PC.pdf; Curated from CCAP Medium MR_PC.pdf specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: PC

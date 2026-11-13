@@ -1,0 +1,89 @@
+id: CultureMech:000973
+name: cultivation_medium_for_chlamydophila_pecorum
+original_name: CULTIVATION MEDIUM FOR CHLAMYDOPHILA PECORUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1503
+  term:
+    id: mediadive.medium:1503
+    label: CULTIVATION MEDIUM FOR CHLAMYDOPHILA PECORUM
+notes: DSMZ Medium 1503 prepares a 50.5 ml CACO-2 cell-culture medium from 45.0 ml
+  MEM, 5.0 ml fetal bovine serum, and 0.5 ml 100x amino-acid stock, then filter-sterilizes
+  it before Chlamydophila pecorum cultivation at 37 C plus 5% CO2.
+ingredients:
+- preferred_term: MEM-Medium
+  concentration:
+    value: '891.089109'
+    unit: ML_PER_L
+  source: DSMZ Medium 1503
+  notes: DSMZ Medium 1503 lists 45.0 ml MEM-Medium in a 50.5 ml CACO-2 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:1377
+    label: MEM-Medium
+- preferred_term: Fetal bovine serum
+  concentration:
+    value: '99.009901'
+    unit: ML_PER_L
+  source: DSMZ Medium 1503
+  notes: DSMZ Medium 1503 lists 5.0 ml fetal bovine serum in a 50.5 ml CACO-2 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:954
+    label: Fetal bovine serum
+- preferred_term: Aminoacids (100 x)
+  concentration:
+    value: '9.90099'
+    unit: ML_PER_L
+  source: DSMZ Medium 1503
+  notes: DSMZ Medium 1503 lists 0.5 ml 100x amino-acid stock in a 50.5 ml CACO-2 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:1070
+    label: Aminoacids
+  chebi_term:
+    id: CHEBI:33709
+    label: amino acid
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Combine 45.0 ml MEM-Medium, 5.0 ml fetal bovine serum, and 0.5 ml 100x
+    amino acids.
+- step_number: 2
+  action: FILTER_STERILIZE
+  description: Filter sterilize through a 0.2 um membrane.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:14.643919Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1503'
+- timestamp: '2026-03-13T06:19:00.082804Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000973'
+- timestamp: '2026-03-17T19:45:11.662212+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CULTIVATION MEDIUM FOR CHLAMYDOPHILA PECORUM" to "cultivation_medium_for_chlamydophila_pecorum"
+    for consistent matching
+- timestamp: '2026-09-09T00:00:00-07:00'
+  curator: repair_dsmz_host_cell_score25.py
+  action: RESOLVED_DSMZ_HOST_CELL_SCORE25_GRAPH
+  changes: Resolved DSMZ Medium 1503 host-cell recipe
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1503.pdf
+  notes: DSMZ Medium 1503 prepares a 50.5 ml CACO-2 cell-culture medium from 45.0
+    ml MEM, 5.0 ml fetal bovine serum, and 0.5 ml 100x amino-acid stock, then filter-sterilizes
+    it before Chlamydophila pecorum cultivation at 37 C plus 5% CO2.
+temperature_value: 37.0
+sterilization:
+  method: FILTER
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1503.pdf

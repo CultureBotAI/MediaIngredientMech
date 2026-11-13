@@ -1,0 +1,69 @@
+identifier: CHEBI:13997
+preferred_term: Citramalate
+synonyms:
+- synonym_text: Citramalate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:citramalate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0807 -> CHEBI:13997 "citramalate(2-)" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000713; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:citramalate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:13997
+  ontology_label: citramalate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Bare anion label 'Citramalate' grounded to the fully-deprotonated citramalate(2-),
+      the species present at growth-medium pH. MIM grounds bare anion labels to the
+      bare-name CHEBI class where one exists (succinate, acetate, lactate); this acid
+      has none, so the fully-deprotonated conjugate base is the correct target. Naive
+      first-match enumeration would have picked the mono-anion (#213).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C5H6O5
+  smiles: CC(O)(CC(=O)[O-])C(=O)[O-]
+  inchi: InChI=1S/C5H8O5/c1-5(10,4(8)9)2-3(6)7/h10H,2H2,1H3,(H,6,7)(H,8,9)/p-2
+  molecular_weight: 146.098
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:22.645904+00:00'
+mim_id: MIM:0000713
+legacy_identifiers:
+- MIM:Citramalate
+- CHEBI:13997

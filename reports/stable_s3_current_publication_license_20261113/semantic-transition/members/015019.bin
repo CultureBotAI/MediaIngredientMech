@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:rabbit_serum_56c_60min_jcm144
+preferred_term: Rabbit serum heated at 56 C for 60 min (JCM 144)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0002392
+  ontology_label: rabbit serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144
+    notes: JCM144/TOGO M135 prescribe rabbit serum heat-inactivated at56C for1hour.
+      Represent this exact schedule independently of the receiving-medium2mL dose
+      and independently of the30minute JCM946 preparation. Broader material parent
+      only; distinct local preparation identity remains. The same JCM144/TOGO M135
+      instruction explicitly includes this rabbit-serum addition among ingredients
+      filter-sterilized ahead of time. Retain both filtration and the 56 C, 60 minute
+      heat schedule; their relative order and filter specifications are not stated.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.557424+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: JCM144/TOGO M135 prescribe rabbit serum heat-inactivated at56C for1hour.
+    Represent this exact schedule independently of the receiving-medium2mL dose and
+    independently of the30minute JCM946 preparation. Isolated successor proposal only;
+    original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.832185+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'JCM144/TOGO M135 prescribe rabbit serum heat-inactivated at56C for1hour. Represent
+  this exact schedule independently of the receiving-medium2mL dose and independently
+  of the30minute JCM946 preparation. Source labels retained as nonresolving provenance:
+  [{"case_id": "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212",
+  "raw_label": "Rabbit serum heat--inactivated at 56C for 1 hr"}]. No global generic
+  alias, supplier equivalence, role approval or complete publication approval is conferred.
+  Receiving-medium dose and unit repairs remain separate. Existing native holds and
+  rejected labels are preserved. The same JCM144/TOGO M135 instruction explicitly
+  includes this rabbit-serum addition among ingredients filter-sterilized ahead of
+  time. Retain both filtration and the 56 C, 60 minute heat schedule; their relative
+  order and filter specifications are not stated.'

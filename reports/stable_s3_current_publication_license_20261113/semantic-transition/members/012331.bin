@@ -1,0 +1,126 @@
+{
+  "author": "Codex /root/research_b",
+  "at": "2026-11-08T06:40:36.183483+00:00",
+  "finding_id": "W06-IR-007",
+  "case_index": 125,
+  "case_id": "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc",
+  "case_input_sha256": "da6960f8eed0edfdf9636234cf3eff90918c70b4fd2e76a1fdd03ef1dcb91048",
+  "raw_source_label": "N-Z Amine, type B (Sheffield)",
+  "occurrence_ids": [
+    "CM_OCC:dd2ad98d837f681cac5b6917ee7d940bb50ca9f3b6a10ac6b6932ade6dc7d5ca"
+  ],
+  "full_frozen_occurrences": [
+    {
+      "component_path": "ingredients/4",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m2815.yaml",
+      "native_name": "N-Z Amine, type B (Sheffield)",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:dd2ad98d837f681cac5b6917ee7d940bb50ca9f3b6a10ac6b6932ade6dc7d5ca",
+      "raw_component": {
+        "concentration": {
+          "unit": "PERCENT_W_V",
+          "value": "1"
+        },
+        "preferred_term": "N-Z Amine, type B (Sheffield)"
+      },
+      "raw_preferred_term": "N-Z Amine, type B (Sheffield)",
+      "recipe_id": "CultureMech:009363",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009363"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M2815"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/togo_medium_m2815.yaml",
+      "source_file_sha256": "251216365957a2b6c641a5bfaf17457a82fca6caa9015cc95fc8fe4cc481edc0",
+      "source_identifiers": []
+    }
+  ],
+  "previous_decision_sha256_canonical": "9b20293c3f750bbaec747180f3dd3938d8b663cdb260db73de90fc5c6594577a",
+  "new_decision_sha256_canonical": "bcb098af4697877123f1772617346c4ae41266a04dd529e994a1539b3cb7de49",
+  "source_evidence": [
+    {
+      "evidence_id": "C-E-125-SOURCE-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m2815.yaml",
+        "sha256": "251216365957a2b6c641a5bfaf17457a82fca6caa9015cc95fc8fe4cc481edc0"
+      },
+      "locator": "Full recipe; occurrence CM_OCC:dd2ad98d837f681cac5b6917ee7d940bb50ca9f3b6a10ac6b6932ade6dc7d5ca at ingredients/4",
+      "supports_or_contradicts": "Preserves the exact raw ingredient, whole-recipe context, nested solutions, source identifiers, preparation and prior curation provenance used in this decision.",
+      "kind": "source_snapshot",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc"
+      ]
+    },
+    {
+      "evidence_id": "C-E-togo-M2815",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/togo-M2815.txt",
+        "sha256": "4e62c5077426b39a7112b7637c6d13966a5bd9e7fb81c12a16c75f4fe3aee276"
+      },
+      "locator": "togo-M2815; exact captured source response",
+      "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+      "kind": "primary_source",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2815",
+      "accessed_at": "2026-11-08T05:08:17.649728+00:00",
+      "case_ids": [
+        "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc"
+      ]
+    }
+  ],
+  "proposal": {
+    "proposal_id": "V3-B-P-SHEFFIELD-TYPE-B",
+    "case_ids": [
+      "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc"
+    ],
+    "description": "TOGO M2815 explicitly names Sheffield Chemical N-Z Amine Type B and describes it as an enzymatic digest of casein. Supplier and grade support a bounded undefined-product identity. Casein is the substrate of hydrolysis, not an asserted intact constituent, and Type A is a different product boundary.",
+    "evidence_ids": [
+      "C-E-125-SOURCE-1",
+      "C-E-togo-M2815",
+      "V3-B-AUTHOR-125",
+      "V3-B-DEDUP"
+    ],
+    "owner_path": "data/ingredients/mapped/sheffield_n_z_amine_type_b.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/payloads/sheffield_n_z_amine_type_b.yaml",
+      "sha256": "a3d42c86d30bd809c4cd0185cd360edeb3c588c5e62ce5135c7aec2e64b52bc6"
+    },
+    "before_sha256": null,
+    "application_scope": "Only case125 sole TOGO M2815 occurrence with the full supplier/type-qualified raw label. Preserve the source1% inclusion wording without assuming percent basis, molecular composition, powder form or catalogue equivalence.",
+    "occurrence_scopes_by_case": {
+      "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc": [
+        "CM_OCC:dd2ad98d837f681cac5b6917ee7d940bb50ca9f3b6a10ac6b6932ade6dc7d5ca"
+      ]
+    },
+    "source_holds_preserved": true,
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "author": "Codex /root/research_b",
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+    ]
+  },
+  "scientific_rationale": "TOGO M2815 explicitly names Sheffield Chemical N-Z Amine Type B and describes it as an enzymatic digest of casein. Supplier and grade support a bounded undefined-product identity. Casein is the substrate of hydrolysis, not an asserted intact constituent, and Type A is a different product boundary.",
+  "source_application_scope": "Only case125 sole TOGO M2815 occurrence with the full supplier/type-qualified raw label. Preserve the source1% inclusion wording without assuming percent basis, molecular composition, powder form or catalogue equivalence.",
+  "remaining_limits": "Catalogue/lot, quantitative hydrolysate composition and percent basis remain unknown; Type A, EZMix and generic casein-digest equivalence are not inferred. These are product/source-release limitations, not unfinished bounded identity work.",
+  "dedup_receipt": {
+    "root": "artifact",
+    "path": "successor-v3/research-b/dedup-receipt.json",
+    "sha256": "7e97d069a66b32ae60d34d3d464c2bafc00d0130b7e3e370bc075768b981bc22"
+  },
+  "primary_bytes_reused_without_new_access_claim": true,
+  "independent_review": "pending separate reviewer",
+  "maintained_write": false
+}

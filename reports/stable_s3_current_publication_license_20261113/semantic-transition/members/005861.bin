@@ -1,0 +1,77 @@
+id: CultureMech:001704
+name: vy_medium
+original_name: VY MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.2
+media_term:
+  preferred_term: DSMZ Medium 577
+  term:
+    id: mediadive.medium:577
+    label: VY MEDIUM
+notes: DSMZ Medium 577 lists 25.0 g veal infusion broth from Difco and 5.0 g yeast
+  extract from Difco brought to one liter with distilled water, with pH adjusted to
+  7.2.
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1.0'
+    unit: L
+  source: DSMZ Medium 577
+  notes: DSMZ Medium 577 brings the formulation to 1000.0 ml with distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Veal infusion broth (Difco 0344)
+  concentration:
+    value: '25.0'
+    unit: G_PER_L
+  source: DSMZ Medium 577
+  notes: DSMZ Medium 577 lists 25.0 g Veal infusion broth (Difco 0344) per liter.
+- preferred_term: Yeast extract (Difco)
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: DSMZ Medium 577
+  notes: DSMZ Medium 577 lists 5.0 g yeast extract from Difco per liter.
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 7.2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:11.635722Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 577'
+- timestamp: '2026-03-13T06:19:06.569662Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001704'
+- timestamp: '2026-03-17T19:45:18.778253+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "VY MEDIUM" to "vy_medium" for consistent matching
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_dsmz_score35.py
+  action: RESOLVED_DSMZ_SCORE35_GRAPH
+  changes: Resolved DSMZ-backed score-35 graph
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium577.pdf
+  notes: DSMZ Medium 577 lists 25.0 g veal infusion broth from Difco and 5.0 g yeast
+    extract from Difco brought to one liter with distilled water, with pH adjusted
+    to 7.2.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium577.pdf

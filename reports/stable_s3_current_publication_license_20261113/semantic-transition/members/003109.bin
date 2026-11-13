@@ -1,0 +1,73 @@
+"""Independent exact cysteine successor and native projection checks, no application."""
+from pathlib import Path
+import copy, hashlib, io, json, os, subprocess, sys, tarfile, types
+import yaml
+D=Path(__file__).absolute().parent;C=D.parents[1];R=C.parents[1]
+P=C/'integration/cysteine-stock-predicate-successor-v1';J=C/'integration/curation-worktree';A=C/'integration/ancillary1258-worktree';T=R/'.temp/kgm-unmapped-20261107'
+def sha(b):return hashlib.sha256(b).hexdigest()
+def load(p):return json.loads(p.read_bytes())
+def save(n,v):
+    with (D/n).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+def mod(n,p):
+    m=types.ModuleType(n);m.__file__=str(p);sys.modules[n]=m;exec(compile(p.read_bytes(),str(p),'exec'),m.__dict__);return m
+s=load(P/'SELECTOR.json');p=Path(s['payload']['path']);raw=p.read_bytes()
+assert sha(raw)==s['payload']['sha256']=='1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2'
+oldraw=Path(s['selected_predecessor']['path']).read_bytes();assert sha(oldraw)==s['selected_predecessor']['sha256']=='0ca4e6c9a4c7d05c99f64adffb1d4ab7c63cb31b618d2b3c74e26288831f16e2'
+assert oldraw==(D/'inputs/published/c-C-P04.yaml').read_bytes()
+new=yaml.safe_load(raw);old=yaml.safe_load(oldraw);inverse=copy.deepcopy(new)
+assert new['ontology_mapping']['mapping_quality']=='NARROW_MATCH' and old['ontology_mapping']['mapping_quality']=='CLOSE_MATCH'
+assert new['curation_history'][:-1]==old['curation_history']
+assert new['ontology_mapping']['evidence'][:-1]==old['ontology_mapping']['evidence']
+assert new['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION'
+assert new['curation_history'][-1]['llm_assisted'] is True
+assert new['curation_history'][-1]['curator']=='Codex /root/step7d_science_c'
+inverse['ontology_mapping']['mapping_quality']='CLOSE_MATCH';inverse['curation_history'].pop();inverse['ontology_mapping']['evidence'].pop();assert inverse==old
+context=load(D/'ORIGINAL-W07-CONTEXT.json')['cysteine'];assert context['historical_operation']==s['original_operation_exact']
+assert s['authentic_before_sha256']==context['authentic_before_sha256']
+assert not any(k in new for k in ['chemical_properties','components','component_assertion','nutritional_roles','physicochemical_roles','cellular_roles','biological_roles'])
+assert new['ingredient_type']=='STOCK_SOLUTION' and new['identifier']=='kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution'
+assert new['ontology_mapping']['ontology_id']=='CHEBI:91248'
+sys.path.insert(0,str(J/'src'))
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+assert not validate_ingredient(new)
+out=D/'native-render/L-Cysteine_X_HCl_X_H2O_Solution.yaml';write_validated_ingredient(new,out);assert out.read_bytes()==raw
+assert all(not is_resolving_synonym(x) for x in new['synonyms'][1:])
+listing=mod('cysteine_peer_list',A/'scripts/export_lists.py');browser=mod('cysteine_peer_browser',A/'scripts/browser_export.py')
+assert listing._synonyms(old)==listing._synonyms(new)
+assert browser.extract_ingredient_for_browser(old,'L-Cysteine_X_HCl_X_H2O_Solution.yaml')['synonyms']==browser.extract_ingredient_for_browser(new,'L-Cysteine_X_HCl_X_H2O_Solution.yaml')['synonyms']
+base={};archive=subprocess.check_output(['git','--no-optional-locks','-C',str(A),'archive','84241993a278a7a413422ef89a52c0b47dc57831','data/ingredients'])
+with tarfile.open(fileobj=io.BytesIO(archive)) as tf:
+    for m in tf.getmembers():
+        if m.isfile() and m.name.endswith('.yaml'):base[m.name]=yaml.safe_load(tf.extractfile(m).read())
+assert len(base)==2956
+owner=s['original_operation_exact']['source_record'];before=copy.deepcopy(base);after=copy.deepcopy(base);before[owner]=old;after[owner]=new
+# The independent W07 residual is included in the coupled diagnostic context too.
+mono='data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml'
+after[mono]=yaml.safe_load((D/'native-render/Sodium_phosphate_monobasic_monohydrate.yaml').read_bytes())
+assert not list(validate_component_partonomy(after.values()))
+producer=T/'claw/scripts/build_mim_ingredient_sssom.py';assert sha(producer.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+kg=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz');assert sha(kg.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+os.environ.update(OPENCLAW_WORKSPACE=str(D/'cysteine-projection-workspace'),MEDIAINGREDIENTMECH_ROOT=str(A),KGMICROBE_ROOT=str(kg.parents[1]))
+native=mod('independent_cysteine_projection',producer);ks=native.load_kgm_source_index(kg);kl=native.load_kgm_labels(kg)
+termfile=C/'preflight/inherited-form-predicate-triage-v1/captures/chebi-91248.json';term=load(termfile)['_embedded']['terms'][0]
+assert term['obo_id']=='CHEBI:91248' and term['label']==new['ontology_mapping']['ontology_label'] and 'monohydrate' in term['description'][0] and not term['is_obsolete']
+rows=[];events=[]
+for records in [before,after]:
+    owners=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in records.items() if '/mapped/' in p});suppressed=[]
+    rr=native._row_from_yaml(A/owner,{},ks,kl,{term['obo_id']:term['label']},record=records[owner],owners=owners,suppressions=suppressed)
+    assert len(rr)==2;rows.append(rr);events.append(suppressed)
+delta=[{k:{'before':b[k],'after':a[k]} for k in b if b[k]!=a[k]} for b,a in zip(*rows)]
+assert set(delta[0])=={'predicate_id','source'} and set(delta[1])=={'source'}
+assert rows[1][0]['object_id']=='CHEBI:91248' and rows[1][0]['predicate_id']=='skos:broadMatch'
+assert rows[1][1]['object_id']==new['identifier'] and rows[1][1]['predicate_id']=='skos:exactMatch'
+assert all('QSY9' not in r['other'] and '(add to make medium anoxic)' not in r['other'] for r in rows[1])
+assert events[0]==events[1]
+restored=copy.deepcopy(new);restored['ontology_mapping']['mapping_quality']='CLOSE_MATCH'
+negative=native._row_from_yaml(A/owner,{},ks,kl,{term['obo_id']:term['label']},record=restored,owners=owners,suppressions=[])
+assert negative[0]['predicate_id']=='skos:closeMatch' and negative[1]['object_id']==new['identifier']
+save('CYSTEINE-INDEPENDENT-CHECKS.json',{'status':'PASS','candidate':s['payload'],'predecessor':s['selected_predecessor'],'exact_original_operation':s['original_operation_exact'],'inverse_whole_object_equal':True,'old_history_and_evidence_exact':True,'rejected_labels_exact':True,'native_schema_errors':0,'native_byte_idempotence':True,'full_coupled_A_overlay_owners':len(after),'partonomy_errors':0,'browser_resolver_synonyms_unchanged':True,'no_solute_CAS_properties_components_roles_invented':True,'source_application':False})
+save('CYSTEINE-INDEPENDENT-PROJECTION.json',{'before':rows[0],'after':rows[1],'delta':delta,'suppression_before':events[0],'suppression_after':events[1],'counterfactual_old_grade_restores_closeMatch':True,'producer':str(producer),'producer_sha256':sha(producer.read_bytes()),'actual_KG_gzip':str(kg),'actual_KG_sha256':sha(kg.read_bytes()),'official_label_capture':str(termfile),'official_label_sha256':sha(termfile.read_bytes()),'limits':'Actual native per-owner primitive/real KG input/fullA842 context plus both review candidates. Cached official label, no provider mock or full generator. Final actual row review remains later.'})
+assert p.read_bytes()==raw
+print(json.dumps({'status':'PASS','candidate':sha(raw),'rows':2,'changed_cells':[list(x) for x in delta]}))

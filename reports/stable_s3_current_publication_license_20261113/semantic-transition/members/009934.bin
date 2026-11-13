@@ -1,0 +1,43 @@
+identifier: kgmicrobe.ingredient:nbrc1130_seawater_3pct
+preferred_term: NBRC 1130 seawater at stated 3 percent salinity
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1130_seawater_3pct
+  ontology_label: NBRC 1130 seawater at stated 3 percent salinity
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1886
+    notes: TOGO M1886/NBRC 1130 specifies 1 L seawater at 3% salinity. Preserve that
+      concentration qualifier and source provenance. It does not specify 3% sodium
+      chloride, a molecular formula, or an artificial seawater brand. The distinct
+      salinity-qualified material is not reduced to bare seawater.
+notes: '#1201 isolated proposal: TOGO M1886/NBRC 1130 specifies 1 L seawater at 3%
+  salinity. Preserve that concentration qualifier and source provenance. It does not
+  specify 3% sodium chloride, a molecular formula, or an artificial seawater brand.
+  The distinct salinity-qualified material is not reduced to bare seawater. Salinity
+  definition/basis and source water are unstated; no conversion to NaCl mass or specific
+  artificial recipe is authorized. Raw source spellings are retained in case evidence
+  and this source scope; no new globally resolving source-local alias is added. Full-owner
+  publication approval and all source-specific holds remain pending.'
+curation_history:
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: TOGO M1886/NBRC 1130 specifies 1 L seawater at 3% salinity. Preserve that
+    concentration qualifier and source provenance. It does not specify 3% sodium chloride,
+    a molecular formula, or an artificial seawater brand. The distinct salinity-qualified
+    material is not reduced to bare seawater.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.068489+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
