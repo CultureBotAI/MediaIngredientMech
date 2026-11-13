@@ -628,7 +628,7 @@ def expected_products(root, review_path, *, _generation_receipt=None):
             "mapping_set_description": "Candidate source identity, "
             + status
             + "; no production permission. Exact native decisions in source-decisions.json.",
-            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "license": "https://creativecommons.org/licenses/by/4.0/",
             "predicate_semantics": "skos",
             "curie_map": {
                 **review["source"]["curie_map"],
