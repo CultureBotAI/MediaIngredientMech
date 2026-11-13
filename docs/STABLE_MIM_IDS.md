@@ -50,6 +50,38 @@ duplicate IDs, unregistered record IDs, missing active records and invalid
 replacement chains. The normal schema, scientific review, mapping and artifact
 checks remain required.
 
+### Concept splits and unresolved replacement
+
+A mapping correction is not a permanent-concept split. Correcting the external
+identifier of a hydrate, or distinguishing two already separate records, keeps
+each record's existing `mim_id`. A genuine concept split means that one record
+previously conflated two or more distinct substances. Neither the allocator nor
+a shared label or alias decides which substance continues that identity.
+
+The current lifecycle supports only `merged` and `retired`, with exactly one
+registered `replaced_by` ID and one terminal event per original ID. It does not
+support a `split` status, multiple replacements, or retirement without a single
+justified replacement. Do not encode a split as several retirement events,
+reuse the original ID on multiple records, or select an arbitrary successor to
+make validation pass.
+
+If evidence establishes that exactly one substance continues the original
+record's identity, a separately reviewed curation may retain that `mim_id` and
+use the existing allocator for genuinely new concepts. Preserve the original
+mint and lifecycle rows, scientific history, source references and valid legacy
+aliases. Preserve disproved identifiers as attributed historical evidence under
+`MAPPING_SEMANTICS.md`, not as resolving aliases. An ambiguous old alias or
+source occurrence must not be assigned to one descendant without its own
+evidence and review; previous mapping or source approvals do not transfer.
+
+When no single continuing substance or replacement is justified, leave the
+split unresolved and the affected identity and release claims held. Preserve
+the existing IDs and evidence; an active registry entry does not grant scientific
+support. Representing a one-to-many replacement requires a separately reviewed
+lifecycle and consumer design before any split is applied. This policy does not
+add a new lifecycle status, allocator, automatic identity decision or permission
+to rewrite historical releases.
+
 ## Public resolution
 
 The `MIM:` prefix is
