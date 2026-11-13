@@ -1,9 +1,9 @@
 # Mapped Ingredients Index
-**Total Records**: 2681
-**Mapped**: 2611 (97.4%)
+**Total Records**: 2682
+**Mapped**: 2612 (97.4%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 70 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 222,468
+**Total Occurrences**: 222,464
 
 ---
 
@@ -78,7 +78,7 @@
 | CHEBI:19475 | 2-aminopentanoic Acid | CHEBI:19475 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31306 | 2-bromo-2-nitro-1,3-propanediol | CHEBI:31306 | CHEBI | CAS_RN_LOOKUP | 0 |
 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| CHEBI:15930 | 2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine | CHEBI:15930 | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:15930 | 2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine | CHEBI:15930 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:16808 | 2-dehydro-D-gluconate | CHEBI:16808 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17256 | 2-deoxyadenosine | CHEBI:17256 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28997 | 2'-Deoxyinosine | CHEBI:28997 | CHEBI | CAS_RN_LOOKUP | 4 |
@@ -272,7 +272,7 @@
 | kgmicrobe.compound:achromoviromycin | Achromoviromycin | kgmicrobe.compound:achromoviromycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:22210 | Aconitate | CHEBI:22210 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:87346 | Acridine orange | CHEBI:87346 | CHEBI | CAS_RN_LOOKUP | 0 |
-| NCIT:C76253 | Acriflavine | NCIT:C76253 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C76253 | Acriflavine | NCIT:C76253 | NCIT | MANUAL_CURATION | 0 |
 | CHEBI:70241 | Actein | CHEBI:70241 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:actinohivin | Actinohivin | kgmicrobe.compound:actinohivin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:actinomycetin | Actinomycetin | kgmicrobe.compound:actinomycetin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -365,9 +365,9 @@
 | CHEBI:197950 | Antimycin A3 | CHEBI:197950 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31225 | Antipyrine | CHEBI:31225 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:2766 | Aphidicolin | CHEBI:2766 | CHEBI | EXACT_MATCH | 0 |
-| mesh:C061361 | Apidaecin IB | mesh:C061361 | MESH | EXACT_MATCH | 0 |
+| mesh:M0170179 | Apidaecin IB | mesh:M0170179 | MESH | MANUAL_CURATION | 0 |
 | CHEBI:18388 | Apigenin | CHEBI:18388 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:2769 | Apigenin Dimethyl Ether | CHEBI:2769 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:2769 | Apigenin Dimethyl Ether | CHEBI:2769 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:70353 | Apiole | CHEBI:70353 | CHEBI | EXACT_MATCH | 0 |
 | FOODON:00001059 | Apple Juice | FOODON:00001059 | FOODON | EXACT_MATCH | 1 |
 | CHEBI:2790 | Apramycin | CHEBI:2790 | CHEBI | EXACT_MATCH | 0 |
@@ -850,7 +850,7 @@
 | CHEBI:17061 | D-glutamine | CHEBI:17061 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16659 | D-glycerate | CHEBI:16659 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27947 | D-histidine | CHEBI:27947 | CHEBI | EXACT_MATCH | 0 |
-| cas:138-86-7 | d-limonene | cas:138-86-7 | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:15382 | d-limonene | CHEBI:15382 | CHEBI | MANUAL_CURATION | 0 |
 | CHEBI:15588 | D-malate | CHEBI:15588 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16899 | D-Mannitol | CHEBI:16899 | CHEBI | EXACT_MATCH | 35 |
 | CHEBI:16024 | D-Mannose | CHEBI:16024 | CHEBI | EXACT_MATCH | 13 |
@@ -1414,7 +1414,6 @@
 | kgmicrobe.compound:l-alanine_4-nitroanilide | L-alanine 4-nitroanilide | kgmicrobe.compound:l-alanine_4-nitroanilide | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | CHEBI:73757 | L-alanylglycine | CHEBI:73757 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:2596 | L-alliin | CHEBI:2596 | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:86658 | L-alpha-Phosphatidylcholine | CHEBI:86658 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:16467 | L-Arginine | CHEBI:16467 | CHEBI | EXACT_MATCH | 106 |
 | CHEBI:31235 | L-Arginine x HCl | CHEBI:31235 | CHEBI | EXACT_MATCH | 14 |
 | CHEBI:29073 | L-Ascorbic acid | CHEBI:29073 | CHEBI | EXACT_MATCH | 26 |
@@ -1530,7 +1529,7 @@
 | CHEBI:25094 | Lysine | CHEBI:25094 | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:212437 | Lysocellin | CHEBI:212437 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C166895 | Lysostaphin | NCIT:C166895 | NCIT | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:lysozyme | Lysozyme | kgmicrobe.ingredient:lysozyme | kgmicrobe.ingredient | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:lysozyme | Lysozyme | kgmicrobe.ingredient:lysozyme | kgmicrobe.ingredient | MANUAL_CURATION | 0 |
 | CHEBI:28488 | m-Xylene | CHEBI:28488 | CHEBI | EXACT_MATCH | 2 |
 | kgmicrobe.ingredient:mes_buffer | MES buffer | CHEBI:39010 | CHEBI | NARROW_MATCH | 6 |
 | cas:145224-94-8 | MES Hydrat | CHEBI:39005 | CHEBI | NARROW_MATCH | 4 |
@@ -2157,7 +2156,7 @@
 | ENVO:00003870 | rice straw | ENVO:00003870 | ENVO | EXACT_MATCH | 1 |
 | CHEBI:45367 | Rifabutin | CHEBI:45367 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28077 | Rifampicin | CHEBI:28077 | CHEBI | EXACT_MATCH | 10 |
-| CHEBI:26580 | Rifamycin | CHEBI:26580 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26580 | Rifamycin | CHEBI:26580 | CHEBI | MANUAL_CURATION | 0 |
 | CHEBI:17876 | Rifamycin B | CHEBI:17876 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16324 | Rifamycin O | CHEBI:16324 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34948 | Rifamycin S | CHEBI:34948 | CHEBI | EXACT_MATCH | 0 |
@@ -2182,7 +2181,7 @@
 | CHEBI:28527 | Rutin | CHEBI:28527 | CHEBI | EXACT_MATCH | 0 |
 | FOODON:03311582 | Rye-bran | FOODON:03311582 | FOODON | SYNONYM_MATCH | 3 |
 | CHEBI:11047 | (S)-3-hydroxybutyrate | CHEBI:11047 | CHEBI | EXACT_MATCH | 0 |
-| cas:9789-92-0 | S-adenosyl Homocysteine | cas:9789-92-0 | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:16680 | S-adenosyl Homocysteine | CHEBI:16680 | CHEBI | MANUAL_CURATION | 0 |
 | CHEBI:6000 | S-Isocorydine () | CHEBI:6000 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32111 | Saccharin | CHEBI:32111 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:8994 | Safrole | CHEBI:8994 | CHEBI | EXACT_MATCH | 0 |
@@ -2306,7 +2305,7 @@
 | ENVO:00001998 | Soil | ENVO:00001998 | ENVO | EXACT_MATCH | 66 |
 | MICRO:0000457 | Soil extract | MICRO:0000457 | MICRO | EXACT_MATCH | 18 |
 | CHEBI:26718 | Solanesol | CHEBI:26718 | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient | EXACT_MATCH | 2 |
+| kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient | MANUAL_CURATION | 2 |
 | CHEBI:30911 | Sorbitol | CHEBI:30911 | CHEBI | EXACT_MATCH | 22 |
 | CHEBI:27922 | Sorbose | CHEBI:27922 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:61117 | Sorgoleone | CHEBI:61117 | CHEBI | EXACT_MATCH | 0 |
@@ -2588,7 +2587,7 @@
 | kgmicrobe.ingredient:x10_jamarin_s | X10 Jamarin S | kgmicrobe.ingredient:x10_jamarin_s | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
 | CHEBI:189560 | Xanthan | CHEBI:189560 | CHEBI | EXACT_MATCH | 0 |
 | cas:11138-66-2 | Xanthan from Xanthomonas campestris | mesh:D016959 | MESH | NARROW_MATCH | 0 |
-| CHEBI:17712 | Xanthine | CHEBI:17712 | CHEBI | CAS_RN_LOOKUP | 21 |
+| CHEBI:17712 | Xanthine | CHEBI:17712 | CHEBI | MANUAL_CURATION | 21 |
 | kgmicrobe.compound:xanthocidin | Xanthocidin | kgmicrobe.compound:xanthocidin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:18107 | Xanthosine | CHEBI:18107 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:10073 | Xanthyletin | CHEBI:10073 | CHEBI | EXACT_MATCH | 0 |
@@ -2622,6 +2621,8 @@
 | CHEBI:41981 | deuterated water | CHEBI:41981 | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:16610 | spermidine | CHEBI:16610 | CHEBI | CAS_RN_LOOKUP | 14 |
 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | cas:66455-27-4 | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:16469 | 17β-Estradiol | CHEBI:16469 | CHEBI | SYNONYM_MATCH | 0 |
+| cas:10294-41-4 | cerium(III) nitrate hexahydrate | mesh:M0319657 | MESH | NARROW_MATCH | 0 |
 
 ## Other Statuses
 
