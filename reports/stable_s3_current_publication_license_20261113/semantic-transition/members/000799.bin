@@ -1,0 +1,60 @@
+identifier: CHEBI:71987
+preferred_term: Curamycin A
+ontology_mapping:
+  ontology_id: CHEBI:71987
+  ontology_label: curamycin A
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:curamycin_a; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:curamycin_a; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C59H84Cl2O32
+  smiles: '[H][C@@]12O[C@]3(O[C@H](C)[C@@](O)(C(C)=O)[C@@H]4OCO[C@H]43)O[C@@]1([H])CO[C@@H](O[C@@H]1O[C@H](COC)[C@@H](O[C@@H]3O[C@H](C)[C@H](OC)[C@H](O[C@H]4C[C@@]5(C)O[C@@]6(C[C@@H](O)[C@H](O[C@H]7C[C@@H](O)[C@H](OC(=O)c8c(C)c(Cl)c(O)c(Cl)c8OC)[C@@H](C)O7)[C@@H](C)O6)O[C@]5([H])[C@@H](C)O4)[C@H]3O)[C@H](O)[C@@H]1OC)[C@@H]2OC(C)=O'
+  inchi: InChI=1S/C59H84Cl2O32/c1-20-34(45(73-12)36(61)37(66)35(20)60)52(69)85-40-21(2)78-32(14-28(40)64)83-41-23(4)88-57(15-29(41)65)92-49-24(5)79-33(16-56(49,9)93-57)84-46-39(68)53(80-22(3)42(46)72-11)86-43-30(17-71-10)82-55(47(74-13)38(43)67)87-54-48(81-27(8)63)44-31(18-75-54)90-59(91-44)51-50(76-19-77-51)58(70,25(6)62)26(7)89-59/h21-24,26,28-33,38-44,46-51,53-55,64-68,70H,14-19H2,1-13H3/t21-,22-,23-,24-,26-,28-,29-,30-,31+,32+,33+,38+,39-,40-,41-,42+,43-,44-,46-,47+,48-,49-,50-,51-,53+,54+,55+,56-,57-,58+,59-/m1/s1
+  molecular_weight: 1376.195
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:26:35.959892+00:00'

@@ -1,0 +1,94 @@
+identifier: CHEBI:17368
+preferred_term: Hypoxanthine
+ontology_mapping:
+  ontology_id: CHEBI:17368
+  ontology_label: hypoxanthine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Cross-references: KEGG:hxan'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 1,7-dihydro-6H-purin-6-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 6(1H)-purinone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 6-oxopurine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9H-purin-6(1H)-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Purine-6-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: purin-6(1H)-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:24.477079+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:68-94-0 from PubChem API via name lookup (Hypoxanthine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 1,7-dihydro-6H-purin-6-one,
+    6(1H)-purinone, 6-oxopurine, 9H-purin-6(1H)-one, Purine-6-ol, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:34.033565+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.016519+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H4N4O; inchi=InChI=1S/C5H4N4O/c10-5-3-4(7-1-6-3)8-2-9-5/h1-2H,(;
+    smiles=O=c1ncnc2ncnc12
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.067643+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.776308+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Hypoxanthine'' -> ''hypoxanthine'': synced to canonical
+    CHEBI label (preferred_term ''Hypoxanthine'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.519004+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 19/19 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 68-94-0
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:52:24.477056+00:00'
+  molecular_formula: C5H4N4O
+  inchi: InChI=1S/C5H4N4O/c10-5-3-4(7-1-6-3)8-2-9-5/h1-2H,(H2,6,7,8,9,10)
+  smiles: O=c1ncnc2ncnc12
+ingredient_type: SINGLE_INGREDIENT

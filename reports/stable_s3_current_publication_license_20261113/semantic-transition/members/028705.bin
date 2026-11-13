@@ -1,0 +1,61 @@
+identifier: CHEBI:4867
+preferred_term: Estragole
+ontology_mapping:
+  ontology_id: CHEBI:4867
+  ontology_label: estragole
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 1-methoxy-4-(prop-2-en-1-yl)benzene
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=140-67-0); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.439402+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.415602+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H12O; inchi=InChI=1S/C10H12O/c1-3-4-9-5-7-10(11-2)8-6-9/h3,5-8;
+    smiles=C=CCc1ccc(OC)cc1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.251009+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001025; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 140-67-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C10H12O
+  inchi: InChI=1S/C10H12O/c1-3-4-9-5-7-10(11-2)8-6-9/h3,5-8H,1,4H2,2H3
+  smiles: C=CCc1ccc(OC)cc1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001025
+legacy_identifiers:
+- MIM:Estragole
+- CHEBI:4867

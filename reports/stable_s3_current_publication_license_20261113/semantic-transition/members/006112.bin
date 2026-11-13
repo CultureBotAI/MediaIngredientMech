@@ -1,0 +1,219 @@
+[
+  {
+    "name": "duplicate_JSON_key",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Duplicate JSON key",
+    "expected_message_part": "Duplicate JSON key"
+  },
+  {
+    "name": "duplicate_YAML_key",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Duplicate YAML key",
+    "expected_message_part": "Duplicate YAML key"
+  },
+  {
+    "name": "plan_closed_extra_field",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Unexpected fields in plan",
+    "expected_message_part": "Unexpected fields"
+  },
+  {
+    "name": "traversal_ref",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Noncanonical relative path",
+    "expected_message_part": "Noncanonical"
+  },
+  {
+    "name": "nested_owner_path",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Owner must be a direct ingredient YAML",
+    "expected_message_part": "direct ingredient"
+  },
+  {
+    "name": "real_plan_missing_acceptance",
+    "result": "expected_refusal",
+    "exception": "FileNotFoundError",
+    "message": "[Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v2/NO_ACCEPTANCE_FILE_FOR_REVIEW.json'",
+    "expected_message_part": null
+  },
+  {
+    "name": "positive_synthetic_parser",
+    "result": "pass",
+    "operations": 4,
+    "acceptance_scope": "Fixture only; no real candidate accepted",
+    "stub": "Only native.git show returns explicitly authored synthetic byte map; all file/native/hash/parser guards real"
+  },
+  {
+    "name": "unknown_operation_kind",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Duplicate/unknown operation",
+    "expected_message_part": "Duplicate/unknown operation"
+  },
+  {
+    "name": "duplicate_operation",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Duplicate/unknown operation",
+    "expected_message_part": "Duplicate/unknown operation"
+  },
+  {
+    "name": "extra_record_field",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Unexpected fields in owner operation",
+    "expected_message_part": "Unexpected fields"
+  },
+  {
+    "name": "create_fake_preimage",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Create has a predecessor",
+    "expected_message_part": "Create has a predecessor"
+  },
+  {
+    "name": "stale_before_sha",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Missing, reused or stale owner preimage",
+    "expected_message_part": "Missing, reused or stale owner preimage"
+  },
+  {
+    "name": "wrong_origin_head",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Origin head differs",
+    "expected_message_part": "Origin head differs"
+  },
+  {
+    "name": "case_hash_drift",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Source case hash differs",
+    "expected_message_part": "Source case hash differs"
+  },
+  {
+    "name": "payload_binding_wrong_role",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Original proposal payload lacks an exact published binding",
+    "expected_message_part": "Original proposal payload lacks"
+  },
+  {
+    "name": "original_proposal_wrong_id",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Origin proposal missing or duplicated",
+    "expected_message_part": "Origin proposal missing"
+  },
+  {
+    "name": "omitted_producer",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Producer input set differs",
+    "expected_message_part": "Producer input set differs"
+  },
+  {
+    "name": "demotion_basename_changed",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Invalid demotion paths or changed subject basename",
+    "expected_message_part": "Invalid demotion paths"
+  },
+  {
+    "name": "demotion_missing_accepted_tuple",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Demotion lacks an accepted relocation review",
+    "expected_message_part": "Demotion lacks an accepted relocation review"
+  },
+  {
+    "name": "missing_operation_leaves_after_hole",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "After inventory is not the exact declared transition",
+    "expected_message_part": "After inventory is not the exact declared transition"
+  },
+  {
+    "name": "acceptance_wrong_plan_hash",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Acceptance does not bind plan",
+    "expected_message_part": "Acceptance does not bind plan"
+  },
+  {
+    "name": "acceptance_omits_payload",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Acceptance omits or changes final operation payloads",
+    "expected_message_part": "Acceptance omits or changes final operation payloads"
+  },
+  {
+    "name": "acceptance_omits_binding",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Acceptance omits or changes artifact bindings",
+    "expected_message_part": "Acceptance omits or changes artifact bindings"
+  },
+  {
+    "name": "history_prefix_changed",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "History prefix was altered or not extended",
+    "expected_message_part": "History prefix"
+  },
+  {
+    "name": "history_not_extended",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "History prefix was altered or not extended",
+    "expected_message_part": "History prefix"
+  },
+  {
+    "name": "history_only_edit",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "History-only/no-op application refused",
+    "expected_message_part": "History-only/no-op"
+  },
+  {
+    "name": "invalid_schema_field",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Native IngredientRecord validation failed",
+    "expected_message_part": "Native IngredientRecord"
+  },
+  {
+    "name": "new_collision_pair",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Final proposed owners introduce a new collision pair",
+    "expected_message_part": "new collision pair"
+  },
+  {
+    "name": "native_owner_chain_gap",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Owner receipt chain has a gap",
+    "expected_message_part": "Owner receipt chain has a gap"
+  },
+  {
+    "name": "dependency_hash_drift",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Input hash differs: SYNTHETIC/wrong-producer.py",
+    "expected_message_part": "Input hash differs"
+  },
+  {
+    "name": "symlink_capture_refused",
+    "result": "expected_refusal",
+    "exception": "ValueError",
+    "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/final-native-plan-preflight-independent-v1/technical/SYNTHETIC-parser-fixture-NOT-CAMPAIGN/SYNTHETIC/alias.json",
+    "expected_message_part": null
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "reviewer": "/root/gyps_native_lineage",
+  "at": "2026-11-08T10:43:23.259951+00:00",
+  "status": "PASS_EXACT_NATIVE_LEDGER_LINEAGE_WITH_CAUSAL_SCOPE_LIMITS",
+  "independence": "Reviewer did not author native proposal ledger, payload, root publication guard or technical prepare fixtures. Initial independent lineage proof was an input; this review separately checks the full new authored ledger against committed original objects and adversarial semantic mutations.",
+  "inputs": [
+    {
+      "path": ".temp/gyps-native-origin-v1/proposals.json",
+      "sha256": "582ea36dd479b8ecd244d996a6eb772569eb232b1631f87ef5f4aa143a20ce67"
+    },
+    {
+      "path": ".temp/gyps-native-origin-v1/origin-binding-context.json",
+      "sha256": "a8ba1204c409919a585429b85b9b4666ebdffad5e0cfb0f9d43bbaf3eb34ffe4"
+    },
+    {
+      "path": ".temp/gyps-native-origin-v1/payloads/GYPS.yaml",
+      "sha256": "fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1"
+    },
+    {
+      "path": ".temp/gyps-native-origin-v1/lineage-review/lineage-proof-v1.json",
+      "sha256": "8bd0be1de3e1a20a6049e48bb6c784428b5bcd6b744c3b605a0843039554c38d"
+    }
+  ],
+  "proposal_object_sha256": "66bb10da3a73e57a473ad1cb9ba0c852ca1aef7fc41c888cc2b012a8a32661cf",
+  "reviewed_native_proposal_count": 1,
+  "exact_GYPS_yaml_unchanged_from784": true,
+  "exact_history_unchanged": true,
+  "conditional_Bacto_requirement_retained": true,
+  "foreign_origin": {
+    "original_W05_head": "108e213e96f7d423ee345ce265d692e79063127c",
+    "unchanged_current_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+    "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+    "case_hash": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+    "full_original_proposal_sha256": "c52010aa91f4484edff947cff7498356bd2119f63ab2f3723389137858aa94e1",
+    "full_original_source_decision_sha256": "794cfb038adb6051188cd72832890c0d5c1d633bce9a106c4329aab128ce25cf",
+    "original_authors_and_backlinks_exact": true,
+    "new_GYPS_backlink_claimed": false
+  },
+  "case_scope": {
+    "global_ledger_population": 1879,
+    "realcase_occurrences": 1,
+    "W05_assigned": true,
+    "W03_assigned": false,
+    "new_assigned_cases": 0,
+    "new_recipe_observation_cases": 0,
+    "new_occurrences": 0
+  },
+  "preserved_W03_core": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json",
+      "sha256": "a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220",
+      "count": 188
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json",
+      "sha256": "ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a",
+      "count": 74
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json",
+      "sha256": "831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878",
+      "count": 868
+    }
+  ],
+  "prior784_sidecar_manifest_members_rehashed": 198,
+  "independent_semantic_negative_controls": [
+    {
+      "control": "wrong_causal_hash",
+      "status": "REFUSED",
+      "reason": "causalcase hash differs",
+      "writes": 0
+    },
+    {
+      "control": "wrong_preimage",
+      "status": "REFUSED",
+      "reason": "real maintained preimage differs",
+      "writes": 0
+    },
+    {
+      "control": "wrong_payload_hash",
+      "status": "REFUSED",
+      "reason": "reviewed payload binding differs",
+      "writes": 0
+    },
+    {
+      "control": "wrong_actual_payload",
+      "status": "REFUSED",
+      "reason": "actual payload bytes differ",
+      "writes": 0
+    },
+    {
+      "control": "foreign_case_claimed_assigned",
+      "status": "REFUSED",
+      "reason": "foreigncase falsely claimed W03assigned",
+      "writes": 0
+    },
+    {
+      "control": "foreign_case_in_assigned_array",
+      "status": "REFUSED",
+      "reason": "invented assignment/observation: assigned_W03_case_ids",
+      "writes": 0
+    },
+    {
+      "control": "causal_case_as_GYPS_observation",
+      "status": "REFUSED",
+      "reason": "false child observation/occurrence",
+      "writes": 0
+    },
+    {
+      "control": "invented_GYPS_backlink",
+      "status": "REFUSED",
+      "reason": "foreign decisionbacklink altered",
+      "writes": 0
+    },
+    {
+      "control": "foreign_author_relabelled",
+      "status": "REFUSED",
+      "reason": "complete foreign proposal altered",
+      "writes": 0
+    },
+    {
+      "control": "false_native_core_membership",
+      "status": "REFUSED",
+      "reason": "false originalcore membership",
+      "writes": 0
+    },
+    {
+      "control": "duplicate_Marine_origin",
+      "status": "REFUSED",
+      "reason": "one authentic GYPS proposal required",
+      "writes": 0
+    },
+    {
+      "control": "false_retirement",
+      "status": "REFUSED",
+      "reason": "false origin retirement/scope",
+      "writes": 0
+    },
+    {
+      "control": "Bacto_hold_removed",
+      "status": "REFUSED",
+      "reason": "conditionalBacto boundary lost",
+      "writes": 0
+    },
+    {
+      "control": "future_head_asserted",
+      "status": "REFUSED",
+      "reason": "future publication falsely asserted",
+      "writes": 0
+    }
+  ],
+  "negative_count": 14,
+  "native_operator_boundary": "Native prepare verifies global hashes and binding shape but does not interpret assignment/causality provenance fields. These controls independently test truthful semantic lineage and must not be described as nativeoperator assignment refusal. Separate technical agent owns realprepare fixture proof.",
+  "crosswalk_requirement": "Complete new nativeproposal object/hash and actual eventual publishedledger/payload head/path/hash must be bound. Nofuturehead or retirement record is fabricated; actual final publication must be verified byroot.",
+  "new_findings": [],
+  "application_and_release_approval": false,
+  "remaining_holds": [
+    "Exactreviewed conditionalBacto payload only; no genericredirect or wholeBacto/owner/role/exportapproval.",
+    "No newPYGS/Marine origins; retain genuineW06/W04 origins separately.",
+    "Root distinctfinalhead review and fullcampaign nativeprepare/crosswalk remain separate.",
+    "Original188/74/868W03core and allold784sidecar members unchanged."
+  ]
+}

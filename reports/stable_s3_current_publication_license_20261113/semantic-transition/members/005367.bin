@@ -1,0 +1,77 @@
+id: CultureMech:014059
+preferred_term: Main sol. J1081
+term:
+  id: mediadive.solution:5148
+  label: Main sol. J1081
+composition:
+- preferred_term: Basal mineral NaCl medium
+  concentration:
+    value: '246.30541871921181'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1989
+    label: Basal mineral NaCl medium
+- preferred_term: Sodium pyruvate
+  concentration:
+    value: '4.926108374384237'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:438
+    label: Sodium pyruvate
+  chebi_term:
+    id: CHEBI:50144
+    label: sodium pyruvate
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Trace vitamins (see Medium No. 197)
+  concentration:
+    value: '9.852216748768473'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1784
+    label: Trace vitamins (see Medium No. 197)
+- preferred_term: Yeast extract
+  concentration:
+    value: '0.19704433497536947'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:16
+    label: Yeast extract
+preparation_notes: "To complete the medium, aseptically add the following solution\
+  \ (autoclaved or *filter-sterilized): \n\nOriginal volume: 1015 mL"
+curation_history:
+- timestamp: '2026-03-13T06:20:35.345457Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:014059'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:40.797520'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:07.476704'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:04:03.207772+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:56:24.019949+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '3 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

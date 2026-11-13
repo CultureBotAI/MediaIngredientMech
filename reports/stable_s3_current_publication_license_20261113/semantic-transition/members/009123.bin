@@ -1,0 +1,962 @@
+{
+  "applied": false,
+  "authentic_original_owner_lineage": "TARGET-032 retains the complete original W03 event; this new owner does not invent a preimage or prior status",
+  "before_capture": null,
+  "before_sha256": null,
+  "candidate": {
+    "path": "publication-v4/candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+    "sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae"
+  },
+  "candidate_id": "NEW-OXOID-CM0149",
+  "case_ids": [
+    "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+  ],
+  "case_partition": "Only the W03 NBRC902/CultureMech source case; no generic or uncatalogued Oxoid assignment",
+  "created_at": "2026-11-08T07:13:06.049005+00:00",
+  "deduplication": {
+    "active_proposals": [
+      {
+        "entry_id": "w03::b-proposal-cm0149-form",
+        "identifier": "UNMAPPED_0507",
+        "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+        "payload_sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328",
+        "preferred_term": "Reinforced clostridial medium",
+        "record": {
+          "curation_history": [
+            {
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "curator": "audit_import_ingredients[mim-queue]",
+              "llm_assisted": false,
+              "new_status": "UNMAPPED",
+              "timestamp": "2026-04-30T18:43:03.698454+00:00"
+            },
+            {
+              "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+              "changes": "Classified as a reinforced clostridial medium preparation and left unmapped pending product- or recipe-level curation.",
+              "curator": "mediaingredientmech-agentic-curation",
+              "llm_assisted": true,
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-05-11T19:50:00Z"
+            },
+            {
+              "action": "RECLASSIFY_INGREDIENT_TYPE",
+              "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+              "curator": "cbclaw_media_modeling_114",
+              "llm_assisted": true,
+              "timestamp": "2026-07-05T00:00:00+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** *Reinforced Clostridial Medium* (RCM) is a named, complete microbiological culture-medium formulation supplied as a multicomponent dehydrated product. It is not a single chemical, salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly use the expansion “reinforced clostridial medium (RCM)” and describe commercial products from Lab M and No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "curator": "edison_literature_identity",
+              "llm_assisted": true,
+              "timestamp": "2026-08-06T00:00:00+00:00"
+            },
+            {
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 3 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Reinforced clostridial medium (BD-Difco)' (x3 CultureMech mentions); 'Reinforced Clostridial medium (Oxoid CM149)' (x1 CultureMech mentions); 'Reinforced clostridial medium (Oxoid)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+              "curator": "claude_culturemech_alias_backfill",
+              "llm_assisted": false,
+              "timestamp": "2026-08-30T06:20:04.233651+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Proposed specificOxoidCM0149 supplied-form correction; retainUNMAPPED and mixed-owner split obligation. NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid, with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification search describes3gyeast+10gLabLemco instead, so formulation revision cannot be silently erased.",
+              "curator": "codex-worker03-broths-source-review",
+              "llm_assisted": true,
+              "timestamp": "2026-11-08T05:21:23.584872+00:00"
+            }
+          ],
+          "identifier": "UNMAPPED_0507",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "UNMAPPED",
+          "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending product- or recipe-level curation.",
+          "occurrence_statistics": {
+            "media_count": 0,
+            "total_occurrences": 0
+          },
+          "preferred_term": "Reinforced clostridial medium",
+          "supplied_form": [
+            {
+              "catalog_number": "CM0149",
+              "form": "dehydrated powder reconstituted as semi-solid medium",
+              "name": "Reinforced Clostridial Medium",
+              "notes": "NBRC902 identifiesOxoidCM0149. Current supplierIFU0539 explicitly callsCM0149 semi-solid, with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar. Historical supplier specification search describes3gyeast+10gLabLemco instead, so formulation revision cannot be silently erased. This annotation is scoped to theOxoid source; it does not assert equality to inherited BD-Difcoaliases.",
+              "supplier": "Oxoid"
+            }
+          ],
+          "synonyms": [
+            {
+              "source": "mim-queue",
+              "synonym_text": "Reinforced clostridial medium",
+              "synonym_type": "RAW_TEXT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced clostridial medium (BD-Difco)",
+              "synonym_type": "CATALOG_VARIANT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced Clostridial medium (Oxoid CM149)",
+              "synonym_type": "CATALOG_VARIANT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced clostridial medium (Oxoid)",
+              "synonym_type": "CATALOG_VARIANT"
+            }
+          ]
+        }
+      },
+      {
+        "entry_id": "w04::media-product-sigma_reinforced_clostridial_agar",
+        "identifier": "kgmicrobe.ingredient:sigma_reinforced_clostridial_agar",
+        "owner_path": "data/ingredients/mapped/Sigma_Reinforced_Clostridial_Agar.yaml",
+        "payload_sha256": "65575d4e9fd960a75adbaa9659a77a9b7e6e9e6f4ea706e5ede6405f2e85ef44",
+        "preferred_term": "Reinforced clostridial agar (Sigma)",
+        "record": {
+          "curation_history": [
+            {
+              "action": "CREATED",
+              "changes": "JCM455 binds the purchased Sigma reinforced clostridial agar product51g before separate sodium carbonate addition. This supplier-product identity can remain opaque without equating it to the current91365 comparator or importing the final alkaline-medium formulation. Generic mixed-vendor RCM owners are not narrowed. Isolated proposal; no maintained data mutation.",
+              "curator": "worker04_media_source_review_proposal",
+              "llm_assisted": true,
+              "timestamp": "2026-11-08T05:32:29.548252+00:00"
+            }
+          ],
+          "identifier": "kgmicrobe.ingredient:sigma_reinforced_clostridial_agar",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "MAPPED",
+          "notes": "JCM455 binds the purchased Sigma reinforced clostridial agar product51g before separate sodium carbonate addition. This supplier-product identity can remain opaque without equating it to the current91365 comparator or importing the final alkaline-medium formulation. Generic mixed-vendor RCM owners are not narrowed. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+          "ontology_mapping": {
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "notes": "JCM455 binds the purchased Sigma reinforced clostridial agar product51g before separate sodium carbonate addition. This supplier-product identity can remain opaque without equating it to the current91365 comparator or importing the final alkaline-medium formulation. Generic mixed-vendor RCM owners are not narrowed.",
+                "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=455"
+              }
+            ],
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "ontology_id": "kgmicrobe.ingredient:sigma_reinforced_clostridial_agar",
+            "ontology_label": "Reinforced clostridial agar (Sigma)",
+            "ontology_source": "kgmicrobe.ingredient"
+          },
+          "preferred_term": "Reinforced clostridial agar (Sigma)",
+          "supplied_form": [
+            {
+              "form": "dehydrated reinforced clostridial agar",
+              "name": "Reinforced clostridial agar (Sigma)",
+              "supplier": "Sigma"
+            }
+          ]
+        }
+      },
+      {
+        "entry_id": "w05::M1193-P-RCM-182",
+        "identifier": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+        "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+        "payload_sha256": "21ae9f818beef065d14b1562cf7d968dc8441a7edc6dd3c7ea7e7e87d2d26b30",
+        "preferred_term": "Reinforced clostridial medium (BD Difco)",
+        "record": {
+          "component_assertion": {
+            "completeness": "COMPLETE",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "notes": "Manufacturer2nd edition nine-part formula page1; peptone specificity kept as printed. Current Oxoid CM0149 has yeast13g and no beef, so its aliases are false for the selected Difco product. This does not reject the source authenticity of Oxoid labels.",
+                "source": "https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf"
+              }
+            ],
+            "method": "RECIPE_TRANSCRIPTION"
+          },
+          "components": [
+            {
+              "component_name": "Peptone",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "10",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Beef extract",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "10",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Yeast extract",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "3",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Dextrose",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "5",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Sodium chloride",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "5",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Soluble starch",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "1",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Cysteine hydrochloride",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": ".5",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Sodium acetate",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": "3",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Agar",
+              "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+              "concentration_value": ".5",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "curation_history": [
+            {
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "curator": "audit_import_ingredients[mim-queue]",
+              "llm_assisted": false,
+              "new_status": "UNMAPPED",
+              "timestamp": "2026-04-30T18:43:03.698454+00:00"
+            },
+            {
+              "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+              "changes": "Classified as a reinforced clostridial medium preparation and left unmapped pending product- or recipe-level curation.",
+              "curator": "mediaingredientmech-agentic-curation",
+              "llm_assisted": true,
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-05-11T19:50:00Z"
+            },
+            {
+              "action": "RECLASSIFY_INGREDIENT_TYPE",
+              "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+              "curator": "cbclaw_media_modeling_114",
+              "llm_assisted": true,
+              "timestamp": "2026-07-05T00:00:00+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** *Reinforced Clostridial Medium* (RCM) is a named, complete microbiological culture-medium formulation supplied as a multicomponent dehydrated product. It is not a single chemical, salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly use the expansion “reinforced clostridial medium (RCM)” and describe commercial products from Lab M and No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "curator": "edison_literature_identity",
+              "llm_assisted": true,
+              "timestamp": "2026-08-06T00:00:00+00:00"
+            },
+            {
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 3 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Reinforced clostridial medium (BD-Difco)' (x3 CultureMech mentions); 'Reinforced Clostridial medium (Oxoid CM149)' (x1 CultureMech mentions); 'Reinforced clostridial medium (Oxoid)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+              "curator": "claude_culturemech_alias_backfill",
+              "llm_assisted": false,
+              "timestamp": "2026-08-30T06:20:04.233651+00:00"
+            },
+            {
+              "action": "CORRECTED",
+              "changes": "Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts. Isolated proposal only; whole-owner/source/export holds remain and integration requires separate native review.",
+              "curator": "Codex worker05 correction1193 source review",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-11-08T05:54:18.111373+00:00"
+            }
+          ],
+          "identifier": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "MAPPED",
+          "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending product- or recipe-level curation. Correction1193: Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts. Independent direct-source check: modern Difco manual says Peptone10g, not a proven historical Tryptose subproduct; current Oxoid IFU has yeast13g and no beef extract.",
+          "occurrence_statistics": {
+            "media_count": 0,
+            "total_occurrences": 0
+          },
+          "ontology_mapping": {
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "notes": "Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts.",
+                "source": "https://www.maplica.com/Manual%20Difco%20P-S.pdf"
+              }
+            ],
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "ontology_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+            "ontology_label": "Reinforced clostridial medium (BD Difco)",
+            "ontology_source": "kgmicrobe.ingredient"
+          },
+          "preferred_term": "Reinforced clostridial medium (BD Difco)",
+          "synonyms": [
+            {
+              "source": "mim-queue",
+              "synonym_text": "Reinforced clostridial medium",
+              "synonym_type": "RAW_TEXT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced clostridial medium (BD-Difco)",
+              "synonym_type": "CATALOG_VARIANT"
+            },
+            {
+              "source": "Correction1193: authentic Oxoid product label excluded from distinct BD-Difco product; raw provenance retained.",
+              "synonym_text": "Reinforced Clostridial medium (Oxoid CM149)",
+              "synonym_type": "REJECTED_LABEL"
+            },
+            {
+              "source": "Correction1193: authentic Oxoid product label excluded from distinct BD-Difco product; raw provenance retained.",
+              "synonym_text": "Reinforced clostridial medium (Oxoid)",
+              "synonym_type": "REJECTED_LABEL"
+            }
+          ]
+        }
+      },
+      {
+        "entry_id": "w05::M1193-P-RCM-142",
+        "identifier": "UNMAPPED_0372",
+        "owner_path": "data/ingredients/unmapped/Dehydrated_RCM_Medium.yaml",
+        "payload_sha256": "330ef19fdb814df6fa63baf77edbee8fee52b2328c7225bdf751c6884c9207ac",
+        "preferred_term": "dehydrated RCM medium",
+        "record": {
+          "component_assertion": {
+            "completeness": "PARTIAL",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "notes": "DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a choice among manufacturer preparations, not one exact supplier product. Curate eight common named components without brand-specific quantities, preserve supplier choice and separately addedresazurin. The exact product selection is a real scientific gap, not a component-grounding prerequisite.",
+                "source": "https://www.maplica.com/Manual%20Difco%20P-S.pdf"
+              },
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "notes": "Independent verification of common named parts; supplier product choice remains unresolved.",
+                "source": "https://www.merckmillipore.com/deepweb/assets/sigmaaldrich/product/documents/127/284/105411-mk.pdf"
+              },
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "notes": "Independent verification of common named parts; supplier product choice remains unresolved.",
+                "source": "https://documents.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf"
+              }
+            ],
+            "method": "RECIPE_TRANSCRIPTION"
+          },
+          "components": [
+            {
+              "component_name": "Peptone",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Yeast extract",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Sodium chloride",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Soluble starch",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Cysteine hydrochloride",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Sodium acetate",
+              "reference_scope": "UNMAPPED"
+            },
+            {
+              "component_name": "Agar",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "curation_history": [
+            {
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "curator": "audit_import_ingredients[mim-queue]",
+              "llm_assisted": false,
+              "new_status": "UNMAPPED",
+              "timestamp": "2026-04-30T18:43:03.698454+00:00"
+            },
+            {
+              "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+              "changes": "Classified as a dehydrated RCM medium preparation and left unmapped pending product- or recipe-level curation.",
+              "curator": "mediaingredientmech-agentic-curation",
+              "llm_assisted": true,
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-05-11T19:05:00Z"
+            },
+            {
+              "action": "RECLASSIFY_INGREDIENT_TYPE",
+              "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+              "curator": "cbclaw_media_modeling_114",
+              "llm_assisted": true,
+              "timestamp": "2026-07-05T00:00:00+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dehydrated_RCM_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** “dehydrated RCM medium” denotes the dry preparation of **Reinforced Clostridial Medium (RCM)**, a complete, multi-component microbiological growth medium. It is neither a single chemical nor a salt, hydrate, buffer, or taxonomic entity. Published recipes contain peptone, yeast extract, and beef extract/Lab-Lemco, so the medium is chemically complex and incompletely  No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "curator": "edison_literature_identity",
+              "llm_assisted": true,
+              "timestamp": "2026-08-06T00:00:00+00:00"
+            },
+            {
+              "action": "CORRECTED",
+              "changes": "DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a choice among manufacturer preparations, not one exact supplier product. Curate eight common named components without brand-specific quantities, preserve supplier choice and separately addedresazurin. The exact product selection is a real scientific gap, not a component-grounding prerequisite. Isolated proposal only; whole-owner/source/export holds remain and integration requires separate native review.",
+              "curator": "Codex worker05 correction1193 source review",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-11-08T05:54:18.111373+00:00"
+            }
+          ],
+          "identifier": "UNMAPPED_0372",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "UNMAPPED",
+          "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a dehydrated medium preparation pending product- or recipe-level curation. Correction1193: DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a choice among manufacturer preparations, not one exact supplier product. Curate eight common named components without brand-specific quantities, preserve supplier choice and separately addedresazurin. The exact product selection is a real scientific gap, not a component-grounding prerequisite.",
+          "occurrence_statistics": {
+            "media_count": 0,
+            "total_occurrences": 0
+          },
+          "preferred_term": "dehydrated RCM medium",
+          "synonyms": [
+            {
+              "source": "mim-queue",
+              "synonym_text": "dehydrated RCM medium",
+              "synonym_type": "RAW_TEXT"
+            }
+          ]
+        }
+      }
+    ],
+    "decision": "No distinct existing OxoidCM0149 owner found. The sole current catalog-qualified worker match is the original W03 form on the mixed existing RCM owner. Preserve generic Dehydrated_RCM_Medium UNMAPPED and the distinct Sigma agar proposal; no owner merge.",
+    "exact_identifier_conflicts": [],
+    "existing": [
+      {
+        "identifier": "UNMAPPED_0372",
+        "owner_path": "data/ingredients/unmapped/Dehydrated_RCM_Medium.yaml",
+        "preferred_term": "dehydrated RCM medium",
+        "record": {
+          "curation_history": [
+            {
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "curator": "audit_import_ingredients[mim-queue]",
+              "llm_assisted": false,
+              "new_status": "UNMAPPED",
+              "timestamp": "2026-04-30T18:43:03.698454+00:00"
+            },
+            {
+              "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+              "changes": "Classified as a dehydrated RCM medium preparation and left unmapped pending product- or recipe-level curation.",
+              "curator": "mediaingredientmech-agentic-curation",
+              "llm_assisted": true,
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-05-11T19:05:00Z"
+            },
+            {
+              "action": "RECLASSIFY_INGREDIENT_TYPE",
+              "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+              "curator": "cbclaw_media_modeling_114",
+              "llm_assisted": true,
+              "timestamp": "2026-07-05T00:00:00+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dehydrated_RCM_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** “dehydrated RCM medium” denotes the dry preparation of **Reinforced Clostridial Medium (RCM)**, a complete, multi-component microbiological growth medium. It is neither a single chemical nor a salt, hydrate, buffer, or taxonomic entity. Published recipes contain peptone, yeast extract, and beef extract/Lab-Lemco, so the medium is chemically complex and incompletely  No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "curator": "edison_literature_identity",
+              "llm_assisted": true,
+              "timestamp": "2026-08-06T00:00:00+00:00"
+            }
+          ],
+          "identifier": "UNMAPPED_0372",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "UNMAPPED",
+          "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a dehydrated medium preparation pending product- or recipe-level curation.",
+          "occurrence_statistics": {
+            "media_count": 0,
+            "total_occurrences": 0
+          },
+          "preferred_term": "dehydrated RCM medium",
+          "synonyms": [
+            {
+              "source": "mim-queue",
+              "synonym_text": "dehydrated RCM medium",
+              "synonym_type": "RAW_TEXT"
+            }
+          ]
+        },
+        "sha256": "5cd0b1d7f6121d0824e99573a98093c2c2f30f0578c890a6c75c2fc1217dd096"
+      },
+      {
+        "identifier": "UNMAPPED_0507",
+        "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+        "preferred_term": "Reinforced clostridial medium",
+        "record": {
+          "curation_history": [
+            {
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "curator": "audit_import_ingredients[mim-queue]",
+              "llm_assisted": false,
+              "new_status": "UNMAPPED",
+              "timestamp": "2026-04-30T18:43:03.698454+00:00"
+            },
+            {
+              "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+              "changes": "Classified as a reinforced clostridial medium preparation and left unmapped pending product- or recipe-level curation.",
+              "curator": "mediaingredientmech-agentic-curation",
+              "llm_assisted": true,
+              "new_status": "UNMAPPED",
+              "previous_status": "UNMAPPED",
+              "timestamp": "2026-05-11T19:50:00Z"
+            },
+            {
+              "action": "RECLASSIFY_INGREDIENT_TYPE",
+              "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+              "curator": "cbclaw_media_modeling_114",
+              "llm_assisted": true,
+              "timestamp": "2026-07-05T00:00:00+00:00"
+            },
+            {
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** *Reinforced Clostridial Medium* (RCM) is a named, complete microbiological culture-medium formulation supplied as a multicomponent dehydrated product. It is not a single chemical, salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly use the expansion “reinforced clostridial medium (RCM)” and describe commercial products from Lab M and No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "curator": "edison_literature_identity",
+              "llm_assisted": true,
+              "timestamp": "2026-08-06T00:00:00+00:00"
+            },
+            {
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 3 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Reinforced clostridial medium (BD-Difco)' (x3 CultureMech mentions); 'Reinforced Clostridial medium (Oxoid CM149)' (x1 CultureMech mentions); 'Reinforced clostridial medium (Oxoid)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+              "curator": "claude_culturemech_alias_backfill",
+              "llm_assisted": false,
+              "timestamp": "2026-08-30T06:20:04.233651+00:00"
+            }
+          ],
+          "identifier": "UNMAPPED_0507",
+          "ingredient_type": "NAMED_MEDIUM",
+          "mapping_status": "UNMAPPED",
+          "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending product- or recipe-level curation.",
+          "occurrence_statistics": {
+            "media_count": 0,
+            "total_occurrences": 0
+          },
+          "preferred_term": "Reinforced clostridial medium",
+          "synonyms": [
+            {
+              "source": "mim-queue",
+              "synonym_text": "Reinforced clostridial medium",
+              "synonym_type": "RAW_TEXT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced clostridial medium (BD-Difco)",
+              "synonym_type": "CATALOG_VARIANT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced Clostridial medium (Oxoid CM149)",
+              "synonym_type": "CATALOG_VARIANT"
+            },
+            {
+              "source": "culturemech:output/ingredient_occurrences.tsv",
+              "synonym_text": "Reinforced clostridial medium (Oxoid)",
+              "synonym_type": "CATALOG_VARIANT"
+            }
+          ]
+        },
+        "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e"
+      }
+    ],
+    "scope": "2956 direct native baseline owners + all981 selected intake proposals; ignored-inclusive current worker YAML catalog search recorded separately; later successor intake awaits coordinator review"
+  },
+  "field_diff": {
+    "curation_history": {
+      "after": [
+        {
+          "action": "CREATED",
+          "changes": "Create a separately deduplicated OxoidCM0149 named-product candidate for the exact W03/NBRC902 source case, retaining historical formula uncertainty and its original provenance without moving or merging a maintained record. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364. Isolated candidate only; no maintained write, role approval, inherited support, membership transfer or release approval. Exact whole-candidate independent review remains required.",
+          "curator": "all-unmatched coordinator /root/next23_context",
+          "llm_assisted": true,
+          "new_status": "MAPPED",
+          "timestamp": "2026-11-08T07:05:36.702541+00:00"
+        },
+        {
+          "action": "CORRECTED_EVIDENCE_PROVENANCE",
+          "changes": "Correct only newly authored coordinator MappingEvidence MANUAL_CURATION to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226. Preserve all original source URLs, interpretations, scientific fields and the complete first-publication history prefix. The original private publication remains immutable. No historical human evidence or ComponentEvidenceType is changed; no scientific approval, inherited support or maintained application.",
+          "curator": "all-unmatched coordinator /root/next23_context",
+          "llm_assisted": true,
+          "new_status": "MAPPED",
+          "previous_status": "MAPPED",
+          "timestamp": "2026-11-08T07:13:06.049005+00:00"
+        }
+      ],
+      "before": null
+    },
+    "identifier": {
+      "after": "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149",
+      "before": null
+    },
+    "ingredient_type": {
+      "after": "NAMED_MEDIUM",
+      "before": null
+    },
+    "mapping_status": {
+      "after": "MAPPED",
+      "before": null
+    },
+    "notes": {
+      "after": "New source-qualified product candidate under #1224. The exact historical NBRC902 formulation revision is unresolved. No components are asserted on this revision-unspecified owner: doing so from the current IFU would silently backdate composition. The current IFU remains source-versioned provenance, not the recipe of every occurrence. No generic RCM, uncatalogued Oxoid, BD-Difco, Sigma agar or mixed-supplier alias is minted. The original W03 full payload and history remain intact in the trace and the authentic existing RCM owner's historical lineage; they are not represented as pre-existing history of this genuinely new owner. No source membership/count is fabricated. https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364",
+      "before": null
+    },
+    "ontology_mapping": {
+      "after": {
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "notes": "Agent-authored interpretation of the cited inspected source; classified as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226, not human-supplied evidence. Exact candidate independent review remains required. NBRC902 explicitly names OxoidCM0149 at38g as the purchased medium. It does not establish a historical formula revision. Water1L and optional additional agar15g are receiving-medium ingredients, not inferred dry-product constituents.",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902"
+          },
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "notes": "Agent-authored interpretation of the cited inspected source; classified as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226, not human-supplied evidence. Exact candidate independent review remains required. Create the separately deduplicated named OxoidCM0149 product; do not merge it with authentic original1769 Difco, Sigma agar, or generic Dehydrated_RCM_Medium. Exact historical composition remains unknown.",
+            "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364"
+          }
+        ],
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "ontology_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149",
+        "ontology_label": "Reinforced clostridial medium (Oxoid CM0149)",
+        "ontology_source": "kgmicrobe.ingredient"
+      },
+      "before": null
+    },
+    "preferred_term": {
+      "after": "Reinforced clostridial medium (Oxoid CM0149)",
+      "before": null
+    },
+    "supplied_form": {
+      "after": [
+        {
+          "catalog_number": "CM0149",
+          "form": "dehydrated named-medium product",
+          "name": "Reinforced clostridial medium (Oxoid CM0149)",
+          "notes": "NBRC902 identifies the catalog product, but not the formula revision or package size. Current IFU0539 distinguishes CM0149B/T semi-solid medium from CM0151 agar. The current CM0149 table lists yeast extract13g/L and agar0.5g/L without beef extract; that current-version information is not retroactively asserted for the historical NBRC902 product. No B/T package or lot is inferred.",
+          "supplier": "Oxoid"
+        }
+      ],
+      "before": null
+    },
+    "synonyms": {
+      "after": [
+        {
+          "source": "culturemech:output/ingredient_occurrences.tsv",
+          "synonym_text": "Reinforced Clostridial medium (Oxoid CM149)",
+          "synonym_type": "CATALOG_VARIANT"
+        }
+      ],
+      "before": null
+    }
+  },
+  "independent_scope_decisions_sha256": "150af7315aa6688d4bc9adb3e2a27d0a0835ec8f8ac33d65b8951712b0382d81",
+  "inherited_support_transferred": false,
+  "issue1226_metadata_correction": {
+    "complete_first_publication_history_prefix_preserved": true,
+    "delta_from_first_publication": {
+      "curation_history": {
+        "after": [
+          {
+            "action": "CREATED",
+            "changes": "Create a separately deduplicated OxoidCM0149 named-product candidate for the exact W03/NBRC902 source case, retaining historical formula uncertainty and its original provenance without moving or merging a maintained record. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364. Isolated candidate only; no maintained write, role approval, inherited support, membership transfer or release approval. Exact whole-candidate independent review remains required.",
+            "curator": "all-unmatched coordinator /root/next23_context",
+            "llm_assisted": true,
+            "new_status": "MAPPED",
+            "timestamp": "2026-11-08T07:05:36.702541+00:00"
+          },
+          {
+            "action": "CORRECTED_EVIDENCE_PROVENANCE",
+            "changes": "Correct only newly authored coordinator MappingEvidence MANUAL_CURATION to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226. Preserve all original source URLs, interpretations, scientific fields and the complete first-publication history prefix. The original private publication remains immutable. No historical human evidence or ComponentEvidenceType is changed; no scientific approval, inherited support or maintained application.",
+            "curator": "all-unmatched coordinator /root/next23_context",
+            "llm_assisted": true,
+            "new_status": "MAPPED",
+            "previous_status": "MAPPED",
+            "timestamp": "2026-11-08T07:13:06.049005+00:00"
+          }
+        ],
+        "before": [
+          {
+            "action": "CREATED",
+            "changes": "Create a separately deduplicated OxoidCM0149 named-product candidate for the exact W03/NBRC902 source case, retaining historical formula uncertainty and its original provenance without moving or merging a maintained record. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364. Isolated candidate only; no maintained write, role approval, inherited support, membership transfer or release approval. Exact whole-candidate independent review remains required.",
+            "curator": "all-unmatched coordinator /root/next23_context",
+            "llm_assisted": true,
+            "new_status": "MAPPED",
+            "timestamp": "2026-11-08T07:05:36.702541+00:00"
+          }
+        ]
+      },
+      "ontology_mapping": {
+        "after": {
+          "evidence": [
+            {
+              "evidence_type": "LLM_SUGGESTION",
+              "notes": "Agent-authored interpretation of the cited inspected source; classified as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226, not human-supplied evidence. Exact candidate independent review remains required. NBRC902 explicitly names OxoidCM0149 at38g as the purchased medium. It does not establish a historical formula revision. Water1L and optional additional agar15g are receiving-medium ingredients, not inferred dry-product constituents.",
+              "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902"
+            },
+            {
+              "evidence_type": "LLM_SUGGESTION",
+              "notes": "Agent-authored interpretation of the cited inspected source; classified as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226, not human-supplied evidence. Exact candidate independent review remains required. Create the separately deduplicated named OxoidCM0149 product; do not merge it with authentic original1769 Difco, Sigma agar, or generic Dehydrated_RCM_Medium. Exact historical composition remains unknown.",
+              "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364"
+            }
+          ],
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "ontology_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149",
+          "ontology_label": "Reinforced clostridial medium (Oxoid CM0149)",
+          "ontology_source": "kgmicrobe.ingredient"
+        },
+        "before": {
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "notes": "NBRC902 explicitly names OxoidCM0149 at38g as the purchased medium. It does not establish a historical formula revision. Water1L and optional additional agar15g are receiving-medium ingredients, not inferred dry-product constituents.",
+              "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902"
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "notes": "Create the separately deduplicated named OxoidCM0149 product; do not merge it with authentic original1769 Difco, Sigma agar, or generic Dehydrated_RCM_Medium. Exact historical composition remains unknown.",
+              "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364"
+            }
+          ],
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "ontology_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_oxoid_cm0149",
+          "ontology_label": "Reinforced clostridial medium (Oxoid CM0149)",
+          "ontology_source": "kgmicrobe.ingredient"
+        }
+      }
+    },
+    "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+    "status": "NEW_COORDINATOR_MAPPING_EVIDENCE_1226_CORRECTED"
+  },
+  "issue_conclusions": {
+    "rcm": {
+      "body": "The original owner can retain **BD-Difco** continuity: its creation history identifies MediaDive1769, whose captured uses name BD-Difco; current JCM481, 482 and 612 independently name BD-Difco RCM. Prepare a supplier-qualified local identity on that authentic owner. Keep the manufacturer nine-part approximate formulation scoped to its cited product/formula; do not infer more specific peptones, salt hydrates or invariant lot composition.\n\nThe NBRC902 occurrence explicitly naming **Oxoid CM0149** needs a separate, deduplicated supplier-specific owner. Its historical formula revision is unknown. The current Oxoid IFU's formula differs from the Difco table, and must not be backdated onto that old occurrence. Bare RCM and mixed-supplier alternatives remain unresolved; preserve all raw strings/history without globally routing generic aliases to either product. Additional water, agar and sea salts in receiving media are not automatically constituents of the purchased dry product. The existing Dehydrated_RCM_Medium scope must be checked during deduplication, not silently absorbed.\n\nSources: [MediaDive1769](https://mediadive.dsmz.de/ingredients/1769), [JCM481](https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=481), [NBRC902](https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902), [Oxoid IFU](https://assets.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf), [Difco/BBL manual excerpt](https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf).\n\nIndependent full-owner scope review is recorded in `.temp/all-unmatched-20261107/preflight/existing-owner-scope-decisions-v1/`; decisions SHA256 `150af7315aa6688d4bc9adb3e2a27d0a0835ec8f8ac33d65b8951712b0382d81`, manifest `c664e35067692c0aa46c4570ec688ffba9281e692337cfa5de1e4f014dc2ce54`. The coordinator rehashed all 89 manifest members. This is a sourced conclusion for candidate preparation; final exact candidate bytes still require native validation and independent review. No maintained records or approvals have changed.\n",
+      "id": 6718503364,
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/root-integration-findings-v1/issue1224-scope-conclusion-readback-v1.json",
+      "sha256": "ed761eca2b2eceb3257f9efadbd53190fbecb383c4ed3198df7f62dd14312d0f",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364"
+    }
+  },
+  "later_successor_intake_accepted": false,
+  "observed_live_heads": {
+    "1": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "10": "468766d941e35a74eb2de3c95096660987277d9b",
+    "2": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+    "3": "1196d5bc3aaba7563b829d5cbe7e54722fccc35d",
+    "4": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+    "5": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+    "6": "82dce85aea7810941dfdf0bde7480bcdaa0c5826",
+    "7": "ddef7355bf7814bd3b1a23b9d61327bea3ac75fe",
+    "8": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+    "9": "77d6beaea5793a0a763957b99e8141ff12b216d2"
+  },
+  "occurrence_ids": [
+    "CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307"
+  ],
+  "operation": "new",
+  "origins": [
+    {
+      "before_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66",
+          "input_sha256": "e3f10cfcaad5a4e177fb3280f96703d1d136385d3ca39cb74fe9198d1a90918d",
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1196"
+          ],
+          "missing_requirement": "The existing owner also carriesBD-Difco and historicalOxoid aliases. The captured currentIFU formula must not be retroactively applied to unknown recipe revisions. Registry promotion requires an explicit scope partition; this form annotation is safe and concrete without it.",
+          "occurrence_ids": [
+            "CM_OCC:ffcf2b54ee7027b6166807e15a6a72a9bae955a7c8c4576805c5bb8e99196307"
+          ]
+        }
+      ],
+      "case_ids": [
+        "CM_NAME:2be5d4f231ea346e62be345a8e8b35adbc735ccdced2de73963ce5265c48fd66"
+      ],
+      "changed_fields": [
+        "curation_history",
+        "supplied_form"
+      ],
+      "destination_path_as_declared": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+      "entry_id": "w03::b-proposal-cm0149-form",
+      "evidence": [
+        {
+          "capture": {
+            "path": "shards/shard-03.json",
+            "root": "source",
+            "sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228"
+          },
+          "evidence_id": "b-case-029",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v1/hardlinked-input-copies-v2/3369b8aa8e9674411d12d05950b556f85f8166718d678e910e363a985265cb17.json",
+          "kind": "source_snapshot",
+          "locator": "cases[29], all fields; original_kg_entry including raw source record, occurrence definition, owner claims and every downstream_holds entry where present",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-03.json",
+          "source_or_response_hash_verified": true,
+          "url": null
+        },
+        {
+          "capture": {
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml",
+            "root": "source",
+            "sha256": "4236ba69748422125d554dfe93badeefab69d81855cff49c318c58f83f483e69"
+          },
+          "evidence_id": "b-recipe-029-00",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v1/hardlinked-input-copies-v2/2014c3f17872c3a387e66206ff19649709f26094422869c632c44b2f7c61053c.yaml",
+          "kind": "source_snapshot",
+          "locator": "Complete recipe CultureMech:008256; source component ingredients/0; includes all ingredient tables, notes, nested stocks, source identifiers and history",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1696_Reinforced_Clostridial_medium.yaml",
+          "source_or_response_hash_verified": true,
+          "url": null
+        },
+        {
+          "capture": {
+            "path": "broths/captures/bbd7246c15ffb57a.html",
+            "root": "artifact",
+            "sha256": "2bbab551cfeceff1fcfabc0d8698ba91d0df4bf56fe43286bd75cd8c07b35a57"
+          },
+          "evidence_id": "b-primary-b80f9ee369",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/captures/bbd7246c15ffb57a.html",
+          "kind": "primary_source",
+          "locator": "Complete primary recipe or product record; ingredient table, formulation/product designation, supplier/catalog fields and preparation notes",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/captures/bbd7246c15ffb57a.html",
+          "source_or_response_hash_verified": true,
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=902"
+        },
+        {
+          "capture": {
+            "path": "broths/additional-acquisition.json",
+            "root": "artifact",
+            "sha256": "c0c88417a60749ae869e004d3b3a21f7ead4d01007a028d03f2f1b322417aa27"
+          },
+          "evidence_id": "b-attempt-c569af5bb2",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/additional-acquisition.json",
+          "kind": "unsuccessful_search",
+          "locator": "entry 5: https://www.thermofisher.com/order/catalog/product/CM0149B",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/additional-acquisition.json",
+          "source_or_response_hash_verified": true,
+          "url": "https://www.thermofisher.com/order/catalog/product/CM0149B"
+        },
+        {
+          "capture": {
+            "path": "broths/owners/Reinforced_Clostridial_Medium.yaml",
+            "root": "artifact",
+            "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e"
+          },
+          "evidence_id": "b-owner-a8d0e9cbeed2",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/owners/Reinforced_Clostridial_Medium.yaml",
+          "kind": "source_snapshot",
+          "locator": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml; complete current baseline owner bytes, including all historical provenance, synonyms, type and ontology/component payload",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/owners/Reinforced_Clostridial_Medium.yaml",
+          "source_or_response_hash_verified": true,
+          "url": null
+        },
+        {
+          "capture": {
+            "path": "broths/targeted-acquisition.json",
+            "root": "artifact",
+            "sha256": "f4a0e2f627d2b07726674c4d143e01f3ef63687a26f37b699ebeb4cca0f0cee8"
+          },
+          "evidence_id": "b-targeted-d5c1626805eb",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/targeted-acquisition.json",
+          "kind": "unsuccessful_search",
+          "locator": "entry3",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/targeted-acquisition.json",
+          "source_or_response_hash_verified": true,
+          "url": "https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0149-V3.pdf"
+        },
+        {
+          "capture": {
+            "path": "broths/targeted2-acquisition.json",
+            "root": "artifact",
+            "sha256": "e5612a27f11b33a4b5a011b370f39c4ea80dbf7f542c1b163d84b88a98c362c8"
+          },
+          "evidence_id": "b-targeted-151c34f3bf1a",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/targeted2-acquisition.json",
+          "kind": "unsuccessful_search",
+          "locator": "entry1",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/targeted2-acquisition.json",
+          "source_or_response_hash_verified": true,
+          "url": "https://tools.thermofisher.com/content/sfs/brochures/BT-SPEC-0099.pdf"
+        },
+        {
+          "capture": {
+            "path": "broths/captures/e931e6ce922a0ffc-targeted.pdf",
+            "root": "artifact",
+            "sha256": "e25480c6921f8d14a79fa95f07c1b7b656bdb2a5d8983eea7b81397c128722df"
+          },
+          "evidence_id": "b-targeted-b087f0859f30",
+          "guarded_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/captures/e931e6ce922a0ffc-targeted.pdf",
+          "kind": "primary_source",
+          "locator": "Complete official source record; supplier specification typical-formula table or source-medium ingredient hierarchy",
+          "resolved_capture_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/captures/e931e6ce922a0ffc-targeted.pdf",
+          "source_or_response_hash_verified": true,
+          "url": "https://assets.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf"
+        }
+      ],
+      "head": "1196d5bc3aaba7563b829d5cbe7e54722fccc35d",
+      "identifier": "UNMAPPED_0507",
+      "index": 200,
+      "kind": "edit_existing_owner",
+      "known_family_recommendations": [],
+      "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+      "payload_path": "snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/broths/proposed/Reinforced_Clostridial_Medium.yaml",
+      "payload_sha256": "137dd17759a3ed4d80255d3869611c81233c57c5ca61b58b0ff8fad82d71c328",
+      "preferred_term": "Reinforced clostridial medium",
+      "proposal_id": "b-proposal-cm0149-form",
+      "provisional": false,
+      "worker": 3
+    }
+  ],
+  "owner_path": "data/ingredients/mapped/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+  "pre_issue1226_candidate": {
+    "path": "candidates/NEW-OXOID-CM0149/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+    "sha256": "9fee156b1913d62de00a497099be7f09510ad2e14e9eb307a96e6bc41f2c938b",
+    "trace_path": "candidates/NEW-OXOID-CM0149/trace.json",
+    "trace_sha256": "1ed5528089afbcb2a6464805e9e2c70184e8d9c028c49091807f54dea019a595"
+  },
+  "prior_candidate": null,
+  "role_approval": false,
+  "scientific_approval": false,
+  "selected_intake_heads": {
+    "1": "26445f23b5a905ac26d864acfbd658570c88769c",
+    "10": "468766d941e35a74eb2de3c95096660987277d9b",
+    "2": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+    "3": "1196d5bc3aaba7563b829d5cbe7e54722fccc35d",
+    "4": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+    "5": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+    "6": "1b3641853c7105b9091f81b5a9b19c99e8ed351e",
+    "7": "fbfa032435ea1c399ae9b98bfedadb9ed639430d",
+    "8": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+    "9": "77d6beaea5793a0a763957b99e8141ff12b216d2"
+  },
+  "source_before_path": null,
+  "status": "NEW_SOURCE_QUALIFIED_PRODUCT",
+  "whole_candidate_independent_review_required": true
+}

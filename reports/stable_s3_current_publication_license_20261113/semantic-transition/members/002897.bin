@@ -1,0 +1,42 @@
+identifier: UNMAPPED_0291
+preferred_term: Planctomyces_artificial_seawater
+synonyms:
+- synonym_text: Planctomyces_artificial_seawater
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI
+    mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.845129+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'seawater')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Planctomyces_artificial_seawater-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — **Recommended status:**
+    retain `UNMAPPED` and `UNDEFINED_MIXTURE` pending inspection of the authoritative
+    DSMZ medium 1560 recipe or the CultureBotHT source record. Do **not** mark `MAPPED`
+    merely because a generic artificial-seawater concept is found. No ontology CURIE
+    was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI mapping
+  available; curator review needed.'
+ingredient_type: UNDEFINED_MIXTURE

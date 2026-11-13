@@ -1,0 +1,69 @@
+identifier: FOODON:03315424
+preferred_term: Meat Extract
+ontology_mapping:
+  ontology_id: FOODON:03315424
+  ontology_label: meat extract
+  ontology_source: FOODON
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kgm-metatraits
+    notes: Meat extract / Lab-Lemco / Beef extract substitute. Distinct from MIM:Beef_Extract
+      (FOODON:03302088); this is the broader "meat extract" term.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 777
+  media_count: 777
+curation_history:
+- timestamp: '2026-05-01T00:13:12.662625+00:00'
+  curator: audit_reconcile_kgm_metatraits
+  action: CREATED_FROM_KGM_METATRAITS_MISSING
+  changes: Created from kg-microbe metatraits (kgm.metatraits.special:meat_extract);
+    MISSING_IN_MIM after the bulk import (no slug collision — genuinely new).
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.643682+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Meat')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.261891+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Meat')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.744435+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519261+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 777/777 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001615; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001615
+legacy_identifiers:
+- MIM:Meat_Extract
+- FOODON:03315424

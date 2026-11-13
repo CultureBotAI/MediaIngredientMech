@@ -1,0 +1,170 @@
+id: CultureMech:003605
+name: difco_raka_ray_no_3_medium
+original_name: DIFCO RAKA-RAY NO.3 medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: KOMODO Medium 1047
+  term:
+    id: komodo.medium:1047
+    label: DIFCO RAKA-RAY NO.3 medium
+notes: 'Source: KOMODO ModelSEED | ID: 1047 | DSMZ Medium: 1047 (mediadive.medium:1047)
+  | Aerobic: No'
+ingredients:
+- preferred_term: Yeast extract
+  concentration:
+    value: '5'
+    unit: G_PER_L
+- preferred_term: Tryptone
+  concentration:
+    value: '20'
+    unit: G_PER_L
+- preferred_term: Liver Concentrate
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Maltose
+  term:
+    id: CHEBI:17306
+    label: maltose
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17306
+    label: maltose
+- preferred_term: Fructose
+  term:
+    id: CHEBI:28757
+    label: fructose
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:28757
+    label: fructose
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Betaine Hydrochloride
+  concentration:
+    value: '2'
+    unit: G_PER_L
+- preferred_term: Diammonium Citrate
+  term:
+    id: CHEBI:63076
+    label: diammonium citrate
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63076
+    label: diammonium citrate
+- preferred_term: Potassium Aspartate
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '0.98'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Manganese Sulfate
+  term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+  concentration:
+    value: '0.42'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+- preferred_term: Dipotassium Phosphate
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: N-Acetylglucosamine
+  term:
+    id: CHEBI:59640
+    label: N-acetylglucosamine
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:59640
+    label: N-acetylglucosamine
+- preferred_term: Potassium Glutamate
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '16'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:01.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 1047'
+- timestamp: '2026-02-03T11:18:58.376129'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 1047
+- timestamp: '2026-03-13T06:19:20.974970Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:003605'
+- timestamp: '2026-03-17T06:29:50.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:35.168908+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "DIFCO RAKA-RAY NO.3 medium" to "difco_raka_ray_no_3_medium"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:18.451606+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 9 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+ph_value: 5.4
+parent_media:
+  path: data/normalized_yaml/bacterial/difco_raka_ray_no_3_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:000470
+  name: difco_raka_ray_no_3_medium
+  notes: Exact DSMZ/KOMODO medium-number match with matching ingredient and concentration
+    signature.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same source medium number and matching ingredient/concentration signature.

@@ -1,0 +1,73 @@
+identifier: cas:19367-38-5
+preferred_term: methyl-trans-p-coumarate
+ontology_mapping:
+  ontology_id: CHEBI:194094
+  ontology_label: (E)-4-coumaric acid methyl ester
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 19367-38-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5319562'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#326)
+    notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+      is identical to CHEBI:194094''s, and a ''parent'' with an identical formula
+      is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref and
+      filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn, written
+      from CultureBotHT compounds_to_cas.csv at creation and so independent of this
+      mapping, resolves in PubChem to the same key ChEBI records for the term. ontology_id
+      is unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:19367-38-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.703368+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:06.694206+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C10H10O3; smiles=COC(=O)C=CC1=CC=C(C=C1)O; inchi=InChI=1S/C10H10O3/c1-13-10(12)7-4-8-2-5-9(11)6-3-8
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.356842+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:52:58.088584+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:194094 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_identical_formula_parents
+  action: REGRADED_PARENT_TO_IDENTITY
+  changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch parent
+    is the same substance, confirmed by InChIKey via the record's own CAS.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 19367-38-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C10H10O3
+  smiles: COC(=O)C=CC1=CC=C(C=C1)O
+  inchi: InChI=1S/C10H10O3/c1-13-10(12)7-4-8-2-5-9(11)6-3-8/h2-7,11H,1H3/b7-4+
+  pubchem_cid: 5319562
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,97 @@
+identifier: CHEBI:16136
+preferred_term: Hydrogen sulfide
+ontology_mapping:
+  ontology_id: CHEBI:16136
+  ontology_label: hydrogen sulfide
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgm-metatraits
+    notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.chemical:hydrogen_sulfide; '
+synonyms:
+- synonym_text: dihydridosulfur
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: dihydrogen(sulfide)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: sulfane
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: hydrogen sulfide'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T20:14:01.918670+00:00'
+  curator: audit_import_ingredients[kgm-metatraits]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.chemical:hydrogen_sulfide; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.009918+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.989323+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=H2S; inchi=InChI=1S/H2S/h1H2; smiles=[H]S[H]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.032727+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-06-02T07:05:13.390016+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    hydrogen sulfide''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    hydrogen sulfide''. Preserved original text and source metadata. No identity,
+    mapping, role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: H2S
+  inchi: InChI=1S/H2S/h1H2
+  smiles: '[H]S[H]'
+  data_source: CHEBI sqlite (oaklib)
+environmental_context:
+- environment_term: ENVO:01000030
+  environment_label: marine hydrothermal vent biome
+  relevance: ENVIRONMENT_MIMIC
+  notes: Vent fluids are sulfide-rich; H2S supplementation reproduces vent chemistry
+    for chemolithotrophic vent organisms.
+physicochemical_roles:
+- role: REDUCING_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

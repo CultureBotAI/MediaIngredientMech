@@ -1,0 +1,334 @@
+{
+  "status": "complete",
+  "reviewer": "worker08 /root/organics; independent of worker05 authors",
+  "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+  "findings": [
+    {
+      "finding_id": "W05-MAT-001",
+      "status": "open",
+      "severity": "P1",
+      "title": "Generic soy owner still asserts branded product and alternative aliases",
+      "case_ids": [
+        "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd",
+        "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276",
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "case_indices": [
+        71,
+        139,
+        176
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-soy-peptone-boundary",
+          "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+          "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+          "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a",
+          "locator": "entire selected owner; synonyms/notes"
+        },
+        {
+          "proposal_id": "MATERIALS-C1193-phytone-boundary",
+          "owner_path": "data/ingredients/mapped/Phytone.yaml",
+          "before_sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Phytone.yaml",
+          "sha256": "1bdbafaff5f1f3bf94121482e57fd2834a666bdc9f6e01ccaacee9e2d50be1fa",
+          "locator": "entire selected owner; synonyms/notes"
+        },
+        {
+          "proposal_id": "MATERIALS-C1193-Difco_Soytone",
+          "owner_path": "data/ingredients/mapped/Difco_Soytone.yaml",
+          "before_sha256": null,
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Difco_Soytone.yaml",
+          "sha256": "8251a4260d94b11435815d53c814365fd8b9037c41d124b867e913ba25657543",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The selected generic Soy_Peptone payload changes primary identity to kgmicrobe.ingredient:soy_peptone but retains EXACT_SYNONYM Phytone peptone and Soytone, CATALOG_VARIANT Phytone peptone (BD-BBL), Bacto Soytone, and the complete Soytone-or-Phytone alternative. The same active batch creates a distinct Difco Soytone owner and assigns Phytone its own identity. The manufacturer guide describes different soy product processing. The generic owner notes expressly postpone branded alias reconciliation. This is an unresolved contradiction in the complete proposed owner, not a claim that the narrow identifier correction caused the inherited aliases.",
+      "bounded_required_followup": "Prepare a successor that preserves the exact unsupported branded/alternative strings, original source and history as nonresolving provenance. Do not infer a forced record merge, catalog equivalence, occurrence reassignment or count redistribution. Treat the active Soya_Pepton/Soya_Peptone family and W08 competing proposal as dependencies requiring separate source-aware reconciliation.",
+      "sources": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-2e3878c52379fbef.pdf",
+          "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6",
+          "locator": "PDF page33 soy product descriptions; page13 Bacto vs Difco; page92 distinct catalog lines"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-DIFCO-SOYTONE",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/captures/difco-soytone.txt",
+          "sha256": "b718bd438f08d64b3dd1fbe262b08c64f9f6fab294f22ce59289f043198493eb",
+          "locator": "product description and catalog numbers"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-fd95ea8d26cdd5fc",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-dd45cbd9e41e72f6.txt",
+          "sha256": "aa063e8b88177611aba640828e84d3982b1b3b1c65b11647d89c9efbf6274c25",
+          "locator": "FOODON03315720 broader hydrolyzed vegetable protein definition"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    },
+    {
+      "finding_id": "W05-MAT-002",
+      "status": "open",
+      "severity": "P1",
+      "title": "Fish-sperm DNA owner retains generic and conflicting tissue aliases",
+      "case_ids": [
+        "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c"
+      ],
+      "case_indices": [
+        62
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-fish-sperm-dna",
+          "owner_path": "data/ingredients/mapped/Fish-sperm_Dna.yaml",
+          "before_sha256": "b58a13acec7b840f5b8f13fe70630055cfe14da2d78e07538439ea1aac1b7893",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Fish-sperm_Dna.yaml",
+          "sha256": "0f355235eec4e7f909d0a5675291872f899dd69fdd331d7b30b77d4f3ec55aaf",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The complete selected Fish-Sperm DNA owner keeps ten EXACT_SYNONYM entries copied from generic DNA, including DNA, deoxyribonucleic acids and thymus nucleic acid. Its primary identity is the narrower fish-sperm material and its ontology relation to CHEBI16991 is NARROW_MATCH. The four inspected source recipes explicitly name fish-sperm DNA (SERVA), without a species or thymus claim. Supplier-form enrichment preserves this existing unsafe alias scope.",
+      "bounded_required_followup": "Retype unsupported generic or conflicting-tissue identity aliases as nonresolving provenance, preserving strings, sources and history. Retain the source-specific SERVA fact; do not infer species, molecular length or counterion, and do not reverse the herring-sperm tombstone solely from this finding.",
+      "sources": [
+        {
+          "evidence_id": "MATERIALS-CAP-bf7d3eb9e6d26ecc",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/extra-e86d7aadca25002a.txt",
+          "sha256": "f6c9cb13ae152ed197e62ffc7636970a0619e657da3fcef55c80ccc5dbf4193d",
+          "locator": "CHEBI16991 generic DNA definition and synonyms"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-d9c01418954b4216",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-e31c165d8d0476fc.txt",
+          "sha256": "a1b0824156e08611487a7cfd3a508fc153b6912d7569f4dcf212293f04a5ba5e",
+          "locator": "M2450 components[0] fish-sperm DNA and comments"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-91700f0a7505294f",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-e5d86d1e81731272.txt",
+          "sha256": "f83798be11d8f2d5354db768f4e4d3030ae25c0fd9d551154309db6e85f06085",
+          "locator": "M2451 fish-sperm source"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-d999432c76b4de79",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-26710cab63b88419.txt",
+          "sha256": "5229638d1de4a75c8a6b2eb7ba4f53ff4908fa4ffbe7d115f36b4b7dc53b4460",
+          "locator": "M2452 fish-sperm source"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-4556b713745fd143",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-f216ebce75ae745b.txt",
+          "sha256": "156124591ae802f0baf680ef0950e1b88932f56add80d3d359bc3a88e463eaf8",
+          "locator": "M2453 fish-sperm source"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    },
+    {
+      "finding_id": "W05-MAT-003",
+      "status": "open",
+      "severity": "P2",
+      "title": "Known truncated concentration token remains on generic Peptone",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "case_indices": [
+        173
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-peptone-identity",
+          "owner_path": "data/ingredients/mapped/Peptone.yaml",
+          "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Peptone.yaml",
+          "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The selected generic Peptone identity correction explicitly declines to repair RAW_TEXT Peptone (0.01 %. The frozen case already identifies this preparation/concentration fragment as a withheld alias concern. Its incomplete concentration-qualified text is not a complete alternative name for the unconcentrated generic material. The unknown assay supplier and mammalian origin do not prevent bounded retirement of this malformed alias.",
+      "bounded_required_followup": "Retain the exact token and source as REJECTED_LABEL provenance with a helper-recorded event. Preserve plural peptones and both MicrobeDecoder organism/source holds; do not reconstruct a 0.01% recipe or infer a missing percent basis.",
+      "sources": [
+        {
+          "path": ".temp/w05-published-head-independent-review-v1/assignments/materials.json",
+          "sha256": "ae5ee08a89325737b0449faa100b90df3603a3987ceff8d530ea9a0098715d91",
+          "locator": "cases[54].original_kg_entry native review and downstream holds; decisions[54]"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    },
+    {
+      "finding_id": "W05-MAT-004",
+      "status": "open",
+      "severity": "P1",
+      "title": "Bacto owner retains a fish-product alias despite the mammalian product boundary",
+      "case_ids": [
+        "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6",
+        "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+        "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d"
+      ],
+      "case_indices": [
+        163,
+        184,
+        186
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-bacto-aliases",
+          "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+          "before_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Bacto_Peptone.yaml",
+          "sha256": "90d4b4f04e9619f91b8a36af0ea737ce6b43cc6b291b5939854f57f94dd56896",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The final Bacto_Peptone payload preserves CATALOG_VARIANT Fish peptone (Fluka), while the same owner already rejects Fish peptone. The inspected Bacto supplier specification defines bovine/porcine digest, and MICRO0000178 is mammalian protein digest. The fish-specific Fluka label is not supported as an identity of that product. Additional remaining generic meat/mixture aliases require individual assessment, but this finding requires no guessed replacement for them.",
+      "bounded_required_followup": "Retire the literal Fish peptone (Fluka) resolving identity claim as nonresolving provenance while preserving its exact text/source/history. Do not infer a Fluka catalog, redirect counts or treat brand difference alone as chemical distinctness. Other ambiguous aliases require their own evidence; this finding does not decide them.",
+      "sources": [
+        {
+          "evidence_id": "MATERIALS-CAP-f1265bc5398a7f56",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-0357ad5e73d4f9f6.txt",
+          "sha256": "ecfed6455cdbdde1d10f6ff236227bb1a0e5b09bc319d0bd4d9a61e0ebc2d9d6",
+          "locator": "Bacto211677 animal origin bovine and porcine product definition"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-31a954364e3e6346",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-246381453c47ddd7.txt",
+          "sha256": "ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31",
+          "locator": "MICRO0000178 mammalian enzymatic digest definition"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    },
+    {
+      "finding_id": "W05-MAT-005",
+      "status": "open",
+      "severity": "P2",
+      "title": "Metadata tokens remain in the Catalase and soy synonym channels",
+      "case_ids": [
+        "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c",
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "case_indices": [
+        116,
+        176
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-catalase-source-form",
+          "owner_path": "data/ingredients/mapped/Catalase.yaml",
+          "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Catalase.yaml",
+          "sha256": "86f16abc6c6ebd4ac4d665f079ed95fba3fce04cccd4553cecf7ba488adc8451",
+          "locator": "entire selected owner; synonyms/notes"
+        },
+        {
+          "proposal_id": "MATERIALS-C1193-soy-peptone-boundary",
+          "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+          "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+          "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "Catalase retains RAW_TEXT Properties: Defined component, Simple component and the reversed phrase. Soy_Peptone retains RAW_TEXT Properties: Undefined component. These describe ingestion metadata rather than an ingredient. This finding concerns the serialized alias channel; no unverified statement about a particular downstream resolver result is made.",
+      "bounded_required_followup": "Retype these exact metadata strings as nonresolving rejected-label provenance, preserving source and history. Keep valid Catalase catalog and soy material assertions separate.",
+      "sources": [
+        {
+          "path": ".temp/w05-published-head-independent-review-v1/assignments/materials.json",
+          "sha256": "ae5ee08a89325737b0449faa100b90df3603a3987ceff8d530ea9a0098715d91",
+          "locator": "selected proposals and original source metadata"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    },
+    {
+      "finding_id": "W05-MAT-006",
+      "status": "nonblocking_completeness_opportunity",
+      "severity": "P3",
+      "title": "Optional typed sucrose component link is available",
+      "case_ids": [
+        "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55"
+      ],
+      "case_indices": [
+        66
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-Sucrose_20_Percent_Stock",
+          "owner_path": "data/ingredients/mapped/Sucrose_20_Percent_Stock.yaml",
+          "before_sha256": null,
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Sucrose_20_Percent_Stock.yaml",
+          "sha256": "4cd1c762323c28e995994844e4e7af1bcc00eacd5d54e583f28c0a4a2c4a2384",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The 20% w/v sucrose stock appropriately remains PARTIAL because its solvent is not explicitly supplied. Its sole named constituent is nevertheless reference_scope UNMAPPED with no component_id. The same active review includes the extant Sucrose owner CHEBI17992 and an official sucrose term capture; its d-salicin alias repair does not change sucrose identity. No scientific reason is stated for withholding this known typed component link. Section 6 explicitly permits UNMAPPED named components. This is not a schema failure or a false identity claim; the decision does not explicitly assert that no sucrose owner exists.",
+      "bounded_required_followup": "Optional: consider the available exact Sucrose CHEBI:17992 component link using MIM_CATALOG, preserving the partial 20% w/v stock, unknown solvent and all Sucrose role/export holds. No blanket requirement to ground components and no release blocker is inferred. Agar in malt agar is at most an analogous optional lookup, not a separate established finding.",
+      "sources": [
+        {
+          "evidence_id": "MATERIALS-CAP-9615db8acd821f29",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-73f0f9de767c897b.txt",
+          "sha256": "b9b385330b7f0698f8ff8df64258015a64b605a711f74ad206e0799fa411e293",
+          "locator": "JCM1013 sucrose20%w/v stock and10ml receiving dose"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-dbb86d8272ad67d6",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-260dd7b43c6e9e78.txt",
+          "sha256": "2799989b1bdab72c97895ef42660e3e37cf6e9324fcd50fb7e0c637cf64cee63",
+          "locator": "CHEBI17992 exact sucrose identity"
+        },
+        {
+          "proposal_id": "MATERIALS-P-sucrose-salicin",
+          "owner_path": "data/ingredients/mapped/Sucrose.yaml",
+          "before_sha256": "36d3205ecc78e87cb9e258f55e7e85c7a6e0daab32ae7a916c674acc327189e1",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/proposed/Sucrose.yaml",
+          "sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+      "severity_revision": "P2 preliminary assessment narrowed to P3 after contract reread and coordinator challenge; original provisional finding preserved."
+    },
+    {
+      "finding_id": "W05-MAT-007",
+      "status": "open",
+      "severity": "P2",
+      "title": "Catalase provenance claims a direct JCM source although the captured endpoint is empty",
+      "case_ids": [
+        "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c"
+      ],
+      "case_indices": [
+        116
+      ],
+      "selected_payloads": [
+        {
+          "proposal_id": "MATERIALS-C1193-catalase-source-form",
+          "owner_path": "data/ingredients/mapped/Catalase.yaml",
+          "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Catalase.yaml",
+          "sha256": "86f16abc6c6ebd4ac4d665f079ed95fba3fce04cccd4553cecf7ba488adc8451",
+          "locator": "entire selected owner; synonyms/notes"
+        }
+      ],
+      "observation": "The selected Catalase notes state JCM117 directly supplies the catalog spelling and60mg addition, and the new source assertion cites that JCM URL. The captured JCM117 response says Nothing found. The substantive historical fact is supported by the inspected TOGO M109 record whose metadata names JCM117, so this is a provenance attribution defect rather than evidence that the Catalase fact is false.",
+      "bounded_required_followup": "Name and cite TOGO M109 as the actually inspected recipe, describe JCM117 as its recorded source lineage, and preserve the current empty JCM response honestly. Do not imply contemporaryC100 establishes historicalC-10 species or product identity.",
+      "sources": [
+        {
+          "evidence_id": "MATERIALS-C1193-JCM117",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/captures/jcm117.txt",
+          "sha256": "42b450100240091799fed5f33b18187fc0234e44696217d96c2f7c72e6e831d8",
+          "locator": "entire no-result page"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-5c0a089f5206be3d",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-cfc365ae34b58b69.txt",
+          "sha256": "7f5f887f27f11f912b9966aa3071f01a90c29b691c0a2f649bebb5de64c5bb4b",
+          "locator": "M109 entire recipe"
+        }
+      ],
+      "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed."
+    }
+  ],
+  "completed_at": "2026-11-08T06:59:56.175144+00:00"
+}

@@ -1,0 +1,61 @@
+identifier: CHEBI:134355
+preferred_term: Auraptene
+ontology_mapping:
+  ontology_id: CHEBI:134355
+  ontology_label: auraptene
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 7-{[(2E)-3,7-dimethylocta-2,6-dien-1-yl]oxy}-2H-1-benzopyran-2-one
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=495-02-3); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.288312+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.105480+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C19H22O3; inchi=InChI=1S/C19H22O3/c1-14(2)5-4-6-15(3)11-12-21-17-9;
+    smiles=CC(C)=CCC/C(C)=C/COc1ccc2ccc(=O)oc2c1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.623868+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000401; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 495-02-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C19H22O3
+  inchi: InChI=1S/C19H22O3/c1-14(2)5-4-6-15(3)11-12-21-17-9-7-16-8-10-19(20)22-18(16)13-17/h5,7-11,13H,4,6,12H2,1-3H3/b15-11+
+  smiles: CC(C)=CCC/C(C)=C/COc1ccc2ccc(=O)oc2c1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000401
+legacy_identifiers:
+- MIM:Auraptene
+- CHEBI:134355

@@ -1,0 +1,89 @@
+identifier: CHEBI:3498
+preferred_term: Cefotaxime sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:3498
+  ontology_label: cefotaxime sodium
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: sodium 3-(acetoxymethyl)-7beta-{[(2Z)-2-(2-amino-1,3-thiazol-4-yl)-2-(methoxyimino)acetyl]amino}-3,4-didehydrocepham-4-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=64485-93-4; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.684368+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.510996+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C16H16N5O7S2.Na; inchi=InChI=1S/C16H17N5O7S2.Na/c1-6(22)28-3-7-4-29-14-10;
+    smiles=[H][C@]12SCC(COC(C)=O)=C(C(=O)[O-])N1C(=O)[C@H]2NC
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.217323+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.387354+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'cefotaxime sodium'; it matches the ChEBI
+    synonym '(+)-Cefotaxime sodium salt' on CHEBI:3498. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 64485-93-4 uniquely
+    resolves by ChEBI xref to CHEBI:3498 'cefotaxime sodium'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 64485-93-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C16H16N5O7S2.Na
+  inchi: InChI=1S/C16H17N5O7S2.Na/c1-6(22)28-3-7-4-29-14-10(13(24)21(14)11(7)15(25)26)19-12(23)9(20-27-2)8-5-30-16(17)18-8;/h5,10,14H,3-4H2,1-2H3,(H2,17,18)(H,19,23)(H,25,26);/q;+1/p-1/b20-9-;/t10-,14-;/m1./s1
+  smiles: '[H][C@]12SCC(COC(C)=O)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)/C(=NOC)c1csc(N)n1.[Na+]'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

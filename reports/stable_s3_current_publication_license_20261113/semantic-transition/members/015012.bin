@@ -1,0 +1,46 @@
+identifier: kgmicrobe.ingredient:human_serum_56c_30min_dsmz1895
+preferred_term: Human serum heated at 56 C for 30 min (DSMZ 1895)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: UBERON:0001977
+  ontology_label: blood serum
+  ontology_source: UBERON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/medium/1895
+    notes: MediaDive1895 explicitly specifies human serum with attribute 56 C; 30
+      min. Donor pooling and supplier are unspecified procurement details; no bovine/rabbit
+      substitution or broader generic-serum alias. Broader material parent only; distinct
+      local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.551272+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: MediaDive1895 explicitly specifies human serum with attribute 56 C; 30
+    min. Donor pooling and supplier are unspecified procurement details; no bovine/rabbit
+    substitution or broader generic-serum alias. Isolated successor proposal only;
+    original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.817265+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'MediaDive1895 explicitly specifies human serum with attribute 56 C; 30 min.
+  Donor pooling and supplier are unspecified procurement details; no bovine/rabbit
+  substitution or broader generic-serum alias. Source labels retained as nonresolving
+  provenance: [{"case_id": "CM_NAME:09f2616c0419d3c5e41510de6e72d5049bc9e6d4972f1585f4eeeef22f3aa82f",
+  "raw_label": "human serum, heat-inactivated"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved.'

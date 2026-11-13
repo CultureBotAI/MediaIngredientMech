@@ -1,0 +1,189 @@
+identifier: CHEBI:17883
+preferred_term: HCl
+ontology_mapping:
+  ontology_id: CHEBI:17883
+  ontology_label: hydrogen chloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('HCl')
+    pmid: '33892647'
+    supports: SUPPORT
+    snippet: In addition, we show that a buffer based on Tris/HCl is not effective
+      in maintaining any of our media types at neutral pH even at relatively high
+      concentrations. **CONCLUSION:** Here we show that the buffering of yeast batch
+      cultures is not straight-forward and addition of a buffering agent to set a
+      desired starting pH does not guarantee pH-maintenance during growth.
+    explanation: Auto-proposed; curator should rephrase or remove.
+synonyms:
+- synonym_text: (0.05 molar)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (1M)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
+    Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Defined component, Solution, Inorganic
+    compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Solvating media; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Chlorwasserstoff
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: HCl.
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Hydrogen chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Hydrogenchlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Wasserstoffchlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[HCl]'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: chlorane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: chloridohydrogen
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: chlorure d'hydrogene
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cloruro de hidrogeno
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: hydrochloric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: HCl (25%; 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (35%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%, v/v)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (32%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25% or 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25% v/ v)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%, 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1208
+  media_count: 1208
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:21.477092+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7647-01-0 from PubChem API via name lookup (HCl)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: Chlorwasserstoff, HCl.,
+    Hydrochloride, Hydrogen chloride, Hydrogenchlorid, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.948934+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.921588+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HCl; inchi=InChI=1S/ClH/h1H; smiles=[H]Cl
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.882306+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=33892647 from propose-evidence batch
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.935466+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111376+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.773229+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''HCl'' -> ''hydrogen chloride'': synced to canonical CHEBI
+    label (preferred_term ''HCl'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role SALT: legacy media_roles SALT assignment dropped
+    during the #128 facet migration: this ingredient is not a salt contributing ionic
+    strength or osmotic balance, so the assignment was a mis-curation rather than
+    a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT only if
+    warranted.'
+- timestamp: '2026-08-27T03:16:39.518985+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/1105 -> 1208/1208 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''HCl (25%; 7.7 M)'' (x72 CultureMech mentions); ''HCl (25%)''
+    (x13 CultureMech mentions); ''HCl (35%)'' (x11 CultureMech mentions); ''HCl (25%,
+    v/v)'' (x5 CultureMech mentions); ''HCl (32%)'' (x2 CultureMech mentions); ''HCl
+    (25% or 7.7 M)'' (x1 CultureMech mentions); ''HCl (25% v/ v)'' (x1 CultureMech
+    mentions); ''HCl (25%, 7.7 M)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 7647-01-0
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:52:21.477065+00:00'
+  molecular_formula: HCl
+  inchi: InChI=1S/ClH/h1H
+  smiles: '[H]Cl'
+kg_microbe_node_id: CHEBI:17883
+ingredient_type: SINGLE_INGREDIENT

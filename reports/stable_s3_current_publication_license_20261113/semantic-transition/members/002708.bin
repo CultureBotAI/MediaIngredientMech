@@ -1,0 +1,54 @@
+identifier: CHEBI:41189
+preferred_term: 4-diol
+synonyms:
+- synonym_text: 4-diol
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diol); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: CSV comma-split fragment; parent
+    compound not recoverable from the fragment.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/4-diol-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — ### Status No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:41189 ''Butane-1,4-diol'': this record is the other
+    half of a comma-split label, not an ingredient. Repaired a comma-split label (#308/#313):
+    `Butane-1` and `4-diol` are the two halves of `butane-1,4-diol` split at its only
+    comma. Neither fragment names a compound; rejoined they name one ChEBI holds as
+    CHEBI:41189 (C4H10O2). The ingest strips commas from every chemical label, so
+    a name containing one arrives as separate fragment records — the same mechanism
+    that produced the `D` record resolved in #346.'
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diol); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.

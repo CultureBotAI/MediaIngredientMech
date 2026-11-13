@@ -1,0 +1,1292 @@
+{
+  "source": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureBotHT/CultureBotHT/data/raw/google_sheets/compounds_to_cas.csv",
+    "sha256": "76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9",
+    "bytes": 76308
+  },
+  "entries": [
+    {
+      "mim_id": "MIM:0000862",
+      "owner": {
+        "identifier": "cas:138-86-7",
+        "preferred_term": "d-limonene",
+        "ontology_mapping": {
+          "ontology_id": "cas:138-86-7",
+          "ontology_label": "d-limonene",
+          "ontology_source": "CAS",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN 138-86-7 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:138-86-7 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.139534+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.848536+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000862; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "138-86-7",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0000862",
+        "legacy_identifiers": [
+          "MIM:D-limonene",
+          "cas:138-86-7"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0000862",
+        "subject_label": "d-limonene",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:138-86-7",
+        "object_label": "d-limonene",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:138-86-7",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 728,
+          "row": {
+            "Compound": "d-limonene",
+            "CAS": "138-86-7",
+            "Company": "",
+            "CatalogNumber": "",
+            "FW": "",
+            "Synonyms": "",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "c27eb8887b768874389dacb49eb188214cd4fe1d407fd88b69b36e113da94375",
+          "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+          "owner_record_sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 953,
+              "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+              "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "953"
+            },
+            "original_owner_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707"
+          }
+        },
+        "original": {
+          "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+          "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+          "owner_record_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+          "basis": {
+            "baseline_position": 957,
+            "previous_decision": {
+              "assertion_id": "MIM.review:acb5701d93b55b6056475f5bdea05f1720d218d8a3ddce6822f25b9aeb1e134f",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "957",
+              "assertion_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/D-limonene.md",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 957
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/D-limonene.md",
+          "sha256": "26e1e00060055037cb37b633b1ea445c548aabd2ae66fa73d3a001eb3f01a13e",
+          "bytes": 4519
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0001139",
+      "owner": {
+        "identifier": "NCIT:C217928",
+        "preferred_term": "Furaltadone hydrochloride",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C217928",
+          "ontology_label": "Furaltadone Hydrochloride",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN 3759-92-1 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80Anti. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Parent class identified via label-exact; matched_via='Furaltadone hydrochloride'"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:3759-92-1 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:33.711965+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.599581+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:47:47.724637+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C217928 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-10-03T07:30:00+00:00",
+            "curator": "yaml_record_review",
+            "action": "PROMOTED_TO_EXACT_NCIT",
+            "changes": "Promoted NCIT:C217928 to the exact primary identifier because its label exactly matches furaltadone hydrochloride; the unverified CAS registry CURIE should no longer be emitted as the SSSOM identity row.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001139; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "3759-92-1",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0001139",
+        "legacy_identifiers": [
+          "MIM:Furaltadone_Hydrochloride",
+          "NCIT:C217928"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0001139",
+        "subject_label": "Furaltadone hydrochloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C217928",
+        "object_label": "Furaltadone Hydrochloride",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=yaml_record_review",
+        "mapping_date": "2026-10-03",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "CAS:3759-92-1",
+        "validation_method": "manual:yaml_record_review|EXACT_NCIT|2026-10-03"
+      },
+      "original_source": [
+        {
+          "physical_line": 194,
+          "row": {
+            "Compound": "Furaltadone hydrochloride",
+            "CAS": "3759-92-1",
+            "Company": "Sigma",
+            "CatalogNumber": "F9255-25G",
+            "FW": "360.75",
+            "Synonyms": "",
+            "Notes": "",
+            "Hans80Anti": "yes",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "3bba8f8a074aa70b2dbce52fa90ce949f7a3b7efff95545cb4d0082a54010316",
+          "owner_record": "data/ingredients/mapped/Furaltadone_Hydrochloride.yaml",
+          "owner_record_sha256": "7be5ca1c837dc8003680e81d72df056fbf2e69bf8c44e0208c682abef747d0e1",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The NCIT target is exact, but the record still emits it as a narrow match plus local registry rows.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 1266,
+              "row_sha256": "a76dc65098bb0a40063482073774e7c4e114663c9d8869c7b9bd771e404acd7a",
+              "owner_record": "data/ingredients/mapped/Furaltadone_Hydrochloride.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The NCIT target is exact, but the record still emits it as a narrow match plus local registry rows.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "1266"
+            },
+            "original_owner_sha256": "d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81"
+          }
+        },
+        "original": {
+          "row_sha256": "a76dc65098bb0a40063482073774e7c4e114663c9d8869c7b9bd771e404acd7a",
+          "owner_record": "data/ingredients/mapped/Furaltadone_Hydrochloride.yaml",
+          "owner_record_sha256": "d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The NCIT target is exact, but the record still emits it as a narrow match plus local registry rows.",
+          "basis": {
+            "baseline_position": 1269,
+            "previous_decision": {
+              "assertion_id": "MIM.review:f9bd3359ed39dccf2d88db8cb81562430bc2ef817c45839745ddca2e7fcfdb37",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "1269",
+              "assertion_sha256": "7742ff40d73cbb4948e640514a06374faaedd7e41ef84fea34664c0e37e8bcf7",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/Furaltadone_Hydrochloride.md",
+            "mapping_change": "review-record-issues-20261003",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 1269
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/Furaltadone_Hydrochloride.md",
+          "sha256": "4fe409820f79b03a7a779764bc8adf1fd3af60ccd368bf1e5e9f48efd8367241",
+          "bytes": 3858
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0001389",
+      "owner": {
+        "identifier": "CHEBI:6109",
+        "preferred_term": "Kanamycin sulfate",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:6109",
+          "ontology_label": "kanamycin A sulfate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Kanamycin A sulfate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Kanamycin acid sulfate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Kanamycin monosulfate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 5,
+          "media_count": 5
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:52:31.015071+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:223-347-1 from PubChem API via name lookup (Kanamycin sulfate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-09T00:32:50.689620+00:00",
+            "curator": "enrich_mim_cas_rn_batch",
+            "action": "CAS_RN_ADDED",
+            "changes": "Added CAS-RN 25839-94-0 from CultureBotHT/compounds_to_cas.csv",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: Kanamycin A sulfate, Kanamycin acid sulfate, Kanamycin monosulfate",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.173152+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:30.170515+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C18H36N4O11.H2O4S; inchi=InChI=1S/C18H36N4O11.H2O4S/c19-2-6-10(25)12(27)13(; smiles=NC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O[C@H]3O[C@H]",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:15.261676+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.390273+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.780586+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Kanamycin sulfate' -> 'kanamycin A sulfate': synced to canonical CHEBI label (preferred_term 'Kanamycin sulfate' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519062+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 1/1 -> 5/5 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001389; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "25839-94-0",
+          "data_source": "CultureBotHT/compounds_to_cas.csv",
+          "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+          "molecular_formula": "C18H36N4O11.H2O4S",
+          "inchi": "InChI=1S/C18H36N4O11.H2O4S/c19-2-6-10(25)12(27)13(28)18(30-6)33-16-5(21)1-4(20)15(14(16)29)32-17-11(26)8(22)9(24)7(3-23)31-17;1-5(2,3)4/h4-18,23-29H,1-3,19-22H2;(H2,1,2,3,4)/t4-,5+,6-,7-,8+,9-,10-,11-,12+,13-,14-,15+,16-,17-,18-;/m1./s1",
+          "smiles": "NC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H](N)C[C@@H]2N)[C@H](O)[C@@H](O)[C@@H]1O.O=S(=O)(O)O"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ],
+        "mim_id": "MIM:0001389",
+        "legacy_identifiers": [
+          "MIM:Kanamycin_Sulfate",
+          "CHEBI:6109"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0001389",
+        "subject_label": "Kanamycin sulfate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:6109",
+        "object_label": "kanamycin A sulfate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Kanamycin acid sulfate|Kanamycin monosulfate|CAS:25839-94-0",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 236,
+          "row": {
+            "Compound": "Kanamycin sulfate",
+            "CAS": "25839-94-0",
+            "Company": "Sigma",
+            "CatalogNumber": "K4000-50G",
+            "FW": "582.58",
+            "Synonyms": "kanamycin",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "yes",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "e1a0cc7da19dbaf4feccb250de85e05c73ba76909b299721139ee8f27c8563bf",
+          "owner_record": "data/ingredients/mapped/Kanamycin_Sulfate.yaml",
+          "owner_record_sha256": "445218d5336935d0186a08073985d850b2864dfe36d0ac0a334fbe0fbe089351",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the stored/exported CAS RN is transposed and SELECTIVE_AGENT is only provisional name-pattern evidence.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 1548,
+              "row_sha256": "e0180dad5f9e64b7a24b44ecdea35bf588eb75680329cdb1517a81e2df8f70a1",
+              "owner_record": "data/ingredients/mapped/Kanamycin_Sulfate.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the stored/exported CAS RN is transposed and SELECTIVE_AGENT is only provisional name-pattern evidence.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "1548"
+            },
+            "original_owner_sha256": "cd1bbebd8e516d860b4b8823a9a8920643443f4d86b5e92b68f90337415dc5a9"
+          }
+        },
+        "original": {
+          "row_sha256": "e0180dad5f9e64b7a24b44ecdea35bf588eb75680329cdb1517a81e2df8f70a1",
+          "owner_record": "data/ingredients/mapped/Kanamycin_Sulfate.yaml",
+          "owner_record_sha256": "cd1bbebd8e516d860b4b8823a9a8920643443f4d86b5e92b68f90337415dc5a9",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the stored/exported CAS RN is transposed and SELECTIVE_AGENT is only provisional name-pattern evidence.",
+          "basis": {
+            "baseline_position": 1552,
+            "previous_decision": {
+              "assertion_id": "MIM.review:d80d014d67b75525d7c45d10744f0fe8ed8ba1686e221740b560c70685861ff5",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "1552",
+              "assertion_sha256": "e0180dad5f9e64b7a24b44ecdea35bf588eb75680329cdb1517a81e2df8f70a1",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/Kanamycin_Sulfate.md",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 1552
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/Kanamycin_Sulfate.md",
+          "sha256": "6ccd007af05634cdb0484f80410162e4043176dc9fd7996aba3b610d4348afd7",
+          "bytes": 3942
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0001639",
+      "owner": {
+        "identifier": "cas:89471-28-0",
+        "preferred_term": "Methyl-2-Hydroxy-Phenylproprionate",
+        "ontology_mapping": {
+          "ontology_id": "cas:89471-28-0",
+          "ontology_label": "Methyl-2-Hydroxy-Phenylproprionate",
+          "ontology_source": "CAS",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN 89471-28-0 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:89471-28-0 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.690895+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:16.332511+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001639; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "89471-28-0",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0001639",
+        "legacy_identifiers": [
+          "MIM:Methyl-2-Hydroxy-Phenylproprionate",
+          "cas:89471-28-0"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0001639",
+        "subject_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:89471-28-0",
+        "object_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:89471-28-0",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 823,
+          "row": {
+            "Compound": "Methyl-2-Hydroxy-Phenylproprionate",
+            "CAS": "89471-28-0",
+            "Company": "",
+            "CatalogNumber": "",
+            "FW": "",
+            "Synonyms": "",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "570189ad58ffacbc5ab5f64e106bf90436917938ae3b9d301d5f1c5239b6e31a",
+          "owner_record": "data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml",
+          "owner_record_sha256": "25cbb95675ee8660b42cafbc1bfc8759e77c4e1444e78726f08e9e4aa8946d2e",
+          "disposition": "WITHHOLD",
+          "review_reason": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 1841,
+              "row_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+              "owner_record": "data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "1841"
+            },
+            "original_owner_sha256": "1b76547623a77d4ad8f527403ce65c3b8bb4cab61910baa6b1ed292dab97a5c7"
+          }
+        },
+        "original": {
+          "row_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+          "owner_record": "data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml",
+          "owner_record_sha256": "1b76547623a77d4ad8f527403ce65c3b8bb4cab61910baa6b1ed292dab97a5c7",
+          "disposition": "WITHHOLD",
+          "review_reason": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+          "basis": {
+            "baseline_position": 1846,
+            "previous_decision": {
+              "assertion_id": "MIM.review:e9c2f16f90c03c122bb7937b72bc81243888c5f8839a2626222b0ad8547847d9",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "1846",
+              "assertion_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+              "resolution_status": "APPROVED",
+              "review_reason": "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+              "review_evidence": "reports/semantic_review_20260921/resolution/historical-review-evidence.json"
+            },
+            "historical_record_review": "reports/yaml_record_review/Methyl-2-Hydroxy-Phenylproprionate.md",
+            "mapping_followup": {
+              "file": "mapping_review/kgmicrobe-followup.json",
+              "row_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+              "identity_review": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog."
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/Methyl-2-Hydroxy-Phenylproprionate.md",
+          "sha256": "100969056a1f92ac8ad1b06e4203be534223601c08dbc108953758f05c4f7890",
+          "bytes": 1572
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0001663",
+      "owner": {
+        "identifier": "CHEBI:17158",
+        "preferred_term": "methylglyoxal",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:17158",
+          "ontology_label": "methylglyoxal",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_stress."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "2-Oxopropanal",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=79-98-8); Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.734643+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:30.774762+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C3H4O2; inchi=InChI=1S/C3H4O2/c1-3(5)2-4/h2H,1H3; smiles=[H]C(=O)C(C)=O",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:16.402225+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001663; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "79-98-8",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:04:17.380972+00:00",
+          "molecular_formula": "C3H4O2",
+          "inchi": "InChI=1S/C3H4O2/c1-3(5)2-4/h2H,1H3",
+          "smiles": "[H]C(=O)C(C)=O"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0001663",
+        "legacy_identifiers": [
+          "MIM:Methylglyoxal",
+          "CHEBI:17158"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0001663",
+        "subject_label": "methylglyoxal",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17158",
+        "object_label": "methylglyoxal",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "2-Oxopropanal|CAS:79-98-8",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 287,
+          "row": {
+            "Compound": "methylglyoxal",
+            "CAS": "79-98-8",
+            "Company": "Sigma",
+            "CatalogNumber": "M0252",
+            "FW": "72.06",
+            "Synonyms": "",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "yes",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "fcd173dc48b6e804dfcd10775554f140b63bfa9a49123791babf57136dbb36c7",
+          "owner_record": "data/ingredients/mapped/Methylglyoxal.yaml",
+          "owner_record_sha256": "500cc73f11811daf04ee8b806bb3b5f23ac2ad078f9f44705dc36bbe2ab4723f",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the YAML and final SSSOM publish the wrong CAS value.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 1868,
+              "row_sha256": "a0191014daa0f4dce729624510db31c462e12d0ee6abca26e6fcf7ce7df9507a",
+              "owner_record": "data/ingredients/mapped/Methylglyoxal.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the YAML and final SSSOM publish the wrong CAS value.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "1868"
+            },
+            "original_owner_sha256": "1b0d81a16e70c2b40221aa4f2e131ab081f492a8756b275a1da1975bf8ca85ec"
+          }
+        },
+        "original": {
+          "row_sha256": "a0191014daa0f4dce729624510db31c462e12d0ee6abca26e6fcf7ce7df9507a",
+          "owner_record": "data/ingredients/mapped/Methylglyoxal.yaml",
+          "owner_record_sha256": "1b0d81a16e70c2b40221aa4f2e131ab081f492a8756b275a1da1975bf8ca85ec",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: the YAML and final SSSOM publish the wrong CAS value.",
+          "basis": {
+            "baseline_position": 1873,
+            "previous_decision": {
+              "assertion_id": "MIM.review:9251ebc2b945246d7124e21c0ee9faa7ff44d5334e48a3c2f3893573029e5050",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "1873",
+              "assertion_sha256": "a0191014daa0f4dce729624510db31c462e12d0ee6abca26e6fcf7ce7df9507a",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/Methylglyoxal.md",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 1873
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/Methylglyoxal.md",
+          "sha256": "b575cd7e152c9b91f4ce3e055396c7129b9df081e428fe569cec2f9270eda231",
+          "bytes": 1988
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0001956",
+      "owner": {
+        "identifier": "CHEBI:16995",
+        "preferred_term": "Oxalic Acid",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:16995",
+          "ontology_label": "oxalic acid",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=144-62-1); Imported from CultureBotHT.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.644664+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:31.752128+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C2H2O4; inchi=InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6); smiles=O=C(O)C(=O)O",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.558065+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001956; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "144-62-1",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:04:17.380972+00:00",
+          "molecular_formula": "C2H2O4",
+          "inchi": "InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6)",
+          "smiles": "O=C(O)C(=O)O"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0001956",
+        "legacy_identifiers": [
+          "MIM:Oxalic_Acid",
+          "CHEBI:16995"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0001956",
+        "subject_label": "Oxalic Acid",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:16995",
+        "object_label": "oxalic acid",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "CAS:144-62-1",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 1357,
+          "row": {
+            "Compound": "Oxalic Acid",
+            "CAS": "144-62-1",
+            "Company": "",
+            "CatalogNumber": "",
+            "FW": "90.03",
+            "Synonyms": "",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "28e50e46be13553190c8b8dab3bfd4ae977aefe6377d7ea20363dcd1c3b826b3",
+          "owner_record": "data/ingredients/mapped/Oxalic_Acid.yaml",
+          "owner_record_sha256": "427316df263ab014e9caa79523272728d39884dcb7ac5e842acd87cb42b34f25",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: invalid CAS 144-62-1 is exported in final other.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 2173,
+              "row_sha256": "8d9f8316a8d8ce9fe75b2c015f5bb4564e1b647e90e1c11ef37bb51d745d8a80",
+              "owner_record": "data/ingredients/mapped/Oxalic_Acid.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: invalid CAS 144-62-1 is exported in final other.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "2173"
+            },
+            "original_owner_sha256": "5d1a4f8966fbaa89c5e4b9717bc35cc6da826c534730b80dcefcbe2fe634dc5f"
+          }
+        },
+        "original": {
+          "row_sha256": "8d9f8316a8d8ce9fe75b2c015f5bb4564e1b647e90e1c11ef37bb51d745d8a80",
+          "owner_record": "data/ingredients/mapped/Oxalic_Acid.yaml",
+          "owner_record_sha256": "5d1a4f8966fbaa89c5e4b9717bc35cc6da826c534730b80dcefcbe2fe634dc5f",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: invalid CAS 144-62-1 is exported in final other.",
+          "basis": {
+            "baseline_position": 2180,
+            "previous_decision": {
+              "assertion_id": "MIM.review:dababd3ea9a78dc35ab067971b1253fe4e23942dd84bc5933798e126c7cecc17",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "2180",
+              "assertion_sha256": "8d9f8316a8d8ce9fe75b2c015f5bb4564e1b647e90e1c11ef37bb51d745d8a80",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/Oxalic_Acid.md",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 2180
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/Oxalic_Acid.md",
+          "sha256": "5fea0e87d5d2e8d6689f4c94c4d68f7a4c7f166ea3fd8696f91ab278825e4e78",
+          "bytes": 2236
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    },
+    {
+      "mim_id": "MIM:0002227",
+      "owner": {
+        "identifier": "cas:9789-92-0",
+        "preferred_term": "S-adenosyl Homocysteine",
+        "ontology_mapping": {
+          "ontology_id": "cas:9789-92-0",
+          "ontology_label": "S-adenosyl Homocysteine",
+          "ontology_source": "CAS",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "S-(5′-Adenosyl)-L-homocysteine",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "culturebotht"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:9789-92-0 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.111100+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.170467+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0002227; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9789-92-0",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0002227",
+        "legacy_identifiers": [
+          "MIM:S-adenosyl_Homocysteine",
+          "cas:9789-92-0"
+        ]
+      },
+      "row": {
+        "subject_id": "MIM:0002227",
+        "subject_label": "S-adenosyl Homocysteine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:9789-92-0",
+        "object_label": "S-adenosyl Homocysteine",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "S-(5′-Adenosyl)-L-homocysteine|CAS:9789-92-0",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "original_source": [
+        {
+          "physical_line": 696,
+          "row": {
+            "Compound": "S-adenosyl Homocysteine",
+            "CAS": "9789-92-0",
+            "Company": "Sigma",
+            "CatalogNumber": "A9384",
+            "FW": "384.41",
+            "Synonyms": "S-(5′-Adenosyl)-L-homocysteine",
+            "Notes": "",
+            "Hans80Anti": "",
+            "Hans80metals": "",
+            "FEBA_carbon": "",
+            "FEBA_nitrogen": "",
+            "FEBA_stress": "",
+            "All_star": ""
+          }
+        }
+      ],
+      "history": {
+        "identity_projected": {
+          "row_sha256": "0251b8755dbbba9adbcd2c703f51b026b3168f48300ac409ce15720c5a599627",
+          "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+          "owner_record_sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+          "identity_projection": {
+            "kind": "mim-inherited-identity-projection/v1",
+            "manifest": "reports/stable_ids_1265_20261108/migration.json",
+            "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+            "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+            "original_report": "reports/sssom_completion_20260921/review.json",
+            "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+            "scientific_approval_added": false,
+            "original_decision": {
+              "source_position": 2487,
+              "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+              "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+              "disposition": "WITHHOLD",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "evidence_key": "2487"
+            },
+            "original_owner_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d"
+          }
+        },
+        "original": {
+          "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+          "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+          "owner_record_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d",
+          "disposition": "WITHHOLD",
+          "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+          "basis": {
+            "baseline_position": 2498,
+            "previous_decision": {
+              "assertion_id": "MIM.review:3da122e5df57c852e888d9b6011e44549bb46245fb24b486f6e157873df4658a",
+              "source_record": "mappings/ingredient_mappings.sssom.tsv",
+              "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+              "assertion_type": "mapping",
+              "source_position": "2498",
+              "assertion_sha256": "c29a77f27dc750a3e67b19e802c11ec7f4adda95a266e3ba6e8ef24351fec8db",
+              "resolution_status": "OPEN",
+              "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+              "review_evidence": ""
+            },
+            "historical_record_review": "reports/yaml_record_review/S-adenosyl_Homocysteine.md",
+            "scoped_review": {
+              "file": "mapping_review/concern_cohorts.json",
+              "position": 2498
+            }
+          }
+        },
+        "record_report": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/yaml_record_review/S-adenosyl_Homocysteine.md",
+          "sha256": "ae8f309c243483a6834d72b935752c20be9f07fe622608dc986b661e8e3ea046",
+          "bytes": 2207
+        },
+        "classification": "Prior scientific reviews and negative evidence, not primary chemical authority"
+      }
+    }
+  ]
+}

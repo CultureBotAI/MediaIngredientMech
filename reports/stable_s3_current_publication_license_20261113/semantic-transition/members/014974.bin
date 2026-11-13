@@ -1,0 +1,282 @@
+{
+  "finding_id": "SV2-ISP4-NESTED-OVERLAP-001",
+  "observed_at": "2026-11-08T07:13:48.652574+00:00",
+  "status": "new_cross_shard_overlap_reported_to_coordinator_before_payload_authoring",
+  "scope": "One nested trace-salts formulation; not whole-medium equivalence, maintained merge, W06 acceptance or new-owner admission.",
+  "frozen_entry": {
+    "index": 548,
+    "entry_id": "w06::B-P-NBRC268-trace-salts",
+    "worker": 6,
+    "head": "1b3641853c7105b9091f81b5a9b19c99e8ed351e",
+    "provisional": true,
+    "proposal_id": "B-P-NBRC268-trace-salts",
+    "kind": "new_owner",
+    "owner_path": "data/ingredients/mapped/nbrc_268_trace_salts_solution.yaml",
+    "destination_path_as_declared": "data/ingredients/mapped/nbrc_268_trace_salts_solution.yaml",
+    "before_sha256": null,
+    "payload_path": "snapshot/workers/w06/reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_268_trace_salts_solution.yaml",
+    "payload_sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+    "proposal_ledger_sha256": "2244c896a5b1cf50681da7d7f15c4ccabae916aa31cc9e40e18b95d72e0dfd14",
+    "identifier": "kgmicrobe.ingredient:nbrc_268_trace_salts_solution",
+    "preferred_term": "NBRC 268 ISP4 trace salts solution",
+    "case_ids": [
+      "CM_NAME:5f615f5b32980cd55699d5175e8421d922a23a011fa7a0a1c66681de0ef0d530"
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CM_NAME:5f615f5b32980cd55699d5175e8421d922a23a011fa7a0a1c66681de0ef0d530",
+        "input_sha256": "1aa59c6c3030a1807f22ead08abd97a6b714d05af5aabd4a4b3b1b3371a7db65",
+        "occurrence_ids": [
+          "CM_OCC:02018aafee01044f8d1a266dc76c63004fe99979dcefeea35b3cd175d6bf0d39"
+        ],
+        "missing_requirement": null,
+        "issue_refs": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "B-56-frozen-0",
+        "kind": "source_snapshot",
+        "capture": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_270.yaml",
+          "sha256": "46046ba4f8c8fb8e3943dc26a47cd55e4eaaad311a1bf673dd9116d1d7c8b0b1"
+        },
+        "url": null,
+        "locator": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_270.yaml; full recipe and nested preparations"
+      },
+      {
+        "evidence_id": "B-http-ffa3384fa2158fad",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "research-b/captures/http-6e58176e2c88cf53394b.txt",
+          "sha256": "f821d5989e1ae2e12e5ede3299173316922e7097c99982c5a18b4c630fee86c0"
+        },
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+        "locator": "Complete retrieved recipe document; source sections cited in case reasoning"
+      }
+    ],
+    "record": {
+      "identifier": "kgmicrobe.ingredient:nbrc_268_trace_salts_solution",
+      "preferred_term": "NBRC 268 ISP4 trace salts solution",
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "TRACE_METAL_MIX",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc_268_trace_salts_solution",
+        "ontology_label": "NBRC 268 ISP4 trace salts solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+            "notes": "Source-defined preparation with retained formulation boundary; registry identity denotes the whole stock, not any component."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "ML"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+            "source_record": "NBRC 268 ISP4 trace salts solution",
+            "notes": "Verbatim constituent names and source batch quantities; water is a preparation input. Child reference_scope UNMAPPED means no exact child identifier was independently established."
+          }
+        ],
+        "notes": "Source batch quantities:0.1 g of each salt with100 ml distilled water. No unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock."
+      },
+      "notes": "Source batch quantities:0.1 g of each salt with100 ml distilled water. No unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock. Raw source labels retained without global resolving aliases: [\"Trace salts solution*\"]. Occurrence-specific linkage is required; identical generic words in other recipes do not imply the same formulation.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T05:16:28.256341+00:00",
+          "curator": "codex_all_unmatched_w06_research_b",
+          "action": "CREATED",
+          "changes": "Create source-defined stock proposal with explicit components and primary recipe evidence; no exact mapping to a solute or generic stock.",
+          "llm_assisted": true,
+          "new_status": "MAPPED"
+        }
+      ]
+    },
+    "changed_fields": [
+      "component_assertion",
+      "components",
+      "curation_history",
+      "identifier",
+      "ingredient_type",
+      "mapping_status",
+      "notes",
+      "ontology_mapping",
+      "preferred_term",
+      "solution_type"
+    ],
+    "names": [
+      {
+        "text": "NBRC 268 ISP4 trace salts solution",
+        "type": "PREFERRED",
+        "role": "preferred"
+      }
+    ],
+    "source_recipe_leads": [],
+    "url_leads": [
+      "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268"
+    ],
+    "prior_inventory_status": "same_payload_as_previous_inventory",
+    "prior_inventory_payload_sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+    "known_family_recommendations": [],
+    "authorship_exclusions": [
+      "w06"
+    ],
+    "scientific_equivalence": null
+  },
+  "exact_candidate_payload": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w06/reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_268_trace_salts_solution.yaml",
+    "sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+    "record": {
+      "identifier": "kgmicrobe.ingredient:nbrc_268_trace_salts_solution",
+      "preferred_term": "NBRC 268 ISP4 trace salts solution",
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "TRACE_METAL_MIX",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc_268_trace_salts_solution",
+        "ontology_label": "NBRC 268 ISP4 trace salts solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+            "notes": "Source-defined preparation with retained formulation boundary; registry identity denotes the whole stock, not any component."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "ML"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+            "source_record": "NBRC 268 ISP4 trace salts solution",
+            "notes": "Verbatim constituent names and source batch quantities; water is a preparation input. Child reference_scope UNMAPPED means no exact child identifier was independently established."
+          }
+        ],
+        "notes": "Source batch quantities:0.1 g of each salt with100 ml distilled water. No unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock."
+      },
+      "notes": "Source batch quantities:0.1 g of each salt with100 ml distilled water. No unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock. Raw source labels retained without global resolving aliases: [\"Trace salts solution*\"]. Occurrence-specific linkage is required; identical generic words in other recipes do not imply the same formulation.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T05:16:28.256341+00:00",
+          "curator": "codex_all_unmatched_w06_research_b",
+          "action": "CREATED",
+          "changes": "Create source-defined stock proposal with explicit components and primary recipe evidence; no exact mapping to a solute or generic stock.",
+          "llm_assisted": true,
+          "new_status": "MAPPED"
+        }
+      ]
+    }
+  },
+  "primary_sources": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/reports/all_unmatched_20261107/worker-10/kg/captures/jcm58.html",
+      "sha256": "1aaeb1dd7a38141e4b231f0588d904ea2b46c12d0d939e1bcc1e133fe807084c",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=58",
+      "original_accessed_at": "2026-11-08T05:08:38.285342+00:00",
+      "locator": "Second table Trace salts solution; first table1mL dose; page-wide media autoclave default."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w06/reports/all_unmatched_20261107/worker-06/research-b/captures/http-6e58176e2c88cf53394b.txt",
+      "sha256": "f821d5989e1ae2e12e5ede3299173316922e7097c99982c5a18b4c630fee86c0",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268",
+      "original_accessed_at": "2026-11-08T05:06:58.754414+00:00",
+      "locator": "Composition *Trace salts solution subsection; parent1mL dose; blank comment field."
+    }
+  ],
+  "comparison": {
+    "same_complete_named_input_table": [
+      {
+        "input": "FeSO4·7H2O",
+        "amount": "0.1",
+        "unit": "g"
+      },
+      {
+        "input": "MnCl2·4H2O",
+        "amount": "0.1",
+        "unit": "g"
+      },
+      {
+        "input": "ZnSO4·7H2O",
+        "amount": "0.1",
+        "unit": "g"
+      },
+      {
+        "input": "Distilled water",
+        "amount": "100",
+        "unit": "mL"
+      }
+    ],
+    "denominator": "Both explicitly list100mLwater input; neither specifies final-volume make-up.",
+    "parent_dose": "Both use1mLtrace stock; this does not normalize stock composition to receiving medium.",
+    "processing": "JCM page default sterilizes media121C15min unless otherwise stated; neither trace subsection independently gives a stock-specific processing schedule. NBRC comment blank. Missing separate stock processing is not a positive difference.",
+    "conclusion": "Matching source-defined complete trace-stock formulation supports a genuine duplication/reuse lead; exact treatment and all admission/continuity obligations remain coordinator review. No second trace owner is needed to complete the JCM58 parent."
+  },
+  "planned_bounded_resolution": "Do not mint or silently adopt W06 identifier. Keep JCM58 parent trace input source-qualified UNMAPPED/no component_id, document allfour nestedinputs verbatim in assertion provenance, and name548 as coordinator dependency. Preserve parent completion and all original W06case/occurrence/history objects if a later reconciled stock is adopted.",
+  "no_mutation_of_other_worker_inputs": true,
+  "no_identity_or_role_export_approval": true
+}

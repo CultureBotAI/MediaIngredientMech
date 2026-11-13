@@ -1,0 +1,100 @@
+identifier: cas:128596-80-5
+preferred_term: 3'-sialyllactose sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:151472
+  ontology_label: N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 128596-80-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="3''-sialyllactose
+      sodium salt"'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'').
+      CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps the counterion
+      and discards the compound (#322). The label names 3''-sialyllactose, and ChEBI
+      has it: CHEBI:151472 carries the related synonym "3''-sialyllactose" and xref
+      cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+      NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+      identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+      2, #245).'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:128596-80-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.861288+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:20.606131+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C23H38NNaO19; smiles=CC(=O)NC1C(CC(OC1C(C(CO)O)O)(C(=O)[O-])OC2C(C(OC(C;
+    inchi=InChI=1S/C23H39NO19.Na/c1-7(29)24-13-8(30)2-23(22(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.030423+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:37:54.665211+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.732555+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-22T23:25:51.030915+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'')
+    (#312). CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps
+    the counterion and discards the compound (#322). The label names 3''-sialyllactose,
+    and ChEBI has it: CHEBI:151472 carries the related synonym "3''-sialyllactose"
+    and xref cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+    NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+    identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+    2, #245).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties:
+  cas_rn: 128596-80-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C23H38NNaO19
+  smiles: CC(=O)NC1C(CC(OC1C(C(CO)O)O)(C(=O)[O-])OC2C(C(OC(C2O)OC(C(CO)O)C(C(C=O)O)O)CO)O)O.[Na+]
+  inchi: InChI=1S/C23H39NO19.Na/c1-7(29)24-13-8(30)2-23(22(38)39,42-19(13)15(35)10(32)4-26)43-20-16(36)12(6-28)40-21(17(20)37)41-18(11(33)5-27)14(34)9(31)3-25;/h3,8-21,26-28,30-37H,2,4-6H2,1H3,(H,24,29)(H,38,39);/q;+1/p-1/t8-,9-,10+,11+,12+,13+,14+,15+,16-,17+,18+,19+,20-,21-,23-;/m0./s1
+  pubchem_cid: 71308479
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

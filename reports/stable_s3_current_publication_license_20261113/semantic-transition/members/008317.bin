@@ -1,0 +1,141 @@
+identifier: mesh:M0314280
+preferred_term: CrKSO42 x 12 H2O
+synonyms:
+- synonym_text: CrKSO42 x 12 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: CrK(SO4)2 x 12 H2O
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02:CM_NAME:03abc18649d46be7f284bcdfb767b82ea714e6b17ea60540cd8debedb5d2bdf6
+- synonym_text: CrK(SO4)2·12H2O
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02:CM_NAME:17a4ef284368d75ac064e8deffcda0d7b5215c079cefb2a2891a2225af3b9cfa
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic double-salt hydrate and left unmapped
+    because the condensed formula resembles chromium potassium sulfate dodecahydrate
+    but lacks locally verified exact ontology evidence.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CrKSO42_x_12_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommendation | Keep ontology mapping unset unless
+    a stable ontology identifier is independently confirmed; do not mint label-only
+    CURIEs | No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 7788-99-0 (potassium chromium(III) sulfate dodecahydrate)
+    from Edison literature research: the report equates chrome alum with KCr(SO4)2*12H2O
+    from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical reference,
+    listing it under an unqualified "CAS Registry Number:" heading. Enrichment only
+    — the mapping status is unchanged, because a CAS identifies a substance without
+    supplying an ontology term. Applied only because the report AFFIRMS the number
+    for this record''s own substance: the same scan pulled CAS numbers out of five
+    other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+    xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
+    rejected-candidate row looks identical to one in a conclusion.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_SOURCE_ALIAS
+  changes: 'Add source-backed same-substance aliases: [''CrK(SO4)2 x 12 H2O'', ''CrK(SO4)2·12H2O''].'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed;
+    coordinator integration and independent review required.
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: Use exact active MeSH concept mesh:M0314280 chrome alum, dodecahydrate,
+    supported by NLM narrower-concept/registry context and the supplier KCr(SO4)2·12H2O/CAS7788-99-0
+    identity. Preserve CAS7788-99-0 as chemical property. This potassium/chromium
+    double sulfate differs from CHEBI53471 Cr2(SO4)3 in potassium and sulfate stoichiometry
+    as well as water; retire the old active hydrate-only CLOSE_MATCH rationale instead
+    of substituting NARROW_MATCH. Full prior evidence and all history remain preserved.
+    The JCM1033 Nothing-found capture is not original recipe proof; use separately
+    inspected TOGO/MediaDive captures at their stated source/version scope. No quantity
+    normalization or whole-owner release is approved. Original full before/predecessor
+    objects and field lineage are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
+  sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
+
+
+  Final W02 proposal correction (unapplied): Use exact active MeSH concept mesh:M0314280
+  chrome alum, dodecahydrate, supported by NLM narrower-concept/registry context and
+  the supplier KCr(SO4)2·12H2O/CAS7788-99-0 identity. Preserve CAS7788-99-0 as chemical
+  property. This potassium/chromium double sulfate differs from CHEBI53471 Cr2(SO4)3
+  in potassium and sulfate stoichiometry as well as water; retire the old active hydrate-only
+  CLOSE_MATCH rationale instead of substituting NARROW_MATCH. Full prior evidence
+  and all history remain preserved. The JCM1033 Nothing-found capture is not original
+  recipe proof; use separately inspected TOGO/MediaDive captures at their stated source/version
+  scope. No quantity normalization or whole-owner release is approved. All precise
+  source, role, duplicate-owner and publication holds remain; this claim-specific
+  correction is not whole-owner approval.'
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7788-99-0
+  data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: mesh:M0314280
+  ontology_label: chrome alum, dodecahydrate
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: worker02 source review
+    notes: Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json
+      and captured primary/ontology evidence. Existing stock, form and evidence-quality
+      concerns remain held.
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: Use exact active MeSH concept mesh:M0314280 chrome alum, dodecahydrate,
+      supported by NLM narrower-concept/registry context and the supplier KCr(SO4)2·12H2O/CAS7788-99-0
+      identity. Preserve CAS7788-99-0 as chemical property. This potassium/chromium
+      double sulfate differs from CHEBI53471 Cr2(SO4)3 in potassium and sulfate stoichiometry
+      as well as water; retire the old active hydrate-only CLOSE_MATCH rationale instead
+      of substituting NARROW_MATCH. Full prior evidence and all history remain preserved.
+      The JCM1033 Nothing-found capture is not original recipe proof; use separately
+      inspected TOGO/MediaDive captures at their stated source/version scope. No quantity
+      normalization or whole-owner release is approved.

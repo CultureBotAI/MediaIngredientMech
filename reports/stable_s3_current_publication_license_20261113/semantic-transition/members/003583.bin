@@ -1,0 +1,32 @@
+"""Read-only native pair verification and exact physical-transport constraints."""
+from pathlib import Path
+import hashlib,json,sys,types
+D=Path(__file__).absolute().parent;C=D.parents[1];J=C/'integration/curation-worktree'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def save(name,v):
+ with (D/name).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+rr=types.ModuleType('closure_native_review_reader');rr.__file__=str(J/'scripts/record_review.py');sys.modules[rr.__name__]=rr;exec(compile(Path(rr.__file__).read_bytes(),rr.__file__,'exec'),rr.__dict__)
+classified=json.loads((D/'NATIVE-REVIEW-CLASSIFICATION.json').read_text());readbacks=[];judgments=[]
+for row in classified:
+ pair=row['pair'];yp=Path(pair['yaml']);mp=Path(pair['markdown']);assert sha(yp)==pair['yaml_sha256'] and sha(mp)==pair['markdown_sha256']
+ rel='/'.join(yp.parts[-4:]);doc=rr.parse_review_bundle(rel,yp.read_bytes(),mp.read_bytes(),J/'schema/record_review.yaml')
+ root=Path(row['source_root']);provenance=rr.source_provenance(root,doc);assert provenance['status'] not in ['invalid','unverified']
+ for item in doc['source']['inputs']:assert sha(root/item['path'])==item['sha256']
+ result={'packet':row['packet'],'pair':pair,'source_root':str(root),'source_provenance':provenance,'inputs_rehashed':len(doc['source']['inputs']),'native_parse_render_schema_pass':True,'reviewer':doc['reviewer'],'verdict':doc['verdict'],'scientific_review':doc['scientific_review'],'native_saver_scope':row['native_save_invoked'],'native_save_executed_here':False}
+ readbacks.append(result)
+ judgments.append({'packet':row['packet'],'authoritative_document':{'path':str(yp),'sha256':sha(yp)},'paired_markdown_support':{'path':str(mp),'sha256':sha(mp)},'proposed_binding_role':'evidence' if row['packet']=='methods-author' else 'review','judgment_count':0 if row['packet']=='methods-author' else 1,'review_id':doc['review_id'],'reviewer':doc['reviewer'],'target_ids':[t['target_id'] for t in doc['targets']],'scope':doc['scope'],'actual_root_selection':None,'limitations':doc.get('limitations',[]),'classification_basis':'Self-authored integrity record, not independent scientific vote.' if row['packet']=='methods-author' else 'One exact native judgment; MD, manifests, source captures, peer diagnostics and handoff do not create additional votes.'})
+save('NATIVE-PAIR-READBACK.json',{'native_script':{'path':rr.__file__,'sha256':sha(rr.__file__)},'schema_sha256':sha(J/'schema/record_review.yaml'),'pairs':readbacks,'mutation':False})
+save('JUDGMENT-ARTIFACTS.json',{'status':'EXACT_AVAILABLE_JUDGMENTS_AND_EVIDENCE_CLASSIFICATION_NOT_ROOT_ACCEPTANCE','records':judgments})
+files=json.loads((D/'FILES.json').read_text());lookup={r['path']:r for r in files};cols=json.loads((D/'CURRENT-TRANSPORT-SAME-BASENAME-COLLISIONS.json').read_text());proof=[]
+for suffix,paths in cols.items():
+ rows=[lookup[p] for p in paths];assert len({r['sha256'] for r in rows})==1 and len({r['bytes'] for r in rows})==1
+ assert len(paths)==len(set(paths))
+ proof.append({'current_destination_suffix':suffix,'sha256':rows[0]['sha256'],'bytes':rows[0]['bytes'],'paths':paths,'logical_memberships':{r['path']:r['memberships'] for r in rows},'a40c_outcome_if_all_original_refs_submitted':'Second distinct original path uses the same destination but a different entry.source; strict destination equality refuses.','bounded_requirement':'Use one actual regular source representative per physical destination/hash/size; retain every original path, packet role, native declared path, source-root identity and acquisition/capture edge in the explicit closure map. Do not change the native guard, overwrite, silently collapse review identities, or claim the candidate author consulted peer output.'})
+save('COLLISION-PROOF.json',{'groups':len(proof),'logical_paths_in_collision_groups':sum(len(x['paths']) for x in proof),'same_basename_different_fullhash_with_same20prefix':False,'all_actual_collisions_are_equal_complete_bytes':True,'groups_exact':proof})
+samples=[]
+for token in ['56b2ec00c5508f974e07-Na2seo3.yaml','90054fac245777b321f7-review.yaml','e3b0c44298fc1c149afb-author.stderr']:
+ matches=[x for x in proof if x['current_destination_suffix']==token]
+ if matches:samples.extend(matches)
+assert len(samples)==3
+save('COLLISION-EXAMPLES.json',samples)
+print(json.dumps({'native_pairs':len(readbacks),'declared_inputs_rehashed':sum(x['inputs_rehashed'] for x in readbacks),'independent_judgments_available':sum(x['judgment_count'] for x in judgments),'self_review_evidence_only':1,'collision_groups':len(proof),'examples':len(samples)}))

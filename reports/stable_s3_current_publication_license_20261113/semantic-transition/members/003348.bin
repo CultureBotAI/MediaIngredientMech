@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "author": "worker02 /root",
+  "request": "B-CONDITIONAL-ROW-0145",
+  "operation": "ORIGINAL-w08::vm-prop-menadione",
+  "owner_sha256": "d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659",
+  "scope": "Four inherited exact synonym tokens only. This is additional source research, not row admission, whole-owner approval, source case acceptance, or permission to edit/export.",
+  "findings": [
+    {
+      "token": "Aquakay",
+      "strongest_justified_disposition": "same-substance chemical synonym",
+      "evidence": [
+        {
+          "path": "inputs/ontology-capture.json",
+          "locator": "/_embedded/terms/0/obo_synonym/8",
+          "meaning": "Related synonym of type BRAND NAME; positive association, not an exact finished-product assertion."
+        },
+        {
+          "path": "skeptic/captures-v2/nist-menadione.body",
+          "locator": "Menadione identity header and Other names",
+          "meaning": "Conventional name for CAS58-27-5/C11H8O2 molecular record."
+        },
+        {
+          "path": "research/root-authority-open.json",
+          "locator": "NZ EPA NZIoC substance overview, parsed lines238-255",
+          "meaning": "Regulatory chemical inventory lists Aquakay as a synonym of Menadione/CAS58-27-5."
+        },
+        {
+          "path": "skeptic/captures-v3/sangon-vitamin-k3.body",
+          "locator": "PDF pages1 and3, sections1.2 and3.1",
+          "meaning": "Manufacturer A502486 SDS uses Aquakay as other identification of VitaminK3; composition names Menadione/CAS58-27-5, at least96%. This purity is not transferred to the owner or historical medicines."
+        }
+      ],
+      "recommendation": "Retain the sourced conventional menadione chemical-name sense for coordinator/W01 consideration. Brand annotation alone is not grounds to reject it. Do not treat an Aquakay finished dosage product as neat menadione.",
+      "limits": "Historical FDA listings identify Aquakay tablets/injection but do not establish their complete composition. No claim of universal brand identity, historical formulation equality, all-country/all-time coverage, owner admission or export clearance."
+    },
+    {
+      "token": "Aquinone",
+      "strongest_justified_disposition": "same-substance chemical synonym",
+      "evidence": [
+        {
+          "path": "inputs/ontology-capture.json",
+          "locator": "/_embedded/terms/0/obo_synonym/9",
+          "meaning": "Related BRAND NAME association; not a complete formulation."
+        },
+        {
+          "path": "skeptic/captures-v2/nist-menadione.body",
+          "locator": "Menadione identity header and Other names",
+          "meaning": "Molecular record lists Aquinone under neutral menadione/CAS58-27-5."
+        },
+        {
+          "path": "research/root-authority-open.json",
+          "locator": "NZ EPA NZIoC substance overview, parsed lines238-255",
+          "meaning": "Chemical inventory explicitly lists Aquinone as a synonym of Menadione/CAS58-27-5."
+        }
+      ],
+      "recommendation": "Retain the supported conventional substance-name sense for coordinator/W01 consideration. Do not infer the complete identity of historical Aquinone Bischoff Injection from chemical databases or from its product name.",
+      "limits": "The historical product listing does not specify a salt, solvent, concentration or complete formulation. Absence of these details is not grounds to reject the demonstrated chemical synonym. No guessed derivative, historical formulation equivalence or global row/export approval."
+    },
+    {
+      "token": "Hemodal",
+      "strongest_justified_disposition": "nonresolving source label justified",
+      "evidence": [
+        {
+          "path": "inputs/ontology-capture.json",
+          "locator": "/_embedded/terms/0/obo_synonym/10",
+          "meaning": "Positive related BRAND NAME association retained."
+        },
+        {
+          "path": "skeptic/captures-v2/nist-menadione.body",
+          "locator": "Menadione identity header and Other names",
+          "meaning": "Positive conventional chemical-name association retained; not a universal formulation claim."
+        },
+        {
+          "path": "research/c/captures/coimbra-194502.body",
+          "locator": "PDF page22, Bayer Hemodal advertisement, separate bottom tablet and injection blocks",
+          "meaning": "Tablets name a dimethylaminoacetyl-methylnaphthohydroquinone chloromethylate derivative; injection names sodium bisulfite of methylnaphthoquinone. These explicit material descriptions do not denote neutral menadione."
+        },
+        {
+          "path": "research/c/captures/coimbra-p22.png",
+          "locator": "Complete rendered PDF page22; visual layout checked by root, research_c and final_reviewer",
+          "meaning": "Preserves the separation of tablet and injectable chemical descriptions; OCR must not conflate them."
+        },
+        {
+          "path": "research/c/search-07.json",
+          "locator": "Full browser-parsed sc-205990 and sc-215295 PDF sections1 and3; exact raw curl403 bodies are separate failed captures",
+          "meaning": "The same manufacturer lists Hemodal for neutral menadioneCAS58-27-5 and menadione sodium bisulfiteCAS130-37-0. Positive neutral chemical use and specific conflicting form both remain."
+        }
+      ],
+      "recommendation": "Withhold unqualified exact resolution of the inherited bare Hemodal token pending contextual reconciliation. A provenance-preserving nonresolving disposition is scientifically justified for this unqualified inherited entry; retain its raw spelling/source/history and positive conventional chemical usage. Root/W01 decide the native representation and any change after filing/review.",
+      "limits": "This does not mean every Hemodal use is false or that the positive database association should be erased. No replacement identity/CURIE, derivative structure, formulation-wide component inference or quantity extrapolation is proposed. The original kg_microbe token lacks a product/date/context selector."
+    },
+    {
+      "token": "Kappaxin",
+      "strongest_justified_disposition": "same-substance chemical synonym",
+      "evidence": [
+        {
+          "path": "inputs/ontology-capture.json",
+          "locator": "/_embedded/terms/0/obo_synonym/11",
+          "meaning": "Related BRAND NAME with kegg.drug provenance."
+        },
+        {
+          "path": "research/c/captures/kegg-D02335-flat-r2.body",
+          "locator": "ENTRY D02335; NAME, FORMULA, DBLINKS fields",
+          "meaning": "Kappaxin(TN) is listed with Menadione(USP), formulaC11H8O2 and CAS58-27-5; molecule context, not an excipient-complete injection."
+        },
+        {
+          "path": "research/c/captures/lkt-V3479-msds.body",
+          "locator": "PDF pages1-2, sections1 and3",
+          "meaning": "LKT VitaminK3 V3479 SDS explicitly includes Kappaxin under Chemical Name(Synonyms), with CAS58-27-5 and C11H8O2 composition."
+        },
+        {
+          "path": "research/c/captures/govinfo-19710806.body",
+          "locator": "Federal Register1971-08-06, printedp14506/PDFp50, Winthrop NDA4-760",
+          "meaning": "Historical Kappaxin Inj. product existence is separate from the supported chemical-name sense; complete composition is not provided by the listing."
+        }
+      ],
+      "recommendation": "Retain supported conventional menadione chemical-name use. Preserve the distinct historical Kappaxin injection boundary; do not resolve whole finished injection to neat compound.",
+      "limits": "No inferred solvent, salt, dose, purity or current marketed status. Positive chemical-name evidence is not generic approval of every historical Kappaxin product or the entire owner row."
+    }
+  ],
+  "common_limits": [
+    "All four entries are inherited unchanged from the authentic before; no alias or history has been edited.",
+    "CHEBI28869 and CAS58-27-5 menadione remain intact. ATCC1257 solute/stock distinction remains separately scoped and all existing holds remain.",
+    "Database and manufacturer naming assertions are evidence of actual usage, not independent experimental votes. Repeated captures and cross-referencing sources are not multiplied as independent approvals.",
+    "No fabricated SKU, lot assay, universal brand scope, guessed menadiol/bisulfite/phylloquinone identity or source absence claim.",
+    "Search coverage is bounded to logged requests and inspected documents. Failed retrievals remain explicit. W01 full-row review and coordinator admission are separate."
+  ],
+  "draft_predecessor": "assessment-v1.json retained; its Kappaxin printed page14492 was a transcription error. Actual PDFpage50 printed14506 visually verified. No scientific disposition changed."
+}

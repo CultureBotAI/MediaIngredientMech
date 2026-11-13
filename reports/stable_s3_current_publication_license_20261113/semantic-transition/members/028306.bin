@@ -1,0 +1,80 @@
+identifier: CHEBI:472657
+preferred_term: Cefixime
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 14
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:cefixime; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:472657
+  notes: CHEBI:472657 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-04T17:55:33.979619+00:00'
+  curator: microbedecoder-import-review
+  action: RESTORED_AFTER_FALSE_POSITIVE
+  changes: restored ontology_mapping CHEBI:472657; UNMAPPED -> PENDING_REVIEW
+  notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+    curation history is append-only. CHEBI:472657 is a real ChEBI term that resolves
+    locally as ''cefixime''; it was demoted for exceeding the CHEBI:300000 ceiling
+    while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+    MAPPED: it has never had a substantive review, and the batch review that promoted
+    its cohort was itself tautological (#203). See #198.'
+  llm_assisted: true
+- timestamp: '2026-08-06T02:16:55+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter, its canonical
+    label exact-matches the record ontology_label (case-insensitive), AND it passed
+    the specificity check (#203) — not a broad class-level term, and no strictly more
+    specific sibling label exists. Promoted PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000629; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: CHEBI:472657
+  ontology_label: cefixime
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: microbedecoder import via ols-label-exact
+    notes: Restored after a false-positive demotion; CHEBI:472657 resolves to 'cefixime'.
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C16H15N5O7S2
+  smiles: '[H][C@]12SCC(C=C)=C(C(=O)O)N1C(=O)[C@H]2NC(=O)/C(=NOCC(=O)O)c1csc(N)n1'
+  inchi: InChI=1S/C16H15N5O7S2/c1-2-6-4-29-14-10(13(25)21(14)11(6)15(26)27)19-12(24)9(20-28-3-8(22)23)7-5-30-16(17)18-7/h2,5,10,14H,1,3-4H2,(H2,17,18)(H,19,24)(H,22,23)(H,26,27)/b20-9-/t10-,14-/m1/s1
+  molecular_weight: 453.458
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:31:06.617150+00:00'
+mim_id: MIM:0000629
+legacy_identifiers:
+- MIM:Cefixime
+- CHEBI:472657

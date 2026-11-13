@@ -1,0 +1,138 @@
+{
+  "case_index": 4,
+  "case_id": "CM_NAME:05cf4675ae38ae4637b1d61cd8b2d7378b8c29edcdd55d893c13b13636ee537e",
+  "query_label": "bovine serum albumin, FractionV (Miles Laboratories, Elkhart, IN, No.81-003)",
+  "family_terms": [
+    "albumin",
+    "albumine"
+  ],
+  "ignored_files_included": true,
+  "method": "Path.rglob of all native per-record YAML includes ignored paths; native is_resolving_synonym policy applied; independent exact casefold/whitespace lookup over every CSV label-index row. No fuzzy hit treated as identity.",
+  "native_catalog_files_scanned": 2956,
+  "generated_label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "exact_resolving_native_matches": [],
+  "exact_index_rows": [],
+  "family_candidates": [
+    {
+      "path": "data/ingredients/mapped/Bovine_Albumin.yaml",
+      "sha256": "6fede17cd3c2e2547278ae75d0b11cdb8d0aaafaa498a186155c567fdaae22f8",
+      "identifier": "MICRO:0000307",
+      "preferred_term": "Bovine albumin",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Bovine albumin",
+        "Bovine albumin"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Bovine albumin",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0000307",
+        "ontology_label": "bovine albumin",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0342; matched via 'Bovine albumin' (name normalization); label-exact"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "identifier": "NCIT:C85253",
+      "preferred_term": "bovine serum albumin",
+      "mapping_status": "MAPPED",
+      "names": [
+        "bovine serum albumin"
+      ],
+      "all_synonyms": [],
+      "supplied_form": [
+        {
+          "name": "Bovine Serum Albumin",
+          "cas_rn": "9048-46-8",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A7030",
+          "form": "lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially globulin free",
+          "notes": "Original CultureBotHT product; supplier page confirms CAS and preparation. Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+        },
+        {
+          "name": "Bovine serum albumin fraction V",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A9647",
+          "notes": "Explicit product in CultureMech:015191 preparation note; preserved from the original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+        },
+        {
+          "name": "BSA solution",
+          "supplier": "Sigma-Aldrich",
+          "catalog_number": "A7409",
+          "form": "solution",
+          "notes": "Alternative product explicitly named in CultureMech:015191; no concentration or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+        }
+      ],
+      "ontology_mapping": {
+        "ontology_id": "NCIT:C85253",
+        "ontology_label": "Bovine Serum Albumin",
+        "ontology_source": "NCIT",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "NCIT via OLS (label-exact)",
+            "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='bovine serum albumin'"
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+            "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml",
+      "sha256": "24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213",
+      "identifier": "MICRO:0001365",
+      "preferred_term": "Lactalbumin hydrolysate",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Lactalbumin hydrolysate",
+        "Lactalbumin hydrolysate"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Lactalbumin hydrolysate",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0001365",
+        "ontology_label": "lactalbumin hydrolysate",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search",
+            "notes": "Auto-upgraded from 'UNMAPPED_0420'; match=label-exact"
+          }
+        ]
+      }
+    }
+  ]
+}

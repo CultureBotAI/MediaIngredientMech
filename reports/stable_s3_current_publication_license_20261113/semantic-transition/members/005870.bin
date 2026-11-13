@@ -1,0 +1,112 @@
+id: CultureMech:004197
+name: yeast_extract_skim_milk_medium
+original_name: Yeast extract - SKIM MILK medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: KOMODO Medium 170
+  term:
+    id: komodo.medium:170
+    label: Yeast extract - SKIM MILK medium
+notes: DSMZ Medium 170 defines Yeast Extract - Skim Milk Medium as 10.0 g Difco skim
+  milk, 1.0 g yeast extract, 15.0 g agar, and 1000.0 ml distilled water.
+ingredients:
+- preferred_term: Skim milk (Difco)
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  source: DSMZ Medium 170
+  notes: DSMZ Medium 170 lists 10.0 g/L Skim milk from Difco; the commercial milk
+    product is retained as an opaque component.
+- preferred_term: Yeast extract
+  concentration:
+    value: '1.0'
+    unit: G_PER_L
+  source: DSMZ Medium 170
+  notes: DSMZ Medium 170 lists 1.0 g/L Yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+  nutritional_roles:
+  - PROTEIN_SOURCE
+- preferred_term: Agar
+  concentration:
+    value: '15.0'
+    unit: G_PER_L
+  source: DSMZ Medium 170
+  notes: DSMZ Medium 170 lists 15.0 g/L Agar.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  physicochemical_roles:
+  - SOLIDIFYING_AGENT
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: DSMZ Medium 170
+  notes: DSMZ Medium 170 lists 1000.0 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:02.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 170'
+- timestamp: '2026-02-03T11:19:19.233135'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 170
+- timestamp: '2026-03-13T06:19:25.776596Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:004197'
+- timestamp: '2026-03-17T06:30:55.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:40.732790+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Yeast extract - SKIM MILK medium" to "yeast_extract_skim_milk_medium"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:55.722592+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_dsmz_170_yeast_extract_skim_milk_score15.py
+  action: RESOLVED_DSMZ_170_YEAST_EXTRACT_SKIM_MILK_SCORE15
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium170.pdf; https://mediadive.dsmz.de/medium/170;
+    https://mediadive.dsmz.de/rest/medium/170
+  notes: DSMZ Medium 170 defines Yeast Extract - Skim Milk Medium as 10.0 g Difco
+    skim milk, 1.0 g yeast extract, 15.0 g agar, and 1000.0 ml distilled water. Added
+    the explicit water row, grounded yeast extract, agar, and water, and retained
+    Difco skim milk as an opaque commercial product. Removed a false kg_microbe_match
+    to DSMZ Medium 12 / Soil Extract Medium.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix 10.0 g Skim milk (Difco), 1.0 g yeast extract, 15.0 g agar, and
+    1000.0 ml distilled water.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium170.pdf
+- reference: https://mediadive.dsmz.de/medium/170
+- reference: https://mediadive.dsmz.de/rest/medium/170

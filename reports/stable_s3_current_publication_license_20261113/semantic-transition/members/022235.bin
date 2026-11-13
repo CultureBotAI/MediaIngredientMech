@@ -1,0 +1,78 @@
+identifier: CHEBI:219729
+preferred_term: ferroverdin
+ontology_mapping:
+  ontology_id: CHEBI:219729
+  ontology_label: Ferroverdin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgmicrobe.compound:ferroverdin
+    notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
+synonyms:
+- synonym_text: (4-ethenylphenyl) 4-hydroxy-3-nitrosobenzoate;iron(2+)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'produces: ferroverdin'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T06:10:55.017713+00:00'
+  curator: audit_propose_chebi_for_unmapped
+  action: CREATED_FROM_UNMAPPED_QUEUE
+  changes: Created new ingredient from kgmicrobe.compound:ferroverdin with auto-curated
+    CHEBI CHEBI:219729 (Ferroverdin)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.601201+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.578216+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=3C15H11NO4.Fe; inchi=InChI=1S/3C15H11NO4.Fe/c3*1-2-10-3-6-12(7-4-10)20-;
+    smiles=C=Cc1ccc(OC(=O)c2ccc(O)c(N=O)c2)cc1.C=Cc1ccc(OC(=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.456159+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    ferroverdin''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    ferroverdin''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001083; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: 3C15H11NO4.Fe
+  inchi: InChI=1S/3C15H11NO4.Fe/c3*1-2-10-3-6-12(7-4-10)20-15(18)11-5-8-14(17)13(9-11)16-19;/h3*2-9,17H,1H2;/q;;;+2
+  smiles: C=Cc1ccc(OC(=O)c2ccc(O)c(N=O)c2)cc1.C=Cc1ccc(OC(=O)c2ccc(O)c(N=O)c2)cc1.C=Cc1ccc(OC(=O)c2ccc(O)c(N=O)c2)cc1.[Fe+2]
+  data_source: CHEBI sqlite (oaklib)
+mim_id: MIM:0001083
+legacy_identifiers:
+- MIM:Ferroverdin
+- CHEBI:219729

@@ -1,0 +1,91 @@
+identifier: kgmicrobe.ingredient:wc_trace_elements_solution
+preferred_term: WC Trace Elements Solution
+synonyms:
+- synonym_text: WC Trace Elements Solution
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.999971+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0066 → MICRO:0000455 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248308+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
+    (#323)
+  llm_assisted: false
+- timestamp: '2026-11-02T21:07:06.593281+00:00'
+  curator: Codex
+  action: REKEYED_WC_STOCK_IDENTITY
+  changes: '#751: identifier MICRO:0000455 -> kgmicrobe.ingredient:wc_trace_elements_solution;
+    mapping_quality LEXICAL_MATCH -> NARROW_MATCH to the unchanged MICRO:0000455 parent.
+    Preserve the source label, prior mapping evidence and history, stored occurrences,
+    stock type and provisional nutritional role. No component, chemistry, membership
+    or role enrichment. Reviewed owner sha256=692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee.
+    UTEX https://utex.org/products/wc-trace-elements-solution defines an eight-component
+    WC stock used by WC and WC+; MicrO https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+    defines MICRO:0000455 as the generic trace elements solution class. A complete
+    label/synonym scan of that immutable ontology found no WC-specific class. Primary
+    capture hashes, exact class/table extracts and the reviewed owner preimage are
+    bound by reports/step7c_wc_stock_751_20261102/source-evidence.json sha256=1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a.
+    Under MAPPING_SEMANTICS section 3 step 3 this specific mixture has a local ingredient
+    identity and NARROW_MATCH grounding, exported as skos:broadMatch to the generic
+    class. The earlier stem-match evidence is retained as history; it does not establish
+    the generic class as this stock''s identity. NONE: identity correction only; changed/new
+    mappings remain withheld pending native mapping-specific review; provisional roles
+    retain their hold.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'CultureMech placeholder_id: 8'
+ontology_mapping:
+  ontology_id: MICRO:0000455
+  ontology_label: trace elements solution
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0066; matched via 'WC Trace Elements Solution';
+      stem-substring
+  - evidence_type: MANUAL_CURATION
+    source: https://utex.org/products/wc-trace-elements-solution
+    notes: UTEX https://utex.org/products/wc-trace-elements-solution defines an eight-component
+      WC stock used by WC and WC+; MicrO https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+      defines MICRO:0000455 as the generic trace elements solution class. A complete
+      label/synonym scan of that immutable ontology found no WC-specific class. Primary
+      capture hashes, exact class/table extracts and the reviewed owner preimage are
+      bound by reports/step7c_wc_stock_751_20261102/source-evidence.json sha256=1076868a28ad39636742ad314a7a7782e981151aa98e85bc95bcf91b6a3e9b5a.
+      Under MAPPING_SEMANTICS section 3 step 3 this specific mixture has a local ingredient
+      identity and NARROW_MATCH grounding, exported as skos:broadMatch to the generic
+      class. The earlier stem-match evidence is retained as history; it does not establish
+      the generic class as this stock's identity.
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+ingredient_type: STOCK_SOLUTION

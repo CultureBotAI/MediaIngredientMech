@@ -1,0 +1,192 @@
+identifier: CHEBI:30411
+preferred_term: Cobalamine
+ontology_mapping:
+  ontology_id: CHEBI:30411
+  ontology_label: cobalamin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320/#319)
+    notes: 'identifier and ontology_id CHEBI:28911 -> CHEBI:30411. ChEBI''s live definition
+      of CHEBI:28911 is ''A cobalamin in which the central cobalt atom has an oxidation
+      state of +3'' — it specifies an oxidation state this record''s label does not.
+      ''Cobalamine'' names the vitamer generically, so MAPPING_SEMANTICS §3 step 4
+      gives it the generic term CHEBI:30411 (''cobalamin''), which was unheld. The
+      record''s own CAS 18534-66-2 is registered by ChEBI against cob(I)alamin — a
+      *third* oxidation state — which is the #320 conflict that surfaced this and
+      is itself evidence the record was never specific to +3. Definition read from
+      the live EBI OLS4 API, since #319 records that the local ChEBI build lacks definitions
+      for some of these terms.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#138/#320)
+    notes: 'Cleared cas_rn, molecular_formula, inchi and smiles, and moved kg_microbe_node_id
+      CHEBI:28911 -> CHEBI:30411. Every one of these encoded the +3 oxidation state
+      this record does not assert. The formula/InChI/SMILES were written by AUTO_BACKFILL_CHEBI_CHEMISTRY
+      on 2026-05-01 by copying CHEBI:28911 while the record was mapped there, so they
+      were a transcription of the grounding rather than evidence for it — the InChI
+      still ended ''/q;+3/p-2''. The cas_rn 18534-66-2 is cob(I)alamin (KEGG C00853,
+      ChEBI:15982, Gmelin 887721), a THIRD oxidation state, and came from a PubChem
+      name lookup — the mechanism that also put CHES on Beef extract. CHEBI:30411
+      deliberately carries no formula, charge or mass because its oxidation state
+      is unspecified, so a record grounded there must not carry structure fields that
+      fix one. Leaving them would re-seed the same wrong inference on any future automated
+      re-grading. Note the formula does not discriminate oxidation state in any case:
+      ChEBI records the identical C62H88CoN13O14P for cob(II)alamin and cob(III)alamin,
+      which differ only in the charge field.'
+synonyms:
+- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: COBALAMIN
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cbl
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Coalpha-[alpha-(5,6-dimethylbenzimidazolyl)]-cobamide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cob(III)alamin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cobalamin (B12)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cobalamin (III)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: alpha-(5,6-dimethylbenzimidazolyl)cobamide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalamin(III)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cobalamin (1 μg/μL)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: cobalamin(1+)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 9
+  media_count: 9
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:30.156848+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:18534-66-2 from PubChem API via name lookup (Cobalamine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: COBALAMIN, Cbl, Coalpha-[alpha-(5,6-dimethylbenzimidazolyl)]-cobamide,
+    Cob(III)alamin, Cobalamin (B12), ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.840424+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.699826+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C62H88CoN13O14P; inchi=InChI=1S/C62H90N13O14P.Co/c1-29-20-39-40(21-30(29);
+    smiles=[H][C@]12[C@H](CC(N)=O)[C@@]3(C)CCC(=O)NC[C@@H](C)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.445363+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110516+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cobalamin
+  action: REGROUNDED_TO_GENERIC_TERM
+  changes: identifier/ontology_id CHEBI:28911 ('cob(III)alamin') -> CHEBI:30411 ('cobalamin')
+    (#320); the term specified oxidation state +3 and the label specifies none. §3
+    step 4.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: cobalamin_residual_cleanup
+  action: CLEARED_CONTRADICTORY_CHEMISTRY
+  changes: 'Cleared cas_rn, molecular_formula, inchi and smiles, and moved kg_microbe_node_id
+    CHEBI:28911 -> CHEBI:30411. Every one of these encoded the +3 oxidation state
+    this record does not assert. The formula/InChI/SMILES were written by AUTO_BACKFILL_CHEBI_CHEMISTRY
+    on 2026-05-01 by copying CHEBI:28911 while the record was mapped there, so they
+    were a transcription of the grounding rather than evidence for it — the InChI
+    still ended ''/q;+3/p-2''. The cas_rn 18534-66-2 is cob(I)alamin (KEGG C00853,
+    ChEBI:15982, Gmelin 887721), a THIRD oxidation state, and came from a PubChem
+    name lookup — the mechanism that also put CHES on Beef extract. CHEBI:30411 deliberately
+    carries no formula, charge or mass because its oxidation state is unspecified,
+    so a record grounded there must not carry structure fields that fix one. Leaving
+    them would re-seed the same wrong inference on any future automated re-grading.
+    Note the formula does not discriminate oxidation state in any case: ChEBI records
+    the identical C62H88CoN13O14P for cob(II)alamin and cob(III)alamin, which differ
+    only in the charge field.'
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518580+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 9/9 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-31T23:56:54.854807+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Cobalamin (1 μg/μL)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''cobalamin(1+)''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000731; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:30.156796+00:00'
+kg_microbe_node_id: CHEBI:30411
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Vitamin Source'
+mim_id: MIM:0000731
+legacy_identifiers:
+- MIM:Cobalamine
+- CHEBI:30411

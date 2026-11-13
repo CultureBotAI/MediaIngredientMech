@@ -1,0 +1,11 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/menadione718-hemodal-successor-independent-v1/save_independent_review_v3.py", line 113, in <module>
+    rr.validate_review(review,F/'schema/record_review.yaml');js(D/'review-content.json',review);yp=rr.save_review(F,review,F/'schema/record_review.yaml');assert rr.read_review(F,yp.relative_to(F).as_posix(),F/'schema/record_review.yaml')==review;rr.assert_current_source(F,review)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree/scripts/record_review.py", line 303, in validate_review
+    _owners(finding, f"finding {finding['finding_id']}")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree/scripts/record_review.py", line 182, in _owners
+    raise ReviewError(f"{label} requires maintained owner paths or an explicit ownership limit")
+menadione_peer_native.ReviewError: finding MENADIONE-HEMODAL-001 requires maintained owner paths or an explicit ownership limit

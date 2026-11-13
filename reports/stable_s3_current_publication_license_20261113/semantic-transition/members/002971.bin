@@ -1,0 +1,57 @@
+identifier: UNMAPPED_0290
+preferred_term: ZMB
+synonyms:
+- synonym_text: ZMB
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 1 CultureBot media; samples: ZMB_noFolicAcid. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_ACRONYM_FALSE_POSITIVE
+  changes: Reviewed OAK/OLS audit candidate NCIT:C17267 Zambia; left unmapped because
+    the exact hit is a country acronym false positive and not a media ingredient.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-05-11T18:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named ZMB medium/formulation variant and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/ZMB-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended mapping status:** retain **`UNMAPPED`**
+    with a resolved textual identity. Do not create an external SSSOM identity row
+    until a stable named-medium record is found or minted in an appropriate resource.
+    Thus, **no `skos:exactMatch` or `skos:closeMatch` row** is currently justified.
+    If local records are created for mZMB or `ZMB_noFolicAcid`, relate those local
+    variants to ZMB using a na CURIEs discussed: NCIT:C17267. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  1 CultureBot media; samples: ZMB_noFolicAcid. No CAS-RN or CHEBI mapping available;
+  reviewed on 2026-05-11 and left unmapped because the exact NCIT hit is a country
+  acronym false positive. Classified on 2026-05-11 as a named medium/formulation variant
+  pending recipe-level curation.'
+ingredient_type: NAMED_MEDIUM

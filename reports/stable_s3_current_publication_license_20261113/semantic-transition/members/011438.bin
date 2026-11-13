@@ -1,0 +1,470 @@
+{
+  "author": "/root/materials_research",
+  "assessed_at": "2026-11-08T08:32:28.638400+00:00",
+  "scope": "Primary BSA context correction, not an independent review.",
+  "case_count": 5,
+  "occurrence_count": 7,
+  "proposal_count": 1,
+  "case_assessments": [
+    {
+      "case_id": "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+      "case_index": 11,
+      "case_input_sha256": "a017f4ba9a4eb10116516438725e75666de5a57111fab1a90af4e3e7085e8a17",
+      "predecessor_decision_object_sha256": "a0d36df6a0c0e322f800bcc9dc4ee4c5653ebd480fd5f0732950fa7c372522c6",
+      "proposal_id": "W05-FINAL-MAT-007",
+      "assessment": "TOGO M2879 and M2880 each explicitly list 2.5 g Bovine albumin fraction V in the ADC composition, separately from the 50 ml ADC receiving dose. Keep the existing Fraction V supplied-form context. The water input is not proof of exact final stock volume, and a named Difco supplement is not proof of a specific albumin catalogue. The M2879 provider table versus quoted study ADC/OADC conflict remains a source hold.",
+      "source_evidence_ids": [
+        "MATERIALS-CAP-a08fb341926e1d0a",
+        "MATERIALS-CAP-ee722a18f3e26939"
+      ],
+      "occurrences": [
+        {
+          "occurrence_id": "CM_OCC:edb03c78593306259fdb43a90571227c4fbc56bd4e48fd0ba55b5831b2a6d353",
+          "recipe_id": "CultureMech:009413",
+          "component_path": "solutions/0/composition/2",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h10_plates_difco_supplemented_with_middlebrook_albumin_dextrose_catalase_and_tween_80.yaml",
+            "sha256": "f652afaefc556ba26ececfae0a76cb537c2e7a857dc2edc713e1659417ea5ba0"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[0].composition[2].concentration: Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:49.248766+00:00; capture SHA256=2101a2efa3d423b6fcdf25342963151d3367f0b1e9b35ea3793e08e3009f5d4f.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine albumin fraction V \",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[0].composition[2].notes: Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:49.248766+00:00; capture SHA256=2101a2efa3d423b6fcdf25342963151d3367f0b1e9b35ea3793e08e3009f5d4f.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2879",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin fraction V \",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine albumin fraction V"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009413"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2879"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        },
+        {
+          "occurrence_id": "CM_OCC:7f37207efc6ae0f6642b33b386643cf8b2c6efea7f85cf61d7f7745d29ba8a8a",
+          "recipe_id": "CultureMech:009415",
+          "component_path": "solutions/0/composition/2",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h9_difco_liquid_medium_supplemented_with_middlebrook_albumin_dextrose_catalase_and_tween_80.yaml",
+            "sha256": "61fc35e783749a3f45be9ac0a5c5c258e4656ec924ffe47153923a0ffd071a8c"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[0].composition[2].concentration: Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:51.214916+00:00; capture SHA256=55d8d62aacd4bbaf10029fe14bac41ede7f1327d13e54862bb48848b6713edc2.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine albumin fraction V \",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[0].composition[2].notes: Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:51.214916+00:00; capture SHA256=55d8d62aacd4bbaf10029fe14bac41ede7f1327d13e54862bb48848b6713edc2.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2880",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin fraction V \",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 2.5 g; scope: Middlebrook albumin/dextrose/catalase (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine albumin fraction V"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009415"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2880"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        }
+      ],
+      "scientific_change": false,
+      "boundaries": "Source-specific supplied-form provenance only. No BSA-to-whole-medium identity, product equivalence, component coupling, role or export admission follows."
+    },
+    {
+      "case_id": "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+      "case_index": 20,
+      "case_input_sha256": "7bafaafc240535e5b5a2650a3e6ca636ded5187f2fe274170e5bd812ab8c4842",
+      "predecessor_decision_object_sha256": "e3975d422393c2c85ddda9e8d38491b48f1a12ed5a3c8c2f167961337311bb45",
+      "proposal_id": "W05-FINAL-MAT-007",
+      "assessment": "TOGO M1946 (original-source metadata NBRC1219) explicitly lists 50 g Bovine albumin (Fraction V) in the OADC preparation. Keep this separate from the 100 ml receiving dose. The listed 1 L water is a stock input, not an independently established exact final volume. Preserve the frozen TOGO-versus-NBRC main-water source-version distinction and the unknown albumin catalogue.",
+      "source_evidence_ids": [
+        "MATERIALS-CAP-b5dd8b92f4e4ea2c"
+      ],
+      "occurrences": [
+        {
+          "occurrence_id": "CM_OCC:8cea04c994ba571f16c49c02f29bea5a3050bc6812f97f94ca3aabe8536cedc5",
+          "recipe_id": "CultureMech:008525",
+          "component_path": "solutions/0/composition/3",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h11_agar.yaml",
+            "sha256": "70bd0aa275b70f180044985941602f767d66a465a6300cb6f0658360f33b9316"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[0].composition[3].concentration: Source amount: 50 g; scope: *OADC enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[3]; accessed=2026-10-09T00:07:49.791948+00:00; capture SHA256=6502ae3706efdaa157e3fb3398082d183daf46a1f968d39f51bddbfc7497a40a.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine albumin (Fraction V)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[0].composition[3].notes: Source amount: 50 g; scope: *OADC enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[3]; accessed=2026-10-09T00:07:49.791948+00:00; capture SHA256=6502ae3706efdaa157e3fb3398082d183daf46a1f968d39f51bddbfc7497a40a.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1946",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin (Fraction V)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 50 g; scope: *OADC enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine albumin (Fraction V)"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008525"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1946"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        }
+      ],
+      "scientific_change": false,
+      "boundaries": "Source-specific supplied-form provenance only. No BSA-to-whole-medium identity, product equivalence, component coupling, role or export admission follows."
+    },
+    {
+      "case_id": "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+      "case_index": 70,
+      "case_input_sha256": "3169035f5758959cc47bcb4f25b9646a9b7b077b20366107afded801efbdceae",
+      "predecessor_decision_object_sha256": "129a35c888f0da0481988b5183171aa4f9490ac3c8d5fd3bb4b05dd396837a99",
+      "proposal_id": "W05-FINAL-MAT-007",
+      "assessment": "TOGO M194 is BSK Medium with original-source metadata JCM201. Its complete component table explicitly lists Bovine albumin, Fraction V, 50 g, as a main batch input. The recipe has 900 ml water, a 200 ml 7% gelatin input, 100 ml CMRL product and later final 6% rabbit-serum supplementation; these do not establish an exact final preparation volume. Correct only the irrelevant ADC/OADC wording to BSK context. Retain Fraction V, 50 g, unknown manufacturer/catalogue and unknown final volume; do not assert 50 g/L. The pinned JCM201 response says Nothing found, so it supplies no original-page corroboration.",
+      "source_evidence_ids": [
+        "MATERIALS-CAP-776733f8ca9ff0a9",
+        "MATERIALS-ATTEMPT-d63e2a0487c298bb"
+      ],
+      "occurrences": [
+        {
+          "occurrence_id": "CM_OCC:553f0c2bb6a0ed4037dcdff9eb7e97c2cbcd332c9d0ee7c301545ead26ab2f85",
+          "recipe_id": "CultureMech:008529",
+          "component_path": "ingredients/6",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M194_BSK_Medium.yaml",
+            "sha256": "7c69961a498dfc2ca583b739bc26731a76e7a46096110762eb23c28e27216bc6"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "ingredients[6].notes: Source batch input: 50 g. Final preparation volume is not independently established; the source batch amount is retained without asserting a final concentration. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=components[0].items[7]; accessed=2026-10-08T21:23:12.010583+00:00; capture SHA256=84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin, Fraction V\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source batch input: 50 g. Final preparation volume is not independently established; the source batch amount is retained without asserting a final concentration.",
+            "preferred_term": "Bovine albumin, Fraction V"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008529"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M194"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        }
+      ],
+      "scientific_change": true,
+      "boundaries": "Source-specific supplied-form provenance only. No BSA-to-whole-medium identity, product equivalence, component coupling, role or export admission follows."
+    },
+    {
+      "case_id": "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+      "case_index": 118,
+      "case_input_sha256": "5f3c5190aa84a6465d25b55afc8986b8a242daea17a38265079cf0f16660caa2",
+      "predecessor_decision_object_sha256": "218500e07abf792e1f4e1c74a82435e94a22145efda65fbd0455e3ced53b548a",
+      "proposal_id": "W05-FINAL-MAT-007",
+      "assessment": "TOGO M2407 explicitly lists 50 g Bovine Albumin (Fraction V) in the OADC Enrichment composition, separately from the 100 ml receiving dose. Preserve the grade and OADC scope. The water input is not an exact final stock volume, and the named Difco enrichment does not independently identify an albumin catalogue.",
+      "source_evidence_ids": [
+        "MATERIALS-CAP-4b8a987a15a1852d"
+      ],
+      "occurrences": [
+        {
+          "occurrence_id": "CM_OCC:350161e7c65c0e47f17ff56f777191694d8e383a73e08847743b9678eead7990",
+          "recipe_id": "CultureMech:008990",
+          "component_path": "solutions/0/composition/3",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h11_agar_difco.yaml",
+            "sha256": "a8afb9b86d5823ea12f44ae237e751c31db83c47605d75bf0f0e87f86079c65a"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[0].composition[3].concentration: Source amount: 50 g; scope: OADC Enrichment (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[3]; accessed=2026-10-09T00:07:50.071945+00:00; capture SHA256=04b2f3a2ed27accf217143d8435e18ccd9d58450ffb5810d3d335ea96d363f0f.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine Albumin (Fraction V)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[0].composition[3].notes: Source amount: 50 g; scope: OADC Enrichment (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[3]; accessed=2026-10-09T00:07:50.071945+00:00; capture SHA256=04b2f3a2ed27accf217143d8435e18ccd9d58450ffb5810d3d335ea96d363f0f.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2407",
+                "snippet": "{\n          \"component_name\": \"Bovine Albumin (Fraction V)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 50 g; scope: OADC Enrichment (Difco) stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine Albumin (Fraction V)"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008990"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2407"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        }
+      ],
+      "scientific_change": false,
+      "boundaries": "Source-specific supplied-form provenance only. No BSA-to-whole-medium identity, product equivalence, component coupling, role or export admission follows."
+    },
+    {
+      "case_id": "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1",
+      "case_index": 120,
+      "case_input_sha256": "c30452f15e25738b430b2ed354657504751c0d0bee6822d484408a1c199f18a9",
+      "predecessor_decision_object_sha256": "dc57b1a054a6c10495bff305b4c99dd4f7bb188ce6d6010c23c3bb9dc24f5bca",
+      "proposal_id": "W05-FINAL-MAT-007",
+      "assessment": "The preserved original M2400 and M2401 API records each list 2.5 g Bovine albumin fraction in their ADC composition, without a fraction number. Retain the unnumbered supplied form; neither the other Fraction V cases nor the ADC label licenses inserting V. The historical archive has a batch fetch timestamp, not exact per-row acquisition times. No successful current retrieval or catalogue identity is inferred.",
+      "source_evidence_ids": [
+        "MATERIALS-ARCHIVE-M2400",
+        "MATERIALS-ARCHIVE-M2401"
+      ],
+      "occurrences": [
+        {
+          "occurrence_id": "CM_OCC:f9c5746537560b159b493f41ea34a90be5db8046b39998e9fc932be44f7de1ac",
+          "recipe_id": "CultureMech:008984",
+          "component_path": "solutions/1/composition/2",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h11_solid_medium_supplemented_with_10_albumin_dextrose_and_catalase.yaml",
+            "sha256": "86b87da851ae2f2ca5d6902a9883451a6c16d637ef934154bd853dfbac847c4c"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[1].composition[2].concentration: Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[3].items[2]; accessed=2026-10-09T00:07:50.372609+00:00; capture SHA256=f56a852e8a18339287161d8d639ac815e007d713d59f8bc65074ec0069dafc4f.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine albumin fraction\",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[1].composition[2].notes: Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[3].items[2]; accessed=2026-10-09T00:07:50.372609+00:00; capture SHA256=f56a852e8a18339287161d8d639ac815e007d713d59f8bc65074ec0069dafc4f.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2401",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin fraction\",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine albumin fraction"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008984"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2401"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        },
+        {
+          "occurrence_id": "CM_OCC:c962a28b589960cdfa4aa883d60dce7a80a8df94e3e157cf5e484a1681da3168",
+          "recipe_id": "CultureMech:008983",
+          "component_path": "solutions/1/composition/2",
+          "full_recipe_snapshot": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h9_liquid_medium_supplemented_with_10_albumin_dextrose_and_catalase.yaml",
+            "sha256": "7a0b697cb0ae77aadb43ce0740cd989f7204a2d353d34f7a7d7f9fb48cfc82d7"
+          },
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "solutions[1].composition[2].concentration: Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[3].items[2]; accessed=2026-10-09T00:07:51.435387+00:00; capture SHA256=69d7dd5605e7974d461817251e32f17b69db2f5f75f94843afa40147ea2a8451.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine albumin fraction\",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[1].composition[2].notes: Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[3].items[2]; accessed=2026-10-09T00:07:51.435387+00:00; capture SHA256=69d7dd5605e7974d461817251e32f17b69db2f5f75f94843afa40147ea2a8451.",
+                "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2400",
+                "snippet": "{\n          \"component_name\": \"Bovine albumin fraction\",\n          \"volume\": 2.5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source amount: 2.5 g; scope: Middlebrook ADC Growth Supplement stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+            "preferred_term": "Bovine albumin fraction"
+          },
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008983"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2400"
+            }
+          ],
+          "actual_read_scope": "Exact full BSA occurrence including its evidence; complete current ingredient/solution structure, source notes and preparation context. Historical changes and unrelated chemical groundings are preserved, not recertified."
+        }
+      ],
+      "scientific_change": false,
+      "boundaries": "Source-specific supplied-form provenance only. No BSA-to-whole-medium identity, product equivalence, component coupling, role or export admission follows."
+    }
+  ],
+  "source_captures": [
+    {
+      "evidence_id": "MATERIALS-CAP-a08fb341926e1d0a",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/primary-ba3ffc303010f844.txt",
+        "sha256": "2101a2efa3d423b6fcdf25342963151d3367f0b1e9b35ea3793e08e3009f5d4f"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2879",
+      "original_accessed_at": "2026-11-08T05:07:28.508424+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-CAP-ee722a18f3e26939",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/primary-b15d00f81f2ec90d.txt",
+        "sha256": "55d8d62aacd4bbaf10029fe14bac41ede7f1327d13e54862bb48848b6713edc2"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2880",
+      "original_accessed_at": "2026-11-08T05:07:29.136136+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-CAP-b5dd8b92f4e4ea2c",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/primary-f08497804f472543.txt",
+        "sha256": "6502ae3706efdaa157e3fb3398082d183daf46a1f968d39f51bddbfc7497a40a"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1946",
+      "original_accessed_at": "2026-11-08T05:07:34.962621+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-CAP-776733f8ca9ff0a9",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/primary-3ab9c4e8e0d2cb33.txt",
+        "sha256": "84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194",
+      "original_accessed_at": "2026-11-08T05:08:10.564549+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-ATTEMPT-d63e2a0487c298bb",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/capture-log.json",
+        "sha256": "34b838bfe7b5021b8a2db6711c6d628b1565998299cb5df98355b29ce5998eda"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=201",
+      "original_accessed_at": "2026-11-08T05:08:10.101663+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Retrieval-log entry 50 and complete linked HTML body; response says Nothing found, not positive recipe evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-CAP-4b8a987a15a1852d",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/primary-06facadf4d42d935.txt",
+        "sha256": "04b2f3a2ed27accf217143d8435e18ccd9d58450ffb5810d3d335ea96d363f0f"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2407",
+      "original_accessed_at": "2026-11-08T05:08:39.260340+00:00",
+      "timestamp_precision": "Recorded source request timestamp; reused without a new remote request.",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-ARCHIVE-M2400",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/archived-togo-five-records.json",
+        "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2400",
+      "original_accessed_at": "2026-01-24T23:51:50Z",
+      "timestamp_precision": "batch fetch timestamp; per-record unknown",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    },
+    {
+      "evidence_id": "MATERIALS-ARCHIVE-M2401",
+      "capture": {
+        "root": "artifact",
+        "path": "materials/captures/archived-togo-five-records.json",
+        "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2401",
+      "original_accessed_at": "2026-01-24T23:51:50Z",
+      "timestamp_precision": "batch fetch timestamp; per-record unknown",
+      "read_at": "2026-11-08T08:32:28.638400+00:00",
+      "actual_read_scope": "Complete recipe component tables, source metadata and preparation comments; derived GMO role/property annotations are not new scientific evidence.",
+      "historical_source_bytes_unchanged": true
+    }
+  ],
+  "BSA_current_and_predecessor_full_reads": [
+    {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/materials/inputs/maintained-before.yaml",
+      "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094"
+    },
+    {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/materials/inputs/predecessor.yaml",
+      "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+    }
+  ],
+  "raw_case_and_decision_full_reads": [
+    {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/materials/inputs/raw-cases.json",
+      "sha256": "150dba43d186a6ab647d74e44e751b825d029b0a081a3c4e3deaf6299d108437"
+    },
+    {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/materials/inputs/decisions.json",
+      "sha256": "0582a62c5955fced7d94c639cbd88c14b4572edab7c69fbc54e1a9c53f06052f"
+    },
+    {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/materials/inputs/proposal.json",
+      "sha256": "7b820e962782f7f489f36a0a661b9567bf8f5de3fa5fb7b46a8eb8f7a2415248"
+    }
+  ],
+  "historical_time_distinction": "The frozen M194 occurrence quotes a 2026-10-08T21:23:12.010583+00:00 capture; the independently retained W05 source request is 2026-11-08T05:08:10.564549+00:00. Both reference the identical 84717c... body. Neither timestamp is replaced by this local reread time.",
+  "limits": [
+    "No new remote source request was made for this historical source-context correction.",
+    "The 29 inherited relevant evidence objects are retained exactly in inputs/evidence-reused.json; their hash check is not a new scientific approval of all linked historical reports.",
+    "The current generic BSA owner and complete selected predecessor were read, but inherited A7030 processing/purity and generic family grounding are unchanged and not newly endorsed.",
+    "The coordinator reconciled BSA union is not adopted. Its #1222 JCM220/MediaDive3888 WITHHOLD is a separate dependency and is not overwritten by this W05-only payload.",
+    "Original source histories, all five frozen case boundaries and all seven occurrence IDs remain immutable. No additional campaign ownership is claimed."
+  ]
+}

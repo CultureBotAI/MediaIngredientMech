@@ -1,0 +1,179 @@
+identifier: CHEBI:3312
+preferred_term: Calcium Chloride
+ontology_mapping:
+  ontology_id: CHEBI:3312
+  ontology_label: calcium dichloride
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_REVIEW
+    source: family_mismatch_fix
+    notes: 'fix(family-mismatch): was CHEBI:86158 (calcium chloride dihydrate); generic
+      "Calcium Chloride" name maps to the anhydrous parent CHEBI:3312, matching CAS-RN
+      10043-52-4. Hydrate-specific records (Cacl22h2o_2, Cacl2_X_2_H2o) retain CHEBI:86158.'
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CaCl2 × 2 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CaCl2*2H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CaCl22H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: calcium chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.807588+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:10043-52-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Calcium Chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.809384+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:10043-52-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Calcium chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: CaCl2 × 2 H2O, CaCl2*2H2O,
+    CaCl22H2O'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Calcium_Chloride_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.554292+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.376919+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ca.2Cl.2H2O; inchi=InChI=1S/Ca.2ClH.2H2O/h;2*1H;2*1H2/q+2;;;;/p-2;
+    smiles=O.O.[Ca+2].[Cl-].[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.026286+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T15:00:00+00:00'
+  curator: family_mismatch_fix
+  action: REMAPPED_ONTOLOGY
+  changes: CHEBI:86158 (calcium chloride dihydrate) → CHEBI:3312 (calcium dichloride);
+    generic ingredient name "Calcium Chloride" should use anhydrous parent. Cleared
+    chemical_properties molecular_formula/inchi/smiles (were dihydrate-specific) and
+    kg_microbe_node_id for re-backfill against the new CHEBI.
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.869643+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ca.2Cl; inchi=InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2; smiles=[Ca+2].[Cl-].[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110371+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'calcium dichloride'; it matches the ChEBI
+    synonym 'calcium chloride' on CHEBI:3312. The schema defines EXACT_MATCH as a
+    direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the
+    recorded grade overstated. ontology_id is unchanged — the term is correct. The
+    SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'CaCl2' on CHEBI:3312 (#414). formula versus name for the same
+    anhydrous salt; identical CAS 10043-52-4 and formula Ca.2Cl. Neither label mentions
+    hydration, so this is not the hydrate/anhydrous trap that rules out the CuSO4
+    and FeSO4 families. Occurrences transferred; kept as a RAW_TEXT synonym there.
+  llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.501233+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''CaCl2 × 2 H2O'' (HYDRATE_FORM), ''CaCl2*2H2O''
+    (HYDRATE_FORM): dihydrate labels on the anhydrous CHEBI:3312 tombstone; the dihydrate
+    is Cacl2_X_2_H2o (#232). The token is kept as provenance only; it must not resolve,
+    be exported, or enter the SSSOM other column.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.402791+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:3312 (Cacl2) so the post-merge REJECTED_WRONG_FORM_SYNONYMS
+    event (#232/#757) no longer blocks _mim_merge_target, and retype dihydrate HYDRATE_FORM
+    token CaCl22H2O to REJECTED_LABEL (held on live Cacl2_X_2_H2o) (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000565; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 10043-52-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:44.807586+00:00'
+  molecular_formula: Ca.2Cl
+  inchi: InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2
+  smiles: '[Ca+2].[Cl-].[Cl-]'
+ingredient_type: SINGLE_INGREDIENT
+kg_microbe_node_id: CHEBI:3312
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (15 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (15 occurrences). High confidence
+      based on 'Defined component' property.
+representative: CHEBI:3312
+mim_id: MIM:0000565
+legacy_identifiers:
+- MIM:Calcium_Chloride
+- CHEBI:3312

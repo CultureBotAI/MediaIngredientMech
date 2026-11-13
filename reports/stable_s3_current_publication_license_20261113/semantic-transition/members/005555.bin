@@ -1,0 +1,81 @@
+id: CultureMech:003001
+name: modified_gam_agar
+original_name: MODIFIED GAM AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: JCM Medium J655
+  term:
+    id: mediadive.medium:J655
+    label: MODIFIED GAM AGAR
+notes: JCM Medium 655 contains 56.7 g GAM agar, modified (Nissui), and 1.0 L distilled
+  water.
+ingredients:
+- preferred_term: GAM agar, modified (Nissui)
+  concentration:
+    value: '56.7'
+    unit: G_PER_L
+  source: JCM Medium 655
+  notes: JCM Medium 655 lists 56.7 g GAM agar, modified (Nissui).
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: JCM Medium 655
+  notes: JCM Medium 655 lists 1000 ml distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:17.200824Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J655'
+- timestamp: '2026-03-13T06:19:17.071908Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:003001'
+- timestamp: '2026-03-17T06:30:52.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:30.714612+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MODIFIED GAM AGAR" to "modified_gam_agar" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:36.589919+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_official_simple_score20.py
+  action: RESOLVED_OFFICIAL_SIMPLE_SCORE20
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=655
+  notes: JCM Medium 655 contains 56.7 g GAM agar, modified (Nissui), and 1.0 L distilled
+    water.
+kg_microbe_match: mediadive.medium:12
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend 56.7 g GAM agar, modified (Nissui), in 1.0 L distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min unless otherwise stated.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=655

@@ -1,0 +1,138 @@
+id: CultureMech:015542
+name: M9
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: D-Glucose
+  concentration:
+    value: '4'
+    unit: G_PER_L
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  notes: 'Mapping: micromediaparam_legacy (confidence: 0.90); CAS: 50-99-7; MW: 180.16'
+- preferred_term: Magnesium sulfate
+  concentration:
+    value: '2'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  notes: 'Mapping: micromediaparam_legacy (confidence: 0.90); CAS: 7487-88-9; MW:
+    120.37'
+- preferred_term: Calcium chloride
+  concentration:
+    value: '0.1'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+  notes: 'Mapping: micromediaparam_legacy (confidence: 0.90); CAS: 10043-52-4; MW:
+    110.98'
+- preferred_term: Sodium phosphate dibasic heptahydrate
+  concentration:
+    value: '12.8'
+    unit: G_PER_L
+  notes: 'CAS: 7782-85-6; MW: 268.07'
+- preferred_term: Potassium phosphate monobasic
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  notes: 'Mapping: micromediaparam_legacy (confidence: 0.90); CAS: 7778-77-0; MW:
+    136.09'
+- preferred_term: Sodium Chloride
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  notes: 'CAS: 7647-14-5; MW: 58.44'
+- preferred_term: Ammonium chloride
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  notes: 'Mapping: micromediaparam_legacy (confidence: 0.90); CAS: 12125-02-9; MW:
+    53.49'
+description: E. coli defined media
+notes: 'Source: FEBA media definitions'
+category: specialized
+source_data:
+  origin: CultureBotHT
+  notes: 'database_id: M9; url: https://github.com/CultureBotAI/CultureBotHT'
+sources:
+- database: CultureBotHT
+  database_id: M9
+  url: https://github.com/CultureBotAI/CultureBotHT
+variants:
+- name: modified_m9_high_density_e_coli_expression
+  description: Modified M9 condition for high-density Escherichia coli protein expression
+    cultures.
+  modifications:
+  - Use modified M9 medium and optimized growth conditions.
+  - Grow Escherichia coli to high culture density.
+  purpose: Capture high-density modified-M9 growth evidence under the parent M9 record.
+  evidence:
+  - reference: PMID:27709314
+    supports: SUPPORT
+    snippet: Using a modified M9 medium and optimized growth conditions, we were able
+      to grow cells in linear log phase to an OD600 of up to 10.
+    explanation: Literature evidence supports modeling the modified high-density M9
+      condition as a variant under the parent M9 record.
+curation_history:
+- timestamp: '2026-03-18T04:31:12.887972+00:00'
+  curator: import_from_culturebotht.py
+  action: IMPORTED
+  notes: 'Imported from CultureBotHT repository: M9.yaml'
+- timestamp: '2026-03-18T04:33:58.992041Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:015542'
+- timestamp: '2026-05-03T02:38:31.073342+00:00'
+  curator: literature_review_apply
+  action: ADDED_GROWTH_EVIDENCE
+  notes: organisms_added=1 metrics_added=1 genomes_added=0
+- timestamp: '2026-05-03T08:15:54.237909+00:00'
+  curator: literature_review_apply
+  action: ADDED_GROWTH_EVIDENCE
+  notes: organisms_added=0 metrics_added=1 genomes_added=0
+- timestamp: '2026-08-06T00:58:02.778967+00:00'
+  curator: curate_organism_culture_type.py
+  action: SET_ORGANISM_CULTURE_TYPE
+  notes: 'Inferred isolate: 1 specific strain(s) named, no community signal (#142)'
+  changes: Set organism_culture_type=isolate (was unset)
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_culturebotht_m9_score15.py
+  action: NORMALIZED_CULTUREBOTHT_M9_SOURCE
+  changes: Normalized M9 CultureBotHT provenance
+  source: CultureBotHT:M9; https://github.com/CultureBotAI/CultureBotHT
+  notes: Copied the CultureBotHT M9 source identity from source_data into the structured
+    sources slot recognized by review scoring.
+data_quality_flags:
+- has_unmapped_ingredients
+organism_culture_type: isolate
+target_organisms:
+- preferred_term: Escherichia coli
+  term:
+    id: NCBITaxon:562
+    label: Escherichia coli
+  growth_metrics:
+  - max_od600: 10.0
+    evidence:
+    - reference: PMID:27709314
+      supports: SUPPORT
+      snippet: Using a modified M9 medium and optimized growth conditions, we were
+        able to grow cells in linear log phase to an OD600 of up to 10.
+      explanation: 'Auto-applied from literature query: "M9"[All Fields] AND OD600[All
+        Fields]'
+    is_max_attainment: true
+references:
+- reference: CultureBotHT:M9
+- reference: https://github.com/CultureBotAI/CultureBotHT

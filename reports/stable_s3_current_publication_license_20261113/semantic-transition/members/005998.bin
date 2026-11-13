@@ -1,0 +1,405 @@
+{
+  "at": "2026-11-08T10:49:02.000562+00:00",
+  "status": "COMPLETE_BOUNDED_CORRECTED_CANDIDATE_RE_REVIEW",
+  "verdict": "pass_with_limitations",
+  "task": "Independent complete corrected CENTRAL31 NTA scientific review with exact VFA/water continuity.",
+  "source_head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+  "source_head_unchanged": true,
+  "author_packet": {
+    "handoff_sha256": "b3c6ab2cb7affefbf5d11ea18cf33cb45cc90c4722a73a7d954018e8c95c751a",
+    "manifest_sha256": "26fc7c7f8db102ab7e34412a6d14cd6aca16712c04807554e9977b05e65ffebc",
+    "selector_sha256": "890d3f06ea39828c4cf108ae0a76bd59ac7fc404728ffba934dabc8f4e7c1c81",
+    "regular_members_verified": 94,
+    "negative_fixture_symlink_targets_verified": 3
+  },
+  "selection": {
+    "path": "SELECTOR.json",
+    "sha256": "330840210b78331e60d4f0aba16d08048a608cd373528a36dc999f47f4a86d62"
+  },
+  "candidate_outcomes": [
+    {
+      "group": "CENTRAL31-NTA",
+      "payload": "author/candidates/NTA_Ferric_Chloride_Trace_Element_Stock_12_8g_Recipe.yaml",
+      "payload_sha256": "03c9602c80adacce4d03edff2ea039fee91c0840fca34d0e44c88b990cf55444",
+      "predecessor_payload_sha256": "1c2038f0403fea83e225ee0a94d0f32fb23a4b1c87260860b3badbcae492842a",
+      "new_scientific_review": true,
+      "unchanged_bytes": false,
+      "verdict": "pass_with_limitations",
+      "basis": "Fresh complete12field/12component scientific assessment and separate skeptical/technical review.",
+      "owner_path": "data/ingredients/mapped/NTA_Ferric_Chloride_Trace_Element_Stock_12_8g_Recipe.yaml",
+      "before_sha256": null,
+      "role_export_application_approval": false
+    },
+    {
+      "group": "CENTRAL31-VFA",
+      "payload": "author/candidates/Seven_Acid_VFA_Mixture_Acetate_Dominant_Recipe.yaml",
+      "payload_sha256": "35fd4c7dde13993100a93e55541f90beda9847ea964d5c359e4c8176afe8fe57",
+      "predecessor_payload_sha256": "35fd4c7dde13993100a93e55541f90beda9847ea964d5c359e4c8176afe8fe57",
+      "new_scientific_review": false,
+      "unchanged_bytes": true,
+      "verdict": "pass_with_limitations",
+      "basis": "Exact complete-byte bridge to predecessor independent scientific verdict; no new unrestricted approval.",
+      "owner_path": "data/ingredients/mapped/Seven_Acid_VFA_Mixture_Acetate_Dominant_Recipe.yaml",
+      "before_sha256": null,
+      "role_export_application_approval": false
+    },
+    {
+      "group": "CENTRAL31-WATER",
+      "payload": "author/candidates/deionized_water.yaml",
+      "payload_sha256": "8dd1dc66ba2b7953d7cad2f578cff6e49e6e84ae1e8b0cecff4784ad9329225f",
+      "predecessor_payload_sha256": "8dd1dc66ba2b7953d7cad2f578cff6e49e6e84ae1e8b0cecff4784ad9329225f",
+      "new_scientific_review": false,
+      "unchanged_bytes": true,
+      "verdict": "pass_with_limitations",
+      "basis": "Exact complete-byte bridge to predecessor independent scientific verdict; no new unrestricted approval.",
+      "owner_path": "data/ingredients/mapped/deionized_water.yaml",
+      "before_sha256": null,
+      "role_export_application_approval": false
+    }
+  ],
+  "coverage": {
+    "fresh_complete_records": 1,
+    "unchanged_complete_records": 2,
+    "fresh_top_level_fields": 12,
+    "fresh_components": 12,
+    "fresh_dry_reference_claims": 10,
+    "genuine_remaining_reference_holds": 2,
+    "origins": 6,
+    "cases": 7,
+    "CM_occurrences": 9,
+    "included_CM": 8,
+    "excluded_CM": 1,
+    "KG_rows": 9,
+    "overlapping_KG_views": 9
+  },
+  "historical_finding_disposition": {
+    "finding_id": "C31-NTA-REF-001",
+    "issue_key": "central31-nta-resolvable-dry-input-references",
+    "status": "resolved",
+    "scope": "Only full corrected private candidate03c9602c. Original600-member packet and its open finding remain unchanged; no GitHub closure or maintained application.",
+    "previous_review_id": "20261108T102443Z-central31-final-candidate-independent",
+    "previous_review_yaml_sha256": "a42de0bd5d42b278690afc1da907d0ad79f970e153c9667dbceb35d349593059",
+    "previous_finding_sha256": "4fe8b85a2f8744cb41effe40950d38c735c1d3f3776e77d4b1e1294230437204",
+    "disposition": {
+      "path": "finding-disposition.json",
+      "sha256": "85b3b4c895aa557650786d17248845d40aaf20a8d23579e13921016de2a93ea3"
+    }
+  },
+  "new_confirmed_findings": [],
+  "actual_reviewers": [
+    {
+      "identity": "worker09:/root/correction_science",
+      "scope": "All12fields/12components,tenform-specific references,twopreferredname serializations,fullprimaryrecipes/contexts and30amountcomparisons",
+      "receipt": {
+        "path": "science/REVIEW-RECEIPT.json",
+        "sha256": "0815ad43958a27c1e5bdca2e1a71c26aaac62a0e9fc070402da8ee7f61190ead"
+      },
+      "seal": {
+        "path": "science/SEAL.json",
+        "sha256": "da207739858dac240fe592a9fb77b9df8fbdc1caa5273e85886492fe7be6760c"
+      }
+    },
+    {
+      "identity": "worker09:/root/correction_skeptic",
+      "scope": "Independent full science/ontology andsource challenge, exact26deltas, native/strict/writer/fullcontextpartonomy,17authorcontrols+5negativecontrols, separatepeer thenfinalassembly",
+      "assessment": {
+        "path": "skeptic/skeptical-assessment.json",
+        "sha256": "bdf93550a14606c4f0034bd470c0d9738c2746f68b7e0ee754132767a0061387"
+      },
+      "peer": {
+        "path": "skeptic/peer-review-science.json",
+        "sha256": "7068e5fc1a22161eb6c91e76b5de93d53cc23f609bc1b4847cb879cceb68828f"
+      },
+      "source_binding_receipt": {
+        "path": "skeptic/current-source-and-filing-review.json",
+        "sha256": "4b559de160880938106239ec46c060563c1cc9d229a8c6ee29081ccb8bc613db"
+      },
+      "final_assembly_receipt": "skeptic/final-assembly-review.json",
+      "final_receipt_note": "Written additively after this fixed handoff; exact actual receipt is bound by outer manifest/seal. No anticipated vote is asserted here."
+    },
+    {
+      "identity": "worker09:/root",
+      "scope": "Current actualGit/remote6origin7casebindings, originalpreservation, nativefindinglineage, boundedpair andhandoff assembly"
+    }
+  ],
+  "independence": "Actual in-process reviewers did not author coordinator /root/next23_context correction or original W02 candidate; no author-team approval transferred. Predecessor W09finding authorship is review, notcandidateauthorship.",
+  "exact_changes": {
+    "terminal_paths": 26,
+    "added_ids": 10,
+    "changed_reference_scopes": 10,
+    "changed_display_names": 2,
+    "formula_source_additions": 2,
+    "new_component_evidence": 1,
+    "new_truthful_llm_history": 1,
+    "component_array": 12,
+    "original_component_evidence_prefix": 3,
+    "original_history_prefix": 4,
+    "all_other_fields_and_profiles_preserved": true,
+    "actual_proof": {
+      "path": "science/full-object-delta-proof.json",
+      "sha256": "1023ac5232f64ce49c3072c722d265156d07ddccac383bce1665e482f2372112"
+    }
+  },
+  "native": {
+    "review_id": "20261108T104741Z-central31-correction-independent",
+    "pair": [
+      {
+        "path": "native/review.yaml",
+        "sha256": "e5d9074cad563e60eeed690c168eb33fceb6e1e8d1e832eebd711efc5dabf967"
+      },
+      {
+        "path": "native/review.md",
+        "sha256": "061991cb49f2474abe331628d02d2279c207f5ef9ed03f596e8cd2f9917fec3e"
+      }
+    ],
+    "validation": {
+      "path": "native/validation.json",
+      "sha256": "13dabafab42ef0adf0e0b81c062016a210651a48748c13cf3a464aa4fe082a6d"
+    },
+    "bound_inputs": 819,
+    "review_kind": "record",
+    "fresh_science_targets": 1,
+    "canonical_saver": false,
+    "registered_review": false,
+    "source_state": "working_tree_attestation on exact private bytes, not committed scientific approval"
+  },
+  "checks": {
+    "schema_targets": 3,
+    "strict_targets": 3,
+    "strict_errors": 0,
+    "byte_identical_roundtrips": 3,
+    "current_catalog": 2956,
+    "projected_fullcontext_records": 2959,
+    "partonomy_errors": 0,
+    "author_controls_passed": 17,
+    "dependency_deprecation_warnings": 12,
+    "additional_native_negative_controls": 5,
+    "original_id_only_label_mismatches_reproduced": 2,
+    "native_projected_rows": 4,
+    "changed_projected_cells": 1,
+    "changed_cell": "NTA source curator attribution only; no identity/predicate/label/other/date change",
+    "shared_rebuild": false
+  },
+  "currentness": {
+    "receipt": {
+      "path": "validation/final-inputs.json",
+      "sha256": "aaed600f9827dd17fb5e3ffd512db05440a9052cc1cd8c7d01bf2a9af8fae500"
+    },
+    "current_actual_heads": [
+      {
+        "name": "w01",
+        "head": "da45d5a58ef762ee357257d6f089df852896984f",
+        "tracked_status": "",
+        "unchanged": true
+      },
+      {
+        "name": "w02",
+        "head": "0c659aa4c121a5b1832bff699c28e30da577ca08",
+        "tracked_status": "",
+        "unchanged": true
+      },
+      {
+        "name": "w06",
+        "head": "0d7fde51fb3109b10424dd3bcf4091c05aa900e7",
+        "tracked_status": "",
+        "unchanged": true
+      },
+      {
+        "name": "w08",
+        "head": "ae1d085d5208f010150f9e27dfd9d9c26ec7d228",
+        "tracked_status": "",
+        "unchanged": true
+      },
+      {
+        "name": "w09",
+        "head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+        "tracked_status": "",
+        "unchanged": true
+      },
+      {
+        "name": "integration",
+        "head": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+        "tracked_status": "",
+        "unchanged": true
+      }
+    ],
+    "six_origins_seven_cases": {
+      "path": "bindings/current-source-coverage.json",
+      "sha256": "f29889af67338c98953a5a37cf606c45d65b1633d78509df8a21511ba7839f7a"
+    },
+    "remote": {
+      "path": "probes/published-heads-readonly-retry.json",
+      "sha256": "bf473d66f0c1f2ed68b6f95514c0519ee0d95140255e9b4a5130933f0c043b06"
+    },
+    "w08_relevant_bridge": "Actual current ae1d085d full objects equal prior assessed source objects; Mc work excluded.",
+    "full_future_campaign_approval": false
+  },
+  "preservation": {
+    "predecessor_members_rehashed": 600,
+    "predecessor_manifest_sha256": "93ccb5a9b75eb4071c1f03fd9692c24260f676d87a74021df52d11c774e2e7dd",
+    "predecessor_seal_sha256": "028b42b1d0e66fcfac6427b9ff299d07a69059b7daff020fd256908f8992addc",
+    "original_private_pairs_rehashed": 713,
+    "old_openfinding_preserved": true,
+    "old_packet_writes": false,
+    "other_source_or_maintained_edits": false
+  },
+  "retained_limits": [
+    "Distilled-water grade and unspecified KOH titrant remain UNMAPPED; no guessed forms, amounts or concentrations.",
+    "NBRC initialwater/pH and JCMfinalvolume/pH remain distinct; no sharedfinalconcentration/postreactionidentity.",
+    "NBRC1308 exclusion and unrelatedMediaDive38/40/source/stock/role/exportholds unchanged.",
+    "VFA/water exactwholebytecarryforward only, notfreshunrestrictedreview.",
+    "Rawprimarycaptures reuse exactbytes/originaltimestamps; independently queried primaryChEBI255 isversioned, notliveontologyrefresh.",
+    "Private nativepair validated byunchangedAPIs; canonical saver/registration notinvoked, scopedprivatepredecessor lineage manually checked throughnativevalidation/provenance/render APIs.",
+    "Initial path-selection wrappers and missing native semantic_digest description failures preserved; finalsuccessors corrected wrapper metadata only. Author ID-only andprojectionfailures retained.",
+    "Authorcontrol firstcollection failed forunavailable inheritedpytestcoverageplugin; exact17tests passed withonly CLIaddopts override, no config/test/gate changes.",
+    "No maintained/source/other-worker edits, Git/GitHub mutations, paidproviders,newexternalsessions,merge orKG rebuild.",
+    "No application,sourcecaseadmission,wholeowner/role/exportapproval; rootretains finalcampaign integration/currentness responsibility."
+  ],
+  "artifacts": [
+    {
+      "path": "SELECTOR.json",
+      "sha256": "330840210b78331e60d4f0aba16d08048a608cd373528a36dc999f47f4a86d62"
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "32c02c707f82b2e7886111afd32fe2a7f475931cfbf5a5bc5096a9e7a44e1158"
+    },
+    {
+      "path": "candidate-outcomes.json",
+      "sha256": "de7f044d0c86b07850108908933db01fb2e11587d2ccc4a88567be4c7d802dc5"
+    },
+    {
+      "path": "findings.json",
+      "sha256": "fa76c6a7f8f37e6cde0a9398420fea24e420a931dbaf3fff41729142cd97035c"
+    },
+    {
+      "path": "finding-disposition.json",
+      "sha256": "85b3b4c895aa557650786d17248845d40aaf20a8d23579e13921016de2a93ea3"
+    },
+    {
+      "path": "input-pins.json",
+      "sha256": "7f14f4b390afe0caa715061a36b4c82ae62ea072573d0dc97035ac5acdc9f43f"
+    },
+    {
+      "path": "bindings/current-source-coverage.json",
+      "sha256": "f29889af67338c98953a5a37cf606c45d65b1633d78509df8a21511ba7839f7a"
+    },
+    {
+      "path": "bindings/current-kg-proof-reference.json",
+      "sha256": "109fc6fffc796c710fd20753b4f701ca4296beb855573909ccfe79cb4e7eecff"
+    },
+    {
+      "path": "native/review.yaml",
+      "sha256": "e5d9074cad563e60eeed690c168eb33fceb6e1e8d1e832eebd711efc5dabf967"
+    },
+    {
+      "path": "native/review.md",
+      "sha256": "061991cb49f2474abe331628d02d2279c207f5ef9ed03f596e8cd2f9917fec3e"
+    },
+    {
+      "path": "native/validation.json",
+      "sha256": "13dabafab42ef0adf0e0b81c062016a210651a48748c13cf3a464aa4fe082a6d"
+    },
+    {
+      "path": "validation/finding-lineage.json",
+      "sha256": "125e9f6d787f79d6f29e4d2b7f3d186f0262d1de21ad733e8db5615637b9b32b"
+    },
+    {
+      "path": "validation/final-inputs.json",
+      "sha256": "aaed600f9827dd17fb5e3ffd512db05440a9052cc1cd8c7d01bf2a9af8fae500"
+    },
+    {
+      "path": "science/REVIEW-RECEIPT.json",
+      "sha256": "0815ad43958a27c1e5bdca2e1a71c26aaac62a0e9fc070402da8ee7f61190ead"
+    },
+    {
+      "path": "science/HANDOFF.json",
+      "sha256": "e6972b5f349f32fb07e7236382550375239033b85848d8a82ed8c2d57c821f3f"
+    },
+    {
+      "path": "science/SEAL.json",
+      "sha256": "da207739858dac240fe592a9fb77b9df8fbdc1caa5273e85886492fe7be6760c"
+    },
+    {
+      "path": "science/full-field-assessment.json",
+      "sha256": "6c98720c2aa2a29b91f3708440471db545f41bad19ebf3fbce5799c944d1046a"
+    },
+    {
+      "path": "science/component-assessments.json",
+      "sha256": "d093347b440afcd5559067f01391e2306be3ac841b1a312af72f3004a99f5b01"
+    },
+    {
+      "path": "science/full-object-delta-proof.json",
+      "sha256": "1023ac5232f64ce49c3072c722d265156d07ddccac383bce1665e482f2372112"
+    },
+    {
+      "path": "science/independent-ontology-query.json",
+      "sha256": "2998c0fd275650c7482f1299b974f7c92485eb1603c5c7f9e768a42bb7c12eab"
+    },
+    {
+      "path": "science/primary-input-review.json",
+      "sha256": "5db3f5837c6ddb6929b7f75a50c54f40764fbb94ad0df9cb9e217fe32f284aa1"
+    },
+    {
+      "path": "skeptic/skeptical-assessment.json",
+      "sha256": "bdf93550a14606c4f0034bd470c0d9738c2746f68b7e0ee754132767a0061387"
+    },
+    {
+      "path": "skeptic/peer-review-science.json",
+      "sha256": "7068e5fc1a22161eb6c91e76b5de93d53cc23f609bc1b4847cb879cceb68828f"
+    },
+    {
+      "path": "skeptic/validation/native-checks.json",
+      "sha256": "aaa7eca9982a14454697a9c5049bc898c2bd3ca7a65d7598f55dc4734f98cc37"
+    },
+    {
+      "path": "skeptic/validation/strict-receipt.json",
+      "sha256": "c035ea3dca103e73bca139e36059a7abe560dbc2553bf67c4b52a9bbadc3ed99"
+    },
+    {
+      "path": "skeptic/validation/author-controls-retry-receipt.json",
+      "sha256": "8de1708d24f0cbdf7a7aed91600bcb10558295d2a5cd39b15bb1241c01a1a3b5"
+    },
+    {
+      "path": "skeptic/validation/author-controls-receipt.json",
+      "sha256": "4160908d3945840a39dd7b56145becaf64d21910420feb687ba4c88c13df481d"
+    },
+    {
+      "path": "skeptic/validation/ten-id-only-counterfactual.json",
+      "sha256": "e03296bf574f36a035bca0d0186cc2a5f0cb79f73dc0a1b582d259139e204c29"
+    },
+    {
+      "path": "skeptic/native-row-delta.json",
+      "sha256": "c44c17de0f0b1e7769947655d8ce326f7790fb68f595b342f87fedcd3aef0fb4"
+    },
+    {
+      "path": "skeptic/current-source-and-filing-review.json",
+      "sha256": "4b559de160880938106239ec46c060563c1cc9d229a8c6ee29081ccb8bc613db"
+    },
+    {
+      "path": "probes/published-heads-readonly-retry.json",
+      "sha256": "bf473d66f0c1f2ed68b6f95514c0519ee0d95140255e9b4a5130933f0c043b06"
+    },
+    {
+      "path": "probes/issue1237-comment-6720405936-readonly-retry.json",
+      "sha256": "88954871428f50d05ff915e52da7cb0b294b91ab333d718f1dcb8d809c0fb87b"
+    },
+    {
+      "path": "probes/issue1237-comment-6720423542-readonly-retry.json",
+      "sha256": "586e03650993478a4600c824c16f9d6ec2139f8c55fcfe5dd385073581c44984"
+    },
+    {
+      "path": "validation/freeze-failed-probe.json",
+      "sha256": "79d4453b620ab5855b9fcf229536cd2484d04cc7d1ac685f2e1197a018908cbe"
+    },
+    {
+      "path": "validation/current-bindings-failed-probe.json",
+      "sha256": "16af08df4857bb3b0fe21d84b3194b0252549ea3716f07114e998b90495bea52"
+    },
+    {
+      "path": "validation/assembly-failed-probe.json",
+      "sha256": "dd21a8d525b60690fbdf0fb1bc79ef017c29b67e74295a00540450e546fe21b8"
+    }
+  ],
+  "seal_contract": "Root MANIFEST.json/MANIFEST.sha256 cover every regular member except root manifests/SEAL.json; fixture symlink target strings are listed explicitly without following. Final skeptic receipt binds this exact handoff, and outer seal binds that actual receipt."
+}

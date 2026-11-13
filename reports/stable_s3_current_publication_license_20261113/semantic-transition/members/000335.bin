@@ -1,0 +1,64 @@
+identifier: CHEBI:2638
+preferred_term: Amikacin disulfate salt
+ontology_mapping:
+  ontology_id: CHEBI:2638
+  ontology_label: amikacin disulfate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: (2S)-4-amino-N-[(1R,2S,3S,4R,5S)-5-amino-2-(3-amino-3-deoxy-alpha-D-glucopyranosyloxy)-4-(6-amino-6-deoxy-alpha-D-glucopyranosyloxy)-3-hydroxycyclohexyl]-2-hydroxybutanamide
+    disulfate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=39831-55-5; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.149151+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.973621+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C22H43N5O13.2H2O4S; inchi=InChI=1S/C22H43N5O13.2H2O4S/c23-2-1-8(29)20(36)27-;
+    smiles=NCC[C@H](O)C(=O)N[C@@H]1C[C@H](N)[C@@H](O[C@H]2O[C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.433320+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 39831-55-5 uniquely
+    resolves by ChEBI xref to CHEBI:2638 'amikacin disulfate'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 39831-55-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C22H43N5O13.2H2O4S
+  inchi: InChI=1S/C22H43N5O13.2H2O4S/c23-2-1-8(29)20(36)27-7-3-6(25)18(39-22-16(34)15(33)13(31)9(4-24)37-22)17(35)19(7)40-21-14(32)11(26)12(30)10(5-28)38-21;2*1-5(2,3)4/h6-19,21-22,28-35H,1-5,23-26H2,(H,27,36);2*(H2,1,2,3,4)/t6-,7+,8-,9+,10+,11-,12+,13+,14+,15-,16+,17-,18+,19-,21+,22+;;/m0../s1
+  smiles: NCC[C@H](O)C(=O)N[C@@H]1C[C@H](N)[C@@H](O[C@H]2O[C@H](CN)[C@@H](O)[C@H](O)[C@H]2O)[C@H](O)[C@H]1O[C@H]1O[C@H](CO)[C@@H](O)[C@H](N)[C@H]1O.O=S(=O)(O)O.O=S(=O)(O)O
+ingredient_type: SINGLE_INGREDIENT

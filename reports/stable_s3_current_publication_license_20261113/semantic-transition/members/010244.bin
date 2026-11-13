@@ -1,0 +1,230 @@
+identifier: CHEBI:31604
+preferred_term: Ferric ammonium citrate
+ontology_mapping:
+  ontology_id: CHEBI:31604
+  ontology_label: ferric ammonium citrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal ferric-ammonium-citrate
+    notes: Fe(III)NH4-Citrate denotes ferric ammonium citrate. CHEBI:31604 describes
+      this material as an indefinite-composition ferric ammonium citrate mixture,
+      so the existing owner is suitable without inventing a fixed molecular stoichiometry.
+      The explicit FeIII and ammonium qualifiers are retained. Evidence and exact
+      frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
+synonyms:
+- synonym_text: 'Role: Nitrogen source; Properties: Defined component, Simple component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Nitrogen source; Properties: Simple component, Defined component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Ammonium ferric citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: E381
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Fe(NH4)citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: FerriSeltz
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: ammonium iron(III) citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ferric ammmonium citrate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Fe(III)NH4-Citrate
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 191
+  media_count: 191
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:05.076943+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1185-57-5 from PubChem API via name lookup (Ammonium ferric
+    citrate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.084832+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:1185-57-5 from CultureBotHT compounds_to_cas.csv (matched:
+    Ferric ammonium citrate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.087315+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:1185-57-5 from CultureBotHT compounds_to_cas.csv (matched:
+    Ferric Ammonium Citrate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Ammonium ferric citrate,
+    E381, Fe(NH4)citrate, FerriSeltz, ammonium iron(III) citrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Ammonium ferric citrate,
+    E381, FerriSeltz, Ferric Ammonium Citrate, ammonium iron(III) citrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: E381, Fe(NH4)citrate,
+    FerriSeltz, Ferric Ammonium Citrate, ammonium iron(III) citrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Fe_Nh4citrate.yaml,
+    Ammonium_Ferric_Citrate.yaml, Ferric_Ammonium_Citrate_2.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.586611+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.438901+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111133+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.764360+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Ferric ammonium citrate'' -> ''ferric ammonium citrate'':
+    synced to canonical CHEBI label (preferred_term ''Ferric ammonium citrate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+    nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518850+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 86/126 -> 191/191 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Ferric
+    ammmonium citrate''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal ferric-ammonium-citrate: added aliases
+    [''Fe(III)NH4-Citrate'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. COI-FAC: preserve exact own scientific delta and all
+    union/whole-owner holds; update outside-review state without applying another
+    shard’s union. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:43:45.046131+00:00'
+  curator: codex_worker04/root
+  action: CORRECTED
+  changes: 'Report-only W04 source-origin successor for #1239 / FAC-F01: change only
+    FerriSeltz synonym_type EXACT_SYNONYM to REJECTED_LABEL, preserving the literal
+    and source kg_microbe. PMDA page1 section3.1 gives 600mg FAC per3g formulated
+    product plus excipients; page2 section19 describes the active ingredient. Primary
+    PDF SHA256 ed32d4c1c55534ae3ebf4eb7e51739d645b751fb63dfe51126c49fc29cb4a98d; https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/180078_7290004B1030_1_09.
+    Update current notes to record this completed bounded alias correction and continued
+    union/owner/role/export holds. Prior notes retained verbatim here: COI-FAC: The
+    outside-W09 coordinator triage reports FAC-F01 needs curation and FAC-F02 optional
+    nonresolving metadata. This W04 proposal does not import or approve combined TARGET009
+    or claim that FerriSeltz/product alias correction is complete. W04’s exact after
+    bytes, W09’s other proposal and the unapproved union remain separate; whole-owner/export
+    acceptance is held. Only the W04-authored mapping-evidence assertion type is corrected
+    under #1226 here. All prior history, generic identity, other aliases, #1226 evidence
+    correction, original source membership and occurrence statistics remain unchanged.
+    No medicine owner/components/roles or competing union is authored.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1185-57-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:45.084826+00:00'
+kg_microbe_node_id: CHEBI:31604
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Nitrogen Source'
+notes: 'Issue #1239 / FAC-F01: FerriSeltz is retained only as REJECTED_LABEL provenance
+  with its original kg_microbe source. The official PMDA FerriSeltz powder 20% label
+  (September 2024 revision, page 1 section 3.1; https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/180078_7290004B1030_1_09)
+  specifies 600 mg ferric ammonium citrate per 3 g formulated product plus excipients.
+  Page 2 section 19 describes the FAC active ingredient separately. This whole-product/component
+  distinction contradicts exact identity of the medicine with generic CHEBI:31604;
+  it does not establish medicinal-product use in either W04 SL7 occurrence. The W04
+  source alias Fe(III)NH4-Citrate and its two frozen occurrences remain unchanged.
+  No new medicine owner, composition, supplied form, formula, role or source reassignment
+  is proposed. The coordinator must rebuild and independently review the coupled FAC
+  union from this corrected W04 origin and the separate W09 origin. The previous combined
+  TARGET-009 and all whole-owner, source, role, supported/withheld and export holds
+  remain unapproved. The four inherited Role/Properties labels remain unchanged and
+  already nonresolving under native policy (FAC-F02 optional metadata typing). The
+  earlier #1226 correction to the W04-authored mapping evidence remains LLM_SUGGESTION;
+  no evidence enums are changed here.'

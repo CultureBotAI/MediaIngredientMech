@@ -1,0 +1,51 @@
+identifier: CHEBI:61327
+preferred_term: 1-ethyl-3-methylimidazolium chloride
+ontology_mapping:
+  ontology_id: CHEBI:61327
+  ontology_label: 1-ethyl-3-methylimidazolium chloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+synonyms:
+- synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=65039-09-0); Imported
+    from CultureBotHT. FEBA/Hans80 panels: FEBA_stress.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.661623+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.455550+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H11N2.Cl; inchi=InChI=1S/C6H11N2.ClH/c1-3-8-5-4-7(2)6-8;/h4-6H,3H2;
+    smiles=CCn1cc[n+](C)c1.[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.763058+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 65039-09-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C6H11N2.Cl
+  inchi: InChI=1S/C6H11N2.ClH/c1-3-8-5-4-7(2)6-8;/h4-6H,3H2,1-2H3;1H/q+1;/p-1
+  smiles: CCn1cc[n+](C)c1.[Cl-]
+ingredient_type: SINGLE_INGREDIENT

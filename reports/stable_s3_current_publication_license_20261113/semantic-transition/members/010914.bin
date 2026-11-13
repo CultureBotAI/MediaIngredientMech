@@ -1,0 +1,134 @@
+{
+  "case_indices": [
+    21,
+    135
+  ],
+  "search_regex": "isp.?7|isp medium (no.? ?)?7|tyrosine agar",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/ISP_7_Medium.yaml",
+      "sha256": "66048f6ccdbbf9ff496ec4c5c653f7617305a021266d857b0c4853d57a3357d9",
+      "record": {
+        "identifier": "UNMAPPED_0408",
+        "preferred_term": "ISP 7 Medium",
+        "synonyms": [
+          {
+            "synonym_text": "ISP 7 Medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1467); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:20:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named ISP 7 medium/formulation and left unmapped pending recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/ISP_7_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended value | Evidence/qualification | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1467); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "ISP 7 Medium",
+        "UNMAPPED_0408",
+        "ISP 7 Medium"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:001099",
+      "recipe_label": "isp_7_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/isp_7_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "ISP 7 Medium (Himedia)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "23.74",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"23.74\"},\"notes\":\"DSMZ Medium 1619 lists 23.74 g ISP 7 Medium (Himedia).\",\"preferred_term\":\"ISP 7 Medium (Himedia)\",\"source\":\"DSMZ Medium 1619\"}"
+    },
+    {
+      "recipe_id": "CultureMech:012514",
+      "recipe_label": "Main sol. 1619",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_3366_Main_sol_1619.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "ISP 7 Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1467",
+      "mim_preferred_term": "ISP 7 Medium",
+      "mim_matched_label": "ISP 7 Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "23.74",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"23.74\"},\"preferred_term\":\"ISP 7 Medium\",\"term\":{\"id\":\"mediadive.compound:1467\",\"label\":\"ISP 7 Medium\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/isp_7_medium.yaml",
+      "sha256": "0baff82eba6ee2c9318db2a4104840352d13e490992ca3f8da1507c09a303672",
+      "frozen_input_manifest_hash": "0baff82eba6ee2c9318db2a4104840352d13e490992ca3f8da1507c09a303672",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_3366_Main_sol_1619.yaml",
+      "sha256": "8269ec718b1999561ac7de8b2b94f9482b29548c133d27d2cfdcdda3d144bb8a",
+      "frozen_input_manifest_hash": "8269ec718b1999561ac7de8b2b94f9482b29548c133d27d2cfdcdda3d144bb8a",
+      "matches_frozen": true
+    }
+  ]
+}

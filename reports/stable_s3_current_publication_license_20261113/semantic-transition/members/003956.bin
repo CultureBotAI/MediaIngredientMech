@@ -1,0 +1,37 @@
+{
+  "scope": "Review-only preparation history; no product or science change.",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "add",
+        "--all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "user.name=Codex independent review fixture",
+        "-c",
+        "user.email=review-fixture@invalid",
+        "-c",
+        "commit.gpgsign=false",
+        "commit",
+        "-m",
+        "Retain review-preparation failures and explicit private finding ownership limit"
+      ],
+      "exit_code": 0,
+      "stdout": "[private-menadione-independent-review d774b5c] Retain review-preparation failures and explicit private finding ownership limit\n 10 files changed, 459 insertions(+)\n create mode 100644 evidence/setup-attempts/NATIVE-SAVE-EXECUTION-v2.json\n create mode 100644 evidence/setup-attempts/NATIVE-SAVE-EXECUTION-v3.json\n create mode 100644 evidence/setup-attempts/NATIVE-SAVE-EXECUTION.json\n create mode 100644 evidence/setup-attempts/native-save-v2.stderr\n create mode 100644 evidence/setup-attempts/native-save-v3.stderr\n create mode 100644 evidence/setup-attempts/native-save.stderr\n create mode 100644 evidence/setup-attempts/save_independent_review.py\n create mode 100644 evidence/setup-attempts/save_independent_review_v2.py\n create mode 100644 evidence/setup-attempts/save_independent_review_v3.py\n create mode 100644 evidence/setup-attempts/save_independent_review_v4.py\n",
+      "stderr": ""
+    }
+  ],
+  "attempts": [
+    "Initial manifest key mismatch stopped before any review fixture.",
+    "Second strict-pair attempt used the captured W02 pair path as if it were a canonical saved location; native refusal preserved. Third uses canonical logical pair parsing plus actual original W02 source/root validation and full hashes.",
+    "Third native validation correctly required explicit finding ownership limit before saving. Final adds only that metadata; no guard weakened."
+  ]
+}

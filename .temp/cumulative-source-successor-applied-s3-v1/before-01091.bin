@@ -1,0 +1,189 @@
+identifier: CHEBI:75836
+preferred_term: FeSO4 x 7H2O
+ontology_mapping:
+  ontology_id: CHEBI:75836
+  ontology_label: iron(2+) sulfate heptahydrate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.7H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:75832's
+      ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: FeSO4 x 5 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: FeSO4 x 6 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: FeSO4 x 6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: FeSO4 x7 H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: FeSO4·6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: FeSO4・6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: ferrous sulfate (anhydrous)
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: ferrous sulfate anhydrous
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: iron(2+) sulfate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:40.986514+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7720-78-7 from PubChem API (ontology label) via name preprocessing
+    (FeSO4 x 7H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: FeSO4 x 5 H2O, FeSO4
+    x 6 H2O, FeSO4 x 6H2O, FeSO4 x7 H2O, FeSO4·6H2O, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.632050+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.609295+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Fe.O4S; inchi=InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
+    smiles=O=S(=O)([O-])[O-].[Fe+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.491983+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111167+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'iron(2+) sulfate (anhydrous)'; it matches
+    the ChEBI synonym 'ferrous sulfate anhydrous' on CHEBI:75832. The schema defines
+    EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known
+    synonym, so the recorded grade overstated. ontology_id is unchanged — the term
+    is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.7H2O' (#321); the label states 7
+    water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value inherited
+    from the parent rather than measured for this record. Water appended in ChEBI's
+    own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:75836 ''FeSO4 x 7 H2O''; occurrences transferred. ''FeSO4
+    x 7H2O'' and ''FeSO4 x 7 H2O'' are the same substance written two ways — a missing
+    space before H2O — so the pair escaped dedup, and the loser was then grounded
+    to the nearest term lexical matching could reach: CHEBI:75832 (''iron(2+) sulfate
+    (anhydrous)''), which does not carry the water its own label states. The #334
+    shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272, which
+    grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:75832 -> CHEBI:75836 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''FeSO4 x 7 H2O''. Provenance is unaffected:
+    what the record used to assert is in this history.'
+  llm_assisted: false
+- timestamp: '2026-08-29T04:13:24.026340+00:00'
+  curator: hydrate_family_cas
+  action: CORRECTED
+  changes: cas_rn 7720-78-7 -> 7782-63-0. 7720-78-7 is the ANHYDROUS parent's CAS.
+    This record is grounded to CHEBI:75836 iron(2+) sulfate heptahydrate, whose ChEBI
+    dbxref is 7782-63-0 (#334).
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:75832 -> CHEBI:75836 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''FeSO4 x 5 H2O'';
+    ''FeSO4 x 6 H2O''; ''FeSO4 x 6H2O''; ''FeSO4·6H2O''; ''FeSO4・6H2O''; ''ferrous
+    sulfate (anhydrous)''; ''ferrous sulfate anhydrous''; ''iron(2+) sulfate''. Preserved
+    original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001090; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7782-63-0
+  data_source: PubChem API (ontology label)
+  retrieval_date: '2026-04-05T23:44:40.986504+00:00'
+  molecular_formula: Fe.O4S.7H2O
+  inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
+  smiles: O=S(=O)([O-])[O-].[Fe+2]
+kg_microbe_node_id: CHEBI:75836
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: IRON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
+mim_id: MIM:0001090
+legacy_identifiers:
+- MIM:Feso4_X_7h2o
+- CHEBI:75836

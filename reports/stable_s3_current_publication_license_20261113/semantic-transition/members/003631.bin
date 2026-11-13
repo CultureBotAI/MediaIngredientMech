@@ -1,0 +1,75 @@
+from pathlib import Path
+import json, hashlib, subprocess
+import yaml
+
+C = Path(__file__).resolve().parents[2]
+D = Path(__file__).resolve().parent
+A = C / 'integration/ancillary1258-worktree'
+def digest(b): return hashlib.sha256(b).hexdigest()
+def pin(p):
+    b = p.read_bytes()
+    return {'path': str(p), 'sha256': digest(b), 'bytes': len(b)}
+def save(name, obj):
+    with (D / name).open('x') as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False); f.write('\n')
+def walk(obj, path=''):
+    if isinstance(obj, dict):
+        for k, v in obj.items(): yield from walk(v, path+'/'+str(k))
+    elif isinstance(obj, list):
+        for k, v in enumerate(obj): yield from walk(v, path+'/'+str(k))
+    elif isinstance(obj, str): yield path, obj
+
+inv = json.loads((D/'ORIGINAL-PROPOSAL-INVENTORY.json').read_bytes())
+P = Path(inv['plan']['path']); I = Path(inv['index']['path'])
+assert pin(P)['sha256'] == inv['plan']['sha256']
+assert pin(I)['sha256'] == inv['index']['sha256']
+plan = json.loads(P.read_bytes()); im = {x['destination']: x for x in json.loads(I.read_bytes())['files']}
+W = C/'workers/w01/worktree/.temp/conditional-full-row-review-v1/DECISIONS-v2.json'
+wd = json.loads(W.read_bytes())['decisions']
+ids = ['sv3-hm-concentrated_hcl_nbrc_togo_source_reagent', 'sv3-hm-hcl_nominal35percent_togo_m3216', 'sv3-hm-hcl_nominal32percent_jcm770', 'sv3-hm-hcl_nominal25percent_jcm431_899', 'sv3-serums-swine-serum1076b']
+selected = [x for x in inv['records'] if x['proposal_id'] in ids]
+out = []
+target_ids = {}
+for r in selected:
+    assert len(r['selected_operations']) == 1
+    op = r['selected_operations'][0]
+    capture = im[op['after_capture']['path']]
+    raw = Path(capture['source']).read_bytes()
+    assert digest(raw) == capture['sha256'] == op['after_capture']['sha256']
+    y = yaml.load(raw, Loader=yaml.CSafeLoader)
+    target_ids[y['identifier']] = op['operation_id']
+    matches = [x for x in wd if x['operation_id'] == op['operation_id']]
+    for m in matches:
+        assert m['owner_payload_sha256'] == digest(raw)
+        ref = m['assessment_binding']
+        assert pin(Path(ref['path']))['sha256'] == ref['sha256']
+    out.append({'origin': {k: v for k, v in r.items() if k not in ('condition_fields',)}, 'selected_payload': capture, 'identifier': y['identifier'], 'preferred_name': y.get('preferred_name'), 'synonyms': y.get('synonyms'), 'actual_conditional_row_reviews': matches})
+save('HCL-SWINE-EXACT-CONDITIONS.json', {'scope':'Unresolved explicit installation/application conditions, not new chemical identity adjudication; conditional W01 row review is not application approval.', 'plan':pin(P), 'w01_provisional_decisions':pin(W), 'rows':out})
+
+head = subprocess.check_output(['git','--no-optional-locks','-C',str(A),'rev-parse','HEAD'], text=True).strip()
+owners = {}
+for folder in ('mapped', 'unmapped'):
+    for p in sorted((A/'data/ingredients'/folder).glob('*.yaml')):
+        raw = p.read_bytes(); y = yaml.load(raw, Loader=yaml.CSafeLoader)
+        owners[str(p.relative_to(A))] = {'input':pin(p), 'data':y, 'operation_id':None}
+baseline_count = len(owners)
+baseline_pins = [{'owner':k,**v['input']} for k,v in owners.items()]
+for r in plan['records']:
+    cap = im[r['after_capture']['path']]; raw = Path(cap['source']).read_bytes()
+    assert digest(raw) == r['after_capture']['sha256'] == cap['sha256']
+    if r['before_source_record'] and r['before_source_record'] != r['source_record']:
+        del owners[r['before_source_record']]
+    owners[r['source_record']] = {'input':pin(Path(cap['source'])), 'data':yaml.load(raw, Loader=yaml.CSafeLoader), 'operation_id':r['operation_id']}
+refs = []
+for owner, v in owners.items():
+    for path, value in walk(v['data']):
+        if value in target_ids:
+            refs.append({'owner':owner,'operation_id':v['operation_id'],'input':v['input'],'field':path,'value':value,'target_operation_id':target_ids[value], 'kind':'self_identifier' if path=='/identifier' else 'ontology_mapping_self_or_other' if path.startswith('/ontology_mapping/') else 'component_or_ingredient_reference' if path.startswith(('/components/','/ingredients/')) else 'other_exact_scalar_reference'})
+changed = []
+for p in baseline_pins:
+    if pin(Path(p['path']))['sha256'] != p['sha256']: changed.append(p['owner'])
+assert not changed
+assert subprocess.check_output(['git','--no-optional-locks','-C',str(A),'rev-parse','HEAD'],text=True).strip() == head
+save('HCL-SWINE-INBOUND-REFERENCE-SCAN.json', {'scope':'Read-only prospective full cdff catalog assembled only in memory from authentic A baseline and exact index captures. No installed partial B read; exact active scalar references distinguished from prose. No scientific acceptance.', 'baseline_root':str(A),'baseline_head':head,'baseline_owner_count':baseline_count,'prospective_owner_count':len(owners),'target_identifiers':target_ids,'all_exact_scalar_matches':refs,'nonself_component_ingredient_references':[r for r in refs if r['kind']=='component_or_ingredient_reference'],'baseline_pin_recheck_pass':True,'plan':pin(P),'index':pin(I)})
+save('CATALOG-INPUT-PINS.json', {'baseline':baseline_pins,'prospective':[{'owner':k,'operation_id':v['operation_id'],**v['input']} for k,v in owners.items()]})
+print(json.dumps({'selected_targets':len(out),'baseline':baseline_count,'prospective':len(owners),'exact_scalar_matches':len(refs),'inbound_components':sum(r['kind']=='component_or_ingredient_reference' for r in refs)}))

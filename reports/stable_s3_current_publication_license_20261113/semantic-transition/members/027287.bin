@@ -1,0 +1,76 @@
+identifier: UNMAPPED_0418
+preferred_term: L-alpha-Phosphatidylcholine
+synonyms:
+- synonym_text: L-α-Phosphatidylcholine
+  synonym_type: EXACT_SYNONYM
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2082); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MAPPED_FROM_UNMAPPED
+  changes: Mapped from the Greek-letter unmapped record to CHEBI:86658 after OLS exact
+    label match on the standard label L-alpha-Phosphatidylcholine; preserved original
+    source label as exact synonym.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519106+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001438; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-12T10:24:59.438113+00:00'
+  curator: codex_postadoption_source_proposal
+  action: PROPOSED_SOURCE_CORRECTION
+  changes: '#1372: proposed withdrawal of unsupported CHEBI:86658 species identity,
+    its kg_microbe_node_id pointer, and ChEBI-derived molecular_weight 758.075; restore
+    original UNMAPPED_0418 from import commit 9cb532c0b21cfadacc8637c1dae4253fc202ef65
+    and move the same permanent concept to unmapped/. Keep current label, Greek-letter
+    source synonym and original source/occurrence/history unchanged. Historical alias
+    CHEBI:86658 must be non-resolving under the explicitly reviewed rejection policy;
+    this proposal is not applicable until that policy and native successor are accepted.
+    Do not add the generated structure-specific synonym or any guessed replacement
+    ontology, CAS, class, structure or source-binding approval. Original assertion
+    values retained here as rejected source provenance: {"chemical_properties":{"data_source":"ChEBI","molecular_weight":758.075,"retrieval_date":"2026-05-23T08:31:03.146760+00:00"},"identifier":"CHEBI:86658","kg_microbe_node_id":"CHEBI:86658","legacy_identifiers":["MIM:L-alpha-Phosphatidylcholine","CHEBI:86658"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"OLS
+    exact label match after transliterating the Greek-letter source label to \"L-alpha-Phosphatidylcholine\".","source":"EBI
+    OLS exact search"}],"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86658","ontology_label":"L-alpha-Phosphatidylcholine","ontology_source":"CHEBI"}}.
+    Primary captures: MediaDive2082 SHA256 be23a8b1370b44a7b3578e0d2395a6f85ee7da30b99906511d6088e055bc4c61;
+    ChEBI86658 SHA256 758571566f4bdb29350beea32d25b0a0d9aa40a27ec4de159bc3619e615b3886.'
+  previous_status: MAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2082); mapped by OLS
+  exact audit after Greek-letter transliteration. Current proposal #1372 withdraws
+  the former exact CHEBI:86658 species grounding and ontology-derived mass: original
+  MediaDive2082 material is marked complex and does not establish that species'' acyl
+  composition or stereochemistry. Restored original UNMAPPED_0418 placeholder; permanent
+  MIM:0001438 is unchanged. CHEBI:86658 is rejected only as an identity assertion
+  for this owner, not globally. Its prior use remains historical provenance and must
+  not resolve as an accepted legacy alias. No replacement ontology, CAS, formula,
+  structure or source identity is asserted. All source, role, quantity and export
+  holds remain.'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001438
+legacy_identifiers:
+- MIM:L-alpha-Phosphatidylcholine
+- UNMAPPED_0418

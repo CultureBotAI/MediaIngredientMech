@@ -1,0 +1,332 @@
+identifier: CHEBI:33403
+preferred_term: Sulfur
+ontology_mapping:
+  ontology_id: CHEBI:33403
+  ontology_label: elemental sulfur
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#368)
+    notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+      weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/368
+    notes: 'Method correction under #1201 comment6724230173. The preserved #368 event
+      and CURATOR_JUDGMENT evidence establish elemental sulfur CHEBI:33403 by a material-versus-atom
+      adjudication, including rejected atom/polysulfur-only labels; the generic preferred
+      term Sulfur alone is not the establishing primary-label method. MANUAL_CURATION
+      records that existing decision. This new explanatory assessment is LLM-authored
+      and does not relabel any historical author or evidence. All source-powder aliases,
+      rejection history, unknown allotrope/lot details, counts, roles and release
+      holds remain unchanged.'
+synonyms:
+- synonym_text: (for anaerobic media only)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (powdered)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (sterilized by steaming for 3 hours on 3 consecutive days)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
+    Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 16S
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Schwefel
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: azufre
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: soufre
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sulfur atom
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: theion
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sulfur
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Sulphur
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:17909
+- synonym_text: Sulfur, precipitated
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:17909
+- synonym_text: polysulfur
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: sulfur, homopolymer
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Sulfur (powder)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Sulfur powder
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Elemental sulphur
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Sulfur, powder
+  synonym_type: RAW_TEXT
+  source: mappings/culturemech_residual_triage.tsv
+- synonym_text: Sulfur, powdered
+  synonym_type: RAW_TEXT
+  source: mappings/culturemech_residual_triage.tsv
+- synonym_text: Sulfur (powdered)
+  synonym_type: EXACT_SYNONYM
+  source: worker01 source review CM_NAME:6ca45fa4fdaf4727a62ed56795b2c2851e7eb92eff962ae4453faf0630f40585;
+    evidence reports/all_unmatched_20261107/worker-01/shard/root_substances/decisions.fragment.json
+- synonym_text: So(Sulfur Powder)
+  synonym_type: RAW_TEXT
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2553
+- synonym_text: Ground sulfur powder
+  synonym_type: RAW_TEXT
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3129
+- synonym_text: Elemental sulfer
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06 case CM_NAME:a1ec56b39c499e067f3680dcd3de08cc28a174c09113a71e04e1f022e3c3eefa
+- synonym_text: powdered sulfur
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:c02f72308ca844d7647f201c144961e0e9ec0777220161b8ebcce8fef4d9c9aa'
+- synonym_text: Powdered sulfur
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:c156c2b055de2ef40216435c26c76759dfb396add803c5df80112cf4d123c506'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 477
+  media_count: 477
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:58.784685+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-722-6 from PubChem API via name lookup (Sulfur)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:47:03.514358+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-722-6 from PubChem API (ontology label) via name preprocessing
+    (sulfur)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7783-06-4 from PubChem (via CHEBI:26833)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 16S, Schwefel, azufre,
+    soufre, sulfur atom, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 16S, Schwefel, azufre,
+    soufre, theion'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sulfur_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.502167+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.581419+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=S; inchi=InChI=1S/S; smiles=[S]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.697895+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 2 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-05-29T23:35:36.113099+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.840485+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sulfur'' -> ''sulfur atom'': synced to canonical CHEBI
+    label (preferred_term ''Sulfur'' unchanged).'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: Removed erroneous chemical_properties.cas_rn 7783-06-4 (that CAS is hydrogen
+    sulfide, H2S / CHEBI:16136 — a PubChem false positive, not elemental sulfur),
+    plus its data_source/retrieval_date. CHEBI:26833 (sulfur atom) mapping unchanged.
+  llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519926+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 51/225 -> 366/366 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-11T13:41:33.694587+00:00'
+  curator: fix_sulfur_family
+  action: CORRECTED
+  changes: identifier CHEBI:26833 -> CHEBI:33403 (elemental sulfur); absorbed duplicate
+    Sulphur and Sulfur (powder) records; merged CultureMech membership from 3 identifiers
+    into CHEBI:33403; added 7 resolving source label(s) and retained 4 atom/polysulfur-only
+    label(s) as REJECTED_LABEL (#368).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T04:15:49.074743+00:00'
+  curator: codex-worker01
+  action: ADDED_SYNONYMS
+  changes: Add source-scoped EXACT_SYNONYM alias 'Sulfur (powdered)'; preserve existing
+    identity and all other claims. Publication support requires fresh content-bound
+    review.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''So(Sulfur Powder)'', ''Ground sulfur powder'' as
+    a bounded reagent alias; preserve identity,hydration,counterion,roles,status and
+    occurrence statistics. Concentration and source-nesting findings remain separate.
+    Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/. Proposal
+    only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: ADDED_SYNONYMS
+  changes: 'Added source-verified RAW_TEXT spelling/qualified-name aliases: Elemental
+    sulfer. No existing identity, mapping, role or count changed. Isolated proposal
+    only; no publication or inherited support approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'powdered sulfur'; Add source-verified
+    same-substance alias 'Powdered sulfur'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G03 from authentic common before
+    sha256=d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323. Origins:
+    worker01:RS-062-ALIAS sha256=49c099fad3aa92d273a5796b0104bb7ec049ce817670b7cfa0603e5ed2fa9df8;
+    worker05:CHEM-PROP-sulfur sha256=f04b8951353ddf1470fdecb3750f1638373f9786425bd8fea71e9662027fb658;
+    worker06:C-P-SULFUR sha256=05307ea33e85fb88ce93e90d15298f23f211323453f5719758039b0efec7ceb5;
+    worker07:B-PROPOSAL-Sulfur sha256=2f6c3222dfb6a5b1e372458028565828efedc260a6356bfa6ee17d9ab47c4e26.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. Report-only candidate; separate final scientific review
+    and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-025 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T16:54:03.096625+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_MAPPING_METHOD
+  changes: 'Private successor for #1201 comment6724230173: change ontology_mapping.mapping_quality
+    from EXACT_MATCH to MANUAL_CURATION to describe the recorded identity adjudication,
+    and append one truthful LLM_SUGGESTION method note. Method correction under #1201
+    comment6724230173. The preserved #368 event and CURATOR_JUDGMENT evidence establish
+    elemental sulfur CHEBI:33403 by a material-versus-atom adjudication, including
+    rejected atom/polysulfur-only labels; the generic preferred term Sulfur alone
+    is not the establishing primary-label method. MANUAL_CURATION records that existing
+    decision. This new explanatory assessment is LLM-authored and does not relabel
+    any historical author or evidence. All source-powder aliases, rejection history,
+    unknown allotrope/lot details, counts, roles and release holds remain unchanged.
+    Preserve every original history event, evidence object and all other fields. No
+    maintained application or independent successor approval; distinct full-payload
+    and complete-row review remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties: {}
+kg_microbe_node_id: CHEBI:33403
+ingredient_type: SINGLE_INGREDIENT
+environmental_context:
+- environment_term: ENVO:01000030
+  environment_label: marine hydrothermal vent biome
+  relevance: NATURAL_SOURCE
+  notes: Elemental sulfur deposits are a hallmark of hydrothermal vent environments.
+- environment_term: ENVO:00000051
+  environment_label: hot spring
+  relevance: NATURAL_SOURCE
+  notes: Elemental sulfur accumulates at terrestrial hot springs; substrate for sulfur-oxidizing
+    thermophiles.
+nutritional_roles:
+- role: SULFUR_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (225 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (225 occurrences). High confidence
+      based on 'Defined component' property.

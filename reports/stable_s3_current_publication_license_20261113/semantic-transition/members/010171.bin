@@ -1,0 +1,694 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="DSMZ cultivation media database">
+    <meta name="author" content="Julia Koblitz">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://mediadive.dsmz.de" />
+    <meta property="og:type" content="database" />
+    <meta property="og:title" content="Finder | Media | MediaDive" />
+    <meta property="og:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains." />
+    <meta property="og:image" content="/img/mediadive_logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mediadive.dsmz.de">
+    <meta property="twitter:title" content="MediaDive — the cultivation media database">
+    <meta property="twitter:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains.">
+    <meta property="twitter:image" content="/img/mediadive_avatar.png">
+
+    <link rel="icon" href="/img/favicon_256x256.png">
+    <title>Finder | Media | MediaDive</title>
+
+    <!-- Phosphoricons and individual D3 icons -->
+    <link href="/css/phosphoricons/regular/style.css?v=2" rel="stylesheet" />
+    <link href="/css/phosphoricons/fill/style.css?v=2" rel="stylesheet" />
+    <link href="/css/d3icons/style.css?v=3" rel="stylesheet" />
+
+    <link href="/css/digidive.css?v=4" rel="stylesheet" />
+    <link href="/css/shepherd.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/style.css?1758698096" rel="stylesheet">
+
+    <script>
+        // define global constants
+        const ROOTPATH = "";
+    </script>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Requires digidive.js for the dropdowns -->
+    <!-- <script src="/js/digidive.js"></script> -->
+    <script src="/js/digidive.js?v=4"></script>
+    <script src="/js/script.js?1722402400"></script>
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "https://piwik.dsmz.de/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '15']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript>
+            <p><img src="https://piwik.dsmz.de/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p>
+        </noscript>
+        <!-- End Matomo Code -->
+    </head>
+
+<body style="position: relative">
+    <!-- Modals go here -->
+    <!-- <div class="modal modal-lg" id="settings" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-400 mw-full">
+            <a href="#" class="btn float-right" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title"><i class="ph ph-gear text-primary"></i> Settings</h5>
+
+            <form action="#" method="get">
+                
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select name="language" id="language" class="form-control">
+                        <option value="en" selected>English</option>
+                        <option value="de" >Deutsch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="transitions" name="transitions" value="true" >
+                        <label for="transitions">Motion-sickness mode</label><br>
+                        <small class="text-muted">This mode reduces motion and animations on the page.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="dyslexia" name="dyslexia" value="true" >
+                        <label for="dyslexia">Dyslexia mode</label><br>
+                        <small class="text-muted">
+                            The web page uses a special font to increase readibility for user with dyslexia.                        </small>
+                    </div>
+                </div>
+                <p>
+                    We use browser cookies to save your preferences.                </p>
+                <button class="btn primary">Apply</button>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="modal modal-lg" id="ingredient-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('ingredient-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Ingredient name</h5>
+            <div id="ingredient-content"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-lg" id="universal-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('universal-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <div id="universal-content" class="content"></div>
+        </div>
+    </div>
+</div>    <div class="loader">
+        <span></span>
+    </div>
+    <div class="popup-bg" onclick="hidePopups();"></div>
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper 
+            ">
+        <!-- data-sidebar-hidden to hide sidebar on start -->
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts">
+                    </div>
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="digidive.toggleSidebar()"></div>
+
+        <!-- Navbar start -->
+        <div class="navbar navbar-top">
+            <div class="container">
+                <!-- here goes your database logo -->
+
+                <a href="/" class="navbar-brand position-relative">
+                                            <img class="" src="/img/mediadive_logo.svg?v=2" alt="MediaDive" style="width: 30rem;">
+                                        
+                </a>
+
+                <a href="//hub.dsmz.de/" class="navbar-brand ml-auto d-none d-sm-block">
+                    <!-- DSMZ Logo is mandatory -->
+                    <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity">
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <!-- Button to toggle sidebar -->
+            <div class="container">
+                <button class="btn btn-action active" type="button" onclick="digidive.toggleSidebar(this);"></button>
+
+                <ul class="navbar-nav">
+                    
+                        <nav aria-label="MediaDive breadcrumbs">
+                            <ul class="breadcrumb m-0">
+                                <li><a href="/">Home</a></li><li><a href="/media">Media</a></li><li class="active" aria-current="page"><a href="javascript:void(0)">Finder</a></li>                            </ul>
+                        </nav>
+                                    </ul>
+
+                <div class="dropdown">
+                    <button class="btn primary circle square mr-10" data-toggle="dropdown" type="button" id="accessibility-menu" aria-haspopup="true" aria-expanded="false">
+                        <i class="ph ph-person-simple"></i>
+                        <span class="sr-only">Accessibility Options</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-center w-300" aria-labelledby="accessibility-menu">
+                        <h6 class="header text-primary">Accessibility</h6>
+                        <form action="#" method="get" class="content">
+                            <input type="hidden" name="accessibility[check]">
+
+                            <input type="hidden" name="redirect" value="/finder/Bordet-Gengou-Agar-Base///">
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select name="accessibility[language]" id="language" class="form-control">
+                                    <option value="en" selected>English</option>
+                                    <option value="de" >Deutsch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-contrast" name="accessibility[contrast]" value="high-contrast" >
+                                    <label for="set-contrast">High contrast</label><br>
+                                    <small class="text-muted">
+                                        Enhance the contrast of the web page for better readability.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-transitions" name="accessibility[transitions]" value="without-transitions" >
+                                    <label for="set-transitions">Reduce motion</label><br>
+                                    <small class="text-muted">
+                                        Reduce motion and animations on the page.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-dyslexia" name="accessibility[dyslexia]" value="dyslexia" >
+                                    <label for="set-dyslexia">Dyslexia mode</label><br>
+                                    <small class="text-muted">
+                                        Use a special font to increase readability for users with dyslexia.                                    </small>
+                                </div>
+                            </div>
+                            <button class="btn primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <form id="medium-search" action="/media" method="get" class="nav-search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" autocomplete="off" placeholder="Search medium">
+                        <div class="input-group-append">
+                            <button class="btn primary"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="suggestions"></div>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+
+            <nav class="sidebar-topnav">
+                <ul>
+                    <li><a href="/docs"><i class="ph ph-book"></i>Manual</a></li>
+                    <li><a href="/contact" title="Support"><i class="ph ph-headset"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-menu">
+
+                
+                <!-- Sidebar links (with icons) and titles -->
+                <h5 class="title">Content</h5>
+
+                <a href="/media" class="with-icon primary ">
+                    <i class="ph ph-flask" aria-hidden="true"></i>
+
+                    Media                </a>
+                <a href="/solutions" class="with-icon secondary ">
+                    <i class="ph ph-test-tube" aria-hidden="true"></i>
+
+                    Solutions                </a>
+                <a href="/ingredients" class="with-icon success ">
+                    <i class="ph ph-mortar-pestle" aria-hidden="true"></i>
+
+                    Ingredients                </a>
+
+                <a href="/strains" class="with-icon signal ">
+                    <!-- text-white bg-dark text-dark-dm bg-light-dm -->
+                    <i class="ph ph-microbes" aria-hidden="true"></i>
+
+                    Strains                </a>
+
+                <a href="/steps" class="with-icon ">
+                    <i class="ph ph-list-checks" aria-hidden="true"></i>
+
+                    Steps                </a>
+                <a href="/gas" class="with-icon ">
+                    <i class="ph ph-gas" aria-hidden="true"></i>
+                    Gas
+                </a>
+
+
+                <h5 class="title">Search</h5>
+
+                <a href="/finder" class="with-icon active">
+                    <i class="ph ph-target" aria-hidden="true"></i>
+                    Medium finder
+                </a>
+                <a href="/solution-finder" class="with-icon ">
+                    <i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i>
+                    Solution finder
+                </a>
+                <a href="/taxonomy" class="with-icon ">
+                    <i class="ph ph-taxonomy" aria-hidden="true"></i>
+                    Taxonomy search                </a>
+                <a href="/isolation-sources" class="with-icon ">
+                    <i class="ph ph-map-pin-line" aria-hidden="true"></i>
+                    Isolation sources                </a>
+
+
+                <h5 class="title">Tools</h5>
+                                    <a href="/medium-builder" class="with-icon ">
+                        <i class="ph ph-flask-pen" aria-hidden="true"></i>
+                        Medium builder
+                    </a>
+                                <!-- sparql -->
+                <a href="https://sparql.dsmz.de/mediadive" class="with-icon">
+                    <i class="ph ph-rdf" aria-hidden="true"></i>
+                    SPARQL endpoint
+                </a>
+                <a href="/unit-converter" class="with-icon ">
+                    <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+
+                    Unit converter                </a>
+                <a href="/compare-media" class="with-icon ">
+                    <i class="ph ph-flask-vial" aria-hidden="true"></i>
+
+                    Compare media                </a>
+                <a href="/compare-solutions" class="with-icon ">
+                    <i class="ph ph-vials" aria-hidden="true"></i>
+
+                    Compare solutions                </a>
+                
+
+
+                <a href="/prediction" class="with-icon ">
+                    <i class="ph ph-chip-ai" aria-hidden="true"></i>
+
+                    Prediction <span class="badge badge-primary ml-5">SOON</span>
+                </a>
+
+
+                
+                <div class="sidebar-content text-muted d-block d-sm-none">
+                    <!-- brought to you by -->
+                    <a href="//www.dsmz.de/" class="navbar-brand ml-auto pb-10">
+
+                        <!-- DSMZ Logo is mandatory -->
+                        <img src="/img/dsmz_full.svg" alt="DSMZ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+                        <div class="content-container">
+
+                <a id="top"></a>
+                <a class="btn float-right  ml-5 d-none d-md-block" href="/docs/website#medium-finder"><i class="ph ph-book mr-10"></i> Learn more</a>
+
+<button class="btn ml-5 d-none d-md-block float-right m-5 tour-btn" onclick="finderTour(true)"><i class="ph ph-lg ph-signpost"></i> Guided tour</button>
+
+<h1><i class="ph ph-target text-primary"></i> Medium finder
+</h1>
+
+<p class="lead">Search for media using compounds and concentrations.</p>
+<p class=""><i class="ph ph-warning text-danger"></i>
+    The medium composition is currently in its beta status, meaning that some concentrations are not correct and need further adjustments. Keep this in mind while trying this out.</p>
+
+<form action="/finder" method="GET">
+    <table class="table" id="formtable">
+        <colgroup>
+            <col class="col-icons">
+            <col class="col-compound">
+            <col span="3" class="col-concentration">
+            <col class="col-trash">
+        </colgroup>
+        <thead>
+            <tr>
+                <th></th>
+                <th><label for="compound" class="required">Compound</label></th>
+                <th><label for="from">Min. conc.</label></th>
+                <th><label for="to">Max. conc.</label></th>
+                <th><label for="unit">Unit</label></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                                <tr>
+                        <td><i class="ph ph-mortar-pestle text-success"></i></td>
+                        <td>
+                                                            <input list="ingredient-list" type="text" name="compounds[]" class="form-control" autocomplete="off" value="Bordet-Gengou-Agar-Base" placeholder="start typing ...">
+                                <!-- <td class="autocomplete">
+                            <input type="text" name="compounds[]" autocomplete="off" class="form-control autocomplete-ingredient" value="Bordet-Gengou-Agar-Base" placeholder="start typing ...">
+                            <div class="autocomplete-items  bg-light"></div>
+                        </td> -->
+                                                    </td>
+                        <td><input class="form-control" type="number" step="0.001" name="from[]" placeholder="from" value=""></td>
+                        <td><input class="form-control" type="number" step="0.001" name="to[]" placeholder="to" value=""></td>
+                        <td><select class="form-control " name="unit[]">
+                                                                    <option value="g_l" >g/l</option>
+                                    <option value="mmol_l" >mmol/l</option>
+                                                            </select></td>
+                        <td><button class="btn square" type="button" onclick="$(this).parent().parent().remove();"><i class="ph ph-trash"></i></button></td>
+                    </tr>
+                        </tbody>
+    </table>
+
+    <button type="button" class="btn mt-10" onclick='addRow("compound")' id="add-compound-btn"><span class="text-success"><i class="ph ph-mortar-pestle"></i><sub>+</sub></span> Add compound</button>
+    <button type="button" class="btn mt-10" onclick='addRow("compound-omit")' id="add-compound-btn"><span class="text-danger"><i class="ph ph-mortar-pestle"></i><sub>-</sub></span> Omit compound</button>
+    <button type="button" class="btn mt-10" onclick='addRow("gas")' id="add-gas-btn"><i class="ph ph-gas"></i><sub>+</sub> Add gas</button>
+    <button type="button" class="btn mt-10" onclick='addRow("solution")' id="add-solution-btn"><i class="ph ph-test-tube text-secondary"></i><sub>+</sub> Add solution</button>
+        <br>
+    <div class="custom-checkbox my-10" id="optional-checkbox">
+        <input type="checkbox" id="optional" value="1" name="optional" >
+        <label for="optional">Include optional ingredients</label>
+    </div>
+    <button type="submit" class="btn primary mt-10">Search</button>
+
+</form>
+
+    <hr>
+    <h3>Search result</h3>
+    <div class="content d-inline-block my-0" id="summary">
+        Current criteria:                    <span class='badge'><i class="ph ph-mortar-pestle text-success"></i> Bordet-Gengou-Agar-Base</span>
+                <p>
+            Your search received <b>1</b> results.
+        </p>
+
+    </div>
+
+    <div class="row">
+        <div class="col col-md-6 pr-md-10">
+                            <div class="box ">
+                    <div class="header">
+                        <h3 class="m-0 mr-10">
+                                                    <a class="btn" href="/medium/438">
+                            <i class="ph text-danger ph-flask"></i> 438</a>
+                        BORDET-GENGOU-MEDIUM (DIFCO)                        </h3>
+                                        </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table small simple">
+
+                            <thead>
+                                <tr>
+                                    <th>Compound</th>
+                                    <th>Conc. [g/L]</th>
+                                    <th>Conc. [mM]</th>
+                                </tr>
+                            </thead>
+                                                            <tr class="" id="comp-74868">
+                                    <td>
+
+                                        <a href="/ingredients/724" class="hyperlink colorless">
+                                            Horse blood                                        </a>
+                                        
+                                    </td>
+                                    <td class="text-right">
+                                        150                                    </td>
+                                    <td class="text-right">
+                                        -                                    </td>
+                                </tr>
+
+                                                            <tr class=" strain-mod" id="comp-74869">
+                                    <td>
+
+                                        <a href="/ingredients/2112" class="hyperlink colorless">
+                                            Bordet-Gengou-Agar-Base                                        </a>
+                                        
+                                    </td>
+                                    <td class="text-right">
+                                        -                                    </td>
+                                    <td class="text-right">
+                                        -                                    </td>
+                                </tr>
+
+                                                                                </table>
+                    </div>
+                    
+                    
+                    <!-- <div class="text-right"><a href="/medium/438" class="btn"><i class="ph ph-flask text-primary"></i> Go to medium</a></div> -->
+                </div>
+                    </div>
+    </div>
+    <!-- </div> -->
+
+    
+
+<datalist id="ingredient-list">
+    <option value=''><option value='(-)-Chloramphenicol'><option value='(-)-Quinic acid'><option value='(DL)-alpha-Lipoic acid'><option value='(NH4) citrate'><option value='(NH4)2 citrate'><option value='(NH4)2CO3'><option value='(NH4)2HPO4'><option value='(NH4)2MoO4'><option value='(NH4)2Ni(SO4)2'><option value='(NH4)2Ni(SO4)2 x 6 H2O'><option value='(NH4)2S4'><option value='(NH4)2SO4'><option value='(NH4)3 citrate'><option value='(NH4)6Mo7O24'><option value='(NH4)6Mo7O24 x 4 H2O'><option value='(NH4)Cl'><option value='(NH4)H2PO4'><option value='(NH4)HCO3'><option value='(NH4)MgPO4'><option value='(NH4)NO3'><option value='1 M TRIS, pH 7,8'><option value='1,1,2-Trichloroethane'><option value='1,2-Dichloropropane'><option value='1,4-Naphthoquinone'><option value='1-Naphtylacetic Acid'><option value='2,2,4,4,6,8,8-Heptamethylnonane'><option value='2,3-butanediol'><option value='2,4-Dichlorophenoxyacetic Acid'><option value='2,4-Dihydroxybenzoic acid'><option value='2-(N-Morpholino)ethanesulfonic acid'><option value='2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine'><option value='2-Chlorobenzoic acid'><option value='2-Furoic acid'><option value='2-Mercaptoethanesulfonate'><option value='2-Mercaptoethanesulfonic acid'><option value='2-Mercaptoethanol'><option value='2-Methylbutyric acid'><option value='2-Nitrophenol'><option value='2-Oxoglutarate'><option value='2-Sulfobenzoic acid'><option value='3,4,5-Trimethoxycinnamic acid'><option value='3,5-Dihydroxybenzoic acid'><option value='3-Aminophenol'><option value='3-Chloroacrylic acid'><option value='3-Hydroxybenzoic acid'><option value='3-Indolyl acetic acid'><option value='3-Methylbutyric acid'><option value='4-(2-hydroxyethyl)-1-piperazineethanesulfonic acid'><option value='4-aminobenzoate'><option value='4-Aminobenzoic Acid'><option value='4-Hydroxybenzoic acid'><option value='4-Hydroxyphenyl acetic acid'><option value='5-Aminovaleric acid'><option value='6-methylnicotinate'><option value='84 g/L NaHCO3 solution'><option value='Absolute ethanol'><option value='ACES'><option value='Acetate'><option value='Acetic acid'><option value='Activated carbon'><option value='Activated charcoal'><option value='Agar'><option value='Agarose'><option value='Air'><option value='air-dried garden soil'><option value='Al2(SO4)3 x 18 H2O'><option value='AlCl3'><option value='AlCl3 x 6 H2O'><option value='AlK(SO4)2'><option value='AlK(SO4)2 x 12 H2O'><option value='Allantoin'><option value='alpha-D-Glucose'><option value='alpha-ketoglutamate'><option value='alpha-ketoglutaric acid'><option value='alpha-lipoic acid'><option value='alpha-Methylbutyric acid'><option value='Aminoacids'><option value='Ammonium acetate'><option value='Ammonium chloride'><option value='Ammonium ferric citrate'><option value='Ammonium Molybdate'><option value='Ammonium molybdate ((NH4)6Mo7O24) tetrahydrate'><option value='Ammonium nitrate'><option value='Ammonium oxalate'><option value='Ammonium Sulfate'><option value='Amphotericin'><option value='Amphotericin B'><option value='Ampicillin'><option value='Ampicillin sodium salt'><option value='Anaerobe Basal Broth CM0957'><option value='Antipyrine'><option value='Arabinose'><option value='Arginine'><option value='Arsenate'><option value='Artificial Sea Salt'><option value='artificial seawater (25 or 33 g/L)'><option value='Ascorbic acid'><option value='Asialofetuin'><option value='Asparagine'><option value='B12'><option value='BaCl2'><option value='BaCl2 x 2 H2O'><option value='Bacto beef extract'><option value='Bacto Bitone'><option value='Bacto brain heart infusion'><option value='Bacto Heart Infusion Broth'><option value='Bacto m TGE broth'><option value='Bacto Middlebrook 7H10 agar'><option value='Bacto Panton'><option value='Bacto peptone'><option value='Bacto Soytone'><option value='Bacto Tryptic Soy Broth'><option value='Bacto Tryptone'><option value='Baker's yeast'><option value='Basal mineral NaCl medium'><option value='Basal salts solution'><option value='BCYE agar'><option value='Beef'><option value='Beef brain powder'><option value='Beef extract'><option value='Benomyl'><option value='Benzothiazole'><option value='Benzylcyanide'><option value='beta-NAD'><option value='Betaine'><option value='Betaine Hydrochloride'><option value='Betaine x H2O'><option value='Bicarbonate'><option value='Bicine'><option value='BICINE buffer'><option value='Biotin'><option value='Biotine'><option value='Biphenyl'><option value='Bis-Tris'><option value='BL Agar'><option value='Blood Agar Base'><option value='Blood agar No 2'><option value='Bordet-Gengou-Agar-Base'><option value='Boric acid'><option value='Bovine albumin'><option value='Bovine calf serum'><option value='Bovine horn meal'><option value='Bovine serum'><option value='Bovine serum albumin'><option value='Brain heart infusion'><option value='Brain heart infusion broth'><option value='Brewer anaerobic agar'><option value='Bromocresol purple'><option value='Bromothymol blue'><option value='Bromothymol blue (5% alcoholic solution)'><option value='Brucella agar'><option value='Brucella Broth'><option value='Butyl vinyl ether'><option value='Butyric acid'><option value='Ca(NO3)2'><option value='Ca(NO3)2 x 4 H2O'><option value='Ca(NO3)2 x 6 H2O'><option value='Ca-folinate'><option value='CaCl2'><option value='CaCl2 x 2 H2O'><option value='CaCl2 x 6 H2O'><option value='CaCl2 x 7 H2O'><option value='CaCl2 x H2O'><option value='CaCO3'><option value='CaHPO4'><option value='Calcium Carbonate'><option value='Calcium Chloride'><option value='Calcium chloride dihydrate'><option value='Calcium D-(+)-pantothenate'><option value='Calcium D-Pantothenate'><option value='Calcium malate'><option value='Calcium panthothenate'><option value='Calcium pantothenate'><option value='Calf serum'><option value='Caproic acid'><option value='Capronic acid'><option value='CAPS buffer'><option value='CAPSO'><option value='Carbon source solution'><option value='Carboxymethyl cellulose'><option value='Carboxymethylcellulose'><option value='Carrot'><option value='Casamino acids'><option value='Casein'><option value='Casein hydrolysate'><option value='Casein peptone'><option value='Casitone'><option value='Casman-Agar-Base'><option value='CaSO4'><option value='CaSO4 x 2 H2O'><option value='CaSO4 x 7 H2O'><option value='Catalase'><option value='Cd(NO3)2 x 4 H2O'><option value='Ce(NO3)3 x 6 H2O'><option value='CeCl3'><option value='CeCl3 x 7 H2O'><option value='Cellobiose'><option value='Cellobiose or Cellulose MN 300'><option value='Cellulose'><option value='Cellulose MN 300'><option value='Cereal leaves'><option value='Cerophyll'><option value='Chalcopyrite'><option value='Charcoal'><option value='Charcoal-filtered, natural seawater'><option value='Cheese whey'><option value='Chitin'><option value='Chitosan'><option value='Cholesterol'><option value='cholesterol lipid concentrate'><option value='Choline'><option value='Choline chloride'><option value='Citric acid'><option value='Citric acid x H2O'><option value='Clarified rumen fluid'><option value='CMRL 1066'><option value='Co Carboxylase'><option value='Co(NO3)2'><option value='Co(NO3)2 x 6 H2O'><option value='Co-carboxylase'><option value='Cobalamin'><option value='Cobalamine'><option value='CoCl2'><option value='CoCl2 x 2 H2O'><option value='CoCl2 x 4 H2O'><option value='CoCl2 x 6 H2O'><option value='Coenzym A'><option value='Coenzyme A'><option value='Coenzyme M'><option value='Colloidal chitin'><option value='Columbia agar base'><option value='Columbia blood agar base'><option value='Complan'><option value='Congo red'><option value='Cooked meat medium'><option value='Copper Sulfate'><option value='Corn meal'><option value='Corn meal agar'><option value='Corn starch'><option value='Corn steep liquor'><option value='Corn steep powder'><option value='CoSO4'><option value='CoSO4 x 7 H2O'><option value='Cow manure'><option value='Cow's milk'><option value='Cr(NO3)3 x 7 H2O'><option value='Cr2(SO4)3 x n H2O'><option value='Creatine'><option value='Creatinine'><option value='Cresol'><option value='Cresol red'><option value='CrK(SO4)2 x 12 H2O'><option value='Crotonic acid'><option value='Cu(NO3)2 x 3 H2O'><option value='CuCl'><option value='CuCl2'><option value='CuCl2 x 2 H2O'><option value='CuCl2 x 5 H2O'><option value='CuCl2 x 6 H2O'><option value='CuCl2 x H2O'><option value='CuSO4'><option value='CuSO4 x 2 H2O'><option value='CuSO4 x 4 H2O'><option value='CuSO4 x 5 H2O'><option value='CuSO4 x 6 H2O'><option value='CuSO4 x H2O'><option value='Cyanocobalamin'><option value='Cyanocobalamine'><option value='Cyanuric acid'><option value='Cycloheximid'><option value='Cyclomaltoheptaose'><option value='Cystein'><option value='Cystein-HCl x 2 H2O'><option value='Cysteine'><option value='Cysteine HCl'><option value='Cysteine hydrochloride'><option value='Cysteine-HCl'><option value='Czapek Dox agar'><option value='Czapek solution'><option value='Czapek-Dox liquid medium'><option value='D'><option value='D(+)-Glucose'><option value='D(+)-Trehalose'><option value='D-(+)-biotin'><option value='D-Arabinose'><option value='D-Biotin'><option value='D-Calcium pantothenate'><option value='D-Fructose'><option value='D-Galactose'><option value='D-galacturonic acid'><option value='D-Glucose'><option value='D-glucuronic acid'><option value='D-Maltose'><option value='D-Mannitol'><option value='D-Mannose'><option value='D-Sorbitol'><option value='D-Sucrose'><option value='D-Trehalose'><option value='D-Xylose'><option value='Decane'><option value='Defibrinated Blood'><option value='Defibrinated sheep blood'><option value='dehydrated RCM medium'><option value='dehydrated Wilkins-Chalgren medium'><option value='Deionized water'><option value='Demineralized water'><option value='Desicatted Ox-bile'><option value='Dextran'><option value='Dextrin'><option value='Dextrose'><option value='Diaminopimelic acid'><option value='Diammonium Citrate'><option value='Diammonium hydrogen citrate'><option value='Dibenzofuran'><option value='Diced potato'><option value='Dichloran-Glycerol-agar base'><option value='Diethyl phosphonate'><option value='Difco 0001'><option value='Difco marine broth'><option value='Difco Marine Broth 2216'><option value='Dimethyl sulfoxide'><option value='Dipotassium Phosphate'><option value='Disodium fumarate'><option value='Disodium oxalate'><option value='Disodium Phosphate'><option value='Disodium succinate'><option value='Disodium succinate x 6 H2O'><option value='Disodium sulfide'><option value='Distilled water'><option value='Dithionite'><option value='Dithiothreitol'><option value='DL-2-Methylbutyric acid'><option value='DL-6,8-thioctic acid'><option value='DL-alpha-lipoic acid'><option value='DL-alpha-Methyl butyric acid'><option value='DL-Asparagine x H2O'><option value='DL-aspartic acid'><option value='DL-Calcium pantothenate'><option value='DL-carnitine'><option value='DL-Dithiothreitol'><option value='DL-Histidine'><option value='DL-Malate'><option value='DL-Malic acid'><option value='DL-Methionine'><option value='DL-mevalonic acid'><option value='DL-Na-lactate'><option value='DL-Na-malate'><option value='DL-Pantothenic acid'><option value='DL-Sodium malate'><option value='DL-Tryptophan'><option value='DNA'><option value='Double distilled water'><option value='Dry cow-manure'><option value='DTT'><option value='Dung extract'><option value='EBIOS'><option value='EDTA'><option value='Eisencitrat'><option value='Elemental sulfur'><option value='Elemental sulphur'><option value='Enzymatic digest of casein'><option value='Erythromycin'><option value='Ethanol'><option value='Ethanol absolute'><option value='Ethanolamine'><option value='Ethylene glycol'><option value='FAD'><option value='Fastidious Anaerobe Agar'><option value='Fastidious Anaerobe Basal Broth'><option value='Fatty acid mixture (see Medium No. 266)'><option value='FBS'><option value='Fe SO4 x 7 H2O'><option value='Fe(III) citrate'><option value='Fe(III)-EDTA'><option value='Fe(III)NH4-EDTA'><option value='Fe(III)PO4 x 4 H2O'><option value='Fe(NH4)2(SO4)2'><option value='Fe(NH4)2(SO4)2 x 12 H2O'><option value='Fe(NH4)2(SO4)2 x 6 H2O'><option value='Fe(NH4)2(SO4)2 x 7 H2O'><option value='Fe(NH4)citrate'><option value='Fe(SO4)3 x n H2O'><option value='Fe2(SO4)3'><option value='Fe2(SO4)3 x H2O'><option value='Fe2(SO4)3 x n H2O'><option value='Fe4(PO4)2'><option value='FeCl2'><option value='FeCl2 x 4 H2O'><option value='FeCl2 x 6 H2O'><option value='FeCl2 x 7 H2O'><option value='FeCl3'><option value='FeCl3 x 4 H2O'><option value='FeCl3 x 6 H2O'><option value='FeNa-EDTA'><option value='FePO4'><option value='Ferric ammonium citrate'><option value='Ferric citrate'><option value='Ferric citrate monohydrate'><option value='Ferrihydrite'><option value='Ferrous citrate'><option value='FeSO4'><option value='FeSO4 x 5 H2O'><option value='FeSO4 x 6 H2O'><option value='FeSO4 x 7 H2O'><option value='FeSO4 x H2O'><option value='Fetal bovine serum'><option value='Fetal calf serum'><option value='Fig'><option value='Fildes Enrichment'><option value='Fish meat extract'><option value='Fish peptone'><option value='Fish-Sperm DNA'><option value='Flavin adenine dinucleotide'><option value='Fluoranthene'><option value='Folic acid'><option value='Folinic acid'><option value='Formic acid'><option value='Fresh egg mixture'><option value='Fructose'><option value='Fucose'><option value='Fumaric acid'><option value='Galactose'><option value='GAM agar'><option value='GAM broth'><option value='GAM Broth mod. powder'><option value='GAM Broth powder'><option value='Gamborg B5 Medium incl. Vitamins'><option value='gamma-Aminobutyric acid'><option value='Garden soil'><option value='Gelatin'><option value='Gelatine'><option value='Gellan Gum'><option value='Gelrite'><option value='Gentisic acid'><option value='Ginger'><option value='Glacial acetic acid'><option value='Gluconic acid'><option value='Glucose'><option value='Glutamic acid'><option value='Glutamine'><option value='Glutathione'><option value='glycerin'><option value='Glycerol'><option value='Glycerol (anhydrous)'><option value='Glycerol mono-oleate'><option value='Glycerol monostearate'><option value='Glycerol-asparagine agar'><option value='Glycine'><option value='Glycine-NaOH buffer'><option value='Glycyl-glycine'><option value='Grace's Insect Medium'><option value='Ground beef'><option value='GYP-sodium acetate-mineral salts broth'><option value='H2O'><option value='H2SeO3'><option value='H2SO4'><option value='H2WO4'><option value='H3BO2'><option value='H3BO3'><option value='H3BO4'><option value='Haemin'><option value='HBO3'><option value='HCl'><option value='HCl, 25%'><option value='Heart Infusion Broth'><option value='Hemicalcium D-(+)-pantothenate'><option value='Hemin'><option value='Hemin chloride'><option value='HEPES'><option value='HEPES buffer'><option value='Heptadecane'><option value='Hexachlorocyclo-hexane'><option value='Hexadecane'><option value='Hipolypepton'><option value='Histidine'><option value='Homo-PIPES'><option value='HOMOPIPES'><option value='Horikoshi-I medium'><option value='Horse blood'><option value='Horse serum'><option value='Hy-Case Amino'><option value='Hypoxanthine'><option value='IMDM-Medium'><option value='Indigo carmine'><option value='Indigocarmine'><option value='Indole'><option value='Infusion Broth'><option value='Inorganic salts-starch agar'><option value='Inosin'><option value='Inositol'><option value='Inulin'><option value='Iron'><option value='Iron metal'><option value='Iron powder'><option value='Iron(III) citrate'><option value='iso-Butyric acid'><option value='iso-Valeric acid'><option value='Isobutyramide'><option value='Isobutyric acid'><option value='Isopropyl alcohol'><option value='Isovaleric acid'><option value='Isovitalex'><option value='ISP 7 Medium'><option value='K-acetate'><option value='K-phosphate buffer'><option value='K2CO3'><option value='K2CrO4'><option value='K2HPO4'><option value='K2HPO4 x 3 H2O'><option value='K2HSO4'><option value='K2S4O6'><option value='K2SO4'><option value='K2SO4 x 7 H2O'><option value='KAl(SO4)2'><option value='Kanamycin sulfate'><option value='Kao and Michayluk vitamin solution'><option value='KBr'><option value='KCl'><option value='KF'><option value='KH2PO3'><option value='KH2PO4'><option value='KH2PO4 x 2 H2O'><option value='KH2PO4 x 7 H2O'><option value='KHCO3'><option value='KI'><option value='Kinetin'><option value='KJ'><option value='KNO2'><option value='KNO3'><option value='KOH'><option value='KSCN'><option value='L(+)-Tartaric acid'><option value='L-15 medium'><option value='L-15 powder'><option value='L-Alanine'><option value='L-Arginine'><option value='L-Arginine x HCl'><option value='L-Ascorbic acid'><option value='L-Asparagin'><option value='L-Asparagine'><option value='L-Aspartic acid'><option value='L-Aspartic acid sodium salt monohydrate'><option value='L-Cysteine'><option value='L-Cysteine HCl'><option value='L-Cysteine HCl x H2O'><option value='L-Cysteine x HCl x H2O solution'><option value='L-Cystine'><option value='L-Fucose'><option value='L-Glutamic acid'><option value='L-Glutamine'><option value='L-Glutathione'><option value='L-Histidin'><option value='L-Histidine'><option value='L-Isoleucine'><option value='L-Leucine'><option value='L-Lysine'><option value='L-Lysine HCl'><option value='L-Methionine'><option value='L-Ornithine HCl'><option value='L-Phenylalanine'><option value='L-Proline'><option value='L-Rhamnose'><option value='L-Serin'><option value='L-Serine'><option value='L-Sodium lactate'><option value='L-Threonine'><option value='L-Tryptophan'><option value='L-Tyrosine'><option value='L-Valine'><option value='L-α-Phosphatidylcholine'><option value='La(NO3)3 x 6 H2O'><option value='Lab Lemco powder'><option value='Lab-Lemco beef extract'><option value='LaCl3 x 7 H2O'><option value='Lactalbumin hydrolysate'><option value='Lactate'><option value='Lactobacilli MRS broth'><option value='Lactobacillus MRS broth'><option value='Lactose'><option value='Larchwood xylan'><option value='LB Broth'><option value='LB broth powder'><option value='Legionella agar enrichment'><option value='Leibovitz's L-15 medium'><option value='Lemon'><option value='Leptospira Enrichment EMJH'><option value='Leptospira Medium Base EMJH'><option value='Li2B4O7'><option value='LiCl'><option value='Linsmaier & Skoog Med. incl. vitamins'><option value='Lipoic acid'><option value='lipoprotein concentrate'><option value='Liver Concentrate'><option value='Liver digest'><option value='Liver extract'><option value='Liver extract concentrate'><option value='m-Xylene'><option value='Magnesium acetate'><option value='Magnesium sulfate'><option value='Magnesium sulfate heptahydrate'><option value='Maize extract'><option value='Maize meal'><option value='Malachite green'><option value='Malate'><option value='Malic acid'><option value='Malt extract'><option value='Malt extract agar'><option value='Malt extract broth'><option value='Malt extract powder'><option value='Malted wheat meal'><option value='Maltose'><option value='Maltose monohydrate'><option value='Maltose x H2O'><option value='Man Rogosa Sharp broth'><option value='Manganese Sulfate'><option value='Mannitol'><option value='Marine agar 2216'><option value='Marine Broth'><option value='Marine broth 2216'><option value='Marmite'><option value='Meat extract'><option value='Meat infusion'><option value='Meat peptone'><option value='Melezitose'><option value='Melibiose'><option value='MEM alpha Modification'><option value='MEM-Medium'><option value='Menadione'><option value='Menadione solution'><option value='MES'><option value='MES acids'><option value='MES buffer'><option value='MES Hydrat'><option value='MES [2-(N-morpholino) ethane sulfonic acid]'><option value='Metall salt sol. 44'><option value='Methanol'><option value='Methanol solution (see below)'><option value='Methanol-utilizing bacteria medium B'><option value='Methylamine'><option value='Methylamine hydrochloride'><option value='Methylene blue'><option value='Mg(NO3)2 x 6 H2O'><option value='Mg(SO4) x 7 H2O'><option value='Mg-citrate'><option value='MgCl2'><option value='MgCl2 x 2 H2O'><option value='MgCl2 x 4 H2O'><option value='MgCl2 x 6 H2O'><option value='MgCl2 x 7 H2O'><option value='MgCl2 x H2O'><option value='MgSO4'><option value='MgSO4 x 6 H2O'><option value='MgSO4 x 7 H2O'><option value='MgSO4 x H2O'><option value='micronutrient solution'><option value='Middlebrook 7H10 agar'><option value='Milk'><option value='Mineral solution (see Medium No. 976'><option value='Mineral water'><option value='Mn(II) x EDTA'><option value='MnCl2'><option value='MnCl2 x 2 H2O'><option value='MnCl2 x 4 H2O'><option value='MnCl2 x 6 H2O'><option value='MnCl4 x 4 H2O'><option value='MnCl4 x 6 H2O'><option value='MnO2'><option value='MnSO4'><option value='MnSO4 x 1 H2O'><option value='MnSO4 x 2 H2O'><option value='MnSO4 x 4 H2O'><option value='MnSO4 x 5 H2O'><option value='MnSO4 x 6 H2O'><option value='MnSO4 x 7 H2O'><option value='MnSO4 x H2O'><option value='MnSO4 x n H2O'><option value='Modified trace vitamins'><option value='Modified Wolfe's minerals'><option value='Monopotassium Phosphate'><option value='Monosodium glutamate'><option value='MoO3'><option value='MOPS'><option value='MOPS buffer'><option value='Morpholinopropane sulfonic acid'><option value='MRS broth'><option value='MRS medium'><option value='Mucin (Sigma Aldrich M1778)'><option value='Mucin from porcine stomach Type III'><option value='Mueller Hinton II agar'><option value='Mueller-Hinton broth'><option value='Murashige & Skoog medium'><option value='Murashige & Skoog Medium including vitamins'><option value='Mycobactine J'><option value='Myo-inositol'><option value='N-(2-acetamido)-2-aminoethanesulfonic acid'><option value='N-Acetyl-D-glucosamine'><option value='N-Acetylglucosamine'><option value='N-acetylmuramic acid'><option value='n-Butyric acid'><option value='n-Decane'><option value='N-methylhydantoin'><option value='n-Valeric acid'><option value='N-Z amine'><option value='N-Z-Amine® A'><option value='N-Z-Case'><option value='Na acetate'><option value='Na acetate x 3 H2O'><option value='Na gluconate'><option value='Na glutamate'><option value='Na malate'><option value='Na NO3'><option value='Na pyruvate'><option value='Na silicate'><option value='Na-(DL)-lactate'><option value='Na-(L)-lactate'><option value='Na-3-hydroxybutyrate'><option value='Na-acetate'><option value='Na-acetate x 3 H2O'><option value='Na-ampicillin'><option value='Na-ascorbate'><option value='Na-aspartate'><option value='Na-benzoate'><option value='Na-butyrate'><option value='Na-caproate'><option value='Na-caseinate'><option value='Na-crotonate'><option value='Na-dithionite'><option value='Na-DL-lactate'><option value='Na-DL-malate'><option value='Na-EDTA'><option value='Na-EDTA x 2 H2O'><option value='Na-formate'><option value='Na-formiate'><option value='Na-fumarate'><option value='Na-gallate'><option value='Na-gluconate'><option value='Na-glycerol phosphate'><option value='Na-L-lactate'><option value='Na-L-malate'><option value='Na-lactate'><option value='Na-laurate'><option value='Na-malate'><option value='Na-meta silicate'><option value='Na-Nitrilotriacetat'><option value='Na-orotate'><option value='Na-oxalate'><option value='Na-phosphate buffer'><option value='Na-Phosphate-Buffer'><option value='Na-propionate'><option value='Na-pyruvate'><option value='Na-silicate'><option value='Na-stearate'><option value='Na-tartrate'><option value='Na-tetrathionate'><option value='Na-thioglycolate'><option value='Na-thiosulfate'><option value='Na-tungstate x 2 H2O'><option value='Na-vanillate'><option value='Na2 alpha-ketoglutarate'><option value='Na2 beta-glycerol PO4 x 5 H2O'><option value='Na2 MoO4 x 2 H2O'><option value='Na2-9,10-anthraquinone-2,6-disulfonate'><option value='Na2-citrate'><option value='Na2-DL-malate'><option value='Na2-EDTA'><option value='Na2-EDTA x 2 H2O'><option value='Na2-fumarate'><option value='Na2-glutamate'><option value='Na2-glyoxalate'><option value='Na2-ß-glycerolphosphate'><option value='Na2-ß-glycerophosphate x 5 H2O'><option value='Na2-tartrate x 2 H2O'><option value='Na2B4O7'><option value='Na2B4O7 x 10 H2O'><option value='Na2CO3'><option value='Na2CO3 anhydrous'><option value='Na2CO3-CO2 buffer'><option value='Na2HAsO4 x 7 H2O'><option value='Na2HPO4'><option value='Na2HPO4 x 12 H2O'><option value='Na2HPO4 x 2 H2O'><option value='Na2HPO4 x 3 H2O'><option value='Na2HPO4 x 6 H2O'><option value='Na2HPO4 x 7 H2O'><option value='Na2HPO4 x H2O'><option value='Na2HPO4-KH2PO4 buffer'><option value='Na2HPO4-NaH2PO4 buffer'><option value='Na2Mo4 x 2 H2O'><option value='Na2MoO4'><option value='Na2MoO4 x 2 H2O'><option value='Na2MoO4 x 7 H2O'><option value='Na2MoO4 x H2O'><option value='Na2MoO7 x 2 H2O'><option value='Na2MoO7O4 x 2 H2O'><option value='Na2MoSO4 x 2 H2O'><option value='Na2O4W x 2 H2O'><option value='Na2S'><option value='Na2S x 9 H2O'><option value='Na2S x H2O'><option value='Na2S2O3'><option value='Na2S2O3 x 5 H2O'><option value='Na2S2O4'><option value='Na2S2O4 x 2 H2O'><option value='Na2S2O5'><option value='Na2S2SO3'><option value='Na2Se2O3'><option value='Na2Se3 x 5 H2O'><option value='Na2SeO3'><option value='Na2SeO3 x 5 H2O'><option value='Na2SeO4'><option value='Na2SeO4 x 10 H2O'><option value='Na2SiO3'><option value='Na2SiO3 x 5 H2O'><option value='Na2SiO3 x 9 H2O'><option value='Na2SO3'><option value='Na2SO3 x 5 H2O'><option value='Na2SO4'><option value='Na2SO4 x 10 H2O'><option value='Na2WO2 x 2 H2O'><option value='Na2WO4'><option value='Na2WO4 x 2 H2O'><option value='Na2WO4 x 6 H2O'><option value='Na3-citrate'><option value='Na3-citrate x 2 H2O'><option value='Na3-citrate x 3 H2O'><option value='Na3-citrate x 5 H2O'><option value='Na3-EDTA'><option value='Na3-NTA x H2O'><option value='Na3VO4'><option value='NaAsO2'><option value='NaBr'><option value='NaCl'><option value='NaClO3'><option value='NaCO3'><option value='NaF'><option value='NaH2PO4'><option value='NaH2PO4 x 2 H2O'><option value='NaH2PO4 x H2O'><option value='NaHCO3'><option value='NaHSeO3'><option value='NaHSO3'><option value='NaNH4HPO4 x 4 H2O'><option value='NaNO2'><option value='NaNO3'><option value='NaOH'><option value='Naphthalene'><option value='Naphthalene sulfonic acid'><option value='NaS2O3'><option value='NaS2O3 x 5 H2O'><option value='NaSiO3 x 5 H2O'><option value='NaSiO3 x 9 H2O'><option value='natural or artificial seawater solution'><option value='Natural sea water'><option value='natural seawater'><option value='NaVO3'><option value='NaVO3 x H2O'><option value='NaVO3 x n H2O'><option value='NdCl3 x 6 H2O'><option value='Neopeptone'><option value='NH4-oxalate'><option value='NH4Cl'><option value='NH4H2PO4'><option value='NH4HCO3'><option value='NH4NO3'><option value='Niacin'><option value='Niacinamide'><option value='NiCl2'><option value='NiCl2 x 2 H2O'><option value='NiCl2 x 5 H2O'><option value='NiCl2 x 6 H2O'><option value='NiCl2 x H2O'><option value='Nicotinamide'><option value='Nicotinate'><option value='Nicotine amide'><option value='Nicotinic acid'><option value='Nicotinic acid amide'><option value='NiSO4 x 6 H2O'><option value='NiSO4 x 7 H2O'><option value='Nitrilotriacetate'><option value='Nitrilotriacetic acid'><option value='Nitrilotriacetic acid trisodium salt monohydrate'><option value='NTA'><option value='Nutrient agar'><option value='Nutrient broth'><option value='Nutrient broth No. 2'><option value='OADC Enrichment'><option value='Oat flakes'><option value='Oatmeal'><option value='Oatmeal agar'><option value='Oleic acid'><option value='Olive oil'><option value='Ox-bile'><option value='Oxgall'><option value='OXOID Legionella CYE-Agar base'><option value='p-Aminobenzoate'><option value='p-Aminobenzoic acid'><option value='p-Hydroxybenzoate'><option value='PABA'><option value='Pancreatic digest of casein'><option value='Pantothenate'><option value='Pantothenic acid'><option value='Para-aminobenzoic acid'><option value='Pectin'><option value='Penicillin'><option value='Pennassay Broth'><option value='Pentachlorophenol'><option value='Peptic digest of animal tissue'><option value='Peptone'><option value='Peptone (Oxoid)'><option value='Peptone from meat'><option value='Peptone mixture'><option value='Phenol'><option value='Phenol red'><option value='Phenyl acetate'><option value='Phenyl acetic acid'><option value='Phenyl propionic acid'><option value='Phosphate buffer'><option value='Phosphate buffer stock solution'><option value='Phosphates solution'><option value='Phytone'><option value='Phytone peptone'><option value='PIPES'><option value='PIPES buffer'><option value='Plain flour'><option value='Plant Agar'><option value='Polar lipid fraction'><option value='Poly hexamethylene carbonate'><option value='Poly(3-hydroxybutyrate)'><option value='poly-ß-hydroxybutyric acid'><option value='Polypeptone'><option value='Poly[(R)-3-hydroxybutyric acid]'><option value='Porcine serum'><option value='Potassium acetate'><option value='Potassium Aspartate'><option value='Potassium Glutamate'><option value='Potassium iodide'><option value='Potassium Phosphate'><option value='Potassium phosphate buffer'><option value='Potassium tetrathionate'><option value='Potato'><option value='Potato flour'><option value='PPLO broth'><option value='PrCl3 x H2O'><option value='Probumin Universal Grade'><option value='Proline'><option value='Propionic acid'><option value='Proteose peptone'><option value='Proteose peptone no. 2'><option value='Proteose peptone no. 3'><option value='Proteose yeastolate'><option value='Pullulan'><option value='Pulp of sour stone cherries'><option value='Putrescine'><option value='Putrescine 2 HCl'><option value='Pyridoxal hydrochloride'><option value='Pyridoxal phosphate'><option value='Pyridoxamine'><option value='Pyridoxamine Dihydrochloride'><option value='Pyridoxamine hydrochloride'><option value='Pyridoxin'><option value='Pyridoxine'><option value='Pyridoxine hydrochloride'><option value='Pyrocatechol'><option value='Pyromelitic acid'><option value='Pyrrole-2-carboxylic acid'><option value='Pyruvate'><option value='Pyruvic acid'><option value='Pyruvic acid sodium salt'><option value='Quinic acid'><option value='Quinoline'><option value='R agar'><option value='R2A agar'><option value='R2A Broth'><option value='Rabbit blood'><option value='Rabbit serum'><option value='Raffinose'><option value='Red Sea salts'><option value='Reinforced clostridial medium'><option value='Resazurin'><option value='Riboflavin'><option value='Riboflavin solution (see Medium No. 462)'><option value='Riboflavine'><option value='Ribose'><option value='Rice starch'><option value='Rifampicin'><option value='Rolled oats'><option value='Rubidium chloride (RbCl)'><option value='Rumen fluid'><option value='Rye grass'><option value='Rye-bran'><option value='ß-NAD'><option value='ß-nicotinamide adenine dinucleotide'><option value='S6 medium'><option value='SABOURAUD- Glucose-Bouillon'><option value='Sake'><option value='Salicylate'><option value='Salt Solution I'><option value='Salt Solution II'><option value='Salt water'><option value='Salts solution'><option value='Se-acid'><option value='Sea Salt'><option value='Sea salts'><option value='Sea water'><option value='Selenite-tungstate solution'><option value='Selenite-tungstate solution (see Medium No. 431)'><option value='SeO2'><option value='Sheep blood'><option value='Sigma Sea salts'><option value='Sigmacell alpha Type 50'><option value='SiO2'><option value='Skim milk'><option value='Skirrow supplement'><option value='SL10'><option value='Sludge'><option value='Small dried sardine'><option value='SnCl2 x 2 H2O'><option value='Sodium acetate'><option value='Sodium acetate trihydrate'><option value='Sodium acetate x 3 H2O'><option value='Sodium alginate'><option value='Sodium ascorbate'><option value='Sodium benzoate'><option value='Sodium beta-glycerophosphate'><option value='Sodium bicarbonate'><option value='Sodium butyrate'><option value='Sodium caproate'><option value='Sodium carbonate'><option value='Sodium carbonate solution'><option value='Sodium Chloride'><option value='Sodium citrate'><option value='Sodium citrate dihydrate'><option value='Sodium crotonate'><option value='Sodium dithionite'><option value='Sodium DL-lactate'><option value='Sodium DL-malate'><option value='Sodium ferulate'><option value='Sodium formate'><option value='Sodium fumarate'><option value='Sodium gluconate'><option value='Sodium glutamate monohydrate'><option value='Sodium glycerophosphate'><option value='Sodium L-lactate'><option value='Sodium L-malate'><option value='Sodium lactate'><option value='Sodium malate'><option value='Sodium maleate'><option value='Sodium nitrate'><option value='Sodium octanoate'><option value='Sodium oleate'><option value='Sodium palmitate'><option value='Sodium perchlorate'><option value='Sodium phosphate buffer'><option value='Sodium polygalacturonate'><option value='Sodium Potassium phosphate buffer'><option value='Sodium propionate'><option value='Sodium pyrophosphate'><option value='Sodium pyruvate'><option value='Sodium resazurin'><option value='Sodium silicate'><option value='Sodium succinate'><option value='Sodium succinate dibasic'><option value='Sodium sulfite'><option value='Sodium tartrate'><option value='Sodium thioglycolate'><option value='Sodium thioglycollate'><option value='Sodium Thiosulfate'><option value='Sodium thiosulfate pentahydrate'><option value='Sodium thiosulphate'><option value='Sodiumbenzoate'><option value='Soil'><option value='Soil extract'><option value='Solution A'><option value='Sorbitol'><option value='Soy flour'><option value='Soy peptone'><option value='Soya flour'><option value='Soya pepton'><option value='Soytone'><option value='SrCl2'><option value='SrCl2 x 6 H2O'><option value='SrSO4'><option value='Standard I Broth'><option value='Starch'><option value='Stearic acid'><option value='Steric solution'><option value='Sterile serum'><option value='Streptomycin sulfate'><option value='Substrate'><option value='Succinate'><option value='Succinic acid'><option value='Sucrose'><option value='Sugar'><option value='Sugar beet molasses'><option value='Sulfur'><option value='Sulfur powder'><option value='Sulphur'><option value='Surfactant'><option value='Swine serum'><option value='Syringic  acid'><option value='Tap water'><option value='Taps'><option value='TAPS sodium salt'><option value='TAPSO'><option value='Taurine'><option value='Tea'><option value='TES'><option value='TES-Puffer'><option value='Tetrachloroethene'><option value='Tetramethyl ammonium'><option value='Tetramethyl ammonium chloride'><option value='Thiamin'><option value='Thiamin pyrophosphate'><option value='Thiamine'><option value='Thiamine HCl'><option value='Thiamine hydrochloride'><option value='Thiamine pyrophosphate'><option value='Thiamine solution (see Medium No. 403)'><option value='Thiamine-HCl x 2 H2O'><option value='Thioctic acid'><option value='Thioglycolate'><option value='Thioglycollic acid'><option value='Thiosulfate'><option value='Thymidine'><option value='Thymine'><option value='TiCl3'><option value='Titanium chloride'><option value='Titanium(III) chloride'><option value='Titriplex1'><option value='TNM-FH Medium'><option value='Todd Hewitt Broth'><option value='Toluene'><option value='Tomato extract'><option value='Tomato juice'><option value='Toray silicone SH 5535'><option value='Trace element solution'><option value='Trace element solution (see Medium No. 187'><option value='Trace element solution SL12'><option value='Trace metal solution'><option value='Trace mineral solution'><option value='Trace minerals'><option value='Trace minerals (see Medium No. 151'><option value='Trace minerals (see Medium No. 197'><option value='Trace vitamins (see Medium No. 197)'><option value='Trace vitamins solution (see Medium No. 284)'><option value='trans-Cinnamic acid'><option value='Trehalose'><option value='Trichloroethylene'><option value='Tricine'><option value='Triethanolamine'><option value='Trimethylamine'><option value='Trimethylamine-HCl'><option value='Trimethylammonium chloride'><option value='Tris'><option value='Tris base'><option value='Tris buffer'><option value='Tris HCl'><option value='Tris(hydroxymethyl)aminomethane'><option value='Tris(hydroxymethyl)methylamine'><option value='Tris-HCl'><option value='Tris-HCl buffer'><option value='Trisodium citrate'><option value='Trisodium citrate x 2 H2O'><option value='Trisodium citrate x 3 H2O'><option value='Trisodium citrate x H2O'><option value='Tropic Marine salt'><option value='Trypsin'><option value='Tryptic Digest of beef heart'><option value='tryptic soy broth without dextrose'><option value='Trypticase'><option value='Trypticase peptone'><option value='Trypticase soy agar'><option value='Trypticase soy broth'><option value='Tryptone'><option value='Tryptone peptone'><option value='Tryptophan'><option value='Tryptose'><option value='Tryptose-phosphate'><option value='Tryptose-phosphate broth'><option value='Tungstate'><option value='Tween'><option value='Tween 20'><option value='Tween 40'><option value='Tween 60'><option value='Tween 80'><option value='Universal peptone'><option value='Uracil'><option value='Urea'><option value='Uric acid'><option value='V-8 Juice'><option value='V8 canned vegetable juice'><option value='Valeric acid'><option value='Vanadium oxide (V2O5)'><option value='Vancomycin x HCl'><option value='Veal infusion broth'><option value='Vitamin B12'><option value='Vitamin B12 solution (see Medium No. 403)'><option value='Vitamin K1'><option value='Vitamin K3'><option value='Vitamin solution'><option value='Vitamin solution (see Medium No. 403)'><option value='Vitamin-free casamino acids'><option value='Vitamine B12'><option value='Vitamins solution'><option value='Vitamins-solution'><option value='Vitox'><option value='VOSO4 x 2 H2O'><option value='VOSO4 x 5 H2O'><option value='VOSO4 x H2O'><option value='VOSO4 x n H2O'><option value='Water'><option value='water (distilled or tapwater)'><option value='Wheat Grains'><option value='White wine'><option value='Whole egg'><option value='Wilkins Chalgrene Anaerobe Broth'><option value='Wilkins-Chalgren-Anaerobe-Broth'><option value='X10 Jamarin S'><option value='Xxxx x.'><option value='Xxxxx xx.'><option value='Xxxxxx x Xxxxxx x x.'><option value='Xxxxxx x.'><option value='Xxxxxx xx.'><option value='Xxxxxx xxxx xxx.'><option value='Xylan'><option value='Xylitol'><option value='Xylose'><option value='Yeast'><option value='Yeast autolysate'><option value='Yeast cell paste'><option value='Yeast extract'><option value='Yeast extract-malt extract agar'><option value='Yeast Nitrogen Base'><option value='YM broth'><option value='Zeikus trace element solution'><option value='Zinc Sulfate'><option value='ZnCl2'><option value='ZnCl2 x 6 H2O'><option value='ZnSO4'><option value='ZnSO4 x 6 H2O'><option value='ZnSO4 x 7 H2O'><option value='[1,1′-Biphenyl]-2-ol'><option value='α-D-Glucose monohydrate'></datalist>
+
+<datalist id="solution-list">
+    <option value="15 Trace element solution SL-4">15 Trace element solution SL-4 (from medium 14)</option><option value="1 Trace element solution SL-6">1 Trace element solution SL-6 (from medium 27)</option><option value="41 Trace element solution SL-12 B">41 Trace element solution SL-12 B (from medium 28)</option><option value="5 Trace element solution (Vishniac & Santer, 1957)">5 Trace element solution (Vishniac & Santer, 1957) (from medium 69)</option><option value="9 Haemin solution">9 Haemin solution (from medium 78)</option><option value="20 Vitamin K1 solution">20 Vitamin K1 solution (from medium 78)</option><option value="23 Trace element solution">23 Trace element solution (from medium 84)</option><option value="12 Allen's trace element solution">12 Allen's trace element solution (from medium 88)</option><option value="14 Salt solution">14 Salt solution (from medium 104)</option><option value="16 Sludge fluid">16 Sludge fluid (from medium 119)</option><option value="7 Fatty acid mixture">7 Fatty acid mixture (from medium 119)</option><option value="17 Modified Wolin's mineral solution">17 Modified Wolin's mineral solution (from medium 141)</option><option value="8 Wolin's vitamin solution">8 Wolin's vitamin solution (from medium 141)</option><option value="18 Trace element solution">18 Trace element solution (from medium 144)</option><option value="31 Trace element solution">31 Trace element solution (from medium 155)</option><option value="42 Trace element solution">42 Trace element solution (from medium 158)</option><option value="57 Trace element solution (A)">57 Trace element solution (A) (from medium 253)</option><option value="24 Trace element solution">24 Trace element solution (from medium 318)</option><option value="2 Trace element solution SL-10">2 Trace element solution SL-10 (from medium 320)</option><option value="30 Mineral solution">30 Mineral solution (from medium 330)</option><option value="21 Volatile fatty acid mixture">21 Volatile fatty acid mixture (from medium 330)</option><option value="28 Trace element solution">28 Trace element solution (from medium 333)</option><option value="25 Trace elements solution">25 Trace elements solution (from medium 334)</option><option value="26 Mineral solution">26 Mineral solution (from medium 335)</option><option value="27 Artificial sea water">27 Artificial sea water (from medium 343)</option><option value="52 Trace element solution (SLA)">52 Trace element solution (SLA) (from medium 351)</option><option value="53 Vitamin solution (VA)">53 Vitamin solution (VA) (from medium 351)</option><option value="3 Selenite-tungstate solution">3 Selenite-tungstate solution (from medium 385)</option><option value="11 Vitamin solution">11 Vitamin solution (from medium 461)</option><option value="29 Vitamin solution">29 Vitamin solution (from medium 484)</option><option value="4 Seven vitamins solution">4 Seven vitamins solution (from medium 503)</option><option value="37 Trace element solution">37 Trace element solution (from medium 533)</option><option value="32 Hutner's salts">32 Hutner's salts (from medium 590)</option><option value="46 "Metals 44"">46 "Metals 44" (from medium 590)</option><option value="55 Artifical sea water">55 Artifical sea water (from medium 600)</option><option value="33 Vitamin solution">33 Vitamin solution (from medium 603)</option><option value="56 Vitamin solution (double conc.)">56 Vitamin solution (double conc.) (from medium 621)</option><option value="45 Trace element solution">45 Trace element solution (from medium 632)</option><option value="19 Trace element solution">19 Trace element solution (from medium 705)</option><option value="13 Trace element solution SL-11">13 Trace element solution SL-11 (from medium 722)</option><option value="36 Trace element solution">36 Trace element solution (from medium 732)</option><option value="38 Trace element solution SL-8">38 Trace element solution SL-8 (from medium 745)</option><option value="39 Wolfe's mineral elixir">39 Wolfe's mineral elixir (from medium 792)</option><option value="40 Growth-stimulating factors">40 Growth-stimulating factors (from medium 829)</option><option value="22 Sugar mix">22 Sugar mix (from medium 843)</option><option value="44 Na-crotonate solution (1 M)">44 Na-crotonate solution (1 M) (from medium 870)</option><option value="48 Trace elements">48 Trace elements (from medium 922)</option><option value="49 Trace element solution">49 Trace element solution (from medium 925)</option><option value="43 Trace element solution SL12">43 Trace element solution SL12 (from medium 998)</option><option value="50 Traceelements Solution">50 Traceelements Solution (from medium 1033)</option><option value="54 Trace mineral solution">54 Trace mineral solution (from medium 1121)</option><option value="51 Trace elements">51 Trace elements (from medium 1147)</option><option value="47 Amorphous Fe(OH)3">47 Amorphous Fe(OH)3 (from medium 1210)</option><option value="6 Clarified rumen fluid">6 Clarified rumen fluid (from medium 1310)</option><option value="34 Trace elements solution (Pfennig, 1965)">34 Trace elements solution (Pfennig, 1965) (from medium 1369)</option><option value="59 Fe(III) quinate solution 0.01 M">59 Fe(III) quinate solution 0.01 M (from medium 380)</option><option value="58 Vitamin solution">58 Vitamin solution (from medium 11a)</option><option value="60 Chloramphenicol">60 Chloramphenicol (from medium 186a)</option></datalist>
+
+
+<script>
+    function addRow(type) {
+        // var cls = gas ? 'gas' : ''
+        var row = $("<tr>")
+        if (type == "gas") {
+            var item = $('<select class="form-control" name="compounds[]">')
+            var options = ["N2", "O2", "CO2", "H2", "CH4", "CO", "Air"]
+            options.forEach(e => {
+                item.append('<option value="' + e + '">' + e + '</option>')
+            });
+            var unit = ["%"]
+            var icon = "fire"
+
+        } else if (type == "solution") {
+            var item = '<input list="solution-list" type="text" name="compounds[]" class="form-control" autocomplete="off" placeholder="start typing ...">'
+            var unit = ["ml"]
+            var icon = "test-tube text-secondary"
+
+        } else if (type == "compound-omit") {
+            var item = '<input list="ingredient-list" type="text" name="compounds[]" class="form-control" autocomplete="off" placeholder="start typing ...">'
+            var unit = ['-']
+            var icon = "mortar-pestle text-danger"
+
+        } else {
+            var item = '<input list="ingredient-list" type="text" name="compounds[]" class="form-control" autocomplete="off" placeholder="start typing ...">'
+            var unit = ["g/l", "mmol/l"]
+            var icon = "mortar-pestle text-success"
+        }
+
+        row.append('<td><i class="ph ph-' + icon + '"></i></td>')
+        row.append($('<td>').append(item))
+        row.append('<td><input class="form-control" type="' + (type == "compound-omit" ? 'hidden' : 'number') + '" step="0.001" name="from[]" id="from" placeholder="from"></td>')
+        row.append('<td><input class="form-control" type="' + (type == "compound-omit" ? 'hidden' : 'number') + '" step="0.001" name="to[]" id="to" placeholder="to"></td>')
+        var select = $('<select class="form-control ' + (type == "compound-omit" ? 'disabled' : '') + '" name="unit[]" >')
+        unit.forEach(e => {
+            select.append('<option value="' + e.replace('/', '_') + '">' + e + '</option>')
+        });
+        row.append($('<td>').append(select))
+        row.append('<td><button class="btn square" type="button" onclick="$(this).parent().parent().remove();"><i class="ph ph-trash"></i></button></td>')
+        $("#formtable tbody").append(row)
+    }
+</script>  <div class="position-absolute top-0 right-0 z-30" id="cookieWarning">
+    <div class="alert primary filled-dm w-300 w-sm-500 w-md-600" role="alert">
+      <div class="row align-items-center">
+        <div class="col-sm-2">
+          <div class="w-100 h-100 d-flex align-items-center rounded-circle bg-white mx-auto">
+            <div class="m-auto">
+              <i class="ph ph-cookie ph-4x" aria-hidden="true" style="color: #6F4E37;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-1 py-10">
+          <h4 class="title">Have some cookies!</h4>
+          We are using cookies to improve the user experience. We save the following information: user preferences for language, accessibility, help features and medium favourites. Unfortunately, you cannot use this site if you don't agree.
+          <div class="mb-10 text-right">
+            <button class="btn alt-dm" onclick="acceptCookies();">
+              I agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="page-footer">
+
+  <div class="footer text-center">
+
+    <div class="w-500 mw-full mx-auto my-20">
+      <h3 class="mt-0">
+        Not found what you were looking for?      </h3>
+
+      <p>
+        Search within all databases of the
+        <a href="https://hub.dsmz.de/" target="_blank" class="link">
+          DSMZ Digital Diversity
+        </a>
+      </p>
+
+      <form id="d3search" onsubmit="d3searchFunction()">
+        <div class="input-group">
+          <input type="search" name="search" id="hub-search" class="form-control" placeholder="Search across all DSMZ Digital Diversity databases">
+          <div class="input-group-append">
+            <button class="btn"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        function d3searchFunction() {
+          event.preventDefault();
+          var val = $('#hub-search').val();
+          // url encode the search term
+          var search = encodeURIComponent(val);
+          var action_src = "https://hub.dsmz.de/#/search/" + search;
+          window.open(action_src, '_blank');
+
+        }
+      </script>
+
+      <div class="">
+        <p class="font-size-12">provided to you by</p>
+        <a href="https://hub.dsmz.de/" target="_blank" title="DSMZ Digital Diversity">
+          <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity" height="70">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="link-parade">
+    <div class="row">
+      <div class="col-md">
+        <h3>Media<em>Dive</em></h3>
+        <a href="/about">About</a>
+        <a href="/news">News</a>
+        <a href="http://dx.doi.org/10.1093/nar/gkac803" target="_blank">Cite</a>
+        <a href="/stats">Statistics</a>
+
+        <!-- <a href="/registry">MediaRegistry</a> -->
+
+      </div>
+      <div class="col-md">
+        <h3>Help</h3>
+        <a href="/docs/website">Website</a>
+        <a href="/docs/medium-builder">Medium builder</a>
+        <a href="/doc/index.html">API reference</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col-md">
+        <h3>Social Media</h3>
+        <a href="https://www.linkedin.com/company/dsmzd3" target="_blank">
+          <span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+          Linkedin
+        </a>
+        <a href="https://www.youtube.com/channel/UCZxfaPawuEmsNNInlIf1Pbw" target="_blank">
+          <span class="icon"><i class="ph ph-youtube-logo"></i></span>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="logo-parade d-flex align-items-center">
+    <a href="https://www.denbi.de/" target="_blank" data-v-f5dfcaf0=""><img src="/img/logos/denbi.svg" alt="de.NBI" data-v-f5dfcaf0=""></a>
+    <div>
+      <small>
+        If Media<em>Dive</em> was useful to you,<br> please participate in this 2-minute survey:      </small><br>
+      <a href="https://de.surveymonkey.com/r/denbi-service?sc=db-node&tool=mediadive" target="_blank">
+        Survey      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <span>
+      &copy; DSMZ 2026    </span>
+    <a href="/imprint">Imprint</a>
+    <a href="/imprint#privacy">Privacy Statement</a>
+    <a href="/imprint#license">
+      <img src="/img/cc.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      <img src="/img/by.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      License    </a>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
+
+</div>
+
+</div>
+<!-- <div class="swipe-area"></div> -->
+
+<script>
+  function acceptCookies() {
+    digidive.createCookie("bacmedia-cookie-seen", true)
+    $("#cookieWarning").hide()
+  }
+</script>
+
+
+
+<script src="/js/tour/popper.min.js"></script><script src="/js/tour/shepherd.min.js"></script><script src="/js/tour/tour.js?1722402400"></script><script src="/js/tour/tour_finder.js?1722402400"></script></body>

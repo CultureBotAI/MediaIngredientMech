@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-08T08:38:45.690887+00:00",
+  "native_adapter_label": "flour",
+  "target": "FOODON:00004510",
+  "adopted_preferred_term": "flour",
+  "mapping_grade": "EXACT_MATCH",
+  "method": "New native primary-label resolution of the explicitly adopted generic material label; not the historical lookup of raw Plain flour.",
+  "database": {
+    "path": "/Users/marcin/.data/oaklib/foodon.db",
+    "size": 306958336,
+    "sha256": "ab21a7b1d712117dceb410e6f92cdd78b67f561d3670f58b0266c8b93f8ad8d0",
+    "metadata": [
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionIRI",
+        "object": "obo:foodon/releases/2026-09-20/foodon.owl",
+        "value": null
+      },
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionInfo",
+        "object": null,
+        "value": "2026-09-20"
+      },
+      {
+        "subject": "obo:foodon.owl",
+        "predicate": "owl:versionInfo",
+        "object": null,
+        "value": "2026-02-02"
+      }
+    ]
+  },
+  "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('rdfs:label','oio:hasExactSynonym','oio:hasRelatedSynonym','oio:hasBroadSynonym','oio:hasNarrowSynonym') AND lower(value) IN ('flour','plain flour','flour added') ORDER BY subject,predicate,value",
+  "rows": [
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "oio:hasRelatedSynonym",
+      "object": null,
+      "value": "flour added"
+    },
+    {
+      "subject": "FOODON:00004510",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "flour"
+    },
+    {
+      "subject": "FOODON:03301116",
+      "predicate": "oio:hasBroadSynonym",
+      "object": null,
+      "value": "flour"
+    }
+  ],
+  "original_primary_capture": {
+    "root": "artifact",
+    "path": "successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json",
+    "sha256": "48c4ece85b7193af6fee377601cc481e86a02b92ae637534a9fd1baf53315c98"
+  },
+  "original_primary_accessed_at": "2026-11-08T05:57:13.916914+00:00",
+  "raw_source_label_is_established_ontology_synonym": false,
+  "CAS_lookup_performed": false
+}

@@ -1,0 +1,101 @@
+identifier: kgmicrobe.ingredient:nbrc_1226_trace_element_solution
+preferred_term: NBRC 1226 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1226_trace_element_solution
+  ontology_label: NBRC 1226 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1226
+    notes: Source-specific stock identity; no exact identity with a constituent or every generic trace-element
+      label.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24'
+  concentration_unit: MG
+- component_name: AlCl3
+  reference_scope: UNMAPPED
+  concentration_value: '13.3'
+  concentration_unit: MG
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '25'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: MG
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24'
+  concentration_unit: MG
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: MG
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '26'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: as needed for pH 6.5
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1226
+    source_record: Trace element solution
+    notes: All listed stock inputs, water and named KOH preparation reagent are retained. Child identities
+      remain UNMAPPED; source formula text is not silently normalized. Source batch amounts do not denote
+      receiving-medium concentrations.
+  notes: NBRC1226 first dissolves NTA in200ml water and adjusts pH6.5 with KOH; that200ml is part of the
+    listed preparation water, not an additional2nd water input. KOH amount/strength and final analytical
+    species are unspecified, so closure is UNKNOWN. The parent medium uses1ml of this stock. Iron is explicitly
+    FeCl3 hexahydrate, distinguishing this stock from JCM1435 FeCl2 tetrahydrate.
+notes: NBRC1226 first dissolves NTA in200ml water and adjusts pH6.5 with KOH; that200ml is part of the
+  listed preparation water, not an additional2nd water input. KOH amount/strength and final analytical
+  species are unspecified, so closure is UNKNOWN. The parent medium uses1ml of this stock. Iron is explicitly
+  FeCl3 hexahydrate, distinguishing this stock from JCM1435 FeCl2 tetrahydrate. Applies only to CultureMech:007465
+  ingredients/10 (CM_OCC:f373ff501342cb166a8c65d99c11cb391e3677a082d93479dba6426317d3ed0b). Raw label
+  "Trace element solution*" is retained as provenance, not a globally resolving synonym. Other occurrences
+  sharing this raw label require their own formulation identities.
+curation_history:
+- timestamp: '2026-11-08T05:32:38+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create occurrence-scoped source-defined stock proposal with primary recipe inputs and explicit
+    preparation limitations. No chemical child mapping or generic-label identity inferred.
+  new_status: MAPPED
+  llm_assisted: true

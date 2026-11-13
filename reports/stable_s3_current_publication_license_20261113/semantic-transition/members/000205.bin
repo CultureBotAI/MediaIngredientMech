@@ -1,0 +1,83 @@
+identifier: CHEBI:355715
+preferred_term: 4-nitrophenyl beta-D-galactopyranoside
+ontology_mapping:
+  ontology_id: CHEBI:355715
+  ontology_label: 4-nitrophenyl-beta-D-galactoside
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgm-metatraits
+    notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:4-nitrophenyl_beta-D-galactopyranoside; '
+synonyms:
+- synonym_text: 4-nitrophenyl-beta-D-galactopyranoside
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'degradation: 4-nitrophenyl beta-D-galactopyranoside'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: 'hydrolysis: 4-nitrophenyl beta-D-galactopyranoside'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T20:14:01.918670+00:00'
+  curator: audit_import_ingredients[kgm-metatraits]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:4-nitrophenyl_beta-D-galactopyranoside; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.931305+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.756438+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H15NO8; inchi=InChI=1S/C12H15NO8/c14-5-8-9(15)10(16)11(17)12(21-;
+    smiles=O=[N+]([O-])c1ccc(O[C@@H]2O[C@H](CO)[C@H](O)[C@H](
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.128740+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label '4-nitrophenyl-beta-D-galactoside'; it
+    matches the ChEBI synonym '4-nitrophenyl-beta-D-galactopyranoside' on CHEBI:355715.
+    The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+    as a match to a known synonym, so the recorded grade overstated. ontology_id is
+    unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+    emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''degradation:
+    4-nitrophenyl beta-D-galactopyranoside''; ''hydrolysis: 4-nitrophenyl beta-D-galactopyranoside''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+    4-nitrophenyl beta-D-galactopyranoside''; ''hydrolysis: 4-nitrophenyl beta-D-galactopyranoside''.
+    Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C12H15NO8
+  inchi: InChI=1S/C12H15NO8/c14-5-8-9(15)10(16)11(17)12(21-8)20-7-3-1-6(2-4-7)13(18)19/h1-4,8-12,14-17H,5H2/t8-,9+,10+,11-,12-/m1/s1
+  smiles: O=[N+]([O-])c1ccc(O[C@@H]2O[C@H](CO)[C@H](O)[C@H](O)[C@H]2O)cc1
+  data_source: CHEBI sqlite (oaklib)

@@ -1,0 +1,77 @@
+identifier: cas:10237-77-1
+preferred_term: rac-3-Hydroxypentanoic Acid
+ontology_mapping:
+  ontology_id: CHEBI:139272
+  ontology_label: 3-hydroxypentanoic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label and CAS-RN name a racemate, while CHEBI:139272 is
+      stereo-unspecified and has separate R and S children. No exact local ChEBI term
+      denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record now uses
+      cas:10237-77-1 as the exact registry identity plus a narrowMatch to CHEBI:139272.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=10237-77-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.029271+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.122368+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H10O3; inchi=InChI=1S/C5H10O3/c1-2-4(6)3-5(7)8/h4,6H,2-3H2,1H3,;
+    smiles=CCC(O)CC(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.062888+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:139272 -> cas:10237-77-1; ontology mapping set to NARROW_MATCH
+    CHEBI:139272 ('3-hydroxypentanoic acid'). Replaced target-derived chemistry and
+    marked 0 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002178; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 107802
+  retrieval_date: '2026-09-12T00:00:00+00:00'
+  molecular_formula: C5H10O3
+  cas_rn: 10237-77-1
+  pubchem_cid: 107802
+  inchi: InChI=1S/C5H10O3/c1-2-4(6)3-5(7)8/h4,6H,2-3H2,1H3,(H,7,8)
+  smiles: CCC(O)CC(=O)O
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002178
+legacy_identifiers:
+- MIM:Rac-3-Hydroxypentanoic_Acid
+- cas:10237-77-1

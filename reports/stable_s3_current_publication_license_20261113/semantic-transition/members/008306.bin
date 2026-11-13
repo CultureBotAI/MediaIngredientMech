@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/final_reviewer",
+  "reviewed_at": "2026-11-08T06:24:46.558031+00:00",
+  "independence_basis": "Fresh in-process reviewer with no authoring role in original A/B/C fragments, successor C correction, root composition or seven source decisions. Reviewer wrote only d/ assessment/test artifacts and did not edit maintained inputs or Git.",
+  "actual_scope": {
+    "scientific_case_indices": [
+      5,
+      20,
+      62,
+      82,
+      89,
+      96,
+      149
+    ],
+    "scientific_case_count": 7,
+    "exact_composed_payloads": [
+      "w02-v2-mohr-hexahydrate-composed"
+    ],
+    "primary_evidence": "43 referenced capture hashes verified; actual primary TOGO/JCM/MediaDive and ChEBI content inspected with original source timestamps retained. Eight frozen CultureMech recipe contexts and complete frozen source case bindings compared.",
+    "mechanical_full_shard_accounting": 188,
+    "helper_review": [
+      "assemble_successor.py",
+      "compose_owner_versions.py",
+      "integrate_successor.py",
+      "bind_successor_reviews.py",
+      "validate_successor_proposals.py"
+    ],
+    "helper_validation": "17 preserved-helper unit tests passed;5 independent proposal/capture rejection probes passed; exact composed object independently reconstructed from predecessor and revision; original owner verified against frozen Git commit.",
+    "excluded": "Scientific re-review of the other181 cases; full owner aliases, roles and release approval; cross-shard winner selection; native integration and downstream exports."
+  },
+  "input_hash_manifest": [
+    {
+      "root": "source",
+      "path": "shards/shard-02.json",
+      "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/petc_medium.yaml",
+      "sha256": "629ff66d2b8e9c486053c9b47d29167252ca0c1474debae068c69b160b8a2ca7"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1094_Dissulfurimicrobium_Hydrothermale_Medium.yaml",
+      "sha256": "38eaa8fa370d467d5926649010427dec8377b06c673a34a683c3614aadefc45f"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M940_Thermobacter_Roseum_Medium.yaml",
+      "sha256": "c1ceeaa10137bc48e7cc7ee584f964ba6f38189c776b21f4db2fda3f8a3a393a"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m3164.yaml",
+      "sha256": "08bbfb052efcf41f271cdcfd6bd31ae19e9ccce36a4e022f76a82c5ac10d47ff"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/primary-209b330041a2793e.html",
+      "sha256": "cea07bdad6f7e443f51549077ecf4815b25d24ee4c8507c198263b92f8dc7e5b"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/togo-M2716.json",
+      "sha256": "b50bba3b8496f5ac762694857697e3894d474df947ee5cb13cc11e6b839f90f5"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/togo-M1094.json",
+      "sha256": "dd0ccde787c0b450e647f851647b4c0815cee18a091944d1c6b3fd787a24b478"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/togo-M940.json",
+      "sha256": "9ebf700a211ec2dc7bd441c0c67cfff9d561e259e9771485963160e4d89acec8"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/primary-a95d21757d9f5e59.html",
+      "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/togo-M3164.json",
+      "sha256": "5bd51a67090c4007c0c53cdb25f7ab0026fb62bfd0ef50b4b4645eefa5b71afd"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/chebi-76181.json",
+      "sha256": "7c66c3f2971ef73a26f7ac0530c5cb9e7fd9c279d28e0fb955d0e89b73260a45"
+    },
+    {
+      "root": "artifact",
+      "path": "a/baseline-owners/Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "ba589668a7e9ed687122766204f51e531d64c54b2177759b555f97be6d7a916f"
+    },
+    {
+      "root": "artifact",
+      "path": "a/review-revisions/source-unit-findings.json",
+      "sha256": "0b0541439c95c6c8e4171b8dce07ddfd9c9e03e7ea5694dfd9ba7bcd2c9ce1bb"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-1d7c0162af4cea089d2d.bin",
+      "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-c103470b4a3c7a00d91a.bin",
+      "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-9acd0fcd50a933270d77.bin",
+      "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-22fdc9c7acf5c3d8f29f.bin",
+      "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-51b504f992baa9fded36.bin",
+      "sha256": "df7564df3936a6a38cbf4b339dea5d51ccdb5e9f8e106a897fe0e7eadeb68d08"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/source-21fcdd4ef87d360ad1ef.bin",
+      "sha256": "15923f4ffd5529a3f049f606c1ce361981d3c76533c6c6dfc05149dec777ef2c"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/ontology-351c65c3e3af54a7.bin",
+      "sha256": "1ca5b1ee73ce8d8fd35e60c7f45baacd870b6f5fdce0a02345be62e7622dbaa5"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/togo-M3118.json",
+      "sha256": "6629d5ccd0d7b876b8f74de07735bed9e8b82cd70d7dd12176a425b221c8b242"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/togo-M997.json",
+      "sha256": "b1a39cac7864d65388d48ef2ca969e9855aa55844022d4b3a946ff5b72e3c312"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/retry-togo-M1016.json",
+      "sha256": "f0d5e45498fe89a99ae850d7ba1772ea80bc1e085b4359e2394b47067474ef75"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/retry-togo-M2560.json",
+      "sha256": "1e8b1409c60ced11652c52f7d9917ca76887a16e68a5b297e254d28a5d54a703"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/togo-retrievals.json",
+      "sha256": "1d1841f141c3f273e294e58612767d04ae99866dcfb3814ea53ab4b7bc0e46d5"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/case-82.json",
+      "sha256": "c099d2ca700d528ea87b983313a1854a42488a049f6428ecb375eaded994a31f"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_mg_basal_medium.yaml",
+      "sha256": "ebbd979580a86bff620c7751e7598b323481a848448ae6e106a35b39ad956fba"
+    },
+    {
+      "root": "artifact",
+      "path": "b/before/mapped-Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "ba589668a7e9ed687122766204f51e531d64c54b2177759b555f97be6d7a916f"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/case-89.json",
+      "sha256": "991a0e2276a5f07365ec63f7d19d1be31485487d0a38f6199dda2bd8f241d381"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/chemically_defined_medium.yaml",
+      "sha256": "0fe41ed0f6f119b73c45b41c8974ba70c45a444117efa3e49c621d33e9736492"
+    },
+    {
+      "root": "artifact",
+      "path": "b/captures/case-96.json",
+      "sha256": "8e6c197911cd7947d6f784813b3001a348874e0d94742636734f75cb4f63f906"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1016_PA_Medium.yaml",
+      "sha256": "d57c9acb38925e05ea7d40918e0901ed9100bafad29e86c0e563e102014dff31"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M997_NH-JN4_Medium.yaml",
+      "sha256": "61c5b3bdc75550b845e1164b5f69ee84b8ba0cd02744c16cfdfcfd2b919229af"
+    },
+    {
+      "root": "artifact",
+      "path": "c/captures/mediadive-106.json",
+      "sha256": "2ae43e104d09412fe4659cb816004c252ae1422726bea1a08968690fa8129828"
+    },
+    {
+      "root": "artifact",
+      "path": "c/captures/chebi-76181.json",
+      "sha256": "7c66c3f2971ef73a26f7ac0530c5cb9e7fd9c279d28e0fb955d0e89b73260a45"
+    },
+    {
+      "root": "artifact",
+      "path": "c/captures/chebi-131378.json",
+      "sha256": "e1dd9fff0f7cf00f7161a7c81242211edeea989668f3881cb468e67b6e33a325"
+    },
+    {
+      "root": "artifact",
+      "path": "c/owners/Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "ba589668a7e9ed687122766204f51e531d64c54b2177759b555f97be6d7a916f"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/c/owner-lookup.json",
+      "sha256": "512496f9444c1ab032c9444476d3c798e9bd13a01060a52b9b2e17f0d2a8173c"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/shared-owner-composition.json",
+      "sha256": "9ed86eeaa2a283442ee53e98a9018448f65bee76282bae7bea15471e6ed255d4"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v4/decisions.json",
+      "sha256": "ea07be24190da3a1ef79fface440612cb7139ef3ae58508f37e08ed4fa536694"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v4/proposals.json",
+      "sha256": "07bfa3757c6851a845bb0a71465573328c2347dec17e6ddad3cf815ae5001d58"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v4/evidence.json",
+      "sha256": "fb2331d9eac9c2165c9acda862637094c8f727681bfff2b131fec342d1550d5e"
+    },
+    {
+      "root": "artifact",
+      "path": "integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "82abcc67d1a33a019952509cbfbc6ab3ee5a962a5af614adae700b030deb6db0"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/c/proposed-owners/c2-proposal-mohr-stock-aliases.yaml",
+      "sha256": "df3c79b19c804d624c9e3ec6b3c9b43eba364bec02014b474b8a60355a96ab32"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "a27f84e2768830f06b85fae4d31f8cc561bcc92467b0070630bafbeefde1b61d"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/guard-tests-v1.json",
+      "sha256": "a606bf407e530b358edde656aabc54a658999dcbd52308feda2d51c2f2b6450f"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/verification-v1.json",
+      "sha256": "feba75447a384750dd2b1cb2849c9d163c8b09fff397b7cce3671a1eae91b0ca"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/context/issue-1201-current.json",
+      "sha256": "a489673b9e2ecc7ad0cc48873192d41bec5be36f477ee1f5a3ded2aacf3c4da1"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/context/coordinator-review-inputs.json",
+      "sha256": "d8ae47ec21840035d0ff2a3d5d09d651f264dabd7041668f5b0911a80914183a"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/assemble_successor.py",
+      "sha256": "a3fd2f4752837f620291c89f3bc2ed8b9ce87bc8c913cebd130df641c530a809"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/bind_successor_reviews.py",
+      "sha256": "f755862f892c5f2c926010efbb31cf33d34a00f3c3c9ad914d2f4304d776b8b8"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/compose_owner_versions.py",
+      "sha256": "400d474bae3d1dde7359dd80bca172d8c57bface31f2b6be8adcd18f5c5b4083"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/integrate_successor.py",
+      "sha256": "7d6b18ab4164f973a15dcf59373878259badd66c784346d9e64e26b4ec34f11e"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_composition_guards.py",
+      "sha256": "a119ddf82344581c6cfe5ca412411bac30d34d5e1952aa23c2f2da2acef8612b"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_review_binding_guards.py",
+      "sha256": "90152c6308c5a1c283de9014748f9481d258b30cf82df4b177f63fdb3e5c85ba"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_successor_guards.py",
+      "sha256": "97fc82335fdb6d04d3943aa1aae0b0ca0b471e195129a75e1573a30e5f6d9da5"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v1-inputs/validate_successor_proposals.py",
+      "sha256": "08f51d6c849d87ab9ba2c64bfdc745f2e96a29bacdc270158481abaada3c9ad3"
+    },
+    {
+      "root": "mim",
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "root": "mim",
+      "path": ".claude/skills/add-media/SKILL.md",
+      "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b"
+    },
+    {
+      "root": "mim",
+      "path": "data/ingredients/mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+      "sha256": "ba589668a7e9ed687122766204f51e531d64c54b2177759b555f97be6d7a916f"
+    },
+    {
+      "root": "mim",
+      "path": "data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml",
+      "sha256": "2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47"
+    },
+    {
+      "root": "mim",
+      "path": "data/ingredients/mapped/Ferrous_ammonium_sulfate.yaml",
+      "sha256": "1896bd445eba02090143319f02fcf1f28dd15b2f34bdba14d6ccc669f5cb3825"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/independent-review-mohr-v1.json",
+      "sha256": "a328afc5af85eb392f8b7a5a6328c79e917f73e4fdca75e887872b8af14b3e14"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/d/review-v2-integrate_successor.py",
+      "sha256": "7b3ec3715fa135abc4f0203ea480f4391002d650460dccb5ad8f6a55382148ec"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/composed-case-updates-v4.json",
+      "sha256": "2b26179cd9795380f2f3bb8ed303ee4e3d916d5ada5215df255ec7cdc7b255fe"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/assemble_successor.py",
+      "sha256": "a3fd2f4752837f620291c89f3bc2ed8b9ce87bc8c913cebd130df641c530a809"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/compose_owner_versions.py",
+      "sha256": "400d474bae3d1dde7359dd80bca172d8c57bface31f2b6be8adcd18f5c5b4083"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integrate_successor.py",
+      "sha256": "7b3ec3715fa135abc4f0203ea480f4391002d650460dccb5ad8f6a55382148ec"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/bind_successor_reviews.py",
+      "sha256": "f755862f892c5f2c926010efbb31cf33d34a00f3c3c9ad914d2f4304d776b8b8"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/validate_successor_proposals.py",
+      "sha256": "08f51d6c849d87ab9ba2c64bfdc745f2e96a29bacdc270158481abaada3c9ad3"
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:04fc9a1465f3d659efe08a5ae5dad64549020bcf412b8f9ccb55584876555c2c",
+      "case_input_sha256": "0f0afb4877682435030242cde8ae5fede13b1b972ed65cfff58f4234a52a579e",
+      "decision_canonical_sha256": "580d0c557ce9d1a08bcabf6b1ae80b838578514ff2cd9fa2a6fa25049f39074a",
+      "status": "approve",
+      "reasoning": "TOGO M2716 explicitly places the six-water double salt in the trace-elements table; source formula preserves one iron, two ammonium, two sulfate and six waters, consistent with CHEBI:76181. This supports the exact spelling alias only, not the entire trace stock or flattened receiving-medium amount.",
+      "inspected_evidence_ids": [
+        "a-case-05-input",
+        "a-case-05-occ-00",
+        "a-primary-togo-M2716",
+        "a-ontology-76181",
+        "a-owner-Fe_Nh42_So42_X_6_H2o",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:1bd8d675450108231a5a447707552676245f24c975891b217f1caa5f8170262b",
+      "case_input_sha256": "251ed8d8d89bc8325c62976e9f16a93fd8a7c457b0d6bfdb1e6ad3adfe78ab44",
+      "decision_canonical_sha256": "d75935cf0d590b2087e9831930f792923d6a970f992d90450b6a10a075e13610",
+      "status": "approve",
+      "reasoning": "TOGO M1094/M940 and independent JCM1030/899 primary bytes explicitly give the six-water salt, at 78.4 mg and 784 mg within separate trace stocks. The decision preserves the frozen G_PER_L discrepancy and declines receiving-medium concentration approval while supporting the precise hydrate alias.",
+      "inspected_evidence_ids": [
+        "a-case-20-input",
+        "a-case-20-occ-00",
+        "a-case-20-occ-01",
+        "a-primary-primary-209b330041a2793e",
+        "a-primary-togo-M1094",
+        "a-primary-togo-M940",
+        "a-primary-primary-a95d21757d9f5e59",
+        "a-ontology-76181",
+        "a-owner-Fe_Nh42_So42_X_6_H2o",
+        "a-case-20-source-unit-review",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:664ea49b4baffce477446f17556f93e233f5535d0abfdec29fbb8f7384caf80c",
+      "case_input_sha256": "79697f0d9ab3be6acce017ccfefa873ecdd3c4a9ab5081d28868f83891ab9332",
+      "decision_canonical_sha256": "92c4f5123bf883a3378bad53eb9ca854c869db908f5b397a9804b726663649a7",
+      "status": "approve",
+      "reasoning": "TOGO M3164 explicitly records Fe(SO4)2(NH4)2·6H2O in a trace-element stock and identifies the hexahydrate. Group reordering does not remove waters or add a species. CHEBI:76181 and M2716 corroborate the source spelling; no whole-stock equivalence follows.",
+      "inspected_evidence_ids": [
+        "a-case-62-input",
+        "a-case-62-occ-00",
+        "a-primary-togo-M3164",
+        "a-ontology-76181",
+        "a-owner-Fe_Nh42_So42_X_6_H2o",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+      "case_input_sha256": "b743d245b922d402168e1739472177832576f232bfd358f5f4abbf6f97131e04",
+      "decision_canonical_sha256": "1287b193a6055ddc8d1d8cbaa75616f2182e59e2440c61b05394df5fcc74703c",
+      "status": "approve",
+      "reasoning": "TOGO M2560 provides the exact six-water salt at392 mg in its trace stock. The revised requirement correctly identifies the three REJECTED_LABEL corrections as concrete but unapplied; retains the separate bare-form, full-owner and coordinator release obligations; and explicitly preserves the frozen392 G_PER_L versus primary392 mg stock-context discrepancy without inferred dose conversion. Alias science, source bindings and hold metadata are unchanged.",
+      "inspected_evidence_ids": [
+        "b-case-82",
+        "b-recipe-82-0",
+        "b-source-c103470b4a3c7a00",
+        "b-togo-5c4d0caab0af798c",
+        "b-reference-351c65c3e3af54a7",
+        "b-owner-678cb5ecb2e4d79c",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+      "case_input_sha256": "37941693b9b2caaf25554ae7964d5bf32609ecd08b96992a5a23c6ce1ab3082e",
+      "decision_canonical_sha256": "faef1c30fef11ecf0eed904a57a2b0790305c4c0ef0a7b66384ec370873fd9d7",
+      "status": "approve",
+      "reasoning": "TOGO M3118 separately identifies the iron hexahydrate at748 mg and its nickel counterpart. The revised requirement correctly distinguishes the proposed three-stock-token correction from unresolved bare-form and whole-owner review, and preserves the frozen748 G_PER_L versus primary748 mg trace-stock discrepancy. No hydrate, metal or receiving-medium quantity equivalence is inferred.",
+      "inspected_evidence_ids": [
+        "b-case-89",
+        "b-recipe-89-0",
+        "b-source-9acd0fcd50a93327",
+        "b-togo-1fdc0893cb11518e",
+        "b-reference-351c65c3e3af54a7",
+        "b-owner-678cb5ecb2e4d79c",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+      "case_input_sha256": "bccb1b20a52833ac6952992e5692e45c4c01a45dac7b5ffc48911ee2c8168295",
+      "decision_canonical_sha256": "e0459e17b9a969dcb19a40485d5db5aeaca92562cb0860c02d8be639557a8440",
+      "status": "approve",
+      "reasoning": "JCM950/966 and TOGO M997/M1016 support the exact six-water alias and2 mg quantity. The revised requirement now recognizes the concrete but unapplied stock-token correction, keeps the2 mg source-unit concern and unresolved bare alias, and retains coordinator/full-owner/release review. The historical source and owner holds remain unchanged.",
+      "inspected_evidence_ids": [
+        "b-case-96",
+        "b-recipe-96-0",
+        "b-recipe-96-1",
+        "b-source-1d7c0162af4cea08",
+        "b-source-22fdc9c7acf5c3d8",
+        "b-source-51b504f992baa9fd",
+        "b-source-21fcdd4ef87d360a",
+        "b-togo-2d0ed411fea8dc70",
+        "b-togo-6d50028ab51b523d",
+        "b-reference-351c65c3e3af54a7",
+        "b-owner-678cb5ecb2e4d79c",
+        "b-togo-failures",
+        "w02-v2-shared-composition"
+      ]
+    },
+    {
+      "case_id": "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+      "case_input_sha256": "01b56128ff63f3ffe353e3c4d62a3bae173bc99ad4a630a0c4b4b32f4dca205e",
+      "decision_canonical_sha256": "fd1775d28f2da937b1f18253a309ca77a4212fe445ae1cbfdda46b3893be993e",
+      "status": "approve",
+      "reasoning": "MediaDive106 gives the bare label but CAS7783-85-9 and formula Fe.2H3N.2H2O4S.6H2O. Together with CHEBI:76181 this supports a source-specific hexahydrate interpretation. Existing CHEBI:76243 anhydrous and CHEBI:131378 heptahydrate owners prevent a universal bare-label conclusion. The proposal adds no bare alias, preserves the inherited WITHHOLD object, and rejects three concentration-qualified tokens without inventing solvent or chemistry.",
+      "inspected_evidence_ids": [
+        "c-frozen-case-149",
+        "c-mediadive-106",
+        "c-chebi-76181",
+        "c-chebi-131378",
+        "c-owner-Fe_Nh42_So42_X_6_H2o",
+        "c2-owner-lookup-149",
+        "w02-v2-shared-composition"
+      ]
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "w02-v2-mohr-hexahydrate-composed",
+      "after_capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+        "sha256": "a27f84e2768830f06b85fae4d31f8cc561bcc92467b0070630bafbeefde1b61d"
+      },
+      "status": "approve",
+      "reasoning": "Exact final object matches an independent composition: every prior alias/evidence/history addition is retained, exactly three baseline concentration-qualified synonym types change to REJECTED_LABEL with text/source unchanged, and correction/root history is appended. Identity CHEBI:76181, six-water chemistry, occurrence statistics and roles remain unchanged. No component edge or stock identity is invented. Approval is limited to the proposed scoped changes: bare Fe(NH4)2(SO4)2, generic hydrate alias, role-like raw strings and other full-owner obligations remain unapproved. No inherited source/owner/SSSOM/release hold is cleared."
+    }
+  ],
+  "code_review": {
+    "status": "approve_with_limits",
+    "reasoning": "Assembly verifies predecessor hashes, exact disjoint no-proposal cohort and frozen source fields, with unique IDs and188-case preservation. Composition preserves existing lists/history and restricts baseline synonym edits to exact REJECTED_LABEL type changes. Integrator validates exact explicit predecessor decisions/fragments and limits cross-author backlinks to enumerated pairs. Binding requires exact decision digest/after capture, nonempty reviewer reasoning and declared author/reviewer separation; final routing authorship and reviewer coverage still require content review. Validator uses maintained closed-schema writer and full in-memory partonomy overlay, retains original history, rejects unknown fields, reports new collisions and rechecks maintained hashes. These helpers rely on the whole-shard auditor for full path/schema/reference validation and do not themselves confer scientific approval. Successor integrator change is restricted to reading the explicit immutable v4 decision updates; the three changed requirement fields were independently checked. Other reviewed helpers match their preserved tested snapshots."
+  },
+  "findings": [
+    {
+      "finding_id": "D-MOHR-001",
+      "severity": "minor",
+      "status": "resolved",
+      "affected_case_indices": [
+        82,
+        89,
+        96
+      ],
+      "field": "missing_requirement",
+      "description": "Active successor requirements retain administrative stock-synonym deferral after exact proposed stock-label correction exists. Historical hold objects must remain unchanged; current requirements must distinguish the proposed three-stock REJECTED_LABEL correction from unresolved under-specified aliases and native/full-owner/release integration. Retain source mg versus frozen G_PER_L stock-context discrepancies for82/89/96.",
+      "dedup_context": "Continuation completeness clarification of issue1201; no independent novel global chemistry claim.",
+      "resolution": "Immutable assembled-v4 changes only the three current missing_requirement fields as requested. Exact Mohr after bytes, frozen/historical holds, all source fields and scientific alias claims are unchanged. Reviewed exact updated integrator points to composed-case-updates-v4; no other helper change."
+    }
+  ],
+  "retained_obligations": [
+    "All original WITHHOLD, source placeholder and release holds remain verbatim.",
+    "The three stock token corrections are proposed only; maintained integration and publication review remain coordinator work.",
+    "Bare/generic hydrate aliases and complete owner semantics remain outside approval.",
+    "Source quantity and stock/receiving-medium context errors remain separate from supported formula aliases."
+  ],
+  "supersedes_review": {
+    "root": "artifact",
+    "path": "continuation-1201-v1/d/independent-review-mohr-v1.json",
+    "sha256": "a328afc5af85eb392f8b7a5a6328c79e917f73e4fdca75e887872b8af14b3e14"
+  }
+}

@@ -1,0 +1,60 @@
+identifier: UNMAPPED_0325
+preferred_term: Amphotericin
+synonyms:
+- synonym_text: Amphotericin
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: amphotericin B
+  synonym_type: RELATED_SYNONYM
+  source: edison_deep_research
+- synonym_text: AmB
+  synonym_type: ABBREVIATION
+  source: edison_deep_research
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1140); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FAMILY_TERM_AMBIGUITY
+  changes: Reviewed OAK/OLS audit candidate MESH:D000666 Amphotericin B and local
+    CHEBI:2682 Amphotericin_B record; left unmapped because the source label is the
+    unqualified family/common name Amphotericin and does not locally prove the B variant
+    identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: "amphotericin" spans amphotericin A and
+    B and is frequently used at the formulation level (deoxycholate/lipid). Commonly
+    means amphotericin B (CHEBI:2682, CAS 1397-89-3), but the label is not locally
+    evidenced as B specifically — do NOT exact-map to amphotericin B. Kept UNMAPPED
+    pending source evidence the label means amphotericin B.'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Amphotericin-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — ### Recommended mapping
+    status CURIEs discussed: MESH:D000666, CHEBI:2682. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1140); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
+  that the intended ingredient is Amphotericin B.
+ingredient_type: SINGLE_INGREDIENT

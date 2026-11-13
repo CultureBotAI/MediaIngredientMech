@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:fish-sperm_dna
+preferred_term: Deoxyribonucleic acid from herring sperm
+synonyms:
+- synonym_text: Deoxyribonucleic acid from herring sperm
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: deoxyribonucleic acids
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.915563+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0144 → CHEBI:16991 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-08-05T06:55:35.063725+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:16991 'Fish-Sperm DNA'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:16991 -> kgmicrobe.ingredient:fish-sperm_dna (#360). This
+    record was merged into 'Fish-Sperm DNA' but kept its own old identifier, so a
+    downstream lookup on this label resolved to nothing live. The target is the one
+    named in this record's own MERGED_INTO entry; the chain was followed to the first
+    live record. A tombstone exists to keep the loser resolvable.
+  llm_assisted: false
+- timestamp: '2026-11-02T02:06:17.932149+00:00'
+  curator: Codex
+  action: REMOVED_STALE_KG_MICROBE_NODE_ID
+  changes: 'Removed stale kg_microbe_node_id CHEBI:16991 after the recorded identity
+    correction to kgmicrobe.ingredient:fish-sperm_dna (#870). Preserved primary identity,
+    ontology mapping, chemistry, synonyms, roles, counts, status and existing tombstone
+    metadata. Source-only correction: the fixed unified snapshot still contains the
+    documented 21 stale cells in 15 rows; #870 remains open. No mapping, role or release
+    approval. Decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/870#issuecomment-6566860803;
+    evidence: reports/step7a_source_753_870_20261101/source-evidence.json sha256=9d9dc2192eaef73d23ce686f10161468ca1055d781a27fbc197957d4e2917fb3.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000918; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:16991
+  ontology_label: deoxyribonucleic acid
+  ontology_source: CHEBI
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0144; matched via 'Deoxyribonucleic acid from
+      herring sperm'; stem-substring
+mim_id: MIM:0000918
+legacy_identifiers:
+- MIM:Deoxyribonucleic_Acid_From_Herring_Sperm
+- kgmicrobe.ingredient:fish-sperm_dna

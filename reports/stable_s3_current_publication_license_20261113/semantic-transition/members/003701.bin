@@ -1,0 +1,404 @@
+schema_version: 1.0.0
+review_id: 20261108T173810Z-c-menadione-hemodal-author-response
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Author response: preserve ambiguous inherited Hemodal without unqualified
+  resolution'
+started_at: '2026-11-08T17:34:28.828536Z'
+finished_at: '2026-11-08T17:38:10.597068Z'
+reviewer:
+  identity: Codex /root/step7d_science_c
+  kind: agent
+  independence: self_review
+  independence_basis: C authored this exact private candidate and the collection/triage.
+    This is only the author integrity/response record, not independent source science
+    or whole-owner approval. Root assigned B a distinct complete-byte review. Fixture
+    Git identity is review-only, not production842.
+skill: curate-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: false
+summary: Narrow private successor changes only the unqualified Hemodal entry to REJECTED_LABEL
+  with truthful LLM evidence/history. All original fields and source/ATCC/role/count
+  limits remain. Native writer/resolver/projection controls pass; independent whole-owner
+  review and final batch/row selection remain pending.
+source:
+  git_revision: 9edb019070073c08272bb059a73fb7f16805d20d
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: evidence/CAPTURE-MAP.json
+    sha256: 16854f7ef0d4e56e44d87094e4af3fd748ef80f3f8666750f40d3f4ef12aa223
+    role: context
+  - path: evidence/SELECTOR.json
+    sha256: f0fa5d7e888d80fb979ebd62a8d70387d4cfe5ee03bde39d04828d6e6735f824
+    role: context
+  - path: evidence/author-checks.json
+    sha256: 4e6b0c5437e844fd1cd285f79b59e102d0b99d0a0b4f13296c6126804cc75323
+    role: context
+  - path: evidence/author-save-attempts/fixture-creation.json
+    sha256: f1e6d15fcc0e0d7dd498c1c939c3f57cc18bf66a77341135f0e077d64dbc5827
+    role: context
+  - path: evidence/author-save-attempts/save-author.stderr
+    sha256: 9f8ed782fe3de907dd725324b3591297918bafceec7ba9173ba517bc6230c4c0
+    role: context
+  - path: evidence/author-save-attempts/save-author.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: evidence/author-save-attempts/save_author_review.py
+    sha256: d58f812aece8d8548374009003f441a5e61f658945435ddd8e39a6f5aaa351dc
+    role: context
+  - path: evidence/author-save-attempts/save_author_review_v2.py
+    sha256: 98b2584b3830d943fd222d94c1a671c7dd64b00c24e33e674ef8913c2d16bbef
+    role: context
+  - path: evidence/author.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: evidence/author.stdout
+    sha256: e811f58c2e0b0e6ee1673249e9a849f416ad27eb4c8cc0c3a7a1472cd1bf5f54
+    role: context
+  - path: evidence/author_successor.py
+    sha256: 1315fe72b9d97d9d88300b8dc09ba626b024c08c7a4022bcd8ab5fd987c37a8c
+    role: context
+  - path: evidence/baseline-inventory.json
+    sha256: 7c4109ffec963eaa1762c84de2582eee6753aaa5bbc40593c8aa015fe99a4e6a
+    role: context
+  - path: evidence/candidate.diff
+    sha256: 9be5559259ec8017c02d3fbac2716528b13b530310c5cf79b7ad6288be012ab0
+    role: context
+  - path: evidence/candidates/Menadione.yaml
+    sha256: 4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591
+    role: target
+  - path: evidence/field-delta.json
+    sha256: 9180ffea8992bfd69ce9c81ce1e20cfb8e6b9bd0f928fd4c12c57863606a408b
+    role: context
+  - path: evidence/input-pins.json
+    sha256: b7f874774cc35b1755c304333771dd73883223fb2da80d6f2a71e21b1702283e
+    role: context
+  - path: evidence/inputs/collection/HANDOFF.json
+    sha256: 2bb69c559c219cff11ea1a43ef351db30085bf7380c6ae594131cb312ab52149
+    role: context
+  - path: evidence/inputs/collection/MANIFEST.json
+    sha256: 8ab0fddad4249b360ce25b4bcbdde092af950f17b2e13954d2abfaccf08e0766
+    role: context
+  - path: evidence/inputs/collection/NATIVE-PAIR-READBACK.json
+    sha256: bbeafa38e3cf0a9ae0e778a86b6dcfd20eeb4bc6944aaa02f9b289f453818502
+    role: context
+  - path: evidence/inputs/collection/ORIGIN-JOINS.json
+    sha256: dbd67da4d24875fc3c17b730f6021e99f324751a3d1c448d20c2e516294c3270
+    role: context
+  - path: evidence/inputs/collection/TRIAGE.md
+    sha256: d1a04256ef70d6162fcbebb3ab3aa49079b73156b8f5f19880f7c088428eb612
+    role: context
+  - path: evidence/inputs/issue/body.md
+    sha256: 63454255adc49c4c2a9894534ac5be3805a757afb347c2c79c02ab13703c8162
+    role: context
+  - path: evidence/inputs/issue/publication-00.json
+    sha256: 4a9989d99aadc7cba85ff36a77a171d1761a81e874bb3814f811ec792729fe6c
+    role: context
+  - path: evidence/inputs/issue/readback-00.json
+    sha256: 6896e2831f7f01ad3c912fc5f7d1e1f010cb2fc9d70a90c98d9a97a689d44bc5
+    role: context
+  - path: evidence/inputs/issue/verified-manifest.json
+    sha256: 0b45d0bf249aeb8e93015d4e0695179600ecb459cb46e81a2c3e4d0d2e0dbfc8
+    role: context
+  - path: evidence/inputs/original-context/0-proposals.json
+    sha256: 9a57733e9e21586a914438f1df1177fbbc0095acd446f1c146310acdf2c32844
+    role: context
+  - path: evidence/inputs/original-context/1-decisions.json
+    sha256: d1fec59800b4819331c099b48a50842938d5f772a77c1b8cefca63046cc6de51
+    role: context
+  - path: evidence/inputs/original-context/2-source-contexts.json
+    sha256: 345201d9c08084e0ca85ed525b1504a9cb80c44f180fd3f4c9d36b3bf099a1f2
+    role: context
+  - path: evidence/inputs/original-context/3-evidence.json
+    sha256: 1e0971f5f407f469e34c68359fe18ba3d4b93dce8ce903ce07d7991aca6ec7bf
+    role: context
+  - path: evidence/inputs/research/HANDOFF.json
+    sha256: a59ed80580cbb402113f73e8be4432e346a7e06d53859f7cd8bad29e3eb9f01f
+    role: context
+  - path: evidence/inputs/research/MANIFEST.json
+    sha256: 2b1efa02949101d57c3b74e8b302713a3bb714b152018b4256e7eb6405a951a1
+    role: context
+  - path: evidence/inputs/research/assessment-v2.json
+    sha256: 63cd18fa3c41d7f630450bff7d40112de00836b7be7a72969c237ddd16cfb52b
+    role: context
+  - path: evidence/inputs/research/findings-ready-for-root.json
+    sha256: 6d312ba224eb91c431806aa15746f815c751812b99d726c78abc6ed6c959a008
+    role: context
+  - path: evidence/inputs/research/input-bindings.json
+    sha256: 9c16e181653aa66db8a213484ae6ab851ed712a38bf952d77c71d56ad7f61039
+    role: context
+  - path: evidence/inputs/research/inputs/atcc1257-original-capture.pdf
+    sha256: d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58
+    role: context
+  - path: evidence/inputs/research/inputs/atcc1257-original-capture.txt
+    sha256: 71c677cd21f359b3a1bbc900bd32810aec74bcf5b4c451ac4450a7313a0453b8
+    role: context
+  - path: evidence/inputs/research/inputs/authentic-before.yaml
+    sha256: 2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0
+    role: context
+  - path: evidence/inputs/research/inputs/before-current-head-binding.json
+    sha256: 4312e9064e5b126a0aafcedc2afdfa8e0d786118877d45765df3f16c113ff231
+    role: context
+  - path: evidence/inputs/research/inputs/ontology-capture.json
+    sha256: 5ee4af948f5e11b4456bcb7d2858883e5c7dae55870f457d996ff788001468a2
+    role: context
+  - path: evidence/inputs/research/inputs/original-proposal-case-context.json
+    sha256: 032395e0d76bc076d267f8a3876e7140313796ba1dfe375fd97fd3feab4b0df8
+    role: context
+  - path: evidence/inputs/research/inputs/selected-owner.yaml
+    sha256: d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659
+    role: context
+  - path: evidence/inputs/research/inputs/w08-selected-git-context.json
+    sha256: f4e6aec0a0eb6780452162999db2da4212006d1a704c41fb9b0d60e2e6b7419e
+    role: context
+  - path: evidence/inputs/research/research/c/captures/coimbra-194502.body
+    sha256: 691a9d0f916fca89f5d97b4f72e3c028d66e5d650915c895c74d9bd04c1028ca
+    role: context
+  - path: evidence/inputs/research/research/c/captures/coimbra-194502.receipt.json
+    sha256: a67eda0fb698bcfaa87423dcd37c34951ab3ee40c135db8ec257e673410464ed
+    role: context
+  - path: evidence/inputs/research/research/c/captures/coimbra-p22.png
+    sha256: 2a1a5d83ca40a51ed5e52c61cbd314377b53bf945cfe33a0ca4aa91469a1d107
+    role: context
+  - path: evidence/inputs/research/research/c/captures/kegg-D02335-flat-r2.body
+    sha256: d59970f6891d18d96fb74c2ecfbbbd313d3cdf86ab667d4d49cfda88bc6ac24a
+    role: context
+  - path: evidence/inputs/research/research/c/captures/lkt-V3479-msds.body
+    sha256: 6ec99943cb4e8533979dc2a01a862225b509e8d39e5f85ed1a47e789c0f0d13b
+    role: context
+  - path: evidence/inputs/research/research/c/search-07.json
+    sha256: b8cedde9a020c9fd21a5649c67f720261998e52c77dfa58bc0c5478d496f3887
+    role: context
+  - path: evidence/inputs/research/skeptic/captures-v2/nist-menadione.body
+    sha256: 21ac6cad78ef08af5d4a5009d70393bd1157c2715cbdd7d8eca1914e74a843d6
+    role: context
+  - path: evidence/inputs/research/skeptic/captures-v2/nist-menadione.receipt.json
+    sha256: 082df2329a98ee8411a400b1f6b854acd7a8f65e5a6d14f8ae58ac958030e773
+    role: context
+  - path: evidence/inputs/research/skeptic/captures-v3/sangon-vitamin-k3.body
+    sha256: 7430f2cf13a19ad54abad51fbb5023d77ff2693bf2ac8967780a9381f0a1107b
+    role: context
+  - path: evidence/native-row-diagnostic.json
+    sha256: fc94ac3015ffc0e08956e834b4e251f3de77155753c98dfebb6b1b2735fc4524
+    role: context
+  - path: evidence/origin-proof.json
+    sha256: 2da80e088e77ff3aa378e371078ef4894a96f082fe14ec0f95a95d5639a0e1da
+    role: context
+  - path: evidence/save_author_review.py
+    sha256: d58f812aece8d8548374009003f441a5e61f658945435ddd8e39a6f5aaa351dc
+    role: context
+  - path: evidence/verification.json
+    sha256: d0c564a8a09cd9dfae35817fd1b7afb24872227fc11fdbd6f967f443a10d7872
+    role: context
+  - path: evidence/verification.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: evidence/verification.stdout
+    sha256: f66a12bba13529f1b15c8049cbf427f0a0b1eaf1487e36791a0ffd48433ae13a
+    role: context
+  - path: evidence/verify_projection.py
+    sha256: 93b58dab478f71191f2351930300c4c57cdba0fe4761e41c3ba5620b15ab3bb6
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+targets:
+- target_id: ORIGINAL-w08::vm-prop-menadione
+  path: evidence/candidates/Menadione.yaml
+  label: Menadione private Hemodal applicability successor
+  kind: source
+  ownership_note: C-authored private complete payload; authentic maintained destination
+    data/ingredients/mapped/Menadione.yaml and original W08 proposal/case retained
+    in origin-proof. No maintained application.
+scope:
+  description: One complete private candidate and its bounded alias-applicability
+    response/integrity checks.
+  selection: Exactly ORIGINAL-w08::vm-prop-menadione selected d18105cf successor4fe793ab.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - ORIGINAL-w08::vm-prop-menadione
+  exclusions:
+  - target: Independent whole-owner/row/source science approval
+    reason: Self-authored response; distinct review and W01 full-row findings remain
+      separate.
+  - target: Source application, current final batch, canonical publication and export
+    reason: No native prepare/apply, synchronization, full generation or acceptance
+      performed.
+checks:
+- check_id: C-BOUNDED
+  name: Guarded exact candidate/schema/preservation and native diagnostic controls
+  status: passed
+  required: true
+  target_ids:
+  - ORIGINAL-w08::vm-prop-menadione
+  evidence_ids:
+  - E-DELTA
+  - E-CHECKS
+  - E-ROWS
+  - E-ORIGIN
+  command: Maintained Python3.13 author_successor.py followed by verify_projection.py
+    in this private packet
+  exit_code: 0
+  summary: 15 bounded checks pass. Genuine2956-owner overlay has zero partonomy violations;
+    one native row changes only source and other, retaining every other cell and suppression
+    object. Forced-KG variants do not restore Hemodal.
+evidence:
+- evidence_id: E-ISSUE
+  kind: record_content
+  reference: evidence/inputs/issue/readback-00.json
+  snapshot_sha256: 6896e2831f7f01ad3c912fc5f7d1e1f010cb2fc9d70a90c98d9a97a689d44bc5
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: 'Exact root-filed #718 comment6724713374 precedes candidate authoring.'
+- evidence_id: E-PRIMARY
+  kind: record_content
+  reference: evidence/inputs/research/research/c/search-07.json
+  snapshot_sha256: b8cedde9a020c9fd21a5649c67f720261998e52c77dfa58bc0c5478d496f3887
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Captured original Santa Cruz sections1/3 distinguish neutral menadioneCAS58-27-5
+    and bisulfiteCAS130-37-0 under Hemodal; failed direct HTTP responses remain separate
+    in original W02 packet.
+- evidence_id: E-BAYER
+  kind: record_content
+  reference: evidence/inputs/research/research/c/captures/coimbra-p22.png
+  snapshot_sha256: 2a1a5d83ca40a51ed5e52c61cbd314377b53bf945cfe33a0ca4aa91469a1d107
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Visually inspected original Bayer advertisement separates tablet derivative
+    and sodium-bisulfite injectable; complete original PDF and acquisition receipt
+    also captured.
+- evidence_id: E-POSITIVE
+  kind: record_content
+  reference: evidence/inputs/research/skeptic/captures-v2/nist-menadione.body
+  snapshot_sha256: 21ac6cad78ef08af5d4a5009d70393bd1157c2715cbdd7d8eca1914e74a843d6
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Positive neutral-menadione Hemodal chemical-name usage preserved; not a
+    declaration that every use is false.
+- evidence_id: E-DELTA
+  kind: record_content
+  reference: evidence/field-delta.json
+  snapshot_sha256: 9180ffea8992bfd69ce9c81ce1e20cfb8e6b9bd0f928fd4c12c57863606a408b
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: One synonym type plus truthful LLM evidence/history, exact inverse preservation
+    of all other fields and old prefixes.
+- evidence_id: E-ORIGIN
+  kind: record_content
+  reference: evidence/origin-proof.json
+  snapshot_sha256: 2da80e088e77ff3aa378e371078ef4894a96f082fe14ec0f95a95d5639a0e1da
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Original W08 full proposal/case/evidence and authentic A842 beforeimage
+    retained; no new origin or source decision.
+- evidence_id: E-CHECKS
+  kind: validation
+  reference: evidence/verification.json
+  snapshot_sha256: d0c564a8a09cd9dfae35817fd1b7afb24872227fc11fdbd6f967f443a10d7872
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: '15 actual author checks: native schema/roundtrip, inverse and negative
+    controls, full2956 partonomy, exact native row and forced-KG rejection.'
+- evidence_id: E-ROWS
+  kind: validation
+  reference: evidence/native-row-diagnostic.json
+  snapshot_sha256: fc94ac3015ffc0e08956e834b4e251f3de77155753c98dfebb6b1b2735fc4524
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Native diagnostic with real KG gzip and full authentic A842 context changes
+    only source and other; Hemodal cannot return via KG variants.
+- evidence_id: E-BOUNDARY
+  kind: record_content
+  reference: evidence/inputs/research/inputs/atcc1257-original-capture.pdf
+  snapshot_sha256: d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Original ATCC1257 evidence retains the menadione solute versus ethanol/water
+    stock boundary; flattened dose is not validated.
+- evidence_id: E-PLAN
+  kind: record_content
+  reference: evidence/SELECTOR.json
+  snapshot_sha256: f0fa5d7e888d80fb979ebd62a8d70387d4cfe5ee03bde39d04828d6e6735f824
+  accessed_at: '2026-11-08T17:38:10.597068Z'
+  support: supports
+  summary: Explicit private author successor, exact original operation and independent/apply
+    flags false; original four-only input configuration untouched.
+assessments:
+- assessment_id: A-DELTA
+  area: provenance
+  topic: Exact source/proposal/history preservation
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w08::vm-prop-menadione
+  evidence_ids:
+  - E-DELTA
+  - E-ORIGIN
+  - E-BOUNDARY
+  - E-PLAN
+  summary: All fields except the one synonym type and appended evidence/history are
+    exact. Original source objects, inherited authorship, ATCC stock/quantity limits,
+    roles and counts persist; no new origin or current plan edit.
+- assessment_id: A-RESPONSE
+  area: consistency
+  topic: Claim-specific nonresolving interpretation
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w08::vm-prop-menadione
+  evidence_ids:
+  - E-ISSUE
+  - E-PRIMARY
+  - E-BAYER
+  - E-POSITIVE
+  - E-DELTA
+  summary: Author response preserves the known neutral substance and positive chemical-name
+    sense while explaining affirmative conflicting forms under the unqualified token.
+    It is not blanket brand rejection, a new chemical identity or a claim that all
+    Hemodal use is false.
+- assessment_id: A-CHECKS
+  area: consistency
+  topic: Native resolution and private projection limits
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w08::vm-prop-menadione
+  evidence_ids:
+  - E-CHECKS
+  - E-ROWS
+  summary: Native resolving policy excludes the rejected entry; the actual-KG diagnostic
+    removes it and rejects forced upper/lowercase reintroduction while retaining the
+    three supported chemical names. This is not final full-campaign generation or
+    row admission.
+findings: []
+actions: []
+limitations:
+- First native author-save attempt refused assessments.2.area=validation before saving
+  any review; the original script/stderr and genuine fixture snapshot are retained.
+  This successor uses the native consistency area; candidate and checks are unchanged.
+- This is an author self-review only; B distinct complete-byte assessment and W01
+  full-row findings remain required.
+- Original W02 review is needs_curation, limited to four token claims and qualified
+  private native primitives; this author pair does not relabel it or add a science
+  vote.
+- Historical finished-product formulations are not inferred. Positive neutral Hemodal
+  usage remains; other three brand-name chemical senses are preserved.
+- No new provider calls, full canonical generation, native source preparation/application,
+  source-case change, four-only configuration change or release hold clearance.
+- The genuine local fixture Git snapshot supports native saving with actual local
+  inputs; no production baseline, reviewer identity or application approval is invented.

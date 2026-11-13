@@ -1,0 +1,129 @@
+id: CultureMech:007504
+name: Casamino acids-peptone-Czapek's agar
+original_name: Casamino acids-peptone-Czapek's agar
+category: bacterial
+description: 915. NBRC 913.
+notes: 'Source: NBRC Medium 913 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=913
+
+
+  The NBRC Casamino acids-peptone-Czapek''s agar table lists Casamino Acids, Bacto
+  Peptone, phosphate and chloride salts, magnesium and iron sulfate heptahydrates,
+  sucrose, agar, and distilled water.'
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: NBRC Medium 913
+  term:
+    id: nbrc.medium:913
+    label: NBRC Medium 913
+ingredients:
+- preferred_term: Casamino Acids (Difco)
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Bacto Peptone (Difco)
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000178
+    label: Bacto peptone
+- preferred_term: K2HPO4
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: KCl
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: MgSO4·7H2O
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: FeSO4·7H2O
+  concentration:
+    value: '10'
+    unit: MG_PER_L
+  term:
+    id: CHEBI:75836
+    label: FeSO4 x 7 H2O
+- preferred_term: Sucrose
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  term:
+    id: CHEBI:17992
+    label: sucrose
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  term:
+    id: CHEBI:15377
+    label: water
+preparation_steps: []
+curation_history:
+- timestamp: '2026-02-20T00:22:35.987896Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 913, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=913.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:09:00.219545Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 8 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.281640Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007504'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Casamino Acids (Difco)1gBacto
+    Peptone (Difco)2gK2HPO41gKCl0.5gMgSO4·7H2O0.5gFeSO4·7H2O10mgSucrose30gAgar15gDistilled
+    water1L'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.744708+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:23.057496+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 913 composition table from the preserved scrape;
+    9 ingredient(s) restored, 0 stock solution(s) nested rather than flattened, 0
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:16.137919+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 5 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-08T00:00:00-07:00'
+  curator: repair_nbrc_exact_score20.py
+  action: RESOLVED_NBRC_EXACT_SCORE20
+  changes: Added source metadata to recovered NBRC score-20 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=913
+  notes: Resolved the recovered NBRC Medium 913 table as Casamino acids-peptone-Czapek's
+    agar.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=913

@@ -1,0 +1,57 @@
+identifier: CHEBI:18186
+preferred_term: DL-Tyrosine
+ontology_mapping:
+  ontology_id: CHEBI:18186
+  ontology_label: tyrosine
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+      has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+      betaine, racemetirosine) — so the stereo-unspecified parent is the closest available,
+      which is what the corpus''s other 15 `DL-` records do (DL-aspartic acid->CHEBI:22660,
+      DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the EXACT those often use:
+      the label names a racemate and the term does not distinguish stereochemistry
+      at all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895 L-tyrosine,
+      which is what CultureMech asserts (CultureMech#276) — that silently discards
+      the D-enantiomer.'
+synonyms: []
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+occurrence_statistics:
+  total_occurrences: 18
+  media_count: 18
+curation_history:
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: CREATED_FROM_CULTUREMECH_GAP
+  changes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+    has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+    betaine, racemetirosine) — so the stereo-unspecified parent is the closest available,
+    which is what the corpus''s other 15 `DL-` records do (DL-aspartic acid->CHEBI:22660,
+    DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the EXACT those often use:
+    the label names a racemate and the term does not distinguish stereochemistry at
+    all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895 L-tyrosine, which
+    is what CultureMech asserts (CultureMech#276) — that silently discards the D-enantiomer.'
+  llm_assisted: false
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.518132+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 18/18 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000891; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+mim_id: MIM:0000891
+legacy_identifiers:
+- MIM:DL-Tyrosine
+- CHEBI:18186

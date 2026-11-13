@@ -1,0 +1,1841 @@
+# Current S3 primary review of seven historical CAS diagnostic actions
+
+- Review: 20261112T192820Z-s3-seven-cas-diagnostics-root-primary
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-12T19:26:29.055653Z
+- Finished UTC: 2026-11-12T19:28:20.528991Z
+- Reviewer: Codex primary /root (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Support exactly two invalid-CAS diagnostic omissions after genuine corrected source application and five complete diagnostic retentions under mandatory WITHHOLD. Each assessment concerns the specified diagnostic action, never positive chemical/source/role or release acceptance. The complete current claim, original row and negative lineage were inspected. No prior finding is superseded or closed.
+
+## Scope And Provenance
+
+Seven complete current diagnostic claims bound to their actual source owners and preserved historical rows.
+
+Selection: Exactly the seven supplied snapshot-row targets and no additional CAS or ontology assertion.
+Coverage: full; 7 reviewed / 7 in the declared population.
+Source: working_tree at Git base f4b6712d9b8a888c03389149283ee2b7d124bf13.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| historical-cas-0000862 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0000862 | snapshot_row | d-limonene |
+| historical-cas-0001139 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0001139 | snapshot_row | Furaltadone hydrochloride |
+| historical-cas-0001389 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0001389 | snapshot_row | Kanamycin sulfate |
+| historical-cas-0001639 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0001639 | snapshot_row | Methyl-2-Hydroxy-Phenylproprionate |
+| historical-cas-0001663 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0001663 | snapshot_row | methylglyoxal |
+| historical-cas-0001956 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0001956 | snapshot_row | Oxalic Acid |
+| historical-cas-0002227 | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json # historical-cas-0002227 | snapshot_row | S-adenosyl Homocysteine |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current native inspection and exact full-row/owner/token endpoint readback | passed | True | historical-cas-0000862, historical-cas-0001139, historical-cas-0001389, historical-cas-0001639, historical-cas-0001663, historical-cas-0001956, historical-cas-0002227 | Actual root-owned S3 inspection/readback exited0 with152 pinned inputs. Every complete row, current/committed owner, semantic target digest and exhaustive invalid token occurrence matched; two corrected identities and five unchanged predecessor owners were checked. |
+| Seven claim-specific diagnostic evidence and hold assessments | passed | True | historical-cas-0000862, historical-cas-0001139, historical-cas-0001389, historical-cas-0001639, historical-cas-0001663, historical-cas-0001956, historical-cas-0002227 | Personally read all current owners/full rows, inherited negative history, captured original source and relevant official database/manufacturer evidence. The two omissions follow actual reviewed corrections; five retentions preserve full payloads and uncertainty. No new network retrieval or repeated suite was needed. |
+
+## Scientific And Domain Assessments
+
+### D-limonene: retire only the disproved historical CAS identity
+
+identity: supported. Targets: historical-cas-0000862.
+
+The committed S3 owner rejects cas:138-86-7 while preserving MIM:0000862 and its genuine slug. I read the raw source lines separating d-limonene from the D,L-limonene entry. Captured three-star CHEBI:15382 explicitly defines the R form and CAS5989-27-5; the two-star duplicate has the same stereochemical InChI but mixed DL names, which are not imported. These primary observations and the completed source correction support only diagnostic omission of the exact old invalid CAS row, preserving all historical holds.
+
+The old full row, invalid tokens, negative review and all original source/role holds remain history. This does not approve a new generated row, canonical REMOVE_WITH_HISTORY, source binding, purchased preparation or role.
+
+### Furaltadone hydrochloride: retain exact ontology row under WITHHOLD
+
+identity: supported. Targets: historical-cas-0001139.
+
+The current full row is already exact NCIT:C217928; the old narrow-match complaint is historical as #902 records. The byte-identical current owner still carries invalid CAS:3759-92-1. Retain the complete diagnostic row under WITHHOLD with both the current invalid-annotation reason and the old recorded explanation. This does not recertify the NCIT mapping or preparation.
+
+Preserve the validly shaped NCIT object, hydrochloride scope, original provenance and every unresolved source/preparation/role claim. This diagnostic retention does not scientifically recertify the ontology mapping or infer a corrected CAS.
+
+### Kanamycin sulfate: retain sulfate-scoped row and provisional role hold
+
+identity: supported. Targets: historical-cas-0001389.
+
+Current owner and row match the frozen predecessor, retaining sulfate-scoped CHEBI:6109, synonyms and invalid CAS:25839-94-0. SELECTIVE_AGENT remains provisional computational evidence. Retain the whole diagnostic row WITHHOLD. Arithmetic proves invalidity only, not a transposition or a replacement CAS; no sulfate/free-base collapse or role/source approval follows.
+
+No free-base collapse, CAS repair, role approval, source-binding acceptance or payload scrub. The full historical validation/source vocabulary remains evidence, not a new positive stamp.
+
+### Methyl-2-Hydroxy-Phenylproprionate: unresolved identity remains withheld
+
+identity: supported. Targets: historical-cas-0001639.
+
+The unchanged owner and full row retain cas:89471-28-0 in identity and annotation. The later #753 decision requires unchanged/WITHHOLD and governs over the old positive history. Missing source locants and stereochemical information remain unresolved. Retain the exact negative diagnostic record without guessing a number or ontology identity; its stable MIM ID supplies no new scientific support.
+
+No guessed ontology, replacement CAS, placeholder, alias rewrite or automatic source approval from the existing permanent MIM ID. Both earlier positive and later negative history remain visible, with the later hold governing.
+
+### Methylglyoxal: retain exact ontology row with invalid annotation withheld
+
+identity: supported. Targets: historical-cas-0001663.
+
+The unchanged CHEBI:17158 row retains 2-Oxopropanal and invalid CAS:79-98-8. Keep every cell under WITHHOLD, preserving source annotations and wrong-CAS history. This does not endorse the ontology target anew, delete the invalid token, or infer a neat/solution preparation, concentration, supplier or FEBA stress role.
+
+Preserve FEBA/Hans80 and chemistry provenance without inferring stress-response role, neat versus solution material, concentration, lot or source identity.
+
+### Oxalic acid: retain ontology row without guessing supplied form
+
+identity: supported. Targets: historical-cas-0001956.
+
+The current owner and complete CHEBI:16995 row remain exact predecessor bytes including invalid CAS:144-62-1. Retain that whole diagnostic backlog and its unresolved annotation. A failed check digit cannot authorize a CAS replacement or ontology retirement; stored formula and structure do not establish supplied hydration.
+
+No hydration inference from formula or molecular weight, no whole-record recertification, and no source-binding approval. The original negative evidence and source provenance remain.
+
+### S-adenosyl Homocysteine: retire only the disproved historical CAS identity
+
+identity: supported. Targets: historical-cas-0002227.
+
+The committed S3 owner rejects cas:9789-92-0 and preserves MIM:0002227, slug and explicit L-homocysteine synonym. I checked original Sigma A9384 source line696, captured manufacturer sheet and official CHEBI:16680 definition/CAS979-92-0; together they support the completed L-material correction. L identity is not inferred from sulfur S. Only diagnostic omission of the old invalid CAS row is supported; full historical negative lineage and separate publication/source/form/role gates remain.
+
+Retain the full invalid historical row and all inherited WITHHOLD history. This is no canonical retirement, positive export, role, purity, hydrate, salt, concentration, occurrence or source-binding approval.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| mapping-policy | MAPPING_SEMANTICS.md; Permanent record identity; §§1–3 | supports | Distinct ingredient scope, permanent identity, owner-specific rejected aliases and non-identity mappings remain separate from diagnostic disposition. |
+| diagnostic-contract | docs/REVIEWED_INVALID_CAS_DIAGNOSTICS.md; Two supported diagnostic actions; publication separation | supports | This opt-in route permits exact invalid-CAS diagnostic omission or mandatory full-row retention/WITHHOLD; neither is canonical retirement or release approval. |
+| full-claims | .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json; entries[all seven] | supports | Exact complete historical rows, current owners, actions, tokens and issue holds assembled by the coordinator from the authored proposal procedure. |
+| historical-packet | .temp/seven-cas-dispositions-claims-s3-v1/evidence/36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622/INPUTS.json; entries[source_position in 953,1266,1548,1841,1868,2173,2487] | supports | Complete historical row/owner pins and inherited WITHHOLD decisions, retained as history rather than newly positive support. |
+| exact-current-readback | .temp/seven-cas-primary-native-s3-v1/FACTS.json; entries[all seven] | supports | Actual read-only checks compare full canonical rows, current and committed owner bytes, permanent IDs, explicit invalid tokens, source endpoint afterimages and unchanged predecessor owners. Arithmetic demonstrates invalidity only. |
+| source-endpoint | .temp/cumulative-source-successor-endpoint-s3-v1/ENDPOINT.json; / | supports | Actual selected completed source successor, whose native manifest and application bind the exact reviewed two-owner corrections among fourteen operations. |
+| source-verification | .temp/cumulative-source-successor-committed-verification-s3-v1/stdout.json; status,current_identity,manifest_sha256 | supports | Coordinator-owned current-head native verification reports COMPLETE_CURRENT_SOURCE_SUCCESSOR at f4b6712d9b8a888c03389149283ee2b7d124bf13; this reviewer read its exact copied bytes and did not rerun it. |
+| verification-copy | .temp/cumulative-source-successor-committed-verification-s3-v1/COPY-RECEIPT.json; files | context_only | Exact byte-preserving copy provenance separates coordinator process ownership from this reviewer’s evidence copying. |
+| hold-context | .temp/seven-cas-current-hold-context-v1/live/HOLD-CONTEXT-ASSESSMENT.json; entries | supports | Captured issue-context qualification preserves all seven historical holds and distinguishes current invalid-token concerns from older stale reasoning. |
+| issue-753 | .temp/seven-cas-current-hold-context-v1/live/753-issue.json; body | context_only | Previously captured issue body; read here as scoped historical/current-context evidence, without claiming a new network retrieval. |
+| comments-753 | .temp/seven-cas-current-hold-context-v1/live/753-comments.json; all captured pages | context_only | Complete comments captured with the issue context; original comment identities and capture times remain in the raw bytes. |
+| issue-887 | .temp/seven-cas-current-hold-context-v1/live/887-issue.json; body | context_only | Previously captured issue body; read here as scoped historical/current-context evidence, without claiming a new network retrieval. |
+| comments-887 | .temp/seven-cas-current-hold-context-v1/live/887-comments.json; all captured pages | context_only | Complete comments captured with the issue context; original comment identities and capture times remain in the raw bytes. |
+| issue-902 | .temp/seven-cas-current-hold-context-v1/live/902-issue.json; body | context_only | Previously captured issue body; read here as scoped historical/current-context evidence, without claiming a new network retrieval. |
+| comments-902 | .temp/seven-cas-current-hold-context-v1/live/902-comments.json; all captured pages | context_only | Complete comments captured with the issue context; original comment identities and capture times remain in the raw bytes. |
+| original-culturebotht | .temp/cumulative-source-successor-inputs-s3-v2/evidence/76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9/compounds_to_cas.csv; lines269,696,728 | supports | The raw source names d-limonene separately from D,L-limonene and explicitly supplies Sigma A9384 plus the L-homocysteine synonym for the other correction. The malformed original CAS strings remain evidence. |
+| d-limonene-chebi | .temp/cumulative-source-successor-inputs-s3-v2/evidence/84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e/chebi-15382.json; ascii_name,definition,names,default_structure,database_accessions | supports | Captured official three-star CHEBI:15382 defines (4R)-limonene and supports the reviewed d-limonene scope. |
+| d-limonene-duplicate | .temp/cumulative-source-successor-inputs-s3-v2/evidence/6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69/chebi-748872.json; stars,definition,names,default_structure | context_only | The two-star ChEMBL-submitted entry has the same stereochemical InChI but mixed DL synonym baggage; no alternative source identity or synonym import is inferred. |
+| sam-chebi | .temp/cumulative-source-successor-inputs-s3-v2/evidence/c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82/chebi-16680.json; ascii_name,definition,names,default_structure,database_accessions | supports | Captured official CHEBI:16680 identifies the L-homocysteine derivative; the sulfur S locant is not treated as stereochemical evidence. |
+| sam-supplier | .temp/cumulative-source-successor-inputs-s3-v2/evidence/aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb/web-primary.txt; Sigma A9384 product-information capture, lines0–6 | supports | The captured manufacturer sheet names S-(5-prime-adenosyl)-L-homocysteine, product A9384 and CAS979-92-0, corroborating the explicit source catalogue entry. |
+| owner-0000862 | data/ingredients/mapped/D-limonene.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0001139 | data/ingredients/mapped/Furaltadone_Hydrochloride.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0001389 | data/ingredients/mapped/Kanamycin_Sulfate.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0001639 | data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0001663 | data/ingredients/mapped/Methylglyoxal.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0001956 | data/ingredients/mapped/Oxalic_Acid.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+| owner-0002227 | data/ingredients/mapped/S-adenosyl_Homocysteine.yaml; entire record | supports | Exact current committed owner bytes, primary and ontology assertions, chemistry, stable ID, aliases and complete curation history. |
+
+## Limits And Additional Notes
+
+- This review supports diagnostic actions only. All seven inherited WITHHOLD decisions and broader source/form/role/suppression obligations remain history/in force; no new positive mapping or source identity is granted.
+- The five held owners were not recertified against fresh supplier/ontology research; their exact negative-evidence scope is deliberately retained. The two corrected identities use the captured primary evidence and actual completed native source endpoint, not guessed checksum repairs.
+- Captured issue bodies/comments retain their original timestamps; no fresh network retrieval is claimed. Old Furaltadone predicate rationale is qualified as historical, and Kanamycin transposition is not inferred from arithmetic.
+- The earlier S2 report format is reused transparently after my actual current S3 evidence review; current inspection, judgments and execution attribution belong to /root. The original scientific and procedure authors remain in retained evidence. No old report is restamped.
+- Native validate/save and a shared collection check follow this authored document; no unexecuted result is represented as passed inside the review. Separate independent skeptical review and actual generation/publication gates remain required.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261112T192820Z-s3-seven-cas-diagnostics-root-primary
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Current S3 primary review of seven historical CAS diagnostic actions
+started_at: '2026-11-12T19:26:29.055653Z'
+finished_at: '2026-11-12T19:28:20.528991Z'
+reviewer:
+  identity: Codex primary /root
+  kind: agent
+  model: Codex (exact model identifier not recorded)
+  independence: self_review
+  independence_basis: I am the coordinator and primary reviewer of these actual S3
+    claims. I executed source application/verification, claims assembly and qualified
+    copying. I read the current seven full rows and owners, negative history and captured
+    primary sources. Original authors remain attributed. This is self review; the
+    separate skeptical review is independent.
+skill: review-sssom-output
+completion: completed
+verdict: pass_with_limitations
+native_verdict: SUPPORTED_DIAGNOSTIC_ACTIONS_ONLY_ALL_SCIENTIFIC_HOLDS_RETAINED
+scientific_review: true
+summary: Support exactly two invalid-CAS diagnostic omissions after genuine corrected
+  source application and five complete diagnostic retentions under mandatory WITHHOLD.
+  Each assessment concerns the specified diagnostic action, never positive chemical/source/role
+  or release acceptance. The complete current claim, original row and negative lineage
+  were inspected. No prior finding is superseded or closed.
+source:
+  git_revision: f4b6712d9b8a888c03389149283ee2b7d124bf13
+  state: working_tree
+  inputs:
+  - path: .claude/skills/map-media-ingredients/SKILL.md
+    sha256: 9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 7c6da4d598d397d3fcc5cff10ebb8a2921dd9f8af0b5fd69083e457267c66cc8
+    role: context
+  - path: .temp/cumulative-source-successor-applied-s3-v1/application.json
+    sha256: 78b862a6670242d1dc1283b43464c2af2cf3bf96ad8e9874b10d59428f3b49a4
+    role: context
+  - path: .temp/cumulative-source-successor-applied-s3-v1/before-00863.bin
+    sha256: 3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978
+    role: context
+  - path: .temp/cumulative-source-successor-applied-s3-v1/before-02228.bin
+    sha256: e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f
+    role: context
+  - path: .temp/cumulative-source-successor-assessed-s3-v1/ASSESSED-REQUEST.json
+    sha256: 1c979c3d89b4e75102044939eab6b393cff2b2e9fa835aa9e0917be833738881
+    role: context
+  - path: .temp/cumulative-source-successor-committed-verification-s3-v1/COPY-RECEIPT.json
+    sha256: 6453ded792ee455683a1a8b9922fce514810b3a7bdca71ea45658be0edbe6712
+    role: context
+  - path: .temp/cumulative-source-successor-committed-verification-s3-v1/RESULT.json
+    sha256: df43dc405dc9afcb48dfc420d2ba860d0bdc775835fe757445a363489473dd0d
+    role: context
+  - path: .temp/cumulative-source-successor-committed-verification-s3-v1/stdout.json
+    sha256: 626fae555154ee950330cd85d52e93cc387e68505907340c060220dc5089feb3
+    role: context
+  - path: .temp/cumulative-source-successor-endpoint-s3-v1/ENDPOINT.json
+    sha256: 3f00d30c7a4ea78f9b1b9eeb32ded044640e074ebd365f9589711230b35ba4ed
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/0b5fc3b58b79396b37ba97c1d16ecf11307002f0e2c4074241b97c9c566e2f00/CONFIGURED-ONTOLOGY-LOOKUP.json
+    sha256: 0b5fc3b58b79396b37ba97c1d16ecf11307002f0e2c4074241b97c9c566e2f00
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614/HISTORY-OBLIGATIONS.json
+    sha256: 126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/13ee219495257a22e816d3c621fa723de868152b71477cd2f96656819e6e9ae0/PRIMARY-IDENTITY-CONCLUSION.json
+    sha256: 13ee219495257a22e816d3c621fa723de868152b71477cd2f96656819e6e9ae0
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac/SUPPRESSION-OBLIGATIONS.json
+    sha256: 20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/26e1e00060055037cb37b633b1ea445c548aabd2ae66fa73d3a001eb3f01a13e/D-limonene.historical-review.md
+    sha256: 26e1e00060055037cb37b633b1ea445c548aabd2ae66fa73d3a001eb3f01a13e
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/299204d51c81d2c02e4b0d5704d8dffe8d3b966fafb1344a383fd53e0d2859e5/CACHED-ISSUE-HISTORY.json
+    sha256: 299204d51c81d2c02e4b0d5704d8dffe8d3b966fafb1344a383fd53e0d2859e5
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/2e7da2023168a61581b6cbdf2cac9243e4b46073301dc6f35937aee308888677/D-limonene.diff
+    sha256: 2e7da2023168a61581b6cbdf2cac9243e4b46073301dc6f35937aee308888677
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/35658dc81876bedbc0b621d9575ef9088006fecc8252a551eb9ece5f202e9c97/INPUT-PINS.json
+    sha256: 35658dc81876bedbc0b621d9575ef9088006fecc8252a551eb9ece5f202e9c97
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f/mapping-evidence.json
+    sha256: 3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978/D-limonene.before.yaml
+    sha256: 3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978/D-limonene.yaml
+    sha256: 3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/452c95a2a6aa09f695951170b4d15bf03c6a6a7fd16459a513b2fb42eeb033b1/EXACT-CORPUS-SEARCH.json
+    sha256: 452c95a2a6aa09f695951170b4d15bf03c6a6a7fd16459a513b2fb42eeb033b1
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/4e2853c22b8ed58d171c48c1853014b412b435506da2cef08c87a1344be76a11/DRAFT-HANDOFF-v2.json
+    sha256: 4e2853c22b8ed58d171c48c1853014b412b435506da2cef08c87a1344be76a11
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd/mapping-evidence.json
+    sha256: 529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/5fe480cd1bb7828c6cefd7ae56397b6a7a86200093f5a83c85dea833650cfb42/web-cas-check-digit-and-pdf-screenshot.txt
+    sha256: 5fe480cd1bb7828c6cefd7ae56397b6a7a86200093f5a83c85dea833650cfb42
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/674fc6c1dc380bcd5e9d9f7d61fc9a40b83b2081612399124e4d6501e0683fc3/primary-http-approved.json
+    sha256: 674fc6c1dc380bcd5e9d9f7d61fc9a40b83b2081612399124e4d6501e0683fc3
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69/chebi-748872.json
+    sha256: 6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/74d47599347441a8ebc853eb5dc139fde9daedc4001a8c246b5028dea2bc3da8/HISTORICAL-HOLDS.json
+    sha256: 74d47599347441a8ebc853eb5dc139fde9daedc4001a8c246b5028dea2bc3da8
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9/compounds_to_cas.csv
+    sha256: 76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/78253121be0cfff808a99ae8a7a14509441cbd982fc70b2a6415507e06b0b0b4/EXPANDED-PRIMARY-NAME-COLLISION-PREFLIGHT.json
+    sha256: 78253121be0cfff808a99ae8a7a14509441cbd982fc70b2a6415507e06b0b0b4
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/7b2fdb24dc57dc9f86cf2bf7a8bdec1044d5e94c53b796e8146080cc5dae9520/HANDOFF.json
+    sha256: 7b2fdb24dc57dc9f86cf2bf7a8bdec1044d5e94c53b796e8146080cc5dae9520
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/7cdc5e23cfb6a41e7be888367ac5fb82c11ad39169bff9da05551a57309023e8/PROPOSALS.json
+    sha256: 7cdc5e23cfb6a41e7be888367ac5fb82c11ad39169bff9da05551a57309023e8
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/80e9c3e8c9d78e884fb82f4f325053d02555306e6bc2b5fc03872c93d432460e/INPUT-PINS.json
+    sha256: 80e9c3e8c9d78e884fb82f4f325053d02555306e6bc2b5fc03872c93d432460e
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/815f2beb80987b9a22710e87db4426ce1bb3db8bf35896b7b5ab0ac080728b55/web-additional-primary.txt
+    sha256: 815f2beb80987b9a22710e87db4426ce1bb3db8bf35896b7b5ab0ac080728b55
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/82640104cc81615d472f4250e2a6a8093075320f4049bffe36739f161b13e61c/ISSUE-HISTORY.json
+    sha256: 82640104cc81615d472f4250e2a6a8093075320f4049bffe36739f161b13e61c
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e/chebi-15382.json
+    sha256: 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/8796271876ee635de3a49a57ff422e5e8e69cd3489ac64897f8b93efe91eb631/web-chebi-comparison.txt
+    sha256: 8796271876ee635de3a49a57ff422e5e8e69cd3489ac64897f8b93efe91eb631
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/91b5ec6848614c33216ec0a37fbbbbf8c067588732bc19a03089fa3ddc32411d/CURRENT-OWNER-AND-ROWS.json
+    sha256: 91b5ec6848614c33216ec0a37fbbbbf8c067588732bc19a03089fa3ddc32411d
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/93f1e8e488c304502990bbaef6718edde547553068fc791db69b357a400a42c7/HISTORICAL-HOLDS.json
+    sha256: 93f1e8e488c304502990bbaef6718edde547553068fc791db69b357a400a42c7
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/9434df8e748141f1066a5b3fd1e30aeebc7fb23d96deba0e05ec2a00dd51697b/DUPLICATE-AND-BEFOREIMAGE-PREFLIGHT.json
+    sha256: 9434df8e748141f1066a5b3fd1e30aeebc7fb23d96deba0e05ec2a00dd51697b
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/a0655391a8d902565c5effa99c5f4504a0b3335550c8aeac5b722b5ee12f6c2f/primary-http-default.json
+    sha256: a0655391a8d902565c5effa99c5f4504a0b3335550c8aeac5b722b5ee12f6c2f
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/a15f9bf206383b6cdb044e657b827b72e063db5eae3f0642dc4907f86f190e19/web-primary.txt
+    sha256: a15f9bf206383b6cdb044e657b827b72e063db5eae3f0642dc4907f86f190e19
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb/web-primary.txt
+    sha256: aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9/context.json
+    sha256: ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/ae8f309c243483a6834d72b935752c20be9f07fe622608dc986b661e8e3ea046/S-adenosyl_Homocysteine.historical-review.md
+    sha256: ae8f309c243483a6834d72b935752c20be9f07fe622608dc986b661e8e3ea046
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82/chebi-16680.json
+    sha256: c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8/mapping-review.json
+    sha256: c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/cc488b5b9a36c8a87d3cbb46d2bf5013677f2adbf4c7b9d41bc1cee45eada31c/S-adenosyl_Homocysteine.diff
+    sha256: cc488b5b9a36c8a87d3cbb46d2bf5013677f2adbf4c7b9d41bc1cee45eada31c
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/cf4ceeebda243c0d83971e135a33de54ab2409b780d77d55ee781dbd4a8bc1f8/CURRENT-OWNER-AND-ROWS.json
+    sha256: cf4ceeebda243c0d83971e135a33de54ab2409b780d77d55ee781dbd4a8bc1f8
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/d8bc0897311f0fc1372eb419ce39d88713327a9771a5f559909d4619c9588d98/ASSEMBLY-ATTEMPT-1.json
+    sha256: d8bc0897311f0fc1372eb419ce39d88713327a9771a5f559909d4619c9588d98
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/d90d3030a8395b294d674cfeb324b58082c8d99c4f985fc88813417e6eb622bf/PRIMARY-IDENTITY-CONCLUSION.json
+    sha256: d90d3030a8395b294d674cfeb324b58082c8d99c4f985fc88813417e6eb622bf
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f/S-adenosyl_Homocysteine.before.yaml
+    sha256: e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f/S-adenosyl_Homocysteine.yaml
+    sha256: e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/e8f4693cac31a2ca29019ff0f9c8ad41af05650685ef47a8bb16a771ce2a6ee9/primary-http.json
+    sha256: e8f4693cac31a2ca29019ff0f9c8ad41af05650685ef47a8bb16a771ce2a6ee9
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/ebff56ee94ecac6f2af01a948b654f0a5f16323680b25643d1f233227c58241e/HANDOFF.json
+    sha256: ebff56ee94ecac6f2af01a948b654f0a5f16323680b25643d1f233227c58241e
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/eda05dab469af0663c0945f865f38f3422c7033ab6106ed5db1447c58adfa1af/CURRENT-ISSUE-HISTORY.json
+    sha256: eda05dab469af0663c0945f865f38f3422c7033ab6106ed5db1447c58adfa1af
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/evidence/f4279df46a0e4094aa934b8adeab2cc953cdcf46b48134a7d72f6444be91e3af/EXACT-CORPUS-SEARCH.json
+    sha256: f4279df46a0e4094aa934b8adeab2cc953cdcf46b48134a7d72f6444be91e3af
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/proposals/MIM-0000862.yaml
+    sha256: 30795b5e4f80ed6f88821c5532a64ecc8c883f8133bef86c024d637479340751
+    role: context
+  - path: .temp/cumulative-source-successor-inputs-s3-v2/proposals/MIM-0002227.yaml
+    sha256: 87f6cae9492263adda19083a21fc6143705371eeab0875d105a00199c0778dff
+    role: context
+  - path: .temp/cumulative-source-successor-inspected-s3-v2/INSPECTED-REQUEST.json
+    sha256: 336140127434edbd22467b4a9e58ae5e18d7be3c082c0fd20fca929e7e14dfaa
+    role: context
+  - path: .temp/cumulative-source-successor-stage-s3-v1/manifest.json
+    sha256: 1c459a680f479d93370d38739e97089bccf50ad1dcf758a90978b452513aa2f7
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/COPY-RECEIPT.json
+    sha256: 23bc856070b1c7cd325af21a498a4e95020a619baa673f364a9cb511cc01453b
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/REVIEW-INPUTS.json
+    sha256: b90cde1ff8320d41063b36b1870fda147fd7b07d06d3a0ef43198b0eeb2aba8a
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/historical/seven-historical-cas-disposition-inputs-v1/INPUTS.json
+    sha256: 36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/historical/seven-historical-cas-independent-draft-v1/DRAFT-ANALYSIS.json
+    sha256: a052756c9b4b36caeb9967ab5723ca9c838ed738157126124a36af7d8ba6e8ef
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/historical/seven-historical-cas-independent-draft-v1/DRAFT-HANDOFF.json
+    sha256: 9188b3e047a15b973eb15b49bf4aab0c646cce028d70313afcd1c524d8fd2ae2
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/753-comments.json
+    sha256: 37e64053dd3f5ebb8599895524998edaf15fc2ebc2aeb0211ff7c666dca49b28
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/753-comments.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/753-issue.json
+    sha256: a31170904f3e6e2dd60f24683d060183133943b6f2fd525d82e3708d9680124a
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/753-issue.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/887-comments.json
+    sha256: cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/887-comments.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/887-issue.json
+    sha256: d958414a06df8bc817fbe8bdf993196e6706c13bb537bc7265988e1918b77b9f
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/887-issue.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/902-comments.json
+    sha256: f32a8aa80e2df2ae691a771757cb49a31699def3287062f8c2bcd2b255aaf006
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/902-comments.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/902-issue.json
+    sha256: 3f66a23c1359a82099f114e7eabc97ddd6ecb42535af8cde74d245d76b19e347
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/902-issue.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/DEDUP-RECEIPT.json
+    sha256: aa9a1ac95d84e4b78082cf04a530d5469e265f7d70a6b0030c084970812e9cc7
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/DEFAULT-READ-FAILURE.json
+    sha256: f8da1d58a28399a57872b52b59bc017aeb1e15de481e295846001c05d6e99a70
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/HANDOFF.json
+    sha256: 4bd9ffe9ffb749a63d2cdb9eae3c2ab9878b0d8127b71cd1b2ba08cd6c3c2d60
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/HOLD-CONTEXT-ASSESSMENT.json
+    sha256: ad2904f131c6e3424ba32634b8d762cef49efbf696bd2e3c3fa1aa0aec0a44cb
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/LIVE-READ-RECEIPT-902.json
+    sha256: fa45a7b8f327f34cfc7bbc969abfd658e5e1593cc70c33684aa6a906b6df9825
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/LIVE-READ-RECEIPT.json
+    sha256: dbc6ce1e7be1b5a070c0fcc92705e51708ed99302a2b0a98c04aaea10da8e993
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/README.md
+    sha256: 2c8e9d3b0a477a043a1767d387afb287c3f0f7013475422a89a0912fcfe318a8
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/assemble_qualification.py
+    sha256: fdffbbcb9d351c97ee97bbf25a985c3e9ed659547a29ffa0cdc7fe189196e769
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/capture_live_issues.py
+    sha256: 18267eed221316a48e12dbc18edf003ee4ddde3ec4f36bf719bdad3a40588ffd
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/capture_stale_reason_issue.py
+    sha256: b7776726704e3ace09fe090c746b3c99a1d90e1f273179b0a0def1806cc20751
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/01.json
+    sha256: 9d2d466b1d6b63ea04eef860e2b6af2921e6122841d4dfb9a5bc218ab510c393
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/01.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/02.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/02.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/03.json
+    sha256: 68ecf111fc244cd88fb0da1302d94759cb486ee4a6d64ca06cf6bb3ce4cfb994
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/03.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/04.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/04.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/05.json
+    sha256: 68ecf111fc244cd88fb0da1302d94759cb486ee4a6d64ca06cf6bb3ce4cfb994
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/05.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/06.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/06.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/07.json
+    sha256: 68ecf111fc244cd88fb0da1302d94759cb486ee4a6d64ca06cf6bb3ce4cfb994
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/07.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/08.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/dedup/08.stderr.txt
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/seven-cas-current-hold-context-v1/live/deduplicate_issue_context.py
+    sha256: 36f3e4b1d702f8f53cbcdf62591be330722b5161612b42af6bf7c719531759ed
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+    sha256: e9d7d989ce3329dc72a627d2f58793d024908f85e70da5780d92c8287bebb7e5
+    role: target
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/REQUIRED-REVIEW-INPUTS.json
+    sha256: 06dccb695ce4da4dd387c006995bbe7ce177b76a63b26a9bfc3f0bfe4eddda46
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/SOURCE-ENDPOINT-BINDING.json
+    sha256: 0c3bed7adfe53cb089dcc8534cab9956a1e0047c6d57ec2f6c001e3e0f90a68c
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/TARGETS.json
+    sha256: 15537a58cb2d257ae9d957647fb5931ecf04368d33ba2dfaed6407a8a2da51cd
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/0fdfcc3388a28820a66a7a6a6d91a4ca5af07db89fd095a49029dd6f6537f075/INVENTORY.json
+    sha256: 0fdfcc3388a28820a66a7a6a6d91a4ca5af07db89fd095a49029dd6f6537f075
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/161fa706908bda78e95797af30090e575659913da28a3f417dcd0497675e5cf2/INPUT-PINS.json
+    sha256: 161fa706908bda78e95797af30090e575659913da28a3f417dcd0497675e5cf2
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/22852e29a6251b79438b35ace14ab9bb3132e8891737bd8378efd23e42d83696/DRAFT-ASSESSMENTS.json
+    sha256: 22852e29a6251b79438b35ace14ab9bb3132e8891737bd8378efd23e42d83696
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/25cbb95675ee8660b42cafbc1bfc8759e77c4e1444e78726f08e9e4aa8946d2e/Methyl-2-Hydroxy-Phenylproprionate.yaml
+    sha256: 25cbb95675ee8660b42cafbc1bfc8759e77c4e1444e78726f08e9e4aa8946d2e
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622/INPUTS.json
+    sha256: 36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f/mapping-evidence.json
+    sha256: 3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/3d9f1ac412209266034319542f225918b78b4e6a8e0658b53ee0689b4fb4dafe/ingredient_mappings.sssom.tsv
+    sha256: 3d9f1ac412209266034319542f225918b78b4e6a8e0658b53ee0689b4fb4dafe
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978/D-limonene.yaml
+    sha256: 3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/427316df263ab014e9caa79523272728d39884dcb7ac5e842acd87cb42b34f25/Oxalic_Acid.yaml
+    sha256: 427316df263ab014e9caa79523272728d39884dcb7ac5e842acd87cb42b34f25
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/437b540d61214ab3fc499c7a78bc2d9fb505212ee169fac2b988e553499fd222/MediaIngredientMech-753.json
+    sha256: 437b540d61214ab3fc499c7a78bc2d9fb505212ee169fac2b988e553499fd222
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/445218d5336935d0186a08073985d850b2864dfe36d0ac0a334fbe0fbe089351/Kanamycin_Sulfate.yaml
+    sha256: 445218d5336935d0186a08073985d850b2864dfe36d0ac0a334fbe0fbe089351
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/500cc73f11811daf04ee8b806bb3b5f23ac2ad078f9f44705dc36bbe2ab4723f/Methylglyoxal.yaml
+    sha256: 500cc73f11811daf04ee8b806bb3b5f23ac2ad078f9f44705dc36bbe2ab4723f
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/51d925bd86709364e2876b8ba736970c23f0ce180ca15512a0fc529240d2e486/CAPTURED-ROW-OWNER-SOURCE-HISTORY.json
+    sha256: 51d925bd86709364e2876b8ba736970c23f0ce180ca15512a0fc529240d2e486
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/7be5ca1c837dc8003680e81d72df056fbf2e69bf8c44e0208c682abef747d0e1/Furaltadone_Hydrochloride.yaml
+    sha256: 7be5ca1c837dc8003680e81d72df056fbf2e69bf8c44e0208c682abef747d0e1
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8/mapping-review.json
+    sha256: c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/caddc617eeda479053c70b276c5ce6c579e749d4783487f15f60e9efee9eff8e/MediaIngredientMech-887.json
+    sha256: caddc617eeda479053c70b276c5ce6c579e749d4783487f15f60e9efee9eff8e
+    role: context
+  - path: .temp/seven-cas-dispositions-claims-s3-v1/evidence/e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f/S-adenosyl_Homocysteine.yaml
+    sha256: e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f
+    role: context
+  - path: .temp/seven-cas-primary-native-s3-v1/FACTS.json
+    sha256: 67a6e0657d4c980b763d30e5ac93b092982e331571c28c6c4310e7ded8697ac3
+    role: context
+  - path: .temp/seven-cas-primary-native-s3-v1/inspection-driver.py
+    sha256: 1b36d06c0e16862d4864d8a4e3ec70269402c722d280d5e28d0c7d7a1f8fdee6
+    role: context
+  - path: AGENTS.md
+    sha256: f16340060be37e57186ff8be31c8b9cb930c0b5229413a338db4c40aa18632a3
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3
+    role: context
+  - path: data/ids/mim_id_lifecycle.tsv
+    sha256: 58a6eea78d16f130cb66a8340970a314bfacee2ab7d2c7e05da38e41398aadb2
+    role: context
+  - path: data/ids/mim_id_registry.tsv
+    sha256: 8b85526b0596ec80c9cf37a5dd6bc82a89720b3db19e4cae749afce01c3069cf
+    role: context
+  - path: data/ingredients/mapped/D-limonene.yaml
+    sha256: 30795b5e4f80ed6f88821c5532a64ecc8c883f8133bef86c024d637479340751
+    role: context
+  - path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    sha256: 7be5ca1c837dc8003680e81d72df056fbf2e69bf8c44e0208c682abef747d0e1
+    role: context
+  - path: data/ingredients/mapped/Kanamycin_Sulfate.yaml
+    sha256: 445218d5336935d0186a08073985d850b2864dfe36d0ac0a334fbe0fbe089351
+    role: context
+  - path: data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml
+    sha256: 25cbb95675ee8660b42cafbc1bfc8759e77c4e1444e78726f08e9e4aa8946d2e
+    role: context
+  - path: data/ingredients/mapped/Methylglyoxal.yaml
+    sha256: 500cc73f11811daf04ee8b806bb3b5f23ac2ad078f9f44705dc36bbe2ab4723f
+    role: context
+  - path: data/ingredients/mapped/Oxalic_Acid.yaml
+    sha256: 427316df263ab014e9caa79523272728d39884dcb7ac5e842acd87cb42b34f25
+    role: context
+  - path: data/ingredients/mapped/S-adenosyl_Homocysteine.yaml
+    sha256: 87f6cae9492263adda19083a21fc6143705371eeab0875d105a00199c0778dff
+    role: context
+  - path: docs/REVIEWED_INVALID_CAS_DIAGNOSTICS.md
+    sha256: d6c0fa2df8abdd3f56bb74a683d2760096536ff0936ff7af1ba45e7a3f0ac564
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 3d9f1ac412209266034319542f225918b78b4e6a8e0658b53ee0689b4fb4dafe
+    role: context
+  - path: reviews/structured/20261112T175604Z-s3-source-corrections-independent-skeptic/review.md
+    sha256: c26f40e9c3509d0dd6887a614a2b3c48fd46c4aa73bb0f2f1f0c41f1e3e260d9
+    role: context
+  - path: reviews/structured/20261112T175604Z-s3-source-corrections-independent-skeptic/review.yaml
+    sha256: b105992c0077b406f22fe314918a253987927cf1e4f553723fc04bf77141b027
+    role: context
+  - path: reviews/structured/20261112T175819Z-fourteen-source-deltas-current-primary/review.md
+    sha256: 39c889d0d1b810c46922fb5e69e223d43c80af45eec963cb9e9360badec76146
+    role: context
+  - path: reviews/structured/20261112T175819Z-fourteen-source-deltas-current-primary/review.yaml
+    sha256: 92b96f8822288111655824691319c36d5327511826297c1ffb79c52f85e01cf1
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/curate/stable_sssom_publication.py
+    sha256: cb73381802f89b9dd8f57579f21c6d7bbcd0244f3ff84c920e8897011953f8e5
+    role: context
+  - path: src/mediaingredientmech/curie.py
+    sha256: d70db8a77876596fcc6ff4f664a46b5f0e5b6418a6b2966292f29e7d069ae415
+    role: context
+  - path: src/mediaingredientmech/stable_ids.py
+    sha256: 9261173f4a9f5d9ed52f034d5a27308e1a44978aa58a9b47aa5a2294c2ce1e1b
+    role: context
+scope:
+  description: Seven complete current diagnostic claims bound to their actual source
+    owners and preserved historical rows.
+  selection: Exactly the seven supplied snapshot-row targets and no additional CAS
+    or ontology assertion.
+  coverage: full
+  population_size: 7
+  reviewed_target_ids:
+  - historical-cas-0000862
+  - historical-cas-0001139
+  - historical-cas-0001389
+  - historical-cas-0001639
+  - historical-cas-0001663
+  - historical-cas-0001956
+  - historical-cas-0002227
+  exclusions:
+  - target: All other canonical rows and original1879-case/1022-origin campaign scope
+    reason: Their decisions, holds and scientific requirements remain unchanged.
+  - target: New generated SSSOM rows, source identity bindings, roles, supplied preparations
+      and KG projection
+    reason: These require their own actual content-bound reviews after generation;
+      this review cannot approve them.
+  - target: Canonical REMOVE_WITH_HISTORY publication and release
+    reason: A diagnostic omission is not canonical retirement or publication authority.
+targets:
+- kind: snapshot_row
+  label: d-limonene
+  owner_paths:
+  - path: data/ingredients/mapped/D-limonene.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0000862
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: e20eaf88a2910adab4206c1417259d329893adef9bf062c74548938a47e83e34
+  target_id: historical-cas-0000862
+- kind: snapshot_row
+  label: Furaltadone hydrochloride
+  owner_paths:
+  - path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0001139
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: a0a4a368f7d482049f6f974ee121694340b38f01bd445f961294527aefa5436e
+  target_id: historical-cas-0001139
+- kind: snapshot_row
+  label: Kanamycin sulfate
+  owner_paths:
+  - path: data/ingredients/mapped/Kanamycin_Sulfate.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0001389
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: 5a01e69641a01373d35b61df616e95d1945412f72492a6d0a82eb5d91466d84c
+  target_id: historical-cas-0001389
+- kind: snapshot_row
+  label: Methyl-2-Hydroxy-Phenylproprionate
+  owner_paths:
+  - path: data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0001639
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: 29d75285297cdeccc114afbb061ea40bc4c691296315aca94919153e31e5fc29
+  target_id: historical-cas-0001639
+- kind: snapshot_row
+  label: methylglyoxal
+  owner_paths:
+  - path: data/ingredients/mapped/Methylglyoxal.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0001663
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: ff3f820f0d4f25aba1f5682270fc90130f5f59764de19aa5237d12ef0c82ec38
+  target_id: historical-cas-0001663
+- kind: snapshot_row
+  label: Oxalic Acid
+  owner_paths:
+  - path: data/ingredients/mapped/Oxalic_Acid.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0001956
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: ba53370267773091a864466e54fac4be5727c1d6f95d0ac6653918e914df6367
+  target_id: historical-cas-0001956
+- kind: snapshot_row
+  label: S-adenosyl Homocysteine
+  owner_paths:
+  - path: data/ingredients/mapped/S-adenosyl_Homocysteine.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: Current permanent ingredient owner
+  path: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  selector: historical-cas-0002227
+  semantic_digest:
+    algorithm: sha256-canonical-json-v1
+    description: Complete diagnostic CAS disposition
+    sha256: 8133994f8129130382c857eed6782a35c71496dd2547845426108583f07ec338
+  target_id: historical-cas-0002227
+checks:
+- check_id: native-current-inspection
+  name: Current native inspection and exact full-row/owner/token endpoint readback
+  status: passed
+  required: true
+  summary: Actual root-owned S3 inspection/readback exited0 with152 pinned inputs.
+    Every complete row, current/committed owner, semantic target digest and exhaustive
+    invalid token occurrence matched; two corrected identities and five unchanged
+    predecessor owners were checked.
+  target_ids:
+  - historical-cas-0000862
+  - historical-cas-0001139
+  - historical-cas-0001389
+  - historical-cas-0001639
+  - historical-cas-0001663
+  - historical-cas-0001956
+  - historical-cas-0002227
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-campaign-adoption-worktree/.venv/bin/python3
+    -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/inspect_actual_seven_cas_primary_s3_v1.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - exact-current-readback
+  - full-claims
+  - source-verification
+- check_id: claim-specific-scientific-assessment
+  name: Seven claim-specific diagnostic evidence and hold assessments
+  status: passed
+  required: true
+  summary: Personally read all current owners/full rows, inherited negative history,
+    captured original source and relevant official database/manufacturer evidence.
+    The two omissions follow actual reviewed corrections; five retentions preserve
+    full payloads and uncertainty. No new network retrieval or repeated suite was
+    needed.
+  target_ids:
+  - historical-cas-0000862
+  - historical-cas-0001139
+  - historical-cas-0001389
+  - historical-cas-0001639
+  - historical-cas-0001663
+  - historical-cas-0001956
+  - historical-cas-0002227
+  evidence_ids:
+  - historical-packet
+  - hold-context
+  - original-culturebotht
+  - d-limonene-chebi
+  - d-limonene-duplicate
+  - sam-chebi
+  - sam-supplier
+evidence:
+- evidence_id: mapping-policy
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  locator: Permanent record identity; §§1–3
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Distinct ingredient scope, permanent identity, owner-specific rejected
+    aliases and non-identity mappings remain separate from diagnostic disposition.
+  snapshot_sha256: ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3
+- evidence_id: diagnostic-contract
+  kind: authority
+  reference: docs/REVIEWED_INVALID_CAS_DIAGNOSTICS.md
+  locator: Two supported diagnostic actions; publication separation
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: This opt-in route permits exact invalid-CAS diagnostic omission or mandatory
+    full-row retention/WITHHOLD; neither is canonical retirement or release approval.
+  snapshot_sha256: d6c0fa2df8abdd3f56bb74a683d2760096536ff0936ff7af1ba45e7a3f0ac564
+- evidence_id: full-claims
+  kind: record_content
+  reference: .temp/seven-cas-dispositions-claims-s3-v1/CLAIMS.json
+  locator: entries[all seven]
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact complete historical rows, current owners, actions, tokens and issue
+    holds assembled by the coordinator from the authored proposal procedure.
+  snapshot_sha256: e9d7d989ce3329dc72a627d2f58793d024908f85e70da5780d92c8287bebb7e5
+- evidence_id: historical-packet
+  kind: prior_review
+  reference: .temp/seven-cas-dispositions-claims-s3-v1/evidence/36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622/INPUTS.json
+  locator: entries[source_position in 953,1266,1548,1841,1868,2173,2487]
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Complete historical row/owner pins and inherited WITHHOLD decisions, retained
+    as history rather than newly positive support.
+  snapshot_sha256: 36bd9830ae9fdfdf9b03346df11f4d9360e3595ed1049c4ace3f43623dc6e622
+- evidence_id: exact-current-readback
+  kind: validation
+  reference: .temp/seven-cas-primary-native-s3-v1/FACTS.json
+  locator: entries[all seven]
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Actual read-only checks compare full canonical rows, current and committed
+    owner bytes, permanent IDs, explicit invalid tokens, source endpoint afterimages
+    and unchanged predecessor owners. Arithmetic demonstrates invalidity only.
+  snapshot_sha256: 67a6e0657d4c980b763d30e5ac93b092982e331571c28c6c4310e7ded8697ac3
+- evidence_id: source-endpoint
+  kind: validation
+  reference: .temp/cumulative-source-successor-endpoint-s3-v1/ENDPOINT.json
+  locator: /
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Actual selected completed source successor, whose native manifest and application
+    bind the exact reviewed two-owner corrections among fourteen operations.
+  snapshot_sha256: 3f00d30c7a4ea78f9b1b9eeb32ded044640e074ebd365f9589711230b35ba4ed
+- evidence_id: source-verification
+  kind: validation
+  reference: .temp/cumulative-source-successor-committed-verification-s3-v1/stdout.json
+  locator: status,current_identity,manifest_sha256
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Coordinator-owned current-head native verification reports COMPLETE_CURRENT_SOURCE_SUCCESSOR
+    at f4b6712d9b8a888c03389149283ee2b7d124bf13; this reviewer read its exact copied
+    bytes and did not rerun it.
+  snapshot_sha256: 626fae555154ee950330cd85d52e93cc387e68505907340c060220dc5089feb3
+- evidence_id: verification-copy
+  kind: validation
+  reference: .temp/cumulative-source-successor-committed-verification-s3-v1/COPY-RECEIPT.json
+  locator: files
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Exact byte-preserving copy provenance separates coordinator process ownership
+    from this reviewer’s evidence copying.
+  snapshot_sha256: 6453ded792ee455683a1a8b9922fce514810b3a7bdca71ea45658be0edbe6712
+- evidence_id: hold-context
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/HOLD-CONTEXT-ASSESSMENT.json
+  locator: entries
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Captured issue-context qualification preserves all seven historical holds
+    and distinguishes current invalid-token concerns from older stale reasoning.
+  snapshot_sha256: ad2904f131c6e3424ba32634b8d762cef49efbf696bd2e3c3fa1aa0aec0a44cb
+- evidence_id: issue-753
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/753-issue.json
+  locator: body
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Previously captured issue body; read here as scoped historical/current-context
+    evidence, without claiming a new network retrieval.
+  snapshot_sha256: a31170904f3e6e2dd60f24683d060183133943b6f2fd525d82e3708d9680124a
+- evidence_id: comments-753
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/753-comments.json
+  locator: all captured pages
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Complete comments captured with the issue context; original comment identities
+    and capture times remain in the raw bytes.
+  snapshot_sha256: 37e64053dd3f5ebb8599895524998edaf15fc2ebc2aeb0211ff7c666dca49b28
+- evidence_id: issue-887
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/887-issue.json
+  locator: body
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Previously captured issue body; read here as scoped historical/current-context
+    evidence, without claiming a new network retrieval.
+  snapshot_sha256: d958414a06df8bc817fbe8bdf993196e6706c13bb537bc7265988e1918b77b9f
+- evidence_id: comments-887
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/887-comments.json
+  locator: all captured pages
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Complete comments captured with the issue context; original comment identities
+    and capture times remain in the raw bytes.
+  snapshot_sha256: cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05
+- evidence_id: issue-902
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/902-issue.json
+  locator: body
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Previously captured issue body; read here as scoped historical/current-context
+    evidence, without claiming a new network retrieval.
+  snapshot_sha256: 3f66a23c1359a82099f114e7eabc97ddd6ecb42535af8cde74d245d76b19e347
+- evidence_id: comments-902
+  kind: prior_review
+  reference: .temp/seven-cas-current-hold-context-v1/live/902-comments.json
+  locator: all captured pages
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: Complete comments captured with the issue context; original comment identities
+    and capture times remain in the raw bytes.
+  snapshot_sha256: f32a8aa80e2df2ae691a771757cb49a31699def3287062f8c2bcd2b255aaf006
+- evidence_id: original-culturebotht
+  kind: primary_source
+  reference: .temp/cumulative-source-successor-inputs-s3-v2/evidence/76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9/compounds_to_cas.csv
+  locator: lines269,696,728
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: The raw source names d-limonene separately from D,L-limonene and explicitly
+    supplies Sigma A9384 plus the L-homocysteine synonym for the other correction.
+    The malformed original CAS strings remain evidence.
+  snapshot_sha256: 76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9
+- evidence_id: d-limonene-chebi
+  kind: database
+  reference: .temp/cumulative-source-successor-inputs-s3-v2/evidence/84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e/chebi-15382.json
+  locator: ascii_name,definition,names,default_structure,database_accessions
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Captured official three-star CHEBI:15382 defines (4R)-limonene and supports
+    the reviewed d-limonene scope.
+  snapshot_sha256: 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e
+- evidence_id: d-limonene-duplicate
+  kind: database
+  reference: .temp/cumulative-source-successor-inputs-s3-v2/evidence/6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69/chebi-748872.json
+  locator: stars,definition,names,default_structure
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: context_only
+  summary: The two-star ChEMBL-submitted entry has the same stereochemical InChI but
+    mixed DL synonym baggage; no alternative source identity or synonym import is
+    inferred.
+  snapshot_sha256: 6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69
+- evidence_id: sam-chebi
+  kind: database
+  reference: .temp/cumulative-source-successor-inputs-s3-v2/evidence/c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82/chebi-16680.json
+  locator: ascii_name,definition,names,default_structure,database_accessions
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Captured official CHEBI:16680 identifies the L-homocysteine derivative;
+    the sulfur S locant is not treated as stereochemical evidence.
+  snapshot_sha256: c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82
+- evidence_id: sam-supplier
+  kind: primary_source
+  reference: .temp/cumulative-source-successor-inputs-s3-v2/evidence/aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb/web-primary.txt
+  locator: Sigma A9384 product-information capture, lines0–6
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: The captured manufacturer sheet names S-(5-prime-adenosyl)-L-homocysteine,
+    product A9384 and CAS979-92-0, corroborating the explicit source catalogue entry.
+  snapshot_sha256: aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb
+- evidence_id: owner-0000862
+  kind: record_content
+  reference: data/ingredients/mapped/D-limonene.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 30795b5e4f80ed6f88821c5532a64ecc8c883f8133bef86c024d637479340751
+- evidence_id: owner-0001139
+  kind: record_content
+  reference: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 7be5ca1c837dc8003680e81d72df056fbf2e69bf8c44e0208c682abef747d0e1
+- evidence_id: owner-0001389
+  kind: record_content
+  reference: data/ingredients/mapped/Kanamycin_Sulfate.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 445218d5336935d0186a08073985d850b2864dfe36d0ac0a334fbe0fbe089351
+- evidence_id: owner-0001639
+  kind: record_content
+  reference: data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 25cbb95675ee8660b42cafbc1bfc8759e77c4e1444e78726f08e9e4aa8946d2e
+- evidence_id: owner-0001663
+  kind: record_content
+  reference: data/ingredients/mapped/Methylglyoxal.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 500cc73f11811daf04ee8b806bb3b5f23ac2ad078f9f44705dc36bbe2ab4723f
+- evidence_id: owner-0001956
+  kind: record_content
+  reference: data/ingredients/mapped/Oxalic_Acid.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 427316df263ab014e9caa79523272728d39884dcb7ac5e842acd87cb42b34f25
+- evidence_id: owner-0002227
+  kind: record_content
+  reference: data/ingredients/mapped/S-adenosyl_Homocysteine.yaml
+  locator: entire record
+  accessed_at: '2026-11-12T19:28:20.528991Z'
+  support: supports
+  summary: Exact current committed owner bytes, primary and ontology assertions, chemistry,
+    stable ID, aliases and complete curation history.
+  snapshot_sha256: 87f6cae9492263adda19083a21fc6143705371eeab0875d105a00199c0778dff
+assessments:
+- assessment_id: diagnostic-0000862
+  area: identity
+  topic: 'D-limonene: retire only the disproved historical CAS identity'
+  outcome: supported
+  summary: The committed S3 owner rejects cas:138-86-7 while preserving MIM:0000862
+    and its genuine slug. I read the raw source lines separating d-limonene from the
+    D,L-limonene entry. Captured three-star CHEBI:15382 explicitly defines the R form
+    and CAS5989-27-5; the two-star duplicate has the same stereochemical InChI but
+    mixed DL names, which are not imported. These primary observations and the completed
+    source correction support only diagnostic omission of the exact old invalid CAS
+    row, preserving all historical holds.
+  target_ids:
+  - historical-cas-0000862
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0000862
+  - original-culturebotht
+  - d-limonene-chebi
+  - d-limonene-duplicate
+  - source-endpoint
+  - source-verification
+  dimensions:
+  - name: cas_disposition
+    value: RETIRE_INVALID_CAS
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  - name: hold_disposition
+    value: RETIRED_WITH_HISTORY
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  - name: permanent_mim_id
+    value: MIM:0000862
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0000862
+    - original-culturebotht
+    - d-limonene-chebi
+    - d-limonene-duplicate
+    - source-endpoint
+    - source-verification
+  details: The old full row, invalid tokens, negative review and all original source/role
+    holds remain history. This does not approve a new generated row, canonical REMOVE_WITH_HISTORY,
+    source binding, purchased preparation or role.
+- assessment_id: diagnostic-0001139
+  area: identity
+  topic: 'Furaltadone hydrochloride: retain exact ontology row under WITHHOLD'
+  outcome: supported
+  summary: 'The current full row is already exact NCIT:C217928; the old narrow-match
+    complaint is historical as #902 records. The byte-identical current owner still
+    carries invalid CAS:3759-92-1. Retain the complete diagnostic row under WITHHOLD
+    with both the current invalid-annotation reason and the old recorded explanation.
+    This does not recertify the NCIT mapping or preparation.'
+  target_ids:
+  - historical-cas-0001139
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0001139
+  - issue-887
+  - issue-902
+  - comments-902
+  - hold-context
+  dimensions:
+  - name: cas_disposition
+    value: RETAIN_INVALID_CAS_WITHHOLD
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  - name: hold_disposition
+    value: WITHHOLD
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  - name: permanent_mim_id
+    value: MIM:0001139
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001139
+    - issue-887
+    - issue-902
+    - comments-902
+    - hold-context
+  details: Preserve the validly shaped NCIT object, hydrochloride scope, original
+    provenance and every unresolved source/preparation/role claim. This diagnostic
+    retention does not scientifically recertify the ontology mapping or infer a corrected
+    CAS.
+- assessment_id: diagnostic-0001389
+  area: identity
+  topic: 'Kanamycin sulfate: retain sulfate-scoped row and provisional role hold'
+  outcome: supported
+  summary: Current owner and row match the frozen predecessor, retaining sulfate-scoped
+    CHEBI:6109, synonyms and invalid CAS:25839-94-0. SELECTIVE_AGENT remains provisional
+    computational evidence. Retain the whole diagnostic row WITHHOLD. Arithmetic proves
+    invalidity only, not a transposition or a replacement CAS; no sulfate/free-base
+    collapse or role/source approval follows.
+  target_ids:
+  - historical-cas-0001389
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0001389
+  - issue-887
+  - hold-context
+  dimensions:
+  - name: cas_disposition
+    value: RETAIN_INVALID_CAS_WITHHOLD
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  - name: hold_disposition
+    value: WITHHOLD
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  - name: permanent_mim_id
+    value: MIM:0001389
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001389
+    - issue-887
+    - hold-context
+  details: No free-base collapse, CAS repair, role approval, source-binding acceptance
+    or payload scrub. The full historical validation/source vocabulary remains evidence,
+    not a new positive stamp.
+- assessment_id: diagnostic-0001639
+  area: identity
+  topic: 'Methyl-2-Hydroxy-Phenylproprionate: unresolved identity remains withheld'
+  outcome: supported
+  summary: 'The unchanged owner and full row retain cas:89471-28-0 in identity and
+    annotation. The later #753 decision requires unchanged/WITHHOLD and governs over
+    the old positive history. Missing source locants and stereochemical information
+    remain unresolved. Retain the exact negative diagnostic record without guessing
+    a number or ontology identity; its stable MIM ID supplies no new scientific support.'
+  target_ids:
+  - historical-cas-0001639
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0001639
+  - issue-753
+  - comments-753
+  - hold-context
+  dimensions:
+  - name: cas_disposition
+    value: RETAIN_INVALID_CAS_WITHHOLD
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  - name: hold_disposition
+    value: WITHHOLD
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  - name: permanent_mim_id
+    value: MIM:0001639
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001639
+    - issue-753
+    - comments-753
+    - hold-context
+  details: No guessed ontology, replacement CAS, placeholder, alias rewrite or automatic
+    source approval from the existing permanent MIM ID. Both earlier positive and
+    later negative history remain visible, with the later hold governing.
+- assessment_id: diagnostic-0001663
+  area: identity
+  topic: 'Methylglyoxal: retain exact ontology row with invalid annotation withheld'
+  outcome: supported
+  summary: The unchanged CHEBI:17158 row retains 2-Oxopropanal and invalid CAS:79-98-8.
+    Keep every cell under WITHHOLD, preserving source annotations and wrong-CAS history.
+    This does not endorse the ontology target anew, delete the invalid token, or infer
+    a neat/solution preparation, concentration, supplier or FEBA stress role.
+  target_ids:
+  - historical-cas-0001663
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0001663
+  - issue-887
+  - hold-context
+  dimensions:
+  - name: cas_disposition
+    value: RETAIN_INVALID_CAS_WITHHOLD
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  - name: hold_disposition
+    value: WITHHOLD
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  - name: permanent_mim_id
+    value: MIM:0001663
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001663
+    - issue-887
+    - hold-context
+  details: Preserve FEBA/Hans80 and chemistry provenance without inferring stress-response
+    role, neat versus solution material, concentration, lot or source identity.
+- assessment_id: diagnostic-0001956
+  area: identity
+  topic: 'Oxalic acid: retain ontology row without guessing supplied form'
+  outcome: supported
+  summary: The current owner and complete CHEBI:16995 row remain exact predecessor
+    bytes including invalid CAS:144-62-1. Retain that whole diagnostic backlog and
+    its unresolved annotation. A failed check digit cannot authorize a CAS replacement
+    or ontology retirement; stored formula and structure do not establish supplied
+    hydration.
+  target_ids:
+  - historical-cas-0001956
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0001956
+  - issue-887
+  - hold-context
+  dimensions:
+  - name: cas_disposition
+    value: RETAIN_INVALID_CAS_WITHHOLD
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  - name: hold_disposition
+    value: WITHHOLD
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  - name: permanent_mim_id
+    value: MIM:0001956
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0001956
+    - issue-887
+    - hold-context
+  details: No hydration inference from formula or molecular weight, no whole-record
+    recertification, and no source-binding approval. The original negative evidence
+    and source provenance remain.
+- assessment_id: diagnostic-0002227
+  area: identity
+  topic: 'S-adenosyl Homocysteine: retire only the disproved historical CAS identity'
+  outcome: supported
+  summary: The committed S3 owner rejects cas:9789-92-0 and preserves MIM:0002227,
+    slug and explicit L-homocysteine synonym. I checked original Sigma A9384 source
+    line696, captured manufacturer sheet and official CHEBI:16680 definition/CAS979-92-0;
+    together they support the completed L-material correction. L identity is not inferred
+    from sulfur S. Only diagnostic omission of the old invalid CAS row is supported;
+    full historical negative lineage and separate publication/source/form/role gates
+    remain.
+  target_ids:
+  - historical-cas-0002227
+  evidence_ids:
+  - mapping-policy
+  - diagnostic-contract
+  - full-claims
+  - historical-packet
+  - exact-current-readback
+  - owner-0002227
+  - original-culturebotht
+  - sam-chebi
+  - sam-supplier
+  - source-endpoint
+  - source-verification
+  dimensions:
+  - name: cas_disposition
+    value: RETIRE_INVALID_CAS
+    definition: Supported diagnostic action only.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  - name: diagnostic_scope
+    value: diagnostic_candidate_only
+    definition: No canonical publication or release authority.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  - name: hold_disposition
+    value: RETIRED_WITH_HISTORY
+    definition: Held rows remain WITHHOLD; diagnostic retirement preserves full historical
+      assertion and inherited negative history.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  - name: permanent_mim_id
+    value: MIM:0002227
+    definition: Existing permanent concept identity is retained; no ID is minted,
+      merged, split or retired.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  - name: inherited_scientific_disposition
+    value: WITHHOLD
+    definition: No earlier negative scientific or source-binding hold is promoted
+      by this diagnostic review.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  - name: whole_row_and_token_scope
+    value: exact_full_historical_row_and_exhaustive_invalid_tokens
+    definition: Every field and listed invalid CAS occurrence is bound, not only subject/object/predicate.
+    evidence_ids:
+    - mapping-policy
+    - diagnostic-contract
+    - full-claims
+    - historical-packet
+    - exact-current-readback
+    - owner-0002227
+    - original-culturebotht
+    - sam-chebi
+    - sam-supplier
+    - source-endpoint
+    - source-verification
+  details: Retain the full invalid historical row and all inherited WITHHOLD history.
+    This is no canonical retirement, positive export, role, purity, hydrate, salt,
+    concentration, occurrence or source-binding approval.
+findings: []
+actions: []
+limitations:
+- This review supports diagnostic actions only. All seven inherited WITHHOLD decisions
+  and broader source/form/role/suppression obligations remain history/in force; no
+  new positive mapping or source identity is granted.
+- The five held owners were not recertified against fresh supplier/ontology research;
+  their exact negative-evidence scope is deliberately retained. The two corrected
+  identities use the captured primary evidence and actual completed native source
+  endpoint, not guessed checksum repairs.
+- Captured issue bodies/comments retain their original timestamps; no fresh network
+  retrieval is claimed. Old Furaltadone predicate rationale is qualified as historical,
+  and Kanamycin transposition is not inferred from arithmetic.
+- The earlier S2 report format is reused transparently after my actual current S3
+  evidence review; current inspection, judgments and execution attribution belong
+  to /root. The original scientific and procedure authors remain in retained evidence.
+  No old report is restamped.
+- Native validate/save and a shared collection check follow this authored document;
+  no unexecuted result is represented as passed inside the review. Separate independent
+  skeptical review and actual generation/publication gates remain required.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/753
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/887
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/902
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1381
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1382
+```

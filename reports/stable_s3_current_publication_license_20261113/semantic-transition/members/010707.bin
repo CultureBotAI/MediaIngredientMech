@@ -1,0 +1,71 @@
+{
+  "finding_id": "MATERIALS-ROOT1193-F03",
+  "reviewer": "/root/materials_research",
+  "created_at": "2026-11-08T05:52:39.916954+00:00",
+  "reviewed_inputs": {
+    "decisions.json": "0a461b89f5d623aa493a7fb4949edfece6d667e232a9fcc1fe492ee4f0ca2c95",
+    "evidence.json": "c490efbf2ce3294b376a9c69fa124b49d02c540e1a988ee5d990af458ad2ea7e",
+    "proposals.json": "d4490c3a6023ce3c57f492272a146b44318e3ad62964a7d12ac74e81c5414c33"
+  },
+  "status": "open",
+  "severity": "blocking",
+  "finding": "Source-qualified new aliases routed through narrower inherited MICRO municipal-sludge and cow-rumen identities without primary municipal/cow origin. Curate real source preparations but do not add unverified narrowed origin; inspect existing occurrences to avoid duplicate owners.",
+  "exact_initial_payloads": [
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-sludge119",
+        "case_ids": [
+          "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429"
+        ],
+        "description": "DSMZ119 prepares sludgefluid by incubating4gyeastextract in1Lanaerobicdigester sludge at37C24h, centrifuging13000g, thenautoclaving supernatant. Rawassignedlabel explicitly saysmedium119. Currentgenericowneroccurrences includeDSMZ119/TOGO3148 andJCM872 plusTOGO2596; this boundedsourcealias does not assert alluse the119process orquantities.",
+        "evidence_ids": [
+          "ROOT-dsmz-119",
+          "R1193-OWNER-Sludge_fluid",
+          "R1193-current-full-owner-contexts",
+          "R1193-current-occurrence-comparison",
+          "R1193-ols-sludge"
+        ],
+        "owner_path": "data/ingredients/mapped/Sludge_fluid.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c",
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Sludge_fluid.yaml",
+          "sha256": "a31ecf89c58887e0fb319ea0e7005a32f44b6999acd7fb57fe23ce4e9b6f8191"
+        },
+        "identity_consequence": "Existingprocessedbiologicalfluididentityretained; exactsourcequalifieradded",
+        "predicate_consequence": "Noidentityorpredicatechange; boundedaliasnotwholeownerapproval",
+        "publication_obligations": "Retain allholds; independentlyreviewallotherowneroccurrencesbeforeintegratedrelease."
+      },
+      "after_yaml": "identifier: MICRO:0000521\npreferred_term: Sludge fluid\nontology_mapping:\n  ontology_id: MICRO:0000521\n  ontology_label: sludge fluid\n  ontology_source: MICRO\n  mapping_quality: EXACT_MATCH\n  match_level: EXACT\n  evidence:\n  - evidence_type: LEXICAL_MATCH\n    source: culturemech:output/ingredient_occurrences.tsv\n    notes: Surface form appears in CultureMech's occurrence table and was grounded\n      to MICRO:0000521 on an exact match against the ontology label. Restored from\n      the record's own creation history (#541); the residual importer wrote this provenance\n      only into the published SSSOM.\n  - evidence_type: MANUAL_CURATION\n    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf\n    notes: DSMZ119 prepares sludgefluid by incubating4gyeastextract in1Lanaerobicdigester\n      sludge at37C24h, centrifuging13000g, thenautoclaving supernatant. Rawassignedlabel\n      explicitly saysmedium119. Currentgenericowneroccurrences includeDSMZ119/TOGO3148\n      andJCM872 plusTOGO2596; this boundedsourcealias does not assert alluse the119process\n      orquantities.\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 2\n  media_count: 2\ncuration_history:\n- timestamp: '2026-08-30T10:35:03.361102+00:00'\n  curator: claude_culturemech_residual_grounding\n  action: CREATED_FROM_CULTUREMECH_RESIDUAL\n  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (2\n    mentions across 2 recipes). Grounded to MICRO:0000521 (''sludge fluid'') on an\n    exact match of the canonical label to the query ''Sludge fluid''. Source: culturemech:output/ingredient_occurrences.tsv.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-08-30T10:41:26.546472+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''Sludge fluid (see below)'' (x1 CultureMech mentions). Source:\n    culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\n- timestamp: '2026-09-06T07:34:56.956907+00:00'\n  curator: claude_restore_culturemech_evidence\n  action: CORRECTED\n  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table\n    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL\n    history entry but absent from the structured field the SSSOM builder reads, so\n    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published\n    row (#541).\n  llm_assisted: false\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: ADDED_SYNONYMS\n  changes: DSMZ119 prepares sludgefluid by incubating4gyeastextract in1Lanaerobicdigester\n    sludge at37C24h, centrifuging13000g, thenautoclaving supernatant. Rawassignedlabel\n    explicitly saysmedium119. Currentgenericowneroccurrences includeDSMZ119/TOGO3148\n    andJCM872 plusTOGO2596; this boundedsourcealias does not assert alluse the119process\n    orquantities. Isolatedboundedproposal; wholeownerexportholdsremain.\n  previous_status: MAPPED\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\nsynonyms:\n- synonym_text: Sludge fluid (see below)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Sludge fluid (medium 119)\n  synonym_type: RAW_TEXT\n  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf; explicitsourcequalifiedprocess,notuniversalmethod\nnotes: ' Correction1193: DSMZ119 prepares sludgefluid by incubating4gyeastextract\n  in1Lanaerobicdigester sludge at37C24h, centrifuging13000g, thenautoclaving supernatant.\n  Rawassignedlabel explicitly saysmedium119. Currentgenericowneroccurrences includeDSMZ119/TOGO3148\n  andJCM872 plusTOGO2596; this boundedsourcealias does not assert alluse the119process\n  orquantities. Other sourceoccurrences and allinheritedholds remain unapproved; no\n  blanketcomposition orrawfluid equivalence.'\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-clarifiedrumen266",
+        "case_ids": [
+          "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+        ],
+        "description": "JCM1423/1424 explicitly use clarifiedrumenfluid fromJCM266, whose process heats120C15min then25000g15min andcollects supernatant. Add the exactsourcequalifiedrawlabel to existingMICRO0000520 owner; do not redefineallclarifiedrumenfluid as thisprotocol or merge it with unprocessedUBERONrumenfluid.",
+        "evidence_ids": [
+          "ROOT-jcm-266",
+          "R1193-OWNER-Clarified_rumen_fluid",
+          "R1193-current-full-owner-contexts",
+          "R1193-current-occurrence-comparison",
+          "R1193-ols-clarified-rumen"
+        ],
+        "owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Clarified_rumen_fluid.yaml",
+          "sha256": "64c2d1ed867ad56163c410403f52bc357234476b52a7e1030e4c599df34bfa49"
+        },
+        "identity_consequence": "Existingprocessedbiologicalfluididentityretained; exactsourcequalifieradded",
+        "predicate_consequence": "Noidentityorpredicatechange; boundedaliasnotwholeownerapproval",
+        "publication_obligations": "Retain allholds; independentlyreviewallotherowneroccurrencesbeforeintegratedrelease."
+      },
+      "after_yaml": "identifier: MICRO:0000520\npreferred_term: Clarified rumen fluid\nontology_mapping:\n  ontology_id: MICRO:0000520\n  ontology_label: clarified rumen fluid\n  ontology_source: MICRO\n  mapping_quality: EXACT_MATCH\n  match_level: EXACT\n  evidence:\n  - evidence_type: LEXICAL_MATCH\n    source: culturemech:output/ingredient_occurrences.tsv\n    notes: Surface form appears in CultureMech's occurrence table and was grounded\n      to MICRO:0000520 on an exact match against the ontology label. Restored from\n      the record's own creation history (#541); the residual importer wrote this provenance\n      only into the published SSSOM.\n  - evidence_type: MANUAL_CURATION\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266\n    notes: JCM1423/1424 explicitly use clarifiedrumenfluid fromJCM266, whose process\n      heats120C15min then25000g15min andcollects supernatant. Add the exactsourcequalifiedrawlabel\n      to existingMICRO0000520 owner; do not redefineallclarifiedrumenfluid as thisprotocol\n      or merge it with unprocessedUBERONrumenfluid.\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 6\n  media_count: 6\ncuration_history:\n- timestamp: '2026-08-30T10:35:03.361102+00:00'\n  curator: claude_culturemech_residual_grounding\n  action: CREATED_FROM_CULTUREMECH_RESIDUAL\n  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (6\n    mentions across 6 recipes). Grounded to MICRO:0000520 (''clarified rumen fluid'')\n    on an exact match of the canonical label to the query ''Clarified rumen fluid''.\n    Source: culturemech:output/ingredient_occurrences.tsv.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-09-06T07:34:56.956907+00:00'\n  curator: claude_restore_culturemech_evidence\n  action: CORRECTED\n  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table\n    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL\n    history entry but absent from the structured field the SSSOM builder reads, so\n    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published\n    row (#541).\n  llm_assisted: false\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: ADDED_SYNONYMS\n  changes: JCM1423/1424 explicitly use clarifiedrumenfluid fromJCM266, whose process\n    heats120C15min then25000g15min andcollects supernatant. Add the exactsourcequalifiedrawlabel\n    to existingMICRO0000520 owner; do not redefineallclarifiedrumenfluid as thisprotocol\n    or merge it with unprocessedUBERONrumenfluid. Isolatedboundedproposal; wholeownerexportholdsremain.\n  previous_status: MAPPED\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\nsynonyms:\n- synonym_text: Rumen fluid, clarified (see Medium No. 266)\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266; explicitsourcequalifiedprocess,notuniversalmethod\nnotes: ' Correction1193: JCM1423/1424 explicitly use clarifiedrumenfluid fromJCM266,\n  whose process heats120C15min then25000g15min andcollects supernatant. Add the exactsourcequalifiedrawlabel\n  to existingMICRO0000520 owner; do not redefineallclarifiedrumenfluid as thisprotocol\n  or merge it with unprocessedUBERONrumenfluid. Other sourceoccurrences and allinheritedholds\n  remain unapproved; no blanketcomposition orrawfluid equivalence.'\n"
+    }
+  ]
+}

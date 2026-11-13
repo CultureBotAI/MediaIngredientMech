@@ -1,0 +1,127 @@
+identifier: kgmicrobe.ingredient:s6_medium
+preferred_term: S6 liquid medium (JCM 90)
+synonyms:
+- synonym_text: S6 medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named S6 medium/formulation and left unmapped pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/S6_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: **Recommended interpretation:** “S6 medium” is a **named culture-medium formulation**, not
+    a single chemical, salt/hydrate, buffer molecule, extract, or generic medium-component family. The
+    strongest retrievable lineage is its use as an **S6 liquid medium for *Bacillus subtilis***, with
+    the formulation attributed to Fujita and Freese (1981). A later paper explicitly distinguishes S6
+    from tryptose  No ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE
+    above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote source-defined JCM90 preparation and transcribe one-level inputs. JCM90 printed liquid
+    formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional
+    solid variant and is not a component of this liquid preparation; xH2O and stock percentage remain
+    unspecified. Source-batch amounts do not infer a measured final volume. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match.
+  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193 source
+  clarification: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate and
+  bicarbonate. Agar15g/L is an optional solid variant and is not a component of this liquid preparation;
+  xH2O and stock percentage remain unspecified. Source-batch amounts do not infer a measured final volume.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:s6_medium
+  ontology_label: S6 liquid medium (JCM 90)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+    notes: All exact current owner occurrences trace to JCM90. JCM90 printed liquid formula is the S6
+      base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional solid variant
+      and is not a component of this liquid preparation; xH2O and stock percentage remain unspecified.
+      Source-batch amounts do not infer a measured final volume.
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.8'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: FeCl3.6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: MnSO4.xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: CaCl2.2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '40.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: 10% Na2S2O3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '900.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+    source_record: JCM90
+    notes: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate.
+      Agar15g/L is an optional solid variant and is not a component of this liquid preparation; xH2O and
+      stock percentage remain unspecified. Source-batch amounts do not infer a measured final volume.

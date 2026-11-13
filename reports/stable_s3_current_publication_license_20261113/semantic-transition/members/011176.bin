@@ -1,0 +1,280 @@
+identifier: kgmicrobe.ingredient:graces_insect_medium
+preferred_term: Grace's insect medium (Sigma G8142, 1x)
+synonyms:
+- synonym_text: Grace's Insect Medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1382); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Grace's insect medium/formulation and left unmapped pending recipe-level
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Graces_Insect_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: | Recommendation | No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE
+    above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:39:58.554862+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote existing source1382 Grace owner to source-qualified Sigma G8142 1x product and add44
+    named UNMAPPED components with explicit three-entry formula uncertainty; no duplicate owner or generic
+    Grace equivalence. Isolated proposal only; whole-owner/source/export holds remain and integration
+    requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1382); no CAS-RN or CHEBI/NCIT match.
+  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193:
+  Source MediaDive ingredient1382 and both current CultureMech occurrences derive DSMZ1514, which explicitly
+  specifies Sigma G8142. Existing UNMAPPED0395 was imported solely from1382. Promote that existing owner
+  as the1x liquid basal product; no equivalence to G9771 powder, TNM-FH, serum-supplemented DSMZ1514 or
+  its separate storage buffer. Manufacturer versions disagree for phosphate, serine and tyrosine; this
+  does not block product identity. Partial partonomy records named ungrounded components without claiming
+  a complete lot formula. Existing occurrence statistics are preserved; the complete current occurrence
+  scan finds two source representations of DSMZ1514. Frozen900G_PER_L and900PERCENT_V_V conversions and
+  storage-buffer flattening are not endorsed.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:graces_insect_medium
+  ontology_label: Grace's insect medium (Sigma G8142, 1x)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1514.pdf
+    notes: Source MediaDive ingredient1382 and both current CultureMech occurrences derive DSMZ1514, which
+      explicitly specifies Sigma G8142. Existing UNMAPPED0395 was imported solely from1382. Promote that
+      existing owner as the1x liquid basal product; no equivalence to G9771 powder, TNM-FH, serum-supplemented
+      DSMZ1514 or its separate storage buffer.
+supplied_form:
+- name: Grace's Insect Medium
+  supplier: Sigma-Aldrich
+  catalog_number: G8142
+  form: 1x liquid, sterile-filtered
+  notes: Supplier product page explicitly lists liquid and0.35g/L sodium bicarbonate with0.6g/L L-glutamine.
+    G9771 powder is separate.
+components:
+- component_name: CaCl2 (anhydrous equivalent)
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: MgCl2 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '1.068189'
+  concentration_unit: G_PER_L
+- component_name: MgSO4 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '1.357858'
+  concentration_unit: G_PER_L
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '2.24'
+  concentration_unit: G_PER_L
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: beta-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: L-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.225'
+  concentration_unit: G_PER_L
+- component_name: L-Arginine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.7'
+  concentration_unit: G_PER_L
+- component_name: L-Asparagine
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Aspartic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Cystine 2HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamine
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G_PER_L
+- component_name: Glycine
+  reference_scope: UNMAPPED
+  concentration_value: '0.65'
+  concentration_unit: G_PER_L
+- component_name: L-Histidine
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: L-Isoleucine
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_L
+- component_name: L-Leucine
+  reference_scope: UNMAPPED
+  concentration_value: '0.075'
+  concentration_unit: G_PER_L
+- component_name: L-Lysine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.625'
+  concentration_unit: G_PER_L
+- component_name: L-Methionine
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_L
+- component_name: L-Phenylalanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G_PER_L
+- component_name: L-Proline
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Threonine
+  reference_scope: UNMAPPED
+  concentration_value: '0.175'
+  concentration_unit: G_PER_L
+- component_name: L-Tryptophan
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: L-Valine
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: D-Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00001'
+  concentration_unit: G_PER_L
+- component_name: Choline chloride
+  reference_scope: UNMAPPED
+  concentration_value: '0.0002'
+  concentration_unit: G_PER_L
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: myo-Inositol
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Niacin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: D-Pantothenic acid hemicalcium
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Pyridoxine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Thiamine
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Dextrose anhydrous
+  reference_scope: UNMAPPED
+  concentration_value: '0.7'
+  concentration_unit: G_PER_L
+- component_name: D-(-)-Fructose
+  reference_scope: UNMAPPED
+  concentration_value: '0.4'
+  concentration_unit: G_PER_L
+- component_name: Fumaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.055'
+  concentration_unit: G_PER_L
+- component_name: alpha-Ketoglutaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.37'
+  concentration_unit: G_PER_L
+- component_name: L-(-)-Malic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.67'
+  concentration_unit: G_PER_L
+- component_name: Succinic acid free acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.06'
+  concentration_unit: G_PER_L
+- component_name: Sucrose
+  reference_scope: UNMAPPED
+  concentration_value: '26.68'
+  concentration_unit: G_PER_L
+- component_name: Sodium phosphate (form unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 formula says NaH2PO4 while earlier manufacturer formula says Na2HPO4(anhydrous),
+    both0.876923g/L. Retain named part without selecting protonation or quantity for an unidentified historical
+    lot.
+- component_name: Serine (stereochemistry and amount unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 formula lists L-serine0.550g/L; earlier formula lists DL-serine1.1g/L. No silent
+    substitution or version inference.
+- component_name: L-Tyrosine disodium (amount unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 G8142 column prints0.7202g/L versus earlier G8142 formula0.07202g/L. Quantity
+    withheld pending manufacturer correction or lot-specific evidence.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/172/423/g8142for.pdf
+    source_record: G8142 column,2018 formula
+    notes: Named formulation constituents; quantities are per liter1x product. Parts remain UNMAPPED.
+      Three disputed entries retain uncertainty; no complete historical-lot formula asserted.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.merckmillipore.com/deepweb/assets/sigmaaldrich/marketing/global/documents/174/355/graces_insect_media.pdf
+    source_record: G8142 liquid column
+    notes: Earlier manufacturer formula corroborates liquid product and most amounts but conflicts for
+      phosphate,serine and tyrosine quantities; those conflicts are explicitly preserved.

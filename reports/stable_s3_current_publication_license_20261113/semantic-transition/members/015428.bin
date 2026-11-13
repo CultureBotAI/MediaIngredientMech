@@ -1,0 +1,106 @@
+identifier: cas:157574-76-0
+preferred_term: 6'-O-sialyllactose sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:153372
+  ontology_label: 5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 157574-76-0 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="6''-O-sialyllactose
+      sodium salt"'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'').
+      As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The label names
+      6''-sialyllactose, and CHEBI:153372 carries the related synonyms "6''-sialyllactose"
+      and "6''SL"; it is the anomer-unspecified D-glucopyranose form, so it is the
+      closest broader term for the salt. cas:157574-76-0 identity, NARROW_MATCH grade
+      and both registry rows unchanged (Section 3 step 2, #245).'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:157574-76-0 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.975107+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:34.760975+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C23H38NNaO19; smiles=CC(=O)NC1C(CC(OC1C(C(CO)O)O)(C(=O)[O-])OCC2C(C(C(C;
+    inchi=InChI=1S/C23H39NO19.Na/c1-7(28)24-13-8(29)2-23(22(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.190563+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:38:52.159360+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.733686+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-22T23:25:51.038995+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'')
+    (#312). As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The label
+    names 6''-sialyllactose, and CHEBI:153372 carries the related synonyms "6''-sialyllactose"
+    and "6''SL"; it is the anomer-unspecified D-glucopyranose form, so it is the closest
+    broader term for the salt. cas:157574-76-0 identity, NARROW_MATCH grade and both
+    registry rows unchanged (Section 3 step 2, #245).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000220; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 157574-76-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C23H38NNaO19
+  smiles: CC(=O)NC1C(CC(OC1C(C(CO)O)O)(C(=O)[O-])OCC2C(C(C(C(O2)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.[Na+]
+  inchi: InChI=1S/C23H39NO19.Na/c1-7(28)24-13-8(29)2-23(22(38)39,43-20(13)15(34)10(31)4-26)40-6-12-16(35)17(36)18(37)21(41-12)42-19(11(32)5-27)14(33)9(30)3-25;/h3,8-21,26-27,29-37H,2,4-6H2,1H3,(H,24,28)(H,38,39);/q;+1/p-1/t8-,9-,10+,11+,12+,13+,14+,15+,16-,17-,18+,19+,20+,21-,23+;/m0./s1
+  pubchem_cid: 132285181
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000220
+legacy_identifiers:
+- MIM:6-O-sialyllactose_Sodium_Salt
+- cas:157574-76-0

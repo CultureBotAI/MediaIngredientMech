@@ -1,0 +1,142 @@
+id: CultureMech:003150
+name: 1_10_r2a_broth
+original_name: 1/10 R2A BROTH
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: JCM Medium J805
+  term:
+    id: mediadive.medium:J805
+    label: 1/10 R2A BROTH
+notes: 1:10 diluted R2A broth (0.32 g dehydrated R2A broth powder dissolved in 1.0
+  L distilled water, adjusted to pH 7.2, and autoclaved at 121 °C for 15 min). Retain
+  1.0 L distilled water batch volume in ingredients[1] for JCM J805 provenance compatibility.
+  Cross-linked to canonical full-strength R2A Broth (CultureMech:003183).
+ingredients:
+- preferred_term: R2A broth (DAIGO) (Nihon Pharm. Co.)
+  concentration:
+    value: '0.32'
+    unit: G_PER_L
+  source: JCM Medium 805
+  notes: 'JCM Medium 805 lists 0.32 g R2A broth DAIGO in 1.0 L distilled water (1:10
+    dilution of JCM Medium 839 R2A Broth DAIGO premix, yielding per L: Yeast extract
+    0.05 g, Proteose peptone no. 3 0.05 g, Casamino acids 0.05 g, Glucose 0.05 g,
+    Soluble starch 0.05 g, Sodium pyruvate 0.03 g, K2HPO4 0.03 g, MgSO4 x 7 H2O 0.005
+    g).'
+  culturemech_term:
+    id: CultureMech:003183
+    label: R2A Broth
+  evidence:
+  - reference: https://www.bacmedia.dsmz.de/pdf/J805
+    supports: SUPPORT
+    snippet: R2A Broth (DAIGO) (Nihon Pharm. Co.) 0.32 g
+    explanation: 'ingredients[0].concentration: PDF page 1, broth row and heading
+      "Final volume: 1000 ml". 0.32 g / 1 L = 0.32 g/L. This record identifies the
+      JCM 805 formulation; no amount changed.'
+- preferred_term: Distilled water
+  concentration:
+    value: '1.0'
+    unit: L
+  source: JCM Medium 805
+  notes: JCM Medium 805 lists 1.0 L distilled water (batch preparation solvent volume).
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+  evidence:
+  - reference: https://www.bacmedia.dsmz.de/pdf/J805
+    supports: SUPPORT
+    snippet: Distilled water 1000.00 ml
+    explanation: 'ingredients[1].concentration: PDF page 1, water row. 1000.00 ml
+      / 1000 = 1.0 L preparation water; retain volume unit. This record identifies
+      the JCM 805 formulation; no amount changed.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:17.649526Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J805'
+- timestamp: '2026-03-13T06:19:18.145594Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:003150'
+- timestamp: '2026-03-17T19:45:31.960642+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "1/10 R2A BROTH" to "1_10_r2a_broth" for consistent
+    matching
+- timestamp: '2026-09-06T00:00:00-07:00'
+  curator: repair_r2a_score40.py
+  action: RESOLVED_R2A_SCORE40_GRAPH
+  changes: Resolved score-40 JCM/TOGO R2A recipe graph
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=805; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+  notes: JCM Medium 805 lists 0.32 g R2A broth DAIGO per 1.0 L distilled water; this
+    is a 1:10 dilution of the JCM Medium 839 R2A Broth DAIGO premix.
+- timestamp: '2026-09-06T00:00:00-07:00'
+  curator: repair_r2a_score40.py
+  action: LINKED_R2A_SCORE40_CHILDREN
+  changes: Linked score-40 JCM/TOGO R2A variants
+  notes: Added or refreshed bacterial/TOGO_M840_1_10_R2A_Broth.yaml as a child of
+    bacterial/1_10_r2a_broth.yaml.
+- timestamp: '2026-10-07T07:16:23Z'
+  curator: codex
+  action: CURATED_CONCENTRATION_EVIDENCE
+  notes: Exact source snippets and claim-specific calculations attached in YAML. Batch
+    volumes remain separate from stock strengths. Unresolved final-volume claims were
+    not altered.
+  source: https://www.bacmedia.dsmz.de/pdf/J805
+  changes: 'ingredients[0].concentration (R2A broth (DAIGO) (Nihon Pharm. Co.)): retained
+    0.32 G_PER_L; attached exact JCM 805 amount and volume-basis evidence; ingredients[1].concentration
+    (Distilled water): retained 1.0 L; attached exact JCM 805 amount and volume-basis
+    evidence'
+- timestamp: '2026-10-21T03:04:47.838499+00:00'
+  curator: stage5-remediation-v1.0
+  action: CURATED
+  notes: 'Resolved Stage 4 findings CM-C1S4-001 and CM-C1S4-002 on CultureMech:003150
+    (Issues #634, #645).'
+  changes: 'Normalized name to 1_10_r2a_broth, retained 1.0 L Distilled water batch
+    volume in ingredients[1] for JCM J805 provenance compatibility, linked R2A broth
+    (DAIGO) to CultureMech:003183 with 1:10 constituent breakdown note, and added pH/sterilization
+    fields (#634, #645).'
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve 0.32 g R2A broth (DAIGO) in 1.0 L distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=805
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+- reference: https://www.bacmedia.dsmz.de/pdf/J805
+  title: '805: 1/10 R2A BROTH'
+  notes: source_type=culture_collection_page; discovery_mode=existing_record_reference;
+    accessed_on=2026-10-07; locator=PDF page 1; JCM-attributed recipe; source_organization=JCM
+    (PDF hosted by DSMZ BacMedia); individual authors and publication year not stated;
+    copyright year is not a publication date.
+parent_media:
+  path: data/normalized_yaml/bacterial/r2a_broth.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:003183
+  name: r2a_broth
+  notes: JCM Medium 805 uses 0.32 g/L R2A Broth DAIGO, a 1:10 dilution of R2A Broth.
+variant_relationship: CONCENTRATION_VARIANT
+variant_modifications:
+- Dilutes the R2A Broth DAIGO powder to 0.32 g/L in distilled water.
+variant_children:
+- path: data/normalized_yaml/bacterial/TOGO_M840_1_10_R2A_Broth.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:010255
+  name: 1_10_r2a_broth
+  notes: TOGO M840 imports the same JCM Medium 805 formulation.
+ph_value: 7.2

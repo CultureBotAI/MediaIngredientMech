@@ -1,0 +1,150 @@
+identifier: CHEBI:64243
+preferred_term: Na-glutamate
+ontology_mapping:
+  ontology_id: CHEBI:64243
+  ontology_label: monosodium L-glutamate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Nitrogen source; Properties: Simple component, Organic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (2S)-2-aminopentanedioate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: L-glutamic acid dianion
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: L-glutamate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:38.626229+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:16177-21-2 from PubChem API (preprocessed) via name preprocessing
+    (Na-glutamate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (2S)-2-aminopentanedioate,
+    L-glutamic acid dianion'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:35.027523+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.088121+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H7NO4; inchi=InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2;
+    smiles=N[C@@H](CCC(=O)[O-])C(=O)[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.811957+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112052+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+    nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'L-glutamate(2-)'; it matches the ChEBI
+    synonym '(2S)-2-aminopentanedioate' on CHEBI:29988. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: merge_salt_label_duplicates
+  action: MERGED_INTO
+  changes: Merged into CHEBI:64243 'Sodium L-glutamate'; occurrences transferred.
+    Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names — the
+    abbreviated `Na-` prefix is why the earlier merge pass missed it (#315).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:29988 -> CHEBI:64243 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Sodium L-glutamate''. Provenance is unaffected:
+    what the record used to assert is in this history.'
+  llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.561780+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''L-glutamate'' (EXACT_SYNONYM): the anion''s
+    name on the monosodium L-glutamate CHEBI:64243 tombstone (#232). The token is
+    kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+    other column.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.411293+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:64243 (Sodium_L-glutamate) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype L-glutamate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL
+    (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+- timestamp: '2026-11-01T03:18:16.205445+00:00'
+  curator: Codex
+  action: CORRECTED_PROVENANCE
+  changes: 'Correct the ontology accession in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION
+    rationale (#1023): CHEBI:29988 is L-glutamate(2-), whose IUPAC name is (2S)-2-aminopentanedioate
+    and whose synonyms include L-glutamic acid dianion (https://www.ebi.ac.uk/chebi/CHEBI:29988,
+    accessed 2026-11-01). The earlier CHEBI:29984 citation was incorrect. This corrects
+    the explanation only; the monosodium L-glutamate representative and both REJECTED_LABEL
+    dispositions are unchanged.'
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: GPT-6 (Codex)
+chemical_properties:
+  cas_rn: 16177-21-2
+  data_source: PubChem API (preprocessed)
+  retrieval_date: '2026-04-05T23:45:38.626218+00:00'
+  molecular_formula: C5H7NO4
+  inchi: InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/p-2/t3-/m0/s1
+  smiles: N[C@@H](CCC(=O)[O-])C(=O)[O-]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Nitrogen Source'
+representative: CHEBI:64243

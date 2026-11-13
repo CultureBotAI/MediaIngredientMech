@@ -1,0 +1,128 @@
+identifier: CHEBI:16919
+preferred_term: Creatine
+ontology_mapping:
+  ontology_id: CHEBI:16919
+  ontology_label: creatine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: ((amino(imino)methyl)(methyl)amino)acetic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (N-methylcarbamimidamido)acetic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (alpha-methylguanido)acetic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Creatin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Kreatin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Methylglycocyamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-(aminoiminomethyl)-N-methylglycine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-Methyl-N-guanylglycine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-[(E)-AMINO(IMINO)METHYL]-N-METHYLGLYCINE
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-[amino(imino)methyl]-N-methylglycine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-amidinosarcosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-carbamimidoyl-N-methylglycine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: alpha-Methylguanidino acetic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:34.182159+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:57-00-1 from PubChem API via name lookup (Creatine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 13 synonyms from kg-microbe P4.4 enrichment: ((amino(imino)methyl)(methyl)amino)acetic
+    acid, (N-methylcarbamimidamido)acetic acid, (alpha-methylguanido)acetic acid,
+    Creatin, Kreatin, ... (8 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.913791+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.798358+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H9N3O2; inchi=InChI=1S/C4H9N3O2/c1-7(4(5)6)2-3(8)9/h2H2,1H3,(H3,;
+    smiles=CN(CC(=O)O)C(=N)N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.545790+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.745875+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Creatine'' -> ''creatine'': synced to canonical CHEBI
+    label (preferred_term ''Creatine'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.518620+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 6/6 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000763; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 57-00-1
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:34.182116+00:00'
+  molecular_formula: C4H9N3O2
+  inchi: InChI=1S/C4H9N3O2/c1-7(4(5)6)2-3(8)9/h2H2,1H3,(H3,5,6)(H,8,9)
+  smiles: CN(CC(=O)O)C(=N)N
+kg_microbe_node_id: CHEBI:16919
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000763
+legacy_identifiers:
+- MIM:Creatine
+- CHEBI:16919

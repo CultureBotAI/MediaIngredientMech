@@ -1,0 +1,96 @@
+"""Independent exact-byte record/lineage and native primitive checks; no source apply."""
+from pathlib import Path
+import copy, csv, hashlib, io, json, os, subprocess, sys, tarfile, types
+import yaml
+
+D=Path(__file__).absolute().parent; C=D.parents[1]; R=C.parents[1]
+P=C/'integration/menadione718-hemodal-successor-v1'
+W=C/'workers/w02/worktree/.temp/menadione-inherited-brands-research-v1'
+A=C/'integration/ancillary1258-worktree'; J=C/'integration/curation-worktree'
+T=R/'.temp/kgm-unmapped-20261107'
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def put(path,raw):
+ path.parent.mkdir(parents=True,exist_ok=True)
+ with path.open('xb') as f:f.write(raw)
+def save(name,value):put(D/name,(json.dumps(value,indent=2,ensure_ascii=False)+'\n').encode())
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','--literal-pathspecs','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+def load(path):return json.loads(path.read_bytes())
+def module(name,path):
+ x=types.ModuleType(name);x.__file__=str(path);sys.modules[name]=x;exec(compile(path.read_bytes(),str(path),'exec'),x.__dict__);return x
+
+sel=load(P/'SELECTOR.json');raw=Path(sel['payload']['path']).read_bytes();oldraw=Path(sel['selected_predecessor']['path']).read_bytes()
+assert sha(raw)==sel['payload']['sha256']=='4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591'
+assert sha(oldraw)==sel['selected_predecessor']['sha256']=='d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659'
+new=yaml.safe_load(raw);old=yaml.safe_load(oldraw);inverse=copy.deepcopy(new)
+assert new['curation_history'][:-1]==old['curation_history']
+assert new['ontology_mapping']['evidence'][:-1]==old['ontology_mapping']['evidence']
+assert new['ontology_mapping']['evidence'][-1]['evidence_type']=='LLM_SUGGESTION'
+assert new['curation_history'][-1]['llm_assisted'] is True
+assert new['curation_history'][-1]['curator']=='Codex /root/step7d_science_c'
+hits=[i for i,s in enumerate(new['synonyms']) if s['synonym_text']=='Hemodal'];assert hits==[12]
+assert new['synonyms'][12]=={**old['synonyms'][12],'synonym_type':'REJECTED_LABEL'}
+inverse['synonyms'][12]['synonym_type']='EXACT_SYNONYM';inverse['curation_history'].pop();inverse['ontology_mapping']['evidence'].pop();assert inverse==old
+assert all('/root/step7d_independent_review' not in e.get('curator','') for e in new['curation_history'])
+plan=load(C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json')
+op=next(x for x in plan['records'] if x['operation_id']==sel['operation_id']);assert op==sel['original_operation_exact']
+authentic=git(A,'show','84241993a278a7a413422ef89a52c0b47dc57831:'+op['source_record']);assert sha(authentic)==op['before_yaml_sha256']==sel['authentic_before_sha256']
+put(D/'authentic-before.yaml',authentic)
+bindings={x['binding_id']:x for x in plan['bindings']};idx={x['destination']:x for x in load(C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json')['files']}
+origin=op['origins'][0];assert len(op['origins'])==1 and origin['worker_slot']=='worker-08';w8=C/'workers/w08/worktree';joins=[]
+for bid in [origin['proposal_binding'],origin['payload_binding'],'w08-decisions']:
+ b=bindings[bid];entry=idx[b['path']];captured=Path(entry['source']).read_bytes();committed=git(w8,'show',origin['head_sha']+':'+b['published_path']);assert captured==committed and sha(captured)==b['sha256']==entry['sha256']
+ joins.append({'binding_id':bid,'head':origin['head_sha'],'published_path':b['published_path'],'capture':entry['source'],'sha256':sha(captured)})
+ if bid==origin['proposal_binding']:proposal=next(x for x in json.loads(captured)['proposals'] if x['proposal_id']==origin['proposal_id'])
+ if bid=='w08-decisions':decision=next(x for x in json.loads(captured)['decisions'] if x['case_id'] in origin['case_hashes'])
+assert proposal['before_sha256']==op['before_yaml_sha256'] and proposal['after_capture']['sha256']==sha(oldraw)
+assert set(proposal['case_ids'])==set(origin['case_hashes']) and decision['case_input_sha256']==origin['case_hashes'][decision['case_id']]
+assert len(decision['occurrence_ids'])==1
+sys.path.insert(0,str(J/'src'))
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+assert not validate_ingredient(new)
+render=D/'native-render/Menadione.yaml';render.parent.mkdir();write_validated_ingredient(new,render);assert render.read_bytes()==raw
+base={}
+with tarfile.open(fileobj=io.BytesIO(git(A,'archive','84241993a278a7a413422ef89a52c0b47dc57831','data/ingredients'))) as tf:
+ for m in tf.getmembers():
+  if m.isfile() and m.name.endswith('.yaml'):base[m.name]=yaml.safe_load(tf.extractfile(m).read())
+assert len(base)==2956
+before=copy.deepcopy(base);after=copy.deepcopy(base);before[op['source_record']]=old;after[op['source_record']]=new
+assert not list(validate_component_partonomy(after.values()))
+assert is_resolving_synonym(old['synonyms'][12]) and not is_resolving_synonym(new['synonyms'][12])
+for term in ['Aquakay','Aquinone','Kappaxin','Menadione (Vitamin K3)','Vitamin K3']:
+ assert is_resolving_synonym(next(s for s in new['synonyms'] if s['synonym_text']==term))
+lists=module('menadione_independent_lists',A/'scripts/export_lists.py')
+browser=module('menadione_independent_browser',A/'scripts/browser_export.py')
+oldnames=lists._synonyms(old);newnames=lists._synonyms(new);assert set(oldnames)-set(newnames)=={'Hemodal'} and not set(newnames)-set(oldnames)
+assert set(browser.extract_ingredient_for_browser(old,'Menadione.yaml')['synonyms'])-set(browser.extract_ingredient_for_browser(new,'Menadione.yaml')['synonyms'])=={'Hemodal'}
+lists.export_label_index([old],D/'label-index-before.csv');lists.export_label_index([new],D/'label-index-after.csv')
+with (D/'label-index-before.csv').open() as f:oldlabels=list(csv.DictReader(f))
+with (D/'label-index-after.csv').open() as f:newlabels=list(csv.DictReader(f))
+removed_labels=[x for x in oldlabels if x not in newlabels];assert len(removed_labels)==1 and 'Hemodal' in removed_labels[0].values();assert all(x in oldlabels for x in newlabels)
+producer=T/'claw/scripts/build_mim_ingredient_sssom.py';assert sha(producer.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+kg=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz');assert sha(kg.read_bytes())=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+os.environ.update(OPENCLAW_WORKSPACE=str(D/'projection-workspace'),MEDIAINGREDIENTMECH_ROOT=str(A),KGMICROBE_ROOT=str(kg.parents[1]))
+native=module('menadione_independent_projection',producer)
+ks=native.load_kgm_source_index(kg);kl=native.load_kgm_labels(kg)
+term=load(W/'inputs/ontology-capture.json')['_embedded']['terms'][0];assert term['obo_id']=='CHEBI:28869' and term['label']=='menadione'
+chem=new['chemical_properties'];ann=term['annotation'];assert chem['molecular_formula']==ann['generalized_empirical_formula'][0] and chem['inchi']==ann['inchi_string'][0] and chem['smiles']==ann['smiles_string'][0] and 'cas:'+chem['cas_rn'] in ann['database_cross_reference']
+labels={term['obo_id']:term['label']};rows=[]
+for records in [before,after]:
+ owners=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in records.items() if '/mapped/' in p})
+ row=native._row_from_yaml(A/op['source_record'],{},ks,kl,labels,record=records[op['source_record']],owners=owners,suppressions=[])
+ assert len(row)==1;rows.append(row[0])
+delta={k:{'before':rows[0][k],'after':rows[1][k]} for k in rows[0] if rows[0][k]!=rows[1][k]}
+assert set(delta)<={'other','source','mapping_date'}
+assert set(rows[0]['other'].split('|'))-set(rows[1]['other'].split('|'))=={'Hemodal'}
+assert not set(rows[1]['other'].split('|'))-set(rows[0]['other'].split('|'))
+assert rows[1]['object_id']=='CHEBI:28869' and rows[1]['predicate_id']=='skos:exactMatch'
+assert all(t in rows[1]['other'].split('|') for t in ['Aquakay','Aquinone','Kappaxin','CAS:58-27-5'])
+restored=copy.deepcopy(new);restored['synonyms'][12]['synonym_type']='EXACT_SYNONYM'
+counter=native._row_from_yaml(A/op['source_record'],{},ks,kl,labels,record=restored,owners=owners,suppressions=[])[0]
+assert 'Hemodal' in counter['other'].split('|')
+save('INDEPENDENT-CHECKS.json',{'status':'PASS','candidate_sha256':sha(raw),'predecessor_sha256':sha(oldraw),'authentic_before_sha256':sha(authentic),'exact_original_operation':op,'published_joins':joins,'proposal':proposal,'source_decision':decision,'inverse_complete_object_equal':True,'whole_top_level_fields':list(new),'all_old_history_and_evidence_exact':True,'native_schema_errors':0,'native_byte_idempotence':True,'full_A_overlay_owners':len(after),'partonomy_errors':0,'resolver_only_removed':'Hemodal','actual_label_index_removed':removed_labels,'chemical_fields_match_official_capture':True,'source_application':False,'full_campaign_review':False,'limits':'Whole source owner examined; inherited role/count and ATCC flattened-dose holds preserved. Native primitives use authentic full A owner context and real KG input with inspected official cached label; no full generator, provider override or canonical/export approval.'})
+save('INDEPENDENT-PROJECTION.json',{'status':'PASS','producer':{'path':str(producer),'sha256':sha(producer.read_bytes())},'kg':{'path':str(kg),'sha256':sha(kg.read_bytes())},'official_label_capture':{'path':str(W/'inputs/ontology-capture.json'),'sha256':sha((W/'inputs/ontology-capture.json').read_bytes())},'before':rows[0],'after':rows[1],'delta':delta,'counterfactual_restore_changes_only_in_memory':True,'restored_token_present':True,'canonical_written':False,'full_generated_row_review':False})
+assert Path(sel['payload']['path']).read_bytes()==raw
+print(json.dumps({'status':'PASS','candidate':sha(raw),'changed_row_fields':list(delta),'resolver_only_removed':'Hemodal','source_application':False}))

@@ -1,0 +1,131 @@
+identifier: CHEBI:5291
+preferred_term: Gelatine
+ontology_mapping:
+  ontology_id: CHEBI:5291
+  ontology_label: gelatin
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:5291 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Gelatine' does not equal the term label 'gelatin'. EXACT_MATCH therefore asserted
+      an identity the pair does not have. Re-graded because British spelling of the
+      term label.
+synonyms:
+- synonym_text: Gelatin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Solidifying component; Properties: Undefined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 15
+  media_count: 15
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.124316+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9000-70-8 from CultureBotHT compounds_to_cas.csv (matched:
+    gelatin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.126003+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9000-70-8 from CultureBotHT compounds_to_cas.csv (matched:
+    Gelatin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Gelatin'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Gelatine'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Gelatin.yaml, Gelatine_2.yaml,
+    Gelatin_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.748169+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.649411+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111234+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 0.90)'
+- timestamp: '2026-06-09T05:23:46.767939+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Gelatine'' -> ''gelatin'': synced to canonical CHEBI
+    label (preferred_term ''Gelatine'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT ->
+    physicochemical_roles.SOLIDIFYING_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); British spelling of
+    the term label.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518920+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 11/11 -> 15/15 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001164; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+kg_microbe_node_id: CHEBI:5291
+chemical_properties:
+  cas_rn: 9000-70-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:45.124313+00:00'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SOLIDIFYING_AGENT
+  confidence: 0.9
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Solidifying Agent'
+mim_id: MIM:0001164
+legacy_identifiers:
+- MIM:Gelatine
+- CHEBI:5291

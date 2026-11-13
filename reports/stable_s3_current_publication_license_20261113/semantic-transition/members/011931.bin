@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:togo_2788_vogel_bonner_salts_50x
+preferred_term: TOGO M2788 Vogel-Bonner salts 50x
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2788_vogel_bonner_salts_50x
+  ontology_label: TOGO M2788 Vogel-Bonner salts 50x
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2788
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: MgSO4 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G
+- component_name: K2HPO4 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '500'
+  concentration_unit: G
+- component_name: NaNH4HPO4 . 4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '175'
+  concentration_unit: G
+- component_name: Citric acid . H2O
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: G
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2788
+    source_record: TOGO M2788 Vogel-Bonner salts 50x
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  notes: Source batch input amounts;50-fold dilution withdistilledwater gives mediumE ataboutpH7.0. TheEMA
+    recipe uses20 ml stock, not20 g/L.
+notes: 'Source batch input amounts;50-fold dilution withdistilledwater gives mediumE ataboutpH7.0. TheEMA
+  recipe uses20 ml stock, not20 g/L. Raw source labels retained without global resolving aliases: ["50x
+  Vogel-Bonner salts"]. Occurrence-specific linkage is required; identical generic words in other recipes
+  do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED

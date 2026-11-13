@@ -1,0 +1,2453 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/broths",
+  "reviewed_author": "/root/chemicals",
+  "reviewed_at": "2026-11-08T05:33:35.977169+00:00",
+  "independence": "Reviewer authored the separate broth batch and did not author or edit the chemical decisions, evidence or payloads. Findings were sent to the chemical author, who made corrections; reviewer independently reopened corrected artifacts and primary captures.",
+  "review_scope": "All51 assigned chemical source cases, their55 complete frozen recipe occurrences/47 distinct recipe snapshots where present, KG raw source contexts and inherited holds, all linked evidence, and all exact proposed payload deltas. Scientific source review plus exact-byte integrity checks; no new external research session, maintained data edit, merge, or downstream rebuild.",
+  "status": "complete",
+  "native_full_payload_approval": false,
+  "release_authorization": false,
+  "limitations": [
+    "The source-bound scientific verdict does not clear existing WITHHOLD dispositions or inherited roles, biosafety, process, mechanism or other complete-record annotations.",
+    "New-owner positive admission remains withheld under issue1165; atomic owner/alias/identifier reconciliation and guarded integration remain coordinator work.",
+    "Checksums and schema/integrity success alone are not scientific proof; case reasons and explicit remaining requirements define this review scope."
+  ],
+  "initial_reviewed_core_sha256": {
+    "decisions.json": "81f6aca84e7da2d889461a494b832aba4dde9b04db0d713b1527d84603cb7605",
+    "evidence.json": "7a2185866fdc7d238ec6308cfd472b5e692ebfc9fd3d0509f79bc09a32227c8a",
+    "proposals.json": "fd8be9397e4a940e4efbc308772fc251512e152fe6aa26f0abce381224f686d2"
+  },
+  "reviewed_core_sha256": {
+    "decisions.json": "e63ed8a8725b9034557d9bbece9166a70be9158ffbc4ddb78d1ead8247224b7c",
+    "evidence.json": "4b16ebc5bc3c14199ee6ca80a226557454cd74f546261646513df9efc12dabcf",
+    "proposals.json": "ec3d7b4c4ee625cf17beb9e910a284ee8e9d23b664e25bc4d2cf6537ca27bcf4"
+  },
+  "frozen_shard_sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228",
+  "case_count": 51,
+  "proposal_count": 34,
+  "evidence_count": 298,
+  "recipe_occurrence_count": 55,
+  "distinct_recipe_count": 47,
+  "mechanical_checks": {
+    "status": "pass",
+    "complete_case_digests": true,
+    "raw_source_fields_unchanged": true,
+    "occurrence_sets_complete": true,
+    "full_recipe_snapshot_hashes_verified": true,
+    "owner_before_hashes_verified": true,
+    "all_evidence_capture_hashes_verified": true,
+    "proposal_after_hashes_verified": true,
+    "inherited_hold_content_unchanged": true,
+    "existing_history_prefixes_preserved": true,
+    "new_creation_history_statuses_checked": true,
+    "registry_stock_filenames_match_identity_suffixes": true
+  },
+  "findings": [
+    {
+      "finding_id": "C-B1",
+      "status": "resolved",
+      "finding": "Ten new registry-stock intended filenames did not match their registry suffixes under MAPPING_SEMANTICS.",
+      "author_correction": "Intended paths now use their exact registry suffixes; stock identities and strengths are preserved.",
+      "independent_recheck": "All ten final registry-stock paths and identifiers were compared directly in the corrected payload/proposal bytes."
+    },
+    {
+      "finding_id": "C-B2",
+      "status": "resolved",
+      "finding": "Unresolved requirements initially deferred available original source checks for MediaDive1902/504/2160; the final coverage pass also required the original resorcinol recipe and MediaDive786/2121 leads.",
+      "author_correction": "Original source chains were pursued and captured; ambiguous source formulas and technical-product composition remain explicit only where primary sources themselves leave them unresolved.",
+      "independent_recheck": "Original JCM826 repeats(NH4)2S4, DSMZ472 gives glycerol monooleate(techn.), and DSMZ1828 plus CCAPMWC verify pentahydrate stock strength. Subsequent exact primary captures for the three remaining cases were inspected before this report was finalized."
+    },
+    {
+      "finding_id": "C-B3",
+      "status": "resolved",
+      "finding": "New alias sources repeated labels rather than provenance; combined web entries attributed claims to unrelated URLs; one PubMed search was unrelated; new records claimed a nonexistent previous MAPPED status.",
+      "author_correction": "New aliases and history now bind actual frozen cases/occurrences and primary URLs; web evidence is split by source; unsuitable PubMed capture is an unsuccessful attempt; MG62T support is strain-limited; creation histories omit previous_status.",
+      "independent_recheck": "Corrected provenance fields and23 split web entries were read, wrong PubMed content was directly inspected, all new creation histories and existing history prefixes were checked. The extra sulfate alias quarantine was independently reviewed against the original JCM sheet."
+    }
+  ],
+  "open_findings": [],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:053d9db831df41c7936ae34acf3a915cfdf097612bab87e50cb19ac7ed8e9a19",
+      "case_input_sha256": "2a2b8eb98b0616b8bd1424a662dcbdbe3a6c432f642de750984652713dcf26a6",
+      "shard_index": 2,
+      "source_label": "Na VO",
+      "verdict": "pass_with_scope_limits",
+      "reason": "CCAP FDMed's trace stock explicitly prints Na3VO4; the damaged source token alone would be insufficient. ChEBI35607 and the existing Na3vo4 owner agree. Alias scope does not certify the frozen flattened concentration.",
+      "reviewed_evidence_ids": [
+        "c-frozen-2",
+        "c-recipe-2-0",
+        "c-fetch-0",
+        "c-fetch-46",
+        "c-web-0"
+      ],
+      "reviewed_proposal_ids": [
+        "c-vanadate-alias"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:2b5d2ea33a525e6747774ec8a2094620d6f9ac3ca3ef1f332512a99512b0066f"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/fdmed.yaml",
+          "sha256": "496db91490e7787087838dcc327c8d1ad0fc7bee851663d3baa7bec94216f258"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:0cfacee74dd7a7cfb91d23ebf9f180404be16eb577fa84af5005dd7392d931df",
+      "case_input_sha256": "b70063b30163cc811fbc2ffb5db3b2b74889c4104d0852d8e92f3ced2933655c",
+      "shard_index": 7,
+      "source_label": "1M NaOH",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2241 identifies a 1M sodium hydroxide solution for pH adjustment. A registry stock with a NaOH component preserves the specified strength without equating the stock with solid NaOH or inventing a dose.",
+      "reviewed_evidence_ids": [
+        "c-frozen-7",
+        "c-recipe-7-0",
+        "c-fetch-1",
+        "c-fetch-50"
+      ],
+      "reviewed_proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:06bcd7b8ddf3a1aa3326fd7e44c178ede346f4591c0e8c819ef94ed5c01f9a14"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/medium_dh.yaml",
+          "sha256": "d255047e787828afded9611242510829cdd3ae49a6373dc8b800767264daebf8"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:0f01261dc40b3afb1a90250b7cec4fa1345556df461a93318ba3371b9ffed350",
+      "case_input_sha256": "57f1bc80dcf1b4df029423f2791067b995b8f15c5456d2500ec6a3d281b69d8f",
+      "shard_index": 9,
+      "source_label": "2--Methylbutyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M694's fatty-acid mixture specifies 2-methylbutyric acid without D/L. The current DL owner makes an extra stereochemical assertion. Retaining this unresolved boundary is justified until that owner or the reagent stereochemistry is clarified.",
+      "reviewed_evidence_ids": [
+        "c-frozen-9",
+        "c-recipe-9-0",
+        "c-fetch-2",
+        "c-fetch-73",
+        "c-web-8"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:87501ea4144f90e2a3188adfb858942529f15de4ac8413e77150e2d2aeaf97d8"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M694_Ruminococcus_Albus_Medium.yaml",
+          "sha256": "3b69719fe6d6fa347a143e8c8cd51363553e229a06d78a60c988e6c018dda72f"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:13ab279707b97daf2383076a1eebab4366cbbd8e77d32193999d6667cf3570e4",
+      "case_input_sha256": "861936229dc7f4aaea53018cc6591a3f693663a2ae6f9d841b6473f85ac9a5ed",
+      "shard_index": 13,
+      "source_label": "Copper(II) Nitrate Trihydrate",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The FEBA recipe explicitly supplies trihydrate CAS10031-43-3 and molecular weight241.6016; official GSRS confirms the same copper nitrate trihydrate. Keeping CAS identity and an asymmetric copper nitrate parent preserves waters of hydration.",
+      "reviewed_evidence_ids": [
+        "c-frozen-13",
+        "c-recipe-13-0",
+        "c-fetch-53",
+        "c-fetch-91",
+        "c-attempt-93"
+      ],
+      "reviewed_proposal_ids": [
+        "c-copper-trihydrate-alias"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:f092f375e07c3a35a7ff8b14c21d9129ef2d20ecc9b778c6bc3c3182989838ae"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/specialized/smn_rich.yaml",
+          "sha256": "d3ac4195e43b97e779cbf4b04bd91bab6240090c46178f3035b2622571a7dccb"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:16268b1fbc156bd19abbec0685da8e7bd6f9543b6e23aa08b651dfb916051766",
+      "case_input_sha256": "08692d99d5ed65057cf37a18c5f4a8c2683b71e636cf9e40c1b5727189247532",
+      "shard_index": 16,
+      "source_label": "0.5% Dithiothreitol (DTT)",
+      "verdict": "pass_with_scope_limits",
+      "reason": "ATCC1257 confirms a freshly prepared 0.5% DTT solution and its 10ml dose, but does not define percentage basis or supplied stereochemical form. Neither the recipient's flattened10g/L nor a generic DTT term resolves the stock specification.",
+      "reviewed_evidence_ids": [
+        "c-frozen-16",
+        "c-recipe-16-0",
+        "c-fetch-3",
+        "c-attempt-105",
+        "c-attempt-121",
+        "c-attempt-124",
+        "c-web-17"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:02c8befc0c401cd703cdb8e056538a6e43b226d6a491557b6819a57293524506"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+          "sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:16a5d90659a7c027c850dc459bdb69ba1029b3eeb461a7202cf8c93a71182b9c",
+      "case_input_sha256": "08680f71058ffd808e0ecd235e9a8204ef12a5595a2f5e43669292218a4afb6e",
+      "shard_index": 17,
+      "source_label": "Sinigrin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The frozen manuscript provenance explicitly says sinigrin hydrate; the product insert demonstrates a potassium variable hydrate exists but cannot identify the manuscript's reagent. Counterion and hydration remain genuinely unresolved rather than being guessed from a common product.",
+      "reviewed_evidence_ids": [
+        "c-frozen-17",
+        "c-recipe-17-0",
+        "c-fetch-39",
+        "c-fetch-59",
+        "c-fetch-106"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:181319747adceb2949e34e43292ef67f0dc8d3e119e44cb8c5bc547feb61ca7c"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_sng_medium.yaml",
+          "sha256": "99cabe0e669d2c41483be98338bf611712194f05e8506537c2d32e7118d12ac4"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:17b3ba649696608dd7507f0833344f58699c908b9b6b084a13d94d5f1bb4fcfe",
+      "case_input_sha256": "81ae9c984da73385bd8444363386c212fb47e32880c8d5bf6bae128606caf089",
+      "shard_index": 18,
+      "source_label": "Na2SiO3·9H2O (4.64 g/L)",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2231 separately lists nonahydrate4.64g and deionized water1L as stock preparation inputs. The proposal preserves those input amounts, the nonahydrate solute CHEBI132108, and the stock identity; it does not turn the recipient dose into stock strength.",
+      "reviewed_evidence_ids": [
+        "c-frozen-18",
+        "c-recipe-18-0",
+        "c-fetch-4",
+        "c-fetch-80",
+        "c-fetch-102"
+      ],
+      "reviewed_proposal_ids": [
+        "c-silicate-nonahydrate-464gl-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:c0d90b9dc9f6d95636774abe8e0f6b9a094a0f37b3a6ed05f74b73e5428c07a6"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml",
+          "sha256": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:18e51c990d219350b38ee3d6bb6658167caa3e874c5c149957cda0e6ea9b4ff1",
+      "case_input_sha256": "50db26538b7bf4bbd43358bcd3b814e0db2907df996e5942013a198f14c30092",
+      "shard_index": 20,
+      "source_label": "1 M NaOH",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M3265 specifies an anoxic1M NaOH solution. Its concentration is identical to the other1M source cases, while the anoxic preparation remains source context. No pure-NaOH identity collapse or new final-medium amount is asserted.",
+      "reviewed_evidence_ids": [
+        "c-frozen-20",
+        "c-recipe-20-0",
+        "c-fetch-5",
+        "c-fetch-50"
+      ],
+      "reviewed_proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:0bb38820ec2b6f33c549d0324984ab49551bd9aaf7268a0f3d2466bd3d979844"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/fe_and_s_free_basal_medium.yaml",
+          "sha256": "9aff181415f39d91d3f3632b5fbe1dcae942c8a379ba4711d6f1c55e840067bc"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:1993b45691a9f82b985ea194f256c98b873dffd2d4b36228f42ea0f685e0d732",
+      "case_input_sha256": "80afa3615574437d5e7dac86061854e073430794310a5d9786ae6baf79fe3138",
+      "shard_index": 21,
+      "source_label": "Na HPO .12H O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original HSM formula is Na2HPO4·12H2O. ChEBI91259 supplies hydrate-specific structure data, correcting the existing owner's anhydrous InChI/SMILES. The stripped token is recoverable only through its exact recipe evidence.",
+      "reviewed_evidence_ids": [
+        "c-frozen-21",
+        "c-recipe-21-0",
+        "c-fetch-6",
+        "c-fetch-68",
+        "c-web-1"
+      ],
+      "reviewed_proposal_ids": [
+        "c-phosphate-dodecahydrate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:a70999323aadb04c51f2fb110153e73ff3dc2cfe960f8abfa403f471f0e6b3fe"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/hsm.yaml",
+          "sha256": "8e23a83a001ba7d86f7e67eee0566d96d9f935ef1efaa38799c6de0b8fc33d92"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:23a657b35e3667931a84c9f08129bad5c4efb8bd542a8a90e959b891fdc5606e",
+      "case_input_sha256": "e790ccaadb0c01017a30e796d13b4dfedb7a64eee267675fe7fec2e5476116f8",
+      "shard_index": 23,
+      "source_label": "0.1N HCl",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2262 and M3213 both expressly identify0.1N HCl in stock preparation. Normality remains literal N and the solution has a registry identity separate from HCl; differing recipient additions do not alter stock concentration.",
+      "reviewed_evidence_ids": [
+        "c-frozen-23",
+        "c-recipe-23-0",
+        "c-recipe-23-1",
+        "c-fetch-7",
+        "c-fetch-8",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "reviewed_proposal_ids": [
+        "c-hcl-01n-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:e41a220f4ae7058e06063f4cc53b0e6858668571fa493d0079fde5832e42f22d",
+        "CM_OCC:37a297a1e36bc177581d75d2a7312170b0473f5e08adfff5de6d6b8b051bb0f2"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml",
+          "sha256": "d999969421b96869ea832e3d126998661c122268c824661eca03f5b1ba1b048e"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml",
+          "sha256": "297ba0a0bb71621a5168866eefaf36ea962d89b3b50995d6d16443acdfcbb84f"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289",
+      "case_input_sha256": "45194cb590dba37aaaccfb67d418068bc19b3c1218dbd644cb000454dd64e9b1",
+      "shard_index": 28,
+      "source_label": "NH VO",
+      "verdict": "pass_with_scope_limits",
+      "reason": "CCAP UCM restores NH4VO3, and the manufacturer identifies ammonium metavanadate CAS7803-55-6. CAS plus an asymmetric ammonium-salt parent is supported; absence of an exact ontology candidate is bounded to the documented searches.",
+      "reviewed_evidence_ids": [
+        "c-frozen-28",
+        "c-recipe-28-0",
+        "c-fetch-9",
+        "c-fetch-38",
+        "c-fetch-81",
+        "c-fetch-83",
+        "c-attempt-98",
+        "c-fetch-99",
+        "c-fetch-112",
+        "c-web-2",
+        "c-web-12"
+      ],
+      "reviewed_proposal_ids": [
+        "c-ammonium-metavanadate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:348dfae15095b368044b92b00d0bedeef742d64eaf5f381d17434e7e7266b296"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/ucm.yaml",
+          "sha256": "74388a28969363b889439ecd0cd4ceef8fb628cdc01c2a1662416c419f5b008d"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:2c217c36bf80b6dd437869bd28fd77efe1f3e40c539ea3e9926f93bd7c326709",
+      "case_input_sha256": "f139dc80b9167ed5a905b3724bf6b376aa53e6b86b176d8cffe138512ec2140f",
+      "shard_index": 30,
+      "source_label": "CoSO .7H2O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "Both Waris-H and the DSMZ copy of Modified Provasoli retain CoSO4·7H2O. ChEBI91244 is the exact heptahydrate. Replacing anhydrous structure fields is chemically necessary; stock doses and unrelated existing annotations remain outside this approval.",
+      "reviewed_evidence_ids": [
+        "c-frozen-30",
+        "c-recipe-30-0",
+        "c-recipe-30-1",
+        "c-attempt-10",
+        "c-fetch-11",
+        "c-fetch-69",
+        "c-attempt-97",
+        "c-fetch-108",
+        "c-web-3",
+        "c-web-13"
+      ],
+      "reviewed_proposal_ids": [
+        "c-cobalt-heptahydrate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:64bd4e8623019f92b6dfd1f3f343b8e779d10186a8ccd2e48f249156152fee0c",
+        "CM_OCC:be913ea5f11b3b0f30f1c2b7676db54fee996cc424849e9f934f0f4a0d168e1d"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/mp.yaml",
+          "sha256": "d996ade7a74b182ed875a01e692151282f34b4b6e2228cef1e8a5e929641cd6a"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/waris_h.yaml",
+          "sha256": "6b84f51622f463c72b01063a0da7ffa457db8a996ee118263eddbf8fb1ddee46"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4",
+      "case_input_sha256": "de6ee0f1d83ae7d491938306d9922b0c7a846518bc20402f5f635477193eb12b",
+      "shard_index": 32,
+      "source_label": "CaCl・2H2O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M520's explicit component annotation identifies calcium chloride dihydrate despite the damaged CaCl spelling. CHEBI86158 and the active dihydrate owner agree. The already rejected duplicate is not reopened.",
+      "reviewed_evidence_ids": [
+        "c-frozen-32",
+        "c-recipe-32-0",
+        "c-fetch-12",
+        "c-attempt-77",
+        "c-fetch-100"
+      ],
+      "reviewed_proposal_ids": [
+        "c-calcium-dihydrate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:9d9b2322d0d2ea997e4ad428914fe0c615f62f02a3ee4f299444c50319f1d2b5"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M520_Syntrophomonas_Medium_for_Syntrophospora_cellicola_19J-3.yaml",
+          "sha256": "f641876237a4f9af117a79115b8626b9fdcf07dbdc0925c19f5c6e8516e29fa8"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:2e7c6115c4ca5f3fd063003cc951f94ee409fd7df1390ddc0230df64be2a6703",
+      "case_input_sha256": "94994e8c3b150e4a2f89da064ea4a8de1dcbb1cf0f639e80365507d7ff71b53e",
+      "shard_index": 33,
+      "source_label": "6N HCl",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2560 explicitly names6N hydrochloric-acid solution. The proposal retains6N stock identity and does not copy the recipient's variable pH-adjustment dose into its composition.",
+      "reviewed_evidence_ids": [
+        "c-frozen-33",
+        "c-recipe-33-0",
+        "c-fetch-13",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "reviewed_proposal_ids": [
+        "c-hcl-6n-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:8b9f3e2b75afc9b5e02322bceef4a2a8b8bd1fd2a019e44a26264cc06020333a"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_mg_basal_medium.yaml",
+          "sha256": "ebbd979580a86bff620c7751e7598b323481a848448ae6e106a35b39ad956fba"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:4f98d9bb98d2d1b4b259c595ed4a209fc0de207301fc421d5ed0361bf660be82",
+      "case_input_sha256": "9c7361d3a1d3308df976ad8c5655901e75ba2dd64815dd94803ea8321b85aad2",
+      "shard_index": 44,
+      "source_label": "iso--Butyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M1093's explicit M124 VFA cross-reference and M1210/M3033 recipes identify isobutyric acid. The doubled hyphen carries no stereochemistry here; CHEBI16135 is the branched2-methylpropanoic acid, distinct from straight-chain butyrate.",
+      "reviewed_evidence_ids": [
+        "c-frozen-44",
+        "c-recipe-44-0",
+        "c-recipe-44-1",
+        "c-recipe-44-2",
+        "c-recipe-44-3",
+        "c-fetch-14",
+        "c-fetch-15",
+        "c-fetch-16",
+        "c-fetch-17",
+        "c-fetch-71"
+      ],
+      "reviewed_proposal_ids": [
+        "c-isobutyrate-alias"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:ad02258eb44cdc8cea76cc1371fbea3eeb109e65908f37bf1a03541988dcd472",
+        "CM_OCC:a3d68cbea0c3e67a31743d2dee386285e21640425599b70c7b1eca142a2d9956",
+        "CM_OCC:fa8ffa6f57d4f492bd5662c741d9812f8403300524394f1dfff0c51e9ce7bb65",
+        "CM_OCC:6a3934927f3f2b2a0ac69a3965aaa007bebb469af550f1b5925e65ff20075aa2"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml",
+          "sha256": "b1ebe2c056076b8b6f9762d5816bf7e59156773b10af3bd9583f08c878ff4916"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1210_YCFA_Medium.yaml",
+          "sha256": "8779c940ec074455b32942db2f9ab0606c2ea022776b1708710dd4b84092c1d5"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml",
+          "sha256": "86a50834c615ada0a2efede291245f7687d31eec514d095badeb3767667713f7"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_ycfa_medium.yaml",
+          "sha256": "3edd879adc9f46bc3c5c33cbff13d3c7fcaed8b8955d00ad9abcd4170aaf7baf"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:584bd7436389f092715019959743bc12d63245d64d4e5caaee04c2f52203f4e9",
+      "case_input_sha256": "02907dfe09697991d449b38ecbcd8c1bbf660ca7584183c212d07e04e02bd322",
+      "shard_index": 50,
+      "source_label": "EDDHA",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original Echenique and Tomaras publications expand EDDHA as the ortho-hydroxyphenyl free acid. HiMedia's SDS gives CAS1170-02-1. Separate iron addition in Tomaras does not turn the supplied reagent into an iron chelate; no salt or stereoisomer is invented.",
+      "reviewed_evidence_ids": [
+        "c-frozen-50",
+        "c-recipe-50-0",
+        "c-recipe-50-1",
+        "c-fetch-37",
+        "c-fetch-56",
+        "c-fetch-64",
+        "c-fetch-82",
+        "c-attempt-114",
+        "c-fetch-128",
+        "c-fetch-129",
+        "c-attempt-130",
+        "c-web-21",
+        "c-web-22"
+      ],
+      "reviewed_proposal_ids": [
+        "c-eddha-free-acid"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:4d85805a5c745c2874ada8f9b916d553fc1bbdc0d2069c1a9e9cc0df50f4406b",
+        "CM_OCC:c772865627bce97906653cada82700c4a6e6d6f51c44505dc1503d5364805eec"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_echenique.yaml",
+          "sha256": "f5d2221be47e030b5f7428afb310ccf8ae0ccde14f78823745426acda59694a9"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_tomaras.yaml",
+          "sha256": "17f627a014f0e712a5d387bbe324609c00d1c52568db5781be688317e34d6e34"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:59476b1238415a5aba57d7419fa95f98bdd5c8ea2f47755702d6c1106229710b",
+      "case_input_sha256": "52400cc081ad1be0636480fa9eb47451da48ef735164f7833aaa824f7fd43d93",
+      "shard_index": 51,
+      "source_label": "y-aminobutyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original contributor's P5 page still prints y-aminobutyric acid in an NNM-carried stock. The plausible gamma interpretation lacks an independent identifier or correction, so the source label and carrier context remain unresolved.",
+      "reviewed_evidence_ids": [
+        "c-frozen-51",
+        "c-recipe-51-0",
+        "c-fetch-54",
+        "c-fetch-74"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:bfc0840224455e7030557fdcf97890c3daaffd1c73924f5095ea9573bd069822"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/rs_medium_nutrient_medium_nm_component.yaml",
+          "sha256": "cb5a972f2d1da8e1c0f822b4f7a1f5a90e5b8062ef67b8413ef97e8a9f9b6cba"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:5bff15b29f6a7a79fbd845595d38c6bdf7126425a3560e12fe46db4a054296c5",
+      "case_input_sha256": "785973721f4107948f2a0c3c7f50ed733655dd565e07a33416ca35b16c300082",
+      "shard_index": 54,
+      "source_label": "Histidine HCl",
+      "verdict": "pass_with_scope_limits",
+      "reason": "Merlen's original Table1 explicitly gives L-histidine hydrochloride monohydrate, resolving qualifiers lost in MediaDB. Source-bound recognition is justified, while adding the broad Histidine HCl string as a global resolving synonym would be unsafe.",
+      "reviewed_evidence_ids": [
+        "c-frozen-54",
+        "c-recipe-54-0",
+        "c-attempt-94",
+        "c-attempt-96",
+        "c-web-11",
+        "c-web-14"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:1a82cce0fea4c64663b21160d44b638e375d41aeefec9a891519131bc6c38908"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml",
+          "sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:637edac40fcbf588526a8d556a971228a71b80b2ac02426e79115e09b388d883",
+      "case_input_sha256": "b1e0a21deaa5bca3ce6623eb3fce83aebf24b4afa25a1726385acd5978a5742c",
+      "shard_index": 59,
+      "source_label": "HEPES (free acid)",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M1060 lists HEPES free acid separately from sodium hydroxide in the stock. CHEBI42334 identifies the supplied acid. An eventual neutralization step does not justify substituting the sodium salt as the ingredient identity.",
+      "reviewed_evidence_ids": [
+        "c-frozen-59",
+        "c-recipe-59-0",
+        "c-fetch-18",
+        "c-fetch-52"
+      ],
+      "reviewed_proposal_ids": [
+        "c-hepes-freeacid"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:fa97aef26b95de3147b4d36cc0365d3d9328b4d79eea97dc6e1490d82e9c2a5b"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1060_Freshwater_Medium_For_Soil_AOA.yaml",
+          "sha256": "6d0f892f08ae257551671be3e0262e0e64f16ba6018289ef48ac3c0e6327339d"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:812926707601b18cb0f6a9eaaac1d8895d8d1d8fc3795df9305b1719d7cd0622",
+      "case_input_sha256": "76be6593a49bbc8f12e3ee784ac42510a75da99ee5a2f63af32ba4e8abbc7651",
+      "shard_index": 66,
+      "source_label": "FeCl .6H 0",
+      "verdict": "pass_with_scope_limits",
+      "reason": "CCAP Walnes' nutrient solution specifies FeCl3·6H2O. The exact hexahydrate ontology identity and existing owner agree. Restoring the corrupted token does not endorse all flattened source concentrations.",
+      "reviewed_evidence_ids": [
+        "c-frozen-66",
+        "c-recipe-66-0",
+        "c-fetch-19",
+        "c-fetch-70"
+      ],
+      "reviewed_proposal_ids": [
+        "c-iron-hexahydrate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:9c6f5250497a03670b2674df5b7c73a76da6721fa566c539893457b7396615ec"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/walnes.yaml",
+          "sha256": "920f6051f02b16b4c9b2e03939ba777115d5241ebd00dea7f9027285913914a3"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6",
+      "case_input_sha256": "3d2a3625e17d93ad60565bc65c416bcb959c1af74d24765d14c449bc612d3888",
+      "shard_index": 69,
+      "source_label": "NH4VO3",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2790 and M2846 explicitly annotate NH4VO3 as ammonium metavanadate. This corroborates the CCAP source and the same CAS7803-55-6 proposal, without broadening to sodium or unspecified vanadate salts.",
+      "reviewed_evidence_ids": [
+        "c-frozen-69",
+        "c-recipe-69-0",
+        "c-recipe-69-1",
+        "c-fetch-20",
+        "c-fetch-21",
+        "c-fetch-38",
+        "c-fetch-81",
+        "c-fetch-83",
+        "c-attempt-98",
+        "c-fetch-99",
+        "c-fetch-112",
+        "c-web-12"
+      ],
+      "reviewed_proposal_ids": [
+        "c-ammonium-metavanadate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:23451706f49358506456e05087c20be966477aaf40126794bfeb1d9c73917b60",
+        "CM_OCC:5ecfd2ef83106a6bae25cb486fa100d1310ed244f19178ad1d1c7d20d8fa61dd"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+          "sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/minimal_mineral_medium.yaml",
+          "sha256": "1a90d42c7a6911ac3f266da24edaae006ab3cacead41fa28f8ff3a811040957a"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82",
+      "case_input_sha256": "6b17d45fa84b9b0dd50c9d1efb5947a35c146a72ef43b8f8600d2c7ca957a8aa",
+      "shard_index": 70,
+      "source_label": "Charcoal activated",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2133 and M2063 explicitly specify activated charcoal/carbon. The NCIT activated-charcoal owner fits the activation-qualified material; the decision does not equate it with generic charcoal or elemental carbon.",
+      "reviewed_evidence_ids": [
+        "c-frozen-70",
+        "c-recipe-70-0",
+        "c-recipe-70-1",
+        "c-fetch-22",
+        "c-fetch-23",
+        "c-fetch-109"
+      ],
+      "reviewed_proposal_ids": [
+        "c-activated-charcoal"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:ac8d7e002297635304cece93d0d30f86246ed4d493226fe5296eb942fe569d1e",
+        "CM_OCC:e02bf809f29427bc19a4530ae8dd57bc628d9ade4031a4048c11ac79ca66d351"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml",
+          "sha256": "5e9cd1cd3846e830d2051522b9bf73462ddcd926f6ec2d655c06d56b1fbf1a33"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml",
+          "sha256": "a562ed4485b1c39ca980c37a6d6698fde59ab7efb8bc6a67854810d4effabb42"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:8fe511e08a2c6b069194f03325bb221aec48b9384739b61d09dee9e219f381e0",
+      "case_input_sha256": "4f503bc7d538dbe2d3dcbd58dd6bfda51a3cd504a6d596ac1a066f46aadd596c",
+      "shard_index": 72,
+      "source_label": "resorcinol",
+      "verdict": "pass_with_scope_limits",
+      "reason": "ChEBI27810 identifies the explicit KOMODO resorcinol name as benzene-1,3-diol. The archived2017 BacDive reproduction of DSMZ195 contains the DSM4661 resorcinol substitution, and current DSMZ383 independently names the same reagent. Exact KOMODO195.1 retrieval failed403; neither historical1mM nor the separate current0.11g recipe proves frozen2.5g/L wrong. Identity is supported while dose/version remains unverified and unchanged.",
+      "reviewed_evidence_ids": [
+        "c-frozen-72",
+        "c-recipe-72-0",
+        "c-fetch-35",
+        "c-fetch-47",
+        "c-attempt-153",
+        "c-fetch-154",
+        "c-fetch-155",
+        "c-fetch-166",
+        "c-fetch-167",
+        "c-attempt-168"
+      ],
+      "reviewed_proposal_ids": [
+        "c-resorcinol"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:ef79c8398f1a0a801d19d52727a73958f96ad0560392cf250977b3324a5f8c90"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/for_dsm_4661.yaml",
+          "sha256": "4099b885ed51c5a4e2913763deb0bacbdfe0817f1234b2a2393dbe8a1123ab74"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:907bb2fe736ba37d3a5087e8fbe3a8be2b99fb4150cfc042fb9cc8942bf4d3f8",
+      "case_input_sha256": "6fb94112872d60e5b0c52049e21b13ff883e17d6da86647de339902d6f5c8b20",
+      "shard_index": 73,
+      "source_label": "1.0 M NaOH",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2927 distinguishes1.0M NaOH for pH adjustment from a separate0.1M solution. The1.0M source belongs with1M only; the proposal preserves that tenfold concentration boundary.",
+      "reviewed_evidence_ids": [
+        "c-frozen-73",
+        "c-recipe-73-0",
+        "c-fetch-24",
+        "c-fetch-50"
+      ],
+      "reviewed_proposal_ids": [
+        "c-naoh-1m-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:40e3e30d196e8561888b31d31f92e79d30b8a9196333b6b57d8d6a35825143e2"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+          "sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:96498a82cd6229d9a2e17e3b012f985bb719729491803128794ff89135811dd2",
+      "case_input_sha256": "d40d057bcb0120d743ee8cdcef11ac617200befe8a1157079bfb691671654940",
+      "shard_index": 77,
+      "source_label": "Citric acid·H2O (4.8 g/L)",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2231 specifies citric acid monohydrate4.8g and water1L as stock inputs. CHEBI31404 denotes the monohydrate solute; the distinct registry stock prevents confusion with the solid citric acid case or its recipient dose.",
+      "reviewed_evidence_ids": [
+        "c-frozen-77",
+        "c-recipe-77-0",
+        "c-fetch-4",
+        "c-fetch-49"
+      ],
+      "reviewed_proposal_ids": [
+        "c-citric-monohydrate-48gl-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:61b2ade4cfd6b6ee77e45adb8e4cebbe550a148f7de21110a9a0c3124cfcb569"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml",
+          "sha256": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:9afe0c8e863f4b300533068d901ca5f4ae343be302bbe439ac508def08873d1a",
+      "case_input_sha256": "5b4d058105b3fa0a0d4bcd0ef6f65b36060a68fbfbd9784073d84c3d7954583e",
+      "shard_index": 78,
+      "source_label": "5-Hydroxyectoine",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original2010 article's Methods names bitop AG hydroxyectoine at20mM, and Figure1 distinguishes four NaCl conditions. ChEBI49432 gives the named natural5-hydroxyectoine identity. Salt variations do not produce four different ingredient identities.",
+      "reviewed_evidence_ids": [
+        "c-frozen-78",
+        "c-recipe-78-0",
+        "c-recipe-78-1",
+        "c-recipe-78-2",
+        "c-recipe-78-3",
+        "c-fetch-36",
+        "c-fetch-48",
+        "c-fetch-55",
+        "c-attempt-95"
+      ],
+      "reviewed_proposal_ids": [
+        "c-5-hydroxyectoine"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:d75ec8da1c9188d43627097a0e3bfa62a026f26e4524a187b4f60cb0b3442052",
+        "CM_OCC:655f31d8ec8363be2d149a5d445828dd8ccf14f5be5a7fd2144da56423822c21",
+        "CM_OCC:bc669e9d41f90c469fc50a6f3f60935f316d74ee59603e29e669f04b5a729909",
+        "CM_OCC:bf7c863c5fa8a6fc28fcea4816bb3d3e3d6f5992ff92e56e9cbed9871e72279e"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_0_6_m_nacl.yaml",
+          "sha256": "07d5f3e41623b8f86c3a85bbe03c11de9fc07b65ce5a185e9faa15a2d3c4b308"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_0_75_m_nacl.yaml",
+          "sha256": "bc903b6a9f1af3249f9d5a551f600436e9c10d9e45bf492a968b3f733d2dca39"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_1_5_m_nacl.yaml",
+          "sha256": "de8993d94d717a4abedc51640fdf540b3d4561705c07ab76cc4d93cd1b33ed18"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_2_5_m_nacl.yaml",
+          "sha256": "a129fe9ea9c46685e7fde826b55ee9acfbf166e55ba35d55c1009c17675493b5"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:9e01e104b2466ebf1384fa319d57b756336a17b72949a706790fce05b416e6f4",
+      "case_input_sha256": "0dd2f5041688891966499b2a81618acc73cd062754ed84e6650f6a816b309a92",
+      "shard_index": 79,
+      "source_label": "1 N HCl",
+      "verdict": "pass_with_scope_limits",
+      "reason": "All six TOGO contexts explicitly identify1N HCl; other acids and acid concentrations elsewhere in those recipes remain separate. The proposal preserves normality and does not interpret application volumes as pure-HCl quantities.",
+      "reviewed_evidence_ids": [
+        "c-frozen-79",
+        "c-recipe-79-0",
+        "c-recipe-79-1",
+        "c-recipe-79-2",
+        "c-recipe-79-3",
+        "c-recipe-79-4",
+        "c-recipe-79-5",
+        "c-fetch-8",
+        "c-fetch-25",
+        "c-fetch-26",
+        "c-fetch-27",
+        "c-fetch-28",
+        "c-fetch-29",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "reviewed_proposal_ids": [
+        "c-hcl-1n-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:b8f64620d859760d7eee0ca40869fb1d3a48a9ca6e66e966e33eea60460d06f3",
+        "CM_OCC:fbd59e942ac292d49b11aaed4727710e02c5d23931b56c9d24a47c43c13e0c59",
+        "CM_OCC:a3f272dc52a94c945637787e5cf4c35d873bb80cbf4b7d685d7f974d237e4797",
+        "CM_OCC:42de058552c1f1ffd8ed3a0aab4e233963638a7391e58532e8792c79185dbbf5",
+        "CM_OCC:e45b7a0c687474bf7e203acca0fddf47aa89f42b07692e0058920e296fd623c9",
+        "CM_OCC:d48e2092a07cdac251eeeb103f9c8092ea50f37d9650ad58556fdfe081296fb9"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2600_Pyrobaculum_Medium.yaml",
+          "sha256": "b160ea07dc22d24914cb47444417d2b6e05132b9cbd83d2258a98ee2ff675e2e"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2654_Methanoregula_Peat_Medium.yaml",
+          "sha256": "a1573d448ba464c3ae1d269592d9627627a7761075203a4b2206af8174482f18"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2680_Caldisphaera_Medium.yaml",
+          "sha256": "3cf2cd1cfe95569f1cf3c534f985c48cde2c90b375f04228171bf08d1bbe5ba6"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml",
+          "sha256": "34c2c8e2888f6614545b81ea073636df1c911644a42db5cc0ba6659a03a3f9f9"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1353_Desulfobacterium_Catecholicum_Medium.yaml",
+          "sha256": "f1daba282cbe9305fd207c8fefc8283cefdfa7b1f7881eb35764ddb842c47442"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml",
+          "sha256": "297ba0a0bb71621a5168866eefaf36ea962d89b3b50995d6d16443acdfcbb84f"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:b39790f7066493e3d1377fb754b214cb4e9713522f01df6a1aaf7fbc127e3daa",
+      "case_input_sha256": "76a5f259925d903ec1b67779fbd29246410a6e366bc49bf8a904b34799da7cf5",
+      "shard_index": 92,
+      "source_label": "0.1 M NaOH",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The0.1M solution in M2927 is distinct from that recipe's1M NaOH adjustment reagent. A separate registry stock with literal0.1M strength is supported; no merged strength or unstated solvent amount is introduced.",
+      "reviewed_evidence_ids": [
+        "c-frozen-92",
+        "c-recipe-92-0",
+        "c-fetch-24",
+        "c-fetch-50"
+      ],
+      "reviewed_proposal_ids": [
+        "c-naoh-01m-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:9716e2407f49dbf61ffa10d14b2f6fbed591a382667a6edf537a4d45ee667076"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+          "sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:b4be1043a7a5204f7e606ab1094a6ffab8b3369b20dc1de44f67e28ee22acc7c",
+      "case_input_sha256": "a856da11b511038db87c53cd213c1593036aaa8f508abb09268f2e1eff046e8a",
+      "shard_index": 93,
+      "source_label": "Adenosine sulfate",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original Merlen table really says adenosine sulfate. An adenylyl-sulfate ontology hit is a different covalent nucleotide, and adenine sulfate would require correcting the source. The missing reagent specification is a genuine identity blocker.",
+      "reviewed_evidence_ids": [
+        "c-frozen-93",
+        "c-recipe-93-0",
+        "c-attempt-94",
+        "c-attempt-96",
+        "c-fetch-104",
+        "c-web-11",
+        "c-web-14"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [
+        "CM_OCC:4abeb9e7ff9ed26e6fd2436f01c996c371eb9e87b0dc0783d1c7a11c1dfcfa9e"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml",
+          "sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:b8338c4b155a2bff20a41a8210ba5004bc7967def36e6cf4496015fe648b75da",
+      "case_input_sha256": "e3255d7890e2f22318fe0850223829d5aa325b4b4b56c8a116f29a08fcc7f8e1",
+      "shard_index": 95,
+      "source_label": "n--Butyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M124 prints n-butyric acid and M1093 explicitly inherits that VFA stock. CHEBI30772 is straight-chain butanoic acid, so the punctuation alias is justified without conflating the separate isobutyric component.",
+      "reviewed_evidence_ids": [
+        "c-frozen-95",
+        "c-recipe-95-0",
+        "c-recipe-95-1",
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-72"
+      ],
+      "reviewed_proposal_ids": [
+        "c-butyric-acid"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:5a6ea760c376c5f496161b54a891dafacdbcd1492f5e07bb73e3674ec50cb82b",
+        "CM_OCC:a6c7aef3bd6d5263bf0df9de173ea81cedf1db25b54a4fbcd8bcfd4a59edec30"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml",
+          "sha256": "b1ebe2c056076b8b6f9762d5816bf7e59156773b10af3bd9583f08c878ff4916"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml",
+          "sha256": "86a50834c615ada0a2efede291245f7687d31eec514d095badeb3767667713f7"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:bb2f95e190ff084cf09d7fdbdbe322a68fc0768001da33db37c0b38cb6e6900c",
+      "case_input_sha256": "6de5c09ad818f4c07aa33513a64130a14905b3786ee761be3f4d43684618a125",
+      "shard_index": 96,
+      "source_label": "1 mM Na2SeO4",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M683 explicitly gives1mM Na2SeO4 solution. The selenate component CHEBI77775 is distinct from selenite; separate stock identity preserves the concentration while avoiding the frozen dose-unit artifact.",
+      "reviewed_evidence_ids": [
+        "c-frozen-96",
+        "c-recipe-96-0",
+        "c-fetch-30",
+        "c-attempt-78",
+        "c-fetch-79",
+        "c-fetch-101"
+      ],
+      "reviewed_proposal_ids": [
+        "c-selenate-1mm-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:80dc7357b622dcc1c4c5fdf08ee088a22dee6f067c118614960928f37870fb58"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M683_Freshwater_Iron_GEL_Medium.yaml",
+          "sha256": "6ad5f50492f97329455ff3f22c1bdcbd336354b311879572392d20788771bbdd"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:c5a361c0ca2066fec6275de9709cf1e6b0334ab2b04a840a26c038c8546d6d6a",
+      "case_input_sha256": "cccd2e552064120673cc7477587852d29a85e4cad48d3cd3e951fcc64cd66b10",
+      "shard_index": 100,
+      "source_label": "10-M NaOH",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M3181's original comment specifies10-M NaOH and its1.12ml addition. The ten-molar stock is not a typo for1M; the proposal correctly separates concentration from application volume.",
+      "reviewed_evidence_ids": [
+        "c-frozen-100",
+        "c-recipe-100-0",
+        "c-fetch-31",
+        "c-fetch-50"
+      ],
+      "reviewed_proposal_ids": [
+        "c-naoh-10m-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:2e6d0008ee72c26488aa084ad160195031e21773f376069e1ef4ec71e34e1960"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+          "sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:d9efff2555033aab5f7a242c01e29d250203409c1ffe5a9a60fef3b6cd19dd54",
+      "case_input_sha256": "b50be6527159a22da95ce693bb9f38f417d51973671337b8f5446b7df95630b3",
+      "shard_index": 109,
+      "source_label": "Coenzyme M (2-mercaptoethanesulfonic acid)",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M2660 expands Coenzyme M as2-mercaptoethanesulfonic acid. ChEBI17905 is the neutral acid, despite the old owner's sulfonate preferred label. The bounded alias is supported, but that inherited owner label and complete payload are not recertified.",
+      "reviewed_evidence_ids": [
+        "c-frozen-109",
+        "c-recipe-109-0",
+        "c-fetch-32",
+        "c-fetch-75",
+        "c-web-7"
+      ],
+      "reviewed_proposal_ids": [
+        "c-coenzyme-m"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:265857c34a4d9db61a33e13c67442ae28fb64de1f508e1fd77cf4bb0501f3a4d"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/archaea/modified_methanobacterium_medium_for_dsm_1093.yaml",
+          "sha256": "0380b997f1760b4e07b5c137c2f56e35f1de036b53428a6d8bef4ec9c4b0a0f5"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:df45fafbf7a4e8f10a144321b964f1872687a0d4fdc05582d7199aa403af21e0",
+      "case_input_sha256": "b011f841b067337383d36194f3abddcd83a51d61f9edfbda16967dd543ca9677",
+      "shard_index": 113,
+      "source_label": "DL--α--Methyl butyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M124 and M1093 explicitly retain DL-alpha-methylbutyric acid. The source supports racemate-specific wording, unlike the unspecified M694 case. The existing generic ChEBI grounding remains a native owner-review concern rather than a new assertion of stereochemical equivalence.",
+      "reviewed_evidence_ids": [
+        "c-frozen-113",
+        "c-recipe-113-0",
+        "c-recipe-113-1",
+        "c-fetch-14",
+        "c-fetch-16",
+        "c-fetch-73",
+        "c-web-8"
+      ],
+      "reviewed_proposal_ids": [
+        "c-dl-methylbutyric"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:4739a65b375d46eb2eb4b50986a027b080ad870b1c832ef26b9b28f1fc2e3e30",
+        "CM_OCC:2395a53e440259cd2e8ce7c73dd39a875899bc77cc0ef3f875de08e9195f9e11"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml",
+          "sha256": "b1ebe2c056076b8b6f9762d5816bf7e59156773b10af3bd9583f08c878ff4916"
+        },
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml",
+          "sha256": "86a50834c615ada0a2efede291245f7687d31eec514d095badeb3767667713f7"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b",
+      "case_input_sha256": "612474b7b513ed17d4e52b3cb8f1a94eefa121a4aaf7633d3ec3439403038a7f",
+      "shard_index": 116,
+      "source_label": "CaCl 2H O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "CCAP TAP's salt stock prints CaCl2·2H2O1g, resolving the stripped token through the exact original recipe. It belongs with the active dihydrate identity, not anhydrous calcium chloride.",
+      "reviewed_evidence_ids": [
+        "c-frozen-116",
+        "c-recipe-116-0",
+        "c-fetch-33",
+        "c-attempt-77",
+        "c-fetch-100"
+      ],
+      "reviewed_proposal_ids": [
+        "c-calcium-dihydrate"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:bf88f6d49fe3904f963a97326cd1a64166ff194609cb16ce2c93418548ab4393"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/algae/CCAP_TAP Medium.yaml",
+          "sha256": "c674aaa30b223093e5b27c3c8762c1ad1dedc3eefa9b876ceaa888eebd20fd34"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:e6492d46250dd1b2dd55942803568f25fa93fc984007baa7b90191e86326addc",
+      "case_input_sha256": "0d2e15bb60649ab86af7c213de5e3d2f3a5c39ff3ef588b9df37e4165d153f80",
+      "shard_index": 119,
+      "source_label": "6 N HCl",
+      "verdict": "pass_with_scope_limits",
+      "reason": "M609's acid trace stock explicitly uses6N HCl. The spacing variant shares the6N stock proposal with M2560, while its10ml recipient addition is not a new stock concentration.",
+      "reviewed_evidence_ids": [
+        "c-frozen-119",
+        "c-recipe-119-0",
+        "c-fetch-34",
+        "c-attempt-51",
+        "c-fetch-65"
+      ],
+      "reviewed_proposal_ids": [
+        "c-hcl-6n-stock"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:2dd66b17e60a1ac166e6d0b07393f227b190d3ec133db75344bbd2c88839244d"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M609_Desulfovibrio_Magnus_Medium.yaml",
+          "sha256": "79b62853cf258e0dd9312404cdd3198140f0c6f93b0884d904594ee1aa9dce9e"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "CM_NAME:f6b9a042c7e910c065bf1b4b1e2c934975efb42208caf4f0bfa1a966bb4f7be8",
+      "case_input_sha256": "ff40f5a58440f47a62d7108eb02ac66d391e28d26f1cc2f686301478576a6599",
+      "shard_index": 122,
+      "source_label": "iso -Butyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "JCM1385 explicitly derives from JCM1130; the inherited VFA mixture names isobutyric acid. The space and hyphen are typographic and preserve the branched acid identity without changing mannitol or other recipient-medium ingredients.",
+      "reviewed_evidence_ids": [
+        "c-frozen-122",
+        "c-recipe-122-0",
+        "c-fetch-57",
+        "c-fetch-58",
+        "c-fetch-71"
+      ],
+      "reviewed_proposal_ids": [
+        "c-isobutyrate-alias"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:08ea4e243cdb6fd7968178d29eae5f930f026d315aed07583df8a93e4d4eb458"
+      ],
+      "source_recipe_snapshots": [
+        {
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "sha256": "9fca5916d287189a52e56553cb910baeaeb35d701cffd17c24852093593477ab"
+        }
+      ],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:2fb5c39272234dd2d46ffdae55b90f7e3f569aa6b44ab5d5220d299674d401bc",
+      "case_input_sha256": "7e7c9c96a30d6b7bb8690071dc37c98145700fa82a2fd223fb4c04fef86d3093",
+      "shard_index": 130,
+      "source_label": "actinohivin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original actinohivin publication describes the named114-residue protein. Preserving the matching source registry is justified for this GTDB stream, without inferring an accession, sequence, production phenotype, or growth assertion from the name alone.",
+      "reviewed_evidence_ids": [
+        "c-frozen-130",
+        "c-fetch-44",
+        "c-attempt-60",
+        "c-attempt-118",
+        "c-web-9"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:3f818e36a8ba5a1e0e15da3ac90ebbe54008a59dff5363df7d7ee38240cf3bd8",
+      "case_input_sha256": "cb9f2f0d5b079fbf5927144b2c30ef5e686b8c3eebf5d0c92a91c02b346aeb6d",
+      "shard_index": 133,
+      "source_label": "Citric acid x H2O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "Original DSMZ848 row4 explicitly gives citric acid xH2O1.50g, agreeing with the frozen MediaDive786 input and CHEBI31404 monohydrate. Retyping H2cit/citrate(1-)/dihydrogen citrate as rejected labels removes charge-state conflation. The recipe pH does not make those anions exact supplied-form synonyms, and other native owner holds remain.",
+      "reviewed_evidence_ids": [
+        "c-frozen-133",
+        "c-fetch-49",
+        "c-attempt-87",
+        "c-fetch-151",
+        "c-fetch-156",
+        "c-fetch-157",
+        "c-fetch-160",
+        "c-fetch-161",
+        "c-fetch-164"
+      ],
+      "reviewed_proposal_ids": [
+        "c-citric-monohydrate-boundary"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:548c45d4bf6549cfe0b6680108dce0b86165b1be3482597bf540592ca4f8bbd8",
+      "case_input_sha256": "ba8a212a69a5b86dbeac3e946e7bd2ba7d6880ef2e8dbb933f9c93c6004fa61d",
+      "shard_index": 139,
+      "source_label": "sarcidin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The1953 sarcidin title supports a historical named antibiotic but provides no verified structure or stable exact chemical identifier. The GTDB source registry and unresolved identity are retained without assuming a modern similarly named antibiotic.",
+      "reviewed_evidence_ids": [
+        "c-frozen-139",
+        "c-fetch-42",
+        "c-attempt-61",
+        "c-attempt-119",
+        "c-web-10",
+        "c-web-18"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:5fba3a87640ce16f49febf724e688faec3affd5375eba57654a41e45513d22cf",
+      "case_input_sha256": "cb8bce7b6329758eddfad7875b2322ac58b22b0e5a7b6301716f5ada9cc235c5",
+      "shard_index": 145,
+      "source_label": "azacolutin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original patent explicitly identifies antibioticC as azacolutin and distinguishes other co-produced antibiotics. Retaining its named registry is supported; the shared production context is not evidence that it equals duramycin.",
+      "reviewed_evidence_ids": [
+        "c-frozen-145",
+        "c-fetch-43",
+        "c-fetch-62"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:89980152b8347a5160e5f245b49f91cc84d69057521557e3a2170a71b59dab10",
+      "case_input_sha256": "b7f348234f4bd1a445088ef927ec4f4db8095f7da75293f1d688a4e48c0eb276",
+      "shard_index": 149,
+      "source_label": "cyclopentanol+CO2",
+      "verdict": "pass_with_scope_limits",
+      "reason": "PMID11594593 supports joint cyclopentanol/CO2 methanogenesis for MG62T. It does not define a single chemical or complete medium. All three source observations remain separate and held; the unrelated PubMed search response cannot support them.",
+      "reviewed_evidence_ids": [
+        "c-frozen-149",
+        "c-attempt-116",
+        "c-attempt-117",
+        "c-web-16"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:9383a8f4873ad942f38bf5b894fc1a770f1bcc5596590ee5421e1592e3452095",
+      "case_input_sha256": "b633c731e449c3915c3a9dfb7a4bea71f8c1973c4184af5afa9cb18016622e42",
+      "shard_index": 154,
+      "source_label": "Glycerol mono-oleate",
+      "verdict": "pass_with_scope_limits",
+      "reason": "DSMZ472 retains glycerol monooleate(techn.) at2.5g. It does not give a manufacturer, ester-isomer distribution, or technical-product composition, so a pure monooleoylglycerol exact match remains unsupported.",
+      "reviewed_evidence_ids": [
+        "c-frozen-154",
+        "c-fetch-76",
+        "c-attempt-86",
+        "c-attempt-132",
+        "c-fetch-135",
+        "c-fetch-139",
+        "c-fetch-140",
+        "c-fetch-145",
+        "c-fetch-146",
+        "c-web-6"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:93dd93be38a47dd2c0fb2bca1c58940f3fd791491e16a468a8cc3e19bf4e038a",
+      "case_input_sha256": "ae84f7a778faa9a5141f1bc8d522a7085f104992b1d4d409ef52b11e8d6be4a0",
+      "shard_index": 155,
+      "source_label": "actinohivin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The second metatraits stream independently names actinohivin. The same original protein characterization supports named-registry retention, while its original source id and lack of sequence remain explicit rather than being collapsed into the GTDB observation.",
+      "reviewed_evidence_ids": [
+        "c-frozen-155",
+        "c-fetch-44",
+        "c-attempt-60",
+        "c-attempt-118",
+        "c-web-9"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef",
+      "case_input_sha256": "74c1f4b6828f9a5bb64089e9477f555a5c0dfab176430ad5da3e609ef0334b81",
+      "shard_index": 172,
+      "source_label": "Poly[R-3-hydroxybutyric acid]",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The source explicitly specifies R-polyhydroxybutyric acid. ChEBI131525 has repeating R units, correcting a monomer-parent/finite-trimer representation. The separate rejected duplicate tombstone and representative update must be integrated atomically; no unspecified polymer is promoted to R by inference.",
+      "reviewed_evidence_ids": [
+        "c-frozen-172",
+        "c-attempt-40",
+        "c-fetch-66",
+        "c-attempt-88",
+        "c-attempt-92",
+        "c-web-4"
+      ],
+      "reviewed_proposal_ids": [
+        "c-r-polymer-identity",
+        "c-r-polymer-tombstone"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba",
+      "case_input_sha256": "60659735ca2949f27515013453c384c018c2092af97d3ed2f60193bf67366d4d",
+      "shard_index": 173,
+      "source_label": "poly-ß-hydroxybutyric acid",
+      "verdict": "pass_with_scope_limits",
+      "reason": "Original DSMZ474 explicitly adds3g poly-beta-hydroxybutyric acid to100mlwater as a suspension, with no R/S designation. The current ingredient2121 page warns that identifiers and chemical parameters are mostly automatic, so its R-polymer CAS enrichment cannot override the exact recipe specificity. CHEBI53389 retains unspecified polymer identity, distinct from the suspension and the R-specific case; the duplicate tombstone and removal of the role text as a synonym must be integrated atomically.",
+      "reviewed_evidence_ids": [
+        "c-frozen-173",
+        "c-fetch-41",
+        "c-fetch-67",
+        "c-attempt-89",
+        "c-fetch-152",
+        "c-fetch-158",
+        "c-fetch-159",
+        "c-fetch-162",
+        "c-fetch-163",
+        "c-fetch-165",
+        "c-web-5"
+      ],
+      "reviewed_proposal_ids": [
+        "c-generic-polymer-alias",
+        "c-generic-polymer-tombstone"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:c37f4832a54734ac2d32eef0abccfea08815b072cf677b1ab9ab3bbe608a850f",
+      "case_input_sha256": "a72abd967a55c99df7b3ff33add84c528ef00688a97d37954811fa2a24b79b68",
+      "shard_index": 174,
+      "source_label": "sarcidin",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The separate metatraits sarcidin observation has the same historical name but no additional structural evidence. Retaining its exact raw source and unresolved disposition avoids letting a duplicate name supply missing identity evidence.",
+      "reviewed_evidence_ids": [
+        "c-frozen-174",
+        "c-fetch-42",
+        "c-attempt-61",
+        "c-attempt-119",
+        "c-web-10",
+        "c-web-18"
+      ],
+      "reviewed_proposal_ids": [],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:c856991d15fde0c056753101242e0681c00b899cb6a7a9bc51bc9a01674a45ca",
+      "case_input_sha256": "198061cdc6f9aa9eaca111f56e42f5e32d7478e625d0338b982b1909e0723d47",
+      "shard_index": 175,
+      "source_label": "NH42S4",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original JCM826 recipe itself repeats(NH4)2S4, so adding oxygen to obtain ammonium sulfate is not source-supported. The remaining provider-correction requirement is genuine. Quarantining a resolving NH42S4 alias is justified without assigning a replacement identity.",
+      "reviewed_evidence_ids": [
+        "c-frozen-175",
+        "c-attempt-84",
+        "c-fetch-113",
+        "c-attempt-131",
+        "c-fetch-134",
+        "c-fetch-137",
+        "c-fetch-138",
+        "c-fetch-143",
+        "c-fetch-144"
+      ],
+      "reviewed_proposal_ids": [
+        "c-sulfate-malformed-alias"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:e7b098420353431e3ddf43c82bd76e81c9c4813e6ff8e6ccdd07b2e578e3f602",
+      "case_input_sha256": "50173687647b4e91c67090553e3c5887afb7c63fec7e54a963fd81daa38ce5bb",
+      "shard_index": 181,
+      "source_label": "cephamycin A",
+      "verdict": "pass_with_scope_limits",
+      "reason": "The original1972 work separates cephamycinsA/B/C. ChEBI55429 is a broad cephamycin class whose R-group formula/structure is not A-specific. Removing copied parent chemistry while retaining the named A registry and broad relation is a bounded correction.",
+      "reviewed_evidence_ids": [
+        "c-frozen-181",
+        "c-attempt-63",
+        "c-fetch-107",
+        "c-fetch-110",
+        "c-fetch-111",
+        "c-attempt-115",
+        "c-web-15"
+      ],
+      "reviewed_proposal_ids": [
+        "c-cephamycin-parent-chemistry"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:ee007a0d70e088ab96b3b7099f19b465d879bce4c31d7fec54afb5417d6f02fd",
+      "case_input_sha256": "34688a97eec33184bd18454b974b1968deb4960ca9eea8ddf472e05beb8f3f53",
+      "shard_index": 184,
+      "source_label": "Na2SiO3 x 5 H2O",
+      "verdict": "pass_with_scope_limits",
+      "reason": "DSMZ1828 and CCAPC59 explicitly support the21.2g/L sodium silicate pentahydrate stock and1ml addition. Five waters must not be changed to nine or anhydrous. A partial registry stock with a literal unresolved pentahydrate component is appropriate when no exact solute owner and solvent recipe are verified.",
+      "reviewed_evidence_ids": [
+        "c-frozen-184",
+        "c-attempt-85",
+        "c-fetch-103",
+        "c-attempt-120",
+        "c-attempt-133",
+        "c-fetch-136",
+        "c-fetch-141",
+        "c-fetch-142",
+        "c-fetch-147",
+        "c-fetch-148",
+        "c-fetch-149",
+        "c-fetch-150"
+      ],
+      "reviewed_proposal_ids": [
+        "c-silicate-pentahydrate-212gl-stock"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    },
+    {
+      "case_id": "KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c",
+      "case_input_sha256": "5059550cd0e838a5474319599692bd95168be806729fc1a2121a988aa4d68082",
+      "shard_index": 185,
+      "source_label": "ardacin A",
+      "verdict": "pass_with_scope_limits",
+      "reason": "Official GSRS572P13F83X identifies ArdacinA/AridicinA and CAS95935-21-0; the original renaming paper distinguishesA/B/C. CAS identity plus a broad glycopeptide class avoids treating the Ardacin antibiotic complex as an exact A identity. Old positive registry evidence cannot approve changed bytes.",
+      "reviewed_evidence_ids": [
+        "c-frozen-185",
+        "c-fetch-45",
+        "c-fetch-90",
+        "c-fetch-122",
+        "c-attempt-123",
+        "c-fetch-125",
+        "c-fetch-126",
+        "c-fetch-127",
+        "c-web-19",
+        "c-web-20"
+      ],
+      "reviewed_proposal_ids": [
+        "c-ardacin-a-cas"
+      ],
+      "occurrence_ids": [],
+      "source_recipe_snapshots": [],
+      "native_hold_effect": "None. Original downstream holds, consumed-name review dispositions and owner native-review rows remain unchanged; this verdict covers the source-bound decision and proposed delta only."
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "c-vanadate-alias",
+      "owner_path": "data/ingredients/mapped/Na3vo4.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "414bd8739268155f11bcba2cd9f19df9e4e3600634190a93fd701d311f3b3350",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/vanadate-alias.yaml",
+        "sha256": "d831e09ad4dc57fbbd1ac2342d7c06e86a91c17a08c0b95f2a42cf6d334a2201"
+      },
+      "identifier": "CHEBI:35607",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-copper-trihydrate-alias",
+      "owner_path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/copper-trihydrate-alias.yaml",
+        "sha256": "58f5e346f53c18d5285ae91ddade0a65d4fe1736eade03b84d9c9b43d1150986"
+      },
+      "identifier": "cas:10031-43-3",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-phosphate-dodecahydrate",
+      "owner_path": "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/phosphate-dodecahydrate.yaml",
+        "sha256": "6a31d80feef598f83c13c6cff4a64a3b79a667aadad900e005ed6c8357c07ebd"
+      },
+      "identifier": "CHEBI:91259",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-cobalt-heptahydrate",
+      "owner_path": "data/ingredients/mapped/Coso4_X_7_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "3e14e4d57dab11eb3974f45db2894b12bd71aa7a761d823ae8ce401300ceba8d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/cobalt-heptahydrate.yaml",
+        "sha256": "e923ecf9243a53ed1f084953b5cd1c24540dac2c219e3db10685c68635e12f5c"
+      },
+      "identifier": "CHEBI:91244",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-calcium-dihydrate",
+      "owner_path": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/calcium-dihydrate.yaml",
+        "sha256": "7964a10623b311704ab0b077c4ece8b728ec5f7e962ee461fb392dad08c1407c"
+      },
+      "identifier": "CHEBI:86158",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-isobutyrate-alias",
+      "owner_path": "data/ingredients/mapped/Isobutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/isobutyrate-alias.yaml",
+        "sha256": "bed52b0ea1a90c9dd0aceca3d44cbf3c2d5b0e1570c636003cb784238133358a"
+      },
+      "identifier": "CHEBI:16135",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-hepes-freeacid",
+      "owner_path": "data/ingredients/mapped/Hepes.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/hepes-freeacid.yaml",
+        "sha256": "7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2"
+      },
+      "identifier": "CHEBI:42334",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-iron-hexahydrate",
+      "owner_path": "data/ingredients/mapped/Fecl3_X_6_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "a77cd844d1d5ec5f1deb35d0ca1eff1ee5b73b17cd140be3524fc057f0f30979",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/iron-hexahydrate.yaml",
+        "sha256": "1fed3231b6c3b777c4c469d3d4e2b87be02df38e9923424eb8fe71865417fff6"
+      },
+      "identifier": "CHEBI:86254",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-activated-charcoal",
+      "owner_path": "data/ingredients/mapped/Activated_Charcoal.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/activated-charcoal.yaml",
+        "sha256": "a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54"
+      },
+      "identifier": "NCIT:C77524",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-butyric-acid",
+      "owner_path": "data/ingredients/mapped/Butyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/butyric-acid.yaml",
+        "sha256": "9cfca18863426d73b8c357c95f4ab928685bb8435d0ab8842ce3c12ffc26652a"
+      },
+      "identifier": "CHEBI:30772",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-coenzyme-m",
+      "owner_path": "data/ingredients/mapped/2-mercaptoethanesulfonate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/coenzyme-m.yaml",
+        "sha256": "3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78"
+      },
+      "identifier": "CHEBI:17905",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-dl-methylbutyric",
+      "owner_path": "data/ingredients/mapped/Dl-2-methylbutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "86d91038be691420f3748192b215a9f6f5fc92cfad5b729bddab9dd4dd5c18ce",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/dl-methylbutyric.yaml",
+        "sha256": "3703b4c5f4dbb1a4810b44f596c032a710acdbdf3a53164b0e23efdfe4f53910"
+      },
+      "identifier": "CHEBI:37070",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-citric-monohydrate-boundary",
+      "owner_path": "data/ingredients/mapped/Citric_Acid_X_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/citric-monohydrate-boundary.yaml",
+        "sha256": "0e8fa07f892b40b7713674373854f3a473285fe7d5c7a246a96bace627f76679"
+      },
+      "identifier": "CHEBI:31404",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-sulfate-malformed-alias",
+      "owner_path": "data/ingredients/mapped/Nh42so4.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "1806053b7d0adc25bd2d1a84f0aeae92185a69f84d2db46abe816c75c21db48d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/sulfate-malformed-alias.yaml",
+        "sha256": "7aaabd05f14689648005b5557134ac022227b304e104831469cc1c74e9648ee6"
+      },
+      "identifier": "CHEBI:62946",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-naoh-1m-stock",
+      "owner_path": "data/ingredients/mapped/naoh_1m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/naoh-1m-stock.yaml",
+        "sha256": "eba7eab0f5b8d26bafda38a4b769158abba5f08d5f206764f40bf7fb6544e07e"
+      },
+      "identifier": "kgmicrobe.ingredient:naoh_1m_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-naoh-01m-stock",
+      "owner_path": "data/ingredients/mapped/naoh_01m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/naoh-01m-stock.yaml",
+        "sha256": "5990de47d76cb30f20322a1b1e9a7faffd6f7f24070dc1feb8cf09b18e106531"
+      },
+      "identifier": "kgmicrobe.ingredient:naoh_01m_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-naoh-10m-stock",
+      "owner_path": "data/ingredients/mapped/naoh_10m_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/naoh-10m-stock.yaml",
+        "sha256": "92d443ad157fc751bda13665e0f87492412bc4ae9596a7316b46624370cadd2a"
+      },
+      "identifier": "kgmicrobe.ingredient:naoh_10m_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-hcl-01n-stock",
+      "owner_path": "data/ingredients/mapped/hcl_01n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/hcl-01n-stock.yaml",
+        "sha256": "0785e2ca88c7004a53f44b2448103ee5bd5c40fbf7b904cf7d5c06927a68060a"
+      },
+      "identifier": "kgmicrobe.ingredient:hcl_01n_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-hcl-6n-stock",
+      "owner_path": "data/ingredients/mapped/hcl_6n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/hcl-6n-stock.yaml",
+        "sha256": "81e88f1472dfa1a3b62fb5f1ef69b6d36f75210b7aabbcb5cad772bb53f14977"
+      },
+      "identifier": "kgmicrobe.ingredient:hcl_6n_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-hcl-1n-stock",
+      "owner_path": "data/ingredients/mapped/hcl_1n_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/hcl-1n-stock.yaml",
+        "sha256": "c3d3fd83d21aef9935d2d190fb37122cc054d344d838921b9fca3fd112366689"
+      },
+      "identifier": "kgmicrobe.ingredient:hcl_1n_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-selenate-1mm-stock",
+      "owner_path": "data/ingredients/mapped/selenate_1mm_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/selenate-1mm-stock.yaml",
+        "sha256": "1e9575f50f1ed5197b53b0bfcdf7bf1f56571615e4a14ed749f654bd40df6d6d"
+      },
+      "identifier": "kgmicrobe.ingredient:selenate_1mm_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-silicate-nonahydrate-464gl-stock",
+      "owner_path": "data/ingredients/mapped/silicate_nonahydrate_464gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/silicate-nonahydrate-464gl-stock.yaml",
+        "sha256": "31532487e1bc980ccaad2248f670fbc369e6de97586b94d45df790dda4828437"
+      },
+      "identifier": "kgmicrobe.ingredient:silicate_nonahydrate_464gl_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-citric-monohydrate-48gl-stock",
+      "owner_path": "data/ingredients/mapped/citric_monohydrate_48gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/citric-monohydrate-48gl-stock.yaml",
+        "sha256": "e8e45efb3315f4dfe360c35600890b10729c94af75e2fe04ba8188948eba4dab"
+      },
+      "identifier": "kgmicrobe.ingredient:citric_monohydrate_48gl_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-silicate-pentahydrate-212gl-stock",
+      "owner_path": "data/ingredients/mapped/silicate_pentahydrate_212gl_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/silicate-pentahydrate-212gl-stock.yaml",
+        "sha256": "2a0317669c5f73e6c1be74d2c79871857fa4dc3a0741646003983d885c088ba3"
+      },
+      "identifier": "kgmicrobe.ingredient:silicate_pentahydrate_212gl_stock",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-ammonium-metavanadate",
+      "owner_path": "data/ingredients/mapped/Ammonium_metavanadate.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/ammonium-metavanadate.yaml",
+        "sha256": "b7eaf66cfd0dca7268035d63774b58e557094c0cc6fcebefbd03dd8f80998386"
+      },
+      "identifier": "cas:7803-55-6",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-resorcinol",
+      "owner_path": "data/ingredients/mapped/Resorcinol.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/resorcinol.yaml",
+        "sha256": "24bf6700379d8293f122751ea47921874cd13b681cb1e454de60e8464d8d8805"
+      },
+      "identifier": "CHEBI:27810",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-5-hydroxyectoine",
+      "owner_path": "data/ingredients/mapped/5_Hydroxyectoine.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/5-hydroxyectoine.yaml",
+        "sha256": "8e324843d56c47978fa582f48ec432d61d2b27b9b13861d3871aa54f7482730f"
+      },
+      "identifier": "CHEBI:49432",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-eddha-free-acid",
+      "owner_path": "data/ingredients/mapped/Ethylenediamine_di_o_hydroxyphenyl_acetic_Acid.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/eddha-free-acid.yaml",
+        "sha256": "fb67264f58e93df88b761268d44d9a2286d9dcab6b2eb097ae108afb9eb518a4"
+      },
+      "identifier": "cas:1170-02-1",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": null,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-r-polymer-identity",
+      "owner_path": "data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/r-polymer-identity.yaml",
+        "sha256": "93d08c548bd48007edbbf5ae46f5da8d096258a9ebac6704cf0cbe1310375fde"
+      },
+      "identifier": "CHEBI:131525",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "merged",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-r-polymer-tombstone",
+      "owner_path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/r-polymer-tombstone.yaml",
+        "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+      },
+      "identifier": "UNMAPPED_0494",
+      "mapping_status": "REJECTED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "mapping_status",
+        "notes",
+        "representative",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-generic-polymer-alias",
+      "owner_path": "data/ingredients/mapped/Poly_3-hydroxybutyrate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "756a84a31ed953b782a4ddc31b346401ddceb3d12260d39d32e9fabb8c88310d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/generic-polymer-alias.yaml",
+        "sha256": "d78d47931757585415d9afa72a2963a88a44eff8bbd511060fafd4846ad6955f"
+      },
+      "identifier": "CHEBI:53389",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "merged",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-generic-polymer-tombstone",
+      "owner_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/generic-polymer-tombstone.yaml",
+        "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+      },
+      "identifier": "UNMAPPED_0493",
+      "mapping_status": "REJECTED",
+      "changed_top_level_fields": [
+        "curation_history",
+        "mapping_status",
+        "notes",
+        "representative",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-cephamycin-parent-chemistry",
+      "owner_path": "data/ingredients/mapped/Cephamycin_A.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/cephamycin-parent-chemistry.yaml",
+        "sha256": "705c3fb16a7cf8b593bc48230832bd3e39a9491d294c65ced79961480db2233a"
+      },
+      "identifier": "kgmicrobe.compound:cephamycin_a",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    },
+    {
+      "proposal_id": "c-ardacin-a-cas",
+      "owner_path": "data/ingredients/mapped/Ardacin_A.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposals/ardacin-a-cas.yaml",
+        "sha256": "9543bdf1f61bce2d47e4fb1e2ef4093c55a1af08a589e4adf3685b73f92bb1a7"
+      },
+      "identifier": "cas:95935-21-0",
+      "mapping_status": "MAPPED",
+      "changed_top_level_fields": [
+        "chemical_properties",
+        "curation_history",
+        "identifier",
+        "ontology_mapping",
+        "synonyms"
+      ],
+      "prior_curation_history_preserved": true,
+      "verdict": "pass_with_scope_limits",
+      "scope": "Exact proposed delta reviewed against cited source, supplied form, owner and identity/predicate semantics. Inherited full-record annotations are not independently approved by this review; native admission and coordinator integration remain required."
+    }
+  ],
+  "reviewed_owner_hashes": {
+    "data/ingredients/mapped/Na3vo4.yaml": "414bd8739268155f11bcba2cd9f19df9e4e3600634190a93fd701d311f3b3350",
+    "data/ingredients/mapped/Naoh.yaml": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31",
+    "data/ingredients/mapped/Dl-2-methylbutyric_Acid.yaml": "86d91038be691420f3748192b215a9f6f5fc92cfad5b729bddab9dd4dd5c18ce",
+    "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml": "566087081c6e46c9c4d7a66f24b4e82c530cbc5402d4818193e99299994034aa",
+    "data/ingredients/mapped/Na2sio3_X_9_H2o.yaml": "f4d860dd443582074583a911491db43130dd92efe57488228012c85da842798b",
+    "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml": "cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05",
+    "data/ingredients/mapped/Hcl.yaml": "396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e",
+    "data/ingredients/mapped/Coso4_X_7_H2o.yaml": "3e14e4d57dab11eb3974f45db2894b12bd71aa7a761d823ae8ce401300ceba8d",
+    "data/ingredients/mapped/Cacl22h2o.yaml": "5f0a5e80a9a0bee1ccdd09234041c29a1c10fb55e52c534da6f87c0c1db6e0ed",
+    "data/ingredients/mapped/Cacl2_X_2_H2o.yaml": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7",
+    "data/ingredients/mapped/Isobutyric_Acid.yaml": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31",
+    "data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml": "891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20",
+    "data/ingredients/mapped/Hepes.yaml": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+    "data/ingredients/mapped/Fecl3_X_6_H2o.yaml": "a77cd844d1d5ec5f1deb35d0ca1eff1ee5b73b17cd140be3524fc057f0f30979",
+    "data/ingredients/mapped/Activated_Charcoal.yaml": "ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f",
+    "data/ingredients/mapped/Citric_Acid_X_H2o.yaml": "75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963",
+    "data/ingredients/mapped/Butyric_Acid.yaml": "421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86",
+    "data/ingredients/mapped/Na2seo4.yaml": "5a4c0a17fa416848cd312592d9560417db3b1f54b858254b2e3a9cc28a1c24e0",
+    "data/ingredients/mapped/2-mercaptoethanesulfonate.yaml": "e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae",
+    "data/ingredients/mapped/Actinohivin.yaml": "9cd36e65b83068f30d45022f98ad14f1b261ff1b7ea576f354953107b7f77b3d",
+    "data/ingredients/mapped/Sarcidin.yaml": "22a6deeb979004b617f6bf021beca83a754b435ca10813140b47bc2181c3bfef",
+    "data/ingredients/mapped/Azacolutin.yaml": "25a1701923e1712d51f148a1d02a7ed4ba2662a4793546e645b26b2b864fc4ce",
+    "data/ingredients/mapped/CyclopentanolCO2.yaml": "7124309eeffdd8fe6e1aea37843fb554ffe353068888e502d4ca850e54ed5ce8",
+    "data/ingredients/mapped/Glycerol_Mono-oleate.yaml": "5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e",
+    "data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml": "9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848",
+    "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8",
+    "data/ingredients/mapped/Poly_3-hydroxybutyrate.yaml": "756a84a31ed953b782a4ddc31b346401ddceb3d12260d39d32e9fabb8c88310d",
+    "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640",
+    "data/ingredients/mapped/Nh42so4.yaml": "1806053b7d0adc25bd2d1a84f0aeae92185a69f84d2db46abe816c75c21db48d",
+    "data/ingredients/mapped/Cephamycin_A.yaml": "bede58a6e1b02beb09c9536b7db3bc48b75c0167ec89a240faafcccbf94a51f3",
+    "data/ingredients/mapped/Na-silicate.yaml": "5655d72545f3b5e0d55759fcada4bf9e516fa3a66287590f4f6fc2cc1e91c2e2",
+    "data/ingredients/mapped/Ardacin_A.yaml": "617a2ddb12f0712cea0d92f46f8b3c784a9181c1a9d74dd98320672dcbf6986e"
+  },
+  "reviewed_complete_recipe_hashes": {
+    "inputs/culturemech/data/normalized_yaml/algae/fdmed.yaml": "496db91490e7787087838dcc327c8d1ad0fc7bee851663d3baa7bec94216f258",
+    "inputs/culturemech/data/normalized_yaml/bacterial/medium_dh.yaml": "d255047e787828afded9611242510829cdd3ae49a6373dc8b800767264daebf8",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M694_Ruminococcus_Albus_Medium.yaml": "3b69719fe6d6fa347a143e8c8cd51363553e229a06d78a60c988e6c018dda72f",
+    "inputs/culturemech/data/normalized_yaml/specialized/smn_rich.yaml": "d3ac4195e43b97e779cbf4b04bd91bab6240090c46178f3035b2622571a7dccb",
+    "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe",
+    "inputs/culturemech/data/normalized_yaml/bacterial/m9_sng_medium.yaml": "99cabe0e669d2c41483be98338bf611712194f05e8506537c2d32e7118d12ac4",
+    "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138",
+    "inputs/culturemech/data/normalized_yaml/bacterial/fe_and_s_free_basal_medium.yaml": "9aff181415f39d91d3f3632b5fbe1dcae942c8a379ba4711d6f1c55e840067bc",
+    "inputs/culturemech/data/normalized_yaml/algae/hsm.yaml": "8e23a83a001ba7d86f7e67eee0566d96d9f935ef1efaa38799c6de0b8fc33d92",
+    "inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml": "d999969421b96869ea832e3d126998661c122268c824661eca03f5b1ba1b048e",
+    "inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml": "297ba0a0bb71621a5168866eefaf36ea962d89b3b50995d6d16443acdfcbb84f",
+    "inputs/culturemech/data/normalized_yaml/algae/ucm.yaml": "74388a28969363b889439ecd0cd4ceef8fb628cdc01c2a1662416c419f5b008d",
+    "inputs/culturemech/data/normalized_yaml/algae/mp.yaml": "d996ade7a74b182ed875a01e692151282f34b4b6e2228cef1e8a5e929641cd6a",
+    "inputs/culturemech/data/normalized_yaml/algae/waris_h.yaml": "6b84f51622f463c72b01063a0da7ffa457db8a996ee118263eddbf8fb1ddee46",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M520_Syntrophomonas_Medium_for_Syntrophospora_cellicola_19J-3.yaml": "f641876237a4f9af117a79115b8626b9fdcf07dbdc0925c19f5c6e8516e29fa8",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_mg_basal_medium.yaml": "ebbd979580a86bff620c7751e7598b323481a848448ae6e106a35b39ad956fba",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml": "b1ebe2c056076b8b6f9762d5816bf7e59156773b10af3bd9583f08c878ff4916",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1210_YCFA_Medium.yaml": "8779c940ec074455b32942db2f9ab0606c2ea022776b1708710dd4b84092c1d5",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml": "86a50834c615ada0a2efede291245f7687d31eec514d095badeb3767667713f7",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_ycfa_medium.yaml": "3edd879adc9f46bc3c5c33cbff13d3c7fcaed8b8955d00ad9abcd4170aaf7baf",
+    "inputs/culturemech/data/normalized_yaml/bacterial/m9_echenique.yaml": "f5d2221be47e030b5f7428afb310ccf8ae0ccde14f78823745426acda59694a9",
+    "inputs/culturemech/data/normalized_yaml/bacterial/m9_tomaras.yaml": "17f627a014f0e712a5d387bbe324609c00d1c52568db5781be688317e34d6e34",
+    "inputs/culturemech/data/normalized_yaml/bacterial/rs_medium_nutrient_medium_nm_component.yaml": "cb5a972f2d1da8e1c0f822b4f7a1f5a90e5b8062ef67b8413ef97e8a9f9b6cba",
+    "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1060_Freshwater_Medium_For_Soil_AOA.yaml": "6d0f892f08ae257551671be3e0262e0e64f16ba6018289ef48ac3c0e6327339d",
+    "inputs/culturemech/data/normalized_yaml/algae/walnes.yaml": "920f6051f02b16b4c9b2e03939ba777115d5241ebd00dea7f9027285913914a3",
+    "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a",
+    "inputs/culturemech/data/normalized_yaml/bacterial/minimal_mineral_medium.yaml": "1a90d42c7a6911ac3f266da24edaae006ab3cacead41fa28f8ff3a811040957a",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml": "5e9cd1cd3846e830d2051522b9bf73462ddcd926f6ec2d655c06d56b1fbf1a33",
+    "inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml": "a562ed4485b1c39ca980c37a6d6698fde59ab7efb8bc6a67854810d4effabb42",
+    "inputs/culturemech/data/normalized_yaml/bacterial/for_dsm_4661.yaml": "4099b885ed51c5a4e2913763deb0bacbdfe0817f1234b2a2393dbe8a1123ab74",
+    "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_0_6_m_nacl.yaml": "07d5f3e41623b8f86c3a85bbe03c11de9fc07b65ce5a185e9faa15a2d3c4b308",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_0_75_m_nacl.yaml": "bc903b6a9f1af3249f9d5a551f600436e9c10d9e45bf492a968b3f733d2dca39",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_1_5_m_nacl.yaml": "de8993d94d717a4abedc51640fdf540b3d4561705c07ab76cc4d93cd1b33ed18",
+    "inputs/culturemech/data/normalized_yaml/bacterial/modified_m63_medium_with_hydroxyectoine_and_2_5_m_nacl.yaml": "a129fe9ea9c46685e7fde826b55ee9acfbf166e55ba35d55c1009c17675493b5",
+    "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2600_Pyrobaculum_Medium.yaml": "b160ea07dc22d24914cb47444417d2b6e05132b9cbd83d2258a98ee2ff675e2e",
+    "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2654_Methanoregula_Peat_Medium.yaml": "a1573d448ba464c3ae1d269592d9627627a7761075203a4b2206af8174482f18",
+    "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2680_Caldisphaera_Medium.yaml": "3cf2cd1cfe95569f1cf3c534f985c48cde2c90b375f04228171bf08d1bbe5ba6",
+    "inputs/culturemech/data/normalized_yaml/archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml": "34c2c8e2888f6614545b81ea073636df1c911644a42db5cc0ba6659a03a3f9f9",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1353_Desulfobacterium_Catecholicum_Medium.yaml": "f1daba282cbe9305fd207c8fefc8283cefdfa7b1f7881eb35764ddb842c47442",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M683_Freshwater_Iron_GEL_Medium.yaml": "6ad5f50492f97329455ff3f22c1bdcbd336354b311879572392d20788771bbdd",
+    "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85",
+    "inputs/culturemech/data/normalized_yaml/archaea/modified_methanobacterium_medium_for_dsm_1093.yaml": "0380b997f1760b4e07b5c137c2f56e35f1de036b53428a6d8bef4ec9c4b0a0f5",
+    "inputs/culturemech/data/normalized_yaml/algae/CCAP_TAP Medium.yaml": "c674aaa30b223093e5b27c3c8762c1ad1dedc3eefa9b876ceaa888eebd20fd34",
+    "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M609_Desulfovibrio_Magnus_Medium.yaml": "79b62853cf258e0dd9312404cdd3198140f0c6f93b0884d904594ee1aa9dce9e",
+    "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml": "9fca5916d287189a52e56553cb910baeaeb35d701cffd17c24852093593477ab"
+  }
+}

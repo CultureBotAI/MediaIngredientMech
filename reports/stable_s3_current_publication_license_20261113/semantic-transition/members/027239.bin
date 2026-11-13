@@ -1,0 +1,51 @@
+{
+  "current_owner_defect": true,
+  "obsolete_canonical_only": false,
+  "invalid_cas": {
+    "value": "138-86-7",
+    "weighted_sum": 63,
+    "expected_check_digit": 3,
+    "actual_check_digit": 7,
+    "checksum_is_not_identity_evidence": true
+  },
+  "recommended_concept": {
+    "mim_id": "MIM:0000862",
+    "nominal_source_label": "d-limonene",
+    "ontology_id": "CHEBI:15382",
+    "ontology_label": "(4R)-limonene",
+    "cas_rn": "5989-27-5",
+    "predicate": "skos:exactMatch",
+    "grounding_method_recommendation": "MANUAL_CURATION with explicit curator judgment resolving the duplicate ChEBI entries and rejecting malformed source CAS; do not claim an automatic unique-synonym or CAS lookup."
+  },
+  "primary_evidence": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/primary/chebi-15382.json",
+      "sha256": "84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e",
+      "bytes": 7791
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/primary/chebi-748872.json",
+      "sha256": "6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69",
+      "bytes": 5660
+    }
+  ],
+  "selection_rationale": "Released three-star CHEBI:15382 has an explicit 4R definition, exact d-limonene synonyms and concordant CAS xrefs. Two-star ChEMBL CHEBI:748872 has the same stereochemical structure but lacks a definition and imports a dl-limonene synonym; do not import its synonym bundle.",
+  "source_scope": "Nominal ingredient concept only. Source row has no supplier, catalog, physical sample, purity, structure or occurrence evidence. No source-to-MIM binding, procurement claim, role, component, or subclass assertion is authorized.",
+  "rejected_replacement": "Do not mechanically repair 138-86-7 to 138-86-3: the latter is DL/racemic limonene/dipentene, separately named in the same source.",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1381",
+  "required_followup": [
+    "Use focused issue1381; preserve the separate residual scope of issue753.",
+    "Create a separate guarded source-correction proposal, preserving stable MIM ID, valid slug alias and all original history.",
+    "Remove disproved cas:138-86-7 from resolving aliases and active CAS/ontology fields only through reviewed owner-rejection policy; retain exact beforeimage and complete rejection history.",
+    "Append corrected scientific evidence and provenance; do not rewrite original raw source or historical reviews.",
+    "Obtain independent review of actual corrected owner and native successor context.",
+    "Adjudicate canonical row retirement/new exact row with fresh whole-row review; do not expand sodium-stock retirement proposal implicitly."
+  ],
+  "holds": [
+    "Current row953 remains WITHHOLD.",
+    "Historical OPEN assertion acb5701d93b55b6056475f5bdea05f1720d218d8a3ddce6822f25b9aeb1e134f remains preserved.",
+    "No native review approval, native application, generated candidate or final release was produced by this investigation.",
+    "All campaign scientific holds and original source/occurrence scope remain unchanged."
+  ],
+  "generation_conclusion": "The malformed-CAS refusal reports a real maintained-owner and canonical defect. It is not grounds to weaken the generator guard, silently omit the row, or invent a replacement."
+}

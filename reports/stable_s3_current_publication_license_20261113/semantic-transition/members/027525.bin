@@ -1,0 +1,186 @@
+{
+  "at": "2026-11-12T20:23:58.525921+00:00",
+  "reviewer": "Codex /root/s2_publication_skeptic",
+  "classification": "Current exact racemate assertion lacks supplied-form support; not a proved alternative identity",
+  "entry": {
+    "entry_id": "row-002125",
+    "candidate_position": 2125,
+    "owner": "data/ingredients/mapped/Nicotine_Fluka.yaml",
+    "owner_sha256": "f0fe43c881fd1cb97bb7024d968f76ef90fbd8a5b541434e4f8862d304d09b86",
+    "before_rows": [
+      {
+        "position": 2107,
+        "row": {
+          "subject_id": "MIM:0001892",
+          "subject_label": "Nicotine (Fluka)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:18723",
+          "object_label": "nicotine",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=claude_culturemech_residual_grounding]|kgm:primary_mappings[kegg_compound]",
+          "mapping_date": "2026-09-06",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "",
+          "validation_method": "manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"
+        }
+      }
+    ],
+    "candidate_row": {
+      "subject_id": "MIM:0001892",
+      "subject_label": "Nicotine (Fluka)",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:18723",
+      "object_label": "nicotine",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "",
+      "validation_method": ""
+    },
+    "proposed_row": {
+      "subject_id": "MIM:0001892",
+      "subject_label": "Nicotine (Fluka)",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:18723",
+      "object_label": "nicotine",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=claude_culturemech_residual_grounding]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "",
+      "validation_method": ""
+    },
+    "disposition": null,
+    "reason": null
+  },
+  "owner_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/data/ingredients/mapped/Nicotine_Fluka.yaml",
+  "owner_sha256": "f0fe43c881fd1cb97bb7024d968f76ef90fbd8a5b541434e4f8862d304d09b86",
+  "owner_text": "identifier: CHEBI:18723\npreferred_term: Nicotine (Fluka)\nontology_mapping:\n  ontology_id: CHEBI:18723\n  ontology_label: nicotine\n  ontology_source: CHEBI\n  mapping_quality: SYNONYM_MATCH\n  match_level: NORMALIZED\n  evidence:\n  - evidence_type: LEXICAL_MATCH\n    source: culturemech:output/ingredient_occurrences.tsv\n    notes: Surface form appears in CultureMech's occurrence table and was grounded\n      to CHEBI:18723 on an exact match against an exact ontology synonym. Restored\n      from the record's own creation history (#541); the residual importer wrote this\n      provenance only into the published SSSOM.\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 1\n  media_count: 1\ncuration_history:\n- timestamp: '2026-08-30T10:35:03.361102+00:00'\n  curator: claude_culturemech_residual_grounding\n  action: CREATED_FROM_CULTUREMECH_RESIDUAL\n  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (1\n    mentions across 1 recipes). Grounded to CHEBI:18723 (''nicotine'') on an exact\n    match of an exact synonym to the query ''nicotine''. Source: culturemech:output/ingredient_occurrences.tsv.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-09-06T07:34:56.956907+00:00'\n  curator: claude_restore_culturemech_evidence\n  action: CORRECTED\n  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table\n    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL\n    history entry but absent from the structured field the SSSOM builder reads, so\n    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published\n    row (#541).\n  llm_assisted: false\n- timestamp: '2026-11-08T22:01:42+00:00'\n  curator: codex\n  action: ASSIGNED_MIM_ID\n  changes: '#1265: assigned permanent MIM:0001892; retained mapping identifier and\n    legacy aliases.'\n  llm_assisted: true\nmim_id: MIM:0001892\nlegacy_identifiers:\n- MIM:Nicotine_Fluka\n- CHEBI:18723\n",
+  "raw_authority": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/cumulative-source-successor-inputs-s3-v2/evidence/bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9/facts.json",
+    "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9",
+    "locator": "CHEBI:18723.statements",
+    "selected_statements": [
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "IAO:0000115",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "A racemate composed of equimolar amounts of (<i>R</i>)- and (<i>S</i>)-nicotine."
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasExactSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "rac-3-(1-methylpyrrolidin-2-yl)pyridine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "(+-)-3-(1-Methyl-2-pyrrolidinyl)pyridine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "(+-)-nicotine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "(R,S)-nicotine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "(RS)-nicotine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "nicotin"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "nikotin"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "oio:hasRelatedSynonym",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "rac-3-(1-methylpyrrolidin-2-yl)pyridine"
+      },
+      {
+        "datatype": null,
+        "graph": null,
+        "language": null,
+        "object": null,
+        "predicate": "rdfs:label",
+        "stanza": "CHEBI:18723",
+        "subject": "CHEBI:18723",
+        "value": "nicotine"
+      }
+    ]
+  },
+  "historical_review": {
+    "container": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/s3-publication-base-inputs-v1/history/0071-historical-review-evidence.json",
+    "sha256": "a0ce8e6066912f8a945f5df57af465cfc3cd25dc941bea1c876debd5c3ccd8b2",
+    "original": {
+      "original_path": "reports/yaml_record_review/Nicotine_Fluka.md",
+      "sha256": "62ead1839c1511d986174d64611f149b32806f399c0cb4119b54c518c846d195",
+      "text": "# `data/ingredients/mapped/Nicotine_Fluka.yaml`\n\n## Verdict\n\nPass with minor issues. The supplier-qualified CultureMech residual maps to\nactive `CHEBI:18723` nicotine and final SSSOM is clean, but the newer\nresidual-created YAML has not been backfilled with `ingredient_type` or\nChEBI-derived chemical properties.\n\n## Identity\n\n- Reviewed record: `data/ingredients/mapped/Nicotine_Fluka.yaml`.\n- Identifier and grounding: `identifier: CHEBI:18723` with\n  `ontology_mapping.ontology_id: CHEBI:18723`, label `nicotine`, source\n  `CHEBI`, `mapping_quality: SYNONYM_MATCH`, `match_level: NORMALIZED`, and\n  `mapping_status: MAPPED`.\n- Occurrences: 1 CultureMech recipe occurrence across 1 medium.\n\n## Validation\n\n- `uv run --frozen python scripts/validate_strict.py` on the 5-file batch from\n  `Nicotine_Fluka` through `Nisin`: exited 0 and wrote zero ERROR rows.\n- Direct `linkml-term-validator validate-data` exited 0 for this CHEBI-primary\n  record.\n\n## Evidence\n\n- A fresh EBI OLS4 lookup resolves `CHEBI:18723` as active `nicotine` and\n  preserves `nicotine` as the canonical label.\n- A fresh PubChem lookup for the supplier-qualified text `Nicotine Fluka`\n  returned no CID; the mapping therefore still rests on the restored\n  CultureMech residual occurrence and exact ontology synonym evidence, not on\n  source-specific CAS or structure confirmation.\n- The final SSSOM row maps `MIM:Nicotine_Fluka` exactly to `CHEBI:18723` and\n  emits no `other` synonym noise.\n\n## Completeness\n\n- The active ChEBI term, CultureMech occurrence evidence, 1/1 occurrence count,\n  and final exact row agree.\n- Minor: as a CHEBI-primary single-ingredient chemical, the record should have\n  `ingredient_type: SINGLE_INGREDIENT` and a ChEBI-derived\n  `chemical_properties` block when the supplier-qualified surface can be\n  resolved to a concrete nicotine form.\n\n## Recommended Edits\n\n- Minor: in `data/ingredients/mapped/Nicotine_Fluka.yaml`, set\n  `ingredient_type: SINGLE_INGREDIENT` and backfill the ChEBI/PubChem chemical\n  block for the verified nicotine form.\n"
+    }
+  },
+  "conclusion": "INSTALL_WITHHOLD. The specific CHEBI concept is explicitly an equimolar R/S racemate. The supplier-qualified owner contains only normalized lexical evidence for nicotine and no stereochemical composition, supplier SKU, CAS or structure. The historical report itself reports no PubChem CID for Nicotine Fluka and no source-specific form confirmation. Exact string matching to a narrower racemate concept does not establish the source form. No alternative stereoisomer is selected.",
+  "minimum_next_action": "Recover the exact original source/product specification and explicitly establish stereochemical scope, or retain the stable owner and withhold this external exact mapping. No guess of S-nicotine, racemate, supplier SKU, or owner merge.",
+  "search_limit": "Read complete current owner, exact raw ChEBI stanza and original archived record review in current qualified closure; no claim that evidence is absent from all external repositories.",
+  "scientific_release_approval": false
+}

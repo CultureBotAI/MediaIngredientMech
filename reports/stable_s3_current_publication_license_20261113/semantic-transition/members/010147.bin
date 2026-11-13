@@ -1,0 +1,178 @@
+identifier: CHEBI:64758
+preferred_term: Na2EDTA·2H2O
+ontology_mapping:
+  ontology_id: CHEBI:64758
+  ontology_label: EDTA disodium salt dihydrate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Properties: Defined component, Organic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Simple component, Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Organic compound, Defined component, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: EDTA disodium dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Na2EDTA . 2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2EDTA · 2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2EDTA.2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2EDTA· 2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2H2EDTA.2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: disodium (ethylenedinitrilo)tetraacetate dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: disodium EDTA dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: disodium edetate dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ethylenediaminetetraacetic acid disodium salt dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Na2EDTA•2H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2EDTA•2H2O(Sigma ED255)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate--water
+    (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Na2-EDTA x 2 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:na2-edta_x_2_h2o
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 140
+  media_count: 139
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:49.334720+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:205-358-3 from PubChem API (ontology label) via name preprocessing
+    (Na2EDTA·2H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: EDTA disodium dihydrate,
+    Na2EDTA . 2H2O, Na2EDTA · 2H2O, Na2EDTA.2H2O, Na2EDTA· 2H2O, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:35.140953+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.206088+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H14N2O8.2H2O.2Na; inchi=InChI=1S/C10H16N2O8.2Na.2H2O/c13-7(14)3-11(4-8(15);
+    smiles=O.O.O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.941179+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: MERGED
+  changes: Absorbed duplicate record Na2edta2h2o.yaml (UNMAPPED_0040) into Na2edta2h2o.yaml;
+    source occurrence counts and synonyms were merged. Exact local EDTA disodium salt
+    dihydrate mapping CHEBI:64758.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-06-14T06:54:43.190263+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_114_cas_audit
+  action: CORRECTED
+  changes: 'cas_rn 205-358-3 -> 6381-92-6. 205-358-3 is an EC/EINECS registry number
+    (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+    mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement is
+    this record''s own CHEBI term CHEBI:64758''s CAS dbxref, and that term''s label
+    matches the substance, so it is evidence rather than inference. The EC number
+    is recorded here rather than discarded: it was correct information in the wrong
+    field.'
+  llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'EDTA disodium salt dihydrate'; it matches
+    the ChEBI synonym 'Na2H2EDTA.2H2O' on CHEBI:64758. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_FROM
+  changes: Absorbed 'Na2-EDTA x 2 H2O' (#321), which differs from this record only
+    in notation the merge pass does not recognise as the same substance, so it escaped
+    dedup and was grounded to the anhydrous parent. It had just been minted 'kgmicrobe.compound:na2-edta_x_2_h2o'
+    on the false premise that ChEBI has no term for this hydrate — ChEBI label search
+    for the dihydrate of the minted-off parent. Occurrences 10/10 + 103/64 -> 113/74.
+    Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519455+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 74/113 -> 139/140 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 6381-92-6
+  data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'
+  retrieval_date: '2026-04-05T23:45:49.334710+00:00'
+  molecular_formula: C10H14N2O8.2H2O.2Na
+  inchi: InChI=1S/C10H16N2O8.2Na.2H2O/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;;2*1H2/q;2*+1;;/p-2
+  smiles: O.O.O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: CHELATOR
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161
+      (chelator (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

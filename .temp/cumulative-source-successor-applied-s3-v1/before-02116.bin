@@ -1,0 +1,70 @@
+identifier: CHEBI:63618
+preferred_term: Pravastatin
+ontology_mapping:
+  ontology_id: CHEBI:63618
+  ontology_label: pravastatin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:pravastatin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Antibiotic_resistance
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:pravastatin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002115; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C23H36O7
+  smiles: '[H][C@@]12C(=C[C@@H](O)C[C@@H]1OC(=O)[C@@H](C)CC)C=C[C@H](C)[C@@H]2CC[C@@H](O)C[C@@H](O)CC(=O)O'
+  inchi: InChI=1S/C23H36O7/c1-4-13(2)23(29)30-20-11-17(25)9-15-6-5-14(3)19(22(15)20)8-7-16(24)10-18(26)12-21(27)28/h5-6,9,13-14,16-20,22,24-26H,4,7-8,10-12H2,1-3H3,(H,27,28)/t13-,14-,16+,17+,18+,19-,20-,22-/m0/s1
+  molecular_weight: 424.534
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:37.694825+00:00'
+mim_id: MIM:0002115
+legacy_identifiers:
+- MIM:Pravastatin
+- CHEBI:63618

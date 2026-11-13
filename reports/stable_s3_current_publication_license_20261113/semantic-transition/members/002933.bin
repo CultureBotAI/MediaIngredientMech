@@ -1,0 +1,44 @@
+identifier: UNMAPPED_0616
+preferred_term: Sugarcane straw (lignocellulose substrate)
+synonyms:
+- synonym_text: Sugarcane straw (lignocellulose substrate)
+  synonym_type: RAW_TEXT
+  source: communitymech-unmapped
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-05-01T02:37:08.074047+00:00'
+  curator: audit_import_ingredients[communitymech-unmapped]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sugarcane_straw_(lignocellulose_substrate));
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T20:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as lignocellulosic plant substrate material and left unmapped
+    pending material-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Sugarcane_straw_lignocellulose_substrate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended identity class:** heterogeneous, taxon-associated
+    **lignocellulosic plant-residue material** used as a solid substrate; retain `ingredient_type:
+    UNDEFINED_MIXTURE`. It is neither a single chemical nor a salt, hydrate, buffer,
+    extract, or invariant commercial formulation. No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sugarcane_straw_(lignocellulose_substrate));
+  no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as lignocellulosic plant substrate
+  material pending material-level curation.
+ingredient_type: UNDEFINED_MIXTURE

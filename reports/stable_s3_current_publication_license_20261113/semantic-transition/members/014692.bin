@@ -1,0 +1,129 @@
+identifier: kgmicrobe.ingredient:metall_salt_sol_44
+preferred_term: Metall salt sol. 44
+synonyms:
+- synonym_text: Metall salt sol. 44
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:615); no CAS-RN or CHEBI/NCIT
+    match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:52:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a named metal salt stock solution and left unmapped pending component
+    list and formulation-specific curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0442 -> kgmicrobe.ingredient:metall_salt_sol_44 (FALLBACK_REGISTRY).
+    A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label
+    and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes
+    the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component
+    mix does not narrow to any single compound (#288).'
+- timestamp: '2026-08-27T03:16:39.520282+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct
+    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer
+    retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Add source-backed Metals44 has-part decomposition from DSMZ590, preserving hydrate
+    forms and explicitly unresolved Na-EDTA/concentrated acid identities; no mapping of whole
+    stock to one salt. Keep borax decahydrate component UNMAPPED pending issue1168 owner reconciliation;
+    baseline CHEBI131366 is not approved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:615); no CAS-RN or CHEBI/NCIT
+  match. Reviewed on 2026-05-11 as a named metal salt stock solution pending component list
+  and formulation-specific curation. Resolved source ingredient615 seeMedium590 to DSMZ Metals44
+  recipe. Add few drops concentrated H2SO4 to retard heavy-metal precipitation. Source basis
+  is1000ml distilled water; no exact Na-EDTA stoichiometry or acid concentration invented.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:metall_salt_sol_44
+  ontology_label: Metall salt sol. 44
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#288)
+    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO
+      by label and synonym: no term denotes it, and none could -- a preparation is not a substance.
+      Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because
+      a multi-component mix does not narrow to any single compound (#288).'
+components:
+- component_name: Na-EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: mg
+- component_name: ZnSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32312
+  concentration_value: '1095'
+  concentration_unit: mg
+- component_name: FeSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:75836
+  concentration_value: '500'
+  concentration_unit: mg
+- component_name: MnSO4 x H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86364
+  concentration_value: '154'
+  concentration_unit: mg
+- component_name: CuSO4 x 5 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31440
+  concentration_value: '39.2'
+  concentration_unit: mg
+- component_name: Co(NO3)2 x 6 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86214
+  concentration_value: '24.8'
+  concentration_unit: mg
+- component_name: Na2B4O7 x 10 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '17.7'
+  concentration_unit: mg
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1000'
+  concentration_unit: ml
+- component_name: concentrated H2SO4
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium590.pdf
+    source_record: DSMZ medium590, Metals44 subsection
+    notes: All listed components plus acid-addition instruction transcribed. Quantities are
+      recipe amounts per1000ml water, not an independently measured final-volume concentration.
+      Na-EDTA sodium stoichiometry and concentrated acid percentage/amount are unspecified.
+  notes: 'Na-EDTA remains UNMAPPED because source does not specify mono/disodium form; concentrated
+    H2SO4 remains UNMAPPED as a prepared acid solution and has no invented amount. A few drops
+    are specified in source. Components are has-part, never identity edges. Borax decahydrate
+    is transcribed without component_id pending cross-shard owner reconciliation: baseline CHEBI131366
+    is tracked as unsupported in issue1168; do not silently apply pending CHEBI38888 correction
+    before coordinator integration.'

@@ -1,0 +1,66 @@
+identifier: CHEBI:15987
+preferred_term: Trithionate
+synonyms:
+- synonym_text: Trithionate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 7
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:trithionate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0686 -> CHEBI:15987 "trithionate(2-)" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002557; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:trithionate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:15987
+  ontology_label: trithionate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
+      PR #201) + local CHEBI verification'
+    notes: Trithionate synonym of CHEBI:15987 trithionate(2-).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: O6S3
+  smiles: O=S(=O)([O-])SS(=O)(=O)[O-]
+  inchi: InChI=1S/H2O6S3/c1-8(2,3)7-9(4,5)6/h(H,1,2,3)(H,4,5,6)/p-2
+  molecular_weight: 192.195
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:39.348835+00:00'
+mim_id: MIM:0002557
+legacy_identifiers:
+- MIM:Trithionate
+- CHEBI:15987

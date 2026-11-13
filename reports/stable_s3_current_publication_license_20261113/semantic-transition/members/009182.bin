@@ -1,0 +1,43 @@
+identifier: kgmicrobe.ingredient:oxoid_lp0027_liver_digest
+preferred_term: Oxoid LP0027 neutralised liver digest
+synonyms:
+- synonym_text: Liver digest (Oxoid LP0027)
+  synonym_type: CATALOG_VARIANT
+  source: CCAP MC explicit Oxoid LP0027 catalog match to manufacturer product; admissible
+    only for that catalog-qualified label.
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0001668
+  ontology_label: liver digest
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.thermofisher.com/order/catalog/product/LP0027B
+    notes: LP0027 is neutralized papaic ox-liver digest; MICRO0001668 supplies broader
+      digest material category only.
+notes: Catalog-specific neutralized papaic ox-liver digest; generic liver digest is
+  a broader material, not exact formulation identity. No cross-brand equivalence or
+  fixed molecular composition inferred.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Catalog-specific neutralized papaic ox-liver digest; generic liver digest
+    is a broader material, not exact formulation identity. No cross-brand equivalence
+    or fixed molecular composition inferred.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.568901+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-182. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

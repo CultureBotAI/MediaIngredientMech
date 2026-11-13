@@ -1,0 +1,130 @@
+identifier: CHEBI:86155
+preferred_term: Bromothymol blue
+ontology_mapping:
+  ontology_id: CHEBI:86155
+  ontology_label: bromothymol blue
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 3,3-bis[3-bromo-4-hydroxy-2-methyl-5-(propan-2-yl)phenyl]-2,1lambda(6)-benzoxathiole-1,1(3H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4,4'-(3H-2,1-Benzoxathiol-3-ylidene)bis(2-bromo-3-methyl-6-(1-methylethyl)phenol)
+    S,S-dioxide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Bromthymol blue
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: bromothymol sulfone phthalein
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: pH indicator'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 174
+  media_count: 174
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:15.380795+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:76-59-5 from PubChem API via name lookup (Bromothymol blue)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:43:19.456804+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:76-59-5 from PubChem API (ontology label) via name preprocessing
+    (bromothymol blue)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 3,3-bis[3-bromo-4-hydroxy-2-methyl-5-(propan-2-yl)phenyl]-2,1lambda(6)-benzoxathiole-1,1(3H)-dione,
+    4,4''-(3H-2,1-Benzoxathiol-3-ylidene)bis(2-bromo-3-methyl-6-(1-methylethyl)phenol)
+    S,S-dioxide, Bromthymol blue, bromothymol sulfone phthalein'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Bromothymol_Blue_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.456707+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.270590+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C27H28Br2O5S; inchi=InChI=1S/C27H28Br2O5S/c1-13(2)17-11-20(15(5)23(28);
+    smiles=Cc1c(C2(c3cc(C(C)C)c(O)c(Br)c3C)OS(=O)(=O)c3ccccc3
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.893651+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247795+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: PH_INDICATOR (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.731849+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Bromothymol blue'' -> ''bromothymol blue'': synced to
+    canonical CHEBI label (preferred_term ''Bromothymol blue'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PH_INDICATOR -> physicochemical_roles.PH_INDICATOR'
+- timestamp: '2026-08-27T03:16:39.518457+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 51/169 -> 174/174 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000530; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 76-59-5
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:15.380747+00:00'
+  molecular_formula: C27H28Br2O5S
+  inchi: InChI=1S/C27H28Br2O5S/c1-13(2)17-11-20(15(5)23(28)25(17)30)27(19-9-7-8-10-22(19)35(32,33)34-27)21-12-18(14(3)4)26(31)24(29)16(21)6/h7-14,30-31H,1-6H3
+  smiles: Cc1c(C2(c3cc(C(C)C)c(O)c(Br)c3C)OS(=O)(=O)c3ccccc32)cc(C(C)C)c(O)c1Br
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: PH_INDICATOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+mim_id: MIM:0000530
+legacy_identifiers:
+- MIM:Bromothymol_Blue
+- CHEBI:86155

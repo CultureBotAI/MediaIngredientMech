@@ -1,0 +1,63 @@
+identifier: CHEBI:16019
+preferred_term: 3-methyl-2-butenol
+ontology_mapping:
+  ontology_id: CHEBI:16019
+  ontology_label: prenol
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: 3-methylbut-2-en-1-ol
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=556-82-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.852962+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.668001+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H10O; inchi=InChI=1S/C5H10O/c1-5(2)3-4-6/h3,6H,4H2,1-2H3;
+    smiles=CC(C)=CCO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.018270+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 556-82-1 uniquely resolves
+    by ChEBI xref to CHEBI:16019 'prenol'. CAS_RN_LOOKUP records the method that established
+    this mapping; a lexical grade would discard that provenance. ontology_id is unchanged.
+    The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438),
+    independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 556-82-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C5H10O
+  inchi: InChI=1S/C5H10O/c1-5(2)3-4-6/h3,6H,4H2,1-2H3
+  smiles: CC(C)=CCO
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,69 @@
+identifier: cas:541-09-3
+preferred_term: Uranyl acetate
+ontology_mapping:
+  ontology_id: mesh:C005460
+  ontology_label: uranyl acetate
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 541-09-3 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 2 CultureBot
+      media; samples: SpecU, FW104 COMM. Curator can promote to a CHEBI primary if/when
+      CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Uranyl acetate'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:541-09-3 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.805487+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:50.217203+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C4H8O6U; smiles=CC(=O)O.CC(=O)O.O=[U]=O; inchi=InChI=1S/2C2H4O2.2O.U/c2*1-2(3)4;;;/h2*1H3,(H,3,4)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.113177+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:04:05.444133+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_MESH
+  changes: set ontology_mapping parent=mesh:C005460 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002588; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 541-09-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C4H8O6U
+  smiles: CC(=O)O.CC(=O)O.O=[U]=O
+  inchi: InChI=1S/2C2H4O2.2O.U/c2*1-2(3)4;;;/h2*1H3,(H,3,4);;;
+  pubchem_cid: 10915
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002588
+legacy_identifiers:
+- MIM:Uranyl_Acetate
+- cas:541-09-3

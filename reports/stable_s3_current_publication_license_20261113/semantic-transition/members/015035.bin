@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:phosphate_nominal1m_ph7_2_jcm556
+preferred_term: Nominal 1 M phosphate buffer, pH 7.2 (JCM 556)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:phosphate_nominal1m_ph7_2_jcm556
+  ontology_label: Nominal 1 M phosphate buffer, pH 7.2 (JCM 556)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      556 names a 1 M phosphate buffer at pH 7.2 and directs mixing 28 mL of 1 M KH2PO4
+      with 78 mL of 1 M Na2HPO4 to prepare 100 mL. The 106 mL input sum conflicts
+      with that stated final amount. A source-qualified nominal preparation with its
+      two named stock parts can be represented while retaining the conflict; no amount
+      is corrected and no quantitative recipe is certified.
+components:
+- component_name: 1 M KH2PO4 solution
+  reference_scope: UNMAPPED
+  source: Source prints 28 mL of this stock.
+- component_name: 1 M Na2HPO4 solution
+  reference_scope: UNMAPPED
+  source: Source prints 78 mL of this stock; supplied hydration unspecified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556
+    source_record: Nominal 1 M phosphate buffer, pH 7.2 (JCM 556)
+    notes: JCM 556 names a 1 M phosphate buffer at pH 7.2 and directs mixing 28 mL
+      of 1 M KH2PO4 with 78 mL of 1 M Na2HPO4 to prepare 100 mL. The 106 mL input
+      sum conflicts with that stated final amount. A source-qualified nominal preparation
+      with its two named stock parts can be represented while retaining the conflict;
+      no amount is corrected and no quantitative recipe is certified.
+  notes: The 28+78 mL versus 100 mL conflict, input-stock solvent/hydration and pH-adjustment
+    details remain unresolved. This prevents normalized quantities and equivalence
+    to another formulation, not recognition of the named source preparation. Source-named
+    parts remain UNMAPPED where supplied form or stock identity is not established.
+    MIM_CATALOG references identify only the supported constituent, not approval of
+    that complete owner.
+notes: JCM 556 names a 1 M phosphate buffer at pH 7.2 and directs mixing 28 mL of
+  1 M KH2PO4 with 78 mL of 1 M Na2HPO4 to prepare 100 mL. The 106 mL input sum conflicts
+  with that stated final amount. A source-qualified nominal preparation with its two
+  named stock parts can be represented while retaining the conflict; no amount is
+  corrected and no quantitative recipe is certified. The 28+78 mL versus 100 mL conflict,
+  input-stock solvent/hydration and pH-adjustment details remain unresolved. This
+  prevents normalized quantities and equivalence to another formulation, not recognition
+  of the named source preparation. Provenance-only source text '1 M Phosphate buffer
+  (pH 7.2, see below)' (case CM_NAME:e533c74f6a51e498259ba29feb1d8c7490c669ab2068ea2f317152ffe577b15f).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.078185+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

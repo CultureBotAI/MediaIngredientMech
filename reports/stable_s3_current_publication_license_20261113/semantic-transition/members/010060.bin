@@ -1,0 +1,60 @@
+id: CultureMech:002506
+name: oatmeal_agar
+original_name: OATMEAL AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: JCM Medium J148
+  term:
+    id: mediadive.medium:J148
+    label: OATMEAL AGAR
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=148'
+ingredients:
+- preferred_term: Oatmeal
+  concentration:
+    value: '30'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps:
+- step_number: 1
+  action: FILTER_STERILIZE
+  description: Boil 30.0 g of oatmeal with 1.0 L of distilled water over water bath,
+    stirring occasionally, for 1 hr. Filter through cloth, make up to 1.0 L, add agar
+    and boil till dissolved.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.820627Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J148'
+- timestamp: '2026-03-13T06:19:13.871988Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002506'
+- timestamp: '2026-03-17T06:30:44.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:27.042346+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "OATMEAL AGAR" to "oatmeal_agar" for consistent matching
+- timestamp: '2026-06-05T07:40:16.699154+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+kg_microbe_match: mediadive.medium:12

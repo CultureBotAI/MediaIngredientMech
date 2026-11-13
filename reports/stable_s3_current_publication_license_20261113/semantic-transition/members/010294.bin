@@ -1,0 +1,481 @@
+{
+  "author": "/root",
+  "at": "2026-11-08T09:30:56.384212+00:00",
+  "rows": [
+    {
+      "index": 130,
+      "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+      "original_case_object_sha256": "0a934ea5cc68420c1b6649e432bb58b1dbb434e9376b6c3603f9d761d151610f",
+      "field": "final_correction_reassessment.assessment",
+      "before": "MediaDive1315/DSMZ542 identifies Penassay/Pennassay broth as the weighed17.5 g product, not the whole supplemented sporulation medium. The full manufacturer Medium3 table supports the same seven parts and product name; source glucose20 g and thymine remain additions.",
+      "after": "mediadive.ingredient:559 in mediadive.solution:1201 / DSMZ medium 542 identifies Penassay/Pennassay broth as the weighed17.5 g product, not the whole supplemented sporulation medium. The full manufacturer Medium3 table supports the same seven parts and product name; source glucose20 g and thymine remain additions.",
+      "source_evidence": [
+        {
+          "evidence_id": "MEDIA-P081",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/adcc06e37deefc619a.html",
+            "sha256": "fbafe3de5e8e3adbfa43f69754c0ff1b79b805d1fcd95643d2760d0685238c76"
+          },
+          "actual_sha256": "fbafe3de5e8e3adbfa43f69754c0ff1b79b805d1fcd95643d2760d0685238c76",
+          "url": "https://mediadive.dsmz.de/ingredients/559",
+          "original_accessed_at": "2026-11-08T05:07:26.660261+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "MEDIA-P050",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/d3f4f0b83515e25d07.html",
+            "sha256": "d0dfab37e007bbf0832aa54b563609dcd2b309796bfdacd5c89f8224038f2486"
+          },
+          "actual_sha256": "d0dfab37e007bbf0832aa54b563609dcd2b309796bfdacd5c89f8224038f2486",
+          "url": "https://mediadive.dsmz.de/rest/solution/1201",
+          "original_accessed_at": "2026-11-08T05:07:24.219938+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "M1193-SCOPE-87",
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/captures/scope-87.json",
+            "sha256": "a2f3de301930a0052e168fa14fcf5aaf6c2cd55504bc7c71aee59de189420919"
+          },
+          "actual_sha256": "a2f3de301930a0052e168fa14fcf5aaf6c2cd55504bc7c71aee59de189420919",
+          "url": null,
+          "original_accessed_at": null,
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO",
+          "case_ids": [
+            "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+            "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8"
+          ],
+          "description": "DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded.",
+          "evidence_ids": [
+            "M1193-SCOPE-87",
+            "M1193-WEB-web-search-03-87",
+            "MEDIA-CASE-087",
+            "MEDIA-P050",
+            "MEDIA-P051",
+            "MEDIA-RECIPE-087-00",
+            "MEDIA-RECIPE-087-01",
+            "MEDIA-RECIPE-087-02",
+            "M1193-DIRECT-100",
+            "M1193-DIRECT-111",
+            "M1193-DIRECT-6",
+            "M1193-OLS-28",
+            "M1193-OLS-BROAD-7",
+            "MEDIA-CASE-130",
+            "MEDIA-P081",
+            "M-FINAL-PRIMARY-READ-LEDGER"
+          ],
+          "owner_path": "data/ingredients/mapped/Penassay_Broth_Difco.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml",
+            "sha256": "8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7"
+          },
+          "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+          "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+          "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+          "replaces_proposal_ids": [],
+          "destination_owner_path": "data/ingredients/mapped/Penassay_Broth_Difco.yaml",
+          "predecessor_proposal": {
+            "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+            "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO",
+            "proposal_object_sha256": "7120246e7f663852589fcb123fd0121d496cb442319bcece2068f9ed5b2ad6ad",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/Penassay_Broth_Difco.yaml",
+              "sha256": "93f0954c8288a87d9a29dba189728dc38853e0ca7b9770ce0dcca85d14693dc1"
+            }
+          },
+          "final_correction": {
+            "author": "Codex GPT-6 /root/media_research",
+            "at": "2026-11-08T07:39:34.583422+00:00",
+            "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+            "changes": [
+              "Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except any separately listed finding."
+            ]
+          }
+        }
+      ],
+      "all_payloads_unchanged": true
+    },
+    {
+      "index": 135,
+      "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+      "original_case_object_sha256": "9b03be0a297f1a4f232b57b7abe6a14247da3e4d4dc964f530d976e62def5243",
+      "field": "final_correction_reassessment.assessment",
+      "before": "MediaDive2528 and its DSMZ1619 uses identify HiMedia ISP7 M362 powder. Preserve the seven immediate named inputs and partial trace-mixture assertion, separate glycerol15 ml, source dosage and existing-owner continuity. Exact whole-product identity does not require every part to have an ontology ID.",
+      "after": "mediadive.ingredient:1467 in mediadive.solution:3366 / DSMZ medium 1619 identify HiMedia ISP7 M362 powder. Preserve the seven immediate named inputs and partial trace-mixture assertion, separate glycerol15 ml, source dosage and existing-owner continuity. Exact whole-product identity does not require every part to have an ontology ID.",
+      "source_evidence": [
+        {
+          "evidence_id": "MEDIA-P083",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/2fb4be6f5e26eb0da0.html",
+            "sha256": "64c3709342b0426ff344b519fb06b291b05a420787371e7608402e3f2b823540"
+          },
+          "actual_sha256": "64c3709342b0426ff344b519fb06b291b05a420787371e7608402e3f2b823540",
+          "url": "https://mediadive.dsmz.de/ingredients/1467",
+          "original_accessed_at": "2026-11-08T05:07:26.735169+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "MEDIA-P017",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/3bd379039ed6b3e277.pdf",
+            "sha256": "fc707d637bfe84d814d32a5c967f6b99242098ab25022f0c31db8d443c079528"
+          },
+          "actual_sha256": "fc707d637bfe84d814d32a5c967f6b99242098ab25022f0c31db8d443c079528",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1619.pdf",
+          "original_accessed_at": "2026-11-08T05:07:21.723808+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "M1193-SCOPE-21",
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/captures/scope-21.json",
+            "sha256": "a626db4d8bcda154dd2e16e45b0fe79bff9ebe7753770e67ee1f28da4012fb25"
+          },
+          "actual_sha256": "a626db4d8bcda154dd2e16e45b0fe79bff9ebe7753770e67ee1f28da4012fb25",
+          "url": null,
+          "original_accessed_at": null,
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "M1193-P-ISP7",
+          "case_ids": [
+            "CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5",
+            "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2"
+          ],
+          "description": "Existing ISP7 owner has only DSMZ1619 occurrences explicitly naming HiMedia. Manufacturer M362 recipe corroborates 23.74g powder plus separately added15ml glycerol; powder is distinct from the completed glycerol medium.",
+          "evidence_ids": [
+            "MEDIA-P017",
+            "M1193-ISP7-M362",
+            "M1193-SCOPE-21",
+            "M1193-OWNER-ISP_7_Medium",
+            "MEDIA-CASE-021",
+            "MEDIA-RECIPE-021-00",
+            "M1193-OLS-6",
+            "M1193-OLS-7",
+            "M1193-OLS-BROAD-6",
+            "MEDIA-CASE-135",
+            "MEDIA-P083",
+            "M-FINAL-PRIMARY-READ-LEDGER"
+          ],
+          "owner_path": "data/ingredients/unmapped/ISP_7_Medium.yaml",
+          "kind": "edit_existing_owner",
+          "before_sha256": "66048f6ccdbbf9ff496ec4c5c653f7617305a021266d857b0c4853d57a3357d9",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/ISP_7_Medium.yaml",
+            "sha256": "82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3"
+          },
+          "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+          "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+          "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+          "replaces_proposal_ids": [
+            "MEDIA-PROPOSAL-ISP7"
+          ],
+          "destination_owner_path": "data/ingredients/mapped/ISP_7_Medium.yaml",
+          "predecessor_proposal": {
+            "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+            "proposal_id": "M1193-P-ISP7",
+            "proposal_object_sha256": "d4844e864567259e677ef7bfaa446840345bd1bf9a60455a886146d5700012fe",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/ISP_7_Medium.yaml",
+              "sha256": "3a50bc429faaed3dc6916c1dc78fa67df8cea3779a98d3084ce381f7be39d2cb"
+            }
+          },
+          "final_correction": {
+            "author": "Codex GPT-6 /root/media_research",
+            "at": "2026-11-08T07:39:34.583422+00:00",
+            "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+            "changes": [
+              "Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except any separately listed finding."
+            ]
+          }
+        }
+      ],
+      "all_payloads_unchanged": true
+    },
+    {
+      "index": 144,
+      "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+      "original_case_object_sha256": "6d66089fc7727102e2a77a26ddd953abaf8c4883f1dce75301a5ce5e5f3328eb",
+      "field": "final_correction_reassessment.assessment",
+      "before": "MediaDive1137/DSMZ804 weighs21 g Mueller-Hinton broth powder with separately added yeast and X/V factors. Preserve this dry source preparation without guessing a vendor, cation adjustment or internal recipe; keep the prepared TOGO M2937 supplied state separately represented.",
+      "after": "mediadive.ingredient:748 in mediadive.solution:1635 / DSMZ medium 804 weighs21 g Mueller-Hinton broth powder with separately added yeast and X/V factors. Preserve this dry source preparation without guessing a vendor, cation adjustment or internal recipe; keep the prepared TOGO M2937 supplied state separately represented.",
+      "source_evidence": [
+        {
+          "evidence_id": "MEDIA-P086",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/8a471eac341548853d.html",
+            "sha256": "f1c4fde02682555ebcd86a30023e3778f5e8e6d2ab560cf782b8bab950d02a7d"
+          },
+          "actual_sha256": "f1c4fde02682555ebcd86a30023e3778f5e8e6d2ab560cf782b8bab950d02a7d",
+          "url": "https://mediadive.dsmz.de/ingredients/748",
+          "original_accessed_at": "2026-11-08T05:07:26.843293+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "MEDIA-P006",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/3c0ecd621d195158bb.html",
+            "sha256": "c683a5d0099723e8ffa83bbe5d14ff0382d2e63faf8398ab59522a790c7d967d"
+          },
+          "actual_sha256": "c683a5d0099723e8ffa83bbe5d14ff0382d2e63faf8398ab59522a790c7d967d",
+          "url": "https://mediadive.dsmz.de/rest/solution/1635",
+          "original_accessed_at": "2026-11-08T05:07:20.497379+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "M1193-SCOPE-12",
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/captures/scope-12.json",
+            "sha256": "2763bb63c1af60f3704612b905b637ea3e949be2f856c278b55e8f20bb504a5e"
+          },
+          "actual_sha256": "2763bb63c1af60f3704612b905b637ea3e949be2f856c278b55e8f20bb504a5e",
+          "url": null,
+          "original_accessed_at": null,
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+          "case_ids": [
+            "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+            "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47"
+          ],
+          "description": "DSMZ804 primary PDF identifies21gMueller-Hintonbroth as a dry medium input, separate from5gyeast,1000mlwater andX/Vfactor supplements. Register this source-supplied powder without selecting a manufacturer or cation adjustment. Current OxoidCM0405 is a comparison, not a catalog assignment. Existing MuellerHintonIIagar is a different solid medium preparation; no maintained MHbroth owner exists. The M2937prepared broth is a separate supplied state whose reconstitution/equivalence is not inferred. Authentic source labels retained in the frozen case ledger and here: [{\"text\": \"Mueller-Hinton broth\", \"source\": \"Mueller-Hinton broth\"}, {\"text\": \"Mueller-Hinton broth\", \"source\": \"mediadive.ingredient:748\"}]. No ambiguous generic resolving alias is introduced.",
+          "evidence_ids": [
+            "MEDIA-CASE-012",
+            "MEDIA-P006",
+            "MEDIA-ARCHIVE-M2937",
+            "MEDIA-RECIPE-012-00",
+            "MEDIA-RECIPE-012-01",
+            "M1193-SCOPE-12",
+            "M1193-WEB-web-b4-2-12",
+            "M1193-DIRECT-23",
+            "M1193-COMPLETE-122",
+            "M1193-COMPLETE-130",
+            "MEDIA-CASE-144",
+            "MEDIA-P086",
+            "M-FINAL-PRIMARY-READ-LEDGER"
+          ],
+          "owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+            "sha256": "cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b"
+          },
+          "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+          "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+          "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+          "replaces_proposal_ids": [],
+          "destination_owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+          "applies_to_occurrence_ids": [
+            "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93"
+          ],
+          "applies_to_source_recipe_identifiers": [
+            "DSMZ:804",
+            "mediadive.compound:748"
+          ],
+          "predecessor_proposal": {
+            "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+            "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+            "proposal_object_sha256": "82a91b01c29aba2268402df1b9440f4360fb721f21c4abf1104cca4b4591799f",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+              "sha256": "dee3d9937df0c4978a23663a3c361b5c5c048cf6b8599f4a7aa54c648ba41e33"
+            }
+          },
+          "final_correction": {
+            "author": "Codex GPT-6 /root/media_research",
+            "at": "2026-11-08T07:39:34.583422+00:00",
+            "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+            "changes": [
+              "Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except any separately listed finding."
+            ]
+          }
+        }
+      ],
+      "all_payloads_unchanged": true
+    },
+    {
+      "index": 158,
+      "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+      "original_case_object_sha256": "0623e6539c420e1e9215f36d29e622bd97fa0521d320b6e02dd01e098eca4a33",
+      "field": "final_correction_reassessment.assessment",
+      "before": "MediaDive581 and complete DSMZ339/339a recipes identify33 g CM0643 powder. The nine manufacturer parts and dry state remain supported; liquid MICRO:0002186 and worker03 prepared broth are different supplied-form scopes. Keep the issue1237 integration dependency explicit.",
+      "after": "mediadive.ingredient:2095 in mediadive.solution:651 and mediadive.solution:5601 / DSMZ media 339 and 339a identify33 g CM0643 powder. The nine manufacturer parts and dry state remain supported; liquid MICRO:0002186 and worker03 prepared broth are different supplied-form scopes. Keep the issue1237 integration dependency explicit.",
+      "source_evidence": [
+        {
+          "evidence_id": "MEDIA-P093",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/b19cfa44db926e6109.html",
+            "sha256": "4b8436d02142c15f53b1e070bf0f25551e64386125a99755d9ff349c642cdd58"
+          },
+          "actual_sha256": "4b8436d02142c15f53b1e070bf0f25551e64386125a99755d9ff349c642cdd58",
+          "url": "https://mediadive.dsmz.de/ingredients/2095",
+          "original_accessed_at": "2026-11-08T05:07:27.520519+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "MEDIA-P022",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/8490647981d108eed0.pdf",
+            "sha256": "96b7b1298dafc3a9bb5a075d48343603e635b118c05ce3c2228de4c4658a5f12"
+          },
+          "actual_sha256": "96b7b1298dafc3a9bb5a075d48343603e635b118c05ce3c2228de4c4658a5f12",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339.pdf",
+          "original_accessed_at": "2026-11-08T05:07:22.167802+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "MEDIA-P042",
+          "capture": {
+            "root": "artifact",
+            "path": "media/captures/ce15dc1073b0219c2e.pdf",
+            "sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7"
+          },
+          "actual_sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339a.pdf",
+          "original_accessed_at": "2026-11-08T05:07:23.668988+00:00",
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        },
+        {
+          "evidence_id": "M1193-SCOPE-36",
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/captures/scope-36.json",
+            "sha256": "6b970999b1fbe9637bcf8b18003e06efead2f8617d5bd7c28c84fbc60ec85658"
+          },
+          "actual_sha256": "6b970999b1fbe9637bcf8b18003e06efead2f8617d5bd7c28c84fbc60ec85658",
+          "url": null,
+          "original_accessed_at": null,
+          "review_read_at": "2026-11-08T08:50:57.436795+00:00",
+          "unqualified_caption_number_present_in_exact_capture": false,
+          "current_reinspection_at": "2026-11-08T09:30:56.384212+00:00"
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "M1193-P-CM0643",
+          "case_ids": [
+            "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+            "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b",
+            "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79"
+          ],
+          "description": "DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution, so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements.",
+          "evidence_ids": [
+            "M1193-SCOPE-36",
+            "M1193-WILKINS-ONTOLOGY",
+            "M1193-WEB-web-open-02-36",
+            "MEDIA-CASE-036",
+            "MEDIA-P022",
+            "MEDIA-RECIPE-036-00",
+            "M1193-OWNER-Dehydrated_Wilkins-Chalgren_Medium",
+            "M1193-OWNER-Wilkins-Chalgren-Anaerobe-Broth",
+            "M1193-OWNER-Wilkins_Chalgrene_Anaerobe_Broth",
+            "M1193-DIRECT-4",
+            "M1193-OLS-14",
+            "M1193-OLS-15",
+            "MEDIA-CASE-063",
+            "MEDIA-P042",
+            "MEDIA-RECIPE-063-00",
+            "MEDIA-CASE-158",
+            "MEDIA-P093",
+            "M-FINAL-PRIMARY-READ-LEDGER"
+          ],
+          "owner_path": "data/ingredients/unmapped/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+          "kind": "edit_existing_owner",
+          "before_sha256": "e08067576d6dfbb31963df2400ef5090aa40b5f0751d99982f3a11cfbe0780d9",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+            "sha256": "cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9"
+          },
+          "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+          "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+          "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+          "replaces_proposal_ids": [],
+          "destination_owner_path": "data/ingredients/mapped/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+          "predecessor_proposal": {
+            "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+            "proposal_id": "M1193-P-CM0643",
+            "proposal_object_sha256": "30242e71d19a5f719675de9a6d2905a165f3940f3b79667dd86da6615df931a8",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+              "sha256": "4c9ad4e62517234ca0cb7b4c58f6dbd33f4fe8319a2f1ba36d9e7752f05fc9b0"
+            }
+          },
+          "final_correction": {
+            "author": "Codex GPT-6 /root/media_research",
+            "at": "2026-11-08T07:39:34.583422+00:00",
+            "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+            "changes": [
+              "Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except any separately listed finding."
+            ]
+          },
+          "integration_dependencies": [
+            {
+              "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237",
+              "counterpart": "w03::b-proposal-cm0643",
+              "obligation": "Retain this CM0643 powder proposal. Worker03 source context is prepared broth; same catalogue does not identify dry and prepared forms. Coordinator owns the separate prepared-broth correction and provenance reconciliation."
+            }
+          ]
+        }
+      ],
+      "all_payloads_unchanged": true
+    }
+  ],
+  "scope": "Four caption namespace corrections only. Exact original source captures and entire prior reassessment objects retained. Payloads, scientific identities, quantities, raw source cases/occurrences and inherited holds unchanged."
+}

@@ -1,0 +1,51 @@
+identifier: cas:1162-82-9
+preferred_term: 5,7,4'-Trimethoxyisoflavone
+ontology_mapping:
+  ontology_id: cas:1162-82-9
+  ontology_label: 5,7,4'-Trimethoxyisoflavone
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 1162-82-9 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:1162-82-9 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.966139+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:33.333395+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C18H16O5; smiles=COC1=CC=C(C=C1)C2=COC3=C(C2=O)C(=CC(=C3)OC)OC;
+    inchi=InChI=1S/C18H16O5/c1-20-12-6-4-11(5-7-12)14-10-23-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.177752+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 1162-82-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C18H16O5
+  smiles: COC1=CC=C(C=C1)C2=COC3=C(C2=O)C(=CC(=C3)OC)OC
+  inchi: InChI=1S/C18H16O5/c1-20-12-6-4-11(5-7-12)14-10-23-16-9-13(21-2)8-15(22-3)17(16)18(14)19/h4-10H,1-3H3
+  pubchem_cid: 136420
+ingredient_type: SINGLE_INGREDIENT

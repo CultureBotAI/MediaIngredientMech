@@ -1,0 +1,87 @@
+identifier: kgmicrobe.compound:ristocetin_b
+preferred_term: Ristocetin B
+ontology_mapping:
+  ontology_id: CHEBI:85129
+  ontology_label: ristocetin
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
+      MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
+      CHEBI:85129(ristocetin), CHEBI:201477(Ristocetin sulfate), CHEBI:201735(Ristocetin
+      A sulfate). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Ristocetin'
+synonyms:
+- synonym_text: 'produces: ristocetin B'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:ristocetin_b;
+    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
+    kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.084452+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.133011+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:18:52.604642+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:85129 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.691801+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C95H110N8O44; inchi=InChI=1S/C95H110N8O44/c1-30-47(109)18-37-20-49(30);
+    smiles=[H][C@]1(C(=O)OC)NC(=O)[C@H]2NC(=O)[C@H](NC(=O)[C@
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    ristocetin B''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''produces:
+    ristocetin B''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002208; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C95H110N8O44
+  inchi: InChI=1S/C95H110N8O44/c1-30-47(109)18-37-20-49(30)139-50-19-35(9-16-46(50)108)59(97)84(125)102-64-68(113)33-5-11-40(12-6-33)137-52-21-38-22-53(81(52)145-95-83(76(121)72(117)56(143-95)29-134-91-78(123)73(118)67(112)32(3)136-91)147-94-82(75(120)71(116)55(27-105)142-94)146-92-77(122)69(114)48(110)28-133-92)138-41-13-7-34(8-14-41)80(144-57-25-44(96)66(111)31(2)135-57)65-89(130)101-63(90(131)132-4)43-23-39(106)24-51(140-93-79(124)74(119)70(115)54(26-104)141-93)58(43)42-17-36(10-15-45(42)107)60(85(126)103-65)98-87(128)62(38)99-86(127)61(37)100-88(64)129/h5-24,31-32,44,48,54-57,59-80,82-83,91-95,104-124H,25-29,96-97H2,1-4H3,(H,98,128)(H,99,127)(H,100,129)(H,101,130)(H,102,125)(H,103,126)/t31-,32-,44+,48+,54+,55-,56+,57+,59+,60+,61-,62+,63-,64+,65-,66-,67-,68+,69+,70+,71-,72+,73+,74-,75+,76-,77-,78+,79-,80+,82+,83+,91?,92-,93+,94-,95-/m0/s1
+  smiles: '[H][C@]1(C(=O)OC)NC(=O)[C@H]2NC(=O)[C@H](NC(=O)[C@@H]3NC(=O)[C@H]4NC(=O)[C@H](NC(=O)[C@H](N)c5ccc(O)c(c5)Oc5cc4cc(O)c5C)[C@H](O)c4ccc(cc4)Oc4cc3cc(c4O[C@@H]3O[C@H](COC4O[C@@H](C)[C@H](O)[C@@H](O)[C@H]4O)[C@@H](O)[C@H](O)[C@H]3O[C@@H]3O[C@@H](CO)[C@H](O)[C@@H](O)[C@H]3O[C@@H]3OC[C@@H](O)[C@@H](O)[C@@H]3O)Oc3ccc(cc3)[C@H]2O[C@@H]2C[C@@H](N)[C@@H](O)[C@H](C)O2)c2ccc(O)c(c2)-c2c(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]3O)cc(O)cc21'
+  data_source: CHEBI sqlite (oaklib)
+mim_id: MIM:0002208
+legacy_identifiers:
+- MIM:Ristocetin_B
+- kgmicrobe.compound:ristocetin_b

@@ -1,0 +1,41 @@
+{
+  "index": 6,
+  "case_id": "CM_NAME:078e4a7ce18a09521df919cc155ed3cf796c2cda8e712c53c183e3227251a8ce",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "potassium.*glutam|glutam.*potassium",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "potassium.*glutam|glutam.*potassium",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml:2:preferred_term: L-Glutamic acid monopotassium salt monohydrate\ndata/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml:32:    notes: 'Catalogueline247 expressly selects Fluka49601 L-glutamicacid monopotassium\ndata/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml:39:      owner selector data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml.\ndata/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml:46:- synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium\n",
+  "label_index_stdout": "5241:L-Glutamic acid monopotassium salt monohydrate,preferred_term,cas:6382-01-0,L-Glutamic acid monopotassium salt monohydrate,CHEBI:16015,MAPPED,unique\n5242:\"L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium salt\",synonym,cas:6382-01-0,L-Glutamic acid monopotassium salt monohydrate,CHEBI:16015,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "CM_NAME:078e4a7ce18a09521df919cc155ed3cf796c2cda8e712c53c183e3227251a8ce",
+      "label": "Potassium Glutamate",
+      "proposal_ids": []
+    }
+  ]
+}

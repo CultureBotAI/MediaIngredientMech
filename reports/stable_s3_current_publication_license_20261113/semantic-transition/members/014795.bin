@@ -1,0 +1,518 @@
+{
+  "case_index": 78,
+  "case_id": "CM_NAME:9b665709b81f53d526a43f36e0973a1456f2696f6609f25261a6462815db309f",
+  "query_label": "Starch from corn (SIGMA)",
+  "family_terms": [
+    "starch",
+    "maize",
+    "corn"
+  ],
+  "ignored_files_included": true,
+  "method": "Path.rglob of all native per-record YAML includes ignored paths; native is_resolving_synonym policy applied; independent exact casefold/whitespace lookup over every CSV label-index row. No fuzzy hit treated as identity.",
+  "native_catalog_files_scanned": 2956,
+  "generated_label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "exact_resolving_native_matches": [],
+  "exact_index_rows": [],
+  "family_candidates": [
+    {
+      "path": "data/ingredients/mapped/Amylopectin_From_Maize.yaml",
+      "sha256": "e35f6b30ae1fbc8c17847d3b2d3ed6d38bd28e08ec2fef36bddecbf12435e4f7",
+      "identifier": "kgmicrobe.ingredient:amylopectin_from_maize",
+      "preferred_term": "amylopectin from maize",
+      "mapping_status": "MAPPED",
+      "names": [
+        "amylopectin from maize"
+      ],
+      "all_synonyms": [],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:28057",
+        "ontology_label": "amylopectin",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#322)",
+            "notes": "mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28057 carries no structural definition, so it is a class rather than an individual, and the record's label 'amylopectin from maize' does not equal the term label 'amylopectin'. EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded because the label carries a botanical source the term does not encode."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Corn_Meal.yaml",
+      "sha256": "deea94b71b43bbd26c2dec5da7b3f0de0db1cd31d2a001c49ddd0af5b871c7f9",
+      "identifier": "FOODON:03310257",
+      "preferred_term": "Corn meal",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Corn meal",
+        "Corn meal",
+        "Maize meal"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Corn meal",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        },
+        {
+          "synonym_text": "Maize meal",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "FOODON:03310257",
+        "ontology_label": "cornmeal",
+        "ontology_source": "FOODON",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "OAK/OLS exact audit",
+            "notes": "OLS audit matched the imported surface form Corn meal to FOODON:03310257 cornmeal through exact synonym corn meal."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Corn_Oil.yaml",
+      "sha256": "ec4374e2dc963838ddd161cd5aae82ab0f3726fee9c26b7d5af9a487699debe9",
+      "identifier": "CHEBI:195250",
+      "preferred_term": "Corn Oil",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Corn Oil"
+      ],
+      "all_synonyms": [],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:195250",
+        "ontology_label": "corn oil",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "LEXICAL_MATCH",
+            "source": "microbedecoder",
+            "notes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:corn_oil; "
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Corn_Steep_Liquor_Glucose_Fumarate.yaml",
+      "sha256": "3f5732bada7cf14e9cd34057719f2b2230be7bb4eeec4e3c74c376bdb3e76e0f",
+      "identifier": "kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate",
+      "preferred_term": "Corn Steep Liquor + Glucose + Fumarate",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Corn Steep Liquor + Glucose + Fumarate",
+        "Corn Steep Liquor + Glucose + Fumarate"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Corn Steep Liquor + Glucose + Fumarate",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate",
+        "ontology_label": "Corn Steep Liquor + Glucose + Fumarate",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'Corn Steep Liquor + Glucose + Fumarate', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv; Corn Steep Liquor carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Gelrite.yaml",
+      "sha256": "81996f0671d0ca15d3290928a11a9ff98808df0faf4b032dcc6330604149cb93",
+      "identifier": "CHEBI:85248",
+      "preferred_term": "Gelrite",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Gelrite",
+        "G Starch",
+        "Gellan Gum",
+        "Phytagel",
+        "Gellan gum (if needed)",
+        "Gelrite (if needed)",
+        "Gellan Gum (Phytagel)",
+        "gelrite (Gellan Gum)"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Role: Solidifying component; Properties: Organic compound, Undefined component",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Role: Solidifying component; Properties: Simple component",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "G Starch",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Gellan Gum",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Phytagel",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Role: Solidifying component; Properties: Undefined component, Organic compound",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Gellan gum (if needed)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Gelrite (if needed)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Gellan Gum (Phytagel)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "gelrite (Gellan Gum)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:85248",
+        "ontology_label": "gellan gum",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#322)",
+            "notes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:85248 carries no structural definition, so it is a class rather than an individual, and the record's label 'Gelrite' does not equal the term label 'gellan gum'. EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded because trade name for gellan gum."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Glucose_Cellobiose_Starch_Trypticase_Yeast_Extract.yaml",
+      "sha256": "34723916c18d5bdcc0f9db97894e83201077c2bce417221dcefeb08bcfb666a8",
+      "identifier": "kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract",
+      "preferred_term": "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+        "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract",
+        "ontology_label": "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'Glucose + Cellobiose + Starch + Trypticase + Yeast Extract', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 5 of 5 constituents resolve to existing MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Glucose_Maltose_Cellobiose_Starch_Glycerol.yaml",
+      "sha256": "55a4ee1c6e3b7fd14c60a946cf3ba30070c14963c7137ccd87b6a11511318354",
+      "identifier": "kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol",
+      "preferred_term": "Glucose + Maltose + Cellobiose + Starch + Glycerol",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Glucose + Maltose + Cellobiose + Starch + Glycerol",
+        "Glucose + Maltose + Cellobiose + Starch + Glycerol"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Glucose + Maltose + Cellobiose + Starch + Glycerol",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol",
+        "ontology_label": "Glucose + Maltose + Cellobiose + Starch + Glycerol",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'Glucose + Maltose + Cellobiose + Starch + Glycerol', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 5 of 5 constituents resolve to existing MIM records via docs/data/label_index.csv. ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical (an unresolved name here means MIM lacks the record, not that the substance is undefined). No concentrations are recorded: the label states none."
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Starch.yaml",
+      "sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b",
+      "identifier": "CHEBI:28017",
+      "preferred_term": "Starch",
+      "mapping_status": "MAPPED",
+      "names": [
+        "Starch",
+        "Soluble starch",
+        "Amidon (starch)",
+        "Corn Starch",
+        "Rice starch",
+        "Staerke",
+        "amidon",
+        "amylum",
+        "Starch soluble",
+        "Starch (soluble)",
+        "Starch, soluble",
+        "Soluble starch (BD-Difco)",
+        "Soluble starch (Sigma)",
+        "Rice starch"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "( soluble)",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "(soluble)",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Role: Carbon source; Properties: Defined component, Complex component, Organic compound",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Complex component",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Role: Carbon source; Properties: Organic compound, Complex component, Defined component",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Soluble starch",
+          "synonym_type": "EXACT",
+          "source": "manual"
+        },
+        {
+          "synonym_text": "Amidon (starch)",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Corn Starch",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Rice starch",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Staerke",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "amidon",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "amylum",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "degradation: starch",
+          "synonym_type": "REJECTED_LABEL",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Starch soluble",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "merged_from_duplicate_mim_record"
+        },
+        {
+          "synonym_text": "Role: Carbon source",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "Starch (soluble)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Starch, soluble",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Soluble starch (BD-Difco)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Soluble starch (Sigma)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Rice starch",
+          "synonym_type": "RAW_TEXT",
+          "source": "sssom_other_backfill"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:28017",
+        "ontology_label": "starch",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/Corn_Meal_Agar.yaml",
+      "sha256": "1b9bf8bf4a702dd002c0c516852742461b245f4d577716e4319de93fca30c278",
+      "identifier": "UNMAPPED_0130",
+      "preferred_term": "Corn meal agar",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Corn meal agar",
+        "Corn meal agar",
+        "Corn meal agar (BD-Difco)",
+        "Corn meal agar (Nissui)"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Corn meal agar",
+          "synonym_type": "RAW_TEXT",
+          "source": "extracted_from_agar_yaml"
+        },
+        {
+          "synonym_text": "Corn meal agar (BD-Difco)",
+          "synonym_type": "CATALOG_VARIANT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "Corn meal agar (Nissui)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    },
+    {
+      "path": "data/ingredients/unmapped/Corn_Steep_Powder.yaml",
+      "sha256": "90782981bcc54dc066b91cadf4794b0f166ea7d6a2d0a80336dcfe302ace35bb",
+      "identifier": "UNMAPPED_0366",
+      "preferred_term": "Corn steep powder",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Corn steep powder",
+        "Corn steep powder"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Corn steep powder",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": null
+    },
+    {
+      "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "identifier": "UNMAPPED_0123",
+      "preferred_term": "Inorganic salts-starch agar",
+      "mapping_status": "UNMAPPED",
+      "names": [
+        "Inorganic salts-starch agar",
+        "Inorganic salts-starch agar"
+      ],
+      "all_synonyms": [
+        {
+          "synonym_text": "Inorganic salts-starch agar",
+          "synonym_type": "RAW_TEXT",
+          "source": "extracted_from_agar_yaml"
+        }
+      ],
+      "supplied_form": [],
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:24839",
+        "ontology_label": "inorganic salt",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CHEBI via OLS (stem-substring)",
+            "notes": "Parent class identified via stem-substring; matched_via='Inorganic salts-starch agar'"
+          }
+        ]
+      }
+    }
+  ]
+}

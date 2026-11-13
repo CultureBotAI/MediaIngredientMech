@@ -1,0 +1,296 @@
+identifier: kgmicrobe.ingredient:wolfes_vitamin_mix
+preferred_term: Wolfe's vitamin mix
+synonyms:
+- synonym_text: Wolfe's vitamin mix
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 61
+  media_count: 61
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or
+    CHEBI mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a vitamin stock/pre-mix and left unmapped because this named
+    formulation should not be identity-mapped to generic vitamin parent terms.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0306 -> kgmicrobe.ingredient:wolfes_vitamin_mix "Wolfe's
+    vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
+    added.
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added nutritional_roles.VITAMIN_SOURCE plus components and component_assertion
+    by transcribing NCMA Medium 6 Wolfe's Vitamin Solution.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-09-11T14:49:05.979520+00:00'
+  curator: fix_lipoic_stereochemistry
+  action: CORRECTED
+  changes: Retargeted Thioctic acid component CHEBI:30314 -> CHEBI:16494 after the
+    source label moved from the R-enantiomer to generic lipoic acid (#454).
+  llm_assisted: false
+- timestamp: '2026-11-08T08:33:33.399902+00:00'
+  curator: Codex worker09 /root ten-vitamin source continuity review
+  action: CORRECTED
+  changes: 'Isolated TV-003 source-continuity proposal: retain authentic CultureBotHT
+    generic owner path/identifier and all original history; replace the later unbridged
+    NCMA active component assertion with the current CultureBotHT ten literal named
+    solutes and printed mg/L values, retaining X100 only as source metadata. Preserve
+    genuine NCMA eleven-solute/phosphate formula as a separate positive source claim;
+    remove the unbridged NCMA phosphate/water parts from the CultureBotHT active list.
+    Deliberately leave ten component references UNMAPPED pending independent child
+    identity review, preserving all displaced original objects in the review beforeimage/disposition
+    ledger. Retain original61count and legacy roles without approval. No JCM/NBRC
+    exact routing, quantity rescaling, source-number mint, whole-owner, role or export
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: Codex
+- timestamp: '2026-11-08T09:11:37.734370+00:00'
+  curator: worker08:/root issue1237 dependent proposal
+  action: CORRECTED
+  changes: Compose the real W09 source-continuity event without changing its authorship,
+    five authentic preceding events, identifier, aliases, historical count61 or inherited
+    role objects. Bind nine literal CB named inputs to current form-compatible MIM
+    catalog identities using preserved primary evidence; keep calcium pantothenate
+    UNMAPPED for exact D/DL uncertainty. Preserve all ten names, order, amounts and
+    MG_PER_L units and X100 metadata; no carrier, phosphate or rescaling. Supersede
+    current blanket-reference deferral with nine bounded bindings and one precise
+    hold. Establish the separate NBRC903-triggered comparator dependency for this
+    existing owner with real beforeimage; original NBRC903 new_owner/null-before origin
+    remains unchanged. Publish nominal JCM/NBRC source recipe separately; exact CB
+    association, owner application, inherited roles and export remain unapproved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or CHEBI
+  mapping available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix pending
+  component-level recipe curation.
+
+
+  Source-continuity correction proposal under issue1237 TV-003: Current CultureBotHT
+  generic source definition, distinct from its ATCC/MD-VS block. The exact Mixes.csv
+  block names ten solutes at the printed mg/L values and labels the preparation X=100
+  / Standard 100X vitamin solution. Values are transcribed without multiplying or
+  dividing by X, and receiving doses are unchanged. Carrier, solvent quantity, preparation
+  process and purchase/lot identity are not specified in this block. Cyanocobalamin
+  is explicit here; no exact cyanocobalamin identity is transferred to JCM197/NBRC837/NBRC903
+  generic Vitamin B12. The preserved W09 precursor deliberately left all ten references
+  UNMAPPED pending child review. The current W08 successor binds nine explicit named
+  inputs to matching current MIM catalog entities after source/form review. Calcium
+  pantothenate alone remains UNMAPPED because the source gives no D/DL designation
+  while active CHEBI:31345 is D-specific. Lipoic acid is generic, not an R/S or racemate
+  assertion; explicit CB cyanocobalamin is not transferred to generic JCM/NBRC Vitamin
+  B12. These component assertions do not approve inherited child aliases, properties,
+  roles or whole-stock equivalence.
+
+
+  Separate genuine NCMA source claim, preserved rather than refuted: NCMA Medium6
+  Wolfe''s Vitamin Solution explicitly prints composition per liter: pyridoxine HCl10mg;
+  thiamine HCl5mg; riboflavin5mg; nicotinic acid5mg; calcium pantothenate5mg; p-aminobenzoic
+  acid5mg; thioctic acid5mg; biotin2mg; folic acid2mg; Vitamin B12 0.1mg; potassium
+  phosphate monobasic900mg. It directs addition to distilled water and filter sterilization,
+  without a literal 1.0L/L water quantity. Source https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+  ; exact current PDF SHA256 b7bbf28efb43cfee8476e83780a55d929e574f3f0b7479583926d927409b4615,
+  accessed2026-11-08T08:27:46.568100+00:00. This positive phosphate-containing source
+  definition is not established as the CultureBotHT generic formulation. The September2026
+  NCMA annotation and all original component/role assertions remain preserved in the
+  authentic beforeimage and unchanged history; the source itself is not wrong. No
+  NCMA owner is minted or merged here.
+
+
+  The original occurrence_statistics61 is retained as the historical imported count;
+  later available source versions enumerate62 and63 and do not prove April membership.
+  All original source histories, aliases and identifiers remain. Legacy NCMA-based
+  nutritional role evidence is retained without renewed role or source-equivalence
+  approval. The nominal JCM197/NBRC837/NBRC903 report is supported separately; its
+  eventual common owner scope is not selected by this correction, and its unknown
+  B12 form is neither equated to nor declared different from the explicit CultureBotHT
+  cyanocobalamin input. All8cases71CMoccurrences84KGholds and6exclusions remain outside
+  automatic mapping release.
+
+
+  Issue1237 current comparator supersession: this existing CultureBotHT owner correction
+  is causally required by the NBRC903 comparison in W08 case CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506,
+  triggered only by CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531
+  (CultureMech:007503, frozen NBRC_904.yaml ingredient9). None of the six NBRC case
+  observations is asserted to be a CB occurrence; zero CB campaign occurrences are
+  claimed. The original NBRC903 new-owner proposal and its null beforeimage remain
+  immutable reconciliation input. JCM197/NBRC837/NBRC903 support one common nominal
+  ten-vitamin recipe with 1L distilled-water input batch and source-specific preparation;
+  generic B12 and unspecified calcium-pantothenate stereochemistry remain explicit.
+  Exact association with this CB concentration/X100 definition is unproven. The W06
+  JCM197 and W08 NBRC903 source-number candidates require central duplicate reconciliation,
+  not installation as two owners or a new human-permission requirement. No W06 case
+  ownership, nominal identifier mint, dose scaling, global exact alias, maintained
+  application or role/export approval is introduced.'
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+components:
+- component_name: pyridoxine HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '10'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:30961
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: 4-Aminobenzoic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:30753
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: Lipoic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:16494
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. Generic lipoic-acid
+    scope; no R/S or racemate claim. No referenced whole-owner aliases, properties,
+    procurement or roles are approved.
+- component_name: Nicotinic Acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:15940
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: Riboflavin
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:17015
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: thiamine HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:49105
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_L
+  source: 'Literal calcium pantothenate remains UNMAPPED: source specifies no D/DL
+    stereochemistry; active CHEBI:31345 has D-specific structure. No D or racemate
+    identity is inferred.'
+- component_name: biotin
+  reference_scope: MIM_CATALOG
+  concentration_value: '2'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:15956
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: Folic Acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '2'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:27470
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. No referenced whole-owner
+    aliases, properties, procurement or roles are approved.
+- component_name: Cyanocobalamin
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:17439
+  source: Literal CultureBotHT Mixes.csv input; bounded identity check against the
+    current catalog owner and preserved primary ChEBI descriptor. Cyanocobalamin is
+    explicit in this CB block only; no vitamer inference for generic JCM/NBRC B12.
+    No referenced whole-owner aliases, properties, procurement or roles are approved.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureBotHT/CultureBotHT/data/raw/google_sheets/media_definitions/Mixes.csv
+    source_record: CultureBotHT raw Mixes.csv, exact Media=Wolfe's vitamin mix block,
+      CSV lines38-51; vitamin rows42-51 and stock-metadata row40
+    notes: Current CultureBotHT generic source definition, distinct from its ATCC/MD-VS
+      block. The exact Mixes.csv block names ten solutes at the printed mg/L values
+      and labels the preparation X=100 / Standard 100X vitamin solution. Values are
+      transcribed without multiplying or dividing by X, and receiving doses are unchanged.
+      Carrier, solvent quantity, preparation process and purchase/lot identity are
+      not specified in this block. Cyanocobalamin is explicit here; no exact cyanocobalamin
+      identity is transferred to JCM197/NBRC837/NBRC903 generic Vitamin B12. The preserved
+      W09 precursor deliberately left all ten references UNMAPPED pending child review.
+      The current W08 successor binds nine explicit named inputs to matching current
+      MIM catalog entities after source/form review. Calcium pantothenate alone remains
+      UNMAPPED because the source gives no D/DL designation while active CHEBI:31345
+      is D-specific. Lipoic acid is generic, not an R/S or racemate assertion; explicit
+      CB cyanocobalamin is not transferred to generic JCM/NBRC Vitamin B12. These
+      component assertions do not approve inherited child aliases, properties, roles
+      or whole-stock equivalence. Exact file SHA256 9c58caac081620bbf5700b74fd957e56d3e5e17d17b282767ec26fabec522549;
+      original archived capture access 2026-11-08T08:11:21.012422+00:00. Dated June
+      block agrees; authentic August consolidated source and current occurrence links
+      are separately retained in the review packet.
+  - evidence_type: CURATED_DATASET
+    source: reports/all_unmatched_20261107/worker-08/successors/issue-1237-tenvit-v1/inputs/coordinator-route/ten-child-identity-matrix.json
+    source_record: Ten literal CB inputs; nine supplied-entity references and one
+      exact stereochemistry hold
+    notes: Archived matrix SHA256 b5f0585e161b13923b399f5f06dfea5a4c5a4cde3902b76bab8a793a646f0dd8.
+      Current exact catalog owner bytes rechecked in this W08 composition; primary
+      descriptors and their original archive provenance preserved. Source membership
+      and quantities remain RECIPE_TRANSCRIPTION; catalog references are bounded named-entity
+      adjudications assisted by an LLM, not human MappingEvidence MANUAL_CURATION.
+      No component or ontology-mapping release approval.
+  notes: Complete ten named solute entries of the inspected source block are retained.
+    UNKNOWN describes the entire stock composition because carrier/preparation closure
+    is not established. This current source correction does not certify the missing
+    April2026 61-occurrence input version, the meaning of X beyond its printed annotation,
+    or any whole-owner, role or export approval.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfes_vitamin_mix
+  ontology_label: Wolfe's vitamin mix
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'Wolfe''s vitamin mix is a named, standard, recurring multi-component supplement
+      (61 media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym
+      with normalisation: no term denotes it, and none could — it is a lab preparation,
+      not a substance. Takes the STOCK_SOLUTION convention used by 12 existing mapped
+      records: a kgmicrobe.ingredient: mint. No parent, because a multi-component
+      mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: NCMA Medium 6 Wolfe's Vitamin Solution
+    reference_type: TECHNICAL_REPORT
+    url: https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+    excerpt: Based on Wolfe's Vitamin Solution
+    curator_note: NCMA Medium 6 enumerates a Wolfe's vitamin stock containing B vitamins
+      and related micronutrient cofactors.

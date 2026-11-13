@@ -1,0 +1,1192 @@
+{
+  "command": [
+    "rg",
+    "--no-ignore",
+    "--hidden",
+    "-l",
+    "-i",
+    "serum",
+    "data/ingredients"
+  ],
+  "exit_code": 0,
+  "ignored_files_included": true,
+  "scope": "Maintained per-record surfaces; all matching complete records parsed. No absence claim about outside-maintained private proposals.",
+  "owners": [
+    {
+      "path": "data/ingredients/unmapped/Bovine_Serum.yaml",
+      "sha256": "31c09e4c6df658ccb66e0eedfcee3f9337dfb754dd6a72c48d254e1684002227",
+      "record": {
+        "identifier": "UNMAPPED_0345",
+        "preferred_term": "Bovine serum",
+        "synonyms": [
+          {
+            "synonym_text": "Bovine serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T08:15:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "REVIEWED_SERUM_SPECIFICITY",
+            "changes": "Reviewed OAK/OLS audit candidate MICRO:0001709 calf serum; left unmapped because bovine serum does not locally specify calf, fetal, or adult source and should not be collapsed into a more specific serum record.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-05-11T07:34:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as an animal serum material while preserving the prior decision not to identity-map to calf, fetal, adult, or generic serum without source specificity.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bovine_serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** an **age-unspecified, bovine-derived blood-serum mixture** used as a culture-medium supplement. It is not a single chemical, salt, hydrate, buffer, or chemically fixed formulation. Serum is produced through blood clotting and separation from cells/clot; consequently, it is compositionally distinct from plasma. Coagulation consumes fibrinogen and other factors while  CURIEs discussed: MICRO:0001709. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence for the specific bovine serum type. Classified as an animal serum material while preserving unmapped identity status.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/Sterile_Serum.yaml",
+      "sha256": "29287e70537f3ceaa457f2e6eb178e12ca9fbb7bbe135e0d1b10047bd5f8183a",
+      "record": {
+        "identifier": "UNMAPPED_0534",
+        "preferred_term": "Sterile serum",
+        "synonyms": [
+          {
+            "synonym_text": "Sterile serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2094); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T20:05:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as sterile serum biological material and left unmapped pending material-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Sterile_serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** an **ambiguous, process-qualified biological mixture**, not a single chemical, salt/hydrate, buffer, or fixed commercial formulation. “Serum” is the liquid obtained when blood is allowed to clot and the clot is removed; compared with plasma, it is depleted in fibrinogen and altered by coagulation and cellular release during clotting. Serum therefore must not be trea CURIEs discussed: UBERON:0001977. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2094); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as biological material pending material-level curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+      "sha256": "39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077",
+      "record": {
+        "identifier": "UNMAPPED_0740",
+        "preferred_term": "CMC + PY + Horse Serum",
+        "synonyms": [
+          {
+            "synonym_text": "CMC + PY + Horse Serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "AMBIGUOUS",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "bergey:substrates"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-05T00:01:30.894952+00:00",
+            "curator": "microbedecoder-residual-dispositions",
+            "action": "FLAGGED_NEEDS_EXPERT",
+            "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+            "previous_status": "UNMAPPED",
+            "new_status": "NEEDS_EXPERT",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CMC_PY_Horse_Serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** a **composite culture-medium recipe shorthand**, not a single chemical, salt/hydrate, commercial product, or uniquely defined named medium. The most defensible decomposition is: CURIEs discussed: UBERON:0001977. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-14T00:00:00+00:00",
+            "curator": "decompose_substrate_combinations",
+            "action": "DECOMPOSED_TO_COMPONENTS",
+            "previous_status": "NEEDS_EXPERT",
+            "new_status": "MAPPED",
+            "changes": "UNMAPPED_0740 -> kgmicrobe.ingredient:cmc_py_horse_serum (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'CMC + PY + Horse Serum', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv; PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-14T00:00:00+00:00",
+            "curator": "apply_curated_decompositions",
+            "action": "REPLACED_COMPONENTS_WITH_CURATED",
+            "changes": "components replaced with the curated research decomposition, superseding the label split. Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-15T00:00:00+00:00",
+            "curator": "move_mapped_out_of_unmapped_collection",
+            "action": "MOVED_TO_MAPPED_COLLECTION",
+            "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-24T00:00:00+00:00",
+            "curator": "migrate_component_partonomy",
+            "action": "TYPED_COMPONENT_PARTONOMY",
+            "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T00:00:00+00:00",
+            "curator": "mim-semantic-evidence-review",
+            "action": "CORRECTED",
+            "changes": "#710: original species-description evidence disproves carboxymethylcellulose expansion and a single CMC/PY/serum mixture. Withdrew all four invented component edges and fallback identity, restored UNMAPPED_0740, marked AMBIGUOUS and moved to unmapped. Kept original raw label; full withdrawn claims and prior source record are preserved in reports/semantic_review_20260921/resolution/components/before-records.json.",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "MicrobeDecoder flattened separate Filifactor villosus culture contexts into CMC + PY + Horse Serum. Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes cooked meat-carbohydrate and peptone-yeast extract cultures supplemented with horse serum. CMC is not carboxymethylcellulose here. This source expression is retained as AMBIGUOUS until separate source preparations are represented; it has no asserted single-mixture components or ontology identity."
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Horse_Serum.yaml",
+      "sha256": "82f2dcc3c661aaa4ebe3cd39c378e06999dfe68aaf9f8c5d5597dc94ea19060c",
+      "record": {
+        "identifier": "MICRO:0001235",
+        "preferred_term": "Horse serum",
+        "synonyms": [
+          {
+            "synonym_text": "Horse serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Horse Serum (Gibco)*",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Horse Serum (RM1239)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Horse Serum (not inactivated)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Horse serum (Invitrogen)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Horse serum (Oxoid)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 30,
+          "media_count": 30
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:146); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.414488+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_MICRO",
+            "changes": "primary UNMAPPED_0403 → MICRO:0001235 via name normalization to 'Horse serum'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum') (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518997+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 30/30 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 5 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Horse Serum (Gibco)*' (x1 CultureMech mentions); 'Horse Serum (RM1239)' (x1 CultureMech mentions); 'Horse Serum (not inactivated)' (x1 CultureMech mentions); 'Horse serum (Invitrogen)' (x1 CultureMech mentions); 'Horse serum (Oxoid)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:146); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0001235",
+          "ontology_label": "horse serum",
+          "ontology_source": "MICRO",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MICRO via OLS search (resolve_unmapped)",
+              "notes": "Auto-upgraded from UNMAPPED_0403; matched via 'Horse serum' (name normalization); label-exact"
+            }
+          ]
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/Probumin_Universal_Grade.yaml",
+      "sha256": "e4f2811fa995811b29fc83f14443021e0254f46ca65c0627b7c669ec48b4b9ec",
+      "record": {
+        "identifier": "UNMAPPED_0499",
+        "preferred_term": "Probumin Universal Grade",
+        "synonyms": [
+          {
+            "synonym_text": "Probumin Universal Grade",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Probumin Universal Grade (Millipore)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1924); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T20:05:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a protein/albumin product preparation and left unmapped pending product-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Probumin_Universal_Grade-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** *Probumin Universal Grade* is a supplier-grade **commercial bovine serum albumin (BSA) preparation**, historically associated in the literature with Millipore/EMD Millipore. It is not a single small chemical, salt, hydrate, buffer, extract, or chemically defined formulation. A peer-reviewed comparison explicitly classified Millipore Probumin among commercial BSA pro No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Probumin Universal Grade (Millipore)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1924); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a protein/albumin product preparation pending product-level curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/unmapped/Swine_Serum.yaml",
+      "sha256": "856b3f7388b406ffb2b0095a9faa5fb9942b78b41bdb0c5124ba3171a90df981",
+      "record": {
+        "identifier": "UNMAPPED_0536",
+        "preferred_term": "Swine serum",
+        "synonyms": [
+          {
+            "synonym_text": "Swine serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:960); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T20:05:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as swine serum biological material and left unmapped pending material-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Swine_serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Curation recommendation — **Recommended mapping status: `UNMAPPED`.** Retain `ingredient_type: UNDEFINED_MIXTURE`. The identity is sufficiently clear for a local definition, but the available evidence does not establish a verified external ontology class that exactly denotes porcine blood serum. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:960); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as biological material pending material-level curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Catalase.yaml",
+      "sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+      "record": {
+        "identifier": "cas:9001-05-2",
+        "preferred_term": "Catalase",
+        "ontology_mapping": {
+          "ontology_id": "mesh:D002374",
+          "ontology_label": "Catalase",
+          "ontology_source": "MESH",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "MIM curation (#312); chebi.db",
+              "notes": "identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 ('Catalase') -> mesh:D002374 ('Catalase'); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db defines NCIT:C61062 'Catalase' as 'Catalase (527 aa, ~60 kDa) is encoded by the human CAT gene' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme's CAS 9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 'Catalase', Rule B1 registry row."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Properties: Defined component, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Simple component, Defined component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Catalase (Sigma C--10)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 34,
+          "media_count": 34
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.659756+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.174638+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-10T06:49:42.119337+00:00",
+            "curator": "fix_dead_chebi_ids.py",
+            "action": "CORRECTED",
+            "changes": "identifier CHEBI:3463 -> NCIT:C61062 (Catalase, source NCIT): CHEBI:3463 is absent from current ChEBI (OLS4 404)."
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518532+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 26/26 -> 34/34 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Catalase (Sigma C--10)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-23T00:44:54.489778+00:00",
+            "curator": "claude",
+            "action": "REGROUNDED_IDENTITY",
+            "changes": "identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 ('Catalase') -> mesh:D002374 ('Catalase'); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db defines NCIT:C61062 'Catalase' as 'Catalase (527 aa, ~60 kDa) is encoded by the human CAT gene' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme's CAS 9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 'Catalase', Rule B1 registry row. (#312)",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "claude-fable-5-1"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "chemical_properties": {
+          "cas_rn": "9001-05-2",
+          "data_source": "CAS registry number of catalase, EC 1.11.1.6 (enzyme, no single structure)"
+        }
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Digested_Serum.yaml",
+      "sha256": "66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35",
+      "record": {
+        "identifier": "MICRO:0001362",
+        "preferred_term": "Digested serum",
+        "synonyms": [
+          {
+            "synonym_text": "Digested serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturebotht"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 2,
+          "media_count": 2
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 3 CultureBot media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping available; curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.395780+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_MICRO",
+            "changes": "primary UNMAPPED_0244 → MICRO:0001362 via name normalization to 'Digested serum'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.247874+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum') (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518736+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 3/3 -> 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          }
+        ],
+        "notes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 3 CultureBot media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping available; curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0001362",
+          "ontology_label": "digested serum",
+          "ontology_source": "MICRO",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MICRO via OLS search (resolve_unmapped)",
+              "notes": "Auto-upgraded from UNMAPPED_0244; matched via 'Digested serum' (name normalization); label-exact"
+            }
+          ]
+        },
+        "nutritional_roles": [
+          {
+            "role": "PROTEIN_SOURCE",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              }
+            ]
+          }
+        ],
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Lipopolysaccharide.yaml",
+      "sha256": "9b8fcf957e38d5f5045f4699e4af8b735593a512d0b8936f1828ee26ae892fc3",
+      "record": {
+        "identifier": "CHEBI:16412",
+        "preferred_term": "Lipopolysaccharide",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:16412",
+          "ontology_label": "lipopolysaccharide",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. Used in 5 CultureBot media; samples: RPMI, RPMI with Fetal bovine serum, RPMI with Fetal bovine serum Conditioned…."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 3,
+          "media_count": 3
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=—); Imported from CultureBotHT. Used in 5 CultureBot media; samples: RPMI, RPMI with Fetal bovine serum, RPMI with Fetal bovine serum Conditioned….",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.532123+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:15.787583+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519207+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 5/5 -> 3/3 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Rabbit_Serum.yaml",
+      "sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+      "record": {
+        "identifier": "MICRO:0002392",
+        "preferred_term": "Rabbit serum",
+        "synonyms": [
+          {
+            "synonym_text": "Rabbit serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 21,
+          "media_count": 21
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.446134+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_MICRO",
+            "changes": "primary UNMAPPED_0506 → MICRO:0002392 via name normalization to 'Rabbit serum'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum') (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519794+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 21/21 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-10T11:26:28.923830+00:00",
+            "curator": "fix_micro_malformed_iris",
+            "action": "CORRECTED",
+            "changes": "Re-grounded MICRO:0002392 'rabbit serum' -> kgmicrobe.ingredient:rabbit_serum 'blood serum' (NARROW_MATCH). MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has no well-formed exact OBO term, so this keeps a local identity and anchors it to blood serum. See #137.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-09-23T17:09:56.133081+00:00",
+            "curator": "restore_micro_source_identities",
+            "action": "CORRECTED",
+            "changes": "Restore MICRO:0002392 'rabbit serum' from the pinned KG-Microbe MICRO KGX (#759). Both node snapshots contain this exact class label; current KGX parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392. This supersedes #137's canonical-IRI-only rejection; it does not claim OLS defining-ontology status. No verified CAS RN is supplied for this material.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0002392",
+          "ontology_label": "rabbit serum",
+          "ontology_source": "MICRO",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "fix_micro_malformed_iris",
+              "notes": "SUPERSEDED by source-backed review #759: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has no well-formed exact OBO term, so this record keeps a local identity and anchors to the blood serum parent."
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "src/mediaingredientmech/ontology_sources/micro/manifest.json",
+              "notes": "Restore MICRO:0002392 'rabbit serum' from the pinned KG-Microbe MICRO KGX (#759). Both node snapshots contain this exact class label; current KGX parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392. This supersedes #137's canonical-IRI-only rejection; it does not claim OLS defining-ontology status. No verified CAS RN is supplied for this material."
+            }
+          ]
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "record": {
+        "identifier": "NCIT:C85253",
+        "preferred_term": "bovine serum albumin",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C85253",
+          "ontology_label": "Bovine Serum Albumin",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='bovine serum albumin'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 7,
+          "media_count": 7
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:9048-46-8 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.447453+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.878089+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:42:26.939508+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C85253 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518443+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 1/1 -> 7/7 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.880128+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9048-46-8",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "supplied_form": [
+          {
+            "name": "Bovine Serum Albumin",
+            "cas_rn": "9048-46-8",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A7030",
+            "form": "lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially globulin free",
+            "notes": "Original CultureBotHT product; supplier page confirms CAS and preparation. Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md."
+          },
+          {
+            "name": "Bovine serum albumin fraction V",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A9647",
+            "notes": "Explicit product in CultureMech:015191 preparation note; preserved from the original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+          },
+          {
+            "name": "BSA solution",
+            "supplier": "Sigma-Aldrich",
+            "catalog_number": "A7409",
+            "form": "solution",
+            "notes": "Alternative product explicitly named in CultureMech:015191; no concentration or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json."
+          }
+        ],
+        "notes": "Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific fraction V/products as supplied forms, not exact synonyms. Preserve all seven original recipe memberships and their preparation qualifiers."
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Porcine_Serum.yaml",
+      "sha256": "55db34244beed3a4065dba84ff2c4dba1d41c4434948bbf85834b86cc2f3b131",
+      "record": {
+        "identifier": "MICRO:0001238",
+        "preferred_term": "Porcine serum",
+        "synonyms": [
+          {
+            "synonym_text": "Porcine serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 3,
+          "media_count": 3
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:967); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.438462+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_MICRO",
+            "changes": "primary UNMAPPED_0495 → MICRO:0001238 via name normalization to 'Porcine serum'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum') (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519708+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:967); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0001238",
+          "ontology_label": "porcine serum",
+          "ontology_source": "MICRO",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MICRO via OLS search (resolve_unmapped)",
+              "notes": "Auto-upgraded from UNMAPPED_0495; matched via 'Porcine serum' (name normalization); label-exact"
+            }
+          ]
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Serum.yaml",
+      "sha256": "bad2776abd495bb123b9f2bc5e13c4f8eea1c943cefd43e719ff20f2f4dc4e57",
+      "record": {
+        "identifier": "UBERON:0001977",
+        "preferred_term": "Serum",
+        "ontology_mapping": {
+          "ontology_id": "UBERON:0001977",
+          "ontology_label": "blood serum",
+          "ontology_source": "UBERON",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "LEXICAL_MATCH",
+              "source": "kgm-metatraits",
+              "notes": "Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:serum; "
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T20:14:01.918670+00:00",
+            "curator": "audit_import_ingredients[kgm-metatraits]",
+            "action": "CREATED_FROM_INGREDIENT_IMPORT",
+            "changes": "Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:serum; ",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.144792+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (UBERON primary (anatomical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.214777+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (UBERON primary (anatomical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-23T19:10:35.228669+00:00",
+            "curator": "fix_ontology_source_mismatch",
+            "action": "CORRECTED",
+            "changes": "ontology_source: registry -> UBERON (aligned with UBERON:0001977 prefix)"
+          }
+        ],
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Fetal_Bovine_Serum.yaml",
+      "sha256": "adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f",
+      "record": {
+        "identifier": "NCIT:C113696",
+        "preferred_term": "Fetal bovine serum",
+        "synonyms": [
+          {
+            "synonym_text": "Fetal bovine serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturebotht"
+          },
+          {
+            "synonym_text": "FBS",
+            "synonym_type": "RAW_TEXT",
+            "source": "merged_from_unmapped_duplicate_review_2026_05_11"
+          },
+          {
+            "synonym_text": "Fetal Bovine Serum (ATCC 30-2020)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 122,
+          "media_count": 122
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned, RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.403009+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_NCIT",
+            "changes": "primary UNMAPPED_0183 → NCIT:C113696 via name normalization to 'Fetal bovine serum'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:14.501662+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:04:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ABSORBED_UNMAPPED_DUPLICATE",
+            "changes": "Absorbed duplicate unmapped record FBS.yaml (UNMAPPED_0382); OAK/OLS audit supports NCIT:C113696 Fetal Bovine Serum as the media-context expansion of FBS.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.247910+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518878+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 8/8 -> 122/122 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Fetal Bovine Serum (ATCC 30-2020)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned, RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review needed. Absorbed FBS source surface on 2026-05-11.",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C113696",
+          "ontology_label": "Fetal Bovine Serum",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS search (resolve_unmapped)",
+              "notes": "Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name normalization); label-exact"
+            }
+          ]
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "nutritional_roles": [
+          {
+            "role": "PROTEIN_SOURCE",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bovine_Calf_Serum.yaml",
+      "sha256": "3303d83e01c861d0344266c6f5ecc3f34f8ab6f79c7e649c203ea01b0c651857",
+      "record": {
+        "identifier": "MICRO:0001709",
+        "preferred_term": "Bovine calf serum",
+        "synonyms": [
+          {
+            "synonym_text": "Bovine calf serum",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Calf serum (Gibco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 8,
+          "media_count": 8
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2061); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:18:21.900059+00:00",
+            "curator": "resolve_unmapped_v2",
+            "action": "AUTO_UPGRADE_TO_MICRO",
+            "changes": "primary UNMAPPED_0343 → MICRO:0001709 (strategy=stem-match)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum') (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518441+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 8/8 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Calf serum (Gibco)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2061); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "MICRO:0001709",
+          "ontology_label": "calf serum",
+          "ontology_source": "MICRO",
+          "mapping_quality": "LEXICAL_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)",
+              "notes": "Auto-upgraded from UNMAPPED_0343; matched via 'Bovine calf serum'; stem-substring"
+            }
+          ]
+        },
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    }
+  ]
+}

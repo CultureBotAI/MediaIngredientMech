@@ -1,0 +1,51 @@
+identifier: CHEBI:4878
+preferred_term: Ethambutol dihydrochloride
+ontology_mapping:
+  ontology_id: CHEBI:4878
+  ontology_label: ethambutol dihydrochloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: N,N'-bis[(2S)-1-hydroxybutan-2-yl]ethane-1,2-diaminium dichloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=1070-11-7); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.447548+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.422618+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H26N2O2.2Cl; inchi=InChI=1S/C10H24N2O2.2ClH/c1-3-9(7-13)11-5-6-12-10(;
+    smiles=CC[C@@H](CO)[NH2+]CC[NH2+][C@@H](CC)CO.[Cl-].[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.261116+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 1070-11-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C10H26N2O2.2Cl
+  inchi: InChI=1S/C10H24N2O2.2ClH/c1-3-9(7-13)11-5-6-12-10(4-2)8-14;;/h9-14H,3-8H2,1-2H3;2*1H/t9-,10-;;/m0../s1
+  smiles: CC[C@@H](CO)[NH2+]CC[NH2+][C@@H](CC)CO.[Cl-].[Cl-]
+ingredient_type: SINGLE_INGREDIENT

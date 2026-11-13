@@ -1,0 +1,106 @@
+identifier: CHEBI:4735
+preferred_term: EDTA (acid form)
+ontology_mapping:
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech-pending
+    notes: 'Imported from culturemech-pending via source-preset. source_id=culturemech.solution_ingredient:EDTA_(acid_form); '
+  - evidence_type: CURATOR_JUDGMENT
+    source: sssom_synonym_enrich_review_2026_05_10
+    notes: Source label specifies the acid form. OAK/OLS search returns CHEBI:4735
+      ethylenediaminetetraacetic acid for edetic acid; previous CHEBI:42191 is EDTA(4-).
+synonyms:
+- synonym_text: edetic acid
+  synonym_type: EXACT_SYNONYM
+  source: sssom_synonym_enrich_review_2026_05_10
+- synonym_text: (ethane-1,2-diyldinitrilo)tetraacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-05-01T02:36:59.689003+00:00'
+  curator: audit_import_ingredients[culturemech-pending]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from culturemech-pending via source-preset. source_id=culturemech.solution_ingredient:EDTA_(acid_form); '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.403266+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.375945+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H12N2O8; inchi=InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12;
+    smiles=O=C([O-])CN(CCN(CC(=O)[O-])CC(=O)[O-])CC(=O)[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.199201+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-10T04:47:45+00:00'
+  curator: sssom_synonym_enrich_review_2026_05_10
+  action: CORRECTED
+  changes: Changed primary identifier and ontology mapping from EDTA tetraanion CHEBI:42191
+    to EDTA acid CHEBI:4735; added edetic acid synonym and corrected formula.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.398977+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-04T05:36:05.608816+00:00'
+  curator: drop_implausible_roles
+  action: CORRECTED
+  changes: 'Removed implausible media_role AMINO_ACID_SOURCE: EDTA is a polyamino-polycarboxylic
+    chelator, not an amino-acid nutrient source; the CHEBI ''amino acid'' ancestry
+    rule over-matched it. After this drop the name-list pass re-tags it CHELATOR.'
+  llm_assisted: false
+- timestamp: '2026-06-04T05:36:15.544101+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_edta_thiamine
+  action: MERGED_INTO
+  changes: Merged into CHEBI:4735, now held by 'EDTA' (446 occurrences). This record
+    was unused and duplicated the same substance under an explicit qualifier (#319/#320).
+    Tombstoned REJECTED, SSSOM rows dropped.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001003; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C10H16N2O8
+  data_source: EBI OLS/OAK CHEBI review
+notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: EDTA (acid form) was corrected from
+  CHEBI:42191 EDTA(4-) to CHEBI:4735 ethylenediaminetetraacetic acid.'
+physicochemical_roles:
+- role: CHELATOR
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001003
+legacy_identifiers:
+- MIM:Edta_Acid_Form
+- CHEBI:4735

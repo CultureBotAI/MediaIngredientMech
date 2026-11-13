@@ -1,0 +1,164 @@
+{
+  "author": "Codex /root/research_a",
+  "at": "2026-11-08T06:36:24.206519+00:00",
+  "finding_id": "W06-IR-002",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+  "proposal_id": "C-P-JCM151",
+  "input_selection": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json",
+    "sha256": "4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a"
+  },
+  "before_proposed_payload": {
+    "root": "artifact",
+    "path": "research-c/after/Trace_Minerals_See_Medium_No_151.yaml",
+    "sha256": "b954f1bba678038122676027fec9642ba08cb7797f04c13e6722c2232b518ce3"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v3/research-a/payloads/Trace_Minerals_See_Medium_No_151.yaml",
+    "sha256": "83d24b0f28e89e47e9e19ee633e5fe2d489615b3d2cecb24913164f1b5a72273"
+  },
+  "maintained_owner_before_sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18",
+  "owner_path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+  "case_ids": [
+    "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+    "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+    "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee"
+  ],
+  "scientific_reason": "The JCM source chain identifies the NTA/sulfate mineral stock; a bare151 pointer does not. The explicitly provider-qualified Trace minerals (JCM Medium 151) remains a resolving raw synonym. Preserve variable MnSO4 hydration, unspecified alum hydration and KOH amount; this is not the ATCC EDTA/cobalt-nitrate stock.",
+  "primary_evidence": [
+    {
+      "evidence_id": "C-E-jcm-151",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-151.txt",
+        "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+      "original_accessed_at": "2026-11-08T05:07:31.546662+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-103",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/7d572de85c9e1564.raw",
+        "sha256": "6fac275389567ae2274bc32d329d69e9f5abd7fe047d6edb2d540e854e73527c"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1347",
+      "original_accessed_at": "2026-11-08T05:06:57.180999+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-806",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-806.txt",
+        "sha256": "45ddb685647b7c03509004e294cf81c7e0866befaa98c5049977cc1ccb695b4a"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=806",
+      "original_accessed_at": "2026-11-08T05:07:33.712487+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-262",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-262.txt",
+        "sha256": "fcb6c19b354bfee56f843748753d428744c4b9e132e43c31b29b657ca592a00f"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=262",
+      "original_accessed_at": "2026-11-08T05:07:32.192169+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-265",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-265.txt",
+        "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265",
+      "original_accessed_at": "2026-11-08T05:07:32.200346+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "C-P-JCM151",
+      "field": "synonyms/0",
+      "before": {
+        "synonym_text": "Trace minerals see Medium No. 151",
+        "synonym_type": "RAW_TEXT",
+        "source": "mim-queue"
+      },
+      "after": {
+        "synonym_text": "Trace minerals see Medium No. 151",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "mim-queue"
+      },
+      "source_context_reason": "The JCM source chain identifies the NTA/sulfate mineral stock; a bare151 pointer does not. The explicitly provider-qualified Trace minerals (JCM Medium 151) remains a resolving raw synonym. Preserve variable MnSO4 hydration, unspecified alum hydration and KOH amount; this is not the ATCC EDTA/cobalt-nitrate stock.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "field": "synonyms/1",
+      "before": {
+        "synonym_text": "Trace minerals (see Medium No. 151",
+        "synonym_type": "RAW_TEXT",
+        "source": "culturemech:output/ingredient_occurrences.tsv"
+      },
+      "after": {
+        "synonym_text": "Trace minerals (see Medium No. 151",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "culturemech:output/ingredient_occurrences.tsv"
+      },
+      "source_context_reason": "The JCM source chain identifies the NTA/sulfate mineral stock; a bare151 pointer does not. The explicitly provider-qualified Trace minerals (JCM Medium 151) remains a resolving raw synonym. Preserve variable MnSO4 hydration, unspecified alum hydration and KOH amount; this is not the ATCC EDTA/cobalt-nitrate stock.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "field": "synonyms/3",
+      "before": {
+        "synonym_text": "Trace minerals (see Medium No. 151 )",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM151 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "after": {
+        "synonym_text": "Trace minerals (see Medium No. 151 )",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM151 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "source_context_reason": "The JCM source chain identifies the NTA/sulfate mineral stock; a bare151 pointer does not. The explicitly provider-qualified Trace minerals (JCM Medium 151) remains a resolving raw synonym. Preserve variable MnSO4 hydration, unspecified alum hydration and KOH amount; this is not the ATCC EDTA/cobalt-nitrate stock.",
+      "before_resolves": true,
+      "after_resolves": false
+    }
+  ],
+  "canonical_label_change": {
+    "before_preferred": "Trace minerals see Medium No. 151",
+    "after_preferred": "JCM 151 trace minerals",
+    "before_ontology_label": "Trace minerals see Medium No. 151",
+    "after_ontology_label": "JCM 151 trace minerals",
+    "external_id_label_preserved": true
+  },
+  "unchanged_fields": [
+    "identifier",
+    "mapping_status",
+    "ontology_id",
+    "mapping_quality",
+    "components",
+    "component_assertion",
+    "supplied_form if present",
+    "all raw synonym text and source",
+    "all prior history",
+    "source holds"
+  ],
+  "applicability_limit": "Existing occurrence-scoped formulation support only. No collection is inferred from a bare medium number; C/root separately correct W06-IR-010 and W06-IR-008. Existing unrelated scientific claims are not recertified.",
+  "independent_review": {
+    "status": "pending"
+  },
+  "maintained_write": false,
+  "source_owner_export_approval": false
+}

@@ -1,0 +1,109 @@
+identifier: CHEBI:17821
+preferred_term: Thymine
+ontology_mapping:
+  ontology_id: CHEBI:17821
+  ontology_label: thymine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Cross-references: KEGG:thym'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 2,4-dihydroxy-5-methylpyrimidine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 5-Methyluracil
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 5-methyl-2,4(1H,3H)-pyrimidinedione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 5-methylpyrimidine-2,4(1H,3H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Thy
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Thymin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 33
+  media_count: 33
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:54:06.238240+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:65-71-4 from PubChem API via name lookup (Thymine)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 2,4-dihydroxy-5-methylpyrimidine,
+    5-Methyluracil, 5-methyl-2,4(1H,3H)-pyrimidinedione, 5-methylpyrimidine-2,4(1H,3H)-dione,
+    Thy, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.649164+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.727231+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H6N2O2; inchi=InChI=1S/C5H6N2O2/c1-3-2-6-5(9)7-4(3)8/h2H,1H3,(H2;
+    smiles=Cc1cnc(=O)nc1=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.891596+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.844079+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Thymine'' -> ''thymine'': synced to canonical CHEBI label
+    (preferred_term ''Thymine'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.519975+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 11/11 -> 33/33 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002504; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 65-71-4
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:54:06.238212+00:00'
+  molecular_formula: C5H6N2O2
+  inchi: InChI=1S/C5H6N2O2/c1-3-2-6-5(9)7-4(3)8/h2H,1H3,(H2,6,7,8,9)
+  smiles: Cc1cnc(=O)nc1=O
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002504
+legacy_identifiers:
+- MIM:Thymine
+- CHEBI:17821

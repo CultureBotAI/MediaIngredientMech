@@ -1,0 +1,140 @@
+{
+  "packet": "W09 conditional complete-row scientific review v1",
+  "prepared_at": "2026-11-08T16:36:03.245569+00:00",
+  "verdict": "NEEDS_CURATION_CONDITIONAL_ONLY",
+  "scope": {
+    "assigned_requests": 83,
+    "distinct_owner_payloads": 76,
+    "added_rows": 71,
+    "retained_rows": 12,
+    "removed_rows": 0,
+    "separate_unselected_complete_alternative": 1,
+    "native_fields": 1079,
+    "before_fields": 156,
+    "alternative_fields": 13,
+    "native_aliases": 104,
+    "before_aliases": 62,
+    "alternative_aliases": 16
+  },
+  "recommendation_counts": {
+    "CONDITIONAL_SUPPORT_SCOPED_COMPLETE_ROW": 77,
+    "NEEDS_CURATION_METHOD_PROVENANCE": 3,
+    "NEEDS_CURATION_UNSAFE_RESOLVING_ALIAS": 1,
+    "NEEDS_EVIDENCE_PERFORMED_MAPPING_METHOD": 1,
+    "NOMINAL_RECIPE_SUPPORTED_DISTINCT_OWNER_CONTINUITY_UNRESOLVED": 1
+  },
+  "scientific_findings": {
+    "confirmed": 5,
+    "precise_method_evidence_gap": 1,
+    "retained_known_hold": "CHEM-COMP-002/#1237 Se/W coinstallation",
+    "rejected_provisional_drop": "Oleic shared official synonyms remain owner-scoped names"
+  },
+  "input_binding": {
+    "dispatch_requests_sha256": "b86f3176dacc955dfde765bfbe9b27976500ae561ec412adad0a75440be5dd2f",
+    "source_plan_sha256": "cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2",
+    "B_baseline": "84241993a278a7a413422ef89a52c0b47dc57831",
+    "historical_W07_diagnostic_sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+    "historical_generation_manifest_sha256": "4be70b978976662bbb78ca6e852f6dba48c5e3e5e9b6eb60d95b865a9a4695e6",
+    "actual_B_source_application": null,
+    "actual_B_generated_full_rows": null,
+    "native_positive_export_proofs": null
+  },
+  "reviewers": {
+    "primary_disjoint_scopes": {
+      "/root/row_materials": 29,
+      "/root/row_stocks_a": 27,
+      "/root/row_stocks_b": 27
+    },
+    "complete_assigned_skeptic": "/root/row_skeptic",
+    "focused_methods_and_aliases": "/root/row_method_adjudication (5requests; not additional full83vote)",
+    "assembly": "W09/root"
+  },
+  "core_files": [
+    {
+      "path": "DECISIONS.json",
+      "sha256": "c2d964f6243b611a9c34c05761348a2b0f96b7f6b2478f403144e1a70b99f6b2"
+    },
+    {
+      "path": "FINDINGS.json",
+      "sha256": "8b0f66bc89372b091d132abe542625db68444c3171e0cda22f9bb511e6ab8110"
+    },
+    {
+      "path": "SUMMARY.json",
+      "sha256": "4ebe0cc91aa214081b565eff95f77bfa4f626982a94d81d4bcaffedf282a2d2f"
+    },
+    {
+      "path": "native/review.yaml",
+      "sha256": "25551d57539e93f906f6c0a2290e7b31fc6dc31a726b050264ba319a86c14dce"
+    },
+    {
+      "path": "native/review.md",
+      "sha256": "52f68487edb0e93f3666f8746fe016cfc55344d1583db460beaba030502aa2aa"
+    },
+    {
+      "path": "native/inspection-final.json",
+      "sha256": "ae725692f4b2761cbfc95fbc0aa3d563ca7be9e33a2b3da6707e0ad927e59ed1"
+    },
+    {
+      "path": "validation/native-pair-validation.json",
+      "sha256": "8d2c6184332b73372e07a4f5daaffa911223fdb0016d4636af377f20fb832ccd"
+    },
+    {
+      "path": "validation/author-field-token-coverage.json",
+      "sha256": "9d14293175465b8387fb73042b71eb961bc04f4f4d2ba2aa807fbc925ea90cc8"
+    },
+    {
+      "path": "validation/skeptical-complete-coverage.json",
+      "sha256": "4e38cffffa9115d0177d97d36e3b570348e4f5b8b5e2bbffce4c11329f248cae"
+    },
+    {
+      "path": "validation/evidence-reference-verification.json",
+      "sha256": "909ddc1e386cc30f9dec3d6126884844bc483b1b66b45b23a280b6e7902924eb"
+    },
+    {
+      "path": "validation/closing-input-recheck.json",
+      "sha256": "3a964b25649e4b195343e036481232ab7014f52de96706a6a781f679fce97d91"
+    },
+    {
+      "path": "validation/independence.json",
+      "sha256": "3fed4bae7d060eddfe9a5c381fdd8dbbfe63f79092d2ac60561c9daa931bd6c8"
+    },
+    {
+      "path": "validation/native-attribution-correction.json",
+      "sha256": "a7532c39f1f30e16403de05ebb6022703351a6b12320da93dc8e60e42e8bf35b"
+    },
+    {
+      "path": "skeptical/SCIENCE-COMPLETED-RECEIPT.json",
+      "sha256": "839691133d40defcb7564311fc03352516d395af1849681cd451195ef280369a"
+    },
+    {
+      "path": "skeptical-methods/ADJUDICATION.json",
+      "sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf"
+    }
+  ],
+  "closing_evidence_check": "448exact referenced paths rehashed unchanged; this does not imply everyunrelated byte ineachcapture was scientifically reread. Source scopes/directread annotations and original retrievaltimestamps remain in indexes.",
+  "required_final_assembly_receipt": "skeptical/ASSEMBLY-READBACK.json must exist and be pinned by final contentmanifest; it must bind this HANDOFF and exact corrected nativepair. A handoff without that receipt and SEAL is not complete.",
+  "technical_checks": "Exact83row/76owner joins, complete13field/token coverage, authorship independence, native B1/H/I/J/L selected83row checks, native review schema/currentinputs and five negative controls passed. Owner-bound/export/application gates not invoked against unappliedB.",
+  "private_failed_probes": "Preserved startup/coverage/probe records; first private serializer wrapper assumption; source-token display-index draft correction; and the independently caught ROW-RULES attribution error with exact pair/helper beforeimages and corrected derivation. These are report-local and do not alter source science.",
+  "source_head_preserved": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+  "tracked_status_at_closing": "clean",
+  "actions_not_taken": [
+    "No source/owner/canonical/policy/gate/selector/acceptance edits",
+    "No Git/GitHub mutations, application, generation, exports or paid/new source research",
+    "No scientific finding repaired; coordinator files/deduplicates before accountable author remediation"
+  ],
+  "later_requirements": [
+    "Resolve exact scientific/method/continuity findings or retain affected holds.",
+    "Actual B application and current owner/canonical/generator equality must be independently bound; all deltas require review.",
+    "Native route/positive supported-export admission is a separate decision; no row or owner roles/export release transfers from this packet."
+  ],
+  "limitations": [
+    "Conditional source-plan/diagnostic context only: actual B application, owner/full-row/generator equality and any delta review remain mandatory.",
+    "No row support grants whole-owner, role, component, stock, occurrence, quantity, mechanism, product/lot, alias-global-uniqueness or supported-export admission.",
+    "Historical W07 generation ancestry is retained literally and is not relabeled as B application/publication ancestry. No future hash/position/acceptance is invented.",
+    "All13 fields and aliases are assessed; hash equality and native rule passes are bindings, not scientific proof.",
+    "Original primary capture bytes/timestamps remain immutable. No new research/provider retrieval was performed. Source gaps are explicit rather than inferred away.",
+    "Method, supplied-form, unknown final-volume and continuity holds remain distinct. Genuine shared synonyms are permitted under section3 without a global unique-string guarantee.",
+    "Numeric confidence is the historical generator grade heuristic, not measured scientific probability. mapping_date derives from owner history; validation_method and KG reviewed-source tokens are historical provenance only, not fresh independent or B publication approval.",
+    "Native generic review shape/currentness checks do not create native export_bundle or reviewed_products approval. Actual current independent support and final canonical bindings remain pending."
+  ]
+}

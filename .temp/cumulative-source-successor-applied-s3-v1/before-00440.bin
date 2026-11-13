@@ -1,0 +1,73 @@
+identifier: FOODON:03413797
+preferred_term: Baker's yeast
+synonyms:
+- synonym_text: Baker's yeast
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 17
+  media_count: 17
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:17); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T17:30:30.729317+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0335 → FOODON:03413797 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.712880+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'yeast')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.735494+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518396+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 17/17 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000440; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:17); no CAS-RN or CHEBI/NCIT
+  match. Curator review needed.
+ontology_mapping:
+  ontology_id: FOODON:03413797
+  ontology_label: baker's yeast
+  ontology_source: FOODON
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: FOODON via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0335'; match=label-exact
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000440
+legacy_identifiers:
+- MIM:Bakers_Yeast
+- FOODON:03413797

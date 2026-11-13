@@ -1,0 +1,63 @@
+identifier: CHEBI:28362
+preferred_term: 2-n-Heptyl-4-hydroxyquinoline N-oxide
+ontology_mapping:
+  ontology_id: CHEBI:28362
+  ontology_label: 2-heptyl-4-hydroxyquinoline N-oxide
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: 2-heptylquinolin-4-ol 1-oxide
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=341-88-8; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.768230+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.569702+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C16H21NO2; inchi=InChI=1S/C16H21NO2/c1-2-3-4-5-6-9-13-12-16(18)14-1;
+    smiles=CCCCCCCc1cc(O)c2ccccc2[n+]1[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.901986+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 341-88-8 uniquely resolves
+    by ChEBI xref to CHEBI:28362 '2-heptyl-4-hydroxyquinoline N-oxide'. CAS_RN_LOOKUP
+    records the method that established this mapping; a lexical grade would discard
+    that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
+    remains skos:exactMatch under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 341-88-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C16H21NO2
+  inchi: InChI=1S/C16H21NO2/c1-2-3-4-5-6-9-13-12-16(18)14-10-7-8-11-15(14)17(13)19/h7-8,10-12,18H,2-6,9H2,1H3
+  smiles: CCCCCCCc1cc(O)c2ccccc2[n+]1[O-]
+ingredient_type: SINGLE_INGREDIENT

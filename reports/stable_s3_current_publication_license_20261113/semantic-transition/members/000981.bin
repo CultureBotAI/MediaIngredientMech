@@ -1,0 +1,163 @@
+identifier: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
+preferred_term: Disodium phosphate heptahydrate (0.02 M stock)
+ontology_mapping:
+  ontology_id: CHEBI:34683
+  ontology_label: disodium hydrogenphosphate
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech-pending
+    notes: 'Imported from culturemech-pending via source-preset. source_id=culturemech.solution_ingredient:Disodium_phosphate_heptahydrate_(0.02_M_stock); '
+  - evidence_type: CURATOR_JUDGMENT
+    source: sssom_synonym_enrich_review_2026_05_10
+    notes: Previous CHEBI:131825 mapping resolved to an unrelated deoxyadenosine term.
+      OLS/OAK finds disodium hydrogenphosphate but no exact heptahydrate stock solution
+      term, so the stock solution retains a kgmicrobe.ingredient identity with CHEBI:34683
+      as a broader solute parent.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:34683 (''disodium hydrogenphosphate'') — a subsumption ChEBI itself
+      denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+      compound, which is not an ancestor even transitively. A hydrate is a distinct
+      substance containing the anhydrous form, not a specialization of it. closeMatch
+      claims similarity without subsumption. The ontology_id and the record''s own
+      identifier are unchanged.'
+synonyms:
+- synonym_text: disodium hydrogen phosphate heptahydrate
+  synonym_type: RELATED_SYNONYM
+  source: sssom_synonym_enrich_review_2026_05_10
+- synonym_text: Disodium phosphate dihydrate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: Phosphoric acid, disodium salt, dihydrate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: Sodium phosphate, dibasic, dihydrate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: disodium hydrogen phosphate dihydrate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: sodium hydrogen orthophosphate dihydrate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: sodium hydrogen phosphate--water (1/2)
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+- synonym_text: sodium monohydrogen phosphate dihydrat
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-05-01T02:36:59.689003+00:00'
+  curator: audit_import_ingredients[culturemech-pending]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from culturemech-pending via source-preset. source_id=culturemech.solution_ingredient:Disodium_phosphate_heptahydrate_(0.02_M_stock); '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.301951+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.268269+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H11N5O3; inchi=InChI=1S/C10H11N5O3/c11-8-5-9(13-2-12-8)15-4-1-3(1;
+    smiles=[H][C@]12O[C@H](C[C@@H]1O)n1c(nc3c(N)ncnc31)[C@H]2
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.073017+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-10T04:47:45+00:00'
+  curator: sssom_synonym_enrich_review_2026_05_10
+  action: CORRECTED
+  changes: Changed primary identifier from unrelated CHEBI:131825 to kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29;
+    retained CHEBI:34683 only as a NARROW_MATCH parent and removed unrelated deoxyadenosine
+    chemical properties.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518747+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
+    phosphate dihydrate''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Phosphoric
+    acid, disodium salt, dihydrate''; ''Sodium phosphate, dibasic, dihydrate''; ''disodium
+    hydrogen phosphate dihydrate''; ''sodium hydrogen orthophosphate dihydrate'';
+    ''sodium hydrogen phosphate--water (1/2)''; ''sodium monohydrogen phosphate dihydrat''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Disodium phosphate dihydrate'',
+    ''Phosphoric acid, disodium salt, dihydrate'', ''Sodium phosphate, dibasic, dihydrate'',
+    ''disodium hydrogen phosphate dihydrate'', ''sodium hydrogen orthophosphate dihydrate''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped dihydrate synonyms to REJECTED_LABEL: sodium hydrogen phosphate--water
+    (1/2), sodium monohydrogen phosphate dihydrat (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.
+    Set fields: {}. Stock owner currently carries water-free phosphate InChI and anhydrous
+    mass141.958. Neither denotes the full concentration-qualified stock. Do not replace
+    with pure heptahydrate structures or a made-up solution molecular weight; formulation
+    details remain unresolved. Original chemical_properties={"data_source": "ChEBI+PubChem",
+    "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2", "molecular_weight":
+    141.958, "retrieval_date": "2026-05-23T08:30:57.822010+00:00"}. Preserved identifier,
+    ontology mapping and grade, roles, synonyms, counts, status and original history.
+    No mapping, role or release approval. Exact preimage and evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml;
+    before_sha256=cf67a250e7d90ccd5c5dfb55ffe9a68202b25348e2f4851f16a5531cfec84e6f.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: STOCK_SOLUTION
+notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825 exact
+  mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution ingredient;
+  retain a kgmicrobe.ingredient identity and use CHEBI:34683 as a broader disodium
+  hydrogenphosphate solute parent.'
+kg_microbe_node_id: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29

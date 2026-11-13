@@ -1,0 +1,364 @@
+{
+  "accessed_at": "2026-11-08T05:14:07.559425+00:00",
+  "scope": "Currently inspected local OAK SQLite stores, read-only; not asserted campaign-pinned. Absence only within listed predicates and literal queries.",
+  "databases": [
+    {
+      "path": "/Users/marcin/.data/oaklib/chebi.db",
+      "size": 4137340928,
+      "mtime_ns": 1791961401274785795,
+      "queries": [
+        {
+          "kind": "metadata",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('owl:versionIRI','owl:versionInfo','dcterms:modified') LIMIT 20",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "obo:chebi.owl",
+              "predicate": "owl:versionIRI",
+              "object": "obo:chebi/255/chebi.owl",
+              "value": null
+            },
+            {
+              "subject": "obo:chebi.owl",
+              "predicate": "owl:versionInfo",
+              "object": null,
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "kind": "cas",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value IN (?,?,?,?) OR object IN (?,?,?,?)",
+          "parameters": [
+            "7783-13-3",
+            "CAS:7783-13-3",
+            "16788-57-1",
+            "CAS:16788-57-1",
+            "7783-13-3",
+            "CAS:7783-13-3",
+            "16788-57-1",
+            "CAS:16788-57-1"
+          ],
+          "results": []
+        },
+        {
+          "kind": "labels",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND ((lower(value) LIKE '%ammonium%' AND lower(value) LIKE '%sodium%' AND lower(value) LIKE '%phosph%') OR (lower(value) LIKE '%potassium%' AND lower(value) LIKE '%phosph%' AND lower(value) LIKE '%trihydrate%'))",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "CHEBI:131527",
+              "predicate": "oio:hasRelatedSynonym",
+              "object": null,
+              "value": "potassium dibasic phosphate trihydrate"
+            }
+          ]
+        }
+      ],
+      "matched_term_statements": {
+        "CHEBI:131527": [
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "IAO:0000115",
+            "object": null,
+            "value": "A potassium salt that is the dipotassium salt of phosphoric acid."
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:charge",
+            "object": null,
+            "value": "0"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:generalized_empirical_formula",
+            "object": null,
+            "value": "HO4P.2K"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:inchi_key_string",
+            "object": null,
+            "value": "ZPWVASYFFYYZEW-UHFFFAOYSA-L"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:inchi_string",
+            "object": null,
+            "value": "InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:mass",
+            "object": null,
+            "value": "174.174"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:monoisotopic_mass",
+            "object": null,
+            "value": "173.88866"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "chemrof:smiles_string",
+            "object": null,
+            "value": "O=P([O-])([O-])O.[K+].[K+]"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasAlternativeId",
+            "object": null,
+            "value": "CHEBI:32031"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "cas:7758-11-4"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "kegg.compound:C13197"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "kegg.drug:D02403"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "metacyc.compound:CPD0-2433"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "reaxys:11343458"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasDbXref",
+            "object": null,
+            "value": "wikipedia.en:Dipotassium_phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasExactSynonym",
+            "object": null,
+            "value": "dipotassium hydrogen phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasOBONamespace",
+            "object": null,
+            "value": "chebi_ontology"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dibasic potassium phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dipotassium hydrogenorthophosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dipotassium monohydrogen phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dipotassium monophosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dipotassium orthophosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Dipotassium phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Hydrogen dipotassium phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "K2HPO4"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Phosphoric acid, dipotassium salt"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Potassium dibasic phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Potassium monohydrogen phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Potassium monophosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Potassium phosphate (dibasic)"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "Potassium phosphate, dibasic"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "dipotassium hydrogen phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "dipotassium hydrogenphosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:hasRelatedSynonym",
+            "object": null,
+            "value": "potassium dibasic phosphate trihydrate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:id",
+            "object": null,
+            "value": "CHEBI:131527"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "oio:inSubset",
+            "object": "obo:chebi/3_STAR",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdf:type",
+            "object": "owl:Class",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdfs:label",
+            "object": null,
+            "value": "dipotassium hydrogen phosphate"
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdfs:subClassOf",
+            "object": "_:riog00076129",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdfs:subClassOf",
+            "object": "_:riog00076128",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdfs:subClassOf",
+            "object": "CHEBI:26218",
+            "value": null
+          },
+          {
+            "subject": "CHEBI:131527",
+            "predicate": "rdfs:subClassOf",
+            "object": "CHEBI:24838",
+            "value": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/Users/marcin/.data/oaklib/ncit.db",
+      "size": 2725199872,
+      "mtime_ns": 1791961409614522199,
+      "queries": [
+        {
+          "kind": "metadata",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE predicate IN ('owl:versionIRI','owl:versionInfo','dcterms:modified') LIMIT 20",
+          "parameters": [],
+          "results": [
+            {
+              "subject": "obo:ncit.owl",
+              "predicate": "owl:versionIRI",
+              "object": "obo:ncit/releases/2026-03-19/ncit.owl",
+              "value": null
+            },
+            {
+              "subject": "obo:ncit.owl",
+              "predicate": "owl:versionInfo",
+              "object": null,
+              "value": "26.02d"
+            }
+          ]
+        },
+        {
+          "kind": "cas",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE value IN (?,?,?,?) OR object IN (?,?,?,?)",
+          "parameters": [
+            "7783-13-3",
+            "CAS:7783-13-3",
+            "16788-57-1",
+            "CAS:16788-57-1",
+            "7783-13-3",
+            "CAS:7783-13-3",
+            "16788-57-1",
+            "CAS:16788-57-1"
+          ],
+          "results": []
+        },
+        {
+          "kind": "labels",
+          "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND ((lower(value) LIKE '%ammonium%' AND lower(value) LIKE '%sodium%' AND lower(value) LIKE '%phosph%') OR (lower(value) LIKE '%potassium%' AND lower(value) LIKE '%phosph%' AND lower(value) LIKE '%trihydrate%'))",
+          "parameters": [],
+          "results": []
+        }
+      ],
+      "matched_term_statements": {}
+    }
+  ]
+}

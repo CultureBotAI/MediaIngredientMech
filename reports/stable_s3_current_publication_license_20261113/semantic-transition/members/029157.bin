@@ -1,0 +1,66 @@
+identifier: CHEBI:90601
+preferred_term: L-pyroglutamic Acid 2-naphthylamide
+synonyms:
+- synonym_text: L-pyroglutamic Acid 2-naphthylamide
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_pyroglutamic_acid_2_naphthylamide);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0825 -> CHEBI:90601 "5-oxo-L-proline 2-naphthylamide"
+    (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001477; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_pyroglutamic_acid_2_naphthylamide);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:90601
+  ontology_label: 5-oxo-L-proline 2-naphthylamide
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: L-pyroglutamic acid 2-naphthylamide is 5-oxo-L-proline 2-naphthylamide
+      (pyroglutamate = 5-oxoproline) (#213).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C15H14N2O2
+  smiles: O=C1CC[C@@H](C(=O)Nc2ccc3ccccc3c2)N1
+  inchi: InChI=1S/C15H14N2O2/c18-14-8-7-13(17-14)15(19)16-12-6-5-10-3-1-2-4-11(10)9-12/h1-6,9,13H,7-8H2,(H,16,19)(H,17,18)/t13-/m0/s1
+  molecular_weight: 254.289
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:03.834157+00:00'
+mim_id: MIM:0001477
+legacy_identifiers:
+- MIM:L-pyroglutamic_Acid_2-naphthylamide
+- CHEBI:90601

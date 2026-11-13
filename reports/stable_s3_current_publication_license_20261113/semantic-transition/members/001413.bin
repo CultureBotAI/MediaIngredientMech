@@ -1,0 +1,63 @@
+identifier: CHEBI:156288
+preferred_term: Kawain
+ontology_mapping:
+  ontology_id: CHEBI:156288
+  ontology_label: DL-kavain
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:6117 (''Kawain'') -> CHEBI:156288 (''DL-kavain'').
+      The record''s own cas_rn 3155-48-4 is registered by ChEBI against CHEBI:156288,
+      which is the racemate of the term the record previously carried. Curation decision
+      on #320: where the CAS names a more specific FORM than the label, the CAS governs
+      — the recipe is taken to mean the substance actually weighed out. These surfaced
+      as ''unrelated'' in the ancestry triage only because ChEBI does not model salt-of
+      / hydrate-of / racemate-of as subsumption, the same gap #342 recorded for hydrates.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=3155-48-4); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.179619+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.177532+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C14H14O3; inchi=InChI=1S/C14H14O3/c1-16-13-9-12(17-14(15)10-13)8-7;
+    smiles=[H][C@]1(/C=C/c2ccccc2)CC(OC)=CC(=O)O1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.270678+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:6117 -> CHEBI:156288 'DL-kavain' (#320); the
+    record's CAS 3155-48-4 denotes the racemate. mapping_quality -> SYNONYM_MATCH.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 3155-48-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C14H14O3
+  inchi: InChI=1S/C14H14O3/c1-16-13-9-12(17-14(15)10-13)8-7-11-5-3-2-4-6-11/h2-8,10,12H,9H2,1H3/b8-7+/t12-/m0/s1
+  smiles: '[H][C@]1(/C=C/c2ccccc2)CC(OC)=CC(=O)O1'
+ingredient_type: SINGLE_INGREDIENT

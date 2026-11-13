@@ -1,0 +1,192 @@
+id: CultureMech:001809
+name: flexibacter_medium
+original_name: FLEXIBACTER MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: DSMZ Medium 668
+  term:
+    id: mediadive.medium:668
+    label: FLEXIBACTER MEDIUM
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium668.pdf'
+ingredients:
+- preferred_term: Tryptone
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Vitamin-free casamino acids
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: Na glutamate
+  term:
+    id: CHEBI:64220
+    label: monosodium glutamate
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:64220
+    label: monosodium glutamate
+- preferred_term: Sodium glycerophosphate
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+- preferred_term: Vitamin B12
+  term:
+    id: CHEBI:176843
+    label: vitamin B12
+  concentration:
+    value: 1e-06
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:176843
+    label: vitamin B12
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Sea water
+  concentration:
+    value: '1000'
+    unit: G_PER_L
+- preferred_term: Na-tartrate
+  term:
+    id: CHEBI:63017
+    label: sodium L-tartrate
+  concentration:
+    value: '1.77'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63017
+    label: sodium L-tartrate
+- preferred_term: CuCl2 x 2 H2O
+  term:
+    id: CHEBI:86318
+    label: copper(II) chloride dihydrate
+  concentration:
+    value: '0.0269'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86318
+    label: copper(II) chloride dihydrate
+- preferred_term: ZnCl2
+  term:
+    id: CHEBI:49976
+    label: zinc dichloride
+  concentration:
+    value: '0.0208'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49976
+    label: zinc dichloride
+- preferred_term: CoCl2 x 6 H2O
+  term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+  concentration:
+    value: '0.0404'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+- preferred_term: Na2MoO4 x 2 H2O
+  term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+  concentration:
+    value: '0.0252'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:11.889613Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 668'
+- timestamp: '2026-03-13T06:19:07.379812Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001809'
+- timestamp: '2026-03-17T06:30:47.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:19.682409+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "FLEXIBACTER MEDIUM" to "flexibacter_medium" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:16.242641+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 11 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:46:42.658519+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+- timestamp: '2026-08-07T07:05:21.568654+00:00'
+  curator: apply_cocktail_nesting.py
+  action: NESTED_FLATTENED_COCKTAIL
+  notes: 'Moved 3 stock-strength component(s) out of ingredients into 1 solution(s):
+    3 -> ''Trace elements'' @ 1 ml/l. Each moved component matched the MediaDive stock
+    by name AND value; bulk ingredients sharing a name were left in place (#150).'
+  changes: Nested 3 ingredient(s) under 1 solution(s); ingredients 15 -> 12
+variant_children:
+- path: data/normalized_yaml/bacterial/KOMODO_668_FLEXIBACTER_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:006257
+  name: flexibacter_medium
+  notes: Same ingredient and concentration signature; KOMODO record copied from the
+    matching DSMZ medium source.
+solutions:
+- preferred_term: Trace elements
+  composition:
+  - preferred_term: H3BO3
+    term:
+      id: CHEBI:33118
+      label: boric acid
+    concentration:
+      value: '2.85'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:33118
+      label: boric acid
+  - preferred_term: MnCl2 x 4 H2O
+    term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+    concentration:
+      value: '1.8'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+  - preferred_term: FeSO4
+    term:
+      id: CHEBI:75832
+      label: iron(2+) sulfate (anhydrous)
+    concentration:
+      value: '1.36'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:75832
+      label: iron(2+) sulfate (anhydrous)
+  concentration:
+    value: '1'
+    unit: ML_PER_L
+  preparation_notes: Stock prepared in 1000 ml; added at 1 ml per litre of medium.
+    Composition and volume from MediaDive (#150).

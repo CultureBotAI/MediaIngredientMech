@@ -1,0 +1,90 @@
+identifier: CHEBI:28908
+preferred_term: Flavomycin
+ontology_mapping:
+  ontology_id: CHEBI:28908
+  ontology_label: bambermycin
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: (2S,3S,4R,5R,6R)-5-{[(2S,3R,4R,5S,6R)-3-acetamido-5-{[(2S,3R,4R,5S,6R)-3-acetamido-4-hydroxy-6-methyl-5-({(2R,3R,4S,5R,6S)-3,4,5-trihydroxy-6-[(2-hydroxy-5-oxocyclopent-1-en-1-yl)carbamoyl]tetrahydro-2H-pyran-2-yl}oxy)tetrahydro-2H-pyran-2-yl]oxy}-4-hydroxy-6-({[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)tetrahydro-2H-pyran-2-yl]oxy}methyl)tetrahydro-2H-pyran-2-yl]oxy}-4-(carbamoyloxy)-6-({[(2R)-2-carboxy-2-{[(2E,6E,13E)-3,8,8,14,18-pentamethyl-11-methylenenonadeca-2,6,13,17-tetraen-1-yl]oxy}ethoxy](hydroxy)phosphoryl}oxy)-3-hydroxy-3-methyltetrahydro-2H-pyran-2-carboxylic
+    acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=11015-37-5; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.654079+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.625749+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C69H107N4O35P; inchi=InChI=1S/C69H107N4O35P/c1-30(2)15-14-17-31(3)18-19;
+    smiles=C=C(C/C=C(C)CCC=C(C)C)CCC(C)(C)/C=C/CC/C(C)=C/CO[C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.525649+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.389276+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'bambermycin'; it matches the ChEBI synonym
+    'Flavomycin' on CHEBI:28908. The schema defines EXACT_MATCH as a direct match
+    to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+    overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 11015-37-5 uniquely
+    resolves by ChEBI xref to CHEBI:28908 'bambermycin'. CAS_RN_LOOKUP records the
+    method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 11015-37-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C69H107N4O35P
+  inchi: InChI=1S/C69H107N4O35P/c1-30(2)15-14-17-31(3)18-19-33(5)22-25-68(9,10)24-13-12-16-32(4)23-26-96-41(60(88)89)29-98-109(94,95)108-66-56(57(107-67(70)92)69(11,93)58(106-66)61(90)91)105-63-44(72-36(8)76)47(81)54(40(101-63)28-97-64-51(85)48(82)45(79)39(27-74)100-64)103-62-43(71-35(7)75)46(80)53(34(6)99-62)102-65-52(86)49(83)50(84)55(104-65)59(87)73-42-37(77)20-21-38(42)78/h13,15,18,23-24,34,39-41,43-58,62-66,74,77,79-86,93H,5,12,14,16-17,19-22,25-29H2,1-4,6-11H3,(H2,70,92)(H,71,75)(H,72,76)(H,73,87)(H,88,89)(H,90,91)(H,94,95)/b24-13+,31-18+,32-23+/t34-,39-,40-,41-,43-,44-,45-,46-,47-,48+,49+,50-,51-,52-,53-,54-,55+,56-,57-,58-,62+,63+,64-,65-,66-,69+/m1/s1
+  smiles: C=C(C/C=C(C)CCC=C(C)C)CCC(C)(C)/C=C/CC/C(C)=C/CO[C@H](COP(=O)(O)O[C@H]1O[C@H](C(=O)O)[C@@](C)(O)[C@H](OC(N)=O)[C@H]1O[C@@H]1O[C@H](CO[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O[C@@H]2O[C@H](C)[C@@H](O[C@@H]3O[C@H](C(=O)NC4=C(O)CCC4=O)[C@H](O)[C@H](O)[C@H]3O)[C@H](O)[C@H]2NC(C)=O)[C@H](O)[C@H]1NC(C)=O)C(=O)O
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

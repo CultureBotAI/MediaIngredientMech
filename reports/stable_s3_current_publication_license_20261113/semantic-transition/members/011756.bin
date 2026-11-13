@@ -1,0 +1,33 @@
+identifier: CHEBI:180950
+preferred_term: Calcium DL-pantothenate
+ontology_mapping:
+  ontology_id: CHEBI:180950
+  ontology_label: Calcium DL-pantothenate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_180950
+    notes: Current nonobsolete CHEBI term explicitly names Calcium DL-pantothenate.
+      Sixteen available JCM originals verify DL source labels; JCM665/827 currently
+      have no recipe body, so those two frozen occurrences are not independently live-reconfirmed.
+      Term is2_STAR with stereounspecified structure; supplier/ontologyCAS difference
+      is unresolved and noCAS property is adopted.
+synonyms:
+- synonym_text: DL--Calcium pantothenate
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source cases; JCM original recipes individually captured
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: DistinctDL/racemic calcium-pantothenate ingredient. Do not absorbD-only or
+  stereochemicallyunspecified calcium-pantothenate source occurrences. No source hydrate,
+  registry number, biological role or concentration is inferred.
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed separateDL identity using currentCHEBI180950. Preserve doubled-hyphen
+    raw source label. NoD-owner merge; noCAS assigned pending registry discrepancy
+    review.
+  new_status: MAPPED
+  llm_assisted: true

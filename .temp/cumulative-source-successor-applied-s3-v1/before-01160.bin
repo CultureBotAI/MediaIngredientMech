@@ -1,0 +1,70 @@
+identifier: CHEBI:67521
+preferred_term: Gambogic Acid
+ontology_mapping:
+  ontology_id: CHEBI:67521
+  ontology_label: (-)-gambogic acid
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=2752-65-0; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.736921+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.702323+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C38H44O8; inchi=InChI=1S/C38H44O8/c1-20(2)10-9-15-36(8)16-14-24-29;
+    smiles=[H][C@@]12C[C@@]3([H])C=C4C(=O)c5c(O)c6c(c(CC=C(C)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.634574+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 2752-65-0 uniquely resolves
+    by ChEBI xref to CHEBI:67521 '(-)-gambogic acid'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001159; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 2752-65-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C38H44O8
+  inchi: InChI=1S/C38H44O8/c1-20(2)10-9-15-36(8)16-14-24-29(39)28-30(40)26-18-23-19-27-35(6,7)46-37(33(23)41,17-13-22(5)34(42)43)38(26,27)45-32(28)25(31(24)44-36)12-11-21(3)4/h10-11,13-14,16,18,23,27,39H,9,12,15,17,19H2,1-8H3,(H,42,43)/b22-13-/t23-,27+,36-,37+,38-/m1/s1
+  smiles: '[H][C@@]12C[C@@]3([H])C=C4C(=O)c5c(O)c6c(c(CC=C(C)C)c5O[C@]41[C@@](C/C=C(/C)C(=O)O)(OC2(C)C)C3=O)O[C@](C)(CCC=C(C)C)C=C6'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001159
+legacy_identifiers:
+- MIM:Gambogic_Acid
+- CHEBI:67521

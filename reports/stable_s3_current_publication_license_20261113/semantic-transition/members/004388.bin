@@ -1,0 +1,83 @@
+id: CultureMech:004047
+name: potato_dextrose_agar
+original_name: POTATO DEXTROSE AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: KOMODO Medium 129
+  term:
+    id: komodo.medium:129
+    label: POTATO DEXTROSE AGAR
+notes: 'Source: KOMODO ModelSEED | ID: 129 | DSMZ Medium: 129 (mediadive.medium:129)
+  | Aerobic: No'
+ingredients:
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Potato
+  concentration:
+    value: '200'
+    unit: G_PER_L
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:01.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 129'
+- timestamp: '2026-02-03T11:19:12.951759'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 129
+- timestamp: '2026-03-13T06:19:24.438572Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:004047'
+- timestamp: '2026-03-17T06:30:36.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:39.178986+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "POTATO DEXTROSE AGAR" to "potato_dextrose_agar" for
+    consistent matching
+- timestamp: '2026-06-05T07:40:20.702438+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+ph_value: 5.6
+parent_media:
+  path: data/normalized_yaml/fungal/potato_dextrose_agar.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:010445
+  name: potato_dextrose_agar
+  notes: KOMODO record states DSMZ Medium 129 provenance and exactly matches the single
+    DSMZ parent signature; parent is categorized fungal while the KOMODO source duplicate
+    is categorized bacterial.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same ingredient and concentration signature; KOMODO record copied from the matching
+  DSMZ medium source. Category differs between source records and should be treated
+  as source metadata, not a formulation difference.

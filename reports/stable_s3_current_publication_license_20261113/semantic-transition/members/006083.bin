@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""Mechanical extraction of a genuinely reviewed tuple; no acceptance writer."""
+from pathlib import Path
+import ast
+import copy
+import datetime
+import hashlib
+import json
+import os
+
+D = Path(__file__).resolve().parent
+C = D.parent.parent
+W = C / "workers/w10/worktree"
+R = W / ".temp/angust-exact-relocation-independent-v1"
+V2 = C / "integration/final-native-intake-v2"
+V3 = C / "integration/final-native-intake-v3"
+K = C / "integration/release-worktree"
+EXPECTED = {
+    "attestation": "e3ccd9d004a02cae6357e03569e934a49d0713f2b5a4f9d0ff8fba9c6d93cc97",
+    "handoff": "06a57eba24b478a8ac75302772e8b00baad33141fa4db0aeadec2881ad25d790",
+    "manifest": "9fbd81e9341f8e9e24f738d2f74be174895c79e3f5068ae93bf15ad63bce9fb2",
+    "tuple": "c50d311dcd0e59cbd25757cdf037797c8aefb49d2ec91984615d252b86aa792f",
+    "request": "204747485ef8eb7c370c7c941256fc2517055df669783c3c4a244e917ed67a46",
+    "v2": "83f1f17c2fc9fd0a504cd533dd0c83612a950210c7b600de68fc386e53f17308",
+    "v3": "4287e87f29a056b00c69ff2e33a287ff4b96b9e6e2c1bafbe5a2d3a5e61d9123",
+}
+
+
+def digest(b):
+    return hashlib.sha256(b).hexdigest()
+
+
+def canonical(o):
+    return json.dumps(o, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode()
+
+
+def read(p, expected=None):
+    assert p.is_file() and not p.is_symlink(), p
+    b = p.read_bytes()
+    if expected:
+        assert digest(b) == expected, (p, digest(b), expected)
+    return b
+
+
+def save(name, obj):
+    p = D / name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("x") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+
+records = []
+
+
+def capture(source, destination, expected=None):
+    raw = read(source, expected)
+    stat = source.stat()
+    target = D / destination
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with target.open("xb") as f:
+        f.write(raw)
+    assert target.stat().st_nlink == 1 and digest(target.read_bytes()) == digest(raw)
+    records.append({"original_path": str(source), "path": destination,
+                    "sha256": digest(raw), "bytes": len(raw),
+                    "original_inode": stat.st_ino, "original_link_count": stat.st_nlink,
+                    "exclusive_regular_copy": True})
+    return raw
+
+
+attestation = json.loads(capture(R/"tuple-attestation.json", "review/tuple-attestation.json", EXPECTED["attestation"]))
+handoff = json.loads(capture(R/"HANDOFF.json", "review/HANDOFF.json", EXPECTED["handoff"]))
+manifest = json.loads(capture(R/"MANIFEST.json", "review/MANIFEST.json", EXPECTED["manifest"]))
+assert attestation["verdict"] == "pass_with_limitations" and attestation["completion"] == "completed"
+assert attestation["scientific_review"] is True
+for flag in ("author_request_itself_is_accepted_review", "whole_plan_acceptance", "operator_code_approval",
+             "source_application_approval", "role_export_approval", "source_identity_resolved"):
+    assert attestation[flag] is False
+tuple_value = attestation["closed_tuple"]
+assert digest(canonical(tuple_value)) == EXPECTED["tuple"] == attestation["reviewed_closed_tuple_sha256"]
+
+for key in ("native_review", "derived_markdown", "actual_scopes"):
+    ref = attestation[key]
+    p = W/ref["path"]
+    capture(p, "review/" + str(p.relative_to(R)), ref["sha256"])
+for ref in attestation["support"]:
+    p = W/ref["path"]
+    capture(p, "review/" + str(p.relative_to(R)), ref["sha256"])
+for key in ("native_validation", "findings", "final_assembly_review"):
+    ref = handoff[key]
+    p = Path(ref["path"])
+    if not p.is_absolute():
+        p = W/p
+    capture(p, "review/" + str(p.relative_to(R)), ref["sha256"])
+
+v2_raw = read(V2/"owner-plan.conditional.json", EXPECTED["v2"])
+v3_raw = read(V3/"owner-plan.conditional.json", EXPECTED["v3"])
+v2, v3 = json.loads(v2_raw), json.loads(v3_raw)
+opid = tuple_value["operation_id"]
+op2 = next(x for x in v2["records"] if x["operation_id"] == opid)
+op3 = next(x for x in v3["records"] if x["operation_id"] == opid)
+assert canonical(op2) == canonical(op3)
+request_binding = next(x for x in v2["bindings"] if x["binding_id"] == op2["relocation_review_binding"])
+assert request_binding["sha256"] == EXPECTED["request"]
+index = json.loads((V2/"materialization-index.json").read_text())
+request_source = next(x for x in index["files"] if x["destination"] == request_binding["path"])
+request = json.loads(capture(Path(request_source["source"]), "author/original-relocation-request.json", EXPECTED["request"]))
+assert canonical(request) == canonical(tuple_value)
+
+native_file = K/"src/mediaingredientmech/curate/campaign_owner_apply.py"
+native_raw = read(native_file)
+module = ast.parse(native_raw)
+keys = next(ast.literal_eval(n.value) for n in module.body if isinstance(n, ast.Assign)
+            and any(isinstance(t, ast.Name) and t.id == "RELOCATION_REVIEW_KEYS" for t in n.targets))
+assert set(tuple_value) == keys and len(keys) == 8 and type(tuple_value["schema_version"]) is int
+expected_tuple = {"schema_version": 1, "operation": "review_campaign_owner_demotion",
+    "operation_id": op3["operation_id"], "before_source_record": op3["before_source_record"],
+    "source_record": op3["source_record"], "before_yaml_sha256": op3["before_yaml_sha256"],
+    "after_yaml_sha256": op3["after_capture"]["sha256"], "origins": op3["origins"]}
+assert canonical(expected_tuple) == canonical(tuple_value)
+
+def strict_equal(candidate):
+    return (isinstance(candidate, dict) and set(candidate) == keys
+            and type(candidate["schema_version"]) is int
+            and canonical(candidate) == canonical(tuple_value))
+
+controls = [{"name": "actual_attested_tuple", "expected_equal": True, "equal": strict_equal(tuple_value)}]
+mutations = {
+    "boolean_schema": lambda x: x.update(schema_version=True),
+    "float_schema": lambda x: x.update(schema_version=1.0),
+    "extra_acceptance_field": lambda x: x.update(accepted=True),
+    "missing_origins": lambda x: x.pop("origins"),
+    "wrong_before_hash": lambda x: x.update(before_yaml_sha256="0"*64),
+    "wrong_after_hash": lambda x: x.update(after_yaml_sha256="0"*64),
+    "wrong_destination": lambda x: x.update(source_record=x["before_source_record"]),
+    "wrong_operation_id": lambda x: x.update(operation_id="synthetic"),
+    "wrong_origin_head": lambda x: x["origins"][0].update(head_sha="0"*40),
+    "wrong_case_hash": lambda x: x["origins"][0]["case_hashes"].update({next(iter(x["origins"][0]["case_hashes"])):"0"*64}),
+}
+for name, change in mutations.items():
+    altered = copy.deepcopy(tuple_value)
+    change(altered)
+    result = strict_equal(altered)
+    assert result is False, name
+    controls.append({"name": name, "expected_equal": False, "equal": result})
+assert controls[0]["equal"] is True
+
+# Deliberately no newline: this is exactly the canonical byte hash attested by W10.
+with (D/"reviewed-relocation-tuple.json").open("xb") as f:
+    f.write(canonical(tuple_value))
+assert digest((D/"reviewed-relocation-tuple.json").read_bytes()) == EXPECTED["tuple"]
+
+def typed(o, path="$", out=None):
+    out = [] if out is None else out
+    out.append({"path": path, "type": type(o).__name__, "value": o if not isinstance(o, (dict,list)) else None})
+    if isinstance(o, dict):
+        for k, v in o.items():
+            typed(v, path+"."+k, out)
+    elif isinstance(o, list):
+        for n, v in enumerate(o):
+            typed(v, f"{path}[{n}]", out)
+    return out
+
+save("typed-tuple-comparison.json", {"before_author_request": typed(request),
+    "independent_reviewed_tuple": typed(tuple_value), "after_derived_file": typed(json.loads((D/"reviewed-relocation-tuple.json").read_bytes())),
+    "all_typed_canonical_values_equal": True})
+save("controls.json", {"scope": "mechanical typed projection only; not native prepare/acceptance/application",
+    "results": controls, "all_passed": True})
+save("conditions.json", {"source_attestation_sha256": EXPECTED["attestation"],
+    "conditions_verbatim": attestation["conditions"], "no_new_interpretation": True})
+save("source-index.json", {"captures": records,
+    "original_large_review_manifest_is_partial_in_this_bridge": True,
+    "plan_references": [{"path": str(V2/"owner-plan.conditional.json"), "sha256": EXPECTED["v2"]},
+                        {"path": str(V3/"owner-plan.conditional.json"), "sha256": EXPECTED["v3"]}],
+    "native_contract_reference": {"path": str(native_file), "sha256": digest(native_raw),
+        "scope": "read-only eight-key protocol and comparison; current code not executed or approved"}})
+destination = "reports/all_unmatched_20261107/angust-relocation-review-bridge-v1"
+new_id = "angustmycin-independent-relocation-reviewed-tuple"
+binding = {"binding_id": new_id, "role": "review", "path": destination+"/reviewed-relocation-tuple.json",
+           "sha256": EXPECTED["tuple"], "published_head": None, "published_path": None}
+save("future-plan-fragment.json", {"status": "PROPOSED_ONLY_NO_PLAN_MUTATION_OR_ACCEPTANCE",
+    "new_tuple_binding": binding,
+    "operation_id": opid,
+    "replace_only_record_reference": {"field": "relocation_review_binding",
+        "before": op3["relocation_review_binding"], "after": new_id},
+    "request_is_unchanged_and_not_an_accepted_review": request_binding,
+    "required_separate_review_evidence": records,
+    "all_other_operation_fields_must_remain_exact": op3,
+    "next_required_steps": ["Bind exact complete attestation/native pair/scopes/conditions and derivation receipt in the successor plan.",
+        "Have distinct final plan review assess this mechanical bridge and the whole final plan.",
+        "Root may accept only the exact successor plan and the new review binding after all conditions and code reviews pass.",
+        "Do not list the original author request as an independently accepted review; no whole-plan/application/role/export approval is created here."]})
+save("DERIVATION.json", {"status": "MECHANICAL_EXTRACTION_OF_ACTUAL_INDEPENDENT_REVIEW",
+    "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    "author": "coordinator /root/step7d_science_c; no independent reviewer role for this derived document",
+    "input_attestation_sha256": EXPECTED["attestation"], "input_author_request_sha256": EXPECTED["request"],
+    "output_sha256": EXPECTED["tuple"], "algorithm": "Exact closed_tuple canonical UTF-8 JSON, sorted keys, separators comma/colon, ensure_ascii false, allow_nan false, no newline.",
+    "tuple_keys": sorted(keys), "typed_values_before_after_and_origins_equal": True,
+    "v2_v3_operation_equal": True, "full_after_payload_sha256": tuple_value["after_yaml_sha256"],
+    "authentic_before_payload_sha256": tuple_value["before_yaml_sha256"],
+    "independent_review_status": "pass_with_limitations as stated by W10; complete original conditions retained",
+    "whole_plan_acceptance": False, "source_identity_resolved": False,
+    "operator_code_approval": False, "source_application_approval": False, "role_export_approval": False,
+    "K_I_J_or_original_plan_writes": False, "controls_passed": len(controls)})
+for r in records:
+    assert digest(read(Path(r["original_path"]))) == r["sha256"]
+assert digest(read(V2/"owner-plan.conditional.json")) == EXPECTED["v2"]
+assert digest(read(V3/"owner-plan.conditional.json")) == EXPECTED["v3"]
+print(json.dumps({"output_sha256": EXPECTED["tuple"], "captured_files": len(records),
+                  "typed_controls_passed": len(controls), "no_acceptance_or_plan_mutation": True}, indent=2))

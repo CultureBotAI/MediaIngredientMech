@@ -1,0 +1,70 @@
+identifier: CHEBI:30033
+preferred_term: Bacteriochlorophyll A
+ontology_mapping:
+  ontology_id: CHEBI:30033
+  ontology_label: bacteriochlorophyll a
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:bacteriochlorophyll_a; '
+synonyms:
+- synonym_text: Bacteriochlorophyll Alpha
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 3
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:bacteriochlorophyll_a; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-06T06:38:51.222544+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0650 ''Bacteriochlorophyll Alpha'' as a RAW_TEXT synonym
+    -- Same pigment; "Alpha" and "A" are the spelled-out and letter forms of the same
+    designation (#213). No new SSSOM row; CHEBI:30033 is already mapped. Source: kgmicrobe.trait:bacteriochlorophyll_alpha.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C55H74MgN4O6
+  smiles: CC[C@H]1C2=[N+]3C(=Cc4c(C(C)=O)c(C)c5[n]4[Mg-2]34[n]3c(c(C)c6c3=C(C3=[N+]4C(=C5)[C@@H](C)[C@@H]3CCC(=O)OC/C=C(C)CCC[C@H](C)CCC[C@H](C)CCCC(C)C)[C@@H](C(=O)OC)C6=O)=C2)[C@@H]1C
+  inchi: InChI=1S/C55H75N4O6.Mg/c1-13-39-34(7)41-29-46-48(38(11)60)36(9)43(57-46)27-42-35(8)40(52(58-42)50-51(55(63)64-12)54(62)49-37(10)44(59-53(49)50)28-45(39)56-41)23-24-47(61)65-26-25-33(6)22-16-21-32(5)20-15-19-31(4)18-14-17-30(2)3;/h25,27-32,34-35,39-40,51H,13-24,26H2,1-12H3,(H-,56,57,58,59,60,62);/q-1;+2/p-1/b33-25+;/t31-,32-,34-,35+,39-,40+,51-;/m1./s1
+  molecular_weight: 911.524
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:25:33.713373+00:00'

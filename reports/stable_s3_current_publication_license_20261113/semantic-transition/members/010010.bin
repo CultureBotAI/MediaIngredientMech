@@ -1,0 +1,95 @@
+identifier: kgmicrobe.ingredient:nbrc_1096_one_fifth_marine_preparation
+preferred_term: 1/5 Marine preparation (NBRC1096 recipe family)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1096_one_fifth_marine_preparation
+  ontology_label: 1/5 Marine preparation (NBRC1096 recipe family)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1096
+    notes: NBRC1096 defines a named1/5Marine preparation used both as basal plate
+      and as100ml ingredient of a separate phenanthrene/ethanol overlay. This owner
+      denotes the source recipe family with explicit natural/artificial seawater and
+      optional-agar branches, not one exact chemical composition. Its invariant inputs
+      are7.5g BactoMarineBroth2216,5g sodium pyruvate and200ml distilled water; the
+      source additionally requires800ml filtered aged seawater OR Daigo Artificial
+      Seawater SP and optionally15g agar. Branch alternatives are retained in notes,
+      never asserted simultaneously as unconditional components. Phenanthrene and
+      ethanol belong only to the overlay and are excluded.
+notes: NBRC1096 defines a named1/5Marine preparation used both as basal plate and
+  as100ml ingredient of a separate phenanthrene/ethanol overlay. This owner denotes
+  the source recipe family with explicit natural/artificial seawater and optional-agar
+  branches, not one exact chemical composition. Its invariant inputs are7.5g BactoMarineBroth2216,5g
+  sodium pyruvate and200ml distilled water; the source additionally requires800ml
+  filtered aged seawater OR Daigo Artificial Seawater SP and optionally15g agar. Branch
+  alternatives are retained in notes, never asserted simultaneously as unconditional
+  components. Phenanthrene and ethanol belong only to the overlay and are excluded.
+  Raw source labels and optional/use instructions are retained in source-case evidence,
+  not installed as global resolving aliases. Existing source/owner/export holds remain;
+  no maintained or release approval.
+curation_history:
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: NBRC1096 defines a named1/5Marine preparation used both as basal plate
+    and as100ml ingredient of a separate phenanthrene/ethanol overlay. This owner
+    denotes the source recipe family with explicit natural/artificial seawater and
+    optional-agar branches, not one exact chemical composition. Its invariant inputs
+    are7.5g BactoMarineBroth2216,5g sodium pyruvate and200ml distilled water; the
+    source additionally requires800ml filtered aged seawater OR Daigo Artificial Seawater
+    SP and optionally15g agar. Branch alternatives are retained in notes, never asserted
+    simultaneously as unconditional components. Phenanthrene and ethanol belong only
+    to the overlay and are excluded. Isolated successor proposal only; published artifacts
+    and maintained data unchanged.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.580312+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+components:
+- component_name: Bacto Marine Broth2216 (Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '7.5'
+  concentration_unit: g per source batch
+- component_name: Sodium pyruvate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: g per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: ml per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1096
+    notes: Invariant partial inputs only. Source recipe-family branch choices(800ml
+      natural OR artificial seawater; optional15g agar) deliberately omitted from
+      unconditional partonomy. pH7.6; no pH-adjusting reagent invented.
+culturemech_reference:
+  medium_id: CultureMech:015906
+  medium_name: one_fifth_marine_agar_with_phenanthrene_nbrc_1096
+  relationship: SIMILAR_COMPOSITION
+  source_path: inputs/culturemech/data/normalized_yaml/bacterial/one_fifth_marine_agar_with_phenanthrene_nbrc_1096.yaml
+  evidence: NBRC1096 defines a named1/5Marine preparation used both as basal plate
+    and as100ml ingredient of a separate phenanthrene/ethanol overlay. This owner
+    denotes the source recipe family with explicit natural/artificial seawater and
+    optional-agar branches, not one exact chemical composition. Its invariant inputs
+    are7.5g BactoMarineBroth2216,5g sodium pyruvate and200ml distilled water; the
+    source additionally requires800ml filtered aged seawater OR Daigo Artificial Seawater
+    SP and optionally15g agar. Branch alternatives are retained in notes, never asserted
+    simultaneously as unconditional components. Phenanthrene and ethanol belong only
+    to the overlay and are excluded. Exact ingredient occurrence CM_OCC:9a75dbf12e84994b30a9931246fffbbc15b338fc6c144601774be5fd42cfc392
+    at ingredients/7; this is not identity to the complete receiving recipe.

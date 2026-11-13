@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:atcc_1612_sodium_carbonate_5_percent_stock
+preferred_term: ATCC 1612 sodium carbonate 5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1612_sodium_carbonate_5_percent_stock
+  ontology_label: ATCC 1612 sodium carbonate 5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx
+    notes: Source-qualified whole stock identity. Generic source wording is not introduced
+      as a globally resolving alias.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx
+    source_record: ATCC 1612 sodium carbonate 5% stock
+    notes: Source names and stated quantities retained without inferred salt, hydrate,
+      stereochemistry or percentage basis.
+  notes: ATCC 1612 specifies sterile anaerobic 5% Na2CO3, adding 0.25 ml per 10 ml
+    receiving medium to adjust that medium to pH 8.2. PERCENT preserves the unspecified
+    basis without asserting w/v, w/w, g/L or molarity. Stock solvent identity and
+    grade, preparation volume and gas, and starting carbonate hydrate are unspecified.
+    Basal and Wolfe-table water do not establish this stock carrier. The main-medium
+    80% N2 / 20% CO2 condition is not an explicit stock preparation recipe. This stock
+    remains separate from the source-explicit 5% w/v DSMZ 135/339a preparation and
+    pure sodium carbonate.
+notes: ATCC 1612 specifies sterile anaerobic 5% Na2CO3, adding 0.25 ml per 10 ml receiving
+  medium to adjust that medium to pH 8.2. PERCENT preserves the unspecified basis
+  without asserting w/v, w/w, g/L or molarity. Stock solvent identity and grade, preparation
+  volume and gas, and starting carbonate hydrate are unspecified. Basal and Wolfe-table
+  water do not establish this stock carrier. The main-medium 80% N2 / 20% CO2 condition
+  is not an explicit stock preparation recipe. This stock remains separate from the
+  source-explicit 5% w/v DSMZ 135/339a preparation and pure sodium carbonate. Exact
+  raw label "5% Na2CO3" retained here as provenance. Applies only to CultureMech:009299
+  ingredients/13; no globally resolving alias is added.
+curation_history:
+- timestamp: '2026-11-08T05:35:11.685684+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Propose isolated source-qualified stock with literal components, occurrence
+    scope and explicit unresolved preparation details. No maintained data or release
+    state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: REMOVED_UNSUPPORTED_COMPONENT
+  changes: 'Issue 1217 W09 residual 001: removed unsupported Water component and current
+    water-inference notes after stock-specific primary-source review. Retained the
+    exact printed solute/strength, UNKNOWN completeness, source scope and all prior
+    history. Report-only proposal; no owner or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

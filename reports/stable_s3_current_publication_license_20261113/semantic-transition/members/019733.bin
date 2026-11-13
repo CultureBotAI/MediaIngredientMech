@@ -1,0 +1,61 @@
+identifier: CHEBI:6570
+preferred_term: Lupeol
+ontology_mapping:
+  ontology_id: CHEBI:6570
+  ontology_label: lupeol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: (3beta)-lup-20(29)-en-3-ol
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=545-47-1); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.549968+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.580849+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C30H50O; inchi=InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7);
+    smiles=[H][C@]12CC[C@@]3([H])[C@@](C)(CC[C@@]4(C)CC[C@@H]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.863415+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001550; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 545-47-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C30H50O
+  inchi: InChI=1S/C30H50O/c1-19(2)20-11-14-27(5)17-18-29(7)21(25(20)27)9-10-23-28(6)15-13-24(31)26(3,4)22(28)12-16-30(23,29)8/h20-25,31H,1,9-18H2,2-8H3/t20-,21+,22-,23+,24-,25+,27+,28-,29+,30+/m0/s1
+  smiles: '[H][C@]12CC[C@@]3([H])[C@@](C)(CC[C@@]4(C)CC[C@@H](C(=C)C)[C@@]43[H])[C@]1(C)CC[C@@]1([H])C(C)(C)[C@@H](O)CC[C@]21C'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001550
+legacy_identifiers:
+- MIM:Lupeol
+- CHEBI:6570

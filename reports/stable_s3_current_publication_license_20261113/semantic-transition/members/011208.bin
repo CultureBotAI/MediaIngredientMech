@@ -1,0 +1,3190 @@
+{
+  "author": "/root/chemicals_research",
+  "authored_at": "2026-11-08T07:52:03.631116+00:00",
+  "review_inputs": {
+    "input-decisions.json": "81abcd5a670e642d0b4a38b23a3e16ec3d3a0e3f53f73622f1f74f464fff3cc1",
+    "input-proposals.json": "b6f614aa5d1d49db0d561287175242a4b628f9d2a097fdc4609d48d2f064e58e",
+    "input-evidence.json": "2715f8354c9a81ba0ca490b56773ede33abb08963c419798638741c5aa03f935",
+    "decisions-v2.json": "52c30e13862d68ca30dd40a4f6958d9d4fc76184aab3bfbee4cab9f06ec4167d",
+    "proposals-v2.json": "695830b77295e5234eb1e3f84af713a13b25d17422ff6f848a9faee025e29893",
+    "evidence-v1.json": "5ff58e13e08481309c3ef0286f0c63bc8589b07be97fbf0b799f2493363b1912"
+  },
+  "case_count": 67,
+  "candidate_count": 57,
+  "case_reviews": [
+    {
+      "lane_index": 0,
+      "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+      "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Bottom layer",
+        "source_label": "Bottom layer",
+        "raw_source_label": "Bottom layer"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+        "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+      ],
+      "decision_object_sha256": "09b03a9869eb443c2e4713fbb12553d6bc0f9373d732a1d618b3fcd76c723b06",
+      "assessment": "JCM628 bottom layer contains 50 ml washed FeS preparation, 50 ml Modified Wolfe mineral solution and 1 g agarose. JCM629 explicitly reuses Medium628 with artificial saltwater replacing Modified Wolfe mineral solution. Both therefore contain the FeS preparation and agarose; the demonstrated distinguishing input is mineral solution versus artificial saltwater. Preserve receiving-layer and top-layer boundaries, processing and exact occurrence routing; neither bottom layer is neat FeS or a zero-valent iron preparation.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-628",
+        "ROOT-jcm-629",
+        "ROOT-RECIPE-5b1f0284b8e9f7a4",
+        "ROOT-RECIPE-a2d32d72985e7804",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-bottom-628",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml",
+            "sha256": "8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "R1193-P-bottom-629",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml",
+            "sha256": "a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 1,
+      "case_id": "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+      "case_input_sha256": "365e3137bc335425a4cd247457ce3aab842560e5545ab35cfab93f9af35875ab",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Dextrose (BD 215530)",
+        "source_label": "Dextrose (BD 215530)",
+        "raw_source_label": "Dextrose (BD 215530)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:070ac64dc4408b63304d8b691b9a82b306e31689f3914eea627a6f1e99bf98ec",
+        "CM_OCC:8e3c9de816dad4419727bfa56e313a163df798333fb3f28be6db58c925e16249",
+        "CM_OCC:2cb2156d7a8739ad61b1f5b70ace92f8b6af50c110033889694494f79d560c1f"
+      ],
+      "decision_object_sha256": "0e5476ac21f4f6cb8f4a7f13dedd2b638dbbeba5b06a21c1a30c2d6e07025aae",
+      "assessment": "BD 215530 is explicitly D(+)-glucose anhydrous on the supplier page. The three OADC contexts retain that product label and separate the supplemented medium from its dextrose input. The alias source is now the actual supplier locator; no OADC composition or product-wide identity is transferred to glucose.",
+      "evidence_ids": [
+        "CHEM-SRC-006",
+        "CHEM-RECIPE-006-01",
+        "CHEM-RECIPE-006-02",
+        "CHEM-RECIPE-006-03",
+        "CHEM-CAP-54ec413d4dba0fba",
+        "CHEM-CAP-2e36b7f2d05209a0",
+        "CHEM-CAP-d1ffb78c451bbabf",
+        "CHEM-CAP-c119b9ae9342e2b9",
+        "CHEM-FAIL-f64b77c8c71e",
+        "CHEM-WEB-6",
+        "CHEM-OWNER-9642ca4960ad",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-dextrose",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/D-glucose.yaml",
+            "sha256": "6b0d06f8eb25d9a4d0c934d92fe7f8a658734073eca8b29fabb142342060307b"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 2,
+      "case_id": "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+      "case_input_sha256": "0d33316ccc177c2a0ba582f1d8b742b109d88012afe797a99efb30433d520bfa",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Iron (powder, 20 - 60 mesh, Nacalai)",
+        "source_label": "Iron (powder, 20 - 60 mesh, Nacalai)",
+        "raw_source_label": "Iron (powder, 20 - 60 mesh, Nacalai)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:06c36e49f693a6a15d24df9aa6161fef97afed71c707b6a133885f01b89d3b8b"
+      ],
+      "decision_object_sha256": "bcb56875b98182b138bcfbaaec13d83ccbf3395979de0145d4b76053d3d5031c",
+      "assessment": "JCM 673 names Nacalai iron powder at 20–60 mesh. The matching Nacalai page supplies elemental Fe, CAS 7439-89-6 and that particle range. The physical grade is preserved in the literal; neither ferric oxide nor dissolved iron ions replace the supplied elemental material.",
+      "evidence_ids": [
+        "CHEM-SRC-007",
+        "CHEM-RECIPE-007-01",
+        "CHEM-CAP-11d151cb0257d194",
+        "CHEM-CAP-610933dda9a38c76",
+        "CHEM-CAP-a4d58bf3f3b268b6",
+        "CHEM-CAP-725a931dca3bf2f5",
+        "CHEM-CAP-0d24fad2c28ce16b",
+        "CHEM-OWNER-e1938013c4b8",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-iron",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Iron.yaml",
+            "sha256": "0182d080bd5348bef40c0f66625c02f0c11091f8390ce4f94e608c753b63fec7"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 3,
+      "case_id": "CM_NAME:23daec5a08dc35f1e39edc61f4b96e8852e0363d2f8a4eafb6fbe52731201d44",
+      "case_input_sha256": "abf87da86ceaa94a6d6a22afc8ba00e51a5f3dce392bbb56d04b15bab048934e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2-tartrate x 2 H2O",
+        "source_label": "Na2-tartrate x 2 H2O",
+        "raw_source_label": "Na2-tartrate x 2 H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0bc4efe1e567fbc85ddd07d2a4f2a814d75e5668d4bc57de8d00d69398e242ac",
+        "CM_OCC:78328118c86b96efef5b66f30a035903c525d7366ca16af7f7e9b6204a3d6a28"
+      ],
+      "decision_object_sha256": "0c8ee8134da161587495e8afad3b88f9c7a6c0151dc0884e6e561e46da64b16e",
+      "assessment": "DSMZ 1565 explicitly specifies disodium tartrate dihydrate but does not establish L, D, meso or racemic composition. Supplier and ontology comparisons do not identify the historical stereoisomer. Preserve both waters and the source label; an exact stereochemical mapping remains unsupported.",
+      "evidence_ids": [
+        "CHEM-SRC-010",
+        "CHEM-RECIPE-010-01",
+        "CHEM-RECIPE-010-02",
+        "CHEM-CAP-fc7901de9c8e8069",
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-tartrate-dsmz",
+        "CHEM-C1193-ols-search-2",
+        "CHEM-C1193-ols2-sodium-tartrate",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-tartrate-download"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 4,
+      "case_id": "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901",
+      "case_input_sha256": "05ae7767d8da7beb31b351bfa279a5f028a84ca432e117a6ec6d985b9f410805",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 29",
+        "source_label": "Medium 29",
+        "raw_source_label": "Medium 29"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ae896ffa5e45dae2a988c513fc5fe516df08139eed80523aa4a745d3907a8031"
+      ],
+      "decision_object_sha256": "58c58cec1103bb3c6cd26cc8a1b08dabcc98efd902ee434e438502c47f44513e",
+      "assessment": "DSMZ 29 provides a numbered salt preparation with its own input table, and MICRO:0001736 supplies the source-specific term. The complete table and preparation, rather than the receiving dose, support the stock identity. Component grounding and inherited source/export holds remain independent.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-40",
+        "ROOT-dsmz-29",
+        "ROOT-RECIPE-0d8c7ed3bc4764a1",
+        "R1193-micro-1736",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-dsmz29",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Pfennigs_Medium_II_DSMZ29.yaml",
+            "sha256": "1cf2667e9a33cc59e981b0257717c72df87cfa6a44d6d4581987cb7e40b9f977"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 5,
+      "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+      "case_input_sha256": "a8e35ff3593e9f4209bdb837b76e599c4c89c63f5c29f96cf60463ceb5e4e4ca",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MKP medium",
+        "source_label": "MKP medium",
+        "raw_source_label": "MKP medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:61e4ba696ad5b790b82da57aab32682afcc95f60d319304d8671f957eee5e83f"
+      ],
+      "decision_object_sha256": "e81c33a5978f02007f5aa7c845eac393ab396ab8d2d67301356aaba300f413b4",
+      "assessment": "MediaDive medium1895 explicitly identifies DSMZ as its source. Solution6635 is the MKP multicomponent medium base containing CMRL1066, Neopeptone, HEPES, sodium citrate, glucose, sodium pyruvate, N-acetylglucosamine and sodium bicarbonate, followed by pH7.6 adjustment with 5 M NaOH, 0.45 micrometre filtration and making up to1000 ml with distilled water. Solution6636 separately combines this MKP base with heat-inactivated human serum and bovine serum albumin. Preserve these preparation stages and exact input quantities; do not infer CMRL1066 stock strength from an unrelated product.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-md-1895",
+        "ROOT-RECIPE-feec59febb90e554",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-mkp",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml",
+            "sha256": "346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 6,
+      "case_id": "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+      "case_input_sha256": "d5cf82c75511e922ee323d10e74610f97b4ef6f20bc0c134abf29b465a6af508",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NaCOOH",
+        "source_label": "NaCOOH",
+        "raw_source_label": "NaCOOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3b98273e3b589c7040f112fb9abafadb2a835985e2533e65688eaed5bbfd8e20"
+      ],
+      "decision_object_sha256": "0d53b6860f389d3b15124a8eb6f0e0857af58edb3f4666c1cebefd5b0111a4b5",
+      "assessment": "TOGO M3211 is Formate medium and its NaCOOH row denotes sodium formate. The false marine-medium caption is corrected. Provider-enriched adjacent ontology fields are not independent primary evidence; the exact literal and primary locator remain on the formate owner.",
+      "evidence_ids": [
+        "CHEM-SRC-024",
+        "CHEM-RECIPE-024-01",
+        "CHEM-CAP-baa7ab015ab6d5a5",
+        "CHEM-CAP-8ec5c3387a865d32",
+        "CHEM-OWNER-0efc6c2a4840",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-formate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Na-formate.yaml",
+            "sha256": "414544e3ce68d9e79d3ec409f2fe9dd7e57baf415c1412fa66afcfcdac704246"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 7,
+      "case_id": "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29",
+      "case_input_sha256": "f312b91619d46505d0752e006ac145bb43a8ed8033463ffa9043d63f23c8345a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 87",
+        "source_label": "Medium 87",
+        "raw_source_label": "Medium 87"
+      },
+      "occurrence_ids": [
+        "CM_OCC:207077211d3ca6dd81cd4ef19b833c74f4b474025e4059e650e29d259d687cd5"
+      ],
+      "decision_object_sha256": "42bbad0e65685be5735bb4534296dcadf4ac1db135ef8ced3bad40e1ddcf9d7f",
+      "assessment": "DSMZ 87 salt preparation has a source-specific MICRO:0001830 term, but the complete source comparison retains the recorded historical sulfide/formula differences. The term does not approve copying all historical ontology composition into the recipe or lifting source holds.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-87a",
+        "ROOT-dsmz-87",
+        "ROOT-RECIPE-a30553925144b36e",
+        "R1193-micro-1830",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-dsmz87",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Chloroflexus_Medium_Modified_DSMZ87.yaml",
+            "sha256": "120bfa94170475679776ec2f64ff3fbdd720a8f195f25fc906eae2b81be5eea4"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 8,
+      "case_id": "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+      "case_input_sha256": "c8713fc32c15adeb807b3172166e06ee395d78e6bb89ef4d63081cb4a9e1be09",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MgSO .7H 0",
+        "source_label": "MgSO .7H 0",
+        "raw_source_label": "MgSO .7H 0"
+      },
+      "occurrence_ids": [
+        "CM_OCC:092a718a269808868b2e33c81ebf7e4a6b543c5f7aac8ae0c6d116627e1e7451",
+        "CM_OCC:c38410b4fe4fa10bbc419bc5b1c7b6a94075e1cc93a378ebe2c7e55658ff7787",
+        "CM_OCC:5569dd9d8368bc0b808d7afa321689c6ee8a14870144b396852f16a463cb9100"
+      ],
+      "decision_object_sha256": "64657316457427930a89d6c57f35fe6e7f15cf4d64cf63231d5e7ecb1d26c2b5",
+      "assessment": "CCAP E27/E31/E31 ANT and TAP establish damaged typography for MgSO4·7H2O. Separately, NBRC 406 itself prints MgSO2·7H2O in the main recipe, so automated TOGO enrichment is not a correction authority. Three MgSO2 literals are rejected on the heptahydrate owner; six hydration-unspecified inherited aliases remain structured, conditional and unapproved pending their original occurrence-stage provenance.",
+      "evidence_ids": [
+        "CHEM-SRC-026",
+        "CHEM-RECIPE-026-01",
+        "CHEM-RECIPE-026-02",
+        "CHEM-RECIPE-026-03",
+        "CHEM-CAP-18d4f57118f39820",
+        "CHEM-CAP-f74b6f207f2c363e",
+        "CHEM-CAP-2dd30154d45162d8",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-SRC-073",
+        "CHEM-RECIPE-073-01",
+        "CHEM-CAP-2462f1349d33dc6f",
+        "FINAL-CHEM-mg-nbrc406",
+        "FINAL-CHEM-mg-togo1597"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Mgso4_X_7_H2o.yaml",
+            "sha256": "4db571f0a533794b456f36ac3ac25e31bc7eebc82b54322e86616fd5b4900d6b"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 9,
+      "case_id": "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+      "case_input_sha256": "823221f252c56090797ca01985678dd28f034507e1aaa1b3541477a029b2ed63",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "So(Sulfur Powder)",
+        "source_label": "So(Sulfur Powder)",
+        "raw_source_label": "So(Sulfur Powder)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b1f0b93d1421356fa381204546322c37c4f3676aa53128dfd3fc4a1a28c9333b"
+      ],
+      "decision_object_sha256": "90d602a4ca92e3bc4d6e633f7c0f4745e416cd27636c1052e766a432f345ed75",
+      "assessment": "The source So(Sulfur Powder) is elemental sulfur powder, with explicit source context rather than a sulfate or sulfide reagent. Preserve the exact label and physical form; the source-specific URL replaces campaign-only alias provenance.",
+      "evidence_ids": [
+        "CHEM-SRC-027",
+        "CHEM-RECIPE-027-01",
+        "CHEM-CAP-c7ce4af92ddac4f6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-SRC-042",
+        "CHEM-RECIPE-042-01",
+        "CHEM-CAP-2219370bc9ce67b6"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-sulfur",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Sulfur.yaml",
+            "sha256": "bb8ed1cc7f1195f73c86207a707c41a88750ca9ada7d0bdf91cd6aa2e2d41560"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 10,
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "case_input_sha256": "3609bf355091abb3388887deed3fbae6391a329338e77d05a32dddfbdcaf8526",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine-HCl·H2O (Vitamin B1)",
+        "source_label": "Thiamine-HCl·H2O (Vitamin B1)",
+        "raw_source_label": "Thiamine-HCl·H2O (Vitamin B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:750ca6e602619153bc2d9d97925f9cfe29b1faab5283067e75d49f8b0770fb51",
+        "CM_OCC:3b8df504b3fea449da7cb5de638db5e6102c008a346ea7c8babe1b53cc9514cb",
+        "CM_OCC:e88296a7c96873bbbdbd2ee0b767815c0d4345c674957212c3bd225be8e22010",
+        "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a",
+        "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef"
+      ],
+      "decision_object_sha256": "53b4e3edb54002c8d7ed0534fc5518edeb2cf22e0005e6e2eeb0815f173578d1",
+      "assessment": "The five NBRC contexts explicitly use a one-water thiamine-HCl spelling. The exact chloride/protonation stoichiometry, reagent identifier and structure remain unresolved. An existing anhydrous or dihydrate record cannot absorb these labels as an exact form solely from the shared thiamine name.",
+      "evidence_ids": [
+        "CHEM-SRC-028",
+        "CHEM-RECIPE-028-01",
+        "CHEM-RECIPE-028-02",
+        "CHEM-RECIPE-028-03",
+        "CHEM-RECIPE-028-04",
+        "CHEM-RECIPE-028-05",
+        "CHEM-CAP-704b31668b441561",
+        "CHEM-CAP-f0c1b4928af89872",
+        "CHEM-CAP-a99de49c99e519a4",
+        "CHEM-CAP-1fc151e426d45042",
+        "CHEM-CAP-6b44ed77cac99113",
+        "CHEM-CAP-aa10057ea2c6f012",
+        "CHEM-CAP-7376810b484a47e8",
+        "CHEM-CAP-f55e3a4d1efb7d51",
+        "CHEM-CAP-f28524e690e051c1",
+        "CHEM-CAP-77de000b5fa8d1a6",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-12d6346a73c5dd24",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-ols-search-3",
+        "CHEM-C1193-ols2-thiamine",
+        "CHEM-C1193-WEB-2",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-WEB-7"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 11,
+      "case_id": "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+      "case_input_sha256": "3bcbf1602bf5552f0a0850853c8c4f607442ed88d28623ff4e0ca4265fb81ddb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "RibofIavin",
+        "source_label": "RibofIavin",
+        "raw_source_label": "RibofIavin"
+      },
+      "occurrence_ids": [
+        "CM_OCC:beade6c2e6d5a1f82e93d8c2152e9a94b20912c89267ff0ddfdf711072b4feac"
+      ],
+      "decision_object_sha256": "273cec5ce9dd47cc23dd16b96a4313b9b86d1dcb99f3ac1951355b1655c54355",
+      "assessment": "RibofIavin is source typography for riboflavin. Separately DSMZ 1157 and NBRC 1604 dose aliquots of 0.2 mg/ml and 0.05 microgram/ml preparations. Those supplied-stock labels are rejected only as exact synonyms of the neat molecular owner, preserving their original source/type history.",
+      "evidence_ids": [
+        "CHEM-SRC-030",
+        "CHEM-RECIPE-030-01",
+        "CHEM-CAP-f93edce2e35b29b6",
+        "CHEM-CAP-3f87f8dfda3887b7",
+        "CHEM-OWNER-59776f859c41",
+        "CHEM-C1193-REINSPECTION",
+        "FINAL-CHEM-riboflavin-dsmz1157",
+        "FINAL-CHEM-riboflavin-nbrc1604"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-riboflavin",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Riboflavin.yaml",
+            "sha256": "565e7c831b157d13766afcadbe4a2634472ae7d6b0140b88415cdbf7280155af"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 12,
+      "case_id": "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+      "case_input_sha256": "7f49a3c1ce107cc13e437a0fa9d009725c7baa0d84e76b526e860a73be73e299",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MnCI2.4H2O",
+        "source_label": "MnCI2.4H2O",
+        "raw_source_label": "MnCI2.4H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f77ae0a944f8bfeadd01225b17e83fedd00a431643e7f24c3b4811193f91103a",
+        "CM_OCC:403a5bb98e98e915e6470ed0af4e0598d0d1a3664d67ff4fee3cbde64770dcca",
+        "CM_OCC:ce923aa01bda5e49687245b6ec97bfe223182422dc8e5100704ad3c6b9fc9084"
+      ],
+      "decision_object_sha256": "94174e81e278224c0b1996756bb7e40c35366e635c6434c8682f977cfed03cae",
+      "assessment": "Three TOGO sources explicitly place MnCI2.4H2O in the manganese chloride tetrahydrate context. The apparent capital-I typo is resolved by the complete source table and formula, with all three primary locators retained. No less hydrated form or generic manganese ion is substituted.",
+      "evidence_ids": [
+        "CHEM-SRC-038",
+        "CHEM-RECIPE-038-01",
+        "CHEM-RECIPE-038-02",
+        "CHEM-RECIPE-038-03",
+        "CHEM-CAP-178c00787726f6db",
+        "CHEM-CAP-90c71e16ed3e36ea",
+        "CHEM-CAP-b5d7e0a2820706b4",
+        "CHEM-CAP-bfb113a11d7f7c01",
+        "CHEM-OWNER-f57a467dbfb7",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Mncl2_X_4_H2o.yaml",
+            "sha256": "92737742a4ef92ff54638fdc96130a2ac0f4cfd1aa6bc9738994689c5bbbf050"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 13,
+      "case_id": "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+      "case_input_sha256": "5f604ab3349ba85cb25c8cfccfd9e39a12f3570918f82900bc1810d891048c94",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution (see Medium No. 403)",
+        "source_label": "Thiamine solution (see Medium No. 403)",
+        "raw_source_label": "Thiamine solution (see Medium No. 403)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b464254d63e0dc7aa5a26c28a5100c9802b79e54826848cfbdaee142eeae0717",
+        "CM_OCC:e16fb08cbc4bd6fcc76bb8bd5930a800b4c1da2e85ab3c1f7ab259dac15831b4",
+        "CM_OCC:262a3d42cc11806d95c5dbac9672d2d1f8a9a1225a6c3e204cab23493e1a95f2",
+        "CM_OCC:4a358907b41f27d7f9a4a4e16503803cab82117ff022a8b1d5308235c11e98ca",
+        "CM_OCC:c9b990f4064b55517bff6ec1ecc64a9d5ba799fc7b9b952836641e9ddf87531f",
+        "CM_OCC:ab88fa0d02e343a789b204484e80d26066c12d845f0d9628258a1c283132d72a",
+        "CM_OCC:65e619dd6f5619cc890c3f0aecdb4408437346acc4c94b1ef55dd4de298d9126",
+        "CM_OCC:71c5ad7b434ee2d2f0153930f3ee4ee13ebc75253219295bb7dc111b66c436aa",
+        "CM_OCC:0deef79b549cd6a61a9e61ee8bdd5ecbe7661fdeca917258d84a0451809d3b6f",
+        "CM_OCC:7ad04c4d61f55e77e5c6130c0b97cc60ab9433c1f23090d3d390065a0cfa7249",
+        "CM_OCC:c696c9e5ea9b30c50a16cfefcfa4653898c9ad3709d252850cdcb1eb0a6e58c4"
+      ],
+      "decision_object_sha256": "bdd159a561a18c01dbe3abfac400e7abbfb73b6a9a791911cfac7a6458e3dd68",
+      "assessment": "JCM 403 supplies 10 mg thiamine HCl in 100 ml of 25 mM phosphate buffer at pH 3.4. Shared composition supports the existing preparation anchor. Filtration is asserted only where NBRC 1321 or JCM 1125 explicitly says so; JCM 403 does not supply that instruction.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-403",
+        "ROOT-jcm-1125",
+        "ROOT-RECIPE-96fa3eb39dd68dcb",
+        "ROOT-RECIPE-6f4beae86bf3a539",
+        "ROOT-RECIPE-09db49e3426ee86e",
+        "ROOT-RECIPE-deb5e286597c977d",
+        "ROOT-RECIPE-6c0dd3b483b8a343",
+        "ROOT-RECIPE-f88f640b60a754fa",
+        "ROOT-RECIPE-f78455a90bd92b21",
+        "ROOT-RECIPE-4db25e9356055811",
+        "ROOT-RECIPE-a69ca664d34dedaa",
+        "ROOT-RECIPE-b9e10bc3a43368cc",
+        "ROOT-RECIPE-2f22b0166b214e7e",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "CHEM-CAP-2caf4cd3f91d0ec5",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "ROOT-P-thiamine-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml",
+            "sha256": "4ccee0fa9ac568c9d1e0b97ac01978f1c74e8bde867f6aa837ff0290db8af503"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 14,
+      "case_id": "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+      "case_input_sha256": "7f4657aefcd8d3c7a07b5f659cef8ef439c2b584a2862e012b4569fb582c4246",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ground sulfur powder",
+        "source_label": "Ground sulfur powder",
+        "raw_source_label": "Ground sulfur powder"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6b10d65b905447f370a91feadd7830f825bde92b44d809a2a391650b238d7d71"
+      ],
+      "decision_object_sha256": "74681be7a3e4e7c913e6633232c1a3f7013f79d21dfd8b35cb04a4f26ff997a6",
+      "assessment": "TOGO M3129 names ground sulfur powder. This is the elemental solid input, not a sulfur-containing mixture or dissolved species; the exact source label receives its own primary locator while sharing the supported sulfur owner.",
+      "evidence_ids": [
+        "CHEM-SRC-042",
+        "CHEM-RECIPE-042-01",
+        "CHEM-CAP-2219370bc9ce67b6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-SRC-027",
+        "CHEM-RECIPE-027-01",
+        "CHEM-CAP-c7ce4af92ddac4f6"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-sulfur",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Sulfur.yaml",
+            "sha256": "bb8ed1cc7f1195f73c86207a707c41a88750ca9ada7d0bdf91cd6aa2e2d41560"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 15,
+      "case_id": "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f",
+      "case_input_sha256": "cdbc07027e95aa58e643a9af930ce0e0a175a3595fcfece226cf78e83f48520a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ATCC Medium 1256",
+        "source_label": "ATCC Medium 1256",
+        "raw_source_label": "ATCC Medium 1256"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a376d5e93f4bd5f888869db883874aff6484e7a9dfc93f9756d2c5e84f029cf7"
+      ],
+      "decision_object_sha256": "b944eeb2f6f9920af767de667ca562491910263cba4281158e73a41792a65a01",
+      "assessment": "The complete ATCC 1256 recipe defines the selected preparation; its numbered source is provenance, not the sole identity justification. Preserve the explicit input table and preparation stage without treating the whole medium as a pure constituent or adopting unrelated receiving-medium additions.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-old-2668",
+        "ROOT-atcc-1256",
+        "ROOT-RECIPE-ef15a907dac3595f",
+        "R1193-dsmz-88",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-atcc1256",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Sulfolobus_Medium_ATCC1256.yaml",
+            "sha256": "6f20bf5a14ffb023671650383db5d11b537b0603eb2afd95c556910239e79808"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 16,
+      "case_id": "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44",
+      "case_input_sha256": "bd6e069783f0b880e8766f1b9a0a530cb4b14d195eb2b5014704550137903116",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "VFA mix (see below)",
+        "source_label": "VFA mix (see below)",
+        "raw_source_label": "VFA mix (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:01a6c45ab3fcd26ee5429e441275f7b848ac565438c21f8251f4b4d3817e7706",
+        "CM_OCC:f6f16d7a4a8689ceef0e314f040b15760528f01ec84663f62fb4a9e3a5438259"
+      ],
+      "decision_object_sha256": "0de7461ba14f7673813ed6ce7f206c55cd6df33288cace4271096addc0bfeade",
+      "assessment": "JCM 1130 defines the VFA preparation used in YCFA. The listed acids, amounts and preparation are retained as batch facts. This mixture is not the generic fatty-acid ontology class or the independently specified JCM 266 stock.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1130",
+        "ROOT-jcm-1385",
+        "ROOT-RECIPE-9fca5916d287189a",
+        "ROOT-RECIPE-8779c940ec074455",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-vfa1130",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/VFA_Mix_JCM1130.yaml",
+            "sha256": "18b788abddd068b5eb094ec779e7f8fc414a818cbe2d5c69735eb010bbd38ec3"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 17,
+      "case_id": "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+      "case_input_sha256": "7519989a8a8bb86cc6afb896262359d75a124e640789802b188c61362a3cf410",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Niacin (B3)",
+        "source_label": "Niacin (B3)",
+        "raw_source_label": "Niacin (B3)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c3a689b2fbe025306a8211e4564bc25444c277fa940510161d1b9a5745f0c26d"
+      ],
+      "decision_object_sha256": "16b0324c6a43be75a316a368e39496286aac4152b4cbd26f45f99f93b5326061",
+      "assessment": "P5 names Niacin (B3) within a separately prepared vitamin stock. That literal identifies the neutral vitamin input, not the whole carrier preparation. Independently, CHEBI:32544 establishes Nicotinate as the charged conjugate base, so only that inherited exact-identity synonym is rejected on neutral nicotinic acid.",
+      "evidence_ids": [
+        "CHEM-SRC-049",
+        "CHEM-RECIPE-049-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-c1a2f9ecce7dc984",
+        "CHEM-OWNER-2acc28cf8842",
+        "CHEM-C1193-REINSPECTION",
+        "FINAL-CHEM-nicotinate-chebi32544"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-niacin",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Nicotinic_Acid.yaml",
+            "sha256": "ff24dac24fc94e805f1f8817e0f0404d1ca866fe2e5729f076fbe6e0e4e83864"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 18,
+      "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+      "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1M HEPES-KOH",
+        "source_label": "1M HEPES-KOH",
+        "raw_source_label": "1M HEPES-KOH"
+      },
+      "occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ],
+      "decision_object_sha256": "678f6b7149014c3560640a4d6be2b1c7bab29d7116a4282fff8280aeb6b0cee6",
+      "assessment": "Both NBRC sources name 1 M HEPES-KOH and dose 20 ml; 7.14 and 9.0 are receiving-medium pH values. Missing stock pH, solvent or neutralization ratio establishes neither equality nor difference. The two handles remain conditional. NEW-02 removes inferred moiety/species material components while retaining the bounded nominal stock description.",
+      "evidence_ids": [
+        "CHEM-SRC-053",
+        "CHEM-RECIPE-053-01",
+        "CHEM-RECIPE-053-02",
+        "CHEM-CAP-8d12f0bd070c4ccb",
+        "CHEM-CAP-b4a1db85c19c42e5",
+        "CHEM-CAP-75a5cab55ae32443",
+        "CHEM-CAP-c801a5637573d5ae",
+        "CHEM-CAP-ed175c6ef98639a6",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-ols-search-6",
+        "CHEM-C1193-ols3-hep",
+        "CHEM-C1193-WEB-1"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-HEPES-1221",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+            "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-HEPES-1474",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+            "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 19,
+      "case_id": "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30",
+      "case_input_sha256": "3868ce650aa43b6e90338a2817bf440ec18945387b7b53430e1b711fd26d6e75",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ferrihydrite suspension (see below)",
+        "source_label": "Ferrihydrite suspension (see below)",
+        "raw_source_label": "Ferrihydrite suspension (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6ea7bfd9b2540ac734e1defecb3e62a6bae393b3ccc06c370cd8bb7a135abffb"
+      ],
+      "decision_object_sha256": "f1fd34aa854618dd4688a699089bfc6a40563538b4af5587a6c9fdc491bae6be",
+      "assessment": "JCM 1030 defines a ferrihydrite suspension by preparation and resuspension with 200 ml water. This is not an explicit 200 ml final-volume instruction or a measured solids concentration. Retain the suspension as a whole preparation and keep its 200 ml receiving dose separate from preparation water.",
+      "evidence_ids": [
+        "CHEM-SRC-059",
+        "CHEM-RECIPE-059-01",
+        "CHEM-CAP-d5b6fd87eabcfeb3",
+        "CHEM-CAP-209b330041a2793e",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-ols-search-7",
+        "CHEM-C1193-ols3-fe1030",
+        "CHEM-C1193-OWNER-Distilled_Water"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-iron-suspension-1030",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_1030.yaml",
+            "sha256": "ee8c1261541f2a0f3eba648287c790a87ef43a88e548bfb5abe1c465fe4f4ee3"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 20,
+      "case_id": "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51",
+      "case_input_sha256": "75ce5084d7c9f906ce39e3d9a323f3fcd74f9d74c71526db799a2fd4e45cf3ae",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution*****",
+        "source_label": "Thiamine solution*****",
+        "raw_source_label": "Thiamine solution*****"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ca5bddea834b7ee8511c4197814303a03b19cd1638127b389079b909a5fff6e7"
+      ],
+      "decision_object_sha256": "07ddf7a475cc618595e97938a1493799a099a065754c85f940eefefe8210afbd",
+      "assessment": "NBRC 1321 footnote ***** explicitly defines the buffered thiamine stock and filter sterilization. The frozen NBRC_1323 filename is not the primary medium number. Preserve that source-specific processing and the shared composition, without transferring filtration into sources that omit it.",
+      "evidence_ids": [
+        "CHEM-SRC-060",
+        "CHEM-RECIPE-060-01",
+        "CHEM-CAP-2caf4cd3f91d0ec5",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "ROOT-jcm-403",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "ROOT-P-thiamine-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml",
+            "sha256": "4ccee0fa9ac568c9d1e0b97ac01978f1c74e8bde867f6aa837ff0290db8af503"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 21,
+      "case_id": "CM_NAME:79509089b17b506a45a709c251375d9aba76e83947e0c7d34b85381f5bd54f93",
+      "case_input_sha256": "a6c1d00ef16cb81cfbaaeb39db414369600e2804bc7d478b7ce6347189f3ee65",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na-meta silicate",
+        "source_label": "Na-meta silicate",
+        "raw_source_label": "Na-meta silicate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5a066ae61fc49bfed7ad814b928035b624856f2e6caa91cf63b829188b1b9bd8",
+        "CM_OCC:6e4a31669775e001b84fee7f5003e15a000fb51e517f47498816089192c01896",
+        "CM_OCC:6e1f1be628e31bd7897d03385f665c60adeeb807335e177ec8b115735d2fd821",
+        "CM_OCC:2823f99ee15f20e356f58c527ff2e837579a809b56762294b629b7f663455ce7",
+        "CM_OCC:89b99a45faef14792121781199db4d975de3e566f609d896f645542c62d263c8",
+        "CM_OCC:4ccd9c47cd7c6038007740559a8f010f53207834c4f5fcb623b84c60dd9babca"
+      ],
+      "decision_object_sha256": "1e3a08d9edf1e006b19fa0cc2fd995955cb2fd35edd67d5c84d7db44c269bbc7",
+      "assessment": "DSMZ 524 and 623 name Na-meta silicate without supplier/hydration in the recipe texts. Provider CAS enrichment is not a historical reagent certificate. Existing anhydrous and nonahydrate candidates do not settle the source form; no exact alias or duplicate owner is justified from the omission alone.",
+      "evidence_ids": [
+        "CHEM-SRC-061",
+        "CHEM-RECIPE-061-01",
+        "CHEM-RECIPE-061-02",
+        "CHEM-RECIPE-061-03",
+        "CHEM-RECIPE-061-04",
+        "CHEM-RECIPE-061-05",
+        "CHEM-RECIPE-061-06",
+        "CHEM-CAP-cdb07af2d1443706",
+        "CHEM-CAP-c24e6de63aab96bf",
+        "CHEM-CAP-2243db4bba8330fa",
+        "CHEM-CAP-ceb79c1f5748c259",
+        "CHEM-OWNER-7ae736d6a61e",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-metasilicate-mesh",
+        "CHEM-C1193-metasilicate-dsmz",
+        "CHEM-C1193-metasilicate-dsmz623",
+        "CHEM-C1193-metasilicate-download"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 22,
+      "case_id": "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429",
+      "case_input_sha256": "18969243a13c9c9442b5a1a883753215b5c5c74db42391daa7030c9aac396f24",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sludge fluid (medium 119)",
+        "source_label": "Sludge fluid (medium 119)",
+        "raw_source_label": "Sludge fluid (medium 119)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:223a8fd8d928c8e286d4746f7869f14ebb86354315f2ce692f905cd08c90f92e"
+      ],
+      "decision_object_sha256": "dc0b25c4897f11d6b462ccf22875d41488073b9e8ce1e6e0d3bbb38f0e8f02d4",
+      "assessment": "The sludge-fluid preparation is resolved through DSMZ 119 and its actual treatment, not by equating sludge with clarified rumen fluid. The frozen thermophilic substitution context is retained with its exact receiving dose and source route; whole-medium composition is not inferred from that dose.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-119",
+        "ROOT-RECIPE-c568333eb369649d",
+        "ROOT-OWNER-Sludge_fluid",
+        "R1193-OWNER-Sludge_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-sludge",
+        "R1193-final-owner-preflight",
+        "R1193-FLUID-jcm-872",
+        "R1193-FLUID-togo-M2596",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-sludge119",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Sludge_fluid.yaml",
+            "sha256": "8ec0d2b96173dd6a86d373385d91aa31900bcd2965c71e5b8659132dc0565101"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 23,
+      "case_id": "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+      "case_input_sha256": "51c508b3197a76257dc6bae4099996f97db05d46f511a3c4a1b6552ac38e04c3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MgSO 7H O",
+        "source_label": "MgSO 7H O",
+        "raw_source_label": "MgSO 7H O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4f80e86736277c4b4e46ea7721b8cf336736f7db1df5827f64983d76ad12c782"
+      ],
+      "decision_object_sha256": "9ef6c583cadae34898d44f5a064fdbc5a3f12891e42b547cc620e266b78bf4f5",
+      "assessment": "CCAP TAP establishes the lost-subscript MgSO 7H O input as magnesium sulfate heptahydrate. This supports only that source damaged label. It does not prove that the six unrelated inherited generic magnesium-sulfate aliases denote the same hydrate.",
+      "evidence_ids": [
+        "CHEM-SRC-073",
+        "CHEM-RECIPE-073-01",
+        "CHEM-CAP-2462f1349d33dc6f",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-SRC-026",
+        "CHEM-RECIPE-026-01",
+        "CHEM-RECIPE-026-02",
+        "CHEM-RECIPE-026-03",
+        "CHEM-CAP-18d4f57118f39820",
+        "CHEM-CAP-f74b6f207f2c363e",
+        "CHEM-CAP-2dd30154d45162d8",
+        "FINAL-CHEM-mg-nbrc406",
+        "FINAL-CHEM-mg-togo1597"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Mgso4_X_7_H2o.yaml",
+            "sha256": "4db571f0a533794b456f36ac3ac25e31bc7eebc82b54322e86616fd5b4900d6b"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 24,
+      "case_id": "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c",
+      "case_input_sha256": "8db73785174781ca025eb7d0e25fb14b35a1da267c8bc5baeb94936d3a472884",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine pyrophosphate (0.2% w/v in water)",
+        "source_label": "Thiamine pyrophosphate (0.2% w/v in water)",
+        "raw_source_label": "Thiamine pyrophosphate (0.2% w/v in water)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:33bb811186f389c24e1cb62667b18c3d91703bda14cf54780a6adf1e086108a8"
+      ],
+      "decision_object_sha256": "0349b2f34c8d3a9955f0aaaa10a013685cfa698eefcc1aee2df085f4d5218dab",
+      "assessment": "TOGO M2577 explicitly names thiamine pyrophosphate at 0.2% w/v in water as a supplied preparation. Retain the whole-stock boundary and exact literal; it is not neat TPP and does not resolve the distinct chloride-free/chloride source identity disputes.",
+      "evidence_ids": [
+        "CHEM-SRC-074",
+        "CHEM-RECIPE-074-01",
+        "CHEM-CAP-082d61a7481e4dee",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-OWNER-ee90f6fa3c70",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-OWNER-02_Thiamine_Pyrophosphate"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-tpp-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/02_Thiamine_Pyrophosphate.yaml",
+            "sha256": "54d7ad5ee7a397607856cbb4b0d6ce243b0e72242ae8703dc8ec3016a8cf826f"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 25,
+      "case_id": "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+      "case_input_sha256": "6fce5ea80fb1c0b56428491de76b1cfcd6f62e839a6b49c52e13a383498a9540",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine solution* (see Medium No. 403 )",
+        "source_label": "Thiamine solution* (see Medium No. 403 )",
+        "raw_source_label": "Thiamine solution* (see Medium No. 403 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6bf77b6cee8bcf26e8f03c90c80758c24045f18fe81e12c0edc13ad270bfc645"
+      ],
+      "decision_object_sha256": "d7f95e5c1d0177ad848e60b7ba66211c47bf25c39b33c6ea9dd3dd8c7e1bfff5",
+      "assessment": "JCM 1468 refers to the JCM 403 thiamine stock and carries an unexplained asterisk. Preserve the reference and composition without treating that asterisk as a filtration instruction. The source-specific preparation wording is corrected in the current decision and full payload.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1468",
+        "ROOT-jcm-403",
+        "ROOT-RECIPE-62912ce6d778f9b3",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "CHEM-CAP-2caf4cd3f91d0ec5",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "ROOT-P-thiamine-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml",
+            "sha256": "4ccee0fa9ac568c9d1e0b97ac01978f1c74e8bde867f6aa837ff0290db8af503"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 26,
+      "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+      "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Tris-HCl",
+        "source_label": "Tris-HCl",
+        "raw_source_label": "Tris-HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+        "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+        "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+        "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+      ],
+      "decision_object_sha256": "f98c277b2f8471484f931a630d6d640d1bbaf16657866b9284ef2d7699a47858",
+      "assessment": "Sixteen Tris-HCl occurrences split into seven weighed salt contexts, six 1 M pH 7.5 stocks, two 0.5 M pH 8.0 stocks and one final-medium 50 mM pH 7.8 context. The solid salt receives the filed #1238 grade correction. NEW-03 removes inferred material components from the two buffer stocks; their positive concentration/pH specifications remain.",
+      "evidence_ids": [
+        "CHEM-SRC-076",
+        "CHEM-RECIPE-076-01",
+        "CHEM-RECIPE-076-02",
+        "CHEM-RECIPE-076-03",
+        "CHEM-RECIPE-076-04",
+        "CHEM-RECIPE-076-05",
+        "CHEM-RECIPE-076-06",
+        "CHEM-RECIPE-076-07",
+        "CHEM-RECIPE-076-08",
+        "CHEM-RECIPE-076-09",
+        "CHEM-RECIPE-076-10",
+        "CHEM-RECIPE-076-11",
+        "CHEM-RECIPE-076-12",
+        "CHEM-RECIPE-076-13",
+        "CHEM-RECIPE-076-14",
+        "CHEM-RECIPE-076-15",
+        "CHEM-RECIPE-076-16",
+        "CHEM-CAP-1da688425060d238",
+        "CHEM-CAP-ca0c0dd760014335",
+        "CHEM-CAP-d38c10241cb6daa0",
+        "CHEM-CAP-b5fc743d359ea6a4",
+        "CHEM-CAP-45911559f6556094",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-d8ba59dcb901ea12",
+        "CHEM-CAP-e5cca8a3bc6f121e",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-tris-pis",
+        "CHEM-C1193-tris-hcl-ols",
+        "CHEM-C1193-nta-ols",
+        "CHEM-C1193-ols-search-0",
+        "CHEM-C1193-ols2-tris-cas",
+        "CHEM-C1193-ols3-tris394",
+        "CHEM-C1193-ols3-tris1137",
+        "CHEM-C1193-ols3-tris1061",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-3",
+        "CHEM-C1193-OWNER-Tris_Base"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-Tris-base-aliases",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tris_Base.yaml",
+            "sha256": "34fb9b6d891884fecf057c92a4c2b46b9d3e20ec18575e4fa9669037b7097e96"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+            "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+            "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+            "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+            "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+            "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+            "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+            "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+            "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+            "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 27,
+      "case_id": "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+      "case_input_sha256": "5bd866b795e5b5fea413c04fc011948a764ac987ab6dc53eef45e19df0287d89",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)",
+        "source_label": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)",
+        "raw_source_label": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f450f83beae9120cb98c3f97cea7213aaa251b8747e4fe38a15c6ac2d39b479f"
+      ],
+      "decision_object_sha256": "b9ada40663202b528573266b48ada9db3891b7730b6215213da58cd289ae992a",
+      "assessment": "TOGO M2410 names a weighed HEPES reagent in BSK II. DSMZ 975 independently lists 2.38 g HEPES (10mM) in one liter of receiving medium, so that inherited concentration label is a weighed input with a final-medium qualifier, not evidence of a supplied 10 mM stock.",
+      "evidence_ids": [
+        "CHEM-SRC-077",
+        "CHEM-RECIPE-077-01",
+        "CHEM-CAP-c0b20edbf3ff8192",
+        "CHEM-CAP-ed175c6ef98639a6",
+        "CHEM-OWNER-6c405ebbdd8b",
+        "CHEM-C1193-REINSPECTION",
+        "FINAL-CHEM-hepes-dsmz975"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-hepes",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Hepes.yaml",
+            "sha256": "3aefb19686531ae41316d9f3e44af9ee3be807869db7fe08f670305e20d66a0d"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 28,
+      "case_id": "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6",
+      "case_input_sha256": "7baae04e8c225ee92abee86628d09723dfadfbe515ba7db9df73b1f205495985",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium 535",
+        "source_label": "Medium 535",
+        "raw_source_label": "Medium 535"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7e6dda745493c68bb1efad67373f08de719d70e8a93f8ffe6f6dcd9e9c201dee"
+      ],
+      "decision_object_sha256": "c4dd4fbbd011104d0b219582a66ee3bbdd75f0ab122cf67c7274fb4518346f24",
+      "assessment": "DSMZ 535 and 535a distinguish the base preparation from blood/agar supplementation. Preserve the named base formulation and source lineage. Flattened commercial TSB/TSA enrichment in the frozen source cannot independently establish extra ingredients in this source preparation.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-535a",
+        "ROOT-dsmz-535",
+        "ROOT-RECIPE-2ae1b7e844ab2fb8",
+        "R1193-jcm-27",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-OWNER-Trypticase_Soy_Agar",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-dsmz535",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Trypticase_Soy_Broth_Agar_DSMZ535.yaml",
+            "sha256": "ec6bf747c7e78fb49cb2c27c95252b04a7b9285ac4c51fe21fe253e540801e1e"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 29,
+      "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+      "case_input_sha256": "14af63c57936316be767d3d1362db66ffaf9601b6f2b7298b44fc0b2018b6417",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir (see Medium No. 470 )",
+        "source_label": "Wolfe's mineral elixir (see Medium No. 470 )",
+        "raw_source_label": "Wolfe's mineral elixir (see Medium No. 470 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+      ],
+      "decision_object_sha256": "3f8f15d5e39210f105ea3900065ecb0c892348d5deeb478cd350dca4e52ad958",
+      "assessment": "JCM 1367 explicitly refers to Wolfe mineral elixir in JCM 470. That route is retained. The JCM 470/DSMZ 792 comparison remains conditional because variable manganese hydration can equal the explicit monohydrate; source numbering alone cannot distinguish the whole stocks.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1367",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-48b7264cf0d94985",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+        "ROOT-OWNER-Modified_Wolfes_Minerals",
+        "ROOT-jcm-837",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_JCM470.yaml",
+            "sha256": "16e3e51862ed69e847325c24cdce235defba5193546845fa4c6501b85b505018"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152",
+            "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227",
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 30,
+      "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+      "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "95% Ethanol",
+        "source_label": "95% Ethanol",
+        "raw_source_label": "95% Ethanol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+        "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+        "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+        "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+        "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+      ],
+      "decision_object_sha256": "2600ff908c5e74ee455ce5d8a463f54719f21173193657e285d46e93397c778b",
+      "assessment": "The five ATCC ethanol occurrences retain three exact source routes: 1490 and its explicit reuses (three occurrences), 1257 (one), and 1524/1527 (one). K1/hemin/menadione receiving-stock recipes are preserved as provenance but do not distinguish the supplied nominal 95% ethanol. Basis, balance and historical product remain unknown.",
+      "evidence_ids": [
+        "CHEM-SRC-083",
+        "CHEM-RECIPE-083-01",
+        "CHEM-RECIPE-083-02",
+        "CHEM-RECIPE-083-03",
+        "CHEM-RECIPE-083-04",
+        "CHEM-RECIPE-083-05",
+        "CHEM-CAP-e10390f56f5dbfeb",
+        "CHEM-FAIL-e087cfab9d8f",
+        "CHEM-FAIL-db8eea0ef9c7",
+        "CHEM-FAIL-e11ef8a68e31",
+        "CHEM-FAIL-d051891eb9f3",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-togo-2574",
+        "CHEM-C1193-togo-2618",
+        "CHEM-C1193-togo-2568",
+        "CHEM-C1193-togo-2724",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-atcc-2574",
+        "CHEM-C1193-ethanol-atcc-2576",
+        "CHEM-C1193-ethanol-atcc-2618",
+        "CHEM-C1193-ethanol-atcc-2568",
+        "CHEM-C1193-ethanol-atcc-2724",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-DISCOVERY",
+        "CHEM-C1193-ETHANOL-OWNER",
+        "CHEM-C1193-ETHANOL-RECONCILIATION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1490.yaml",
+            "sha256": "62fdd2c20709c774cf46c59f9525197c562826a0090ea7300a00b826d5c5f1a1"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+            "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+            "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1257",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1257.yaml",
+            "sha256": "0b85608d2c3edc071e90ea43c17043259cb00a0c91ab2f7ddc14babf09c7e027"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1524",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1524.yaml",
+            "sha256": "e36314422595bd1f1e2272703e85127c030436028874c45ac0b821fcae358db7"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 31,
+      "case_id": "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8",
+      "case_input_sha256": "dadbda87dece51af2ac44a8db9d746cee009a04c750ec24b841dc15d2773bfbf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's Modified Mineral Elixir",
+        "source_label": "Wolfe's Modified Mineral Elixir",
+        "raw_source_label": "Wolfe's Modified Mineral Elixir"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1d27e8cd82ccaba8431dce35c2e5fdba9956aa6cc7a9d0267b0d6155cefe3257",
+        "CM_OCC:6cc20456395f0d87374e5a6169dcc633950fe9e2d23814e31cc2fe27ce6d1f44"
+      ],
+      "decision_object_sha256": "0a72278c0f8bb0229cba28f236029295ca3c91be3a2043d1a887c04ba4342fb9",
+      "assessment": "ATCC 1190/1191 provides the modified Wolfe input table with explicit anhydrous qualifiers and manganese monohydrate. JCM 221 gives matching amounts while omitting some form details. The related extension is filed under #1237 and remains conditional; the original CR02 targets are not silently expanded.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-1190",
+        "ROOT-atcc-1191",
+        "ROOT-RECIPE-693548ba2284b840",
+        "ROOT-RECIPE-7dc863ff5b8ac1b9",
+        "ROOT-OWNER-Modified_Wolfes_Minerals",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-wolfe1190",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfes_Modified_Mineral_Elixir_ATCC1190.yaml",
+            "sha256": "0004ee7fd18aeaf948d0b163fc8c0ab8b45296bd4065e5e2093b5f1dcc1eb9ee"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 32,
+      "case_id": "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81",
+      "case_input_sha256": "aa6562fbcca9be70d95869c2e921548908e4710dbbe5671a9ef218685c0ba6ab",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "ATCC Medium 1490",
+        "source_label": "ATCC Medium 1490",
+        "raw_source_label": "ATCC Medium 1490"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fbcadf4595a2a9f59680c766f1a06190f59bdc1305d7fbb93b37f38409c62019",
+        "CM_OCC:4186d9b8947318773ec7b2288cdbbfe95b54b7f7ee6ad57b7807fef26f4bd961"
+      ],
+      "decision_object_sha256": "52c9a81ebd504761eb497b93dcc03f55c9661052c296a841a2b7c925e8830a59",
+      "assessment": "ATCC 1490 defines the chopped-meat preparation reused by two explicit source references. The complete recipe, rather than its medium number alone, supports that inheritance. Preserve meat preparation, basal additions and later hemin/K1 stages; the ethanol reagent is separately conditional.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-1490",
+        "ROOT-togo-api-M2574",
+        "ROOT-togo-api-M2618",
+        "ROOT-RECIPE-fd1be3c67130bb75",
+        "ROOT-RECIPE-17b9f16c92a9a907",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-atcc1490",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Modified_Chopped_Meat_Agar_Base_ATCC1490.yaml",
+            "sha256": "3a07bed7778bb04561e69288cf0d1f48222f681535322e4d093d0612d5dd2b46"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 33,
+      "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+      "case_input_sha256": "f991232b0ee5b3c4ca51922d5738cdcda1baded0e6470444d5c137171e796850",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir (see below)",
+        "source_label": "Wolfe's mineral elixir (see below)",
+        "raw_source_label": "Wolfe's mineral elixir (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+      ],
+      "decision_object_sha256": "8d0d5484ac26a20a5c0961faf4bc3ebf8882e0de559a067b14b272bce16c44e6",
+      "assessment": "The JCM 470 Vulcanibacillus source explicitly supplies the acidified Wolfe elixir table. Keep the fourteen salt inputs, 1000 ml water and pH-1 sulfuric-acid treatment. Do not infer that x waters means a hydrate different from the DSMZ monohydrate.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-616f29cc6173669c",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+        "ROOT-jcm-1367",
+        "ROOT-jcm-837",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_JCM470.yaml",
+            "sha256": "16e3e51862ed69e847325c24cdce235defba5193546845fa4c6501b85b505018"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152",
+            "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227",
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 34,
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Rumen fluid, clarified (see Medium No. 266)",
+        "source_label": "Rumen fluid, clarified (see Medium No. 266)",
+        "raw_source_label": "Rumen fluid, clarified (see Medium No. 266)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8",
+        "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"
+      ],
+      "decision_object_sha256": "946cfb539b5715dfaa9ae20ce513902e4201f583afb4a50f3774a9604e245ddc",
+      "assessment": "JCM 1423/1424 explicitly refer to clarified rumen fluid from JCM 266, with different receiving doses. The preparation route supports the existing source-bound owner. Three reference-only follow-ons preserve the original component provenance while avoiding dangling old identifiers; no new source cases or whole-owner approval follow.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-1423",
+        "ROOT-jcm-1424",
+        "ROOT-jcm-266",
+        "ROOT-RECIPE-47166c7750acf289",
+        "ROOT-RECIPE-9969248462e7fa50",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen",
+        "R1193-final-owner-preflight",
+        "R1193-FLUID-md-161",
+        "R1193-FLUID-md-212",
+        "R1193-FLUID-md-J146",
+        "R1193-FLUID-md-J563",
+        "R1193-FLUID-togo-M567",
+        "R1193-FLUID-jcm-355",
+        "R1193-FLUID-jcm-1201",
+        "R1193-FLUID-md-P2",
+        "R1193-fluid-origin-search",
+        "R1193-synonym-policy",
+        "R1193-DEP-legacy-research",
+        "R1193-DEP-integration-failure",
+        "R1193-DEP-owner-pyglucose",
+        "R1193-DEP-owner-casitone",
+        "R1193-DEP-owner-pyg"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-clarifiedrumen266",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Clarified_rumen_fluid.yaml",
+            "sha256": "0b8ea2127cdae48da5dedae89e92a6a5b6cdfa706e80c3fdbe348f9e09497786"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "R1193-DEP-rumen-pyglucose",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/PY-glucose-rumen_Fluid.yaml",
+            "sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "R1193-DEP-rumen-casitone",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+            "sha256": "2f3c3f811aba49913ed21cc3789cacbb2fd8bcea945d8ba383f939220a1b1045"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "R1193-DEP-rumen-pyg",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/PYG_Rumen_Fluid.yaml",
+            "sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 35,
+      "case_id": "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca",
+      "case_input_sha256": "4efedcf158dea39a55fce3f42cbb6c6482580261b7f23e960b5a9655404e8411",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine HCl (B1)",
+        "source_label": "Thiamine HCl (B1)",
+        "raw_source_label": "Thiamine HCl (B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:27b9483c3b79e8b2d2a004b07fd9b4ac650b7e9b248ce0b067a256a86b49d22e"
+      ],
+      "decision_object_sha256": "077b8d81145e923d85671fe69fb1e4d0b7e81334d23c4d89a7048cd69833572e",
+      "assessment": "P5 names thiamine HCl (B1) in a single stock. Its reagent label is preserved with the actual P5 locator, separate from the stock carrier. No monohydrate or dihydrate identity is inferred from this unqualified input, and inherited form holds remain.",
+      "evidence_ids": [
+        "CHEM-SRC-092",
+        "CHEM-RECIPE-092-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-OWNER-c375e99738c7",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-thiamine-hcl",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Hcl.yaml",
+            "sha256": "3ca6503e6989658b279f1d3fe11e516e8a1e14f426b54dfa2163dae7ab0d6438"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 36,
+      "case_id": "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80",
+      "case_input_sha256": "a1ac44708aa43463c67fa51b22fc804a7ea38d83bc36dbd26d66e0c6d72a872f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "HS medium",
+        "source_label": "HS medium",
+        "raw_source_label": "HS medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2fb7994b676cdf765cfcdd745573a6bda1daa06dd56274091e18e8ab16661cf0"
+      ],
+      "decision_object_sha256": "3b38566155602e6bd7b0419bb4345101043825806c2794671b667f1d61754ae2",
+      "assessment": "The complete source defines HS medium independently of its later methanol/acetate additions. Keep those preparation levels separate and retain the source-specific base specification. A generic HS acronym is not sufficient to import another medium formulation.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2643",
+        "ROOT-RECIPE-c17da30347a05c71",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-hs",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/HS_Medium_Base_TOGO_M2643.yaml",
+            "sha256": "a2f6674871bc5fd0908ce99e6a459eb1bd98e492724fc48e798ecf62c0640ca4"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 37,
+      "case_id": "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f",
+      "case_input_sha256": "f3ab6d9ae717b59e486571bd15513c8d96dedc8a1bb6585c300b2814554b1071",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "M2SGC medium",
+        "source_label": "M2SGC medium",
+        "raw_source_label": "M2SGC medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6b7165c4209e96c0bf6a0fc67e696dccbc5d72db78c17a6bd4679b7aaaecc621"
+      ],
+      "decision_object_sha256": "273cdf24767ba2d13838b3e34b1feee81089eaa68c46a2efb82c230d1f454e14",
+      "assessment": "TOGO M2789 defines the M2SGC broth context and antibiotic alternatives. Preserve the base and its actual rumen-fluid/carbohydrate inputs, without interpreting the malformed antibiotic units or either alternative as a newly verified final concentration.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2789",
+        "ROOT-RECIPE-69d8a1298722f69e",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-m2sgc",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/M2SGC_Broth_TOGO_M2789.yaml",
+            "sha256": "18a346db4de7a92be6d608e272d6aa10ae9c230b33515b875a89e609de47c17f"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 38,
+      "case_id": "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+      "case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "TeO",
+        "source_label": "TeO",
+        "raw_source_label": "TeO"
+      },
+      "occurrence_ids": [
+        "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+        "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5"
+      ],
+      "decision_object_sha256": "819d773b4af50b7808a3a1925268351e5c4a8b2d6fc8a4a94aac15c85686fa94",
+      "assessment": "CCAP UCM explicitly prints TeO2, while the frozen TeO string has lost its subscript and occurs at both stock and flattened stages. The exact source compound is tellurium dioxide, CAS 7446-07-3, not tellurium or tellurite. NEW-01 corrects only its parent grade; exact source-stage and upstream recurrence holds remain.",
+      "evidence_ids": [
+        "CHEM-SRC-098",
+        "CHEM-RECIPE-098-01",
+        "CHEM-RECIPE-098-02",
+        "CHEM-CAP-2256f29f0929d107",
+        "CHEM-CAP-ea5b78eecca53ac5",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-teo-nite",
+        "CHEM-C1193-tellurium-pubchem",
+        "CHEM-C1193-tellurium-parent",
+        "CHEM-C1193-ols-search-1",
+        "CHEM-C1193-ols2-tellurium-cas",
+        "CHEM-C1193-ols2-tellurium",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-2"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-tellurium-dioxide",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Tellurium_Dioxide.yaml",
+            "sha256": "bd3c67ab3b8a9148e56f627525caba8b952ea0e680735e7574c59367c815ab0c"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 39,
+      "case_id": "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc",
+      "case_input_sha256": "c741bf41cf6cac1e7fc4091bc7ab48c13fb181048ad67b084842300baa06b2e8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Mineral medium",
+        "source_label": "Mineral medium",
+        "raw_source_label": "Mineral medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d6a674e9ad3227a85fdbc303b8410762cef74067b022ec2be5c0113ee761cd51"
+      ],
+      "decision_object_sha256": "24a7a87e5c578c3925bfd4b6e629e50abc5f8c9eb7b103234fb445b607916626",
+      "assessment": "JCM 521 defines the mineral medium and later additions at distinct stages. Preserve the source preparation and batch amounts; the frozen 9 g/L-like flattened value is not a measured mineral-stock concentration or authority to copy all later additions into its components.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-521",
+        "ROOT-RECIPE-6fb922185bab8624",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-jcm521",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Mineral_Medium_Base_JCM521.yaml",
+            "sha256": "df5d241cd8b59e601b3b32a5c17c96c8443e603ae4291618e8d00d1f1eb1a90f"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 40,
+      "case_id": "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1",
+      "case_input_sha256": "5fdf4afbd1b1789e0e24195dca35071e76fb079702432307f3110e0ee24064cc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "RS Medium - Non-Nutrient Medium (NNM) Component",
+        "source_label": "RS Medium - Non-Nutrient Medium (NNM) Component",
+        "raw_source_label": "RS Medium - Non-Nutrient Medium (NNM) Component"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e58110bc9182c533152ff919ac2110c34b56c41b88e85335b0f4103421735cff",
+        "CM_OCC:55c40221634b054c53e25c5ef6edf5425ecb859687bfc4fc6a3ca3c2a67a4622",
+        "CM_OCC:7a1c8d66b1f6c411c3f60b6acdb2d886c6cba48461ea2d01ac2ed16929f752ca",
+        "CM_OCC:f214da93f7d742328c2e1397340e61de8dc2ae4c5ceea89673dd3bc48bed039e",
+        "CM_OCC:cd78a01cdff5574b2f51a53af25618d30993cf533e23d43c5e539d916efc18ac",
+        "CM_OCC:ba42927df674ad8839b5910944caea3e8bdcb88622c100cc0e7688dd6c5ec3df",
+        "CM_OCC:666ee6dee4e4fae6c289bbdccbc04a5134a5090f64fd99b2a610c37fdf6fe9f1",
+        "CM_OCC:3b1b7ff8eef8e17c380f1f2e122e88d492282a3fa8ec0b12cb6697cd68452231",
+        "CM_OCC:3370c79f00d19064ba7c7b8716cb2a2aadb12aabf9d1cc1cd9cb6217130eced1",
+        "CM_OCC:e7e816d36038ba74945a43d44d2c2af45bcf7cbb605555ab87a83849e82c81b2",
+        "CM_OCC:4ac6082e5d5aca2619a5863b37dc47f8e2f4c4dece0c01999628e26c45ef0feb",
+        "CM_OCC:4c9101706c6bfcdd6b06fe03b1704ddf324983574fbd1c83ebdf210cd9151b71",
+        "CM_OCC:d88b72407ef9ed490e375cf4f06cbe13106d70c346d263f98c81499d7bb4d1b8",
+        "CM_OCC:baf644176135de0e9a4914e27367ee7793c0b0cb3d94e37752760a56d80312fa",
+        "CM_OCC:17ade2a6a84ce852d90c0ef518acef44ce815b6d4de29ba39fe7a0f4c2a91730",
+        "CM_OCC:d5d7a73d01ac9a9d2ea1ef048bd20c35b4a6c1ba3bcc62d3806b4f94de04c8a9",
+        "CM_OCC:d4a9ed88b844c92ddc954fbb32ecbdff1a67d71b8565b39ed2d38be4f92835d7",
+        "CM_OCC:68796a6d056977963f82ab0696f61a3f01a93a46d25240e1cc6a4048aeb63eb1",
+        "CM_OCC:f27df4f080c833468dcd1a314f00b4b4ab056b2d7bdfa320d0f975cc388682cd",
+        "CM_OCC:4cc0bfabf395feeb1387ec6c3a911fbe95e41d6c79feb0c33ff708a6e3ca9c7f",
+        "CM_OCC:eff46648a3cb69bef008877b1e72603358dd307ae65e06020442b455150e8108"
+      ],
+      "decision_object_sha256": "c290e831825988944ec030dd206522ac26784ba7245c05cd5973190c2d69bb31",
+      "assessment": "P4 defines the NNM carrier used repeatedly throughout P5 stocks and mix make-up. Preserve all 21 occurrence routes and the distinction between single stocks, 50 ml mixes and the 150 ml assembly. Unspecified make-up volumes are not obtained by subtraction; the P5 sugar-name conflicts remain source holds.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-md-P4",
+        "ROOT-md-P5",
+        "ROOT-RECIPE-cb5a972f2d1da8e1",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-nnm",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Non_Nutrient_Medium_Carrier_MediaDive_P4.yaml",
+            "sha256": "d0aff74e6350716c3b683b9242ea27934a75cf180f275a0f484d98b47ad550c1"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 41,
+      "case_id": "CM_NAME:d91cb09543c05accf6eb00e342661258e11988eb84982fa71feba38d2307559b",
+      "case_input_sha256": "698f621d7877e874d973a4d5d48d84e01eecc8aa72accb140b8d10b525c0fc71",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixier",
+        "source_label": "Wolfe's mineral elixier",
+        "raw_source_label": "Wolfe's mineral elixier"
+      },
+      "occurrence_ids": [
+        "CM_OCC:22456661f40002d321baa620d26291b9646e582f2531b9f060b9b1c577937acb"
+      ],
+      "decision_object_sha256": "0a410d4054107b3ba9a07c33c66611eb47a07fae06adc1634b60d4b2ce8ccc8c",
+      "assessment": "Both official ATCC 2811 sheets name one ml Wolfe mineral elixier without a formula or unambiguous cross-reference. Searches found candidate Wolfe preparations but no authoritative link to one of them. The missing fact is which whole preparation the source means; ingredient CURIE uncertainty alone would not justify this hold.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-atcc-old-2472",
+        "ROOT-RECIPE-cb74c7b9d6f36b40",
+        "R1193-atcc-2811-current",
+        "R1193-web-search-atcc2811",
+        "R1193-web-search-medium-context",
+        "R1193-atcc-119",
+        "R1193-ols-extra-5",
+        "R1193-final-owner-preflight"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 42,
+      "case_id": "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959",
+      "case_input_sha256": "aeb01141d881ef8e7ba03a781a679f0fcd5791b2d472e58c79054349fe7056f9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's modified mineral elixir (see below)",
+        "source_label": "Wolfe's modified mineral elixir (see below)",
+        "raw_source_label": "Wolfe's modified mineral elixir (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c85332953b4845e14a6186ad8facee76793872b599224ab47c028205432951cb"
+      ],
+      "decision_object_sha256": "a6aa103a2a34823908c80a8dd559639318f325dcd5c63d1f5600bc9bd5157fb3",
+      "assessment": "JCM 221 modified Wolfe has the same thirteen non-water input amounts as ATCC 1190/1191. Its omitted hydration and KOH strength cannot prove a different mixture. Preserve the listed 1000 ml water versus ATCC final-volume instruction separately; coordinator family reconciliation remains pending.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-221",
+        "ROOT-atcc-1190",
+        "ROOT-RECIPE-fcdc19bccf3c23c0",
+        "ROOT-OWNER-Modified_Wolfes_Minerals",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-wolfe221",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfes_Modified_Mineral_Elixir_JCM221.yaml",
+            "sha256": "5ecc52ff6012d7a8eb4a10d9520db8a931a4559240c6548b0a44ed4e2c1302c0"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 43,
+      "case_id": "CM_NAME:dcaebb575fdae4723ccb30779f3d58420ccb21cffe38a0d0ab7386e2b5bbbfaa",
+      "case_input_sha256": "2da46096ef9f6f8341b62fb4f734670bf78065afade5a43c0b308a0046563228",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Guanine HCl",
+        "source_label": "Guanine HCl",
+        "raw_source_label": "Guanine HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1db127c1fa4cd04b983b0136eecc195c824f1618cf924a9bd8c1179117ad83f9"
+      ],
+      "decision_object_sha256": "e544bf5c48a88c07c5a5e129c2a84fce9d6191d46a0c78f3c136c613add3f4ee",
+      "assessment": "The source Guanine HCl row lacks a supplier and hydration certificate. Free attempts to retrieve the Merlen full paper failed; a snippet is not a complete recipe. Current TCI and Sigma comparators establish a 1:1 salt but allow water loss and do not identify the historical supplied form. No exact anhydrous/hydrate selection follows.",
+      "evidence_ids": [
+        "CHEM-SRC-106",
+        "CHEM-RECIPE-106-01",
+        "CHEM-CAP-6c18a010f003efde",
+        "CHEM-FAIL-782fe35967b1",
+        "CHEM-FAIL-ba2b718b3e87",
+        "CHEM-WEB-106",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-cdmlp-publisher",
+        "CHEM-C1193-cdmlp-pdf",
+        "CHEM-C1193-guanine-tci",
+        "CHEM-C1193-guanine-sigma-sds",
+        "CHEM-C1193-ols-search-4",
+        "CHEM-C1193-WEB-2",
+        "CHEM-C1193-WEB-3",
+        "CHEM-C1193-WEB-4",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-cdmlp-merlen-free",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-TCI-G0170"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 44,
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "95% ethanol",
+        "source_label": "95% ethanol",
+        "raw_source_label": "95% ethanol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+      ],
+      "decision_object_sha256": "25bd83daf4a4334f4b05c51ba3a51acb5305b06f2abfcc4002dcb419475c9322",
+      "assessment": "The eleven TOGO DSMZ ethanol contexts trace K1 and K3 uses to DSMZ 78/104/110; the nested 212a case is the twelfth route. The common nominal 95% name is retained without a v/v or aqueous-balance assertion. Receiving dilution and variant medium recipes do not prove separate supplied ethanols.",
+      "evidence_ids": [
+        "CHEM-SRC-111",
+        "CHEM-RECIPE-111-01",
+        "CHEM-RECIPE-111-02",
+        "CHEM-RECIPE-111-03",
+        "CHEM-RECIPE-111-04",
+        "CHEM-RECIPE-111-05",
+        "CHEM-RECIPE-111-06",
+        "CHEM-RECIPE-111-07",
+        "CHEM-RECIPE-111-08",
+        "CHEM-RECIPE-111-09",
+        "CHEM-RECIPE-111-10",
+        "CHEM-RECIPE-111-11",
+        "CHEM-FAIL-82a765ac4575",
+        "CHEM-CAP-e0c65da722d0c440",
+        "CHEM-FAIL-726c647c6df3",
+        "CHEM-FAIL-ee59039ab231",
+        "CHEM-FAIL-1b08ca19d49a",
+        "CHEM-FAIL-ba6e72f40fcb",
+        "CHEM-CAP-9b35c1d4f58911cf",
+        "CHEM-FAIL-13a27ae6e9f2",
+        "CHEM-FAIL-f38c1f1168b0",
+        "CHEM-FAIL-c3ba69d0e771",
+        "CHEM-CAP-5299c9a510c6ec5b",
+        "CHEM-FAIL-64f727257453",
+        "CHEM-FAIL-03748f8ae4f1",
+        "CHEM-FAIL-dd16f71bb244",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-togo-2534",
+        "CHEM-C1193-togo-2535",
+        "CHEM-C1193-togo-2536",
+        "CHEM-C1193-togo-2537",
+        "CHEM-C1193-togo-2585",
+        "CHEM-C1193-togo-2744",
+        "CHEM-C1193-togo-3072",
+        "CHEM-C1193-togo-2522",
+        "CHEM-C1193-togo-2524",
+        "CHEM-C1193-togo-2523",
+        "CHEM-C1193-togo-2525",
+        "CHEM-C1193-ethanol-med110",
+        "CHEM-C1193-ethanol-med78",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-DISCOVERY",
+        "CHEM-C1193-ETHANOL-OWNER",
+        "CHEM-C1193-ETHANOL-RECONCILIATION",
+        "CHEM-CAP-e050890a98d1c10c",
+        "CHEM-RECIPE-124-01",
+        "CHEM-SRC-124"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "sha256": "2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 45,
+      "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+      "case_input_sha256": "fb68ed72ddf203869194e70fedec0c60e7e593b27a29a766662dc30969316175",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Wolfe's mineral elixir",
+        "source_label": "Wolfe's mineral elixir",
+        "raw_source_label": "Wolfe's mineral elixir"
+      },
+      "occurrence_ids": [
+        "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+        "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+        "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+        "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+        "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+      ],
+      "decision_object_sha256": "41b17ae9a79b86761946d1bc6932d94d968d746c3f122e7f4f644cebaa92d1fc",
+      "assessment": "Five Wolfe occurrences resolve by explicit source references to the JCM 470 or DSMZ 792 recipe, not by the generic label alone. Keep the route subsets, compatible salt amounts and unresolved manganese form bridge; neither candidate is selected as a winning owner.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-dsmz-1083",
+        "ROOT-dsmz-792",
+        "ROOT-dsmz-792b",
+        "ROOT-dsmz-1092",
+        "ROOT-jcm-837",
+        "ROOT-jcm-470",
+        "ROOT-RECIPE-50a1697df32fe2ac",
+        "ROOT-RECIPE-62792a39759d8222",
+        "ROOT-RECIPE-10b5e06aa5069f2f",
+        "ROOT-RECIPE-a43ae2b1769bc54f",
+        "ROOT-RECIPE-a4747e18766bd439",
+        "ROOT-OWNER-Wolfes_Mineral_Mix",
+        "ROOT-OWNER-ATCC_Wolfes_Mineral_Mix",
+        "ROOT-jcm-1367",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_JCM470.yaml",
+            "sha256": "16e3e51862ed69e847325c24cdce235defba5193546845fa4c6501b85b505018"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152",
+            "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227",
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        },
+        {
+          "proposal_id": "R1193-P-wolfe792",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+            "sha256": "fe55d4ad8e232b22f09e05adbed30701587314f158fdc4ff536c4c0049aa16b5"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+            "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+            "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+            "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 46,
+      "case_id": "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28",
+      "case_input_sha256": "6944dca858c50dbc1586aee141db6460b2c15515b92985761f67930675693d1a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Oxoid Lab-Lemco Powder",
+        "source_label": "Oxoid Lab-Lemco Powder",
+        "raw_source_label": "Oxoid Lab-Lemco Powder"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b705141f74474c9668c71a9cb5254471683ade16a8f204a899a14eebe89de67f"
+      ],
+      "decision_object_sha256": "515ca3470dfa79a8678771229df170bdae1d4bbae4abc182e9e82aa3b2828338",
+      "assessment": "The complete Oxoid Lab-Lemco specification and source ATCC recipe establish the named beef-extract powder. Its protein/hydrolysate variability is not a missing whole-product identity. The proposal preserves supplier identity without inferring a pure molecule, exact lot composition or a generic beef-product equivalence.",
+      "evidence_ids": [
+        "CHEM-SRC-113",
+        "CHEM-RECIPE-113-01",
+        "CHEM-FAIL-cc76f863354d",
+        "CHEM-CAP-f21eb5a7e9960955",
+        "CHEM-OWNER-41851cf2bb37",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-lablemco-spec",
+        "CHEM-C1193-lablemco-product",
+        "CHEM-C1193-ols-search-5",
+        "CHEM-C1193-ols3-lablemco",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-OWNER-Lab_Lemco_Powder"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-Lab-Lemco",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Lab_Lemco_Powder.yaml",
+            "sha256": "68f205c8e9c7f168b968854cba01ff228a66dfcfb33ccc06c6fff7f86e2da531"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 47,
+      "case_id": "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4",
+      "case_input_sha256": "17e2ef4216b5013a7ec6009fdb33dc691f3d12798d3322a2c517587b2ee72ecb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Medium D",
+        "source_label": "Medium D",
+        "raw_source_label": "Medium D"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4db1beae6d1a89f1f470594fe110233ea64b8543d0128988a18ffed441ee347f"
+      ],
+      "decision_object_sha256": "6ab5a7c7ab975d51a40b7e4799ad6e7ceffc8221c5f693106f618a6f1960990d",
+      "assessment": "The source Medium D is resolved through its actual base and trace preparations. HEPES addition belongs to the DH receiving variant. Preserve the input tables and dilution stages; a shared letter name does not prove identity with an unrelated Medium D.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-togo-api-M2241",
+        "ROOT-RECIPE-d255047e787828af",
+        "R1193-dsmz-86",
+        "R1193-nies-d-stock",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "R1193-P-mediumd",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Medium_D_Base_TOGO_M2241.yaml",
+            "sha256": "30e3d03a99229a38b8573b39dadeae98fd73d8b0f75d0cca36c54e791344ca52"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 48,
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "case_input_sha256": "ff67d450affc1426840c96f3a73b32777864fd9ebb2c6386b63678d2630306fb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thiamine-HCl⋅H2O (Vitamin B1)",
+        "source_label": "Thiamine-HCl⋅H2O (Vitamin B1)",
+        "raw_source_label": "Thiamine-HCl⋅H2O (Vitamin B1)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"
+      ],
+      "decision_object_sha256": "1542944bd97b78afbd64ab16809510f442ce95347591311a2031a2cf5af6ddcd",
+      "assessment": "NBRC 1507 independently prints Thiamine-HCl·H2O. Its unresolved chloride/protonation and supplier identity is assessed separately from the other NBRC monohydrate occurrences. The literal is retained rather than silently normalized to anhydrous thiamine hydrochloride or the dihydrate.",
+      "evidence_ids": [
+        "CHEM-SRC-117",
+        "CHEM-RECIPE-117-01",
+        "CHEM-FAIL-642928fbf158",
+        "CHEM-CAP-74b89743eed1808f",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-12d6346a73c5dd24",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-ols-search-3",
+        "CHEM-C1193-ols2-thiamine",
+        "CHEM-C1193-WEB-2",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-WEB-7",
+        "CHEM-C1193-togo-2152"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 49,
+      "case_id": "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de",
+      "case_input_sha256": "13b282617355eeab118b52dd735a89e29c033d7a62a1b59ca20862c5324553ca",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Poorly crystalline iron(III) oxide (see below)",
+        "source_label": "Poorly crystalline iron(III) oxide (see below)",
+        "raw_source_label": "Poorly crystalline iron(III) oxide (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fc00fa67458fcb7b2e26669a46b25edd43ed901b4379805b3b6e86988f962e3b"
+      ],
+      "decision_object_sha256": "6793e1d66205896bf1f071d2fb12b4fa8077275ead3238fba74808b06d650e95",
+      "assessment": "JCM 411 defines poorly crystalline iron(III) oxide by precipitation, washing and resuspension. This supports a source-defined preparation even when exact mineral phase, retained ions and final solids concentration are unresolved. Its ferric input/procedure is not an exact molecular iron-oxide identity or the JCM 1030 recipe.",
+      "evidence_ids": [
+        "CHEM-SRC-121",
+        "CHEM-RECIPE-121-01",
+        "CHEM-FAIL-4f749238dc5c",
+        "CHEM-CAP-325bb28919ae30b6",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-ols-search-7",
+        "CHEM-C1193-ols3-fe411"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-iron-suspension-411",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_411.yaml",
+            "sha256": "6f027199b7e1869a630679dceba3e973162ff20fd8a13726515f1fef5b086578"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 50,
+      "case_id": "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4",
+      "case_input_sha256": "8c8901d11f39d1c383269d1f0e4e80e10417de6e4a89e41c719a22a7f88ec72b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "chitin (shrimp shells)",
+        "source_label": "chitin (shrimp shells)",
+        "raw_source_label": "chitin (shrimp shells)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c6f24e1535b152c8149a068ac81b91909233753dda3d92bd8b1d3588fb1b7fcf"
+      ],
+      "decision_object_sha256": "898ac3ca2c5be457b96b2b31371076f8880f596b14d10fee8738c4106d73d377",
+      "assessment": "TOGO M2313 explicitly selects shrimp-shell chitin as one of several alternative carbon sources. The source-qualified biological polymer can retain local identity without a fictitious pure molecular formula or a claimed supplier lot. Alternative substrates are not co-components of that selected preparation.",
+      "evidence_ids": [
+        "CHEM-SRC-123",
+        "CHEM-RECIPE-123-01",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-39aa3b4fe5e386a5",
+        "CHEM-OWNER-caf7cad18009",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-ols-search-8",
+        "CHEM-C1193-ols3-chitin",
+        "CHEM-C1193-OWNER-Chitin",
+        "CHEM-C1193-OWNER-Chitin_From_Shrimp_Shells"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-shrimp-chitin",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Chitin_From_Shrimp_Shells.yaml",
+            "sha256": "7c1b6c27311eae909d27ebe00996dcad80a296162c3c8655c7a5dda0cb994724"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 51,
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ethanol (95 %)",
+        "source_label": "Ethanol (95 %)",
+        "raw_source_label": "Ethanol (95 %)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ],
+      "decision_object_sha256": "50c039b5bc182fbc97a8b4d94f6c213b15e01cdb51b9986700df58181b8f923a",
+      "assessment": "DSMZ 212a explicitly defines K1 with 0.1 ml vitamin and 20 ml nominal 95% ethanol. Preserve this nested occurrence as the twelfth DSMZ route. Neither subsequent medium assembly volumes nor water in other stocks identifies the supplied ethanol balance.",
+      "evidence_ids": [
+        "CHEM-SRC-124",
+        "CHEM-RECIPE-124-01",
+        "CHEM-CAP-e050890a98d1c10c",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-ethanol-med110",
+        "CHEM-C1193-ethanol-med78",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-DISCOVERY",
+        "CHEM-C1193-ETHANOL-OWNER",
+        "CHEM-C1193-ETHANOL-RECONCILIATION",
+        "CHEM-C1193-togo-2522",
+        "CHEM-C1193-togo-2523",
+        "CHEM-C1193-togo-2524",
+        "CHEM-C1193-togo-2525",
+        "CHEM-C1193-togo-2534",
+        "CHEM-C1193-togo-2535",
+        "CHEM-C1193-togo-2536",
+        "CHEM-C1193-togo-2537",
+        "CHEM-C1193-togo-2585",
+        "CHEM-C1193-togo-2744",
+        "CHEM-C1193-togo-3072",
+        "CHEM-CAP-5299c9a510c6ec5b",
+        "CHEM-CAP-9b35c1d4f58911cf",
+        "CHEM-CAP-e0c65da722d0c440",
+        "CHEM-FAIL-03748f8ae4f1",
+        "CHEM-FAIL-13a27ae6e9f2",
+        "CHEM-FAIL-1b08ca19d49a",
+        "CHEM-FAIL-64f727257453",
+        "CHEM-FAIL-726c647c6df3",
+        "CHEM-FAIL-82a765ac4575",
+        "CHEM-FAIL-ba6e72f40fcb",
+        "CHEM-FAIL-c3ba69d0e771",
+        "CHEM-FAIL-dd16f71bb244",
+        "CHEM-FAIL-ee59039ab231",
+        "CHEM-FAIL-f38c1f1168b0",
+        "CHEM-RECIPE-111-01",
+        "CHEM-RECIPE-111-02",
+        "CHEM-RECIPE-111-03",
+        "CHEM-RECIPE-111-04",
+        "CHEM-RECIPE-111-05",
+        "CHEM-RECIPE-111-06",
+        "CHEM-RECIPE-111-07",
+        "CHEM-RECIPE-111-08",
+        "CHEM-RECIPE-111-09",
+        "CHEM-RECIPE-111-10",
+        "CHEM-RECIPE-111-11",
+        "CHEM-SRC-111"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "sha256": "2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85"
+          },
+          "applies_to_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 52,
+      "case_id": "KG_CASE:03ab2d92d43227aeb1d5875af5e77aaa1accc7ccddcf2ef921b7d1fe72afdbd1",
+      "case_input_sha256": "4bf682c4992f1e01e34caedfe82ae8d58edc23fc5d7c784452aa3e8fdb976094",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:89",
+        "source_label": "Ethanol absolute",
+        "raw_source_label": "Ethanol absolute"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "06be4d7f86705599ef1c345f52c6d0336274c0b836de3e6874dd53ab5f580360",
+      "assessment": "Absolute ethanol already has an established alias on the existing ethanol record. The current MediaDive 89 identifier block contains unrelated oligosaccharide metadata and cannot prove molecular identity. No duplicate owner or new alias is needed; the existing alias/export holds remain independently effective.",
+      "evidence_ids": [
+        "CHEM-SRC-128",
+        "CHEM-FAIL-6c7d07e923c0",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-CAP-1307e4da2336c70b",
+        "CHEM-OWNER-9551295e7ea1",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "548cd71e8e586bd00b5ddfd2c2ef909d3e3b81ada8bbf2d301d7c7c82f483f27",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 53,
+      "case_id": "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73",
+      "case_input_sha256": "454de2f0dfbce6f9f2da9abdc998de7f6877bc29dd5dff6358d9e815e7a8f138",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2363",
+        "source_label": "Complan",
+        "raw_source_label": "Complan"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "512669faea45457de46fb792caaf639c905e8314b323a2e09ce86a7317d6dd25",
+      "assessment": "The historical source names Complan as a product. That supports a bounded whole-product registry identity without importing a modern Original variant, flavor or exact formula. The modern supplier ingredients are a comparator; the historical source context and unresolved variant are retained.",
+      "evidence_ids": [
+        "CHEM-SRC-137",
+        "CHEM-FAIL-90b838169498",
+        "CHEM-CAP-00ba36ab7a1d895f",
+        "CHEM-OWNER-991ec7740785",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-complan-per",
+        "CHEM-C1193-complan-um",
+        "CHEM-C1193-ols3-complan",
+        "CHEM-C1193-WEB-3",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-COMPLAN-ORIGINAL"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-C1193-Complan",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Complan.yaml",
+            "sha256": "0f6ed920e326cde57290521875b686f09069e41465dfbc4c7eea3fa860913563"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f9f609d75b0c2d8b190b0e341dd3b11612d6a79e207757f5b9aa3c6e90c01a26",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 54,
+      "case_id": "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a",
+      "case_input_sha256": "4564e471824e2da44461e52dc519222375a4e4ea57d8e3f53796ad67ca3fe216",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:bacteriocin_isk_1",
+        "source_label": "bacteriocin ISK-1",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "98d7aa88b11283678675f25236f2a394b90e4c3a56b59aefe879c03a996dc04d",
+      "assessment": "The nukacin primary paper describes a 27-residue lantibiotic from Staphylococcus warneri, while the inspected ontology structure does not establish the same mature peptide. Retain the bounded source/product context and the explicit chemical-identity dispute rather than using the generic bacteriocin name to approve an exact small-molecule target.",
+      "evidence_ids": [
+        "CHEM-SRC-138",
+        "CHEM-CAP-5a950c17f8940801",
+        "CHEM-CAP-c1084ee5b4d5a1d7",
+        "CHEM-CAP-1cb0e6bf2d205d3f",
+        "CHEM-OWNER-03db4ef1acb9",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-bacteriocin-context",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Bacteriocin_Isk_1.yaml",
+            "sha256": "08812a542e619b154db8c9330e6de143024588dbe20207a47dcf41732177a165"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "f906ad1e41edb9791851d9952eb96c0cf576083c682fe4067d728bae9c85fafc",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 55,
+      "case_id": "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6",
+      "case_input_sha256": "488f8b1d76f415c689127be5998739344721da5d949d22594f2b98c788cc09ff",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1423",
+        "source_label": "Na2-tartrate x 2 H2O",
+        "raw_source_label": "Na2-tartrate x 2 H2O"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "284080f6686aa03cef97b91b74c53c9d16fba4773fe82e7da43bb587c85d7ec9",
+      "assessment": "MediaDive 1423 supplies the same disodium tartrate dihydrate context as DSMZ 1565. Preserve the two waters and independently retain the missing stereoisomer/catalog fact; the provider name and enrichment do not establish L-specific or anhydrous identity.",
+      "evidence_ids": [
+        "CHEM-SRC-141",
+        "CHEM-FAIL-00ae0387add0",
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-TARTRATE-KG-PRIMARY",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-tartrate-dsmz",
+        "CHEM-C1193-ols-search-2",
+        "CHEM-C1193-ols2-sodium-tartrate",
+        "CHEM-C1193-WEB-5",
+        "CHEM-C1193-tartrate-download"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "f0cc82add5b27678cae0df13e63dfa956ffa719933b084cb621fefcc6012cdd6",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 56,
+      "case_id": "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+      "case_input_sha256": "c1054b225585042df2ac9414e633aed9deb76574cd6afcef53db957567c0926c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1042",
+        "source_label": "KJ",
+        "raw_source_label": "KJ"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "816e3322dbdc422bc2be3ddf070b0f790cd4e9b6bc26bad0e4dbb82d8ae5ccda",
+      "assessment": "The historical KJ stock context remains unidentified beyond its source label and strength; inconsistent provider phencyclidine metadata is rejected as evidence. Separately DSMZ 792b positively shows that KI (0.01% w/v) is a supplied aliquot, supporting its removal as an exact synonym on neat KI without resolving KJ.",
+      "evidence_ids": [
+        "CHEM-SRC-150",
+        "CHEM-FAIL-1f5e9f890ab3",
+        "CHEM-CAP-2be47c9bf376a98c",
+        "CHEM-CAP-a2b1fc00a6ad6e6c",
+        "CHEM-OWNER-57b162c1eb30",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-kj-download",
+        "CHEM-C1193-kj-1155",
+        "CHEM-C1193-kj-1727",
+        "CHEM-C1193-kj-media",
+        "CHEM-C1193-WEB-4",
+        "FINAL-CHEM-ki-dsmz792b",
+        "FINAL-CHEM-BEFORE-Ki"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "FINAL-CHEM-P-ki-stock-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Ki.yaml",
+            "sha256": "cd5c871818cdef240a45d23ae282f91cf21af97a951a69400f78c665a7b4a33b"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "ee9f7eebb7947096d54bf846ef58369648156bdd65057ad878cde938b95beada",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 57,
+      "case_id": "KG_CASE:6c0774cbb93fb412e2cb8a6745916b2ffc6351cd6d14c355c12ade2f598cac10",
+      "case_input_sha256": "b8ffa6bb93e8817024d4fb83487545153c6ba5770b2a2ce6e577d33588ca0279",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:pyg",
+        "source_label": "PYG",
+        "raw_source_label": "PYG"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "7266ad7f1e9cd5d8d81fc5c252e19431a942c14ebea4d722557dafc6d30c74e4",
+      "assessment": "The 114 PYG source assertions already retain reported-culture-medium context and identity_approved=false. The freely inspected DSMZ 104 recipe is a comparator, not proof that all observations used it. The unavailable Bergey formulation and each observation’s variant cannot be invented; preserve all 114 source and hold records.",
+      "evidence_ids": [
+        "CHEM-SRC-152",
+        "CHEM-CAP-ee2ec78d487d3a9f",
+        "CHEM-WEB-152",
+        "CHEM-PYG-COMPARATOR",
+        "CHEM-OWNER-edbb2f79997b",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-7"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "26525a5bdaaef59d52a96cf617d5dd779545251433eabf2bf005e8c031384a75",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 58,
+      "case_id": "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd",
+      "case_input_sha256": "50dd5e0b5aaf367a6ee20f18e886b478d970ec55ed3c7d55c2139b2d3dd2cc99",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:778",
+        "source_label": "Thiamine pyrophosphate",
+        "raw_source_label": "Thiamine pyrophosphate"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "d34046430bcd70ae77d31750c1e6be782b0cade1f7eb40743ed7258106e4fba6",
+      "assessment": "The chloride-free CHEBI:9532 versus chloride CHEBI:18290 distinction remains explicit. CAS 136-09-4 is preserved as an inherited claim, not newly validated against 9532, whose captured metadata lists a different CAS. Worker09 dependency and the exact source778 WITHHOLD remain; no salt promotion follows from this report.",
+      "evidence_ids": [
+        "CHEM-SRC-153",
+        "CHEM-FAIL-4c7da0c4e60e",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-CAP-2c3af0a5e6fa857b",
+        "CHEM-OWNER-92372a0a8f9f",
+        "CHEM-C1193-REINSPECTION"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "CHEM-PROP-tpp-chloride-carryover",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_pyrophosphate.yaml",
+            "sha256": "2ebf00f1efc407a44ee53be99b88548bbf159e2f690adc40b457eb21d1f99471"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "4a48da7eebf1bf55b185b7d890eb8e5d495d16ebb5180f583e60ec48f36eceb0",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 59,
+      "case_id": "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a",
+      "case_input_sha256": "2142d359d885bc5897b10c7d4c037558d61823015b1a5338d3ce7f97c724a8be",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1846",
+        "source_label": "Fatty acid mixture see Medium No. 266",
+        "raw_source_label": "Fatty acid mixture (see Medium No. 266)"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "cc3ddaa7c29a0e6eb080f1c29288b51d86c1a3d3d0295335bfda017ba2495c70",
+      "assessment": "JCM 266 defines four 0.5 g acid inputs with 20 ml water and NaOH adjustment. DSMZ 119 uses the same generic name for a materially different acid-volume recipe. Retire only the two ambiguous active generic resolver aliases, preserving their full source/type/text history and the JCM stock identity.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-266",
+        "ROOT-chebi-35366",
+        "ROOT-OWNER-Fatty_Acid_Mixture_See_Medium_No_266",
+        "R1193-final-owner-preflight",
+        "ROOT-dsmz-119"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "ROOT-P-fatty-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+            "sha256": "efb04e27ce7179329b86d996c551d62ce1777d001919c9c3e4bddeae2d2528a9"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "df39d2d3682606854766a4b20b2f464a6c484102714eb261de2b0366509e4122",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 60,
+      "case_id": "KG_CASE:8fddccd7e32c351a0fa76c05180120b817299029e956a686081cce5e8c3748dc",
+      "case_input_sha256": "d1db9aface07214c50d0e926dec8cc165cf4fdfde79996561ffd15f0d6f4ee40",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid",
+        "source_label": "Ethylenediamine-N,N'-disuccinic acid",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "556ca14a0087cf1f8932f68071c046cea9a8bf2594b89f0a0418669ffbf6aa98",
+      "assessment": "The metatraits EDDS name does not specify stereochemistry or salt. USDA supplier evidence distinguishes S,S free acid from trisodium material; NIST’s generic structure does not resolve that assay identity. Preserve the three actual owner comparisons and the source handle without transferring S,S identity or minting a duplicate.",
+      "evidence_ids": [
+        "CHEM-SRC-161",
+        "CHEM-CAP-5676c81b1b63d438",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-ols-search-9",
+        "CHEM-C1193-WEB-7",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-NIST-EDDS"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "be52b85208d8f16fa52aa8f952609a1089494a0316fafdf3c5f8fc2394f38417",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 61,
+      "case_id": "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+      "case_input_sha256": "5607783459949650b00f73c85878ff9dc0086eaf8a214c84c37399caa24ea5a3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:77",
+        "source_label": "Thiamine-HCl x 2 H2O",
+        "raw_source_label": "Thiamine-HCl x 2 H2O"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "f1e480db3f010cc1fefc74d262437f27cc0839e711ffa76428c07d4616150ff5",
+      "assessment": "Authentic baseline Thiamine-hcl_X_2_H2o contains CAS 13465-05-9. Direct PubChem retrieval maps that number to HCl·2H2O lacking the thiamine skeleton. Withdraw only the false CAS and its retrieval metadata, with no replacement CAS; preserve CHEBI:132751, supported structure/formula, history and holds.",
+      "evidence_ids": [
+        "CHEM-SRC-162",
+        "CHEM-FAIL-d767e51f9c09",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-8302d660a59e8a0f",
+        "CHEM-OWNER-50d3d5c3c8b8",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-thiamine-download",
+        "FINAL-CHEM-cas13465-05-9-pubchem",
+        "FINAL-CHEM-BEFORE-Thiamine-hcl_X_2_H2o"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "FINAL-CHEM-P-thiamine-dihydrate-cas",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine-hcl_X_2_H2o.yaml",
+            "sha256": "ab440f15278493fc5b2d43ddfabea2e24eddbb82a592d80e7f4903dc1b9a69ac"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "815d543d4ef36c1b2456b03981550c425ed19bfb1ff3d745cee0536f5b9b18d7",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 62,
+      "case_id": "KG_CASE:9fae354066718d7267ba86497352f9703e0d882643a772b6f90ac16c3b22d17c",
+      "case_input_sha256": "70421b4cc1e9adcd501d6186a8ad7cb2f2daf95aad6e564d0fe7d011e64dd62a",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside",
+        "source_label": "3-O-methyl alpha-D-glucopyranoside",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "57c5f8ad7d3f02f0dcc67916b360707f82b0373bdacea39398c3dcbfac087940",
+      "assessment": "The GTDB-metatraits 3-O-methyl alpha-D-glucopyranoside label lacks the original product/structure. The supplier/CID96241 comparator leaves the anomeric center unspecified and does not prove that exact alpha glycoside. Preserve existing registry provenance and the source-specific missing fact.",
+      "evidence_ids": [
+        "CHEM-SRC-164",
+        "CHEM-CAP-51df236a2b550440",
+        "CHEM-FAIL-1cef9c1c8827",
+        "CHEM-FAIL-971ce1b9404c",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-glucoside-goldbio",
+        "CHEM-C1193-glucoside-biosynth"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "0b1fc916720ef70b2be4d4abc23976365c9dd65ba9a76ca7d2692b148e535a4e",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 63,
+      "case_id": "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+      "case_input_sha256": "3112c4cbfac9121633d5779a3c5886cbbab2b5fc0c6f877c0cb0c1b1353db809",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1401",
+        "source_label": "Eisencitrat",
+        "raw_source_label": "Eisencitrat"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "c1529adc632aecc052fba65b75a28ce7ccc96f9a1a89444a3c69989854d7ae3d",
+      "assessment": "MediaDive Eisencitrat lacks sufficient oxidation/stoichiometry/hydration evidence, and provider chemistry is inconsistent. Independently TOGO M565/JCM 561 positively doses five ml Ferric citrate (0.1%, w/v), supporting rejection of only that stock identity alias on neat iron(III) citrate. The unresolved Eisencitrat identity is unchanged.",
+      "evidence_ids": [
+        "CHEM-SRC-169",
+        "CHEM-FAIL-c0d64e577aaa",
+        "CHEM-CAP-eafc32f5af450587",
+        "CHEM-CAP-44fd6e04e0c45f90",
+        "CHEM-CAP-b2c90681f754ef21",
+        "CHEM-OWNER-56c34b44b9a3",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-eisencitrat-solution",
+        "CHEM-C1193-WEB-7",
+        "FINAL-CHEM-ferric-togo565",
+        "FINAL-CHEM-BEFORE-Fe_Iii_Citrate"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "FINAL-CHEM-P-ferric-stock-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Fe_Iii_Citrate.yaml",
+            "sha256": "13a0819a9177eac3c4aab92e463039c5b6b50de35429eb755ca68512ee85708e"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "2ea29cf4ed2bead08339945109dfdd3a29ebcf7a6273da1e5631d01a36777be4",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 64,
+      "case_id": "KG_CASE:b1d73a6c6976e7905cd359d5180c5c7309b083045e06f5ec274866c20954ef9f",
+      "case_input_sha256": "b31000c9a1ddcc270faabc884c2694a653bef0963359420f23032cb14ee2324d",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid",
+        "source_label": "Ethylenediamine-N,N'-disuccinic acid",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "112ca02e1563dcd1a0b5835595ef6c175526eb20a45ba15f8549d2caf7a7fc07",
+      "assessment": "GTDB-metatraits EDDS is a separate source node with no structural cross-reference. Existing placeholder, MicrobeDecoder registry and S,S acid owner are comparison dependencies, not automatic merge targets. Original reagent provenance is required for an exact chemical promotion.",
+      "evidence_ids": [
+        "CHEM-SRC-170",
+        "CHEM-CAP-5676c81b1b63d438",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-ols-search-9",
+        "CHEM-C1193-WEB-7",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-NIST-EDDS"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "be52b85208d8f16fa52aa8f952609a1089494a0316fafdf3c5f8fc2394f38417",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 65,
+      "case_id": "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+      "case_input_sha256": "82f44ce7541bb60558fe2bc59891a6b783c975b9e05bffd4bb2a280106202813",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1856",
+        "source_label": "Thiamine solution see Medium No. 403",
+        "raw_source_label": "Thiamine solution (see Medium No. 403)"
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "1c0cce80a3339ff20bfd012e34fd17891ca8ff372ba4e60a16e1dedd26eadcea",
+      "assessment": "The KG source’s JCM 403 thiamine pointer is reconciled to the same existing buffered preparation with an authentic baseline hash. Preserve all four source backlinks and their processing differences. Explicit NBRC/JCM1125 filtration does not make filtration universal.",
+      "evidence_ids": [
+        "ROOT-SHARD",
+        "ROOT-jcm-403",
+        "ROOT-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "CHEM-CAP-2caf4cd3f91d0ec5",
+        "R1193-final-owner-preflight",
+        "R1193-synonym-policy"
+      ],
+      "payloads": [
+        {
+          "proposal_id": "ROOT-P-thiamine-stock",
+          "after_capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml",
+            "sha256": "4ccee0fa9ac568c9d1e0b97ac01978f1c74e8bde867f6aa837ff0290db8af503"
+          },
+          "applies_to_occurrence_ids": null,
+          "routing_limit": "An absent explicit subset means the linked case context only; it does not cross-apply another candidate in a split case."
+        }
+      ],
+      "original_hold_object_sha256": "22042e5a12b9b4c9b9cf879da44088caeff39b7c272780ebc896f32e6b3937b3",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    },
+    {
+      "lane_index": 66,
+      "case_id": "KG_CASE:e677b0709edcd66b4bf0e683b40ffe54d9799827ccbc954fa0c154ce9cf407f5",
+      "case_input_sha256": "141042cb76ee0decc53b63bf16b3c911aa154cae51ad946dde3f67af3b26ef7f",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside",
+        "source_label": "3-O-methyl alpha-D-glucopyranoside",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "decision_object_sha256": "dc4ec5ba4bb5334cc888281c05fed639bd4ad6567827e8c07da165c90e7e2817",
+      "assessment": "The separate metatraits methyl-glucopyranoside node independently lacks anomeric/aglycon and product provenance. It can retain its existing label-based registry context, but the comparator cannot establish alpha molecular identity or justify merging source observations.",
+      "evidence_ids": [
+        "CHEM-SRC-183",
+        "CHEM-CAP-51df236a2b550440",
+        "CHEM-FAIL-1cef9c1c8827",
+        "CHEM-FAIL-971ce1b9404c",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-6",
+        "CHEM-C1193-glucoside-goldbio",
+        "CHEM-C1193-glucoside-biosynth"
+      ],
+      "payloads": [],
+      "original_hold_object_sha256": "0b1fc916720ef70b2be4d4abc23976365c9dd65ba9a76ca7d2692b148e535a4e",
+      "scientific_review": "complete within the explicitly described source/candidate scope",
+      "whole_owner_or_export_approval": false
+    }
+  ]
+}

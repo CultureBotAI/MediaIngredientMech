@@ -1,0 +1,106 @@
+identifier: kgmicrobe.ingredient:sodium_phosphate_0_5m_ph7_3_jcm296_1036
+preferred_term: 0.5 M Na2HPO4-NaH2PO4 buffer, pH 7.3 (JCM 296 / 1036)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sodium_phosphate_0_5m_ph7_3_jcm296_1036
+  ontology_label: 0.5 M Na2HPO4-NaH2PO4 buffer, pH 7.3 (JCM 296 / 1036)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=296
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1101
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+components:
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  source: Hydration and proportion unspecified.
+- component_name: NaH2PO4
+  reference_scope: UNMAPPED
+  source: Hydration and proportion unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1036
+    source_record: 0.5 M Na2HPO4-NaH2PO4 buffer, pH 7.3 (JCM 296 / 1036)
+    notes: JCM 296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=296
+    source_record: 0.5 M Na2HPO4-NaH2PO4 buffer, pH 7.3 (JCM 296 / 1036)
+    notes: JCM 296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1101
+    source_record: 0.5 M Na2HPO4-NaH2PO4 buffer, pH 7.3 (JCM 296 / 1036)
+    notes: JCM 296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+      buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+      TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+      the JCM 1036 capture supplies that linked buffer context for case 107.
+  notes: Salt hydrations, ratio, solvent and titrant are not specified. The source
+    cross-reference is needed to interpret case 107, and does not assert the two complete
+    receiving solutions are identical. Source-named parts remain UNMAPPED where supplied
+    form or stock identity is not established. MIM_CATALOG references identify only
+    the supported constituent, not approval of that complete owner.
+notes: JCM 296 Solution A and JCM 1036 Solution B each name 2 mL of 0.5 M Na2HPO4-NaH2PO4
+  buffer at pH 7.3. Their receiving vitamin/iron mixtures differ and are not merged.
+  TOGO M1101, associated with JCM 1037, directs Solution B to the preceding medium;
+  the JCM 1036 capture supplies that linked buffer context for case 107. Salt hydrations,
+  ratio, solvent and titrant are not specified. The source cross-reference is needed
+  to interpret case 107, and does not assert the two complete receiving solutions
+  are identical. Provenance-only source text '0.5 M Na2HPO4--NaH2PO4 buffer (pH 7.3)'
+  (case CM_NAME:30d535bf6e7b33c8e1f49d1271b5232d9cf24cbc7e96a022cebe18b0734a4789).
+  Provenance-only source text '0.5 M Na2HPO4-NaH2PO4 buffer (pH 7.3)' (case CM_NAME:c913149f291090dbd1a988198e9564ece146c9a85eca72b3def86a0bb333e673).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.976101+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1, 2 from human-only MANUAL_CURATION to
+    LLM_SUGGESTION. Exact sources, notes, quantities, scientific conclusions, unchanged
+    historical MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum
+    objects, prior history and all source/role/export holds remain unchanged. This
+    is provenance correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

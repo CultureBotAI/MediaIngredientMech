@@ -1,0 +1,73 @@
+{
+  "new_findings": [],
+  "resolved_candidate_only": [
+    {
+      "finding_id": "PEPTONE-FINAL-SCI-001",
+      "issue_key": "marine-agar-2216-partial-uncertain-product-scope",
+      "category": "completeness",
+      "severity": "minor",
+      "status": "resolved",
+      "certainty": "confirmed",
+      "title": "Marine product-scope completeness corrected to UNKNOWN in exact guarded successor",
+      "description": "Re-read full exact successor, actualATCC two-page source/table and M2265/DSM604/JCM118 context. The represented commercial dry product remains the owner. UNKNOWN accurately states that exact product-list closure is not established, while every nominal dry row remains and no omitted constituent is invented. Fresh evidence/history explicitly limit supersession to active completeness, preserving old statements verbatim. All prior affected targets are covered; one actual target.",
+      "target_ids": [
+        "ORIGINAL-w04::FREV-MEDIA-P-media-alias-marine2216"
+      ],
+      "field_paths": [
+        "/component_assertion/completeness",
+        "/component_assertion/notes",
+        "/component_assertion/evidence/0/notes"
+      ],
+      "evidence_ids": [
+        "DISPOSITION",
+        "SCIENCE",
+        "FIELD-DELTA",
+        "COMPONENTS",
+        "SCHEMA",
+        "CONTROLS"
+      ],
+      "rule_id": "ComponentCompletenessEnum / MAPPING_SEMANTICS section6",
+      "native_severity": "minor",
+      "normalization_reason": "Original minor assertion/rationale finding retained; all affected Marine target bytes re-reviewed. Resolution is a candidate observation, not a gate waiver, GitHub closure or maintained-record state.",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "role": "Authentic existing owner; exact unapplied guarded successor preserves original W04 origin and maintained beforeimage7b9ca923."
+        }
+      ],
+      "external_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1233#issuecomment-6720875895"
+      ],
+      "tags": [
+        "candidate-only",
+        "prior-bytes-preserved",
+        "no-application"
+      ],
+      "disposition_reason": "Resolved only for exact isolated candidate355f0f593c84cabc8c10fbf3e72af8415725b94602dd6e660f1b82985703cfcc. No maintained application, GitHub issue closure, prior-byte rewrite or unrelated owner/role/export acceptance.",
+      "previous_occurrences": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T112421Z-w10-peptone-final-three-independent",
+          "finding_id": "PEPTONE-FINAL-SCI-001"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "review_id": "20261108T112612Z-w10-peptone-final-three-independent-v2",
+          "finding_id": "PEPTONE-FINAL-SCI-001"
+        }
+      ]
+    }
+  ],
+  "canonical_disposition": {
+    "path": ".temp/marine-completeness-successor-independent-v1/science/finding-disposition.json",
+    "sha256": "312e1e36ba0a13a4f0a8e8220040bc6da4df2aab1ce7f53d4322e3baaed314ee"
+  },
+  "author_key_crosswalk": {
+    "path": ".temp/marine-completeness-successor-independent-v1/lineage/finding-key-crosswalk.json",
+    "sha256": "89de433bde1e0e82f43c8245fca837d488f9de43becfb8ef36c4611c88d460af"
+  },
+  "GitHub_state_rechecked": false,
+  "GitHub_mutation": false,
+  "unrelated_findings_closed": false
+}

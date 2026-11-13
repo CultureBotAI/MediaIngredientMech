@@ -1,0 +1,215 @@
+id: CultureMech:014959
+preferred_term: Main sol. 1593a
+term:
+  id: mediadive.solution:6270
+  label: Main sol. 1593a
+composition:
+- preferred_term: TES
+  concentration:
+    value: '2.3'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1453
+    label: TES
+  chebi_term:
+    id: CHEBI:39035
+    label: TES
+    confidence: 0.9
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/6270
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 1,
+                      "compound": "TES",
+                      "compound_id": 1453,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": "",
+                      "attribute": "",
+                      "amount": 2.3,
+                      "unit": "g",
+                      "g_l": 2.3,
+                      "mmol_l": 10.0327,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[0].concentration (TES) in
+      MediaDive solution 6270; locator=$.data.recipe[0] (compound_id=1453). Provider
+      explicitly reports g_l=2.3. Arithmetic check: 2.3 g * 1 g/g / (1000 ml / 1000
+      ml per L) = 2.3 g/L, consistent with the reported value at its precision. Evidence
+      supports the provider-declared concentration within this solution, not a concentration
+      in a receiving medium or an independently measured final volume. Water addition
+      alone is not used to infer a final volume. Additional exact excerpt at $.data.volume:
+      "volume": 1000. Retrieved 2026-10-07T10:01:55.873109+00:00; response SHA256=cff96821e213448e69d1507dea48b5c0d7b07ccd022c21898d50f2b775454c6b.'
+- preferred_term: NaNO3
+  concentration:
+    value: '5'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:187
+    label: NaNO3
+  chebi_term:
+    id: CHEBI:63005
+    label: sodium nitrate
+    match_type: manual_curated
+- preferred_term: Mg(SO4) x 7 H2O
+  concentration:
+    value: '10'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:2154
+    label: Mg(SO4) x 7 H2O
+  chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+    match_type: manual_curated
+- preferred_term: CaCl2 x 2 H2O
+  concentration:
+    value: '10'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:7
+    label: CaCl2 x 2 H2O
+  chebi_term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Na3-citrate x 2 H2O
+  concentration:
+    value: '10'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:2155
+    label: Na3-citrate x 2 H2O
+  chebi_term:
+    id: CHEBI:32142
+    label: sodium citrate dihydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Na-EDTA x 2 H2O
+  concentration:
+    value: '10'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:890
+    label: Na-EDTA x 2 H2O
+  chebi_term:
+    id: CHEBI:64758
+    label: EDTA disodium salt dihydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: K2HPO4 x 3 H2O
+  concentration:
+    value: '2'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:244
+    label: K2HPO4 x 3 H2O
+  chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Na2CO3
+  concentration:
+    value: '2'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:32
+    label: Na2CO3
+  chebi_term:
+    id: CHEBI:29377
+    label: sodium carbonate
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Fe(NH4)citrate
+  concentration:
+    value: '1'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1203
+    label: Fe(NH4)citrate
+  chebi_term:
+    id: CHEBI:144421
+    label: iron(III) citrate
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Vitamin B12
+  concentration:
+    value: '1'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:18
+    label: Vitamin B12
+  chebi_term:
+    id: CHEBI:176843
+    label: vitamin B12
+    confidence: 0.9
+    match_type: manual_curated
+preparation_notes: 'Adjust pH to 8.0.
+
+  Make up to <span class=''amount'' data-volume=''1000''>1000</span> ml with MilliQ
+  water.
+
+  Autoclave at 121 °C for 20 min.
+
+  After Cooling, add the following filter sterilized components:'
+curation_history:
+- timestamp: '2026-03-13T06:20:40.160331Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:014959'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:46.386102'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:02.987596'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:04:08.401112+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:41.563850+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 5 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:56:29.255296+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '3 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-10-07T10:04:07.640757+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/6270
+  changes: 'composition[0].concentration: {"unit": "G_PER_L", "value": "2.3"} -> {"unit":
+    "G_PER_L", "value": "2.3"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/6270
+  title: 'MediaDive solution 6270: Main sol. 1593a'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=cff96821e213448e69d1507dea48b5c0d7b07ccd022c21898d50f2b775454c6b;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

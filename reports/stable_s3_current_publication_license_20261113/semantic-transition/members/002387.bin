@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:soyton
+preferred_term: Soyton
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:soyton
+  ontology_label: Soyton
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: PLACEHOLDER
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgm-metatraits
+    notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:soyton; '
+  - evidence_type: CURATOR_JUDGMENT
+    source: sssom_synonym_enrich_review_2026_05_10
+    notes: Previous FOODON:03302071 mapping resolves to green kidney bean and is not
+      an identity mapping for Soyton. No exact FOODON candidate was found for Soyton/Soytone
+      in the reviewed OLS queries.
+synonyms:
+- synonym_text: Soyton
+  synonym_type: RAW_TEXT
+  source: kgm-metatraits
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T20:14:01.918670+00:00'
+  curator: audit_import_ingredients[kgm-metatraits]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:soyton; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.403277+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.565058+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+- timestamp: '2026-05-10T04:47:45+00:00'
+  curator: sssom_synonym_enrich_review_2026_05_10
+  action: CORRECTED
+  changes: Changed primary identifier from unrelated FOODON:03302071 to kgmicrobe.ingredient:soyton;
+    retained no external exact mapping because OLS did not provide an exact Soyton/Soytone
+    ontology term.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+ingredient_type: UNDEFINED_MIXTURE
+notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: FOODON:03302071 resolves to green
+  kidney bean and is not an identity mapping for Soyton. Retained kgmicrobe.ingredient:soyton
+  pending exact external ontology support.'
+kg_microbe_node_id: kgmicrobe.ingredient:soyton

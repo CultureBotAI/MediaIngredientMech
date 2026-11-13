@@ -1,0 +1,650 @@
+schema_version: 1.0.0
+review_id: 20261111T165102Z-lc-real-canary-four-source-primary
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Primary scientific review of four exact LC canary source transitions
+started_at: '2026-11-11T16:49:02.587714Z'
+finished_at: '2026-11-11T16:51:02Z'
+reviewer:
+  identity: Codex /root primary campaign coordinator
+  kind: agent
+  independence: self_review
+  independence_basis: Coordinator primary assessment of the exact original payloads,
+    current LC beforeimages and inspected primary captures; distinct skeptical author
+    reviews the same targets separately.
+skill: .claude/skills/review-ingredients/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: All four exact proposed source transitions are supported within their documented
+  identity and alias scope. Existing quantity, procurement, role, source-binding and
+  release holds remain. This is scientific assessment of the materialized LC source
+  draft, not stable-ID application or export acceptance.
+source:
+  git_revision: 84241993a278a7a413422ef89a52c0b47dc57831
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-ingredients/SKILL.md
+    sha256: abc08ae7bc519645ddafb4f6c5c3ebe2432826c9b3883ee58f4c2eabca4dc8a8
+    role: context
+  - path: .claude/skills/review-ingredients/reference/validation-rules.md
+    sha256: c9bbbd618dfc57363581aaf1aa757230acde0548e689e61fb059fb031a5b4a21
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml
+    sha256: 0f7efcf2d026ed5ad88d0b062e4cb3553a2a4b3eb44ffc9c1f5ce1d1c1e42aa2
+    role: context
+  - path: data/ingredients/unmapped/Barley_Grains.yaml
+    sha256: 1a954879e6f48dfdd8d079fef24cf5737fdac6b757c9925df7b5e41e99994721
+    role: context
+  - path: data/ingredients/unmapped/CeNO33_X_6_H2O.yaml
+    sha256: b6909792f69eb1098e590d07c5949dc92a2ec24c8342d66b80fb386c7460705d
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/final-native-intake-v1/inputs/union-ledger.json
+    sha256: a709fa2094a25e244b96f18699be06c266b7653719fcba04062c6f195daa25c5
+    role: context
+  - path: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/algae/asw_barley.yaml
+    sha256: f61cae2ab08da149a69a6514ed5942a367f60517c8d2aa65fb66601b03382625
+    role: context
+  - path: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/1_10_brain_heart_infusion_agar_17_estradiol.yaml
+    sha256: 5acdbafc9ba20a9e4335cf36f78fca1e319138e2b1c81db2263346188e22ce8e
+    role: context
+  - path: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/minimal_media.yaml
+    sha256: a1c2ef58d6c029684210986a59e8189c070713adbe27d27e824f98568c288cff
+    role: context
+  - path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/01038577085b76728b1f-17beta-Estradiol.yaml
+    sha256: 4dacd21277fac9a62c75482ddc47e99c84e9f6dacdfd9adc62b9a2f33e2830a8
+    role: target
+  - path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/18d031cae437b989fa7a-Barley_Grains.yaml
+    sha256: fcf312d031b3cd12c7d0fa29aa208a633717a42b83b0e655b37ced18687d3b03
+    role: target
+  - path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/781bc38fc8c9b1dca9ea-CeNO33_X_6_H2O.yaml
+    sha256: e8924dfd639f08a3d05cfd8d38d0a243871485f54865b9ade787d7915466cfc8
+    role: target
+  - path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/8c84eb497cc146e769f0-Arabinan_From_Sugar_Beet.yaml
+    sha256: 0da1dc6012d021d27271f497d6a9dc395c5bfa395cd98807b9e7f22b3e42eae8
+    role: target
+  - path: reports/all_unmatched_20261107/separate-real-canary-primary-review-v1/inspect.py
+    sha256: 2de532f9e12440d56000aea5253ba482972c3303b56df85824e52b58dbe8c925
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/COPY-PROPOSAL.json
+    sha256: 72b501a0854fb16c58ba0d986aefee3e1f8730ebed3e5305b4266959b010d810
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-quantity-skeptic-v1/ASSESSMENT.json
+    sha256: 19e0a978fa10c2cd02a3761b718e5b11f8eed2f9fe8b109f32c8ef52d3970d96
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/mediadive1587.receipt.json
+    sha256: a1c3582e425f02e599ab082be0fb3d5eb6bf5207d649a7b4ab263c275463e531
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/meshM0319657.receipt.json
+    sha256: 2ea31f7791a8fe015924931fcac093e2c424bb8806e01325bb0a6b547d48234a
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/pubchem16211466.body
+    sha256: 94a6bf41c1c98d3797809b081aa539e157e2a3f56dfd2124d6f5a88d418e19ce
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/pubchem16211466.receipt.json
+    sha256: 0adcada846477fa8a19fedea4ba3595112a3f99348069e579936450c0aaf3eef
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/parent-crosscheck/pubchem_hexahydrate_synonyms.body
+    sha256: 4158ec84c5aeff088fce19137cfb8a3ac5f75be7ac9e7dd40072572ea5033548
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/parent-crosscheck/pubchem_hexahydrate_synonyms.receipt.json
+    sha256: dc129793ea053c9c49905d65412b10287e5163ca29cd41a0038fb7ec6ed86385
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-skeptical-preparation-v1/ASSESSMENT.json
+    sha256: 708edde3fa6005ccdd154ba2dac7178f2211a4d578a0deaf5d2d58641af4096c
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-lc-arabinan-barley-skeptical-v1/TRANSITION-ASSESSMENTS.json
+    sha256: eaec4c2ac7ee21aa115411f098185370615ca63bcf41fc9affe2077062566666
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-lc-four-transition-skeptical-v1/ASSESSMENT.json
+    sha256: 273aec7b943d9631621fca119a82f3fe7dada0fcf79e10098a635e28a02d980c
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-skeptical-preparation-v1/ACTUAL-CURRENT-CONCEPT-OUTCOMES.json
+    sha256: 603688672aa98f16ab6b38b3858e91cfc5812d825485ff06144aa28a29b388b8
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-skeptical-preparation-v1/ORIGINAL-SOURCE-OUTCOMES.json
+    sha256: 8b90d7247cd6929144ea72064b4e19b469fd008add5b3f750d917c5e5c9dd2ab
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/after-inventory.json
+    sha256: 9c4056379fdc69b94435ab429791ed94a9898f23cd74ad28f3387769f6b3242d
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/constructor/COMPLETE.json
+    sha256: 048a67bf161fe50b11cad6116a8f39fda1705d647804826a80a44d052238d6d0
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/constructor/manifest.json
+    sha256: 84579b0e7bfc0944466b796e4c16bc3f4525c5614082e1ff6205043e9a951055
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/owner-plan.draft.json
+    sha256: 529fbba2fa634141cecec5041c6449273c2d02c95771f70f6c57299b3caef52f
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/resolution-crosswalk.draft.json
+    sha256: 816f598a43185d3409bf41e0559e6d8e60ca27222690f858a321b173ea23351b
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/scope.json
+    sha256: 7bea1e1ece740c0200978f5061a47e9314ed2692c9dfa9dd90d79acdacaecc7f
+    role: context
+  - path: reports/all_unmatched_20261107/separate-real-canary-v2/source-review-targets.json
+    sha256: dc4a8987f0f5ae284ed3c088afeb7db6cc5723bbe0a4be7d4cf10d112316dac2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/a/captures/mediadive-solution-5819.json
+    sha256: 2d8c03502943a8ac8a2e167a1a50a9ff396a9c507fcb196399f6a208b7185ba7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/a/captures/mediadive-solution-5825.json
+    sha256: e671c45bfa38be39e110eac45adc562c84b1bbea7bf8bb57352cf4181545f635
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/a/captures/primary-6059474a423ebb03.pdf
+    sha256: cda345f42d7513951836e962728a2b46fd0b6bbdd02080c2aa8580b1627dd852
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/c/captures/mediadive-1587.json
+    sha256: b92df3f1aedce5ed217cba4602fca7b156946d04db6f0ca479069f51255c60ba
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/c/captures/medium-1738.json
+    sha256: f8f0d5951fa459c1a867162e49d36165e92dc8c796bb3d7d8f1175c0a7220446
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/c/captures/mesh-C032786.json
+    sha256: dde1e361708f2d0e9d13abf333298cdb5c3f2d3d219a5707f687bc87f1cc335a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/c/captures/mesh-M0319657.json
+    sha256: 955fd9aa39af3a86c3a6457e55cc544140df52f5ba7a196a572e2a71a563338e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-02/c/captures/sigma-cerium.json
+    sha256: ac546b35b48419fcefbe5d3571777c92d018bb0c50e75aea9ed8de3761ab2810
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/ontology-arabinan.txt
+    sha256: 0baa8a133d767e0f5f52229a88fc3b39d0f7972d9ee139c578fb721f6238f24b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/web-arabinan-confirmed.json
+    sha256: 81a2fb03a93da695631378b99708bab9252a57ca214b1c26117de5f8810f3f7e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/bio/captures/bb1ddbfc113f52b2
+    sha256: df6fe231f46310b36f20f9176219deb10e7a24dc28055df2a8ff6d825aac7361
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/chemicals/captures/detail-16469.json
+    sha256: 3f00d0eb7f2cfc6c54893c000a6f4d65470887de39303fdbb780c2c77aa6147b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/chemicals/captures/nb-1181.json
+    sha256: 2724a0074719e6a1ba3cb6b324fc3efb08557d978b430ab4a9f295af8fd57367
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- kind: generated
+  label: cerium(III) nitrate hexahydrate
+  owner_paths:
+  - path: data/ingredients/mapped/CeNO33_X_6_H2O.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: maintained IngredientRecord owner after separately authorized source application
+  path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/781bc38fc8c9b1dca9ea-CeNO33_X_6_H2O.yaml
+  target_id: ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+- kind: generated
+  label: Arabinan from Sugar Beet
+  owner_paths:
+  - path: data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: maintained IngredientRecord owner after separately authorized source application
+  path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/8c84eb497cc146e769f0-Arabinan_From_Sugar_Beet.yaml
+  target_id: ORIGINAL-w03::m-arabinan_source_alias
+- kind: generated
+  label: Barley grains
+  owner_paths:
+  - path: data/ingredients/unmapped/Barley_Grains.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: maintained IngredientRecord owner after separately authorized source application
+  path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/18d031cae437b989fa7a-Barley_Grains.yaml
+  target_id: ORIGINAL-w10::bio-proposal-Barley_Grains
+- kind: generated
+  label: 17β-Estradiol
+  owner_paths:
+  - path: data/ingredients/mapped/17beta-Estradiol.yaml
+    repository: CultureBotAI/MediaIngredientMech
+    role: maintained IngredientRecord owner after separately authorized source application
+  path: reports/all_unmatched_20261107/final-native-intake-v2/payloads/01038577085b76728b1f-17beta-Estradiol.yaml
+  target_id: ORIGINAL-w10::chem-proposal-99
+scope:
+  description: Exactly the four materialized LC canary generated payloads and their
+    complete beforeimages, where present.
+  selection: Exact selected_operations from the completed constructor, no extra record
+    or scientific-category inference.
+  coverage: full
+  population_size: 4
+  reviewed_target_ids:
+  - ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+  - ORIGINAL-w03::m-arabinan_source_alias
+  - ORIGINAL-w10::bio-proposal-Barley_Grains
+  - ORIGINAL-w10::chem-proposal-99
+checks:
+- check_id: native-inspect
+  name: Current native target/source inspection
+  status: passed
+  required: true
+  summary: Native inspect captured current LC84241993 and55 explicit/default input
+    hashes; exact input currentness was rechecked before authoring.
+  target_ids:
+  - ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+  - ORIGINAL-w03::m-arabinan_source_alias
+  - ORIGINAL-w10::bio-proposal-Barley_Grains
+  - ORIGINAL-w10::chem-proposal-99
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-campaign-adoption-worktree/.venv/bin/python3
+    -B /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-legacy/scripts/record_review.py
+    --repo-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-legacy
+    inspect --targets /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-legacy/reports/all_unmatched_20261107/separate-real-canary-v2/source-review-targets.json
+    --input .claude/skills/review-ingredients/SKILL.md --input .claude/skills/review-ingredients/reference/validation-rules.md
+    --input AGENTS.md --input MAPPING_SEMANTICS.md --input conf/record_review.yaml
+    --input data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml --input data/ingredients/unmapped/Barley_Grains.yaml
+    --input data/ingredients/unmapped/CeNO33_X_6_H2O.yaml --input docs/record-review-profile.md
+    --input docs/record-reviews.md --input reports/all_unmatched_20261107/final-native-intake-v1/inputs/union-ledger.json
+    --input reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/algae/asw_barley.yaml
+    --input reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/1_10_brain_heart_infusion_agar_17_estradiol.yaml
+    --input reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/minimal_media.yaml
+    --input reports/all_unmatched_20261107/separate-real-canary-primary-review-v1/inspect.py
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/COPY-PROPOSAL.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-quantity-skeptic-v1/ASSESSMENT.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/mediadive1587.receipt.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/meshM0319657.receipt.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/pubchem16211466.body
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/pubchem16211466.receipt.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/parent-crosscheck/pubchem_hexahydrate_synonyms.body
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/parent-crosscheck/pubchem_hexahydrate_synonyms.receipt.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-skeptical-preparation-v1/ASSESSMENT.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-lc-arabinan-barley-skeptical-v1/TRANSITION-ASSESSMENTS.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-lc-four-transition-skeptical-v1/ASSESSMENT.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-skeptical-preparation-v1/ACTUAL-CURRENT-CONCEPT-OUTCOMES.json
+    --input reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-skeptical-preparation-v1/ORIGINAL-SOURCE-OUTCOMES.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/after-inventory.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/constructor/COMPLETE.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/constructor/manifest.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/owner-plan.draft.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/resolution-crosswalk.draft.json
+    --input reports/all_unmatched_20261107/separate-real-canary-v2/scope.json --input
+    reports/all_unmatched_20261107/separate-real-canary-v2/source-review-targets.json
+    --input reports/all_unmatched_20261107/worker-02/a/captures/mediadive-solution-5819.json
+    --input reports/all_unmatched_20261107/worker-02/a/captures/mediadive-solution-5825.json
+    --input reports/all_unmatched_20261107/worker-02/a/captures/primary-6059474a423ebb03.pdf
+    --input reports/all_unmatched_20261107/worker-02/c/captures/mediadive-1587.json
+    --input reports/all_unmatched_20261107/worker-02/c/captures/medium-1738.json --input
+    reports/all_unmatched_20261107/worker-02/c/captures/mesh-C032786.json --input
+    reports/all_unmatched_20261107/worker-02/c/captures/mesh-M0319657.json --input
+    reports/all_unmatched_20261107/worker-02/c/captures/sigma-cerium.json --input
+    reports/all_unmatched_20261107/worker-03/materials/ontology-arabinan.txt --input
+    reports/all_unmatched_20261107/worker-03/materials/web-arabinan-confirmed.json
+    --input reports/all_unmatched_20261107/worker-10/bio/captures/bb1ddbfc113f52b2
+    --input reports/all_unmatched_20261107/worker-10/chemicals/captures/detail-16469.json
+    --input reports/all_unmatched_20261107/worker-10/chemicals/captures/nb-1181.json
+    --input schema/record_review.yaml --input scripts/record_review.py --input src/mediaingredientmech/schema/mediaingredientmech.yaml
+  exit_code: 0
+  evidence_ids:
+  - plan
+  - scope
+- check_id: primary-science
+  name: P1-P4 source/form, ontology and alias assessment
+  status: passed
+  required: true
+  summary: Read complete proposed records/current beforeimages and inspected primary
+    source/ontology captures; assessed each transition individually, including hydrate
+    form, botanical scope, grain preparation and beta stereochemistry.
+  target_ids:
+  - ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+  - ORIGINAL-w03::m-arabinan_source_alias
+  - ORIGINAL-w10::bio-proposal-Barley_Grains
+  - ORIGINAL-w10::chem-proposal-99
+  evidence_ids:
+  - semantics
+  - plan
+  - scope
+  - cases
+  - payload-0
+  - payload-1
+  - payload-2
+  - payload-3
+  - ce-source
+  - ce-properties
+  - ce-cas
+  - ce-mesh
+  - ce-stock
+  - ara-source
+  - ara-term
+  - ara-recipe
+  - barley-source
+  - barley-recipe
+  - estradiol-source
+  - estradiol-term
+  - estradiol-recipe
+- check_id: hold-boundary
+  name: Separate identity from dose, roles and publication
+  status: passed
+  required: true
+  summary: No unsupported exact parent, class-subsumption, role, source quantity or
+    supplier identity is added by these transitions. Retained holds and full original
+    accounting remain; separate publication gates are pending.
+  target_ids:
+  - ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+  - ORIGINAL-w03::m-arabinan_source_alias
+  - ORIGINAL-w10::bio-proposal-Barley_Grains
+  - ORIGINAL-w10::chem-proposal-99
+  evidence_ids:
+  - scope
+  - cases
+  - semantics
+  - estradiol-recipe
+evidence:
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections1-3; supplied forms, registry identity and asymmetric predicates
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Specific hydrates and stereoisomers retain distinct identities; broad/close/narrow
+    mappings are not interchangeable identity or subclass assertions.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+- evidence_id: plan
+  kind: record_content
+  reference: reports/all_unmatched_20261107/separate-real-canary-v2/owner-plan.draft.json
+  locator: Four selected record dictionaries; original bindings retained
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: One promotion, two alias/history edits and one create; source application
+    and future stable adoption/export remain separate gates.
+  snapshot_sha256: 529fbba2fa634141cecec5041c6449273c2d02c95771f70f6c57299b3caef52f
+- evidence_id: scope
+  kind: record_content
+  reference: reports/all_unmatched_20261107/separate-real-canary-v2/scope.json
+  locator: selected_operations; scientific_approval=false
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Administrative canary selection preserves full1879-case/1022-origin accounting;
+    nonselection does not invent a scientific hold.
+  snapshot_sha256: 7bea1e1ece740c0200978f5061a47e9314ed2692c9dfa9dd90d79acdacaecc7f
+- evidence_id: cases
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v1/inputs/union-ledger.json
+  locator: Exact case IDs in the four plan operations
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: The original source cases, quantities and labels remain retained as evidence;
+    source-normalization defects are not copied as chemical identity assertions.
+  snapshot_sha256: a709fa2094a25e244b96f18699be06c266b7653719fcba04062c6f195daa25c5
+- evidence_id: payload-0
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v2/payloads/781bc38fc8c9b1dca9ea-CeNO33_X_6_H2O.yaml
+  locator: Complete generated IngredientRecord payload
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Exact complete proposed source payload inspected together with its current
+    maintained beforeimage where present.
+  snapshot_sha256: e8924dfd639f08a3d05cfd8d38d0a243871485f54865b9ade787d7915466cfc8
+- evidence_id: payload-1
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v2/payloads/8c84eb497cc146e769f0-Arabinan_From_Sugar_Beet.yaml
+  locator: Complete generated IngredientRecord payload
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Exact complete proposed source payload inspected together with its current
+    maintained beforeimage where present.
+  snapshot_sha256: 0da1dc6012d021d27271f497d6a9dc395c5bfa395cd98807b9e7f22b3e42eae8
+- evidence_id: payload-2
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v2/payloads/18d031cae437b989fa7a-Barley_Grains.yaml
+  locator: Complete generated IngredientRecord payload
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Exact complete proposed source payload inspected together with its current
+    maintained beforeimage where present.
+  snapshot_sha256: fcf312d031b3cd12c7d0fa29aa208a633717a42b83b0e655b37ced18687d3b03
+- evidence_id: payload-3
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v2/payloads/01038577085b76728b1f-17beta-Estradiol.yaml
+  locator: Complete generated IngredientRecord payload
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Exact complete proposed source payload inspected together with its current
+    maintained beforeimage where present.
+  snapshot_sha256: 4dacd21277fac9a62c75482ddc47e99c84e9f6dacdfd9adc62b9a2f33e2830a8
+- evidence_id: ce-source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-02/c/captures/mediadive-1587.json
+  locator: data.name, CAS-RN, synonyms; ingredient1587
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Provider names Ce(NO3)3 x6H2O and CAS10294-41-4, resolving the formerly
+    unverified shorthand without treating the malformed flattened spelling as an active
+    alias.
+  snapshot_sha256: b92df3f1aedce5ed217cba4602fca7b156946d04db6f0ca479069f51255c60ba
+- evidence_id: ce-properties
+  kind: database
+  reference: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/network-attempt2/pubchem16211466.body
+  locator: PropertyTable.Properties[CID16211466]
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: PubChem identifies cerium(3+) trinitrate hexahydrate, formulaCeH12N3O15,
+    mass434.22 and the exact six-water InChI; these match the payload.
+  snapshot_sha256: 94a6bf41c1c98d3797809b081aa539e157e2a3f56dfd2124d6f5a88d418e19ce
+- evidence_id: ce-cas
+  kind: database
+  reference: reports/all_unmatched_20261107/separate-real-canary-science-inputs-v1/preflight/stable-adoption-real-canary-cerium-science-preparation-v1/captures/parent-crosscheck/pubchem_hexahydrate_synonyms.body
+  locator: CID16211466; exact name and CAS10294-41-4
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: The exact-form name and CAS support the hydrate identity. Other depositor
+    strings in the synonym list are not approved or imported.
+  snapshot_sha256: 4158ec84c5aeff088fce19137cfb8a3ac5f75be7ac9e7dd40072572ea5033548
+- evidence_id: ce-mesh
+  kind: database
+  reference: reports/all_unmatched_20261107/worker-02/c/captures/mesh-M0319657.json
+  locator: M0319657; label and @type
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: NLM identifies an active Concept labelled cerium nitrate (Ce(+3)), broader
+    than the supplied hexahydrate; the retained mapping is broad-only, not exact or
+    subclass.
+  snapshot_sha256: 955fd9aa39af3a86c3a6457e55cc544140df52f5ba7a196a572e2a71a563338e
+- evidence_id: ce-stock
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-02/a/captures/mediadive-solution-5819.json
+  locator: Source solution composition
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Trace-stock composition is occurrence-specific; it does not redefine the
+    dry hydrate as a solution or establish a universal final-medium dose.
+  snapshot_sha256: 2d8c03502943a8ac8a2e167a1a50a9ff396a9c507fcb196399f6a208b7185ba7
+- evidence_id: ara-source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-03/materials/web-arabinan-confirmed.json
+  locator: Captured manufacturer P-ARAB data sheet and separate P-LARB material
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Manufacturer material ties sugar-beet-pulp arabinan to the botanical wording
+    and CAS. Distinct supplier grades sharing CAS are not collapsed or attributed
+    to the original recipe.
+  snapshot_sha256: 81a2fb03a93da695631378b99708bab9252a57ca214b1c26117de5f8810f3f7e
+- evidence_id: ara-term
+  kind: database
+  reference: reports/all_unmatched_20261107/worker-03/materials/ontology-arabinan.txt
+  locator: CHEBI22590 label and definition
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: ChEBI arabinan is a polysaccharide of arabinose residues. The botanical-source-qualified
+    record retains only its existing asymmetric parent mapping.
+  snapshot_sha256: 0baa8a133d767e0f5f52229a88fc3b39d0f7972d9ee139c578fb721f6238f24b
+- evidence_id: ara-recipe
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/minimal_media.yaml
+  locator: Original ingredient wording and source context
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Frozen recipe preserves sugar-beet qualification; the new RAW_TEXT alias
+    does not assert procurement, lot, molecular branching or purity.
+  snapshot_sha256: a1c2ef58d6c029684210986a59e8189c070713adbe27d27e824f98568c288cff
+- evidence_id: barley-source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-10/bio/captures/bb1ddbfc113f52b2
+  locator: CCAP ASW+Barley; page1 preparation
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Primary recipe adds one barley grain to25mL before autoclaving. This supports
+    singular grain as the input-material alias, without equating it to flour, extract
+    or the processed medium.
+  snapshot_sha256: df6fe231f46310b36f20f9176219deb10e7a24dc28055df2a8ff6d825aac7361
+- evidence_id: barley-recipe
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/algae/asw_barley.yaml
+  locator: Frozen barley ingredient occurrence
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: Original grain count and preparation context remain; no mass, species,
+    role or ontology identity is inferred.
+  snapshot_sha256: f61cae2ab08da149a69a6514ed5942a367f60517c8d2aa65fb66601b03382625
+- evidence_id: estradiol-source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-10/chemicals/captures/nb-1181.json
+  locator: NBRC1181 Medium Detail; composition
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: NBRC explicitly names17beta-estradiol and1mg with1L distilled water. The
+    frozen1g/L normalization conflicts and remains held rather than imported.
+  snapshot_sha256: 2724a0074719e6a1ba3cb6b324fc3efb08557d978b430ab4a9f295af8fd57367
+- evidence_id: estradiol-term
+  kind: database
+  reference: reports/all_unmatched_20261107/worker-10/chemicals/captures/detail-16469.json
+  locator: CHEBI16469; name, ascii_name and definition
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: supports
+  summary: The term is specifically the17beta isomer of estradiol; neither generic
+    nor alpha-isomer identity is substituted.
+  snapshot_sha256: 3f00d0eb7f2cfc6c54893c000a6f4d65470887de39303fdbb780c2c77aa6147b
+- evidence_id: estradiol-recipe
+  kind: record_content
+  reference: reports/all_unmatched_20261107/final-native-intake-v1/source-captures/inputs/culturemech/data/normalized_yaml/bacterial/1_10_brain_heart_infusion_agar_17_estradiol.yaml
+  locator: Normalized quantity versus primary NBRC recipe
+  accessed_at: '2026-11-11T16:51:02Z'
+  support: context_only
+  summary: Retained normalization conflict is a quantity/source/export hold, separate
+    from supported beta-specific chemical identity.
+  snapshot_sha256: 5acdbafc9ba20a9e4335cf36f78fca1e319138e2b1c81db2263346188e22ce8e
+assessments:
+- assessment_id: cerium-form
+  area: identity
+  topic: P1/P2 exact supplied form and nonidentity grounding
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w02::c-proposal-cerium-nitrate-hexahydrate
+  summary: The exact source transition preserves cerium(III) nitrate hexahydrate under
+    cas:10294-41-4 with a broad-only parent mapping.
+  evidence_ids:
+  - semantics
+  - payload-0
+  - ce-source
+  - ce-properties
+  - ce-cas
+  - ce-mesh
+  - ce-stock
+  details: The former raw queue spelling lacks the verified parentheses and stays
+    REJECTED_LABEL. The correct provider spelling remains RAW_TEXT. PubChem properties
+    match six waters; no parent identity, role, supplier procurement or subclass assertion
+    is approved. M0319657 is a MeSH Concept; the payload word descriptor is not an
+    assertion of its RDF class. All previous history and occurrence counts remain.
+    This review supports the source promotion but does not supply a Cerium source-export
+    binding.
+- assessment_id: arabinan-alias
+  area: nomenclature
+  topic: P2/P3 botanical qualification and alias boundary
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w03::m-arabinan_source_alias
+  summary: The sugar-beet-preserving RAW_TEXT alias and appended history are supported,
+    with existing identity and broad mapping unchanged.
+  evidence_ids:
+  - semantics
+  - payload-1
+  - ara-source
+  - ara-term
+  - ara-recipe
+  details: The full before/after comparison retains all other fields. Existing CAS11078-27-6
+    is not evidence that P-ARAB and P-LARB grades are interchangeable. No exact generic-arabinan
+    ontology replacement, procurement, purity or role is added. Historical no-exact-term
+    notes are preserved history, not a new exhaustive ontology-absence claim.
+- assessment_id: barley-input
+  area: identity
+  topic: P2/P3 original material and preparation stage
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w10::bio-proposal-Barley_Grains
+  summary: Singular Barley grain is a supported raw source alias for the retained
+    grain-input owner.
+  evidence_ids:
+  - payload-2
+  - barley-source
+  - barley-recipe
+  - semantics
+  details: Only the synonym/history delta is proposed. UNMAPPED_0096, UNMAPPED status,
+    UNDEFINED_MIXTURE and occurrence statistics remain. A counted grain is not assigned
+    a guessed mass, cultivar, species ontology, food ontology or role. The primary
+    preparation adds grain before autoclaving; no identity with the processed medium
+    is asserted. Future stable-ID adoption must independently preserve this owner
+    and may support MIM-only output only under its own gates.
+- assessment_id: estradiol-beta
+  area: identity
+  topic: P1/P2 stereochemistry and source quantity separation
+  outcome: supported
+  target_ids:
+  - ORIGINAL-w10::chem-proposal-99
+  summary: Creating the beta-specific chemical record at CHEBI16469 is supported while
+    the quantity/source/export conflict stays held.
+  evidence_ids:
+  - payload-3
+  - estradiol-source
+  - estradiol-term
+  - estradiol-recipe
+  - semantics
+  details: The exact source and canonical term agree on17beta identity and SYNONYM_MATCH
+    semantics. The payload contains no imported dose or role. The1mg primary input
+    and frozen1g/L value are not reconciled by this record. Agent-authored evidence
+    remains LLM_SUGGESTION and the#1226 correction/history remains intact. This source
+    review grants no source-binding or export acceptance.
+findings: []
+actions: []
+limitations:
+- This is the legacy LC source stage. No stable MIM ID has been assigned or applied
+  by this review; actual TC adoption, rename/alias continuity and real export/consumer
+  canary remain separate required outcomes.
+- A source-transition finding-free review is not complete-payload publication approval.
+  Preserved dose, supplier/procurement, role, source-binding and export holds remain;
+  MEM is outside the four source-review targets and its hold is not cleared.
+- Captured primary/ontology documents were inspected locally. No paid provider call,
+  exhaustive ontology-absence search, new supplier attribution or approval of every
+  depositor synonym was made.
+- Native source-plan admission, guarded application, currentness and final release
+  validation remain required after the distinct skeptical review. Passed dependency
+  suites were not repeated for this report.
+notes:
+- MeSH M0319657 is treated as a Concept with a broad mapping, regardless of incidental
+  descriptor wording in historical evidence text.
+- P1-P4 rubric is preserved through per-target assessments; no numeric score is used
+  as scientific or publication approval.
+tags:
+- canary
+- source-transition
+- primary
+- scientific-review
+- holds-preserved

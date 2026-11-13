@@ -1,0 +1,285 @@
+{
+  "open_findings": [
+    {
+      "finding_id": "W09-ROW-SELENITE-ALIAS-001",
+      "title": "Na2Se2O3 resolves to anhydrous disodium selenite despite explicit malformed-source hold",
+      "certainty": "confirmed",
+      "area": "identity",
+      "severity": "major",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0182"
+      ],
+      "owner": "data/ingredients/mapped/Na2seo3.yaml",
+      "owner_sha256": "72881247e6866d384b23e34c169d2a08a612117ebf0316be706038a7301684ed",
+      "row_sha256": "ba47c0480af0388e910224b04aa90c407839238cd062ebc857f9c842975379b9",
+      "before_row_sha256": "c6d2fa1db57262c9e7a9a6b45e6dd9088747d325c5bed7a94d4f847f89617e55",
+      "field_paths": [
+        "other"
+      ],
+      "description": "Inherited Na2Se2O3 differs in selenium count and remains explicitly unresolved in actual DSMZ863/MD804 source context; it cannot resolve to anhydrous Na2SeO3 merely from raw-history inheritance.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Root should route the inherited resolving-alias exposure under the existing source hold. Any correction must retain the literal raw source and history, exclude it from resolving aliases through an authenticated source change, and leave genuine Na2SeO3 (anhydrous) support intact. Missing fact: authoritative correction or original reagent identity for DSMZ863/MD804.",
+      "acceptance_conditions": [
+        "Preserve authentic raw Na2Se2O3 evidence and source hold; do not infer a corrected reagent.",
+        "Remove unsafe resolving use only through accountable bounded owner correction, then regenerate/re-review the exact full row."
+      ],
+      "evidence_ids_or_locators": [
+        "RS-009-PRIMARY-000",
+        "RS-009-PRIMARY-001",
+        "RS-009-PRIMARY-002",
+        "RS-009-PRIMARY-003",
+        "RS-009-PRIMARY-004",
+        "RS-009-PRIMARY-005",
+        "RS-009-PRIMARY-006",
+        "RS-009-PRIMARY-007",
+        "RS-009-PRIMARY-008",
+        "Na2Se2O3-DSMZ863",
+        "Na2Se2O3-MD804",
+        "W01-final-case169"
+      ],
+      "independent_reviews": [
+        "skeptical/decisions.json",
+        "science/materials/findings.json"
+      ],
+      "deduplication_context": "MIM#718 inherited source hold",
+      "no_fix_performed": true
+    },
+    {
+      "finding_id": "W09-ROW-BORAX-METHOD-001",
+      "title": "Borax structural judgment emitted as lexical matching",
+      "certainty": "confirmed",
+      "area": "provenance",
+      "severity": "major",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0171"
+      ],
+      "owner": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+      "owner_sha256": "f3be9ddfe74195bdf64175b02a73db08f9d23317299930e4d1502e6ce48fa402",
+      "row_sha256": "ce593ef62f44bc9668e251fa092ff17df5ccc261b3c22dfc8ac55c1de1c47c79",
+      "before_row_sha256": "d08e82e9247fe01cb576f2f92e85ac63567afc3c68d9ac06a421f848daa7552a",
+      "field_paths": [
+        "mapping_justification"
+      ],
+      "description": "Whole owner ontology_mapping.evidence[0] and curation_history[10] explicitly record primary formula-accounting verification of conventional Na2B4O7·10H2O against structural Na2[B4O5(OH)4]·8H2O. This is the performed resolution; neither raw preferred label nor conventional decahydrate aliases equal the captured primary label disodium tetraborate octahydrate. Official CHEBI38888 capture supplies formula8H2O.H4B4O9.2Na, mass381.371 and a structural formula synonym; Gainsford2008 captured original article explicitly calls that structure sodium tetraborate decahydrate/borax and reports Mr381.38. Supplier S9640 independently corroborates conventional formula/CAS1303-96-4. Therefore the target identity is supported by primary structural chemistry, not invalidated by the octahydrate word. EXACT_MATCH mechanically emits semapv:LexicalMatching and0.99, but current semantics§0 and sssom_grading distinguish actual label resolution from curator judgment. A deterministic emitted field cannot replace the recorded method. No new primary-label or unique CAS lookup is recorded in this accepted payload.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Preserve supported identity and authentic history; correct actual method provenance through accountable owner/native derivation after coordinator filing.",
+      "acceptance_conditions": [
+        "Root files/deduplicates the bounded method finding before correction. Accountable author records the actual performed judgment using supported native method grade/evidence; retains exactCHEBI38888 identity, formula/CAS and original history.",
+        "Regenerate under the authorized mechanism and independently review the exact resulting full row; do not hand-patch SSSOM or downgrade its own-identifier exact predicate simply to match a method enum."
+      ],
+      "evidence_ids_or_locators": [
+        "KG26-COMP-borate175-ols-38888-v1",
+        "KG26-COMP-borate175-structure-web-v1",
+        "KG26-COMP-borate175-supplier-web-v1"
+      ],
+      "independent_reviews": [
+        "skeptical/decisions.json",
+        "skeptical-methods/ADJUDICATION.json"
+      ],
+      "deduplication_context": "Coordinator deduplicates against existing method/provenance work; no GitHub mutation in this review.",
+      "no_fix_performed": true
+    },
+    {
+      "finding_id": "W09-ROW-SULFUR-METHOD-001",
+      "title": "Sulfur material judgment emitted as lexical matching",
+      "certainty": "confirmed",
+      "area": "provenance",
+      "severity": "major",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0264",
+        "B-CONDITIONAL-ROW-0264-COMMENT-ALTERNATIVE"
+      ],
+      "owner": "data/ingredients/mapped/Sulfur.yaml",
+      "owner_sha256": "eff9acd458d8e3a2c12fd743f523444001e30d64ce5710d9bc902fef8c716103",
+      "row_sha256": "e85c5ca5ab00c18cedc8f221698e948e3cbcb9760793a137d42a37009dfa01ed",
+      "before_row_sha256": "40b06aa67aa944c0061512bdc5c533bfeb683217c071239aa00502531c0b7972",
+      "field_paths": [
+        "mapping_justification"
+      ],
+      "description": "Whole owner evidence explicitly says CURATOR_JUDGMENT and explains weighable sulfur material versus sulfur atom/polysulfur. History[16] records #368 CHEBI26833->CHEBI33403 correction, duplicate absorption and rejected atom/polysulfur labels. Later source alias events do not record a new lexical resolution. CHEBI33403 OLS primary label is elemental sulfur; only listed obo_synonym is elemental sulphur with hasRelatedSynonym scope. Source preferred Sulfur is not a captured primary-label match. DSMZ1092/854/897 explicitly use weighed sulfur(powdered) and separate its handling from dissolved medium/stock inputs, supporting the material interpretation. The current EXACT_MATCH-derived LexicalMatching method is unsupported by the affirmative judgment trace. Both native row and optional retained-comment full row contain the same method claim; retaining the accurate historical correction comment does not repair it.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Preserve supported identity and authentic history; correct actual method provenance through accountable owner/native derivation after coordinator filing.",
+      "acceptance_conditions": [
+        "Preserve elemental-sulfur identity, original rejected labels, complete histories and source preparation holds; correct method provenance through authorized owner/native derivation and re-review exact complete row.",
+        "Prefer retaining the historical #368 explanation as an unselected complete-row alternative once method corrected: it truthfully explains material/atom scope. Selection still belongs to coordinator."
+      ],
+      "evidence_ids_or_locators": [
+        "RS-062-PRIMARY-004",
+        "RS-062-PRIMARY-005",
+        "RS-062-PRIMARY-006",
+        "RS-062-PRIMARY-007",
+        "CHEM-CAP-c108c1a21b52d95b"
+      ],
+      "independent_reviews": [
+        "skeptical/decisions.json",
+        "skeptical-methods/ADJUDICATION.json"
+      ],
+      "deduplication_context": "Coordinator deduplicates against existing method/provenance work; no GitHub mutation in this review.",
+      "no_fix_performed": true
+    },
+    {
+      "finding_id": "W09-ROW-DIARSENIC-METHOD-001",
+      "title": "Diarsenic ratio/representation judgment emitted as lexical matching",
+      "certainty": "confirmed",
+      "area": "provenance",
+      "severity": "major",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0407"
+      ],
+      "owner": "data/ingredients/mapped/Diarsenic_Trioxide.yaml",
+      "owner_sha256": "8d630caa382201110a476192206856c823447390b3576c17e3b008948fa7c36b",
+      "row_sha256": "bb117ee83138475fae95f661b0923aeac48c727609150fb1b425d6cfc72a43b6",
+      "before_row_sha256": null,
+      "field_paths": [
+        "mapping_justification"
+      ],
+      "description": "Original RS074 decision explicitly compares source empiricalAs2O3 with CHEBI30621 molecular depictionAs4O6, consults definition2:3 and PubChemCID14888, rejects arsenite replacement, and only then proposes the minimal exact oxide owner. Owner evidence and history retain that representation judgment. This affirmative trace is stronger than merely observing LLM authorship. Official ChEBI primary label is diarsenic trioxide and As2O3 is a synonym; OLS search capture classifies As2O3 among related_synonyms while its exact_synonym is the tetraarsoxane structural name. Current preferred-label equality was adopted after the documented reasoning and does not itself establish a performed primary-label lookup. The identity judgment is chemically supported at the oxide-reagent scope: official definition gives As:O2:3; primary CCAP UCM weighsAs2O3 separately from NaOH-containing primary stock; PubChem captures empirical formula and As4O6 representation corroboration. The defect concerns published LexicalMatching as the recorded method, not forcing a different oxide or an arsenite ion identity.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Preserve supported identity and authentic history; correct actual method provenance through accountable owner/native derivation after coordinator filing.",
+      "acceptance_conditions": [
+        "Root files/deduplicates before remediation; preserve minimalCHEBI30621 identity, original empirical-formula alias and complete judgment history. Correct actual method provenance under native contracts and re-review exact whole row.",
+        "Keep molecular-weight/polymorph/lot claims absent and the alkaline stock/preparation-level quantity correction hold distinct. Do not substitute a synonym grade based on unperformed uniqueness lookup.",
+        "If an accountable author actually performs and records a separate current primary-label resolution consistent with §0, independently assess those new bytes; preserve the original ratio/representation judgment without fabricating a historical lookup."
+      ],
+      "evidence_ids_or_locators": [
+        "RS-074-PRIMARY-000",
+        "RS-074-PRIMARY-001",
+        "RS-074-REPRESENTATION-2000d6d05dbe",
+        "RS-074-REPRESENTATION-5f9314de8d66",
+        "RS-074-REPRESENTATION-a5dafd1d45bb"
+      ],
+      "independent_reviews": [
+        "skeptical/decisions.json",
+        "skeptical-methods/ADJUDICATION.json"
+      ],
+      "deduplication_context": "Coordinator deduplicates against existing method/provenance work; no GitHub mutation in this review.",
+      "no_fix_performed": true
+    },
+    {
+      "finding_id": "W09-ROW-BENZENETRIOL-METHOD-TRACE-OBSERVATION",
+      "title": "Benzene1,2,4triol actual mapping-method trace is incomplete",
+      "certainty": "provisional",
+      "area": "provenance",
+      "severity": "minor",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0336"
+      ],
+      "owner": "data/ingredients/mapped/Benzene_1_2_4_triol.yaml",
+      "owner_sha256": "f2f3758b7b3793052a5b644bbfdbf78799ee7d412cc82982566b01f1ecef39d1",
+      "row_sha256": "8845a048538144b408baa574583d0a799a602704bc6d68efa5cf48fa4255d1dd",
+      "before_row_sha256": null,
+      "field_paths": [
+        "mapping_justification"
+      ],
+      "description": "Identity and 1,2,4 substitution pattern are supported, but the exact performed name-resolution route is not established. Equal adopted primary labels and LLM authorship alone neither prove nor disprove LexicalMatching.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Retain supported chemical identity while requesting the exact performed method trace or a truthfully performed current name-resolution event.",
+      "acceptance_conditions": [
+        "Before affirming the method field without limitation, accountable source author should provide the actual name-resolution trace or a truthfully performed current primary-label resolution event while preserving the historical source-synonym path.",
+        "Identity and source substitution-pattern support remain valid; method evidence gap must remain visible in complete-row admission decision."
+      ],
+      "evidence_ids_or_locators": [
+        "RS-043-PRIMARY-000",
+        "RS-043-PRIMARY-002"
+      ],
+      "independent_reviews": [
+        "skeptical/decisions.json",
+        "skeptical-methods/ADJUDICATION.json"
+      ],
+      "deduplication_context": "Coordinator deduplicates against existing method/provenance work; no GitHub mutation in this review.",
+      "no_fix_performed": true
+    },
+    {
+      "finding_id": "W09-ROW-BICARBONATE-CONTINUITY-001",
+      "title": "Omitted stock preparation facts used as positive distinct-owner evidence",
+      "certainty": "confirmed",
+      "area": "ownership",
+      "severity": "major",
+      "status": "open",
+      "target_ids": [
+        "B-CONDITIONAL-ROW-0637"
+      ],
+      "owner": "data/ingredients/mapped/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+      "owner_sha256": "f7aca68cf65299a813290c8831a568126f3f18eb4ecf50dec60c8f178246a61a",
+      "row_sha256": "88dc1f4938389de841c6de4454fc3e699ec018e92eb68a859646e56ea0748e5a",
+      "before_row_sha256": null,
+      "field_paths": [
+        "object_id",
+        "owner.notes",
+        "owner.ontology_mapping.evidence"
+      ],
+      "description": "NBRC1257/1321 shared literal8.4g NaHCO3 +100mL water, CO2 saturation and sealed autoclaving are supported. Missing prior saturation/final-volume detail in generic84g/L/J451 proves neither equality nor distinct identity; withhold the positive distinct-owner/coinstallation conclusion.",
+      "rule": "MAPPING_SEMANTICS section0/3/6 and actual performed-method provenance; complete row scope",
+      "bounded_followup": "Coordinator files/deduplicates; accountable author adjudicates generic84g/L versus NBRC1257/1321 nominal stock continuity without missing-facts-as-difference/equality, arbitrary merge or source-number identities.",
+      "acceptance_conditions": [
+        "Retain complete literal NBRC1257/1321 recipe, preparation and union.",
+        "Supply a scientific shared nominal-scope decision or positive formulation distinction; hold only affected independent installation/routing until resolved.",
+        "Preserve generic J451 identity/history and unquantified CO2/final-volume facts."
+      ],
+      "evidence_ids_or_locators": [
+        "skeptical/findings.json; exact NBRC1321/NBRC1257/J451 captures"
+      ],
+      "independent_reviews": [
+        "skeptical/findings.json"
+      ],
+      "deduplication_context": "CHEM-COMP-006/#1237 is raw-pointer alias context, not owner-continuity adjudication",
+      "no_fix_performed": true
+    }
+  ],
+  "retained_known_holds": [
+    {
+      "finding_id": "CHEM-COMP-002",
+      "issue": "1237",
+      "requests": [
+        "B-CONDITIONAL-ROW-0556",
+        "B-CONDITIONAL-ROW-0651"
+      ],
+      "status": "OPEN_UNCHANGED",
+      "description": "JCM317/NBRC1020 nominal Se/W overlap: missing hydrate qualifiers establish neither identity nor distinctness; do not merge or co-install both as proved-distinct owners. NBRC824 missing water denominator remains excluded.",
+      "acceptance_condition": "Evidence for supplied-form/applicability distinction or separately reviewed common nominal scope, with preserved original source details and routing."
+    }
+  ],
+  "adjudicated_challenges": [
+    {
+      "request_id": "B-CONDITIONAL-ROW-0207",
+      "input_binding": {
+        "owner": "data/ingredients/mapped/Oleic_Acid.yaml",
+        "candidate_payload_sha256": "2cfb484f60c62bd956b8248bae0bc82c361e09b3f031411d62e741e0ca125d54",
+        "before_row_sha256": "2b65dc5c92fca08a2e807aad7be431b8953728a8facfb00a4af33bd362464fb8",
+        "native_row_sha256": "4708e2b9499373d15f2a421b8ad37acbb6415e58ba39e668cd89afe77f0546f2",
+        "proposed_retained_comment_row_sha256": null,
+        "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/payloads/RS-063-ALIAS.yaml"
+      },
+      "reviewer": "/root/row_method_adjudication",
+      "finding_id": "W09-ROW-OLEIC-BROAD-ALIASES-001",
+      "disposition": "PROVISIONAL_DROP_CONCERN_NOT_CONFIRMED_KEEP_WITH_SCOPED_LIMIT",
+      "reasons": [
+        "Official ChEBI backend16196 defines cis/Z octadec9enoic acid and explicitly lists FA18:1 as ChEBI-source SYNONYM(statusC) and Octadec-9-enoic acid as ChEMBL-source SYNONYM(statusC). These are genuine recorded names, not an inferred broadMatch label copied without its predicate.",
+        "Each literal is less specific than a fully stereodescriptive name. That fact alone does not establish a false synonym under §3, which allows legitimate shared names. Owner preferred Oleic acid, CAS112-80-1, cis-specific InChI and current supplier O1008 support a specific cis-oleic record. ATCC1507/173 primary OADC recipes expressly name SigmaO-1008; manufacturer captured lines84-86 identify cis aliases and lines104-106 CAS112-80-1.",
+        "An ontology synonym alone would not prove a source identity; the independent original recipe/product linkage resolves this owner context. Existing evidence does not justify forcing these two names to REJECTED_LABEL solely because the strings omit position/E/Z.",
+        "Recommend KEEP as existing owner-scoped names. This does not assert either string is a globally unique chemical identifier or license mapping a future unspecified FA18:1 occurrence, positional isomer, trans-isomer or salt to this owner without source assessment."
+      ],
+      "evidence_ids": [
+        "RS-063-PRIMARY-003",
+        "RS-063-PRIMARY-004",
+        "RS-063-PRIMARY-005",
+        "RS-063-SUPPLIER-RESOLVED"
+      ],
+      "bounded_acceptance_conditions": [
+        "Preserve official synonym-source context and all source-specific identity/lot limits. Do not file a confirmed scientific DROP based only on missing qualifiers.",
+        "Any distinct owned-name exclusivity SUPPRESS decision needs its own actual preferred-owner/sidecar evidence; this bounded adjudication does not decide it."
+      ],
+      "limits": [
+        "The backend names.type=SYNONYM does not expose OBO exact/related scope, so no typedExactSynonym claim is made. No new ontology retrieval occurred. Current catalogue purity does not establish historical lot purity; reagent remains distinct from prepared OADC."
+      ]
+    }
+  ],
+  "report_correction_note": "Original material provisional Sulfur narrative said exact synonym; distinct ontology readback identifies hasRelatedSynonym. The immutable original is preserved and final method finding uses the actual annotation.",
+  "source_changes": false,
+  "issue_filing_owner": "Campaign coordinator; report before any remediation."
+}

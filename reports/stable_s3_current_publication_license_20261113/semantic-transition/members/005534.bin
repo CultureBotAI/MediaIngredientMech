@@ -1,0 +1,212 @@
+id: CultureMech:001236
+name: mm3
+original_name: MM3
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_range:
+  min: 5.8
+  max: 6.0
+media_term:
+  preferred_term: DSMZ Medium 1781
+  term:
+    id: mediadive.medium:1781
+    label: MM3
+notes: 'Source: DSMZ'
+ingredients:
+- preferred_term: KH2PO4
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: (NH4)2SO4
+  term:
+    id: CHEBI:62946
+    label: ammonium sulfate
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:62946
+    label: ammonium sulfate
+- preferred_term: MgSO4 x 7 H2O
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: CaCl2 x 2 H2O
+  term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+  concentration:
+    value: '0.02'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+- preferred_term: Yeast extract
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+- preferred_term: alpha-D-Glucose
+  term:
+    id: CHEBI:17925
+    label: alpha-D-glucose
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17925
+    label: alpha-D-glucose
+- preferred_term: Vitamin B12
+  term:
+    id: CHEBI:176843
+    label: vitamin B12
+  concentration:
+    value: '0.017'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:176843
+    label: vitamin B12
+- preferred_term: 4-aminobenzoate
+  term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+  concentration:
+    value: '0.013'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  concentration:
+    value: '0.003'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15956
+    label: biotin
+- preferred_term: Nicotinic acid
+  term:
+    id: CHEBI:15940
+    label: nicotinic acid
+  concentration:
+    value: '0.033'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15940
+    label: nicotinic acid
+- preferred_term: Hemicalcium D-(+)-pantothenate
+  concentration:
+    value: '0.017'
+    unit: G_PER_L
+- preferred_term: Pyridoxamine hydrochloride
+  term:
+    id: CHEBI:131531
+    label: pyridoxamine hydrochloride
+  concentration:
+    value: '0.05'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:131531
+    label: pyridoxamine hydrochloride
+- preferred_term: Thiamine-HCl x 2 H2O
+  term:
+    id: CHEBI:132751
+    label: thiamine hydrochloride dihydrate
+  concentration:
+    value: '0.033'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:132751
+    label: thiamine hydrochloride dihydrate
+- preferred_term: DL-6,8-thioctic acid
+  term:
+    id: CHEBI:16494
+    label: lipoic acid
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:16494
+    label: lipoic acid
+- preferred_term: Riboflavin
+  term:
+    id: CHEBI:17015
+    label: riboflavin
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17015
+    label: riboflavin
+- preferred_term: Folic acid
+  term:
+    id: CHEBI:27470
+    label: folic acid
+  concentration:
+    value: '0.004'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:27470
+    label: folic acid
+- preferred_term: N-Acetylglucosamine
+  term:
+    id: CHEBI:59640
+    label: N-acetylglucosamine
+  concentration:
+    value: '100'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:59640
+    label: N-acetylglucosamine
+preparation_steps:
+- step_number: 1
+  action: FILTER_STERILIZE
+  description: Filter sterilize the solution.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.456350Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1781'
+- timestamp: '2026-03-13T06:19:02.471218Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001236'
+- timestamp: '2026-03-17T06:29:51.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:14.300948+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MM3" to "mm3" for consistent matching
+- timestamp: '2026-05-20T06:01:58.131553+00:00'
+  curator: migrate_ph_range.py
+  action: MIGRATED_PH_RANGE
+  notes: 'ph_range ''5.8-6'' -> {''min'': 5.8, ''max'': 6.0}'
+- timestamp: '2026-06-05T07:41:35.221426+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 15 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:47:08.228337+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 2 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.

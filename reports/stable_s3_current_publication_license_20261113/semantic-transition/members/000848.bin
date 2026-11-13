@@ -1,0 +1,74 @@
+identifier: cas:576-42-1
+preferred_term: D-Saccharic acid potassium salt
+ontology_mapping:
+  ontology_id: CHEBI:16002
+  ontology_label: D-glucaric acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 576-42-1 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='D-Saccharic acid
+      potassium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'narrowMatch parent CHEBI:26218 (''potassium salt'') -> CHEBI:16002 (''D-glucaric
+      acid''). The previous parent was the class of all potassium salts: it retained
+      the counterion and discarded the compound, collapsing unrelated ingredients
+      onto one node. Chosen because it is saccharic acid is glucaric acid; the label
+      specifies the D- form. The record stays cas-primary per MAPPING_SEMANTICS §3
+      step 2; only the parent moves.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:576-42-1 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.105100+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:40.860894+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C6H9KO8; smiles=C(C(C(C(=O)[O-])O)O)(C(C(=O)O)O)O.[K+];
+    inchi=InChI=1S/C6H10O8.K/c7-1(3(9)5(11)12)2(8)4(10)6(13)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.800879+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:45:19.003435+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26218 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26218 'potassium salt' -> CHEBI:16002 'D-glucaric
+    acid' (#322); saccharic acid is glucaric acid; the label specifies the D- form.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 576-42-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C6H9KO8
+  smiles: C(C(C(C(=O)[O-])O)O)(C(C(=O)O)O)O.[K+]
+  inchi: InChI=1S/C6H10O8.K/c7-1(3(9)5(11)12)2(8)4(10)6(13)14;/h1-4,7-10H,(H,11,12)(H,13,14);/q;+1/p-1/t1-,2-,3-,4+;/m0./s1
+  pubchem_cid: 23674495
+ingredient_type: SINGLE_INGREDIENT

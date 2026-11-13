@@ -1,0 +1,139 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792
+preferred_term: Wolfe mineral elixir (DSMZ792)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792
+  ontology_label: Wolfe mineral elixir (DSMZ792)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    notes: 'JCM 470 and DSMZ 792 describe the same fourteen named salt inputs and
+      quantities in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM
+      writes MnSO4·xH2O while DSMZ specifies the monohydrate; x is not established
+      to differ from 1. This is compatible evidence with unresolved reagent hydration,
+      not proof of different preparations. Source accessions and their occurrence
+      routes remain separate provenance. The identifier is a conditional historical
+      proposal handle; no winning owner, merge, simultaneous installation or complete
+      component grounding is approved. Coordinator reconciliation under #1237 must
+      preserve both source assertions, pH method and all inherited holds.'
+notes: 'JCM 470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+  in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+  while DSMZ specifies the monohydrate; x is not established to differ from 1. This
+  is compatible evidence with unresolved reagent hydration, not proof of different
+  preparations. Source accessions and their occurrence routes remain separate provenance.
+  The identifier is a conditional historical proposal handle; no winning owner, merge,
+  simultaneous installation or complete component grounding is approved. Coordinator
+  reconciliation under #1237 must preserve both source assertions, pH method and all
+  inherited holds. Verbatim source-only labels retained as provenance, excluded from
+  globally resolving aliases: ["Wolfe''s mineral elixir"].'
+components:
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 30g
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  source: 5g; DSMZ792 prints multiplication x H2O, monohydrate
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 10g
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: KAl(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  source: 0.18g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: (NH4)2Ni(SO4)2·6H2O
+  reference_scope: UNMAPPED
+  source: 2.8g
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1000ml; acidifiedpH1
+- component_name: Dilute sulfuric acid
+  reference_scope: UNMAPPED
+  source: to waterpH1; amount unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    source_record: Wolfe mineral elixir (DSMZ792)
+    notes: 'JCM 470 and DSMZ 792 describe the same fourteen named salt inputs and
+      quantities in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM
+      writes MnSO4·xH2O while DSMZ specifies the monohydrate; x is not established
+      to differ from 1. This is compatible evidence with unresolved reagent hydration,
+      not proof of different preparations. Source accessions and their occurrence
+      routes remain separate provenance. The identifier is a conditional historical
+      proposal handle; no winning owner, merge, simultaneous installation or complete
+      component grounding is approved. Coordinator reconciliation under #1237 must
+      preserve both source assertions, pH method and all inherited holds. Component
+      inputs and quantities remain transcribed from this entry’s cited source.'
+  notes: 'JCM 470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+    in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+    while DSMZ specifies the monohydrate; x is not established to differ from 1. This
+    is compatible evidence with unresolved reagent hydration, not proof of different
+    preparations. Source accessions and their occurrence routes remain separate provenance.
+    The identifier is a conditional historical proposal handle; no winning owner,
+    merge, simultaneous installation or complete component grounding is approved.
+    Coordinator reconciliation under #1237 must preserve both source assertions, pH
+    method and all inherited holds. The transcribed components are source assertions,
+    not evidence of cross-source disjointness.'
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral
+    elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to
+    fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source
+    assertion. No generic Wolfe elixir alias may resolve both formulations globally.
+    Independent correction: Remove newly added ambiguous global aliases; preserve
+    exact raw labels in source ledger and notes. Isolated proposal only; all source
+    and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

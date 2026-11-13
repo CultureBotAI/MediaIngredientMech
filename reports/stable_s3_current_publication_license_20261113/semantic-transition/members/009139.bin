@@ -1,0 +1,126 @@
+identifier: kgmicrobe.ingredient:bacto_heart_infusion_broth
+preferred_term: Bacto Heart Infusion Broth
+synonyms:
+- synonym_text: Bacto Heart Infusion Broth
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Bacto Heart Infusion Broth (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1460); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.464468+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Infusion')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bacto_Heart_Infusion_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **supplier-branded,
+    dehydrated complete microbiological broth medium**, not a single chemical, salt/hydrate,
+    buffer, or tissue extract alone. “Bacto” and “Difco” are trademarks associated
+    with Difco products now supplied by BD; therefore, “Bacto Heart Infusion Broth”
+    carries supplier/formulation scope rather than merely naming a generic chemical
+    substance. The pre No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Bacto Heart Infusion Broth (Difco)'' (x3 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed catalog-bound existing-owner promotion and primary-source literal
+    composition. Original MediaDive1460 explicitly identifiesBD238400; BD catalog
+    confirmsDifco HeartInfusionBroth. ATCC254 gives25g/L and10g beef-heart infusion
+    solids from500g tissue,10g tryptose,5gNaCl, with agar omitted for broth. This
+    is distinct from BHI and heartinfusionagar.
+  llm_assisted: true
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.496866+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-148. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1460); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bacto_heart_infusion_broth
+  ontology_label: Bacto Heart Infusion Broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/8402cc43252343248e557b29618fce30.ashx
+    notes: Original MediaDive1460 explicitly identifiesBD238400; BD catalog confirmsDifco
+      HeartInfusionBroth. ATCC254 gives25g/L and10g beef-heart infusion solids from500g
+      tissue,10g tryptose,5gNaCl, with agar omitted for broth. This is distinct from
+      BHI and heartinfusionagar.
+supplied_form:
+- name: BD Difco Heart Infusion Broth
+  supplier: BD Difco
+  catalog_number: '238400'
+  form: dehydrated broth powder
+components:
+- component_name: Beef Heart, Infusion from500g
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_L
+- component_name: Tryptose
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_L
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/8402cc43252343248e557b29618fce30.ashx
+    source_record: ATCC254 broth-medium and scratch-formula sections
+    notes: Original MediaDive1460 explicitly identifiesBD238400; BD catalog confirmsDifco
+      HeartInfusionBroth. ATCC254 gives25g/L and10g beef-heart infusion solids from500g
+      tissue,10g tryptose,5gNaCl, with agar omitted for broth. This is distinct from
+      BHI and heartinfusionagar.
+  notes: Literal constituent names, without asserted chemical identifiers. Amounts
+    are per litre of reconstituted broth; water is preparation solvent, not dry product
+    constituent.

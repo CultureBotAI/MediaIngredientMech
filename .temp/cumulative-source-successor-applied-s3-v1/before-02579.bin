@@ -1,0 +1,118 @@
+identifier: CHEBI:53424
+preferred_term: Tween 20
+ontology_mapping:
+  ontology_id: CHEBI:53424
+  ontology_label: polysorbate 20
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Surfactant; Properties: Defined component, Organic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.929943+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9005-64-5 from CultureBotHT compounds_to_cas.csv (matched:
+    Tween 20)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T01:05:11.483996+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:9784 -> CHEBI:53424 (old label: ''Tween 20'',
+    new label: ''polysorbate 20''). Reason: Previous CHEBI:9784 no longer resolves
+    in CHEBI. Stripped 0 kg_microbe-sourced synonyms that were contaminated by the
+    wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.784406+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.866721+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=(C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C18H34O6; inchi=InChI=1S/C26H50O10/c1-2-3-4-5-6-7-8-9-10-11-24(30);
+    smiles=[H][C@]1(C(COCCOC(=O)CCCCCCCCCCC)OCCO)OCC(OCCO)[C@
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.081607+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113285+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SURFACTANT (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'polysorbate 20'; it matches the ChEBI
+    synonym 'Tween 20' on CHEBI:53424. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520037+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:9784 -> CHEBI:53424 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002578; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9005-64-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:45.929939+00:00'
+  molecular_formula: (C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C18H34O6
+  inchi: InChI=1S/C26H50O10/c1-2-3-4-5-6-7-8-9-10-11-24(30)34-19-18-31-20-22(32-15-12-27)26-25(35-17-14-29)23(21-36-26)33-16-13-28/h22-23,25-29H,2-21H2,1H3/t22?,23?,25-,26-/m1/s1
+  smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
+kg_microbe_node_id: CHEBI:53424
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SURFACTANT
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Surfactant'
+mim_id: MIM:0002578
+legacy_identifiers:
+- MIM:Tween_20
+- CHEBI:53424

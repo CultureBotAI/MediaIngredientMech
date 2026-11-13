@@ -1,0 +1,98 @@
+identifier: cas:10294-41-4
+preferred_term: cerium(III) nitrate hexahydrate
+synonyms:
+- synonym_text: CeNO33 x 6 H2O
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+- synonym_text: Ce(NO3)3 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mediadive.ingredient:1587
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic salt hydrate and left unmapped because
+    the source formula appears to abbreviate cerium nitrate hexahydrate but is not
+    locally verified as an exact ontology identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CeNO33_x_6_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended status:
+    `UNMAPPED`**, while normalizing the local chemical identity and populating source-backed
+    chemical properties. This is preferable to `MAPPED` because the literature verifies
+    the interpretation and formula but does not verify a stable ontology identifier
+    or CAS RN. No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:21:11.143703+00:00'
+  curator: all_unmatched_20261107_worker02_research_c
+  action: PROMOTED_TO_MAPPED
+  changes: Resolve mediadive.ingredient:1587 Ce(NO3)3 x 6 H2O as cerium(III) nitrate
+    hexahydrate, primary cas:10294-41-4, with skos:broadMatch to mesh:M0319657 cerium
+    nitrate (Ce(+3)); preserve source spellings and all previous history. Proposal
+    only; reviewed evidence in reports/all_unmatched_20261107/worker-02/c/. Inherited
+    publication support is withdrawn for changed bytes; coordinator must re-review
+    the complete payload. Preserve flattened producer label CeNO33 x 6 H2O as non-resolving
+    REJECTED_LABEL with original source; verified provider parentheses distinguish
+    the nitrate stoichiometry.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a formula shorthand
+  for a cerium nitrate hydrate; left unmapped pending exact formula/CAS evidence.
+  The 2026-11-08 source review resolves the former formula/CAS gap with independent
+  primary evidence. The exact hydrate CAS is distinct from the broader MeSH family;
+  see campaign proposal and retained historical notes.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: mesh:M0319657
+  ontology_label: cerium nitrate (Ce(+3))
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://mediadive.dsmz.de/rest/ingredient/1587
+    notes: Exact raw formula Ce(NO3)3 x 6 H2O and CAS10294-41-4 support the hexahydrate;
+      independent supplier and PubChem exact-form evidence is captured in the worker02
+      campaign.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://id.nlm.nih.gov/mesh/M0319657.json
+    notes: Closest verified eligible broader nitrate family in the captured name/CAS
+      search. NARROW_MATCH emits skos:broadMatch; descriptor is not exact hydrate
+      identity. Registry/identity row retains cas:10294-41-4. An exact SNOMED substance
+      search hit exists but SNOMED is outside the frozen schema OntologySourceEnum.
+chemical_properties:
+  cas_rn: 10294-41-4
+  molecular_formula: CeH12N3O15
+  molecular_weight: 434.22
+  inchi: InChI=1S/Ce.3NO3.6H2O/c;3*2-1(3)4;;;;;;/h;;;;6*1H2/q+3;3*-1;;;;;;
+  data_source: PubChem CID16211466; independent Sigma-Aldrich product identity; MediaDive
+    source formula/CAS
+  retrieval_date: '2026-11-08T05:08:52.306616+00:00'
+supplied_form:
+- name: cerium(III) nitrate hexahydrate
+  cas_rn: 10294-41-4
+  form: hexahydrate
+  notes: 'Source-specific formula and CAS establish six waters; no supplier or catalogue
+    is attributed to the original recipe. Independent supplier comparison: Sigma-Aldrich238538.'

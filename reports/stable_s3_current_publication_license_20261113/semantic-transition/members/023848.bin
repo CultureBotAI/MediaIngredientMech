@@ -1,0 +1,68 @@
+identifier: UNMAPPED_0179
+preferred_term: 5-methylbenzimidazolyl cobamide
+synonyms:
+- synonym_text: 5-methylbenzimidazolyl cobamide
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: 5-MeBza-Cba
+  synonym_type: ABBREVIATION
+  source: edison_deep_research
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:12:15Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_COBAMIDE_VARIANT
+  changes: Classified as a single cobamide-family ingredient and left unmapped because
+    no exact local ontology identity for the 5-methylbenzimidazolyl lower-ligand variant
+    was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-17T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: discrete cobamide variant (lower ligand
+    = 5-methylbenzimidazole; "5-MeBza-Cba"); no stable CHEBI/CAS, and mapping to cobalamin
+    would be chemically incorrect at the lower-ligand level. Kept UNMAPPED.'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/5-methylbenzimidazolyl_Cobamide-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Executive recommendation — Retain **`UNMAPPED`**.
+    The label denotes a chemically meaningful, discrete cobamide variant defined by
+    a **5-methylbenzimidazole lower ligand**, but it does not specify the variable
+    upper axial ligand. No exact stable ontology CURIE, CAS Registry Number, or unique
+    source-backed formula was verified. Therefore, create **no SSSOM identity row**
+    at present. In particular No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002693; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a specific
+  cobamide variant; not identity-mapped to generic cobamide or cobalamin.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002693
+legacy_identifiers:
+- MIM:5-methylbenzimidazolyl_Cobamide
+- UNMAPPED_0179

@@ -1,0 +1,133 @@
+{
+  "case_indices": [
+    179
+  ],
+  "search_regex": "\\bs6\\b",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/S6_Medium.yaml",
+      "sha256": "b695c49aee4fb2ded3824eda4850b35a0e21fbc1fe4db5eaa8e89e95de954c8e",
+      "record": {
+        "identifier": "UNMAPPED_0512",
+        "preferred_term": "S6 medium",
+        "synonyms": [
+          {
+            "synonym_text": "S6 medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:50:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named S6 medium/formulation and left unmapped pending recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/S6_Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** “S6 medium” is a **named culture-medium formulation**, not a single chemical, salt/hydrate, buffer molecule, extract, or generic medium-component family. The strongest retrievable lineage is its use as an **S6 liquid medium for *Bacillus subtilis***, with the formulation attributed to Fujita and Freese (1981). A later paper explicitly distinguishes S6 from tryptose  No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "S6 medium",
+        "UNMAPPED_0512",
+        "S6 medium"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:003267",
+      "recipe_label": "s8_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/s8_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "S6 medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "S6 medium",
+      "mim_matched_label": "S6 medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "1000",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"1000\"},\"preferred_term\":\"S6 medium\"}"
+    },
+    {
+      "recipe_id": "CultureMech:012803",
+      "recipe_label": "Main sol. J91",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_3721_Main_sol_J91.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "S6 medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1622",
+      "mim_preferred_term": "S6 medium",
+      "mim_matched_label": "S6 medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "1000",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"1000\"},\"preferred_term\":\"S6 medium\",\"term\":{\"id\":\"mediadive.compound:1622\",\"label\":\"S6 medium\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_3721_Main_sol_J91.yaml",
+      "sha256": "1547601dbffcbcceaeb1f13802917c35a8a71e86a78cbaedc73039f1f3dae15f",
+      "frozen_input_manifest_hash": "1547601dbffcbcceaeb1f13802917c35a8a71e86a78cbaedc73039f1f3dae15f",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/s8_medium.yaml",
+      "sha256": "323c7cdc2141b0cb9203787f21bcaf81ca21a5596d9add6d31ce838ef68b7392",
+      "frozen_input_manifest_hash": "323c7cdc2141b0cb9203787f21bcaf81ca21a5596d9add6d31ce838ef68b7392",
+      "matches_frozen": true
+    }
+  ]
+}

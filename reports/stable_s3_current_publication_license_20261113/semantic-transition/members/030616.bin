@@ -1,0 +1,58 @@
+identifier: UNMAPPED_0138
+preferred_term: Tryptone soya broth (Oxoid)
+synonyms:
+- synonym_text: Tryptone soya broth (Oxoid)
+  synonym_type: RAW_TEXT
+  source: extracted_from_trypticase_peptone_yaml
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:53:54.781350+00:00'
+  curator: audit_extract_complex_media_synonyms
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Trypticase_Peptone.yaml — 'Tryptone soya broth (Oxoid)'
+    is a complete media formulation, not a synonym of the base ingredient. Pending
+    curator re-mapping.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.987713+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Tryptone')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Tryptone_Soya_Broth_Oxoid-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended identity:** an **Oxoid-branded complete
+    microbiological broth medium**, corresponding to product **CM0129** (historically
+    also printed **CM 129**). It is a complex commercial formulation rather than a
+    single chemical, salt/hydrate, buffer alone, extract alone, or peptone ingredient.
+    Independent papers identify it as “Tryptone soya broth (Oxoid CM 129)” and “Tryptone
+    Soya Broth (CM012 No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002931; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Extracted from over-conflated Trypticase_Peptone.yaml synonyms
+ingredient_type: NAMED_MEDIUM
+mim_id: MIM:0002931
+legacy_identifiers:
+- MIM:Tryptone_Soya_Broth_Oxoid
+- UNMAPPED_0138

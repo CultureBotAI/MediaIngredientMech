@@ -1,0 +1,54 @@
+"""2026-11-11: genuine native inspection for one current pre-ID concept review."""
+from pathlib import Path
+from datetime import datetime, timezone
+import contextlib, hashlib, json, sys, types
+
+HERE=Path(__file__).resolve().parent
+TC=HERE.parents[1]
+PREFIX='.temp/stable-adoption1303-real-canary-inputs-v1'
+EVIDENCE='reports/separate-real-canary-chem99-inputs-v1'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+
+def main():
+    assert TC.name=='stable-adoption-real-canary-target'
+    assert sys.version_info[:2]==(3,13) and sys.executable.endswith('/stable-campaign-adoption-worktree/.venv/bin/python3')
+    sys.path.insert(0,str(TC/'src'))
+    pins={'context.json':'ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9',
+          'payloads.json':'21bd18ee7c5e5428c906d87dacd85dbbe6c97a252e524ecddb2408c3f3a0607a',
+          'targets.json':'7eb9f06aef2fc496812cb3696db0bb25a453d9e8332869e45fe43edcdb576711',
+          'UNASSESSED-REQUEST.json':'949863cd4406c92a7406304986ab34382115923722dadd9ca6e71c179d5b685a'}
+    for name,digest in pins.items():assert sha((TC/PREFIX/'inspection'/name).read_bytes())==digest
+    context=json.loads((TC/PREFIX/'inspection/context.json').read_bytes())
+    inputs={'AGENTS.md','MAPPING_SEMANTICS.md','conf/record_review.yaml','schema/record_review.yaml',
+        'scripts/record_review.py','src/mediaingredientmech/schema/mediaingredientmech.yaml',
+        '.claude/skills/review-ingredients/SKILL.md','.claude/skills/review-ingredients/reference/validation-rules.md',
+        'docs/record-reviews.md','docs/record-review-profile.md','docs/STABLE_ID_ADOPTION.md',
+        'data/ids/mim_id_registry.tsv','data/ids/mim_id_lifecycle.tsv',
+        str(Path(__file__).resolve().relative_to(TC)),PREFIX+'/eligibility-intake.json',
+        PREFIX+'/origin_accounting.json',PREFIX+'/origin_proof.json'}
+    inputs.update(PREFIX+'/inspection/'+name for name in pins)
+    inputs.update(EVIDENCE+'/'+name for name in ['chebi-16469.json','nbrc-1181.json','culturemech-estradiol.yaml','COPY-PROVENANCE.json'])
+    # Actual complete current owner bytes support the duplicate-boundary check.
+    assert len(context['target_inventory'])==2956
+    for name,digest in context['target_inventory'].items():
+        assert sha((TC/name).read_bytes())==digest;inputs.add(name)
+    helper_path=TC/'scripts/record_review.py';raw=helper_path.read_bytes()
+    native=types.ModuleType('_tc_chem99_primary_native_review');native.__file__=str(helper_path)
+    sys.modules[native.__name__]=native
+    exec(compile(raw,str(helper_path),'exec'),native.__dict__)
+    argv=['--repo-root',str(TC),'inspect','--targets',str(TC/PREFIX/'inspection/targets.json')]
+    for name in sorted(inputs):argv.extend(['--input',name])
+    out=HERE/'inspection';out.mkdir();started=datetime.now(timezone.utc).isoformat()
+    with (out/'COMMAND.json').open('x') as f:json.dump({'helper':str(helper_path),'helper_sha256':sha(raw),'entrypoint':'main(argv)','argv':argv,'cwd':str(TC)},f,indent=2)
+    with (out/'stdout.json').open('x') as stdout,(out/'stderr.txt').open('x') as stderr:
+        with contextlib.redirect_stdout(stdout),contextlib.redirect_stderr(stderr):
+            value=native.main(argv)
+    code=0 if value is None else int(value)
+    receipt={'started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),
+        'exit_code':code,'source_input_count':len(inputs),'native_helper_sha256':sha(raw),
+        'stdout_sha256':sha((out/'stdout.json').read_bytes()),'stderr_sha256':sha((out/'stderr.txt').read_bytes()),
+        'purpose':'Actual current native inspection only; no scientific judgment or allocation'}
+    with (out/'RESULT.json').open('x') as f:json.dump(receipt,f,indent=2)
+    print(json.dumps(receipt,indent=2));raise SystemExit(code)
+
+if __name__=='__main__':main()

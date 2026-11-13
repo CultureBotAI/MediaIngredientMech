@@ -1,0 +1,130 @@
+id: CultureMech:007451
+name: 1/10 Tryptic Soy Medium w/o Dextrose (pH 5.0)
+original_name: 1/10 Tryptic Soy Medium w/o Dextrose (pH 5.0)
+category: bacterial
+description: 1038. NBRC 1035.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: NBRC Medium 1035
+  term:
+    id: nbrc.medium:1035
+    label: NBRC Medium 1035
+ph_value: 5.0
+ingredients:
+- preferred_term: Bacto Tryptic Soy Broth w/o Dextrose (Difco)
+  concentration:
+    value: '2.75'
+    unit: G_PER_L
+  source: NBRC Medium 1035
+  notes: NBRC Medium 1035 lists 2.75 g Bacto Tryptic Soy Broth without dextrose.
+- preferred_term: NaCl
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: NBRC Medium 1035
+  notes: NBRC Medium 1035 lists 5 g NaCl.
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: K2HPO4
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+  source: NBRC Medium 1035
+  notes: NBRC Medium 1035 lists 2.5 g K2HPO4.
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: NBRC Medium 1035
+  notes: NBRC Medium 1035 lists 15 g agar if needed.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  source: NBRC Medium 1035
+  notes: NBRC Medium 1035 lists 1 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve Bacto Tryptic Soy Broth without dextrose, NaCl, K2HPO4, and
+    agar if needed in 1 L distilled water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 5.0.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Sterilize by autoclaving.
+curation_history:
+- timestamp: '2026-02-20T00:22:36.010533Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 1035, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=1035.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:09:32.652995Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 5 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.125937Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007451'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Bacto Tryptic Soy Broth w/o
+    Dextrose (Difco)2.75gNaCl5gK2HPO42.5gAgar (if needed)15gDistilled water1LpH 5.0'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.560436+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.537307+00:00'
+  curator: recover_nbrc_composition.py
+  action: Removed corrupt rows, kept curated composition
+  notes: Record already held a grounded ingredient list, so the NBRC medium 1035 page
+    was NOT used — it lists only the commercial premix. Dropped the empty-name row
+    and 0 unparsed solution blob(s) (#299).
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_nbrc_1038_score15.py
+  action: RESOLVED_NBRC_1038_SCORE15
+  changes: Replaced expanded TSB rows with NBRC Medium 1035 formula
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1035
+  notes: Added the NBRC Medium 1035 source term, replaced the expanded Tryptic Soy
+    Agar approximation with the official commercial-premix formula, and recorded pH
+    5.0.
+notes: 'Source: NBRC Medium 1035 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1035
+
+
+  NBRC lists 1/10 Tryptic Soy Medium without dextrose at pH 5.0, prepared from Bacto
+  Tryptic Soy Broth without dextrose, NaCl, K2HPO4, optional agar, and distilled water.'
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1035

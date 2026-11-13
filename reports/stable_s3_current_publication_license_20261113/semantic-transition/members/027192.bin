@@ -1,0 +1,1133 @@
+{
+  "timestamp": "2026-11-12T14:12:07.820445+00:00",
+  "status": "PRIVATE_GUARDED_PROPOSALS_ONLY",
+  "eventual_beforeimage": "Original completed TC, byte-identical to these two S records; fresh cumulative S2 required, preserving prior nine exact corrections.",
+  "operations": [
+    {
+      "mim_id": "MIM:0000862",
+      "issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1381"
+      ],
+      "before": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/D-limonene.yaml",
+        "sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+        "bytes": 1802
+      },
+      "current_S_before": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/data/ingredients/mapped/D-limonene.yaml",
+        "sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+        "bytes": 1802
+      },
+      "before_private_copy": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/before/data/ingredients/mapped/D-limonene.yaml",
+        "sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+        "bytes": 1802
+      },
+      "before_owner_path": "data/ingredients/mapped/D-limonene.yaml",
+      "after": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/proposed/data/ingredients/mapped/D-limonene.yaml",
+        "sha256": "30795b5e4f80ed6f88821c5532a64ecc8c883f8133bef86c024d637479340751",
+        "bytes": 4930
+      },
+      "after_owner_path": "data/ingredients/mapped/D-limonene.yaml",
+      "top_level_delta": {
+        "chemical_properties": {
+          "before_present": true,
+          "before": {
+            "cas_rn": "138-86-7",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "after_present": true,
+          "after": {
+            "cas_rn": "5989-27-5",
+            "data_source": "ChEBI:15382 official compound API; 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e",
+            "retrieval_date": "2026-11-12T14:01:48.755315+00:00"
+          }
+        },
+        "curation_history": {
+          "before_present": true,
+          "before": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:138-86-7 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:33.139534+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:13.848536+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-11-08T22:01:42+00:00",
+              "curator": "codex",
+              "action": "ASSIGNED_MIM_ID",
+              "changes": "#1265: assigned permanent MIM:0000862; retained mapping identifier and legacy aliases.",
+              "llm_assisted": true
+            }
+          ],
+          "after_present": true,
+          "after": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:138-86-7 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:33.139534+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:13.848536+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-11-08T22:01:42+00:00",
+              "curator": "codex",
+              "action": "ASSIGNED_MIM_ID",
+              "changes": "#1265: assigned permanent MIM:0000862; retained mapping identifier and legacy aliases.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-12T14:12:07.820445+00:00",
+              "curator": "codex_two_invalid_cas_source_proposals",
+              "action": "PROPOSED_SOURCE_CORRECTION",
+              "changes": "#1381: private exact source-correction proposal. The raw source explicitly names d-limonene; official three-star ChEBI15382 and government identity evidence establish the R form/CAS5989-27-5. Resolve the duplicate two-star ChEBI entry by matching structures and the explicit curated definition; do not conflate the separately named DL source or import mixed synonyms. Replace the invalid active primary/grounding/CAS property with CHEBI:15382 and sourced CAS 5989-27-5; mapping quality MANUAL_CURATION records explicit source/form adjudication. Remove only the disproved cas:138-86-7 resolving alias under the reviewed native owner-rejection policy. Preserve MIM:0000862, filename, genuine MIM slug, preferred term, all raw source synonyms, occurrences, original history, and all release/source/role holds. Do not mint, merge, split, import roles/components/structures, approve source bindings or declare publication. This proposal is not native application or scientific release approval. Exact rejected original assertion and original chemical-property provenance: {\"chemical_properties\":{\"cas_rn\":\"138-86-7\",\"data_source\":\"CultureBotHT compounds_to_cas.csv\",\"retrieval_date\":\"2026-04-29T06:51:33.117170+00:00\"},\"identifier\":\"cas:138-86-7\",\"legacy_identifiers\":[\"MIM:D-limonene\",\"cas:138-86-7\"],\"ontology_mapping\":{\"evidence\":[{\"evidence_type\":\"DATABASE_MATCH\",\"notes\":\"Imported from CultureBotHT. CAS-RN 138-86-7 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term.\",\"source\":\"CultureBotHT\"}],\"mapping_quality\":\"FALLBACK_REGISTRY\",\"ontology_id\":\"cas:138-86-7\",\"ontology_label\":\"d-limonene\",\"ontology_source\":\"CAS\"}}.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "Codex (exact model identifier was not recorded in the proposal receipt)"
+            }
+          ]
+        },
+        "identifier": {
+          "before_present": true,
+          "before": "cas:138-86-7",
+          "after_present": true,
+          "after": "CHEBI:15382"
+        },
+        "legacy_identifiers": {
+          "before_present": true,
+          "before": [
+            "MIM:D-limonene",
+            "cas:138-86-7"
+          ],
+          "after_present": true,
+          "after": [
+            "MIM:D-limonene"
+          ]
+        },
+        "ontology_mapping": {
+          "before_present": true,
+          "before": {
+            "ontology_id": "cas:138-86-7",
+            "ontology_label": "d-limonene",
+            "ontology_source": "CAS",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 138-86-7 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              }
+            ]
+          },
+          "after_present": true,
+          "after": {
+            "ontology_id": "CHEBI:15382",
+            "ontology_label": "(4R)-limonene",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "MANUAL_CURATION",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "https://www.ebi.ac.uk/chebi/CHEBI:15382",
+                "notes": "#1381: released three-star ChEBI (4R)-limonene explicitly defines the R form, lists d-limonene as a synonym and CAS 5989-27-5. Official API capture SHA256 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e. Chemical scope and stereochemical structure corroborate the named concept; no supplier, lot, purity or source-binding assertion is inferred."
+              },
+              {
+                "evidence_type": "CURATOR_JUDGMENT",
+                "source": "CultureBotHT compounds_to_cas.csv line 728; https://www.ebi.ac.uk/chebi/CHEBI:15382; https://www.ebi.ac.uk/chebi/CHEBI:748872",
+                "notes": "#1381: original source explicitly names d-limonene separately from its DL-limonene row. Select the defined three-star R-form ontology entry. The secondary two-star ChEMBL-submitted entry has the same stereochemical structure but mixed DL synonym baggage; no such synonyms are imported. MANUAL_CURATION records this explicit adjudication, not an automatic CAS or lexical lookup. The prior malformed registry assertion and source bytes remain fully preserved in curation history and the proposal evidence; all existing release/source/role holds remain."
+              }
+            ]
+          }
+        }
+      },
+      "rejected_identifiers": [
+        "cas:138-86-7"
+      ],
+      "rejected_labels": [],
+      "inherited_holds": [
+        {
+          "hold_kind": "entire_original_source_and_origin_context",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/.temp/stable-adoption1303-real-canary-inputs-v1/inspection/context.json",
+            "sha256": "ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9",
+            "bytes": 38130190
+          },
+          "selector": "/",
+          "retention": "Byte-identical original 1879-case,1022-origin context, including source evidence, origin accounting and holds; no status reclassification."
+        },
+        {
+          "hold_kind": "original_worker_history_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/HISTORY-OBLIGATIONS.json",
+            "sha256": "126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614",
+            "bytes": 170445
+          },
+          "selector": "/",
+          "retention": "Preserve original W01 13-item and W09 8-row historical findings/decisions exactly, with their original review identities."
+        },
+        {
+          "hold_kind": "original_suppression_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/SUPPRESSION-OBLIGATIONS.json",
+            "sha256": "20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac",
+            "bytes": 71268
+          },
+          "selector": "/",
+          "retention": "No suppression-history retirement or blanket synonym approval by a source delta."
+        },
+        {
+          "hold_kind": "exact_owner_prior_withhold_and_full_historical_chain",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/HISTORICAL-HOLDS.json",
+            "sha256": "74d47599347441a8ebc853eb5dc139fde9daedc4001a8c246b5028dea2bc3da8",
+            "bytes": 5451
+          },
+          "values": {
+            "status": "PRESERVED_WITHHOLD",
+            "entries": [
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-review.json",
+                  "sha256": "c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8",
+                  "bytes": 2682011
+                },
+                "selector": "decisions[source_position=953]",
+                "entry": {
+                  "source_position": 953,
+                  "row_sha256": "c27eb8887b768874389dacb49eb188214cd4fe1d407fd88b69b36e113da94375",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "evidence_key": "953"
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "sha256": "3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f",
+                  "bytes": 6066389
+                },
+                "selector": "entries.953",
+                "entry": {
+                  "row_sha256": "c27eb8887b768874389dacb49eb188214cd4fe1d407fd88b69b36e113da94375",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "owner_record_sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "identity_projection": {
+                    "kind": "mim-inherited-identity-projection/v1",
+                    "manifest": "reports/stable_ids_1265_20261108/migration.json",
+                    "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+                    "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+                    "original_report": "reports/sssom_completion_20260921/review.json",
+                    "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+                    "scientific_approval_added": false,
+                    "original_decision": {
+                      "source_position": 953,
+                      "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                      "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                      "disposition": "WITHHOLD",
+                      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                      "evidence_key": "953"
+                    },
+                    "original_owner_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707"
+                  }
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/sssom_completion_20260921/mapping-evidence.json",
+                  "sha256": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+                  "bytes": 4887723
+                },
+                "selector": "entries.953",
+                "entry": {
+                  "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "owner_record_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "basis": {
+                    "baseline_position": 957,
+                    "previous_decision": {
+                      "assertion_id": "MIM.review:acb5701d93b55b6056475f5bdea05f1720d218d8a3ddce6822f25b9aeb1e134f",
+                      "source_record": "mappings/ingredient_mappings.sssom.tsv",
+                      "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+                      "assertion_type": "mapping",
+                      "source_position": "957",
+                      "assertion_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                      "resolution_status": "OPEN",
+                      "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+                      "review_evidence": ""
+                    },
+                    "historical_record_review": "reports/yaml_record_review/D-limonene.md",
+                    "scoped_review": {
+                      "file": "mapping_review/concern_cohorts.json",
+                      "position": 957
+                    }
+                  }
+                }
+              }
+            ],
+            "historical_review_authority": "Prior scientific review, not primary chemical authority; no new positive disposition."
+          },
+          "retention": "Current WITHHOLD and original OPEN assertions remain; no mapping/source/role release promotion."
+        },
+        {
+          "hold_kind": "exact_original_owner_scope",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/D-limonene.yaml",
+            "sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+            "bytes": 1802
+          },
+          "values": {
+            "mim_id": "MIM:0000862",
+            "preferred_term": "d-limonene",
+            "synonyms": [],
+            "occurrence_statistics": {
+              "total_occurrences": 0,
+              "media_count": 0
+            },
+            "notes": null,
+            "roles": null,
+            "components": null,
+            "supplied_form": null
+          },
+          "retention": "No added source/product/lot/preparation/occurrence/role claims; absent fields remain absent."
+        }
+      ],
+      "residual_holds": [
+        {
+          "hold_kind": "entire_original_source_and_origin_context",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/.temp/stable-adoption1303-real-canary-inputs-v1/inspection/context.json",
+            "sha256": "ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9",
+            "bytes": 38130190
+          },
+          "selector": "/",
+          "retention": "Byte-identical original 1879-case,1022-origin context, including source evidence, origin accounting and holds; no status reclassification."
+        },
+        {
+          "hold_kind": "original_worker_history_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/HISTORY-OBLIGATIONS.json",
+            "sha256": "126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614",
+            "bytes": 170445
+          },
+          "selector": "/",
+          "retention": "Preserve original W01 13-item and W09 8-row historical findings/decisions exactly, with their original review identities."
+        },
+        {
+          "hold_kind": "original_suppression_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/SUPPRESSION-OBLIGATIONS.json",
+            "sha256": "20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac",
+            "bytes": 71268
+          },
+          "selector": "/",
+          "retention": "No suppression-history retirement or blanket synonym approval by a source delta."
+        },
+        {
+          "hold_kind": "exact_owner_prior_withhold_and_full_historical_chain",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/HISTORICAL-HOLDS.json",
+            "sha256": "74d47599347441a8ebc853eb5dc139fde9daedc4001a8c246b5028dea2bc3da8",
+            "bytes": 5451
+          },
+          "values": {
+            "status": "PRESERVED_WITHHOLD",
+            "entries": [
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-review.json",
+                  "sha256": "c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8",
+                  "bytes": 2682011
+                },
+                "selector": "decisions[source_position=953]",
+                "entry": {
+                  "source_position": 953,
+                  "row_sha256": "c27eb8887b768874389dacb49eb188214cd4fe1d407fd88b69b36e113da94375",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "evidence_key": "953"
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "sha256": "3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f",
+                  "bytes": 6066389
+                },
+                "selector": "entries.953",
+                "entry": {
+                  "row_sha256": "c27eb8887b768874389dacb49eb188214cd4fe1d407fd88b69b36e113da94375",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "owner_record_sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "identity_projection": {
+                    "kind": "mim-inherited-identity-projection/v1",
+                    "manifest": "reports/stable_ids_1265_20261108/migration.json",
+                    "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+                    "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+                    "original_report": "reports/sssom_completion_20260921/review.json",
+                    "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+                    "scientific_approval_added": false,
+                    "original_decision": {
+                      "source_position": 953,
+                      "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                      "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                      "disposition": "WITHHOLD",
+                      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                      "evidence_key": "953"
+                    },
+                    "original_owner_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707"
+                  }
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/sssom_completion_20260921/mapping-evidence.json",
+                  "sha256": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+                  "bytes": 4887723
+                },
+                "selector": "entries.953",
+                "entry": {
+                  "row_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                  "owner_record": "data/ingredients/mapped/D-limonene.yaml",
+                  "owner_record_sha256": "6c8b6d061c369d56085331ac64480d3e48b4b1cba763117f884afb9a8e562707",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: live OLS now has exact d-limonene ChEBI candidates and the stored CAS no longer resolves through PubChem name lookup.",
+                  "basis": {
+                    "baseline_position": 957,
+                    "previous_decision": {
+                      "assertion_id": "MIM.review:acb5701d93b55b6056475f5bdea05f1720d218d8a3ddce6822f25b9aeb1e134f",
+                      "source_record": "mappings/ingredient_mappings.sssom.tsv",
+                      "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+                      "assertion_type": "mapping",
+                      "source_position": "957",
+                      "assertion_sha256": "8dcf2691d01a3c49781f3cd595b021d5b3eeb8fc1cfa24a63e8623f8100e4fde",
+                      "resolution_status": "OPEN",
+                      "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+                      "review_evidence": ""
+                    },
+                    "historical_record_review": "reports/yaml_record_review/D-limonene.md",
+                    "scoped_review": {
+                      "file": "mapping_review/concern_cohorts.json",
+                      "position": 957
+                    }
+                  }
+                }
+              }
+            ],
+            "historical_review_authority": "Prior scientific review, not primary chemical authority; no new positive disposition."
+          },
+          "retention": "Current WITHHOLD and original OPEN assertions remain; no mapping/source/role release promotion."
+        },
+        {
+          "hold_kind": "exact_original_owner_scope",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/D-limonene.yaml",
+            "sha256": "3e587ecd29cfb9e4bd2567a03d27c0fd75aa6f5344b2178e6bdfc2aebb7a4978",
+            "bytes": 1802
+          },
+          "values": {
+            "mim_id": "MIM:0000862",
+            "preferred_term": "d-limonene",
+            "synonyms": [],
+            "occurrence_statistics": {
+              "total_occurrences": 0,
+              "media_count": 0
+            },
+            "notes": null,
+            "roles": null,
+            "components": null,
+            "supplied_form": null
+          },
+          "retention": "No added source/product/lot/preparation/occurrence/role claims; absent fields remain absent."
+        }
+      ],
+      "corrective_evidence": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/primary/chebi-15382.json",
+          "sha256": "84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e",
+          "bytes": 7791
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/primary/chebi-748872.json",
+          "sha256": "6e11b28aaa317fe7fc1451caa1b3618199d9b32dbc5aa340cd3768979be14b69",
+          "bytes": 5660
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/primary/web-chebi-comparison.txt",
+          "sha256": "8796271876ee635de3a49a57ff422e5e8e69cd3489ac64897f8b93efe91eb631",
+          "bytes": 27890
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/CURRENT-OWNER-AND-ROWS.json",
+          "sha256": "91b5ec6848614c33216ec0a37fbbbbf8c067588732bc19a03089fa3ddc32411d",
+          "bytes": 4183
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/PRIMARY-IDENTITY-CONCLUSION.json",
+          "sha256": "d90d3030a8395b294d674cfeb324b58082c8d99c4f985fc88813417e6eb622bf",
+          "bytes": 3504
+        }
+      ],
+      "primary_finding_packet": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/d-limonene-invalid-cas-primary-v1/HANDOFF.json",
+        "sha256": "7b2fdb24dc57dc9f86cf2bf7a8bdec1044d5e94c53b796e8146080cc5dae9520",
+        "bytes": 6708
+      },
+      "diff": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/D-limonene.diff",
+        "sha256": "2e7da2023168a61581b6cbdf2cac9243e4b46073301dc6f35937aee308888677",
+        "bytes": 4796
+      },
+      "closed_schema": "PASS",
+      "native_primary_review": null,
+      "native_skeptic_review": null,
+      "native_application": false
+    },
+    {
+      "mim_id": "MIM:0002227",
+      "issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1382"
+      ],
+      "before": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+        "sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+        "bytes": 1946
+      },
+      "current_S_before": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+        "sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+        "bytes": 1946
+      },
+      "before_private_copy": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/before/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+        "sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+        "bytes": 1946
+      },
+      "before_owner_path": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+      "after": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/proposed/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+        "sha256": "87f6cae9492263adda19083a21fc6143705371eeab0875d105a00199c0778dff",
+        "bytes": 5187
+      },
+      "after_owner_path": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+      "top_level_delta": {
+        "chemical_properties": {
+          "before_present": true,
+          "before": {
+            "cas_rn": "9789-92-0",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00"
+          },
+          "after_present": true,
+          "after": {
+            "cas_rn": "979-92-0",
+            "data_source": "ChEBI:16680 official compound API; Sigma A9384 product information; c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82",
+            "retrieval_date": "2026-11-12T14:05:02.326588+00:00"
+          }
+        },
+        "curation_history": {
+          "before_present": true,
+          "before": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:9789-92-0 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.111100+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.170467+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-11-08T22:01:42+00:00",
+              "curator": "codex",
+              "action": "ASSIGNED_MIM_ID",
+              "changes": "#1265: assigned permanent MIM:0002227; retained mapping identifier and legacy aliases.",
+              "llm_assisted": true
+            }
+          ],
+          "after_present": true,
+          "after": [
+            {
+              "timestamp": "2026-04-29T06:51:33.117170+00:00",
+              "curator": "audit_add_remaining_culturebotht",
+              "action": "CREATED_FROM_CAS_FALLBACK",
+              "changes": "Created with cas:9789-92-0 as primary identifier; no CHEBI entry exists for this compound.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.111100+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.170467+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-11-08T22:01:42+00:00",
+              "curator": "codex",
+              "action": "ASSIGNED_MIM_ID",
+              "changes": "#1265: assigned permanent MIM:0002227; retained mapping identifier and legacy aliases.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-12T14:12:07.820445+00:00",
+              "curator": "codex_two_invalid_cas_source_proposals",
+              "action": "PROPOSED_SOURCE_CORRECTION",
+              "changes": "#1382: private exact source-correction proposal. The original source explicitly supplies Sigma A9384 and the L synonym; the manufacturer product sheet and official ChEBI16680 establish the same L material and CAS979-92-0. Do not infer L configuration from the sulfur S locant or arithmetic checksum repair. Replace the invalid active primary/grounding/CAS property with CHEBI:16680 and sourced CAS 979-92-0; mapping quality MANUAL_CURATION records explicit source/form adjudication. Remove only the disproved cas:9789-92-0 resolving alias under the reviewed native owner-rejection policy. Preserve MIM:0002227, filename, genuine MIM slug, preferred term, all raw source synonyms, occurrences, original history, and all release/source/role holds. Do not mint, merge, split, import roles/components/structures, approve source bindings or declare publication. This proposal is not native application or scientific release approval. Exact rejected original assertion and original chemical-property provenance: {\"chemical_properties\":{\"cas_rn\":\"9789-92-0\",\"data_source\":\"CultureBotHT compounds_to_cas.csv\",\"retrieval_date\":\"2026-04-29T06:51:33.117170+00:00\"},\"identifier\":\"cas:9789-92-0\",\"legacy_identifiers\":[\"MIM:S-adenosyl_Homocysteine\",\"cas:9789-92-0\"],\"ontology_mapping\":{\"evidence\":[{\"evidence_type\":\"DATABASE_MATCH\",\"notes\":\"Imported from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term.\",\"source\":\"CultureBotHT\"}],\"mapping_quality\":\"FALLBACK_REGISTRY\",\"ontology_id\":\"cas:9789-92-0\",\"ontology_label\":\"S-adenosyl Homocysteine\",\"ontology_source\":\"CAS\"}}.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "Codex (exact model identifier was not recorded in the proposal receipt)"
+            }
+          ]
+        },
+        "identifier": {
+          "before_present": true,
+          "before": "cas:9789-92-0",
+          "after_present": true,
+          "after": "CHEBI:16680"
+        },
+        "legacy_identifiers": {
+          "before_present": true,
+          "before": [
+            "MIM:S-adenosyl_Homocysteine",
+            "cas:9789-92-0"
+          ],
+          "after_present": true,
+          "after": [
+            "MIM:S-adenosyl_Homocysteine"
+          ]
+        },
+        "ontology_mapping": {
+          "before_present": true,
+          "before": {
+            "ontology_id": "cas:9789-92-0",
+            "ontology_label": "S-adenosyl Homocysteine",
+            "ontology_source": "CAS",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              }
+            ]
+          },
+          "after_present": true,
+          "after": {
+            "ontology_id": "CHEBI:16680",
+            "ontology_label": "S-adenosyl-L-homocysteine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "MANUAL_CURATION",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "https://www.ebi.ac.uk/chebi/CHEBI:16680",
+                "notes": "#1382: released three-star ChEBI S-adenosyl-L-homocysteine explicitly defines the L-homocysteine derivative and records CAS 979-92-0. Its exact S-(5'-adenosyl)-L-homocysteine synonym and stereochemical structure match the named source/catalog material. Official API capture SHA256 c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82. No role or optional structure/property bundle is imported."
+              },
+              {
+                "evidence_type": "CURATOR_JUDGMENT",
+                "source": "CultureBotHT compounds_to_cas.csv line 696; https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/320/327/a9384pis.pdf",
+                "notes": "#1382: the original row explicitly records Company Sigma, CatalogNumber A9384 and S-(5′-Adenosyl)-L-homocysteine. The inspected official A9384 sheet gives that L material and CAS 979-92-0, corroborating the ontology. Supplier text capture SHA256 aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb. L configuration is supported by the explicit source synonym/catalog; S- is a sulfur locant, not stereochemical evidence. No actual purchased lot, purity, hydrate, salt, solution concentration, occurrence or source-binding approval is inferred. All existing release/source/role holds remain."
+              }
+            ]
+          }
+        }
+      },
+      "rejected_identifiers": [
+        "cas:9789-92-0"
+      ],
+      "rejected_labels": [],
+      "inherited_holds": [
+        {
+          "hold_kind": "entire_original_source_and_origin_context",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/.temp/stable-adoption1303-real-canary-inputs-v1/inspection/context.json",
+            "sha256": "ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9",
+            "bytes": 38130190
+          },
+          "selector": "/",
+          "retention": "Byte-identical original 1879-case,1022-origin context, including source evidence, origin accounting and holds; no status reclassification."
+        },
+        {
+          "hold_kind": "original_worker_history_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/HISTORY-OBLIGATIONS.json",
+            "sha256": "126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614",
+            "bytes": 170445
+          },
+          "selector": "/",
+          "retention": "Preserve original W01 13-item and W09 8-row historical findings/decisions exactly, with their original review identities."
+        },
+        {
+          "hold_kind": "original_suppression_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/SUPPRESSION-OBLIGATIONS.json",
+            "sha256": "20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac",
+            "bytes": 71268
+          },
+          "selector": "/",
+          "retention": "No suppression-history retirement or blanket synonym approval by a source delta."
+        },
+        {
+          "hold_kind": "exact_owner_prior_withhold_and_full_historical_chain",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/HISTORICAL-HOLDS.json",
+            "sha256": "93f1e8e488c304502990bbaef6718edde547553068fc791db69b357a400a42c7",
+            "bytes": 5459
+          },
+          "values": {
+            "entries": [
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-review.json",
+                  "sha256": "c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8",
+                  "bytes": 2682011
+                },
+                "selector": "decisions[source_position=2487]",
+                "entry": {
+                  "source_position": 2487,
+                  "row_sha256": "0251b8755dbbba9adbcd2c703f51b026b3168f48300ac409ce15720c5a599627",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "evidence_key": "2487"
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "sha256": "3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f",
+                  "bytes": 6066389
+                },
+                "selector": "entries.2487",
+                "entry": {
+                  "row_sha256": "0251b8755dbbba9adbcd2c703f51b026b3168f48300ac409ce15720c5a599627",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "owner_record_sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "identity_projection": {
+                    "kind": "mim-inherited-identity-projection/v1",
+                    "manifest": "reports/stable_ids_1265_20261108/migration.json",
+                    "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+                    "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+                    "original_report": "reports/sssom_completion_20260921/review.json",
+                    "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+                    "scientific_approval_added": false,
+                    "original_decision": {
+                      "source_position": 2487,
+                      "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+                      "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                      "disposition": "WITHHOLD",
+                      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                      "evidence_key": "2487"
+                    },
+                    "original_owner_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d"
+                  }
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/sssom_completion_20260921/mapping-evidence.json",
+                  "sha256": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+                  "bytes": 4887723
+                },
+                "selector": "entries.2487",
+                "entry": {
+                  "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "owner_record_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "basis": {
+                    "baseline_position": 2498,
+                    "previous_decision": {
+                      "assertion_id": "MIM.review:3da122e5df57c852e888d9b6011e44549bb46245fb24b486f6e157873df4658a",
+                      "source_record": "mappings/ingredient_mappings.sssom.tsv",
+                      "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+                      "assertion_type": "mapping",
+                      "source_position": "2498",
+                      "assertion_sha256": "c29a77f27dc750a3e67b19e802c11ec7f4adda95a266e3ba6e8ef24351fec8db",
+                      "resolution_status": "OPEN",
+                      "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+                      "review_evidence": ""
+                    },
+                    "historical_record_review": "reports/yaml_record_review/S-adenosyl_Homocysteine.md",
+                    "scoped_review": {
+                      "file": "mapping_review/concern_cohorts.json",
+                      "position": 2498
+                    }
+                  }
+                }
+              }
+            ],
+            "authority": "Prior reviews and prior negative evidence, not primary chemical authority. No positive scientific disposition is inherited or granted."
+          },
+          "retention": "Current WITHHOLD and original OPEN assertions remain; no mapping/source/role release promotion."
+        },
+        {
+          "hold_kind": "exact_original_owner_scope",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+            "sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+            "bytes": 1946
+          },
+          "values": {
+            "mim_id": "MIM:0002227",
+            "preferred_term": "S-adenosyl Homocysteine",
+            "synonyms": [
+              {
+                "synonym_text": "S-(5′-Adenosyl)-L-homocysteine",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "culturebotht"
+              }
+            ],
+            "occurrence_statistics": {
+              "total_occurrences": 0,
+              "media_count": 0
+            },
+            "notes": null,
+            "roles": null,
+            "components": null,
+            "supplied_form": null
+          },
+          "retention": "No added source/product/lot/preparation/occurrence/role claims; absent fields remain absent."
+        }
+      ],
+      "residual_holds": [
+        {
+          "hold_kind": "entire_original_source_and_origin_context",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/.temp/stable-adoption1303-real-canary-inputs-v1/inspection/context.json",
+            "sha256": "ab3d1c3947b0ad9933d2722804967208869b6c380b928132e1f7f0e476eca1f9",
+            "bytes": 38130190
+          },
+          "selector": "/",
+          "retention": "Byte-identical original 1879-case,1022-origin context, including source evidence, origin accounting and holds; no status reclassification."
+        },
+        {
+          "hold_kind": "original_worker_history_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/HISTORY-OBLIGATIONS.json",
+            "sha256": "126a8e112f71c0b692a9e60a1d2663555864ac49104a8af242769ed56b5f9614",
+            "bytes": 170445
+          },
+          "selector": "/",
+          "retention": "Preserve original W01 13-item and W09 8-row historical findings/decisions exactly, with their original review identities."
+        },
+        {
+          "hold_kind": "original_suppression_obligations",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/SUPPRESSION-OBLIGATIONS.json",
+            "sha256": "20222f9e374f29ad8a9ddac518236e8f6aca275c8395730b08c0e2588426dbac",
+            "bytes": 71268
+          },
+          "selector": "/",
+          "retention": "No suppression-history retirement or blanket synonym approval by a source delta."
+        },
+        {
+          "hold_kind": "exact_owner_prior_withhold_and_full_historical_chain",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/HISTORICAL-HOLDS.json",
+            "sha256": "93f1e8e488c304502990bbaef6718edde547553068fc791db69b357a400a42c7",
+            "bytes": 5459
+          },
+          "values": {
+            "entries": [
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-review.json",
+                  "sha256": "c2e84d8f2c7e95839d3ac9d3b18118dc43f5131a0f539d1c30e8936f76ce05b8",
+                  "bytes": 2682011
+                },
+                "selector": "decisions[source_position=2487]",
+                "entry": {
+                  "source_position": 2487,
+                  "row_sha256": "0251b8755dbbba9adbcd2c703f51b026b3168f48300ac409ce15720c5a599627",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "review_evidence": "reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "evidence_key": "2487"
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/stable_ids_1265_20261108/mapping-evidence.json",
+                  "sha256": "3d93354758569e5f8f882711c63c5f89951c699a72f9f3aa414ded2e3ca10c3f",
+                  "bytes": 6066389
+                },
+                "selector": "entries.2487",
+                "entry": {
+                  "row_sha256": "0251b8755dbbba9adbcd2c703f51b026b3168f48300ac409ce15720c5a599627",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "owner_record_sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "identity_projection": {
+                    "kind": "mim-inherited-identity-projection/v1",
+                    "manifest": "reports/stable_ids_1265_20261108/migration.json",
+                    "manifest_sha256": "0c51b35d1f9e9784854627f8c05fd634d6af50530c98f1779e2b5bb8fb746121",
+                    "source_commit": "0dac278466699129a083343a921c2e0ca18a9ab4",
+                    "original_report": "reports/sssom_completion_20260921/review.json",
+                    "original_report_sha256": "ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf",
+                    "scientific_approval_added": false,
+                    "original_decision": {
+                      "source_position": 2487,
+                      "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+                      "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                      "disposition": "WITHHOLD",
+                      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                      "evidence_key": "2487"
+                    },
+                    "original_owner_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d"
+                  }
+                }
+              },
+              {
+                "source": {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/reports/sssom_completion_20260921/mapping-evidence.json",
+                  "sha256": "529bb71759b79adc40e8a15767221679731004eb289486adb36a4e8965cc06dd",
+                  "bytes": 4887723
+                },
+                "selector": "entries.2487",
+                "entry": {
+                  "row_sha256": "5bca427efc255030e5403edd372de4ddd5b5e817b020b82e5a2ecb7e47c05bdd",
+                  "owner_record": "data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+                  "owner_record_sha256": "9fde7f84d2526e6ba4a2ce3ad1463b1121867b5397586e0c6d8ad9eddc43ae7d",
+                  "disposition": "WITHHOLD",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The CAS fallback no longer resolves, while active CHEBI:16680 appears to cover the intended identity.",
+                  "basis": {
+                    "baseline_position": 2498,
+                    "previous_decision": {
+                      "assertion_id": "MIM.review:3da122e5df57c852e888d9b6011e44549bb46245fb24b486f6e157873df4658a",
+                      "source_record": "mappings/ingredient_mappings.sssom.tsv",
+                      "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+                      "assertion_type": "mapping",
+                      "source_position": "2498",
+                      "assertion_sha256": "c29a77f27dc750a3e67b19e802c11ec7f4adda95a266e3ba6e8ef24351fec8db",
+                      "resolution_status": "OPEN",
+                      "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+                      "review_evidence": ""
+                    },
+                    "historical_record_review": "reports/yaml_record_review/S-adenosyl_Homocysteine.md",
+                    "scoped_review": {
+                      "file": "mapping_review/concern_cohorts.json",
+                      "position": 2498
+                    }
+                  }
+                }
+              }
+            ],
+            "authority": "Prior reviews and prior negative evidence, not primary chemical authority. No positive scientific disposition is inherited or granted."
+          },
+          "retention": "Current WITHHOLD and original OPEN assertions remain; no mapping/source/role release promotion."
+        },
+        {
+          "hold_kind": "exact_original_owner_scope",
+          "reference": {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml",
+            "sha256": "e804bc8fb9cf73c0c182b5b70ace0c719a760dd72743c8c99b7d1e0d633c805f",
+            "bytes": 1946
+          },
+          "values": {
+            "mim_id": "MIM:0002227",
+            "preferred_term": "S-adenosyl Homocysteine",
+            "synonyms": [
+              {
+                "synonym_text": "S-(5′-Adenosyl)-L-homocysteine",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "culturebotht"
+              }
+            ],
+            "occurrence_statistics": {
+              "total_occurrences": 0,
+              "media_count": 0
+            },
+            "notes": null,
+            "roles": null,
+            "components": null,
+            "supplied_form": null
+          },
+          "retention": "No added source/product/lot/preparation/occurrence/role claims; absent fields remain absent."
+        }
+      ],
+      "corrective_evidence": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/primary/chebi-16680.json",
+          "sha256": "c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82",
+          "bytes": 15388
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/primary/web-primary.txt",
+          "sha256": "aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb",
+          "bytes": 11419
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/CURRENT-OWNER-AND-ROWS.json",
+          "sha256": "cf4ceeebda243c0d83971e135a33de54ab2409b780d77d55ee781dbd4a8bc1f8",
+          "bytes": 4581
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/PRIMARY-IDENTITY-CONCLUSION.json",
+          "sha256": "13ee219495257a22e816d3c621fa723de868152b71477cd2f96656819e6e9ae0",
+          "bytes": 3867
+        }
+      ],
+      "primary_finding_packet": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s-adenosyl-homocysteine-invalid-cas-primary-v1/HANDOFF.json",
+        "sha256": "ebff56ee94ecac6f2af01a948b654f0a5f16323680b25643d1f233227c58241e",
+        "bytes": 4828
+      },
+      "diff": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/S-adenosyl_Homocysteine.diff",
+        "sha256": "cc488b5b9a36c8a87d3cbb46d2bf5013677f2adbf4c7b9d41bc1cee45eada31c",
+        "bytes": 5028
+      },
+      "closed_schema": "PASS",
+      "native_primary_review": null,
+      "native_skeptic_review": null,
+      "native_application": false
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/nine-source-native-evidence-manifest-v1/MANIFEST.json",
+      "sha256": "c98c6d029679208f55d05a5d7493a24bdac4b6c27a0c68daf4de3440d7093db9",
+      "bytes": 303857
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/nine-reviewed-source-deltas-v1/INDEX.json",
+      "sha256": "2b0756c435373497a957a78be27fa1282ef1b32a6a70b5c3a28997bcada47f56",
+      "bytes": 15347
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/DUPLICATE-AND-BEFOREIMAGE-PREFLIGHT.json",
+      "sha256": "9434df8e748141f1066a5b3fd1e30aeebc7fb23d96deba0e05ec2a00dd51697b",
+      "bytes": 4017
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/CONFIGURED-ONTOLOGY-LOOKUP.json",
+      "sha256": "0b5fc3b58b79396b37ba97c1d16ecf11307002f0e2c4074241b97c9c566e2f00",
+      "bytes": 1797
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "77a57aaaa1a968dec077b13851b28350701b0952d672417f26e514bebfd0f392",
+      "bytes": 105365
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+      "bytes": 4699
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "bytes": 5014
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/src/mediaingredientmech/curate/curation_successor.py",
+      "sha256": "6b34ede05a681531d07715ea68a847692b90c51f25a0884d6f8a577eecd13766",
+      "bytes": 87102
+    }
+  ],
+  "closed_schema": "PASS_FOR_BOTH",
+  "stable_id_new_target_true_slug_and_rejected_alias_checks": "PASS",
+  "configured_ontology_lookup": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/CONFIGURED-ONTOLOGY-LOOKUP.json",
+    "sha256": "0b5fc3b58b79396b37ba97c1d16ecf11307002f0e2c4074241b97c9c566e2f00",
+    "bytes": 1797
+  },
+  "duplicate_preflight": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/DUPLICATE-AND-BEFOREIMAGE-PREFLIGHT.json",
+    "sha256": "9434df8e748141f1066a5b3fd1e30aeebc7fb23d96deba0e05ec2a00dd51697b",
+    "bytes": 4017
+  },
+  "expanded_name_preflight": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/EXPANDED-PRIMARY-NAME-COLLISION-PREFLIGHT.json",
+    "sha256": "78253121be0cfff808a99ae8a7a14509441cbd982fc70b2a6415507e06b0b0b4",
+    "bytes": 1893
+  },
+  "preservation": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/two-invalid-cas-source-proposals-v1/PRESERVATION.json",
+    "sha256": "727c3c378868924c0488b411c422e46e85d46dc35561d2efda16f993f1d8c23c",
+    "bytes": 2068635
+  },
+  "no_native_campaign_phase_or_release_approval": true,
+  "remaining": [
+    "Independent skeptical exact-afterimage review",
+    "Actual S2 native inspection and paired source reviews",
+    "Explicit old CAS row accounting through reviewed publication contract",
+    "Actual regenerated whole-row review and release validation"
+  ]
+}

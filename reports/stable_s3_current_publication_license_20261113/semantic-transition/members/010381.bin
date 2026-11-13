@@ -1,0 +1,28 @@
+{
+  "author": "/root/buffer_hepes",
+  "at": "2026-11-08T09:39:35.518271+00:00",
+  "policy": {
+    "path": "src/mediaingredientmech/synonym_policy.py",
+    "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+  },
+  "existing_regression_test": {
+    "path": "tests/test_sssom_other_cross_record.py",
+    "sha256": "277f866f32c725f15d0e854fc742f1fb16b9ae4af147bfa6e00e00476aeee699",
+    "test": "test_missing_explicit_target_never_credits_former_identifier_owner; explicit empty target case"
+  },
+  "current_W05_plus_selected_parent_records": 3029,
+  "preferred_name": "Bacto Soytone",
+  "before_with_old_explicit_target": [
+    "MIM:Soya_Pepton",
+    "MIM:Soya_Peptone"
+  ],
+  "counterfactual_field_removed": [
+    "MIM:Soya_Pepton",
+    "MIM:Soya_Peptone"
+  ],
+  "after_explicit_empty_target": [
+    "MIM:Bacto_Soytone"
+  ],
+  "result": "PASS",
+  "interpretation": "Explicit unresolved pointer retains the tombstone name and does not credit unrelated shared-ID owners; absence would retain unsafe legacy fallback. This is continuity preservation, not a branded identity decision."
+}

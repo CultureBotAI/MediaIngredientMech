@@ -1,0 +1,87 @@
+id: CultureMech:011953
+preferred_term: Cultivation of Diplorickettsia massiliensis
+term:
+  id: mediadive.solution:2620
+  label: Cultivation of Diplorickettsia massiliensis
+composition:
+- preferred_term: Leibovitz's L-15 medium
+  concentration:
+    value: '930.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1941
+    label: Leibovitz's L-15 medium
+- preferred_term: Fetal bovine serum
+  concentration:
+    value: '50.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:954
+    label: Fetal bovine serum
+- preferred_term: Tryptose-phosphate
+  concentration:
+    value: '20.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1165
+    label: Tryptose-phosphate
+- preferred_term: Glutamine
+  concentration:
+    value: '20.0'
+    unit: MILLIMOLAR
+  term:
+    id: mediadive.compound:2161
+    label: Glutamine
+  chebi_term:
+    id: CHEBI:18050
+    label: L-glutamine
+    confidence: 0.9
+    match_type: manual_curated
+preparation_notes: "Cultivation of XTC-2 (from Xenopus laevis) cells \nFilter-sterilize\
+  \ (0.2 µm) and keep no longer than 4 weeks. Store at room temperature to facilitate\
+  \ detection of contamination.\nPrepare a 25 cm<sup>2</sup> flask and seed cells\
+  \ according to standard protocols. Incubate at 28 - 32°C in hermetic flasks. Cells\
+  \ are easily detached mechanically, no enzyme is necessary. Medium should be changed\
+  \ once a week. When a confluent layer has formed, infection can be carried out.\n\
+  \nOriginal volume: 100 mL"
+curation_history:
+- timestamp: '2026-03-13T06:20:22.984743Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:011953'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:26.471954'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:12.931542'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:49.863284+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:46:56.062068+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:11.071711+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '3 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

@@ -1,0 +1,212 @@
+id: CultureMech:007518
+name: modified_growth_medium_with_23_total_salt_concentration
+original_name: Modified Growth Medium With 23% Total Salt Concentration
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.0
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '233'
+    unit: ML_PER_L
+  source: TOGO M1005
+  notes: TOGO M1005 lists 233 ml/L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Yeast extract
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  source: TOGO M1005
+  notes: TOGO M1005 lists 2 g/L Yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+- preferred_term: Agar
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  source: TOGO M1005
+  notes: TOGO M1005 lists 20 g/L Agar.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Peptone (Oxoid)
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  source: TOGO M1005
+  notes: TOGO M1005 lists 10 g/L Peptone (Oxoid).
+  term:
+    id: MICRO:0000178
+    label: peptone
+media_term:
+  preferred_term: TOGO Medium M1005
+  term:
+    id: TOGO:M1005
+    label: Modified Growth Medium With 23% Total Salt Concentration
+notes: TOGO M1005 records JCM_M956-2 Modified Growth Medium With 23% Total Salt Concentration
+  with 233 ml/L distilled water, 2 g/L yeast extract, 10 g/L Peptone (Oxoid), 767
+  ml/L MDS salt water from TOGO M578, 20 g/L agar, and final adjustment to pH 7.0.
+  JCM Medium 574 defines MDS salt water as NaCl, MgCl2 x 6H2O, MgSO4 x 7H2O, KCl,
+  and 1 M CaCl2 solution brought to 1 L and adjusted to pH 7.5 with 1 M Tris base.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:53.741663Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M1005'
+- timestamp: '2026-01-28T19:48:10.272794Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:04:16.789383+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:19:49.345079Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007518'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:29:46.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:07.676731+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Modified Growth Medium With 23% Total Salt Concentration"
+    to "modified_growth_medium_with_23_total_salt_concentration" for consistent matching
+- timestamp: '2026-05-16T09:03:06.819434+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:40:29.616448+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_m1004_m1005_score15.py
+  action: RESOLVED_TOGO_M1004_M1005_SCORE15
+  source: https://togomedium.org/medium/M1005; https://togomedium.org/medium/M578;
+    https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=956; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+  notes: TOGO M1005 records JCM_M956-2 Modified Growth Medium With 23% Total Salt
+    Concentration with 233 ml/L distilled water, 2 g/L yeast extract, 10 g/L Peptone
+    (Oxoid), 767 ml/L MDS salt water from TOGO M578, 20 g/L agar, and final adjustment
+    to pH 7.0. JCM Medium 574 defines MDS salt water as NaCl, MgCl2 x 6H2O, MgSO4
+    x 7H2O, KCl, and 1 M CaCl2 solution brought to 1 L and adjusted to pH 7.5 with
+    1 M Tris base.
+solutions:
+- preferred_term: MDS salt water
+  concentration:
+    value: '767'
+    unit: ML_PER_L
+  source: TOGO M1005
+  notes: TOGO M1005 adds 767 ml/L MDS salt water from TOGO M578/JCM 574.
+  composition:
+  - preferred_term: NaCl
+    concentration:
+      value: '240.0'
+      unit: G_PER_L
+    source: JCM Medium 574
+    notes: JCM Medium 574 prints this component in its MDS salt-water stock.
+    term:
+      id: CHEBI:26710
+      label: sodium chloride
+    mediaingredientmech_chebi_term:
+      id: CHEBI:26710
+      label: sodium chloride
+  - preferred_term: MgCl2 x 6H2O
+    concentration:
+      value: '30.0'
+      unit: G_PER_L
+    source: JCM Medium 574
+    notes: JCM Medium 574 prints this component in its MDS salt-water stock.
+    term:
+      id: CHEBI:86345
+      label: magnesium dichloride hexahydrate
+    mediaingredientmech_chebi_term:
+      id: CHEBI:86345
+      label: magnesium dichloride hexahydrate
+  - preferred_term: MgSO4 x 7H2O
+    concentration:
+      value: '35.0'
+      unit: G_PER_L
+    source: JCM Medium 574
+    notes: JCM Medium 574 prints this component in its MDS salt-water stock.
+    term:
+      id: CHEBI:31795
+      label: magnesium sulfate heptahydrate
+    mediaingredientmech_chebi_term:
+      id: CHEBI:31795
+      label: magnesium sulfate heptahydrate
+  - preferred_term: KCl
+    concentration:
+      value: '7.0'
+      unit: G_PER_L
+    source: JCM Medium 574
+    notes: JCM Medium 574 prints this component in its MDS salt-water stock.
+    term:
+      id: CHEBI:32588
+      label: potassium chloride
+    mediaingredientmech_chebi_term:
+      id: CHEBI:32588
+      label: potassium chloride
+  - preferred_term: 1 M CaCl2 solution
+    concentration:
+      value: '5.0'
+      unit: ML_PER_L
+    source: JCM Medium 574
+    notes: JCM Medium 574 adds 5 ml/L 1 M CaCl2 solution to MDS salt water.
+    term:
+      id: CHEBI:3312
+      label: calcium dichloride
+    mediaingredientmech_chebi_term:
+      id: CHEBI:3312
+      label: calcium dichloride
+  - preferred_term: Distilled water
+    concentration:
+      value: '1.0'
+      unit: L
+    source: JCM Medium 574
+    notes: JCM Medium 574 prints this component in its MDS salt-water stock.
+    term:
+      id: CHEBI:15377
+      label: water
+    mediaingredientmech_chebi_term:
+      id: CHEBI:15377
+      label: water
+  preparation_notes: JCM Medium 574 brings the MDS salt water stock to 1.0 L with
+    distilled water and adjusts it to pH 7.5 with 1 M Tris base.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix distilled water, yeast extract, agar, Peptone (Oxoid), and MDS
+    salt water thoroughly.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust TOGO M1005 to pH 7.0.
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1005
+- reference: https://togomedium.org/medium/M578
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=956
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574

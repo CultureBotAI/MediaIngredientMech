@@ -1,0 +1,69 @@
+identifier: UNMAPPED_0554
+preferred_term: Trace minerals see Medium No. 197
+synonyms:
+- synonym_text: Trace minerals see Medium No. 197
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Trace minerals (see Medium No. 197
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1833); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:06.996202+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.971950+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Trace_Minerals_See_Medium_No_197-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Trace minerals
+    see Medium No. 197` is not a single chemical, salt, hydrate, or generic mineral
+    family. Its wording is an unresolved **catalog-local cross-reference to a trace-mineral
+    stock formulation** defined elsewhere under “Medium No. 197.” The referenced catalog,
+    edition, and recipe were not recoverable from the indexed literature searched;
+    therefore, the exac No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Trace minerals (see Medium No. 197'' (x2 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002926; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1833); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: NAMED_MEDIUM
+mim_id: MIM:0002926
+legacy_identifiers:
+- MIM:Trace_Minerals_See_Medium_No_197
+- UNMAPPED_0554

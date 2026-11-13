@@ -1,0 +1,91 @@
+identifier: kgmicrobe.ingredient:atcc929_phenol_red_stock
+preferred_term: ATCC 929 alkaline phenol red stock
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc929_phenol_red_stock
+  ontology_label: ATCC 929 alkaline phenol red stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+    notes: Original ATCC929 enumerates0.5g phenol red,1mL6NNaOH and99mL DIwater, and
+      a0.25mL medium dose. Units denote amounts in the listed100mL liquid-input preparation,
+      not a measured final-volume assertion. This source-specific alkaline indicator
+      is distinct from Flow0.5% phenol-red products whose formulation is unavailable.
+      Do not infer the final dye protonation state or an exact free-acid composition
+      of the resulting alkaline solution.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms:
+- synonym_text: Phenol red 0.5% (see below)
+  synonym_type: REJECTED_LABEL
+  source: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+notes: Original ATCC929 enumerates0.5g phenol red,1mL6NNaOH and99mL DIwater, and a0.25mL
+  medium dose. Units denote amounts in the listed100mL liquid-input preparation, not
+  a measured final-volume assertion. This source-specific alkaline indicator is distinct
+  from Flow0.5% phenol-red products whose formulation is unavailable. Do not infer
+  the final dye protonation state or an exact free-acid composition of the resulting
+  alkaline solution. Isolated proposal only. Complete published payload and cross-shard
+  resolution remain coordinator obligations; no source record or existing hold is
+  changed. The unqualified raw source label is retained as REJECTED_LABEL solely for
+  provenance because RAW_TEXT also resolves globally in the native matcher. The exact
+  source occurrence may bind to this source-qualified preparation after coordinator
+  integration; no global same-label binding is proposed.
+solution_type: OTHER
+components:
+- component_name: Phenol red
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31991
+  concentration_value: '0.5'
+  concentration_unit: G_PER_100_ML_PREPARATION
+- component_name: 6 N NaOH solution
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_100_ML_PREPARATION
+  source: Retain the supplied 6N solution; do not assert a quantity of neat NaOH or
+    an unspecified stock solvent.
+- component_name: DI water
+  reference_scope: UNMAPPED
+  concentration_value: '99'
+  concentration_unit: ML_PER_100_ML_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+    notes: All enumerated inputs are represented; COMPLETE describes enumeration,
+      not complete ingredient grounding or fixed quantities for variable titration.
+      Original ATCC929 enumerates0.5g phenol red,1mL6NNaOH and99mL DIwater, and a0.25mL
+      medium dose. Units denote amounts in the listed100mL liquid-input preparation,
+      not a measured final-volume assertion. This source-specific alkaline indicator
+      is distinct from Flow0.5% phenol-red products whose formulation is unavailable.
+      Do not infer the final dye protonation state or an exact free-acid composition
+      of the resulting alkaline solution.
+curation_history:
+- timestamp: '2026-11-08T04:30:41.363631+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported distinct ingredient identity and only evidenced
+    preparation/components; no roles inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:45:12.617124+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: 'IR-SHARD-ARTIFACT-9: make ambiguous source-local label provenance non-resolving
+    under the actual native matcher. Whole source-qualified identity unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.037588+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

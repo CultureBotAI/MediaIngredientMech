@@ -1,0 +1,56 @@
+identifier: UNMAPPED_0198
+preferred_term: Agelasine
+synonyms:
+- synonym_text: Agelasine
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and left unmapped
+    because the local OLS exact audit found no exact ontology hit.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Agelasine-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommendation: retain `UNMAPPED`.** The unqualified
+    label **Agelasine** is not sufficiently specific to represent one resolved chemical
+    substance. Literature uses it for a natural-product family of distinct **9-methyladeninium
+    diterpenoid alkaloids**, while older literature also describes an unlettered agelasine
+    from *Agelas dispar*. Named members are separate congeners, not interchangeable
+    syn No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002700; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact source-backed identity.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002700
+legacy_identifiers:
+- MIM:Agelasine
+- UNMAPPED_0198

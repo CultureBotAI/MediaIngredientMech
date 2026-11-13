@@ -1,0 +1,33 @@
+{
+  "scope": "Actual private read-only review; output writes only this new packet",
+  "python": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+  "commands": [
+    {
+      "script": "inspect_inputs.py",
+      "exit_code": 0,
+      "result": "3targets73inputs before new-byte assessment"
+    },
+    {
+      "script": "audit.py",
+      "exit_code": 0,
+      "stdout": "audit.stdout",
+      "stderr": "audit.stderr",
+      "result": "3targets6origins8cases; native projection; protected source unchanged"
+    },
+    {
+      "command": "Existing validate_strict.py candidates --out strict-failures.tsv --workers1",
+      "exit_code": 0,
+      "stdout": "strict.stdout",
+      "stderr": "strict.stderr",
+      "result": "3files zero errors"
+    },
+    {
+      "script": "save_review.py",
+      "exit_code": 0,
+      "stdout": "save-review.stdout",
+      "stderr": "save-review.stderr",
+      "result": "native strict pair,301inputs,semantic roundtrip exact"
+    }
+  ],
+  "broad_tests_or_partial_B_prepare": false
+}

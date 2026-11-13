@@ -1,0 +1,61 @@
+identifier: CHEBI:15420
+preferred_term: Perillyl Alcohol
+ontology_mapping:
+  ontology_id: CHEBI:15420
+  ontology_label: perillyl alcohol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: '[4-(prop-1-en-2-yl)cyclohex-1-en-1-yl]methanol'
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=536-59-4); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.739882+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.850546+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H16O; inchi=InChI=1S/C10H16O/c1-8(2)10-5-3-9(7-11)4-6-10/h3,10;
+    smiles=C=C(C)C1CC=C(CO)CC1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.691462+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002020; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 536-59-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C10H16O
+  inchi: InChI=1S/C10H16O/c1-8(2)10-5-3-9(7-11)4-6-10/h3,10-11H,1,4-7H2,2H3
+  smiles: C=C(C)C1CC=C(CO)CC1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002020
+legacy_identifiers:
+- MIM:Perillyl_Alcohol
+- CHEBI:15420

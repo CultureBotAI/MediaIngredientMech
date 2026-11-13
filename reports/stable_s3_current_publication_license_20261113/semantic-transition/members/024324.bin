@@ -1,0 +1,86 @@
+identifier: kgmicrobe.compound:36-dihydroxyflavone
+preferred_term: 3',6-Dihydroxyflavone
+ontology_mapping:
+  ontology_id: CHEBI:24698
+  ontology_label: hydroxyflavone
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'SUPERSEDED (#324): this evidence describes CID 676293, 6,3''-dimethoxyflavone,
+      which is NOT this ingredient. Original note follows. Imported from CultureBotHT.
+      CAS-RN 71592-46-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite
+      + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI
+      adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: 'SUPERSEDED (#324): this evidence describes CID 676293, 6,3''-dimethoxyflavone,
+      which is NOT this ingredient. Original note follows. Parent class identified
+      via pubchem-xref; matched_via=''pubchem CID 676293'''
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#324)
+    notes: Re-grounded per MAPPING_SEMANTICS §3 step 3. The label names PubChem CID
+      688662 6,3'-dihydroxyflavone (C15H10O4, InChIKey YHLLABKHTFWHSZ-UHFFFAOYSA-N),
+      whose synonyms include the literal string "3',6-DIHYDROXYFLAVONE". ChEBI has
+      no term for it — 13 dihydroxyflavone terms exist, none the 6,3'- isomer, and
+      an InChIKey lookup returns nothing — and PubChem lists no CAS for it, so steps
+      1 and 2 are both unavailable. Previous identifier cas:71592-46-6 belongs to
+      CID 676293 6,3'-dimethoxyflavone (C17H14O4), two methyls heavier.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:71592-46-6 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.869581+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:23.433451+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C17H14O4; smiles=COC1=CC2=C(C=C1)OC(=CC2=O)C3=CC(=CC=C3)OC;
+    inchi=InChI=1S/C17H14O4/c1-19-12-5-3-4-11(8-12)17-10-15(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.043621+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:38:04.259364+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:107657 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: fix_dihydroxyflavone_wrong_compound
+  action: CORRECTED_WRONG_COMPOUND
+  changes: 'identifier cas:71592-46-6 -> kgmicrobe.compound:36-dihydroxyflavone; ontology_mapping
+    CHEBI:107657 (a dimethoxy compound) -> CHEBI:24698 hydroxyflavone NARROW_MATCH;
+    chemical_properties cleared (they described CID 676293, not this ingredient: C17H14O4,
+    CID 676293, sourced CultureBotHT compounds_to_cas.csv). Root cause is the CAS
+    in compounds_to_cas.csv, which belongs to 6,3''-dimethoxyflavone; the chemistry
+    and parent backfills then followed it and agreed with each other, so no internal
+    check could see the conflict (#324).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000152; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties: {}
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000152
+legacy_identifiers:
+- MIM:36-Dihydroxyflavone
+- kgmicrobe.compound:36-dihydroxyflavone

@@ -1,0 +1,10 @@
+{
+  "scope": "Initial default-permission read-only GitHub attempts before the successful ordinary escalation",
+  "commands": [
+    "gh issue view 887 --repo CultureBotAI/MediaIngredientMech --json number,title,state,url,body,comments,createdAt,updatedAt,closedAt",
+    "gh issue view 753 --repo CultureBotAI/MediaIngredientMech --json number,title,state,url,body,comments,createdAt,updatedAt,closedAt"
+  ],
+  "combined_exit_code": 1,
+  "each_error": "error connecting to api.github.com\ncheck your internet connection or https://githubstatus.com\n",
+  "interpretation": "Network access failed in the default tool context. This is neither a scientific finding nor a permission denial. The explicitly authorized read-only REST captures subsequently succeeded through the ordinary approval mechanism. No target state was modified."
+}

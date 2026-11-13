@@ -1,0 +1,10 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/inherited-form-predicate-triage-v1/seal_cysteine.py", line 54, in <module>
+    rr.validate_review(review);yp=rr.save_review(F,review);assert rr.read_review(F,str(yp.relative_to(F)))==review
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/cysteine-stock-predicate-assessment-v1/native-review-fixture/scripts/record_review.py", line 208, in validate_review
+    raise ReviewError("; ".join(
+    ...<2 lines>...
+    ))
+cys_review.ReviewError: assessments.1.outcome: 'concerning' is not one of ['supported', 'concern', 'unknown', 'not_applicable']; findings.0.issue_key: 'CultureBotAI/MediaIngredientMech:cysteine-stock-current-form-predicate' does not match '^[A-Za-z0-9][A-Za-z0-9._-]{0,159}(?![\\s\\S])'; findings.0: 'title' is a required property

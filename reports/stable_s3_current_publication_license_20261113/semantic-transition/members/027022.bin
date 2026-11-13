@@ -1,0 +1,69 @@
+identifier: UNMAPPED_0450
+preferred_term: MnCl4 x 6 H2O
+synonyms:
+- synonym_text: MnCl4 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: manganese(II) chloride
+  synonym_type: RAW_TEXT
+  source: edison_deep_research_2026_06
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2071); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_AMBIGUITY
+  changes: Classified as a single inorganic salt hydrate surface form and left unmapped
+    because MnCl4 x 6 H2O is not locally verified as a valid manganese chloride hydrate
+    identity; mapping to manganese(II) chloride would alter stoichiometry.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: edison_deep_research
+  action: REVIEWED_DEEP_RESEARCH
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison deep research (literature) + MediaDive recipe context (medium J1323
+    trace metals, alongside ZnCl2/Al2(SO4)3/FeSO4) identify this as manganese(II)
+    chloride. Left UNMAPPED: ''x 6 H2O'' is a non-standard hydrate (MnCl2 forms mono/di/tetrahydrate;
+    CHEBI has no hexahydrate term) and ''MnCl4'' is malformed — unsafe to assert an
+    exact hydrate identity. (Contrast MnCl4 x 4 H2O, merged to the tetrahydrate CHEBI:86368.)'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mncl4_X_6_H2o-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **ambiguous,
+    malformed single-inorganic-salt hydrate label**, probably intended to denote a
+    manganese(II) chloride trace-metal reagent, but not sufficiently resolved to a
+    unique chemical identity. CURIEs discussed: CHEBI:86368. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002850; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2071); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
+  manganese chloride hydrate formula; left unmapped.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002850
+legacy_identifiers:
+- MIM:MnCl4_X_6_H2O
+- UNMAPPED_0450

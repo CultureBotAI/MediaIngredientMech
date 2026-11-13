@@ -1,0 +1,98 @@
+id: CultureMech:000447
+name: maricaulis_medium
+original_name: MARICAULIS MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1025
+  term:
+    id: mediadive.medium:1025
+    label: MARICAULIS MEDIUM
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1025.pdf'
+ingredients:
+- preferred_term: Sigma Sea salts
+  concentration:
+    value: '30'
+    unit: G_PER_L
+- preferred_term: NH4Cl
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: Riboflavin
+  term:
+    id: CHEBI:17015
+    label: riboflavin
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17015
+    label: riboflavin
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Peptone
+  concentration:
+    value: '100'
+    unit: G_PER_L
+- preferred_term: Yeast extract
+  concentration:
+    value: '50'
+    unit: G_PER_L
+preparation_steps:
+- step_number: 1
+  action: AUTOCLAVE
+  description: Autoclave and cool the medium. Aseptically add from sterile stock solutions,
+    20 ml 50xPYE and 5 ml 0.2 mg/ml riboflavin (filter sterilised), and 2 ml 50% glucose
+    per liter of medium.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:13.143187Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1025'
+- timestamp: '2026-03-13T06:18:55.390933Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000447'
+- timestamp: '2026-03-17T06:30:55.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:06.408891+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MARICAULIS MEDIUM" to "maricaulis_medium" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:12.699244+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:47:00.838185+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+variant_children:
+- path: data/normalized_yaml/bacterial/KOMODO_1025_MARICAULIS_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:003537
+  name: maricaulis_medium
+  notes: Same source medium number and matching ingredient/concentration signature.

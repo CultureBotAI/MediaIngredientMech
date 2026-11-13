@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-08T11:54:17.312806+00:00",
+  "finding_id": "CW4-ORIGINAL-HASH-001",
+  "issue_key": "MIM-CW4-ORIGINAL-HASH-001",
+  "status": "resolved",
+  "bounded_disposition": "VERIFIED_CORRECTED_AT_EXACT_PRIVATE_V5_WITH_IMMUTABLE_J",
+  "previous_occurrence": {
+    "repository": "CultureBotAI/MediaIngredientMech",
+    "review_id": "20261108T113114Z-crosswalk-v4-original-hash-final",
+    "finding_id": "CW4-ORIGINAL-HASH-001",
+    "native_yaml": {
+      "path": "inputs/v4-review/native-v2/review.yaml",
+      "sha256": "cb3b4520373999ce312ba68d21f4a1ccbdea2ad038ab3188a1d2ba286ea43a7f"
+    },
+    "sealed_manifest": {
+      "path": "inputs/v4-review/MANIFEST.json",
+      "sha256": "11ca26726b47b153fd32ec3e4f0d4df1c286dd08d819cc564c8656fdb899ecc3"
+    }
+  },
+  "complete_affected_target_id": "CROSSWALK-V4-RETIREMENT-VERSION",
+  "candidate": {
+    "path": "author/runtime/crosswalk.py",
+    "sha256": "290d87f86a0ebde9b255776a2858e54a17df6891ecf3fbec69748b7d6bb300de"
+  },
+  "before": {
+    "path": "author/before-v4/crosswalk.py",
+    "sha256": "85a641de00ffb6905095b7f239f8f4d861ba341d69098911ec8812175f4d7399"
+  },
+  "patch": {
+    "path": "author/crosswalk-v4-to-v5.patch",
+    "sha256": "4af1295ef148b61fbe990460f53a758838ac76cbe7b3378c0eb041aa2022df8c"
+  },
+  "filed_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1247#issuecomment-6720915291",
+  "scientific_review": false,
+  "reason": "The actual unique published member canonical hash now equals both declared original hash and caller proposal hash, uniformly for initial and successor origins. Fresh retirement-only and genuinely mixed full-validator controls refuse the original true-to-int/float witnesses and retain exact legitimate values. Prior85+new24 tests pass. Exact real c91 EBIOS empty retirement remains valid. No old report or issue state is changed.",
+  "evidence": [
+    {
+      "path": "technical/exact-diff-proof.json",
+      "sha256": "28907576098c327bcdd567aa07cbc5827b5273dc7dfcd659456debc85367faa2"
+    },
+    {
+      "path": "technical/test-results.json",
+      "sha256": "f2896df7009cbbb5fac8ceee1053793fd5ce48abb5dc943f7442b61018c68de2"
+    },
+    {
+      "path": "technical/independent-probe-results.json",
+      "sha256": "2cbc3543947bf0b11d20816faad11dd234b5395e2fa4c09a79c01e5fb7dfde39"
+    },
+    {
+      "path": "skeptical/mixed-results.json",
+      "sha256": "dffe8fa68eaacffac4aa87f57caa6a0c6c32e494364dfdfe9796fe1f440c36a8"
+    },
+    {
+      "path": "technical/peer-skeptical-mixed.json",
+      "sha256": "eb0d08998893e044960ad6f4fe712e66f0c053716cd4e90bf3c82863c4d0868a"
+    },
+    {
+      "path": "skeptical/peer-technical.json",
+      "sha256": "ddb9b020da897753de9a6833a917ed49549220623a87220515ed045d42a8311d"
+    },
+    {
+      "path": "validation/actual-published-int1-regression.json",
+      "sha256": "4c6dc05a84cfea84f6ac36bcc1c0ba24171fecc663066c74a479662afa943425"
+    },
+    {
+      "path": "technical/peer-root-actual-regression.json",
+      "sha256": "4b977243a97b170021cb646898d9dfb647d74b5e594ff48e398237257cabcfbb"
+    },
+    {
+      "path": "skeptical/peer-root-ebios.json",
+      "sha256": "a2b8aa742ce6f922234db51a61d830b01151b13efdd36a4805fc4ed7d4e53364"
+    }
+  ],
+  "historical_v4_review_unchanged": "NEEDS_CURATION",
+  "GitHub_state_changed": false,
+  "source_role_export_application_approval": false,
+  "future_I_K_plan_compatibility": false
+}

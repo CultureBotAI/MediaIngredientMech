@@ -1,0 +1,67 @@
+identifier: CHEBI:29806
+preferred_term: Fumarate
+synonyms:
+- synonym_text: Fumarate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+  source_occurrences:
+  - source: microbedecoder
+    count: 103
+    source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:fumarate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0630 -> CHEBI:29806 "fumarate(2-)" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518195+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fumarate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:29806
+  ontology_label: fumarate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Bare anion label 'Fumarate' grounded to the fully-deprotonated fumarate(2-),
+      the species present at growth-medium pH. MIM grounds bare anion labels to the
+      bare-name CHEBI class where one exists (succinate, acetate, lactate); this acid
+      has none, so the fully-deprotonated conjugate base is the correct target. Naive
+      first-match enumeration would have picked the mono-anion (#213).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C4H2O4
+  smiles: O=C([O-])/C=C/C(=O)[O-]
+  inchi: InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/p-2/b2-1+
+  molecular_weight: 114.056
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:27.038813+00:00'

@@ -1,0 +1,111 @@
+"""One guarded private Hemodal applicability successor; no maintained application."""
+from pathlib import Path
+import copy, datetime, difflib, hashlib, importlib.util, io, json, os, subprocess, sys, tarfile
+sys.dont_write_bytecode = True
+D=Path(__file__).absolute().parent; C=D.parents[1]; A=C/'integration/ancillary1258-worktree';T=C.parent/'kgm-unmapped-20261107'
+W=C/'workers/w02/worktree/.temp/menadione-inherited-brands-research-v1'
+TR=C/'preflight/w02-menadione-research-root-collection-v1'
+ISSUES=C/'preflight/menadione-hemodal-finding-publication-v1'
+sys.path[:0]=[str(A/'src'),str(T/'claw/src')]
+import yaml
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient,ValidationFailedError
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(name,value):
+ p=D/name;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:json.dump(value,f,indent=2,ensure_ascii=False);f.write('\n')
+pins={};copymap=[]
+def read(p,expected=None):
+ p=Path(p).absolute();f=FrozenFile.capture(p)
+ if expected:assert sha(f.content)==expected,str(p)
+ pins[p]=f;return f.content
+def capture(p,relative,expected=None):
+ raw=read(p,expected);q=D/'inputs'/relative;q.parent.mkdir(parents=True,exist_ok=True)
+ with q.open('xb') as f:f.write(raw)
+ copymap.append({'original_path':str(Path(p).absolute()),'captured_path':str(q.relative_to(D)),'sha256':sha(raw),'bytes':len(raw),'meaning':'Exact existing evidence capture, not a new acquisition or change of original source context.'})
+ return raw
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+BASE='84241993a278a7a413422ef89a52c0b47dc57831'
+assert git(A,'rev-parse','HEAD').decode().strip()==BASE
+git_index=git(A,'ls-files','--stage','-z');git_status=git(A,'status','--porcelain=v1','--untracked-files=no','-z')
+owner_before={str(p.relative_to(A)):sha(p.read_bytes()) for cat in ['mapped','unmapped'] for p in sorted((A/'data/ingredients'/cat).glob('*.yaml'))}
+assert len(owner_before)==2956
+issue=json.loads(capture(ISSUES/'readback-00.json','issue/readback-00.json'))
+assert issue['id']==6724713374
+for n in ['publication-00.json','body.md','verified-manifest.json']:capture(ISSUES/n,'issue/'+n)
+for n in ['HANDOFF.json','MANIFEST.json','TRIAGE.md','NATIVE-PAIR-READBACK.json','ORIGIN-JOINS.json']:capture(TR/n,'collection/'+n)
+primary_names=['HANDOFF.json','MANIFEST.json','assessment-v2.json','input-bindings.json','findings-ready-for-root.json','inputs/selected-owner.yaml','inputs/authentic-before.yaml','inputs/ontology-capture.json','inputs/original-proposal-case-context.json','inputs/atcc1257-original-capture.pdf','inputs/atcc1257-original-capture.txt','inputs/w08-selected-git-context.json','inputs/before-current-head-binding.json','research/c/search-07.json','research/c/captures/coimbra-194502.body','research/c/captures/coimbra-194502.receipt.json','research/c/captures/coimbra-p22.png','skeptic/captures-v2/nist-menadione.body','skeptic/captures-v2/nist-menadione.receipt.json','research/c/captures/kegg-D02335-flat-r2.body','research/c/captures/lkt-V3479-msds.body','skeptic/captures-v3/sangon-vitamin-k3.body']
+for n in primary_names:capture(W/n,'research/'+n)
+context=json.loads((D/'inputs/research/inputs/original-proposal-case-context.json').read_bytes())
+for i,r in enumerate(context['entries']):capture(r['original_path'],'original-context/'+str(i)+'-'+Path(r['original_path']).name,r['original_sha256'])
+planpath=C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json'
+plan=json.loads(read(planpath,'cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'))
+op=next(r for r in plan['records'] if r['operation_id']=='ORIGINAL-w08::vm-prop-menadione')
+oldraw=read(W/'inputs/selected-owner.yaml','d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659')
+assert op['after_capture']['sha256']==sha(oldraw)
+authentic=git(A,'show',BASE+':'+op['before_source_record']);assert sha(authentic)==op['before_yaml_sha256']=='2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0'
+assert authentic==read(W/'inputs/authentic-before.yaml')
+for r in json.loads((W/'inputs/w08-selected-git-context.json').read_bytes())['rows']:
+ command=r['command'];raw=git(Path(command[3]),'show',command[5]);assert sha(raw)==r['sha256'];assert raw==read(r['frozen_path'])
+before=yaml.safe_load(oldraw);after=copy.deepcopy(before)
+assert before['identifier']=='CHEBI:28869' and before['chemical_properties']['cas_rn']=='58-27-5'
+positions=[i for i,s in enumerate(before['synonyms']) if s['synonym_text']=='Hemodal'];assert len(positions)==1
+i=positions[0];assert before['synonyms'][i]=={'synonym_text':'Hemodal','synonym_type':'EXACT_SYNONYM','source':'kg_microbe'}
+after['synonyms'][i]['synonym_type']='REJECTED_LABEL'
+note=("Claim-specific inherited-label assessment by Codex /root/step7d_science_c under "+issue['html_url']+". "
+      "The unqualified kg_microbe Hemodal entry is not a unique identity-bearing name for this neutral menadione owner. "
+      "Santa Cruz sc-205990 sections1/3 (https://datasheets.scbt.com/sc-205990.pdf) use Hemodal for menadione CAS58-27-5, "
+      "while sc-215295 sections1/3 (https://datasheets.scbt.com/sc-215295.pdf) use it for menadione sodium bisulfite CAS130-37-0. "
+      "Exact browser-extracted primary sections are retained in W02 research/c/search-07.json; failed direct HTTP bodies are separate. "
+      "The Bayer advertisement in Coimbra Medica February1945 PDF page22 separately identifies a derivative tablet and sodium-bisulfite injection "
+      "(https://am.uc.pt/romulo/download/wqnDk8Kjw5jDjsOQwpJpaGNtbGFuwpzClsKZwp9nwpM%3D/UCRC-Coimbra-Medica-1945-02.pdf; "
+      "complete PDF SHA256 691a9d0f916fca89f5d97b4f72e3c028d66e5d650915c895c74d9bd04c1028ca; visual page SHA256 2a1a5d83ca40a51ed5e52c61cbd314377b53bf945cfe33a0ca4aa91469a1d107). "
+      "This affirmative form ambiguity justifies only the unqualified entry's nonresolving REJECTED_LABEL disposition under MAPPING_SEMANTICS section3. "
+      "Positive neutral-menadione usage in NIST (https://webbook.nist.gov/cgi/cbook.cgi?ID=C58275&Units=SI), ChEBI and sc-205990 remains valid contextual evidence; not every Hemodal use is false. "
+      "Preserve its spelling/source/history, supported Aquakay/Aquinone/Kappaxin chemical-name senses, known CHEBI28869/CAS58-27-5 identity, "
+      "and the ATCC1257 50mg solute versus separate ethanol/water stock boundary and unvalidated flattened dose. No replacement identity, product equivalence, role or export approval is inferred.")
+new_evidence={'evidence_type':'LLM_SUGGESTION','source':issue['html_url'],'notes':note}
+after['ontology_mapping']['evidence'].append(new_evidence)
+record_curation_event(after,curator='Codex /root/step7d_science_c',action='REJECTED_AMBIGUOUS_INHERITED_ALIAS',llm_assisted=True,llm_model='gpt-6',previous_status=before['mapping_status'],new_status=before['mapping_status'],changes='Private successor to selected d18105cf under '+issue['html_url']+': change only bare Hemodal synonym_type from EXACT_SYNONYM to REJECTED_LABEL and append this claim-specific LLM evidence/history. Preserve kg_microbe source, positive neutral-name evidence, all other complete fields and historical prefixes. The same token also names distinct bisulfite/derivative materials; no universal false-name claim or replacement identity. ATCC1257 solute/stock and flattened-dose holds remain. No maintained application, independent approval or change to original source proposals/cases.')
+def exact_delta(value):
+ x=copy.deepcopy(value);assert x['synonyms'][i]['synonym_type']=='REJECTED_LABEL';x['synonyms'][i]['synonym_type']='EXACT_SYNONYM'
+ assert x['ontology_mapping']['evidence'].pop()==new_evidence
+ event=x['curation_history'].pop();assert event['llm_assisted'] is True and event['curator']=='Codex /root/step7d_science_c'
+ assert x==before,'Unrelated field or original history changed'
+exact_delta(after);assert not validate_ingredient(before) and not validate_ingredient(after)
+checks=[{'name':'closed schema before/after and exact inverse delta','status':'PASS'}]
+assert is_resolving_synonym(before['synonyms'][i]) and not is_resolving_synonym(after['synonyms'][i])
+assert all(is_resolving_synonym(s) for s in after['synonyms'] if s['synonym_text'] in {'Aquakay','Aquinone','Kappaxin'})
+checks.append({'name':'Hemodal no longer resolves; three supported chemical names still resolve','status':'PASS'})
+for label,mutator in [('historical authorship',lambda v:v['curation_history'][0].update(curator='invented-human')),('identity',lambda v:v.update(identifier='CHEBI:13037')),('second synonym rejection',lambda v:v['synonyms'][i-1].update(synonym_type='REJECTED_LABEL'))]:
+ mutant=copy.deepcopy(after);mutator(mutant)
+ try:exact_delta(mutant)
+ except AssertionError:checks.append({'name':'reject '+label+' mutation','status':'expected_refusal'})
+ else:raise AssertionError(label)
+bad=copy.deepcopy(after);bad['synonyms'][i]['guessed_identity']='CHEBI:28869';assert validate_ingredient(bad)
+checks.append({'name':'closed synonym schema rejects invented identity field','status':'expected_refusal'})
+producers=[A/'MAPPING_SEMANTICS.md',A/'src/mediaingredientmech/curate/publication_guard.py',A/'src/mediaingredientmech/curate/curation_event.py',A/'src/mediaingredientmech/ingredient_bundle_refresh.py',A/'src/mediaingredientmech/validation/write_validated.py',A/'src/mediaingredientmech/validation/component_partonomy.py',A/'src/mediaingredientmech/synonym_policy.py',A/'scripts/record_review.py',A/'schema/record_review.yaml']+sorted((A/'src/mediaingredientmech/schema').glob('*.yaml'))
+for p in producers:read(p)
+read(Path(__file__))
+def recheck():
+ for f in pins.values():f.verify()
+ assert git(A,'rev-parse','HEAD').decode().strip()==BASE and git(A,'ls-files','--stage','-z')==git_index
+ assert git(A,'status','--porcelain=v1','--untracked-files=no','-z')==git_status
+ assert owner_before=={str(p.relative_to(A)):sha(p.read_bytes()) for cat in ['mapped','unmapped'] for p in sorted((A/'data/ingredients'/cat).glob('*.yaml'))}
+(D/'candidates').mkdir();(D/'native-render').mkdir()
+render=D/'native-render/Menadione.yaml';write_validated_ingredient(after,render);raw=render.read_bytes();assert yaml.safe_load(raw)==after
+write_validated_ingredient(after,D/'native-render/Menadione-roundtrip.yaml');assert raw==(D/'native-render/Menadione-roundtrip.yaml').read_bytes()
+dest=D/'candidates/Menadione.yaml';publish_new_files([(dest,raw)],recheck);recheck()
+checks.append({'name':'native guarded private publication and exact roundtrip','status':'PASS'})
+with(D/'candidate.diff').open('x') as f:f.write(''.join(difflib.unified_diff(oldraw.decode().splitlines(True),raw.decode().splitlines(True),fromfile='selected-d181/Menadione.yaml',tofile='private-successor/Menadione.yaml')))
+save('SELECTOR.json',{'schema_version':1,'status':'PRIVATE_MENADIONE_SUCCESSOR_PENDING_DISTINCT_REVIEW','operation_id':op['operation_id'],'selected_predecessor':{'path':str(W/'inputs/selected-owner.yaml'),'sha256':sha(oldraw)},'payload':{'path':str(dest),'sha256':sha(raw)},'authentic_before_sha256':op['before_yaml_sha256'],'original_operation_exact':op,'issue':issue['html_url'],'source_decisions_unchanged':True,'independent_review':None,'scientific_approval':False,'application_authorized':False,'four_only_input_selection_changed':False})
+save('field-delta.json',{'only_semantic_field':{'path':f'synonyms/{i}/synonym_type','before':'EXACT_SYNONYM','after':'REJECTED_LABEL'},'new_evidence':new_evidence,'new_history':after['curation_history'][-1],'all_other_fields_and_complete_old_history_evidence_prefixes_exact':True})
+save('origin-proof.json',{'original_operation':op,'original_context':context,'published_payload_and_proposals_verified':True,'authentic_baseline':BASE,'before_hash':sha(authentic),'source_case_changes':False})
+save('CAPTURE-MAP.json',copymap)
+save('author-checks.json',{'checks':checks,'source_and_inputs_unchanged':True,'private_only':True,'candidate_sha256':sha(raw)})
+save('input-pins.json',[{'path':str(p),'sha256':sha(f.content),'bytes':len(f.content)} for p,f in pins.items()])
+print(json.dumps({'candidate':str(dest),'sha256':sha(raw),'checks':len(checks),'captures':len(copymap),'independent_review_pending':True},indent=2))

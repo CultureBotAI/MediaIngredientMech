@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:jcm_1353_phosphate_buffered_trace_vitamins
+preferred_term: JCM 1353 phosphate-buffered trace vitamins
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1353_phosphate_buffered_trace_vitamins
+  ontology_label: JCM 1353 phosphate-buffered trace vitamins
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Trace vitamins (JCM197)
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+- component_name: NaH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.468'
+  concentration_unit: G
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.866'
+  concentration_unit: G
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353
+    source_record: JCM 1353 phosphate-buffered trace vitamins
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: JCM1353 adds both printed phosphate inputs to1L of JCM197tracevitamins; no
+    extra water or unspecified hydrate is inferred. The receiving recipe calls the
+    additions autoclaved or filter-sterilized and marks this vitamin stock with an
+    asterisk without an explicit asterisk key; preserve those sterilization alternatives
+    rather than asserting a definite method. It is used at10ml/L of receiving medium.
+    Nested JCM197 remains an unmapped named child pending shared-owner integration.
+    This phosphate-containing stock is distinct from JCM197 itself. COMPLETE refers
+    to the three printed preparation inputs.
+notes: 'JCM1353 adds both printed phosphate inputs to1L of JCM197tracevitamins; no
+  extra water or unspecified hydrate is inferred. The receiving recipe calls the additions
+  autoclaved or filter-sterilized and marks this vitamin stock with an asterisk without
+  an explicit asterisk key; preserve those sterilization alternatives rather than
+  asserting a definite method. It is used at10ml/L of receiving medium. Nested JCM197
+  remains an unmapped named child pending shared-owner integration. This phosphate-containing
+  stock is distinct from JCM197 itself. COMPLETE refers to the three printed preparation
+  inputs. Raw source label retained for this occurrence only: ''Trace vitamins solution*
+  (see below)''. Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true

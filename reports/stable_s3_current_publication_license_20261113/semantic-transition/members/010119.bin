@@ -1,0 +1,41 @@
+{
+  "index": 151,
+  "case_id": "KG_CASE:4587ab8604d2857e7527db79daa6a4a379723dc93003ea6314fc200d36042c99",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "laurat|dodecanoate",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "laurat|dodecanoate",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Dodecanoate.yaml:2:preferred_term: Dodecanoate\ndata/ingredients/mapped/Dodecanoate.yaml:5:  ontology_label: dodecanoate\ndata/ingredients/mapped/Dodecanoate.yaml:11:    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:dodecanoate; '\ndata/ingredients/mapped/Dodecanoate.yaml:25:  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:dodecanoate; '\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:2:preferred_term: 5-Hydroxydodecanoate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:5:  ontology_label: 5-hydroxylaurate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:11:    notes: Local CHEBI labels CHEBI:195418 5-hydroxylaurate with 5-hydroxydodecanoate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:15:    notes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH. The label ''5-Hydroxydodecanoate''\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:16:      resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:17:      label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:21:- synonym_text: 5-Hydroxydodecanoate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:24:- synonym_text: 5-hydroxydodecanoate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:27:- synonym_text: 5-hydroxylaurate\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:45:  changes: Mapped to CHEBI:195418 5-hydroxylaurate using local CHEBI exact synonym\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:46:    evidence for 5-hydroxydodecanoate.\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:53:  changes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#312). The label ''5-Hydroxydodecanoate''\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:54:    resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:55:    label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology\ndata/ingredients/mapped/5-Hydroxydodecanoate.yaml:63:  5-hydroxylaurate by local CHEBI exact synonym review on 2026-05-11.\ndata/ingredients/mapped/Na-laurate.yaml:2:preferred_term: Na-laurate\ndata/ingredients/mapped/Na-laurate.yaml:5:  ontology_label: sodium dodecanoate\ndata/ingredients/mapped/Na-laurate.yaml:19:- synonym_text: sodium dodecanoate\ndata/ingredients/mapped/Na-laurate.yaml:22:- synonym_text: sodium laurate\ndata/ingredients/mapped/Na-laurate.yaml:40:    (Na-laurate)\ndata/ingredients/mapped/Na-laurate.yaml:47:    salt, Lauric acid, sodium salt, sodium dodecanoate, sodium laurate'\ndata/ingredients/mapped/Na-laurate.yaml:69:  changes: 'ontology_label ''Na-laurate'' -> ''sodium dodecanoate'': synced to canonical\ndata/ingredients/mapped/Na-laurate.yaml:70:    CHEBI label (preferred_term ''Na-laurate'' unchanged).'\n",
+  "label_index_stdout": "1337:5-Hydroxydodecanoate,preferred_term,CHEBI:195418,5-Hydroxydodecanoate,CHEBI:195418,MAPPED,unique\n1338:5-hydroxydodecanoate,synonym,CHEBI:195418,5-Hydroxydodecanoate,CHEBI:195418,MAPPED,unique\n1339:5-hydroxylaurate,synonym,CHEBI:195418,5-Hydroxydodecanoate,CHEBI:195418,MAPPED,unique\n3867:Dodecanoate,preferred_term,CHEBI:18262,Dodecanoate,CHEBI:18262,MAPPED,unique\n3869:\"Dodecanoic acid, sodium salt\",synonym,CHEBI:131839,Na-laurate,CHEBI:131839,MAPPED,unique\n5371:\"Lauric acid, sodium salt\",synonym,CHEBI:131839,Na-laurate,CHEBI:131839,MAPPED,unique\n6267:Na-laurate,preferred_term,CHEBI:131839,Na-laurate,CHEBI:131839,MAPPED,unique\n7834:sodium dodecanoate,synonym,CHEBI:131839,Na-laurate,CHEBI:131839,MAPPED,unique\n7883:sodium laurate,synonym,CHEBI:131839,Na-laurate,CHEBI:131839,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "KG_CASE:4587ab8604d2857e7527db79daa6a4a379723dc93003ea6314fc200d36042c99",
+      "label": "Na-laurate",
+      "proposal_ids": []
+    }
+  ]
+}

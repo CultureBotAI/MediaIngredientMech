@@ -1,0 +1,66 @@
+id: CultureMech:009468
+name: mueller_hinton_mh_broth
+original_name: Mueller–Hinton (MH) broth
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Ciprofloxacin
+  concentration:
+    value: '4'
+    unit: MG_PER_L
+  source: TOGO M2937
+  notes: TOGO M2937 lists optional ciprofloxacin at 4 ug/ml; this is stored as the
+    equivalent 4 mg/L.
+  term:
+    id: CHEBI:100241
+    label: ciprofloxacin
+  mediaingredientmech_chebi_term:
+    id: CHEBI:100241
+    label: ciprofloxacin
+  cellular_metabolic_roles:
+  - INHIBITOR
+- preferred_term: Mueller-Hinton broth
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: TOGO M2937
+  notes: TOGO M2937 lists 1 L of Mueller-Hinton broth.
+media_term:
+  preferred_term: TOGO Medium M2937
+  term:
+    id: TOGO:M2937
+    label: Mueller–Hinton (MH) broth
+notes: TOGO M2937 records Mueller-Hinton broth at 42 C, optionally supplemented with
+  ciprofloxacin at 4 ug/ml.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.415123Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M2937'
+- timestamp: '2026-03-13T06:20:06.299796Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009468'
+- timestamp: '2026-03-17T19:46:25.275324+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Mueller–Hinton (MH) broth" to "mueller_hinton_mh_broth"
+    for consistent matching
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_togo_literal_products_score40.py
+  action: RESOLVED_TOGO_LITERAL_PRODUCT_SCORE40_GRAPH
+  changes: Resolved score-40 TOGO literal product/additive graph
+  source: https://togomedium.org/medium/M2937
+  notes: TOGO M2937 records Mueller-Hinton broth at 42 C, optionally supplemented
+    with ciprofloxacin at 4 ug/ml.
+temperature_value: 42.0
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M2937

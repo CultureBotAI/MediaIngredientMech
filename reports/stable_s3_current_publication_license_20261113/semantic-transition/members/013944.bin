@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "review_status": "complete",
+  "reviewer": "/root/materials",
+  "primary_scientific_author": "/root",
+  "primary_provenance_author": "/root/antibiotics",
+  "completed_at": "2026-11-08T05:48:30.959753+00:00",
+  "scope": "Only the two exact frozen source cases and proposed existing-owner associations; no broader hydrate family, all-use source-ID or whole-owner release assessment",
+  "resulting_association_status": "SUPPORTED for exact source cases after separate skeptical review; all stated publication and routing gates retained",
+  "reviewed_author_draft_status": "proposed source associations pending separate skeptical review",
+  "author_draft_status_interpretation": "Historical primary-author draft status is preserved byte-for-byte; this independent receipt supplies the completed review outcome without rewriting the reviewed association payload.",
+  "published_parent": "d74ab6d48f6345260087cf973cadbe7b6269109f",
+  "input_hashes": {
+    "cases.json": "371920f6f3f78000a608a3616ce6852d17ee861e57e1bc2e6adc4238b6d4159d",
+    "acceptance.json": "4b51ff4640997de8205c90f9aed62cfaa33bf8320dee3c4d4bb7ab9ef23b53cc",
+    "decisions.json": "b1fcbdb2192605dcdb1d103cb47386718aa7b495b6ebfe579e952d37b033066f",
+    "existing-owner-associations.json": "3661cfa9853ae8f3c9edff29f5790bb07626b27f17aa604a8a2ed12f5b69d71a",
+    "evidence.json": "59b56083d20fe1bec766cb28e500bf1b513d30250ed59432e3bc480c7c185885",
+    "scientific-payload-hashes.json": "f868df9e793991771f637a5eebbdbed95e408dfc7c04518fabc6da8c9e8ca746",
+    "provenance/source-associations.json": "da0c01093db818d70556a66ee9b561e8bc6bd70ee39d1cb62d618177a840909a",
+    "provenance/PROVENANCE-MANIFEST.json": "987c3a90374eeb2b87ae6eaa2212225542b1d45ead874d78df3bf2339df8bc43",
+    "provenance/replay_lineage.py": "123fb6b78a6983ee8006aeb51bce68b3bff4bd37dfd2f6a2ad647b845be61437"
+  },
+  "evidence_file_sha256_before_peer_attachment": "59b56083d20fe1bec766cb28e500bf1b513d30250ed59432e3bc480c7c185885",
+  "association_file_sha256": "3661cfa9853ae8f3c9edff29f5790bb07626b27f17aa604a8a2ed12f5b69d71a",
+  "scientific_hash_method": "SHA256 canonical JSON sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False; excludes only independent_review from each decision",
+  "case_reviews": [
+    {
+      "case_id": "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+      "source_id": "mediadive.ingredient:38",
+      "raw_source_label": "CoCl2 x 6 H2O",
+      "case_input_sha256": "d914376a6ab96adf399d8502c21da3932be9b2dc1f3b4f643bd850f0416e55f1",
+      "scientific_payload_sha256": "642e7ec2f49a8e6973c7ac5acd9d542bfa9830e3c6ee6f0cf85678f4235e7ee5",
+      "association_id": "hx-association-38",
+      "association_canonical_sha256": "4f1b8f4343864fc8db8487f1c9b2cb289c65780d0bfa5ee09b7e344ac847aa80",
+      "review_status": "complete",
+      "result": "supported exact source-specific association with retained gates",
+      "scientific_reasoning": "The first producer-selected cobalt row is exactly medium14/SL-4 row6, reconstructed through catalogue order and verified against retained original response bytes. The original recipe witness explicitly names CoCl2 six-water reagent; ChEBI53503 defines cobalt:chloride:water1:2:6 with CAS7791-13-1. Current automatic parent annotations and parent-derived mmol_l do not override that source form. The existing active owner already retains the raw label; its generic hydrate and water1/7 synonyms and provisional role remain outside this source association.",
+      "source_scope": {
+        "original_response_sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144",
+        "original_observed_at": "2026-11-05T06:23:28.282363+00:00",
+        "original_json_pointer": "/data/solutions/1/recipe/5",
+        "medium_id": 14,
+        "solution_id": 20,
+        "recipe_order": 6,
+        "not_all_occurrences_of_ingredient_id": true
+      },
+      "evidence_ids_reviewed": [
+        "hx-frozen-cases",
+        "hx-lineage",
+        "hx-lineage-validation",
+        "hx-original-body",
+        "hx-dsmz-recipe",
+        "hx-current-rest",
+        "hx-current-solution",
+        "hx-ingredient-38",
+        "hx-page-38",
+        "hx-group-Co",
+        "hx-issue344",
+        "hx-current-owners",
+        "hx-remote-owners",
+        "hx-sa-chebi-53503"
+      ],
+      "retained_holds": {
+        "whole_owner_export_disposition": "WITHHOLD",
+        "exact_frozen_review_key": "799",
+        "source_hold_recommendation": "Source-form ambiguity resolved for this exact case after separate review; coordinator must reconcile existing content-bound gates before any routing change. No runtime hold or selector is edited.",
+        "excluded_scopes": [
+          "Every other source case",
+          "Atypical/unattested hydrate forms in issue344",
+          "All unrelated owner aliases and provisional roles",
+          "Rejected legacy records and source-specific rejected labels",
+          "Any solution/stock or dissolved-species identity",
+          "Whole-row publication approval"
+        ]
+      },
+      "review_findings": [
+        "HX-SR-01",
+        "HX-SR-02"
+      ],
+      "export_approval": false,
+      "maintained_mutation": false
+    },
+    {
+      "case_id": "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63",
+      "source_id": "mediadive.ingredient:40",
+      "raw_source_label": "NiCl2 x 6 H2O",
+      "case_input_sha256": "99ce8066e233feb35be383c055cf4299d7271a1895a8e1bec6d5685743ea14b2",
+      "scientific_payload_sha256": "582ff6afa54b2e688aa9357e04e90ad910c2f1ac30715f8ffc2500494ffc70dc",
+      "association_id": "hx-association-40",
+      "association_canonical_sha256": "e905e9874546977c0f25c4489f5820f84b56e5faece3bf24f4a092513fed8dca",
+      "review_status": "complete",
+      "result": "supported exact source-specific association with retained gates",
+      "scientific_reasoning": "The first producer-selected nickel row is exactly medium14/SL-4 row8, reconstructed through catalogue order and verified against retained original response bytes. The original recipe witness explicitly names NiCl2 six-water reagent; ChEBI53542 defines nickel:chloride:water1:2:6 with CAS7791-20-0. Issue344 itself warns that this genuine hydrate can carry anhydrous metadata; the group distribution reinforces that warning without proving a backend mechanism. Existing owner association is supported while the full row, roles and rejected legacy records remain held.",
+      "source_scope": {
+        "original_response_sha256": "eae2b02dd9bf80cafe07a5758681fb72ec3a4590de7d25a620c071802fc23144",
+        "original_observed_at": "2026-11-05T06:23:28.282363+00:00",
+        "original_json_pointer": "/data/solutions/1/recipe/7",
+        "medium_id": 14,
+        "solution_id": 20,
+        "recipe_order": 8,
+        "not_all_occurrences_of_ingredient_id": true
+      },
+      "evidence_ids_reviewed": [
+        "hx-frozen-cases",
+        "hx-lineage",
+        "hx-lineage-validation",
+        "hx-original-body",
+        "hx-dsmz-recipe",
+        "hx-current-rest",
+        "hx-current-solution",
+        "hx-ingredient-40",
+        "hx-page-40",
+        "hx-group-Ni",
+        "hx-issue344",
+        "hx-current-owners",
+        "hx-remote-owners",
+        "hx-sa-chebi-53542"
+      ],
+      "retained_holds": {
+        "whole_owner_export_disposition": "WITHHOLD",
+        "exact_frozen_review_key": "2097",
+        "source_hold_recommendation": "Source-form ambiguity resolved for this exact case after separate review; coordinator must reconcile existing content-bound gates before any routing change. No runtime hold or selector is edited.",
+        "excluded_scopes": [
+          "Every other source case",
+          "Atypical/unattested hydrate forms in issue344",
+          "All unrelated owner aliases and provisional roles",
+          "Rejected legacy records and source-specific rejected labels",
+          "Any solution/stock or dissolved-species identity",
+          "Whole-row publication approval"
+        ]
+      },
+      "review_findings": [
+        "HX-SR-01",
+        "HX-SR-02"
+      ],
+      "export_approval": false,
+      "maintained_mutation": false
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "HX-SR-01",
+      "severity": "P2",
+      "scope": "Evidence applicability only; scientific decisions and owner associations unchanged",
+      "status": "resolved",
+      "problem": "Six element-specific evidence entries declared both case IDs although their captures concerned only cobalt or nickel.",
+      "resolution": "Primary author narrowed case_ids for ingredient/page/group entries to their corresponding exact case.",
+      "rereview": "Compared all six final evidence entries and both decision reference lists; no cross-element applicability remains.",
+      "initial_evidence_sha256": "6afc0ee716b09196c4d1a8adcf77b288fbf5ba9febd73250266719d3622ae762",
+      "final_evidence_sha256_before_peer_attachment": "59b56083d20fe1bec766cb28e500bf1b513d30250ed59432e3bc480c7c185885"
+    },
+    {
+      "finding_id": "HX-SR-02",
+      "severity": "P2",
+      "scope": "Capture integrity after primary provenance script finalization",
+      "status": "resolved",
+      "problem": "The evidence ledger initially pinned the earlier replay-validation receipt after its author finalized source-manifest checks and changed the receipt bytes.",
+      "resolution": "Primary author refreshed the lineage-validation capture hash after the provenance bundle froze.",
+      "rereview": "Final capture hashes and complete provenance manifest validated; finalized replay script independently rerun without writes and returned PASS.",
+      "final_script_sha256": "123fb6b78a6983ee8006aeb51bce68b3bff4bd37dfd2f6a2ad647b845be61437",
+      "final_replay_validation_sha256": "1becb80f071ab54a112993dd79b4177d3fa84fca013d71dd17ee32ad22320f0e"
+    }
+  ],
+  "open_findings": [],
+  "owner_mutation_proposal_count": 0,
+  "source_association_count": 2,
+  "validation": {
+    "status": "PASS",
+    "evidence_capture_count": 18,
+    "candidate_owner_count": 9,
+    "all_evidence_hashes_verified": true,
+    "all_provenance_manifest_members_verified": true,
+    "original187_decisions_byte_identical_to_parent": true,
+    "all_case_and_scientific_hashes_verified": true,
+    "all_source_association_links_verified": true,
+    "final_provenance_script_readonly_rerun": {
+      "status": "PASS",
+      "checked_at": "2026-11-08T05:47:21.585804+00:00",
+      "upstream_revision": "f10fb3909ed32898a54176ca77e509a950d16b84",
+      "admitted_generation_manifest_sha256": "fa3c9e47bad5ff298b35e32382de7bd642e6be6ed95540db128d7d674058924f",
+      "catalogue_media_count": 3344,
+      "raw_medium_bodies_verified": 3344,
+      "ledger_event_count": 6737,
+      "compound_rows_replayed": 1214,
+      "compound_values_and_insertion_order_equal": true,
+      "solution_rows_replayed": 5442,
+      "solution_values_and_insertion_order_equal": true,
+      "exact_case_count": 2,
+      "owner_count": 9,
+      "source_associations_sha256": "da0c01093db818d70556a66ee9b561e8bc6bd70ee39d1cb62d618177a840909a",
+      "script_sha256": "123fb6b78a6983ee8006aeb51bce68b3bff4bd37dfd2f6a2ad647b845be61437"
+    },
+    "independent_selection_implementation_capture": {
+      "path": "independent/independent-lineage-replay.json",
+      "sha256": "88b3f5a4d93367da9c12a1ab6e6f3a250b9fbaafee2dcaa16bb5de9cf8e8d7f1"
+    }
+  },
+  "independent_work": [
+    "Read full issue344 body and both comments, prior published decisions and nine current owner files.",
+    "Fresh official ingredient38/40 REST and webpage captures and cobalt/nickel group pages independently verified automatic-matching disclaimer and shared parent annotations.",
+    "Fresh official DSMZ14 PDF independently retrieved; exact bytes equal primary author capture and table explicitly states both six-water reagents.",
+    "Independently implemented catalogue-first traversal and compared all1214 compound and5442 solution values and insertion order; both selected rows match exact frozen cases and retained original body.",
+    "Read producer catalogue/acquisition/extraction code and independently reran final pure-extraction plus manifest/body/ledger validation without --write.",
+    "Verified exact ChEBI1:2:6 definitions, CAS numbers and current active owners; kept stock preparation and dissolved-species scope separate."
+  ],
+  "limitations": [
+    "The recipe asserts supplied reagent form; this is not analytical verification of a physical supplier lot.",
+    "The broad/group-level automatic annotation interpretation is an evidence-supported inference; exact backend assignment of each field is not proven.",
+    "PDF and provider API are related source-lineage views, not independent chemical replicates.",
+    "Identical source row values occur in other recipes; producer ordering, not value matching, reconstructs the selected frozen source provenance.",
+    "No full production acquisition validator, SQLite-cache deserialization, downstream rebuild, maintained mutation, alias activation, hold edit or global source-ID routing was performed.",
+    "Original source body observed_at remains2026-11-05; fresh PDF and reviewer capture times are separately recorded.",
+    "All185 other campaign source decisions and atypical hydrate families are outside this reassessment."
+  ],
+  "release_approval": false
+}

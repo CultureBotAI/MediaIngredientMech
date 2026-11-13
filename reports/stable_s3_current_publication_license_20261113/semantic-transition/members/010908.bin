@@ -1,0 +1,253 @@
+{
+  "case_indices": [
+    167
+  ],
+  "search_regex": "malt.*broth",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/mapped/Malt_Extract_Broth.yaml",
+      "sha256": "74e309a78e06e989234fb08bb61de8c5c152b62d377b00bff20a5a27d49ef910",
+      "record": {
+        "identifier": "kgmicrobe.ingredient:malt_extract_broth",
+        "preferred_term": "Malt extract broth",
+        "synonyms": [
+          {
+            "synonym_text": "Malt extract broth",
+            "synonym_type": "RAW_TEXT",
+            "source": "extracted_from_malt_extract_yaml"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 5,
+          "media_count": 5
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-19T07:53:54.781350+00:00",
+            "curator": "audit_extract_complex_media_synonyms",
+            "action": "EXTRACTED_COMPLEX_MEDIUM",
+            "changes": "Extracted from Malt_Extract.yaml — 'Malt extract broth' is a complete media formulation, not a synonym of the base ingredient. Pending curator re-mapping.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:19.718203+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Malt')",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:18:21.942915+00:00",
+            "curator": "resolve_unmapped_v2",
+            "action": "AUTO_UPGRADE_TO_FOODON",
+            "changes": "primary UNMAPPED_0133 → FOODON:03301056 (strategy=stem-match)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-05T00:00:00+00:00",
+            "curator": "ingredient_mapping_review_2026_05_05",
+            "action": "CORRECTED",
+            "changes": "Changed identifier from FOODON:03301056 to kgmicrobe.ingredient:malt_extract_broth and retained FOODON:03301056 only as CLOSE_MATCH. Malt extract broth is a formulation, not identical to malt extract.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519250+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 5/5 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          }
+        ],
+        "notes": "Extracted from over-conflated Malt_Extract.yaml synonyms Malt extract broth is a formulation, not identical to malt extract.",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "ontology_mapping": {
+          "ontology_id": "FOODON:03301056",
+          "ontology_label": "malt extract",
+          "ontology_source": "FOODON",
+          "mapping_quality": "CLOSE_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "ingredient_mapping_review_2026-05-05",
+              "notes": "Malt extract broth is a formulation, not identical to malt extract."
+            }
+          ]
+        },
+        "kg_microbe_node_id": "kgmicrobe.ingredient:malt_extract_broth"
+      },
+      "names": [
+        "Malt extract broth",
+        "kgmicrobe.ingredient:malt_extract_broth",
+        "Malt extract broth"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:001248",
+      "recipe_label": "omy",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/omy.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "Malt extract broth",
+      "label_source": "legacy_name",
+      "resolved_identifier": "kgmicrobe.ingredient:malt_extract_broth",
+      "resolution_source": "mim_exact",
+      "local_identifier": "FOODON:03301056",
+      "source_compound_id": "",
+      "mim_preferred_term": "Malt extract broth",
+      "mim_matched_label": "Malt extract broth",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03301056",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "5.0",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"5.0\"},\"notes\":\"MediaDive Medium 1815 lists 5.0 g Malt extract broth.\",\"preferred_term\":\"Malt extract broth\",\"source\":\"DSMZ/MediaDive Medium 1815\",\"term\":{\"id\":\"FOODON:03301056\",\"label\":\"malt extract\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:002035",
+      "recipe_label": "luedemann_medium_luedemann_1968",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/luedemann_medium_luedemann_1968.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "Malt extract broth",
+      "label_source": "legacy_name",
+      "resolved_identifier": "kgmicrobe.ingredient:malt_extract_broth",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Malt extract broth",
+      "mim_matched_label": "Malt extract broth",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03301056",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "15",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"15\"},\"evidence\":[{\"explanation\":\"Concentration evidence for ingredients[1].concentration (Malt extract broth) in MediaDive medium 877; locator=$.data.solutions[0].recipe[1]. Provider explicitly reports g_l=15; check: 15 g * 1 g/g / (1000 ml / 1000 ml per L) = 15 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T12:20:22.213900+00:00; response SHA256=550b2223f0b7a736e7043e834e9f4063deaadbde167a7524dd4a8083562c79a6.\",\"reference\":\"https://mediadive.dsmz.de/rest/medium/877\",\"snippet\":\"{\\n                        \\\"recipe_order\\\": 2,\\n                        \\\"compound\\\": \\\"Malt extract broth\\\",\\n                        \\\"compound_id\\\": 810,\\n                        \\\"amount\\\": 15,\\n                        \\\"unit\\\": \\\"g\\\",\\n                        \\\"g_l\\\": 15,\\n                        \\\"optional\\\": 0\\n                    }\",\"supports\":\"SUPPORT\"}],\"preferred_term\":\"Malt extract broth\"}"
+    },
+    {
+      "recipe_id": "CultureMech:006714",
+      "recipe_label": "luedemann_medium_luedemann_1968",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/KOMODO_877_LUEDEMANN_medium_LUEDEMANN_1968.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "1",
+      "preferred_term": "Malt extract broth",
+      "label_source": "legacy_name",
+      "resolved_identifier": "kgmicrobe.ingredient:malt_extract_broth",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Malt extract broth",
+      "mim_matched_label": "Malt extract broth",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03301056",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "15",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"15\"},\"evidence\":[{\"explanation\":\"Concentration evidence for ingredients[1].concentration (Malt extract broth) in MediaDive medium 877; locator=$.data.solutions[0].recipe[1]. Provider explicitly reports g_l=15; check: 15 g * 1 g/g / (1000 ml / 1000 ml per L) = 15 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T12:20:22.213900+00:00; response SHA256=550b2223f0b7a736e7043e834e9f4063deaadbde167a7524dd4a8083562c79a6. KOMODO accession 877 is mapped to the same DSMZ accession by https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaList; mapping response SHA256=d8259d98e6dbffdf6961a1ab92bc86f3567d5d96de352bfa079edb2a91e9580a. The mapping supports identity only, not ingredient quantities or variants.\",\"reference\":\"https://mediadive.dsmz.de/rest/medium/877\",\"snippet\":\"{\\n                        \\\"recipe_order\\\": 2,\\n                        \\\"compound\\\": \\\"Malt extract broth\\\",\\n                        \\\"compound_id\\\": 810,\\n                        \\\"amount\\\": 15,\\n                        \\\"unit\\\": \\\"g\\\",\\n                        \\\"g_l\\\": 15,\\n                        \\\"optional\\\": 0\\n                    }\",\"supports\":\"SUPPORT\"}],\"preferred_term\":\"Malt extract broth\"}"
+    },
+    {
+      "recipe_id": "CultureMech:011243",
+      "recipe_label": "Main sol. 877",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_1816_Main_sol_877.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "1",
+      "preferred_term": "Malt extract broth",
+      "label_source": "preferred_term",
+      "resolved_identifier": "kgmicrobe.ingredient:malt_extract_broth",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:810",
+      "mim_preferred_term": "Malt extract broth",
+      "mim_matched_label": "Malt extract broth",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03301056",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "15",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"15\"},\"evidence\":[{\"explanation\":\"Concentration evidence for composition[1].concentration (Malt extract broth) in MediaDive solution 1816; locator=$.data.recipe[1] (compound_id=810). Provider explicitly reports g_l=15. Arithmetic check: 15 g * 1 g/g / (1000 ml / 1000 ml per L) = 15 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \\\"volume\\\": 1000. Retrieved 2026-10-07T08:56:40.396755+00:00; response SHA256=05a12f290b5d10d9e755bdaffdd3ab9c22dcb3720f430941863636573cb1bae2.\",\"reference\":\"https://mediadive.dsmz.de/rest/solution/1816\",\"snippet\":\"{\\n                \\\"recipe_order\\\": 2,\\n                \\\"compound\\\": \\\"Malt extract broth\\\",\\n                \\\"compound_id\\\": 810,\\n                \\\"solution\\\": null,\\n                \\\"solution_id\\\": null,\\n                \\\"condition\\\": null,\\n                \\\"attribute\\\": null,\\n                \\\"amount\\\": 15,\\n                \\\"unit\\\": \\\"g\\\",\\n                \\\"g_l\\\": 15,\\n                \\\"mmol_l\\\": null,\\n                \\\"optional\\\": 0\\n            }\",\"supports\":\"SUPPORT\"}],\"preferred_term\":\"Malt extract broth\",\"term\":{\"id\":\"mediadive.compound:810\",\"label\":\"Malt extract broth\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:014985",
+      "recipe_label": "Main sol. 1815",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_6325_Main_sol_1815.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "1",
+      "preferred_term": "Malt extract broth",
+      "label_source": "preferred_term",
+      "resolved_identifier": "kgmicrobe.ingredient:malt_extract_broth",
+      "resolution_source": "mim_exact",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:810",
+      "mim_preferred_term": "Malt extract broth",
+      "mim_matched_label": "Malt extract broth",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "MAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "FOODON:03301056",
+      "grounding_reason": "trusted MIM label-index answer",
+      "concentration_value": "5",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"5\"},\"preferred_term\":\"Malt extract broth\",\"term\":{\"id\":\"mediadive.compound:810\",\"label\":\"Malt extract broth\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/KOMODO_877_LUEDEMANN_medium_LUEDEMANN_1968.yaml",
+      "sha256": "0dd3f4608ba48151cef2bd2b383e241d12c1cd42629b9a3ca3561963eac053ee",
+      "frozen_input_manifest_hash": "0dd3f4608ba48151cef2bd2b383e241d12c1cd42629b9a3ca3561963eac053ee",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/luedemann_medium_luedemann_1968.yaml",
+      "sha256": "a526536929e39edeb16326dfdab78ba90797aef91ef1a2b84ef8d16c7460339a",
+      "frozen_input_manifest_hash": "a526536929e39edeb16326dfdab78ba90797aef91ef1a2b84ef8d16c7460339a",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_1816_Main_sol_877.yaml",
+      "sha256": "3afac8f2e8ac1c59f10c9539923b4949e4697f4c30671b0914aef4b9a0c3bd8e",
+      "frozen_input_manifest_hash": "3afac8f2e8ac1c59f10c9539923b4949e4697f4c30671b0914aef4b9a0c3bd8e",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_6325_Main_sol_1815.yaml",
+      "sha256": "eaf763e00d6d4d0de7400f054dbf9d2d114ed3defa17698be9dd48fb10b78ab2",
+      "frozen_input_manifest_hash": "eaf763e00d6d4d0de7400f054dbf9d2d114ed3defa17698be9dd48fb10b78ab2",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/omy.yaml",
+      "sha256": "ebb475524e799c6a13c3f11992de61a55b73c124bfcc7f820feea0fc156ad893",
+      "frozen_input_manifest_hash": "ebb475524e799c6a13c3f11992de61a55b73c124bfcc7f820feea0fc156ad893",
+      "matches_frozen": true
+    }
+  ]
+}

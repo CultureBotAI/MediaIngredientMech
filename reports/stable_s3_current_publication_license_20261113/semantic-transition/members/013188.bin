@@ -1,0 +1,88 @@
+identifier: kgmicrobe.ingredient:togomedium_m2405_basal_salts_medium
+preferred_term: TogoMedium M2405 basal salts medium
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togomedium_m2405_basal_salts_medium
+  ontology_label: TogoMedium M2405 basal salts medium
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2405
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+- component_name: MgSO4 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.36'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: FeSO4 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.28'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: (NH4)SO4
+  reference_scope: UNMAPPED
+  concentration_value: '2.38'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.42'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10.69'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2405
+    source_record: TogoMedium M2405 basal salts medium
+    notes: Literal M2405 BSM subrecipe, used90%v/v with10%LB. Formula (NH4)SO4 and
+      unusual CaCl2.7H2O remain unresolved, not silently repaired. Agar percentage
+      basis unreported. No chemical equivalence to a conventional BSM is asserted.
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Literal M2405 BSM subrecipe, used90%v/v with10%LB. Formula (NH4)SO4 and unusual
+  CaCl2.7H2O remain unresolved, not silently repaired. Agar percentage basis unreported.
+  No chemical equivalence to a conventional BSM is asserted. Raw source labels retained
+  in linked frozen cases: [''Basal salts medium (BSM)'']. Generic labels are not global
+  resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.232641+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

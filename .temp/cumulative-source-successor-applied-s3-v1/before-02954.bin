@@ -1,0 +1,59 @@
+identifier: UNMAPPED_0272
+preferred_term: ZMB_ALS
+synonyms:
+- synonym_text: ZMB_ALS
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 33
+  media_count: 33
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 33 CultureBot media; samples: ZMB_ALS_noAlanine, ZMB_ALS_noArginine, ZMB_ALS_noGlycine….
+    No CAS-RN or CHEBI mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named defined-medium/base formulation and left unmapped
+    pending recipe-level curation rather than mapping the acronym to unrelated lexical
+    hits.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/ZMB_ALS-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `ZMB_ALS` is an
+    unresolved **named medium/base-formulation label**, not a single chemical, salt,
+    hydrate, buffer, extract, or ontology-grounded commercial product. The CultureBot
+    derivative names (`ZMB_ALS_noAlanine`, `..._noArginine`, `..._noGlycine`, etc.)
+    are consistent with a leave-one-amino-acid-out screening series, but names alone
+    do not establish the parent  No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002954; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  33 CultureBot media; samples: ZMB_ALS_noAlanine, ZMB_ALS_noArginine, ZMB_ALS_noGlycine….
+  No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named defined-medium/base
+  formulation.'
+ingredient_type: NAMED_MEDIUM
+mim_id: MIM:0002954
+legacy_identifiers:
+- MIM:ZMB_ALS
+- UNMAPPED_0272

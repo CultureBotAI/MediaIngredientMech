@@ -1,0 +1,51 @@
+identifier: kgmicrobe.ingredient:laked_horse_blood_hema_m2932
+preferred_term: Laked horse blood, Hema Resource and Supply (TOGO M2932)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0001234
+  ontology_label: horse blood
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2932
+    notes: TOGO M2932 explicitly names laked equine blood from Hema Resource and Supply.
+      Lysis, species and supplier remain in scope; the receiving-medium5%v/v does
+      not become the product concentration. Broader material parent only; distinct
+      local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.560974+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: TOGO M2932 explicitly names laked equine blood from Hema Resource and Supply.
+    Lysis, species and supplier remain in scope; the receiving-medium5%v/v does not
+    become the product concentration. Isolated successor proposal only; original published
+    review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.841967+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Laked horse blood
+  supplier: Hema Resource & Supply, Aurora, OR
+  notes: Source-qualified supplier claim only; no product number or laking method
+    stated.
+notes: 'TOGO M2932 explicitly names laked equine blood from Hema Resource and Supply.
+  Lysis, species and supplier remain in scope; the receiving-medium5%v/v does not
+  become the product concentration. Source labels retained as nonresolving provenance:
+  [{"case_id": "CM_NAME:39e5014231767fa76f07a19d59096709ae1c885b295f162a0f48b2f8337b0b27",
+  "raw_label": "laked horse blood (Hema Resource & Supply, Aurora, OR)"}]. No global
+  generic alias, supplier equivalence, role approval or complete publication approval
+  is conferred. Receiving-medium dose and unit repairs remain separate. Existing native
+  holds and rejected labels are preserved.'

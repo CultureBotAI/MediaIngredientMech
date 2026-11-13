@@ -1,0 +1,2282 @@
+id: https://w3id.org/mediaingredientmech
+name: mediaingredientmech-schema
+title: MediaIngredientMech Schema
+description: >-
+  LinkML schema for curating media ingredient ontology mappings with LLM assistance tracking.
+  Provides structured workflow for mapping ingredients to CHEBI/FOODON terms with full audit trails.
+
+license: BSD-3-Clause
+see_also:
+  - https://github.com/CultureBotAI/MediaIngredientMech
+  - https://github.com/CultureBotAI/CultureMech
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mediaingredientmech: https://w3id.org/mediaingredientmech/
+  MIM: https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  FOODON: http://purl.obolibrary.org/obo/FOODON_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  MESH: http://id.nlm.nih.gov/mesh/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  METPO: http://purl.obolibrary.org/obo/METPO_
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  # Causal graphs (IngredientRecord.causal_graphs): relation ontologies, node
+  # groundings, sibling-Mech record namespaces and evidence references.
+  RO: http://purl.obolibrary.org/obo/RO_
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  GO: http://purl.obolibrary.org/obo/GO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  RHEA: http://purl.obolibrary.org/obo/RHEA_
+  EC: https://enzyme.expasy.org/EC/
+  TCDB: https://www.tcdb.org/search/result.php?tc=
+  NCBIfam: https://www.ncbi.nlm.nih.gov/genome/annotation_prok/evidence/
+  Pfam: https://www.ebi.ac.uk/interpro/entry/pfam/
+  InterPro: https://www.ebi.ac.uk/interpro/entry/InterPro/
+  PANTHER: http://www.pantherdb.org/panther/family.do?clsAccession=
+  PROSITE: https://prosite.expasy.org/
+  ComplexPortal: https://www.ebi.ac.uk/complexportal/complex/
+  UniProtKB: https://www.uniprot.org/uniprotkb/
+  MetaCyc: https://biocyc.org/META/NEW-IMAGE?object=
+  gomodel: http://model.geneontology.org/
+  Reactome: https://reactome.org/content/detail/
+  WikiPathways: https://www.wikipathways.org/pathways/
+  proteintraitsmech: https://w3id.org/proteintraitsmech/
+  traitmech: https://w3id.org/traitmech/
+  cellstructuremech: https://w3id.org/cellstructuremech/
+  PMID: http://www.ncbi.nlm.nih.gov/pubmed/
+  doi: https://doi.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  MIM.vocab: https://w3id.org/mediaingredientmech/vocabulary/
+
+default_prefix: mediaingredientmech
+default_range: string
+
+imports:
+  - linkml:types
+  # Shared, byte-identical Mech module: Discussion (knowledge gaps) + Dataset.
+  # Vendored + sha-pinned across the Mech repos — see culturebotai-claw#7.
+  - mech_shared
+
+classes:
+  IngredientCollection:
+    tree_root: true
+    description: Root container for all ingredient records
+    attributes:
+      generation_date:
+        range: datetime
+        description: Timestamp when this collection was generated
+      total_count:
+        range: integer
+        description: Total number of ingredient records
+      mapped_count:
+        range: integer
+        description: Number of mapped ingredients
+      unmapped_count:
+        range: integer
+        description: Number of unmapped ingredients
+      category:
+        description: >-
+          Categorization label for partitioned unmapped collections (e.g.
+          PLACEHOLDER, COMPLEX_MEDIA, INCOMPLETE_FORMULA, OTHER,
+          ALREADY_MAPPED). Set by scripts/categorize_unmapped.py; absent
+          on the canonical mapped_ingredients.yaml / unmapped_ingredients.yaml.
+      count:
+        range: integer
+        description: >-
+          Record count for this categorized partition. Mirrors len(ingredients)
+          when present.
+      ingredients:
+        range: IngredientRecord
+        multivalued: true
+        inlined_as_list: true
+        description: List of all ingredient records
+
+  IngredientRecord:
+    tree_root: true
+    description: >-
+      Core record for a media ingredient with ontology mapping, synonyms, and curation history.
+      Represents either a mapped ingredient (with a primary ontology, registry, or local
+      identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation).
+      Can serve as root element for individual YAML files or as elements in IngredientCollection.
+    attributes:
+      mim_id:
+        identifier: true
+        required: true
+        pattern: '^MIM:(?!0000000)[0-9]{7}(?![\s\S])'
+        description: >-
+          Permanent opaque record identifier from the append-only MIM registry.
+          Preserved through name, filename, mapping and status changes; never reused.
+      legacy_identifiers:
+        multivalued: true
+        description: >-
+          Preserved former identifiers and slug-based aliases. Aliases may be shared
+          by distinct records and must not be used as unique record keys.
+      identifier:
+        required: true
+        description: >-
+          Chemical/material mapping identifier retained independently of the
+          permanent mim_id. Reviewed duplicate families may share this CURIE. For mapped ingredients this is the
+          primary ontology, registry, or local identity (e.g. `CHEBI:26710`,
+          `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped
+          ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested
+          `ontology_mapping.ontology_id` is a grounding target: it equals
+          `identifier` when the identifier itself names the grounded ontology
+          term, but registry or local identities may legitimately differ from
+          the ontology target at any evidence-backed mapping quality.
+      preferred_term:
+        required: true
+        description: Canonical name for this ingredient
+      ontology_mapping:
+        range: OntologyMapping
+        description: Ontology term mapping (CHEBI/FOODON)
+        # id↔label gate: makes `linkml-term-validator validate-data --labels`
+        # verify ontology_label is the canonical OBO label for ontology_id.
+        # No `range:` on purpose — a range-less binding triggers the label
+        # check without an enum-membership check (which would need per-ontology
+        # tree expansion). Id existence is covered by Engine B / OAK lookup.
+        bindings:
+          - binds_value_of: ontology_id
+            obligation_level: REQUIRED
+      synonyms:
+        range: IngredientSynonym
+        multivalued: true
+        inlined_as_list: true
+        description: Alternative names and raw text variants
+      mapping_status:
+        range: MappingStatusEnum
+        required: true
+        description: Current mapping status
+      occurrence_statistics:
+        range: OccurrenceStats
+        description: Usage statistics across media recipes
+      curation_history:
+        range: CurationEvent
+        multivalued: true
+        inlined_as_list: true
+        description: Audit trail of all curation actions
+      notes:
+        description: Free-text curation notes
+      community_organism_roles:
+        range: CommunityOrganismRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER, SYNERGIST, COMPETITOR). Formerly `cellular_roles`; renamed to disambiguate from ingredient-level cellular metabolic roles.
+      nutritional_roles:
+        range: NutritionalRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: What element or macronutrient this ingredient supplies to the medium (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE). Facet 1 of 3 orthogonal ingredient-role facets — a single ingredient may carry multiple values (e.g., L-cysteine → AMINO_ACID_SOURCE + SULFUR_SOURCE).
+      physicochemical_roles:
+        range: PhysicochemicalRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Chemical or physical function this ingredient performs in the medium (e.g., BUFFER, CHELATOR, REDUCING_AGENT). Facet 2 of 3 orthogonal ingredient-role facets — independent of what element the ingredient supplies.
+      cellular_metabolic_roles:
+        range: CellularMetabolicRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Role of this ingredient inside/on the cultured microbe (e.g., SUBSTRATE, ELECTRON_DONOR, COFACTOR). Facet 3 of 3 orthogonal ingredient-role facets — often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms that oxidize the compound for energy).
+      solution_type:
+        range: SolutionTypeEnum
+        description: Type of solution if this is a stock/pre-mix rather than individual chemical
+      chemical_properties:
+        range: ChemicalProperties
+        description: Chemical structure and properties (for CHEBI-mapped ingredients only)
+      supplied_form:
+        range: SuppliedForm
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          The material actually ordered and delivered for this ingredient — the
+          thing on the shelf, as distinct from the substance the record denotes.
+          Multivalued because one ingredient is legitimately buyable in several
+          forms (anhydrous vs a hydrate, free acid vs sodium salt) and a recipe
+          may not say which. Keeps procurement detail OUT of the identity: the
+          `identifier` optimises for how the node reads in the knowledge graph,
+          and this slot carries what you would put on a purchase order.
+      representative:
+        description: >-
+          `identifier` of the representative record if this record has been
+          merged. Only set when mapping_status is REJECTED due to merge.
+          Points to the canonical record representing this ingredient.
+          (No pattern constraint: the merge-tracking feature is currently
+          unused — when revived, point at the schema's canonical identifier
+          format.)
+      merged:
+        multivalued: true
+        description: >-
+          List of record `identifier`s merged into this representative.
+          Only set on records serving as merge targets. Tracks all records
+          consolidated into this canonical representation.
+          (No pattern constraint: see `representative` above.)
+      ingredient_type:
+        range: IngredientTypeEnum
+        description: >-
+          Classification of entry type: single chemical ingredient vs whole named medium.
+          SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose).
+          NAMED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB
+          broth) -- "defined" = record granularity (a whole named medium), NOT
+          "chemically defined"; undefined components are expected.
+          UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone).
+          STOCK_SOLUTION: Pre-mixed solution of defined ingredients.
+      components:
+        range: StockComponent
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or
+          UNDEFINED_MIXTURE: the list of component ingredients (with concentration
+          where known). This is ingredient/mixture partonomy, not an identity mapping,
+          a complete culturing recipe, or a relationship among chemical forms. It may
+          transcribe a combination label. Populate only from verifiable evidence;
+          omit the slot when no constituent is known. When present, component_assertion
+          records how the decomposition was made and its evidence.
+      component_assertion:
+        range: ComponentAssertion
+        inlined: true
+        description: >-
+          Method and structured evidence for the record-level has-part claim carried
+          by components. Required whenever components is non-empty and forbidden when
+          components is absent; the corpus-level partonomy validator enforces that
+          cross-field invariant.
+      culturemech_reference:
+        range: CultureMechReference
+        description: >-
+          Typed, stable link to a CultureMech recipe. Replaces the former
+          `culturemech_medium_name`, which held a display string and no
+          relationship semantics, so it could not distinguish the same
+          formulation from a variant or a merely similar composition (#447).
+          CultureMech remains authoritative for the recipe body and for recipe
+          family/variant structure; this records only which recipe a record
+          answers to and how.
+      kg_microbe_node_id:
+        description: >-
+          KG-Microbe node ID for this ingredient when found in the KG exactly.
+          Populated when the ingredient is present as a named node in the
+          KG-Microbe mediadive graph (i.e. used as an ingredient in at
+          least one KG-Microbe medium solution). The node ID is a CURIE
+          using whichever scheme the KG-Microbe graph stores the entity
+          under — most often `CHEBI:`, but also `mesh:`, `NCIT:`,
+          `FOODON:`, `ENVO:`, or one of the kg-microbe registry prefixes
+          (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`).
+        required: false
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
+      environmental_context:
+        range: EnvironmentContext
+        multivalued: true
+        required: false
+        inlined_as_list: true
+        description: >-
+          Environmental contexts where this ingredient is relevant. Each entry
+          pairs an ENVO term with a relevance qualifier explaining the
+          association (natural source, selective agent, environment mimic,
+          etc.). Enables cross-repository environment-driven queries with
+          CommunityMech (`environment_term`) and CultureMech
+          (`source_environment`). Optional; ubiquitous ingredients
+          (water, glucose) typically have no entries.
+        bindings:
+          - binds_value_of: environment_term
+            obligation_level: REQUIRED
+      discussions:
+        range: Discussion
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Open questions, knowledge gaps, controversies, and curation todos
+          attached to this ingredient (shared Discussion supertype; anchor
+          `attaches_to` into e.g. `ontology_mapping#<term>`).
+      datasets:
+        range: Dataset
+        multivalued: true
+        inlined_as_list: true
+        description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
+      causal_graphs:
+        description: >-
+          Evidence-backed mechanism graphs explaining how this ingredient, as
+          supplied, acts on cultured microbes. Fleet graph_list shape (TraitMech,
+          CellStructureMech), so kg-microbe-graph coverage and structure audits
+          read it with default field names. Each graph has exactly one INGREDIENT
+          node grounded to this record's identifier; every other chemical the
+          cell meets is a separate CHEMICAL node reached through typed chemistry
+          edges (CausalEdge.bridge_kind). A graph links to another record, in MIM
+          or a sibling Mech, only through a node grounding equal to that record's
+          identifier. Graphs never change identifier, ontology_mapping or
+          components and never produce SSSOM rows (MAPPING_SEMANTICS.md section 7).
+          This schema validates structure only; the planned offline semantic gate
+          must verify anchors, bridges, evidence and scope before record curation.
+        range: CausalGraph
+        multivalued: true
+        inlined_as_list: true
+    rules:
+      - preconditions:
+          slot_conditions:
+            components:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            component_assertion:
+              value_presence: PRESENT
+        bidirectional: true
+      - preconditions:
+          slot_conditions:
+            components:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            ingredient_type:
+              equals_string_in:
+                - STOCK_SOLUTION
+                - NAMED_MEDIUM
+                - UNDEFINED_MIXTURE
+      - description: Only a resolved identity anchors a mechanism.
+        preconditions:
+          slot_conditions:
+            causal_graphs:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            mapping_status:
+              equals_string: MAPPED
+      - description: >-
+          A NAMED_MEDIUM carries no causal graph: CultureMech owns the recipe and
+          the constituents' records carry their mechanisms. Untyped records may
+          carry graphs.
+        preconditions:
+          slot_conditions:
+            ingredient_type:
+              equals_string: NAMED_MEDIUM
+        postconditions:
+          slot_conditions:
+            causal_graphs:
+              value_presence: ABSENT
+
+  EnvironmentContext:
+    description: >-
+      Environmental context annotation for an ingredient. Links an
+      ingredient to an ENVO environment with a relevance qualifier
+      explaining why the ingredient is associated with that environment.
+      Schema mirrors the legacy `MappedIngredient.environmental_context`
+      class in mapped_ingredients_schema.yaml so cross-repo tooling can
+      treat the two interchangeably.
+    attributes:
+      environment_term:
+        required: true
+        range: string
+        pattern: "^ENVO:\\d{7,8}$"
+        description: ENVO term CURIE (e.g. `ENVO:00000044` for peatland)
+      environment_label:
+        required: false
+        range: string
+        slot_uri: rdfs:label
+        description: >-
+          Canonical ENVO label for environment_term. Verified against the
+          ontology by the id↔label gate; the free/relevance name lives in notes.
+      relevance:
+        required: true
+        range: EnvironmentRelevanceEnum
+        description: Why this ingredient is relevant to the specified environment
+      notes:
+        required: false
+        range: string
+        description: Additional context about the ingredient-environment relationship
+
+  OntologyMapping:
+    description: Mapping to an ontology term (CHEBI, FOODON, etc.)
+    attributes:
+      ontology_id:
+        required: true
+        description: >-
+          Ontology term ID in CURIE format. Most rows use a standard
+          uppercase-prefix / numeric-local form (e.g. `CHEBI:26710`), but
+          the schema also accepts the lowercase / alphanumeric / dotted
+          prefixes used elsewhere in this project for non-ontology
+          identifiers and kg-microbe registry rows (`cas:247167-54-0`,
+          `mesh:C028805`, `NCIT:C76253`, `kgmicrobe.compound:aburamycin_a`).
+          Local IDs may contain letters, digits, `.`, `_`, `-`, and `~`.
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
+      ontology_label:
+        required: true
+        slot_uri: rdfs:label
+        description: >-
+          Canonical OBO label for ontology_id (e.g. "sodium chloride" for
+          CHEBI:26710). The id↔label gate verifies this equals the ontology's
+          canonical label; abbreviations/formulas/free names (e.g. "NaCl")
+          belong in preferred_term / synonyms, not here.
+      ontology_source:
+        range: OntologySourceEnum
+        required: true
+        description: Source ontology
+      mapping_quality:
+        range: MappingQualityEnum
+        required: true
+        description: Quality assessment of this mapping
+      match_level:
+        range: MatchLevelEnum
+        description: Technical method used to find this mapping
+      evidence:
+        range: MappingEvidence
+        multivalued: true
+        inlined_as_list: true
+        description: Evidence supporting this mapping
+
+  ChemicalProperties:
+    description: Chemical structure and properties for CHEBI-mapped ingredients
+    attributes:
+      cas_rn:
+        description: >-
+          Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXXX-XX-X.
+          Primary chemical identifier used in regulatory and commercial contexts.
+          Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+      molecular_formula:
+        description: Molecular formula (e.g., H2O, C6H12O6)
+      smiles:
+        description: Simplified Molecular Input Line Entry System notation
+      inchi:
+        description: IUPAC International Chemical Identifier
+      molecular_weight:
+        range: float
+        description: Molecular weight in g/mol
+      pubchem_cid:
+        range: integer
+        minimum_value: 1
+        description: >-
+          PubChem Compound Identifier (CID), stored as a positive integer.
+          Populated by the PubChem enrichment path in
+          `scripts/enrich_chemical_properties.py` when chemical properties
+          are sourced from PubChem rather than ChEBI.
+      data_source:
+        description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
+      retrieval_date:
+        range: datetime
+        description: When these properties were retrieved
+
+  CultureMechReference:
+    description: >-
+      A verified link from a MIM record to a CultureMech recipe, carried by
+      stable id rather than by display name. CultureMech names are not unique --
+      2291 are shared by more than one recipe and 4784 recipes carry none -- so a
+      name cannot identify a recipe and must never be the stored identity (#447).
+    attributes:
+      medium_id:
+        required: true
+        pattern: '^CultureMech:[0-9]{6}$'
+        description: >-
+          The stable CultureMech recipe id. Every recipe in
+          `data/normalized_yaml/` carries one as its first field, and they are
+          unique across all 15877 of them.
+      medium_name:
+        description: >-
+          Display name at the time of linking. Convenience for a human reader
+          only -- never used for matching, and not authoritative if CultureMech
+          renames the recipe.
+      relationship:
+        range: CultureMechRelationshipEnum
+        required: true
+        description: >-
+          How this record relates to that recipe. Required because an untyped
+          link cannot distinguish the claims it might be making, which is the
+          defect that motivated this class.
+      source_path:
+        description: >-
+          Path to the recipe within CultureMech at the time of linking, as
+          provenance. Not resolved at read time; the id is the identity.
+      evidence:
+        required: true
+        description: >-
+          Why this link is believed, in prose. Required so a link can never rest
+          on a name match alone -- both existing links were verified by
+          composition, and the record of that is the reason to trust them.
+  MappingEvidence:
+    description: Evidence for an ontology mapping
+    attributes:
+      evidence_source:
+        description: >-
+          Study or data-source type behind the cited evidence, not the curation
+          method or the location of a quote. Omit when unknown; never infer
+          from a PMID, DOI, or whether an LLM assisted curation.
+        range: EvidenceSourceEnum
+      evidence_type:
+        range: EvidenceTypeEnum
+        required: true
+        description: Type of evidence
+      source:
+        description: Source of evidence (e.g., database name, curator name)
+      confidence_score:
+        range: float
+        description: Confidence score (0.0-1.0)
+      notes:
+        description: Additional context
+      cas_rn:
+        description: >-
+          CAS Registry Number that supports this evidence row. Set by the
+          CAS-RN cross-reference resolver (`evidence_type: CAS_RN_CROSS_REFERENCE`)
+          when an ontology term was matched via its CAS-RN rather than label
+          or synonym. Same format as `ChemicalProperties.cas_rn`.
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+      pmid:
+        description: PubMed ID for MEDLINE citations (e.g., 12345678)
+        pattern: "^[0-9]+$"
+      doi:
+        description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
+        pattern: "^10\\.\\d{4,}/[-._;()/:A-Za-z0-9]+$"
+      snippet:
+        description: |
+          Exact substring quoted from the cited abstract that supports
+          this mapping. Used by linkml-reference-validator to detect
+          AI-hallucinated evidence: every snippet must appear verbatim
+          in the cached PubMed abstract for the given pmid/doi.
+      supports:
+        range: EvidenceSupportEnum
+        description: |
+          How the cited reference relates to the mapping claim.
+          SUPPORT = abstract substantiates the mapping; PARTIAL =
+          adjacent context only; REFUTE = contradicts; NO_EVIDENCE =
+          reference cited but no relevant snippet extractable.
+      explanation:
+        description: |
+          Curator (or LLM)'s rationale connecting the snippet to the
+          mapping claim — separate from the verbatim snippet so the
+          snippet stays validatable.
+
+  IngredientSynonym:
+    description: Alternative name or raw text variant for an ingredient
+    attributes:
+      synonym_text:
+        required: true
+        description: The synonym text
+      synonym_type:
+        range: SynonymTypeEnum
+        description: Type of synonym
+      source:
+        description: Where this synonym came from (e.g., database, curator)
+      occurrence_count:
+        range: integer
+        description: Number of times this variant appears
+
+  SuppliedForm:
+    description: >-
+      A purchasable form of an ingredient: what a lab would physically order and
+      receive. Separate from `ChemicalProperties`, which describes the substance
+      the record denotes — the two differ whenever a recipe names a substance
+      generically but only one form is sold, or several are.
+    attributes:
+      name:
+        description: >-
+          The product name as a catalogue would write it, e.g.
+          `Carboxymethylcellulose sodium`. Not necessarily the record's
+          preferred_term, which optimises for readability in the graph.
+      cas_rn:
+        description: >-
+          The CAS-RN you would order by. This is the operative identifier for
+          procurement and may differ from `chemical_properties.cas_rn`, which
+          describes the substance — the free acid and its sodium salt have
+          different CAS-RNs and are different purchases.
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+      form:
+        description: >-
+          The physical/chemical form supplied, e.g. `sodium salt`,
+          `heptahydrate`, `anhydrous powder`, `50% w/v solution`.
+      supplier:
+        description: Vendor, where a specific one is recorded (e.g. `Sigma-Aldrich`).
+      catalog_number:
+        description: Vendor catalogue number, e.g. `C-5013`.
+      notes:
+        description: >-
+          Why this form, or what the source said. Use it when a medium's
+          preparation note names a form its ingredient string does not — DSMZ
+          1111 lists `Carboxymethyl cellulose` but its note specifies the sodium
+          salt.
+
+  OccurrenceStats:
+    description: Statistics about ingredient usage across media
+    attributes:
+      total_occurrences:
+        range: integer
+        required: true
+        description: Total number of occurrences across all media
+      media_count:
+        range: integer
+        required: true
+        description: Number of unique media containing this ingredient
+      sample_media:
+        multivalued: true
+        description: Sample media names (for reference)
+      concentration_range:
+        description: Observed concentration range (if available)
+      source_occurrences:
+        multivalued: true
+        inlined_as_list: true
+        range: SourceOccurrence
+        description: >-
+          Prevalence recorded by a NON-media source, kept separate from
+          total_occurrences/media_count so it never inflates the media counts.
+          total_occurrences answers "in how many CultureMech media recipes does this
+          appear", which is legitimately 0 for an ingredient sourced from BacDive
+          traits or Bergey substrates. Recording that alone discarded the abundance
+          signal those sources carry -- the same signal used to rank the candidates
+          worth onboarding -- leaving 386 zero-weight records for anything
+          downstream that weights ingredients by prevalence (#196).
+
+  SourceOccurrence:
+    description: >-
+      An occurrence count attributed to a specific upstream source, with the
+      source's own provenance detail.
+    attributes:
+      source:
+        required: true
+        description: Upstream dataset the count comes from (e.g. microbedecoder)
+      count:
+        range: integer
+        required: true
+        description: Number of occurrences that source reports
+      source_columns:
+        description: >-
+          The upstream columns the count was aggregated over, verbatim (e.g.
+          `BacDive_Metabolite_utilization|Bergey_substrate`), so the number stays
+          interpretable without the original extract.
+
+  CurationEvent:
+    description: Audit trail entry for a curation action
+    attributes:
+      timestamp:
+        range: datetime
+        required: true
+        description: When this action occurred
+        pattern: "^20[0-9]{2}-"
+      curator:
+        required: true
+        description: Who performed this action (username or system)
+      action:
+        range: string
+        required: true
+        pattern: "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
+        description: >-
+          Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted
+          by the curation tool that produced this event. CurationActionEnum
+          below documents well-known actions; new tools are free to introduce
+          new labels (live data has 110+ distinct values).
+      changes:
+        description: Description of what changed
+      previous_status:
+        range: MappingStatusEnum
+        description: Status before this action
+      new_status:
+        range: MappingStatusEnum
+        description: Status after this action
+      llm_assisted:
+        range: boolean
+        description: Whether LLM assistance was used
+      llm_model:
+        description: LLM model identifier (if llm_assisted=true)
+      notes:
+        description: Additional context for this action
+
+  RoleCitation:
+    description: Citation supporting a role assignment (DOI, publication, database reference)
+    attributes:
+      doi:
+        description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
+        pattern: "^10\\.\\d{4,}/[-._;()/:A-Za-z0-9]+$"
+      pmid:
+        description: PubMed ID for MEDLINE citations
+      reference_text:
+        description: Human-readable citation text
+      reference_type:
+        range: CitationTypeEnum
+        description: Type of reference (peer-reviewed, database, manual curation, etc.)
+      url:
+        range: uri
+        description: Web URL for the reference
+      excerpt:
+        description: Relevant excerpt or quote from the source
+      curator_note:
+        description: Curator's explanation of why this supports the role assignment
+
+  CommunityOrganismRoleAssignment:
+    description: Assignment of an organism-in-community role with supporting evidence (e.g., which member of a consortium plays the PRIMARY_DEGRADER or SYNERGIST role).
+    attributes:
+      role:
+        range: CommunityOrganismRoleEnum
+        required: true
+        description: The community/ecological role of the organism (e.g., PRIMARY_DEGRADER, SYNERGIST, COMMENSAL, COMPETITOR).
+      metabolic_context:
+        description: Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  NutritionalRoleAssignment:
+    description: Assignment of a nutritional facet role (what element or macronutrient the ingredient supplies) with supporting evidence.
+    attributes:
+      role:
+        range: NutritionalRoleEnum
+        required: true
+        description: The nutritional role (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE).
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  PhysicochemicalRoleAssignment:
+    description: Assignment of a physicochemical facet role (the chemical or physical function the ingredient performs in the medium) with supporting evidence.
+    attributes:
+      role:
+        range: PhysicochemicalRoleEnum
+        required: true
+        description: The physicochemical role (e.g., BUFFER, CHELATOR, REDUCING_AGENT).
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  CellularMetabolicRoleAssignment:
+    description: Assignment of a cellular-metabolic facet role (what the ingredient does inside or to the cultured microbe) with supporting evidence. Assignments in this facet are often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms that oxidize the compound for energy); capture that in `metabolic_context`.
+    attributes:
+      role:
+        range: CellularMetabolicRoleEnum
+        required: true
+        description: The cellular-metabolic role (e.g., SUBSTRATE, ELECTRON_DONOR, COFACTOR).
+      metabolic_context:
+        description: Pathway or organism context that scopes this assignment (e.g., "methanol → ELECTRON_DONOR in methylotrophs only", "sulfate → ELECTRON_ACCEPTOR under anaerobic sulfate reduction"). Important when a role only holds for a subset of organisms or conditions.
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  ComponentAssertion:
+    description: >-
+      Provenance for one IngredientRecord.components decomposition. The method states
+      how the constituent list was derived; evidence identifies the source that can be
+      checked. It describes has-part only: a mapping or interpretation of the whole
+      record as another ingredient is an ontology-grounding claim, not a component.
+    attributes:
+      method:
+        range: ComponentMethodEnum
+        required: true
+        description: Method used to derive the constituent list.
+      completeness:
+        range: ComponentCompletenessEnum
+        required: true
+        description: Whether the cited source establishes a complete constituent list.
+      evidence:
+        range: ComponentEvidence
+        multivalued: true
+        inlined_as_list: true
+        required: true
+        description: One or more structured evidence records supporting the decomposition.
+      notes:
+        description: Additional context about the decomposition as a whole.
+
+  ComponentEvidence:
+    description: Evidence supporting an IngredientRecord.components decomposition.
+    attributes:
+      supports:
+        description: >-
+          How this evidence bears on the attached claim, not confidence or
+          evidence quality. Omission means unassessed, never implicit SUPPORT.
+        range: SupportLevelEnum
+      evidence_source:
+        description: >-
+          Study or data-source type behind the cited evidence, not the curation
+          method or the location of a quote. Omit when unknown; never infer
+          from a PMID, DOI, or whether an LLM assisted curation.
+        range: EvidenceSourceEnum
+      evidence_type:
+        range: ComponentEvidenceTypeEnum
+        required: true
+        description: Kind of source that supports the constituent list.
+      source:
+        required: true
+        description: >-
+          Stable source name, repository-relative path, database identifier, DOI, or URL.
+      source_record:
+        description: >-
+          Row key, recipe identifier, source label, or other locator within source.
+      notes:
+        description: Curator explanation of what the source establishes.
+
+  StockComponent:
+    description: >-
+      One constituent in an IngredientRecord.components has-part assertion. The
+      component may resolve to the current MIM catalog, deliberately name an external
+      ontology/registry term, or remain unmapped; reference_scope makes those cases
+      explicit. This class does not represent an identity mapping or a relationship
+      among chemical forms.
+    attributes:
+      component_name:
+        required: true
+        description: >-
+          Component ingredient name as listed in the supporting source
+          (e.g. "FeCl3 x 6 H2O").
+      component_id:
+        description: >-
+          Semantic CURIE for the component (e.g. CHEBI:..., MICRO:..., or cas:...).
+          It is not unconditionally a foreign key to one MIM row: reference_scope
+          states whether the CURIE is represented in MIM or deliberately external.
+          Omit only when reference_scope is UNMAPPED.
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
+      reference_scope:
+        range: ComponentReferenceScopeEnum
+        required: true
+        description: Resolution status and intended scope of component_id.
+      concentration_value:
+        description: >-
+          Amount/concentration of the component, kept as a string to preserve the
+          source's formatting (e.g. "1.5", "0.1-0.5").
+      concentration_unit:
+        description: Unit for concentration_value (e.g. G_PER_L, MG_PER_L, M, MM, PERCENT).
+      source:
+        description: >-
+          Legacy free-text component provenance retained for compatibility; it may
+          duplicate component_assertion.evidence. New curation should put record-level
+          decomposition method and structured evidence in component_assertion, using
+          this slot only when a part has additional component-specific provenance.
+    rules:
+      - preconditions:
+          slot_conditions:
+            reference_scope:
+              equals_string_in:
+                - MIM_CATALOG
+                - EXTERNAL_TERM
+        postconditions:
+          slot_conditions:
+            component_id:
+              value_presence: PRESENT
+      - preconditions:
+          slot_conditions:
+            reference_scope:
+              equals_string_in:
+                - UNMAPPED
+        postconditions:
+          slot_conditions:
+            component_id:
+              value_presence: ABSENT
+      - preconditions:
+          slot_conditions:
+            concentration_value:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            concentration_unit:
+              value_presence: PRESENT
+        bidirectional: true
+
+  # ---------------------------------------------------------------------------
+  # Causal graphs (IngredientRecord.causal_graphs), the fleet graph_list shape.
+  # CausalGraph, CausalNode, CausalEdge and EvidenceItem keep the slot names,
+  # ranges and requiredness of CellStructureMech's copy ("same shape as
+  # TraitMech"), with TraitMech's protein-node slots; ProteinExample is
+  # TraitMech's. MIM deltas are marked "# MIM"; graph_kind takes MIM's own enum
+  # where CellStructureMech uses its GraphKindEnum (TraitMech has no graph_kind).
+  # tests/test_causal_graph_schema.py pins this against vendored copies under
+  # tests/fixtures/fleet_graph_shapes/.
+  # ---------------------------------------------------------------------------
+
+  EvidenceItem:
+    description: >-
+      One citation for one graph claim (fleet EvidenceItem shape). The source kind
+      is read from `reference`: PMID:/doi: is literature; a
+      https://github.com/CultureBotAI/<Mech>/blob/<commit>/<path> permalink at the
+      pinned commit is a sibling record; an ontology CURIE (CHEBI:, GO:) is an
+      axiom to be recomputed by the planned semantic gate from
+      mappings/ontology_facts.tsv; any other CURIE
+      (RHEA:, EC:, UniProtKB:, PDB:) is a database entry. Never an LLM.
+    attributes:
+      reference:
+        description: PMID:..., doi:..., a database or ontology CURIE, or a pinned sibling-record permalink.
+        required: true
+        range: string
+        pattern: "^(?:[A-Za-z][A-Za-z0-9._-]*:\\S+|https?://\\S+)$"
+      snippet:
+        description: >-
+          Verbatim quote, only when actually verbatim: for literature from
+          references_cache/, for a sibling record from its pinned text in
+          mappings/cross_mech_assertions.jsonl, for a database entry only from a
+          cached copy in references_cache/. Never on an ontology-axiom citation.
+        range: string
+      notes:
+        description: What the source establishes for this claim. Required with literature.
+        range: string
+
+  CausalGraph:
+    description: >-
+      A directed, evidence-backed mechanism graph for one ingredient. Same shape as
+      the fleet CausalGraph. MIM: graph_id pattern, `explains`, `organism_scope`,
+      and minimum_cardinality on nodes and edges (TaxonMech #66 precedent).
+    attributes:
+      graph_id:
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"   # MIM
+      title:
+        range: string
+      description:
+        range: string
+      graph_kind:
+        description: What the graph explains (claw graph_facets value).
+        range: IngredientGraphKindEnum
+        required: true
+      scope_status:
+        description: >-
+          Curator disposition. NONMECHANISTIC is a reviewed graph with no cellular
+          mechanism in it (a SPECIATION graph, an indicator dye), explained in
+          scope_notes; never a deferral. Proposed or incomplete graphs are
+          REVIEW_NEEDED. MECHANISTIC requires the planned qc-causal-graphs scope
+          gate and independent scientific approval; schema validation is insufficient.
+        range: CausalGraphScopeEnum
+        required: true
+      scope_notes:
+        range: string
+      explains:   # MIM
+        description: >-
+          Role assignments on this record that the graph explains, as
+          `<facet>#<ROLE>` hash anchors (mech_shared attaches_to convention), e.g.
+          `nutritional_roles#SULFUR_SOURCE`. Each must name a role present on the
+          record. A pointer only: a role never creates an edge and an edge never
+          creates a role.
+        multivalued: true
+        range: string
+        pattern: "^(nutritional_roles|physicochemical_roles|cellular_metabolic_roles)#[A-Z][A-Z0-9_]*$"
+      organism_scope:   # MIM
+        description: >-
+          The one NCBITaxon in which the biological edges hold (a TaxonMech record
+          where one exists). Every organism-specific source the graph cites
+          (protein_examples taxa, PathwayMech taxa) must lie on its lineage. Omit
+          only for a taxon-agnostic graph; such a graph cannot be MECHANISTIC if it
+          cites organism-specific evidence. Strains and genome assemblies are
+          reached through TaxonMech, never copied here.
+        range: string
+        pattern: "^NCBITaxon:[1-9][0-9]*$"
+      nodes:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: CausalNode
+      edges:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: CausalEdge
+    rules:
+      - description: A SPECIATION graph is chemistry only and never MECHANISTIC.
+        preconditions:
+          slot_conditions:
+            graph_kind:
+              equals_string: SPECIATION
+        postconditions:
+          slot_conditions:
+            scope_status:
+              equals_string: NONMECHANISTIC
+
+  CausalNode:
+    description: >-
+      A node in an ingredient mechanism graph. Exactly one INGREDIENT node per
+      graph, grounded to the record identifier. GENE_OR_PROTEIN denotes a
+      taxon-agnostic protein family, function-defined protein or complex;
+      organism-specific UniProtKB proteins are protein_examples, never groundings;
+      genes and operons are metadata.
+    attributes:
+      node_id:
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"   # MIM
+      label:
+        description: Canonical label of the grounding (ChEBI/GO label, or the sibling record's label).
+        required: true
+        range: string
+      node_type:
+        required: true
+        range: CausalNodeTypeEnum
+      grounding:
+        description: >-
+          CURIE for the node; for a sibling-Mech record, that record's identifier,
+          which is the only way a graph links out of the record. MIM: the local
+          part admits `~` (five MIM identifiers use it); organism, strain, genome
+          and protein-instance prefixes are refused (genome firewall).
+        range: string
+        pattern: "^(?!(?:UniProtKB|NCBITaxon|ncbi\\.assembly|kgmicrobe\\.strain|insdc|RefSeq|GenBank|ENA|biosample|bioproject|img\\.taxon|patric|gtdb):)[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._~-]+$"
+      target_mech:   # MIM
+        description: >-
+          Owning Mech when a grounding is a record in more than one Mech and the
+          node_type precedence in the planned qc-causal-graphs gate does not decide it.
+        range: SiblingMechEnum
+      grounding_status:   # TraitMech
+        range: ProteinGroundingStatusEnum
+      grounding_notes:   # TraitMech
+        range: string
+      component_ref:
+        description: >-
+          components[].component_id of this record when the node is one of its own
+          components (COMPONENT edges), so graph and composition stay in step.
+        range: string
+      xrefs:
+        description: >-
+          CURIEs denoting exactly this node's entity (e.g. the GO term an EC record
+          maps to). Never the record identifier, a parent, or a related form:
+          those are separate nodes joined by an edge.
+        multivalued: true
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._~-]+$"   # MIM: admits ~
+      description:
+        range: string
+      gene_symbols:   # TraitMech (its `operon` slot is not carried)
+        multivalued: true
+        range: string
+      protein_examples:   # TraitMech
+        description: >-
+          Organism-specific UniProtKB instances of a GENE_OR_PROTEIN node, or
+          proteins that enable a MOLECULAR_FUNCTION node (MIM: TraitMech allows
+          GENE_OR_PROTEIN only; ProteinTraitsMech attaches its examples to EC/RHEA
+          records). Each names the taxon in which its role was established; that
+          taxon resolves to a TaxonMech record.
+        multivalued: true
+        inlined_as_list: true
+        range: ProteinExample
+
+  CausalEdge:
+    description: >-
+      An evidence-backed directed relationship between two local node_ids. MIM:
+      edge_id (TaxonMech precedent), a closed predicate_id, bridge_kind on
+      chemistry edges, and the assertion_basis each edge claims.
+    attributes:
+      edge_id:   # MIM
+        description: Stable within the graph; review dispositions and Discussions anchor on causal_graphs#<graph_id>/<edge_id>.
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"
+      subject:
+        required: true
+        range: string
+      predicate:
+        description: Canonical label of predicate_id (title in IngredientGraphPredicateEnum).
+        required: true
+        range: string
+      predicate_id:
+        required: true   # MIM: optional in TraitMech
+        range: IngredientGraphPredicateEnum
+      object:
+        required: true
+        range: string
+      description:
+        range: string
+      bridge_kind:   # MIM
+        description: >-
+          Set on chemistry edges only: what the supplied form becomes, or a
+          protonation/tautomer step between species. Each kind fixes the allowed
+          predicate_id and the bases that must verify (MAPPING_SEMANTICS.md section 7).
+          Chemistry edges are taxon-independent.
+        range: BridgeKindEnum
+      stoichiometry:   # MIM
+        description: ION_PART only. Ions released per formula unit; must equal the ChEBI SMILES component count.
+        range: integer
+        minimum_value: 1
+      assertion_basis:   # MIM
+        description: The offline checks this edge claims; the planned qc-causal-graphs gate must confirm each one.
+        required: true
+        multivalued: true
+        range: AssertionBasisEnum
+      evidence:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: EvidenceItem
+    rules:
+      - preconditions:
+          slot_conditions:
+            stoichiometry:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            bridge_kind:
+              equals_string: ION_PART
+
+  ProteinExample:   # TraitMech's shape; MIM adds only evidence minimum_cardinality
+    description: >-
+      A source-backed UniProt protein paired with the organism in which its role in
+      this mechanism was established. Reviewed Swiss-Prot entries are preferred.
+      Not exported as a graph node; it is how genome-level information enters MIM.
+    attributes:
+      uniprot_id:
+        required: true
+        range: string
+        pattern: "^UniProtKB:(?:[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9](?:[A-Z][A-Z0-9]{2}[0-9]){1,2})$"
+      protein_label:
+        required: true
+        range: string
+      gene_symbol:
+        range: string
+      taxon_id:
+        required: true
+        range: string
+        pattern: "^NCBITaxon:[0-9]+$"
+      taxon_label:
+        required: true
+        range: string
+      entry_status:
+        required: true
+        range: UniProtEntryStatusEnum
+      proteome_id:
+        range: string
+        pattern: "^UP[0-9]{9}$"
+      retrieved_on:
+        description: Date the UniProt metadata was verified (quote it in YAML).
+        required: true
+        range: date
+      entry_version:
+        range: integer
+      sequence_version:
+        range: integer
+      role:
+        required: true
+        range: string
+      evidence:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: EvidenceItem
+
+enums:
+
+  EvidenceSourceEnum:
+    description: >-
+      Study or data-source type providing a claim's evidence. This is independent
+      of supports, citation identifiers, quotation location, and curation method.
+    permissible_values:
+      FIELD_STUDY:
+        description: Observation or measurement made in a natural system.
+      MESOCOSM:
+        description: Experiment in a controlled enclosure representing a natural system.
+      LABORATORY:
+        description: Controlled laboratory study; use IN_VITRO or IN_VIVO when that distinction is known.
+      IN_VITRO:
+        description: Experiment outside an intact organism, such as a culture or biochemical assay.
+      IN_VIVO:
+        description: Experiment or observation in an intact living organism.
+      COMPUTATIONAL:
+        description: Model, simulation, prediction, or computational analysis providing the cited evidence.
+      META_ANALYSIS:
+        description: Systematic synthesis or quantitative analysis of results across studies.
+      REVIEW:
+        description: Narrative review or expert synthesis of published work.
+      REMOTE_SENSING:
+        description: Satellite, aerial, or other remotely sensed observations.
+      LONG_TERM_MONITORING:
+        description: Repeated observations from a long-term monitoring programme.
+      EXPERT_OPINION:
+        description: Expert judgement or consensus rather than a primary experimental result.
+      DATABASE:
+        description: Assertion or observation obtained from a database or curated data resource.
+      OTHER:
+        description: A known study or data-source type outside these categories; explain it in notes or explanation.
+
+  MappingStatusEnum:
+    permissible_values:
+      MAPPED:
+        description: Has valid ontology mapping
+      UNMAPPED:
+        description: No ontology mapping exists
+      PENDING_REVIEW:
+        description: Suggested mapping awaiting review
+      IN_PROGRESS:
+        description: Currently being curated
+      NEEDS_EXPERT:
+        description: Requires expert domain knowledge
+      AMBIGUOUS:
+        description: Multiple possible interpretations
+      REJECTED:
+        description: Determined to be invalid or duplicate
+
+  EnvironmentRelevanceEnum:
+    description: >-
+      Describes why an ingredient is relevant to a particular environment.
+      Mirrors the enum in mapped_ingredients_schema.yaml.
+    permissible_values:
+      NATURAL_SOURCE:
+        description: Ingredient is naturally found in or sourced from this environment
+      REQUIRED_FOR_ORGANISM:
+        description: Required for cultivating organisms from this environment
+      SELECTIVE_AGENT:
+        description: Selectively promotes growth of organisms from this environment
+      ENVIRONMENT_MIMIC:
+        description: Helps replicate the chemical conditions of this environment in vitro
+      COMMONLY_USED:
+        description: Commonly used in media targeting organisms from this environment
+
+  MappingQualityEnum:
+    permissible_values:
+      EXACT_MATCH:
+        description: Direct exact match to ontology term
+      SYNONYM_MATCH:
+        description: Matches known synonym in ontology
+      CLOSE_MATCH:
+        description: Semantically close but not exact
+      MANUAL_CURATION:
+        description: Manually curated by expert
+      LLM_ASSISTED:
+        description: Mapping suggested by LLM, human-verified
+      PROVISIONAL:
+        description: Tentative mapping needing verification
+      NARROW_MATCH:
+        description: >-
+          Ontology term is narrower than the ingredient (more specific). Used
+          when the ingredient name covers a class and the chosen term covers
+          one instance/subtype of that class.
+      BROAD_MATCH:
+        description: Ontology term is broader than the ingredient (less specific).
+      LEXICAL_MATCH:
+        description: >-
+          Lexical (string-level) match without semantic verification —
+          typically a token-overlap or normalized-name match.
+      CAS_RN_LOOKUP:
+        description: >-
+          Mapping resolved via CAS Registry Number lookup rather than ontology
+          label/synonym match.
+      FALLBACK_REGISTRY:
+        description: >-
+          Identity assigned via a registry-row fallback (`registry:` or
+          `kgmicrobe.compound:` / `kgmicrobe.ingredient:`) when no direct
+          ontology term is available.
+      PLACEHOLDER:
+        description: >-
+          Mapping is a placeholder pending real curation (e.g. minted
+          kg-microbe ingredient row, awaiting upgrade to CHEBI/FOODON/etc.).
+
+  MatchLevelEnum:
+    permissible_values:
+      EXACT:
+        description: Direct string match with no normalization
+      NORMALIZED:
+        description: Chemical normalization applied (hydrate strip, formula fix, catalog removal)
+      FUZZY:
+        description: Synonym matching or semantic similarity
+      MANUAL:
+        description: Expert or LLM-assisted curation
+      UNMAPPABLE:
+        description: Cannot reliably map to ontology
+      UNKNOWN:
+        description: Match method not recorded or imported from external source
+
+  OntologySourceEnum:
+    permissible_values:
+      CHEBI:
+        description: Chemical Entities of Biological Interest
+      FOODON:
+        description: Food Ontology
+      NCIT:
+        description: NCI Thesaurus
+      MESH:
+        description: Medical Subject Headings
+      UBERON:
+        description: Uber Anatomy Ontology
+      ENVO:
+        description: Environment Ontology
+      MICRO:
+        description: Microbiology vocabulary
+      BTO:
+        description: BRENDA Tissue Ontology
+      CAS:
+        description: >-
+          CAS Registry — fallback identity when the ingredient has a CAS number
+          but no resolved ontology term (paired with `cas:` prefix CURIEs).
+      registry:
+        description: >-
+          Generic registry-row fallback used when an identity exists in a
+          non-ontology registry tracked by the SSSOM pipeline.
+      kgmicrobe.compound:
+        description: >-
+          kg-microbe compound registry row (placeholder identity awaiting
+          upgrade to a CHEBI/MESH/etc. term).
+      kgmicrobe.ingredient:
+        description: >-
+          kg-microbe ingredient registry row (placeholder identity awaiting
+          upgrade to an ontology term).
+
+  CurationActionEnum:
+    description: >-
+      Documentation-only reference list of well-known curation action labels.
+      The `action` slot on CurationEvent has range `string` constrained by a
+      SCREAMING_SNAKE_CASE pattern, not membership in this enum — curation
+      tools mint new labels freely (live data has 117 distinct values as of
+      2026-05-12). The 25 labels below cover the 9 baseline operation verbs
+      plus the most frequent automated/classification/merge labels observed
+      in live data (together >93% of all curation events). New tools should
+      reuse one of these names when applicable rather than inventing a
+      near-duplicate.
+    permissible_values:
+      # --- Baseline curation operations (semantic verbs) ---
+      CREATED:
+        description: Record minted by a curator or import tool.
+      IMPORTED:
+        description: Record imported from an external source.
+      MAPPED:
+        description: Ontology mapping added or replaced.
+      ANNOTATED:
+        description: Notes or freeform metadata added.
+      CORRECTED:
+        description: Mapping or data corrected (in response to a review finding).
+      MERGED:
+        description: Record merged with another record.
+      STATUS_CHANGED:
+        description: "`mapping_status` field changed."
+      VALIDATED:
+        description: Mapping validated against ontology or reference data.
+      SYNONYM_ADDED:
+        description: Single synonym added (cf. plural ADDED_SYNONYMS for batch).
+      # --- Most frequent automated actions (live data) ---
+      AUTO_CLASSIFY_INGREDIENT_TYPE:
+        description: "Automated `ingredient_type` classification (single chemical, defined medium, mixture, stock)."
+      AUTO_BACKFILL_CHEBI_CHEMISTRY:
+        description: Automated backfill of molecular formula / SMILES / InChI from ChEBI.
+      AUTO_BACKFILL_PUBCHEM_CHEMISTRY:
+        description: Automated backfill of chemical properties from PubChem.
+      ADDED_SYNONYMS:
+        description: Batch synonym add (multiple synonyms in one event).
+      ADDED_CAS_RN:
+        description: CAS Registry Number added to a record.
+      CAS_RN_ADDED:
+        description: >-
+          Legacy alias for ADDED_CAS_RN emitted by older tooling. Prefer
+          ADDED_CAS_RN in new code.
+      # --- Provenance of unmapped/placeholder records ---
+      CREATED_AS_UNMAPPED:
+        description: Record minted in the UNMAPPED state, awaiting ontology lookup.
+      CREATED_FROM_CULTUREBOTHT:
+        description: Record imported from the CultureBot HT pipeline.
+      CREATED_FROM_CAS_LOOKUP:
+        description: Record created after resolving an unmapped name via CAS lookup.
+      CREATED_FROM_CAS_FALLBACK:
+        description: Record created with a `cas:` fallback identity when no ontology term was found.
+      CREATED_FROM_KGM_PLACEHOLDER:
+        description: Record created from a kg-microbe placeholder ingredient row.
+      # --- Classification & merge ---
+      CLASSIFIED_UNDEFINED_MIXTURE:
+        description: Classified as an undefined mixture (yeast extract, peptone, ...).
+      CLASSIFIED_STOCK_SOLUTION:
+        description: Classified as a stock solution / premix.
+      CLASSIFIED_NAMED_MEDIUM:
+        description: Classified as a complete named-medium recipe.
+      CLASSIFIED_DEFINED_MEDIUM:
+        description: >-
+          Legacy history value. The pre-#222 spelling of
+          CLASSIFIED_NAMED_MEDIUM, retained because 43 recorded events carry it
+          and an event log states what was done at the time. New events use
+          CLASSIFIED_NAMED_MEDIUM.
+      MERGED_FROM_DUPLICATES:
+        description: Duplicate records consolidated into this representative.
+      BACKFILL_PARENT_CHEBI:
+        description: >-
+          Legacy history value emitted when old tooling looked up a broader ChEBI
+          parent. It does not denote an active MIM hierarchy edge; retain it only so
+          historical curation events remain valid.
+      # --- Causal graphs (IngredientRecord.causal_graphs) ---
+      CAUSAL_GRAPH_ADDED:
+        description: A causal graph was added (record_refresh.py REFRESHABLE_SECTIONS action).
+      CAUSAL_GRAPH_UPDATED:
+        description: A graph's nodes, edges, evidence or scope changed, or a graph was withdrawn (record_refresh.py action).
+
+  SynonymTypeEnum:
+    permissible_values:
+      EXACT_SYNONYM:
+        description: Exact alternative name
+      RELATED_SYNONYM:
+        description: Related but not identical
+      EXACT:
+        description: >-
+          Shorthand alias for EXACT_SYNONYM emitted by some import tooling;
+          retained for backward compatibility with existing records.
+      RELATED:
+        description: >-
+          Shorthand alias for RELATED_SYNONYM emitted by some import tooling;
+          retained for backward compatibility with existing records.
+      RAW_TEXT:
+        description: Raw text from original data
+      REJECTED_LABEL:
+        description: >-
+          Reviewed candidate or source label that is not an identity-bearing
+          name for this record. Retained for provenance only; resolvers and
+          published synonym exports must exclude it.
+      ABBREVIATION:
+        description: Abbreviated form
+      COMMON_NAME:
+        description: Common or colloquial name
+      SYSTEMATIC_NAME:
+        description: Systematic chemical name
+      HYDRATE_FORM:
+        description: Chemical with hydrate notation (e.g., MgSO4•7H2O)
+      CATALOG_VARIANT:
+        description: Name with catalog/supplier code (e.g., NaCl Fisher S271-500)
+      INCOMPLETE_FORMULA:
+        description: Incomplete chemical formula (e.g., K2HPO instead of K2HPO4)
+      ALTERNATE_FORM:
+        description: Alternative chemical form (salt, ester, etc.)
+
+  EvidenceTypeEnum:
+    permissible_values:
+      DATABASE_MATCH:
+        description: Direct match in ontology database
+      CURATOR_JUDGMENT:
+        description: Expert curator decision
+      LLM_SUGGESTION:
+        description: LLM-generated suggestion
+      LITERATURE:
+        description: Based on literature evidence
+      TEXT_SIMILARITY:
+        description: Based on text similarity metrics
+      CROSS_REFERENCE:
+        description: Cross-reference to other database
+      LEXICAL_MATCH:
+        description: >-
+          Lexical (token-overlap / normalized-name) match against an ontology
+          label or synonym.
+      CAS_RN_CROSS_REFERENCE:
+        description: >-
+          Identity established via CAS Registry Number cross-reference rather
+          than ontology label match.
+      MANUAL_CURATION:
+        description: >-
+          Manually curated evidence supplied by a human reviewer (distinct
+          from CURATOR_JUDGMENT, which records the decision rather than the
+          source of evidence).
+      MANUAL_REVIEW:
+        description: Identity confirmed during a manual review pass.
+      CURATOR_CONFIRMED_SYNONYM:
+        description: Curator confirmed a synonym match found by tooling.
+
+  EvidenceSupportEnum:
+    description: How a cited reference relates to the claim it is attached to
+    permissible_values:
+      SUPPORT:
+        description: Reference substantiates the claim
+      PARTIAL:
+        description: Reference touches adjacent context but does not directly substantiate
+      REFUTE:
+        description: Reference contradicts the claim
+      NO_EVIDENCE:
+        description: Reference cited but no extractable supporting snippet
+      WRONG_STATEMENT:
+        description: |
+          Reference is incorrectly cited (placeholder for legacy data;
+          flagged for cleanup)
+
+  ComponentMethodEnum:
+    description: Method used to derive an IngredientRecord.components has-part list.
+    permissible_values:
+      LABEL_ENUMERATION:
+        description: Constituents were transcribed from a source label that explicitly enumerates them.
+      ABBREVIATION_EXPANSION:
+        description: >-
+          A curator expanded an abbreviation or named blend using a reviewed curation
+          or research artifact; the parts are not all spelled out by the source label.
+      CURATED_INTERPRETATION:
+        description: >-
+          A curator established the constituent list from reviewed evidence that is
+          neither a literal label enumeration nor a direct recipe transcription.
+      RECIPE_TRANSCRIPTION:
+        description: Constituents and quantities were transcribed from a cited verified recipe.
+
+  ComponentEvidenceTypeEnum:
+    description: Kind of evidence supporting a component decomposition.
+    permissible_values:
+      SOURCE_LABEL:
+        description: The upstream label explicitly enumerates the constituents.
+      CURATED_DATASET:
+        description: A reviewed structured curation table supplies the constituents.
+      MANUAL_CURATION:
+        description: A curator established the constituent list and recorded the rationale.
+      RECIPE_SOURCE:
+        description: A cited medium or stock-solution recipe supplies the constituents.
+      PUBLICATION:
+        description: A publication supplies or directly supports the constituent list.
+
+  ComponentReferenceScopeEnum:
+    description: Resolution scope of a StockComponent.component_id.
+    permissible_values:
+      MIM_CATALOG:
+        description: >-
+          The CURIE is the primary identifier of at least one active MIM record. Because
+          the catalog still has tracked duplicate-identifier families, this denotes the
+          represented entity and is not guaranteed to select one physical YAML row.
+      EXTERNAL_TERM:
+        description: >-
+          The CURIE is a deliberate ontology or registry reference for which MIM has no
+          active record; no local record is implied or fabricated.
+      UNMAPPED:
+        description: The component is named but has no component_id.
+
+  ComponentCompletenessEnum:
+    description: Completeness of a component decomposition relative to its cited source.
+    permissible_values:
+      COMPLETE:
+        description: The source explicitly establishes that the listed constituents are complete.
+      PARTIAL:
+        description: The source explicitly indicates that additional constituents are omitted.
+      UNKNOWN:
+        description: The source does not establish whether the list is complete.
+
+  NutritionalRoleEnum:
+    description: >-
+      What element or macronutrient an ingredient supplies to the medium.
+      One of three orthogonal role facets (with PhysicochemicalRoleEnum and
+      CellularMetabolicRoleEnum). A single ingredient may carry multiple
+      nutritional roles (e.g. L-cysteine supplies both amino-acid and sulfur).
+    permissible_values:
+      CARBON_SOURCE:
+        description: Provides organic carbon for biosynthesis and energy.
+        mappings:
+          - METPO:2000006
+      NITROGEN_SOURCE:
+        description: Provides nitrogen for amino acids, nucleotides, and other biomass components.
+        mappings:
+          - METPO:2000014
+      SULFUR_SOURCE:
+        description: Provides sulfur (typically for cysteine, methionine, Fe-S clusters).
+        mappings:
+          - METPO:2000020
+      PHOSPHATE_SOURCE:
+        description: Provides phosphate for nucleotides, phospholipids, and energy carriers.
+      IRON_SOURCE:
+        description: Provides iron (typically for cytochromes, Fe-S clusters, and other metalloproteins).
+      TRACE_ELEMENT:
+        description: Provides a micronutrient required in trace amounts (e.g., zinc, cobalt, manganese, molybdenum).
+      MINERAL_SOURCE:
+        description: >-
+          Provides a bulk inorganic mineral nutrient not covered by a more
+          specific element-source value — in practice the macronutrient cations
+          magnesium, calcium, potassium, and sodium (e.g., MgCl2, CaCl2, KCl,
+          NaCl). Prefer the specific value (PHOSPHATE_SOURCE, IRON_SOURCE,
+          SULFUR_SOURCE, TRACE_ELEMENT) whenever the salient nutrient is one of
+          those; MINERAL_SOURCE is the residual bucket, mirroring how
+          TRACE_ELEMENT buckets the micronutrient metals.
+      VITAMIN_SOURCE:
+        description: Provides vitamins or vitamin precursors.
+        meaning: CHEBI:33229
+      AMINO_ACID_SOURCE:
+        description: Provides one or more specific amino acids as building blocks.
+        mappings:
+          - CHEBI:33709
+      PROTEIN_SOURCE:
+        description: Provides peptides, proteins, or complex amino-acid mixtures (e.g., yeast extract, peptone, tryptone).
+        mappings:
+          - CHEBI:36080
+      COFACTOR_PROVIDER:
+        description: Supplies enzyme cofactors or prosthetic groups to the medium (the compound acts as a source; contrast with CellularMetabolicRoleEnum.COFACTOR, which is the intracellular role).
+        mappings:
+          - CHEBI:23357
+      ENERGY_SOURCE:
+        description: Primary energy substrate for chemotrophic growth.
+        mappings:
+          - METPO:2000010
+      LIGHT_SOURCE:
+        description: Radiant-energy source for phototrophic growth. No CHEBI or METPO term yet describes a radiant-energy *supply* role (METPO:1000656 is the organism metabolic-mode `photoautotrophic`, not a supply-side role); METPO submission pending.
+
+  PhysicochemicalRoleEnum:
+    description: >-
+      Chemical or physical function an ingredient performs in the medium,
+      independent of what element it supplies. One of three orthogonal role
+      facets (with NutritionalRoleEnum and CellularMetabolicRoleEnum).
+    permissible_values:
+      BUFFER:
+        description: Maintains stable pH via a conjugate acid–base system.
+        meaning: CHEBI:35225
+      SOLIDIFYING_AGENT:
+        description: Gelling agent for solid or semi-solid media (e.g., agar, gellan gum, silica gel).
+      CHELATOR:
+        description: Sequesters metal ions to control availability, toxicity, or precipitation (e.g., EDTA, NTA, citrate).
+        meaning: CHEBI:38161
+      SURFACTANT:
+        description: Reduces surface tension for emulsification, solubilization, or membrane permeabilization (e.g., Tween, Triton X-100).
+        meaning: CHEBI:35195
+        mappings:
+          - CHEBI:63046
+      REDUCING_AGENT:
+        description: Lowers the redox potential of the medium (e.g., sodium sulfide, cysteine, thioglycolate, dithiothreitol).
+        meaning: CHEBI:63247
+      OXIDIZING_AGENT:
+        description: Raises the redox potential of the medium.
+        meaning: CHEBI:63248
+      PH_INDICATOR:
+        description: Colorimetric acid–base indicator dye (e.g., phenol red, bromothymol blue).
+        meaning: CHEBI:50407
+      REDOX_INDICATOR:
+        description: Colorimetric indicator of redox potential (e.g., resazurin turns pink under mildly oxidizing conditions).
+        mappings:
+          - CHEBI:47867
+      SELECTIVE_AGENT:
+        description: Antimicrobial or otherwise selective agent used to enrich for or against particular organisms (e.g., antibiotics, bile salts, high salt, azide).
+        mappings:
+          - CHEBI:33281
+          - CHEBI:33282
+          - CHEBI:35718
+      ANTIFOAM:
+        description: Suppresses foaming in aerated or vigorously mixed cultures (e.g., silicone antifoam, polypropylene glycol).
+        meaning: CHEBI:77973
+      OSMOTIC_AGENT:
+        description: >-
+          Contributes primarily to the osmotic strength of the medium (e.g., NaCl at high concentration, sucrose, glycerol as osmolyte).
+          NOTE: shares `mappings: CHEBI:25728 (osmolyte)` with CellularMetabolicRoleEnum.OSMOPROTECTANT. Auto-classifiers driven by the SSSOM must NOT fan a single CHEBI:25728 annotation out to both facets — this is a medium-side role, whereas OSMOPROTECTANT is an intracellular, organism-conditional role. Assign OSMOPROTECTANT only when there is organism-context evidence.
+        mappings:
+          - CHEBI:25728
+      PRECIPITATION_INHIBITOR:
+        description: Prevents precipitation of otherwise poorly-soluble medium components (e.g., citrate keeping iron soluble at neutral pH).
+
+  CellularMetabolicRoleEnum:
+    description: >-
+      Role of the ingredient inside or on the cultured microbe(s) — the
+      compound's metabolic fate or biochemical function at the cell level.
+      One of three orthogonal role facets (with NutritionalRoleEnum and
+      PhysicochemicalRoleEnum). Values in this facet are often
+      organism-conditional (e.g. ELECTRON_DONOR applies only for organisms
+      that oxidize the compound for energy; methanol is an electron donor
+      for methylotrophs but only a carbon source for others).
+    permissible_values:
+      SUBSTRATE:
+        description: Consumed by the organism for biosynthesis, energy, or both (general-purpose substrate role).
+      ELECTRON_DONOR:
+        description: Electron donor for chemolithotrophic or heterotrophic energy metabolism (organism-conditional).
+        meaning: CHEBI:15022
+      ELECTRON_ACCEPTOR:
+        description: Terminal electron acceptor for respiration (e.g., nitrate, oxygen, sulfate; organism-conditional).
+        meaning: CHEBI:17654
+      COFACTOR:
+        description: Acts as an intracellular enzyme cofactor (contrast with NutritionalRoleEnum.COFACTOR_PROVIDER, the supply-side role).
+        meaning: CHEBI:23357
+      PROSTHETIC_GROUP_PRECURSOR:
+        description: Precursor for a covalently-bound cofactor / prosthetic group (e.g., δ-aminolevulinate for heme). Note the mapping below points at the parent role `prosthetic group` — CHEBI has no dedicated `prosthetic group precursor` role class, so the mapping is a hierarchy pointer, not identity.
+        mappings:
+          - CHEBI:26348
+      MEMBRANE_COMPONENT:
+        description: Incorporated into cell membranes (e.g., fatty acids, sterols, isoprenoid lipids).
+      OSMOPROTECTANT:
+        description: >-
+          Accumulated intracellularly to balance external osmotic stress (e.g., glycine betaine, ectoine, trehalose). Organism-conditional — assign only with organism-context evidence (e.g., "glycine betaine is imported and accumulated as an osmoprotectant by <organism>").
+          NOTE: shares `mappings: CHEBI:25728 (osmolyte)` with PhysicochemicalRoleEnum.OSMOTIC_AGENT. See that value's description for cross-facet guidance.
+        mappings:
+          - CHEBI:25728
+      INDUCER:
+        description: Triggers expression of specific genes or pathways when present (e.g., IPTG, arabinose).
+      INHIBITOR:
+        description: Suppresses growth or a specific pathway (e.g., antibiotics targeting cellular processes).
+        meaning: CHEBI:35222
+      QUENCHER:
+        description: Absorbs or dissipates a signal (e.g., quenches fluorescence, radicals, or light).
+
+  CommunityOrganismRoleEnum:
+    description: Role an organism plays in a microbial community (formerly `CellularRoleEnum`; renamed 2026-07-19 to disambiguate from cell-level metabolic roles of ingredients — these values describe organisms, not ingredients).
+    permissible_values:
+      PRIMARY_DEGRADER:
+        description: Main organism degrading target compound(s)
+      REDUCTIVE_DEGRADER:
+        description: Degrades compounds via reductive pathways (e.g., reductive dechlorination)
+      OXIDATIVE_DEGRADER:
+        description: Degrades compounds via oxidative pathways
+      BIOTRANSFORMER:
+        description: Transforms compound without complete degradation
+      SYNERGIST:
+        description: Enhances degradation by another organism
+      BRIDGE_ORGANISM:
+        description: Converts intermediates between community members
+      ELECTRON_SHUTTLE:
+        description: Mediates electron transfer between organisms or redox species
+      DETOXIFIER:
+        description: Removes or neutralizes toxic compounds
+      COMMENSAL:
+        description: Benefits from community without clear contribution
+      COMPETITOR:
+        description: Competes for nutrients or ecological niche
+
+  CitationTypeEnum:
+    description: Type of reference or citation
+    permissible_values:
+      PEER_REVIEWED_PUBLICATION:
+        description: Peer-reviewed journal article or conference paper
+      PREPRINT:
+        description: Preprint or non-peer-reviewed manuscript
+      DATABASE_ENTRY:
+        description: Reference to database record or entry
+      TECHNICAL_REPORT:
+        description: Technical report, manual, or documentation
+      MANUAL_CURATION:
+        description: Expert manual curation without specific publication
+      COMPUTATIONAL_PREDICTION:
+        description: Computational inference or prediction
+
+  SolutionTypeEnum:
+    description: Type of solution for mixture ingredients (stock solutions, pre-mixes)
+    permissible_values:
+      VITAMIN_MIX:
+        description: Pre-mixed vitamin solution (e.g., vitamin B12 solution, biotin mix)
+      TRACE_METAL_MIX:
+        description: Pre-mixed trace element or metal solution
+      AMINO_ACID_MIX:
+        description: Pre-mixed amino acid solution
+      BUFFER_SOLUTION:
+        description: Pre-prepared buffer solution (e.g., phosphate buffer, HEPES buffer)
+      CARBON_SOURCE_MIX:
+        description: Pre-mixed carbon source solution
+      MINERAL_STOCK:
+        description: Concentrated mineral stock solution
+      COFACTOR_MIX:
+        description: Pre-mixed cofactor or enzyme supplement solution
+      COMPLEX_UNDEFINED:
+        description: Complex undefined mixture (e.g., yeast extract, peptone)
+      OTHER:
+        description: Other type of pre-mixed solution
+
+  CultureMechRelationshipEnum:
+    description: How a MIM record relates to the CultureMech recipe it references
+    permissible_values:
+      EXACT_FORMULATION:
+        description: >-
+          The same formulation. Asserted only when composition was compared, not
+          when names agree.
+      VARIANT_OF:
+        description: >-
+          A documented variant of that recipe -- a modification of it rather than
+          a different medium.
+      SIMILAR_COMPOSITION:
+        description: >-
+          Compositionally close but not identical, with the differences recorded
+          in `evidence`. The honest value when recipes overlap substantially and
+          disagree in named ways.
+      CANDIDATE_UNVERIFIED:
+        description: >-
+          A candidate proposed by matching but not yet confirmed by a curator.
+          Exists so "not linked" and "linked but unchecked" are different states:
+          absence would otherwise conflate a record nobody has looked at with one
+          whose candidate was rejected. Never written by an automated matcher
+          into an accepted link.
+  IngredientTypeEnum:
+    description: Classification of ingredient entry type
+    permissible_values:
+      SINGLE_INGREDIENT:
+        description: >-
+          Pure chemical compound or single ingredient (e.g., NaCl, agar, glucose, water).
+          Can be mapped to chemical ontologies like CHEBI.
+      NAMED_MEDIUM:
+        description: >-
+          A complete, named medium formulation or recipe with multiple ingredients
+          (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar).
+          Denotes RECORD GRANULARITY -- this record is a whole named medium rather
+          than a single ingredient. Complex, undefined components (digests,
+          infusions, extracts, sera) are expected and normal in these records; the
+          compositional distinction is carried by UNDEFINED_MIXTURE, not by this
+          value. Should cross-reference to CultureMech for the full recipe.
+          Spelled DEFINED_MEDIUM before #222, which renamed it because "DEFINED"
+          read as the microbiology term of art "chemically defined medium" -- see
+          #478 for the remaining conflation, that this enum mixes granularity
+          (SINGLE_INGREDIENT / NAMED_MEDIUM / STOCK_SOLUTION) with composition
+          (UNDEFINED_MIXTURE).
+      UNDEFINED_MIXTURE:
+        description: >-
+          Complex mixture of unknown or variable composition
+          (e.g., yeast extract, peptone, soil extract).
+          Components not fully characterized.
+      STOCK_SOLUTION:
+        description: >-
+          Pre-mixed solution of defined ingredients
+          (e.g., vitamin B12 solution, trace metal mix).
+          Components known but premixed for convenience.
+
+  # ---------------------------------------------------------------------------
+  # Causal graphs (see the CausalGraph classes above).
+  # ---------------------------------------------------------------------------
+
+  IngredientGraphKindEnum:
+    description: >-
+      What a graph explains. `typical_roles` lists the role anchors a kind usually
+      explains; the planned qc-causal-graphs gate warns on an unusual pairing, never rejects it.
+    permissible_values:
+      ASSIMILATION:
+        description: The active species is taken up and incorporated into biomass or a cellular pool.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#CARBON_SOURCE nutritional_roles#NITROGEN_SOURCE
+            nutritional_roles#SULFUR_SOURCE nutritional_roles#PHOSPHATE_SOURCE
+            nutritional_roles#IRON_SOURCE nutritional_roles#TRACE_ELEMENT
+            nutritional_roles#MINERAL_SOURCE nutritional_roles#AMINO_ACID_SOURCE
+            nutritional_roles#PROTEIN_SOURCE nutritional_roles#VITAMIN_SOURCE
+            cellular_metabolic_roles#SUBSTRATE cellular_metabolic_roles#MEMBRANE_COMPONENT
+      ENERGY_CONSERVATION:
+        description: The species is an electron donor, terminal electron acceptor or energy substrate.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#ENERGY_SOURCE nutritional_roles#LIGHT_SOURCE
+            cellular_metabolic_roles#ELECTRON_DONOR cellular_metabolic_roles#ELECTRON_ACCEPTOR
+      COFACTOR_FUNCTION:
+        description: The species is, or is converted into, a cofactor or prosthetic group an enzyme requires.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#VITAMIN_SOURCE nutritional_roles#COFACTOR_PROVIDER
+            nutritional_roles#TRACE_ELEMENT nutritional_roles#IRON_SOURCE
+            cellular_metabolic_roles#COFACTOR cellular_metabolic_roles#PROSTHETIC_GROUP_PRECURSOR
+      REGULATION:
+        description: The species changes gene expression or protein activity without being consumed.
+        annotations:
+          typical_roles: cellular_metabolic_roles#INDUCER cellular_metabolic_roles#QUENCHER
+      INHIBITION:
+        description: >-
+          The species inhibits a target or growth. Link an AntibioticMech or
+          NaturalProductMech record by shared grounding instead of re-curating its graph.
+        annotations:
+          typical_roles: cellular_metabolic_roles#INHIBITOR physicochemical_roles#SELECTIVE_AGENT
+      STRESS_PROTECTION:
+        description: The species protects cells against a stress.
+        annotations:
+          typical_roles: cellular_metabolic_roles#OSMOPROTECTANT
+      MEDIUM_CONDITIONING:
+        description: The ingredient changes a medium property (pH, redox, osmolarity, metal availability, gel state) and through it the culture.
+        annotations:
+          typical_roles: >-
+            physicochemical_roles#BUFFER physicochemical_roles#CHELATOR
+            physicochemical_roles#REDUCING_AGENT physicochemical_roles#OXIDIZING_AGENT
+            physicochemical_roles#OSMOTIC_AGENT physicochemical_roles#SOLIDIFYING_AGENT
+            physicochemical_roles#PRECIPITATION_INHIBITOR physicochemical_roles#SURFACTANT
+            physicochemical_roles#ANTIFOAM physicochemical_roles#PH_INDICATOR
+            physicochemical_roles#REDOX_INDICATOR
+      SPECIATION:
+        description: >-
+          Chemistry only: what the supplied form becomes (bridge and COMPONENT
+          edges), with the mechanism delegated to the species' or components' own
+          MIM records. Always NONMECHANISTIC; scope_notes names those records.
+
+  CausalGraphScopeEnum:
+    description: Fleet scope disposition (TraitMech, CellStructureMech values).
+    permissible_values:
+      MECHANISTIC:
+        description: A source-backed biological mechanism requiring the planned qc-causal-graphs scope gate and independent scientific approval.
+      NONMECHANISTIC:
+        description: Reviewed; no cellular mechanism to model (e.g. SPECIATION). Explained in scope_notes.
+      REVIEW_NEEDED:
+        description: Proposed or incomplete; awaits an explicit scope decision.
+
+  CausalNodeTypeEnum:
+    description: >-
+      TraitMech's vocabulary, CellStructureMech's STRUCTURE, and MIM's anchor
+      INGREDIENT. No TAXON: organisms are organism_scope and protein_examples taxa.
+    permissible_values:
+      INGREDIENT:
+        description: This record as supplied; exactly one per graph; grounding equals the record identifier.
+      CHEMICAL:
+        description: Any other chemical entity (active species, metabolite, cofactor form, another MIM record).
+      GENE_OR_PROTEIN:
+        description: A taxon-agnostic protein family, function-defined protein or complex.
+      MOLECULAR_FUNCTION:
+        description: >-
+          An activity or reaction: EC, RHEA, GO molecular function, and
+          ProteinTraitsMech FUNC_TRANSPORT records (TCDB families as transport functions).
+      BIOLOGICAL_PROCESS:
+        description: A biological process (GO BP), including ProteinTraitsMech FUNC_PATHWAY records.
+      PATHWAY:
+        description: A PathwayMech record.
+      STRUCTURE:
+        description: A CellStructureMech record or GO cellular component.
+      CELLULAR_LOCALIZATION:
+        description: A location with no CellStructureMech record.
+      # ORGANELLE, CAPACITY, STATE, RNA, GENETIC_ELEMENT and the two FACTOR values
+      # are TraitMech's vocabulary, kept for fleet parity with no MIM-specific
+      # meaning. Their descriptions are TraitMech's; STATE and CAPACITY are
+      # shortened to drop TraitMech's trait-specific wording.
+      ORGANELLE:
+        description: A cellular organelle or microbial subcellular structure.
+      TRAIT:
+        description: A TraitMech class record (never an OBJECT_PROPERTY record such as METPO:2000020).
+      QUALITY:
+        description: An attribute, including a ProteinTraitsMech requirement trait (COFACTOR_REQ_*).
+      CAPACITY:
+        description: >-
+          A metabolic or functional capacity, such as reducing power or energy
+          charge, that is neither a single chemical species nor a process.
+      STATE:
+        description: >-
+          A bioenergetic or molecular state of the cell (e.g. proton motive force),
+          as distinct from the process that establishes it.
+      RNA:
+        description: A functional RNA molecule or RNA-containing causal entity.
+      GENETIC_ELEMENT:
+        description: A non-protein mobile or chromosomal genetic element such as a plasmid or prophage.
+      ENVIRONMENTAL_FACTOR:
+        description: An environmental exposure or condition.
+      EXPERIMENTAL_FACTOR:
+        description: An assay, perturbation, or experimental condition.
+
+  BridgeKindEnum:
+    description: >-
+      Closed set of chemistry edges. Each fixes its predicate_id and required bases;
+      The planned qc-causal-graphs gate must recompute every one from mappings/ontology_facts.tsv.
+    permissible_values:
+      HYDRATE_PART:
+        description: Hydrate has part its anhydrous form (BFO:0000051). ONTOLOGY_AXIOM; subject is a ChEBI hydrate.
+      ION_PART:
+        description: >-
+          Salt has part a constituent ion (BFO:0000051) with stoichiometry.
+          ONTOLOGY_AXIOM when ChEBI asserts or entails it; otherwise CHEMICAL_STRUCTURE
+          (the ion's ChEBI SMILES is a '.'-component of the salt's, counts match,
+          charges balance). Transition-metal salts of carbon-containing anions also
+          need LITERATURE (complexation).
+      PROTONATION:
+        description: One ChEBI-asserted RO:0018033/RO:0018034 hop per edge. ONTOLOGY_AXIOM.
+      TAUTOMER:
+        description: ChEBI-asserted RO:0018036. ONTOLOGY_AXIOM.
+      STRUCTURAL_FORM:
+        description: >-
+          Structure-specific form is a (rdfs:subClassOf) structure-less supplied
+          class, e.g. D-glucopyranose is a D-glucose. ONTOLOGY_AXIOM (asserted
+          direct subclass) plus CHEMICAL_STRUCTURE guards: the form has a SMILES and
+          no isotopic layer, the class has no SMILES, formula and charge are equal,
+          and no other non-isotopic direct subclass shares the form's InChIKey
+          connectivity block with a different stereo block.
+      FORM_OF_PARENT:
+        description: >-
+          First hop only, from a cas:/kgmicrobe.* anchor to the ChEBI parent named
+          by the record's own SSSOM skos:broadMatch row. RECORD_SSSOM. Not re-exported.
+      COMPONENT:
+        description: >-
+          Mixture anchor has part one of its own components (BFO:0000051; node
+          component_ref). RECORD_COMPONENT. No chemistry edge may start at a
+          component node; its own record owns its speciation. Not re-exported.
+
+  AssertionBasisEnum:
+    description: The offline check an edge claims; the planned semantic gate must run these checks on committed files.
+    permissible_values:
+      LITERATURE:
+        description: PMID/doi evidence with a verbatim snippet found in references_cache (qc-evidence normalisation).
+      ONTOLOGY_AXIOM:
+        description: The triple (or a declared sub-property of it) is asserted or entailed in mappings/ontology_facts.tsv.
+      CHEMICAL_STRUCTURE:
+        description: Recomputed from ChEBI SMILES, formula, charge and InChIKey rows in mappings/ontology_facts.tsv.
+      SIBLING_RECORD:
+        description: >-
+          The pinned sibling record states the relation for exactly this grounding
+          (mappings/cross_mech_assertions.jsonl; table in MAPPING_SEMANTICS.md section 7).
+      DATABASE_RECORD:
+        description: A cached database entry (references_cache/UniProtKB_<acc>.json, Rhea directional id) states it.
+      RECORD_COMPONENT:
+        description: Restates this record's components entry; inherits its component_assertion.
+      RECORD_SSSOM:
+        description: Restates this record's own SSSOM row.
+
+  IngredientGraphPredicateEnum:
+    description: >-
+      Closed edge vocabulary. `title` is the canonical label `predicate` must carry
+      (RO labels as in ro.db). Allowed endpoint node types are enforced by
+      the planned qc-causal-graphs gate; biolink_predicate is the planned KGX projection.
+    # Value descriptions of RO and BFO terms are the first paragraph of the term's
+    # IAO:0000115 definition, verbatim (checked against ro.db, RO release
+    # 2026-09-04). RO:0002326 has no definition there; its description restates
+    # RO's editor note and its curator note on GO usage. rdfs:subClassOf and
+    # skos:broadMatch use MIM's own wording.
+    permissible_values:
+      "BFO:0000051":
+        title: has part
+        description: >-
+          a core relation that holds between a whole and its part
+        meaning: BFO:0000051
+        annotations: {biolink_predicate: "biolink:has_part", bridge_kinds: "HYDRATE_PART ION_PART COMPONENT"}
+      "BFO:0000050":
+        title: part of
+        description: >-
+          a core relation that holds between a part and its whole
+        meaning: BFO:0000050
+        annotations: {biolink_predicate: "biolink:part_of"}
+      "rdfs:subClassOf":
+        title: is a
+        description: >-
+          RDFS subclass axiom: the subject class is a subclass of the object class (every
+          instance of the subject is an instance of the object).
+        meaning: rdfs:subClassOf
+        annotations: {biolink_predicate: "biolink:subclass_of", bridge_kinds: STRUCTURAL_FORM}
+      "skos:broadMatch":
+        title: has broader match
+        description: >-
+          SKOS mapping relation: the object is a broader concept than the subject.
+          Restates the record's own SSSOM skos:broadMatch row (FORM_OF_PARENT).
+        meaning: skos:broadMatch
+        annotations: {biolink_predicate: none, bridge_kinds: FORM_OF_PARENT}
+      "RO:0018033":
+        title: is deprotonated form of
+        description: >-
+          A is a deprotonated form of B if and only if A is chemical entity that is a
+          Brønsted–Lowry Base (i.e., can receive a proton) and by adding some nonzero
+          number of protons transforms it into B.
+        meaning: RO:0018033
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: PROTONATION}
+      "RO:0018034":
+        title: is protonated form of
+        description: >-
+          A is a protonated form of B if and only if A is chemical entity that is a
+          Brønsted–Lowry Acid (i.e., can give up a proton) and by removing some nonzero
+          number of protons transforms it into B.
+        meaning: RO:0018034
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: PROTONATION}
+      "RO:0018036":
+        title: is tautomer of
+        description: >-
+          Two chemicals are tautomers if they can be readily interconverted.
+        meaning: RO:0018036
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: TAUTOMER}
+      "RO:0002020":
+        title: transports
+        description: >-
+          Holds between p and c when p is a transport process or transporter activity and
+          the outcome of this p is to move c from one location to another.
+        meaning: RO:0002020
+        annotations: {biolink_predicate: "biolink:affects", object_aspect_qualifier: transport}
+      "RO:0002233":
+        title: has input
+        description: >-
+          p has input c iff: p is a process, c is a material entity, c is a participant in
+          p, c is present at the start of p, and the state of c is modified during p.
+        meaning: RO:0002233
+        annotations: {biolink_predicate: "biolink:has_input"}
+      "RO:0002234":
+        title: has output
+        description: >-
+          p has output c iff c is a participant in p, c is present at the end of p, and c
+          is not present in the same state at the beginning of p.
+        meaning: RO:0002234
+        annotations: {biolink_predicate: "biolink:has_output"}
+      "RO:0004009":
+        title: has primary input
+        description: >-
+          p has primary input c if (a) p has input c and (b) the goal of process is to
+          modify, consume, or transform c.
+        meaning: RO:0004009
+        annotations: {biolink_predicate: "biolink:has_input"}
+      "RO:0004008":
+        title: has primary output
+        description: >-
+          p has primary output c if (a) p has output c and (b) the goal of process is to
+          modify, produce, or transform c.
+        meaning: RO:0004008
+        annotations: {biolink_predicate: "biolink:has_output"}
+      "RO:0002505":
+        title: has intermediate
+        description: >-
+          p has intermediate c if and only if p has parts p1, p2 and p1 has output c, and
+          p2 has input c
+        meaning: RO:0002505
+        annotations: {biolink_predicate: "biolink:has_participant"}
+      "RO:0000057":
+        title: has participant
+        description: >-
+          a relation between a process and a continuant, in which the continuant is
+          somehow involved in the process
+        meaning: RO:0000057
+        annotations: {biolink_predicate: "biolink:has_participant"}
+      "RO:0000056":
+        title: participates in
+        description: >-
+          a relation between a continuant and a process, in which the continuant is
+          somehow involved in the process
+        meaning: RO:0000056
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002352":
+        title: input of
+        description: >-
+          inverse of has input
+        meaning: RO:0002352
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002353":
+        title: output of
+        description: >-
+          inverse of has output
+        meaning: RO:0002353
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002327":
+        title: enables
+        description: >-
+          c enables p iff c is capable of p and c acts to execute p.
+        meaning: RO:0002327
+        annotations: {biolink_predicate: "biolink:enables"}
+      "RO:0002326":
+        title: contributes to
+        description: >-
+          c contributes to p when c is part of some c' that is capable of p, and c is
+          capable of some p' that is part of p (RO's editor note; RO gives no textual
+          definition). In GO usage p is a molecular function.
+        meaning: RO:0002326
+        annotations: {biolink_predicate: "biolink:contributes_to"}
+      "RO:0002331":
+        title: involved in
+        description: >-
+          c involved_in p if and only if c enables some process p', and p' is part of p
+        meaning: RO:0002331
+        annotations: {biolink_predicate: "biolink:actively_involved_in"}
+      "RO:0002224":
+        title: starts with
+        description: >-
+          x starts with y if and only if x has part y and the time point at which x starts
+          is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y)
+          < ω(x), where α is a function that maps a process to a start point, and ω is a
+          function that maps a process to an end point.
+        meaning: RO:0002224
+        annotations: {biolink_predicate: "biolink:has_part"}
+      "RO:0002230":
+        title: ends with
+        description: >-
+          x ends with y if and only if x has part y and the time point at which x ends is
+          equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) =
+          ω(x), where α is a function that maps a process to a start point, and ω is a
+          function that maps a process to an end point.
+        meaning: RO:0002230
+        annotations: {biolink_predicate: "biolink:has_part"}
+      "RO:0001025":
+        title: located in
+        description: >-
+          a relation between two independent continuants, the target and the location, in
+          which the target is entirely within the location
+        meaning: RO:0001025
+        annotations: {biolink_predicate: "biolink:located_in"}
+      "RO:0002342":
+        title: results in transport across
+        description: >-
+          Holds between p and m when p is a transportation or localization process and the
+          outcome of this process is to move c from one location to another, and the route
+          taken by c follows a path that crosses m.
+        meaning: RO:0002342
+        annotations: {biolink_predicate: "biolink:related_to"}
+      "RO:0002436":
+        title: molecularly interacts with
+        description: >-
+          An interaction relationship in which the two partners are molecular entities
+          that directly physically interact with each other for example via a stable
+          binding interaction or a brief interaction during which one modifies the other.
+        meaning: RO:0002436
+        annotations: {biolink_predicate: "biolink:physically_interacts_with"}
+      "RO:0000053":
+        title: has characteristic
+        description: >-
+          Inverse of characteristic_of
+        meaning: RO:0000053
+        annotations: {biolink_predicate: "biolink:has_attribute"}
+      "MIM.vocab:satisfies_cofactor_requirement":
+        title: satisfies cofactor requirement
+        description: Chemical to a ProteinTraitsMech COFACTOR_REQ_* record whose xrefs contain exactly the chemical's grounding.
+        annotations: {biolink_predicate: "biolink:related_to"}
+      "RO:0002411":
+        title: causally upstream of
+        description: >-
+          p is causally upstream of q iff p is causally related to q, the end of p
+          precedes the end of q, and p is not an occurrent part of q.
+        meaning: RO:0002411
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002304":
+        title: causally upstream of, positive effect
+        description: >-
+          p is causally upstream of, positive effect q iff p is casually upstream of q,
+          and the execution of p is required for the execution of q.
+        meaning: RO:0002304
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002305":
+        title: causally upstream of, negative effect
+        description: >-
+          p is causally upstream of, negative effect q iff p is casually upstream of q,
+          and the execution of p decreases the execution of q.
+        meaning: RO:0002305
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002213":
+        title: positively regulates
+        description: >-
+          p positively regulates q iff p regulates q, and p increases the rate or
+          magnitude of execution of q.
+        meaning: RO:0002213
+        annotations: {biolink_predicate: "biolink:regulates"}
+      "RO:0002212":
+        title: negatively regulates
+        description: >-
+          p negatively regulates q iff p regulates q, and p decreases the rate or
+          magnitude of execution of q.
+        meaning: RO:0002212
+        annotations: {biolink_predicate: "biolink:regulates"}
+      "RO:0012006":
+        title: is small molecule inhibitor of
+        description: >-
+          a relation between a continuant and a process, in which the continuant is a
+          small molecule that inhibits the process
+        meaning: RO:0012006
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002566":
+        title: causally influences
+        description: >-
+          The entity or characteristic A is causally upstream of the entity or
+          characteristic B, A having an effect on B. An entity corresponds to any
+          biological type of entity as long as a mass is measurable. A characteristic
+          corresponds to a particular specificity of an entity (e.g., phenotype, shape,
+          size).
+        meaning: RO:0002566
+        annotations: {biolink_predicate: "biolink:affects"}
+
+  SiblingMechEnum:
+    description: Fleet Mechs a node may resolve into; keys match culturebotai-claw fleet.yaml.
+    # Each description names the Mech and its record scope as its README states it.
+    permissible_values:
+      MEDIAINGREDIENTMECH:
+        description: MediaIngredientMech (this repository); growth-media ingredient records.
+      PROTEINTRAITSMECH:
+        description: >-
+          ProteinTraitsMech; protein trait records (sequence, structure and function
+          traits, including enzymatic activities and cofactor requirements).
+      PATHWAYMECH:
+        description: PathwayMech; pathway-level microbial mechanism records.
+      CELLSTRUCTUREMECH:
+        description: CellStructureMech; microbial cell structure records.
+      TRAITMECH:
+        description: TraitMech; microbial ecophysiological trait records.
+      TAXONMECH:
+        description: TaxonMech; microbial taxon records (organism_scope and protein_examples taxa resolve here).
+      ANTIBIOTICMECH:
+        description: AntibioticMech; records of chemical structures with antimicrobial activity.
+      NATURALPRODUCTMECH:
+        description: NaturalProductMech; natural product structure records.
+      HABITATMECH:
+        description: HabitatMech; microbial habitat and environment records.
+      COMMUNITYMECH:
+        description: CommunityMech; microbial community records.
+
+  ProteinGroundingStatusEnum:   # TraitMech
+    description: Review disposition for a node without an exact CURIE.
+    permissible_values:
+      REVIEWED_LABEL_ONLY:
+        description: The evidence supports the label, but no exact family, function or complex term can be asserted without overclaiming.
+
+  UniProtEntryStatusEnum:   # TraitMech
+    permissible_values:
+      REVIEWED:
+        description: UniProtKB/Swiss-Prot.
+      UNREVIEWED:
+        description: UniProtKB/TrEMBL.

@@ -1,0 +1,148 @@
+id: CultureMech:001823
+name: columbia_blood_agar
+original_name: COLUMBIA BLOOD AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: DSMZ Medium 687
+  term:
+    id: mediadive.medium:687
+    label: COLUMBIA BLOOD AGAR
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf'
+ingredients:
+- preferred_term: Bacto Panton (Peptone)
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists Bacto Panton as a peptone in the Columbia Blood Agar
+    Base; the BD product is not reducible to one ChEBI molecule.
+- preferred_term: Bacto Bitone (Peptone)
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists Bacto Bitone as a peptone in the Columbia Blood Agar
+    Base; the BD product is not reducible to one ChEBI molecule.
+- preferred_term: Tryptic Digest of beef heart
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists tryptic digest of beef heart as part of the Columbia
+    Blood Agar Base.
+- preferred_term: Corn starch
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists 1 g corn starch.
+  term:
+    id: CHEBI:28017
+    label: starch
+  mediaingredientmech_chebi_term:
+    id: CHEBI:28017
+    label: starch
+- preferred_term: NaCl
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists 5 g NaCl.
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 lists 15 g agar.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Deionized water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 instructs suspending Columbia Blood Agar Base in 1 L deionized
+    water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Sterile defibrinated blood
+  concentration:
+    value: '5'
+    unit: PERCENT_V_V
+  source: DSMZ Medium 687
+  notes: DSMZ Medium 687 instructs adding 5% sterile defibrinated blood after cooling.
+  term:
+    id: UBERON:0000178
+    label: blood
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Suspend 44 g Columbia Blood Agar Base in 1 L deionized water and heat
+    to boiling.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Sterilize in an autoclave for 15 min at 121 C.
+- step_number: 3
+  action: COOL
+  description: Cool to 45 C, add 5% sterile defibrinated blood, and mix well.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:11.927805Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 687'
+- timestamp: '2026-01-28T19:48:30.378147Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:07.490434Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001823'
+- timestamp: '2026-03-17T06:30:29.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:19.812289+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "COLUMBIA BLOOD AGAR" to "columbia_blood_agar" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:16.265409+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_dsmz_1551_687_score15.py
+  action: RESOLVED_DSMZ_1551_687_SCORE15
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf
+  notes: DSMZ Medium 687 lists Columbia Blood Agar Base as Bacto Panton, Bacto Bitone,
+    tryptic digest of beef heart, corn starch, NaCl, and agar suspended in 1 L deionized
+    water; after sterilization and cooling it adds 5% sterile defibrinated blood.
+kg_microbe_match: mediadive.medium:687
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf

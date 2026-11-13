@@ -1,0 +1,142 @@
+identifier: kgmicrobe.ingredient:hcl_nominal25percent_jcm431_899
+preferred_term: Nominal 25% HCl reagent (JCM 431 / 899)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hcl_nominal25percent_jcm431_899
+  ontology_label: Nominal 25% HCl reagent (JCM 431 / 899)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+      12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent
+      boundary is represented without equating the two complete trace-element mixtures.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+      12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent
+      boundary is represented without equating the two complete trace-element mixtures.
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2305
+    notes: LLM-assisted bounded comparison under issue1237, independently checked
+      against exact source captures. Literal 25%, 32% and 35% are retained as source
+      specifications, not normalized comparable fractions. The cited sources do not
+      state a common percentage basis, carrier, grade or assay tolerance; the exact
+      same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly
+      calls its 25% input concentrated, so that qualitative label does not exclude
+      a numerical percentage. If comparable definitions and assay ranges were established,
+      a real strength difference could be assessed; they are not established here.
+      Before co-installing overlapping candidates, the coordinator must choose an
+      explicit common bounded partial-material scope preserving every source context,
+      or obtain comparable preparation/product evidence. No owner merge or arbitrary
+      winner is selected.
+components:
+- component_name: HCl
+  reference_scope: UNMAPPED
+  source: 25% as printed; percentage basis and solvent unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    source_record: Nominal 25% HCl reagent (JCM 431 / 899)
+    notes: JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+      12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent
+      boundary is represented without equating the two complete trace-element mixtures.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899
+    source_record: Nominal 25% HCl reagent (JCM 431 / 899)
+    notes: JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+      12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent
+      boundary is represented without equating the two complete trace-element mixtures.
+  notes: 'Percent basis, solvent and supplied grade remain unknown. Different receiving-stock
+    addition volumes are not evidence of different acid concentrations. Source-named
+    parts remain UNMAPPED where supplied form or stock identity is not established.
+    MIM_CATALOG references identify only the supported constituent, not approval of
+    that complete owner. Literal 25%, 32% and 35% are retained as source specifications,
+    not normalized comparable fractions. The cited sources do not state a common percentage
+    basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation
+    relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated,
+    so that qualitative label does not exclude a numerical percentage. If comparable
+    definitions and assay ranges were established, a real strength difference could
+    be assessed; they are not established here. Before co-installing overlapping candidates,
+    the coordinator must choose an explicit common bounded partial-material scope
+    preserving every source context, or obtain comparable preparation/product evidence.
+    No owner merge or arbitrary winner is selected. Component-list completeness is
+    UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the
+    complete acid-reagent formulation or explicitly identify omitted constituents.
+    Separately listed receiving-stock water is not evidence of the acid reagent carrier.'
+notes: 'JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+  12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent boundary
+  is represented without equating the two complete trace-element mixtures. Percent
+  basis, solvent and supplied grade remain unknown. Different receiving-stock addition
+  volumes are not evidence of different acid concentrations. Provenance-only source
+  text ''25% HCl'' (case CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity. Successor-v3 relation correction: Literal
+  25%, 32% and 35% are retained as source specifications, not normalized comparable
+  fractions. The cited sources do not state a common percentage basis, carrier, grade
+  or assay tolerance; the exact same-or-distinct preparation relation is unresolved.
+  TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative
+  label does not exclude a numerical percentage. If comparable definitions and assay
+  ranges were established, a real strength difference could be assessed; they are
+  not established here. Before co-installing overlapping candidates, the coordinator
+  must choose an explicit common bounded partial-material scope preserving every source
+  context, or obtain comparable preparation/product evidence. No owner merge or arbitrary
+  winner is selected.'
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:38:17.660327+00:00'
+  curator: codex_worker10_successor_v3_bio_research
+  action: CORRECTED
+  changes: Correct unsupported cross-strength disjointness and record conditional
+    relations among nominal-percent and qualitative HCl preparations under CHEM-COMP-004.
+    Preserve all literal specifications, source routes, component assertions, quantities
+    and original history; no consolidation or release.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.053278+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:46:08.696668+00:00'
+  curator: Codex worker10 /root
+  action: CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION
+  changes: 'Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component
+    assertion fields component_assertion.completeness, component_assertion.notes.
+    Component-list completeness is UNKNOWN: the cited receiving recipes name and dose
+    HCl but do not establish the complete acid-reagent formulation or explicitly identify
+    omitted constituents. Separately listed receiving-stock water is not evidence
+    of the acid reagent carrier. Preserved all component objects, names, identities,
+    quantities, sources, original history, supplied-form and source-case scope, and
+    every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative
+    assertion correction, not human scientific review, a new owner decision or release
+    approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

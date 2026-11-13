@@ -1,0 +1,112 @@
+identifier: CHEBI:34683
+preferred_term: Sodium phosphate dibasic
+ontology_mapping:
+  ontology_id: CHEBI:34683
+  ontology_label: disodium hydrogenphosphate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: 2x UGA
+      defined nocarbon, 2x_UGA_defined_nocarbon, Hans Basal Media….'
+synonyms:
+- synonym_text: Sodium dihydrogen phosphate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=—); Imported from
+    CultureBotHT. Used in 10 CultureBot media; samples: 2x UGA defined nocarbon, 2x_UGA_defined_nocarbon,
+    Hans Basal Media….'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.339681+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.431733+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=3Na.O4P; inchi=InChI=1S/3Na.H3O4P/c;;;1-5(2,3)4/h;;;(H3,1,2,3,4)/;
+    smiles=O=P([O-])([O-])[O-].[Na+].[Na+].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.490600+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248218+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-27T03:16:39.519873+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 10/10 -> 33/33 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Sodium
+    dihydrogen phosphate''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:34683 (Na2HPO4). Dibasic sodium phosphate is disodium
+    hydrogenphosphate, not trisodium phosphate. Sodium dihydrogen phosphate is monobasic
+    and is a REJECTED_LABEL here; its 78 recipe rows are excluded from this transfer.
+    Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:37583 -> CHEBI:34683 (#799). This record was merged into
+    'Na2HPO4' but kept its own old identifier, so a downstream lookup on this label
+    resolved to nothing live. The target is the one named in this record's own MERGED_INTO
+    entry; the chain was followed to the first live record. A tombstone exists to
+    keep the loser resolvable.
+  llm_assisted: false
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:37583 -> CHEBI:34683 (#799). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Na2HPO4''. Provenance is unaffected: what
+    the record used to assert is in this history.'
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: 3Na.O4P
+  inchi: InChI=1S/3Na.H3O4P/c;;;1-5(2,3)4/h;;;(H3,1,2,3,4)/q3*+1;/p-3
+  smiles: O=P([O-])([O-])[O-].[Na+].[Na+].[Na+]
+  data_source: CHEBI sqlite (oaklib)
+physicochemical_roles:
+- role: BUFFER
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+representative: CHEBI:34683

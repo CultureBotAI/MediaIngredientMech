@@ -1,0 +1,54 @@
+identifier: kgmicrobe.ingredient:corn_steep_liquor
+preferred_term: corn steep liquor
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:corn_steep_liquor
+  ontology_label: corn steep liquor
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=48
+    notes: Liquid corn-steep material as named by JCM48, TOGO M40/M2901 and admitted
+      MediaDive source. JCM48 permits a dried powder substitute; that substitution
+      does not make the two supplied forms identical. No particular manufacturer,
+      solids fraction or component amounts are established. OLS exact search finds
+      a TransformON term outside the native OntologySourceEnum, a BTO grown-cell condition
+      rather than ingredient, and a valueset entry; none is substituted as an exact
+      native chemical grounding. Local ingredient identity preserves the material
+      without inventing quantified components.
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Corn steep liquor
+  synonym_type: EXACT_SYNONYM
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=48
+notes: Liquid corn-steep material as named by JCM48, TOGO M40/M2901 and admitted MediaDive
+  source. JCM48 permits a dried powder substitute; that substitution does not make
+  the two supplied forms identical. No particular manufacturer, solids fraction or
+  component amounts are established. OLS exact search finds a TransformON term outside
+  the native OntologySourceEnum, a BTO grown-cell condition rather than ingredient,
+  and a valueset entry; none is substituted as an exact native chemical grounding.
+  Local ingredient identity preserves the material without inventing quantified components.
+  Isolated proposal only. Complete published payload and cross-shard resolution remain
+  coordinator obligations; no source record or existing hold is changed.
+curation_history:
+- timestamp: '2026-11-08T04:30:41.363631+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported distinct ingredient identity and only evidenced
+    preparation/components; no roles inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.018382+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

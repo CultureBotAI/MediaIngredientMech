@@ -1,0 +1,208 @@
+{
+  "at": "2026-11-12T10:39:33.268505+00:00",
+  "status": "PROPOSAL_NOT_APPLIED_NOT_NATIVE_APPROVAL",
+  "mim_id": "MIM:0001002",
+  "issue": 1225,
+  "TC_HEAD": "57bbdcf656d7bde80ed0bb8bac1cbd096c7ea915",
+  "source_path": "data/ingredients/mapped/Edta.yaml",
+  "before_sha256": "c151e85978ba8a6a57c1c145929b16f003821a1975b5e8979e2f95214d6ed74f",
+  "after_sha256": "2ae05a9dec8664a0e818f23173b37ca4fe2ee9a4bcd36bf568f29d65eecd076c",
+  "delta_excluding_appended_event": [
+    {
+      "path": "$.chemical_properties.data_source",
+      "before": "PubChem API",
+      "after": "Formula, InChI and SMILES: ChEBI:4735 public API, captured 2026-11-08T06:51:53.310006+00:00 (sha256 5c10db580fcabb79ebbbbf70b42a20aad95bedebe89669ff5c9506a558b8020b). CAS 60-00-4 retained from prior PubChem API retrieval 2026-04-05T19:51:59.317982+00:00; no new CAS acquisition."
+    },
+    {
+      "path": "$.chemical_properties.inchi",
+      "before": "InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20)/p-2",
+      "after": "InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20)"
+    },
+    {
+      "path": "$.chemical_properties.molecular_formula",
+      "before": "C10H14N2O8",
+      "after": "C10H16N2O8"
+    },
+    {
+      "path": "$.chemical_properties.retrieval_date",
+      "before": "2026-04-05T19:51:59.317982+00:00",
+      "after": "2026-11-08T06:51:53.310006+00:00"
+    },
+    {
+      "path": "$.chemical_properties.smiles",
+      "before": "O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-]",
+      "after": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O"
+    },
+    {
+      "path": "$.synonyms[5].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL"
+    },
+    {
+      "path": "$.synonyms[6].synonym_type",
+      "before": "EXACT_SYNONYM",
+      "after": "REJECTED_LABEL"
+    }
+  ],
+  "appended_event": {
+    "timestamp": "2026-11-12T10:39:33.268505+00:00",
+    "curator": "codex_postadoption_source_proposal",
+    "action": "PROPOSED_SOURCE_CORRECTION",
+    "changes": "#1225: current-owner proposal reuses the independently reviewed neutral-acid correction, retaining prior PR351 free-acid CHEBI:4735 identity, CAS60-00-4, SYNONYM_MATCH, permanent MIM:0001002, legacy aliases and all original history. Replace only inherited dianion molecular_formula/InChI/SMILES with the inspected neutral-acid values; retain both explicit dianion names and original kg_microbe source as REJECTED_LABEL. Formula/structures reuse the actual 2026-11-08T06:51:53.310006+00:00 ChEBI4735 API capture SHA2565c10db580fcabb79ebbbbf70b42a20aad95bedebe89669ff5c9506a558b8020b; dianion names/structures use ChEBI64755 capture SHA256d27dd801defc6f5b5a16339d2df6d2a72911b7aa98cef1f3870237be7d743e53. The old CAS PubChem acquisition date remains explicit in property-specific provenance; no new CAS retrieval is claimed. The current sealed local ChEBI facts corroborate these property values and do not prove source material form. The historical candidate 2186a74fe18d095a014f2521b2c29fe200ecf7e86ac073b5260541f4373576ea included a separate Worker10 spelling proposal; do not transplant that alias or its acceptance into this current-owner delta. Existing CHELATOR prediction and all source, quantity, procurement, salt/form and export holds remain unchanged. No scientific/source/role/publication approval or maintained application follows from this afterimage.",
+    "previous_status": "MAPPED",
+    "new_status": "MAPPED",
+    "llm_assisted": true
+  },
+  "closed_schema": "PASS",
+  "native_synonym_rejection": "PASS",
+  "original_TC_inventory_unchanged": true,
+  "original_five_proposal_package_unchanged": true,
+  "original_five_pins": {
+    "CeNO33_X_6_H2O.diff": "39b17da748b266dc24fbcb03064dafbdc1342dbe23ac9fb40a565023db2e12f1",
+    "HANDOFF.json": "0bcc3d52d9d4c9b0ffff8b12988776cf92919b0082f91613eb2d8b742df6ac27",
+    "INPUT-PINS.json": "cb6d917da8bf525f51fef3e2bd391228f074b2a77e5a425e0bfcfb76d967117b",
+    "L-alpha-Phosphatidylcholine.diff": "ff6e8e3968fb6ffd0ba2c7e210f33a47b757cfb9e3b46b473c6dfd342ae34975",
+    "Lysozyme.diff": "60cc93323955e6e65308edf8e590ce7095da607895ca07b55464262b487e3e48",
+    "PLACEHOLDER-COLLISION-SEARCH.json": "709b08b53f890e0537aef12f7f799b4dcf3cac730c5ec0e8c27170fc45ac186b",
+    "PLACEHOLDER-CONTINUITY-PROOF.json": "5f04edf314bcb762d7beab0dfdcfd456ebc5c0e1252d0ec0a26c6192e52428cb",
+    "POLICY-AND-APPLICATION-PLAN.md": "2604b5facfc7ddd672dc15e7beef63f76a717d5f66871466ba7dd3c7257fdd26",
+    "PROPOSALS.json": "b3595888c7200413fc38ca4b40e8103025af637073d518456aeaf39fc544906d",
+    "Rifamycin.diff": "acd26f4b70a4bfa8953202a34eede028a435bd319b362b7a539318d0869e14da",
+    "Sorbitan_Monooleate.diff": "78113794866df66349bad8fadff7ce1f1329312b92fdb9609f59c7ef9ab51efd",
+    "TC-INVENTORY-AFTER.json": "4bb663790fe601e90e38d0c263eca5e301a8e93cae5534b5f06084767353848c",
+    "TC-INVENTORY-BEFORE.json": "4bb663790fe601e90e38d0c263eca5e301a8e93cae5534b5f06084767353848c",
+    "TC-STATUS-BEFORE.txt": "0136c3742f4450655b665653a6e0e9e635240709e0271411d6f835e72355ef67",
+    "VALIDATION.json": "246f79769319506a31bfef896cc4327e99bbb9b118b7e16cc2c632bcb8cdca1a",
+    "before/data/ingredients/mapped/CeNO33_X_6_H2O.yaml": "3d2b7216e0a7099bb9274feb2cb8a45b6db64234a26f0f5f0d58744bbf231dd1",
+    "before/data/ingredients/mapped/L-alpha-Phosphatidylcholine.yaml": "4e951f39e1c8890eb0f6f260dcb7e28edfd18a5b57a191fcb6ef0290507c3be2",
+    "before/data/ingredients/mapped/Lysozyme.yaml": "149eda7e851924447adcbfaf8a97b89479fc9db4c8bbbf00592827b47c38a9a9",
+    "before/data/ingredients/mapped/Rifamycin.yaml": "4e971cec7029a881832201d2bd17bfd4c797e00030341d6dfe457cf539aba1c8",
+    "before/data/ingredients/mapped/Sorbitan_Monooleate.yaml": "515170be9297b049e5a2e3ae8335e7d2290ffeedd17c12b050708db9cb512c99",
+    "historical-PC-import.yaml": "e3fd7795b63efa9e8bfc9b12f03179a6653cb8ac673a419a6e187a214481666b",
+    "live-issues/1263-comments.json": "ab466e646a4134a915d2c81a7eb1cc9f0da88b634f424259dd6cf7464764b446",
+    "live-issues/1263.json": "d9ef9d6b47dbed7646d39968b46aedeef2f8669d6bc46fb30c5d62816c7f1e97",
+    "live-issues/1367-comments.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "live-issues/1367.json": "600bf2170378c6c42ee10e66be166a9b7750e36b33f4704a3da756f6d65e30f3",
+    "live-issues/1372-comments.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "live-issues/1372.json": "8db6262f7d259a2a6b5d64dfce67bbe2fb0d200160e1e5dcf8f5fdc7f8a4d31a",
+    "live-issues/1373.json": "226e0b9b9267e20b056ade98f85bc603237ba968acec1db4c6bf3cd839dee8ba",
+    "live-issues/746.json": "3cf7433c1caabb7763419f5c75c18c3c2c0fd3cb70e6b231f605c77a6c913704",
+    "live-issues/753-comments.json": "4e3c17362d83d5cba644749ce27613fc4054fd45a6ca7f2698b556ae1047aba4",
+    "live-issues/753.json": "a31170904f3e6e2dd60f24683d060183133943b6f2fd525d82e3708d9680124a",
+    "live-issues/754-comments.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "live-issues/754.json": "44b9b7cde4d0e57e064ccf69f7f72531b83e28da572d9134703ce4c4bd45a502",
+    "live-issues/760.json": "d5773aae8ecd23072af710994fa934f8a5524fafec5a1e30543a917286538149",
+    "live-issues/761-comments.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "live-issues/761.json": "1f169fc93e0a752a8371dd8acec03baef40d4a357821bee98cc731adf80ef3fe",
+    "live-issues/dedup-lysozyme.json": "d2df03e8058e058b8ac17d543d31c4d282db6deeddd952dc860400c15a0d44f7",
+    "live-issues/dedup-method.json": "eab99c67db56a62e822928ebad81d3a56a02e8a4d35ef63d08cba0030c684611",
+    "live-issues/dedup-sorbitan.json": "f7e9197ba8de9842f01631e9585ab6c9cb6d7e7a71e81ef1bcb4acf9f2f5a14f",
+    "live-issues/queried-at.txt": "5fbddd31a0732eabe45ad0bca77567570f3ed2eda3a58d6abe7b4ff9f9b44e8c",
+    "method-defects-issue.md": "c5595f6d03b9a73eafe04535d426a4dbaa94306f175dab92e44b68a6312a4e1a",
+    "pc-alias-policy-issue-comment.md": "5e153e33b5800f4f9c3b01dee0f923b70c03a26ea591519b5fabc3e0bb09cc51",
+    "prepare_proposals.py": "166fa909a012690b97d9b4d2a6cf74e7aef37d08cd5c7e7cbc5af0cf4e42a283",
+    "proposed/data/ingredients/mapped/CeNO33_X_6_H2O.yaml": "1798d87405e4e4693428d1ec22b36b69b66fb063231173f21b6c687f343e0e78",
+    "proposed/data/ingredients/mapped/Lysozyme.yaml": "f62b6f74a0eca6fb53cbee56e29352c9e6168dfdd55b1b0552a2d0f761a1ebf8",
+    "proposed/data/ingredients/mapped/Rifamycin.yaml": "d84189a7d9183bed90f7559dc20695db2349e1bce905ef02e898362a50fc8cf8",
+    "proposed/data/ingredients/mapped/Sorbitan_Monooleate.yaml": "a0c32ff2af4efdf6ebbddd455cd41d4b800c1cb6712dc8f9f263013f4020f1a4",
+    "proposed/data/ingredients/unmapped/L-alpha-Phosphatidylcholine.yaml": "7a4fe270de41651fec141ecc96d0509b9be6b591f318f3d6f9148ac68baf763a"
+  },
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/data/ingredients/mapped/Edta.yaml",
+      "sha256": "c151e85978ba8a6a57c1c145929b16f003821a1975b5e8979e2f95214d6ed74f",
+      "bytes": 7977
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/edta1225-candidate-v1/build_candidate.py",
+      "sha256": "ec3ad2f42e25448f52c4108e6893b39583bd482a2ef228d6e30c6557acc4edf2",
+      "bytes": 6772
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/edta1225-candidate-v1/candidate/Edta.yaml",
+      "sha256": "2186a74fe18d095a014f2521b2c29fe200ecf7e86ac073b5260541f4373576ea",
+      "bytes": 9918
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/edta1225-candidate-v1/chebi-4735-live-v1.json",
+      "sha256": "5c10db580fcabb79ebbbbf70b42a20aad95bedebe89669ff5c9506a558b8020b",
+      "bytes": 22233
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/edta1225-candidate-v1/chebi-64755-live-v1.json",
+      "sha256": "d27dd801defc6f5b5a16339d2df6d2a72911b7aa98cef1f3870237be7d743e53",
+      "bytes": 2772
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/edta1225-candidate-v1/primary-retrieval-v1.json",
+      "sha256": "307b17477f423085720997a2c8dfe8dcd7ad8abcb304469e79505998a672d336",
+      "bytes": 968
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/edta1225-independent-v1/ASSESSMENT.json",
+      "sha256": "3e0525dfbac0a23a50d663ae3dcdc60ba71b75a2968f13a6a2671d0d0fd39233",
+      "bytes": 9889
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/edta1225-source-correction-v1/issue1225.json",
+      "sha256": "5f7f0284e3108f4663fee5320d14af1433c7c391c0d460e28e31e79674507de4",
+      "bytes": 7214
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/edta1225-source-correction-v1/issue319.json",
+      "sha256": "afcd49a30af06681bfc490bdfd38f8d89e5e67bbb7eabbafdc7d09654b914e4f",
+      "bytes": 16374
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/edta1225-source-correction-v1/pr351.json",
+      "sha256": "c72ab1f95f8dcf52e875b1aeb51a8d4fb31d9f340e97a80187d798bea86d1d48",
+      "bytes": 2745
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/postadoption-edta1225-proposal-v1/issue320-live.json",
+      "sha256": "b7a04f94d72511112d64b2ae9140e96657d7195d536e51e667e6c86a2ef0feee",
+      "bytes": 13736
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/facts.json",
+      "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9",
+      "bytes": 72987431
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/RECEIPT.json",
+      "sha256": "738a975f3191e8ad060f4f6c2a98b36959dedc7f363a2444887a80f6ce7565ae",
+      "bytes": 3352
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-reassessment-v2/EDTA-64755-database.json",
+      "sha256": "af224f8ada87c2eb477db981bc2ce9916bd279baf6d11df214e4b49c0c5a177d",
+      "bytes": 6137
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "77a57aaaa1a968dec077b13851b28350701b0952d672417f26e514bebfd0f392",
+      "bytes": 105365
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "bytes": 5014
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34",
+      "bytes": 4699
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/src/mediaingredientmech/synonym_policy.py",
+      "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+      "bytes": 3996
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-adoption-real-canary-target/MAPPING_SEMANTICS.md",
+      "sha256": "76dbbbbc4dd0d729dbba4521505bade4f2f2a53d4ee144ac9bca0fcda8b29015",
+      "bytes": 76741
+    }
+  ],
+  "pending": "Fresh exact-payload independent review, native1373 preparation/application, generated-row review and full gates. Historical2186review is evidence, not current approval."
+}

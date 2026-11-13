@@ -1,0 +1,41 @@
+{
+  "index": 87,
+  "case_id": "CM_NAME:916051cc208aff2a932a7c193a878c0a8ba082cb26659ad9db7304aa58d5cbe8",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "tartrat",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "tartrat",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Na-tartrate.yaml:2:preferred_term: Na-tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:5:  ontology_label: sodium L-tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:17:- synonym_text: (+)-tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:26:- synonym_text: (2R,3R)-tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:29:- synonym_text: (R,R)-Tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:32:- synonym_text: L-tartrate\ndata/ingredients/mapped/Na-tartrate.yaml:53:    (Na-tartrate)\ndata/ingredients/mapped/Na-tartrate.yaml:59:  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (+)-tartrate, (2R,3R)-2,3-dihydroxybutanedioate,\ndata/ingredients/mapped/Na-tartrate.yaml:60:    (2R,3R)-2,3-dihydroxysuccinate, (2R,3R)-tartrate, (R,R)-Tartrate, ... (2 more)'\ndata/ingredients/mapped/Na-tartrate.yaml:91:    does not equal the term's primary label 'L-tartrate(2-)'; it matches the ChEBI\ndata/ingredients/mapped/Na-tartrate.yaml:100:  changes: Merged into CHEBI:63017 'Sodium tartrate'; occurrences transferred. Tombstoned\ndata/ingredients/mapped/Na-tartrate.yaml:110:    it. Now agrees with the merge target ''Sodium tartrate''. Provenance is unaffected:\ndata/ingredients/mapped/Tartrate.yaml:2:preferred_term: Tartrate\ndata/ingredients/mapped/Tartrate.yaml:5:  ontology_label: tartrate\ndata/ingredients/mapped/Tartrate.yaml:11:    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:tartrate; '\ndata/ingredients/mapped/Tartrate.yaml:28:  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:tartrate; '\ndata/ingredients/mapped/Tartrate.yaml:54:    typo for tartrate (#213). No new SSSOM row; CHEBI:132950 is already mapped. Source:\ndata/ingredients/mapped/Sodium_Tartrate.yaml:2:preferred_term: Sodium tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:5:  ontology_label: sodium L-tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:32:- synonym_text: Bisodium tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:35:- synonym_text: Disodium L-(+)-tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:41:- synonym_text: Sodium L-(+)-tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:53:- synonym_text: disodium tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:56:- synonym_text: sodium L-tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:59:- synonym_text: Na-tartrate\ndata/ingredients/mapped/Sodium_Tartrate.yaml:76:  changes: Added CAS-RN:868-18-8 from PubChem API via name lookup (Sodium tartrate)\ndata/ingredients/mapped/Sodium_Tartrate.yaml:83:    acid, disodium salt, Bisodium tartrate, Disodium L-(+)-tartrate, Disodium salt\ndata/ingredients/mapped/Sodium_Tartrate.yaml:84:    of L-(+)-tartaric acid, Sodium L-(+)-tartrate, ... (5 more)'\ndata/ingredients/mapped/Sodium_Tartrate.yaml:110:  changes: 'ontology_label ''Sodium tartrate'' -> ''sodium L-tartrate'': synced to\ndata/ingredients/mapped/Sodium_Tartrate.yaml:111:    canonical CHEBI label (preferred_term ''Sodium tartrate'' unchanged).'\ndata/ingredients/mapped/Sodium_Tartrate.yaml:119:  changes: 'Absorbed CHEBI:30924 ''Na-tartrate'' (#315). Same substance under an abbreviated-counterion\ndata/ingredients/mapped/Sodium_Tartrate.yaml:123:    this salt): (+)-tartrate, (2R,3R)-2,3-dihydroxybutanedioate, (2R,3R)-2,3-dihydroxysuccinate,\ndata/ingredients/mapped/Sodium_Tartrate.yaml:124:    (2R,3R)-tartrate…'\ndata/ingredients/mapped/Synephrine_Tartrate.yaml:2:preferred_term: Synephrine Tartrate\ndata/ingredients/mapped/Synephrine_Tartrate.yaml:5:  ontology_label: Synephrine Tartrate\ndata/ingredients/mapped/Diammonium_tartrate.yaml:2:preferred_term: Diammonium tartrate\ndata/ingredients/mapped/Diammonium_tartrate.yaml:5:  ontology_label: diammonium L-tartrate\ndata/ingredients/mapped/Diammonium_tartrate.yaml:25:    mentions across 1 recipes). Grounded to CHEBI:63075 (''diammonium L-tartrate'')\ndata/ingredients/mapped/Diammonium_tartrate.yaml:26:    on an exact match of an exact synonym to the query ''diammonium tartrate''. Source:\n",
+  "label_index_stdout": "24:(+)-tartrate,synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n142:\"(2R,3R)-2,3-dihydroxybutanedioate\",synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n144:\"(2R,3R)-2,3-dihydroxysuccinate\",synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n150:\"(2R,3R)-tartrate\",synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n368:\"(R,R)-Tartrate\",synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n371:\"(R-(R*,R*))-2,3-dihydroxybutanedioic acid, disodium salt\",synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n2366:Bisodium tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n3575:diammonium L-tartrate,ontology_label,CHEBI:63075,Diammonium tartrate,CHEBI:63075,MAPPED,unique\n3580:Diammonium tartrate,preferred_term,CHEBI:63075,Diammonium tartrate,CHEBI:63075,MAPPED,unique\n3693:\"disodium (2R,3R)-2,3-dihydroxybutanedioate\",synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n3697:\"disodium (R-(R*,R*))-2,3-dihydroxybutanedioate\",synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n3741:Disodium L-(+)-tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n3760:Disodium salt of L-(+)-tartaric acid,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n3780:disodium tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n5306:L-tartrate,synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n5307:L-threarate,synonym,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n6281:Na-tartrate,preferred_term,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n6282:Na-tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n7873:Sodium L-(+)-tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n7879:sodium L-tartrate,synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n7880:sodium L-tartrate,ontology_label,CHEBI:63017,Na-tartrate,CHEBI:63017,REJECTED,unique\n8015:Sodium tartrate,preferred_term,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n8242:Synephrine Tartrate,preferred_term,cas:16589-24-5,Synephrine Tartrate,cas:16589-24-5,MAPPED,unique\n8259:\"Tartaric acid, disodium salt\",synonym,CHEBI:63017,Sodium tartrate,CHEBI:63017,MAPPED,unique\n8260:Tartate,synonym,CHEBI:132950,Tartrate,CHEBI:132950,MAPPED,unique\n8261:Tartrate,preferred_term,CHEBI:132950,Tartrate,CHEBI:132950,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "CM_NAME:916051cc208aff2a932a7c193a878c0a8ba082cb26659ad9db7304aa58d5cbe8",
+      "label": "NH4-tartrate",
+      "proposal_ids": []
+    }
+  ]
+}

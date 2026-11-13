@@ -1,0 +1,70 @@
+identifier: kgmicrobe.ingredient:jcm852_se_w_solution
+preferred_term: JCM852 Se/W solution
+synonyms:
+- synonym_text: Selenite-tungstate solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm852_se_w_solution
+  ontology_label: JCM852 Se/W solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    notes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted
+      to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88
+      citronellol remains rejected.
+notes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted to MediaDive
+  ingredient88 occurrences with the explicit JCM852 reference. CHEBI88 citronellol
+  remains rejected.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted
+    to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88
+    citronellol remains rejected.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.555556+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-175. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+components:
+- component_name: Na2SeO3·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.7'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.3'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    source_record: JCM852 Se/W solution
+    notes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted
+      to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88
+      citronellol remains rejected.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and
+    source batch units are transcribed without lexical identity promotion.

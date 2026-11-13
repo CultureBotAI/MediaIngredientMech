@@ -1,0 +1,441 @@
+{
+  "index": 163,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:20b59c3993908f9f8807d4f06c83fad1a17da4125d23600e0d5264b00ab64262",
+    "original_kg_entry": {
+      "candidate_id": "20b59c3993908f9f8807d4f06c83fad1a17da4125d23600e0d5264b00ab64262",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [
+        {
+          "candidate_field": "source_label",
+          "disposition": "WITHHOLD",
+          "matched_field": "subject_label",
+          "matched_label": "84 g/L NaHCO3 solution",
+          "review_dispositions": [
+            {
+              "disposition": "WITHHOLD",
+              "evidence_key": "263",
+              "object_id": "CHEBI:32139",
+              "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+              "owner_record_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+              "predicate_id": "skos:broadMatch",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval.",
+              "row_sha256": "f4db1f3baddc5285bd0b457f4ffeb48e030e5445612048c828c8c9395de4c1c8",
+              "source_position": "263",
+              "subject_id": "MIM:84_GL_NaHCO3_Solution"
+            }
+          ],
+          "row": {
+            "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+            "confidence": "0.9",
+            "mapping_date": "2026-09-20",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "object_id": "CHEBI:32139",
+            "object_label": "sodium hydrogencarbonate",
+            "object_source": "obo:chebi.owl",
+            "other": "",
+            "predicate_id": "skos:broadMatch",
+            "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+            "subject_id": "MIM:84_GL_NaHCO3_Solution",
+            "subject_label": "84 g/L NaHCO3 solution",
+            "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+          },
+          "row_sha256": "f4db1f3baddc5285bd0b457f4ffeb48e030e5445612048c828c8c9395de4c1c8"
+        },
+        {
+          "candidate_field": "source_label",
+          "disposition": "WITHHOLD",
+          "matched_field": "subject_label",
+          "matched_label": "84 g/L NaHCO3 solution",
+          "review_dispositions": [
+            {
+              "disposition": "WITHHOLD",
+              "evidence_key": "264",
+              "object_id": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+              "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+              "owner_record_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+              "predicate_id": "skos:exactMatch",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: two parenthetical source surfaces are not exact synonyms of an 84 g/L sodium bicarbonate solution.",
+              "row_sha256": "a24ffb23b8e309efbdf45ac47b76462e00dba83125d1180bc040434b8a9cc4e0",
+              "source_position": "264",
+              "subject_id": "MIM:84_GL_NaHCO3_Solution"
+            }
+          ],
+          "row": {
+            "comment": "Registry/identity row preserving kgmicrobe.ingredient:84_gl_nahco3_solution alongside parent CHEBI:32139.",
+            "confidence": "0.99",
+            "mapping_date": "2026-09-02",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "object_id": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+            "object_label": "84 g/L NaHCO3 solution",
+            "object_source": "kgm:ingredient",
+            "other": "",
+            "predicate_id": "skos:exactMatch",
+            "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+            "subject_id": "MIM:84_GL_NaHCO3_Solution",
+            "subject_label": "84 g/L NaHCO3 solution",
+            "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+          },
+          "row_sha256": "a24ffb23b8e309efbdf45ac47b76462e00dba83125d1180bc040434b8a9cc4e0"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "disposition": "WITHHOLD",
+          "matched_field": "subject_label",
+          "matched_label": "84 g/L NaHCO3 solution",
+          "review_dispositions": [
+            {
+              "disposition": "WITHHOLD",
+              "evidence_key": "263",
+              "object_id": "CHEBI:32139",
+              "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+              "owner_record_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+              "predicate_id": "skos:broadMatch",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval.",
+              "row_sha256": "f4db1f3baddc5285bd0b457f4ffeb48e030e5445612048c828c8c9395de4c1c8",
+              "source_position": "263",
+              "subject_id": "MIM:84_GL_NaHCO3_Solution"
+            }
+          ],
+          "row": {
+            "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+            "confidence": "0.9",
+            "mapping_date": "2026-09-20",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "object_id": "CHEBI:32139",
+            "object_label": "sodium hydrogencarbonate",
+            "object_source": "obo:chebi.owl",
+            "other": "",
+            "predicate_id": "skos:broadMatch",
+            "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+            "subject_id": "MIM:84_GL_NaHCO3_Solution",
+            "subject_label": "84 g/L NaHCO3 solution",
+            "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+          },
+          "row_sha256": "f4db1f3baddc5285bd0b457f4ffeb48e030e5445612048c828c8c9395de4c1c8"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "disposition": "WITHHOLD",
+          "matched_field": "subject_label",
+          "matched_label": "84 g/L NaHCO3 solution",
+          "review_dispositions": [
+            {
+              "disposition": "WITHHOLD",
+              "evidence_key": "264",
+              "object_id": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+              "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+              "owner_record_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+              "predicate_id": "skos:exactMatch",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: two parenthetical source surfaces are not exact synonyms of an 84 g/L sodium bicarbonate solution.",
+              "row_sha256": "a24ffb23b8e309efbdf45ac47b76462e00dba83125d1180bc040434b8a9cc4e0",
+              "source_position": "264",
+              "subject_id": "MIM:84_GL_NaHCO3_Solution"
+            }
+          ],
+          "row": {
+            "comment": "Registry/identity row preserving kgmicrobe.ingredient:84_gl_nahco3_solution alongside parent CHEBI:32139.",
+            "confidence": "0.99",
+            "mapping_date": "2026-09-02",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "object_id": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+            "object_label": "84 g/L NaHCO3 solution",
+            "object_source": "kgm:ingredient",
+            "other": "",
+            "predicate_id": "skos:exactMatch",
+            "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+            "subject_id": "MIM:84_GL_NaHCO3_Solution",
+            "subject_label": "84 g/L NaHCO3 solution",
+            "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+          },
+          "row_sha256": "a24ffb23b8e309efbdf45ac47b76462e00dba83125d1180bc040434b8a9cc4e0"
+        }
+      ],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "84 g/L NaHCO3 solution",
+          "owner": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "84 g/L NaHCO3 solution",
+          "owner": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "84 g/L NaHCO3 solution",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "84 g/L NaHCO3 solution",
+          "owner": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "84 g/L NaHCO3 solution",
+          "owner": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "84 g/L NaHCO3 solution",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+          "mapping_status": "MAPPED",
+          "native_review_rows": [
+            {
+              "decision": {
+                "disposition": "WITHHOLD",
+                "evidence_key": "263",
+                "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval.",
+                "row_sha256": "f4db1f3baddc5285bd0b457f4ffeb48e030e5445612048c828c8c9395de4c1c8",
+                "source_position": 263
+              },
+              "row": {
+                "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+                "confidence": "0.9",
+                "mapping_date": "2026-09-20",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "object_id": "CHEBI:32139",
+                "object_label": "sodium hydrogencarbonate",
+                "object_source": "obo:chebi.owl",
+                "other": "",
+                "predicate_id": "skos:broadMatch",
+                "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+                "subject_id": "MIM:84_GL_NaHCO3_Solution",
+                "subject_label": "84 g/L NaHCO3 solution",
+                "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+              }
+            },
+            {
+              "decision": {
+                "disposition": "WITHHOLD",
+                "evidence_key": "264",
+                "owner_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: two parenthetical source surfaces are not exact synonyms of an 84 g/L sodium bicarbonate solution.",
+                "row_sha256": "a24ffb23b8e309efbdf45ac47b76462e00dba83125d1180bc040434b8a9cc4e0",
+                "source_position": 264
+              },
+              "row": {
+                "comment": "Registry/identity row preserving kgmicrobe.ingredient:84_gl_nahco3_solution alongside parent CHEBI:32139.",
+                "confidence": "0.99",
+                "mapping_date": "2026-09-02",
+                "mapping_justification": "semapv:ManualMappingCuration",
+                "object_id": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+                "object_label": "84 g/L NaHCO3 solution",
+                "object_source": "kgm:ingredient",
+                "other": "",
+                "predicate_id": "skos:exactMatch",
+                "source": "MIM:MIM curation (#288)|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=unmapped_ols_exact_audit]|kgm:primary_mappings[kegg_compound]",
+                "subject_id": "MIM:84_GL_NaHCO3_Solution",
+                "subject_label": "84 g/L NaHCO3 solution",
+                "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+              }
+            }
+          ],
+          "ontology_mapping": {
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "notes": "A prepared solution of a single compound: STOCK_SOLUTION, so it takes a kgmicrobe.ingredient: mint rather than the compound's own identifier, with a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in #114. For PBS, note the term is NCIT:C178908 'phosphate-buffered saline'; searching the bare acronym instead returns NCIT:C122728 'TSPO wt Allele', a gene allele (#288).",
+                "source": "MIM curation (#288)"
+              }
+            ],
+            "mapping_quality": "NARROW_MATCH",
+            "ontology_id": "CHEBI:32139",
+            "ontology_label": "sodium hydrogencarbonate",
+            "ontology_source": "CHEBI"
+          },
+          "path": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+          "preferred_term": "84 g/L NaHCO3 solution",
+          "sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+          "subject_id": "MIM:84_GL_NaHCO3_Solution"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "84 g/L NaHCO3 solution",
+      "resolving_owner_paths": [
+        "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:1764",
+      "source_label": "84 g/L NaHCO3 solution",
+      "source_record": {
+        "amount": 30,
+        "attribute": "autoclaved under CO2 atmosphere",
+        "compound": "84 g/L NaHCO3 solution",
+        "compound_id": 1764,
+        "optional": 0,
+        "recipe_order": 10,
+        "unit": "ml"
+      },
+      "triage_flags": [
+        "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "84 g/L NaHCO3 solution",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1764",
+    "source_identity_claimed": false,
+    "source_label": "84 g/L NaHCO3 solution"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "record": {
+        "identifier": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+        "preferred_term": "84 g/L NaHCO3 solution",
+        "synonyms": [
+          {
+            "synonym_text": "84 g/L NaHCO3 solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "(5% w/v solution)",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "(after autoclaving)",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 1,
+          "media_count": 1
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T18:50:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_STOCK_SOLUTION",
+            "changes": "Classified as a concentration-specific sodium bicarbonate stock solution and left unmapped rather than identity-mapping to neat sodium bicarbonate.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0321 -> kgmicrobe.ingredient:84_gl_nahco3_solution \"sodium hydrogencarbonate\" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518154+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-02T17:40:44.716277+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: '(5% w/v solution)'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T22:41:49.137449+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: '(after autoclaving)'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentration-specific sodium bicarbonate stock solution pending component-level recipe curation.",
+        "ingredient_type": "STOCK_SOLUTION",
+        "solution_type": "OTHER",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:32139",
+          "ontology_label": "sodium hydrogencarbonate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "NARROW_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#288)",
+              "notes": "A prepared solution of a single compound: STOCK_SOLUTION, so it takes a kgmicrobe.ingredient: mint rather than the compound's own identifier, with a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in #114. For PBS, note the term is NCIT:C178908 'phosphate-buffered saline'; searching the bare acronym instead returns NCIT:C122728 'TSPO wt Allele', a gene allele (#288)."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "matched_labels": [
+        "84 g/L NaHCO3 solution",
+        "84 g/L NaHCO3 solution"
+      ],
+      "preferred_term": "84 g/L NaHCO3 solution",
+      "identifier": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+      "status": "MAPPED",
+      "mapping": {
+        "ontology_id": "CHEBI:32139",
+        "ontology_label": "sodium hydrogencarbonate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#288)",
+            "notes": "A prepared solution of a single compound: STOCK_SOLUTION, so it takes a kgmicrobe.ingredient: mint rather than the compound's own identifier, with a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in #114. For PBS, note the term is NCIT:C178908 'phosphate-buffered saline'; searching the bare acronym instead returns NCIT:C122728 'TSPO wt Allele', a gene allele (#288)."
+          }
+        ]
+      },
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentration-specific sodium bicarbonate stock solution pending component-level recipe curation.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

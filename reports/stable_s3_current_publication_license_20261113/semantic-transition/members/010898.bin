@@ -1,0 +1,259 @@
+{
+  "case_indices": [
+    131
+  ],
+  "search_regex": "leptospira|emjh",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/Leptospira_Medium_Base_EMJH.yaml",
+      "sha256": "a5959d7c2363434932c1fe1bf1d839428ba1a3150d2f73fe0cff3a81d03de358",
+      "record": {
+        "identifier": "UNMAPPED_0426",
+        "preferred_term": "Leptospira Medium Base EMJH",
+        "synonyms": [
+          {
+            "synonym_text": "Leptospira Medium Base EMJH",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Leptospira Medium Base EMJH (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:20:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a Leptospira EMJH medium base preparation and left unmapped pending product- or recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-07-05T00:00:00+00:00",
+            "curator": "cbclaw_media_modeling_114",
+            "action": "RECLASSIFY_INGREDIENT_TYPE",
+            "changes": "ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Leptospira_Medium_Base_EMJH-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended record action | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Leptospira Medium Base EMJH (Difco)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium base preparation pending product- or recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "Leptospira Medium Base EMJH",
+        "UNMAPPED_0426",
+        "Leptospira Medium Base EMJH",
+        "Leptospira Medium Base EMJH (Difco)"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:000549",
+      "recipe_label": "leptospira_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/leptospira_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "Leptospira Medium Base EMJH",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Leptospira Medium Base EMJH",
+      "mim_matched_label": "Leptospira Medium Base EMJH",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "2.3",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"2.3\"},\"preferred_term\":\"Leptospira Medium Base EMJH\"}"
+    },
+    {
+      "recipe_id": "CultureMech:000549",
+      "recipe_label": "leptospira_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/leptospira_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "2",
+      "preferred_term": "Leptospira Enrichment EMJH",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "100",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"100\"},\"preferred_term\":\"Leptospira Enrichment EMJH\"}"
+    },
+    {
+      "recipe_id": "CultureMech:008992",
+      "recipe_label": "leptospira_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/TOGO_M2409_Leptospira-Medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "2",
+      "preferred_term": "Leptospira Medium Base EMJH (Difco)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "Leptospira Medium Base EMJH",
+      "mim_matched_label": "Leptospira Medium Base EMJH (Difco)",
+      "mim_match_type": "synonym",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "2.3",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"2.3\"},\"notes\":\"Properties: Defined component, Complex component\",\"preferred_term\":\"Leptospira Medium Base EMJH (Difco)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:008992",
+      "recipe_label": "leptospira_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/TOGO_M2409_Leptospira-Medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "3",
+      "preferred_term": "Leptospira Enrichment EMJH",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "100",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"100\"},\"preferred_term\":\"Leptospira Enrichment EMJH\"}"
+    },
+    {
+      "recipe_id": "CultureMech:011626",
+      "recipe_label": "Main sol. 1113",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_2234_Main_sol_1113.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "Leptospira Medium Base EMJH",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:990",
+      "mim_preferred_term": "Leptospira Medium Base EMJH",
+      "mim_matched_label": "Leptospira Medium Base EMJH",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "2.3",
+      "concentration_unit": "G_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"2.3\"},\"preferred_term\":\"Leptospira Medium Base EMJH\",\"term\":{\"id\":\"mediadive.compound:990\",\"label\":\"Leptospira Medium Base EMJH\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:011626",
+      "recipe_label": "Main sol. 1113",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_2234_Main_sol_1113.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "3",
+      "preferred_term": "Leptospira Enrichment EMJH",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:992",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "100",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"100\"},\"preferred_term\":\"Leptospira Enrichment EMJH\",\"term\":{\"id\":\"mediadive.compound:992\",\"label\":\"Leptospira Enrichment EMJH\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/TOGO_M2409_Leptospira-Medium.yaml",
+      "sha256": "20c2f2d6b59106c029d1aaa4a25be827710771d50d7d30bc2a425df255785f5c",
+      "frozen_input_manifest_hash": "20c2f2d6b59106c029d1aaa4a25be827710771d50d7d30bc2a425df255785f5c",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/leptospira_medium.yaml",
+      "sha256": "beffa88b7364367af7c75fb67c284c698dcfd0abe93928126880c756452ff464",
+      "frozen_input_manifest_hash": "beffa88b7364367af7c75fb67c284c698dcfd0abe93928126880c756452ff464",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_2234_Main_sol_1113.yaml",
+      "sha256": "85ab5677d100cd93394fdd4d1fb12150412764bc850542fa3c24913c37162e8e",
+      "frozen_input_manifest_hash": "85ab5677d100cd93394fdd4d1fb12150412764bc850542fa3c24913c37162e8e",
+      "matches_frozen": true
+    }
+  ]
+}

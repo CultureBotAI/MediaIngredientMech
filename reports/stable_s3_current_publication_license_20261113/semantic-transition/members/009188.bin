@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T08:19:13.627479+00:00",
+  "reviewer": "/root/provenance_controls",
+  "independence": "Separate in-process technical reviewer; did not author the private writer, real successor payloads or root build script. Test code and private control fixtures authored by reviewer. Historical worker03 scientific authorship is not independently reapproved.",
+  "status": "PASS_WITH_EXPLICIT_SCOPE_LIMITS",
+  "scope": "Exact input and guard review plus all 49 actual corrected payloads within 74 selected candidates. This handoff does not yet approve the final new 188-case core/manifest, which will be reviewed in a separate immutable followup.",
+  "counts": {
+    "predecessor_cases": 188,
+    "complete_selected_payloads": 74,
+    "changed_payloads": 49,
+    "unchanged_payloads": 25,
+    "authentic_existing_beforeimages": 10,
+    "null_new_owner_beforeimages": 39,
+    "inherited_manual_objects": 3,
+    "already_correct_oxoid_objects": 2,
+    "coordinator_manifest_members": 122
+  },
+  "finding_disposition": {
+    "id": "W03-PROV-GUARD-001",
+    "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1246",
+    "status": "Resolved only in exact immutable v2 helper by independent retest; original failed helper and controls preserved. GitHub issue itself not mutated.",
+    "receipt": "guard-finding-disposition-v2.json",
+    "sha256": "d08c93cd8272f7dfdf7903a972592f0310af0450db5cc3d6bd21fea74fc1e994"
+  },
+  "controls": {
+    "original": {
+      "run": 23,
+      "failed": 1
+    },
+    "expanded_original": {
+      "run": 36,
+      "failed": 1
+    },
+    "corrected": {
+      "run": 37,
+      "failed": 0,
+      "original_36_method_asts_unchanged": true,
+      "added": "Native writer not called and no output on old-byte mismatch."
+    }
+  },
+  "candidate_receipt": {
+    "path": "candidate-payload-review-v1.json",
+    "sha256": "da98872c47cd64a6e4ffb726f6e4d878cb8368507244724ae2e09ec97634a92b"
+  },
+  "native_validation": {
+    "closed_schema_records": 74,
+    "partonomy_overlay_records": 2996,
+    "partonomy_before_violations": 0,
+    "partonomy_after_violations": 0,
+    "identity_and_resolving_alias_projections_unchanged": true,
+    "negative_component_reference_control_passed": true
+  },
+  "retention": {
+    "maintained_baseline_files": 3060,
+    "ignored_inclusive_declared_root_files": 3028,
+    "maintained_changed": 0,
+    "declared_roots": [
+      "data/ingredients",
+      "data/curated",
+      "mappings"
+    ],
+    "all_prior_payloads_and_reviews_preserved": true
+  },
+  "limitations": [
+    "No scientific review or renewal of source, identity, form, quantity, role, whole-owner, release or supported-export approval.",
+    "Native schema and partonomy PASS establishes only documented invariants; partonomy permits baseline duplicate IDs and does not establish unique identity.",
+    "Single-author private writer is not an atomic hostile-concurrency API.",
+    "Declared root inventory includes ignored files only within named maintained roots; no absence claim about arbitrary historical/private trees.",
+    "Source new core, transport manifest and published successor head remain outside this candidate handoff pending separate readback.",
+    "No maintained writes, Git or GitHub mutation, network access, provider credits or external session by reviewer."
+  ],
+  "manifest": {
+    "path": "MANIFEST-v1.json",
+    "sha256": "40f038936f57216a84bbc732213ad54b5f42fd485fd83e69a64de5a0db3a7723",
+    "regular_members": 48,
+    "private_fixture_symlinks_described": 6
+  },
+  "input_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w03-current-provenance-allowlist-v1/AUTHOR-TASK.md",
+      "sha256": "6c59c57bf48dc8cff5ff13d91190456d0e017e1883b24b4280dd3323ed7d32c3"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w03-current-provenance-allowlist-v1/repair-allowlist.json",
+      "sha256": "9b8283520ab7f9911f4997d62a85aea798f634bd8e8ed69c60dd77a26cdeec9d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w03-current-provenance-allowlist-v1/MANIFEST.json",
+      "sha256": "cfa0bdc8489880ef50676547c9dc912bc1e31b7d139b53eef47a80053b7e6475"
+    },
+    {
+      "path": ".temp/w03-provenance-successor-v1/provenance_writer.py",
+      "sha256": "d15001850b076f124770cf470904c2044790899299a2ba8d1ac5014ac6e01c90"
+    },
+    {
+      "path": ".temp/w03-provenance-successor-v1/provenance_writer_v2.py",
+      "sha256": "3b15bce56791af306b5db44f44b73d489f5203a23f36f4959084e10a402fc66a"
+    },
+    {
+      "path": ".temp/w03-provenance-successor-v1/build_candidates_v2.py",
+      "sha256": "e7d3972909c33be333c17768dac440e2a4cf407ffdfac573e71229ec543172ca"
+    },
+    {
+      "path": ".temp/w03-provenance-successor-v1/context/issue1246.json",
+      "sha256": "c4472efa272a920b5ebb40ef53cd1ea68cb17ab63616bc030920d6e9fbdff7a4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payload-bridge.json",
+      "sha256": "d3f027e825894f029f0e26ba6f352fe6c6e2ab17aa87bee2caeff714d89e4dce"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/scientific-field-retention.json",
+      "sha256": "698519e2a4304d3ae428202d847c4d721c2cb6ddeddcecb1e17cfe1c0bab27df"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/validation/native-payloads.json",
+      "sha256": "29663f6e91c25c01c1aa16a910d532d567826cb27166922ada084d664e58227f"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": ".claude/skills/review-yaml-category/SKILL.md",
+      "sha256": "154758ee4b3bd401e19c89d488ff648014c5ec4282c6c1b710de5093ce36c101"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    }
+  ]
+}

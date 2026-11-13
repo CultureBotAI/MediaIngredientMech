@@ -1,0 +1,278 @@
+"""One private issue718 alias successor and immutable stock-deferral bridge.
+
+No maintained writes, source application, acceptance, or full-plan construction.
+"""
+from pathlib import Path
+import copy
+import difflib
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import types
+
+import yaml
+
+D = Path(__file__).resolve().parent
+C = D.parents[1]
+A = C / "integration/ancillary1258-worktree"
+T = C.parent / "kgm-unmapped-20261107"
+TRIAGE = C / "preflight/w09-selected-chemical-triage-v1"
+ISSUES = C / "preflight/w09-chemical-findings-publication-v1"
+sys.path.insert(0, str(A / "src"))
+from mediaingredientmech.curate.publication_guard import (
+    FrozenFile, check_reserved, finish_receipt, publish_validated,
+)
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.validation.write_validated import (
+    validate_ingredient, write_validated_ingredient,
+)
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def save(name, value):
+    with (D / name).open("x", encoding="utf-8") as handle:
+        json.dump(value, handle, indent=2, ensure_ascii=False)
+        handle.write("\n")
+
+pins = {}
+def capture(path, expected=None):
+    frozen = FrozenFile.capture(Path(path))
+    digest = sha(frozen.content)
+    if expected is not None:
+        assert digest == expected, str(path)
+    pins[str(frozen.path)] = frozen
+    return frozen
+
+source_index = json.loads(capture(TRIAGE / "source-index.json").content)
+evidence = json.loads(capture(TRIAGE / "selected-plan-evidence.json").content)
+capture(TRIAGE / "HANDOFF.json", "7ed820be0508bd76cc8e591de684fe34fc6d6018772a85c5313fb2a8d5d090c3")
+capture(Path(__file__))
+for ref in source_index["references"]:
+    capture(ref["path"], ref["sha256"])
+issue = json.loads(capture(ISSUES / "readback-00.json").content)
+defer_issue = json.loads(capture(ISSUES / "readback-01.json").content)
+assert issue["id"] == 6724233754 and defer_issue["id"] == 6724234025
+for name in ["publication-00.json", "publication-01.json", "verified-manifest.json"]:
+    capture(ISSUES / name)
+
+producer_paths = [
+    A / "src/mediaingredientmech/curate/publication_guard.py",
+    A / "src/mediaingredientmech/curate/curation_event.py",
+    A / "src/mediaingredientmech/validation/write_validated.py",
+    A / "src/mediaingredientmech/synonym_policy.py",
+    A / "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    A / "src/mediaingredientmech/schema/mech_shared.yaml",
+]
+for path in producer_paths:
+    capture(path)
+git = lambda *args: subprocess.check_output(["git", "-C", str(A), *args])
+head = git("rev-parse", "HEAD").decode().strip()
+status = git("status", "--porcelain=v1", "-z", "--untracked-files=no")
+index = Path(git("rev-parse", "--git-path", "index").decode().strip())
+if not index.is_absolute():
+    index = A / index
+index_before = sha(index.read_bytes())
+inventory = {str(p.relative_to(A)): sha(p.read_bytes())
+             for category in ["mapped", "unmapped"]
+             for p in sorted((A / "data/ingredients" / category).glob("*.yaml"))}
+
+operation = next(r for r in evidence["records"] if r["operation_id"] == "ORIGINAL-w01::RS-009-ALIAS")
+before_ref = next(x["reference"] for x in evidence["complete_selected_payloads"]
+                  if x["operation_id"] == operation["operation_id"])
+before_raw = capture(before_ref["path"], "72881247e6866d384b23e34c169d2a08a612117ebf0316be706038a7301684ed").content
+before = yaml.safe_load(before_raw)
+after = copy.deepcopy(before)
+assert before["identifier"] == "CHEBI:48843" and before["preferred_term"] == "Na2SeO3"
+indices = [i for i, s in enumerate(before["synonyms"]) if s["synonym_text"] == "Na2Se2O3"]
+assert len(indices) == 1
+alias_index = indices[0]
+assert before["synonyms"][alias_index] == {
+    "synonym_text": "Na2Se2O3", "synonym_type": "RAW_TEXT", "source": "merge_from_UNMAPPED_0473",
+}
+after["synonyms"][alias_index]["synonym_type"] = "REJECTED_LABEL"
+new_evidence = {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": issue["html_url"],
+    "notes": (
+        "Claim-specific applicability assessment by Codex /root/next23_context: "
+        "Na2Se2O3 is retained as a source literal, not an identity-bearing synonym of this Na2SeO3 owner. "
+        "The official DSMZ Medium 863 PDF prints Na2Se2O3 0.100 g "
+        "(SHA256 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912); "
+        "official MediaDive ingredient804 preserves that name without CAS/formula/ChEBI "
+        "(SHA256 fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839). "
+        "The captured official CHEBI:48843 record identifies disodium selenite with formula 2Na.O3Se "
+        "(SHA256 cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872). "
+        "Those source facts do not substantiate the earlier merge's inferred spelling correction. "
+        "Preserve the exact literal, merge_from_UNMAPPED_0473 source and historical event; "
+        "make only this label non-resolving. The original DSMZ863/MediaDive804 reagent identity "
+        "remains unresolved under W01 case169/#718; no corrected reagent is inferred. "
+        "The supported Na2SeO3 (anhydrous) alias and its four source occurrences remain unchanged. "
+        "This evidence assesses alias applicability only, not a new ontology match, role or release approval."
+    ),
+}
+after["ontology_mapping"]["evidence"].append(new_evidence)
+record_curation_event(
+    after, curator="Codex coordinator /root/next23_context", action="REJECTED_UNSUPPORTED_SOURCE_ALIAS",
+    changes=(
+        "Under " + issue["html_url"] + ", change only Na2Se2O3 synonym_type from RAW_TEXT to "
+        "REJECTED_LABEL; preserve its literal and merge_from_UNMAPPED_0473 provenance, all old history "
+        "and evidence, valid Na2SeO3 (anhydrous) addition, identity and all unrelated fields. "
+        "Append the claim-specific primary-source assessment. DSMZ863/MediaDive804 original-reagent "
+        "hold remains; no inferred correction, role or release approval. Private candidate successor "
+        "to selected72881247, not a maintained owner write or alteration of the original worker proposal."
+    ), previous_status="MAPPED", new_status="MAPPED", llm_assisted=True,
+)
+
+def assert_narrow(candidate):
+    restored = copy.deepcopy(candidate)
+    assert restored["synonyms"][alias_index]["synonym_type"] == "REJECTED_LABEL"
+    restored["synonyms"][alias_index]["synonym_type"] = "RAW_TEXT"
+    assert restored["ontology_mapping"]["evidence"].pop() == new_evidence
+    event = restored["curation_history"].pop()
+    assert event["llm_assisted"] is True
+    assert restored == before, "Unrelated candidate field or historical prefix changed"
+
+assert_narrow(after)
+assert not validate_ingredient(before)
+assert not validate_ingredient(after)
+assert is_resolving_synonym(before["synonyms"][alias_index])
+assert not is_resolving_synonym(after["synonyms"][alias_index])
+assert next(s for s in after["synonyms"] if s["synonym_text"] == "Na2SeO3 (anhydrous)") == before["synonyms"][-1]
+assert is_resolving_synonym(after["synonyms"][-1])
+mutant = copy.deepcopy(after)
+mutant["synonyms"][alias_index]["guessed_identity"] = "CHEBI:48843"
+assert validate_ingredient(mutant), "Closed schema must reject unsupported synonym fields"
+mutant = copy.deepcopy(after)
+mutant["chemical_properties"]["molecular_formula"] = "Na2Se2O3"
+try:
+    assert_narrow(mutant)
+except AssertionError:
+    pass
+else:
+    raise AssertionError("Unrelated identity mutation escaped bounded-delta check")
+
+# Actual native projection function; diagnostic supplements are deliberately empty,
+# except the labelled counterfactual KG alias feed. This is not actual generation.
+claw_path = T / "claw/scripts/build_mim_ingredient_sssom.py"
+claw_file = capture(claw_path)
+module = types.ModuleType("selenite718_native_projection")
+module.__file__ = str(claw_path)
+sys.modules[module.__name__] = module
+exec(compile(claw_file.content, str(claw_path), "exec"), module.__dict__)
+for path, content in module._IMPORTED_PRODUCER_BYTES.items():
+    capture(path, sha(content))
+module._check_producer_bindings()
+owners = module.build_owner_index({"MIM:Na2seo3": after})
+project = lambda record, labels: module._row_from_yaml(
+    Path(operation["source_record"]), {}, {}, labels, {}, record=record, owners=owners,
+)
+old_rows, new_rows = project(before, {}), project(after, {})
+assert len(old_rows) == len(new_rows) == 1
+old_tokens = old_rows[0]["other"].split("|")
+new_tokens = new_rows[0]["other"].split("|")
+assert "Na2Se2O3" in old_tokens and "Na2Se2O3" not in new_tokens
+assert [x for x in old_tokens if x != "Na2Se2O3"] == new_tokens
+counterfactual = project(after, {"CHEBI:48843": ("disodium selenite", ["Na2Se2O3"])})
+assert "Na2Se2O3" not in counterfactual[0]["other"].split("|")
+for field in ["subject_id", "subject_label", "predicate_id", "object_id", "object_label", "object_source", "mapping_justification", "confidence", "comment"]:
+    assert old_rows[0][field] == new_rows[0][field], field
+
+def recheck():
+    for frozen in pins.values():
+        frozen.verify()
+    assert git("rev-parse", "HEAD").decode().strip() == head
+    assert git("status", "--porcelain=v1", "-z", "--untracked-files=no") == status
+    assert sha(index.read_bytes()) == index_before
+    assert inventory == {str(p.relative_to(A)): sha(p.read_bytes())
+                         for category in ["mapped", "unmapped"]
+                         for p in sorted((A / "data/ingredients" / category).glob("*.yaml"))}
+    module._check_producer_bindings()
+
+(D / "candidates").mkdir()
+(D / "inputs").mkdir()
+with (D / "inputs/selected-predecessor.yaml").open("xb") as handle:
+    handle.write(before_raw)
+candidate = D / "candidates/Na2seo3.yaml"
+receipt_path = D / "native-publication-receipt.json"
+with receipt_path.open("x+") as receipt:
+    try:
+        recheck()
+        with candidate.open("xb"):
+            pass
+        target = FrozenFile.capture(candidate)
+        output = publish_validated(target, lambda p: write_validated_ingredient(after, p), recheck)
+        assert yaml.safe_load(output.content) == after
+        finish_receipt(receipt, receipt_path, {
+            "status": "PRIVATE_CANDIDATE_WRITTEN_INDEPENDENT_REVIEW_PENDING",
+            "candidate": {"path": str(candidate), "sha256": sha(output.content)},
+            "selected_predecessor_sha256": sha(before_raw),
+            "maintained_writes": False, "scientific_self_approval": False,
+        }, recheck)
+    except Exception as error:
+        receipt.seek(0); receipt.truncate()
+        json.dump({"status": "FAILED_OR_PARTIAL", "error": repr(error), "retry": False}, receipt)
+        receipt.flush()
+        raise
+
+with (D / "candidate.diff").open("x") as handle:
+    handle.write("".join(difflib.unified_diff(before_raw.decode().splitlines(True), output.content.decode().splitlines(True), fromfile="selected72881247/Na2seo3.yaml", tofile="private-successor/Na2seo3.yaml")))
+deferred_ids = {
+    "ORIGINAL-w01::NSV4-PROP-JCM_317_Se_W_Solution",
+    "ORIGINAL-w01::NSV4-PROP-NBRC_1020_Se_W_Solution",
+    "ORIGINAL-w01::CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+}
+deferred = [r for r in evidence["records"] if r["operation_id"] in deferred_ids]
+assert len(deferred) == 3 and all(r["kind"] == "create" and r["before_yaml_sha256"] is None for r in deferred)
+case_ids = {cid for r in deferred for o in r["origins"] for cid in o["case_hashes"]}
+assert len(case_ids) == 4
+decisions = [r for r in evidence["complete_selected_decisions"] if r["case_id"] in case_ids]
+proposal_ids = {o["proposal_id"] for r in deferred for o in r["origins"]}
+save("stock-deferral-bridge.json", {
+    "status": "ROOT_SELECTED_OPERATION_DEFERRAL_NOT_REWRITTEN_SOURCE_DECISIONS",
+    "root_published_disposition": {"url": defer_issue["html_url"], "capture_sha256": sha((ISSUES / "readback-01.json").read_bytes())},
+    "original_plan": evidence["plan"], "deferred_operations_exact": deferred,
+    "original_case_objects_exact": decisions,
+    "original_proposals_exact": [p for p in evidence["full_proposals"] if p["proposal_id"] in proposal_ids],
+    "case_ids_retained": sorted(case_ids), "source_decisions_changed": False,
+    "original_occurrence_holds_retained": True,
+    "not_a_merge_or_retarget": True,
+    "generic84gL_operation_remains_separate": next(r for r in evidence["records"] if r["operation_id"] == "ORIGINAL-w01::KG26-PROP-163-NONNAMES"),
+    "future_plan_sha256": None, "future_operation_count": None,
+})
+save("candidate-lineage.json", {
+    "candidate": {"path": str(candidate), "sha256": sha(output.content)},
+    "selected_predecessor": before_ref, "authentic_operation_before_sha256": operation["before_yaml_sha256"],
+    "original_operation_exact": operation,
+    "original_proposal_exact": next(p for p in evidence["full_proposals"] if p["proposal_id"] == "RS-009-ALIAS"),
+    "original_case_exact": next(r for r in evidence["complete_selected_decisions"] if r["case_id"] in operation["origins"][0]["case_hashes"]),
+    "related_unresolved_case_exact": next(r for r in evidence["complete_selected_decisions"] if r["source"].get("raw_source_label") == "Na2Se2O3"),
+    "related_hold_is_not_new_operation_origin": True,
+    "independent_review_pending": True, "source_acceptance": False,
+})
+save("diagnostic-projection.json", {
+    "scope": "Actual pinned native single-owner function; empty residual/KG/canonical-label supplements. Not actual generation or canonical review.",
+    "before_rows": old_rows, "after_rows": new_rows,
+    "counterfactual_KG_reintroduction_refused": counterfactual,
+    "actual_generation_still_required": True,
+})
+save("checks.json", {
+    "before_and_after_closed_schema": "PASS", "narrow_delta_and_history_evidence_prefixes": "PASS",
+    "old_alias_resolves_new_alias_does_not": "PASS", "valid_anhydrous_alias_preserved": "PASS",
+    "unsupported_synonym_field_negative": "PASS", "unrelated_identity_mutation_negative": "PASS",
+    "native_projection_only_unsafe_token_removed": "PASS", "KG_alias_reintroduction_negative": "PASS",
+    "unchanged_identity_predicate_quality_confidence": "PASS", "A_owner_bytes_preserved": len(inventory),
+    "A_head": head, "A_index_sha256": index_before, "A_tracked_status_hex": status.hex(),
+    "private_only": True, "whole_candidate_independent_review_pending": True,
+})
+save("input-pins.json", [{"path": p, "sha256": sha(f.content), "bytes": len(f.content)} for p, f in pins.items()])
+save("producer-pins.json", {
+    "python": sys.version, "MIM_root": str(A), "MIM_head": head,
+    "files": [{"path": str(p), "sha256": sha(p.read_bytes())} for p in producer_paths],
+    "Claw_projection_files": [{"path": str(p), "sha256": sha(b)} for p, b in module._IMPORTED_PRODUCER_BYTES.items()],
+})
+recheck()
+print(json.dumps({"status": "PRIVATE_SUCCESSOR_READY_FOR_INDEPENDENT_REVIEW", "candidate_sha256": sha(output.content), "deferrals": 3, "retained_cases": 4}))

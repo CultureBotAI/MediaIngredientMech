@@ -1,0 +1,52 @@
+identifier: UNMAPPED_0200
+preferred_term: Deoxysappanone B 7,3'-Dimethyl Ether
+synonyms:
+- synonym_text: Deoxysappanone B 7,3'-Dimethyl Ether
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T05:30:04.072219+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C1645 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and removed
+    the weak NCIT dimethyl ether parent because it was a substring/substituent match,
+    not an identity or useful parent for this source term.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Deoxysappanone_B_73-Dimethyl_Ether-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **discrete single
+    small molecule**, not a medium formulation, extract, buffer, mixture, salt family,
+    or generic ether. The strongest direct source names “deoxysappanone (B) 7,3′-dimethyl
+    ether” as a selected deoxysappanone compound and elsewhere writes “deoxysappanone
+    (deoxysappanone b 7,3′-dimethyl ether).” This supports retaining `ingredient_type:
+    SINGLE_INGREDI CURIEs discussed: NCIT:C1645. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact source-backed identity.
+ingredient_type: SINGLE_INGREDIENT

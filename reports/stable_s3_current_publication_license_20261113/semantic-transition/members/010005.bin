@@ -1,0 +1,74 @@
+identifier: kgmicrobe.ingredient:jcm_50_isp3_oatmeal_agar
+preferred_term: Oatmeal agar ISP-3 (JCM50 preparation)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_50_isp3_oatmeal_agar
+  ontology_label: Oatmeal agar ISP-3 (JCM50 preparation)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=50
+    notes: MediaDive ingredient1611 usage links JCM51; JCM51 explicitly references
+      ISP-3 oatmeal agar see Medium50 before adding yeast extract. JCM50 prepares
+      an oatmeal infusion by heating20g QuakerWhiteOats in1L water and filtering,
+      then restoring filtrate to1L and adding1ml trace-salts stock and18g agar. This
+      prepared medium differs from the generic existing Oatmeal_Agar family and BD-Difco
+      dry-product alias; no vendor product equivalence is asserted. Raw whole oatmeal
+      is a processing input, not an unconditional retained20g finished-medium part.
+notes: MediaDive ingredient1611 usage links JCM51; JCM51 explicitly references ISP-3
+  oatmeal agar see Medium50 before adding yeast extract. JCM50 prepares an oatmeal
+  infusion by heating20g QuakerWhiteOats in1L water and filtering, then restoring
+  filtrate to1L and adding1ml trace-salts stock and18g agar. This prepared medium
+  differs from the generic existing Oatmeal_Agar family and BD-Difco dry-product alias;
+  no vendor product equivalence is asserted. Raw whole oatmeal is a processing input,
+  not an unconditional retained20g finished-medium part. Raw source labels and optional/use
+  instructions are retained in source-case evidence, not installed as global resolving
+  aliases. Existing source/owner/export holds remain; no maintained or release approval.
+curation_history:
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: MediaDive ingredient1611 usage links JCM51; JCM51 explicitly references
+    ISP-3 oatmeal agar see Medium50 before adding yeast extract. JCM50 prepares an
+    oatmeal infusion by heating20g QuakerWhiteOats in1L water and filtering, then
+    restoring filtrate to1L and adding1ml trace-salts stock and18g agar. This prepared
+    medium differs from the generic existing Oatmeal_Agar family and BD-Difco dry-product
+    alias; no vendor product equivalence is asserted. Raw whole oatmeal is a processing
+    input, not an unconditional retained20g finished-medium part. Isolated successor
+    proposal only; published artifacts and maintained data unchanged.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.609125+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+components:
+- component_name: Filtered oatmeal infusion (JCM50 preparation)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L per source batch
+- component_name: Trace salts solution (JCM50)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ml per source batch
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '18'
+  concentration_unit: g per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=50
+    notes: Three actual assembled inputs. Filtrate yield retained as1L; initial20g
+      oatmeal is not final dissolved mass. Trace stock contains0.1g each FeSO4·7H2O,MnCl2·4H2O,ZnSO4·7H2O
+      in100ml water. Unspecified pH7.2 adjustment keeps completeness PARTIAL.

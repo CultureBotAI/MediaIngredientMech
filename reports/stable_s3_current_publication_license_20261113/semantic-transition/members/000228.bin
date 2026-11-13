@@ -1,0 +1,77 @@
+identifier: CHEBI:18281
+preferred_term: 2,5-didehydro-D-gluconic acid
+synonyms:
+- synonym_text: 5-didehydro-D-gluconic Acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0792 -> CHEBI:17426 "5-dehydro-D-gluconic acid" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: REGROUNDED_AFTER_TRUNCATED_LABEL
+  changes: 'identifier/ontology_id CHEBI:17426 -> CHEBI:18281; preferred_term ''5-didehydro-D-gluconic
+    Acid'' -> ''2,5-didehydro-D-gluconic acid''. The previous mapping asserted skos:exactMatch
+    to a different compound (5-dehydro- vs 2,5-didehydro-, C6H10O7 vs C6H8O7), which
+    licenses node substitution downstream. Verified: OLS4: CHEBI:17426 label=''5-dehydro-D-gluconic
+    acid'' (C6H10O7); CHEBI:18281 label=''2,5-didehydro-D-gluconic acid'' (C6H8O7),
+    not obsolete, hasExactSynonym ''D-threo-hexo-2,5-diulosonic acid''. Distinct compounds;
+    no existing record claims CHEBI:18281.'
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:18281
+  ontology_label: 2,5-didehydro-D-gluconic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'SUPERSEDED (#308): this record was re-grounded from CHEBI:17426 to CHEBI:18281;
+      the claim below that ''didehydro'' is a typo for ''dehydro'' denoting the same
+      compound is false -- they are distinct compounds. Original note follows. ''didehydro''
+      is a typo for ''dehydro''; same compound as 5-dehydro-D-gluconic acid. The anion
+      form of the same typo was corrected earlier in this issue (#213).'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#308)
+    notes: 'Re-grounded from CHEBI:17426 after the source label was found to be comma-truncated.
+      OLS4: CHEBI:17426 label=''5-dehydro-D-gluconic acid'' (C6H10O7); CHEBI:18281
+      label=''2,5-didehydro-D-gluconic acid'' (C6H8O7), not obsolete, hasExactSynonym
+      ''D-threo-hexo-2,5-diulosonic acid''. Distinct compounds; no existing record
+      claims CHEBI:18281.'
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C6H8O7
+  smiles: O=C(O)C(=O)[C@@H](O)[C@H](O)C(=O)CO
+  inchi: InChI=1S/C6H8O7/c7-1-2(8)3(9)4(10)5(11)6(12)13/h3-4,7,9-10H,1H2,(H,12,13)/t3-,4+/m1/s1
+  molecular_weight: 192.123
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:14:12.609628+00:00'

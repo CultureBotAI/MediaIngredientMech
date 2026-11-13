@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:hcl_01n_stock
+preferred_term: 0.1 N HCl stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hcl_01n_stock
+  ontology_label: 0.1 N HCl stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: Source-bound worker03 review
+    notes: Distinct concentration-qualified stock; component identity is not whole-stock
+      grounding.
+components:
+- component_name: HCl
+  component_id: CHEBI:17883
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: N
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: culturemech
+    source_record: 0.1N HCl
+    notes: Primary source stock identity and strength. Solvent not inferred.
+notes: Source-qualified stock proposal. The source input dose belongs to its recipe
+  occurrence, not to stock composition. Solvent omitted because not specified; component
+  completeness is PARTIAL.
+synonyms:
+- synonym_text: 0.1N HCl
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[23] case_id=CM_NAME:23a657b35e3667931a84c9f08129bad5c4efb8bd542a8a90e959b891fdc5606e;
+    source=culturemech; source_case_id=0.1N HCl; CultureMech:008849 ingredients/28
+    (inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml); CultureMech:009654
+    ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3213'
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_STOCK_PROPOSAL
+  changes: 'Propose distinct stock with explicit source concentration and typed has-part;
+    no exact or broad mapping to solute. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[23] case_id=CM_NAME:23a657b35e3667931a84c9f08129bad5c4efb8bd542a8a90e959b891fdc5606e;
+    source=culturemech; source_case_id=0.1N HCl; CultureMech:008849 ingredients/28
+    (inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml); CultureMech:009654
+    ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3213'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.511620+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-154. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

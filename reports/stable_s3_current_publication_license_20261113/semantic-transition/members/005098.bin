@@ -1,0 +1,82 @@
+id: CultureMech:001090
+name: heart_infusion_blood_agar
+original_name: HEART INFUSION BLOOD AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_range:
+  min: 7.0
+  max: 7.4
+media_term:
+  preferred_term: DSMZ Medium 1609
+  term:
+    id: mediadive.medium:1609
+    label: HEART INFUSION BLOOD AGAR
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1609.pdf'
+ingredients:
+- preferred_term: Bacto Heart Infusion Broth
+  concentration:
+    value: '25'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Defibrinated Blood
+  concentration:
+    value: '75'
+    unit: G_PER_L
+preparation_steps:
+- step_number: 1
+  action: POUR_PLATES
+  description: 'Allow to soak for 10 minutes, swirl to mix then sterilize by autoclaving
+    at 121°C for 15 minutes. Cool to 47°C then aseptically add 5-10% of sterile defibrinated
+    blood (horse or sheep), mix well and pour plates. pH: 7.2 ± 0.2'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:14.999606Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1609'
+- timestamp: '2026-03-13T06:19:01.112124Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001090'
+- timestamp: '2026-03-17T06:29:42.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:12.795742+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "HEART INFUSION BLOOD AGAR" to "heart_infusion_blood_agar"
+    for consistent matching
+- timestamp: '2026-05-20T06:01:22.455439+00:00'
+  curator: migrate_ph_range.py
+  action: MIGRATED_PH_RANGE
+  notes: 'ph_range ''7-7.4'' -> {''min'': 7.0, ''max'': 7.4}'
+- timestamp: '2026-06-05T07:41:08.341669+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_remaining_score10_grounding_batch9.py
+  action: RESOLVED_REMAINING_SCORE10_GROUNDING_BATCH9
+  changes: marked reviewed opaque ingredients
+  source: official catalogue recipe and local exact label index
+  notes: 'Reviewed remaining score-10 grounding rows: Bacto Heart Infusion Broth,
+    Defibrinated Blood.'
+kg_microbe_match: mediadive.medium:12
+data_quality_flags:
+- ingredients_curated
+- has_unmapped_ingredients

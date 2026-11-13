@@ -1,0 +1,73 @@
+identifier: CHEBI:18300
+preferred_term: Maleic acid
+ontology_mapping:
+  ontology_id: CHEBI:18300
+  ontology_label: maleic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: cis-Butenedioic acid, Toxilic acid
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: (2Z)-but-2-enedioic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=203-742-5); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.594439+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.627442+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H4O4; inchi=InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7;
+    smiles=O=C(O)/C=CC(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.134533+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_114_cas_audit
+  action: CORRECTED
+  changes: 'cas_rn 203-742-5 -> 110-16-7. 203-742-5 is an EC/EINECS registry number
+    (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+    mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement is
+    this record''s own CHEBI term CHEBI:18300''s CAS dbxref, and that term''s label
+    matches the substance, so it is evidence rather than inference. The EC number
+    is recorded here rather than discarded: it was correct information in the wrong
+    field.'
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.519236+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 110-16-7
+  data_source: 'CHEBI dbxref on CHEBI:18300 (corrected from an EC number, #114)'
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C4H4O4
+  inchi: InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/b2-1-
+  smiles: O=C(O)/C=CC(=O)O
+ingredient_type: SINGLE_INGREDIENT

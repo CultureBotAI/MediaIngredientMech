@@ -1,0 +1,178 @@
+identifier: kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt
+preferred_term: 0.5 M Nitrilotriacetic acid, disodium salt
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt
+  ontology_label: 0.5 M Nitrilotriacetic acid, disodium salt
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/
+      ; ../CultureMech/output/ingredient_occurrences.tsv
+    notes: Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source
+      occurrence rows explicitly name one of each. Restore the trisodium substance
+      as its own record, carrying its chemistry and valid synonyms; withdraw those
+      synonyms on the stock. The stock is a local preparation with a named disodium
+      solute, no pure-substance formula or CAS. Solvent and complete recipe are not
+      established.
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Solution, Defined component, Organic
+    compound'
+  synonym_type: REJECTED_LABEL
+  source: CultureMech
+- synonym_text: N,N-Bis(carboxymethyl)glycine, trisodium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: NTA Trisodium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Nitrilotriacetic acid sodium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Nitrilotriacetic acid, trisodium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Trisodium N,N-bis(carboxymethyl)glycinate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Trisodium NTA
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Trisodium aminotriacetate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Trisodium nitrilotriacetate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: trisodium 2,2',2''-nitrilotriacetate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: 'Role: Mineral source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: REJECTED_LABEL
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.613132+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:5064-31-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Nitrilotriacetic acid, trisodium salt)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:10.595652+00:00'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:15467-20-6 from NCI CACTUS via name lookup (0.5 M Nitrilotriacetic
+    acid, disodium salt)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: N,N-Bis(carboxymethyl)glycine,
+    trisodium salt, NTA Trisodium salt, Nitrilotriacetic acid sodium salt, Nitrilotriacetic
+    acid, trisodium salt, Trisodium N,N-bis(carboxymethyl)glycinate, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: 0.5 M Nitrilotriacetic
+    acid, disodium salt, N,N-Bis(carboxymethyl)glycine, trisodium salt, NTA Trisodium
+    salt, Nitrilotriacetic acid sodium salt, Trisodium N,N-bis(carboxymethyl)glycinate,
+    ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Nitrilotriacetic_Acid_Trisodium_Salt.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (15467-20-6|5064-31-3) resolved via
+    OAK canonical xref: 5064-31-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.647189+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.440906+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H6NO6.3Na; inchi=InChI=1S/C6H9NO6.3Na/c8-4(9)1-7(2-5(10)11)3-6(12)1;
+    smiles=O=C([O-])CN(CC(=O)[O-])CC(=O)[O-].[Na+].[Na+].[Na+
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.745782+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.109950+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source
+    occurrence rows explicitly name one of each. Restore the trisodium substance as
+    its own record, carrying its chemistry and valid synonyms; withdraw those synonyms
+    on the stock. The stock is a local preparation with a named disodium solute, no
+    pure-substance formula or CAS. Solvent and complete recipe are not established.
+    Evidence: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/
+    ; ../CultureMech/output/ingredient_occurrences.tsv'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: STOCK_SOLUTION
+physicochemical_roles:
+- role: CHELATOR
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
+solution_type: OTHER
+components:
+- component_name: Nitrilotriacetic acid disodium salt
+  component_id: cas:15467-20-6
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.5'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: CultureMech
+    source_record: 0.5 M Nitrilotriacetic acid, disodium salt
+    notes: Source label explicitly names concentration and disodium solute; no solvent
+      or full formulation inferred. Component label punctuation normalized to the
+      catalog preferred term.
+  notes: Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source
+    occurrence rows explicitly name one of each. Restore the trisodium substance as
+    its own record, carrying its chemistry and valid synonyms; withdraw those synonyms
+    on the stock. The stock is a local preparation with a named disodium solute, no
+    pure-substance formula or CAS. Solvent and complete recipe are not established.

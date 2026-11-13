@@ -1,0 +1,1246 @@
+
+<!-- D-1 : w-3 : DM-1 : D-SEQ-1 2020Sv -->
+
+
+			<!-- eNLogoKbn = 3 -->
+				
+		<!DOCTYPE html>
+		<html lang="ja">
+		<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+
+		<link rel="apple-touch-icon" sizes="192x192" href="./img/en-icon.png">
+		<title>製品詳細情報｜&#x9244;&#x7c89; 19418-25 500G &#x30ca;&#x30ab;&#x30e9;&#x30a4;&#x30c6;&#x30b9;&#x30af;&#x682a;&#x5f0f;&#x4f1a;&#x793e;｜e-Nacalai Search Version</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+			<meta name="description" content="ナカライテスクの「鉄粉 (ナカライ規格特級 ＧＲ)」の商品詳細ページです。純度や仕様、安全データシート (SDS)、価格や納期、保管上の注意をご確認いただけます。">
+		<meta property="og:title"        content="鉄粉">
+<meta property="og:type"         content="website">
+<meta property="og:url"          content="https://www.e-nacalai.jp/ec2/EC-srchdetl.cfm?syohin=1941825&syubetsu=3">
+<meta property="og:image" content="https://www.e-nacalai.jp/ComPicture/Gaikan/1000000-1999999/1941825.jpg">
+<meta property="og:description"  content="ナカライテスクの「鉄粉 (ナカライ規格特級 ＧＲ)」の商品詳細ページです。純度や仕様、安全データシート (SDS)、価格や納期、保管上の注意をご確認いただけます。">
+<meta property="og:site_name"    content="e-Nacalai Search Version">
+<meta property="og:locale"       content="ja_JP">
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:site" content="@NacalaiTesqueJP">
+<meta name="twitter:domain"      content="www.e-nacalai.jp">
+<meta name="twitter:title"       content="鉄粉">
+<meta name="twitter:description" content="ナカライテスクの「鉄粉 (ナカライ規格特級 ＧＲ)」の商品詳細ページです。純度や仕様、安全データシート (SDS)、価格や納期、保管上の注意をご確認いただけます。">
+<meta name="twitter:image" content="https://www.e-nacalai.jp/ComPicture/Gaikan/1000000-1999999/1941825.jpg">
+
+		<link rel="stylesheet" type="text/css" href="./css/style.css">		
+		<link rel="stylesheet" type="text/css" href="./css/color.css">		
+		<link rel="stylesheet" type="text/css" href="./css/styleDM.css">	
+		<link rel="stylesheet" type="text/css" href="./css/styleYK.css?v=20250217">	
+		<link rel="stylesheet" type="text/css" href="./colorbox.css">
+
+		
+		<script type="text/javascript" src="./jquery.js"></script>
+		<script type="text/javascript" src="./jquery.blockUI.js"></script>
+		<script type="text/javascript" src="./jquery.colorbox-min.js"></script>
+		
+
+		<script type="text/javascript" src="./js/datepicker/HolidayChk.js"></script>
+		<script type="text/javascript" src="./js/openclose.js"></script>
+		<script type="text/javascript" src="./js/ddmenu_min.js"></script>
+		<script type="text/javascript" src="./EC-Common.js"></script>
+		<script type="text/javascript" src="./EC-TextCounter.js"></script>	
+		<script type="text/javascript" src="./EC-Recommend.js"></script>
+		
+		
+
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<style>
+		.option1,.option2,.option3,.new {position:absolute;right:0px;top:0px;padding-top:0px;}
+		</style>
+		<![endif]-->
+
+		
+		
+		<script type="text/javascript"><!--
+		    var NextListParam  = [];
+		    var NextListParam2 = [];
+		
+
+		
+		  $(function(){
+		
+
+		
+
+		    if($("#txtFeedback").val() == ''){
+		      var count = $("#txtFeedback").val().length;
+		      var max = $("#txtFeedback").attr("maxlength") - 1;
+		      if (max - count < 0){
+		        $("#InputNum").css("color", "red");
+		      }else{
+		        $("#InputNum").css("color", "blue");
+		      }
+		      $("#InputNum").text(max - count);
+		    }
+		    $("#txtFeedback").bind("change keyup",function(){
+		      count = $(this).val().length;
+		      max = $(this).attr("maxlength") - 1;
+		      if (max - count < 0){
+		        $("#InputNum").css("color", "red");
+		      }else{
+		        $("#InputNum").css("color", "blue");
+		      }
+		      $("#InputNum").text(max - count);
+		    });
+
+		
+		
+		  });
+		
+
+		
+		
+		
+
+		  function StartSearch(Para1){
+		    if (Para1 == '1'){
+		      var TimeOut  = 30000;
+		      var Interval = 200;
+		      var Cnt      = 0;
+		      var BlockView2;
+		      BlockView2  = '';
+		      BlockView2 += '<div id="ProgressOut" style="height: 24px; display: inline-block;"></div>';
+		      $.blockUI({message: BlockView2, css: {padding: '10px', border: '3px solid #999999', color: '#666666'}, overlayCSS: {backgroundColor: '#FFFFFF'}});
+		      setInterval(function(){
+		        Cnt += Interval;
+
+		        var DataURL = './EC-Progress.cfm?Dum=1&Dum=' + Date.now();
+		        $.ajax({
+		          url: DataURL,
+		          type: "GET",
+		          dataType: "html",
+		          async: true
+		        }).done(function(data){
+		          $('#ProgressOut').replaceWith(data);
+		        });
+		        if (Cnt >= TimeOut){
+
+		          location.href = './EC-TimeOutError.cfm';
+		          $.unblockUI();
+		          return false;
+		        };
+		      }, Interval);
+		    }else{
+		      $.blockUI({message: '<img src="./img/icon_loading03.gif" alt="loading" title="loading" width="160" height="24" style="border-style: none;">', css: {padding: '10px', border: '3px solid #999999', color: '#666666'}, overlayCSS: {backgroundColor: '#FFFFFF'}}); 
+		    }
+		  }
+		
+		
+
+		
+		
+		
+		function openDetail(JutyuNo){
+			
+			var tmpUrl = './EC-HatyuuJyokyoGeneralDetl.cfm?JutyuNo=' + JutyuNo;
+			
+			$.colorbox({
+				iframe:true,
+				width:'90%',
+				height:'90%',
+				maxWidth:'800px',
+				fixed:true,
+				opacity:0.7,
+				scrolling:true,
+				returnFocus:true,
+				href:tmpUrl
+			});
+		}
+		
+		function JokyoUpdate(JutyuNo,tmpDefStatus){
+			
+			var tmpStatus = document.getElementById(JutyuNo + '-Status').value;
+			var tmpNoki = document.getElementById(JutyuNo + '-Noki').value;
+			var tmpBiko = document.getElementById(JutyuNo + '-Biko').value;
+			var tmpUrl = './EC-HatyuuJyokyoUpdate.cfm';
+			
+			$.ajax({
+				type: "POST",
+				url: tmpUrl,
+				data: {JutyuNo:JutyuNo,tmpStatus:tmpStatus,tmpDefStatus:tmpDefStatus,tmpNoki:tmpNoki,tmpBiko:tmpBiko}
+			}).done(function(data) {
+				$('#RapidMsg').fadeIn(800).delay(300).fadeOut(1200);
+			});
+		}
+		
+		
+		function ExcelDownLoad(WMultiLingual,WSTRYMD,WSTPYMD,WebjutyuNo,AiteTyuban,SyohinCodeSrcKbn,SyohinCode,SyohinNameSrcKbn,SyohinName,ViewMode,ViewNTokuCode,ViewCstmCode,StatusKbn,SortKbn,UpdateDate){
+
+			var tmpUrl = 	'./EC-HatyuuJyokyoExcelDL.cfm'
+						+	'?WMultiLingual=' + WMultiLingual
+						+	'&WSTRYMD=' + WSTRYMD
+						+	'&WSTPYMD=' + WSTPYMD
+						+	'&WebjutyuNo=' + WebjutyuNo
+						+	'&AiteTyuban=' + AiteTyuban
+						+	'&SyohinCodeSrcKbn=' + SyohinCodeSrcKbn
+						+	'&SyohinCode=' + SyohinCode
+						+	'&SyohinNameSrcKbn=' + SyohinNameSrcKbn
+						+	'&SyohinName=' + SyohinName
+						+	'&ViewMode=' + ViewMode
+						+	'&ViewNTokuCode=' + ViewNTokuCode
+						+	'&ViewCstmCode=' + ViewCstmCode
+						+	'&StatusKbn=' + StatusKbn
+						+	'&SortKbn=' + SortKbn
+						+	'&UpdateDate=' + UpdateDate
+						+	'&mode=LoadView'
+						+	'&type=Hattyuujokyo';
+						
+			$.colorbox({
+				iframe:true,
+				width:'90%',
+				height:'300px',
+				maxWidth:'800px',
+				fixed:true,
+				opacity:0.7,
+				scrolling:true,
+				returnFocus:true,
+				href:tmpUrl
+			});
+		
+		}
+		
+		function ExcelDownLoadMeisai(WMultiLingual,WSTRYMD,WSTPYMD,ViewMode,ViewNTokuCode,ViewCstmCode,AddCAS,AddMakerName,AddApproverName,HistoryMemo){
+			var tmpUrl = 	'./EC-HatyuuJyokyoExcelDL.cfm'
+						+	'?WMultiLingual=' + WMultiLingual
+						+	'&WSTRYMD=' + WSTRYMD
+						+	'&WSTPYMD=' + WSTPYMD
+						+	'&ViewMode=' + ViewMode
+						+	'&ViewNTokuCode=' + ViewNTokuCode
+						+	'&ViewCstmCode=' + ViewCstmCode
+						+	'&AddCAS=' + AddCAS
+						+	'&AddMakerName=' + AddMakerName
+						+	'&AddApproverName=' + AddApproverName
+						+	'&HistoryMemo=' + HistoryMemo
+						+	'&mode=LoadView'
+						+	'&type=Meisai';
+			$.colorbox({
+				iframe:true,
+				width:'90%',
+				height:'300px',
+				maxWidth:'800px',
+				fixed:true,
+				opacity:0.7,
+				scrolling:true,
+				returnFocus:true,
+				href:tmpUrl
+			});
+		}
+		
+		function statusCahge(id){
+			var tmpType = document.getElementById(id + '-Status').value;
+			
+			if(tmpType == '01'){
+				var tmpCss = '#FF0000';
+			}else if(tmpType == '02' || tmpType == '03' || tmpType == '04'){
+				var tmpCss = '#008800';
+			}else if(tmpType == '05'){
+				var tmpCss = '#0000FF';
+			}else if(tmpType == '09'){
+				var tmpCss = '#555555';
+			}
+			document.getElementById(id + '-Status').style.color = tmpCss;
+		}
+
+		
+		function BtnRelation(Para1, Para2){
+		  if(window.confirm(Para2 + 'します。よろしいですか？')){
+		    ShowBlock1();
+		    $('#SubmitID').val(Para1);
+		    $('#form1').submit();
+		  }else{ 
+		    return false;
+		  }
+		}
+
+		
+		
+		
+		
+		
+		function _cb() {
+			try {
+				$("#row").css("display", "table-row");
+			}
+			catch(e) {}
+		}
+		
+		
+		function viewCustom(){
+			$(this).colorbox({iframe:true, width:"90%", height:"90%", fixed:true, opacity:0.7, scrolling:true, returnFocus:true, href:"./EC-FormMakerList.cfm?Dum=1"});
+
+			var tmpUrl = './EC-MyHistoryDisplaySort.cfm';
+			$.colorbox({
+				iframe:true,
+				width:'90%',
+				height:'90%',
+				maxWidth:'800px',
+				fixed:true,
+				opacity:0.7,
+				scrolling:true,
+				returnFocus:true,
+				href:tmpUrl
+			});
+		}
+
+
+		  
+		  function QuestionChk(){
+		    var AlertMsg = '';
+		
+			
+		    if (document.form1.InputRequestTarget.selectedIndex == '0'){
+		      AlertMsg += 'お問合わせ区分を選択してください\n';	
+
+		    }
+			
+		    if ($('#txtFeedback').val() == ''){
+		      AlertMsg += '調査依頼内容を入力してください\n';		
+
+		    }
+		    if (AlertMsg != ''){						
+		      alert(AlertMsg);
+		      return false;
+		    }else{
+		      ShowBlock1();
+		      $('#form1').submit();
+		    }
+		  }
+
+		  function AlertView(){
+		
+		  }
+		  
+		
+		function dNDLOpen(id){
+			document.getElementById('dNID').value = id;
+			document.dform.submit();
+		}
+		
+		
+		function buttonDisabled(id){
+			var btn = document.getElementById(id);
+			btn.disabled = true;
+			setTimeout(function(){btn.disabled = false},3000); 
+		}
+		
+		
+		function OpenChgHistory(JutyuNo){
+			var tmpUrl = './EC-MyHistoryChange.cfm?JutyuNo=' + JutyuNo;
+			$.colorbox({
+				iframe:true,
+				width:'600px',
+				height:'400px',
+				maxWidth:'90%',
+				maxHeight:'90%',
+				fixed:true,
+				opacity:0.7,
+				scrolling:true,
+				returnFocus:true,
+				href:tmpUrl
+			});
+		}
+		
+		//--></script>
+		</head>
+		<body>
+
+		
+				<form name="ChangeLang" id="ChangeLang" action="#" method="post" style="display: inline;">
+				<input type="hidden" name="Language" id="Language" value="">
+				</form>
+			
+
+			<header>
+			<div class="inner">
+
+			
+			<div class="pcswitch" style=" text-align: right;">
+			
+			
+			
+				<div class="LangArea" style="display: inline-block; padding: 2px; margin: 2px;">
+				
+				
+				
+				Language Option: 
+				
+						<span style="font-weight: bold;">Japanese</span>
+											
+						 / 
+					
+						<a href="#" rel="EN" class="SelectLang">English &#x28;Japan&#x29;</a>
+											
+						 / 
+					
+						<a href="#" rel="EO" class="SelectLang">English &#x28;International&#x29;</a>
+					
+				</div>	
+			
+			
+			<a href="../Manual/SVhthtuntfN/Contents.cfm" target="_blank"><div class="manualPanel MouseOnRed">操作説明書</div></a>
+			</div>	
+
+			
+
+			<h1 id="logo"><a href="./EC-srchtop.cfm"><img src="./img/logo_e-nacalai_SV01.gif" alt="e-Nacalai Search Version &#x30e1;&#x30cb;&#x30e5;&#x30fc;&#x753b;&#x9762;&#x3078;" title="e-Nacalai Search Version &#x30e1;&#x30cb;&#x30e5;&#x30fc;&#x753b;&#x9762;&#x3078;"></a></h1>
+
+			
+			
+			<div class="pcswitch">
+			<div class="contactArea">	
+			
+				
+
+				<a href="./EC-CartList.cfm" style="text-decoration: none;">
+				<div class="contact MouseOnRed">
+				<div class="cTitle">
+				<img src="./img/icon_cart01.png" width="24" height="24" alt="カートへ" title="カートへ" style="border: none;">
+				カート
+				</div>	
+				<div class="cSub">
+				商品数：<span class="CartCnt">0</span>点
+				</div>	
+				<div class="cSub">
+				金額：&yen;<span class="CartKingaku">0</span>&#x28;&#x7a0e;&#x629c;&#x29;
+				</div>	
+				</div>	
+				</a>
+			
+				<a href="#" class="FormLogin">
+				<div class="contact MouseOnRed">
+			
+			<div class="cTitle">
+			&#x30b2;&#x30b9;&#x30c8;&#x30e6;&#x30fc;&#x30b6; &#x69d8; 
+			</div>	
+			<div class="cSub" style="margin:12px 0px 14px 0px;"><img class="iconview" src="./img/icon_door01.png" alt="&#x30e6;&#x30fc;&#x30b6;&#x767b;&#x9332;&#xff0f;&#x30ed;&#x30b0;&#x30a4;&#x30f3;" title="&#x30e6;&#x30fc;&#x30b6;&#x767b;&#x9332;&#xff0f;&#x30ed;&#x30b0;&#x30a4;&#x30f3;" width="16" height="16">ユーザ登録／ログイン</div></span>
+			</div>	
+			
+				</a>
+			
+			
+			</div>	
+			</div>	
+			</div>	
+			</header>
+			
+				<nav id="menubar">
+				<ul class="inner">
+				
+
+					<li>
+					
+						<a href="#" onclick="return false;" onkeypress="return false;">検索</a>
+					
+						<ul class="ddmenu">
+						
+							<li>
+								
+								<div class="MenuLink LoadBlock" onclick="location.href='./EC-srchtop.cfm';" style="cursor: pointer;">通常検索</div>
+							
+							</li>
+						
+							<li>
+								
+								<div class="MenuLink LoadBlock" onclick="location.href='./EC-srchtop.cfm?Dum=1&amp;MenuKbn=8';" style="cursor: pointer;">複数コード</div>
+							
+							</li>
+						
+							<li>
+								
+								<div class="MenuLink LoadBlock" onclick="location.href='./EC-srchtop.cfm?Dum=1&amp;MenuKbn=9';" style="cursor: pointer;">抗体</div>
+							
+							</li>
+						
+							<li>
+								
+								<div class="MenuLink LoadBlock" onclick="location.href='./EC-Maintenance.html';" style="cursor: pointer;">構造式</div>
+							
+							</li>
+						
+							<li>
+								
+								<div class="MenuLink LoadBlock" onclick="location.href='./EC-Information.cfm';" style="cursor: pointer;">キャンペーン情報</div>
+							
+							</li>
+						
+						</ul>
+					
+					</li>
+				
+
+					<li>
+						
+						<a href="./EC-GuestUser.cfm" class="LoadBlock">マイカタログ</a>
+					
+					</li>
+				
+
+					<li>
+						
+						<a href="./EC-GuestUser.cfm" class="LoadBlock">注文書履歴</a>
+					
+					</li>
+				
+				</ul>
+				</nav>	<!-- /#menubar -->
+				
+			
+			
+			<nav id="menubar-s">
+			<div class="viewright" style="padding: 5px;">
+			
+			
+
+				<a href="./EC-CartList.cfm" style="text-decoration: none;">
+				<div class="contact_s MouseOnRed">
+				<div class="cTitle">
+				カート
+				</div>
+				<div class="cSub">
+				商品数：<span class="CartCnt">0</span>点
+				</div>
+				<div class="cSub">
+				金額：&yen;<span class="CartKingaku">0</span>&#x28;&#x7a0e;&#x629c;&#x29;
+				</div>	
+				</div>	
+				</a>
+			
+				<a href="#" class="FormLogin" style="text-decoration: none;">
+				<div class="contact_s MouseOnRed">
+			
+			<div class="cTitle">
+			&#x30b2;&#x30b9;&#x30c8;&#x30e6;&#x30fc;&#x30b6; &#x69d8; 
+			</div>
+			<div class="cSub" style="margin:10px 0px 14px 0px;"><img class="iconview" src="./img/icon_door01.png" alt="&#x30e6;&#x30fc;&#x30b6;&#x767b;&#x9332;&#xff0f;&#x30ed;&#x30b0;&#x30a4;&#x30f3;" title="&#x30e6;&#x30fc;&#x30b6;&#x767b;&#x9332;&#xff0f;&#x30ed;&#x30b0;&#x30a4;&#x30f3;" width="16" height="16">ユーザ登録／ログイン</div>
+			</div>	
+			
+				</a>
+			
+			</div>
+
+			
+			
+				<ul>
+				
+						<li id="closemenu_1">
+						<a href="#" onclick="$('#closemenu_1').toggle(); $('#openmenu_1').toggle(); $('#ddmenu_1').slideToggle('fast'); return false;" onkeypress="$('#closemenu_1').toggle(); $('#openmenu_1').toggle(); $('#ddmenu_1').slideToggle('fast'); return false;">検索 ▽</a>
+
+						</li>
+						<li id="openmenu_1" style="display: none;">
+						<a href="#" onclick="$('#closemenu_1').toggle(); $('#openmenu_1').toggle(); $('#ddmenu_1').slideToggle('fast'); return false;" onkeypress="$('#closemenu_1').toggle(); $('#openmenu_1').toggle(); $('#ddmenu_1').slideToggle('fast'); return false;">検索 ▲</a>
+						</li>
+					
+						<ul id="ddmenu_1" style="display: none; clear: both;">
+						
+							<li style="background: #FAFAFA;">
+								
+								<a href="./EC-srchtop.cfm" class="LoadBlock">通常検索</a>
+							
+							</li>
+						
+							<li style="background: #FAFAFA;">
+								
+								<a href="./EC-srchtop.cfm?Dum=1&amp;MenuKbn=8" class="LoadBlock">複数コード</a>
+							
+							</li>
+						
+							<li style="background: #FAFAFA;">
+								
+								<a href="./EC-srchtop.cfm?Dum=1&amp;MenuKbn=9" class="LoadBlock">抗体</a>
+							
+							</li>
+						
+							<li style="background: #FAFAFA;">
+								
+								<a href="./EC-Maintenance.html" class="LoadBlock">構造式</a>
+							
+							</li>
+						
+							<li style="background: #FAFAFA;">
+								
+								<a href="./EC-Information.cfm" class="LoadBlock">キャンペーン情報</a>
+							
+							</li>
+						
+						<div style="clear: both;"></div>
+						</ul>
+						
+						<li>
+						<a href="./EC-GuestUser.cfm" class="LoadBlock">マイカタログ</a>
+						</li>
+						
+						<li>
+						<a href="./EC-GuestUser.cfm" class="LoadBlock">注文書履歴</a>
+						</li>
+					
+				</ul>
+			
+			<ul style="clear: both;">
+			
+			
+						<li><a href="#" rel="JP" onclick="return false;" style="font-weight: bold;">Language<br>[Japanese]</a></li>
+					
+						<li><a href="#" rel="EN" class="SelectLang">Language<br>[English &#x28;Japan&#x29;]</a></li>
+					
+						<li><a href="#" rel="EO" class="SelectLang">Language<br>[English &#x28;International&#x29;]</a></li>
+					
+			<li><a href="../Manual/SVhthtuntfN/Contents.cfm" target="_blank" style="padding:24px 0px;">操作説明書</a></li>
+			</ul>
+			</nav>	
+		
+		<div style="clear: both;"></div>
+
+		
+
+		<div class="contents c1">
+		<div class="inner">
+		<div class="main">
+
+		<article class="list">
+		
+		
+
+		<div class="ReturnNavi">
+		<a href="#" class="ReturnBack">&#x76f4;&#x524d;&#x306e;&#x753b;&#x9762;&#x306b;&#x623b;&#x308b;  </a>
+		</div>
+
+	
+
+		<h2>
+		
+			<figure style="float: left; margin-right: 10px;"><img src="../ComPicture/Gaikan/t/1000000-1999999/1941825_t.jpg" alt="&#x9244;&#x7c89;" title="&#x9244;&#x7c89;"></figure>
+		
+		<div>
+		鉄粉 
+			<span>Iron, powder</span>
+		
+		</div>
+		<div style="clear: both;">
+		</div>
+		</h2>
+
+		<div class="viewright">
+		
+						
+			<span class="icon iconOn" style="line-height: 32px;"><a href="./EC-CartAddPL.cfm&#x3f;Dum&#x3d;1&amp;cd=1941825&amp;l=JP&amp;pg=%E6%96%87%E5%AD%97%E5%88%97%E6%A4%9C%E7%B4%A2" class="CartSend">
+			<img src="./img/icon_cart01.png" width="16" height="16" alt="カートへ" title="カートへ" style="border: none;">カートへ
+			</a></span>
+			
+			<span class="icon iconOn" style="line-height: 32px;"><a href="./EC-GuestUser.cfm">
+			<img src="./img/icon_folder_c01.gif" width="16" height="16" alt="マイカタログへ追加" title="マイカタログへ追加" style="vertical-align: middle; border: none;">
+			マイカタログへ追加
+			</a></span>
+		
+		</div>
+
+		
+		
+
+		<nav class="list">
+		
+		
+		<div class="detldiv">
+		
+
+		
+		<table class="ta1" id="1">
+		<tr>
+		<th class="current">基本情報</th> <th><a href="#2" class="scrollmenu">在庫／価格</a></th> <th><a href="#3" class="scrollmenu">関連資料</a></th> <th><a href="#5" class="scrollmenu">詳細情報</a></th> <th><a href="#6" class="scrollmenu">製品画像</a></th> 
+		</tr>
+		</table>
+	
+		
+		<table class="ta1 detlList">
+		
+			<tr>
+			<th class="tamidashi">
+			商品コード
+			</th>
+			<td>
+			19418-25
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			CAS RN
+			<a href="#" onclick="PopUpWindow('hint', 'CAS%20RN', 280, 340); return false;" onkeypress="PopUpWindow('hint', 'CAS%20RN', 280, 340); return false;"><img src="./img/icon_info01.gif" alt="" title="" class="hinticon" style="width: 16px;"></a>
+			</th>
+			<td>
+			7439-89-6
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			容量
+			</th>
+			<td>
+			500G
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			製造元／販売元
+			</th>
+			<td>
+			ナカライテスク株式会社
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			規格
+			</th>
+			<td>
+			
+				<div>ナカライ規格特級</div>
+			
+				<div>GR(Guaranteed Reagent)</div>
+			
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			純度／測定方法
+			</th>
+			<td>
+			≧98.0%(金属Feとして)(T)
+			</td>
+			</tr>
+		
+
+		</table>
+		</div>
+
+		
+		
+		<div class="detldiv">
+		
+
+		
+		<table class="ta1" id="2">
+		<tr>
+		<th><a href="#1" class="scrollmenu">基本情報</a></th> <th class="current">在庫／価格</th> <th><a href="#3" class="scrollmenu">関連資料</a></th> <th><a href="#5" class="scrollmenu">詳細情報</a></th> <th><a href="#6" class="scrollmenu">製品画像</a></th> 
+		</tr>
+		</table>
+	
+		
+		<table class="ta1 detlList">
+		
+			<tr>
+			<th class="tamidashi">
+			ナカライ在庫情報
+			</th>
+			<td>
+			<span class="color1 viewbold">6 ～ 20本</span>
+			</td>
+			</tr>
+		
+			<tr>
+			<th class="tamidashi">
+			標準納期
+			</th>
+			<td>
+			翌営業日
+			</td>
+			</tr>
+		
+		<tr>
+		<th class="tamidashi">
+		定価<span style="padding-left: 0.5em;">※税抜</span>
+		</th>
+		<td>
+		<span class="nowraptxt">&yen;9,970</span> 
+		
+		</td>
+		</tr>
+		</table>
+		</div>
+
+		
+			<div class="detldiv">
+			
+
+		
+		<table class="ta1" id="3">
+		<tr>
+		<th><a href="#1" class="scrollmenu">基本情報</a></th> <th><a href="#2" class="scrollmenu">在庫／価格</a></th> <th class="current">関連資料</th> <th><a href="#5" class="scrollmenu">詳細情報</a></th> <th><a href="#6" class="scrollmenu">製品画像</a></th> 
+		</tr>
+		</table>
+	
+			
+			<table class="ta1 detlList">
+				
+
+				<tr>
+				<th class="tamidashi">
+				SDS
+				</th>
+				<td>
+				
+					<ul style="padding-left: 0.5em;">
+					
+						<li><a href="./../ComDocs/Msds/PDF/1/GHS-19418-5.pdf" target="_blank">日本語<img src="./img/icon_pdf01.gif" alt="&#x65e5;&#x672c;&#x8a9e;" title="&#x65e5;&#x672c;&#x8a9e;" style="margin: 4px; border: none;"></a></li>
+					
+						<li><a href="./../ComDocs/Msds/PDF/1/GHS-19418E-5.pdf" target="_blank">英語<img src="./img/icon_pdf01.gif" alt="&#x82f1;&#x8a9e;" title="&#x82f1;&#x8a9e;" style="margin: 4px; border: none;"></a></li>
+					
+					</ul>
+				
+				</td>
+				</tr>
+				
+
+				<tr>
+				<th class="tamidashi">
+				分析表
+				</th>
+				<td>
+				
+					<ul style="padding-left: 0.5em;">
+					
+						<li><a href="./EC-GuestUser.cfm">日本語</a></li>
+					
+						<li><a href="./EC-GuestUser.cfm">英語</a></li>
+					
+					</ul>
+				
+				</td>
+				</tr>
+				
+
+				<tr>
+				<th class="tamidashi">
+				製品規格書
+				</th>
+				<td>
+				
+					<ul style="padding-left: 0.5em;">
+					
+						<li><a href="./../ComDocs/Kikaku/1/K_19418-2-J.pdf" target="_blank">日本語<img src="./img/icon_pdf01.gif" alt="&#x65e5;&#x672c;&#x8a9e;" title="&#x65e5;&#x672c;&#x8a9e;" style="margin: 4px; border: none;"></a></li>
+					
+						<li><a href="./../ComDocs/Kikaku/1/K_19418-2-E.pdf" target="_blank">英語<img src="./img/icon_pdf01.gif" alt="&#x82f1;&#x8a9e;" title="&#x82f1;&#x8a9e;" style="margin: 4px; border: none;"></a></li>
+					
+					</ul>
+				
+				</td>
+				</tr>
+			
+			</table>
+			</div>
+		
+			<div class="detldiv">
+			
+
+		
+		<table class="ta1" id="5">
+		<tr>
+		<th><a href="#1" class="scrollmenu">基本情報</a></th> <th><a href="#2" class="scrollmenu">在庫／価格</a></th> <th><a href="#3" class="scrollmenu">関連資料</a></th> <th class="current">詳細情報</th> <th><a href="#6" class="scrollmenu">製品画像</a></th> 
+		</tr>
+		</table>
+	
+			
+			<table class="ta1 detlList">
+
+			
+				<tr>
+				<th class="tamidashi">
+				分子量
+				</th>
+				<td>
+				55.845
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				分子式
+				</th>
+				<td>
+				Fe
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				示性式
+				</th>
+				<td>
+				Fe 
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				EINECS
+				<a href="#" onclick="PopUpWindow('hint', 'EINECS', 280, 340); return false;" onkeypress="PopUpWindow('hint', 'EINECS', 280, 340); return false;"><img src="./img/icon_info01.gif" alt="" title="" class="hinticon" style="width: 16px;"></a>
+				</th>
+				<td>
+				231-096-4
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				国連番号
+				<a href="#" onclick="PopUpWindow('hint', '%E5%9B%BD%E9%80%A3%E7%95%AA%E5%8F%B7', 280, 340); return false;" onkeypress="PopUpWindow('hint', '%E5%9B%BD%E9%80%A3%E7%95%AA%E5%8F%B7', 280, 340); return false;"><img src="./img/icon_info01.gif" alt="" title="" class="hinticon" style="width: 16px;"></a>
+				</th>
+				<td>
+				NONE
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				ACXID
+				</th>
+				<td>
+				X1002535-7
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				形態
+				</th>
+				<td>
+				固体(粉末), 約20～60mesh
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				形状
+				</th>
+				<td>
+				粉末 粒径：約２０～６０メッシュ
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				危険度分類番号
+				</th>
+				<td>
+				R: 25, 36
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				安全度分類番号
+				</th>
+				<td>
+				S: 16, 45, 26, 36/37/39
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				融点
+				</th>
+				<td>
+				1535℃
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				沸点
+				</th>
+				<td>
+				2730℃
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				色
+				</th>
+				<td>
+				灰～灰黒色
+				</td>
+				</tr>
+			
+				<tr>
+				<th class="tamidashi">
+				soluble in (数mg／ml以上)
+				</th>
+				<td>
+				HCl、HNO3
+				</td>
+				</tr>
+			
+			</table>
+			</div>
+		
+			<div class="detldiv">
+			
+
+		
+		<table class="ta1" id="6">
+		<tr>
+		<th><a href="#1" class="scrollmenu">基本情報</a></th> <th><a href="#2" class="scrollmenu">在庫／価格</a></th> <th><a href="#3" class="scrollmenu">関連資料</a></th> <th><a href="#5" class="scrollmenu">詳細情報</a></th> <th class="current">製品画像</th> 
+		</tr>
+		</table>
+	
+
+			<div style="text-align: left; padding-bottom: 10px;">
+			<div style="padding: 10px;">
+
+			
+			
+				<a href="../ComPicture/Gaikan/1000000-1999999/1941825.jpg" data-lightbox="1" title="&#x88fd;&#x54c1;&#x5916;&#x89b3;" style="text-decoration: none;">
+					<img src="../ComPicture/Gaikan/1000000-1999999/1941825.jpg" alt="&#x88fd;&#x54c1;&#x5916;&#x89b3;" title="&#x88fd;&#x54c1;&#x5916;&#x89b3;" width="100" height="100" style="border: 1px solid #999999;">
+				</a>
+				
+					<a href="https://www.e-nacalai.jp/online/photo/19418-25a.jpg" data-lightbox="2" title="&#x5f62;&#x72b6;1" style="text-decoration: none;">
+						<img src="https://www.e-nacalai.jp/online/photo/19418-25a.jpg" alt="&#x5f62;&#x72b6;1" title="&#x5f62;&#x72b6;1" width="100" height="100" style="border: 1px solid #999999;">
+					</a>
+					
+					<a href="https://www.e-nacalai.jp/online/photo/19418-25b.jpg" data-lightbox="3" title="&#x5f62;&#x72b6;2" style="text-decoration: none;">
+						<img src="https://www.e-nacalai.jp/online/photo/19418-25b.jpg" alt="&#x5f62;&#x72b6;2" title="&#x5f62;&#x72b6;2" width="100" height="100" style="border: 1px solid #999999;">
+					</a>
+					
+					<a href="https://www.e-nacalai.jp/online/photo/19418-25bb.jpg" data-lightbox="4" title="&#x5f62;&#x72b6;3" style="text-decoration: none;">
+						<img src="https://www.e-nacalai.jp/online/photo/19418-25bb.jpg" alt="&#x5f62;&#x72b6;3" title="&#x5f62;&#x72b6;3" width="100" height="100" style="border: 1px solid #999999;">
+					</a>
+				
+			<div>クリックで拡大表示できます</div>
+			
+			</div>
+
+			
+			
+				<div style="text-align: left; padding-left: 10px;">
+				外観画像は包装形態の見本です。ラベルの内容は最新版ラベルと一致しないことがあります。<br>
+最新版ラベルの内容は「製品ラベル」をご参照ください。
+(製品ラベルの閲覧はユーザ登録が必要です)
+				</div>
+			
+			</div>
+			</div>	
+		
+		</nav>
+
+		<div class="viewright">
+						
+			<span class="icon iconOn" style="line-height: 32px;"><a href="./EC-CartAddPL.cfm&#x3f;Dum&#x3d;1&amp;cd=1941825&amp;l=JP&amp;pg=%E6%96%87%E5%AD%97%E5%88%97%E6%A4%9C%E7%B4%A2" class="CartSend">
+			<img src="./img/icon_cart01.png" width="16" height="16" alt="カートへ" title="カートへ" style="border: none;">カートへ
+			</a></span>
+		
+			<span class="icon iconOn" style="line-height: 32px;"><a href="./EC-GuestUser.cfm">
+			<img src="./img/icon_folder_c01.gif" width="16" height="16" alt="マイカタログへ追加" title="マイカタログへ追加" style="vertical-align: middle; border: none;">
+			マイカタログへ追加
+			</a></span>
+		
+		</div>
+
+		
+		
+			<div id="RecommendList" style="text-align: center; font-size: 16px; font-weight: bold; margin: 20px; padding: 0px;">
+			<img src="./img/icon_loading03.gif" alt="Loading" title="Loading" width="160" height="24" style="border: none;">
+			<form name="RecForm1" id="RecForm1" action="#" style="display: inline;">
+			<input type="hidden" name="RecSCD"   id="RecSCD"   value="__1941825__3__-__-__-__-__">
+			<input type="hidden" name="RecSNM"   id="RecSNM"   value="鉄粉(20～60mesh)">
+			<input type="hidden" name="RecTitle" id="RecTitle" value="1">
+			
+				<input type="hidden" name="RecModel" id="RecModel" value="4">
+			
+			</form>
+			</div>
+		
+
+<script type="text/javascript"><!--
+	
+	$(function(){
+		var now = new Date();
+		var hour = now.getHours();
+		var min = now.getMinutes();
+		var sec = now.getSeconds();
+		if(hour < 10){hour = "0" + hour;}
+		if(min < 10){min = "0" + min;}
+		if(sec < 10){sec = "0" + sec;}
+		var nowsec = hour + min + sec;
+		
+		var MenuKbn = $('#dN_MenuKbn').val();
+		var dN_Mode = $('#dN_dN_Mode').val();
+		var tmpLang = $('#dN_tmpLang').val();
+		var srchword = $('#dN_srchword').val();
+		var scode = $('#dN_scode').val();
+		var syohin = $('#dN_syohin').val();
+		var syubetsu = $('#dN_syubetsu').val();
+		var cno = $('#dN_cno').val();
+		var scd = $('#dN_scd').val();
+		var mcd = $('#dN_mcd').val();
+		var ccet = $('#dN_ccet').val();
+		var C = $('#dN_C').val();
+		var Bunya01 = $('#dN_Bunya01').val();
+		var Bunya02 = $('#dN_Bunya02').val();
+		
+		if(srchword != '' || scode != '' ||  mcd != '' || ccet == ''){
+		DataURL = './EC-incDNListView.cfm';
+		$.ajax({
+			url: DataURL,
+			type: "GET",
+			dataType: "html",
+			data: {  Dum1:nowsec
+					,MenuKbn:MenuKbn
+					,dN_Mode:dN_Mode
+					,tmpLang:tmpLang
+					,srchword:srchword
+					,scode:scode
+					,scd:scd
+					,mcd:mcd
+					,syohin:syohin
+					,syubetsu:syubetsu
+					,cno:cno
+					,C:C
+					,Bunya01:Bunya01
+					,Bunya02:Bunya02},
+			async: true
+		}).done(function(data){
+			$('#dN_Area').fadeOut('fast');
+			$('#dN_Area').replaceWith(data);
+			$('#dN_Area').fadeIn('fast');
+		});
+		}else{
+			$('#dN_Area').fadeOut('fast');
+		
+		}
+	});
+--></script>
+
+<div class="dN_Area" id="dN_Area">
+	<img src="./img/icon_loading03.gif" alt="Loading" title="Loading" width="160" height="24" style="border-style: none;">
+	<input type="hidden" name="MenuKbn"			id="dN_MenuKbn"			value="21">
+	<input type="hidden" name="dN_Mode"			id="dN_dN_Mode"			value="">
+	<input type="hidden" name="tmpLang"			id="dN_tmpLang"			value="JP">
+	<input type="hidden" name="srchword"		id="dN_srchword"		value="">
+	<input type="hidden" name="scode"			id="dN_scode"			value="">
+	<input type="hidden" name="syohin"			id="dN_syohin"			value="1941825">
+	<input type="hidden" name="syubetsu"		id="dN_syubetsu"		value="3">
+	<input type="hidden" name="cno"				id="dN_cno"				value="">
+	<input type="hidden" name="mcd"				id="dN_mcd"				value="">
+	<input type="hidden" name="scd"				id="dN_scd"				value="">
+	<input type="hidden" name="ccet"			id="dN_ccet"			value="">
+	<input type="hidden" name="C"				id="dN_C"				value="">
+	<input type="hidden" name="Bunya01"			id="dN_Bunya01"			value="">
+	<input type="hidden" name="Bunya02"			id="dN_Bunya02"			value="">
+</div>
+	
+
+		
+
+		<div class="ReturnNavi">
+		<a href="#" class="ReturnBack">&#x76f4;&#x524d;&#x306e;&#x753b;&#x9762;&#x306b;&#x623b;&#x308b;  </a>
+		</div>
+
+	
+		</article>	
+
+		</div>	
+		</div>	
+		</div>	
+
+		
+			<p id="pagetop" class="inner"><a href="#" class="scrollmenu">&uarr;</a></p>
+
+			<footer>
+				
+				
+				<div id="footermenu" class="inner">
+				<ul>
+				
+					
+						<li class="title">検索</li>
+						
+									<li><a href="./EC-srchtop.cfm" class="LoadBlock">通常検索</a></li>
+								
+									<li><a href="./EC-srchtop.cfm?Dum=1&amp;MenuKbn=8" class="LoadBlock">複数コード</a></li>
+								
+									<li><a href="./EC-srchtop.cfm?Dum=1&amp;MenuKbn=9" class="LoadBlock">抗体</a></li>
+								
+									<li><a href="./EC-Maintenance.html" class="LoadBlock">構造式</a></li>
+								
+									<li><a href="./EC-Information.cfm" class="LoadBlock">キャンペーン情報</a></li>
+								
+				</ul>
+				<ul>
+				
+				
+				<li class="title">&#x30de;&#x30a4;&#x30ab;&#x30bf;&#x30ed;&#x30b0;&#x30fb;&#x6ce8;&#x6587;&#x66f8;&#x5c65;&#x6b74;</li>
+				
+					
+						<li><a href="./EC-GuestUser.cfm">マイカタログ</a></li>
+						
+					<li><a href="./EC-GuestUser.cfm">&#x6ce8;&#x6587;&#x66f8;&#x5c65;&#x6b74;</a></li>
+				
+					<li><a href="./EC-mybookshelf.cfm?Dum=1">&#x30de;&#x30a4;&#x672c;&#x68da;</a></li>
+				
+				</ul>
+				
+				<ul><li class="title">その他</li><li><a href="./EC-Information.cfm?Dum=1&amp;MenuKbn=33">What's New</a></li><li><a href="./EC-Question.cfm&#x3f;Dum&#x3d;1&amp;MenuKbn=27" target="_blank">調査依頼</a></li><li><a href="../Manual/SVhthtuntfN/Contents.cfm" target="_blank">操作説明書</a></li><li><a href="./EC-SrchTopIndication.cfm" target="_blank">特定商取引法に関する法律に基づく表示</a></li><li><a href="./EC-Kiyaku.cfm" class="PopupURL2" rel="./EC-Kiyaku.cfm">e-Nacalai Search Version 利用規約</a></li><li><a href="https://www.nacalai.co.jp/related/privacypolicy.html" target="_blank">個人情報保護に関するガイドライン</a></li></ul>
+
+				</div>	
+			
+
+			
+			<div id="copyright">
+			<small>Copyright&copy; <a href="https://www.nacalai.co.jp/">NACALAI TESQUE, INC.</a> All Rights Reserved.</small>
+			
+			</div>
+
+			</footer>
+			
+
+			<!--メニューの３本バー-->
+			<div id="menubar_hdr" class="close"><span></span><span></span><span></span></div>
+			
+			<script type="text/javascript">
+			//if (OCwindowWidth() <= 800){
+			  open_close("menubar_hdr", "menubar-s");
+			//}
+			</script>
+		
+
+		<div class="Information"></div>
+		<div class="cookietoptab"></div>	
+
+		
+		
+		<form action="#" name="FormIDToken" id="FormIDToken" method="get" style="display: inline;">
+		
+			<input type="hidden" name="FormCFID"     id="FormCFID"     value="12011218">
+		
+			<input type="hidden" name="FormCFToken"  id="FormCFToken"  value="31641247">
+		
+			<input type="hidden" name="FormTokenQ"   id="FormTokenQ"   value="">
+		
+			<input type="hidden" name="FormTokenDum" id="FormTokenDum" value="?Dum=1">
+		
+		</form>
+
+		<!--License20200706rAbO1-->
+		
+		</body>
+		</html>
+
+		

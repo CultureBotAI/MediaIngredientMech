@@ -1,0 +1,62 @@
+identifier: mesh:C000601869
+preferred_term: beta-Lipomycin
+synonyms:
+- synonym_text: beta-Lipomycin
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Beta Lipomycin
+  synonym_type: EXACT_SYNONYM
+  source: unknown_term_placeholder_ols_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=kgmicrobe.compound:beta_lipomycin);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.374781+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0593 → mesh:C000601869 via name normalization to 'beta-Lipomycin'
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: MERGED_FROM_KGM_PLACEHOLDER_DUPLICATE
+  changes: Retired duplicate placeholder record Beta_Lipomycin.yaml after EBI OLS
+    exact label match to existing mesh:C000601869 representative; added "Beta Lipomycin"
+    as exact synonym.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386815+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+notes: Imported from mim-queue (source_id=kgmicrobe.compound:beta_lipomycin); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C000601869
+  ontology_label: beta-lipomycin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0593; matched via 'beta-Lipomycin' (name normalization);
+      label-exact
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

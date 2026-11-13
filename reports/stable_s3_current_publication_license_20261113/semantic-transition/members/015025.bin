@@ -1,0 +1,94 @@
+identifier: MICRO:0001715
+preferred_term: Artificial seawater
+ontology_mapping:
+  ontology_id: MICRO:0001715
+  ontology_label: artificial seawater
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  match_level: EXACT
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech:output/ingredient_occurrences.tsv
+    notes: Surface form appears in CultureMech's occurrence table and was grounded
+      to MICRO:0001715 on an exact match against the ontology label. Restored from
+      the record's own creation history (#541); the residual importer wrote this provenance
+      only into the published SSSOM.
+  - evidence_type: LLM_SUGGESTION
+    source: https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+    notes: DSMZ 601 and NBRC 1183 describe artificial sea water prepared from marine
+      aquarium salt mixtures without identifying a particular product. MicrO MICRO:0001715
+      defines the generic inorganic salts solution that mimics sea water, not one
+      fixed formula. The spacing variant Artificial sea water therefore belongs to
+      the existing generic Artificial seawater owner; no product-specific identity
+      is selected. Bounded spelling association only; no new endorsement of inherited
+      navigation aliases.
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (19
+    mentions across 19 recipes). Grounded to MICRO:0001715 (''artificial seawater'')
+    on an exact match of the canonical label to the query ''Artificial seawater''.
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-30T10:41:26.546472+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Artificial seawater (see below)'' (x7 CultureMech mentions);
+    ''Artificial seawater (see Medium No. 736 )'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-06T07:34:56.956907+00:00'
+  curator: claude_restore_culturemech_evidence
+  action: CORRECTED
+  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table
+    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL
+    history entry but absent from the structured field the SSSOM builder reads, so
+    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
+    row (#541).
+  llm_assisted: false
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: ADDED_SYNONYMS
+  changes: Added source-verified spacing variant Artificial sea water to existing
+    generic MICRO:0001715 owner; no supplier/formula selection or inherited-alias
+    approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.091870+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+synonyms:
+- synonym_text: Artificial seawater (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Artificial seawater (see Medium No. 736 )
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Artificial sea water
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium601.pdf; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1183
+notes: DSMZ 601 and NBRC 1183 describe artificial sea water prepared from marine aquarium
+  salt mixtures without identifying a particular product. MicrO MICRO:0001715 defines
+  the generic inorganic salts solution that mimics sea water, not one fixed formula.
+  The spacing variant Artificial sea water therefore belongs to the existing generic
+  Artificial seawater owner; no product-specific identity is selected. Specific aquarium
+  product, batch formula and strength remain unknown; they are not prerequisites for
+  this spelling-only association to the existing explicitly generic ontology sense.
+  Provenance-only source text 'Artificial sea water' (case CM_NAME:e88d9dba7b6c89f143d72d69e57c72390ec19461c2bb1456f248e761559e41cd).
+  Inherited navigation aliases are not newly validated by this proposal.

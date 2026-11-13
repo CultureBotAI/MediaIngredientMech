@@ -1,0 +1,98 @@
+preferred_term: R2A broth DAIGO
+ingredient_type: NAMED_MEDIUM
+supplied_form:
+- name: R2A broth DAIGO
+  supplier: FUJIFILM Wako; historical Nihon Pharm. source
+  catalog_number: 395-01681
+  form: dehydrated broth powder
+  notes: NBRC1455 identifies exact code and JCM839 names NihonPharm premix. Current
+    Wako page lists manufacturer LABOLOGY; no equivalence to other brands is asserted.
+notes: JCM805 uses0.32g/L at1/10 strength; NBRC1455 uses3.2g/L. The product is the
+  same broth premix, with dose retained in recipes. JCM839 provides the full listed
+  formulation and explicitly names DAIGO premix. Do not equate with R2Aagar; MICRO0000541
+  has an internally inconsistent liquid definition and agar-bearing quoted formula
+  and is not asserted as exact grounding.
+synonyms:
+- synonym_text: R2A broth (DAIGO) (Nihon Pharm. Co.)
+  synonym_type: CATALOG_VARIANT
+  source: JCM805/JCM839 and NBRC1455
+- synonym_text: R2A Broth "DAIGO"
+  synonym_type: CATALOG_VARIANT
+  source: JCM805/JCM839 and NBRC1455
+components:
+- component_name: Yeast extract (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Proteose peptone No.3 (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Casamino acids (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Sodium pyruvate
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G_PER_L
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G_PER_L
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+    source_record: JCM839 R2A BROTH component table and DAIGO premix comment
+    notes: Eight dry ingredients per litre of prepared broth.1L distilled water is
+      the preparation solvent, not part of the purchased dry powder. Components remain
+      literal UNMAPPED references; no external chemical identity assignment is implied.
+  notes: Concentrations refer to prepared full-strength broth;0.32g/L dilution in
+    JCM805 is an occurrence condition. The approximate sum3.15g/L is compatible with
+    the supplier3.2g/L instruction, not an additional ingredient claim.
+identifier: kgmicrobe.ingredient:r2a_broth_daigo
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:r2a_broth_daigo
+  ontology_label: R2A broth DAIGO
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+    notes: Specific DAIGO broth preparation; no exact ontology claim to R2Aagar or
+      internally inconsistent MICRO0000541.
+curation_history:
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed DAIGO broth identity and primary-source literal component transcription
+    with source-defined prepared-broth concentration denominator.
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.476287+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-139. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

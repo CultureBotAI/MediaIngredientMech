@@ -1,0 +1,264 @@
+id: CultureMech:000068
+name: e31_ant
+category: algae
+sources:
+- database: CCAP
+  database_id: E31_ANT
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for saltwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf
+salinity: marine (natural seawater or artificial seawater)
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- timestamp: '2026-06-14T05:58:58.561437+00:00'
+  curator: idnf-grounding-fix-v1.0
+  action: Fixed ID_NOT_FOUND term groundings
+  notes: Absent/obsolete CHEBI term ids fixed - 1 re-grounded to the correct CHEBI,
+    0 de-grounded (mixture or unverifiable).
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: E31_ANT, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.498706'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.074380Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000068'
+- timestamp: '2026-03-17T19:45:04.029111+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "E31:ANT" to "e31_ant" for consistent matching
+- timestamp: '2026-04-04T12:54:54.790313'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 13 curated ingredients from CCAP
+  source: CCAP Medium MR_E31_ANT.pdf
+- timestamp: '2026-05-16T08:57:02.309661+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:56.498996+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:E31_ANT; https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:E31_ANT
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf
+ingredients:
+- preferred_term: KNO
+  term:
+    id: CHEBI:63043
+    label: potassium nitrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790272'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: K2HPO4
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790286'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: MgSO .7H 0
+  notes: Ontology mapping not yet available; From CCAP Medium MR_E31_ANT.pdf; Curated
+    from CCAP Medium MR_E31_ANT.pdf specification
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+- preferred_term: EDTA.Na .2H O
+  term:
+    id: CHEBI:64734
+    label: EDTA disodium salt (anhydrous)
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 0.95
+    curation_date: '2026-04-04T12:54:54.790290'
+    ontology_source: CHEBI
+  concentration:
+    value: '3.24'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: FeCl3 x 6 H2O
+  term:
+    id: CHEBI:86254
+    label: iron trichloride hexahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 0.95
+    curation_date: '2026-04-04T12:54:54.790292'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.08'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: MnSO4 x 4 H2O
+  term:
+    id: CHEBI:86358
+    label: manganese(II) sulfate tetrahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790295'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.450'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: ZnSO4 x 7 H2O
+  term:
+    id: CHEBI:32312
+    label: zinc sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790297'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.230'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: Na2MoO4 x 2 H2O
+  term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790299'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.097'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: CuSO4 x 5 H2O
+  term:
+    id: CHEBI:31440
+    label: copper(II) sulfate pentahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790301'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: CoSO4 x 7 H2O
+  term:
+    id: CHEBI:91244
+    label: cobalt(2+) sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790302'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.0056'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: KNO
+  term:
+    id: CHEBI:63043
+    label: potassium nitrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790304'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.05'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: NaH2PO4 x 2 H2O
+  term:
+    id: CHEBI:37585
+    label: sodium dihydrogenphosphate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790306'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.0078'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+- preferred_term: Glycine
+  term:
+    id: CHEBI:15428
+    label: glycine
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.790308'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.3'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31_ANT.pdf
+  notes: From CCAP Medium MR_E31_ANT.pdf; Curated from CCAP Medium MR_E31_ANT.pdf
+    specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: E31:ANT

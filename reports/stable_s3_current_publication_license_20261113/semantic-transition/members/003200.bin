@@ -1,0 +1,125 @@
+"""Exact neutral closure expansion only. No configuration or native preparation."""
+from pathlib import Path
+from collections import defaultdict, Counter
+import copy, datetime, hashlib, importlib.util, json, os, stat
+import yaml
+D=Path(__file__).absolute().parent; C=D.parents[1]
+OLD=C/'integration/corrected-successor-input-selection-preparation-v1'
+INV=C/'preflight/corrected-evidence-closure-inventory-v2'
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ref(p): return {'path':str(Path(p).absolute()),'sha256':sha(p)}
+def load(p): return json.loads(Path(p).read_text())
+def save(n,v):
+ with (D/n).open('x') as f: json.dump(v,f,indent=2,ensure_ascii=False,allow_nan=False);f.write('\n')
+reads={}; groups={}; packets=[]; native_edges=[]; capture_edges=[]; historical=[]; pairs=[]
+def checked(p,h=None,n=None):
+ p=Path(p).absolute(); s=p.lstat(); assert stat.S_ISREG(s.st_mode) and not p.is_symlink(),p
+ b=p.read_bytes(); actual=hashlib.sha256(b).hexdigest(); assert h is None or h==actual,(str(p),h,actual)
+ assert n is None or len(b)==n,(p,n,len(b))
+ reads[str(p)]={'path':str(p),'sha256':actual,'bytes':len(b),'device':s.st_dev,'inode':s.st_ino,'nlink':s.st_nlink}
+ return {k:reads[str(p)][k] for k in ['path','sha256','bytes']}
+def add(p,h,origin,identity,role,locator,n=None):
+ f=checked(p,h,n); key=(f['sha256'],Path(f['path']).name)
+ if key not in groups:groups[key]={'physical':f,'logical_sources':[]}
+ edge={**f,'packet_origin':origin,'attribution':{'identity':identity,'role':role},'locator':locator}
+ if edge not in groups[key]['logical_sources']:groups[key]['logical_sources'].append(edge)
+ # Prefer an existing literal independent in-C source; preserve every original edge.
+ candidates=[groups[key]['physical'],f]
+ groups[key]['physical']=sorted(candidates,key=lambda x:(not Path(x['path']).is_relative_to(C),len(x['path']),x['path']))[0]
+ return f
+assert sha(OLD/'successor-inputs.json')=='7191495c824c70e6c4b55d75f4c5cd667bda6d5006553e168431a59330b27bb3'
+old=load(OLD/'successor-inputs.json')
+for item in old['supporting_evidence']:
+ checked(item['path'],item['sha256'],item['bytes'])
+ key=(item['sha256'],Path(item['path']).name);assert key not in groups
+ groups[key]={'physical':{k:item[k] for k in ['path','sha256','bytes']},'logical_sources':copy.deepcopy(item['logical_sources'])}
+ for edge in item['logical_sources']:
+  checked(edge['path'],edge['sha256'],edge['bytes']);checked(edge['packet_origin']['path'],edge['packet_origin']['sha256'])
+for root in [OLD,INV]:
+ m=load(root/'MANIFEST.json'); origin=ref(root/'HANDOFF.json')
+ for e in m.get('files',m.get('members')):
+  add(root/e['path'],e['sha256'],origin,'Codex /root/step7d_science_c','historical neutral closure/selection preparation; not a scientific vote','predecessor sealed member',e.get('bytes'))
+ for name in ['MANIFEST.json','HANDOFF.json']:add(root/name,sha(root/name),origin,'Codex /root/step7d_science_c','historical neutral closure/selection preparation','predecessor seal')
+
+SPECS=[
+ ('menadione-author','integration/menadione718-hemodal-successor-v1','HANDOFF.json','4617a1ecbb18c5aa3a3a998c8c829b00d4f6fdc39c20c16166ce2cfff02cf46c3f','MANIFEST.json','7ee0133a2504d16effe7877bd831f5ac83227a7f6902281897ea6b116b5d48c6','Codex /root/step7d_science_c','candidate author; self review and all support are evidence'),
+ ('menadione-independent','preflight/menadione718-hemodal-successor-independent-v1','HANDOFF.json','3ecfc69cd733e2d10f0b4543b0540ea94c5c54081541cbad39173285d618389f','MANIFEST.json','9f55d6b8af6c37c3e02a5ef7aaa858703ea723cafcfe764b865587f4a8a7941d','Codex /root/step7d_independent_review','independent whole-owner judgment context; support is not an extra vote'),
+ ('cysteine-author-v2','integration/cysteine-stock-predicate-successor-v1','HANDOFF-v2.json','c69cb45634889f54f08ba7a75d259c4a951cd17d164f7a89cf589b0edc3083c0','MANIFEST-v2.json','f8d8ef2473f2714d55d72fc4a783388083aca276df9833f07dab232d38cd79f7','Codex /root/step7d_science_c','candidate author; current and historical self reviews are evidence only'),
+ ('w07-residual-serialization','integration/w07-monohydrate-residual-v1','HANDOFF.json','1d477d699a231175dedc11edaac1994a6b059eeb978eec316457968d064c3c55','MANIFEST.json',None,'Codex /root/step7d_science_c','mechanical native serialization of genuine W07 residual; no new science'),
+ ('cysteine-residual-independent','preflight/cysteine901-w07-monohydrate-independent-v1','HANDOFF.json','21d647a908230de81f762af6814d57d3f82783c432626a246571bf1f0cc4e515','MANIFEST.json','2030b4619fa04713667db20dfc0909f470b0cdb1b7e3e89174cf802a0599e15d','Codex /root/step7d_independent_review','independent two-owner judgment context; all support remains evidence'),
+ ('phosphate-coupling','preflight/inherited-form-predicate-triage-v1','HANDOFF.json','07594b0d6a20a2e5dbd889916353a9dbc3746e79b90b9cfad234d32c2d2c4e77','MANIFEST.json','523d05b409a109a66ea29bc0e7f6ea5665f7960fa435f7d642b58dfef79c9de7','Codex /root/step7d_science_c','coupling/deferral evidence; prior composition authorship disclosed; no independent vote'),
+ ('ten-preconditions','preflight/source-application-preconditions-audit-v1','HANDOFF.json','c416b7338d6289f7fd2c18fe1e9aefaa165e74570f8db1743d7ee593600520ef','MANIFEST.json','515c13e6eafbbca565406c28c4ec382c152e6c9e39b82d1bd3f331b8adf7587c','Codex /root/next23_context','complete proposal/case precondition audit and ten deferral joins; not new source approval'),
+]
+# Exact pin corrected from authoritative current handoff, never guessed from a timestamp.
+SPECS[0]=(*SPECS[0][:3],'4617a1ecbb18c5aa3a998c8c829b00d4f6fdc39c20c16166ce2cfff02cf46c3f',*SPECS[0][4:])
+rp=C/'integration/curation-worktree/scripts/record_review.py';spec=importlib.util.spec_from_file_location('closure_native',rp);rr=importlib.util.module_from_spec(spec);spec.loader.exec_module(rr)
+def pair_read(root,receipt_name,key,origin,identity,role,historical_only=False):
+ receipt=load(root/receipt_name);pair=receipt.get('pair', {k:receipt.get(k) for k in ['yaml','markdown','yaml_sha256','markdown_sha256']})
+ fixture=Path(receipt.get('source_root',receipt.get('fixture_root')))
+ for kind in ['yaml','markdown']:add(pair[kind],pair[kind+'_sha256'],origin,identity,role,'actual native pair '+receipt_name)
+ doc=rr.load_document(Path(pair['yaml']).read_bytes());rr.validate_review(doc)
+ assert rr.parse_review_bundle('reviews/structured/'+doc['review_id']+'/review.yaml',Path(pair['yaml']).read_bytes(),Path(pair['markdown']).read_bytes())==doc
+ if not historical_only:rr.assert_current_source(fixture,doc)
+ for e in doc['source']['inputs']:
+  loc={'packet':key,'review_document':pair['yaml'],'original_native_root':str(fixture),'native_revision':doc['source']['git_revision'],'native_state':doc['source']['state'],'declared_path':e['path'],'native_role':e['role'],'historical_only':historical_only}
+  add(fixture/e['path'],e['sha256'],origin,identity,role,json.dumps(loc,sort_keys=True))
+  native_edges.append({**loc,'actual_input':str(fixture/e['path']),'sha256':e['sha256']})
+ pairs.append({'packet':key,'receipt':ref(root/receipt_name),'pair':pair,'source_root':str(fixture),'source':doc['source'],'reviewer':doc['reviewer'],'verdict':doc['verdict'],'completion':doc['completion'],'scope':doc['scope'],'limitations':doc['limitations'],'historical_only':historical_only,'selected_judgment':key in ['menadione-independent','cysteine-residual-independent'],'all_support_role':'evidence'})
+ return fixture,doc
+for key,rel,hn,hh,mn,mh,identity,role in SPECS:
+ root=C/rel;checked(root/hn,hh);checked(root/mn,mh);origin=ref(root/hn)
+ m=load(root/mn);members=m.get('members',m.get('files'))
+ for e in members:add(root/e['path'],e['sha256'],origin,identity,role,'packet='+key+'; manifested member',e.get('bytes'))
+ for name in [hn,mn]:add(root/name,sha(root/name),origin,identity,role,'packet='+key+'; seal')
+ packets.append({'key':key,'root':str(root),'handoff':origin,'manifest':ref(root/mn),'members':len(members),'identity':identity,'role':role})
+ fixture=None
+ rn={'menadione-author':'NATIVE-AUTHOR-RECEIPT.json','menadione-independent':'NATIVE-REVIEW-RECEIPT.json','cysteine-author-v2':'NATIVE-AUTHOR-RECEIPT-v2.json','cysteine-residual-independent':'NATIVE-REVIEW-RECEIPT.json'}.get(key)
+ if rn:fixture,doc=pair_read(root,rn,key,origin,identity,role)
+ if key=='cysteine-author-v2':pair_read(root,'NATIVE-AUTHOR-RECEIPT.json',key+'-historical',origin,identity,role,True)
+ for name in ['input-pins.json']:
+  if (root/name).exists():
+   for e in load(root/name):
+    p=Path(e['path'])
+    # Prior startup references are historical, and their preserved fixture bytes are already bound above.
+    if p.exists() and sha(p)==e['sha256']:add(p,e['sha256'],origin,identity,role,'declared original input pin: '+name,e.get('bytes'))
+    else:historical.append({'packet':key,'kind':'historical original input pin','pin':e,'current_observed_sha256':sha(p) if p.exists() else None,'bound_original_container':ref(root/name)})
+ if (root/'CAPTURE-MAP.json').exists():
+  for e in load(root/'CAPTURE-MAP.json'):
+   cap=root/e.get('captured_path',e.get('capture_path',''));h=e['sha256'];add(cap,h,origin,identity,role,'literal evidence capture; original context retained')
+   op=Path(e['original_path']);current=op.exists() and sha(op)==h
+   if current:add(op,h,origin,identity,role,'original acquisition/source referenced by capture map',e.get('bytes'))
+   else:historical.append({'packet':key,'kind':'historical acquisition edge','edge':e,'preserved_capture':ref(cap),'current_observed_sha256':sha(op) if op.exists() else None})
+   capture_edges.append({'packet':key,**e,'actual_capture':str(cap),'original_current_hash_equal':current})
+ transport_name={'menadione-independent':'INPUT-TRANSPORT-v2.json','cysteine-author-v2':'NATIVE-INPUT-TRANSPORT-v2.json','cysteine-residual-independent':'INPUT-TRANSPORT.json'}.get(key)
+ if transport_name:
+  transport=load(root/transport_name);es=transport if isinstance(transport,list) else transport.get('inputs',transport.get('current_edges'))
+  declared={e['path']:e['sha256'] for e in doc['source']['inputs']}
+  for e in es:
+   assert declared[e['fixture_path']]==e['sha256'];add(fixture/e['fixture_path'],e['sha256'],origin,identity,role,'native capture path from '+transport_name)
+   add(e['original_path'],e['sha256'],origin,identity,role,'original literal source of '+transport_name,e.get('bytes'))
+   capture_edges.append({'packet':key,**e,'actual_capture':str(fixture/e['fixture_path']),'original_current_hash_equal':True})
+  if isinstance(transport,dict) and 'excluded_historical_startup_edges' in transport:
+   historical.extend({'packet':key,'kind':'excluded historical startup log; retain original path and empty fixture, current completed log separately','edge':e,'transport':ref(root/transport_name)} for e in transport['excluded_historical_startup_edges'])
+
+# Restore native/capture context of the entire predecessor without treating any peer support as a new vote.
+prior_native=load(INV/'NATIVE-INPUT-MAP.json');prior_capture=load(INV/'SOURCE-ACQUISITION-EDGE-MAP.json')
+idx=C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json';checked(idx,'1143b4eed8c0f27ee967da9a518961fcbf8c7f45a987c728a47b7e31e0db05fd')
+byhash=defaultdict(list)
+for e in load(idx)['files']:byhash[e['sha256']].append(e)
+reps=[];outside=[];reused={}
+for key,g in sorted(groups.items()):
+ p=g['physical'];assert p['sha256']==key[0]
+ matches=byhash.get(key[0],[])
+ for e in matches:
+  if e['source'] not in reused:reused[e['source']]=checked(e['source'],e['sha256'],e['size'])
+ row={**g,'destination_suffix':key[0][:20]+'-'+key[1],'existing_index_destinations':matches,'actual_new_destination':None}
+ reps.append(row)
+ if not Path(p['path']).is_relative_to(C):outside.append(row)
+save('PACKETS.json',packets);save('READBACK.json',list(reads.values()));save('TRANSPORT-REPRESENTATIVES.json',reps)
+save('NATIVE-PAIR-READBACK.json',{'native_producer':ref(rp),'new_pairs':pairs,'predecessor_pairs':ref(INV/'NATIVE-PAIR-READBACK.json')})
+save('NATIVE-INPUT-MAP.json',{'predecessor':prior_native,'added':native_edges})
+save('SOURCE-ACQUISITION-EDGE-MAP.json',{'predecessor':prior_capture,'added':capture_edges})
+save('HISTORICAL-CONTEXT-QUALIFICATIONS.json',historical);save('OUTSIDE-C-REPRESENTATIVES.json',outside)
+save('EXISTING-INDEX-READBACK.json',list(reused.values()))
+save('RESULT.json',{'status':'EXPANDED_COMPLETE_NEUTRAL_CLOSURE_NOT_CONFIGURATION','at':datetime.datetime.now(datetime.UTC).isoformat(),'predecessor_selection':ref(OLD/'successor-inputs.json'),'predecessor_manifest':ref(OLD/'MANIFEST.json'),'packets_added':len(packets),'manifest_members_added':sum(p['members'] for p in packets),'new_native_pairs':len(pairs),'physical_representatives':len(reps),'logical_source_edges':sum(len(g['logical_sources']) for g in reps),'verified_current_paths':len(reads),'new_native_input_edges':len(native_edges),'new_capture_edges':len(capture_edges),'historical_qualified_edges':len(historical),'outside_C_representatives':len(outside),'content_groups_existing_index':sum(bool(r['existing_index_destinations']) for r in reps),'construction':False,'configuration':False,'native_prepare':False,'application':False,'new_scientific_judgment':False})
+print(json.dumps(load(D/'RESULT.json'),indent=2))

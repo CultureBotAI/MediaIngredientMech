@@ -1,0 +1,56 @@
+identifier: UNMAPPED_0159
+preferred_term: Ethanolamine acetate
+synonyms:
+- synonym_text: Ethanolamine acetate
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:01:28Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_ORGANIC_SALT
+  changes: Classified as a single ethanolamine acetate salt and left unmapped because
+    no exact local ontology term was verified; component mappings to ethanolamine
+    or acetate would not preserve salt identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Ethanolamine_acetate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended mapping
+    status: `UNMAPPED`.** The chemical identity is sufficiently clear to enrich the
+    local record, but no exact external ontology CURIE or verified CAS RN was established.
+    Retaining `UNMAPPED` protects the salt-level identity and is preferable to mapping
+    to either component. No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002785; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as an ethanolamine
+  acetate salt; not identity-mapped to component parents.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002785
+legacy_identifiers:
+- MIM:Ethanolamine_Acetate
+- UNMAPPED_0159

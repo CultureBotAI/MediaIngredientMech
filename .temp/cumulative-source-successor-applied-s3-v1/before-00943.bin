@@ -1,0 +1,61 @@
+identifier: CHEBI:42098
+preferred_term: Digoxigenin
+ontology_mapping:
+  ontology_id: CHEBI:42098
+  ontology_label: digoxigenin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 3beta,12beta,14-trihydroxy-5beta-card-20(22)-enolide
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=1672-46-4); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.268542+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.207463+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C23H34O5; inchi=InChI=1S/C23H34O5/c1-21-7-5-15(24)10-14(21)3-4-17-;
+    smiles=[H][C@]12CC[C@]3([H])[C@]([H])(C[C@@H](O)[C@@]4(C)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.024499+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000942; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1672-46-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C23H34O5
+  inchi: InChI=1S/C23H34O5/c1-21-7-5-15(24)10-14(21)3-4-17-18(21)11-19(25)22(2)16(6-8-23(17,22)27)13-9-20(26)28-12-13/h9,14-19,24-25,27H,3-8,10-12H2,1-2H3/t14-,15+,16-,17-,18+,19-,21+,22+,23+/m1/s1
+  smiles: '[H][C@]12CC[C@]3([H])[C@]([H])(C[C@@H](O)[C@@]4(C)[C@]3(O)CC[C@]4([H])C3=CC(=O)OC3)[C@@]1(C)CC[C@H](O)C2'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000942
+legacy_identifiers:
+- MIM:Digoxigenin
+- CHEBI:42098

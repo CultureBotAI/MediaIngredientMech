@@ -1,0 +1,64 @@
+identifier: CHEBI:2911
+preferred_term: Atorvastatin calcium salt trihydrate
+ontology_mapping:
+  ontology_id: CHEBI:2911
+  ontology_label: atorvastatin calcium trihydrate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: calcium bis{(3R,5R)-7-[3-(anilinocarbonyl)-5-(4-fluorophenyl)-2-isopropyl-4-phenyl-1H-pyrrol-1-yl]-3,5-dihydroxyheptanoate}
+    trihydrate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=344423-98-9; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.281478+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.099984+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2C33H34FN2O5.Ca.3H2O; inchi=InChI=1S/2C33H35FN2O5.Ca.3H2O/c2*1-21(2)31-30(33(4;
+    smiles=CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.613869+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 344423-98-9 uniquely
+    resolves by ChEBI xref to CHEBI:2911 'atorvastatin calcium trihydrate'. CAS_RN_LOOKUP
+    records the method that established this mapping; a lexical grade would discard
+    that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
+    remains skos:exactMatch under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 344423-98-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: 2C33H34FN2O5.Ca.3H2O
+  inchi: InChI=1S/2C33H35FN2O5.Ca.3H2O/c2*1-21(2)31-30(33(41)35-25-11-7-4-8-12-25)29(22-9-5-3-6-10-22)32(23-13-15-24(34)16-14-23)36(31)18-17-26(37)19-27(38)20-28(39)40;;;;/h2*3-16,21,26-27,37-38H,17-20H2,1-2H3,(H,35,41)(H,39,40);;3*1H2/q;;+2;;;/p-2/t2*26-,27-;;;;/m11..../s1
+  smiles: CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)[O-].CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)[O-].O.O.O.[Ca+2]
+ingredient_type: SINGLE_INGREDIENT

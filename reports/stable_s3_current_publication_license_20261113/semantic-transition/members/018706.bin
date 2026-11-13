@@ -1,0 +1,112 @@
+identifier: MICRO:0000193
+preferred_term: Brain heart infusion broth
+synonyms:
+- synonym_text: Brain heart infusion broth
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 29
+  media_count: 29
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:827); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.502925+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'infusion')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.904002+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0347 → MICRO:0000193 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518452+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 29/29 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the FDA BAM Medium
+    1 Brain Heart Infusion formula.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000524; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:827); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0000193
+  ontology_label: brain heart infusion
+  ontology_source: MICRO
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0347; matched via 'Brain heart infusion broth';
+      stem-substring
+components:
+- component_name: Calf brain, infusion from
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: G_PER_L
+- component_name: Beef Heart Infusion
+  component_id: kgmicrobe.ingredient:beef_heart_infusion
+  reference_scope: MIM_CATALOG
+  concentration_value: '250'
+  concentration_unit: G_PER_L
+- component_name: Proteose peptone (Difco)
+  component_id: MICRO:0000180
+  reference_scope: MIM_CATALOG
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Na2HPO4
+  component_id: CHEBI:34683
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: Dextrose
+  component_id: CHEBI:17634
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.fda.gov/food/laboratory-methods-food/bam-media-m24-brain-heart-infusion-bhi-broth-and-agar-equivalent-media-are-available-difco-and-bbl
+    source_record: BAM Media M24 Medium 1
+    notes: FDA's BAM Medium 1 recipe names the Brain Heart Infusion broth constituents
+      and per-liter amounts.
+  notes: FDA lists Proteose peptone (Difco) or polypeptone (Bioquest) as alternatives;
+    this MIM decomposition follows the Difco alternative.
+mim_id: MIM:0000524
+legacy_identifiers:
+- MIM:Brain_Heart_Infusion_Broth
+- MICRO:0000193

@@ -1,0 +1,97 @@
+identifier: kgmicrobe.compound:maltose_hydrate
+preferred_term: Maltose Hydrate
+synonyms:
+- synonym_text: Maltose Hydrate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 8
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0676 -> kgmicrobe.compound:maltose_hydrate "maltose"
+    (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001592; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate); no
+  CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:17306
+  ontology_label: maltose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Maltose hydrate is the hydrated form of maltose. CHEBI has anhydrous maltose
+      CHEBI:17306 but no hydrate term; Section 3 mint + narrowMatch, per the hydrate
+      convention in #242 (#213).'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:17306 (''maltose'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'The source table explicitly names maltose hydrate and8BacDive-metabolite-utilization
+      observations. Preserve its distinct local identity without assigning the separate
+      D-maltose-monohydrate CAS or an anomer. See the complete identity, mapping,
+      chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json;
+      owner selector data/ingredients/mapped/Maltose_Hydrate.yaml. Primary source
+      references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/17306/;
+      https://www.ebi.ac.uk/ols4/api/search?q=Maltose%20Hydrate&ontology=chebi,ncit&rows=100;
+      https://github.com/CultureBotAI/MediaIngredientMech/blob/467aa319a06ef992035f509f66fe251082b44ae1/data/custom/microbedecoder/unmapped_labels.tsv.
+      Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
+mim_id: MIM:0001592
+legacy_identifiers:
+- MIM:Maltose_Hydrate
+- kgmicrobe.compound:maltose_hydrate

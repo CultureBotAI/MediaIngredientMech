@@ -1,0 +1,255 @@
+id: CultureMech:007037
+name: m9_medium_fischer_et_al
+original_name: M9 medium; Fischer et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: D-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '16.6518'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:glc_D'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.1'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Dibasic sodium phosphate
+  concentration:
+    value: '52.9727'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '8.55578'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  concentration:
+    value: '0.0033132'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '22.0449'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '2.0'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Manganese sulfate
+  term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+  concentration:
+    value: '0.00709975'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+- preferred_term: Ammonium chloride
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '14.9558'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: Cobalt chloride
+  concentration:
+    value: '0.00756525'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:35696
+    label: cobalt dichloride
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.00626022'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Cupric chloride
+  concentration:
+    value: '0.00703894'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:49553
+    label: copper(II) chloride
+- preferred_term: Iron(III) chloride
+  concentration:
+    value: '0.616722'
+    unit: MILLIMOLAR
+- preferred_term: Sodium EDTA
+  concentration:
+    value: '0.597736'
+    unit: MILLIMOLAR
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:43.915038Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 147, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:45.723131Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007037'
+- timestamp: '2026-03-17T06:30:32.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:03.827468+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "M9 medium; Fischer et al" to "m9_medium_fischer_et_al"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:11.989537+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T04:06:25.252072+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:147's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-10-13T22:34:41.350925+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATIONS_WITH_SCOPED_NOTES
+  notes: Added verified bibliography, raw/Markdown archive links, excerpts and qualified
+    scientific-name/NCBI taxonomy notes. Preserved prior recipe values and history.
+    Study differences, import discrepancies and unresolved strain/formulation scope
+    remain explicit; no new native growth or concentration assertion.
+  source: PMID:12603321
+media_term:
+  preferred_term: MediaDB Medium 147
+  term:
+    id: MEDIADB:147
+    label: M9 medium; Fischer et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:12603321
+  title: Metabolic flux profiling of Escherichia coli mutants in central carbon metabolism
+    using GC-MS.
+  authors: Fischer E; Sauer U
+  year: 2003
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=archived_PubMed_abstract; owner=MEDIADB:147;
+    discovery_sourceID=49; source_url=https://doi.org/10.1046/j.1432-1033.2003.03448.x;
+    alternate_identifier=doi:10.1046/j.1432-1033.2003.03448.x; raw=references_cache/papers/PMID_12603321.xml;
+    markdown=references_cache/papers/PMID_12603321.md; PubMed abstract, experimental
+    verification sentence; exact excerpt="environmental modifications and seven knockout
+    mutations". Reported organism=Escherichia coli (E. coli); canonical scientific
+    name=Escherichia coli; NCBITaxon:562; actual rank=species; taxonomy_match=exact_species_not_strain;
+    role=experimental species; local formulation unresolved. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli MG1655; canonical scientific name=Escherichia
+    coli str. K-12 substr. MG1655; NCBITaxon:511145; actual rank=no rank; taxonomy_match=canonical_name_match_secondary_strain_lead;
+    role=MediaDB strain lead, not confirmed by abstract. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=511145&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli W3110; canonical scientific name=Escherichia
+    coli str. K-12 substr. W3110; NCBITaxon:316407; actual rank=no rank; taxonomy_match=canonical_name_match_secondary_strain_lead;
+    role=MediaDB strain lead, not confirmed by abstract. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=316407&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli JM101; canonical scientific name=Escherichia
+    coli; NCBITaxon:562; actual rank=species; taxonomy_match=parent_rank_only; role=secondary
+    strain/mutant lead; exact clone unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli K-10_Zwf-; canonical scientific name=Escherichia
+    coli; NCBITaxon:562; actual rank=species; taxonomy_match=parent_rank_only; role=secondary
+    strain/mutant lead; exact clone unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli K-10_PfkA-; canonical scientific name=Escherichia
+    coli; NCBITaxon:562; actual rank=species; taxonomy_match=parent_rank_only; role=secondary
+    strain/mutant lead; exact clone unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli JM101_PykAF-; canonical scientific name=Escherichia
+    coli; NCBITaxon:562; actual rank=species; taxonomy_match=parent_rank_only; role=secondary
+    strain/mutant lead; exact clone unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli W3110_Pgi-; canonical scientific name=Escherichia
+    coli str. K-12 substr. W3110; NCBITaxon:316407; actual rank=no rank; taxonomy_match=parent_rank_only;
+    role=secondary mutant lead; verified parent label is not exact mutant identity.
+    Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=316407&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli MG1655_SdhA-_Mdh-; canonical scientific name=Escherichia
+    coli str. K-12 substr. MG1655; NCBITaxon:511145; actual rank=no rank; taxonomy_match=parent_rank_only;
+    role=secondary mutant lead; verified parent label is not exact mutant identity.
+    Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=511145&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli K-12_Mae-_Pck-; canonical scientific name=Escherichia
+    coli K-12; NCBITaxon:83333; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=secondary mutant lead; verified parent label is not exact mutant identity.
+    Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=83333&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli K-12_FumA-; canonical scientific name=Escherichia
+    coli K-12; NCBITaxon:83333; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=secondary mutant lead; verified parent label is not exact mutant identity.
+    Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=83333&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Isotope-labelled glucose experiments, environmental modifications and knockout
+    backgrounds are separate contexts. The abstract supplies no complete M9 salts/trace
+    formula or named strain-to-assay map; a shared M9 name does not establish equivalence
+    to other local M9 recipes. Local comparison: Fourteen native entries include 16.6518
+    mM glucose, 52.9727 mM dibasic sodium phosphate, 14.9558 mM ammonium chloride,
+    thiamine and trace components. Hydrate/salt identities and the generic preparation
+    text are not verified by this abstract. Inventory covers inspected medium-relevant
+    passages, not the whole paper or bibliography. Correction/retraction coverage
+    is limited to inspected metadata; bounded taxonomy misses do not prove absence.
+    Original ingredients, amounts, preparation, history and links are preserved, not
+    newly certified. No new native growth assertion, resolved variant or concentration
+    evidence.'

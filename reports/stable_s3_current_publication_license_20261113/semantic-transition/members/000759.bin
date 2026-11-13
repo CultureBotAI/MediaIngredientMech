@@ -1,0 +1,66 @@
+identifier: NCIT:C386
+preferred_term: Colistin sulfate salt
+ontology_mapping:
+  ontology_id: NCIT:C386
+  ontology_label: Colistin Sulfate
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#455)
+    notes: Duplicate of the existing NCIT:C386 'Colistin Sulfate' record; the old
+      CHEBI:37943 xref denoted colistin without sulfate.
+synonyms: []
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=1264-72-8; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.873818+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.751907+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C52H97N16O13R; smiles=*C[C@@H](C)CCCCC(=O)N[C@@H](CCN)C(=O)N[C@H](C(=O)N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.489513+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.387757+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: MERGED_INTO
+  changes: Merged into NCIT:C386 'Colistin Sulfate'; this zero-occurrence CAS-selected
+    duplicate was grounded to CHEBI:37943 colistin without sulfate. Tombstoned REJECTED
+    and SSSOM row dropped (#455).
+  llm_assisted: false
+chemical_properties: {}
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

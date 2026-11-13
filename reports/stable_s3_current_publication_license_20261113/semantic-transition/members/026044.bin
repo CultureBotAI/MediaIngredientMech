@@ -1,0 +1,75 @@
+identifier: CHEBI:229630
+preferred_term: NH42CO3
+synonyms:
+- synonym_text: NH42CO3
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2076); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:07:24Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic ammonium carbonate-like salt and left
+    unmapped because the source formula omits parentheses and no exact local ammonium
+    carbonate identity was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0480 -> CHEBI:229630 "ammonium carbonate" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-27T03:16:39.518216+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001871; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2076); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as NH42CO3 shorthand;
+  left unmapped pending exact formula/CAS evidence.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:229630
+  ontology_label: ammonium carbonate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient 2076 (CAS 10361-29-2 ammonium carbonate) + local
+      OAK CHEBI exact-label verification
+    notes: '''NH42CO3'' = (NH4)2CO3 ammonium carbonate; MediaDive CAS 10361-29-2;
+      OAK CHEBI:229630 ''ammonium carbonate''.'
+chemical_properties:
+  molecular_formula: CO3.2H4N
+  smiles: O=C([O-])[O-].[NH4+].[NH4+]
+  inchi: InChI=1S/CH2O3.2H3N/c2-1(3)4;;/h(H2,2,3,4);2*1H3
+  molecular_weight: 96.086
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:16:05.034840+00:00'
+mim_id: MIM:0001871
+legacy_identifiers:
+- MIM:Nh42co3
+- CHEBI:229630

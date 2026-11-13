@@ -1,0 +1,289 @@
+id: CultureMech:007467
+name: '1261'
+original_name: '1261'
+category: bacterial
+description: 1261. NBRC 1257.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_range:
+  min: 6.8
+  max: 7.0
+media_term:
+  preferred_term: NBRC Medium 1257
+  term:
+    id: nbrc.medium:1257
+    label: NBRC Medium 1257
+ingredients:
+- preferred_term: KH2PO4
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: NH4Cl
+  concentration:
+    value: '0.25'
+    unit: G_PER_L
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: NaCl
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: MgCl2·6H2O
+  concentration:
+    value: '0.4'
+    unit: G_PER_L
+  term:
+    id: CHEBI:86345
+    label: MgCl2 x 6 H2O
+- preferred_term: KCl
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: CaCl2·2H2O
+  concentration:
+    value: '0.15'
+    unit: G_PER_L
+  term:
+    id: CHEBI:86158
+    label: CaCl2 x 2 H2O
+- preferred_term: Na2SO4
+  concentration:
+    value: '4'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32149
+    label: sodium sulfate
+- preferred_term: Yeast extract
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: Resazurin
+  concentration:
+    value: '1'
+    unit: MG_PER_L
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+- preferred_term: Sodium acetate
+  concentration:
+    value: '2.73'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32954
+    label: sodium acetate
+- preferred_term: Trace element mixture*
+  concentration:
+    value: '1'
+    unit: ML_PER_L
+- preferred_term: Selenite-tungstate solution**
+  concentration:
+    value: '1'
+    unit: ML_PER_L
+- preferred_term: Bicarbonate solution***
+  concentration:
+    value: '30'
+    unit: ML_PER_L
+- preferred_term: Sulfide solution****
+  concentration:
+    value: '1.5'
+    unit: ML_PER_L
+- preferred_term: Distilled water
+  concentration:
+    value: '970'
+    unit: ML_PER_L
+  term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix ingredients except for bicarbonate and sulfide solutions.
+- step_number: 2
+  action: ALIQUOT
+  description: Dispense the medium into culture vessels under a stream of nitrogen
+    gas and seal with butyl rubber stoppers.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 minutes.
+- step_number: 4
+  action: MIX
+  description: Aseptically and anaerobically add the remaining ingredients using sterile
+    syringes and enclose N2/CO2 (80/20) mixed gas with the vessels.
+- step_number: 5
+  action: ADJUST_PH
+  description: Adjust pH to 6.8-7.0 using a compact pH meter.
+curation_history:
+- timestamp: '2026-02-20T00:22:36.043616Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 1257, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=1257.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-09T08:04:19.615416+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T03:08:47.461765Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 92 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.173592Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007467'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.618266+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.698945+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 1257 composition table from the preserved scrape;
+    15 ingredient(s) restored, 4 stock solution(s) nested rather than flattened, 1
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:15.841315+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 15 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+  notes: Preserved the recovered NBRC Medium 1257 composition table.
+solutions:
+- preferred_term: Trace element mixture
+  composition:
+  - preferred_term: HCl (25%; 7.7 M)
+    concentration:
+      value: '12.5'
+      unit: ML_PER_L
+  - preferred_term: FeSO4·7H2O
+    concentration:
+      value: '2100'
+      unit: MG_PER_L
+  - preferred_term: H3BO3
+    concentration:
+      value: '30'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:33118
+      label: boric acid
+  - preferred_term: MnCl2·4H2O
+    concentration:
+      value: '100'
+      unit: MG_PER_L
+  - preferred_term: CoCl2·6H2O
+    concentration:
+      value: '190'
+      unit: MG_PER_L
+  - preferred_term: NiCl2·6H2O
+    concentration:
+      value: '24'
+      unit: MG_PER_L
+  - preferred_term: CuCl2·2H2O
+    concentration:
+      value: '2'
+      unit: MG_PER_L
+  - preferred_term: ZnSO4·7H2O
+    concentration:
+      value: '144'
+      unit: MG_PER_L
+  - preferred_term: Na2MoO4·2H2O
+    concentration:
+      value: '36'
+      unit: MG_PER_L
+  - preferred_term: Distilled water
+    concentration:
+      value: '987'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Trace element mixture
+- preferred_term: Selenite-tungstate solution
+  composition:
+  - preferred_term: NaOH
+    concentration:
+      value: '0.4'
+      unit: G_PER_L
+    term:
+      id: CHEBI:32145
+      label: sodium hydroxide
+  - preferred_term: Na2SeO3·5H2O
+    concentration:
+      value: '6'
+      unit: MG_PER_L
+  - preferred_term: Na2WO4·2H2O
+    concentration:
+      value: '8'
+      unit: MG_PER_L
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Selenite-tungstate solution
+- preferred_term: Bicarbonate solution (1.0 M)
+  composition:
+  - preferred_term: NaHCO3
+    concentration:
+      value: '8.4'
+      unit: G_PER_L
+    term:
+      id: CHEBI:32139
+      label: sodium hydrogencarbonate
+  - preferred_term: Distilled water
+    concentration:
+      value: '100'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Bicarbonate solution (1.0 M)
+- preferred_term: Sulfide solution (1.0 M)
+  composition:
+  - preferred_term: Na2S·9H2O
+    concentration:
+      value: '12'
+      unit: G_PER_L
+  - preferred_term: Distilled water
+    concentration:
+      value: '50'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: Sulfide solution (1.0 M)
+notes: 'Source: NBRC Medium 1257 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+
+
+  The NBRC Medium for Strain SR45 table lists pH 6.8 to 7.0, four nested stock solutions,
+  and aseptic anaerobic addition of bicarbonate and sulfide solutions after sealed-vessel
+  autoclaving.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257

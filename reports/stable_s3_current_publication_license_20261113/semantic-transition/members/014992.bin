@@ -1,0 +1,45 @@
+identifier: CHEBI:16469
+preferred_term: 17β-Estradiol
+ontology_mapping:
+  ontology_id: CHEBI:16469
+  ontology_label: 17beta-estradiol
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1181;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/16469/
+    notes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion
+      formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is preserved
+      rather than choosing generic estradiol or17alpha. The frozen1g/L value contradicts
+      the primary1mg input and is not imported into MIM.
+synonyms:
+- synonym_text: 17β-Estradiol
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:bf95441dfe84a25316206b45e2b482da582422f4309fc061b7603038dfe73894
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: CREATED_FROM_SOURCE_REVIEW
+  changes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion
+    formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is preserved
+    rather than choosing generic estradiol or17alpha. The frozen1g/L value contradicts
+    the primary1mg input and is not imported into MIM. Proposed only; integration
+    requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:45:24.660791+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

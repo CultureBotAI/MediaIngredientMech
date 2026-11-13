@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:arabinoxylan_rye_flour
+preferred_term: Arabinoxylan (Rye Flour)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.875651+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0176 → FOODON:03302492 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.734942+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'The named rye-derived arabinoxylan material is not rye flour FOODON:03302492.
+    A manufacturer uses exactly this name for an arabinoxylan preparation with residual
+    protein/ash. Retain a local material identity, without asserting procurement from
+    that supplier, exact purity, or whole-mixture equivalence to pure polymer. Evidence:
+    https://www.megazyme.com/arabinoxylan-rye-flour'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:arabinoxylan_rye_flour
+  ontology_label: Arabinoxylan (Rye Flour)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.megazyme.com/arabinoxylan-rye-flour
+    notes: The named rye-derived arabinoxylan material is not rye flour FOODON:03302492.
+      A manufacturer uses exactly this name for an arabinoxylan preparation with residual
+      protein/ash. Retain a local material identity, without asserting procurement
+      from that supplier, exact purity, or whole-mixture equivalence to pure polymer.
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+ingredient_type: UNDEFINED_MIXTURE

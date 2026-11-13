@@ -1,0 +1,243 @@
+identifier: CHEBI:234035
+preferred_term: Carboxymethyl cellulose
+ontology_mapping:
+  ontology_id: CHEBI:234035
+  ontology_label: carboxymethylcellulose sodium salt
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:85146 (''carboxymethylcellulose'') -> CHEBI:234035
+      (''carboxymethylcellulose sodium salt''). The record''s own cas_rn 9004-32-4
+      is registered by ChEBI against CHEBI:234035, which is the sodium salt of the
+      term the record previously carried. Curation decision on #320: where the CAS
+      names a more specific FORM than the label, the CAS governs — the recipe is taken
+      to mean the substance actually weighed out. These surfaced as ''unrelated''
+      in the ancestry triage only because ChEBI does not model salt-of / hydrate-of
+      / racemate-of as subsumption, the same gap #342 recorded for hydrates.'
+synonyms:
+- synonym_text: ( sodium salt)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CMC
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Carboximethylcellulosum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Carboxymethylcellulose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Carboxymethylcellulosum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Celluloseglycolic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Glycolic acid cellulose ether
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: carmellosum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: carmelosa
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: croscarmellose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: croscarmellosum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: croscarmelosa
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (sodium salt)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Carboxymethyl cellulose (sodium salt)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
+- synonym_text: Carboxymethylcellulose sodium
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
+- synonym_text: CMC-Na
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
+- synonym_text: Carboxymethyl cellulose, sodium salt
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Carmellose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 7
+  media_count: 7
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.822001+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9004-32-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Carboxymethylcellulose)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 9004-32-4 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: CMC, Carboximethylcellulosum,
+    Carboxymethylcellulose, Carboxymethylcellulosum, Celluloseglycolic acid, ... (6
+    more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: CMC, Carboximethylcellulosum,
+    Carboxymethyl cellulose, Carboxymethylcellulosum, Celluloseglycolic acid, ...
+    (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Carboxymethylcellulose.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.612448+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.108701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.736720+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.735527+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Carboxymethyl cellulose'' -> ''carboxymethylcellulose'':
+    synced to canonical CHEBI label (preferred_term ''Carboxymethyl cellulose'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:85146 -> CHEBI:234035 'carboxymethylcellulose
+    sodium salt' (#320); the record's CAS 9004-32-4 denotes the sodium salt. mapping_quality
+    -> SYNONYM_MATCH.
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_cmc_records
+  action: MERGED_FROM
+  changes: 'Absorbed ''Carboxymethyl cellulose (sodium salt)'' (#394). The two were
+    crossed: the generic-looking record held the SALT''s term (CHEBI:234035) while
+    the salt-labelled record held FOODON:03460374. Codex read the four source strings
+    behind this record''s occurrences and they are genuinely mixed — 2 plain (''Carboxymethyl
+    cellulose'', KOMODO 1111 and DSMZ 1111) and 2 explicitly sodium salt (''Carboxymethyl
+    cellulose, sodium salt'', JCM 1052; ''Carboxymethylcellulose (CMC), sodium salt'',
+    DSMZ 1684) — and DSMZ 1111''s own prep note specifies the sodium salt. CultureBotHT''s
+    compounds_to_cas.csv maps BOTH the plain and the sodium name to the same CAS 9004-32-4,
+    so the upstream conflation is already there. Resolved under the orderability rule:
+    an ingredient maps to a specific chemical someone can order, picking one by convention
+    when sources disagree. CHEBI:234035 carries cas:9004-32-4 — the product a lab
+    buys — while the plain term CHEBI:85146 carries cas:9000-11-7, a different purchase.
+    Both labels remain resolvable as synonyms.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: add_supplied_form
+  action: ADDED_SUPPLIED_FORM
+  changes: Recorded the purchasable form separately from identity. The record's identity
+    question (#394) was settled by CAS, but that put procurement detail into the mapping.
+    supplied_form carries it instead, so the identifier is free to optimise for how
+    the node reads in the KG.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518508+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Carboxymethyl cellulose, sodium salt'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Carmellose''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:85146 -> CHEBI:234035 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000591; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+kg_microbe_node_id: CHEBI:234035
+chemical_properties:
+  cas_rn: 9004-32-4
+  data_source: CultureBotHT/compounds_to_cas.csv
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Carboxymethylcellulose sodium
+  cas_rn: 9004-32-4
+  form: sodium salt
+  supplier: Sigma-Aldrich
+  catalog_number: C-5013
+  notes: 'The form DSMZ 1111''s preparation note specifies (''Carboxymethyl cellulose,
+    sodium salt, high viscosity (Sigma No. C-5013), works well'') even though its
+    ingredient string says plain. JCM 1052 and DSMZ 1684 name the sodium salt in the
+    ingredient string itself. #394.'
+mim_id: MIM:0000591
+legacy_identifiers:
+- MIM:Carboxymethyl_Cellulose
+- CHEBI:234035

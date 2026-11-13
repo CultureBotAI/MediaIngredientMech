@@ -1,0 +1,69 @@
+{
+  "author": "/root/buffer_hepes",
+  "at": "2026-11-08T09:30:33.717645+00:00",
+  "ignored_files_included": true,
+  "method": "Path.rglob over every maintained ingredient YAML, plus all current canonical selected full proposal payloads; no gitignore exclusions.",
+  "bounded_scope": "Current W05 checkout and selected W05 proposals, not every other worker live head. Root must reconcile frozen/advancing cross-worker siblings separately.",
+  "maintained_records_scanned": 2956,
+  "selected_proposals_scanned": 142,
+  "primary_identifier_targets": [
+    "FOODON:03315306",
+    "MICRO:0000178",
+    "MICRO:0000181",
+    "kgmicrobe.ingredient:peptone",
+    "kgmicrobe.ingredient:soy_peptone"
+  ],
+  "maintained_hits": [
+    {
+      "path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+      "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+      "identifier": "MICRO:0000178",
+      "mapping_status": "MAPPED"
+    },
+    {
+      "path": "data/ingredients/mapped/Peptone.yaml",
+      "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+      "identifier": "MICRO:0000178",
+      "mapping_status": "MAPPED"
+    },
+    {
+      "path": "data/ingredients/mapped/Polypeptone.yaml",
+      "sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+      "identifier": "FOODON:03315306",
+      "mapping_status": "MAPPED"
+    }
+  ],
+  "selected_hits": [
+    {
+      "proposal_id": "W05-FINAL-MAT-001",
+      "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+        "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+      },
+      "identifier": "MICRO:0000178"
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+      },
+      "identifier": "kgmicrobe.ingredient:soy_peptone"
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-039",
+      "owner_path": "data/ingredients/mapped/Peptone.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+        "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+      },
+      "identifier": "kgmicrobe.ingredient:peptone"
+    }
+  ],
+  "no_existing_MICRO_0000181_primary_identity_in_this_scan": true
+}

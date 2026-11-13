@@ -1,0 +1,58 @@
+identifier: mesh:M0313825
+preferred_term: Fe(III)-EDTA, ammonium salt
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: mesh:M0313825
+  ontology_label: Fe(III)-EDTA, ammonium salt
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/medium/P10; https://mediadive.dsmz.de/rest/solution/1349;
+      https://mediadive.dsmz.de/rest/solution/2271; https://mediadive.dsmz.de/rest/solution/2356;
+      https://www.bacmedia.dsmz.de/medium/P10; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1132.pdf;
+      https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1181.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium632.pdf
+    notes: DSMZ632/1181 and their source-derived frozen recipes weigh ammonium ferric
+      EDTA; public P10 explicitly reports that named reagent within a trace stock
+      but remains an uncurated user dataset. Primary NLM M0313825 specifically denotes
+      Fe(III)-EDTA,ammonium salt; C019179 parent descriptor includes other salts and
+      is not exact. Canada substance assessment corroborates CAS21265-50-9. DSMZ1132
+      instead explicitly specifies Fe-NH4EDTA(4mg/ml),1.0ml; its four frozen derivatives
+      refer to a stock, not weighed pure salt. Propose separate exact salt and source-qualified4mg/mLstock,
+      preserving raw label ambiguity and receiving-medium errors.
+notes: DSMZ632/1181 and their source-derived frozen recipes weigh ammonium ferric
+  EDTA; public P10 explicitly reports that named reagent within a trace stock but
+  remains an uncurated user dataset. Primary NLM M0313825 specifically denotes Fe(III)-EDTA,ammonium
+  salt; C019179 parent descriptor includes other salts and is not exact. Canada substance
+  assessment corroborates CAS21265-50-9. DSMZ1132 instead explicitly specifies Fe-NH4EDTA(4mg/ml),1.0ml;
+  its four frozen derivatives refer to a stock, not weighed pure salt. Propose separate
+  exact salt and source-qualified4mg/mLstock, preserving raw label ambiguity and receiving-medium
+  errors.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: DSMZ632/1181 and their source-derived frozen recipes weigh ammonium ferric
+    EDTA; public P10 explicitly reports that named reagent within a trace stock but
+    remains an uncurated user dataset. Primary NLM M0313825 specifically denotes Fe(III)-EDTA,ammonium
+    salt; C019179 parent descriptor includes other salts and is not exact. Canada
+    substance assessment corroborates CAS21265-50-9. DSMZ1132 instead explicitly specifies
+    Fe-NH4EDTA(4mg/ml),1.0ml; its four frozen derivatives refer to a stock, not weighed
+    pure salt. Propose separate exact salt and source-qualified4mg/mLstock, preserving
+    raw label ambiguity and receiving-medium errors. Isolated proposal, pending independent
+    and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.249521+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 21265-50-9
+  data_source: Primary Canada EDTA-salts assessment; exact NLM M0313825 ammonium-salt
+    concept

@@ -1,0 +1,218 @@
+identifier: CHEBI:91249
+preferred_term: Diammonium molybdate
+ontology_mapping:
+  ontology_id: CHEBI:91249
+  ontology_label: ammonium molybdate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 13106-76-8
+    notes: ChEBI ID CHEBI:91249 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: (NH4)2MoO4
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium Molybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium molybdate(VI)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Molybdic acid, diammonium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ammonium orthomolybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: bisammonium dioxido(dioxo)molybdenum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: diammonium tetraoxomolybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (NH4)6Mo7O24 x 4 H2O
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: (NH4)6Mo7O24
+  synonym_type: EXACT
+  source: manual
+- synonym_text: Molybdic acid ammonium salt tetrahydrate
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: Ammonium heptamolybdate tetrahydrate
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (NH4)6Mo7O24.4H2O
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 239
+  media_count: 239
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:05.605205+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:234-320-9 from PubChem API via name lookup (Ammonium Molybdate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.726442+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:12027-67-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Ammonium molybdate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:19:20.864755+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:91249
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 13106-76-8 from PubChem (via CHEBI:91249)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 12027-67-7 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 4 synonyms for unmapped CultureMech surface forms
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (NH4)2MoO4, Ammonium
+    Molybdate, Ammonium molybdate(VI), Molybdic acid, diammonium salt, ammonium orthomolybdate,
+    ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Ammonium Molybdate,
+    Ammonium molybdate(VI), Diammonium molybdate, Molybdic acid, diammonium salt,
+    ammonium orthomolybdate, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (NH4)2MoO4, Ammonium
+    molybdate(VI), Diammonium molybdate, Molybdic acid, diammonium salt, ammonium
+    orthomolybdate, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Nh42moo4.yaml, Ammonium_Molybdate.yaml,
+    Ammonium_Molybdate_2.yaml. Synonyms, curation_history, and occurrence counts were
+    unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (12027-67-7|13106-76-8) resolved via
+    OAK canonical xref: 13106-76-8 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.250987+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.185426+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2H4N.MoO4; inchi=InChI=1S/Mo.2H3N.4O/h;2*1H3;;;;/q;;;;;2*-1/p+2;
+    smiles=[NH4+].[NH4+].[O]=[Mo](=[O])([O-])[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.997427+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110943+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-27T03:16:39.518731+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 8/8 -> 239/239 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(NH4)6Mo7O24.4H2O''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''(NH4)6Mo7O24 x 4 H2O'', ''Molybdic
+    acid ammonium salt tetrahydrate'', ''Ammonium heptamolybdate tetrahydrate'', ''(NH4)6Mo7O24.4H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000930; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
+chemical_properties:
+  cas_rn: 13106-76-8
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:19:20.864770+00:00'
+  molecular_formula: 2H4N.MoO4
+  inchi: InChI=1S/Mo.2H3N.4O/h;2*1H3;;;;/q;;;;;2*-1/p+2
+  smiles: '[NH4+].[NH4+].[O]=[Mo](=[O])([O-])[O-]'
+kg_microbe_node_id: CHEBI:91249
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
+mim_id: MIM:0000930
+legacy_identifiers:
+- MIM:Diammonium_molybdate
+- CHEBI:91249

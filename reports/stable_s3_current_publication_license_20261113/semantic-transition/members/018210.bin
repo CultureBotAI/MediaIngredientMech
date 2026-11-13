@@ -1,0 +1,145 @@
+identifier: CHEBI:16997
+preferred_term: 1,2-Propanediol
+ontology_mapping:
+  ontology_id: CHEBI:16997
+  ontology_label: propane-1,2-diol
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: 2-propandiol
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: 1,2-propandiol
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=57-55-6; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.671813+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.468278+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H8O2; inchi=InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3;
+    smiles=CC(O)CO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.775861+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-06T05:15:48.923652+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0723 ''2-propandiol'' as a RAW_TEXT synonym -- Truncation
+    artifact of 1,2-propanediol; a diol cannot carry a single locant (#213). No new
+    SSSOM row; CHEBI:16997 is already mapped. Source: kgmicrobe.trait:2_propandiol.'
+  llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'propane-1,2-diol'; it matches the ChEBI
+    synonym '1,2-Propanediol' on CHEBI:16997. The schema defines EXACT_MATCH as a
+    direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the
+    recorded grade overstated. ontology_id is unchanged — the term is correct. The
+    SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 57-55-6 uniquely resolves
+    by ChEBI xref to CHEBI:16997 'propane-1,2-diol'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''1,2-propandiol''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000029; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 57-55-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C3H8O2
+  inchi: InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3
+  smiles: CC(O)CO
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000029
+legacy_identifiers:
+- MIM:12-Propanediol
+- CHEBI:16997
+discussions:
+- discussion_id: kgscan-2db2ffbbe7ca
+  prompt: 'Knowledge gap for 1,2-Propanediol: By integrating data from experimental
+    models, clinical studies, and translational research, the review identifies areas
+    of consensus, ongoing controversy, and major knowledge gaps in IBD pathophysiology
+    and clinical practice.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: controversy_conflict,
+    explicit_gap, future_work, limitations_barriers, unclear_unknown). Curator review
+    required: set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:42198674
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: By integrating data from experimental models, clinical studies, and translational
+      research, the review identifies areas of consensus, ongoing controversy, and
+      major knowledge gaps in IBD pathophysiology and clinical practice.
+    explanation: Gap-signal sentence (explicit_gap, controversy_conflict) from the
+      cited abstract.
+  - reference: PMID:41191190
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite the remarkable progress in biopropanol production technology,
+      it still faces numerous challenges, including the low production efficiency
+      of natural microorganisms, the strong inhibitory effect of the product, and
+      poor substrate conversion rates.
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:41715897
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite their recognized importance, the molecular strategies through
+      which HMOs govern microbial competition and niche establishment remain poorly
+      understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:42149637
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: However, the fitness costs imposed by multidrug-resistant (MDR) IncHI2
+      plasmids across different serovars and the underlying mechanisms remain poorly
+      understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan

@@ -1,0 +1,108 @@
+identifier: cas:9005-79-2
+preferred_term: Glycogen from bovine liver
+ontology_mapping:
+  ontology_id: CHEBI:28087
+  ontology_label: glycogen
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_chebi_grounding_curation
+    notes: 'Grounded to CHEBI:28087 (glycogen), EXACT_MATCH: "from bovine liver" is
+      a provenance qualifier, not a distinct chemical, and glycogen is source-independent
+      in CHEBI — the same treatment as the plain "Glycogen" record (CHEBI:28087, EXACT_MATCH).
+      Supersedes the prior cas:9005-79-2 registry fallback; the CAS-RN is retained
+      in chemical_properties.'
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT with CAS-RN 9005-79-2 (retained as chemical_properties.cas_rn).
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28087 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Glycogen from bovine liver' does not equal the term label 'glycogen'. EXACT_MATCH
+      therefore asserted an identity the pair does not have. Re-graded because source-qualified.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:9005-79-2 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.852128+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:22.038395+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C24H42O21; smiles=C(C1C(C(C(C(O1)OCC2C(C(C(C(O2)OC3C(OC(C(C3O)O)O)CO;
+    inchi=InChI=1S/C24H42O21/c25-1-5-9(28)11(30)16(35)22(41-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.791134+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.741541+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_chebi_grounding_curation
+  action: GROUND_TO_CHEBI_PARENT
+  changes: ontology_mapping cas:9005-79-2 (FALLBACK_REGISTRY) -> CHEBI:28087 (glycogen),
+    EXACT_MATCH. "from bovine liver" is a source qualifier; glycogen is source-independent
+    in CHEBI. Consistent with the plain Glycogen record (CHEBI:28087).
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier cas:9005-79-2 kept (§3 step 2, its own CAS); the mandatory Rule
+    B1 registry row to kgmicrobe.ingredient:glycogen_from_bovine_liver was missing
+    and is now emitted. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001219; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9005-79-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C24H42O21
+  smiles: C(C1C(C(C(C(O1)OCC2C(C(C(C(O2)OC3C(OC(C(C3O)O)O)CO)O)O)OC4C(C(C(C(O4)CO)O)O)O)O)O)O)O
+  inchi: InChI=1S/C24H42O21/c25-1-5-9(28)11(30)16(35)22(41-5)39-4-8-20(45-23-17(36)12(31)10(29)6(2-26)42-23)14(33)18(37)24(43-8)44-19-7(3-27)40-21(38)15(34)13(19)32/h5-38H,1-4H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15-,16-,17-,18-,19-,20-,21+,22+,23-,24-/m1/s1
+  pubchem_cid: 439177
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001219
+legacy_identifiers:
+- MIM:Glycogen_From_Bovine_Liver
+- cas:9005-79-2

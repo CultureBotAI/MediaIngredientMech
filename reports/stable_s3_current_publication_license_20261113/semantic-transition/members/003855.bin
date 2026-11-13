@@ -1,0 +1,21 @@
+{
+  "only_semantic_field": "ontology_mapping.mapping_quality",
+  "before": "CLOSE_MATCH",
+  "after": "NARROW_MATCH",
+  "new_evidence": {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813",
+    "notes": "Claim-specific current form-of assessment under https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813. JCM680 (https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=680; exact captured HTML SHA25616525b97d468855002dda4489f4b2030d28a9a1d332828cc27a0f2e15b5b07f0) explicitly names L-cysteine hydrochloride monohydrate solution. The active defining CHEBI:91248 term is L-cysteine hydrochloride hydrate, a monohydrate of L-cysteine hydrochloride (full OLS term capture SHA2567ef9e26cec1a5833d216a01df066c0b6a0bfba77bad16db354c690a7a814a683). This remains a local prepared stock, not the pure solute. Current MAPPING_SEMANTICS sections1/3 explicitly permit the solution-of broader-parent relation without is_a or identity equivalence; native NARROW_MATCH therefore publishes skos:broadMatch while retaining the local exact registry row. The historical #342/#321 rationale and evidence are preserved, but no longer justify CLOSE_MATCH under the current contract. The source10mL is an addition dose, not stock concentration; solvent, concentration, stock pH, complete formulation and quantity interpretation remain unknown. No solute CAS, structure, formula or role is assigned to the stock; rejected instruction and QSY9 labels, counts and all original source decisions remain unchanged."
+  },
+  "new_history": {
+    "timestamp": "2026-11-08T17:49:04.460114+00:00",
+    "curator": "Codex /root/step7d_science_c",
+    "action": "CORRECTED_FORM_PARENT_PREDICATE",
+    "changes": "Private exact successor to selected0ca4e6c9 under https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813: CLOSE_MATCH to NARROW_MATCH for the supported solution-of CHEBI91248 relation; truthful LLM evidence/history appended. Preserve the distinct local stock identity, parent ID/label, every old history/evidence object, W07 rejected labels, all source/stock/quantity unknowns, roles and counts. No source application or release approval.",
+    "previous_status": "MAPPED",
+    "new_status": "MAPPED",
+    "llm_assisted": true,
+    "llm_model": "gpt-6"
+  },
+  "old_complete_objects_exact": true
+}

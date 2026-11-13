@@ -1,0 +1,189 @@
+identifier: CHEBI:91247
+preferred_term: L-Cysteine HCl
+ontology_mapping:
+  ontology_id: CHEBI:91247
+  ontology_label: L-cysteine hydrochloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: (add to make medium anoxic)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Cysteine-HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: (1R)-1-carboxy-2-sulfanylethan-1-aminium chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (R)-Cysteine hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cysteine monohydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-(+)-Cysteine hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Cysteine monohydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Cysteiniumchloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-cysteinium chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: L-Cysteine . HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: L--cysteine・HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Cysteine.HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: L-cysteine · HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: cysteine . HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 302
+  media_count: 302
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:40.250803+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:200-157-7 from PubChem API via name lookup (Cysteine-HCl)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.253625+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7048-04-6 from CultureBotHT compounds_to_cas.csv (matched:
+    L-Cysteine HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: (1R)-1-carboxy-2-sulfanylethan-1-aminium
+    chloride, (R)-Cysteine hydrochloride, Cysteine monohydrochloride, L-(+)-Cysteine
+    hydrochloride, L-Cysteine monohydrochloride, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:52891 (QSY9 succinimidyl ester, a fluorescence quencher)
+    → CHEBI:91247 (L-cysteine hydrochloride). Original CHEBI was unrelated compound.
+    Also corrected CAS-RN 200-157-7 (EINECS number, not a CAS) → 52-89-1 (the real
+    CAS-RN for L-cysteine hydrochloride anhydrous, confirmed via PubChem).
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.454201+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:52891 -> CHEBI:91247 (old label: ''L-Cysteine
+    HCl'', new label: ''L-cysteine hydrochloride''). Reason: Previous CHEBI:52891
+    was QSY9 succinimidyl ester — unrelated. Stripped 8 kg_microbe-sourced synonyms
+    that were contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Cysteine-hcl.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (52-89-1|7048-04-6) resolved via OAK
+    canonical xref: 52-89-1 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.321484+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.327216+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H7NO2S.HCl; inchi=InChI=1S/C3H7NO2S.ClH/c4-2(1-7)3(5)6;/h2,7H,1,4H2,;
+    smiles=Cl.N[C@@H](CS)C(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.476127+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.743390+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519125+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 72/154 -> 302/302 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''L-Cysteine . HCl'' (x19 CultureMech mentions); ''L--cysteine・HCl''
+    (x2 CultureMech mentions); ''Cysteine.HCl'' (x1 CultureMech mentions); ''L-cysteine
+    · HCl'' (x1 CultureMech mentions); ''cysteine . HCl'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-21T03:52:08Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium''].
+    ChEBI gives these names to CHEBI:52891, not to this record''s CHEBI:91247 -- L-cysteine
+    hydrochloride is not the QSY9 dye at CHEBI:52891 -- its CAS 52-89-1 read as an
+    accession. Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe''s
+    synonym list (#669).'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 52-89-1
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: C3H7NO2S.HCl
+  inchi: InChI=1S/C3H7NO2S.ClH/c4-2(1-7)3(5)6;/h2,7H,1,4H2,(H,5,6);1H/t2-;/m0./s1
+  smiles: Cl.N[C@@H](CS)C(=O)O
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

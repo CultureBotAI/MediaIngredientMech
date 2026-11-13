@@ -1,0 +1,655 @@
+# Independent skeptical review of one GYPS native dependency representation
+
+- Review: 20261108T104719Z-w03-gyps-native-origin-skeptic
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T10:40:13.865910Z
+- Finished UTC: 2026-11-08T10:47:19.730969Z
+- Reviewer: Codex /root/gyps_native_skeptic (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+One authentic GYPS existing-owner dependency is expressible with the real W05 global peptones case as causal-only context. Exact fa98 scientific payload,36840preimage, foreign originalauthors/head/proposal/case/backlinks and188/74/868 sourcecores remain unchanged. Native structural success alone does not enforce assignment/observation scope or approve science.
+
+## Scope And Provenance
+
+Complete new one-GYPS proposal representation, prior science-byte retention, foreign causalcase scope and bounded native contract compatibility.
+
+Selection: All one nativeproposal, its full original object, complete unchanged payload and exact citedlineage; no sampling.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 784ee2541506c914b4c34f091de688d39784d548.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| W03-DEP-1176-GYPS | .temp/gyps-native-origin-v1/proposals.json # proposals[proposal_id=W03-DEP-1176-GYPS]; complete object and exact unchanged payload | snapshot_row | GYPS additive native proposal representation |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Exact full-payload/preimage/sourcecore retention | passed | True | W03-DEP-1176-GYPS | Fullpayload bytes equal priorcommittedfa98, realmaintainedpreimage36840, original188/74/868 corebytes matchGit784. |
+| Real foreign case, author/head/object/backlinks and causal scope | passed | True | W03-DEP-1176-GYPS | Canonicalglobalcasehashd428, W05assignment only, original108e/currenta43 exact3filebridge and fullforeignobjects; noinventedGYPSobservation/W03case/occurrence. |
+| Actual native prepare and complete-original crosswalk | passed | True | W03-DEP-1176-GYPS | Ownprepare/_recheck and separatetechnicalprepare/crosswalk succeed on exact prospectiveledger in1ownerfixture with real1879caseledger; noapply/fullcampaignclaim. |
+| Independent provenance adversarial controls | passed | True | W03-DEP-1176-GYPS | Own22semantic controls refuse false assignment, observation, authorship, backlinks, counts, retirement, payload/before/casehash and approval leakage. Native falseassignment blindspot explicitly reproducedby technicalreview. |
+| Actual new remote head, final crosswalk and campaign intake | not_applicable | False | W03-DEP-1176-GYPS | The newcommit does not yet exist in thisreview. Bindingcontext marksactualheadpending; root obtains distinctfinalheadreview afterpublication. |
+
+## Scientific And Domain Assessments
+
+### Unchanged scientific scope, with no new authority
+
+identity: supported. Targets: W03-DEP-1176-GYPS.
+
+Completeexactfa98scientific payload reused; conditionalBacto/source/role/quantity/history limits remain.
+
+The review grants no brand-specificMICRO equivalence, genericparent acceptance, newchemistry, whole-owner/role/export approval or release. A separately reviewed literalUNMAPPED successor remains required if finalBacto identity cannotbe retained.
+
+### Truthful nativecase binding and foreign authorship
+
+provenance: supported. Targets: W03-DEP-1176-GYPS.
+
+Realcausalreference supports one genuineW03dependent origin; W05 peptonescase is onlycausalcontext.
+
+Currentnativeoperator allowsrealglobalcase binding withoutassignedworker enforcement; explicit falseassignment/observation exclusions preserve truth. Foreign originalcase/proposal/authors/backlinks are preserved unchanged. PYGS/Marine retain separateW06/W04origins; no duplicate proposals or normalizedretirement.
+
+### Native structural evidence versus semantic and scientific approval
+
+provenance: supported. Targets: W03-DEP-1176-GYPS.
+
+Actualnativeprepare/crosswalk prove bounded shape compatibility, with independent semanticchecks retaining sourcecausality.
+
+Fixturehead3b1 is not actualworkerpublication; oneownerinventory and syntheticemptySSSOM checkpoint cannot stand for fullcampaignprepare. Same falseassignment counterfactual structurallypasses but taskprivateguard refuses. No nativecode/gatechanges or assertionweakening.
+
+### Ledger publication metadata and pending actualhead
+
+provenance: supported. Targets: W03-DEP-1176-GYPS.
+
+Publicationevent describes additive reportrepresentation, with actualcommitbinding explicitly pending.
+
+It is not a newYAMLcuration event, foreign origin retirement, actualalreadycommittedhead claim or extraoccurrence. Finalheadreview must bind eventualactualpublishedbytes/head separately.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| semantics | MAPPING_SEMANTICS.md; sections3 and6 | supports | Sections3/6 preserve exact identity and distinguish catalogue component references from owner-path identity. |
+| native-contract | .temp/gyps-native-origin-v1/inputs/contracts/campaign_owner_apply.py; _load; prepare; _recheck | supports | Existing-owner origin requires actual kind, preimage, payload and global frozen case hashes. It does not enforce assigned-worker or observation semantics. |
+| crosswalk-contract | .temp/gyps-native-origin-v1/inputs/contracts/crosswalk.py | supports | Complete exact proposal object/hash is required; no normalized retirement or manufactured original can replace it. |
+| actual-proposal | .temp/gyps-native-origin-v1/proposals.json | supports | Complete one-proposal ledger retains real foreign case as causal-only and leaves original source-core membership/counts unchanged. |
+| prior-sidecar | .temp/gyps-native-origin-v1/inputs/prior-sidecar/dependency-selection.json | supports | Exact784 committed source sidecar object is the predecessor. It is record content; its name in the additive evidence list does not make it an independent reviewer verdict. |
+| payload | .temp/gyps-native-origin-v1/payloads/GYPS.yaml | supports | All10651scientific YAML bytes equal previously reviewed fa98 payload: conditional Bacto, no generic redirect, PARTIAL recipe and history unchanged. |
+| before | .temp/gyps-native-origin-v1/inputs/before/GYPS.yaml | supports | Real maintained existing-owner preimage36840; verified directly against current owner and Git784. |
+| foreign-case | .temp/gyps-native-origin-v1/lineage-review/global-causal-case.json | supports | Actual1879 global ledger contains exact W05 peptones case once, assignedW05 notW03. Case is not GYPS observation. |
+| foreign-proposal | .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-proposal.json | supports | Full original W05proposal/authors/head and current108e-to-a43 unchanged bridge verified directly from Git. |
+| foreign-decision | .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-decision.json | supports | Exact original source decision/backlinks preserved; no newGYPSbacklink claimed. |
+| source | .temp/gyps-native-origin-v1/inputs/prior-sidecar/inputs/primary/gyps-publication-528.pdf; Alain2002 p1622; archived exactbytes | context_only | Exact archived source a89c capture retained from prior reviewed GYPS case. No fresh chemistry approval or new primary research is claimed here. |
+| prior-distinct-review | .temp/gyps-native-origin-v1/inputs/distinct-head-review/HANDOFF.json | context_only | Distinct reviewed784 publication retains conditional Bacto and source/role/export limits; it does not approve new intake representation or final composition. |
+| route | .temp/gyps-native-origin-v1/inputs/issue1176-route-comment.json | supports | Filed1176 route explicitly authorizes truthful additive native representation with foreign causalcase only; it supplies no scientific authority. |
+| own-semantics | .temp/gyps-native-origin-v1/skeptical-review/independent-semantics-controls-v1.json | supports | Independent directGit/object/case/core checks and22 private semantic negative controls all pass/refuse as intended; not nativeoperator enforcement. |
+| own-prepare | .temp/gyps-native-origin-v1/skeptical-review/native-prepare-independent-recheck-v1.json | supports | Own actualnative prepare and _recheck on copied one-owner fixture with exactledger/full1879cases; noapply. Synthetic checkpoint and fixturehead explicitly bounded. |
+| technical | .temp/gyps-native-origin-v1/technical-review/native-prepare-crosswalk-v2.json | supports | Separatetechnical actualnativeprepare/fulloriginalcrosswalk plus4nativefailures and1crosswalkfailure. 11producerpins/26inputs/1owner; nofullcampaignclaim. |
+| boundary | .temp/gyps-native-origin-v1/technical-review/actual-private-guard-boundary-v1.json | supports | Same counterfeit falseW03assignment passesnative/crosswalk but isrefusedby actualrootprivateguard. Do not describeprivate semantics asnativeenforcement. |
+| lineage-review | .temp/gyps-native-origin-v1/lineage-review/final-lineage-review-v1.json | supports | Separate exact-byte final lineage review,14 ownmutations, original authors/backlinks/case scopes preserved. |
+| direct-causal | .temp/gyps-native-origin-v1/skeptical-review/direct-causal-readback-v1.json | supports | Own parse confirms realoldGYPSMICROincomingreference to changing genericparent. Existing sharedidentifier is not a uniquerecordkey; no automaticretarget. |
+
+## Limits And Additional Notes
+
+- This is a provenance/representation-only review with scientific_review:false; no new scientific source or wholeowner approval.
+- ConditionalBacto retention remains exact. If finalBacto identity cannot be retained, a separatelyreviewed literalUNMAPPED successor is required; never silently mapGYPS to genericmesh:D010461.
+- Nativeprepare andcrosswalk donot enforceassignment/observation meaning. Explicittruthfulprovenance and independentsemantic checks are essential.
+- One-owner copiedfixture with real1879globalcases and syntheticmapping checkpoint is not fullcampaignprepared or actualfuturepublication proof.
+- No paidresearch, provideraccess, primarynetworkrefetch, maintainedwrite, foreignworktree edit, GitHubmutation or apply operation was performed by thisreviewer.
+- Priorsealed primarycapture is retained byte-for-byte; thisreview doesnot pretendfreshprimaryscientificinspection or replace priorindependentreview.
+- The sidecar selector is recordcontent; an evidence-list prior_review label for it is context shorthand, not a separateindependent reviewer identity. Actualdistinctreview is separatelybound.
+- Actualremote publication, fullcampaignapplication/crosswalk, whole-owner role/export and finalcoalescence approval remain withrootanddistinctreviewers.
+- Nativeprivatepersistence validates/render/currentness/virtualcanonicalparse underexplicituserboundary; canonicalreviews/structured is untouched.
+- The searched/accountedboundary is explicitfrozencaseledger/shards, namedcommittedlineage/artifacts/coreobjects and nativeinputs. No assertion aboutallhistorical/privatefiles beingabsent.
+- No new confirmed defect in this exactprospectiveledger. Thisreview doesnot markanyexistingGitHubissue closed or superseded.
+- The root publication_event time is ledgercreation metadata; pendingactualcommit flag prevents treating it as a verifiedpublishedhead.
+- Prior198-member sidecar preservation is separatelycheckedbylineageagent; thisreview independentlychecks exactoriginalselectedGYPSobject/payload and originalthreecorefiles, withoutclaiming allprivatehistoricalfiles audited.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T104719Z-w03-gyps-native-origin-skeptic
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Independent skeptical review of one GYPS native dependency representation
+started_at: '2026-11-08T10:40:13.865910Z'
+finished_at: '2026-11-08T10:47:19.730969Z'
+reviewer:
+  identity: Codex /root/gyps_native_skeptic
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process reviewer; did not author ledger, payload,
+    rootguard, foreignlineage capture or technicalfixture. Independently verified
+    committed originals and full current representation, ran22semanticmutations and
+    actualnativeprepare/_recheck in a separate copiedfixture. No newscientific adjudication
+    or selfapproval of parentW03science.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Exact one-proposal native representation is supported for report-only
+  publication; actual final published-head binding and coordinator integration remain
+  pending.
+scientific_review: false
+summary: One authentic GYPS existing-owner dependency is expressible with the real
+  W05 global peptones case as causal-only context. Exact fa98 scientific payload,36840preimage,
+  foreign originalauthors/head/proposal/case/backlinks and188/74/868 sourcecores remain
+  unchanged. Native structural success alone does not enforce assignment/observation
+  scope or approve science.
+source:
+  git_revision: 784ee2541506c914b4c34f091de688d39784d548
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-yaml-record/SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: .temp/gyps-native-origin-v1/evidence.json
+    sha256: 1cc886f9f582562ef7fcb2b25f88ea5722db4e4c4a9b10b0a086cfded494ae9b
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/before/GYPS.yaml
+    sha256: 36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/campaign_owner_apply.py
+    sha256: 4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/crosswalk-shape-contract.md
+    sha256: f861f8cbd3b40ce011258621b6ebf791f77afa4944ef9633fd14291584117a6b
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/crosswalk-v3-README.md
+    sha256: f3bc343284aee9cf127852ccdf42b281ee22ef1ad68868e3e62531cd213aedd8
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/crosswalk.py
+    sha256: 6b247656ec34a5280a7b10ba1dea6a67edfc12fa0aab004cbb2ec9575a650753
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/contracts/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/distinct-head-review/HANDOFF.json
+    sha256: 2d97691f4c83391fcd0d83abc97e3139654b57606e9610ddb018131f6b5ea328
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/frozen/shard-03.json
+    sha256: 90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/frozen/shard-05.json
+    sha256: 457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/frozen/union-ledger.json
+    sha256: a709fa2094a25e244b96f18699be06c266b7653719fcba04062c6f195daa25c5
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/issue1176-route-comment.json
+    sha256: e16e0a3bcb0f3c541437fdd363b5a684aa132dece0766de2467bffd11271eec7
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/prior-sidecar/dependency-selection.json
+    sha256: b1e181a1dfbbc2d0588b377f00e5922c6b5340e86b171b9ebf8233d963f0ad92
+    role: context
+  - path: .temp/gyps-native-origin-v1/inputs/prior-sidecar/inputs/primary/gyps-publication-528.pdf
+    sha256: a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661
+    role: context
+  - path: .temp/gyps-native-origin-v1/lineage-review/final-lineage-review-v1.json
+    sha256: 0f79465f8ac4b9643b815bc0473f25b04b0c3306da3a6b90f7ae81b40fbd2e01
+    role: context
+  - path: .temp/gyps-native-origin-v1/lineage-review/global-causal-case.json
+    sha256: 233791e8938f37c02c3cde73866f729cbaa44632b390d378c05bf31750b173db
+    role: context
+  - path: .temp/gyps-native-origin-v1/lineage-review/original-W03-GYPS-sidecar-object.json
+    sha256: 1d5e7694c0106b9fa154f9bb087bff51ff285618aa853125b6953877b70cc444
+    role: context
+  - path: .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-decision.json
+    sha256: 4a12ba31e70c8cbd97739f671b99727153542a37f077dc2beb43f9094a2f5255
+    role: context
+  - path: .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-proposal.json
+    sha256: 398d60cc014f0ac2df2c6173586cdb99c7ba412a7d189f7053c5b42ded10685f
+    role: context
+  - path: .temp/gyps-native-origin-v1/origin-binding-context.json
+    sha256: a8ba1204c409919a585429b85b9b4666ebdffad5e0cfb0f9d43bbaf3eb34ffe4
+    role: context
+  - path: .temp/gyps-native-origin-v1/payloads/GYPS.yaml
+    sha256: fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1
+    role: context
+  - path: .temp/gyps-native-origin-v1/proposals.json
+    sha256: 582ea36dd479b8ecd244d996a6eb772569eb232b1631f87ef5f4aa143a20ce67
+    role: target
+  - path: .temp/gyps-native-origin-v1/skeptical-review/direct-causal-readback-v1.json
+    sha256: df19669f9054a641d0b55f87ebd55b5dc5edc3a6fbf70ca3be14e6af3f51a355
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/independent-semantics-controls-v1.json
+    sha256: 2d18a18f9dd7e17296714580148a083dc3aac79e37d210b13064355d6af212d7
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/initial-contract-pins.json
+    sha256: b4ea0918b05fb14cadf198797fe59abc65f3d83a803d8aebb9391eb25fe6001d
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/native-prepare-independent-recheck-v1.json
+    sha256: edf8a5b38609024bb5867e21d8922c147fa25c702837cfe8f6a03ba68f9622ac
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/original-context-readback.json
+    sha256: de787039c60fe79b5e5cfac10703f10c2f6fad2d3e4f2ba686e6ae494b567365
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/recheck_native_prepare_v1.py
+    sha256: d4429ec30e28c15667d6e153b379f813abd0877b4de9b95fd7fe44b7907f08dd
+    role: context
+  - path: .temp/gyps-native-origin-v1/skeptical-review/verify_semantics_independent_v1.py
+    sha256: d6a37bf0344b6a9f27fe79b5f3624ae6eb2369a512b54105ca55a885b0d2de4a
+    role: context
+  - path: .temp/gyps-native-origin-v1/technical-review/HANDOFF.json
+    sha256: f78e2898872058313193fa01947687d32032ce4eada824578cd3b7a4c74bf520
+    role: context
+  - path: .temp/gyps-native-origin-v1/technical-review/actual-private-guard-boundary-v1.json
+    sha256: abc2329f92455f851c31c5c5130a7117d8cc7eb94bbc678d7341ac1a7ddba41e
+    role: context
+  - path: .temp/gyps-native-origin-v1/technical-review/false-assignment-boundary-v1.json
+    sha256: 36ca4d8aedacc5136a32ce61a40cd29778c47aadc8e3b633d62ede51232acd2a
+    role: context
+  - path: .temp/gyps-native-origin-v1/technical-review/native-prepare-crosswalk-v2.json
+    sha256: bf1905aeae9d59de8659b6a95143374deab2fefb13485061feb755b133927f75
+    role: context
+  - path: .temp/gyps-native-origin-v1/validation/direct-causal-reference-proof.json
+    sha256: 868fd99dbeb17e0b1f6fbc2180a089dc894a5fef5f8bcfc99c81ec9b912db0e3
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/GYPS.yaml
+    sha256: 36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e
+    role: context
+  - path: data/ingredients/mapped/Peptone.yaml
+    sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json
+    sha256: a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json
+    sha256: 831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json
+    sha256: ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+scope:
+  description: Complete new one-GYPS proposal representation, prior science-byte retention,
+    foreign causalcase scope and bounded native contract compatibility.
+  selection: All one nativeproposal, its full original object, complete unchanged
+    payload and exact citedlineage; no sampling.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - W03-DEP-1176-GYPS
+  exclusions:
+  - target: GYPS/Bacto whole-owner science, genericPeptone owner, PYGS/Marine sourceorigins,
+      actual fullcampaign application/export
+    reason: Only representation and retention of already reviewed scientific bytes
+      are assessed; these require separate authorities and exactfinalhead/composition
+      review.
+targets:
+- target_id: W03-DEP-1176-GYPS
+  path: .temp/gyps-native-origin-v1/proposals.json
+  label: GYPS additive native proposal representation
+  kind: snapshot_row
+  selector: proposals[proposal_id=W03-DEP-1176-GYPS]; complete object and exact unchanged
+    payload
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/GYPS.yaml
+    role: maintained_record
+  ownership_note: W03 authors this additive dependent representation only. W05 original
+    parent/case author and head remain foreign causal context; no GYPS observation
+    or extra W03 assigned case.
+checks:
+- check_id: payload-retention
+  name: Exact full-payload/preimage/sourcecore retention
+  status: passed
+  required: true
+  summary: Fullpayload bytes equal priorcommittedfa98, realmaintainedpreimage36840,
+    original188/74/868 corebytes matchGit784.
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - payload
+  - before
+  - own-semantics
+- check_id: foreign-causal-lineage
+  name: Real foreign case, author/head/object/backlinks and causal scope
+  status: passed
+  required: true
+  summary: Canonicalglobalcasehashd428, W05assignment only, original108e/currenta43
+    exact3filebridge and fullforeignobjects; noinventedGYPSobservation/W03case/occurrence.
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - foreign-case
+  - foreign-proposal
+  - foreign-decision
+  - own-semantics
+  - direct-causal
+- check_id: native-compatibility
+  name: Actual native prepare and complete-original crosswalk
+  status: passed
+  required: true
+  summary: Ownprepare/_recheck and separatetechnicalprepare/crosswalk succeed on exact
+    prospectiveledger in1ownerfixture with real1879caseledger; noapply/fullcampaignclaim.
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - own-prepare
+  - technical
+  - native-contract
+  - crosswalk-contract
+- check_id: semantic-negatives
+  name: Independent provenance adversarial controls
+  status: passed
+  required: true
+  summary: Own22semantic controls refuse false assignment, observation, authorship,
+    backlinks, counts, retirement, payload/before/casehash and approval leakage. Native
+    falseassignment blindspot explicitly reproducedby technicalreview.
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - own-semantics
+  - boundary
+  - lineage-review
+- check_id: actual-published-head
+  name: Actual new remote head, final crosswalk and campaign intake
+  status: not_applicable
+  required: false
+  summary: The newcommit does not yet exist in thisreview. Bindingcontext marksactualheadpending;
+    root obtains distinctfinalheadreview afterpublication.
+  target_ids:
+  - W03-DEP-1176-GYPS
+evidence:
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Sections3/6 preserve exact identity and distinguish catalogue component
+    references from owner-path identity.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+  locator: sections3 and6
+- evidence_id: native-contract
+  kind: authority
+  reference: .temp/gyps-native-origin-v1/inputs/contracts/campaign_owner_apply.py
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Existing-owner origin requires actual kind, preimage, payload and global
+    frozen case hashes. It does not enforce assigned-worker or observation semantics.
+  snapshot_sha256: 4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca
+  locator: _load; prepare; _recheck
+- evidence_id: crosswalk-contract
+  kind: authority
+  reference: .temp/gyps-native-origin-v1/inputs/contracts/crosswalk.py
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Complete exact proposal object/hash is required; no normalized retirement
+    or manufactured original can replace it.
+  snapshot_sha256: 6b247656ec34a5280a7b10ba1dea6a67edfc12fa0aab004cbb2ec9575a650753
+- evidence_id: actual-proposal
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/proposals.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Complete one-proposal ledger retains real foreign case as causal-only and
+    leaves original source-core membership/counts unchanged.
+  snapshot_sha256: 582ea36dd479b8ecd244d996a6eb772569eb232b1631f87ef5f4aa143a20ce67
+- evidence_id: prior-sidecar
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/inputs/prior-sidecar/dependency-selection.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Exact784 committed source sidecar object is the predecessor. It is record
+    content; its name in the additive evidence list does not make it an independent
+    reviewer verdict.
+  snapshot_sha256: b1e181a1dfbbc2d0588b377f00e5922c6b5340e86b171b9ebf8233d963f0ad92
+- evidence_id: payload
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/payloads/GYPS.yaml
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: 'All10651scientific YAML bytes equal previously reviewed fa98 payload:
+    conditional Bacto, no generic redirect, PARTIAL recipe and history unchanged.'
+  snapshot_sha256: fa98f361a39dcaf0bea1f4046829287581bc45e2813044696e5070de58708aa1
+- evidence_id: before
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/inputs/before/GYPS.yaml
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Real maintained existing-owner preimage36840; verified directly against
+    current owner and Git784.
+  snapshot_sha256: 36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e
+- evidence_id: foreign-case
+  kind: database
+  reference: .temp/gyps-native-origin-v1/lineage-review/global-causal-case.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Actual1879 global ledger contains exact W05 peptones case once, assignedW05
+    notW03. Case is not GYPS observation.
+  snapshot_sha256: 233791e8938f37c02c3cde73866f729cbaa44632b390d378c05bf31750b173db
+- evidence_id: foreign-proposal
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-proposal.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Full original W05proposal/authors/head and current108e-to-a43 unchanged
+    bridge verified directly from Git.
+  snapshot_sha256: 398d60cc014f0ac2df2c6173586cdb99c7ba412a7d189f7053c5b42ded10685f
+- evidence_id: foreign-decision
+  kind: record_content
+  reference: .temp/gyps-native-origin-v1/lineage-review/original-W05-parent-decision.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Exact original source decision/backlinks preserved; no newGYPSbacklink
+    claimed.
+  snapshot_sha256: 4a12ba31e70c8cbd97739f671b99727153542a37f077dc2beb43f9094a2f5255
+- evidence_id: source
+  kind: primary_source
+  reference: .temp/gyps-native-origin-v1/inputs/prior-sidecar/inputs/primary/gyps-publication-528.pdf
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: context_only
+  summary: Exact archived source a89c capture retained from prior reviewed GYPS case.
+    No fresh chemistry approval or new primary research is claimed here.
+  snapshot_sha256: a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661
+  locator: Alain2002 p1622; archived exactbytes
+- evidence_id: prior-distinct-review
+  kind: prior_review
+  reference: .temp/gyps-native-origin-v1/inputs/distinct-head-review/HANDOFF.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: context_only
+  summary: Distinct reviewed784 publication retains conditional Bacto and source/role/export
+    limits; it does not approve new intake representation or final composition.
+  snapshot_sha256: 2d97691f4c83391fcd0d83abc97e3139654b57606e9610ddb018131f6b5ea328
+- evidence_id: route
+  kind: authority
+  reference: .temp/gyps-native-origin-v1/inputs/issue1176-route-comment.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Filed1176 route explicitly authorizes truthful additive native representation
+    with foreign causalcase only; it supplies no scientific authority.
+  snapshot_sha256: e16e0a3bcb0f3c541437fdd363b5a684aa132dece0766de2467bffd11271eec7
+- evidence_id: own-semantics
+  kind: validation
+  reference: .temp/gyps-native-origin-v1/skeptical-review/independent-semantics-controls-v1.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Independent directGit/object/case/core checks and22 private semantic negative
+    controls all pass/refuse as intended; not nativeoperator enforcement.
+  snapshot_sha256: 2d18a18f9dd7e17296714580148a083dc3aac79e37d210b13064355d6af212d7
+- evidence_id: own-prepare
+  kind: validation
+  reference: .temp/gyps-native-origin-v1/skeptical-review/native-prepare-independent-recheck-v1.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Own actualnative prepare and _recheck on copied one-owner fixture with
+    exactledger/full1879cases; noapply. Synthetic checkpoint and fixturehead explicitly
+    bounded.
+  snapshot_sha256: edf8a5b38609024bb5867e21d8922c147fa25c702837cfe8f6a03ba68f9622ac
+- evidence_id: technical
+  kind: validation
+  reference: .temp/gyps-native-origin-v1/technical-review/native-prepare-crosswalk-v2.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Separatetechnical actualnativeprepare/fulloriginalcrosswalk plus4nativefailures
+    and1crosswalkfailure. 11producerpins/26inputs/1owner; nofullcampaignclaim.
+  snapshot_sha256: bf1905aeae9d59de8659b6a95143374deab2fefb13485061feb755b133927f75
+- evidence_id: boundary
+  kind: validation
+  reference: .temp/gyps-native-origin-v1/technical-review/actual-private-guard-boundary-v1.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Same counterfeit falseW03assignment passesnative/crosswalk but isrefusedby
+    actualrootprivateguard. Do not describeprivate semantics asnativeenforcement.
+  snapshot_sha256: abc2329f92455f851c31c5c5130a7117d8cc7eb94bbc678d7341ac1a7ddba41e
+- evidence_id: lineage-review
+  kind: prior_review
+  reference: .temp/gyps-native-origin-v1/lineage-review/final-lineage-review-v1.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Separate exact-byte final lineage review,14 ownmutations, original authors/backlinks/case
+    scopes preserved.
+  snapshot_sha256: 0f79465f8ac4b9643b815bc0473f25b04b0c3306da3a6b90f7ae81b40fbd2e01
+- evidence_id: direct-causal
+  kind: validation
+  reference: .temp/gyps-native-origin-v1/skeptical-review/direct-causal-readback-v1.json
+  accessed_at: '2026-11-08T10:47:19.730969Z'
+  support: supports
+  summary: Own parse confirms realoldGYPSMICROincomingreference to changing genericparent.
+    Existing sharedidentifier is not a uniquerecordkey; no automaticretarget.
+  snapshot_sha256: df19669f9054a641d0b55f87ebd55b5dc5edc3a6fbf70ca3be14e6af3f51a355
+assessments:
+- assessment_id: identity-byte-retention
+  area: identity
+  topic: Unchanged scientific scope, with no new authority
+  outcome: supported
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - payload
+  - prior-sidecar
+  - prior-distinct-review
+  - own-semantics
+  summary: Completeexactfa98scientific payload reused; conditionalBacto/source/role/quantity/history
+    limits remain.
+  details: The review grants no brand-specificMICRO equivalence, genericparent acceptance,
+    newchemistry, whole-owner/role/export approval or release. A separately reviewed
+    literalUNMAPPED successor remains required if finalBacto identity cannotbe retained.
+- assessment_id: causal-scope
+  area: provenance
+  topic: Truthful nativecase binding and foreign authorship
+  outcome: supported
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - actual-proposal
+  - foreign-case
+  - foreign-proposal
+  - foreign-decision
+  - direct-causal
+  - own-semantics
+  summary: Realcausalreference supports one genuineW03dependent origin; W05 peptonescase
+    is onlycausalcontext.
+  details: Currentnativeoperator allowsrealglobalcase binding withoutassignedworker
+    enforcement; explicit falseassignment/observation exclusions preserve truth. Foreign
+    originalcase/proposal/authors/backlinks are preserved unchanged. PYGS/Marine retain
+    separateW06/W04origins; no duplicate proposals or normalizedretirement.
+- assessment_id: native-limits
+  area: provenance
+  topic: Native structural evidence versus semantic and scientific approval
+  outcome: supported
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - own-prepare
+  - technical
+  - boundary
+  - native-contract
+  - crosswalk-contract
+  summary: Actualnativeprepare/crosswalk prove bounded shape compatibility, with independent
+    semanticchecks retaining sourcecausality.
+  details: Fixturehead3b1 is not actualworkerpublication; oneownerinventory and syntheticemptySSSOM
+    checkpoint cannot stand for fullcampaignprepare. Same falseassignment counterfactual
+    structurallypasses but taskprivateguard refuses. No nativecode/gatechanges or
+    assertionweakening.
+- assessment_id: event-chronology
+  area: provenance
+  topic: Ledger publication metadata and pending actualhead
+  outcome: supported
+  target_ids:
+  - W03-DEP-1176-GYPS
+  evidence_ids:
+  - actual-proposal
+  - route
+  - own-semantics
+  summary: Publicationevent describes additive reportrepresentation, with actualcommitbinding
+    explicitly pending.
+  details: It is not a newYAMLcuration event, foreign origin retirement, actualalreadycommittedhead
+    claim or extraoccurrence. Finalheadreview must bind eventualactualpublishedbytes/head
+    separately.
+findings: []
+actions: []
+limitations:
+- This is a provenance/representation-only review with scientific_review:false; no
+  new scientific source or wholeowner approval.
+- ConditionalBacto retention remains exact. If finalBacto identity cannot be retained,
+  a separatelyreviewed literalUNMAPPED successor is required; never silently mapGYPS
+  to genericmesh:D010461.
+- Nativeprepare andcrosswalk donot enforceassignment/observation meaning. Explicittruthfulprovenance
+  and independentsemantic checks are essential.
+- One-owner copiedfixture with real1879globalcases and syntheticmapping checkpoint
+  is not fullcampaignprepared or actualfuturepublication proof.
+- No paidresearch, provideraccess, primarynetworkrefetch, maintainedwrite, foreignworktree
+  edit, GitHubmutation or apply operation was performed by thisreviewer.
+- Priorsealed primarycapture is retained byte-for-byte; thisreview doesnot pretendfreshprimaryscientificinspection
+  or replace priorindependentreview.
+- The sidecar selector is recordcontent; an evidence-list prior_review label for it
+  is context shorthand, not a separateindependent reviewer identity. Actualdistinctreview
+  is separatelybound.
+- Actualremote publication, fullcampaignapplication/crosswalk, whole-owner role/export
+  and finalcoalescence approval remain withrootanddistinctreviewers.
+- Nativeprivatepersistence validates/render/currentness/virtualcanonicalparse underexplicituserboundary;
+  canonicalreviews/structured is untouched.
+- The searched/accountedboundary is explicitfrozencaseledger/shards, namedcommittedlineage/artifacts/coreobjects
+  and nativeinputs. No assertion aboutallhistorical/privatefiles beingabsent.
+notes:
+- No new confirmed defect in this exactprospectiveledger. Thisreview doesnot markanyexistingGitHubissue
+  closed or superseded.
+- The root publication_event time is ledgercreation metadata; pendingactualcommit
+  flag prevents treating it as a verifiedpublishedhead.
+- Prior198-member sidecar preservation is separatelycheckedbylineageagent; thisreview
+  independentlychecks exactoriginalselectedGYPSobject/payload and originalthreecorefiles,
+  withoutclaiming allprivatehistoricalfiles audited.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6720449180
+tags:
+- gyps
+- native-intake
+- provenance-only
+- independent-review
+- no-export-approval
+```

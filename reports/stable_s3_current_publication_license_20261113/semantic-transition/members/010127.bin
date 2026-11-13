@@ -1,0 +1,46 @@
+{
+  "index": 174,
+  "case_id": "KG_CASE:c31774c1e88d11983f1d8fa850645fc376c9eb1fbb570ade1e3e245866ef5ae6",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "actinomycetin",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "actinomycetin",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Actinomycetin.yaml:1:identifier: kgmicrobe.compound:actinomycetin\ndata/ingredients/mapped/Actinomycetin.yaml:2:preferred_term: Actinomycetin\ndata/ingredients/mapped/Actinomycetin.yaml:4:  ontology_id: kgmicrobe.compound:actinomycetin\ndata/ingredients/mapped/Actinomycetin.yaml:5:  ontology_label: Actinomycetin\ndata/ingredients/mapped/Actinomycetin.yaml:23:  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:actinomycetin;\ndata/ingredients/mapped/Actinomycetin.yaml:42:    or normalized local duplicate supports promotion from kgmicrobe.compound:actinomycetin\n",
+  "label_index_stdout": "1612:Actinomycetin,preferred_term,kgmicrobe.compound:actinomycetin,Actinomycetin,kgmicrobe.compound:actinomycetin,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "KG_CASE:c31774c1e88d11983f1d8fa850645fc376c9eb1fbb570ade1e3e245866ef5ae6",
+      "label": "actinomycetin",
+      "proposal_ids": []
+    },
+    {
+      "case_id": "KG_CASE:e6bd5460b2e7ff7d003fc1fda39880da9a69bbbd4c3b9fe30b140d4e8f98f0f7",
+      "label": "actinomycetin",
+      "proposal_ids": []
+    }
+  ]
+}

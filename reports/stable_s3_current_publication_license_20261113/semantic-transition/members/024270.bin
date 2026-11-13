@@ -1,0 +1,90 @@
+identifier: CHEBI:78019
+preferred_term: 2,3,5-Triphenyltetrazolium chloride
+ontology_mapping:
+  ontology_id: CHEBI:78019
+  ontology_label: 2,3,5-triphenyltetrazolium chloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: Ralstonia_antibiotic_mix,
+      Ralstonia_antibiotic_mix_minus_Bacitracin, Ralstonia_antibiotic_mix_minus_Chloramphenicol….'
+synonyms:
+- synonym_text: 2,3,5-triphenyl-2H-tetrazol-3-ium chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Triphenyltetrazolium Chloride
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 10
+  media_count: 10
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=298-96-4); Imported
+    from CultureBotHT. Used in 10 CultureBot media; samples: Ralstonia_antibiotic_mix,
+    Ralstonia_antibiotic_mix_minus_Bacitracin, Ralstonia_antibiotic_mix_minus_Chloramphenicol….'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.789332+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.593173+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C19H15N4.Cl; inchi=InChI=1S/C19H15N4.ClH/c1-4-10-16(11-5-1)19-20-22(1;
+    smiles=[Cl-].c1ccc(-c2nn(-c3ccccc3)[n+](-c3ccccc3)n2)cc1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.929985+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247728+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: REDOX_INDICATOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDOX_INDICATOR ->
+    physicochemical_roles.REDOX_INDICATOR'
+- timestamp: '2026-08-06T04:28:16.724447+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0673 ''Triphenyltetrazolium Chloride'' as a RAW_TEXT
+    synonym -- Same compound (TTC); the target label carries the 2,3,5- locants the
+    residual label omits (#213). No new SSSOM row; CHEBI:78019 is already mapped.
+    Source: kgmicrobe.trait:triphenyltetrazolium_chloride.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000098; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 298-96-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C19H15N4.Cl
+  inchi: InChI=1S/C19H15N4.ClH/c1-4-10-16(11-5-1)19-20-22(17-12-6-2-7-13-17)23(21-19)18-14-8-3-9-15-18;/h1-15H;1H/q+1;/p-1
+  smiles: '[Cl-].c1ccc(-c2nn(-c3ccccc3)[n+](-c3ccccc3)n2)cc1'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: REDOX_INDICATOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+mim_id: MIM:0000098
+legacy_identifiers:
+- MIM:235-Triphenyltetrazolium_Chloride
+- CHEBI:78019

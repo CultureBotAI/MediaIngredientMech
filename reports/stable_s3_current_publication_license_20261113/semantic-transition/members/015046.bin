@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:nbrc_824_neutralized_0_2_m_na_terephthalate_stock
+preferred_term: NBRC824 neutralized 0.2 M Na-terephthalate stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_824_neutralized_0_2_m_na_terephthalate_stock
+  ontology_label: NBRC824 neutralized 0.2 M Na-terephthalate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    notes: The former decision unnecessarily deferred a source-defined preparation
+      while waiting for a more-specific sodium-salt purchase. NBRC824 explicitly specifies
+      a neutralized, filter-sterilized 0.2 M Na-terephthalate solution. A source-qualified
+      local stock is supported at that nominal preparation scope. The raw chemical
+      table row is not asserted globally equivalent to the whole stock, and no solvent,
+      titrant, sodium stoichiometry, hydrate or final-medium dose is inferred.
+synonyms: []
+curation_history:
+- timestamp: '2026-11-08T05:59:52.941688+00:00'
+  curator: all_unmatched_worker10_successor_source_review
+  action: CREATED_FROM_SOURCE_REVIEW
+  changes: The former decision unnecessarily deferred a source-defined preparation
+    while waiting for a more-specific sodium-salt purchase. NBRC824 explicitly specifies
+    a neutralized, filter-sterilized 0.2 M Na-terephthalate solution. A source-qualified
+    local stock is supported at that nominal preparation scope. The raw chemical table
+    row is not asserted globally equivalent to the whole stock, and no solvent, titrant,
+    sodium stoichiometry, hydrate or final-medium dose is inferred. Isolated proposal
+    only; no owner, mapping-output or role release.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.107928+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: OTHER
+components:
+- component_name: Na-terephthalate (supplied salt form unspecified)
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    notes: The former decision unnecessarily deferred a source-defined preparation
+      while waiting for a more-specific sodium-salt purchase. NBRC824 explicitly specifies
+      a neutralized, filter-sterilized 0.2 M Na-terephthalate solution. A source-qualified
+      local stock is supported at that nominal preparation scope. The raw chemical
+      table row is not asserted globally equivalent to the whole stock, and no solvent,
+      titrant, sodium stoichiometry, hydrate or final-medium dose is inferred. Named
+      input only; exact supplied salt, carrier/titrant and quantities are not asserted.
