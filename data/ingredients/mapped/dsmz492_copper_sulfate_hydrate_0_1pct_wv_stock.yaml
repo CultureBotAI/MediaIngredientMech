@@ -1,0 +1,84 @@
+identifier: kgmicrobe.ingredient:dsmz492_copper_sulfate_hydrate_0_1pct_wv_stock
+preferred_term: DSMZ492 copper sulfate hydrate stock (0.1% w/v)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+synonyms: []
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz492_copper_sulfate_hydrate_0_1pct_wv_stock
+  ontology_label: DSMZ492 copper sulfate hydrate stock (0.1% w/v)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf
+    notes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label is retained in these
+      notes and frozen case evidence, not as a stock synonym. Raw source label: ''CuSO4
+      x H2O''; source ID: mediadive.ingredient:509.'
+notes: ' Issue1201 successor scope: Source-qualified 0.1% w/v stock as explicitly
+  supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf. 0.1
+  g per 100 mL is represented as 1 g/L. The receiving addition volume is not stock
+  concentration. The source does not disclose stock solvent or other constituents;
+  these are not inferred, and component completeness is UNKNOWN. This whole stock
+  is not identical to its solute. The bare ingredient label is retained in these notes
+  and frozen case evidence, not as a stock synonym. Raw source label: ''CuSO4 x H2O'';
+  source ID: mediadive.ingredient:509.'
+components:
+- component_name: CuSO4 x H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf
+    notes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label is retained in these
+      notes and frozen case evidence, not as a stock synonym. Raw source label: ''CuSO4
+      x H2O''; source ID: mediadive.ingredient:509.'
+curation_history:
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CREATED
+  changes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium492.pdf.
+    0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+    stock concentration. The source does not disclose stock solvent or other constituents;
+    these are not inferred, and component completeness is UNKNOWN. This whole stock
+    is not identical to its solute. The bare ingredient label is retained in these
+    notes and frozen case evidence, not as a stock synonym. Raw source label: ''CuSO4
+    x H2O''; source ID: mediadive.ingredient:509. All prior source, native-owner,
+    SSSOM and downstream holds remain in force; this isolated proposal is not publication
+    approval.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:19:50.283191+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003227 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003227
+legacy_identifiers:
+- MIM:dsmz492_copper_sulfate_hydrate_0_1pct_wv_stock
+- kgmicrobe.ingredient:dsmz492_copper_sulfate_hydrate_0_1pct_wv_stock

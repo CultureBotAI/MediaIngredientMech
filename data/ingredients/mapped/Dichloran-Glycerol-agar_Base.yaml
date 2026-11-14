@@ -1,0 +1,117 @@
+identifier: kgmicrobe.ingredient:dichloran_glycerol_agar_base
+preferred_term: Dichloran-glycerol agar base (source2177)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dichloran_glycerol_agar_base
+  ontology_label: Dichloran-glycerol agar base (source2177)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/medium/1775
+    notes: The exact mediadive2177 source ingredient and DSMZ1775 distinguish31.5g
+      Dichloran-Glycerol-agar base from separately added220g glycerol. Promote the
+      existing imported2177 owner to an opaque named dry-base identity; a source supplier
+      is not required to preserve the verified base boundary. OxoidCM0729 and MerckDG18
+      are product comparators only; no supplier or their formulation is assigned to
+      this source. This proposal does not claim all manufacturers are chemically identical.
+notes: 'The exact mediadive2177 source ingredient and DSMZ1775 distinguish31.5g Dichloran-Glycerol-agar
+  base from separately added220g glycerol. Promote the existing imported2177 owner
+  to an opaque named dry-base identity; a source supplier is not required to preserve
+  the verified base boundary. OxoidCM0729 and MerckDG18 are product comparators only;
+  no supplier or their formulation is assigned to this source. This proposal does
+  not claim all manufacturers are chemically identical. Raw source labels and optional/use
+  instructions are retained in source-case evidence, not installed as global resolving
+  aliases. Existing source/owner/export holds remain; no maintained or release approval.
+  Prior labels and curation provenance: [{"synonym_text": "Dichloran-Glycerol-agar
+  base", "synonym_type": "RAW_TEXT", "source": "mim-queue"}]. These historical source
+  labels are retained here; no generic label is asserted as an exact source formulation
+  synonym.'
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2177); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a dichloran-glycerol agar base preparation and left unmapped
+    pending product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dichloran-Glycerol-agar_Base-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **dehydrated,
+    multi-component culture-medium base**, exemplified in the literature by **Oxoid
+    CM0729**, used to prepare Dichloran 18% Glycerol agar. It is neither a single
+    chemical nor a hydrate/salt form. Although the current `DEFINED_MEDIUM` classification
+    is defensible at the database’s medium level, the word **base** is important:
+    the cited commercial powder i No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:04:20.089567+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: MAPPED_TO_REGISTRY
+  changes: The exact mediadive2177 source ingredient and DSMZ1775 distinguish31.5g
+    Dichloran-Glycerol-agar base from separately added220g glycerol. Promote the existing
+    imported2177 owner to an opaque named dry-base identity; a source supplier is
+    not required to preserve the verified base boundary. OxoidCM0729 and MerckDG18
+    are product comparators only; no supplier or their formulation is assigned to
+    this source. This proposal does not claim all manufacturers are chemically identical.
+    Isolated successor proposal only; published artifacts and maintained data unchanged.
+  llm_assisted: true
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:47:37.618504+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002773; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002773; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+supplied_form:
+- name: Dichloran-Glycerol-agar base
+  form: dry basal medium
+  notes: Source dose31.5g; separate glycerol220g is outside the base. Manufacturer
+    and internal composition unstated.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+mim_id: MIM:0002773
+legacy_identifiers:
+- MIM:Dichloran-Glycerol-agar_Base
+- UNMAPPED_0376
+- kgmicrobe.ingredient:dichloran_glycerol_agar_base

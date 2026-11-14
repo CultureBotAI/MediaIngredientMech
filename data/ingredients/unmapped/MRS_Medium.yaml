@@ -54,15 +54,38 @@ curation_history:
     not resolve them: ''MRS medium (Difco)'' (x1 CultureMech mentions); ''MRS medium
     (Scharlau Chemie)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing generic MRS owner includes scratch JCM1 and branded Difco/Scharlau
+    uses. Preserve its UNMAPPED identity and original authentic aliases, with explicit
+    source partition and no universal component assertion. The separately proposed
+    source-qualified JCM1 preparation carries the exact11-input recipe for JCM111;
+    commercial variants are not assigned to it. Isolated proposal only; inherited
+    holds remain.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002842; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002842; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named MRS medium formulation pending
-  formulation-specific curation.
+  formulation-specific curation. Correction1193: Existing generic MRS owner includes
+  scratch JCM1 and branded Difco/Scharlau uses. Preserve its UNMAPPED identity and
+  original authentic aliases, with explicit source partition and no universal component
+  assertion. The separately proposed source-qualified JCM1 preparation carries the
+  exact11-input recipe for JCM111; commercial variants are not assigned to it.'
 ingredient_type: NAMED_MEDIUM
 mim_id: MIM:0002842
 legacy_identifiers:

@@ -1,0 +1,85 @@
+identifier: kgmicrobe.ingredient:sulfuric_acid_2n_dsmz29_40_206_897
+preferred_term: 2 N sulfuric acid preparation (DSMZ29/40/206/897)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sulfuric_acid_2n_dsmz29_40_206_897
+  ontology_label: 2 N sulfuric acid preparation (DSMZ29/40/206/897)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2258; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2595
+    notes: The cited DSMZ recipes explicitly prescribe2N sulfuric acid in their titration
+      or preparation steps. Normality is retained as stated; no molarity, density
+      or solvent is inferred. Individual receiving-medium additions and process contexts
+      remain source-specific. Component completeness is UNKNOWN. Unstated solvent,
+      hydration, assay and final volume are not invented. This is the named preparation
+      at the cited source scope; no full-formulation equivalence with other products
+      is asserted.
+notes: The cited DSMZ recipes explicitly prescribe2N sulfuric acid in their titration
+  or preparation steps. Normality is retained as stated; no molarity, density or solvent
+  is inferred. Individual receiving-medium additions and process contexts remain source-specific.
+  Component completeness is UNKNOWN. Unstated solvent, hydration, assay and final
+  volume are not invented. This is the named preparation at the cited source scope;
+  no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: The cited DSMZ recipes explicitly prescribe2N sulfuric acid in their titration
+    or preparation steps. Normality is retained as stated; no molarity, density or
+    solvent is inferred. Individual receiving-medium additions and process contexts
+    remain source-specific. Component completeness is UNKNOWN. Unstated solvent, hydration,
+    assay and final volume are not invented. This is the named preparation at the
+    cited source scope; no full-formulation equivalence with other products is asserted.
+    Isolated proposal, pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.195030+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003347 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: H2SO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26836
+  concentration_value: '2'
+  concentration_unit: N
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2258; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2595
+    source_record: 2N H2SO4
+    notes: The cited DSMZ recipes explicitly prescribe2N sulfuric acid in their titration
+      or preparation steps. Normality is retained as stated; no molarity, density
+      or solvent is inferred. Individual receiving-medium additions and process contexts
+      remain source-specific.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium206.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium897.pdf;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2614; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2624;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2599
+    source_record: 2 N H2SO4
+    notes: The cited DSMZ recipes explicitly prescribe2N sulfuric acid in their titration
+      or preparation steps. Normality is retained as stated; no molarity, density
+      or solvent is inferred. Individual receiving-medium additions and process contexts
+      remain source-specific.
+mim_id: MIM:0003347
+legacy_identifiers:
+- MIM:sulfuric_acid_2n_dsmz29_40_206_897
+- kgmicrobe.ingredient:sulfuric_acid_2n_dsmz29_40_206_897

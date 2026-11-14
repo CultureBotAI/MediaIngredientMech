@@ -40,7 +40,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgSO2 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgSO4.7H2O
   synonym_type: HYDRATE_FORM
@@ -105,10 +105,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: MgSO2
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgSO2·7H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgSO4 x 7 H20
   synonym_type: RAW_TEXT
@@ -131,6 +131,13 @@ synonyms:
 - synonym_text: MgSO .7H O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
+- synonym_text: MgSO .7H 0
+  synonym_type: RAW_TEXT
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_E27.pdf ; https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf
+    ; https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf
+- synonym_text: MgSO 7H O
+  synonym_type: RAW_TEXT
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5688
@@ -324,11 +331,46 @@ curation_history:
     #892, #893, #899).'
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''MgSO .7H 0'', ''MgSO 7H O'' as a bounded reagent
+    alias; preserve identity,hydration,counterion,roles,status and occurrence statistics.
+    Concentration and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
+    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. The literal MgSO2 formula has two oxygens in the sulfur
+    group and does not denote MgSO4·7H2O. NBRC 406 itself prints MgSO2·7H2O in the
+    main recipe, while its trace-mineral block separately prints MgSO4·7H2O; TOGO
+    enriches the erroneous main string as heptahydrate. That enrichment is not independent
+    primary correction. Preserve the raw typo and original source in REJECTED_LABEL
+    as a non-identity literal on this exact heptahydrate owner; no different chemical
+    reagent is invented. Report-only candidate; separate final scientific review and
+    coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001681; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001681; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 10034-99-8
@@ -352,6 +394,16 @@ nutritional_roles:
 - role: MINERAL_SOURCE
   confidence: 0.8
   evidence: []
+notes: The literal MgSO2 formula has two oxygens in the sulfur group and does not
+  denote MgSO4·7H2O. NBRC 406 itself prints MgSO2·7H2O in the main recipe, while its
+  trace-mineral block separately prints MgSO4·7H2O; TOGO enriches the erroneous main
+  string as heptahydrate. That enrichment is not independent primary correction. Preserve
+  the raw typo and original source in REJECTED_LABEL as a non-identity literal on
+  this exact heptahydrate owner; no different chemical reagent is invented. Six inherited
+  hydration-unspecified aliases remain conditional, exactly preserved with their original
+  structured source/type in the alias ledger. The existing backfill source does not
+  identify their original recipe or product; absence of hydration is not positive
+  evidence of anhydrous material. No whole-owner alias approval or hold release follows.
 mim_id: MIM:0001681
 legacy_identifiers:
 - MIM:Mgso4_X_7_H2o

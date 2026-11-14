@@ -109,6 +109,26 @@ synonyms:
 - synonym_text: CaCl2*2H2O
   synonym_type: HYDRATE_FORM
   source: MERGED_FROM CaCl22H2O (#414)
+- synonym_text: CaCl・2H2O
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[32] case_id=CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4;
+    source=culturemech; source_case_id=CaCl・2H2O; CultureMech:009912 ingredients/8
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M520_Syntrophomonas_Medium_for_Syntrophospora_cellicola_19J-3.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[116] case_id=CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b;
+    source=culturemech; source_case_id=CaCl 2H O; CultureMech:000139 ingredients/0
+    (inputs/culturemech/data/normalized_yaml/algae/CCAP_TAP Medium.yaml); Primary
+    evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M520;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf'
+- synonym_text: CaCl 2H O
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[32] case_id=CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4;
+    source=culturemech; source_case_id=CaCl・2H2O; CultureMech:009912 ingredients/8
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M520_Syntrophomonas_Medium_for_Syntrophospora_cellicola_19J-3.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[116] case_id=CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b;
+    source=culturemech; source_case_id=CaCl 2H O; CultureMech:000139 ingredients/0
+    (inputs/culturemech/data/normalized_yaml/algae/CCAP_TAP Medium.yaml); Primary
+    evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M520;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6013
@@ -244,11 +264,33 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[32] case_id=CM_NAME:2d9a485db4f05986a11be7f9f9e3a39ab1deeca6508f8cc0a66481ec9a96bbf4;
+    source=culturemech; source_case_id=CaCl・2H2O; CultureMech:009912 ingredients/8
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M520_Syntrophomonas_Medium_for_Syntrophospora_cellicola_19J-3.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[116] case_id=CM_NAME:e3ed9f4c8837b1e374439e034ab7f30f3774d9b46f1536afad0b071ebd7e8c3b;
+    source=culturemech; source_case_id=CaCl 2H O; CultureMech:000139 ingredients/0
+    (inputs/culturemech/data/normalized_yaml/algae/CCAP_TAP Medium.yaml); Primary
+    evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M520;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000551; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000551; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:86158
 chemical_properties:

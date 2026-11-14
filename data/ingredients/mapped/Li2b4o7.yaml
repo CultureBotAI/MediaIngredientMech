@@ -1,0 +1,66 @@
+identifier: cas:12007-60-2
+preferred_term: Li2B4O7
+synonyms:
+- synonym_text: Li2B4O7
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen20261107; DSMZ1493; MediaDive solution3061 compound1323
+- synonym_text: Lithium tetraborate
+  synonym_type: EXACT_SYNONYM
+  source: https://www.sigmaaldrich.com/GB/en/product/sigald/222534
+- synonym_text: Dilithium tetraborate
+  synonym_type: EXACT_SYNONYM
+  source: PubChem CID9815330; ECHA234-514-3 annotation
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:190479
+  ontology_label: inorganic lithium salt
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_190479
+    notes: 'Verified current canonical label and definition: lithium salt lacking
+      C-H bonds. Li2B4O7 is a distinct inorganic lithium salt, not identical to this
+      class. Bounded official ChEBI searches by12007-60-2,Li2B4O7,lithium tetraborate,dilithium
+      tetraborate found no exact term; this is the closest verified parent in the
+      lithium-salt branch. CHEBI38910 is trilithium borate BO3.3Li and is rejected;
+      CHEBI38889 is hydrated tetraborate(2-) H4B4O9, so no exact anion-form identity
+      is inferred. NARROW_MATCH must publish as skos:broadMatch with CAS identity
+      and mandatory kgmicrobe.compound registry rows under MAPPING_SEMANTICS sections2/3.'
+chemical_properties:
+  cas_rn: 12007-60-2
+  molecular_formula: Li2B4O7
+  data_source: DSMZ1493 formula; PubChem CID9815330 PUG-View formula/CAS annotations;
+    Sigma222534 formula/CAS, independently of the parent mapping
+  retrieval_date: '2026-11-08T04:23:19.238166+00:00'
+notes: Isolated new-record proposal for the exact source formula Li2B4O7 in DSMZ1493
+  and MediaDive solution3061 (compound1323),0.01g in the printed1L recipe context.
+  Preserves both frozen CultureMech occurrences without converting occurrence counts
+  into corpus statistics. Primary supplier evidence establishes chemical identity
+  only; no assertion DSMZ used that supplier, purity, grade or lot. Hydrated lithium
+  tetraborate is a separate supplied substance and is not absorbed into this identity.
+  No roles, mechanisms, causal graphs or full scientific release support are claimed.
+  Coordinator must complete independent/native review, create the exact CAS identity
+  row, the asymmetric parent row and mandatory kgmicrobe.compound:li2b4o7 registry
+  row, synchronize maintained surfaces and pass integration gates before application.
+curation_history:
+- timestamp: '2026-11-08T04:23:19.280097+00:00'
+  curator: worker01_source_identity_followup
+  action: CREATED_AS_PROPOSAL
+  changes: 'Isolated proposal only: source Li2B4O7 identity corroborated as CAS12007-60-2,
+    with verified broader inorganic lithium salt CHEBI190479. No maintained owner
+    created and no release or whole-record approval granted. Raw formula retained;
+    evidence bundle reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003090 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003090
+legacy_identifiers:
+- MIM:Li2b4o7
+- cas:12007-60-2

@@ -1,0 +1,93 @@
+identifier: kgmicrobe.ingredient:nbrc_1378_fenaedta_stock
+preferred_term: NBRC 1378 FeNaEDTA stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1378_fenaedta_stock
+  ontology_label: NBRC 1378 FeNaEDTA stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1378
+    notes: Source-qualified stock identity with partial literal component assertion.
+      Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+      then adds5ml to medium. Proposed partial stock retains the directly stated mass
+      concentration. The mass/molarity pair must not be used to infer monohydrate;
+      source solute form and the frozen578g/L transcription remain separate unresolved
+      issues. Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship
+      remain unverified; no molarity conversion or pure-solute exact mapping.
+components:
+- component_name: FeNaEDTA
+  reference_scope: UNMAPPED
+  concentration_value: '578'
+  concentration_unit: mg/L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1378
+    source_record: NBRC 1378 FeNaEDTA stock
+    notes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+      then adds5ml to medium. Proposed partial stock retains the directly stated mass
+      concentration. The mass/molarity pair must not be used to infer monohydrate;
+      source solute form and the frozen578g/L transcription remain separate unresolved
+      issues. Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship
+      remain unverified; no molarity conversion or pure-solute exact mapping.
+  notes: Unstated solvent and source chemical-form details remain unasserted. Concentration
+    is the stock claim, never the receiving-medium dose.
+notes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+  then adds5ml to medium. Proposed partial stock retains the directly stated mass
+  concentration. The mass/molarity pair must not be used to infer monohydrate; source
+  solute form and the frozen578g/L transcription remain separate unresolved issues.
+  Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship remain
+  unverified; no molarity conversion or pure-solute exact mapping. Remove the rejected
+  FeNaEDTA synonym because native partonomy treats every alias as a possible identity
+  self-reference. Preserve the exact raw source label FeNaEDTA here and in source
+  evidence; it is not a globally resolving alias for this stock. Component and stock
+  concentration claims are unchanged.
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+    then adds5ml to medium. Proposed partial stock retains the directly stated mass
+    concentration. The mass/molarity pair must not be used to infer monohydrate; source
+    solute form and the frozen578g/L transcription remain separate unresolved issues.
+    Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship remain
+    unverified; no molarity conversion or pure-solute exact mapping. Isolated successor
+    proposal only; no maintained surfaces, roles, source bytes or publication holds
+    changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:10:23.034600+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CORRECTED
+  changes: Remove the rejected FeNaEDTA synonym because native partonomy treats every
+    alias as a possible identity self-reference. Preserve the exact raw source label
+    FeNaEDTA here and in source evidence; it is not a globally resolving alias for
+    this stock. Component and stock concentration claims are unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003120 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003120
+legacy_identifiers:
+- MIM:NBRC_1378_FeNaEDTA_stock
+- kgmicrobe.ingredient:nbrc_1378_fenaedta_stock

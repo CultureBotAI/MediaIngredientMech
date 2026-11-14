@@ -1,0 +1,83 @@
+identifier: cas:7803-55-6
+preferred_term: Ammonium metavanadate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: Source-bound chemical identity proposal; no source-specific biological or medium
+  role inferred.
+ontology_mapping:
+  ontology_id: CHEBI:47704
+  ontology_label: ammonium salt
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:47704
+    notes: Ammonium salt class is broader than NH4VO3; no ionic component is substituted
+      for the whole salt.
+chemical_properties:
+  cas_rn: 7803-55-6
+  molecular_formula: H4NO3V
+  data_source: HiMedia GRM1365 primary product information
+  retrieval_date: '2026-11-08T05:29:01.443067+00:00'
+synonyms:
+- synonym_text: NH VO
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[28] case_id=CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289;
+    source=culturemech; source_case_id=NH VO; CultureMech:000140 ingredients/12 (inputs/culturemech/data/normalized_yaml/algae/ucm.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[69] case_id=CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6;
+    source=culturemech; source_case_id=NH4VO3; CultureMech:009338 ingredients/18 (inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml);
+    CultureMech:009388 ingredients/14 (inputs/culturemech/data/normalized_yaml/bacterial/minimal_mineral_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2846;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf; Primary
+    evidence: https://www.himedialabs.com/media/TD/GRM1365.pdf'
+- synonym_text: NH4VO3
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[28] case_id=CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289;
+    source=culturemech; source_case_id=NH VO; CultureMech:000140 ingredients/12 (inputs/culturemech/data/normalized_yaml/algae/ucm.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[69] case_id=CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6;
+    source=culturemech; source_case_id=NH4VO3; CultureMech:009338 ingredients/18 (inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml);
+    CultureMech:009388 ingredients/14 (inputs/culturemech/data/normalized_yaml/bacterial/minimal_mineral_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2846;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf; Primary
+    evidence: https://www.himedialabs.com/media/TD/GRM1365.pdf'
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_IDENTITY_PROPOSAL
+  changes: 'Create distinct source-supported chemical proposal; retain inherited publication
+    obligations. Source binding: frozen preliminary-v5/shards/shard-03.json cases[28]
+    case_id=CM_NAME:2ba4ee4f9b9fb2ae61c1ab7a92ca2dd5d192bba6059a49377ce28bb636a5e289;
+    source=culturemech; source_case_id=NH VO; CultureMech:000140 ingredients/12 (inputs/culturemech/data/normalized_yaml/algae/ucm.yaml);
+    frozen preliminary-v5/shards/shard-03.json cases[69] case_id=CM_NAME:8781390a5a8ac08dd4020d4b266ed311a408a84bdbdc4bb630e3919e538bfff6;
+    source=culturemech; source_case_id=NH4VO3; CultureMech:009338 ingredients/18 (inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml);
+    CultureMech:009388 ingredients/14 (inputs/culturemech/data/normalized_yaml/bacterial/minimal_mineral_medium.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2846;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf; Primary
+    evidence: https://www.himedialabs.com/media/TD/GRM1365.pdf'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.524432+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-161. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002967 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002967
+legacy_identifiers:
+- MIM:Ammonium_metavanadate
+- cas:7803-55-6

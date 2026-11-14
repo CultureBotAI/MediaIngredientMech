@@ -43,16 +43,53 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-11-08T06:08:37.922096+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_PROVENANCE_EXTENDED
+  changes: Resolve independent finding VM1201-F3 with the actual cited CultureBotHT
+    sheet and recovered TOGO stock formula/preparation. Add bounded comparison provenance;
+    preserve existing identifier, components, assertion, synonyms, counts and roles.
+    No duplicate owner or exact cross-source membership is claimed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002481; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002481; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   8 CultureBot media; samples: MoLS4, LS4D, MoYLS4…. No CAS-RN or CHEBI mapping available;
   reviewed on 2026-05-11 as a named vitamin stock/pre-mix. Component-level recipe
-  transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
+  transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08. Issue
+  1201 source comparison: the actual CultureBotHT primary Google Sheet, Mixes!A84:C98
+  (https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84),
+  identifies a 1000X Thauer vitamin stock and explicitly gives cyanocobalamin 0.1
+  mg/L and calcium pantothenate 5 mg/L among the eleven listed constituents. Those
+  existing component assertions are preserved as CultureBotHT-specific. TOGO M2809
+  LS4D (https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2809), comments
+  paragraphs 8 and 10, documents a related stock per litre distilled water: biotin
+  2 mg; folic acid 2 mg; pyridoxine hydrochloride 10 mg; thiamine hydrochloride, riboflavin,
+  nicotinic acid, DL-pantothenic acid (calcium salt), p-aminobenzoic acid and lipoic
+  acid each 5 mg; generic vitamin B12 0.1 mg; choline chloride 200 mg. It adjusts
+  pH to 7 with 1 M KOH (amount unspecified), then stores dark at 4 degrees C under
+  nitrogen. The structured TOGO row omits the calcium-salt qualifier from DL-pantothenic
+  acid; this internal discrepancy is retained rather than silently interpreted as
+  free acid. Nitrogen is a storage atmosphere, not an ingredient. The TOGO generic
+  B12 wording does not select the sheet-specified cyanocobalamin, and the sheet does
+  not specify pantothenate stereochemistry. Consequently this comparison is source-scoped
+  provenance, not a new exact alias, complete-formula equivalence assertion or evidence
+  for replacing the CultureBotHT component forms. Water and KOH describe the TOGO
+  preparation only and are not silently added to the existing CultureBotHT component
+  assertion. The primary lookup is complete; the remaining specific bridge is reagent-form
+  equivalence between these two documented sources.'
 ingredient_type: STOCK_SOLUTION
 solution_type: VITAMIN_MIX
 components:

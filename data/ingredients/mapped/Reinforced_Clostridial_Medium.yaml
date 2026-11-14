@@ -1,0 +1,415 @@
+identifier: kgmicrobe.ingredient:reinforced_clostridial_medium_difco
+preferred_term: Reinforced clostridial medium (BD Difco)
+synonyms:
+- synonym_text: Reinforced clostridial medium
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+- synonym_text: Reinforced clostridial medium (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced clostridial medium (Oxoid)
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+  synonym_type: REJECTED_LABEL
+  source: 'Correction1193: authentic Oxoid product label excluded from distinct BD-Difco
+    product; raw provenance retained.'
+- synonym_text: Reinforced clostridial medium (Oxoid)
+  synonym_type: REJECTED_LABEL
+  source: 'Correction1193: authentic Oxoid product label excluded from distinct BD-Difco
+    product; raw provenance retained.'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a reinforced clostridial medium preparation and left unmapped
+    pending product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** *Reinforced Clostridial
+    Medium* (RCM) is a named, complete microbiological culture-medium formulation
+    supplied as a multicomponent dehydrated product. It is not a single chemical,
+    salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly
+    use the expansion “reinforced clostridial medium (RCM)” and describe commercial
+    products from Lab M and No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Reinforced clostridial medium (BD-Difco)'' (x3 CultureMech
+    mentions); ''Reinforced Clostridial medium (Oxoid CM149)'' (x1 CultureMech mentions);
+    ''Reinforced clostridial medium (Oxoid)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed specificOxoidCM0149 supplied-form correction; retainUNMAPPED and
+    mixed-owner split obligation. NBRC902 identifiesOxoidCM0149. Current supplierIFU0539
+    explicitly callsCM0149 semi-solid, with0.5g/Lagar and13g/Lyeast extract; it distinguishesCM0151agar.
+    Historical supplier specification search describes3gyeast+10gLabLemco instead,
+    so formulation revision cannot be silently erased.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate
+    that whole named product with its manufacturer nine-part recipe. The existing
+    Oxoid aliases are excluded from this product identity because manufacturer formulations
+    use different peptone/extract products; retain raw strings as rejected for this
+    selected BD product, not as rejected source facts. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:05:36.702541+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Partition named Difco and Oxoid product scopes using original1769 source
+    continuity. Preserve both authors'' events, the Difco manufacturer formula and
+    exact original synonym sources; reject bare/opposing-vendor identity claims on
+    this specific owner. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364.
+    Isolated candidate only; no maintained write, role approval, inherited support,
+    membership transfer or release approval. Exact whole-candidate independent review
+    remains required.'
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T07:13:06.049005+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only newly authored coordinator MappingEvidence MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226.
+    Preserve all original source URLs, interpretations, scientific fields and the
+    complete first-publication history prefix. The original private publication remains
+    immutable. No historical human evidence or ComponentEvidenceType is changed; no
+    scientific approval, inherited support or maintained application.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-032 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:30:56.528587+00:00'
+  curator: Codex W05 /root consolidated source supplement
+  action: CORRECTED
+  changes: 'COMBINED37-COMPONENT-GROUNDING-001 / #1193: add individually supported
+    material component references for Sodium chloride, Agar. Preserve every component
+    name/amount/unit, all unrelated fields and prior history; retain per-component
+    unresolved form/product limits. Add the primary approximate-formula/performance-adjustment
+    qualification for the unchanged nine nominal inputs. Report-only proposal; no
+    maintained application, source/role or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:36:52.134796+00:00'
+  curator: Codex W05 /root consolidated component re-review
+  action: CORRECTED
+  changes: 'W05-CONSOLIDATED-MEDIA-REVIEW-001: The complete Difco RCM manufacturer
+    formula explicitly names generic Peptone at10 g per litre of standard reconstitution.
+    This supports the named generic protein-digest part without inventing a supplier,
+    substrate, enzyme or Bacto identity. The final reviewed generic Peptone proposal
+    W05-FINAL-MAT-039 supplies the conditional exact target. Its target acceptance/application
+    is a separate dependency, not a missing supplier fact about this generic named
+    input. The earlier attribution to the20-claim #1176 consumer ledger was incorrect:
+    that ledger contains no RCM claim. Marine Broth''s separately directed peptone
+    withdrawal is preserved. All nominal quantities, COMPLETE nine printed inputs,
+    approximate/performance-adjustment footnote and unknown lot formulation remain
+    unchanged. Append-only report proposal; no maintained owner, source/role/export
+    admission.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:48:36.219978+00:00'
+  curator: Codex W05 /root consolidated exact component continuity
+  action: CORRECTED
+  changes: RCM printed generic Peptone input remains10 g per litre of standard reconstitution.
+    Bind this one previously supported generic material component to the selected
+    actual generic owner mesh:D010461, following exact reviewed W05-FINAL-MAT-039.
+    Native section3 direct unspecified-sense priority supersedes the provisional local
+    parent; no supplier, lot assay, substrate or enzyme inference is added. No other
+    RCM part, quantity, nine-input COMPLETE scope or approximate/performance-adjustment
+    qualification changes. Parent application remains conditional; no global old-ID
+    redirect, named-product equivalence or source/role/export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor TARGET-032 binds the actual published
+    W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen accepted source
+    heads. Exact #1193, #1224 claim corrections and genuine source-history appendices
+    are recorded in final-same-target-reconciliation-v4. Original combined bytes and
+    authentic maintained beforeimage remain preserved. This draft retains all case,
+    occurrence, role, preparation, product and release holds; source acceptance and
+    distinct final combined-byte review are not inferred. No maintained record or
+    export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:37:47.205435+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_STALE_COMPONENT_NOTE
+  changes: 'Private note-only successor for COMBINED37-RCM-STALE-PART-NOTE-001, https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720291988.
+    The current Peptone edge already references mesh:D010461/MIM_CATALOG; qualify
+    the active component_assertion.notes to match that conditional edge. Superseded
+    sentence retained verbatim here: Generic peptone and unspecified salt forms remain
+    named UNMAPPED components. All components, identifiers, quantities, source-relative
+    COMPLETE nine-input formula, performance-adjustment/lot limits, aliases, roles,
+    all previous history and source scope are unchanged. Generic-parent installation
+    and all19 incoming dependent-owner corrections remain required. No maintained
+    application, independent finding closure or scientific/export approval is claimed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002893; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002893; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Historical before-owner notes, retained as provenance: Imported from mim-queue
+  (source_id=mediadive.ingredient:1769); no CAS-RN or CHEBI/NCIT match. Reviewed on
+  2026-05-11 as a medium preparation pending product- or recipe-level curation.
+
+
+  Historical proposal prose from w05::M1193-P-RCM-182; conflicting identity/support
+  claims are superseded by the current conclusion below: Imported from mim-queue (source_id=mediadive.ingredient:1769);
+  no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending
+  product- or recipe-level curation. Correction1193: Original1769andits three source
+  media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer
+  nine-part recipe. The existing Oxoid aliases are excluded from this product identity
+  because manufacturer formulations use different peptone/extract products; retain
+  raw strings as rejected for this selected BD product, not as rejected source facts.
+  Independent direct-source check: modern Difco manual says Peptone10g, not a proven
+  historical Tryptose subproduct; current Oxoid IFU has yeast13g and no beef extract.
+
+
+  Historical mapping objects, preserved without live support transfer: {"authentic_before":
+  null, "w03::b-proposal-cm0149-form": null, "w05::M1193-P-RCM-182": {"evidence":
+  [{"evidence_type": "MANUAL_CURATION", "notes": "Original1769andits three source
+  media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer
+  nine-part recipe. The existing Oxoid aliases are excluded from this product identity
+  because manufacturer formulations use different peptone/extract products; retain
+  raw strings as rejected for this selected BD product, not as rejected source facts.",
+  "source": "https://www.maplica.com/Manual%20Difco%20P-S.pdf"}], "mapping_quality":
+  "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+  "ontology_label": "Reinforced clostridial medium (BD Difco)", "ontology_source":
+  "kgmicrobe.ingredient"}}
+
+
+  Current scope: authentic original MediaDive1769 owner promoted specifically to BD-Difco
+  Reinforced clostridial medium. Preserve the BD-Difco-qualified alias. Bare RCM and
+  both Oxoid strings are retained with their original sources as nonresolving REJECTED_LABEL
+  provenance on this owner; they are not false source observations. The W03 Oxoid
+  supplied-form event remains exact in historical lineage, but the current Oxoid product
+  is represented separately and is not a supplied form of Difco RCM. Manufacturer
+  formulas are not retroactive measurements of unknown historical lots. Keep Dehydrated_RCM_Medium
+  and mixed-supplier contexts unresolved. https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Peptone
+  reference_scope: MIM_CATALOG
+  concentration_value: '10'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+  component_id: mesh:D010461
+- component_name: Beef extract
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Dextrose
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+  component_id: CHEBI:26710
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Cysteine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Agar
+  reference_scope: MIM_CATALOG
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+  component_id: CHEBI:2509
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf
+    notes: Manufacturer2nd edition nine-part formula page1; peptone specificity kept
+      as printed. Current Oxoid CM0149 has yeast13g and no beef, so its aliases are
+      false for the selected Difco product. This does not reject the source authenticity
+      of Oxoid labels. Under the filed COMBINED37-COMPONENT-GROUNDING-001 follow-up,
+      each printed component was assessed separately. Supported existing MIM material
+      references are added for Sodium chloride, Agar. All literal names, nominal amounts
+      and units are retained. Other entries remain UNMAPPED for the specific form,
+      processing or product prerequisites recorded in the source ledger; there is
+      no blanket unspecified-salt rule or whole-owner approval. The manufacturer describes
+      an approximate formula per litre, adjusted and/or supplemented to meet performance
+      criteria. COMPLETE refers to all nine nominal printed inputs, not every lot
+      or molecular closure. Reconstitution water remains outside the dry product.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A26710
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named sodium chloride material
+      reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A2509
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named agar material reference;
+      no role, alias, whole-product or export approval. Agent-assisted applicability
+      assessment; original evidence remains.
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf
+    notes: 'The complete Difco RCM manufacturer formula explicitly names generic Peptone
+      at10 g per litre of standard reconstitution. This supports the named generic
+      protein-digest part without inventing a supplier, substrate, enzyme or Bacto
+      identity. The final reviewed generic Peptone proposal W05-FINAL-MAT-039 supplies
+      the conditional exact target. Its target acceptance/application is a separate
+      dependency, not a missing supplier fact about this generic named input. The
+      earlier attribution to the20-claim #1176 consumer ledger was incorrect: that
+      ledger contains no RCM claim. Marine Broth''s separately directed peptone withdrawal
+      is preserved. All nominal quantities, COMPLETE nine printed inputs, approximate/performance-adjustment
+      footnote and unknown lot formulation remain unchanged. Source capture is the
+      complete retained manufacturer RCM document, independently read; this is an
+      agent-assisted applicability judgment, not a new human curation assertion.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf
+    notes: RCM printed generic Peptone input remains10 g per litre of standard reconstitution.
+      Bind this one previously supported generic material component to the selected
+      actual generic owner mesh:D010461, following exact reviewed W05-FINAL-MAT-039.
+      Native section3 direct unspecified-sense priority supersedes the provisional
+      local parent; no supplier, lot assay, substrate or enzyme inference is added.
+      No other RCM part, quantity, nine-input COMPLETE scope or approximate/performance-adjustment
+      qualification changes. Parent application remains conditional; no global old-ID
+      redirect, named-product equivalence or source/role/export approval. Agent-assisted
+      applicability assessment of the exact retained complete manufacturer formula;
+      no historical human attribution.
+  notes: COMPLETE means complete relative to the cited manufacturer's approximate
+    nine-part Difco formula, including its adjustment/supplementation-for-performance
+    footnote. It is not exact known composition of every lot or historical recipe.
+    Generic Peptone is linked to mesh:D010461 in the MIM catalog, conditional on installation
+    of the actual reviewed generic Peptone owner and complete incoming-reference closure.
+    The remaining explicitly ungrounded entries retain UNMAPPED scope; no salt form
+    or product identity is guessed. No receiving-medium water, extra agar, salts or
+    resazurin is added as a constituent of this dry product.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:reinforced_clostridial_medium_difco
+  ontology_label: Reinforced clostridial medium (BD Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/ingredients/1769
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Authentic original owner source1769 names BD-Difco in its three uses; JCM481,482,612
+      explicitly corroborate BD-Difco RCM38g. This establishes source continuity,
+      not a hash/order winner.
+  - evidence_type: LLM_SUGGESTION
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Reinforced-Clostridial-Medium.pdf
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Manufacturer Difco/BBL manual approximate nine-part formula belongs to the Difco
+      product. The separate OxoidCM0149 table differs and is not this material.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1224#issuecomment-6718503364
+    notes: 'Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Source-partition conclusion: keep original1769 continuity on the Difco-specific
+      owner and represent the NBRC902/OxoidCM0149 product separately. Historical formula/lot
+      identity and generic or mixed-vendor RCM uses remain unresolved.'
+supplied_form:
+- name: Reinforced clostridial medium (BD Difco)
+  supplier: BD Difco
+  form: dehydrated named-medium powder
+  notes: Original MediaDive1769/JCM481,482,612 supplier scope. The cited Difco/BBL
+    second-edition manufacturer manual supplies the approximate formulation; no historical
+    lot, purchased SKU or revision equivalence is inferred. Oxoid CM0149 is a separate
+    candidate.
+mim_id: MIM:0002893
+legacy_identifiers:
+- MIM:Reinforced_Clostridial_Medium
+- UNMAPPED_0507
+- kgmicrobe.ingredient:reinforced_clostridial_medium_difco

@@ -1,0 +1,107 @@
+identifier: kgmicrobe.ingredient:jcm_933_rst_trace_elements
+preferred_term: JCM 933 RST trace elements
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_933_rst_trace_elements
+  ontology_label: JCM 933 RST trace elements
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=933
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: G
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+- component_name: Fe(NH4)2(SO4)2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.8'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=933
+    source_record: JCM 933 RST trace elements
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: Dissolve NTA and adjust to pH6.0 with KOH, then add minerals. KOH is an explicit
+    unquantified input. MnSO4·xH2O is retained literally; a monohydrate or other hydration
+    is not inferred. The source-qualified receiving caseJCM1344 uses10ml; the1ml dose
+    in JCM933 is a separate receiving recipe, not the stock concentration. Component
+    amounts describe preparation inputs rather than post-neutralization speciation.
+notes: 'Dissolve NTA and adjust to pH6.0 with KOH, then add minerals. KOH is an explicit
+  unquantified input. MnSO4·xH2O is retained literally; a monohydrate or other hydration
+  is not inferred. The source-qualified receiving caseJCM1344 uses10ml; the1ml dose
+  in JCM933 is a separate receiving recipe, not the stock concentration. Component
+  amounts describe preparation inputs rather than post-neutralization speciation.
+  Raw source label retained for this occurrence only: ''RST trace elements (see Medium
+  No. 933 )''. Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003288 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+synonyms:
+- synonym_text: RST trace elements (see Medium No. 933 )
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=933
+mim_id: MIM:0003288
+legacy_identifiers:
+- MIM:jcm_933_rst_trace_elements
+- kgmicrobe.ingredient:jcm_933_rst_trace_elements

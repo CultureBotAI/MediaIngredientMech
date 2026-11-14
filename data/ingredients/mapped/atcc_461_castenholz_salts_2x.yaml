@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:atcc_461_castenholz_salts_2x
+preferred_term: ATCC 461 Castenholz salts 2x
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_461_castenholz_salts_2x
+  ontology_label: ATCC 461 Castenholz salts 2x
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/40D6184E15BC4586AE200B0FB00A64CE.ashx
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: Nitsch's Trace Elements
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: ML
+- component_name: FeCl3 (0.03% solution)
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: ML
+- component_name: CaSO4 . 2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: MgSO4 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.016'
+  concentration_unit: G
+- component_name: KNO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.21'
+  concentration_unit: G
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  concentration_value: '1.4'
+  concentration_unit: G
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.22'
+  concentration_unit: G
+- component_name: DI Water
+  reference_scope: UNMAPPED
+  concentration_value: '1000'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/40D6184E15BC4586AE200B0FB00A64CE.ashx
+    source_record: ATCC 461 Castenholz salts 2x
+    notes: Verbatim constituent names and source batch quantities; water is a preparation
+      input. Child reference_scope UNMAPPED means no exact child identifier was independently
+      established.
+  notes: ATCC4612x mineralstock;500 ml goes into theparentmedium. NestedNitsch and0.03%FeCl3
+    remain distinct components; theATCC source version is not replaced byJCM273Nitsch.
+    Nested ATCC461 Nitsch prints H3BO4; its chemical identity remains unresolved and
+    is not silently borrowed from JCM273. Adjust the outerstock to pH8.2; the source
+    does not name the titrant, so constituent closure remains UNKNOWN.
+notes: 'ATCC4612x mineralstock;500 ml goes into theparentmedium. NestedNitsch and0.03%FeCl3
+  remain distinct components; theATCC source version is not replaced byJCM273Nitsch.
+  Nested ATCC461 Nitsch prints H3BO4; its chemical identity remains unresolved and
+  is not silently borrowed from JCM273. Adjust the outerstock to pH8.2; the source
+  does not name the titrant, so constituent closure remains UNKNOWN. Raw source labels
+  retained without global resolving aliases: ["Castenholz Salts, 2x"]. Occurrence-specific
+  linkage is required; identical generic words in other recipes do not imply the same
+  formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003206 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003206
+legacy_identifiers:
+- MIM:atcc_461_castenholz_salts_2x
+- kgmicrobe.ingredient:atcc_461_castenholz_salts_2x

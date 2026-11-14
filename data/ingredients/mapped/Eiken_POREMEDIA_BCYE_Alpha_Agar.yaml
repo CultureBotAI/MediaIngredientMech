@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:eiken_poremedia_bcye_alpha_agar
+preferred_term: POREMEDIA B-CYE alpha agar (Eiken)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:eiken_poremedia_bcye_alpha_agar
+  ontology_label: POREMEDIA B-CYE alpha agar (Eiken)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.eiken.co.jp/products_technique/result/
+    notes: JCM1087 names the commercial Eiken POREMEDIA B-CYE alpha product. Manufacturer
+      list separately identifies POREMEDIA B-CYEα agar plates (E-MP96); this corroborates
+      the product family and prepared-plate state without inventing the historical
+      package. This medium remains distinct from dry BD BCYE or Oxoid CYE base.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: JCM1087 names the commercial Eiken POREMEDIA B-CYE alpha product. Manufacturer
+  list separately identifies POREMEDIA B-CYEα agar plates (E-MP96); this corroborates
+  the product family and prepared-plate state without inventing the historical package.
+  This medium remains distinct from dry BD BCYE or Oxoid CYE base. Raw source labels
+  remain in campaign case evidence; no unqualified global alias is added. This isolated
+  proposal does not clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: JCM1087 names the commercial Eiken POREMEDIA B-CYE alpha product. Manufacturer
+    list separately identifies POREMEDIA B-CYEα agar plates (E-MP96); this corroborates
+    the product family and prepared-plate state without inventing the historical package.
+    This medium remains distinct from dry BD BCYE or Oxoid CYE base. Isolated proposal;
+    no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.499538+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003010 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: POREMEDIA B-CYE alpha agar (Eiken)
+  supplier: Eiken Chemical
+  form: prepared B-CYE alpha agar plates
+mim_id: MIM:0003010
+legacy_identifiers:
+- MIM:Eiken_POREMEDIA_BCYE_Alpha_Agar
+- kgmicrobe.ingredient:eiken_poremedia_bcye_alpha_agar

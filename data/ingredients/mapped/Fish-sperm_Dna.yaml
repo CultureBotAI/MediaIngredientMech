@@ -18,34 +18,34 @@ ontology_mapping:
       because source-qualified: the term is DNA generally.'
 synonyms:
 - synonym_text: (Deoxyribonucleotide)m
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: (Deoxyribonucleotide)n
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: (Deoxyribonucleotide)n+m
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: DNA
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: DNAn
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: DNAn+1
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Desoxyribonukleinsaeure
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: deoxyribonucleic acids
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: desoxyribose nucleic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: thymus nucleic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Deoxyribonucleic acid from herring sperm
   synonym_type: RAW_TEXT
@@ -144,17 +144,80 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:47:55.809626+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Bind the four SERVA fish-sperm DNA source occurrences to the already existing
+    Fish-Sperm DNA material family and add the supplier-qualified form. Do not mint
+    a duplicate, infer fish species/counterion/polymer length, change the existing
+    serialized NARROW_MATCH DNA relation (held and not endorsed by this supplied-form
+    change) or reverse the herring-sperm tombstone. Exact isolated payload; no maintained
+    write. All prior scientific/publication holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:53:56.974214+00:00'
+  curator: worker05/materials_research skeptical remediation1193
+  action: CORRECTED
+  changes: Clarify retained NARROW_MATCH is an inherited, held mapping-direction assertion;
+    supplier-form curation does not approve it. Exact isolated proposal. Preserve
+    all prior source and export holds.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Retire ten generic-DNA or conflicting-thymus exact identity aliases from
+    the source-specific fish-sperm material. Their texts, kg_microbe sources and all
+    history remain. The independent basis is the fish-sperm source boundary versus
+    generic CHEBI:16991, not an absent-formula heuristic. The herring-sperm tombstone
+    is unchanged; species, counterion and molecular length remain unspecified. Isolated
+    proposal only; no maintained data or source membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001099; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001099; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 9007-49-2
   data_source: PubChem API (ontology label)
   retrieval_date: '2026-04-05T23:44:42.459861+00:00'
 ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: DNA (fish sperm; SERVA)
+  supplier: SERVA
+  notes: TOGO M2450–2453 supplier-qualified source; no SERVA catalog or species specified.
+notes: 'Bind the four SERVA fish-sperm DNA source occurrences to the already existing
+  Fish-Sperm DNA material family and add the supplier-qualified form. Do not mint
+  a duplicate, infer fish species/counterion/polymer length, change the existing serialized
+  NARROW_MATCH DNA relation (held and not endorsed by this supplied-form change) or
+  reverse the herring-sperm tombstone. Source-qualified proposal under issue1193.
+  No ingredient roles, assay outcomes, complete-owner support or release admission
+  are approved. Preserve all frozen source and owner holds; component uncertainty
+  is stated separately from whole-material identity.
+
+
+  Final W05 report-only correction: Retire ten generic-DNA or conflicting-thymus exact
+  identity aliases from the source-specific fish-sperm material. Their texts, kg_microbe
+  sources and all history remain. The independent basis is the fish-sperm source boundary
+  versus generic CHEBI:16991, not an absent-formula heuristic. The herring-sperm tombstone
+  is unchanged; species, counterion and molecular length remain unspecified. All original
+  source, organism, role, owner and export holds remain. Independent review of these
+  exact successor bytes is pending.'
 mim_id: MIM:0001099
 legacy_identifiers:
 - MIM:Fish-sperm_Dna

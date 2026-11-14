@@ -1,0 +1,88 @@
+identifier: kgmicrobe.ingredient:p_aminobenzoic_acid_point3_ug_per_ul_preparation
+preferred_term: 0.3 μg/μL p-aminobenzoic acid preparation
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:p_aminobenzoic_acid_point3_ug_per_ul_preparation
+  ontology_label: 0.3 μg/μL p-aminobenzoic acid preparation
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1604
+    notes: NBRC1604 explicitly names p-aminobenzoic acid (0.3 ug/uL), with a 10 uL
+      receiving-medium addition; direct provider TOGO M3052 identifies NBRC_M1604
+      and preserves the concentration-qualified label. This preparation is distinct
+      in represented scope from neat PABA. The named solute resolves to the actual
+      PABA owner CHEBI:30753, without inferring solution protonation, carrier, additives,
+      sterilization method or batch yield. The receiving 10 uL dose is not a stock
+      constituent quantity. UNKNOWN closure records undisclosed carrier/full formulation.
+      This follow-up repairs an inherited concentration-qualified alias on the chemical
+      owner; it does not assert either case69 M3160/M3161 occurrence uses this stock.
+      No exact whole-preparation ontology/catalogue owner was established by the bounded
+      lookup; local registry scope preserves the stated concentration rather than
+      identifying the stock with its solute.
+synonyms:
+- synonym_text: p-aminobenzoic acid (0.3 μg/μL)
+  synonym_type: RAW_TEXT
+  source: TOGO M3052 / NBRC1604
+notes: NBRC1604 explicitly names p-aminobenzoic acid (0.3 ug/uL), with a 10 uL receiving-medium
+  addition; direct provider TOGO M3052 identifies NBRC_M1604 and preserves the concentration-qualified
+  label. This preparation is distinct in represented scope from neat PABA. The named
+  solute resolves to the actual PABA owner CHEBI:30753, without inferring solution
+  protonation, carrier, additives, sterilization method or batch yield. The receiving
+  10 uL dose is not a stock constituent quantity. UNKNOWN closure records undisclosed
+  carrier/full formulation. This follow-up repairs an inherited concentration-qualified
+  alias on the chemical owner; it does not assert either case69 M3160/M3161 occurrence
+  uses this stock.
+components:
+- component_name: 4-aminobenzoic acid
+  component_id: CHEBI:30753
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.3'
+  concentration_unit: UG_PER_UL
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1604
+    notes: NBRC1604 explicitly names p-aminobenzoic acid (0.3 ug/uL), with a 10 uL
+      receiving-medium addition; direct provider TOGO M3052 identifies NBRC_M1604
+      and preserves the concentration-qualified label. This preparation is distinct
+      in represented scope from neat PABA. The named solute resolves to the actual
+      PABA owner CHEBI:30753, without inferring solution protonation, carrier, additives,
+      sterilization method or batch yield. The receiving 10 uL dose is not a stock
+      constituent quantity. UNKNOWN closure records undisclosed carrier/full formulation.
+      This follow-up repairs an inherited concentration-qualified alias on the chemical
+      owner; it does not assert either case69 M3160/M3161 occurrence uses this stock.
+  notes: Only the named PABA solute and source-explicit mass/volume strength are known.
+    The recipe does not identify stock carrier/full composition.
+curation_history:
+- timestamp: '2026-11-08T08:15:31.966840+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CREATED
+  changes: 'Issue1230: source-supported preparation for the inherited concentration-qualified
+    chemical-owner alias. NBRC1604 explicitly names p-aminobenzoic acid (0.3 ug/uL),
+    with a 10 uL receiving-medium addition; direct provider TOGO M3052 identifies
+    NBRC_M1604 and preserves the concentration-qualified label. This preparation is
+    distinct in represented scope from neat PABA. The named solute resolves to the
+    actual PABA owner CHEBI:30753, without inferring solution protonation, carrier,
+    additives, sterilization method or batch yield. The receiving 10 uL dose is not
+    a stock constituent quantity. UNKNOWN closure records undisclosed carrier/full
+    formulation. This follow-up repairs an inherited concentration-qualified alias
+    on the chemical owner; it does not assert either case69 M3160/M3161 occurrence
+    uses this stock.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003319 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003319
+legacy_identifiers:
+- MIM:p_aminobenzoic_acid_point3_ug_per_ul_preparation
+- kgmicrobe.ingredient:p_aminobenzoic_acid_point3_ug_per_ul_preparation

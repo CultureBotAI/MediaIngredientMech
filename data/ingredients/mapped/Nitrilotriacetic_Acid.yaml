@@ -19,6 +19,11 @@ ontology_mapping:
       and of iRGD peptide (piRGD) to enhance treatment efficacy of doxorubicin-containing
       liposomes (Caelyx).
     explanation: Auto-proposed; curator should rephrase or remove.
+  - evidence_type: DATABASE_MATCH
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1740.pdf
+    notes: Primary recipe explicitly expands Titriplex 1 as nitrilotriacetic acid.
+      Merck 108416 SDS confirms acid CAS 139-13-9. Applies to source 1590; sodium
+      salts and hydrates remain distinct.
 synonyms:
 - synonym_text: ( disodium salt)
   synonym_type: RAW_TEXT
@@ -73,6 +78,12 @@ synonyms:
 - synonym_text: triglycine
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Nitrilotriacetic acid (C6H9NO6)
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:f4002d9f826ab0d2896cbcf1a43909fa4df797a95ca1ac1dcf330221ae41bf10'
+- synonym_text: Titriplex1
+  synonym_type: RAW_TEXT
+  source: mediadive.ingredient:1590; DSMZ medium 1740; Merck Titriplex I 108416 SDS
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1348
@@ -177,11 +188,32 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CORRECTED
+  changes: Add source-verified Titriplex1 raw alias to nitrilotriacetic acid; do not
+    merge sodium NTA forms or retire the unmapped duplicate without coordinator reconciliation.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Nitrilotriacetic acid (C6H9NO6)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001901; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001901; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 139-13-9

@@ -1,0 +1,103 @@
+identifier: cas:18662-53-8
+preferred_term: Trisodium nitrilotriacetate monohydrate
+synonyms:
+- synonym_text: Na3-NTA x H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Nitrilotriacetic acid trisodium salt monohydrate
+  synonym_type: RAW_TEXT
+  source: mediadive.ingredient:1930
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1482); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:56:05Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_HYDRATE_SALT_AMBIGUITY
+  changes: Classified as a single NTA salt hydrate and left unmapped because no exact
+    local ontology term for trisodium nitrilotriacetate monohydrate was verified;
+    generic NTA, nitrilotriacetate, or anhydrous sodium nitrilotriacetate mappings
+    would not preserve salt and hydrate state.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Na3-NTA_x_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **single chemical
+    salt hydrate**, normalized as **trisodium nitrilotriacetate monohydrate** (trisodium
+    NTA monohydrate), rather than a mixture, buffer, extract, commercial formulation,
+    or ingredient family. No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: PROMOTED_TO_MAPPED
+  changes: Promote explicit trisodium nitrilotriacetate monohydrate to its own CAS
+    18662-53-8 with broader sodium nitrilotriacetate CHEBI:132766 relation, preserving
+    hydrate scope and source history.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002865; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002865; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1482); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a trisodium NTA
+  hydrate; not identity-mapped to generic NTA or anhydrous sodium nitrilotriacetate.
+  Campaign source review verifies form-specific CAS 18662-53-8 and broader CHEBI:132766
+  parent; historical no-CAS statements above record the earlier state. Preserve source
+  1482 history and source-specific downstream holds. No exact identity to anhydrous
+  trisodium NTA.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:132766
+  ontology_label: sodium nitrilotriacetate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.sigmaaldrich.com/NO/en/product/aldrich/72565
+    notes: Supplier 72565 verifies CAS 18662-53-8, trisodium stoichiometry, one water
+      and molecular mass 275.10. Captured worker-07 evidence c-e-web-nta. OLS CHEBI:132766
+      verifies nearest anhydrous 3:1 sodium-salt parent (CAS 5064-31-3); this NARROW_MATCH
+      grade emits skos:broadMatch, never exact identity to parent.
+chemical_properties:
+  cas_rn: 18662-53-8
+  molecular_formula: C6H8NNa3O7
+  molecular_weight: 275.1
+  data_source: Sigma-Aldrich 72565; https://www.sigmaaldrich.com/NO/en/product/aldrich/72565
+  retrieval_date: '2026-11-08T05:09:34.003Z'
+supplied_form:
+- name: Nitrilotriacetic acid trisodium salt monohydrate
+  cas_rn: 18662-53-8
+  form: trisodium salt monohydrate
+  notes: Sigma 72565 independently establishes this chemical form; the MediaDive source
+    is not asserted to have purchased that specific supplier product.
+mim_id: MIM:0002865
+legacy_identifiers:
+- MIM:Na3-NTA_X_H2O
+- UNMAPPED_0475
+- cas:18662-53-8

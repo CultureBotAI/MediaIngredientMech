@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:blood_agar_base_difco0045
+preferred_term: Blood Agar Base, Difco 0045
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:blood_agar_base_difco0045
+  ontology_label: Blood Agar Base, Difco 0045
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/medium/646
+    notes: DSMZ646 explicitly names dehydrated Difco0045 Blood Agar Base at40g/L before
+      rabbit OR sheep blood is added. Known historical catalog suffices for an opaque
+      product identity; neither formula nor blood is inferred as a product constituent.
+      No exact supported ontology/CAS identity established in the recorded bounded
+      lookup; source-qualified preparation registry identity only.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.556166+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: DSMZ646 explicitly names dehydrated Difco0045 Blood Agar Base at40g/L before
+    rabbit OR sheep blood is added. Known historical catalog suffices for an opaque
+    product identity; neither formula nor blood is inferred as a product constituent.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.828709+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002978 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: Blood Agar Base
+  supplier: Difco
+  catalog_number: '0045'
+  form: dehydrated medium base
+  notes: Historical product named by DSMZ646; not the separately proposed preparedbase
+    or complete blood agar.
+notes: 'DSMZ646 explicitly names dehydrated Difco0045 Blood Agar Base at40g/L before
+  rabbit OR sheep blood is added. Known historical catalog suffices for an opaque
+  product identity; neither formula nor blood is inferred as a product constituent.
+  Source labels retained as nonresolving provenance: [{"case_id": "CM_NAME:2cdb3b5518368d4cf3374ee9513c6a1ee1b86afbe62a5a1bcf329382163236d1",
+  "raw_label": "Blood Agar Base from Difco 0045"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved.'
+mim_id: MIM:0002978
+legacy_identifiers:
+- MIM:Blood_Agar_Base_Difco0045
+- kgmicrobe.ingredient:blood_agar_base_difco0045

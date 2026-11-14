@@ -49,16 +49,36 @@ curation_history:
     not resolve them: ''MEM alpha Modification (BioWest)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed supplied-form annotation for source1923 BioWestP0440; retain UNMAPPED
+    until generic owner scope and complete formulation are reconciled.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002840; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002840; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1923); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete MEM alpha medium formulation
   pending formulation-specific curation.
 ingredient_type: NAMED_MEDIUM
+supplied_form:
+- name: MEM alpha modification with Earle salts and L-glutamine, without sodium bicarbonate
+  supplier: BioWest
+  catalog_number: P0440
+  form: powder
+  notes: Source-bound to frozen MediaDive1923 attribute P0440. Other generic MEM-alpha
+    formulations are not thereby equated; see manufacturer specification. The source
+    complex_compound=0 is inconsistent with the multicomponent product.
 mim_id: MIM:0002840
 legacy_identifiers:
 - MIM:MEM_Alpha_Modification

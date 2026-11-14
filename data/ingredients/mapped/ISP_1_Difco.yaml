@@ -1,0 +1,85 @@
+synonyms:
+- synonym_text: ISP Medium 1 (Difco)
+  synonym_type: RAW_TEXT
+  source: ISP Medium 1 (Difco)
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:50:37.806762+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: NBRC1153 names DifcoISP1 powder8g and adds agar separately. Primary JCM656
+    and manufacturer-authored Difco manual explicitly identify ISP1 as the5g tryptone/3g
+    yeast-extract powder. Added magnesium sulfate in JCM656 and agar in NBRC1153 are
+    not constituents of the powder. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003034 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+identifier: kgmicrobe.ingredient:isp_1_difco
+preferred_term: ISP Medium1 powder (Difco)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:isp_1_difco
+  ontology_label: ISP Medium1 powder (Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=656
+    notes: NBRC1153 names DifcoISP1 powder8g and adds agar separately. Primary JCM656
+      and manufacturer-authored Difco manual explicitly identify ISP1 as the5g tryptone/3g
+      yeast-extract powder. Added magnesium sulfate in JCM656 and agar in NBRC1153
+      are not constituents of the powder.
+components:
+- component_name: Pancreatic digest of casein
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=656
+    notes: NBRC1153 names DifcoISP1 powder8g and adds agar separately. Primary JCM656
+      and manufacturer-authored Difco manual explicitly identify ISP1 as the5g tryptone/3g
+      yeast-extract powder. Added magnesium sulfate in JCM656 and agar in NBRC1153
+      are not constituents of the powder.
+notes: ' Correction1193: NBRC1153 names DifcoISP1 powder8g and adds agar separately.
+  Primary JCM656 and manufacturer-authored Difco manual explicitly identify ISP1 as
+  the5g tryptone/3g yeast-extract powder. Added magnesium sulfate in JCM656 and agar
+  in NBRC1153 are not constituents of the powder.'
+supplied_form:
+- name: ISP Medium1 powder (Difco)
+  form: powder
+  supplier: BD Difco
+  notes: Original collection specifies manufacturer/product; package catalog is not
+    guessed.
+mim_id: MIM:0003034
+legacy_identifiers:
+- MIM:ISP_1_Difco
+- kgmicrobe.ingredient:isp_1_difco

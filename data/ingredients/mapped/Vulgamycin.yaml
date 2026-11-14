@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: mesh:C012306
   ontology_label: enterocin
   ontology_source: MESH
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -15,6 +15,15 @@ ontology_mapping:
     source: MESH via EBI OLS exact synonym search
     notes: Promoted from kgmicrobe.compound:vulgamycin after OLS returned mesh:C012306
       with exact synonym "Vulgamycin".
+  - evidence_type: LITERATURE
+    source: https://doi.org/10.1021/acs.joc.8b02273
+    notes: Original synthesis work and an explicit supplier specification identify
+      the polyketide Vulgamycin with enterocin, corroborating mesh:C012306 beyond
+      its untyped synonym. Propose evidence refresh and SYNONYM_MATCH. Do not conflate
+      this polyketide with enterococcal peptide bacteriocins; inherited WITHHOLD needs
+      fresh full-payload review. Exact primary-source capture and live ontology record
+      are in worker09 antibiotic evidence; this proposal does not clear publication
+      holds.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -55,11 +64,26 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Enrich existing mapping with independent chemical synonym evidence and
+    correct quality to SYNONYM_MATCH. Proposal only; original mapping evidence preserved
+    in before capture. No role, whole-record, hold-removal or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002634; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002634; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
@@ -69,6 +93,10 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: '2026-11-08 proposal: Enrich existing mapping with independent chemical synonym
+  evidence and correct quality to SYNONYM_MATCH. Prior no-hit statements are historical
+  search results; original history is preserved. Fresh complete-payload review is
+  required before publication.'
 mim_id: MIM:0002634
 legacy_identifiers:
 - MIM:Vulgamycin

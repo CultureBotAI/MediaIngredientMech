@@ -68,21 +68,95 @@ curation_history:
     to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T09:30:25.481026+00:00'
+  curator: Codex worker05 /root/buffer_tris
+  action: RETARGET_SUPPORTED_GENERIC_COMPONENT
+  changes: The exact MicrobeDecoder source label explicitly names generic peptone.
+    Retarget this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only
+    with the reviewed generic Peptone owner in the same application phase. The source
+    does not select Bacto, mammalian origin, digest method or a supplier, and none
+    is inferred. A supplier or detailed formulation is not a prerequisite for retaining
+    this genuinely generic named part. LABEL_ENUMERATION and COMPLETE remain relative
+    to the cited named-input list; this does not assert a complete growth recipe.
+    This is a bounded part-reference correction only. Whole-owner identity, raw labels,
+    occurrence counts, quantities, unrelated components, all historical evidence and
+    source/role/export holds are preserved. Historical all-components-identified statements
+    describe prior states, not a new approval. No new MappingEvidence is added; historical
+    human/component evidence enums are not rewritten. Filed before this private correction
+    at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:49:28.241585+00:00'
+  curator: Codex worker05 /root/buffer_tris
+  action: RETARGET_DIRECT_GENERIC_PEPTONE
+  changes: Retarget only this source-supported generic peptone part from the earlier
+    conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct
+    generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The
+    primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis
+    definition and the manufacturer generic description support the ordinary unspecified
+    peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
+    lot or digestion detail does not itself establish a different material or require
+    a new process/precipitation assay gate. The raw named-input evidence and material
+    scope are unchanged. The previous local-target event and assertion notes are preserved
+    as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative
+    to the named inputs, all quantities and their absence, raw labels, source occurrences
+    and all other parts. This does not assign Bacto, animal origin, supplier product,
+    formulation equivalence, source-assay admission, roles or export approval. Apply
+    only with the exact reviewed direct Peptone parent in the same phase; no global
+    identifier replacement.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001191; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_peptone_yeast_extract);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001191; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_peptone_yeast_extract);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. Successor dependency assessment:
+  The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
+  this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only with the
+  reviewed generic Peptone owner in the same application phase. The source does not
+  select Bacto, mammalian origin, digest method or a supplier, and none is inferred.
+  A supplier or detailed formulation is not a prerequisite for retaining this genuinely
+  generic named part. LABEL_ENUMERATION and COMPLETE remain relative to the cited
+  named-input list; this does not assert a complete growth recipe. This is a bounded
+  part-reference correction only. Whole-owner identity, raw labels, occurrence counts,
+  quantities, unrelated components, all historical evidence and source/role/export
+  holds are preserved. Historical all-components-identified statements describe prior
+  states, not a new approval. No new MappingEvidence is added; historical human/component
+  evidence enums are not rewritten. Direct generic identity successor: Retarget only
+  this source-supported generic peptone part from the earlier conditional local identity
+  kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461
+  (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly
+  includes Peptone; its conventional partial protein-hydrolysis definition and the
+  manufacturer generic description support the ordinary unspecified peptone sense
+  under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion
+  detail does not itself establish a different material or require a new process/precipitation
+  assay gate. The raw named-input evidence and material scope are unchanged. The previous
+  local-target event and assertion notes are preserved as superseded routing history.
+  Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities
+  and their absence, raw labels, source occurrences and all other parts. This does
+  not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay
+  admission, roles or export approval. Apply only with the exact reviewed direct Peptone
+  parent in the same phase; no global identifier replacement.'
 components:
 - component_name: glucose
   component_id: CHEBI:17234
   reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: peptone
-  component_id: MICRO:0000178
+  component_id: mesh:D010461
   reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: yeast extract
@@ -101,8 +175,81 @@ component_assertion:
     source: mappings/microbedecoder_residual_research_decomposition.tsv
     source_record: Glucose Peptone-yeast Extract
     notes: 'Reviewed row: strategy=split, confidence=high; PYG-family reordering.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: CSV row 1597 (header included), Bergey_Substrates_for_end_products
+      = 'glucose peptone-yeast extract', Anaerofustis stercorihominis
+    notes: Literal named-input evidence supports generic peptone at this scope. Exact
+      archive/member bytes and complete source rows are preserved in buffer-parts-v1/dependencies/source-observations.json.
+      Independently re-extracted by /root/buffer_tris with LLM assistance; original
+      source scientists and skeptical review remain attributed in the preserved W03
+      packet.
+  - evidence_type: CURATED_DATASET
+    source: buffer-parts-v1/dependencies/source-assessment.json
+    source_record: PC03 data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml#components[1]
+    notes: The exact MicrobeDecoder source label explicitly names generic peptone.
+      Retarget this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone
+      only with the reviewed generic Peptone owner in the same application phase.
+      The source does not select Bacto, mammalian origin, digest method or a supplier,
+      and none is inferred. A supplier or detailed formulation is not a prerequisite
+      for retaining this genuinely generic named part. LABEL_ENUMERATION and COMPLETE
+      remain relative to the cited named-input list; this does not assert a complete
+      growth recipe. Independent prior source work by /root/peptone_other_sources
+      and skeptical review by /root/peptone_skeptic are reused only at their exact
+      unchanged source-claim scope; neither approves these new payload bytes. Current
+      candidate author /root/buffer_tris; independent final byte review remains separate.
+  - evidence_type: CURATED_DATASET
+    source: https://id.nlm.nih.gov/mesh/D010461
+    source_record: NLM descriptor D010461 Peptones, entry term Peptone, preferred
+      concept M0016245; PC03 exact raw MicrobeDecoder labels retained in buffer-parts-v1/dependencies-direct-v1/source-observations.json
+    notes: The descriptor and manufacturer generic definition support the reviewed
+      generic Peptone owner identity; the exact source labels support this named part.
+      LLM-assisted applicability assessment by /root/buffer_tris, following separate
+      primary author /root/buffer_hepes and coordinator skeptical reassessment /root/step7d_independent_review.
+      Retarget only this source-supported generic peptone part from the earlier conditional
+      local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity
+      mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor
+      explicitly includes Peptone; its conventional partial protein-hydrolysis definition
+      and the manufacturer generic description support the ordinary unspecified peptone
+      sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
+      lot or digestion detail does not itself establish a different material or require
+      a new process/precipitation assay gate. The raw named-input evidence and material
+      scope are unchanged. The previous local-target event and assertion notes are
+      preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE
+      relative to the named inputs, all quantities and their absence, raw labels,
+      source occurrences and all other parts. This does not assign Bacto, animal origin,
+      supplier product, formulation equivalence, source-assay admission, roles or
+      export approval. Apply only with the exact reviewed direct Peptone parent in
+      the same phase; no global identifier replacement.
+  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe. Successor dependency assessment:
+    The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
+    this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only with the
+    reviewed generic Peptone owner in the same application phase. The source does
+    not select Bacto, mammalian origin, digest method or a supplier, and none is inferred.
+    A supplier or detailed formulation is not a prerequisite for retaining this genuinely
+    generic named part. LABEL_ENUMERATION and COMPLETE remain relative to the cited
+    named-input list; this does not assert a complete growth recipe. This is a bounded
+    part-reference correction only. Whole-owner identity, raw labels, occurrence counts,
+    quantities, unrelated components, all historical evidence and source/role/export
+    holds are preserved. Historical all-components-identified statements describe
+    prior states, not a new approval. No new MappingEvidence is added; historical
+    human/component evidence enums are not rewritten. Direct generic identity successor:
+    Retarget only this source-supported generic peptone part from the earlier conditional
+    local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity
+    mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor
+    explicitly includes Peptone; its conventional partial protein-hydrolysis definition
+    and the manufacturer generic description support the ordinary unspecified peptone
+    sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
+    lot or digestion detail does not itself establish a different material or require
+    a new process/precipitation assay gate. The raw named-input evidence and material
+    scope are unchanged. The previous local-target event and assertion notes are preserved
+    as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative
+    to the named inputs, all quantities and their absence, raw labels, source occurrences
+    and all other parts. This does not assign Bacto, animal origin, supplier product,
+    formulation equivalence, source-assay admission, roles or export approval. Apply
+    only with the exact reviewed direct Peptone parent in the same phase; no global
+    identifier replacement.'
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:glucose_peptone_yeast_extract

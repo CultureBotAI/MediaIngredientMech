@@ -1,0 +1,117 @@
+identifier: kgmicrobe.ingredient:riboflavin_solution_see_medium_no_462
+preferred_term: Riboflavin solution (JCM Medium 462)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1893); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:06.899561+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.874074+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Riboflavin_Solution_See_Medium_No_462-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **defined riboflavin
+    stock solution referenced by another culture-medium recipe**, rather than riboflavin
+    as a single chemical and rather than complete Medium No. 462. The phrase “see
+    Medium No. 462” is recipe-navigation text inherited from a medium catalogue. CURIEs
+    discussed: CHEBI:17015, CHEBI:15366. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: PROMOTED_TO_MAPPED
+  changes: Proposed UNMAPPED_0508 promotion to JCM462 riboflavin-stock registry identity;
+    corrected NAMED_MEDIUM to STOCK_SOLUTION, transcribed source components, and moved
+    source-local navigation labels to nonresolving provenance.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T07:45:24.721773+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002896; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002896; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Source-specific riboflavin stock identified through JCM772 to JCM462. Printed
+  batch:2.5mg riboflavin and100mL distilled water. Quantities remain batch provenance;
+  no identity equivalence to CHEBI:17015 or complete medium asserted. Provenance-only
+  raw navigation labels from mediadive.compound:1893: ["Riboflavin solution see Medium
+  No. 462", "Riboflavin solution (see Medium No. 462)"]. These labels lack the JCM
+  namespace and are excluded from resolving synonyms. Prior research history preserved;
+  this new primary-source assessment does not approve inherited or new export payloads.'
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:riboflavin_solution_see_medium_no_462
+  ontology_label: Riboflavin solution (JCM Medium 462)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=462
+    notes: JCM772 refers to the JCM462 riboflavin stock. Named preparation is2.5mg
+      riboflavin in100mL distilled water; not pure riboflavin and not whole Medium462.
+components:
+- component_name: Riboflavin
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17015
+  source: Source batch input2.5mg
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  source: Source batch solvent100mL; final solution volume not stated.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=462
+    source_record: Riboflavin solution subsection
+    notes: 2.5mg riboflavin and100mL distilled water. JCM772 is the source of the
+      mediadive4719/J772 reference; DSMZ462 is not substituted.
+mim_id: MIM:0002896
+legacy_identifiers:
+- MIM:Riboflavin_Solution_See_Medium_No_462
+- UNMAPPED_0508
+- kgmicrobe.ingredient:riboflavin_solution_see_medium_no_462

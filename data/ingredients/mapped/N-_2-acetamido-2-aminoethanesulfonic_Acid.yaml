@@ -19,6 +19,15 @@ synonyms:
 - synonym_text: ACES
   synonym_type: RAW_TEXT
   source: MERGED_FROM_CHEBI:39061
+- synonym_text: ACES (N-(2-Acetamido)-2-aminoethanesulfonic acid)
+  synonym_type: RAW_TEXT
+  source: culturemech:ACES (N-(2-Acetamido)-2-aminoethanesulfonic acid)
+- synonym_text: ACES buffer
+  synonym_type: RAW_TEXT
+  source: NBRC weighed ACES reagent; CM_NAME:6eaa1db1cbb641a0ecfe9c716337000c8bb518e60b4bb5a7686656ad58f07be2
+- synonym_text: ACES Buffer
+  synonym_type: RAW_TEXT
+  source: NBRC weighed ACES reagent; CM_NAME:e477f61317bf39561d26ec48a120308fe1a695b63d62907fac95c552c75850ff
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 15
@@ -84,11 +93,47 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: ADDED_SYNONYMS
+  changes: 'Added two source labels for weighed ACES reagent; retained CHEBI:39060
+    under prior #320/#334 ruling and did not revive rejected Aces.yaml.'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.
+  previous_status: MAPPED
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Add source-bound spelling(s) ACES (N-(2-Acetamido)-2-aminoethanesulfonic
+    acid) to the verified live owner; preserve identity and existing release holds.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G19 from authentic common before
+    sha256=b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41. Origins:
+    worker09:ma-alias-n-_2-acetamido-2-aminoethanesulfonic_acid sha256=a9ad00dcf2bd1b1cd8b15af804d326e4d7d45edd6c1afae174dabeb80544a135;
+    worker10:buffers-aces-aliases sha256=e2f6e61eb8c1ebace26f66b815b859010dc833f407e4049253349db843290edd.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001745; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001745; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7365-82-4

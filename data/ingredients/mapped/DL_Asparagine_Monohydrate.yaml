@@ -1,0 +1,88 @@
+identifier: cas:69833-18-7
+preferred_term: DL-Asparagine monohydrate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+synonyms:
+- synonym_text: DL-Asparagine x H2O
+  synonym_type: RAW_TEXT
+  source: MediaDive ingredient1128 https://www.bacmedia.dsmz.de/ingredients/1128
+chemical_properties:
+  cas_rn: 69833-18-7
+  molecular_formula: C4H8N2O3.H2O
+  data_source: https://labchem-wako.fujifilm.com/sds/W01W0101-0748JGHEEN.pdf
+ontology_mapping:
+  ontology_id: CHEBI:22653
+  ontology_label: asparagine
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: https://labchem-wako.fujifilm.com/sds/W01W0101-0748JGHEEN.pdf
+    notes: The source explicitly specifies DL-asparagine with one water. Wako identifies
+      DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate
+      product, but that number also appears on generic asparagine records; it is not
+      copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653
+      asparagine.
+notes: The source explicitly specifies DL-asparagine with one water. Wako identifies
+  DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate product,
+  but that number also appears on generic asparagine records; it is not copied. A
+  distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653 asparagine.
+  MediaDive1128 supplies the DL and hydration descriptors. Its derived molarity uses
+  an anhydrous mass and does not override the raw 0.8 g reagent identity. Local ChEBI/NCIT
+  and current OLS CAS searches found no exact term. NCIT:C87433 is excluded because
+  its L synonym and CAS 5794-13-8 identify the L hydrate. The existing rejected hydrate
+  alias remains unchanged.
+supplied_form:
+- name: DL-Asparagine Monohydrate
+  cas_rn: 69833-18-7
+  form: monohydrate
+  supplier: FUJIFILM Wako
+  catalog_number: 016-07482
+  notes: Wako catalog and SDS independently verify the DL monohydrate form and CAS.
+    This is an available supplied form, not a claim that MediaDive used this supplier.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The source explicitly specifies DL-asparagine with one water. Wako identifies
+    DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate
+    product, but that number also appears on generic asparagine records; it is not
+    copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653
+    asparagine. Isolated proposal only; all native holds remain preserved in source-case
+    decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T06:15:47.962006+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: PEER_REVIEW_CORRECTION
+  changes: 'Resolve independent finding OP1201-F1: the supplied form is narrower than
+    its ontology parent, so mapping_quality is NARROW_MATCH and the intended predicate
+    is skos:broadMatch. Preserve the distinct identity and all source boundaries.
+    This remains an isolated unapplied proposal.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to CAS_RN_CROSS_REFERENCE:
+    The manufacturer SDS establishes the DL monohydrate CAS. The parent relation and
+    exclusion of the L hydrate remain explicit decisions with LLM history. Isolated
+    successor proposal only; all inherited source, role and export holds remain. Historical
+    evidence and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002992 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002992
+legacy_identifiers:
+- MIM:DL_Asparagine_Monohydrate
+- cas:69833-18-7

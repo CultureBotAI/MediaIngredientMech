@@ -16,6 +16,12 @@ synonyms:
 - synonym_text: Marine Broth 2216 (BD--Difco)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Difco Bacto Marine Broth (DIFCO 2216)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ514a and cited NBRC primary recipes; worker03 broth evidence ledger
+- synonym_text: Bacto Marine Broth 2216 (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ514a and cited NBRC primary recipes; worker03 broth evidence ledger
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 19
@@ -88,125 +94,383 @@ curation_history:
     2887 Difco Marine Agar 2216 scratch formula with agar omitted for broth.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed two exact Difco2216 source aliases. Dose differences and separately
+    added agar/salts remain occurrence context. Existing component payload and WITHHOLD
+    native status are not cleared.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Exact Difco2216 source cases identify commercial broth37.4g, with separate
+    receiving supplements. Existing mapped2216 record erroneously treats the ATCC
+    agar-minus-agar scratch recipe as the commercial broth formula. Manufacturer-authored
+    Difco manual distinguishes broth MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4
+    3.24g. Correct commercial product composition and retain source recipe variants
+    as distinct. Isolated proposal only; whole-owner/source/export holds remain and
+    integration requires separate native review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-012. Origins:
+    w03::b-proposal-marine-aliases; w05::M1193-P-MARINE2216. Authentic beforeimage,
+    every authored event and all source-case/capture bindings are retained in the
+    adjacent trace. This is candidate composition, not corpus application, owner merge,
+    role approval, inherited support or release approval. Independent whole-owner
+    science review is required.'
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: ANNOTATED
+  changes: 'Preserved verbatim historical MappingEvidence object from MIM curation
+    (#260), now superseded only as active broth/agar equivalence rationale by the
+    manufacturer table: {"evidence_type": "MANUAL_CURATION", "notes": "Minted under
+    the #288 named-preparation convention (#260): the broth twin of Marine Agar 2216,
+    already in the corpus as an UNMAPPED record. Minted alongside its agar rather
+    than left unmapped: the two differ only by the gelling agent, and splitting them
+    would be arbitrary. Cross-reference: CultureMech:008094. A CultureMech id cannot
+    be the identifier — MIM''s primary key is an ontology CURIE or a registry mint
+    — so it is carried here as evidence.", "source": "MIM curation (#260)"}. Its MANUAL_CURATION
+    attribution is retained as historical provenance; the new manufacturer-based interpretation
+    is separately LLM_SUGGESTION. No inherited role, membership, source or export
+    approval transfers.'
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: 'W05-MEDIA-F01: replace the false active agar-equivalence premise with
+    the directly supported commercial broth basis. Preserve every component, alias,
+    owner identifier and historical event. Isolated report-only successor; maintained
+    data and all original source, owner, role, cross-shard and export holds remain
+    unchanged. Withdrawn active assertion retained verbatim for historical attribution:
+    {"evidence_type": "MANUAL_CURATION", "notes": "Minted under the #288 named-preparation
+    convention (#260): the broth twin of Marine Agar 2216, already in the corpus as
+    an UNMAPPED record. Minted alongside its agar rather than left unmapped: the two
+    differ only by the gelling agent, and splitting them would be arbitrary. Cross-reference:
+    CultureMech:008094. A CultureMech id cannot be the identifier — MIM''s primary
+    key is an ontology CURIE or a registry mint — so it is carried here as evidence.",
+    "source": "MIM curation (#260)"}'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-012 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:29:39.343065+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: ANNOTATED
+  changes: 'Post-seal source correction under issue 1208, comment 6718748333 / W06-TU-005:
+    qualify the component evidence with the manufacturer approximate-formula designation
+    and performance adjustment/supplementation footnote. Preserve COMPLETE relative
+    to all 16 nominal printed dry-product inputs and every component object, quantity
+    and unit. Water remains reconstitution solvent; no salt-form, Peptone, new constituent
+    or every-lot closure inference. W06-TU-003 is already corrected in the active
+    ontology evidence and receives no further edit. All prior history, source/owner/role/export
+    holds and cross-shard dependencies remain. Isolated report-only successor; independent
+    exact-byte review pending.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:30:56.402441+00:00'
+  curator: Codex W05 /root consolidated source supplement
+  action: CORRECTED
+  changes: 'COMBINED37-COMPONENT-GROUNDING-001 / #1193: add individually supported
+    material component references for Sodium chloride, Potassium chloride, Sodium
+    bicarbonate, Potassium bromide, Boric acid, Sodium fluoride, Ammonium nitrate.
+    Preserve every component name/amount/unit, all unrelated fields and prior history;
+    retain per-component unresolved form/product limits. Report-only proposal; no
+    maintained application, source/role or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor TARGET-012 binds the actual published
+    W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen accepted source
+    heads. Exact #1193, #1208 claim corrections and genuine source-history appendices
+    are recorded in final-same-target-reconciliation-v4. Original combined bytes and
+    authentic maintained beforeimage remain preserved. This draft retains all case,
+    occurrence, role, preparation, product and release holds; source acceptance and
+    distinct final combined-byte review are not inferred. No maintained record or
+    export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:48:35.482484+00:00'
+  curator: Codex /root/step7d_independent_review (author task)
+  action: GROUNDED_GENERIC_PEPTONE_COMPONENT
+  changes: 'Under https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6720502530,
+    add only the supported generic mesh:D010461/MIM_CATALOG reference at Marine Broth2216
+    component0, conditional on exact parent payload c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
+    Retain the literal name,5 G_PER_L_AT_STANDARD_RECONSTITUTION, all16 inputs, every
+    other reference/quantity, approximate performance-qualified composition, broth/agar
+    boundary, water outside the powder, all genuine original origins and all source/form/role/export
+    holds. Append two claim-specific evidence objects and qualify only the contradictory
+    active Peptone-UNMAPPED sentence. This author previously advised on the generic
+    parent; a distinct reviewer must assess these final bytes. Private composed proposal
+    only, with no maintained/source/publication approval. The replaced complete prior
+    active note remains verbatim historical provenance: "The manufacturer manual,
+    printed page 352, labels the Difco Marine Broth 2216 table \"Approximate Formula*
+    Per Liter\" and states \"Adjusted and/or supplemented as required to meet performance
+    criteria.\" COMPLETE covers all 16 nominal printed inputs of the dehydrated product,
+    not exact chemical closure for every lot. The listed quantities are per litre
+    at the stated standard reconstitution of 37.4 g powder in 1 L of purified water;
+    they are not concentrations in the dry powder. All component names and quantities
+    are preserved. Generic Peptone and source-unspecified salt forms remain UNMAPPED;
+    no unprinted ingredient, lot-specific adjustment, hydrate or salt identity is
+    invented. Water is reconstitution solvent, not a dry-product constituent. The
+    ATCC agar-minus-agar scratch variant remains a distinct formulation. Under the
+    filed COMBINED37-COMPONENT-GROUNDING-001 follow-up, each printed component was
+    assessed separately. Supported existing MIM material references are added for
+    Sodium chloride, Potassium chloride, Sodium bicarbonate, Potassium bromide, Boric
+    acid, Sodium fluoride, Ammonium nitrate. All literal names, nominal amounts and
+    units are retained. Other entries remain UNMAPPED for the specific form, processing
+    or product prerequisites recorded in the source ledger; there is no blanket unspecified-salt
+    rule or whole-owner approval."'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001605; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
-ingredient_type: UNDEFINED_MIXTURE
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001605; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Correction1193: Exact Difco2216 source
+  cases identify commercial broth37.4g, with separate receiving supplements. Existing
+  mapped2216 record erroneously treats the ATCC agar-minus-agar scratch recipe as
+  the commercial broth formula. Manufacturer-authored Difco manual distinguishes broth
+  MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4 3.24g. Correct commercial product
+  composition and retain source recipe variants as distinct. This proposal neither
+  merges generic MarineBroth/DifcoMarineBroth records nor approves their complete
+  use scopes. Cross-shard worker03 proposal b-proposal-marine-aliases edits the same
+  owner and requires coordinator reconciliation against the original before hash.
+
+
+  Current source-bound correction (W05-MEDIA-F01, #1208/#1193): The existing registry
+  denotes the named commercial Difco Marine Broth 2216 preparation. The manufacturer
+  manual, printed pages 351-352, independently lists broth and agar formulas: broth
+  has magnesium chloride 5.9 g and magnesium sulfate 3.24 g per litre at standard
+  reconstitution; agar has magnesium chloride 8.8 g and sodium sulfate 3.24 g. Thus
+  the products do not differ only by agar. The corrected sixteen-part commercial broth
+  formula is retained; unspecified salt forms remain UNMAPPED. The old MIM curation
+  (#260) assertion and ATCC agar-minus-agar transcription are historical provenance,
+  not the active identity basis. This source-bound correction does not merge generic
+  marine-medium owners or resolve worker03 same-owner alias reconciliation.'
+ingredient_type: NAMED_MEDIUM
 components:
 - component_name: Peptone
-  component_id: MICRO:0000178
   reference_scope: MIM_CATALOG
-  concentration_value: '5.0'
-  concentration_unit: G_PER_L
-- component_name: Yeast Extract
-  component_id: FOODON:03315426
-  reference_scope: MIM_CATALOG
-  concentration_value: '1.0'
-  concentration_unit: G_PER_L
-- component_name: Ferric Citrate
-  component_id: CHEBI:144421
-  reference_scope: MIM_CATALOG
-  concentration_value: '0.1'
-  concentration_unit: G_PER_L
-- component_name: Sodium Chloride
-  component_id: CHEBI:26710
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+  component_id: mesh:D010461
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ferric citrate
+  reference_scope: UNMAPPED
+  concentration_value: '.1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
   reference_scope: MIM_CATALOG
   concentration_value: '19.45'
-  concentration_unit: G_PER_L
-- component_name: Magnesium Chloride
-  component_id: CHEBI:86345
-  reference_scope: MIM_CATALOG
-  concentration_value: '8.8'
-  concentration_unit: G_PER_L
-- component_name: Sodium Sulfate
-  component_id: CHEBI:32149
-  reference_scope: MIM_CATALOG
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+  component_id: CHEBI:26710
+- component_name: Magnesium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5.9'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium sulfate
+  reference_scope: UNMAPPED
   concentration_value: '3.24'
-  concentration_unit: G_PER_L
-- component_name: Calcium Chloride
-  component_id: CHEBI:3312
-  reference_scope: MIM_CATALOG
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Calcium chloride
+  reference_scope: UNMAPPED
   concentration_value: '1.8'
-  concentration_unit: G_PER_L
-- component_name: Potassium Chloride
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium chloride
+  reference_scope: MIM_CATALOG
+  concentration_value: '.55'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:32588
+- component_name: Sodium bicarbonate
   reference_scope: MIM_CATALOG
-  concentration_value: '0.55'
-  concentration_unit: G_PER_L
-- component_name: Sodium Bicarbonate
+  concentration_value: '.16'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:32139
+- component_name: Potassium bromide
   reference_scope: MIM_CATALOG
-  concentration_value: '0.16'
-  concentration_unit: G_PER_L
-- component_name: Potassium Bromide
+  concentration_value: '.08'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:32030
+- component_name: Strontium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.034'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Boric acid
   reference_scope: MIM_CATALOG
-  concentration_value: '0.08'
-  concentration_unit: G_PER_L
-- component_name: Strontium Chloride
-  component_id: CHEBI:36383
-  reference_scope: MIM_CATALOG
-  concentration_value: '0.034'
-  concentration_unit: G_PER_L
-- component_name: Boric Acid
+  concentration_value: '.022'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:33118
+- component_name: Sodium silicate
+  reference_scope: UNMAPPED
+  concentration_value: '.004'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium fluoride
   reference_scope: MIM_CATALOG
-  concentration_value: '0.022'
-  concentration_unit: G_PER_L
-- component_name: Sodium Silicate
-  component_id: CHEBI:60720
-  reference_scope: MIM_CATALOG
-  concentration_value: '0.004'
-  concentration_unit: G_PER_L
-- component_name: Sodium Fluoride
+  concentration_value: '.0024'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:28741
+- component_name: Ammonium nitrate
   reference_scope: MIM_CATALOG
-  concentration_value: '0.0024'
-  concentration_unit: G_PER_L
-- component_name: Ammonium Nitrate
+  concentration_value: '.0016'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
   component_id: CHEBI:63038
-  reference_scope: MIM_CATALOG
-  concentration_value: '0.0016'
-  concentration_unit: G_PER_L
-- component_name: Disodium Phosphate
-  component_id: CHEBI:34683
-  reference_scope: MIM_CATALOG
-  concentration_value: '0.008'
-  concentration_unit: G_PER_L
-- component_name: Distilled water
-  component_id: CHEBI:15377
-  reference_scope: MIM_CATALOG
-  concentration_value: '1.0'
-  concentration_unit: L_PER_L
+- component_name: Disodium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.008'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
 component_assertion:
   method: RECIPE_TRANSCRIPTION
   completeness: COMPLETE
   evidence:
   - evidence_type: RECIPE_SOURCE
-    source: https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx
-    source_record: ATCC Medium 2887 Marine Agar/Broth 2216
-    notes: ATCC Medium 2887 lists the Difco Marine Agar 2216 scratch formula with
-      peptone, yeast extract, ferric citrate, salts, agar, and distilled water per
-      liter, and says to omit agar for broth medium.
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+    notes: The manufacturer manual, printed page 352, labels the Difco Marine Broth
+      2216 table "Approximate Formula* Per Liter" and states "Adjusted and/or supplemented
+      as required to meet performance criteria." COMPLETE covers all 16 nominal printed
+      inputs of the dehydrated product, not exact chemical closure for every lot.
+      The listed quantities are per litre at the stated standard reconstitution of
+      37.4 g powder in 1 L of purified water; they are not concentrations in the dry
+      powder. All component names and quantities are preserved. The literal generic
+      Peptone input is separately grounded below to the exact selected generic parent
+      mesh:D010461; source-unspecified salt forms remain UNMAPPED; no unprinted ingredient,
+      lot-specific adjustment, hydrate or salt identity is invented. Water is reconstitution
+      solvent, not a dry-product constituent. The ATCC agar-minus-agar scratch variant
+      remains a distinct formulation. Under the filed COMBINED37-COMPONENT-GROUNDING-001
+      follow-up, each printed component was assessed separately. Supported existing
+      MIM material references are added for Sodium chloride, Potassium chloride, Sodium
+      bicarbonate, Potassium bromide, Boric acid, Sodium fluoride, Ammonium nitrate.
+      All literal names, nominal amounts and units are retained. Other entries remain
+      UNMAPPED for the specific form, processing or product prerequisites recorded
+      in the source ledger; there is no blanket unspecified-salt rule or whole-owner
+      approval.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A26710
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named sodium chloride material
+      reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A32588
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named potassium chloride
+      material reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A32139
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named sodium hydrogencarbonate
+      material reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A32030
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named potassium bromide
+      material reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A33118
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named boric acid material
+      reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A28741
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named sodium fluoride material
+      reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A63038
+    notes: Official ontology entry read in full with structure/form/processing annotations
+      and the exact manufacturer table. Supports only the named ammonium nitrate material
+      reference; no role, alias, whole-product or export approval. Agent-assisted
+      applicability assessment; original evidence remains.
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+    notes: Printed page352, Difco Marine Broth2216 Approximate Formula Per Liter,
+      independently names Peptone5.0g. Bind only this ordinary generic material component
+      to the separately selected exact Peptone owner mesh:D010461 (payload SHA256
+      c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7). Preserve5
+      G_PER_L_AT_STANDARD_RECONSTITUTION, all16 nominal printed dry-product inputs
+      and the performance adjustment/supplementation qualification. No Bacto, mammalian
+      feedstock, enzyme, supplier-input equivalence, lot composition or role is inferred.
+      Water remains reconstitution solvent outside the dry powder; the agar formulation
+      stays distinct. Agent-assisted scoped applicability correction under https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6720502530;
+      final application remains conditional on that exact accepted parent.
+  - evidence_type: CURATED_DATASET
+    source: https://id.nlm.nih.gov/mesh/D010461
+    notes: The active NLM Peptones descriptor and preferred concept M0016245 support
+      the separately selected ordinary generic Peptone material identity. The manufacturer
+      input is unqualified Peptone, so this component reference follows that generic
+      scope, not a narrower Bacto/mammalian digest. This author previously participated
+      in the generic-parent scope advice; this is an authored dependent correction,
+      not an independent parent approval. No source-case, whole-medium, role or export
+      support is transferred.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:marine_broth_2216
   ontology_label: Marine broth 2216
   ontology_source: kgmicrobe.ingredient
   mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: MANUAL_CURATION
-    source: MIM curation (#260)
-    notes: 'Minted under the #288 named-preparation convention (#260): the broth twin
-      of Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside
-      its agar rather than left unmapped: the two differ only by the gelling agent,
-      and splitting them would be arbitrary. Cross-reference: CultureMech:008094.
-      A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
-      CURIE or a registry mint — so it is carried here as evidence.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+    notes: 'The existing registry denotes the named commercial Difco Marine Broth
+      2216 preparation. The manufacturer manual, printed pages 351-352, independently
+      lists broth and agar formulas: broth has magnesium chloride 5.9 g and magnesium
+      sulfate 3.24 g per litre at standard reconstitution; agar has magnesium chloride
+      8.8 g and sodium sulfate 3.24 g. Thus the products do not differ only by agar.
+      The corrected sixteen-part commercial broth formula is retained; unspecified
+      salt forms remain UNMAPPED. The old MIM curation (#260) assertion and ATCC agar-minus-agar
+      transcription are historical provenance, not the active identity basis. This
+      source-bound correction does not merge generic marine-medium owners or resolve
+      worker03 same-owner alias reconciliation.'
+supplied_form:
+- name: Marine Broth2216
+  form: powder
+  supplier: BD Difco
+  catalog_number: '279110'
+  notes: Catalog identified in manufacturer manual; not a claim that every historical
+    unqualified2216 use selected this package.
 mim_id: MIM:0001605
 legacy_identifiers:
 - MIM:Marine_Broth_2216

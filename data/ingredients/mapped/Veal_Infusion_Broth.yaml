@@ -1,0 +1,109 @@
+identifier: kgmicrobe.ingredient:veal_infusion_broth
+preferred_term: Veal infusion broth
+synonyms:
+- synonym_text: Veal infusion broth
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Veal infusion broth (Difco 0344)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium577.pdf
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:579); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.999774+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'infusion')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Veal_Infusion_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **ambiguous,
+    animal-derived complex mixture/medium label**, not a single chemical. The strongest
+    retrieved source distinguishes a commercial material called **“veal infusion”**
+    from the complete medium in which it is used: **VY liquid medium contains 25 g/L
+    veal infusion (BD Diagnostics) plus 5 g/L yeast extract**. Thus, veal infusion
+    can function as a complex me No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed catalog/supplier-specific registry promotion based on the original
+    import source and primary recipe; prior research retained as provenance, not a
+    veto or approval. DSMZ577 and MediaDive579 identify Difco0344 veal infusion broth25g/L;
+    separate yeast extract5g/L belongs to VY medium, not this product.
+  llm_assisted: true
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.468838+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-136. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002935; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002935; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:579); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Source-bound proposal: DSMZ577 and MediaDive579
+  identify Difco0344 veal infusion broth25g/L; separate yeast extract5g/L belongs
+  to VY medium, not this product.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:veal_infusion_broth
+  ontology_label: Veal infusion broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium577.pdf
+    notes: DSMZ577 and MediaDive579 identify Difco0344 veal infusion broth25g/L; separate
+      yeast extract5g/L belongs to VY medium, not this product.
+supplied_form:
+- name: Veal infusion broth (Difco 0344)
+  supplier: Difco
+  form: dehydrated culture-medium powder
+  notes: DSMZ577 and MediaDive579 identify Difco0344 veal infusion broth25g/L; separate
+    yeast extract5g/L belongs to VY medium, not this product.
+  catalog_number: '0344'
+mim_id: MIM:0002935
+legacy_identifiers:
+- MIM:Veal_Infusion_Broth
+- UNMAPPED_0566
+- kgmicrobe.ingredient:veal_infusion_broth

@@ -30,23 +30,26 @@ synonyms:
   source: merged_record
 - synonym_text: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic
     acid
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
 - synonym_text: Scutellarein 7-O-beta-D-glucuronide
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
 - synonym_text: Scutellarein-7-O-beta-D-glucuronide
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
 - synonym_text: Scutellarein-7-glucuronide
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
 - synonym_text: Scutellarein-7beta-D-glucuronide
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
 - synonym_text: Scutellarein-7beta-D-glucuronoside
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merged_record
+- synonym_text: Na2S2O4 (sodium dithionite)
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:9fee3c0f257ab7170834523b406b4cbdf6701f67f091bd67c389b79219e88fce'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 47
@@ -115,11 +118,55 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:15:32.683727+00:00'
+  curator: Codex worker08 /root/inorganics
+  action: CORRECTED
+  changes: 'Reject six scutellarin/glucuronide aliases on live Sodium_Dithionite owner.
+    Evidence: https://mediadive.dsmz.de/ingredients/653, https://www.ebi.ac.uk/chebi/CHEBI:66870,
+    https://www.ebi.ac.uk/chebi/CHEBI:61278; capture keys: if-web-a6115707524d, if-web-3b45bf729424,
+    if-web-cba02e9e72c1; see reports/all_unmatched_20261107/worker-08/research/inorganic_forms.
+    Proposed bytes only; all existing release holds retained.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Na2S2O4 (sodium dithionite)';
+    Reject unrelated scutellarin label '5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl
+    beta-D-glucopyranosiduronic acid'; Reject unrelated scutellarin label 'Scutellarein
+    7-O-beta-D-glucuronide'; Reject unrelated scutellarin label 'Scutellarein-7-O-beta-D-glucuronide';
+    Reject unrelated scutellarin label 'Scutellarein-7-glucuronide'; Reject unrelated
+    scutellarin label 'Scutellarein-7beta-D-glucuronide'; Reject unrelated scutellarin
+    label 'Scutellarein-7beta-D-glucuronoside'; Bounded correction follows issue1169;
+    no full-row release approval
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G18 from authentic common before
+    sha256=5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1. Origins:
+    worker07:B-PROPOSAL-Sodium_Dithionite sha256=8a5db0b778fbf29dd18aa87380cb38b8acbe9111b871e88dea679dddd39cd19b;
+    worker08:if-repair-dithionite-Sodium_Dithionite sha256=4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002307; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002307; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7775-14-6

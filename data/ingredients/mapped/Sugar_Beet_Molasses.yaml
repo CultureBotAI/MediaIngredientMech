@@ -1,4 +1,4 @@
-identifier: FOODON:00003412
+identifier: FOODON:03543005
 preferred_term: Sugar beet molasses
 synonyms:
 - synonym_text: Sugar beet molasses
@@ -29,24 +29,53 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Propose correction from sugar beet root FOODON00003412 to exact sugar beet
+    molasses FOODON03543005; retain prior WITHHOLD until new payload review.
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.566172+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-180. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002406; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002406; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:346); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: FOODON:00003412
-  ontology_label: sugar beet
+  ontology_id: FOODON:03543005
+  ontology_label: 30050 - sugar beet molasses (efsa foodex2)
   ontology_source: FOODON
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: MANUAL_CURATION
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: FOODON via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0535; matched via 'Sugar beet molasses'; stem-substring
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?iri=http://purl.obolibrary.org/obo/FOODON_03543005
+    notes: 'Verified exact material definition: molasses obtained from sugar beet.
+      Former FOODON00003412 denotes root and is contradicted for this syrup; original
+      event retained.'
 mim_id: MIM:0002406
 legacy_identifiers:
 - MIM:Sugar_Beet_Molasses
 - FOODON:00003412
+- FOODON:03543005

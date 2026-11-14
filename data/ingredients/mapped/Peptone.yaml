@@ -1,14 +1,72 @@
-identifier: MICRO:0000178
+identifier: mesh:D010461
 preferred_term: Peptone
 ontology_mapping:
-  ontology_id: MICRO:0000178
-  ontology_label: peptone
-  ontology_source: MICRO
+  ontology_id: mesh:D010461
+  ontology_label: Peptones
+  ontology_source: MESH
   mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS search
-    notes: Auto-created from foodon_pass; label-exact (micro)
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Primary manufacturer guide defines peptones as protein hydrolysates of
+      varied animal/vegetable starting materials. Existing unqualified Peptone owner
+      has only lexical MICRO mammalian grounding, not source-origin evidence. Own
+      variable-material identity does not assign a particular digest or supplier.
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/M0017860
+    notes: 'Primary NLM concept for active descriptor D011492 defines a complex mixture
+      produced by partial or extensive hydrolysis. Compared with the manufacturer
+      generic partial-protein-hydrolysate definition, this supports a broader material
+      relation only: NARROW_MATCH / native broadMatch, preserving kgmicrobe.ingredient:peptone.
+      The descriptor indexing annotation does not establish clinical use or approve
+      an organism/assay role.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Printed page7 defines generic peptones as water-soluble partial protein
+      hydrolysates from plant, yeast or animal sources and includes acid, base or
+      enzyme processing. This supports broader Protein Hydrolysates membership without
+      selecting feedstock, enzyme, supplier, lot, numerical composition or organism
+      role.
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/M0016245
+    notes: The direct Peptones descriptor D010461 was assessed under native section3
+      exact-term precedence. Its primary concept specifies acid-or-enzyme partial
+      hydrolysis and solubility/nonprecipitation criteria. The source-unspecified
+      owner and two observations do not establish that complete narrower specification;
+      manufacturer generic scope also includes base hydrolysis. No exact D010461 identity
+      is asserted merely from its matching name.
+  - evidence_type: LLM_SUGGESTION
+    source: https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl
+    notes: Full FOODON:03315306 class has an actual subclass restriction member_of
+      some FOODON:03400181 food additive (us cfr), in addition to its SIREN flavoring
+      rdfs:comment. The initial private FoodOn candidate is unselected because these
+      source peptones do not establish that membership. This statement is a negative
+      applicability finding; it does not edit or disapprove other owners automatically.
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/D010461
+    notes: The complete active NLM Peptones descriptor, its explicit Peptone entry
+      term and preferred concept M0016245 support the ordinary generic material identity.
+      Under native section3, this supported unspecified sense takes precedence over
+      a local fallback. The conventional partial-hydrolysis/solubility description
+      does not create a new lot-specific assay gate when no different actual source
+      preparation is established. This is not supplier-product or source-assay approval.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Printed page7 independently identifies generic peptones as water-soluble
+      partial protein-hydrolysis products while explaining variable feedstocks and
+      product profiles. Mention of possible acid, base or enzyme processing is not
+      positive evidence that the unqualified assigned owner denotes a different preparation
+      from the ordinary MeSH Peptones sense. Earlier process/precipitation-gate inference
+      is superseded; no numeric composition or role is imported.
+  - evidence_type: LLM_SUGGESTION
+    source: https://foodon.org/design/foodon-relations/
+    notes: The official member_of guidance connects products to external product-type
+      categories rather than asserting subclass identity in agency classifications.
+      The verified FoodOn03315306 existential member_of axiom is real, but does not
+      by itself impose food-use, has-role, regulatory approval or lot eligibility
+      on a MIM material broader mapping. Earlier stronger negative applicability wording
+      is retained historically and superseded here. Selection of direct generic mesh:D010461
+      follows the closer supported material term, not an invented FoodOn gate.
 mapping_status: MAPPED
 curation_history:
 - timestamp: '2026-05-01T19:55:09.679469+00:00'
@@ -56,11 +114,101 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:54:48.074406+00:00'
+  curator: worker05/materials_research skeptical remediation1193
+  action: CORRECTED
+  changes: Reconcile existing generic Peptone owner to local protein-digest material
+    identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural
+    provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder
+    source-case holds; no new owner or catalog assignment. Exact isolated guarded
+    proposal only.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Reject only the incomplete concentration token Peptone (0.01
+    % as an identity name of generic Peptone. Preserve its original microbedecoder
+    provenance and plural Peptones. Do not invent a missing parenthesis, percent basis
+    or preparation. Eighteen retained historical inbound MICRO:0000178 component references
+    and current proposed components remain a source-level integration dependency;
+    no automatic retargeting is authorized. Isolated proposal only; no maintained
+    data or source membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:36:38.806015+00:00'
+  curator: Codex /root/buffer_hepes; W05 consolidated report-only parent correction
+  action: CORRECTED
+  changes: 'Complete the supported nonidentity family grounding: retain kgmicrobe.ingredient:peptone
+    and use NARROW_MATCH to mesh:D011492 Protein Hydrolysates, with native broadMatch
+    plus the local B1 identity row. The active primary NLM concept M0017860 defines
+    a complex mixture produced by partial or extensive hydrolysis; the manufacturer
+    guide defines generic peptones as water-soluble partial protein hydrolysates and
+    includes plant, yeast or animal material and acid, base or enzyme processing.
+    Assess the direct MeSH Peptones term D010461 before this broader route: its acid-or-enzyme
+    and precipitation criteria are not established for the complete source-unspecified
+    generic scope. MICRO:0000178 adds unsupported mammalian origin, MICRO:0000174
+    an unverified enzymatic process, and MICRO:0000172 does not establish yeast coverage.
+    Do not select FOODON:03315306 after full OWL inspection reveals an actual member-of
+    food-additive restriction in addition to its SIREN comment; preserve the initial
+    private candidate and NEW01 report as unselected evidence. CHEBI:749541 is a sparse
+    imported molecular-entity class without established whole-mixture scope. MICRO:0000167
+    is a supported but less specific undefined-mixture option. The MeSH descriptor
+    indexing annotation about therapeutic/nutrient use is not imported as a clinical
+    or assay role. Preserve the two MicrobeDecoder observations, raw plural, rejected
+    truncated token, all previous history/evidence/statistics, provisional roles,
+    source holds and source-specific incoming-reference reconciliation; no owner,
+    source-case or export admission. This event describes the selected successor relative
+    to the published source payload; the earlier unselected private FoodOn candidate
+    remains separately preserved and was never applied.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:46:57.767703+00:00'
+  curator: Codex /root/buffer_hepes; W05 direct generic Peptone reassessment
+  action: CORRECTED_GENERIC_PEPTONE_IDENTITY
+  changes: 'Use the ordinary generic Peptone identity mesh:D010461 (Peptones) under
+    MAPPING_SEMANTICS section3 exact-term and unspecified-sense priority. The active
+    primary NLM descriptor explicitly supplies Peptone as an entry term and a conventional
+    water-soluble partial protein-hydrolysis material definition, independently consistent
+    with the manufacturer generic peptone description. The earlier requirement for
+    a source-specific acid-or-enzyme/precipitation certificate was overstated: the
+    general possibility of base hydrolysis does not establish a different actual preparation
+    or sense for this unqualified owner. This is generic material identity, not identity
+    with every supplier product or a newly verified assay preparation. The earlier
+    FoodOn inference was also overstated: its actual member_of external category relation
+    is not a has-role, food-use, regulatory-approval or lot-eligibility requirement,
+    and the axiom alone does not refute a material broader mapping. The closer direct
+    generic MeSH term, rather than that invented gate, determines the corrected identity
+    choice. Retain all earlier evidence and histories as authentic superseded interpretation;
+    preserve raw plural and rejected truncated label, occurrence statistics, provisional
+    roles and all frozen source/owner/export holds. Five reviewed generic dependent
+    references and the separate RCM reference must follow this actual identifier in
+    independently authored source-specific successors; no global replacement, named-product
+    merge or source-observation redirect is authorized. Isolated guarded successor;
+    no maintained or downstream application.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002016; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002016; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
@@ -82,9 +230,80 @@ synonyms:
   synonym_type: RAW_TEXT
   source: microbedecoder
 - synonym_text: Peptone (0.01 %
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: microbedecoder
+notes: 'Previous published proposal scope, preserved as historical provenance and
+  superseded where corrected below:
+
+  Correction1193: Existing generic Peptone material owner includes unqualified MicrobeDecoder
+  plural peptones; primary protein-digest family is known but mammalian source is
+  not. MICRO0000178 definition restricts to mammalian animal-protein digest, so its
+  old exact identity is replaced with local material identity without adding an unsupported
+  ontology relation. This removes a narrower origin assertion; it does not identify
+  the actual assay supplier or composition, approve PROTEIN_SOURCE, repair the truncated
+  Peptone (0.01 % alias, or release any source/export hold. All current exact-label
+  occurrences and full recipes were inspected as bound context. Preserve raw observations
+  and original organism relations independently.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration
+  token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original
+  microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis,
+  percent basis or preparation. Eighteen retained historical inbound MICRO:0000178
+  component references and current proposed components remain a source-level integration
+  dependency; no automatic retargeting is authorized. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.
+
+
+  Consolidated parent-grounding successor (prior scope text preserved as history):
+  Complete the supported nonidentity family grounding: retain kgmicrobe.ingredient:peptone
+  and use NARROW_MATCH to mesh:D011492 Protein Hydrolysates, with native broadMatch
+  plus the local B1 identity row. The active primary NLM concept M0017860 defines
+  a complex mixture produced by partial or extensive hydrolysis; the manufacturer
+  guide defines generic peptones as water-soluble partial protein hydrolysates and
+  includes plant, yeast or animal material and acid, base or enzyme processing. Assess
+  the direct MeSH Peptones term D010461 before this broader route: its acid-or-enzyme
+  and precipitation criteria are not established for the complete source-unspecified
+  generic scope. MICRO:0000178 adds unsupported mammalian origin, MICRO:0000174 an
+  unverified enzymatic process, and MICRO:0000172 does not establish yeast coverage.
+  Do not select FOODON:03315306 after full OWL inspection reveals an actual member-of
+  food-additive restriction in addition to its SIREN comment; preserve the initial
+  private candidate and NEW01 report as unselected evidence. CHEBI:749541 is a sparse
+  imported molecular-entity class without established whole-mixture scope. MICRO:0000167
+  is a supported but less specific undefined-mixture option. The MeSH descriptor indexing
+  annotation about therapeutic/nutrient use is not imported as a clinical or assay
+  role. Preserve the two MicrobeDecoder observations, raw plural, rejected truncated
+  token, all previous history/evidence/statistics, provisional roles, source holds
+  and source-specific incoming-reference reconciliation; no owner, source-case or
+  export admission. Independent exact-byte review and root integration remain pending.
+
+
+  Direct generic Peptone reassessment, superseding earlier broader-only and eligibility-gate
+  interpretations while preserving their history: Use the ordinary generic Peptone
+  identity mesh:D010461 (Peptones) under MAPPING_SEMANTICS section3 exact-term and
+  unspecified-sense priority. The active primary NLM descriptor explicitly supplies
+  Peptone as an entry term and a conventional water-soluble partial protein-hydrolysis
+  material definition, independently consistent with the manufacturer generic peptone
+  description. The earlier requirement for a source-specific acid-or-enzyme/precipitation
+  certificate was overstated: the general possibility of base hydrolysis does not
+  establish a different actual preparation or sense for this unqualified owner. This
+  is generic material identity, not identity with every supplier product or a newly
+  verified assay preparation. The earlier FoodOn inference was also overstated: its
+  actual member_of external category relation is not a has-role, food-use, regulatory-approval
+  or lot-eligibility requirement, and the axiom alone does not refute a material broader
+  mapping. The closer direct generic MeSH term, rather than that invented gate, determines
+  the corrected identity choice. Retain all earlier evidence and histories as authentic
+  superseded interpretation; preserve raw plural and rejected truncated label, occurrence
+  statistics, provisional roles and all frozen source/owner/export holds. Five reviewed
+  generic dependent references and the separate RCM reference must follow this actual
+  identifier in independently authored source-specific successors; no global replacement,
+  named-product merge or source-observation redirect is authorized. Exact successor
+  independent review remains required.'
 mim_id: MIM:0002016
 legacy_identifiers:
 - MIM:Peptone
 - MICRO:0000178
+- mesh:D010461

@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock
+preferred_term: JCM 515 vitamin B12 20 microgram per ml stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock
+  ontology_label: JCM 515 vitamin B12 20 microgram per ml stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=515
+    notes: Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515
+      explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving
+      the receiving medium. Registry identity preserves this documented preparation;
+      no exact molecular mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515 explicitly
+  adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving the receiving
+  medium. The carrier and any additional stock constituents are unspecified. No water,
+  ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This
+  is a preparation record with UNKNOWN component completeness; complete-formulation
+  equivalence and source hold release are not asserted. NBRC 0.002%(w/v) and TOGO
+  M498 2 mg/100 ml nominal strengths both convert to 20 mg/L. Their carriers and stock
+  provenance are not shown to match JCM 515; retain them only as conditional comparisons,
+  without merging source memberships. Quantities, where present, describe the supplied
+  stock, not the finished receiving medium. Raw labels remain source-scoped in evidence;
+  no global synonym, biological role, occurrence count integration or downstream admission
+  is proposed.
+components:
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG_PER_L
+  source: 'Issue 1227 IR003 retained limit: Generic B12 does not select a vitamer.
+    CHEBI:176843 is a class; CHEBI:17439 selects cyanocobalamin. Preserve source and
+    owner holds.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=515
+    source_record: JCM 515 vitamin B12 20 microgram per ml stock
+    notes: Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515
+      explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving
+      the receiving medium. The carrier and any additional stock constituents are
+      unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin
+      form is inferred. This is a preparation record with UNKNOWN component completeness;
+      complete-formulation equivalence and source hold release are not asserted. NBRC
+      0.002%(w/v) and TOGO M498 2 mg/100 ml nominal strengths both convert to 20 mg/L.
+      Their carriers and stock provenance are not shown to match JCM 515; retain them
+      only as conditional comparisons, without merging source memberships.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.102866+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM515
+    explicitly adds1ml of20µg/ml filter-sterilized B12 stock after autoclaving the
+    receiving medium.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.111326+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR006: set UNKNOWN because the source does not
+    establish retained or full stock membership; no explicitly omitted constituent
+    list is claimed. Earlier history and all source, scientific, role, withheld and
+    downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003050 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003050
+legacy_identifiers:
+- MIM:JCM515_Vitamin_B12_20ug_ml_Stock
+- kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock

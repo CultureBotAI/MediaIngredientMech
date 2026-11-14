@@ -42,6 +42,9 @@ synonyms:
 - synonym_text: MOPS buffer (SIGMA)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: 3-[N-morpho- lino] propanesulfonic acid (MOPS)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06 case CM_NAME:7ecad0eaa6874a18efcafb58e963d264b06411526d870ac26173cbf27a321db5
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 56
@@ -138,11 +141,23 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''MOPS buffer (SIGMA)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: ADDED_SYNONYMS
+  changes: Add the raw broken-line MOPS acid spelling to exact CHEBI:44115 acid owner;
+    preserve broader MOPS owner boundary.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000123; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000123; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 32 FEBA media formulations.
 chemical_properties:

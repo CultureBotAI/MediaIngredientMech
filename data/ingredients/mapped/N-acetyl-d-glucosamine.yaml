@@ -10,6 +10,19 @@ ontology_mapping:
     source: MIM curation (#460)
     notes: N-acetyl-D-glucosamine is the free monosaccharide; CHEBI:8006 is the peptidoglycan
       residue and carries the wrong polymer formula.
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal nacetyl-d-monomer
+    notes: The D-configured N-acetylglucosamine monomer is explicit despite doubled
+      dashes. CHEBI:506227 defines the free monosaccharide; CHEBI:8006 is a peptidoglycan
+      residue/polymer context and is not the ingredient. TOGO M194 is provider-backed;
+      its historical JCM201 endpoint absence does not justify swapping in LB-medium
+      context. JCM1429 lists N-acetyl-D-glucosamine as a free ingredient. The frozen
+      CHEBI:8006 annotation conflicts with this monomer and its formula; the existing
+      CHEBI:506227 owner is correct. Add the exact spaced N -Acetyl spelling and flag
+      the upstream term independently of the alias. Evidence and exact frozen scope
+      are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: 'Role: Carbon source; Properties: Defined component, Organic compound,
     Simple component'
@@ -38,6 +51,12 @@ synonyms:
 - synonym_text: N-Acetylchitosamine
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: N--Acetyl--D--glucosamine
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+- synonym_text: N -Acetyl-D-glucosamine
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 29
@@ -160,11 +179,35 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal nacetyl-d-monomer: added aliases [''N--Acetyl--D--glucosamine'',
+    ''N -Acetyl-D-glucosamine'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001748; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001748; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7512-17-6

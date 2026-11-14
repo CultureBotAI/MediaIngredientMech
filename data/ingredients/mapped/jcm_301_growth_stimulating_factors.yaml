@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:jcm_301_growth_stimulating_factors
+preferred_term: JCM 301 growth stimulating factors
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_301_growth_stimulating_factors
+  ontology_label: JCM 301 growth stimulating factors
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=301
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: Isobutyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: Valeric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: 2-Methyl-butyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: 3-Methyl-butyric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: Caproic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: Succinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML
+- component_name: NaOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=301
+    source_record: JCM 301 growth stimulating factors
+    notes: Verbatim constituent names and source batch quantities; water is a preparation
+      input. Child reference_scope UNMAPPED means no exact child identifier was independently
+      established.
+  notes: Preparation inputs fromJCM301; adjustpH to9.0 withNaOH (amount unspecified).
+    Component assertion does not claim all acids remain protonated after neutralization.2-Methyl-butyric
+    acid stereochemistry is unspecified.
+notes: 'Preparation inputs fromJCM301; adjustpH to9.0 withNaOH (amount unspecified).
+  Component assertion does not claim all acids remain protonated after neutralization.2-Methyl-butyric
+  acid stereochemistry is unspecified. Raw source labels retained without global resolving
+  aliases: ["Growth stimulating factors (see below)"]. Occurrence-specific linkage
+  is required; identical generic words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003278 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003278
+legacy_identifiers:
+- MIM:jcm_301_growth_stimulating_factors
+- kgmicrobe.ingredient:jcm_301_growth_stimulating_factors

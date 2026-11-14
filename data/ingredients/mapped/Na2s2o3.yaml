@@ -14,6 +14,15 @@ ontology_mapping:
     notes: Corrected from CHEBI:59168 (nonaethylene glycol monomethyl ether — unrelated
       compound) to CHEBI:132112 (sodium thiosulfate). CAS-RN 7772-98-7 confirms sodium
       thiosulfate.
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal thiosulfate-malformed-alias
+    notes: Na2S2SO3 contains three sulfur atoms as written, whereas thiosulfate132112
+      is Na2S2O3. Ingredient1492 has no corroborating registry data. The thiosulfate
+      owner must not resolve this malformed string; preserve it as rejected source
+      provenance until a source correction exists. Evidence and exact frozen scope
+      are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: 'Properties: Defined component, Inorganic compound, Simple component'
   synonym_type: RAW_TEXT
@@ -43,7 +52,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
 - synonym_text: NaS2O3
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: Disodium thiosulfate
   synonym_type: EXACT_SYNONYM
@@ -64,7 +73,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Na2S2SO3
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0472
 - synonym_text: Na2S2O3 (if needed)
   synonym_type: RAW_TEXT
@@ -245,11 +254,38 @@ curation_history:
     for the assertion-specific interpretation.
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal thiosulfate-malformed-alias: added aliases
+    []; rejected provenance labels [''Na2S2SO3''] Subject to independent skeptical
+    review and guarded coordinator integration; inherited full-payload support must
+    not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-05: synonyms[9] ''NaS2O3'': reject_resolving_identity_preserve_text_and_source.
+    Original DSMZ1003 prints NaS2O3 itself; no independent correction restores a second
+    sodium, so the exact one-sodium formula must not globally resolve to disodium
+    thiosulfate. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001816; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001816; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7772-98-7

@@ -1,27 +1,36 @@
-identifier: FOODON:03315719
+identifier: mesh:C017721
 preferred_term: Casamino acids
 ontology_mapping:
-  ontology_id: FOODON:03315719
-  ontology_label: mammalian milk protein (hydrolyzed)
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: mesh:C017721
+  ontology_label: casamino acids
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: HISTORICAL; superseded by exact MeSH identity below. Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH
   - evidence_type: MANUAL_CURATION
     source: MIM curation (#263)
-    notes: Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is
-      an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not
-      a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone
-      record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already
-      correct and is retained.
+    notes: HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020
+      'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein --
+      an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the
+      same FOODON term as the sibling Casein_Peptone record, which is the same class
+      of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/C017721.json
+    notes: Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein
+      whose nitrogen is converted to amino acids or other compounds of relative chemical
+      simplicity. This exact material term is more specific than FOODON03315719 and
+      avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct
+      from enzymatic casein peptone and vitamin-assay grade. Historical source statistics
+      are preserved, not recomputed or merged.
 synonyms:
 - synonym_text: ( vitamin assay)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: 'Properties: Undefined component'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: Casamino Acid
   synonym_type: EXACT_SYNONYM
@@ -36,11 +45,38 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: carbocerate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Casamino Acids (0.01 %
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: Casamino acids (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD--Difco)
+- synonym_text: Casamino acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (Difco)
+- synonym_text: casamino acid (BD Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:casamino acid (BD Difco)
+- synonym_text: Casamino acids (BD Bacto)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD Bacto)
+- synonym_text: Bacto Casamino acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Bacto Casamino acids (Difco)
+- synonym_text: Casamino acids (BD BBL)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD BBL)
+- synonym_text: Casamino acids (BD-Difico)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD-Difico)
+- synonym_text: Casamino Acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino Acids (Difco)
+- synonym_text: Bacto Casamino Acid (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Bacto Casamino Acid (Difco)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1313
@@ -168,11 +204,45 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose exact ordinary acid-casein digest identity mesh:C017721 verified
+    in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject
+    inherited carbocerate/metadata/grade-fragment aliases; preserve the historical
+    concentration-fragment RAW_TEXT label under#213 pending claim-specific source
+    review and add ordinary supplier spellings. Coordinator must reconcile identifier
+    references and shared-parent closure; no merge or hold release.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:55:57.876916+00:00'
+  curator: Codex worker09
+  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
+  changes: 'Issue #1226 provenance-only correction for ma-casamino-distinct, audit
+    flag 572: changed ontology_mapping.evidence[2].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
+    not a MIM human reviewer; the cited source author is distinct from the author
+    of this curation judgment. Preserved the complete source, notes and claim content,
+    all other mapping evidence (including the ambiguous historical Casamino wrapper
+    where present), component evidence, scientific fields and prior history. No identity,
+    source applicability, outcome, role, coalescence or export approval change. Audit:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
+    complete original evidence-object SHA256 51770068b6471bacd7b371954c225258f20205dc6b022ed56fbae455c7ecb815.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000603; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000603; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 65072-00-6
@@ -190,3 +260,4 @@ mim_id: MIM:0000603
 legacy_identifiers:
 - MIM:Casamino_Acids
 - FOODON:03315719
+- mesh:C017721

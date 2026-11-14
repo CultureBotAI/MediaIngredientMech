@@ -1,0 +1,91 @@
+identifier: kgmicrobe.compound:hexaammonium_heptamolybdate_dihydrate
+preferred_term: Hexaammonium heptamolybdate dihydrate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:35505
+  ontology_label: hydrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    notes: NBRC943 explicitly specifies (NH4)6Mo7O24·2H2O9.25mg in modified Hutner
+      solution. Formula is chemically coherent and no competing primary recipe formula
+      was found. Exact tetrahydrate term86244 is not an identity match; its own prose
+      says heptahydrate despite four-water formula, so formula/structure take precedence.
+      Preserve a distinct source-stated two-water registry identity without replacing
+      its waters. No exact ontology term or CAS is asserted; registry identity preserves
+      the stated formula. Bounded exact hexaammonium search finds only the distinct
+      tetrahydrate; CHEBI35505 is the verified general hydrate-class anchor, not a
+      claim of exact parent identity.
+synonyms:
+- synonym_text: (NH4)6Mo7O24·2H2O
+  synonym_type: HYDRATE_FORM
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+notes: 'NBRC943 explicitly specifies (NH4)6Mo7O24·2H2O9.25mg in modified Hutner solution.
+  Formula is chemically coherent and no competing primary recipe formula was found.
+  Exact tetrahydrate term86244 is not an identity match; its own prose says heptahydrate
+  despite four-water formula, so formula/structure take precedence. Preserve a distinct
+  source-stated two-water registry identity without replacing its waters. No exact
+  ontology term or CAS is asserted; registry identity preserves the stated formula.
+  Bounded exact hexaammonium search finds only the distinct tetrahydrate; CHEBI35505
+  is the verified general hydrate-class anchor, not a claim of exact parent identity.
+
+
+  CH-10 qualification: retain this distinct source-stated local hydrate identity and
+  exact formal water count under §3. No measured crystal phase, supplier purity, new
+  CAS or molecular mass is asserted. This does not release the separate source1201/#344/#896
+  owner conflict. Bounded live heptamolybdate and ammonium-molybdate searches found
+  tetrahydrate86244 and orthomolybdate91249, neither a parent identity for this dihydrate.
+  General ammonium-salt47704 and hydrate35505 are broad, non-equivalent class anchors;
+  no closer heptamolybdate parent was established in those searches. Retain the verified
+  hydrate35505 asymmetric class mapping rather than substitute the chemically wrong
+  orthomolybdate or invent an exact term. Parent specificity is a recorded limitation,
+  not a physical-phase gate.'
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: NBRC943 explicitly specifies (NH4)6Mo7O24·2H2O9.25mg in modified Hutner
+    solution. Formula is chemically coherent and no competing primary recipe formula
+    was found. Exact tetrahydrate term86244 is not an identity match; its own prose
+    says heptahydrate despite four-water formula, so formula/structure take precedence.
+    Preserve a distinct source-stated two-water registry identity without replacing
+    its waters. No exact ontology term or CAS is asserted; registry identity preserves
+    the stated formula. Isolated successor proposal only; no maintained surfaces,
+    roles, source bytes or publication holds changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-10 qualification: retain this distinct source-stated
+    local hydrate identity and exact formal water count under §3. No measured crystal
+    phase, supplier purity, new CAS or molecular mass is asserted. This does not release
+    the separate source1201/#344/#896 owner conflict. Bounded live heptamolybdate
+    and ammonium-molybdate searches found tetrahydrate86244 and orthomolybdate91249,
+    neither a parent identity for this dihydrate. General ammonium-salt47704 and hydrate35505
+    are broad, non-equivalent class anchors; no closer heptamolybdate parent was established
+    in those searches. Retain the verified hydrate35505 asymmetric class mapping rather
+    than substitute the chemically wrong orthomolybdate or invent an exact term. Parent
+    specificity is a recorded limitation, not a physical-phase gate. Isolated report-only
+    successor; original sealed evidence/history retained. No role, owner/export approval
+    or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003029 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+chemical_properties:
+  data_source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+  molecular_formula: (NH4)6Mo7O24.2H2O
+mim_id: MIM:0003029
+legacy_identifiers:
+- MIM:Hexaammonium_Heptamolybdate_Dihydrate
+- kgmicrobe.compound:hexaammonium_heptamolybdate_dihydrate

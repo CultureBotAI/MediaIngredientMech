@@ -39,10 +39,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2MoSO4 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NaMoO4 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium Molybdate Dihydrate
   synonym_type: EXACT_SYNONYM
@@ -67,37 +67,37 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2MoSO4
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NaMoO4
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: sodium dioxido(dioxo)molybdenum--water (1/2)
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na2Mo4 x 2 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0469
 - synonym_text: Na2MoO7 x 2 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0470
 - synonym_text: Na2MoO7O4 x 2 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0471
 - synonym_text: Na2MoO4·2H2O
   synonym_type: RAW_TEXT
   source: MERGED_FROM_kgmicrobe.compound:na2moo42h2o
 - synonym_text: Na2MO4.2H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: Na2MoO7・2H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: NaMoO4 · 2H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: NaMoO4.2H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -292,11 +292,47 @@ curation_history:
     ''NaMoO4 · 2H2O''; ''NaMoO4.2H2O''. Tokens already present on the kg-microbe ontology
     node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
+  changes: Retype literal Na2Mo4 x 2 H2O as REJECTED_LABEL on sodium molybdate dihydrate.
+    MediaDive 736 supplies that oxygen-deficient formula with no CAS/structure; exact
+    CHEBI:75213 is MoO4-containing. Retain malformed source text and its provenance
+    without claiming the intended corrected compound; unrelated aliases and source
+    holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:18:34.364526+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: REJECTED_UNSUPPORTED_FORMULA_ALIASES
+  changes: 'Independent owner-wide review extends the existing Na2Mo4 x 2 H2O rejection
+    to ten related literal malformed or form-unspecified formula aliases: [''Na2MoSO4
+    x 2 H2O'', ''NaMoO4 x 2 H2O'', ''Na2MoSO4'', ''NaMoO4'', ''Na2MoO7 x 2 H2O'',
+    ''Na2MoO7O4 x 2 H2O'', ''Na2MO4.2H2O'', ''Na2MoO7・2H2O'', ''NaMoO4 · 2H2O'', ''NaMoO4.2H2O''].
+    CHEBI:75213 denotes disodium molybdate dihydrate, 2H2O.MoO4.2Na. The listed formulas
+    alter sodium/oxygen counts, introduce sulfur, omit hydrate specificity or omit
+    the molybdenum element spelling. Preserve each exact source string and its original
+    provenance as REJECTED_LABEL; do not infer a corrected chemical for any source
+    occurrence. Historical June 16 merge claims cite Edison/MediaDive/OAK generically
+    but do not provide a source-qualified correction witness that establishes universal
+    alias equivalence. The September backfills preserve KG spellings, not independent
+    formula evidence. Primary identifier, structure, roles, counts and source holds
+    remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001813; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001813; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:75213
 chemical_properties:

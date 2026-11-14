@@ -1,10 +1,10 @@
-identifier: cas:333-93-7
+identifier: CHEBI:201718
 preferred_term: Putrescine Dihydrochloride
 ontology_mapping:
   ontology_id: CHEBI:201718
   ontology_label: 1,4-Diaminobutane dihydrochloride
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -15,6 +15,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via PubChem (pubchem-xref)
     notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 9532'
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal putrescine-dihydrochloride
+    notes: Putrescine2HCl, CAS333-93-7 and C4H12N2.2ClH identify the dihydrochloride,
+      not free putrescine. CHEBI:201718 now denotes this exact salt; the existing
+      CAS-primary owner still treats it as a broad parent. Promote the owner to the
+      exact ontology salt while retaining CAS, rejecting the free-base alias and preserving
+      history. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: Putrescine
   synonym_type: REJECTED_LABEL
@@ -85,11 +94,35 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal putrescine-dihydrochloride: added aliases
+    []; rejected provenance labels []. Exact ontology promotion. Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002144; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002144; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 333-93-7
@@ -104,3 +137,4 @@ mim_id: MIM:0002144
 legacy_identifiers:
 - MIM:Putrescine_Dihydrochloride
 - cas:333-93-7
+- CHEBI:201718

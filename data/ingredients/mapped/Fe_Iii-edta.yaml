@@ -9,6 +9,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal ferric-edta
+    notes: EDTA・Fe(III) names the ferric EDTA coordination entity CHEBI:30729. The
+      three frozen sources specify the complex without a sodium counterion; a sodium
+      feredetate identity78292 would add an unsupported constituent. The existing
+      ferric-EDTA owner can retain the exact typographic alias. Evidence and exact
+      frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: 'Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
@@ -44,11 +53,14 @@ synonyms:
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Fe(III)-EDTA (0.66% [wt/vol] in water)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Fe·EDTA
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: EDTA・Fe(III)
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 58
@@ -164,11 +176,38 @@ curation_history:
     acceptor: ethylenediaminetetraacetatoferrate''. Preserved original text and source
     metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal ferric-edta: added aliases [''EDTA・Fe(III)''];
+    rejected provenance labels [] Subject to independent skeptical review and guarded
+    coordinator integration; inherited full-payload support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-06: synonyms[11] ''Fe(III)-EDTA (0.66% [wt/vol] in
+    water)'': reject_resolving_identity_preserve_text_and_source. TOGO2251 explicitly
+    defines0.66g Fe(III)-EDTA in100ml water and adds10ml of that stock; formulation
+    is distinct from the isolated coordination entity. Isolated report-only successor;
+    original sealed evidence/history retained. No role, owner/export approval or inherited
+    source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001060; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001060; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 15275-07-7

@@ -15,10 +15,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MESH via OLS search
     notes: Auto-upgraded from 'kgmicrobe.compound:etamycin'; match=label-exact
+  - evidence_type: LITERATURE
+    source: https://www.jstage.jst.go.jp/article/antibiotics1968/32/6/32_6_575/_pdf
+    notes: Okumura et al.1979, Controlled biosynthesis of neoviridogriseins I, p575
+      and comparative characterization, identifies viridogrisein (=etamycin). Supports
+      existing exact synonym only; does not approve inferred SELECTIVE_AGENT role
+      or export.
 synonyms:
 - synonym_text: Viridogrisein
   synonym_type: EXACT_SYNONYM
-  source: unknown_term_placeholder_ols_review
+  source: https://www.jstage.jst.go.jp/article/antibiotics1968/32/6/32_6_575/_pdf
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -59,11 +65,27 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Replace unsupported placeholder-only provenance for the existing Viridogrisein
+    synonym with primary comparative chemical evidence. Preserve owner role/publication
+    hold. Isolated proposal only; integration requires fresh native review of changed
+    bytes and retains all source and export holds.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001027; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001027; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:

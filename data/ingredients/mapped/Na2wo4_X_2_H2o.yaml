@@ -9,6 +9,17 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal tungstate-malformed-alias
+    notes: Exact source1743 provenance binds JCM371 recipe6; original JCM371 prints
+      Na2WO4·2H2O0.1mg, supporting correction of the flattened oxygen count for this
+      occurrence. Preserve Na2WO2 variants as rejected provenance as directed. The
+      distinct NaWO4·2H2O token is also printed malformed by JCM215 and lacks a verified
+      sodium-count correction. The explicitly aliquoted0.1%w/v preparation and exact
+      water-free Disodium tetraoxotungstate token are rejected on this pure hydrate
+      owner. Five additional generic backfill names remain unchanged as an unconfirmed
+      scope concern pending claim-specific convention review; no blanket water-free-name
+      policy is applied. All other source and owner/export holds remain.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -18,7 +29,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2WO4 x 2 H2O (0.1% w/v)
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2WO4.2H2O
   synonym_type: HYDRATE_FORM
@@ -30,7 +41,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NaWO4·2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-tungstate x 2 H2O
   synonym_type: HYDRATE_FORM
@@ -61,16 +72,16 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: Na2WO2 x 2 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0474
 - synonym_text: Na2WO4•2H2O
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Disodium tetraoxotungstate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: Na2WO2.2H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: Sodium tungstate(VI)
   synonym_type: RAW_TEXT
@@ -87,6 +98,9 @@ synonyms:
 - synonym_text: sodium tetraoxotungstate(VI)
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Na2O4W x 2 H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:a95c95f03ae23d36f302766c92da2175591978255d9e13505b9becc628a1bca5
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1642
@@ -241,11 +255,94 @@ curation_history:
     acid, disodium salt''; ''sodium tetraoxotungstate(VI)''. Tokens already present
     on the kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: All four occurrences explicitly retain Na2O4W x2H2O, including MediaDive
+    compound891 in solution2031. Reordering elemental symbols does not change Na2WO4.2H2O.
+    ChEBI63939 exactly specifies sodium tungstate dihydrate; no routing to anhydrous63940
+    is allowed. TOGO stock mg units remain independent of identity. Proposed only;
+    integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal tungstate-malformed-alias: added aliases
+    []; rejected provenance labels [''Na2WO2 x 2 H2O'', ''Na2WO2.2H2O''] Subject to
+    independent skeptical review and guarded coordinator integration; inherited full-payload
+    support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G10 from authentic common before
+    sha256=b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9. Origins:
+    worker04:w04-chem-proposal-tungstate-malformed-alias sha256=ee4ddb16dcd7db924f74c49b55dbfb563d9da489a7a2adb9a0b03ee575a9da57;
+    worker10:chem-proposal-85 sha256=0171a951977bda32923c673fed37555ac8f0c1f0862e4f449cce27613c70175f.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-016 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-03/05/06: correct only source1743 from original JCM371,
+    retaining malformed provenance; separately reject listed NaWO4 token, one exact
+    water-free name and verified stock alias. Five extra generic names remain unchanged
+    and unapproved. CH-06: synonyms[2] ''Na2WO4 x 2 H2O (0.1% w/v)'': reject_resolving_identity_preserve_text_and_source.
+    Original DSMZ511/540/561 add2.00/0.10/0.50ml respectively of0.1%w/v sodium-tungstate-dihydrate
+    stock. Stock identity is not pure solute identity. CH-05: synonyms[6] ''NaWO4·2H2O'':
+    reject_resolving_identity_preserve_text_and_source. Original JCM215 itself prints
+    NaWO4·2H2O with one sodium. It does not supply an independent two-sodium correction;
+    do not transfer JCM371’s distinct oxygen-count correction. CH-05: synonyms[18]
+    ''Disodium tetraoxotungstate'': reject_resolving_identity_preserve_text_and_source.
+    The exact systematic Disodium tetraoxotungstate token is on CHEBI63940 with water-free
+    formula and came only from SSSOM backfill; no claim-specific two-water bridge
+    was established for that entry. Isolated report-only successor; original sealed
+    evidence/history retained. No role, owner/export approval or inherited source
+    hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:01:15.204122+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private source-bound composition refresh TARGET-016 at frozen 2026-11-08T09:58:00.326701+00:00
+    input cutoff. Exact published source events remain verbatim; immutable prior candidate
+    and original owner retain all historical claims. Applied only the recorded claim-specific
+    #1201, #1226 corrections. This author event is not independent owner, role, source-membership
+    or release approval. W05-dependent groups remain pending and are not emitted in
+    this phase.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001831; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001831; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 10213-10-2

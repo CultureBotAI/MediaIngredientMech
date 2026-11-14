@@ -9,9 +9,17 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal monosodium-glutamate-alias
+    notes: Original DSMZ34 prints Na-glutamate; association with generic monosodium
+      glutamate64220 is conventional name-level interpretation, not independent procurement
+      proof from automatic MediaDive839 CAS/mass. Do not infer L stereochemistry or
+      hydration. The distinct source415 prints Na2-glutamate, so the existing rejection
+      of that two-sodium alias remains; automatic one-sodium metadata does not normalize
+      the conflict. All source-specific and owner/export holds remain.
 synonyms:
 - synonym_text: Na2-glutamate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: sodium 2-ammoniopentanedioate
   synonym_type: EXACT_SYNONYM
@@ -174,11 +182,37 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal monosodium-glutamate-alias: added aliases
+    []; rejected provenance labels [''Na2-glutamate''] Subject to independent skeptical
+    review and guarded coordinator integration; inherited full-payload support must
+    not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-04: remove automatic mass/CAS-as-independent-proof
+    rationale for source839; preserve distinct source415 rejection and all supplied-form
+    limits. Isolated report-only successor; original sealed evidence/history retained.
+    No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001835; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001835; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:64220
 chemical_properties:

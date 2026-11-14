@@ -2,9 +2,9 @@ identifier: UNMAPPED_0493
 preferred_term: poly-ß-hydroxybutyric acid
 synonyms:
 - synonym_text: poly-ß-hydroxybutyric acid
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -41,16 +41,39 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Retire generic beta-polymer duplicate UNMAPPED_0493 atomically with CHEBI:53389
+    owner alias update; retain distinction from R-specific polymer. Source binding:
+    frozen preliminary-v5/shards/shard-03.json cases[173] case_id=KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba;
+    source=mediadive; source_case_id=mediadive.ingredient:2121; Primary evidence:
+    https://mediadive.dsmz.de/finder/poly-%C3%9F-hydroxybutyric+acid///; Primary evidence:
+    https://mediadive.dsmz.de/ingredients/2121; Primary evidence: https://mediadive.dsmz.de/medium/474;
+    Primary evidence: https://mediadive.dsmz.de/solution-finder/poly-%C3%9F-hydroxybutyric+acid///?mainsol=1&optional=1;
+    Primary evidence: https://mediadive.dsmz.de/solutions/5634; Primary evidence:
+    https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium474.pdf'
+  previous_status: UNMAPPED
+  new_status: REJECTED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002881; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002881; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a PHB-like polymer
-  surface form; not merged without exact CAS/stereochemistry evidence.
+  surface form; not merged without exact CAS/stereochemistry evidence. Proposed duplicate
+  retirement is atomic with canonical target update; preserve source provenance.
 ingredient_type: SINGLE_INGREDIENT
+representative: CHEBI:53389
 mim_id: MIM:0002881
 legacy_identifiers:
 - MIM:Poly-~DF-hydroxybutyric_Acid

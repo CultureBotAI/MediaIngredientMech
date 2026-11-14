@@ -1,18 +1,22 @@
-identifier: MICRO:0000521
+identifier: kgmicrobe.ingredient:sludge_fluid
 preferred_term: Sludge fluid
 ontology_mapping:
-  ontology_id: MICRO:0000521
-  ontology_label: sludge fluid
-  ontology_source: MICRO
-  mapping_quality: EXACT_MATCH
-  match_level: EXACT
+  ontology_id: kgmicrobe.ingredient:sludge_fluid
+  ontology_label: Sludge fluid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: LEXICAL_MATCH
-    source: culturemech:output/ingredient_occurrences.tsv
-    notes: Surface form appears in CultureMech's occurrence table and was grounded
-      to MICRO:0000521 on an exact match against the ontology label. Restored from
-      the record's own creation history (#541); the residual importer wrote this provenance
-      only into the published SSSOM.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf
+    notes: The existing Sludge_fluid owner spans source-described liquid material
+      from sludge. Its MICRO0000521 exact target asserts municipal origin, while DSMZ119/JCM872
+      specify anaerobic-digester sludge without that origin. TOGO M2596 separately
+      identifies Ithaca wastewater sludge and its own clarification process. Reuse
+      this existing generic material owner with a local registry identity rather than
+      duplicate it or force municipal origin on every source. The DSMZ119/JCM872 yeast-incubated
+      supernatant is a distinct supplied preparation; the M2596 input and further
+      SS preparation must retain their own source-qualified processing and must not
+      receive the119 formula.
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -43,17 +47,86 @@ curation_history:
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
   llm_assisted: false
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CORRECTED
+  changes: 'The existing Sludge_fluid owner spans source-described liquid material
+    from sludge. Its MICRO0000521 exact target asserts municipal origin, while DSMZ119/JCM872
+    specify anaerobic-digester sludge without that origin. TOGO M2596 separately identifies
+    Ithaca wastewater sludge and its own clarification process. Reuse this existing
+    generic material owner with a local registry identity rather than duplicate it
+    or force municipal origin on every source. The DSMZ119/JCM872 yeast-incubated
+    supernatant is a distinct supplied preparation; the M2596 input and further SS
+    preparation must retain their own source-qualified processing and must not receive
+    the119 formula. Independent correction: The existing Sludge_fluid owner spans
+    source-described liquid material from sludge. Its MICRO0000521 exact target asserts
+    municipal origin, while DSMZ119/JCM872 specify anaerobic-digester sludge without
+    that origin. TOGO M2596 separately identifies Ithaca wastewater sludge and its
+    own clarification process. Reuse this existing generic material owner with a local
+    registry identity rather than duplicate it or force municipal origin on every
+    source. The DSMZ119/JCM872 yeast-incubated supernatant is a distinct supplied
+    preparation; the M2596 input and further SS preparation must retain their own
+    source-qualified processing and must not receive the119 formula. Isolated proposal
+    only; all source and release holds remain.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002279; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002279; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 synonyms:
 - synonym_text: Sludge fluid (see below)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+notes: 'The existing Sludge_fluid owner spans source-described liquid material from
+  sludge. Its MICRO0000521 exact target asserts municipal origin, while DSMZ119/JCM872
+  specify anaerobic-digester sludge without that origin. TOGO M2596 separately identifies
+  Ithaca wastewater sludge and its own clarification process. Reuse this existing
+  generic material owner with a local registry identity rather than duplicate it or
+  force municipal origin on every source. The DSMZ119/JCM872 yeast-incubated supernatant
+  is a distinct supplied preparation; the M2596 input and further SS preparation must
+  retain their own source-qualified processing and must not receive the119 formula.
+  Historical narrow-ontology grounding remains in original curation history and before
+  snapshot; its exact export row must be withdrawn on integration. Preserve every
+  inherited source hold, generic historical label and source-specific preparation
+  boundary. Verbatim assigned source label: "Sludge fluid (medium 119)". No newly
+  resolving source alias is added by this correction.'
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Sludge fluid prepared by DSMZ119 / JCM872
+  form: Yeast-incubated, centrifuged, autoclaved digester-sludge supernatant
+  notes: Source preparation only:0.4% yeast extract, anaerobic incubation37°C24h,13000g
+    clarification, autoclaved supernatant. DSMZ119 storage8–12°C andJCM872 room-temperature
+    storage remain distinct. Do not transfer this formula to TOGO M2596 raw fluid
+    or SS.
+- name: Sludge fluid input to TOGO M2596 SS
+  form: Anaerobic sewage-digester sludge liquid material
+  notes: M2596 documents Ithaca wastewater origin and a distinct SS preparation with10400g30min
+    initial clarification; source input must not be globally reassigned to DSMZ119
+    yeast-incubated preparation.
 mim_id: MIM:0002279
 legacy_identifiers:
 - MIM:Sludge_fluid
 - MICRO:0000521
+- kgmicrobe.ingredient:sludge_fluid

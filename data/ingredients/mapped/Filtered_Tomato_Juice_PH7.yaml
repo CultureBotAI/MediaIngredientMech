@@ -1,0 +1,66 @@
+identifier: kgmicrobe.ingredient:filtered_tomato_juice_ph7
+preferred_term: filtered tomato juice adjusted to pH 7.0
+ontology_mapping:
+  ontology_id: MICRO:0000556
+  ontology_label: filtered tomato juice
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M4
+    notes: Source TOGO M4 explicitly identifies filtered tomato juice atpH7.0, separate
+      from final medium pH6.0. Preserve a distinct preparation identity and broad
+      relation to filtered tomato juice. Titrant and amount are unspecified; no component
+      or exact equivalence with untreated juice is asserted. Current JCM11 is unavailable,
+      so TOGO is source database evidence, not newly inspected JCM corroboration.
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Tomato juice, filtered, pH 7.0
+  synonym_type: EXACT_SYNONYM
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M4
+notes: Source TOGO M4 explicitly identifies filtered tomato juice atpH7.0, separate
+  from final medium pH6.0. Preserve a distinct preparation identity and broad relation
+  to filtered tomato juice. Titrant and amount are unspecified; no component or exact
+  equivalence with untreated juice is asserted. Current JCM11 is unavailable, so TOGO
+  is source database evidence, not newly inspected JCM corroboration. Isolated proposal
+  only. Complete published payload and cross-shard resolution remain coordinator obligations;
+  no source record or existing hold is changed.
+curation_history:
+- timestamp: '2026-11-08T04:30:41.363631+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported distinct ingredient identity and only evidenced
+    preparation/components; no roles inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:44:02.163027+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: 'MIM#1164: narrower pH-qualified preparation maps to its broader filtered-juice
+    parent with NARROW_MATCH, emitting skos:broadMatch under the pinned native producer.
+    Identity and unknown titrant are unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.008504+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003019 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003019
+legacy_identifiers:
+- MIM:Filtered_Tomato_Juice_PH7
+- kgmicrobe.ingredient:filtered_tomato_juice_ph7

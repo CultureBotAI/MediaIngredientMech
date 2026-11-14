@@ -1,0 +1,319 @@
+identifier: kgmicrobe.ingredient:tris_hcl_01m_ph75_nominal_buffer
+preferred_term: Tris-HCl buffer (0.1 M, pH 7.5 nominal stock)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tris_hcl_01m_ph75_nominal_buffer
+  ontology_label: Tris-HCl buffer (0.1 M, pH 7.5 nominal stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 619,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 664,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 929,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 929,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=979
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 929,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium600.pdf
+    notes: Agent-authored nominal scope reconciliation N04, original proposal 929,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+synonyms: []
+components:
+- component_name: Tris buffer moiety
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: M
+  source: Named Tris-HCl buffer system. No dry hydrochloride solid, free HCl dose
+    or acid/base ratio is inferred.
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507
+    source_record: 'Attributed original proposal 619: NBRC1507 Tris HCl0.1M pH7.5
+      buffer'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":619,"worker":"w07","head":"090b8933175271a3daf1e1b4483a10dc367ec32c","proposal_id":"A-PROPOSAL-NBRC1507_Tris_HCl_01M_pH75_Buffer","payload_sha256":"5075afe8b0cfe791905bffccf82899c3c661066f68e522c6934cea85f01a4254","raw_source_labels":["0.1
+      M Tris/HCl (pH7.5)"],"original_components":[{"component_name":"Tris buffer moiety","reference_scope":"UNMAPPED","concentration_value":"0.1","concentration_unit":"M"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"UNKNOWN","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507","source_record":"NBRC1507
+      Tris HCl0.1M pH7.5 buffer","notes":"Source specifies0.1M Tris/HCl,pH7.5; nominal
+      total Tris moiety concentration retained, not independent concentrations for
+      acid and conjugate base. Solvent and neutralization ratio unreported."}],"notes":"Source
+      does not establish complete preparation composition; unreported solvent or pH-adjustment
+      constituents remain unknown. No exhaustive list is claimed. Issue1237 W01-PREP-B-001:
+      NBRC1507 names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It does not enumerate
+      free hydrochloric acid as a separately added component. Retain the named buffer
+      moiety and nominal strength; the complete constituent list, solvent, preparation
+      and neutralization ratio remain unknown. No dry Tris-HCl substitution or neutralization
+      chemistry is inferred."},"original_notes":"Source specifies0.1M Tris/HCl,pH7.5;
+      nominal total Tris moiety concentration retained, not independent concentrations
+      for acid and conjugate base. Solvent and neutralization ratio unreported. Raw
+      assigned source label: 0.1 M Tris/HCl (pH7.5). Quantities in notes preserve
+      source preparation and are not final-medium concentrations. No global synonym
+      is added for this context-dependent label. Issue1237 W01-PREP-B-001: NBRC1507
+      names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It does not enumerate free
+      hydrochloric acid as a separately added component. Retain the named buffer moiety
+      and nominal strength; the complete constituent list, solvent, preparation and
+      neutralization ratio remain unknown. No dry Tris-HCl substitution or neutralization
+      chemistry is inferred.","original_synonyms":null,"proposal_occurrence_selectors":{},"case_ids":["CM_NAME:2936c2ff84f59836f8388c7d253fdf06da96a4c9207f05bd5f0eb01ae202088e"],"case_applicability":[{"case_id":"CM_NAME:2936c2ff84f59836f8388c7d253fdf06da96a4c9207f05bd5f0eb01ae202088e","applicability":"Applies
+      to exact raw source label ''0.1 M Tris/HCl (pH7.5)'' and all 1 frozen occurrence
+      objects, each verified against its complete recipe snapshot hash. NBRC1507 specifies
+      a 0.1 M Tris/HCl buffer at pH7.5. That buffered preparation is not pure Tris
+      base or Tris hydrochloride. A source-qualified buffer record can retain the
+      declared molarity/pH while leaving the unreported acid/base recipe ratio and
+      solvent detail unasserted.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:81c5f7ba19b8db3f5fd647b84f5b8720d000f9f0356b7ca8ce36ba6fce3444bc"]}]}'
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768
+    source_record: 'Attributed original proposal 664: NBRC981 TrisHCl0.1M pH7.5 buffer'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":664,"worker":"w07","head":"090b8933175271a3daf1e1b4483a10dc367ec32c","proposal_id":"B-PROPOSAL-nbrc_981_tris_hcl_01m_ph75","payload_sha256":"bc71c5838af04b61802a9fc8a05396ad931841bd6de1b241dbfffca70e1fa359","raw_source_labels":["0.1
+      M Tris-HCl (pH 7.5)"],"original_components":[{"component_name":"Tris-HCl buffer","reference_scope":"UNMAPPED","concentration_value":"0.1","concentration_unit":"M"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"UNKNOWN","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768","source_record":"NBRC981
+      TrisHCl0.1M pH7.5 buffer","notes":"Nominal source-qualified stock only. pH7.5;
+      source doesnot provide detailed acidbasecomposition or solvent; notpureTrisHClsalt.
+      The source does not establish a complete constituent list; no omitted solvent
+      or titrant is invented."}],"notes":"Completeness concerns the source constituent
+      list, not ontology resolution. UNMAPPED parts preserve literal source wording
+      and do not assert an unsupported exact ID."},"original_notes":"Nominal source-qualified
+      stock only. pH7.5; source doesnot provide detailed acidbasecomposition or solvent;
+      notpureTrisHClsalt. The source does not establish a complete constituent list;
+      no omitted solvent or titrant is invented. Raw source labels retained in linked
+      frozen cases: [''0.1 M Tris-HCl (pH 7.5)'']. Generic labels are not global resolving
+      synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.","original_synonyms":null,"proposal_occurrence_selectors":{},"case_ids":["CM_NAME:de62f5de28188461b72a9cb065140dbd33f5ac8d3f5a2437cb8cb2095c2ea312"],"case_applicability":[{"case_id":"CM_NAME:de62f5de28188461b72a9cb065140dbd33f5ac8d3f5a2437cb8cb2095c2ea312","applicability":"Applies
+      only to the exact frozen raw label, occurrence IDs and full captured source
+      contexts enumerated in this decision. Source-scoped subset refinements and proposal
+      occurrence_ids take precedence over generic labels. M1768/NBRC981 specifies
+      0.1 M Tris-HCl at pH7.5. This is a buffer preparation containing a protonation
+      mixture, not pure Tris or solid Tris hydrochloride; the pH qualifier remains
+      identity-relevant preparation context.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:a31ef76cf25be6b3b36657fc3db6273a2ebe84507d52dd78bdb5d1164948e038"]}]}'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995
+    source_record: 'Attributed original proposal 929: 0.1 M Tris-HCl buffer, pH 7.5
+      (JCM 900 / 979 / 995; DSMZ 600)'
+    notes: Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":929,"worker":"w10","head":"c66d6d3665368fe1ae8986fb7c16340a103582c1","proposal_id":"sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600","payload_sha256":"4820de62d1309441c3cb26b2614f3914c9a25ca48ba9ad2f79f787c168acb070","raw_source_labels":["0.1
+      M Tris--HCl buffer (pH 7.5)","0.1 M Tris-HCl buffer (pH 7.5)","0.1M Tris/HCl
+      buffer pH 7.5"],"original_components":[{"component_name":"Tris-HCl","reference_scope":"UNMAPPED","source":"Source
+      buffer system; no dry hydrochloride solid or addition of free HCl is inferred."}],"original_component_assertion":{"method":"LABEL_ENUMERATION","completeness":"PARTIAL","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995","source_record":"0.1
+      M Tris-HCl buffer, pH 7.5 (JCM 900 / 979 / 995; DSMZ 600)","notes":"JCM 900,
+      979 and 995 and DSMZ 600 each specify 50 mL of 0.1 M Tris-HCl buffer at pH 7.5.
+      This bounded record covers that explicitly printed stock specification only.
+      JCM 900 changes the buffer to pH 8.5 for agar plates; that alternative is excluded.
+      The shared concentration/pH/system boundary does not certify common preparation
+      history."},{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900","source_record":"0.1
+      M Tris-HCl buffer, pH 7.5 (JCM 900 / 979 / 995; DSMZ 600)","notes":"JCM 900,
+      979 and 995 and DSMZ 600 each specify 50 mL of 0.1 M Tris-HCl buffer at pH 7.5.
+      This bounded record covers that explicitly printed stock specification only.
+      JCM 900 changes the buffer to pH 8.5 for agar plates; that alternative is excluded.
+      The shared concentration/pH/system boundary does not certify common preparation
+      history."},{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=979","source_record":"0.1
+      M Tris-HCl buffer, pH 7.5 (JCM 900 / 979 / 995; DSMZ 600)","notes":"JCM 900,
+      979 and 995 and DSMZ 600 each specify 50 mL of 0.1 M Tris-HCl buffer at pH 7.5.
+      This bounded record covers that explicitly printed stock specification only.
+      JCM 900 changes the buffer to pH 8.5 for agar plates; that alternative is excluded.
+      The shared concentration/pH/system boundary does not certify common preparation
+      history."},{"evidence_type":"RECIPE_SOURCE","source":"https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium600.pdf","source_record":"0.1
+      M Tris-HCl buffer, pH 7.5 (JCM 900 / 979 / 995; DSMZ 600)","notes":"JCM 900,
+      979 and 995 and DSMZ 600 each specify 50 mL of 0.1 M Tris-HCl buffer at pH 7.5.
+      This bounded record covers that explicitly printed stock specification only.
+      JCM 900 changes the buffer to pH 8.5 for agar plates; that alternative is excluded.
+      The shared concentration/pH/system boundary does not certify common preparation
+      history."}],"notes":"Solvent, titrant, reagent form and preparation ratio are
+      not given. The pH 8.5 agar alternative needs a separate occurrence-specific
+      choice; source-to-occurrence applicability here is limited to pH 7.5. Source-named
+      parts remain UNMAPPED where supplied form or stock identity is not established.
+      MIM_CATALOG references identify only the supported constituent, not approval
+      of that complete owner."},"original_notes":"JCM 900, 979 and 995 and DSMZ 600
+      each specify 50 mL of 0.1 M Tris-HCl buffer at pH 7.5. This bounded record covers
+      that explicitly printed stock specification only. JCM 900 changes the buffer
+      to pH 8.5 for agar plates; that alternative is excluded. The shared concentration/pH/system
+      boundary does not certify common preparation history. Solvent, titrant, reagent
+      form and preparation ratio are not given. The pH 8.5 agar alternative needs
+      a separate occurrence-specific choice; source-to-occurrence applicability here
+      is limited to pH 7.5. Provenance-only source text '0.1 M Tris--HCl buffer (pH
+      7.5)' (case CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6).
+      Provenance-only source text '0.1 M Tris-HCl buffer (pH 7.5)' (case CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd).
+      Provenance-only source text '0.1M Tris/HCl buffer pH 7.5' (case CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9).
+      Generic source-local labels are not added as globally resolving synonyms. No
+      exact formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+      receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+      is separate from preparation identity.","original_synonyms":null,"proposal_occurrence_selectors":{},"case_ids":["CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6","CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd","CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9"],"case_applicability":[{"case_id":"CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6","applicability":"All
+      2 full frozen occurrence snapshots and linked captured primary contexts were
+      independently reread for case 1. JCM 900, 979 and 995 and DSMZ 600 each specify
+      50 mL of 0.1 M Tris-HCl buffer at pH 7.5. This bounded record covers that explicitly
+      printed stock specification only. JCM 900 changes the buffer to pH 8.5 for agar
+      plates; that alternative is excluded. The shared concentration/pH/system boundary
+      does not certify common preparation history. This association is source-bound;
+      raw generic labels remain nonresolving provenance unless explicitly the spelling-only
+      seawater alias.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:f5b1318224eefbc80be099061d03969fbe12235aad421e19b12f4a891513ed7e","CM_OCC:50013a2c3458b1e518a661b64d1c5ffde0365f3c8cfea83f25acd7b092f8c7e2"]},{"case_id":"CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd","applicability":"All
+      2 full frozen occurrence snapshots and linked captured primary contexts were
+      independently reread for case 56. JCM 900, 979 and 995 and DSMZ 600 each specify
+      50 mL of 0.1 M Tris-HCl buffer at pH 7.5. This bounded record covers that explicitly
+      printed stock specification only. JCM 900 changes the buffer to pH 8.5 for agar
+      plates; that alternative is excluded. The shared concentration/pH/system boundary
+      does not certify common preparation history. This association is source-bound;
+      raw generic labels remain nonresolving provenance unless explicitly the spelling-only
+      seawater alias.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:4bdb47ec3d40143602286ce7a32cba3b90e4175f795251f6f174b592943aed3a","CM_OCC:4736319b8877c1424d45939dc9f44b4791dfc4d16ad06fa46a44d1d865fef763"]},{"case_id":"CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9","applicability":"All
+      1 full frozen occurrence snapshots and linked captured primary contexts were
+      independently reread for case 100. JCM 900, 979 and 995 and DSMZ 600 each specify
+      50 mL of 0.1 M Tris-HCl buffer at pH 7.5. This bounded record covers that explicitly
+      printed stock specification only. JCM 900 changes the buffer to pH 8.5 for agar
+      plates; that alternative is excluded. The shared concentration/pH/system boundary
+      does not certify common preparation history. This association is source-bound;
+      raw generic labels remain nonresolving provenance unless explicitly the spelling-only
+      seawater alias.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:700aa270224cf039dc505adeede7317e744cfac07aa0232604b370f9d82f781a"]}]}
+  notes: Nominal source-relative material inputs, with all exact attributed profiles
+    retained. UNKNOWN means the source does not settle the full list; COMPLETE here
+    counts all named immediate inputs including acid/base adjustments, not resolved
+    molecular chemistry or universal supplied-form equivalence. Unresolved components
+    remain UNMAPPED. NBRC1507, NBRC981, JCM900/979/995 and DSM600 name the same 0.1
+    M pH7.5 buffer. JCM900 explicitly changes buffer pH to8.5 for agar plates; that
+    alternative is excluded from pH7.5 applicability. NBRC981 support is a saved official-page
+    tool response, not the failed TOGO M1768 fetch. Buffer preparation, final carrier
+    volume and acid/base ratio unreported. DSM2730.2M pH7.5 is positively different
+    concentration; it remains separate.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Source specifies0.1M Tris/HCl,pH7.5; nominal total Tris moiety concentration retained,
+    not independent concentrations for acid and conjugate base. Solvent and neutralization
+    ratio unreported.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.143365+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Issue1237 W01-PREP-B-001:
+    NBRC1507 names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It does not enumerate
+    free hydrochloric acid as a separately added component. Retain the named buffer
+    moiety and nominal strength; the complete constituent list, solvent, preparation
+    and neutralization ratio remain unknown. No dry Tris-HCl substitution or neutralization
+    chemistry is inferred. Remove the unsupported separate Hydrochloric acid has-part
+    assertion; preserve UNKNOWN completeness and the first named buffer moiety at
+    0.1 M. Isolated report-only successor; no owner, role, source gate or release
+    approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.248702+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.948117+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1, 2, 3 from human-only MANUAL_CURATION
+    to LLM_SUGGESTION. Exact sources, notes, quantities, scientific conclusions, unchanged
+    historical MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum
+    objects, prior history and all source/role/export holds remain unchanged. This
+    is provenance correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:04:39.310199+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: COMPOSED_PRIVATE_NOMINAL_PREPARATION
+  changes: For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237, compose
+    draft N04 from authentic original proposals [619, 664, 929]; preserve every origin
+    history and exact source profile. Native create operation remains null-before
+    because every source proposal is genuinely new_owner. This LLM-assisted author
+    interpretation does not grant independent scientific, role, source, or export
+    approval. UNKNOWN source-list completeness is kept for named stocks; complete
+    attributed recipe lists preserve unresolved forms and alternative reagents.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003189 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: Private draft of Tris-HCl buffer, nominal 0.1 M, pH 7.5. NBRC1507, NBRC981,
+  JCM900/979/995 and DSM600 name the same 0.1 M pH7.5 buffer. JCM900 explicitly changes
+  buffer pH to8.5 for agar plates; that alternative is excluded from pH7.5 applicability.
+  NBRC981 support is a saved official-page tool response, not the failed TOGO M1768
+  fetch. Buffer preparation, final carrier volume and acid/base ratio unreported.
+  DSM2730.2M pH7.5 is positively different concentration; it remains separate. One
+  partial pH7.5 nominal target across the three proposals; preserve each applicable
+  occurrence, and retain JCM900 agar alternative as a qualified excluded variant.
+  The common scope does not assert identical fully specified molecular preparations,
+  complete solvent/neutralizer ratios, supplier lots, or source-independent exact
+  associations. Original raw labels, exact quantities, handling, source assertions,
+  occurrence qualifications, component profiles and full histories are retained in
+  this record and its immutable original-input packet. Historical events describe
+  isolated worker proposals; they do not claim maintained application. Generic context
+  labels are not made globally resolving synonyms. All source-case, role, owner and
+  export holds survive. Independent exact-byte whole-candidate review remains required
+  before application.
+mim_id: MIM:0003189
+legacy_identifiers:
+- MIM:Tris_HCl_01M_pH75_Nominal_Buffer
+- kgmicrobe.ingredient:tris_hcl_01m_ph75_nominal_buffer

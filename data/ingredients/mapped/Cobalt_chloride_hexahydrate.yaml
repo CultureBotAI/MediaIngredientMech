@@ -10,6 +10,13 @@ ontology_mapping:
     source: PubChem
     cas_rn: 7791-13-1
     notes: ChEBI ID CHEBI:53503 found via PubChem CAS-RN cross-reference
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: Retain Cobalt(II) chloride--water (1/7) as REJECTED_LABEL on the exact
+      CHEBI53503 hexahydrate owner. The explicit water ratio1/7 conflicts with the
+      six-water definition, formula and structure. Preserve valid six-water names
+      and the original literal/source/history; this does not infer any source reagent
+      identity from a malformed formula.
 synonyms:
 - synonym_text: Cobalt dichloride hexahydrate
   synonym_type: EXACT_SYNONYM
@@ -27,11 +34,14 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cobalt(II) chloride--water (1/7)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: CoCl2 x 6 H2O
   synonym_type: RAW_TEXT
   source: MERGED_FROM_CHEBI:35696
+- synonym_text: CoCl2-6H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2638
@@ -92,13 +102,63 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: Retain Cobalt(II) chloride--water (1/7) as REJECTED_LABEL on the exact
+    CHEBI53503 hexahydrate owner. The explicit water ratio1/7 conflicts with the six-water
+    definition, formula and structure. Preserve valid six-water names and the original
+    literal/source/history; this does not infer any source reagent identity from a
+    malformed formula. Original full before/predecessor objects and field lineage
+    are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:18:40.490477+00:00'
+  curator: codex_worker09_source_review
+  action: ADDED_SYNONYMS
+  changes: 'Preserve source-reviewed exact raw aliases: CoCl2-6H2O. Identity, hydrate
+    and salt scope are retained. This isolated candidate does not release current
+    mapping holds or approve unrelated synonyms/roles. Evidence: reports/all_unmatched_20261107/worker-09/salts/decisions.json
+    and evidence.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:28:39.842266+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: COMPOSED_PRIVATE_CURRENT_SOURCE_DELTAS
+  changes: Compose compatible current proposals w02::fc-chem-proposal-cobalt-chloride-alias,
+    w09::sa-proposal-cobalt_chloride_hexahydrate against their one authentic beforeimage.
+    Keep every current original history/event, source-case and occurrence binding,
+    exact alias source and rejected-label correction. This LLM-assisted private whole-payload
+    composition grants no independent scientific, owner, role, source-case or export
+    approval and clears no inherited hold.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000732; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000732; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
+
+
+  Final W02 proposal correction (unapplied): Retain Cobalt(II) chloride--water (1/7)
+  as REJECTED_LABEL on the exact CHEBI53503 hexahydrate owner. The explicit water
+  ratio1/7 conflicts with the six-water definition, formula and structure. Preserve
+  valid six-water names and the original literal/source/history; this does not infer
+  any source reagent identity from a malformed formula. All precise source, role,
+  duplicate-owner and publication holds remain; this claim-specific correction is
+  not whole-owner approval.'
 chemical_properties:
   cas_rn: 7791-13-1
   data_source: FEBA ontology enrichment (via PubChem)

@@ -4,14 +4,22 @@ ontology_mapping:
   ontology_id: kgmicrobe.compound:alboverticillin
   ontology_label: Alboverticillin
   ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
     notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
       MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+  - evidence_type: LLM_SUGGESTION
+    source: https://doi.org/10.1021/acs.jnatprod.2c00065
+    notes: The2022 original research abstract explicitly establishes triculamin and
+      alboverticillin as the same lasso peptide by2D NMR. Preserve local identity
+      without uninspected sequence/topology properties.
+synonyms:
+- synonym_text: triculamin
+  synonym_type: EXACT_SYNONYM
+  source: https://doi.org/10.1021/acs.jnatprod.2c00065
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -52,11 +60,38 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Curate supported local alboverticillin identity and primary-demonstrated
+    triculamin synonym; no inferred molecular properties. Proposal only; inherited
+    publication/role/source holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.168257+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000290; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000290; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: '2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier;
   no exact OLS candidate and no normalized local mapped duplicate were found in the

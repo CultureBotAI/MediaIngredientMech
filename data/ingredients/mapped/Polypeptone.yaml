@@ -1,17 +1,50 @@
-identifier: FOODON:03315306
+identifier: kgmicrobe.ingredient:polypeptone
 preferred_term: Polypeptone
 ontology_mapping:
-  ontology_id: FOODON:03315306
-  ontology_label: protein hydrolyzates
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: mesh:D010461
+  ontology_label: Peptones
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
   evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Own peptone preparation scope, not exact generic protein-hydrolysate class.
+      Bare source442 supplier remains unverified.
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
-    notes: Commercial food mixture - FOODON is correct parent ontology. Polypeptone
-      (BD/Difco) is a blend of casein and meat peptones; Hipolypepton (Nihon seiyaku/Wako)
-      is a similar Japanese peptone blend of casein + soy. Mapped to FOODON parent
-      'protein hydrolyzates' since no exact FOODON term exists. CLOSE_MATCH.
+    notes: 'Historical unsupported assertion, contradicted by supplier evidence; not
+      current support. Original rationale: Commercial food mixture - FOODON is correct
+      parent ontology. Polypeptone (BD/Difco) is a blend of casein and meat peptones;
+      Hipolypepton (Nihon seiyaku/Wako) is a similar Japanese peptone blend of casein
+      + soy. Mapped to FOODON parent ''protein hydrolyzates'' since no exact FOODON
+      term exists. CLOSE_MATCH.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf
+    notes: 'Correction to earlier cbclaw_foodon_promotion rationale: manufacturer
+      defines unsuffixedHipolypepton as casein-derived enzymatic hydrolysate and S/N/NS
+      assoy-derived. The earliercasein+soyblend claim doesnot support Hipolypepton
+      equivalence. Historical assertion is preserved as prior evidence, contradicted
+      here. Other Polypeptone products and inherited roles/mapping are not reapproved.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/D010461
+    notes: 'Retain supplier-unspecified named Polypeptone as kgmicrobe.ingredient:polypeptone,
+      with a NARROW_MATCH to the closer MeSH D010461 Peptones material category. Native
+      section3 exact-term precedence is evaluated: MICRO:0000179 specifically defines
+      the BD casein/animal-tissue blend and MICRO:0000178 adds enzymatic/mammalian
+      restrictions; neither establishes the generic named material identity. The complete
+      manufacturer guide printed7 supports the peptone partial protein-hydrolysate
+      relation, independently consistent with NLM D010461 and M0016245. This does
+      not import the BD formula or measured lot characteristics. The manufacturer
+      general base-hydrolysis possibility is a terminology caveat, not evidence that
+      these particular observations have a conflicting material. FoodOn member_of
+      external agency categorization is not a source food-use or role prerequisite,
+      so the earlier stronger formal-restriction inference is qualified. FOODON:03315306
+      and MeSH D011492 remain broader material alternatives; closer verified D010461
+      is selected under native precedence. None of these mappings transfers the old
+      exact generic FoodOn identity to the named preparation. Agent-assisted primary-source
+      interpretation; sealed coordinator reassessment and separate W05 scientific
+      reviewer agree on this bounded relation, with final exact payload review recorded
+      separately.'
 synonyms:
 - synonym_text: Polypeptone
   synonym_type: EXACT_SYNONYM
@@ -23,28 +56,70 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: manual
 - synonym_text: Polypepton (Nihon Pharm. Co.)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; provenance-only identity hold under issue1202: retain this historical
+    Nihon-qualified label, but do not resolve it globally to an unsettled Polypeptone
+    owner or the dated BD blend. Wako 2001/2002 and Nihon 2007 sources support a casein-derived
+    digest family; they do not establish the exact historical recipe product/version
+    or equivalence to a particular Hipolypepton SKU. Current JCM181 names Hipolypepton
+    (FUJIFILM Wako), a source-vintage conflict, not a historical equivalence bridge.
+    This disposition does not reject the existence or chemistry of the Japanese product.'
 - synonym_text: Polypeptone peptone (BD-BBL)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; Issue1202 comment6719869255: this label names the specific documented
+    BD casein/animal-tissue blended product. The present owner denotes the supplier-unspecified
+    named Polypeptone preparation; exact interchangeability with this catalogue product
+    is unproved. Preserve the original literal/source as nonresolving provenance.
+    This does not deny the product or prove chemical difference, import its equal-parts
+    formula, mint a BD owner, merge owners, or approve source/role/export.'
 - synonym_text: Polypeptone Peptone (BD 211910)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; Issue1202 comment6719869255: this label names the specific documented
+    BD casein/animal-tissue blended product. The present owner denotes the supplier-unspecified
+    named Polypeptone preparation; exact interchangeability with this catalogue product
+    is unproved. Preserve the original literal/source as nonresolving provenance.
+    This does not deny the product or prove chemical difference, import its equal-parts
+    formula, mint a BD owner, merge owners, or approve source/role/export.'
+- synonym_text: Polypepton (Nihon Seiyaku)
+  synonym_type: REJECTED_LABEL
+  source: 'culturemech:output/ingredient_occurrences.tsv; provenance-only identity
+    hold under issue1202: retain this historical Nihon-qualified label, but do not
+    resolve it globally to an unsettled Polypeptone owner or the dated BD blend. Wako
+    2001/2002 and Nihon 2007 sources support a casein-derived digest family; they
+    do not establish the exact historical recipe product/version or equivalence to
+    a particular Hipolypepton SKU. Current JCM181 names Hipolypepton (FUJIFILM Wako),
+    a source-vintage conflict, not a historical equivalence bridge. This disposition
+    does not reject the existence or chemistry of the Japanese product.'
+- synonym_text: Polypeptone (BBL)
+  synonym_type: REJECTED_LABEL
+  source: 'culturemech:output/ingredient_occurrences.tsv; Issue1202 comment6719869255:
+    this label names the specific documented BD casein/animal-tissue blended product.
+    The present owner denotes the supplier-unspecified named Polypeptone preparation;
+    exact interchangeability with this catalogue product is unproved. Preserve the
+    original literal/source as nonresolving provenance. This does not deny the product
+    or prove chemical difference, import its equal-parts formula, mint a BD owner,
+    merge owners, or approve source/role/export.'
 - synonym_text: Hipolypepton
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
+  source: manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated
+    identical to the casein/animal-tissue blend; retained provenance.
+- synonym_text: Hipolypepton (Nihon seiyaku)
+  synonym_type: REJECTED_LABEL
+  source: manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated
+    identical to the casein/animal-tissue blend; retained provenance.
+- synonym_text: Hipolypepton*
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv; Wako catalog unqualified
+    Hipolypepton is casein digest, not demonstrated identical to the casein/animal-tissue
+    blend; retained provenance.
+- synonym_text: Hipolypepton
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Hipolypepton (Nihon seiyaku)
-  synonym_type: CATALOG_VARIANT
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Hipolypepton*
-  synonym_type: RAW_TEXT
-  source: culturemech:output/ingredient_occurrences.tsv
-- synonym_text: Polypepton (Nihon Seiyaku)
-  synonym_type: RAW_TEXT
-  source: culturemech:output/ingredient_occurrences.tsv
-- synonym_text: Polypeptone (BBL)
-  synonym_type: CATALOG_VARIANT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -93,11 +168,141 @@ curation_history:
     Seiyaku)'' (x1 CultureMech mentions); ''Polypeptone (BBL)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed rejection of three unsupported Hipolypepton aliases from genericPolypeptone
+    owner; add manufacturer contradiction to prior blend rationale. Retain inherited
+    unrelated claims for separate full review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:47:55.835634+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Correct the Polypeptone owner whole-identity boundary with its own registry
+    identity and retire the three Hipolypepton resolving aliases using direct manufacturer
+    evidence. Preserve other source labels and all ambiguous Japanese Polypepton and
+    generic source442 provenance; no forced cross-brand equivalence. Exact isolated
+    payload; no maintained write. All prior scientific/publication holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-019. Origins:
+    w05::MATERIALS-C1193-polypeptone-boundary; w06::A-P-POLYPEPTONE-BOUNDARY. Authentic
+    beforeimage, every authored event and all source-case/capture bindings are retained
+    in the adjacent trace. This is candidate composition, not corpus application,
+    owner merge, role approval, inherited support or release approval. Independent
+    whole-owner science review is required.'
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Isolated proposal only; no maintained data or source membership
+    change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-019 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:05:07.440499+00:00'
+  curator: /root/polypeptone_supplement; W05 report-only source-origin supplement
+  action: CORRECTED
+  changes: Withdraw unsupported global resolution of the two Nihon-qualified Polypepton
+    aliases while preserving their exact text/source provenance; date the BD blend
+    claim to the 2019 technical guide and qualify historical casein-derived material
+    scope. Preserve local identity/grounding continuity with POLYPEPTONE-001 explicitly
+    open pending coupled scope and MICRO:0000179 exact-term-priority review. Preserve
+    all previous history/statistics, original Hipolypepton exclusions, source forms/quantities
+    and holds. No maintained record or union applied.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:37:57.957356+00:00'
+  curator: Codex W05 /root consolidated Polypeptone correction
+  action: CORRECTED
+  changes: 'Filed1202 comment6719869255: change three BD catalogue labels to provenance-only
+    REJECTED_LABEL on supplier-unspecified named Polypeptone. Preserve their exact
+    text/source prefixes and every previous history event. Issue1202 comment6719869255:
+    this label names the specific documented BD casein/animal-tissue blended product.
+    The present owner denotes the supplier-unspecified named Polypeptone preparation;
+    exact interchangeability with this catalogue product is unproved. Preserve the
+    original literal/source as nonresolving provenance. This does not deny the product
+    or prove chemical difference, import its equal-parts formula, mint a BD owner,
+    merge owners, or approve source/role/export. Mapping decision remains explicitly
+    pending formal-restriction triage; no FoodOn parent change in this intermediate
+    candidate.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:48:08.449664+00:00'
+  curator: Codex W05 /root consolidated source-origin correction
+  action: CORRECTED
+  changes: 'Retain supplier-unspecified named Polypeptone as kgmicrobe.ingredient:polypeptone,
+    with a NARROW_MATCH to the closer MeSH D010461 Peptones material category. Native
+    section3 exact-term precedence is evaluated: MICRO:0000179 specifically defines
+    the BD casein/animal-tissue blend and MICRO:0000178 adds enzymatic/mammalian restrictions;
+    neither establishes the generic named material identity. The complete manufacturer
+    guide printed7 supports the peptone partial protein-hydrolysate relation, independently
+    consistent with NLM D010461 and M0016245. This does not import the BD formula
+    or measured lot characteristics. The manufacturer general base-hydrolysis possibility
+    is a terminology caveat, not evidence that these particular observations have
+    a conflicting material. FoodOn member_of external agency categorization is not
+    a source food-use or role prerequisite, so the earlier stronger formal-restriction
+    inference is qualified. FOODON:03315306 and MeSH D011492 remain broader material
+    alternatives; closer verified D010461 is selected under native precedence. None
+    of these mappings transfers the old exact generic FoodOn identity to the named
+    preparation. Append native broader mapping with truthful LLM-assisted evidence;
+    preserve every prior event and all alias/source/statistic/role holds. Final exact-byte
+    review remains a separate receipt.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor TARGET-019 binds the actual published
+    W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen accepted source
+    heads. Exact #1202, #1226 claim corrections and genuine source-history appendices
+    are recorded in final-same-target-reconciliation-v4. Original combined bytes and
+    authentic maintained beforeimage remain preserved. This draft retains all case,
+    occurrence, role, preparation, product and release holds; source acceptance and
+    distinct final combined-byte review are not inferred. No maintained record or
+    export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002086; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002086; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 nutritional_roles:
@@ -107,7 +312,122 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: 'Source-scoped proposal w05::MATERIALS-C1193-polypeptone-boundary: Current
+  BD Polypeptone is an equal-parts pancreatic-casein/peptic-animal-tissue digest blend.
+  The old claim that Hipolypepton is a casein+soy blend is superseded by Wako manufacturer
+  casein-only starting-material description. This does not assign bare MediaDive442
+  or Japanese Polypepton labels to BD211910; those product identities remain held.
+  Correct the Polypeptone owner whole-identity boundary with its own registry identity
+  and retire the three Hipolypepton resolving aliases using direct manufacturer evidence.
+  Preserve other source labels and all ambiguous Japanese Polypepton and generic source442
+  provenance; no forced cross-brand equivalence. Source-qualified proposal under issue1193.
+  No ingredient roles, assay outcomes, complete-owner support or release admission
+  are approved. Preserve all frozen source and owner holds; component uncertainty
+  is stated separately from whole-material identity.
+
+
+  Source-scoped proposal w06::A-P-POLYPEPTONE-BOUNDARY:  Source-review correction:
+  Hipolypepton aliases are REJECTED_LABEL because manufacturer distinguishes the unsuffixed
+  casein hydrolysate from soy variants and from broader Polypeptone products. Original
+  provenance remains in synonyms/history; no global product merge is authorized.
+
+
+  Current published W05 source correction (108e213e96f7d423ee345ce265d692e79063127c,
+  W05-FINAL-MAT-030): The Thermo Fisher technical guide copyrighted 2019 describes
+  the named BD Polypeptone product as an equal-parts pancreatic-casein/peptic-animal-tissue
+  digest blend. The old claim that Hipolypepton is a casein+soy blend is superseded
+  by Wako manufacturer casein-derived starting-material description. This does not
+  assign bare MediaDive442 or Japanese Polypepton labels to BD211910; those product
+  identities remain held. Correct the Polypeptone owner whole-identity boundary with
+  its own registry identity and retire the three Hipolypepton resolving aliases using
+  direct manufacturer evidence. Preserve other source labels and all ambiguous Japanese
+  Polypepton and generic source442 provenance; no forced cross-brand equivalence.
+  Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
+  complete-owner support or release admission are approved. Preserve all frozen source
+  and owner holds; component uncertainty is stated separately from whole-material
+  identity.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.
+
+
+  Polypeptone source-origin supplement under issue1202: the two Nihon-qualified Polypepton
+  labels are retained as provenance-only REJECTED_LABEL entries. This prevents unsupported
+  global resolution; it does not declare every Japanese Polypepton chemically distinct
+  from every Hipolypepton. The 2001/2002 Wako and 2007 Nihon primary sources establish
+  historical casein raw material and enzymatic processing, not a pure final casein
+  composition or an occurrence-specific SKU bridge. Current JCM181 and related recipes
+  naming FUJIFILM Wako Hipolypepton conflict with older Nihon Polypepton labels; preserve
+  both source versions. The current Shioya product catalogues are separate version
+  evidence.
+
+
+  The selected local identifier and self-only FALLBACK_REGISTRY remain unchanged solely
+  for source-owner continuity in this isolated fragment. They are not accepted final
+  grounding: POLYPEPTONE-001 remains open. FOODON:03315306 protein hydrolyzates supports
+  a broader NARROW_MATCH relation for a settled named protein-hydrolysate preparation.
+  MICRO:0000179 polypeptone has an explicit BD blended-digest definition and is a
+  substantive exact-term candidate for that BD scope under MAPPING_SEMANTICS section3.
+  The coordinator must settle the coupled owner scope and assess this exact-term priority
+  before selecting final grounding; neither ontology label assigns bare MediaDive442
+  or historical Japanese occurrences to BD. Feasible BD-specific curation need not
+  await resolution of every generic/Japanese occurrence: those routes may remain explicitly
+  held. No competing worker union or arbitrary identifier is selected.
+
+
+  The 150 context rows are a read-only source-scope ledger, not a new membership count
+  or approval. Historical occurrence_statistics 135/135, every old curation event,
+  the three pre-existing Hipolypepton exclusions, ingredient roles, source quantities
+  and all source/owner/export holds remain unchanged. No owner merge, maintained data
+  change, source-case admission or release approval is conferred.
+
+
+  Consolidated Polypeptone alias correction: Issue1202 comment6719869255: this label
+  names the specific documented BD casein/animal-tissue blended product. The present
+  owner denotes the supplier-unspecified named Polypeptone preparation; exact interchangeability
+  with this catalogue product is unproved. Preserve the original literal/source as
+  nonresolving provenance. This does not deny the product or prove chemical difference,
+  import its equal-parts formula, mint a BD owner, merge owners, or approve source/role/export.
+  The filed FOODON broader-grounding recommendation is being reconciled against newly
+  captured full-OWL formal food-additive membership evidence W05-PARENTS-NEW01. This
+  intermediate alias-only candidate leaves the preceding grounding unchanged pending
+  that bounded scientific triage; it does not describe self-only grounding as final
+  sufficient curation. All five prior Japanese/Hipolypepton rejections, source-vintage
+  boundaries,135/135 statistics and computational role remain exact. The separate
+  M122 quantity discrepancy remains in CultureMech150/408 scope without source or
+  quantity edits.
+
+
+  Final consolidated grounding selection (supersedes the earlier self-only/pending
+  grounding paragraphs, while preserving their history): Retain supplier-unspecified
+  named Polypeptone as kgmicrobe.ingredient:polypeptone, with a NARROW_MATCH to the
+  closer MeSH D010461 Peptones material category. Native section3 exact-term precedence
+  is evaluated: MICRO:0000179 specifically defines the BD casein/animal-tissue blend
+  and MICRO:0000178 adds enzymatic/mammalian restrictions; neither establishes the
+  generic named material identity. The complete manufacturer guide printed7 supports
+  the peptone partial protein-hydrolysate relation, independently consistent with
+  NLM D010461 and M0016245. This does not import the BD formula or measured lot characteristics.
+  The manufacturer general base-hydrolysis possibility is a terminology caveat, not
+  evidence that these particular observations have a conflicting material. FoodOn
+  member_of external agency categorization is not a source food-use or role prerequisite,
+  so the earlier stronger formal-restriction inference is qualified. FOODON:03315306
+  and MeSH D011492 remain broader material alternatives; closer verified D010461 is
+  selected under native precedence. None of these mappings transfers the old exact
+  generic FoodOn identity to the named preparation. Native projection must be broadMatch
+  to mesh:D010461 plus the exact local registry identity row. The three BD labels
+  remain provenance-only REJECTED_LABEL; the five prior Japanese/Hipolypepton rejections,
+  literal labels/source prefixes,135/135 statistic and computational role remain unchanged.
+  Product-association, source-vintage, CM150/408 quantity, role and export holds remain.
+  This does not assert every product chemically different, create a BD owner, merge
+  owners or approve source membership. POLYPEPTONE-001 broader-grounding deficiency
+  is repaired in this bounded source proposal; coupled owner/source/union acceptance
+  remains coordinator work, and its old review is preserved.'
 mim_id: MIM:0002086
 legacy_identifiers:
 - MIM:Polypeptone
 - FOODON:03315306
+- kgmicrobe.ingredient:polypeptone

@@ -37,16 +37,63 @@ curation_history:
     identifier promoted by a mechanism that never decided anything is what #203 and
     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: M2843 explicitly says potato extract from 200 g boiled potato per litre.
+    The component surface boiled potato is a preparation-input shorthand, not 200
+    g/L retained extract solids. The CultureBotHT YAML/current normalized source specifies
+    4 g/L Infusion from Potatoes plus 20 g/L dextrose; the alternate underscore-name
+    imported record preserves 4 and 20 without units. Neither record supplies an extraction
+    protocol or physical supply-state definition. Neither exact equivalence nor a
+    distinct resulting preparation has been established. Withdraw the duplicate new
+    M2843 owner and add only a source-bounded preparation/supplied-form note to the
+    existing UNMAPPED0251 owner. Do not assign CAS93348-51-7, equate the output to
+    whole tissue, promote the whole owner, or rewrite its earlier occurrence statistics.
+  new_status: UNMAPPED
+  llm_assisted: true
+  previous_status: UNMAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002821; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002821; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 2 CultureBot
   media; samples: Potato Dextrose Broth, Potato_Dextrose_Broth. No CAS-RN or CHEBI
-  mapping available; curator review needed.'
+  mapping available; curator review needed.
+
+
+  #1201 isolated proposal: M2843 explicitly says potato extract from 200 g boiled
+  potato per litre. The component surface boiled potato is a preparation-input shorthand,
+  not 200 g/L retained extract solids. The CultureBotHT YAML/current normalized source
+  specifies 4 g/L Infusion from Potatoes plus 20 g/L dextrose; the alternate underscore-name
+  imported record preserves 4 and 20 without units. Neither record supplies an extraction
+  protocol or physical supply-state definition. Neither exact equivalence nor a distinct
+  resulting preparation has been established. Withdraw the duplicate new M2843 owner
+  and add only a source-bounded preparation/supplied-form note to the existing UNMAPPED0251
+  owner. Do not assign CAS93348-51-7, equate the output to whole tissue, promote the
+  whole owner, or rewrite its earlier occurrence statistics. Existing-owner supply
+  state and preparation lineage are incomplete. M2843 boiling duration, extraction
+  method and yield are also unspecified. The supported source preparation can be recorded
+  without asserting exact equivalence to the two prior owner occurrences. Raw source
+  spellings are retained in case evidence and this source scope; no new globally resolving
+  source-local alias is added. Full-owner publication approval and all source-specific
+  holds remain pending.'
 ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Potato extract from boiled potato (TOGO M2843)
+  form: source-stated potato extract preparation
+  notes: 'M2843 states extract from200g boiled potato per litre of medium. This is
+    a preparation basis, not200g/L retained extract solids. No exact preparation equivalence
+    to prior CultureBotHT4g/L Infusion from Potatoes is asserted; owner identity stays
+    UNMAPPED. Source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2843'
 mim_id: MIM:0002821
 legacy_identifiers:
 - MIM:Infusion_From_Potatoes

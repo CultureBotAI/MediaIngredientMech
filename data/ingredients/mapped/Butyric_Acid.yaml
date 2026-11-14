@@ -62,6 +62,14 @@ synonyms:
 - synonym_text: propylformic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: n--Butyric acid
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[95] case_id=CM_NAME:b8338c4b155a2bff20a41a8210ba5004bc7967def36e6cf4496015fe648b75da;
+    source=culturemech; source_case_id=n--Butyric acid; CultureMech:007610 solutions/1/composition/1
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml);
+    CultureMech:007780 ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1093;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M124'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 48
@@ -142,11 +150,31 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[95] case_id=CM_NAME:b8338c4b155a2bff20a41a8210ba5004bc7967def36e6cf4496015fe648b75da;
+    source=culturemech; source_case_id=n--Butyric acid; CultureMech:007610 solutions/1/composition/1
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1093_Rumen_Bacteria_Medium.yaml);
+    CultureMech:007780 ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M124_Medium_10.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1093;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M124'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000540; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000540; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 107-92-6

@@ -1,0 +1,46 @@
+identifier: kgmicrobe.ingredient:dried_yeast_material
+preferred_term: Dried yeast material
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dried_yeast_material
+  ontology_label: Dried yeast material
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1463
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+notes: 'NBRC1463 uses5g dry yeast and separately0.1g yeast extract; NBRC828 uses10g
+  dry yeast. The material category is dried yeast biomass, distinct from extract.
+  Species, viability, particle size, manufacturer and drying process are unknown;
+  two contexts share only this generic material scope, not a proven product or lot.
+  FOODON dry-yeast search found more specific torula/brewer and fine/active/inactive
+  terms whose additional qualifiers are unsupported. Raw labels retained as occurrence
+  provenance only: [''Dry yeast'']. Identity is the stated physical material, not
+  an arbitrary recipe-specific duplicate. Existing generic yeast, baker yeast and
+  wet cell paste do not establish this supplied state.'
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003223 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: Dried yeast
+  form: dried yeast biomass
+  notes: NBRC1463 and NBRC828 explicitly specify dry yeast. Species, viability, grade,
+    particle size and drying method remain unspecified.
+mim_id: MIM:0003223
+legacy_identifiers:
+- MIM:dried_yeast_material
+- kgmicrobe.ingredient:dried_yeast_material

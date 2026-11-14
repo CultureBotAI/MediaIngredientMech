@@ -25,6 +25,9 @@ synonyms:
 - synonym_text: α-D-Glucose
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Glucose (α-, D+)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06 case CM_NAME:7fc4fcdc626f033207d081d9114ff9c21661d641cbca3910541eb2020b421eaa
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 7
@@ -97,11 +100,23 @@ curation_history:
   changes: Added Unicode-Greek synonym α-D-Glucose moved from generic Glucose; this
     spelling names the alpha anomer CHEBI:17925 (#518).
   llm_assisted: true
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: ADDED_SYNONYMS
+  changes: Add DSMZ403 raw Glucose (α-, D+) alias to exact alpha-D-glucose; do not
+    infer monohydrate.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000307; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000307; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 492-62-6

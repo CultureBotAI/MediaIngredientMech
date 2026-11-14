@@ -1,21 +1,19 @@
-identifier: mesh:C000366
-preferred_term: O Carbamyl D Serine
+identifier: mesh:M0040464
+preferred_term: O-carbamyl-D-serine
 ontology_mapping:
-  ontology_id: mesh:C000366
-  ontology_label: O-carbamylserine
+  ontology_id: mesh:M0040464
+  ontology_label: O-carbamyl-D-serine
   ontology_source: MESH
   mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: kg-microbe metatraits unmapped_compounds.tsv
-    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
-      MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
-      CHEBI:192410(Carbamyl chloride), CHEBI:229987(O-Benzyl-D-serine), CHEBI:37713(O-phospho-D-serine).
-      Pending curator promotion to a CHEBI/NCIT primary identifier.'
-  - evidence_type: DATABASE_MATCH
-    source: MESH via EBI OLS exact synonym search
-    notes: Promoted from kgmicrobe.compound:o_carbamyl_d_serine after OLS returned
-      mesh:C000366 with exact synonym "O Carbamyl D Serine".
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://id.nlm.nih.gov/mesh/M0040464.json
+    notes: MeSH C000366 preferred concept explicitly has narrower D(M0040464) and
+      L(M0307419) concepts. Existing exact synonym-based descriptor mapping collapsed
+      their scope. Use the exact D concept as primary identifier; independent PubChem122679
+      and supplier20324 confirm CAS3819-76-9 and D/(2R) structure. Production local
+      adapter resolves M0040464 canonical label; no descriptor-level D-only identity
+      is asserted.
 synonyms:
 - synonym_text: O-carbamyl-D-serine
   synonym_type: EXACT_SYNONYM
@@ -59,14 +57,54 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-11-08T05:21:11.143703+00:00'
+  curator: all_unmatched_20261107_worker02_research_c
+  action: CORRECTED
+  changes: 'Retain the explicitly D-specific O-carbamyl-D-serine identity as exact
+    mesh:M0040464 rather than broader descriptor mesh:C000366 O-carbamylserine. NLM
+    descriptor concepts explicitly distinguish D and L, whereas the prior OLS synonym-based
+    descriptor promotion erased that distinction. Preserve CAS3819-76-9 and D/(2R)
+    chemical properties as independent supporting evidence. Proposal only; reviewed
+    evidence in reports/all_unmatched_20261107/worker-02/c/. Inherited publication
+    support is withdrawn for changed bytes; coordinator must re-review the complete
+    payload. Retired obsolete mapping evidence from active grounding; retained verbatim
+    as historical provenance: [{"evidence_type": "DATABASE_MATCH", "notes": "Imported
+    from kg-microbe''s unmapped placeholder namespace. Ingested into MIM''s pipeline;
+    confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:192410(Carbamyl
+    chloride), CHEBI:229987(O-Benzyl-D-serine), CHEBI:37713(O-phospho-D-serine). Pending
+    curator promotion to a CHEBI/NCIT primary identifier.", "source": "kg-microbe
+    metatraits unmapped_compounds.tsv"}, {"evidence_type": "DATABASE_MATCH", "notes":
+    "Promoted from kgmicrobe.compound:o_carbamyl_d_serine after OLS returned mesh:C000366
+    with exact synonym \"O Carbamyl D Serine\".", "source": "MESH via EBI OLS exact
+    synonym search"}].'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001935; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001935; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 3819-76-9
+  molecular_formula: C4H8N2O4
+  molecular_weight: 148.12
+  inchi: InChI=1S/C4H8N2O4/c5-2(3(7)8)1-10-4(6)9/h2H,1,5H2,(H2,6,9)(H,7,8)/t2-/m1/s1
+  pubchem_cid: 122679
+  data_source: PubChem122679 D/(2R) compound; independent Funakoshi20324 exact-name/CAS
+    confirmation
+  retrieval_date: '2026-11-08T05:16:56.266877+00:00'
 mim_id: MIM:0001935
 legacy_identifiers:
 - MIM:O_Carbamyl_D_Serine
 - mesh:C000366
+- mesh:M0040464

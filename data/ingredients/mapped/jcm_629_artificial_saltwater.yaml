@@ -1,0 +1,137 @@
+identifier: kgmicrobe.ingredient:jcm_629_artificial_saltwater
+preferred_term: JCM 629 artificial saltwater
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_629_artificial_saltwater
+  ontology_label: JCM 629 artificial saltwater
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629
+    notes: Source-specific multicomponent stock; registry identity does not assert
+      interchangeability with other recipes bearing this generic label.
+synonyms: []
+components:
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaCl'
+- component_name: MgCl2·6H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86345
+  source: JCM629 explicitly lists MgCl2·6H2O; official CHEBI:86345 denotes magnesium
+    dichloride hexahydrate and the active MIM catalog retains this exact label.
+- component_name: MgSO4 x 7 H2O
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: MgSO4·7H2O'
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KCl'
+- component_name: NaHCO3
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaHCO3'
+- component_name: CaCl2 x 2 H2O
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: CaCl2·2H2O'
+- component_name: NH4Cl
+  component_id: CHEBI:31206
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NH4Cl'
+- component_name: KH2PO4
+  component_id: CHEBI:63036
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KH2PO4'
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: Distilled water'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629
+    source_record: jcm629
+    notes: JCM629 stock batch lists NaCl27.5g, MgCl2·6H2O5.38g, MgSO4·7H2O6.78g, KCl0.72g,
+      NaHCO3 0.2g, CaCl2·2H2O1.4g, NH4Cl1g, KH2PO4 0.05g, distilled water1L. It replaces
+      ModifiedWolfe mineral solution inJCM628. Water amount is retained without assuming
+      exact finalvolume; frozen150G_PER_L is not this composition.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:86345
+    notes: 'Component-reference reconciliation for issue1209: the JCM629 MgCl2·6H2O
+      constituent matches existing CHEBI:86345. No source quantity, stock composition,
+      final volume or owner identity is changed.'
+notes: JCM629 stock batch lists NaCl27.5g, MgCl2·6H2O5.38g, MgSO4·7H2O6.78g, KCl0.72g,
+  NaHCO3 0.2g, CaCl2·2H2O1.4g, NH4Cl1g, KH2PO4 0.05g, distilled water1L. It replaces
+  ModifiedWolfe mineral solution inJCM628. Water amount is retained without assuming
+  exact finalvolume; frozen150G_PER_L is not this composition. Raw source label 'Artificial
+  saltwater (see below)' is recorded in this evidence rather than as a global resolving
+  alias because the label is recipe-scoped. No EXACT_FORMULATION link to the whole
+  medium is asserted. Current-origin bridge retains the W09 agent-authorship correction
+  and original source profile while preserving the already evidenced issue1209 MgCl2·6H2O
+  child reference. This remains a null-before isolated proposal. The JCM629 stock
+  is separate from the bottom and top medium layers and from receiving-medium 150
+  G_PER_L data; all original case and occurrence restrictions remain.
+curation_history:
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose source-specific JCM 629 artificial saltwater stock with complete
+    constituent list, original batch quantities in evidence and no guessed final-volume
+    concentrations.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:16:55.913197+00:00'
+  curator: Codex /root/step7d_independent_review
+  action: RECONCILED_PROPOSAL_COMPONENT_REFERENCE
+  changes: 'Issue1209: ground the existing MgCl2·6H2O component in CHEBI:86345 with
+    MIM_CATALOG scope; retain all original recipe evidence, amounts and history. Isolated
+    proposal only; no maintained application.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:55:57.876916+00:00'
+  curator: Codex worker09
+  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
+  changes: 'Issue #1226 provenance-only correction for ma-stock-jcm_629_artificial_saltwater,
+    audit flag 574: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
+    not a MIM human reviewer; the cited source author is distinct from the author
+    of this curation judgment. Preserved the complete source, notes and claim content,
+    all other mapping evidence (including the ambiguous historical Casamino wrapper
+    where present), component evidence, scientific fields and prior history. No identity,
+    source applicability, outcome, role, coalescence or export approval change. Audit:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
+    complete original evidence-object SHA256 a5f9cf4025b1e612796351077cc5a64acdb371385b976e8f265a0e8a9018eac2.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:31:38.943111+00:00'
+  curator: Codex worker04 /root positive-candidate current-origin composition
+  action: COMPOSED_CURRENT_ORIGIN_PROVENANCE
+  changes: Private candidate successor of 3ec1193e021f6a5ba584fff84c0ab87d1c731e27db68d7775e5c9b716e7f5980.
+    Retain exact reviewed predecessor scientific fields and all authentic source profiles/events;
+    bind current committed origins w09::ma-stock-jcm_629_artificial_saltwater. Retype
+    only identified agent-authored MappingEvidence under issue1226; append missing
+    original correction events verbatim and explicitly qualify isolated proposal lineage.
+    No maintained application, source-case acceptance increment, role approval, new
+    component mapping or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003284 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003284
+legacy_identifiers:
+- MIM:jcm_629_artificial_saltwater
+- kgmicrobe.ingredient:jcm_629_artificial_saltwater

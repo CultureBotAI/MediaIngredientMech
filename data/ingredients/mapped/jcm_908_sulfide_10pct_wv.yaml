@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv
+preferred_term: JCM 908 sodium sulfide nonahydrate 10% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv
+  ontology_label: JCM 908 sodium sulfide nonahydrate 10% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=908
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses
+  7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not stated
+  and source closure is unknown; UNKNOWN records the supported solute and mass/volume
+  basis without claiming an explicitly omitted ingredient. Raw case labels remain
+  only in evidence and case-bound proposal links, not globally resolving synonyms.
+  No occurrence count transfer, source-hold release or receiving-medium dose correction
+  is implied. Issue 1227 source-relative completeness: JCM 908 supplies filter-sterilized
+  10% w/v sodium sulfide nonahydrate stock, 7.5 ml. The source does not close the
+  stock ingredient list or identify its carrier. UNKNOWN denotes unstated source closure;
+  no carrier is invented and no particular omitted ingredient is asserted.'
+solution_type: OTHER
+components:
+- component_name: Na2S x 9 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:76209
+  concentration_value: '10'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=908
+    source_record: '908'
+    notes: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses
+      7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not
+      stated and source closure is unknown; UNKNOWN records the supported solute and
+      mass/volume basis without claiming an explicitly omitted ingredient. JCM 908
+      supplies filter-sterilized 10% w/v sodium sulfide nonahydrate stock, 7.5 ml.
+      The source does not close the stock ingredient list or identify its carrier.
+      UNKNOWN denotes unstated source closure; no carrier is invented and no particular
+      omitted ingredient is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses
+    7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not
+    stated, so PARTIAL records only verified solute and mass/volume basis.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Set component_assertion.completeness
+    PARTIAL → UNKNOWN. JCM 908 supplies filter-sterilized 10% w/v sodium sulfide nonahydrate
+    stock, 7.5 ml. The source does not close the stock ingredient list or identify
+    its carrier. UNKNOWN denotes unstated source closure; no carrier is invented and
+    no particular omitted ingredient is asserted. All inherited history, scientific/source/role/export
+    holds and original before hash remain preserved. This is a proposal, pending independent
+    whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003286 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003286
+legacy_identifiers:
+- MIM:jcm_908_sulfide_10pct_wv
+- kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv

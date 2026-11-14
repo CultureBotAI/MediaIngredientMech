@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:nbrc_268_trace_salts_solution
+preferred_term: NBRC 268 ISP4 trace salts solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_268_trace_salts_solution
+  ontology_label: NBRC 268 ISP4 trace salts solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268
+    source_record: NBRC 268 ISP4 trace salts solution
+    notes: Verbatim constituent names and source batch quantities; water is a preparation
+      input. Child reference_scope UNMAPPED means no exact child identifier was independently
+      established.
+  notes: Source batch quantities:0.1 g of each salt with100 ml distilled water. No
+    unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock.
+notes: 'Source batch quantities:0.1 g of each salt with100 ml distilled water. No
+  unreported final-volume make-up is assumed. The parentISP4 recipe uses1 ml stock.
+  Raw source labels retained without global resolving aliases: ["Trace salts solution*"].
+  Occurrence-specific linkage is required; identical generic words in other recipes
+  do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003313 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003313
+legacy_identifiers:
+- MIM:nbrc_268_trace_salts_solution
+- kgmicrobe.ingredient:nbrc_268_trace_salts_solution

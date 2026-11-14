@@ -49,7 +49,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: unmapped_duplicate_review_2026_05_11
 - synonym_text: KH PO
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MKP
   synonym_type: EXACT_SYNONYM
@@ -85,17 +85,20 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Potassium Phosphate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: (dibasic)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: KH2PO4 (0.4 g/l)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: KH2PO4 (7% w/v)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Potassium Phosphate monobasic crystal
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:e25fa3244c304aac094fb968ff5423426bda0ee3f6e8df26f702a747cdd3137f
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5649
@@ -223,11 +226,77 @@ curation_history:
     not resolve them: ''KH2PO4 (0.4 g/l)'' (x1 CultureMech mentions); ''KH2PO4 (7%
     w/v)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: NBRC1398 explicitly specifies potassium phosphate monobasic crystal0.5g.
+    ChEBI63036 is potassium dihydrogen phosphate; monobasic identifies that stoichiometry
+    and crystal describes supplied morphology without asserting a different hydrate.
+    Preserve the full source spelling on KH2PO4, never the dibasic owner. Proposed
+    only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:15:28.229007+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: REJECTED_UNSAFE_IDENTITY_ALIASES
+  changes: 'Independent review IF1201-R2: preserve the original text and source provenance
+    while changing three unsafe maintained identity aliases to REJECTED_LABEL. The
+    fragment (dibasic) does not identify monobasic potassium dihydrogen phosphate.
+    KH2PO4 (0.4 g/l) and KH2PO4 (7% w/v) encode concentration context or a preparation,
+    not an exact pure-salt identity. This is an owner-alias correction; no claim is
+    made that the standalone (dibasic) fragment currently resolves in a native consumer.
+    Primary identity, chemistry, roles, counts and source holds remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-011. Origins:
+    w08::if1201-edit-kh2po4-alias-scope; w10::chem-proposal-120. Authentic beforeimage,
+    every authored event and all source-case/capture bindings are retained in the
+    adjacent trace. This is candidate composition, not corpus application, owner merge,
+    role approval, inherited support or release approval. Independent whole-owner
+    science review is required.'
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype KH PO, Potassium Phosphate as REJECTED_LABEL, preserving original
+    text and provenance. KH PO is an incomplete formula and Potassium Phosphate is
+    a generic family label; neither establishes exact monobasic KH2PO4 identity. Preserve
+    prior hydrate, concentration-label and source holds; no source occurrence is chemically
+    corrected. All inherited history, scientific/source/role/export holds and original
+    before hash remain preserved. This is a proposal, pending independent whole-payload
+    review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-011 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001400; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001400; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7778-77-0

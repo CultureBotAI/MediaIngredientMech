@@ -1,0 +1,116 @@
+identifier: kgmicrobe.ingredient:jcm574_mds_salt_water
+preferred_term: JCM 574 MDS salt water
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm574_mds_salt_water
+  ontology_label: JCM 574 MDS salt water
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    notes: JCM574 defines this complete seven-input stock and uses833mL in the receiving
+      medium. The final stock pH is7.5; preparation is source-owned. Three solution/solvent
+      parts retain raw supplied-form names without guessed component IDs. The whole
+      stock has an established source identity; these part-grounding gaps do not make
+      it an unresolved mixture identity.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms:
+- synonym_text: MDS salt water (see below)
+  synonym_type: REJECTED_LABEL
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+notes: JCM574 defines this complete seven-input stock and uses833mL in the receiving
+  medium. The final stock pH is7.5; preparation is source-owned. Three solution/solvent
+  parts retain raw supplied-form names without guessed component IDs. The whole stock
+  has an established source identity; these part-grounding gaps do not make it an
+  unresolved mixture identity. Isolated proposal only. Complete published payload
+  and cross-shard resolution remain coordinator obligations; no source record or existing
+  hold is changed. The unqualified raw source label is retained as REJECTED_LABEL
+  solely for provenance because RAW_TEXT also resolves globally in the native matcher.
+  The exact source occurrence may bind to this source-qualified preparation after
+  coordinator integration; no global same-label binding is proposed.
+solution_type: MINERAL_STOCK
+components:
+- component_name: NaCl
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26710
+  concentration_value: '240'
+  concentration_unit: G_PER_L
+- component_name: MgCl2 x 6 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86345
+  concentration_value: '30'
+  concentration_unit: G_PER_L
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31795
+  concentration_value: '35'
+  concentration_unit: G_PER_L
+- component_name: KCl
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32588
+  concentration_value: '7'
+  concentration_unit: G_PER_L
+- component_name: 1 M CaCl2 solution
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: ML_PER_L
+  source: Specific premixed solution; do not substitute the neat calcium chloride
+    owner.
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: Bring stock volume to 1.0 L; do not assert that exactly 1 L water is added.
+- component_name: 1 M Tris base
+  reference_scope: UNMAPPED
+  source: Variable titration to stock pH7.5; neither fixed amount nor neat-Tris identity
+    is invented.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    notes: All enumerated inputs are represented; COMPLETE describes enumeration,
+      not complete ingredient grounding or fixed quantities for variable titration.
+      JCM574 defines this complete seven-input stock and uses833mL in the receiving
+      medium. The final stock pH is7.5; preparation is source-owned. Three solution/solvent
+      parts retain raw supplied-form names without guessed component IDs. The whole
+      stock has an established source identity; these part-grounding gaps do not make
+      it an unresolved mixture identity.
+curation_history:
+- timestamp: '2026-11-08T04:30:41.363631+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported distinct ingredient identity and only evidenced
+    preparation/components; no roles inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:45:12.617124+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: 'IR-SHARD-ARTIFACT-9: make ambiguous source-local label provenance non-resolving
+    under the actual native matcher. Whole source-qualified identity unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.983188+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003052 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003052
+legacy_identifiers:
+- MIM:JCM574_MDS_Salt_Water
+- kgmicrobe.ingredient:jcm574_mds_salt_water

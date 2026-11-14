@@ -56,6 +56,10 @@ synonyms:
 - synonym_text: manganese(2+) sulfate--water (1/4)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Manganous sulfate tetrahydrate
+  synonym_type: EXACT_SYNONYM
+  source: worker01 source review CM_NAME:53ca45bc805198046babc2d4af60c8c7c4fc9179b532ac656accf1c52b4c5a3d;
+    evidence reports/all_unmatched_20261107/worker-01/shard/root_substances/decisions.fragment.json
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 107
@@ -155,11 +159,24 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T04:15:49.074743+00:00'
+  curator: codex-worker01
+  action: ADDED_SYNONYMS
+  changes: Add source-scoped EXACT_SYNONYM alias 'Manganous sulfate tetrahydrate';
+    preserve existing identity and all other claims. Publication support requires
+    fresh content-bound review.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001708; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001708; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 10101-68-5

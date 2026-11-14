@@ -43,6 +43,12 @@ synonyms:
 - synonym_text: Sodium-β-glycerophosphate
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: β-glycerophosphate-2Na
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: di-Na-ß-glycerophosphate
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 23
@@ -122,11 +128,27 @@ curation_history:
     not resolve them: ''Sodium β--glycerophosphate'' (x1 CultureMech mentions); ''Sodium-β-glycerophosphate''
     (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:18:40.490477+00:00'
+  curator: codex_worker09_source_review
+  action: ADDED_SYNONYMS
+  changes: 'Preserve source-reviewed exact raw aliases: β-glycerophosphate-2Na, di-Na-ß-glycerophosphate.
+    Identity, hydrate and salt scope are retained. This isolated candidate does not
+    release current mapping holds or approve unrelated synonyms/roles. Evidence: reports/all_unmatched_20261107/worker-09/salts/decisions.json
+    and evidence.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002295; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002295; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 819-83-0

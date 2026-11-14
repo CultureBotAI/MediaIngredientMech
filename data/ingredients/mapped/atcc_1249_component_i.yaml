@@ -1,0 +1,75 @@
+identifier: kgmicrobe.ingredient:atcc_1249_component_i
+preferred_term: ATCC 1249 Component I
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1249_component_i
+  ontology_label: ATCC 1249 Component I
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: MgSO4
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: G
+- component_name: Sodium citrate
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G
+- component_name: CaSO4 x 2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+- component_name: DI water
+  reference_scope: UNMAPPED
+  concentration_value: '400.0'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    source_record: ATCC 1249 Component I
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: ComponentI is prepared separately, adjusted to pH7.5 and autoclaved at121°C.
+    The source does not name the pH-adjusting reagent or amount; closure remains UNKNOWN.
+    MgSO4 and sodium citrate forms are only as printed. ComponentsII/III and optional
+    ferrous-ammonium-sulfate solution belong to the receiving medium and are excluded.
+notes: 'ComponentI is prepared separately, adjusted to pH7.5 and autoclaved at121°C.
+  The source does not name the pH-adjusting reagent or amount; closure remains UNKNOWN.
+  MgSO4 and sodium citrate forms are only as printed. ComponentsII/III and optional
+  ferrous-ammonium-sulfate solution belong to the receiving medium and are excluded.
+  Raw source label retained for this occurrence only: ''Component I''. Generic wording
+  is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003202 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003202
+legacy_identifiers:
+- MIM:atcc_1249_component_i
+- kgmicrobe.ingredient:atcc_1249_component_i

@@ -16,6 +16,17 @@ ontology_mapping:
       mass by 18 g/mol per water. Corrected because adopted verbatim from the mapped
       term CHEBI:232425 ('monosodium L-glutamate hydrate'), which is the specific
       hydrate and already carries the water.
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal glutamate-monohydrate
+    notes: NBRC1625 explicitly specifies L-glutamic acid monosodium salt monohydrate;
+      CHEBI:232425 provides its one-water formula, InChI and SMILES. Preserve that
+      supported structure repair and explicit L alias. DSMZ1454 and JCM904 name sodium
+      glutamate monohydrate; their conventional association follows MAPPING_SEMANTICS
+      §3, rather than independent supplier proof from automatically matched CAS or
+      mass. Neither name-level source association certifies a purchased batch’s enantiomeric
+      purity or crystal phase. CH-05 rejects the two water-free systematic aliases
+      while preserving their exact text/source. All source-specific, role and whole-owner/export
+      holds remain.
 synonyms:
 - synonym_text: 'Role: Nitrogen source; Properties: Defined component, Simple component,
     Organic compound'
@@ -26,7 +37,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: sodium (2S)-2-azaniumylpentanedioate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: Glutamate Sodium
   synonym_type: RAW_TEXT
@@ -59,8 +70,14 @@ synonyms:
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: sodium (2S)-2-ammoniopentanedioate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
+- synonym_text: L-glutamic acid monosodium salt monohydrate
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+- synonym_text: Sodium glutamate・H2O
+  synonym_type: HYDRATE_FORM
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=904
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 16
@@ -157,19 +174,54 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal glutamate-monohydrate: added aliases [''L-glutamic
+    acid monosodium salt monohydrate'']; rejected provenance labels []. Corrected
+    hydrate InChI/SMILES to include one water. Subject to independent skeptical review
+    and guarded coordinator integration; inherited full-payload support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-04/05: separate explicit NBRC1625 and conventional
+    DSMZ1454/JCM904 evidence from automatic CAS/mass; add exact JCM904 hydrate spelling;
+    reject two specified water-free systematic aliases. Preserve hydrated structure
+    repair. CH-05: synonyms[2] ''sodium (2S)-2-azaniumylpentanedioate'': reject_resolving_identity_preserve_text_and_source.
+    The full charged systematic name omits hydrate water and is a synonym of separate
+    water-free CHEBI:64243; it is not the one-water chemical structure of232425. CH-05:
+    synonyms[13] ''sodium (2S)-2-ammoniopentanedioate'': reject_resolving_identity_preserve_text_and_source.
+    The systematic water-free monosodium L-glutamate name was imported by sssom_other_backfill;
+    no hydrate modifier or source-specific hydrate bridge is present in that complete
+    entry/history. CHEBI64243 records this exact name. Isolated report-only successor;
+    original sealed evidence/history retained. No role, owner/export approval or inherited
+    source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002315; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002315; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6106-04-3
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:53:51.816519+00:00'
+  data_source: ChEBI:232425 via captured OLS4; original CAS provenance retained in
+    history
+  retrieval_date: '2026-11-08T05:07:15.066830+00:00'
   molecular_formula: C5H8NO4.H2O.Na
-  inchi: InChI=1S/C5H9NO4.Na/c6-3(5(9)10)1-2-4(7)8;/h3H,1-2,6H2,(H,7,8)(H,9,10);/q;+1/p-1/t3-;/m0./s1
-  smiles: '[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-].[Na+]'
+  inchi: InChI=1S/C5H9NO4.Na.H2O/c6-3(5(9)10)1-2-4(7)8;;/h3H,1-2,6H2,(H,7,8)(H,9,10);;1H2/q;+1;/p-1/t3-;;/m0../s1
+  smiles: O.[H][C@](N)(CCC(=O)[O-])C(=O)O.[Na+]
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: NITROGEN_SOURCE

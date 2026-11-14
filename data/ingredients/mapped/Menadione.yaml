@@ -9,6 +9,27 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374
+    notes: Claim-specific inherited-label assessment by Codex /root/step7d_science_c
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374.
+      The unqualified kg_microbe Hemodal entry is not a unique identity-bearing name
+      for this neutral menadione owner. Santa Cruz sc-205990 sections1/3 (https://datasheets.scbt.com/sc-205990.pdf)
+      use Hemodal for menadione CAS58-27-5, while sc-215295 sections1/3 (https://datasheets.scbt.com/sc-215295.pdf)
+      use it for menadione sodium bisulfite CAS130-37-0. Exact browser-extracted primary
+      sections are retained in W02 research/c/search-07.json; failed direct HTTP bodies
+      are separate. The Bayer advertisement in Coimbra Medica February1945 PDF page22
+      separately identifies a derivative tablet and sodium-bisulfite injection (https://am.uc.pt/romulo/download/wqnDk8Kjw5jDjsOQwpJpaGNtbGFuwpzClsKZwp9nwpM%3D/UCRC-Coimbra-Medica-1945-02.pdf;
+      complete PDF SHA256 691a9d0f916fca89f5d97b4f72e3c028d66e5d650915c895c74d9bd04c1028ca;
+      visual page SHA256 2a1a5d83ca40a51ed5e52c61cbd314377b53bf945cfe33a0ca4aa91469a1d107).
+      This affirmative form ambiguity justifies only the unqualified entry's nonresolving
+      REJECTED_LABEL disposition under MAPPING_SEMANTICS section3. Positive neutral-menadione
+      usage in NIST (https://webbook.nist.gov/cgi/cbook.cgi?ID=C58275&Units=SI), ChEBI
+      and sc-205990 remains valid contextual evidence; not every Hemodal use is false.
+      Preserve its spelling/source/history, supported Aquakay/Aquinone/Kappaxin chemical-name
+      senses, known CHEBI28869/CAS58-27-5 identity, and the ATCC1257 50mg solute versus
+      separate ethanol/water stock boundary and unvalidated flattened dose. No replacement
+      identity, product equivalence, role or export approval is inferred.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:mndn'
   synonym_type: RAW_TEXT
@@ -49,7 +70,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Hemodal
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Kappaxin
   synonym_type: EXACT_SYNONYM
@@ -74,6 +95,9 @@ synonyms:
     component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Menadione (Vitamin K3)
+  synonym_type: RAW_TEXT
+  source: 'ATCC Medium 1257 ETSA, Menadione Solution solute: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 107
@@ -165,11 +189,51 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:19:58.845677+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: ATCC Medium 1257 (https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx)
+    identifies Menadione (Vitamin K3) as the 50 mg solute in its separate Menadione
+    Solution (50 ml 95% ethanol plus 50 ml water). Add the compound alias only; the
+    frozen ETSA flattened 50 G_PER_L amount is not validated and the whole solution
+    is not a synonym of menadione. Isolated proposal only; independent and coordinator
+    review remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:22:24.855200+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_PROVENANCE_REFINED
+  changes: 'Independent review: replace generic author-only attribution on newly proposed
+    aliases with exact primary recipe/product identifier and URL. Existing aliases
+    and identity/component claims are unchanged. Isolated successor proposal only.'
+  llm_assisted: true
+- timestamp: '2026-11-08T17:34:28.828536+00:00'
+  curator: Codex /root/step7d_science_c
+  action: REJECTED_AMBIGUOUS_INHERITED_ALIAS
+  changes: 'Private successor to selected d18105cf under https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724713374:
+    change only bare Hemodal synonym_type from EXACT_SYNONYM to REJECTED_LABEL and
+    append this claim-specific LLM evidence/history. Preserve kg_microbe source, positive
+    neutral-name evidence, all other complete fields and historical prefixes. The
+    same token also names distinct bisulfite/derivative materials; no universal false-name
+    claim or replacement identity. ATCC1257 solute/stock and flattened-dose holds
+    remain. No maintained application, independent approval or change to original
+    source proposals/cases.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001622; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001622; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 58-27-5
@@ -186,6 +250,11 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Vitamin Source'
+notes: ATCC Medium 1257 (https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx)
+  identifies Menadione (Vitamin K3) as the 50 mg solute in its separate Menadione
+  Solution (50 ml 95% ethanol plus 50 ml water). Add the compound alias only; the
+  frozen ETSA flattened 50 G_PER_L amount is not validated and the whole solution
+  is not a synonym of menadione.
 mim_id: MIM:0001622
 legacy_identifiers:
 - MIM:Menadione

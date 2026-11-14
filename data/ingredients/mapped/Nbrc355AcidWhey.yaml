@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:nbrc355_acid_whey
+preferred_term: NBRC 355 acid-precipitated milk supernatant
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc355_acid_whey
+  ontology_label: NBRC 355 acid-precipitated milk supernatant
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M153; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium775.pdf;
+      https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=162; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=355
+    notes: NBRC 355 directs adding HCl to warmed milk to coagulate it, centrifuging,
+      and using the supernatant as cheese whey. The source-defined output can be represented
+      without a quantified yield. Starting milk and HCl are processing inputs; precipitated
+      milk proteins are removed, and their masses or final retained fractions are
+      not asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium
+      355 in case 23.
+notes: '#1201 isolated proposal: NBRC 355 directs adding HCl to warmed milk to coagulate
+  it, centrifuging, and using the supernatant as cheese whey. The source-defined output
+  can be represented without a quantified yield. Starting milk and HCl are processing
+  inputs; precipitated milk proteins are removed, and their masses or final retained
+  fractions are not asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium
+  355 in case 23. Milk source, acid quantity, temperature and centrifugation settings
+  are not stated; no acid/rennet or formulation equivalence is asserted for the other
+  six case 23 occurrences. The distinction from generic cheese whey is the positively
+  stated HCl-coagulation/centrifugation process, not merely a different recipe citation.
+  Raw source spellings are retained in case evidence and this source scope; no new
+  globally resolving source-local alias is added. Full-owner publication approval
+  and all source-specific holds remain pending.'
+curation_history:
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: NBRC 355 directs adding HCl to warmed milk to coagulate it, centrifuging,
+    and using the supernatant as cheese whey. The source-defined output can be represented
+    without a quantified yield. Starting milk and HCl are processing inputs; precipitated
+    milk proteins are removed, and their masses or final retained fractions are not
+    asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium
+    355 in case 23.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.038072+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003133 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003133
+legacy_identifiers:
+- MIM:Nbrc355AcidWhey
+- kgmicrobe.ingredient:nbrc355_acid_whey

@@ -1,0 +1,360 @@
+identifier: kgmicrobe.ingredient:wolfes_mineral_elixir_acidified_14_salt_nominal_recipe
+preferred_term: Wolfe's mineral elixir (acidified fourteen-salt nominal recipe)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfes_mineral_elixir_acidified_14_salt_nominal_recipe
+  ontology_label: Wolfe's mineral elixir (acidified fourteen-salt nominal recipe)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470
+    notes: Agent-authored nominal scope reconciliation N08, original proposal 381,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    notes: Agent-authored nominal scope reconciliation N08, original proposal 384,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+synonyms: []
+components:
+- component_name: MgSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '30'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:31795
+- component_name: Manganese sulfate hydrate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+  source: 'JCM470: MnSO4·xH2O, x unspecified; DSM792: MnSO4·H2O. Preserve distinct
+    literal hydration assertions; no common exact child identifier.'
+- component_name: NaCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:26710
+- component_name: FeSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:75836
+- component_name: Cobalt chloride hexahydrate
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.8'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:53503
+  source: 'Original literal source component name: CoCl2·6H2O. '
+- component_name: CaCl2·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:86158
+- component_name: ZnSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.8'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:32312
+- component_name: CuSO4·5H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:31440
+- component_name: KAl(SO4)2·12H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.18'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:86465
+- component_name: H3BO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:33118
+- component_name: Na2MoO4·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:75213
+- component_name: (NH4)2Ni(SO4)2·6H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.8'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:86149
+- component_name: Na2WO4·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:63939
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '1000'
+  concentration_unit: ML_ADDED_PER_SOURCE_BATCH
+  source: Listed source water input; not an asserted final1Lmixture volume.
+  component_id: CHEBI:15377
+- component_name: Diluted sulfuric acid
+  reference_scope: UNMAPPED
+  source: Adjust water to pH1.0 before dissolving the salts; dilution and amount unspecified.
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470
+    source_record: 'Attributed original proposal 381: Wolfe mineral elixir (JCM470)'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":381,"worker":"w05","head":"108e213e96f7d423ee345ce265d692e79063127c","proposal_id":"R1193-P-wolfe470","payload_sha256":"16e3e51862ed69e847325c24cdce235defba5193546845fa4c6501b85b505018","raw_source_labels":["Wolfe''s
+      mineral elixir","Wolfe''s mineral elixir (see Medium No. 470 )","Wolfe''s mineral
+      elixir (see below)"],"original_components":[{"component_name":"MgSO4·7H2O","reference_scope":"UNMAPPED","source":"30g"},{"component_name":"MnSO4·xH2O","reference_scope":"UNMAPPED","source":"5g;
+      x unspecified"},{"component_name":"NaCl","reference_scope":"UNMAPPED","source":"10g"},{"component_name":"FeSO4·7H2O","reference_scope":"UNMAPPED","source":"1g"},{"component_name":"CoCl2·6H2O","reference_scope":"UNMAPPED","source":"1.8g"},{"component_name":"CaCl2·2H2O","reference_scope":"UNMAPPED","source":"1g"},{"component_name":"ZnSO4·7H2O","reference_scope":"UNMAPPED","source":"1.8g"},{"component_name":"CuSO4·5H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"KAl(SO4)2·12H2O","reference_scope":"UNMAPPED","source":"0.18g"},{"component_name":"H3BO3","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Na2MoO4·2H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"(NH4)2Ni(SO4)2·6H2O","reference_scope":"UNMAPPED","source":"2.8g"},{"component_name":"Na2WO4·2H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Na2SeO4","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Distilled
+      water","reference_scope":"UNMAPPED","source":"1000ml; acidifiedpH1"},{"component_name":"Dilute
+      sulfuric acid","reference_scope":"UNMAPPED","source":"to waterpH1; amount unspecified"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"COMPLETE","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470","source_record":"Wolfe
+      mineral elixir (JCM470)","notes":"JCM 470 and DSMZ 792 describe the same fourteen
+      named salt inputs and quantities in 1000 ml water, acidified to pH 1 with diluted
+      sulfuric acid. JCM writes MnSO4·xH2O while DSMZ specifies the monohydrate; x
+      is not established to differ from 1. This is compatible evidence with unresolved
+      reagent hydration, not proof of different preparations. Source accessions and
+      their occurrence routes remain separate provenance. The identifier is a conditional
+      historical proposal handle; no winning owner, merge, simultaneous installation
+      or complete component grounding is approved. Coordinator reconciliation under
+      #1237 must preserve both source assertions, pH method and all inherited holds.
+      Component inputs and quantities remain transcribed from this entry’s cited source."}],"notes":"JCM
+      470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+      in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+      while DSMZ specifies the monohydrate; x is not established to differ from 1.
+      This is compatible evidence with unresolved reagent hydration, not proof of
+      different preparations. Source accessions and their occurrence routes remain
+      separate provenance. The identifier is a conditional historical proposal handle;
+      no winning owner, merge, simultaneous installation or complete component grounding
+      is approved. Coordinator reconciliation under #1237 must preserve both source
+      assertions, pH method and all inherited holds. The transcribed components are
+      source assertions, not evidence of cross-source disjointness."},"original_notes":"JCM
+      470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+      in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+      while DSMZ specifies the monohydrate; x is not established to differ from 1.
+      This is compatible evidence with unresolved reagent hydration, not proof of
+      different preparations. Source accessions and their occurrence routes remain
+      separate provenance. The identifier is a conditional historical proposal handle;
+      no winning owner, merge, simultaneous installation or complete component grounding
+      is approved. Coordinator reconciliation under #1237 must preserve both source
+      assertions, pH method and all inherited holds. Verbatim source-only labels retained
+      as provenance, excluded from globally resolving aliases: [\"Wolfe''s mineral
+      elixir (see Medium No. 470 )\", \"Wolfe''s mineral elixir (see below)\", \"Wolfe''s
+      mineral elixir\"].","original_synonyms":null,"proposal_occurrence_selectors":{"occurrence_application_note":"Correction1193:
+      propose distinct source-qualified preparation Wolfe mineral elixir (JCM470).
+      JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837.
+      Variable MnSO4·xH2O stays a named unresolved component; this does not prevent
+      identifying the whole preparation. Case112 applies only toJCM837 occurrence,
+      not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible
+      quantities/components. All originaloccurrenceIDs retained in decisions; source
+      recipe determines subgroup, never bare string.","applies_to_occurrence_ids":["CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152","CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227","CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"]},"case_ids":["CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051","CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c","CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"],"case_applicability":[{"case_id":"CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051","applicability":"Preserve
+      exact source and occurrence routes. These full candidate bytes are conditional
+      report artifacts; no family winner, merger or simultaneous installation is selected.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"]},{"case_id":"CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c","applicability":"Preserve
+      exact source and occurrence routes. These full candidate bytes are conditional
+      report artifacts; no family winner, merger or simultaneous installation is selected.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"]},{"case_id":"CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff","applicability":"Preserve
+      exact source and occurrence routes. These full candidate bytes are conditional
+      report artifacts; no family winner, merger or simultaneous installation is selected.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b","CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6","CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0","CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465","CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"]}]}'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    source_record: 'Attributed original proposal 384: Wolfe mineral elixir (DSMZ792)'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":384,"worker":"w05","head":"108e213e96f7d423ee345ce265d692e79063127c","proposal_id":"R1193-P-wolfe792","payload_sha256":"fe55d4ad8e232b22f09e05adbed30701587314f158fdc4ff536c4c0049aa16b5","raw_source_labels":["Wolfe''s
+      mineral elixir"],"original_components":[{"component_name":"MgSO4·7H2O","reference_scope":"UNMAPPED","source":"30g"},{"component_name":"MnSO4·H2O","reference_scope":"UNMAPPED","source":"5g;
+      DSMZ792 prints multiplication x H2O, monohydrate"},{"component_name":"NaCl","reference_scope":"UNMAPPED","source":"10g"},{"component_name":"FeSO4·7H2O","reference_scope":"UNMAPPED","source":"1g"},{"component_name":"CoCl2·6H2O","reference_scope":"UNMAPPED","source":"1.8g"},{"component_name":"CaCl2·2H2O","reference_scope":"UNMAPPED","source":"1g"},{"component_name":"ZnSO4·7H2O","reference_scope":"UNMAPPED","source":"1.8g"},{"component_name":"CuSO4·5H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"KAl(SO4)2·12H2O","reference_scope":"UNMAPPED","source":"0.18g"},{"component_name":"H3BO3","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Na2MoO4·2H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"(NH4)2Ni(SO4)2·6H2O","reference_scope":"UNMAPPED","source":"2.8g"},{"component_name":"Na2WO4·2H2O","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Na2SeO4","reference_scope":"UNMAPPED","source":"0.1g"},{"component_name":"Distilled
+      water","reference_scope":"UNMAPPED","source":"1000ml; acidifiedpH1"},{"component_name":"Dilute
+      sulfuric acid","reference_scope":"UNMAPPED","source":"to waterpH1; amount unspecified"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"COMPLETE","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf","source_record":"Wolfe
+      mineral elixir (DSMZ792)","notes":"JCM 470 and DSMZ 792 describe the same fourteen
+      named salt inputs and quantities in 1000 ml water, acidified to pH 1 with diluted
+      sulfuric acid. JCM writes MnSO4·xH2O while DSMZ specifies the monohydrate; x
+      is not established to differ from 1. This is compatible evidence with unresolved
+      reagent hydration, not proof of different preparations. Source accessions and
+      their occurrence routes remain separate provenance. The identifier is a conditional
+      historical proposal handle; no winning owner, merge, simultaneous installation
+      or complete component grounding is approved. Coordinator reconciliation under
+      #1237 must preserve both source assertions, pH method and all inherited holds.
+      Component inputs and quantities remain transcribed from this entry’s cited source."}],"notes":"JCM
+      470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+      in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+      while DSMZ specifies the monohydrate; x is not established to differ from 1.
+      This is compatible evidence with unresolved reagent hydration, not proof of
+      different preparations. Source accessions and their occurrence routes remain
+      separate provenance. The identifier is a conditional historical proposal handle;
+      no winning owner, merge, simultaneous installation or complete component grounding
+      is approved. Coordinator reconciliation under #1237 must preserve both source
+      assertions, pH method and all inherited holds. The transcribed components are
+      source assertions, not evidence of cross-source disjointness."},"original_notes":"JCM
+      470 and DSMZ 792 describe the same fourteen named salt inputs and quantities
+      in 1000 ml water, acidified to pH 1 with diluted sulfuric acid. JCM writes MnSO4·xH2O
+      while DSMZ specifies the monohydrate; x is not established to differ from 1.
+      This is compatible evidence with unresolved reagent hydration, not proof of
+      different preparations. Source accessions and their occurrence routes remain
+      separate provenance. The identifier is a conditional historical proposal handle;
+      no winning owner, merge, simultaneous installation or complete component grounding
+      is approved. Coordinator reconciliation under #1237 must preserve both source
+      assertions, pH method and all inherited holds. Verbatim source-only labels retained
+      as provenance, excluded from globally resolving aliases: [\"Wolfe''s mineral
+      elixir\"].","original_synonyms":null,"proposal_occurrence_selectors":{"occurrence_application_note":"Correction1193:
+      propose distinct source-qualified preparation Wolfe mineral elixir (DSMZ792).
+      DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences
+      in case112. Keep distinct from JCM470 variable hydrate source assertion. No
+      generic Wolfe elixir alias may resolve both formulations globally. All originaloccurrenceIDs
+      retained in decisions; source recipe determines subgroup, never bare string.","applies_to_occurrence_ids":["CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b","CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6","CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0","CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465"]},"case_ids":["CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"],"case_applicability":[{"case_id":"CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff","applicability":"Preserve
+      exact source and occurrence routes. These full candidate bytes are conditional
+      report artifacts; no family winner, merger or simultaneous installation is selected.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b","CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6","CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0","CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465","CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"]}]}'
+  - evidence_type: CURATED_DATASET
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720269879
+    source_record: 'N08: exact source-form component reference completion'
+    notes: 'LLM-assisted coordinator author correction of NOMINAL-COMPONENT-001, including
+      the five references recorded at issuecomment-6720241863. The preserved primary
+      recipes identify the listed supplied compounds. Current catalog identities and
+      primary ChEBI records are bound by the successor proof. This is one-level material
+      partonomy only, not new whole-owner, source-occurrence, role or export approval.
+      Component changes: [{"index":2,"literal_source_name":"NaCl","catalog_identifier":"CHEBI:26710","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:26710","catalog_yaml_sha256":"41c45e2a588da9811c8f20f7bf5c2c80dc15945cf8fdee5673d4143a8af62e68"},{"index":0,"literal_source_name":"MgSO4·7H2O","catalog_identifier":"CHEBI:31795","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:31795","catalog_yaml_sha256":"1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2"},{"index":3,"literal_source_name":"FeSO4·7H2O","catalog_identifier":"CHEBI:75836","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:75836","catalog_yaml_sha256":"becd0250e47dc561b10ebceb0d366018bd4790156c055cd299489f0cb034f172"},{"index":4,"literal_source_name":"CoCl2·6H2O","catalog_identifier":"CHEBI:53503","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:53503","catalog_yaml_sha256":"f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc"},{"index":5,"literal_source_name":"CaCl2·2H2O","catalog_identifier":"CHEBI:86158","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:86158","catalog_yaml_sha256":"029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7"},{"index":6,"literal_source_name":"ZnSO4·7H2O","catalog_identifier":"CHEBI:32312","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:32312","catalog_yaml_sha256":"2a8b07050006f6d9d0d167997107fbb3b3c453657c98c0b512276e182f4bc791"},{"index":7,"literal_source_name":"CuSO4·5H2O","catalog_identifier":"CHEBI:31440","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:31440","catalog_yaml_sha256":"76cdfb2344f207d747e60376104e13e68f4bb4df79e33343a396810b5a61cf04"},{"index":8,"literal_source_name":"KAl(SO4)2·12H2O","catalog_identifier":"CHEBI:86465","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:86465","catalog_yaml_sha256":"70e4c49858df84bf7c5963f50d1dcd7f3a6c132ab1f29251f438d730af435e2f"},{"index":9,"literal_source_name":"H3BO3","catalog_identifier":"CHEBI:33118","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:33118","catalog_yaml_sha256":"9ba49752b7773e367ed46e4bcd6333e27ac444b797ba7d8ac0e32cf7baae1c15"},{"index":10,"literal_source_name":"Na2MoO4·2H2O","catalog_identifier":"CHEBI:75213","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:75213","catalog_yaml_sha256":"d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612"},{"index":11,"literal_source_name":"(NH4)2Ni(SO4)2·6H2O","catalog_identifier":"CHEBI:86149","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:86149","catalog_yaml_sha256":"95a9c8fd17541611183de192078aebab13e1d6ebdb9e77808d2800da711a7b47"},{"index":12,"literal_source_name":"Na2WO4·2H2O","catalog_identifier":"CHEBI:63939","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:63939","catalog_yaml_sha256":"b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9"},{"index":14,"literal_source_name":"Distilled
+      water","catalog_identifier":"CHEBI:15377","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:15377","catalog_yaml_sha256":"458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"}]'
+  notes: Nominal source-relative material inputs, with all exact attributed profiles
+    retained. UNKNOWN means the source does not settle the full list; COMPLETE here
+    counts all named immediate inputs including acid/base adjustments, not resolved
+    molecular chemistry or universal supplied-form equivalence. Unresolved components
+    remain UNMAPPED. JCM470 and DSM792 give the same14salt masses plus1Lwater and
+    explicitly acidify topH1with diluteH2SO4 before adding salts. JCM470MnSO4·xH2O
+    remains unknown hydrate; DSM792explicitly usesMnSO4·H2O. Keep both literals and
+    separate source-specific component assertions. The listed1Lwater is not an instruction
+    to adjust the final mixture to1L. Do not assignJCM manganese monohydrate identity
+    fromDSM, or equate the exact fully specified molecular mixtures. Do not call the14salts
+    alone a complete material list while dropping the acid. Use a partial common component
+    assertion plus the complete attributed source tables. No exact whole-stock ontology
+    or pure-component parent is authorized.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral
+    elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367
+    and837. Variable MnSO4·xH2O stays a named unresolved component; this does not
+    prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence,
+    not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible
+    quantities/components. Independent correction: Remove newly added ambiguous global
+    aliases; preserve exact raw labels in source ledger and notes. Isolated proposal
+    only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral
+    elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to
+    fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source
+    assertion. No generic Wolfe elixir alias may resolve both formulations globally.
+    Independent correction: Remove newly added ambiguous global aliases; preserve
+    exact raw labels in source ledger and notes. Isolated proposal only; all source
+    and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:04:39.310199+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: COMPOSED_PRIVATE_NOMINAL_PREPARATION
+  changes: For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237, compose
+    draft N08 from authentic original proposals [381, 384]; preserve every origin
+    history and exact source profile. Native create operation remains null-before
+    because every source proposal is genuinely new_owner. This LLM-assisted author
+    interpretation does not grant independent scientific, role, source, or export
+    approval. W05 source acceptance pending. UNKNOWN source-list completeness is kept
+    for named stocks; complete attributed recipe lists preserve unresolved forms and
+    alternative reagents.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:19:44.385936+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: GROUNDED_PRIVATE_NOMINAL_COMPONENT_REFERENCES
+  changes: For issue1237 comments6720241863 and6720269879, add 13 exact source-form
+    component references in N08. Preserve every existing quantity, unit, source profile,
+    ordered history and Hutner predecessor lineage. Two raw formula names across the
+    batch are retained verbatim in component.source where an existing recognized catalog
+    spelling is required. This is an LLM-assisted private author successor awaiting
+    independent exact-byte review, not corpus application or scientific/role/export
+    approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003199 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: Private draft of Wolfe's mineral elixir,14-salt acidic nominal recipe. JCM470
+  and DSM792 give the same14salt masses plus1Lwater and explicitly acidify topH1with
+  diluteH2SO4 before adding salts. JCM470MnSO4·xH2O remains unknown hydrate; DSM792explicitly
+  usesMnSO4·H2O. Keep both literals and separate source-specific component assertions.
+  The listed1Lwater is not an instruction to adjust the final mixture to1L. Do not
+  assignJCM manganese monohydrate identity fromDSM, or equate the exact fully specified
+  molecular mixtures. Do not call the14salts alone a complete material list while
+  dropping the acid. Use a partial common component assertion plus the complete attributed
+  source tables. No exact whole-stock ontology or pure-component parent is authorized.
+  One bounded nominal acidic14-salt preparation target, not two source-number identities.
+  Preserve distinct source hydration assertions; independent final candidate review
+  is required. Existing EDTA/3gMg Wolfe owners have different recorded recipe content
+  and are not substituted. The common scope does not assert identical fully specified
+  molecular preparations, complete solvent/neutralizer ratios, supplier lots, or source-independent
+  exact associations. Original raw labels, exact quantities, handling, source assertions,
+  occurrence qualifications, component profiles and full histories are retained in
+  this record and its immutable original-input packet. Historical events describe
+  isolated worker proposals; they do not claim maintained application. Generic context
+  labels are not made globally resolving synonyms. All source-case, role, owner and
+  export holds survive. W05 consolidated successor108e213e is published and its ten
+  relevant payloads are byte-identical to the prior compared inputs; distinct final-head
+  review and coordinator source acceptance remain pending. This draft is ineligible
+  for application.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+mim_id: MIM:0003199
+legacy_identifiers:
+- MIM:Wolfes_Mineral_Elixir_Acidified_14_Salt_Nominal_Recipe
+- kgmicrobe.ingredient:wolfes_mineral_elixir_acidified_14_salt_nominal_recipe

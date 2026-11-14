@@ -47,6 +47,9 @@ synonyms:
 - synonym_text: trisodium 2,2',2''-nitrilotriacetate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na3-NTA
+  synonym_type: RAW_TEXT
+  source: CultureMech
 occurrence_statistics:
   total_occurrences: 1
   media_count: 1
@@ -64,11 +67,27 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:18:40.490477+00:00'
+  curator: codex_worker09_source_review
+  action: ADDED_SYNONYMS
+  changes: 'Preserve source-reviewed exact raw aliases: Na3-NTA. Identity, hydrate
+    and salt scope are retained. This isolated candidate does not release current
+    mapping holds or approve unrelated synonyms/roles. Evidence: reports/all_unmatched_20261107/worker-09/salts/decisions.json
+    and evidence.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001903; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001903; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 mim_id: MIM:0001903
 legacy_identifiers:

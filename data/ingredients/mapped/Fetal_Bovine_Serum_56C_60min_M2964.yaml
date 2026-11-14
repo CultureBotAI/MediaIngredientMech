@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:fetal_bovine_serum_56c_60min_m2964
+preferred_term: Fetal bovine serum heated at 56 C for 60 min (TOGO M2964)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: NCIT:C113696
+  ontology_label: Fetal Bovine Serum
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2964
+    notes: TOGO M2964 explicitly specifies fetal-bovine serum heated56C for1hour.
+      The raw capitalI hour token is retained in provenance; the explicit56C60minute
+      process differs from explicit56C30minute and56C45minute processes. Preparations
+      with unstated heat schedules may overlap; their exact relationship remains unresolved.
+      Broader material parent only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.590086+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: TOGO M2964 explicitly specifies fetal-bovine serum heated56C for1hour.
+    The raw capitalI hour token is retained in provenance; the one-hour process remains
+    distinct from30minute and unknown-schedule FBS. Isolated successor proposal only;
+    original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: CORRECTED
+  changes: 'BIO-F04 source-bound successor correction: TOGO M2964 explicitly specifies
+    fetal-bovine serum heated56C for1hour. The raw capitalI hour token is retained
+    in provenance; the explicit56C60minute process differs from explicit56C30minute
+    and56C45minute processes. Preparations with unstated heat schedules may overlap;
+    their exact relationship remains unresolved. Prior isolated proposal sv1-bio-fetal_bovine_serum_56c_60min_m2964
+    remains immutable; this event records proposal authorship only. Earlier history
+    is retained verbatim, including superseded wording.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003017 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: 'TOGO M2964 explicitly specifies fetal-bovine serum heated56C for1hour. The
+  raw capitalI hour token is retained in provenance; the explicit56C60minute process
+  differs from explicit56C30minute and56C45minute processes. Preparations with unstated
+  heat schedules may overlap; their exact relationship remains unresolved. Source
+  labels retained as nonresolving provenance: [{"case_id": "CM_NAME:f0870abaebfec419bb00e1e9f9f9d05503fd7a69d7edea0fb3ce27634f64151a",
+  "raw_label": "Fetal bovine serum (heated 56°C- I hour)"}]. No global generic alias,
+  supplier equivalence, role approval or complete publication approval is conferred.
+  Receiving-medium dose and unit repairs remain separate. Existing native holds and
+  rejected labels are preserved. Source-qualified naming is not proof of a distinct
+  preparation. Preserve unresolved cross-source relationships and evaluate a common
+  named partial scope or exact product/protocol bridge before simultaneous installation.
+  No role/export or whole-owner approval; all inherited holds remain.'
+mim_id: MIM:0003017
+legacy_identifiers:
+- MIM:Fetal_Bovine_Serum_56C_60min_M2964
+- kgmicrobe.ingredient:fetal_bovine_serum_56c_60min_m2964

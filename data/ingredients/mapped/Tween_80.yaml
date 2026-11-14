@@ -9,6 +9,22 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal polysorbate80-alias
+    notes: Polyoxyethylene sorbitan mono-oleate explicitly identified as Tween80 is
+      polysorbate80 CHEBI:53426. The polyoxyethylene qualifier distinguishes it from
+      sorbitan monooleate; this is a safe source alias to the existing Tween80 owner,
+      not to Span80. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:53426
+    notes: 'CH-07: The retained InChI and SMILES exactly reproduce ChEBI:53426 representative
+      annotations. ChEBI also defines a polymer with w+x+y+z=20 and supplies a variable
+      polymer formula. These strings are representative database structures, not a
+      measurement that commercial Tween80 is a single discrete C32H60O10 species;
+      the existing variable formula and supported polyoxyethylene/Tween80 source alias
+      are retained.'
 synonyms:
 - synonym_text: 'Role: Surfactant; Properties: Defined component, Organic compound,
     Simple component'
@@ -54,6 +70,13 @@ synonyms:
 - synonym_text: Tween 80 (pH 8.0)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Tween80
+  synonym_type: EXACT_SYNONYM
+  source: worker01 source review CM_NAME:09df6cd5d8e96a2c2bf0fa49e38b24565df773c0ebd6ba725199c5993462d536;
+    evidence reports/all_unmatched_20261107/worker-01/shard/root_substances/decisions.fragment.json
+- synonym_text: polyoxyethylene sorbitan mono-oleate (Tween 80)
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 299
@@ -125,11 +148,81 @@ curation_history:
     not resolve them: ''Tween 80 (BD)'' (x2 CultureMech mentions); ''Tween 80 (pH
     8.0)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T04:15:49.074743+00:00'
+  curator: codex-worker01
+  action: ADDED_SYNONYMS
+  changes: Add source-scoped EXACT_SYNONYM alias 'Tween80'; preserve existing identity
+    and all other claims. Publication support requires fresh content-bound review.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal polysorbate80-alias: added aliases [''polyoxyethylene
+    sorbitan mono-oleate (Tween 80)'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G02 from authentic common before
+    sha256=b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24. Origins:
+    worker01:RS-005-ALIAS sha256=1050d40c2efcad9b1e103218e6759dd28becb400a980ef4015f6fed1d5158043;
+    worker04:w04-chem-proposal-polysorbate80-alias sha256=dfb5f2a4019bf5ff8af77270a0cab636b578911a7fd768849b0e3b63df8b6cc5.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-027 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-07: The retained InChI and SMILES exactly reproduce
+    ChEBI:53426 representative annotations. ChEBI also defines a polymer with w+x+y+z=20
+    and supplies a variable polymer formula. These strings are representative database
+    structures, not a measurement that commercial Tween80 is a single discrete C32H60O10
+    species; the existing variable formula and supported polyoxyethylene/Tween80 source
+    alias are retained. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:01:15.204122+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private source-bound composition refresh TARGET-027 at frozen 2026-11-08T09:58:00.326701+00:00
+    input cutoff. Exact published source events remain verbatim; immutable prior candidate
+    and original owner retain all historical claims. Applied only the recorded claim-specific
+    #1201, #1226 corrections. This author event is not independent owner, role, source-membership
+    or release approval. W05-dependent groups remain pending and are not emitted in
+    this phase.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002581; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002581; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 9005-65-6
@@ -151,6 +244,13 @@ physicochemical_roles:
       component'
     curator_note: Widespread use in media formulations (229 occurrences). High confidence
       based on 'Defined component' property.
+notes: 'Current published W04 source correction (7cc3c2540fd1b55281c6f5551f13a90a1e7916b1,
+  FINAL-CHEM-P-polysorbate80-alias): CH-07: The retained InChI and SMILES exactly
+  reproduce ChEBI:53426 representative annotations. ChEBI also defines a polymer with
+  w+x+y+z=20 and supplies a variable polymer formula. These strings are representative
+  database structures, not a measurement that commercial Tween80 is a single discrete
+  C32H60O10 species; the existing variable formula and supported polyoxyethylene/Tween80
+  source alias are retained.'
 mim_id: MIM:0002581
 legacy_identifiers:
 - MIM:Tween_80

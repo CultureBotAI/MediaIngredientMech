@@ -1,0 +1,76 @@
+identifier: kgmicrobe.ingredient:jcm687_methanol_solution
+preferred_term: JCM687 Methanol solution
+synonyms:
+- synonym_text: Methanol solution (see below)
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:606affef587ae82fbc1e2facd239d116a6bde1b08f7a1890f9ce14a67f4f8184;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm687_methanol_solution
+  ontology_label: JCM687 Methanol solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687
+    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
+      no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
+      source use.
+notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
+  no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
+  source use.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
+    no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
+    source use.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.547488+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-172. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003261 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+components:
+- component_name: Methanol
+  reference_scope: UNMAPPED
+  concentration_value: '2.28'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687
+    source_record: JCM687 Methanol solution
+    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
+      no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
+      source use.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and
+    source batch units are transcribed without lexical identity promotion.
+mim_id: MIM:0003261
+legacy_identifiers:
+- MIM:jcm687_methanol_solution
+- kgmicrobe.ingredient:jcm687_methanol_solution

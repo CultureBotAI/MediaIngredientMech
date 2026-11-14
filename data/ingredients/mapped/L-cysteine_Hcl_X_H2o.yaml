@@ -91,6 +91,12 @@ synonyms:
 - synonym_text: Cystein-HCl
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: L--Cysteine・H2O・HCl
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:12e1979a2a04cf0a7a578034feabc2b65300ce42d1bcba9ce5e53c3a8f343f44
+- synonym_text: L-Cysteine . HCl . H2O
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:287e8d4624154869e879a74678f47ebc4d92788de0f3ffbce4e4ba0b120ad924
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1768
@@ -254,11 +260,24 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified exact-scope raw alias 'L--Cysteine・H2O・HCl'; Add source-verified
+    exact-scope raw alias 'L-Cysteine . HCl . H2O'
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001448; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001448; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7048-04-6

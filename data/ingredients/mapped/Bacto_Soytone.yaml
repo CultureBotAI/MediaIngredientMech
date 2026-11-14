@@ -15,6 +15,14 @@ ontology_mapping:
       "phospholipid", which is semantically wrong). Bacto Soytone is Difco's enzymatic
       digest of soybean meal (a soy peptone); ontology_mapping repointed to the representative
       FOODON:03315720 this record was merged into.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Printed page33 distinguishes named Bacto Soytone and other soy peptone
+      products and processing. Combined with the authentic historical merge and current
+      shared-identifier inventory, generic soy-digest identity does not establish
+      a unique branded Bacto representative. This supports withholding the active
+      representative redirect, not a new ontology identity or a revision of historical
+      evidence.
 synonyms:
 - synonym_text: 'Properties: Undefined component'
   synonym_type: RAW_TEXT
@@ -108,14 +116,58 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T09:39:35.518271+00:00'
+  curator: Codex /root/buffer_hepes; W05 Soy continuity dependent proposal
+  action: MARKED_TOMBSTONE_REPRESENTATIVE_UNRESOLVED
+  changes: Mark the historical Bacto Soytone merge representative explicitly unresolved
+    with an empty representative string. The old FOODON:03315720 identifier is shared
+    by active owners and cannot establish a unique current generic-Soy representative
+    after the source-qualified Soy identity correction. A direct redirect to MICRO:0000181
+    would assert unsupported equality of a named Bacto product and generic soy digest.
+    Native preferred-term ownership treats an explicit unresolved representative as
+    retaining the rejected tombstone name; removing the field would instead fall back
+    to the old shared identifier. Preserve the original identifier, ontology mapping
+    and historical evidence, rejected status, all source names, zero statistics and
+    complete merge history as historical provenance. No active Bacto owner is minted,
+    no prior occurrence is reassigned, no branded/generic equality is inferred, and
+    no role/source/export admission follows. Root must reconcile a scientifically
+    supported branded representative and historical source membership before any later
+    identity redirect.
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000432; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000432; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
-representative: FOODON:03315720
+representative: ''
+notes: 'Report-only Soy continuity disposition: Mark the historical Bacto Soytone
+  merge representative explicitly unresolved with an empty representative string.
+  The old FOODON:03315720 identifier is shared by active owners and cannot establish
+  a unique current generic-Soy representative after the source-qualified Soy identity
+  correction. A direct redirect to MICRO:0000181 would assert unsupported equality
+  of a named Bacto product and generic soy digest. Native preferred-term ownership
+  treats an explicit unresolved representative as retaining the rejected tombstone
+  name; removing the field would instead fall back to the old shared identifier. Preserve
+  the original identifier, ontology mapping and historical evidence, rejected status,
+  all source names, zero statistics and complete merge history as historical provenance.
+  No active Bacto owner is minted, no prior occurrence is reassigned, no branded/generic
+  equality is inferred, and no role/source/export admission follows. Root must reconcile
+  a scientifically supported branded representative and historical source membership
+  before any later identity redirect. The earlier mapping/evidence and identity strings
+  are retained solely as authentic tombstone history, not newly approved live material
+  identity. Empty representative is deliberate and must remain explicit; no replacement
+  target is asserted.'
 mim_id: MIM:0000432
 legacy_identifiers:
 - MIM:Bacto_Soytone

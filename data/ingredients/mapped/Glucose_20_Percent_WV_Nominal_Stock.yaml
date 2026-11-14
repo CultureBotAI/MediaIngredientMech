@@ -1,0 +1,201 @@
+identifier: kgmicrobe.ingredient:glucose_20_percent_wv_nominal_stock
+preferred_term: Glucose solution (20% w/v nominal stock)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:glucose_20_percent_wv_nominal_stock
+  ontology_label: Glucose solution (20% w/v nominal stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977
+    notes: Agent-authored nominal scope reconciliation N06, original proposal 553,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009
+    notes: Agent-authored nominal scope reconciliation N06, original proposal 585,
+      under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Preserve
+      its source-specific quantities and unknowns. This is local whole-preparation
+      identity only; no exact chemical identity, independent approval, inherited role
+      approval or released row is asserted.
+synonyms: []
+components:
+- component_name: Glucose
+  reference_scope: MIM_CATALOG
+  concentration_value: '20'
+  concentration_unit: PERCENT_W_V
+  component_id: CHEBI:17234
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977
+    source_record: 'Attributed original proposal 553: JCM 977 glucose 20% w/v stock'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":553,"worker":"w06","head":"0d7fde51fb3109b10424dd3bcf4091c05aa900e7","proposal_id":"B-P-JCM977-glucose20","payload_sha256":"462fde36c2adc525f0c0bcb070437784d524d909afbe19ffe042c4eb808a6f1c","raw_source_labels":["20%
+      (w/v) Glucose"],"original_components":[{"component_name":"Glucose","reference_scope":"UNMAPPED","concentration_value":"20","concentration_unit":"PERCENT_W_V"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"UNKNOWN","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977","source_record":"JCM
+      977 glucose 20% w/v stock","notes":"The source explicitly states glucose at
+      20% (w/v), stock autoclaving and the 100 ml receiving dose. It does not state
+      the solvent of that stock. Only the named glucose component and explicit mass
+      concentration are transcribed; its exact child identity remains UNMAPPED."}],"notes":"JCM977
+      adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled VNG base.
+      The source does not identify the stock solvent or preparation volume; basal
+      distilled water belongs to the receiving medium. Water is omitted from components,
+      and closure remains UNKNOWN. The solute label does not specifyanomer, chirality
+      or hydrate; these are deliberately not assigned."},"original_notes":"JCM977
+      adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled VNG base.
+      The source does not identify the stock solvent or preparation volume; basal
+      distilled water belongs to the receiving medium. Water is omitted from components,
+      and closure remains UNKNOWN. The solute label does not specifyanomer, chirality
+      or hydrate; these are deliberately not assigned. Raw source labels retained
+      without global resolving aliases: [\"20% (w/v) Glucose\"]. Occurrence-specific
+      linkage is required; identical generic words in other recipes do not imply the
+      same formulation.","original_synonyms":null,"proposal_occurrence_selectors":{},"case_ids":["CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190"],"case_applicability":[{"case_id":"CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190","applicability":"Applies
+      to the sole TOGO1030 VNG occurrence and its separately sterilized glucose solution;
+      final-medium glucose concentration is not substituted for stock identity. The
+      source-specific stock preparation remains applicable; solvent composition and
+      stock preparation volume are unreported and are not inferred from receiving-medium
+      water or gas handling.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:138097c3171f32850bf017b32a14616d550739905d624d1d7bc334cb0d892a42"]}]}'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009
+    source_record: 'Attributed original proposal 585: JCM 1009 anaerobic glucose 20%
+      w/v stock'
+    notes: 'Exact attributed source profile follows. Original source notes/qualifiers
+      remain unchanged archival assertions, including prior conditional identity statements;
+      only the current explicit nominal-scope interpretation supersedes those prior
+      whole-target choices. This does not approve every original inherited claim.
+      {"origin_index":585,"worker":"w06","head":"0d7fde51fb3109b10424dd3bcf4091c05aa900e7","proposal_id":"C-P-JCM1009-GLUCOSE20","payload_sha256":"aa215b122dd0d7645877cb8f34c1150e40bb63b703eaeed989b77ad7e0d746b2","raw_source_labels":["20%
+      (w/v) Glucose solution"],"original_components":[{"component_name":"Glucose","reference_scope":"UNMAPPED","concentration_value":"20","concentration_unit":"PERCENT_W_V"}],"original_component_assertion":{"method":"RECIPE_TRANSCRIPTION","completeness":"UNKNOWN","evidence":[{"evidence_type":"RECIPE_SOURCE","source":"https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009","source_record":"JCM
+      1009 anaerobic glucose 20% w/v stock","supports":"SUPPORT","notes":"Captured
+      primary source inspected in full; literal component names and stated quantities
+      retained. Child identities remain UNMAPPED."}],"notes":"JCM1009 adds 0.1 ml
+      of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic
+      stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate
+      and stock preparation volume and solvent composition are unstated. Water is
+      omitted from components and closure remains UNKNOWN. JCM977 has the same explicit
+      mass concentration and autoclaving but does not specify anaerobic preparation/storage,
+      so this source-qualified preparation is kept separate. No frozen root-level
+      or mass-style dose is silently approved."},"original_notes":"JCM1009 adds 0.1
+      ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic
+      stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate
+      and stock preparation volume and solvent composition are unstated. Water is
+      omitted from components and closure remains UNKNOWN. JCM977 has the same explicit
+      mass concentration and autoclaving but does not specify anaerobic preparation/storage,
+      so this source-qualified preparation is kept separate. No frozen root-level
+      or mass-style dose is silently approved. Raw labels retained only in this source
+      context: [\"20% (w/v) Glucose solution\"]. No global resolving alias is asserted.","original_synonyms":null,"proposal_occurrence_selectors":{},"case_ids":["CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b"],"case_applicability":[{"case_id":"CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b","applicability":"The
+      one nested Sol2 occurrence adds0.1ml for a5ml medium batch; the20%(w/v) qualifier
+      and nesting are essential to the source context. The source-specific stock preparation
+      remains applicable; solvent composition and stock preparation volume are unreported
+      and are not inferred from receiving-medium water or gas handling.","occurrence_bindings":null,"occurrence_ids":["CM_OCC:5bf3b8748c7e93d82364437e58b9cb4cd3e04324fcbe42c27424d9157943c6f6"]}]}'
+  - evidence_type: CURATED_DATASET
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720269879
+    source_record: 'N06: exact source-form component reference completion'
+    notes: 'LLM-assisted coordinator author correction of NOMINAL-COMPONENT-001, including
+      the five references recorded at issuecomment-6720241863. The preserved primary
+      recipes identify the listed supplied compounds. Current catalog identities and
+      primary ChEBI records are bound by the successor proof. This is one-level material
+      partonomy only, not new whole-owner, source-occurrence, role or export approval.
+      Component changes: [{"index":0,"literal_source_name":"Glucose","catalog_identifier":"CHEBI:17234","ontology_source":"https://www.ebi.ac.uk/chebi/CHEBI:17234","catalog_yaml_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"}]'
+  notes: Nominal source-relative material inputs, with all exact attributed profiles
+    retained. UNKNOWN means the source does not settle the full list; COMPLETE here
+    counts all named immediate inputs including acid/base adjustments, not resolved
+    molecular chemistry or universal supplied-form equivalence. Unresolved components
+    remain UNMAPPED. JCM977 and JCM1009 explicitly name20%(w/v)glucose. JCM977 reports
+    medium autoclaving, followed after cooling by20%(w/v)glucose addition with the
+    source parenthetical per900ml,autoclaved. No more specific separate-stock sterilization
+    or storage protocol is inferred. JCM1009 explicitly describes autoclaved anaerobic
+    stock and N2storage. Keep each method as source-qualified context; N2 atmosphere
+    is not an asserted stock component. No solvent amount, exact supplied glucose
+    form or generic-lot identity is established.
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed JCM 1009 anaerobic glucose 20% w/v stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T10:04:39.310199+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: COMPOSED_PRIVATE_NOMINAL_PREPARATION
+  changes: For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237, compose
+    draft N06 from authentic original proposals [553, 585]; preserve every origin
+    history and exact source profile. Native create operation remains null-before
+    because every source proposal is genuinely new_owner. This LLM-assisted author
+    interpretation does not grant independent scientific, role, source, or export
+    approval. UNKNOWN source-list completeness is kept for named stocks; complete
+    attributed recipe lists preserve unresolved forms and alternative reagents.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:19:44.385936+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: GROUNDED_PRIVATE_NOMINAL_COMPONENT_REFERENCES
+  changes: For issue1237 comments6720241863 and6720269879, add 1 exact source-form
+    component references in N06. Preserve every existing quantity, unit, source profile,
+    ordered history and Hutner predecessor lineage. Two raw formula names across the
+    batch are retained verbatim in component.source where an existing recognized catalog
+    spelling is required. This is an LLM-assisted private author successor awaiting
+    independent exact-byte review, not corpus application or scientific/role/export
+    approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003024 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: Private draft of Glucose solution, nominal 20% w/v. JCM977 and JCM1009 explicitly
+  name20%(w/v)glucose. JCM977 reports medium autoclaving, followed after cooling by20%(w/v)glucose
+  addition with the source parenthetical per900ml,autoclaved. No more specific separate-stock
+  sterilization or storage protocol is inferred. JCM1009 explicitly describes autoclaved
+  anaerobic stock and N2storage. Keep each method as source-qualified context; N2
+  atmosphere is not an asserted stock component. No solvent amount, exact supplied
+  glucose form or generic-lot identity is established. One partial20%w/vglucose target
+  with both preparation assertions retained. The common scope does not assert identical
+  fully specified molecular preparations, complete solvent/neutralizer ratios, supplier
+  lots, or source-independent exact associations. Original raw labels, exact quantities,
+  handling, source assertions, occurrence qualifications, component profiles and full
+  histories are retained in this record and its immutable original-input packet. Historical
+  events describe isolated worker proposals; they do not claim maintained application.
+  Generic context labels are not made globally resolving synonyms. All source-case,
+  role, owner and export holds survive. Independent exact-byte whole-candidate review
+  remains required before application.
+mim_id: MIM:0003024
+legacy_identifiers:
+- MIM:Glucose_20_Percent_WV_Nominal_Stock
+- kgmicrobe.ingredient:glucose_20_percent_wv_nominal_stock

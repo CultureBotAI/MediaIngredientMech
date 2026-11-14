@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:cinerubin_a
+identifier: mesh:C000481
 preferred_term: Cinerubin A
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:cinerubin_a
-  ontology_label: Cinerubin A
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C000481
+  ontology_label: cinerubine A
+  ontology_source: MESH
+  mapping_quality: MANUAL_CURATION
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,7 +12,17 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:214436(Cinerubin R), CHEBI:218086(Cinerubin B), CHEBI:224126(Cinerubin
       Y). Pending curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+  - evidence_type: LITERATURE
+    source: https://www.dcchemicals.com/product_show-cinerubin-a.html?datasheet=datasheet
+    notes: Propose mesh:C000481 cinerubine A. DC Chemicals explicitly equates Cinerubin
+      A/Cinerubine A with same CAS and formula. Exact A designation is preserved;
+      ChEBI Cinerubin B/R/Y query hits are rejected. New payload must retain hold
+      until re-reviewed. Exact primary-source capture and live ontology record are
+      in worker09 antibiotic evidence; this proposal does not clear publication holds.
+synonyms:
+- synonym_text: cinerubine A
+  synonym_type: EXACT_SYNONYM
+  source: https://www.dcchemicals.com/product_show-cinerubin-a.html?datasheet=datasheet
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -44,16 +54,36 @@ curation_history:
     promotion.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Promote existing distinct source owner to mesh:C000481 cinerubine A. Proposal
+    only; original mapping evidence preserved in before capture. No role, whole-record,
+    hold-removal or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000702; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000702; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier;
-  reviewed OLS candidates were not exact identity matches for the source label.'
+  reviewed OLS candidates were not exact identity matches for the source label.
+
+  2026-11-08 proposal: Promote existing distinct source owner to mesh:C000481 cinerubine
+  A. Prior no-hit statements are historical search results; original history is preserved.
+  Fresh complete-payload review is required before publication.'
 mim_id: MIM:0000702
 legacy_identifiers:
 - MIM:Cinerubin_A
 - kgmicrobe.compound:cinerubin_a
+- mesh:C000481

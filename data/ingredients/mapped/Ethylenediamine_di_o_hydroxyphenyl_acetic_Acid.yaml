@@ -1,0 +1,64 @@
+identifier: cas:1170-02-1
+preferred_term: Ethylenediamine-di(o-hydroxyphenyl)acetic acid
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:35692
+  ontology_label: dicarboxylic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: Echenique1992 abstract; Tomaras2003 original Methods; HiMedia RM3650 SDS
+      sections1,3; ChEBI:35692
+    notes: Source authors explicitly expand EDDHA to the ortho-hydroxyphenyl free
+      acid. Supplier primary sheet establishes CAS1170-02-1 and two carboxylic acid
+      groups; dicarboxylic acid is a broader class, not exact identity.
+chemical_properties:
+  cas_rn: 1170-02-1
+  molecular_formula: C18H20N2O6
+  data_source: https://www.himediadownloads.com/MSDS/RM3650.pdf
+  retrieval_date: '2026-11-08T05:29:01.443067+00:00'
+synonyms:
+- synonym_text: EDDHA
+  synonym_type: ABBREVIATION
+  source: Echenique1992 and Tomaras2003 original source articles
+notes: Free acid identity without iron or counterion. No specific stereoisomer, purity
+  or claim that HiMedia supplied the historical experiments is made.
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_IDENTITY_PROPOSAL
+  changes: 'Create source-verified EDDHA free-acid CAS identity after original article
+    expansion; no iron-chelate equivalence. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[50] case_id=CM_NAME:584bd7436389f092715019959743bc12d63245d64d4e5caaee04c2f52203f4e9;
+    source=culturemech; source_case_id=EDDHA; CultureMech:007194 ingredients/7 (inputs/culturemech/data/normalized_yaml/bacterial/m9_echenique.yaml);
+    CultureMech:007195 ingredients/8 (inputs/culturemech/data/normalized_yaml/bacterial/m9_tomaras.yaml);
+    Primary evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC207480/; Primary evidence:
+    https://www.academia.edu/76955898/Attachment_to_and_biofilm_formation_on_abiotic_surfaces_by_Acinetobacter_baumannii_involvement_of_a_novel_chaperone_usher_pili_assembly_system;
+    Primary evidence: https://www.himediadownloads.com/MSDS/RM3650.pdf; Primary evidence:
+    https://www.microbiologyresearch.org/content/journal/micro/10.1099/mic.0.26541-0?crawler=true'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.528597+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-164. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003013 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003013
+legacy_identifiers:
+- MIM:Ethylenediamine_di_o_hydroxyphenyl_acetic_Acid
+- cas:1170-02-1

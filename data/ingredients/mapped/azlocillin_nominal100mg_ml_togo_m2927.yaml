@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:azlocillin_nominal100mg_ml_togo_m2927
+preferred_term: Nominal 100 mg/mL azlocillin stock (KM2; TOGO M2927)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:azlocillin_nominal100mg_ml_togo_m2927
+  ontology_label: Nominal 100 mg/mL azlocillin stock (KM2; TOGO M2927)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2927
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M2927 KM2 separately defines azlocillin stock from 100 mg azlocillin and 1 mL
+      distilled water and labels it 100 mg/mL. The 25 microlitre receiving addition
+      is distinct. No final-volume operation or supplied sodium form is invented.
+components:
+- component_name: Azlocillin
+  reference_scope: UNMAPPED
+  source: Source adds 100 mg; supplied salt and hydration not given.
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  source: Source input 1 mL; not an independently certified final stock volume.
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2927
+    source_record: Nominal 100 mg/mL azlocillin stock (KM2; TOGO M2927)
+    notes: TOGO M2927 KM2 separately defines azlocillin stock from 100 mg azlocillin
+      and 1 mL distilled water and labels it 100 mg/mL. The 25 microlitre receiving
+      addition is distinct. No final-volume operation or supplied sodium form is invented.
+  notes: Supplied salt/hydrate, final volume after dissolution and sterilization are
+    unspecified. Source-named parts remain UNMAPPED where supplied form or stock identity
+    is not established. MIM_CATALOG references identify only the supported constituent,
+    not approval of that complete owner.
+notes: TOGO M2927 KM2 separately defines azlocillin stock from 100 mg azlocillin and
+  1 mL distilled water and labels it 100 mg/mL. The 25 microlitre receiving addition
+  is distinct. No final-volume operation or supplied sodium form is invented. Supplied
+  salt/hydrate, final volume after dissolution and sterilization are unspecified.
+  Provenance-only source text '100 mg/ml azlocillin' (case CM_NAME:e247c1c5cd79b6fb7ff18406a6b8d73ea248d7fb661876f2be9fb34e11909380).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.073541+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003209 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003209
+legacy_identifiers:
+- MIM:azlocillin_nominal100mg_ml_togo_m2927
+- kgmicrobe.ingredient:azlocillin_nominal100mg_ml_togo_m2927

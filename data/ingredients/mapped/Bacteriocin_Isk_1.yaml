@@ -14,11 +14,17 @@ ontology_mapping:
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
   - evidence_type: LITERATURE
     source: FutureHouse Falcon deep research (2026-05-09); DOI:10.5109/24265; DOI:10.1128/AAC.01623-08
-    notes: Literature supports an ISK-1 lantibiotic/nukacin-related peptide, but producer
-      and name usage spans Pediococcus bacteriocin ISK-1 and Staphylococcus warneri
-      nukacin ISK-1. Retain the kgmicrobe placeholder and do not promote CHEBI:204272
-      without sequence or provenance confirmation.
+    notes: Historical research proposed a producer-name ambiguity. Primary reidentification
+      PMID11193411 and DOI10.2323/jgam.47.143 now resolves Pediococcus sp.ISK-1 as
+      Staphylococcus warneri ISK-1; retain the registry because source peptide provenance
+      and the CHEBI204272 structure discrepancy remain unresolved.
     confidence_score: 0.8
+  - evidence_type: LITERATURE
+    source: Sashihara et al.2000; DOI10.1271/bbb.64.2420; reidentification DOI10.2323/jgam.47.143
+    pmid: '11193411'
+    notes: Primary author-reported reidentification resolves producer naming but does
+      not itself establish the exact frozen metatraits peptide or validate the structure
+      attached to CHEBI204272. Captures in reports/all_unmatched_20261107/worker-05/chemicals/.
 synonyms:
 - synonym_text: bacteriocin ISK-1
   synonym_type: EXACT_SYNONYM
@@ -74,19 +80,40 @@ curation_history:
     synonyms and caution note added.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Replace the obsolete producer-name ambiguity caution and its current evidence
+    rationale with primary reclassification evidence and the remaining source-provenance/ontology-structure
+    requirements. Preserve registry identity,all mappings and status; no exactCHEBI204272
+    promotion. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
+    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000428; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000428; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
-notes: '2026-05-09 Falcon/OAK review: CHEBI:204272 is a Nukacin ISK-1 candidate, but
-  local OAK/OLS did not provide a confirmable exact label/alias and Falcon-cited literature
-  shows ambiguity between Pediococcus bacteriocin ISK-1 and Staphylococcus warneri
-  nukacin ISK-1 usages. Retain kgmicrobe.compound:bacteriocin_isk_1 as the primary
-  mapping and do not assert skos:exactMatch to CHEBI:204272 pending sequence/provenance
-  confirmation.'
+notes: '2026-11-08 source review: Sashihara et al.2000 (PMID11193411,DOI10.1271/bbb.64.2420)
+  and2001 (DOI10.2323/jgam.47.143) establish that the former Pediococcus sp.ISK-1
+  producer was reidentified as Staphylococcus warneri ISK-1. Producer names therefore
+  do not establish two different bacteriocins. Exact promotion remains unresolved:
+  this metatraits source lacks original peptide/assay provenance,and live CHEBI:204272
+  labels Nukacin ISK-1 while its1178.444Da short-peptide structure does not establish
+  the primary reported mature27-residue lantibiotic. Retain kgmicrobe.compound:bacteriocin_isk_1;
+  require source trace and ontology structure reconciliation before exact mapping.'
 mim_id: MIM:0000428
 legacy_identifiers:
 - MIM:Bacteriocin_Isk_1

@@ -15,6 +15,16 @@ ontology_mapping:
     source: NCIT via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='L-Malic acid disodium
       salt monohydrate'
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: 'Correct the property block at the stated L-disodium malate monohydrate
+      scope using directly retrieved PubChemCID16211643: two sodium ions, one water
+      and explicit S stereochemistry, corroborated by Sigma233935 L-form label/structure.
+      Replace the one-sodium, water-free, stereounspecified CID197014/formula/structures.
+      This is not a CAS reassignment or supplier winner: the same CAS207511-06-6 appears
+      on Aladdin D302750C COA labelled DL, a separately recorded unresolved registry/stereo
+      conflict. Keep the stated owner identity provisionally held, no source-lot equivalence
+      and no resolution of case10 acid-versus-anion ambiguity.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -61,20 +71,44 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: 'Correct the property block at the stated L-disodium malate monohydrate
+    scope using directly retrieved PubChemCID16211643: two sodium ions, one water
+    and explicit S stereochemistry, corroborated by Sigma233935 L-form label/structure.
+    Replace the one-sodium, water-free, stereounspecified CID197014/formula/structures.
+    This is not a CAS reassignment or supplier winner: the same CAS207511-06-6 appears
+    on Aladdin D302750C COA labelled DL, a separately recorded unresolved registry/stereo
+    conflict. Keep the stated owner identity provisionally held, no source-lot equivalence
+    and no resolution of case10 acid-versus-anion ambiguity. Original full before/predecessor
+    objects and field lineage are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001424; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001424; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 207511-06-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C4H4NaO5-
-  smiles: C(C(C(=O)[O-])O)C(=O)[O-].[Na+]
-  inchi: InChI=1S/C4H6O5.Na/c5-2(4(8)9)1-3(6)7;/h2,5H,1H2,(H,6,7)(H,8,9);/q;+1/p-2
-  pubchem_cid: 197014
+  data_source: 'Formula/InChI/SMILES/CID: PubChem16211643, exact stated L-disodium
+    monohydrate scope corroborated by Sigma233935. CAS preserved, not independently
+    resolved: Aladdin D302750C labels DL material with same CAS; see final-corrections-v1/chemistry/new-finding-malate-stereo.json.'
+  retrieval_date: '2026-11-08T08:04:32.259026+00:00'
+  molecular_formula: C4H6Na2O6
+  smiles: C([C@@H](C(=O)[O-])O)C(=O)[O-].O.[Na+].[Na+]
+  inchi: InChI=1S/C4H6O5.2Na.H2O/c5-2(4(8)9)1-3(6)7;;;/h2,5H,1H2,(H,6,7)(H,8,9);;;1H2/q;2*+1;/p-2/t2-;;;/m0.../s1
+  pubchem_cid: 16211643
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE
@@ -90,6 +124,16 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+notes: 'Final W02 proposal correction (unapplied): Correct the property block at the
+  stated L-disodium malate monohydrate scope using directly retrieved PubChemCID16211643:
+  two sodium ions, one water and explicit S stereochemistry, corroborated by Sigma233935
+  L-form label/structure. Replace the one-sodium, water-free, stereounspecified CID197014/formula/structures.
+  This is not a CAS reassignment or supplier winner: the same CAS207511-06-6 appears
+  on Aladdin D302750C COA labelled DL, a separately recorded unresolved registry/stereo
+  conflict. Keep the stated owner identity provisionally held, no source-lot equivalence
+  and no resolution of case10 acid-versus-anion ambiguity. All precise source, role,
+  duplicate-owner and publication holds remain; this claim-specific correction is
+  not whole-owner approval.'
 mim_id: MIM:0001424
 legacy_identifiers:
 - MIM:L-Malic_Acid_Disodium_Salt_Monohydrate

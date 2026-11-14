@@ -1,0 +1,81 @@
+identifier: kgmicrobe.ingredient:dsmz_878_fe_citrate_001m_stock
+preferred_term: DSMZ 878 Fe citrate 0.01 M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_878_fe_citrate_001m_stock
+  ontology_label: DSMZ 878 Fe citrate 0.01 M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium878.pdf
+    notes: Source-qualified stock identity with partial literal component assertion.
+      DSMZ878 defines the reagent as 0.01 M Fe citrate stock and adds 0.5 ml. The
+      flattened g/L discrepancy belongs to the receiving-medium transcription. A partial
+      source-qualified stock can retain 0.01 M literally while leaving iron valence,
+      citrate ratio and solvent ungrounded. Stock solute oxidation state/ligand ratio
+      and solvent remain unspecified; no mass conversion or molecular exact identity
+      is authorized.
+synonyms:
+- synonym_text: 0.01 M Fe citrate
+  synonym_type: REJECTED_LABEL
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium878.pdf
+components:
+- component_name: Fe citrate
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium878.pdf
+    source_record: DSMZ 878 Fe citrate 0.01 M stock
+    notes: DSMZ878 defines the reagent as 0.01 M Fe citrate stock and adds 0.5 ml.
+      The flattened g/L discrepancy belongs to the receiving-medium transcription.
+      A partial source-qualified stock can retain 0.01 M literally while leaving iron
+      valence, citrate ratio and solvent ungrounded. Stock solute oxidation state/ligand
+      ratio and solvent remain unspecified; no mass conversion or molecular exact
+      identity is authorized.
+  notes: Unstated solvent and source chemical-form details remain unasserted. Concentration
+    is the stock claim, never the receiving-medium dose.
+notes: DSMZ878 defines the reagent as 0.01 M Fe citrate stock and adds 0.5 ml. The
+  flattened g/L discrepancy belongs to the receiving-medium transcription. A partial
+  source-qualified stock can retain 0.01 M literally while leaving iron valence, citrate
+  ratio and solvent ungrounded. Stock solute oxidation state/ligand ratio and solvent
+  remain unspecified; no mass conversion or molecular exact identity is authorized.
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: DSMZ878 defines the reagent as 0.01 M Fe citrate stock and adds 0.5 ml.
+    The flattened g/L discrepancy belongs to the receiving-medium transcription. A
+    partial source-qualified stock can retain 0.01 M literally while leaving iron
+    valence, citrate ratio and solvent ungrounded. Stock solute oxidation state/ligand
+    ratio and solvent remain unspecified; no mass conversion or molecular exact identity
+    is authorized. Isolated successor proposal only; no maintained surfaces, roles,
+    source bytes or publication holds changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003002 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003002
+legacy_identifiers:
+- MIM:DSMZ_878_Fe_citrate_0.01_M_stock
+- kgmicrobe.ingredient:dsmz_878_fe_citrate_001m_stock

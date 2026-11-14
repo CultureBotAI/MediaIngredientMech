@@ -1,17 +1,28 @@
-identifier: kgmicrobe.compound:collinomycin
+identifier: CHEBI:220350
 preferred_term: Collinomycin
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:collinomycin
-  ontology_label: Collinomycin
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: CHEBI:220350
+  ontology_label: alpha-Rubromycin
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
     notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
       MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+  - evidence_type: LITERATURE
+    source: https://www.medchemexpress.com/alpha-rubromycin.html
+    notes: Propose promotion to CHEBI:220350 alpha-Rubromycin. MCE HY-119787 explicitly
+      supplies Collinomycin as synonym and formula agrees with live ChEBI. Query by
+      raw Collinomycin alone had no ontology hit; verified synonym resolves that search
+      gap. Preserve source preferred label and historical registry provenance. Exact
+      primary-source capture and live ontology record are in worker09 antibiotic evidence;
+      this proposal does not clear publication holds.
+synonyms:
+- synonym_text: alpha-Rubromycin
+  synonym_type: EXACT_SYNONYM
+  source: https://www.medchemexpress.com/alpha-rubromycin.html
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -52,15 +63,34 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Promote existing distinct source owner to CHEBI:220350 alpha-Rubromycin.
+    Proposal only; original mapping evidence preserved in before capture. No role,
+    whole-record, hold-removal or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000742; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000742; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: '2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier;
   no exact OLS candidate and no normalized local mapped duplicate were found in the
-  UNKNOWN_TERM no-hit review.'
+  UNKNOWN_TERM no-hit review.
+
+  2026-11-08 proposal: Promote existing distinct source owner to CHEBI:220350 alpha-Rubromycin.
+  Prior no-hit statements are historical search results; original history is preserved.
+  Fresh complete-payload review is required before publication.'
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: SELECTIVE_AGENT
@@ -73,3 +103,4 @@ mim_id: MIM:0000742
 legacy_identifiers:
 - MIM:Collinomycin
 - kgmicrobe.compound:collinomycin
+- CHEBI:220350

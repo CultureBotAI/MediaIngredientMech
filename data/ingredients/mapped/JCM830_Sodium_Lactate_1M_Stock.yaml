@@ -1,0 +1,70 @@
+identifier: kgmicrobe.ingredient:jcm830_sodium_lactate_1m_stock
+preferred_term: JCM830 sodium lactate1M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm830_sodium_lactate_1m_stock
+  ontology_label: JCM830 sodium lactate1M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/medium/J830
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Source-derived MediaDive J830 explicitly20ml1M stock per liter. Site marks
+  external medium inofficial; current direct JCM830 recipe unavailable. Nominal stock
+  only, unresolved L/DL and preparation solvent; no exact link to L-specific owner.
+  Raw assigned source label: 1.0 M Sodium lactate. Quantities in notes preserve source
+  preparation and are not final-medium concentrations. No global synonym is added
+  for this context-dependent label.'
+solution_type: OTHER
+components:
+- component_name: Sodium lactate
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/medium/J830
+    source_record: JCM830 sodium lactate1M stock
+    notes: Source-derived MediaDive J830 explicitly20ml1M stock per liter. Site marks
+      external medium inofficial; current direct JCM830 recipe unavailable. Nominal
+      stock only, unresolved L/DL and preparation solvent; no exact link to L-specific
+      owner.
+  notes: Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Source-derived MediaDive J830 explicitly20ml1M stock per liter. Site marks external
+    medium inofficial; current direct JCM830 recipe unavailable. Nominal stock only,
+    unresolved L/DL and preparation solvent; no exact link to L-specific owner.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.156143+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003057 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003057
+legacy_identifiers:
+- MIM:JCM830_Sodium_Lactate_1M_Stock
+- kgmicrobe.ingredient:jcm830_sodium_lactate_1m_stock

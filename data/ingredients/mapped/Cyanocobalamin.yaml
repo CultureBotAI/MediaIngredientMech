@@ -78,6 +78,15 @@ synonyms:
 - synonym_text: (add after autoclaving)
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Cyanocobalamin (Vitamin B12)
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:590488b99071f5cbf3833dbb86727ffa3a04fa3240ac12fd216d33a58533206e
+- synonym_text: Cyanocobalamine (vitamin B12)
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:ade5faddd54b9aefbb3671f7f3edb7ac5f3c2ed2d8681528a6944562b8eb470d'
+- synonym_text: Cyanocobalamin (B12)
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:bebd47660a5f76edf2a81ef14a561524a5fd84aff145cbf266030b6467773228'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 275
@@ -194,11 +203,31 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified exact-scope raw alias 'Cyanocobalamin (Vitamin B12)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Cyanocobalamine (vitamin B12)';
+    Add source-verified same-substance alias 'Cyanocobalamin (B12)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000788; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000788; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 68-19-9

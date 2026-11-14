@@ -1,0 +1,197 @@
+identifier: kgmicrobe.ingredient:jcm_852_se_w_solution
+preferred_term: JCM 852 Se/W solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+synonyms:
+- synonym_text: Se/W solution (Medium No.852)
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: mediadive.medium:J1188;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+- synonym_text: Selenite-tungstate solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df;
+    retained provenance only, requires source-context routing.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_852_se_w_solution
+  ontology_label: JCM 852 Se/W solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    notes: Source-defined whole mineral-stock preparation. The preserved bounded stock-name
+      searches found no exact ontology term. Local identity under MAPPING_SEMANTICS
+      section 3; no whole-stock equivalence or broader mapping to a constituent. Two
+      independently authored proposals are reconciled by exact primary formulation
+      and source occurrence, not filename or hash priority.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    notes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted
+      to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88
+      citronellol remains rejected.
+components:
+- component_name: Na2SeO3·5H2O
+  component_id: CHEBI:131361
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.7'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2WO4·2H2O
+  component_id: CHEBI:63939
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.3'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+    source_record: 'JCM 852, Se/W solution: complete three-row table'
+    notes: Na2SeO3·5H2O 1.7 mg, Na2WO4·2H2O 3.3 mg, distilled water 1 L; no NaOH.
+      These are literal input masses and added distilled-water volume. Neither a final
+      volume nor a derived molarity is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:131361
+    source_record: CHEBI:131361
+    notes: Official current OLS ChEBI term, exact supplied-form formula and CAS were
+      compared with the active MIM component owner. Captured response, retrieval timestamp
+      and owner hash are retained in stock-reconciliations-v1/component-identity-assessment.json.
+      This supports only the named constituent, not other assertions on that owner.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:63939
+    source_record: CHEBI:63939
+    notes: Official current OLS ChEBI term, exact supplied-form formula and CAS were
+      compared with the active MIM component owner. Captured response, retrieval timestamp
+      and owner hash are retained in stock-reconciliations-v1/component-identity-assessment.json.
+      This supports only the named constituent, not other assertions on that owner.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:15377
+    source_record: CHEBI:15377
+    notes: Official current OLS ChEBI term, exact supplied-form formula and CAS were
+      compared with the active MIM component owner. Captured response, retrieval timestamp
+      and owner hash are retained in stock-reconciliations-v1/component-identity-assessment.json.
+      This supports only the named constituent, not other assertions on that owner.
+  notes: Quantities describe one preparation containing 1 L added distilled water;
+    they do not claim a final 1 L solution or a final-volume concentration. Component
+    references resolve to active exact-form MIM owners. No gas component, role, mechanism,
+    or release approval is asserted. Raw generic names and provider-free pointers
+    remain nonresolving REJECTED_LABEL provenance; only explicit source-case/occurrence
+    routing applies.
+notes: 'Reconciled isolated new-owner proposal for the exact JCM852 Se/W stock. JCM1188
+  directly references this table; the frozen CultureMech narrative invokes JCM1187
+  inheritance, and that source narrative difference remains in the evidence packet.
+  MediaDive compound 88 occurrences require the explicit Medium No. 852 qualifier.
+  The unrelated historical CHEBI:88 citronellol claim remains rejected. No corpus-wide
+  occurrence count is inferred from the three linked source cases. The complete original
+  W01/W03 proposals, source case objects, occurrences, captures and review lineage
+  remain immutable in stock-reconciliations-v1. The proposal preserves all original
+  raw names as nonresolving provenance. Its component list is the printed recipe input
+  list, with water added rather than made up to a final volume. This proposal does
+  not apply maintained changes or lift mapping, component, role or downstream release
+  holds. Current-origin bridge retains the exact W01 and W03 source profiles and their
+  provenance-correction events. Both are null-before isolated new-owner proposals.
+  The older reconciliation event wording about authentic maintained history refers
+  here only to preserved proposal histories: there is no maintained predecessor for
+  this candidate. Retained source-batch descriptions both state 1.7 mg pentahydrate
+  and 3.3 mg dihydrate with 1 L added water; no final volume, NaOH, generic occurrence
+  transfer or child-owner approval is inferred.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.861239+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 138. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.607217+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM852 selenium/tungsten stock; source has no NaOH. Routing restricted
+    to MediaDive ingredient88 occurrences with the explicit JCM852 reference. CHEBI88
+    citronellol remains rejected.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:20:18.714456+00:00'
+  curator: campaign_stock_reconciliation
+  action: RECONCILED_PROPOSAL
+  changes: 'Isolated proposal only: reconcile the W01 and W03 JCM852 source-formulation
+    proposals. Preserve authentic maintained history followed by both original proposal-event
+    lineages verbatim. Those historical proposal events are not maintained application
+    events. Select source-qualified identity/classification, literal added-water preparation
+    quantities, verified active exact-form component references and nonresolving raw
+    labels. All source cases/occurrences remain scoped in the lineage packet; no maintained
+    data or release approval changed.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.683383+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:16:40.555556+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-175. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:31:38.943111+00:00'
+  curator: Codex worker04 /root positive-candidate current-origin composition
+  action: COMPOSED_CURRENT_ORIGIN_PROVENANCE
+  changes: Private candidate successor of fe30024461e73f121db3ff32689106c8785907038e193c59daedc90f224b4dcb.
+    Retain exact reviewed predecessor scientific fields and all authentic source profiles/events;
+    bind current committed origins w01::NSV4-PROP-JCM_852_Se_W_Solution, w03::m-jcm852_se_w_solution.
+    Retype only identified agent-authored MappingEvidence under issue1226; append
+    missing original correction events verbatim and explicitly qualify isolated proposal
+    lineage. No maintained application, source-case acceptance increment, role approval,
+    new component mapping or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003078 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003078
+legacy_identifiers:
+- MIM:JCM_852_Se_W_Solution
+- kgmicrobe.ingredient:jcm_852_se_w_solution

@@ -77,17 +77,32 @@ curation_history:
     cephamycin A''. Preserved original text and source metadata. No identity, mapping,
     role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Remove copied cephamycin-class R-group formula/SMILES from cephamycin
+    A. Primary isolation paper distinguishes A from B and C; no A-specific structure
+    is invented. Broad CHEBI:55429 relation and provisional role stay held for complete-payload
+    review. Source binding: frozen preliminary-v5/shards/shard-03.json cases[181]
+    case_id=KG_CASE:e7b098420353431e3ddf43c82bd76e81c9c4813e6ff8e6ccdd07b2e578e3f602;
+    source=metatraits; source_case_id=kgmicrobe.compound:cephamycin_a; Primary evidence:
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC444279/?page=1'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000662; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000662; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
-chemical_properties:
-  molecular_formula: C8H7NO4SR2
-  smiles: '*C1=C(C(=O)O)N2C(=O)[C@](*)(OC)C2SC1'
-  data_source: CHEBI sqlite (oaklib)
 physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8

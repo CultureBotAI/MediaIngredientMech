@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock
+preferred_term: JCM600 water-saturated toluene stock, 5.0 mM
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms: []
+notes: JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described
+  as 5.0 mM and added at 40 mL per litre. This supports a stock record separate from
+  pure toluene and from the receiving medium. The exact M607/G5G6 source points to
+  JCM600. The source concentration descriptor is transcribed; saturation temperature,
+  water grade and final-medium concentration are not inferred. The receiving mass-unit
+  error is preserved separately.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock
+  ontology_label: JCM600 water-saturated toluene stock, 5.0 mM
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=600
+    notes: JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock
+      described as 5.0 mM and added at 40 mL per litre. This supports a stock record
+      separate from pure toluene and from the receiving medium.
+solution_type: CARBON_SOURCE_MIX
+components:
+- component_name: Toluene
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17578
+  concentration_value: '5.0'
+  concentration_unit: MILLIMOLAR
+- component_name: water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=600
+    source_record: JCM600 final anaerobicstock line
+    notes: The exact M607/G5G6 source points to JCM600. The source concentration descriptor
+      is transcribed; saturation temperature, water grade and final-medium concentration
+      are not inferred. The receiving mass-unit error is preserved separately.
+  notes: Only source-supported constituents are asserted. No whole-to-part grounding,
+    full culturing recipe or speciation claim is made.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock
+    described as 5.0 mM and added at 40 mL per litre. This supports a stock record
+    separate from pure toluene and from the receiving medium. Isolated proposal only;
+    all native holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to LLM_SUGGESTION:
+    An agent proposes a distinct registry preparation from JCM600; unreported phase
+    conditions and solvent grade remain unknown. Isolated successor proposal only;
+    all inherited source, role and export holds remain. Historical evidence and predecessor
+    files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003259 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003259
+legacy_identifiers:
+- MIM:jcm600_water_saturated_toluene_stock
+- kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock

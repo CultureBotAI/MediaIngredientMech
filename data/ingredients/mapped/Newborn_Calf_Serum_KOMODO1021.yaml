@@ -1,0 +1,69 @@
+identifier: kgmicrobe.ingredient:newborn_calf_serum_komodo1021
+preferred_term: Sterile newborn calf serum (KOMODO1021 selected variant; DSMZ1021)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0001709
+  ontology_label: calf serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf
+    notes: KOMODO1021 and its variant explicitly select newborn calf serum; linked
+      DSMZ1021 requires sterile fetal OR newborn serum, without overriding the selected
+      newborn row. Sterility is retained for this selected newborn preparation; no
+      particular sterilization method or heat schedule is inferred. CCONT0000051 is
+      a label candidate in an imported ontology outside native OntologySourceEnum;
+      preserve a local source-qualified newborn identity with broader calf-serum parent.
+      Broader material parent only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.569027+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: KOMODO1021 and its variant explicitly select newborn calf serum; linked
+    DSMZ1021 permits fetal OR newborn, without overriding the selected newborn row.
+    CCONT0000051 is a label candidate in an imported ontology outside native OntologySourceEnum;
+    preserve a local source-qualified newborn identity with broader calf-serum parent.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: CORRECTED
+  changes: 'BIO-F05 source-bound successor correction: KOMODO1021 and its variant
+    explicitly select newborn calf serum; linked DSMZ1021 requires sterile fetal OR
+    newborn serum, without overriding the selected newborn row. Sterility is retained
+    for this selected newborn preparation; no particular sterilization method or heat
+    schedule is inferred. CCONT0000051 is a label candidate in an imported ontology
+    outside native OntologySourceEnum; preserve a local source-qualified newborn identity
+    with broader calf-serum parent. Prior isolated proposal sv1-bio-newborn_calf_serum_komodo1021
+    remains immutable; this event records proposal authorship only. Earlier history
+    is retained verbatim, including superseded wording.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003137 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: 'KOMODO1021 and its variant explicitly select newborn calf serum; linked DSMZ1021
+  requires sterile fetal OR newborn serum, without overriding the selected newborn
+  row. Sterility is retained for this selected newborn preparation; no particular
+  sterilization method or heat schedule is inferred. CCONT0000051 is a label candidate
+  in an imported ontology outside native OntologySourceEnum; preserve a local source-qualified
+  newborn identity with broader calf-serum parent. Source labels retained as nonresolving
+  provenance: [{"case_id": "CM_NAME:4eebc47e9964bef6c5d5c75b6c24f82c8aef986705313de74373073b1b66633f",
+  "raw_label": "new borne calf serum"}]. No global generic alias, supplier equivalence,
+  role approval or complete publication approval is conferred. Receiving-medium dose
+  and unit repairs remain separate. Existing native holds and rejected labels are
+  preserved. Source-qualified naming is not proof of a distinct preparation. Preserve
+  unresolved cross-source relationships and evaluate a common named partial scope
+  or exact product/protocol bridge before simultaneous installation. No role/export
+  or whole-owner approval; all inherited holds remain.'
+mim_id: MIM:0003137
+legacy_identifiers:
+- MIM:Newborn_Calf_Serum_KOMODO1021
+- kgmicrobe.ingredient:newborn_calf_serum_komodo1021

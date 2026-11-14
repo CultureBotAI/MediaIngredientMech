@@ -1,11 +1,11 @@
 identifier: kgmicrobe.ingredient:modified_trace_vitamins
-preferred_term: Modified trace vitamins
+preferred_term: JCM 1158 modified trace vitamins
 synonyms:
 - synonym_text: Modified trace vitamins
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: mim-queue
 - synonym_text: Modified trace vitamins (see below)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -55,19 +55,55 @@ curation_history:
     not resolve them: ''Modified trace vitamins (see below)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Transcribe JCM1158 source-defined vitamin stock, including DL-calcium pantothenate
+    and KH2PO4. Retain named formulation registry and existing alias/export hold.
+    Isolated proposal only; integration requires fresh native review of changed bytes
+    and retains all source and export holds.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:36:24.206519+00:00'
+  curator: all_unmatched_20261107_worker06_successor_v3_research_a
+  action: CORRECTED
+  changes: 'W06-IR-002 / issue1217: retain the exact non-identifying raw labels and
+    their original sources as REJECTED_LABEL; JCM1158 supplies ten vitamins including
+    DL-calcium pantothenate plus KH2PO4 and water. Modified trace vitamins and its
+    see-below variant do not independently name that formulation; JCM1353 uses a different
+    phosphate-buffered parent. Qualify the preferred and registry-self labels while
+    retaining ingredient2017 provenance and the whole-owner/other-context hold. Components,
+    identifiers, mapping predicates and release holds are unchanged. Source definition:
+    https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1158'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001715; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001715; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a modified trace vitamin stock mixture
   pending component list and formulation-specific curation.
+
+  Source definition is JCM1158 Modified trace vitamins. This assertion is not a merge
+  with JCM197 or other modified vitamin formulas. MediaDiveJ1158 flattens the stock
+  into a parent volume; use original stock batch amounts. Compared JCM1353 buffered197vitamins:
+  phosphate species and pantothenate scope differ. Existing owner originates fromMediaDive2017;
+  this decomposition does not establish equivalence with other modified vitamin mixtures.'
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:modified_trace_vitamins
-  ontology_label: Modified trace vitamins
+  ontology_label: JCM 1158 modified trace vitamins
   ontology_source: kgmicrobe.ingredient
   mapping_quality: FALLBACK_REGISTRY
   evidence:
@@ -78,6 +114,67 @@ ontology_mapping:
       is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
       mint with no parent, because a multi-component mix does not narrow to any single
       compound (#288).'
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: mg
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: mg
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: mg
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: DL-Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: mg
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: Lipoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: mg
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.9'
+  concentration_unit: g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1158
+    source_record: JCM1158 / Modified trace vitamins
+    supports: SUPPORT
+    notes: Exact source2017 formulation; the explicit DL calcium form is not D-pantothenate.
+  notes: Amounts are source batch quantities, not computed medium concentrations.
+    Component identifiers remain unassigned; named has-part constituents are not whole-mixture
+    identity mappings.
 mim_id: MIM:0001715
 legacy_identifiers:
 - MIM:Modified_Trace_Vitamins

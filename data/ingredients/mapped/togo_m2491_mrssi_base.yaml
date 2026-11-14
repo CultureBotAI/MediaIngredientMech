@@ -1,0 +1,168 @@
+identifier: kgmicrobe.ingredient:togo_m2491_mrssi_base
+preferred_term: TOGO M2491 MRSsi base
+ingredient_type: NAMED_MEDIUM
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2491_mrssi_base
+  ontology_label: TOGO M2491 MRSsi base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/medium/M2491
+    notes: 'TOGO M2491 describes MRSsi basal ingredients separately from carbohydrate
+      assay additions. The source is a named medium formulation, not generic MRS or
+      a particular commercial MRS powder. Provider table transcription (quantity basis
+      qualified below; not calculated stock concentrations): Distilled water: provider
+      table1Lentry; prose gives per-litre formulation basis; MgSO4 · 7H2O: 0.2 g;
+      yeast extract: 5 g; CoCl2 · 6H2O: 0.1 g; sodium acetate: 5 g; Tween 80: 0.5
+      ml; MnSO4 · 4 H2O: 0.05 g; casamino acids: 5 g; peptone: 5 g. No batch-to-final-volume
+      conversion is made. Handling atmosphere is not listed as a material part; pH
+      reagents are source inputs, without an assertion of unchanged molecular species
+      after pH adjustment. Nested formulations remain source-qualified named parts
+      where exact composition/owner identity is not established. No verified exact
+      eligible ontology term or existing whole-preparation owner was established by
+      the bounded source/owner review. This self-registry mapping represents the preparation,
+      not its individual constituents. TOGO M2491 prose states the MRSsi constituent
+      amounts per litre. Its distilledwater1L table row is not proof of a measured1Lwater
+      addition. Retain the reported per-litre formulation basis without claiming an
+      independently measured final batch volume or converting receiving5mLculture
+      volume into stock composition.'
+synonyms: []
+notes: 'TOGO M2491 describes MRSsi basal ingredients separately from carbohydrate
+  assay additions. The source is a named medium formulation, not generic MRS or a
+  particular commercial MRS powder. Provider table transcription (quantity basis qualified
+  below; not calculated stock concentrations): Distilled water: provider table1Lentry;
+  prose gives per-litre formulation basis; MgSO4 · 7H2O: 0.2 g; yeast extract: 5 g;
+  CoCl2 · 6H2O: 0.1 g; sodium acetate: 5 g; Tween 80: 0.5 ml; MnSO4 · 4 H2O: 0.05
+  g; casamino acids: 5 g; peptone: 5 g. No batch-to-final-volume conversion is made.
+  Handling atmosphere is not listed as a material part; pH reagents are source inputs,
+  without an assertion of unchanged molecular species after pH adjustment. Nested
+  formulations remain source-qualified named parts where exact composition/owner identity
+  is not established. Raw source labels and original occurrence IDs remain in the
+  evidence ledger; no recipe-local label is activated as a global synonym. All inherited
+  release holds remain. TOGO M2491 prose states the MRSsi constituent amounts per
+  litre. Its distilledwater1L table row is not proof of a measured1Lwater addition.
+  Retain the reported per-litre formulation basis without claiming an independently
+  measured final batch volume or converting receiving5mLculture volume into stock
+  composition.'
+components:
+- component_name: water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31795
+- component_name: Yeast extract
+  reference_scope: MIM_CATALOG
+  component_id: FOODON:03315426
+- component_name: Cobalt chloride hexahydrate
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:53503
+- component_name: sodium acetate
+  reference_scope: UNMAPPED
+- component_name: Tween 80
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:53426
+- component_name: MnSO4 x 4 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86358
+- component_name: casamino acids
+  reference_scope: UNMAPPED
+- component_name: Peptone
+  reference_scope: MIM_CATALOG
+  component_id: mesh:D010461
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2491
+    source_record: TOGO M2491 MRSsi base
+    notes: 'TOGO M2491 describes MRSsi basal ingredients separately from carbohydrate
+      assay additions. The source is a named medium formulation, not generic MRS or
+      a particular commercial MRS powder. Provider table transcription (quantity basis
+      qualified below; not calculated stock concentrations): Distilled water: provider
+      table1Lentry; prose gives per-litre formulation basis; MgSO4 · 7H2O: 0.2 g;
+      yeast extract: 5 g; CoCl2 · 6H2O: 0.1 g; sodium acetate: 5 g; Tween 80: 0.5
+      ml; MnSO4 · 4 H2O: 0.05 g; casamino acids: 5 g; peptone: 5 g. No batch-to-final-volume
+      conversion is made. Handling atmosphere is not listed as a material part; pH
+      reagents are source inputs, without an assertion of unchanged molecular species
+      after pH adjustment. Nested formulations remain source-qualified named parts
+      where exact composition/owner identity is not established. TOGO M2491 prose
+      states the MRSsi constituent amounts per litre. Its distilledwater1L table row
+      is not proof of a measured1Lwater addition. Retain the reported per-litre formulation
+      basis without claiming an independently measured final batch volume or converting
+      receiving5mLculture volume into stock composition.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2491
+    source_record: 'M2491 MRSsi base: second component group, Peptone5g; comments
+      paragraph3'
+    notes: 'Source-specific applicability assessment under #1176 comment6720739455.
+      The MRSsi ingredient table and its formulation paragraph name unqualified peptone5g.
+      BectonDickinson in the preceding paragraph identifies a different maintenance
+      MRS medium and does not establish Bacto Peptone identity for this MRSsi ingredient.
+      Bind the literal generic part to the actual selected generic Peptone owner mesh:D010461;
+      no supplier, animal substrate, enzyme, Bacto grade, lot, role, source-material
+      or export approval is inferred. Preserve all original quantities and preparation/completeness
+      qualifications.'
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: 'TOGO M2491 describes MRSsi basal ingredients separately from carbohydrate
+    assay additions. The source is a named medium formulation, not generic MRS or
+    a particular commercial MRS powder. Source transcription basis (literal input
+    amounts, not calculated stock concentrations): Distilled water: 1 L; MgSO4 · 7H2O:
+    0.2 g; yeast extract: 5 g; CoCl2 · 6H2O: 0.1 g; sodium acetate: 5 g; Tween 80:
+    0.5 ml; MnSO4 · 4 H2O: 0.05 g; casamino acids: 5 g; peptone: 5 g. No batch-to-final-volume
+    conversion is made. Handling atmosphere is not listed as a material part; pH reagents
+    are source inputs, without an assertion of unchanged molecular species after pH
+    adjustment. Nested formulations remain source-qualified named parts where exact
+    composition/owner identity is not established.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:11:19.278370+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: CORRECTED
+  changes: Independent reviewer B requested complete assessment of known components.
+    Resolve verified source-form parts to actual active MIM owners without changing
+    source amounts or inferring any new formulation. MgSO4 · 7H2O, yeast extract,
+    CoCl2 · 6H2O, Tween 80, MnSO4 · 4 H2O, peptone
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:06:25.173567+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CORRECTED
+  changes: 'Issue1241 W02-F-QUANTITY: TOGO M2491 prose states the MRSsi constituent
+    amounts per litre. Its distilledwater1L table row is not proof of a measured1Lwater
+    addition. Retain the reported per-litre formulation basis without claiming an
+    independently measured final batch volume or converting receiving5mLculture volume
+    into stock composition. Earlier creation events are preserved as history, with
+    the active quantity-basis assertion corrected here.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T11:10:59.104742+00:00'
+  curator: Codex /root/step7d_science_c
+  action: COUPLED_PEPTONE_REFERENCE
+  changes: 'Private composition after filed #1176 comment6720739455: replace only
+    MRSsi components[8].component_id MICRO:0000178 with generic mesh:D010461, supported
+    by exact TOGO M2491 ingredient table and MRSsi formulation paragraph. The separate
+    maintenance-MRS vendor sentence does not identify this input as Bacto. Preserve
+    the genuine W02 new-owner proposal, full source cases/evidence/history, all quantities
+    and holds; append this agent-assisted source applicability assessment. No maintained
+    owner, source routing, role or export approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003354 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003354
+legacy_identifiers:
+- MIM:togo_m2491_mrssi_base
+- kgmicrobe.ingredient:togo_m2491_mrssi_base

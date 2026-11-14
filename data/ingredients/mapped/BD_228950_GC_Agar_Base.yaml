@@ -1,0 +1,118 @@
+identifier: kgmicrobe.ingredient:bd_228950_gc_agar_base
+preferred_term: GC Medium Base (BD228950)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_228950_gc_agar_base
+  ontology_label: GC Medium Base (BD228950)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://imgcdn.mckesson.com/CumulusWeb/Click_and_learn/SDS_BBL_MEDIA_AGAR_GC_MED_BASE_500G.pdf
+    notes: BD-authored SDS identifies catalog228950 as Chocolate Agar Base (GC Medium),
+      manufacturer BD Diagnostic Systems, solid powder. TOGO M2206 paragraph11 explicitly
+      lists six dry-base ingredients totaling36g; paragraph9 dissolves that base in500mL
+      water, while paragraph13 separately prepares500mL water with10g dried bovine
+      hemoglobin. IsoVitaleX is also a separate addition. The components below are
+      only the six named dry-base inputs, with literal source-batch masses. No preparation
+      water, hemoglobin or IsoVitaleX belongs to this dry product. Neither inspected
+      source establishes the Difco sub-brand.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: BD-authored SDS identifies catalog228950 as Chocolate Agar Base (GC Medium),
+  manufacturer BD Diagnostic Systems, solid powder. TOGO M2206 paragraph11 explicitly
+  lists six dry-base ingredients totaling36g; paragraph9 dissolves that base in500mL
+  water, while paragraph13 separately prepares500mL water with10g dried bovine hemoglobin.
+  IsoVitaleX is also a separate addition. The components below are only the six named
+  dry-base inputs, with literal source-batch masses. No preparation water, hemoglobin
+  or IsoVitaleX belongs to this dry product. Neither inspected source establishes
+  the Difco sub-brand. Existing whole-owner, role, source-specific and export holds
+  remain; this isolated proposal does not approve maintained data or releases.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: BD-authored SDS explicitly identifies228950 as Chocolate Agar Base (GC
+    Medium), corroborating the source GC base catalog. Opaque product identity is
+    sufficient; the SDS lists only selected hazardous ingredients, so no full formulation
+    or supplemented-medium composition is inferred. Isolated proposal; no maintained
+    data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.467310+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: BD-authored SDS identifies catalog228950 as Chocolate Agar Base (GC Medium),
+    manufacturer BD Diagnostic Systems, solid powder. TOGO M2206 paragraph11 explicitly
+    lists six dry-base ingredients totaling36g; paragraph9 dissolves that base in500mL
+    water, while paragraph13 separately prepares500mL water with10g dried bovine hemoglobin.
+    IsoVitaleX is also a separate addition. The components below are only the six
+    named dry-base inputs, with literal source-batch masses. No preparation water,
+    hemoglobin or IsoVitaleX belongs to this dry product. Neither inspected source
+    establishes the Difco sub-brand. Historical events are preserved verbatim; this
+    event qualifies/retracts conflicting earlier inferences where explicitly described
+    above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002970 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: GC Medium Base (BD228950)
+  supplier: BD Diagnostic Systems
+  form: dehydrated basal medium
+  catalog_number: '228950'
+components:
+- component_name: NaCl
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26710
+- component_name: Monopotassium Phosphate
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63036
+- component_name: Dipotassium Phosphate
+  concentration_value: '4'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131527
+- component_name: Agar
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:2509
+- component_name: Corn Starch
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: UNMAPPED
+- component_name: Proteose Peptone No.3
+  concentration_value: '15'
+  concentration_unit: G_PER_SOURCE_DRY_BASE_BATCH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2206
+    source_record: M2206 components paragraph_index11 GC agar base (BD228950)
+    notes: BD-authored SDS identifies catalog228950 as Chocolate Agar Base (GC Medium),
+      manufacturer BD Diagnostic Systems, solid powder. TOGO M2206 paragraph11 explicitly
+      lists six dry-base ingredients totaling36g; paragraph9 dissolves that base in500mL
+      water, while paragraph13 separately prepares500mL water with10g dried bovine
+      hemoglobin. IsoVitaleX is also a separate addition. The components below are
+      only the six named dry-base inputs, with literal source-batch masses. No preparation
+      water, hemoglobin or IsoVitaleX belongs to this dry product. Neither inspected
+      source establishes the Difco sub-brand.
+  notes: Complete six-row membership of the cited nominal36g dry-base formula only,
+    not a product-lot analysis. Corn-starch specificity and ProteosePeptoneNo3 remain
+    unmapped rather than collapsing to generic starch/proteose peptone. No source
+    supplier is invented for those inputs.
+mim_id: MIM:0002970
+legacy_identifiers:
+- MIM:BD_228950_GC_Agar_Base
+- kgmicrobe.ingredient:bd_228950_gc_agar_base

@@ -1,0 +1,380 @@
+identifier: kgmicrobe.ingredient:seven_acid_vfa_mixture_acetate_dominant_recipe
+preferred_term: Seven-acid volatile fatty acid mixture (17:6:4:1:1:1:1 nominal recipe)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:seven_acid_vfa_mixture_acetate_dominant_recipe
+  ontology_label: Seven-acid volatile fatty acid mixture (17:6:4:1:1:1:1 nominal recipe)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/solution/3774
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://mediadive.dsmz.de/rest/solution/608
+    notes: 'DSMZ MediaDive solution 608: Volatile fatty acid mixture defines this
+      multi-component preparation. Registry identity preserves the recipe-specific
+      stock; no exact molecular ontology mapping is asserted.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537
+    notes: One explicitly nominal seven-acid input recipe, bounded to the two retained
+      source batch profiles below. Global components have no numerical amounts. In
+      the matched chemical order acetic, propionic, straight-chain butyric, iso-butyric,
+      n-valeric, iso-valeric, DL-2-methylbutyric acid, MediaDive3774 gives 17/6/4/1/1/1/1
+      mL and MediaDive608 gives 548.5/193.5/129/32.25/32.25/32.25/32.25 mL. Six inputs
+      scale by 32.25; acetate differs by 0.25 mL. These are not numerically equal
+      formulations, nor does either source state rounding. No tolerance, average,
+      solvent, neat-acid purity, additive final volume or empirical equivalence is
+      inferred. The original ordered profiles remain below without reordering. Existing
+      W08 component form references and their source evidence are retained; this composition
+      does not turn W01 UNMAPPED annotations into a new independent child-form approval.
+      COMPLETE concerns the seven named immediate inputs. Generic VFA labels remain
+      non-resolving source-local labels. Original evidence items are retained verbatim
+      for their named source-specific origins; they are not inherited final combined-owner
+      approval.
+synonyms:
+- synonym_text: VFA solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:013996;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+- synonym_text: Volatile fatty acid mixture
+  synonym_type: REJECTED_LABEL
+  source: MediaDive608 original raw label; exact source-local occurrence only, not
+    global resolution
+solution_type: CARBON_SOURCE_MIX
+components:
+- component_name: Acetic acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15366
+  source: 'Literal source component: Acetic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Acetic acid; the inspected active catalog
+    and primary ontology identity CHEBI:15366 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Propionic acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:30768
+  source: 'Literal source component: Propionic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Propionic acid; the inspected active catalog
+    and primary ontology identity CHEBI:30768 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Butyric acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:30772
+  source: 'Literal source component: Butyric acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Butyric acid; the inspected active catalog
+    and primary ontology identity CHEBI:30772 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: n-Valeric acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17418
+  source: 'Literal source component: n-Valeric acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names n-Valeric acid; the inspected active catalog
+    and primary ontology identity CHEBI:17418 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: iso-Butyric acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:16135
+  source: 'Literal source component: iso-Butyric acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names iso-Butyric acid; the inspected active catalog
+    and primary ontology identity CHEBI:16135 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: DL-2-Methylbutyric acid
+  reference_scope: EXTERNAL_TERM
+  component_id: cas:116-53-0
+  source: 'Literal source component: DL-2-Methylbutyric acid, 32.25 ml per source
+    batch, in DSMZ MediaDive solution 608 (https://mediadive.dsmz.de/rest/solution/608).
+    Issue 1227 peer correction VM1227-PEER-001: TCI M0181 (https://www.tcichemicals.com/US/en/p/M0181)
+    explicitly identifies DL-2-methylbutyric acid as CAS116-53-0. This registry-form
+    bridge supports the named DL ingredient, not a DSMZ supplier/product assignment.
+    CHEBI:37070 is a broader concept with individual R/S children; bounded local ChEBI/NCIt
+    lookup did not establish an exact racemate term. No active local owner holds cas:116-53-0,
+    so EXTERNAL_TERM is deliberate. Literal amount, source preparation and all holds
+    remain; no structure, role or owner-wide approval is introduced.'
+- component_name: iso-Valeric acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:28484
+  source: 'Literal source component: iso-Valeric acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names iso-Valeric acid; the inspected active catalog
+    and primary ontology identity CHEBI:28484 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/3774
+    source_record: MediaDive 3774 VFA solution; complete named stock table and preparation
+      notes
+    notes: Source seven liquid input amounts sum31mL; units retain original batch
+      amounts without assuming additive final volume or introducing solvent. No neat-acid
+      purity or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body
+      supplies this source-defined formula. Seven source liquid inputs are17,6,4,1,1,1,1mL.
+      Their arithmetic sum31mL and API volume do not establish additive final volume;
+      units express only each literal input. No solvent is introduced.
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/608
+    source_record: 'DSMZ MediaDive solution 608: Volatile fatty acid mixture'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+  - evidence_type: MANUAL_CURATION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537
+    source_record: CENTRAL31-VFA nominal composition by worker02 /root (LLM-assisted
+      author)
+    notes: One explicitly nominal seven-acid input recipe, bounded to the two retained
+      source batch profiles below. Global components have no numerical amounts. In
+      the matched chemical order acetic, propionic, straight-chain butyric, iso-butyric,
+      n-valeric, iso-valeric, DL-2-methylbutyric acid, MediaDive3774 gives 17/6/4/1/1/1/1
+      mL and MediaDive608 gives 548.5/193.5/129/32.25/32.25/32.25/32.25 mL. Six inputs
+      scale by 32.25; acetate differs by 0.25 mL. These are not numerically equal
+      formulations, nor does either source state rounding. No tolerance, average,
+      solvent, neat-acid purity, additive final volume or empirical equivalence is
+      inferred. The original ordered profiles remain below without reordering. Existing
+      W08 component form references and their source evidence are retained; this composition
+      does not turn W01 UNMAPPED annotations into a new independent child-form approval.
+      COMPLETE concerns the seven named immediate inputs. Generic VFA labels remain
+      non-resolving source-local labels. ComponentEvidenceTypeEnum MANUAL_CURATION
+      records this curator-established interpretation; it is not the human-only MappingEvidence
+      enum or independent approval.
+  notes: One explicitly nominal seven-acid input recipe, bounded to the two retained
+    source batch profiles below. Global components have no numerical amounts. In the
+    matched chemical order acetic, propionic, straight-chain butyric, iso-butyric,
+    n-valeric, iso-valeric, DL-2-methylbutyric acid, MediaDive3774 gives 17/6/4/1/1/1/1
+    mL and MediaDive608 gives 548.5/193.5/129/32.25/32.25/32.25/32.25 mL. Six inputs
+    scale by 32.25; acetate differs by 0.25 mL. These are not numerically equal formulations,
+    nor does either source state rounding. No tolerance, average, solvent, neat-acid
+    purity, additive final volume or empirical equivalence is inferred. The original
+    ordered profiles remain below without reordering. Existing W08 component form
+    references and their source evidence are retained; this composition does not turn
+    W01 UNMAPPED annotations into a new independent child-form approval. COMPLETE
+    concerns the seven named immediate inputs. Generic VFA labels remain non-resolving
+    source-local labels. Original RECIPE_TRANSCRIPTION assertions and their distinct
+    source scopes are preserved in the following origin profiles and immutable originals.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: "One explicitly nominal seven-acid input recipe, bounded to the two retained\
+  \ source batch profiles below. Global components have no numerical amounts. In the\
+  \ matched chemical order acetic, propionic, straight-chain butyric, iso-butyric,\
+  \ n-valeric, iso-valeric, DL-2-methylbutyric acid, MediaDive3774 gives 17/6/4/1/1/1/1\
+  \ mL and MediaDive608 gives 548.5/193.5/129/32.25/32.25/32.25/32.25 mL. Six inputs\
+  \ scale by 32.25; acetate differs by 0.25 mL. These are not numerically equal formulations,\
+  \ nor does either source state rounding. No tolerance, average, solvent, neat-acid\
+  \ purity, additive final volume or empirical equivalence is inferred. The original\
+  \ ordered profiles remain below without reordering. Existing W08 component form\
+  \ references and their source evidence are retained; this composition does not turn\
+  \ W01 UNMAPPED annotations into a new independent child-form approval. COMPLETE\
+  \ concerns the seven named immediate inputs. Generic VFA labels remain non-resolving\
+  \ source-local labels.\nPrivate proposal only. Exact occurrence selectors and their\
+  \ original quantities, unsupported/withheld source associations and role/export\
+  \ holds remain in the bound routing ledger. No maintained owner merge, role approval,\
+  \ source-global mapping, source-release or export approval. Final complete candidate\
+  \ bytes require distinct independent review. \nZero occurrence statistics are an\
+  \ unintegrated candidate placeholder, not absence of source observations.\nOriginal\
+  \ w01 proposal NSV4-PROP-MediaDive_3774_VFA_Solution (9f7b7fac893a1ea8e9ae5f772fd38f4423bd95d6b0238c12c357cb4efd7d5328),\
+  \ source-specific prior claims: Source seven liquid input amounts sum31mL; units\
+  \ retain original batch amounts without assuming additive final volume or introducing\
+  \ solvent. No neat-acid purity or grade inferred. LiveJCM1029 is unavailable; exact\
+  \ MediaDive3774 body supplies this source-defined formula. Seven source liquid inputs\
+  \ are17,6,4,1,1,1,1mL. Their arithmetic sum31mL and API volume do not establish\
+  \ additive final volume; units express only each literal input. No solvent is introduced.\
+  \ Source-local raw labels are REJECTED_LABEL: they are preserved for provenance\
+  \ and occurrence-specific decisions but native resolution must not expose them as\
+  \ global synonyms. The source-qualified preferred term denotes this exact preparation.\
+  \ No unsupported roles, mechanisms, vendor, grade or release approval are asserted.\
+  \ Any UNMAPPED part retains its literal source identity; component grounding is\
+  \ separate from established whole-stock recipe identity.\nOriginal assertion method/completeness:\
+  \ RECIPE_TRANSCRIPTION/COMPLETE. Seven source liquid inputs are17,6,4,1,1,1,1mL.\
+  \ Their arithmetic sum31mL and API volume do not establish additive final volume;\
+  \ units express only each literal input. No solvent is introduced. Source-local\
+  \ raw labels are REJECTED_LABEL: they are preserved for provenance and occurrence-specific\
+  \ decisions but native resolution must not expose them as global synonyms. The source-qualified\
+  \ preferred term denotes this exact preparation. No unsupported roles, mechanisms,\
+  \ vendor, grade or release approval are asserted. Any UNMAPPED part retains its\
+  \ literal source identity; component grounding is separate from established whole-stock\
+  \ recipe identity.\nLiteral original ordered input profile (amounts apply only to\
+  \ this source batch): [{\"component_name\":\"Acetic acid\",\"reference_scope\":\"\
+  UNMAPPED\",\"concentration_value\":\"17\",\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"\
+  },{\"component_name\":\"Propionic acid\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"6\",\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"},{\"component_name\"\
+  :\"n-Butyric acid\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\":\"\
+  4\",\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"},{\"component_name\":\"\
+  iso-Butyric acid\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\":\"1\"\
+  ,\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"},{\"component_name\":\"n-Valeric\
+  \ acid\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\":\"1\",\"concentration_unit\"\
+  :\"ML_PER_SOURCE_PREPARATION\"},{\"component_name\":\"iso-Valeric acid\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"1\",\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"\
+  },{\"component_name\":\"DL-alpha-Methylbutyric acid\",\"reference_scope\":\"UNMAPPED\"\
+  ,\"concentration_value\":\"1\",\"concentration_unit\":\"ML_PER_SOURCE_PREPARATION\"\
+  }]\n\nOriginal w08 proposal vm-prop-new-98 (068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8),\
+  \ source-specific prior claims:  Raw source labels retained here, with recipe scope:\
+  \ 'Volatile fatty acid mixture'. Generic local labels are not published as global\
+  \ synonyms. Occurrence statistics remain zero until source-specific membership integration;\
+  \ frozen observations are fully recorded in the evidence decisions. Quantities use\
+  \ literal source-batch units, not final culture concentrations. Component references\
+  \ identify source-compatible catalog or external entities only after source-form\
+  \ review. Remaining UNMAPPED components retain their precise form or nested-preparation\
+  \ limits. Component names and quantities remain source-specific; no role or export\
+  \ approval is inherited.\nOriginal assertion method/completeness: RECIPE_TRANSCRIPTION/COMPLETE.\
+  \ \nLiteral original ordered input profile (amounts apply only to this source batch):\
+  \ [{\"component_name\":\"Acetic acid\",\"reference_scope\":\"MIM_CATALOG\",\"concentration_value\"\
+  :\"548.5\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\",\"component_id\":\"CHEBI:15366\"\
+  ,\"source\":\"Literal source component: Acetic acid. Issue 1227 IR003 component-specific\
+  \ adjudication: The cited recipe names Acetic acid; the inspected active catalog\
+  \ and primary ontology identity CHEBI:15366 match this stated chemical form. Source\
+  \ spelling, amount, unit and preparation boundary are preserved; no role, owner-wide\
+  \ or export approval is transferred.\"},{\"component_name\":\"Propionic acid\",\"\
+  reference_scope\":\"MIM_CATALOG\",\"concentration_value\":\"193.5\",\"concentration_unit\"\
+  :\"ML_PER_SOURCE_BATCH\",\"component_id\":\"CHEBI:30768\",\"source\":\"Literal source\
+  \ component: Propionic acid. Issue 1227 IR003 component-specific adjudication: The\
+  \ cited recipe names Propionic acid; the inspected active catalog and primary ontology\
+  \ identity CHEBI:30768 match this stated chemical form. Source spelling, amount,\
+  \ unit and preparation boundary are preserved; no role, owner-wide or export approval\
+  \ is transferred.\"},{\"component_name\":\"Butyric acid\",\"reference_scope\":\"\
+  MIM_CATALOG\",\"concentration_value\":\"129\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\"\
+  ,\"component_id\":\"CHEBI:30772\",\"source\":\"Literal source component: Butyric\
+  \ acid. Issue 1227 IR003 component-specific adjudication: The cited recipe names\
+  \ Butyric acid; the inspected active catalog and primary ontology identity CHEBI:30772\
+  \ match this stated chemical form. Source spelling, amount, unit and preparation\
+  \ boundary are preserved; no role, owner-wide or export approval is transferred.\"\
+  },{\"component_name\":\"n-Valeric acid\",\"reference_scope\":\"MIM_CATALOG\",\"\
+  concentration_value\":\"32.25\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\",\"\
+  component_id\":\"CHEBI:17418\",\"source\":\"Literal source component: n-Valeric\
+  \ acid. Issue 1227 IR003 component-specific adjudication: The cited recipe names\
+  \ n-Valeric acid; the inspected active catalog and primary ontology identity CHEBI:17418\
+  \ match this stated chemical form. Source spelling, amount, unit and preparation\
+  \ boundary are preserved; no role, owner-wide or export approval is transferred.\"\
+  },{\"component_name\":\"iso-Butyric acid\",\"reference_scope\":\"MIM_CATALOG\",\"\
+  concentration_value\":\"32.25\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\",\"\
+  component_id\":\"CHEBI:16135\",\"source\":\"Literal source component: iso-Butyric\
+  \ acid. Issue 1227 IR003 component-specific adjudication: The cited recipe names\
+  \ iso-Butyric acid; the inspected active catalog and primary ontology identity CHEBI:16135\
+  \ match this stated chemical form. Source spelling, amount, unit and preparation\
+  \ boundary are preserved; no role, owner-wide or export approval is transferred.\"\
+  },{\"component_name\":\"DL-2-Methylbutyric acid\",\"reference_scope\":\"EXTERNAL_TERM\"\
+  ,\"concentration_value\":\"32.25\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\"\
+  ,\"component_id\":\"cas:116-53-0\",\"source\":\"Literal source component: DL-2-Methylbutyric\
+  \ acid, 32.25 ml per source batch, in DSMZ MediaDive solution 608 (https://mediadive.dsmz.de/rest/solution/608).\
+  \ Issue 1227 peer correction VM1227-PEER-001: TCI M0181 (https://www.tcichemicals.com/US/en/p/M0181)\
+  \ explicitly identifies DL-2-methylbutyric acid as CAS116-53-0. This registry-form\
+  \ bridge supports the named DL ingredient, not a DSMZ supplier/product assignment.\
+  \ CHEBI:37070 is a broader concept with individual R/S children; bounded local ChEBI/NCIt\
+  \ lookup did not establish an exact racemate term. No active local owner holds cas:116-53-0,\
+  \ so EXTERNAL_TERM is deliberate. Literal amount, source preparation and all holds\
+  \ remain; no structure, role or owner-wide approval is introduced.\"},{\"component_name\"\
+  :\"iso-Valeric acid\",\"reference_scope\":\"MIM_CATALOG\",\"concentration_value\"\
+  :\"32.25\",\"concentration_unit\":\"ML_PER_SOURCE_BATCH\",\"component_id\":\"CHEBI:28484\"\
+  ,\"source\":\"Literal source component: iso-Valeric acid. Issue 1227 IR003 component-specific\
+  \ adjudication: The cited recipe names iso-Valeric acid; the inspected active catalog\
+  \ and primary ontology identity CHEBI:28484 match this stated chemical form. Source\
+  \ spelling, amount, unit and preparation boundary are preserved; no role, owner-wide\
+  \ or export approval is transferred.\"}]"
+curation_history:
+- timestamp: '2026-11-08T04:36:11.840661+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 121. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.583114+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Seven source liquid
+    inputs are17,6,4,1,1,1,1mL. Their arithmetic sum31mL and API volume do not establish
+    additive final volume; units express only each literal input. No solvent is introduced.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.591531+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:20:00.916166+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined DSMZ solution 608 volatile fatty acid mixture with
+    complete immediate constituent enumeration and registry identity.  Isolated proposal
+    only; independent and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 7 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:53:05.971681+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_COMPONENT_IDENTITY_CORRECTION
+  changes: 'Resolve routed VM1227-PEER-001 for DL-2-Methylbutyric acid: replace the
+    overly broad exact catalog reference with cas:116-53-0 under EXTERNAL_TERM after
+    primary source/form review. Preserve source amount, unit, all other components,
+    complete stock identity, original history and every source/role/export hold. No
+    new owner or supplier procurement assertion.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:06:03.105882+00:00'
+  curator: worker02 /root
+  action: COMPOSED_NOMINAL_PROPOSAL
+  changes: 'Compose two authentic new-owner proposals into this private nominal scope
+    under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537.
+    Origins: NSV4-PROP-MediaDive_3774_VFA_Solution SHA256 9f7b7fac893a1ea8e9ae5f772fd38f4423bd95d6b0238c12c357cb4efd7d5328,
+    vm-prop-new-98 SHA256 068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8.
+    Original histories/evidence remain attributed to their original authors; this
+    is not a maintained-owner merge. One explicitly nominal seven-acid input recipe,
+    bounded to the two retained source batch profiles below. Global components have
+    no numerical amounts. In the matched chemical order acetic, propionic, straight-chain
+    butyric, iso-butyric, n-valeric, iso-valeric, DL-2-methylbutyric acid, MediaDive3774
+    gives 17/6/4/1/1/1/1 mL and MediaDive608 gives 548.5/193.5/129/32.25/32.25/32.25/32.25
+    mL. Six inputs scale by 32.25; acetate differs by 0.25 mL. These are not numerically
+    equal formulations, nor does either source state rounding. No tolerance, average,
+    solvent, neat-acid purity, additive final volume or empirical equivalence is inferred.
+    The original ordered profiles remain below without reordering. Existing W08 component
+    form references and their source evidence are retained; this composition does
+    not turn W01 UNMAPPED annotations into a new independent child-form approval.
+    COMPLETE concerns the seven named immediate inputs. Generic VFA labels remain
+    non-resolving source-local labels. Private proposal only. Exact occurrence selectors
+    and their original quantities, unsupported/withheld source associations and role/export
+    holds remain in the bound routing ledger. No maintained owner merge, role approval,
+    source-global mapping, source-release or export approval. Final complete candidate
+    bytes require distinct independent review. '
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003163 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003163
+legacy_identifiers:
+- MIM:Seven_Acid_VFA_Mixture_Acetate_Dominant_Recipe
+- kgmicrobe.ingredient:seven_acid_vfa_mixture_acetate_dominant_recipe

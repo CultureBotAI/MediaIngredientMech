@@ -69,17 +69,47 @@ curation_history:
     to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:36:28.285714+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Add primary publication support for starch expansion restricted to microbedecoder4104,4109,8883;
+    retain all unknown quantities and source-material holds. Proposal only; all source
+    and publication holds retained.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:19:18.764652+00:00'
+  curator: codex-worker03 /root dependent-origin author
+  action: COUPLED_PEPTONE_REFERENCE
+  changes: Under issue1176, couple only components[0].component_id from MICRO:0000178
+    to the supported generic Peptone owner mesh:D010461, conditional on exact current
+    W05-FINAL-MAT-039. Three exact original species-description abstracts explicitly
+    name peptone/yeast extract/glucose/starch; full papers are not claimed inspected.
+    Unknown quantities, complete formulation and all three material/source holds remain.
+    Preserve original W06 proposal R-P-PYGS-SOURCE-EVIDENCE and its frozen cases/history;
+    W03 authors only this new dependency correction, not that source work. Append
+    source-specific evidence; retain all other fields/quantities, source/role/export
+    holds. No global replacement or maintained application.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001984; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001984; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 components:
 - component_name: peptone
-  component_id: MICRO:0000178
+  component_id: mesh:D010461
   reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: yeast extract
@@ -103,8 +133,66 @@ component_assertion:
     source_record: PYGS
     notes: 'Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts (usually);
       ''S'' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged.'
+  - evidence_type: PUBLICATION
+    source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10555335&format=json&resultType=core
+    source_record: microbedecoder4104 / PMID10555335
+    supports: SUPPORT
+    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
+      broth for this organism/source context. Supports starch expansion here; no universal
+      quantities, individual substrate consumption or source-material release.
+  - evidence_type: PUBLICATION
+    source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1099/00207713-50-1-107&format=json&resultType=core
+    source_record: microbedecoder4109 / PMID10826793
+    supports: SUPPORT
+    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
+      broth for this organism/source context. Supports starch expansion here; no universal
+      quantities, individual substrate consumption or source-material release.
+  - evidence_type: PUBLICATION
+    source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10758868&format=json&resultType=core
+    source_record: microbedecoder8883 / PMID10758868
+    supports: SUPPORT
+    notes: Primary species-description abstract explicitly uses peptone/yeast-extract/glucose/starch
+      broth for this organism/source context. Supports starch expansion here; no universal
+      quantities, individual substrate consumption or source-material release.
+  - evidence_type: PUBLICATION
+    source: https://pubmed.ncbi.nlm.nih.gov/10555335/
+    source_record: Clostridium frigidicarnis original species-description abstract;
+      PMID10555335
+    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
+      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
+      complete formulation and all three material/source holds remain. Issue1176:
+      bind this one supported generic peptone part to mesh:D010461 only with exact
+      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
+      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
+      or owner/role/export approval follows. Agent-assisted applicability assessment;
+      preserve all predecessor assertions/history and holds.'
+  - evidence_type: PUBLICATION
+    source: https://pubmed.ncbi.nlm.nih.gov/10826793/
+    source_record: Clostridium gasigenes original species-description abstract; PMID10826793
+    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
+      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
+      complete formulation and all three material/source holds remain. Issue1176:
+      bind this one supported generic peptone part to mesh:D010461 only with exact
+      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
+      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
+      or owner/role/export approval follows. Agent-assisted applicability assessment;
+      preserve all predecessor assertions/history and holds.'
+  - evidence_type: PUBLICATION
+    source: https://pubmed.ncbi.nlm.nih.gov/10758868/
+    source_record: Clostridium algidixylanolyticum original species-description abstract;
+      PMID10758868
+    notes: 'Three exact original species-description abstracts explicitly name peptone/yeast
+      extract/glucose/starch; full papers are not claimed inspected. Unknown quantities,
+      complete formulation and all three material/source holds remain. Issue1176:
+      bind this one supported generic peptone part to mesh:D010461 only with exact
+      W05-FINAL-MAT-039 c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7.
+      No supplier, animal source, enzyme, Bacto product identity, organism-consumption
+      or owner/role/export approval follows. Agent-assisted applicability assessment;
+      preserve all predecessor assertions/history and holds.'
   notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+    variant hierarchy, or complete culturing recipe. These three source contexts support
+    the starch expansion. Exact recipe quantities and universal PYGS formulation remain
+    unknown; completeness UNKNOWN and all three material-edge holds remain.
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:pygs

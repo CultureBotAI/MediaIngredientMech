@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:sazae_meat_pieces_nbrc1130
+preferred_term: Cut sazae turban-shell meat (NBRC 1130)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sazae_meat_pieces_nbrc1130
+  ontology_label: Cut sazae turban-shell meat (NBRC 1130)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1886
+    notes: NBRC1130 via TOGO M1886 explicitly names turban-shell/sazae meat cut. Represent
+      the source common-name tissue preparation without assigning a guessed Latin
+      species, hydrolysate identity or tissue composition. Taxonomic precision is
+      a possible later refinement, not required to preserve the demonstrated material.
+      No exact supported ontology/CAS identity established in the recorded bounded
+      lookup; source-qualified preparation registry identity only.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.572769+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: NBRC1130 via TOGO M1886 explicitly names turban-shell/sazae meat cut. Represent
+    the source common-name tissue preparation without assigning a guessed Latin species,
+    hydrolysate identity or tissue composition. Taxonomic precision is a possible
+    later refinement, not required to preserve the demonstrated material. Isolated
+    successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.869446+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003160 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: 'NBRC1130 via TOGO M1886 explicitly names turban-shell/sazae meat cut. Represent
+  the source common-name tissue preparation without assigning a guessed Latin species,
+  hydrolysate identity or tissue composition. Taxonomic precision is a possible later
+  refinement, not required to preserve the demonstrated material. Source labels retained
+  as nonresolving provenance: [{"case_id": "CM_NAME:90681c62817776ef2c60af1673667511ac3b308b1b33a5be8d282069217d42b0",
+  "raw_label": "Turban shell (sazae) meat cut"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved.'
+mim_id: MIM:0003160
+legacy_identifiers:
+- MIM:Sazae_Meat_Pieces_NBRC1130
+- kgmicrobe.ingredient:sazae_meat_pieces_nbrc1130

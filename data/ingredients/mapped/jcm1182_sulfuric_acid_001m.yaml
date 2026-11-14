@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:jcm1182_sulfuric_acid_001m
+preferred_term: JCM 1182 0.01 M sulfuric acid preparation
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1182_sulfuric_acid_001m
+  ontology_label: JCM 1182 0.01 M sulfuric acid preparation
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/medium/M1267
+    notes: The JCM1182 trace-element recipe specifies 1.0 L of 0.01 M H2SO4 as an
+      input preparation. Analytical acid concentration is explicit; solvent composition
+      is unstated. The record does not equate the whole preparation to neat sulfuric
+      acid. No verified exact eligible ontology term or existing whole-preparation
+      owner was established by the bounded source/owner review. This self-registry
+      mapping represents the preparation, not its individual constituents.
+synonyms: []
+notes: The JCM1182 trace-element recipe specifies 1.0 L of 0.01 M H2SO4 as an input
+  preparation. Analytical acid concentration is explicit; solvent composition is unstated.
+  The record does not equate the whole preparation to neat sulfuric acid. Raw source
+  labels and original occurrence IDs remain in the evidence ledger; no recipe-local
+  label is activated as a global synonym. All inherited release holds remain.
+solution_type: OTHER
+components:
+- component_name: H2SO4
+  component_id: CHEBI:26836
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M1267
+    source_record: JCM 1182 0.01 M sulfuric acid preparation
+    notes: The JCM1182 trace-element recipe specifies 1.0 L of 0.01 M H2SO4 as an
+      input preparation. Analytical acid concentration is explicit; solvent composition
+      is unstated. The record does not equate the whole preparation to neat sulfuric
+      acid.
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: The JCM1182 trace-element recipe specifies 1.0 L of 0.01 M H2SO4 as an
+    input preparation. Analytical acid concentration is explicit; solvent composition
+    is unstated. The record does not equate the whole preparation to neat sulfuric
+    acid.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003243 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003243
+legacy_identifiers:
+- MIM:jcm1182_sulfuric_acid_001m
+- kgmicrobe.ingredient:jcm1182_sulfuric_acid_001m

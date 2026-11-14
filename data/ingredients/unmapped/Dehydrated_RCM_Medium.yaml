@@ -46,16 +46,75 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a
+    choice among manufacturer preparations, not one exact supplier product. Curate
+    eight common named components without brand-specific quantities, preserve supplier
+    choice and separately addedresazurin. The exact product selection is a real scientific
+    gap, not a component-grounding prerequisite. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002766; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002766; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a dehydrated medium preparation pending
-  product- or recipe-level curation.
+  product- or recipe-level curation. Correction1193: DSMZ634 explicitly allows BD-BBL,Oxoid
+  orMerck RCM, so this source is a choice among manufacturer preparations, not one
+  exact supplier product. Curate eight common named components without brand-specific
+  quantities, preserve supplier choice and separately addedresazurin. The exact product
+  selection is a real scientific gap, not a component-grounding prerequisite.'
 ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+- component_name: Glucose
+  reference_scope: UNMAPPED
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+- component_name: Cysteine hydrochloride
+  reference_scope: UNMAPPED
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+- component_name: Agar
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.maplica.com/Manual%20Difco%20P-S.pdf
+    notes: DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a
+      choice among manufacturer preparations, not one exact supplier product. Curate
+      eight common named components without brand-specific quantities, preserve supplier
+      choice and separately addedresazurin. The exact product selection is a real
+      scientific gap, not a component-grounding prerequisite.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.merckmillipore.com/deepweb/assets/sigmaaldrich/product/documents/127/284/105411-mk.pdf
+    notes: Independent verification of common named parts; supplier product choice
+      remains unresolved.
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Instructions/MBD_BT_IFU-0539%20CM0149B%20REINFORCED%20CLOSTRIDIAL%20MEDIUM.pdf
+    notes: Independent verification of common named parts; supplier product choice
+      remains unresolved.
 mim_id: MIM:0002766
 legacy_identifiers:
 - MIM:Dehydrated_RCM_Medium

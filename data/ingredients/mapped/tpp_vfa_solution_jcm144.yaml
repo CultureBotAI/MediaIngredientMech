@@ -1,0 +1,93 @@
+identifier: kgmicrobe.ingredient:tpp_vfa_solution_jcm144
+preferred_term: TPP/VFA solution (JCM 144)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COFACTOR_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tpp_vfa_solution_jcm144
+  ontology_label: TPP/VFA solution (JCM 144)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      144 specifies TPP/VFA solution from 1.5 mL of 0.2% thiamine pyrophosphate, 1
+      mL of its VFA solution and 8.4 mL distilled water, then filter sterilization.
+      The VFA input has its own same-page formulation; it is retained as a stock component.
+      The inputs sum to 10.9 mL; the source does not certify a 10 mL final denominator,
+      so none is invented.
+components:
+- component_name: 0.2% thiamine pyrophosphate solution
+  reference_scope: UNMAPPED
+  source: Source input 1.5 mL; percent basis and supplied form unresolved.
+- component_name: VFA solution (JCM 144)
+  reference_scope: UNMAPPED
+  source: Source input 1 mL; same page specifies isobutyric, 2-methylbutyric, isovaleric
+    and valeric acids, 0.5 mL each, with 0.1 N NaOH to 100 mL.
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  source: Source input 8.4 mL.
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144
+    source_record: TPP/VFA solution (JCM 144)
+    notes: JCM 144 specifies TPP/VFA solution from 1.5 mL of 0.2% thiamine pyrophosphate,
+      1 mL of its VFA solution and 8.4 mL distilled water, then filter sterilization.
+      The VFA input has its own same-page formulation; it is retained as a stock component.
+      The inputs sum to 10.9 mL; the source does not certify a 10 mL final denominator,
+      so none is invented.
+  notes: TPP stock percent basis and chemical form remain unknown. The part list is
+    deliberately partial at preparation/speciation level, and no exact identity link
+    to the defective existing 0.2% TPP owner is asserted. Source-named parts remain
+    UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG
+    references identify only the supported constituent, not approval of that complete
+    owner.
+notes: JCM 144 specifies TPP/VFA solution from 1.5 mL of 0.2% thiamine pyrophosphate,
+  1 mL of its VFA solution and 8.4 mL distilled water, then filter sterilization.
+  The VFA input has its own same-page formulation; it is retained as a stock component.
+  The inputs sum to 10.9 mL; the source does not certify a 10 mL final denominator,
+  so none is invented. TPP stock percent basis and chemical form remain unknown. The
+  part list is deliberately partial at preparation/speciation level, and no exact
+  identity link to the defective existing 0.2% TPP owner is asserted. Provenance-only
+  source text 'TPP/VFA mixture (see below)' (case CM_NAME:c3670da453732681e6eba32d3fdf0d4ea5e4c7afbabf8aa46ee2f2e863dccdd2).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.047048+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003365 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003365
+legacy_identifiers:
+- MIM:tpp_vfa_solution_jcm144
+- kgmicrobe.ingredient:tpp_vfa_solution_jcm144

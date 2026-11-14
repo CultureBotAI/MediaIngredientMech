@@ -1,10 +1,10 @@
-identifier: CHEBI:86477
+identifier: kgmicrobe.compound:sodium_sulfite_pentahydrate
 preferred_term: Na2SO3 x 5 H2O
 ontology_mapping:
   ontology_id: CHEBI:86477
   ontology_label: sodium sulfite
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -17,6 +17,20 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's
       ChEBI formula ('2Na.O3S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1353.pdf
+    notes: DSMZ1353 explicitly states Na2SO3 x5H2O0.01g in its500mL trace-element
+      recipe. Preserve this source-stated five-water substance with its own registry
+      identity and asymmetric sodium-sulfite parent under MAPPING_SEMANTICS§3; this
+      is formal source transcription, not measured crystal-phase, commercial purity
+      or supplier characterization. Exact current ChEBI query returned no hydrate
+      term; PubChem19790054 has matching formal composition but the inspected synonym
+      response supplies no CAS. No new CAS or molecular mass is asserted. The existing26
+      occurrence statistics and all original histories are preserved; those26 occurrences,
+      the inherited unqualified disodium-sulfite alias and downstream source/SSSOM
+      selectors require their own scoped review. This proposal neither reassigns them
+      nor clears their holds. Earlier database-match entries remain historical evidence
+      of import/formula repair; they do not establish exact anhydrous identity.
 synonyms:
 - synonym_text: Anhydrous sodium sulfite
   synonym_type: REJECTED_LABEL
@@ -115,21 +129,57 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T08:04:03.943442+00:00'
+  curator: worker04_root_independent_finding_correction_proposal
+  action: CORRECTED
+  changes: 'Address independently recorded FINAL-BIO-CHEM-02 and existing#896: correct
+    this existing five-water owner in place, retain preferred label and history, change
+    exact anhydrous identity to local registry with NARROW_MATCH parent, remove stale
+    anhydrous KG node and active anhydrous structural descriptors. Archived prior
+    chemical_properties: {"data_source": "PubChem (via CHEBI:86477)", "retrieval_date":
+    "2026-04-09T00:32:50.689620+00:00", "molecular_formula": "2Na.O3S.5H2O", "inchi":
+    "InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2", "smiles": "O=S([O-])[O-].[Na+].[Na+]"}.
+    DSMZ1353 explicitly states Na2SO3 x5H2O0.01g in its500mL trace-element recipe.
+    Preserve this source-stated five-water substance with its own registry identity
+    and asymmetric sodium-sulfite parent under MAPPING_SEMANTICS§3; this is formal
+    source transcription, not measured crystal-phase, commercial purity or supplier
+    characterization. Exact current ChEBI query returned no hydrate term; PubChem19790054
+    has matching formal composition but the inspected synonym response supplies no
+    CAS. No new CAS or molecular mass is asserted. The existing26 occurrence statistics
+    and all original histories are preserved; those26 occurrences, the inherited unqualified
+    disodium-sulfite alias and downstream source/SSSOM selectors require their own
+    scoped review. This proposal neither reassigns them nor clears their holds. Isolated
+    proposal only; all source, role, whole-owner and export holds remain.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001827; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-kg_microbe_node_id: CHEBI:86477
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001827; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
-  data_source: PubChem (via CHEBI:86477)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: 2Na.O3S.5H2O
-  inchi: InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
-  smiles: O=S([O-])[O-].[Na+].[Na+]
+  data_source: 'DSMZ1353 trace-element table: explicit Na2SO3 x5H2O. Formal source
+    transcription, not measured crystallography.'
 ingredient_type: SINGLE_INGREDIENT
+notes: ' DSMZ1353 explicitly states Na2SO3 x5H2O0.01g in its500mL trace-element recipe.
+  Preserve this source-stated five-water substance with its own registry identity
+  and asymmetric sodium-sulfite parent under MAPPING_SEMANTICS§3; this is formal source
+  transcription, not measured crystal-phase, commercial purity or supplier characterization.
+  Exact current ChEBI query returned no hydrate term; PubChem19790054 has matching
+  formal composition but the inspected synonym response supplies no CAS. No new CAS
+  or molecular mass is asserted. The existing26 occurrence statistics and all original
+  histories are preserved; those26 occurrences, the inherited unqualified disodium-sulfite
+  alias and downstream source/SSSOM selectors require their own scoped review. This
+  proposal neither reassigns them nor clears their holds.'
 mim_id: MIM:0001827
 legacy_identifiers:
 - MIM:Na2so3_X_5_H2o
 - CHEBI:86477
+- kgmicrobe.compound:sodium_sulfite_pentahydrate

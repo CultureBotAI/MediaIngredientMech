@@ -1,0 +1,103 @@
+identifier: kgmicrobe.ingredient:bicarbonate_basal_medium_togo_m2185
+preferred_term: Bicarbonate basal medium, BBM (TOGO M2185)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bicarbonate_basal_medium_togo_m2185
+  ontology_label: Bicarbonate basal medium, BBM (TOGO M2185)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2185
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M2185 names BBM and gives the basal salts, vitamin solution, mineral solution
+      and water. This NAMED_MEDIUM record denotes the basal medium used as an ingredient.
+      Nitrate and varied acetate additions belong to the receiving experiment and
+      are excluded. The Bruce et al. 1999 reference is source provenance; its full
+      text was not obtained and is not claimed as evidence for these amounts.
+components:
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  source: Printed 0.25 g per litre of basal medium.
+- component_name: NaH2PO4
+  reference_scope: UNMAPPED
+  source: Printed 0.6 g per litre; hydration unspecified.
+- component_name: KCl
+  reference_scope: UNMAPPED
+  source: Printed 0.1 g per litre.
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  source: Printed 2.52 g per litre.
+- component_name: Vitamin solution (TOGO M2185)
+  reference_scope: UNMAPPED
+  source: Printed 10 mL input stock; same source lists its components.
+- component_name: Mineral solution (TOGO M2185)
+  reference_scope: UNMAPPED
+  source: Printed 10 mL input stock; same source lists its components.
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  source: Printed 1 L basal preparation context; no final-volume correction.
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2185
+    source_record: Bicarbonate basal medium, BBM (TOGO M2185)
+    notes: TOGO M2185 names BBM and gives the basal salts, vitamin solution, mineral
+      solution and water. This NAMED_MEDIUM record denotes the basal medium used as
+      an ingredient. Nitrate and varied acetate additions belong to the receiving
+      experiment and are excluded. The Bruce et al. 1999 reference is source provenance;
+      its full text was not obtained and is not claimed as evidence for these amounts.
+  notes: Some salt supplied forms, full quantitative stock reconstruction and final-volume
+    interpretation remain unresolved. Partial source-supported decomposition is sufficient
+    to identify this named basal preparation. Source-named parts remain UNMAPPED where
+    supplied form or stock identity is not established. MIM_CATALOG references identify
+    only the supported constituent, not approval of that complete owner.
+notes: TOGO M2185 names BBM and gives the basal salts, vitamin solution, mineral solution
+  and water. This NAMED_MEDIUM record denotes the basal medium used as an ingredient.
+  Nitrate and varied acetate additions belong to the receiving experiment and are
+  excluded. The Bruce et al. 1999 reference is source provenance; its full text was
+  not obtained and is not claimed as evidence for these amounts. Some salt supplied
+  forms, full quantitative stock reconstruction and final-volume interpretation remain
+  unresolved. Partial source-supported decomposition is sufficient to identify this
+  named basal preparation. Provenance-only source text 'Bicarbonate-buffered basal
+  medium (BBM)' (case CM_NAME:e665b825fbda7fa942884bbe313e925d87d37d27dfb29d2c32ed270eb2d70131).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.083648+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003215 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003215
+legacy_identifiers:
+- MIM:bicarbonate_basal_medium_togo_m2185
+- kgmicrobe.ingredient:bicarbonate_basal_medium_togo_m2185

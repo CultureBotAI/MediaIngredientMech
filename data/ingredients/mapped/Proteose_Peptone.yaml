@@ -22,14 +22,17 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: manual
 - synonym_text: Proteose peptone no. 3
-  synonym_type: RELATED_SYNONYM
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose peptone No. 3 (BD-Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Bacto Proteose Peptone No. 3 (Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose Peptone
   synonym_type: EXACT_SYNONYM
   source: manual
@@ -40,8 +43,9 @@ synonyms:
   synonym_type: RELATED_SYNONYM
   source: manual
 - synonym_text: Proteose Peptone (Difco no. 3)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose peptone (Difco)
   synonym_type: CATALOG_VARIANT
   source: manual
@@ -49,17 +53,21 @@ synonyms:
   synonym_type: CATALOG_VARIANT
   source: manual
 - synonym_text: Proteose Peptone No. 3
-  synonym_type: RELATED_SYNONYM
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Bacto Proteose Peptone No.3 (Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose peptone no.3 (Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose peptone No. 3 (BD--Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
+  synonym_type: REJECTED_LABEL
+  source: 'manual; worker05 source review: distinct substance/product; retained as
+    nonresolving provenance.'
 - synonym_text: Proteose peptone (BD--Difco)
   synonym_type: CATALOG_VARIANT
   source: manual
@@ -149,11 +157,26 @@ curation_history:
     Peptone record after splitting Proteose peptone no. 2 to a local kgmicrobe.ingredient
     identity anchored to the well-formed MICRO:0000180 parent. See #137.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:17:20.168806+00:00'
+  curator: worker05/materials_research (Codex proposal)
+  action: CORRECTED
+  changes: Reject numbered Proteose Peptone No.3 aliases on the unnumbered generic
+    Proteose owner; preserve exact raw labels and provenance. Isolated proposal only.
+    Changed bytes withdraw inherited support; no role, whole-owner or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002130; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002130; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: 'CultureMech placeholder_id: 3; absorbed Peptic digest of animal tissue source
   surface on 2026-05-11.'

@@ -7,6 +7,12 @@ synonyms:
 - synonym_text: N-Z-Amine A
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: N--Z Amine, type A (Sheffield)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06; CM_NAME:a068b8e304ea67121e10f7c68d6740704e58bb067bf7a3240715296058cf201c
+- synonym_text: N--Z amine, type A (Sheffield)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06; CM_NAME:7513c6aa9fa07a62140c31216b5451cd6a58bd0d439e7e6fb0162efb861723cc
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -50,15 +56,33 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''N-Z-Amine A'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:28:48.441410+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: ADDED_SYNONYMS
+  changes: Added exact source-qualified RAW_TEXT aliases N--Z Amine, type A (Sheffield)
+    and N--Z amine, type A (Sheffield) after comparing JCM437 and six independent
+    JCM44/45/47/80/103/104 recipe references. Preserve UNMAPPED, undefined-mixture
+    status, product grade distinctions and original catalogue uncertainty. Isolated
+    proposal only; no publication or inherited support approval.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002858; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002858; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2439); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a protein hydrolysate/preparation pending
-  product-level curation.
+  product-level curation. Sheffield TypeA raw labels are retained as source-qualified
+  product-family wording. This does not establish catalogue-grade equivalence between
+  Sheffield material, Sigma C7290 or C0626, EZMix, TypeB or generic N-Z amine; product-level
+  identity and ontology grounding remain unresolved.
 ingredient_type: UNDEFINED_MIXTURE
 mim_id: MIM:0002858
 legacy_identifiers:

@@ -1,0 +1,66 @@
+identifier: kgmicrobe.ingredient:jcm_665_sodium_acetate_2m_ph7
+preferred_term: JCM665 sodiumacetate2M pH7 stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_665_sodium_acetate_2m_ph7
+  ontology_label: JCM665 sodiumacetate2M pH7 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=665
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=665
+    source_record: JCM665 sodiumacetate2M pH7 stock
+    notes: Nominal source-qualified stock only. pH7.0; solvent,titrant and suppliedhydrate
+      unreported. The source does not establish a complete constituent list; no omitted
+      solvent or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Nominal source-qualified stock only. pH7.0; solvent,titrant and suppliedhydrate
+  unreported. The source does not establish a complete constituent list; no omitted
+  solvent or titrant is invented. Raw source labels retained in linked frozen cases:
+  [''2 M Sodium acetate (pH 7.0)'']. Generic labels are not global resolving synonyms.
+  No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.246240+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003285 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003285
+legacy_identifiers:
+- MIM:jcm_665_sodium_acetate_2m_ph7
+- kgmicrobe.ingredient:jcm_665_sodium_acetate_2m_ph7

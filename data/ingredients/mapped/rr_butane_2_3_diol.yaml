@@ -1,0 +1,55 @@
+identifier: CHEBI:16982
+preferred_term: (R,R)-butane-2,3-diol
+ontology_mapping:
+  ontology_id: CHEBI:16982
+  ontology_label: (R,R)-butane-2,3-diol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:16982
+    notes: Primary ChEBI definition verified against exact frozen source identity;
+      no unsupported supplied grade, dose or molecular property imported.
+synonyms:
+- synonym_text: (R,R)-Butane-2,3-diol
+  synonym_type: RAW_TEXT
+  source: culturemech:(R,R)-Butane-2,3-diol
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: Source-review proposal only; source stock concentrations and medium doses remain
+  in CultureMech. No claim that independent review or release gates are complete.
+curation_history:
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose distinct exact CHEBI:16982 identity for (R,R)-Butane-2,3-diol;
+    preserve explicit stereochemistry/polymer/sodium form.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:55:57.876916+00:00'
+  curator: Codex worker09
+  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
+  changes: 'Issue #1226 provenance-only correction for ma-new-rr_butane_2_3_diol,
+    audit flag 568: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
+    not a MIM human reviewer; the cited source author is distinct from the author
+    of this curation judgment. Preserved the complete source, notes and claim content,
+    all other mapping evidence (including the ambiguous historical Casamino wrapper
+    where present), component evidence, scientific fields and prior history. No identity,
+    source applicability, outcome, role, coalescence or export approval change. Audit:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
+    complete original evidence-object SHA256 d32bf3b7085cf55d142a64677cda3c1d328a7bd8560f52f0f49f0f8d3112c790.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003334 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003334
+legacy_identifiers:
+- MIM:rr_butane_2_3_diol
+- CHEBI:16982

@@ -50,12 +50,6 @@ synonyms:
 - synonym_text: Tris buffer
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: Tris buffer 1M
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Tris hydrochloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: Tris(hydroxymethyl)aminomethane
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -80,9 +74,6 @@ synonyms:
 - synonym_text: aminotris(hydroxymethyl)methane
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: nitrilotriacetic acid trisodium salt
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: Tris
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
@@ -93,12 +84,6 @@ synonyms:
     component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: Tris-HCl buffer
-  synonym_type: EXACT
-  source: manual
-- synonym_text: Tris HCl
-  synonym_type: EXACT
-  source: manual
 - synonym_text: 'Role: Buffer; Properties: Defined component, Complex component, Solution'
   synonym_type: RAW_TEXT
   source: CultureMech
@@ -114,8 +99,23 @@ synonyms:
 - synonym_text: Tris (hydroxymethyl) aminomethane
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Tris buffer 1M
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Tris hydrochloride
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: nitrilotriacetic acid trisodium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Tris-HCl buffer
+  synonym_type: REJECTED_LABEL
+  source: manual
+- synonym_text: Tris HCl
+  synonym_type: REJECTED_LABEL
+  source: manual
 - synonym_text: Tris・HCl
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -254,11 +254,67 @@ curation_history:
     not resolve them: ''Tris (hydroxymethyl) aminomethane'' (x4 CultureMech mentions);
     ''Tris・HCl'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:15:32.683727+00:00'
+  curator: Codex worker08 /root/inorganics
+  action: CORRECTED
+  changes: 'Reject four hydrochloride/Tris-HCl labels on the free tris base owner;
+    preserve source provenance. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:9754,
+    https://www.sigmaaldrich.com/US/en/product/sigma/t3253, https://www.ebi.ac.uk/chebi/CHEBI:46097;
+    capture keys: if-web-6322279750cf, if-web-dc07e461177a, if-web-c9217d1795e3; see
+    reports/all_unmatched_20261107/worker-08/research/inorganic_forms. Proposed bytes
+    only; all existing release holds retained.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: REJECTED_INCORRECT_IDENTITY_ALIASES
+  changes: 'Reject six inappropriate resolving aliases on Tris free base: hydrochloride
+    labels denote distinct salt or buffer contexts, Tris buffer1M denotes a preparation,
+    and nitrilotriacetic acid trisodium salt is an unrelated chelator. Preserve all
+    original label texts, sources, chemistry, roles, counts and history. Full local
+    occurrence table examined; no blanket reassignment of its198 existing Tris-base
+    hits.'
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+  previous_status: MAPPED
+- timestamp: '2026-11-08T06:15:28.229007+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: REJECTED_UNSAFE_IDENTITY_ALIASES
+  changes: 'Independent review IF1201-R2: change Tris buffer 1M and nitrilotriacetic
+    acid trisodium salt to REJECTED_LABEL while preserving their exact text and original
+    kg_microbe source provenance. A 1 M buffer preparation is not pure tris, and nitrilotriacetate
+    is a different chemical. Retain the original proposal history and all four hydrochloride/Tris-HCl
+    label rejections. This successor replaces that original proposal once, preserving
+    its source-case link and original before hash. Primary identity, chemistry, roles,
+    counts and source holds remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-026. Origins:
+    w05::CHEM-C1193-Tris-base-aliases; w08::if1201-edit-tris-alias-scope. Authentic
+    beforeimage, every authored event and all source-case/capture bindings are retained
+    in the adjacent trace. This is candidate composition, not corpus application,
+    owner merge, role approval, inherited support or release approval. Independent
+    whole-owner science review is required.'
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002553; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002553; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:9754
 chemical_properties:
@@ -276,6 +332,12 @@ physicochemical_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Buffer'
+notes: ' Reject six inappropriate resolving aliases on Tris free base: hydrochloride
+  labels denote distinct salt or buffer contexts, Tris buffer1M denotes a preparation,
+  and nitrilotriacetic acid trisodium salt is an unrelated chelator. Preserve all
+  original label texts, sources, chemistry, roles, counts and history. Full local
+  occurrence table examined; no blanket reassignment of its198 existing Tris-base
+  hits.'
 mim_id: MIM:0002553
 legacy_identifiers:
 - MIM:Tris_Base

@@ -1,9 +1,15 @@
 identifier: kgmicrobe.ingredient:vitamin_solution_see_medium_no_403
-preferred_term: Vitamin solution see Medium No. 403
+preferred_term: JCM 403 vitamin solution
 synonyms:
 - synonym_text: Vitamin solution see Medium No. 403
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: mim-queue
+- synonym_text: Vitamin solution* (see Medium No. 403 )
+  synonym_type: REJECTED_LABEL
+  source: 'JCM Medium 403, Vitamin solution; source mediadive.ingredient:1855: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403'
+- synonym_text: Vitamin solution (see Medium No. 403)
+  synonym_type: REJECTED_LABEL
+  source: 'JCM Medium 403, Vitamin solution; source mediadive.ingredient:1855: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -49,15 +55,57 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-11-08T05:19:58.963635+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: JCM Medium 403 separately defines this vitamin mixture as p-aminobenzoic
+    acid 4 mg, biotin 1 mg, nicotinic acid 10 mg, DL-calcium pantothenate 5 mg and
+    pyridoxine hydrochloride 10 mg in 100 ml sodium phosphate buffer (10 mM, pH 7.1).
+    The separate thiamine and vitamin B12 stocks are excluded. Raw pointer aliases
+    apply only to this JCM formulation. Isolated proposal only; independent and coordinator
+    review remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:22:24.965899+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_PROVENANCE_REFINED
+  changes: 'Independent review: replace generic author-only attribution on newly proposed
+    aliases with exact primary recipe/product identifier and URL. Existing aliases
+    and identity/component claims are unchanged. Isolated successor proposal only.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR002: qualify the preferred name by JCM and retain the three providerless
+    recipe pointers as REJECTED_LABEL provenance only; IR003: bind 4 compatible source
+    components to active catalog entities or explicitly conditional selected-proposal
+    entities without copying role or export approval. Earlier history and all source,
+    scientific, role, withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002625; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002625; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1855); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Medium-specific vitamin solution is a formulation
-  pointer, not identical to the generic vitamin solution class.
+  pointer, not identical to the generic vitamin solution class. JCM Medium 403 separately
+  defines this vitamin mixture as p-aminobenzoic acid 4 mg, biotin 1 mg, nicotinic
+  acid 10 mg, DL-calcium pantothenate 5 mg and pyridoxine hydrochloride 10 mg in 100
+  ml sodium phosphate buffer (10 mM, pH 7.1). The separate thiamine and vitamin B12
+  stocks are excluded. Providerless Medium No. 403 pointers are retained as REJECTED_LABEL
+  provenance and must not resolve or export as names. Source occurrence links establish
+  this JCM preparation separately.
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: MICRO:0000460
@@ -77,6 +125,72 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+solution_type: VITAMIN_MIX
+components:
+- component_name: p-Aminobenzoic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '4.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:30753
+  source: 'Literal source component: p-Aminobenzoic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names p-Aminobenzoic acid; the inspected active
+    catalog and primary ontology identity CHEBI:30753 match this stated chemical form.
+    Source spelling, amount, unit and preparation boundary are preserved; no role,
+    owner-wide or export approval is transferred.'
+- component_name: Biotin
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:15956
+  source: 'Literal source component: Biotin. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names Biotin; the inspected active catalog and primary ontology
+    identity CHEBI:15956 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: Nicotinic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:15940
+  source: 'Literal source component: Nicotinic acid. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Nicotinic acid; the inspected active catalog
+    and primary ontology identity CHEBI:15940 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: DL-Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Source explicitly says DL; the active
+    CHEBI:31345 structure is D-specific. No D-only substitution.'
+- component_name: Pyridoxine·HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:30961
+  source: 'Literal source component: Pyridoxine·HCl. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Pyridoxine·HCl; the inspected active catalog
+    and primary ontology identity CHEBI:30961 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+- component_name: Sodium phosphate buffer (10 mM, pH 7.1)
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: The active generic sodium-phosphate-buffer
+    owner combines several strengths/pH values. No exact complete 10 mM pH 7.1 stock
+    formulation bridge is established.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+    source_record: JCM Medium 403, separately enumerated vitamin stock
+    notes: Amounts are literal source-batch amounts, not finished-medium concentrations.
+      Compatible components now reference their inspected catalog entities; remaining
+      UNMAPPED references preserve the specific unresolved vitamer, stereochemistry
+      or nested-preparation boundary.
 mim_id: MIM:0002625
 legacy_identifiers:
 - MIM:Vitamin_Solution_See_Medium_No_403

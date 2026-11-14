@@ -1,14 +1,38 @@
-identifier: CHEBI:131366
+identifier: CHEBI:38888
 preferred_term: Na2B4O7 x 10 H2O
 ontology_mapping:
-  ontology_id: CHEBI:131366
-  ontology_label: disodium tetraborate decahydrate
+  ontology_id: CHEBI:38888
+  ontology_label: disodium tetraborate octahydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: MANUAL_CURATION
   evidence:
-  - evidence_type: MANUAL_CURATION
-    source: cbclaw_new_entry
-    notes: Created to cover unmapped CultureMech surface forms
+  - evidence_type: LLM_SUGGESTION
+    source: https://journals.iucr.org/e/issues/2008/05/00/wm2174/wm2174.pdf
+    notes: The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O
+      and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material.
+      Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium
+      tetraborate decahydrate as the latter structural formula, with Mr381.38. Official
+      CHEBI38888 has that structural formula and381.371 mass; its octahydrate label
+      counts the eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O.
+      Official supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates
+      supplied form. CHEBI131366 and86222 instead contain two excess waters and remain
+      upstream defects. This identity proposal covers explicitly weighed decahydrate
+      reagent contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no
+      global mediadive.ingredient:196 exact redirect is approved.
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:38888
+    notes: Live official structural formula and mass agree with the primary borax
+      structure; exact label retained.
+  - evidence_type: LLM_SUGGESTION
+    source: https://journals.iucr.org/e/issues/2008/05/00/wm2174/wm2174.pdf
+    notes: 'Method correction under #1201 comment6724230173, retaining the established
+      #318 identity. Selection of CHEBI:38888 required comparing conventional Na2B4O7·10H2O
+      with the primary borax structure Na2[B4O5(OH)4]·8H2O and the official ChEBI
+      structure/mass; it was not established by a primary-label lexical match. MANUAL_CURATION
+      records that substantive adjudication, with this new evidence explicitly LLM-authored.
+      Preserve the conventional decahydrate aliases, CAS and structural properties,
+      unchanged exact own-identifier relation, and the separate DSMZ770 0.1% stock/source-routing
+      hold. No new human verification, role or export approval.'
 synonyms:
 - synonym_text: Na2B4O7 x 10 H2O
   synonym_type: HYDRATE_FORM
@@ -106,18 +130,79 @@ curation_history:
     ·  10 H2O''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T04:36:22.312690+00:00'
+  curator: worker01_add_media_identity
+  action: CORRECTED
+  changes: 'Isolated proposal: replace internally inconsistent CHEBI131366 identity/properties
+    with structurally exact CHEBI38888 after primary formula-accounting verification.
+    Preserve conventionaldecahydrate raw labels, all original history/counts and unreviewed
+    roles. The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O
+    and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material.
+    Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate
+    decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888
+    has that structural formula and381.371 mass; its octahydrate label counts the
+    eight molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official
+    supplier CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied
+    form. CHEBI131366 and86222 instead contain two excess waters and remain upstream
+    defects. This identity proposal covers explicitly weighed decahydrate reagent
+    contexts; DSMZ7700.1%w/v stock remains a distinct preparation, so no global mediadive.ingredient:196
+    exact redirect is approved.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.383451+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T16:54:22.000658+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_MAPPING_METHOD
+  changes: 'Private successor for #1201 comment6724230173: change ontology_mapping.mapping_quality
+    from EXACT_MATCH to MANUAL_CURATION to describe the recorded identity adjudication,
+    and append one truthful LLM_SUGGESTION method note. Method correction under #1201
+    comment6724230173, retaining the established #318 identity. Selection of CHEBI:38888
+    required comparing conventional Na2B4O7·10H2O with the primary borax structure
+    Na2[B4O5(OH)4]·8H2O and the official ChEBI structure/mass; it was not established
+    by a primary-label lexical match. MANUAL_CURATION records that substantive adjudication,
+    with this new evidence explicitly LLM-authored. Preserve the conventional decahydrate
+    aliases, CAS and structural properties, unchanged exact own-identifier relation,
+    and the separate DSMZ770 0.1% stock/source-routing hold. No new human verification,
+    role or export approval. Preserve every original history event, evidence object
+    and all other fields. No maintained application or independent successor approval;
+    distinct full-payload and complete-row review remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001800; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001800; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
-  molecular_formula: 10H2O.H4B4O9.2Na
-  inchi: InChI=1S/B4H4O9.2Na.10H2O/c5-1-9-3(7)11-2(6)12-4(8,10-1)13-3;;;;;;;;;;;;/h5-8H;;;10*1H2/q-2;2*+1;;;;;;;;;;
-  smiles: O.O.O.O.O.O.O.O.O.O.[H]OB1O[B-]2(O[H])OB(O[H])O[B-](O[H])(O1)O2.[Na+].[Na+]
-  data_source: CHEBI sqlite (oaklib)
+  cas_rn: 1303-96-4
+  molecular_formula: 8H2O.H4B4O9.2Na
+  inchi: InChI=1S/B4H4O9.2Na.8H2O/c5-1-9-3(7)11-2(6)12-4(8,10-1)13-3;;;;;;;;;;/h5-8H;;;8*1H2/q-2;2*+1;;;;;;;;
+  smiles: '[H]OB1O[B-]2(O[H])OB(O[H])O[B-](O[H])(O1)O2.[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]'
+  data_source: Official OLS CHEBI38888 structure; CAS from official SigmaS9640; primary
+    structure DOI10.1107/S1600536808010441
 occurrence_statistics:
   total_occurrences: 263
   media_count: 263
@@ -130,7 +215,19 @@ physicochemical_roles:
       (buffer (role))'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+notes: The source conventional sodium tetraborate decahydrate formula Na2B4O7·10H2O
+  and structural borax formula Na2[B4O5(OH)4]·8H2O denote the same bulk material.
+  Gainsford etal2008 DOI10.1107/S1600536808010441 explicitly identifies sodium tetraborate
+  decahydrate as the latter structural formula, with Mr381.38. Official CHEBI38888
+  has that structural formula and381.371 mass; its octahydrate label counts the eight
+  molecular waters after hydroxylation and does not mean Na2B4O7·8H2O. Official supplier
+  CAS1303-96-4/Na2B4O7·10H2O/MW381.37 independently corroborates supplied form. CHEBI131366
+  and86222 instead contain two excess waters and remain upstream defects. This identity
+  proposal covers explicitly weighed decahydrate reagent contexts; DSMZ7700.1%w/v
+  stock remains a distinct preparation, so no global mediadive.ingredient:196 exact
+  redirect is approved.
 mim_id: MIM:0001800
 legacy_identifiers:
 - MIM:Na2b4o7_X_10_H2o
 - CHEBI:131366
+- CHEBI:38888

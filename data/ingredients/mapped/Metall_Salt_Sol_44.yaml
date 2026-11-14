@@ -44,15 +44,34 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Add source-backed Metals44 has-part decomposition from DSMZ590, preserving
+    hydrate forms and explicitly unresolved Na-EDTA/concentrated acid identities;
+    no mapping of whole stock to one salt. Keep borax decahydrate component UNMAPPED
+    pending issue1168 owner reconciliation; baseline CHEBI131366 is not approved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001632; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001632; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:615); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named metal salt stock solution pending
-  component list and formulation-specific curation.
+  component list and formulation-specific curation. Resolved source ingredient615
+  seeMedium590 to DSMZ Metals44 recipe. Add few drops concentrated H2SO4 to retard
+  heavy-metal precipitation. Source basis is1000ml distilled water; no exact Na-EDTA
+  stoichiometry or acid concentration invented.
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:metall_salt_sol_44
@@ -67,6 +86,64 @@ ontology_mapping:
       is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
       mint with no parent, because a multi-component mix does not narrow to any single
       compound (#288).'
+components:
+- component_name: Na-EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: mg
+- component_name: ZnSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32312
+  concentration_value: '1095'
+  concentration_unit: mg
+- component_name: FeSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:75836
+  concentration_value: '500'
+  concentration_unit: mg
+- component_name: MnSO4 x H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86364
+  concentration_value: '154'
+  concentration_unit: mg
+- component_name: CuSO4 x 5 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31440
+  concentration_value: '39.2'
+  concentration_unit: mg
+- component_name: Co(NO3)2 x 6 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:86214
+  concentration_value: '24.8'
+  concentration_unit: mg
+- component_name: Na2B4O7 x 10 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '17.7'
+  concentration_unit: mg
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1000'
+  concentration_unit: ml
+- component_name: concentrated H2SO4
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium590.pdf
+    source_record: DSMZ medium590, Metals44 subsection
+    notes: All listed components plus acid-addition instruction transcribed. Quantities
+      are recipe amounts per1000ml water, not an independently measured final-volume
+      concentration. Na-EDTA sodium stoichiometry and concentrated acid percentage/amount
+      are unspecified.
+  notes: 'Na-EDTA remains UNMAPPED because source does not specify mono/disodium form;
+    concentrated H2SO4 remains UNMAPPED as a prepared acid solution and has no invented
+    amount. A few drops are specified in source. Components are has-part, never identity
+    edges. Borax decahydrate is transcribed without component_id pending cross-shard
+    owner reconciliation: baseline CHEBI131366 is tracked as unsupported in issue1168;
+    do not silently apply pending CHEBI38888 correction before coordinator integration.'
 mim_id: MIM:0001632
 legacy_identifiers:
 - MIM:Metall_Salt_Sol_44

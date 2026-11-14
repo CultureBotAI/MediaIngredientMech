@@ -32,7 +32,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: merge_from_UNMAPPED_0412
 - synonym_text: KI (0.01% w/v)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -143,11 +143,30 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''KI (0.01% w/v)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: DSMZ 792b explicitly doses 0.50 ml KI (0.01% w/v) into solution A. This
+    is an aliquoted supplied stock, not neat potassium iodide CHEBI:8346. Mark only
+    this stock label REJECTED_LABEL on the chemical owner, preserving its raw text,
+    source and history. Do not infer stock solvent or use this to settle the separate
+    ambiguous KJ source case. Report-only isolated correction; all inherited holds
+    remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001402; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001402; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7681-11-0
@@ -165,6 +184,11 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Mineral'
+notes: DSMZ 792b explicitly doses 0.50 ml KI (0.01% w/v) into solution A. This is
+  an aliquoted supplied stock, not neat potassium iodide CHEBI:8346. Mark only this
+  stock label REJECTED_LABEL on the chemical owner, preserving its raw text, source
+  and history. Do not infer stock solvent or use this to settle the separate ambiguous
+  KJ source case.
 mim_id: MIM:0001402
 legacy_identifiers:
 - MIM:Ki

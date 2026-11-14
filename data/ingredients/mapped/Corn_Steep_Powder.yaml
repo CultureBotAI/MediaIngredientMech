@@ -1,0 +1,111 @@
+identifier: kgmicrobe.ingredient:corn_steep_powder
+preferred_term: Corn steep powder
+synonyms:
+- synonym_text: Corn steep powder
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2075); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a plant-derived steeping product and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Corn_steep_powder-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** “Corn steep powder”
+    is an **undefined, process-derived mixture**, most plausibly a shortened label
+    for **corn steep liquor powder** or **dried corn steep liquor powder (DCSLP)**.
+    It is used as a complex fermentation nutrient rather than as a single chemical,
+    salt, hydrate, buffer, or chemically defined formulation. Published work explicitly
+    calls DCSLP a commercial  No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T04:34:34.030560+00:00'
+  curator: worker01_add_media_identity
+  action: PROMOTED_TO_MAPPED
+  changes: 'Isolated proposal: promote existing source-linked owner UNMAPPED_0366
+    to kgmicrobe.ingredient:corn_steep_powder. Original DSMZ581 and admitted MediaDive
+    ingredient2075 explicitly identify corn steep powder as a5g medium ingredient.
+    Preserve this process-derived powder as its own undefined complex material. No
+    vendor, drying process, fixed chemical composition or equivalence to a particular
+    corn-steep-liquor concentrate is asserted. The absence of a fixed molecular formula
+    does not prevent a source-defined material registry identity. Preserve original
+    history and occurrence counts; no maintained data are changed.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.156636+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002761; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002761; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify
+  corn steep powder as a5g medium ingredient. Preserve this process-derived powder
+  as its own undefined complex material. No vendor, drying process, fixed chemical
+  composition or equivalence to a particular corn-steep-liquor concentrate is asserted.
+  The absence of a fixed molecular formula does not prevent a source-defined material
+  registry identity.
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Corn steep powder
+  form: powder
+  notes: Vendor and lot unspecified in original DSMZ581.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:corn_steep_powder
+  ontology_label: Corn steep powder
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium581.pdf
+    notes: Original DSMZ581 and admitted MediaDive ingredient2075 explicitly identify
+      corn steep powder as a5g medium ingredient. Preserve this process-derived powder
+      as its own undefined complex material. No vendor, drying process, fixed chemical
+      composition or equivalence to a particular corn-steep-liquor concentrate is
+      asserted. The absence of a fixed molecular formula does not prevent a source-defined
+      material registry identity.
+mim_id: MIM:0002761
+legacy_identifiers:
+- MIM:Corn_Steep_Powder
+- UNMAPPED_0366
+- kgmicrobe.ingredient:corn_steep_powder

@@ -47,6 +47,12 @@ synonyms:
 - synonym_text: MES acids
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 2-(N-Morpholino)ethanesulfonic acid (MES)
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:72ccf01c3682df1b53cf0378716b00fb7c13a968ddd1e8bb64930807bf6ad235
+- synonym_text: Morpholinoethanesulfonic acid (MES)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:1b72da178c0d3eaa29cb304dc0fe29b438019a4bb84576a2c0316fc824493828
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 24
@@ -154,11 +160,48 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: The source explicitly spells out morpholinoethanesulfonic acid and weighs
+    5 g. CHEBI39005 denotes that acid; CHEBI39010 is the broader MES family with separate
+    acid, anion and zwitterion children. Use the existing acid owner and preserve
+    its specificity, rather than append this acid spelling to Mes.yaml. Proposed only;
+    integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified exact-scope raw alias '2-(N-Morpholino)ethanesulfonic
+    acid (MES)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G16 from authentic common before
+    sha256=74b9b9ad58114bc8b6b1cb6248f12b9857093f0339635bb3c1c4d8e6e3a02f46. Origins:
+    worker07:A-PROPOSAL-Mes_2-_N-morpholino_Ethane_Sulfonic_Acid sha256=6e5df45049de0e795f0e346d7461d2f4c93f0f19a7a019c815419501f739a86b;
+    worker10:chem-proposal-13 sha256=4adeedffc3ec87accb397962dacb43ab33e4c7b0bb9a255e9b5a430a09aa8834.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001630; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001630; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 4432-31-9

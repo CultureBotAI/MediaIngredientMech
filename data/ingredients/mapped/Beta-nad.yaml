@@ -124,15 +124,34 @@ curation_history:
     not resolve them: ''β-NAD'' (x3 CultureMech mentions); ''β--NAD'' (x1 CultureMech
     mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The source and existing aliases already identify beta-NAD. Maintained history
+    distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES
+    backfill. Correct the conflated chemical-property attribution without changing
+    molecular values, identity, aliases or native holds. Isolated proposal only; all
+    native holds remain preserved in source-case decisions.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000482; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000482; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 53-84-9
-  data_source: PubChem API
+  data_source: 'CAS RN: PubChem API name lookup, curation event 2026-04-05; molecular
+    formula, InChI and SMILES: ChEBI backfill, curation event 2026-05-01 (CHEBI:15846).'
   retrieval_date: '2026-04-05T19:51:11.834021+00:00'
   molecular_formula: C21H28N7O14P2
   inchi: InChI=1S/C21H27N7O14P2/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(32)14(30)11(41-21)6-39-44(36,37)42-43(34,35)38-5-10-13(29)15(31)20(40-10)27-3-1-2-9(4-27)18(23)33/h1-4,7-8,10-11,13-16,20-21,29-32H,5-6H2,(H5-,22,23,24,25,33,34,35,36,37)/p+1/t10-,11-,13-,14-,15-,16-,20-,21-/m1/s1
@@ -145,6 +164,15 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+notes: '
+
+
+  The source and existing aliases already identify beta-NAD. Maintained history distinguishes
+  the PubChem CAS import from the later ChEBI formula, InChI and SMILES backfill.
+  Correct the conflated chemical-property attribution without changing molecular values,
+  identity, aliases or native holds. MediaDive1340 names NAD and records a 2 mg dose.
+  This proposal repairs field provenance only; it does not infer a salt, change redox
+  state or approve a withheld SSSOM row.'
 mim_id: MIM:0000482
 legacy_identifiers:
 - MIM:Beta-nad

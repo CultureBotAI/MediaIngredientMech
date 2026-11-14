@@ -1,0 +1,63 @@
+identifier: CHEBI:747199
+preferred_term: Strontium sulfate
+ingredient_type: SINGLE_INGREDIENT
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: CHEBI:747199
+  ontology_label: strontium sulfate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Primary source provider and EBI OLS ChEBI
+    notes: JCM1030-1032 and MediaDive solution5083 supply the trace SrSO4 scope. The
+      old JCM1033 HTML capture returned Nothing found; a separately recovered complete
+      bacmedia JCM1033 PDF lists SrSO4 0.92mg in the trace-elements section. CHEBI747199
+      provides the strontium sulfate ontology identity; neither source establishes
+      a corrected receiving-medium dose. Preserve the frozen0.92G_PER_L versus source0.92mg
+      discrepancy and all publication holds.
+chemical_properties:
+  molecular_formula: Sr.O4S
+  data_source: ChEBI CHEBI:747199 via primary EBI OLS capture
+  retrieval_date: '2026-11-08T05:10:11.769770+00:00'
+  inchi: InChI=1S/H2O4S.Sr/c1-5(2,3)4;/h(H2,1,2,3,4);/q;+2/p-2
+  smiles: O=S(=O)([O-])[O-].[Sr+2]
+  cas_rn: 7759-02-6
+synonyms:
+- synonym_text: SrSO4
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02
+notes: JCM1030-1032 and MediaDive solution5083 supply the trace SrSO4 scope. The old
+  JCM1033 HTML capture returned Nothing found; a separately recovered complete bacmedia
+  JCM1033 PDF lists SrSO4 0.92mg in the trace-elements section. CHEBI747199 provides
+  the strontium sulfate ontology identity; neither source establishes a corrected
+  receiving-medium dose. Preserve the frozen0.92G_PER_L versus source0.92mg discrepancy
+  and all publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_NEW_INGREDIENT
+  changes: 'JCM1030-1033 and MediaDive solution5083 supply SrSO4; primary CHEBI747199
+    confirms strontium sulfate with Sr.O4S and CAS7759-02-6. Hydrated chlorides are
+    separate identities. Evidence: case30 primary recipes and a-ontology-747199.'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed;
+    coordinator integration and independent review required.
+- timestamp: '2026-11-08T08:09:06.604679+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1241, distinguish failed JCM1033 HTML from separate successful
+    PDF evidence in active strontium provenance; retain all quantities, scientific
+    fields, previous events and dose/form/release holds.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003174 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003174
+legacy_identifiers:
+- MIM:Strontium_sulfate
+- CHEBI:747199

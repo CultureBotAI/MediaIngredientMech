@@ -1,0 +1,210 @@
+identifier: kgmicrobe.ingredient:lab_lemco_powder
+preferred_term: Lab Lemco powder
+synonyms:
+- synonym_text: Lab Lemco powder
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Lab-Lemco powder
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Lab--Lemco powder (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: '`Lab-Lemco’ powder'
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: ‘Lab-Lemco’ powder
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Lab-Lemco (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf
+- synonym_text: Lab-Lemco Powder (Oxoid LP0029)
+  synonym_type: CATALOG_VARIANT
+  source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf
+- synonym_text: Oxoid Lab-Lemco Powder
+  synonym_type: CATALOG_VARIANT
+  source: Primary assigned source + Oxoid LP0029 specification
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:42:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named complex nutrient powder and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Lab_Lemco_powder-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended classification:** named, supplier-associated
+    **complex meat-derived nutrient extract/powder** used as a microbiological-media
+    component. It is **not** a single chemical, salt, hydrate, buffer, or complete
+    culture medium. No ontology CURIE was proposed. Recorded as provenance only —
+    no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Lab-Lemco powder'' (x5 CultureMech mentions); ''Lab--Lemco
+    powder (Oxoid)'' (x4 CultureMech mentions); ''`Lab-Lemco’ powder'' (x2 CultureMech
+    mentions); ''‘Lab-Lemco’ powder'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T04:34:33.928115+00:00'
+  curator: worker01_add_media_identity
+  action: PROMOTED_TO_MAPPED
+  changes: 'Isolated proposal: promote existing source-linked owner UNMAPPED_0419
+    to kgmicrobe.ingredient:lab_lemco_powder. Oxoid Lab-Lemco is a refined meat-extract
+    powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations and
+    current official LP0029 specification. This whole variable-composition product
+    is not one molecule or a finished medium. The exact molecular constituent list
+    and historical lot composition are not established and are not required to preserve
+    the named product identity. Current supplier compositional ranges are not backdated
+    to historical lots. Preserve original history and occurrence counts; no maintained
+    data are changed.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: PROMOTED_SOURCE_DEFINED_PRODUCT
+  changes: Oxoid Lab-Lemco powder LP0029 is a named refined meat-extract product.
+    Primary specification and catalogue corroborate product identity; composition
+    varies and no fixed molecular formula or complete component quantities are asserted.
+    This does not identify Lab-Lemco Broth or generic beef extract as this product.
+    Historical owner aliases and counts retained.
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-031. Origins:
+    w01::KG26-PROP-182-IDENTITY; w05::CHEM-C1193-Lab-Lemco. Authentic beforeimage,
+    every authored event and all source-case/capture bindings are retained in the
+    adjacent trace. This is candidate composition, not corpus application, owner merge,
+    role approval, inherited support or release approval. Independent whole-owner
+    science review is required.'
+- timestamp: '2026-11-08T07:57:16.094429+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-031 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002831; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002831; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complex nutrient powder pending
+  product-specific composition curation.
+
+
+  Source-scoped proposal w01::KG26-PROP-182-IDENTITY: Oxoid Lab-Lemco is a refined
+  meat-extract powder, identified by original DSMZ727 and CCAP CHM/EG/EG:JM formulations
+  and current official LP0029 specification. This whole variable-composition product
+  is not one molecule or a finished medium. The exact molecular constituent list and
+  historical lot composition are not established and are not required to preserve
+  the named product identity. Current supplier compositional ranges are not backdated
+  to historical lots.
+
+
+  Source-scoped proposal w05::CHEM-C1193-Lab-Lemco: Correction1193: Oxoid Lab-Lemco
+  powder LP0029 is a named refined meat-extract product. Primary specification and
+  catalogue corroborate product identity; composition varies and no fixed molecular
+  formula or complete component quantities are asserted. This does not identify Lab-Lemco
+  Broth or generic beef extract as this product. Historical owner aliases and counts
+  retained.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf
+    notes: Oxoid Lab-Lemco is a refined meat-extract powder, identified by original
+      DSMZ727 and CCAP CHM/EG/EG:JM formulations and current official LP0029 specification.
+      This whole variable-composition product is not one molecule or a finished medium.
+      The exact molecular constituent list and historical lot composition are not
+      established and are not required to preserve the named product identity. Current
+      supplier compositional ranges are not backdated to historical lots.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf
+    notes: Oxoid Lab-Lemco powder LP0029 is a named refined meat-extract product.
+      Primary specification and catalogue corroborate product identity; composition
+      varies and no fixed molecular formula or complete component quantities are asserted.
+      This does not identify Lab-Lemco Broth or generic beef extract as this product.
+      Historical owner aliases and counts retained.
+  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: kgmicrobe.ingredient:lab_lemco_powder
+  ontology_label: Lab Lemco powder
+  ontology_source: kgmicrobe.ingredient
+supplied_form:
+- name: Lab-Lemco Powder
+  supplier: Oxoid
+  catalog_number: LP0029
+  form: meat-extract powder
+  notes: Official current specification; historical CCAP L29 wording is preserved
+    in source evidence.
+mim_id: MIM:0002831
+legacy_identifiers:
+- MIM:Lab_Lemco_Powder
+- UNMAPPED_0419
+- kgmicrobe.ingredient:lab_lemco_powder
