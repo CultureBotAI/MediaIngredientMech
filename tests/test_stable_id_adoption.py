@@ -47,7 +47,14 @@ def commit(root):
 
 
 class Fixture:
-    def __init__(self, tmp, monkeypatch, original_records=None, additional_sources=None):
+    def __init__(
+        self,
+        tmp,
+        monkeypatch,
+        original_records=None,
+        additional_sources=None,
+        legacy_corrections=None,
+    ):
         self.root, self.legacy, self.claw = (tmp / name for name in ("target", "legacy", "claw"))
         for root in (self.root, self.legacy, self.claw):
             initialize(root)
@@ -142,7 +149,16 @@ class Fixture:
         new = "data/ingredients/unmapped/New.yaml"
         held = "data/ingredients/unmapped/Held.yaml"
         self.move, self.new, self.held = move, new, held
+        if legacy_corrections:
+            commit(self.legacy)
+            for path, record in legacy_corrections.items():
+                assert path in self.paths
+                (self.legacy / path).write_text(yaml.safe_dump(record, sort_keys=False))
         legacy_base = commit(self.legacy)
+        legacy_before = api.hashes(api.inventory(self.legacy))
+        # Portable reconstruction needs the genuine legacy baseline Git object,
+        # not merely the fixture's claimed before-inventory (#1392).
+        command(self.root, "fetch", "--no-tags", str(self.legacy), legacy_base)
         old = (self.legacy / self.paths[1]).read_bytes()
         (self.legacy / "archive").mkdir()
         (self.legacy / "archive/move.yaml").write_bytes(old)
@@ -191,7 +207,7 @@ class Fixture:
                 }
             )
         after = api.hashes(api.inventory(self.legacy))
-        write(self.legacy / "before.json", {"schema_version": 1, "owners": before})
+        write(self.legacy / "before.json", {"schema_version": 1, "owners": legacy_before})
         write(self.legacy / "after.json", {"schema_version": 1, "owners": after})
         ref = lambda path: {"path": path, "sha256": api.sha((self.legacy / path).read_bytes())}
         write(self.legacy / "cases.json", cases)
@@ -236,7 +252,7 @@ class Fixture:
             "state": "complete",
             "recovery_required": False,
             "plan": ref("plan.json"),
-            "before_inventory": before,
+            "before_inventory": legacy_before,
             "after_inventory": after,
             "completed_operations": [r["operation_id"] for r in operations],
             "records": [
@@ -336,7 +352,7 @@ class Fixture:
             "native_prepare_proof": {
                 "plan_sha256": ref("plan.json")["sha256"],
                 "acceptance_sha256": ref("acceptance.json")["sha256"],
-                "before_owner_sha256": before,
+                "before_owner_sha256": legacy_before,
                 "after_owner_sha256": after,
                 "native_input_sha256": {"plan.json": ref("plan.json")["sha256"]},
             },
