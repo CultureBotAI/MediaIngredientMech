@@ -61,6 +61,15 @@ synonyms:
 - synonym_text: iso-Valeric acid
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
+- synonym_text: iso -Valeric acid
+  synonym_type: RAW_TEXT
+  source: 'Frozen CultureMech JCM1385 VFA component; JCM1385 refers to JCM1130: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1385
+    and https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130 ; branched acid https://www.ebi.ac.uk/chebi/CHEBI:28484'
+- synonym_text: iso--Valeric acid
+  synonym_type: RAW_TEXT
+  source: 'Frozen CultureMech VFA occurrences; JCM1130 VFA solution names isovaleric
+    separately from n-valeric: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    ; https://www.ebi.ac.uk/chebi/CHEBI:28484'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 104
@@ -185,11 +194,28 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: ANNOTATED
+  changes: Add source-bound raw alias(es) iso -Valeric acid, iso--Valeric acid to
+    existing same-scope owner; preserve all other fields and retired labels. Isolated
+    proposal only; no release approval or hold removal. New alias assertion provenance
+    identifies the exact frozen source context and inspected primary recipe, ontology
+    or supplier URL.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001369; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001369; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 503-74-2

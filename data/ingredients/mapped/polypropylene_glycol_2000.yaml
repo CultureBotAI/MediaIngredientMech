@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:polypropylene_glycol_2000
+preferred_term: Polypropylene glycol 2000 (nominal grade)
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:61615
+  ontology_label: poly(propylene glycol) polymer
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1400
+    notes: 'Codex worker06 LLM-assisted proposal: NBRC1400 names Polypropylene glycol
+      2000 (PPG 2000). Preserve the nominal polymer grade as material identity. The
+      source does not specify a unique molecule, supplier or exact molecular-weight
+      definition.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A61615
+    notes: 'Full active CHEBI:61615 term describes polymer material composed of poly(propylene
+      glycol) macromolecules. It is a broader parent only: NARROW_MATCH means this
+      nominal-grade record is narrower and projects skos:broadMatch to CHEBI:61615
+      plus its own exact registry row under MAPPING_SEMANTICS. Bounded official exact-grade
+      queries found no supported exact term; generic CAS25322-69-4 is not grade-specific
+      identity.'
+synonyms:
+- synonym_text: Polypropylene glycol 2000 (PPG 2000)
+  synonym_type: RAW_TEXT
+  source: NBRC1400; CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25
+- synonym_text: PPG 2000
+  synonym_type: ABBREVIATION
+  source: NBRC1400 literal parenthetical material name
+notes: Bounded nominal polypropylene glycol 2000 material named by NBRC1400; not a
+  fixed molecular species. SINGLE_INGREDIENT denotes recipe-ingredient granularity,
+  not purity or a homogeneous chain length. The receiving recipe lists 2.0 g of this
+  material, separately lists distilled water 1 L, and instructs sonication of the
+  medium excluding agar until PPG2000 is emulsified. These are receiving-medium inputs/process,
+  not evidence of a supplied aqueous stock or an intrinsic 2 g/L material concentration,
+  and the added water is not assumed to be measured final volume. Supplier, catalogue,
+  molecular-weight distribution, the definition of the nominal 2000 average, end groups
+  and supplied physical form are unknown. No fixed molecular weight, formula, SMILES,
+  InChI, CAS, PEG/monomer identity, repeat-unit component, nutritional role or product
+  approval is inferred. Supplier examples establish that nominal polymer grades are
+  representable; they do not establish NBRC procurement. Applicability is bounded
+  to the preserved NBRC1400 occurrence; cross-source material equivalence requires
+  comparison.
+curation_history:
+- timestamp: '2026-11-08T08:29:41.004578+00:00'
+  curator: Codex worker06 /root
+  action: CREATED
+  changes: 'INFO004 informational scope completion: propose nominal PPG2000 material,
+    with genuine null-before origin and broader CHEBI:61615 grounding. No maintained
+    owner, source import, role or export changed.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003324 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003324
+legacy_identifiers:
+- MIM:polypropylene_glycol_2000
+- kgmicrobe.ingredient:polypropylene_glycol_2000

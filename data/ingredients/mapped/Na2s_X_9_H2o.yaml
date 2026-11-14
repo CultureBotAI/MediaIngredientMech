@@ -30,10 +30,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2S x 9 H2O (3% w/v)
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2S x 9 H2O(24% w/v)
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2S x 9H2O
   synonym_type: HYDRATE_FORM
@@ -204,11 +204,28 @@ curation_history:
     for reduction of the medium)''. Tokens already present on the kg-microbe ontology
     node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T06:15:28.229007+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: REJECTED_UNSAFE_IDENTITY_ALIASES
+  changes: 'Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3%
+    w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance,
+    but change their types to REJECTED_LABEL. They identify concentration-qualified
+    preparations and cannot be exact aliases for pure sodium sulfide nonahydrate.
+    Primary identity, chemistry, roles, counts and source holds remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001820; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001820; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:76209
 chemical_properties:

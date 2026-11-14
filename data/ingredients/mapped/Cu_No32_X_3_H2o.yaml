@@ -60,6 +60,12 @@ synonyms:
 - synonym_text: copper(2+) dinitrate
   synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
+- synonym_text: Copper(II) Nitrate Trihydrate
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[13] case_id=CM_NAME:13ab279707b97daf2383076a1eebab4366cbbd8e77d32193999d6667cf3570e4;
+    source=culturemech; source_case_id=Copper(II) Nitrate Trihydrate; CultureMech:015747
+    ingredients/15 (inputs/culturemech/data/normalized_yaml/specialized/smn_rich.yaml);
+    Primary evidence: https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -176,11 +182,29 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[13] case_id=CM_NAME:13ab279707b97daf2383076a1eebab4366cbbd8e77d32193999d6667cf3570e4;
+    source=culturemech; source_case_id=Copper(II) Nitrate Trihydrate; CultureMech:015747
+    ingredients/15 (inputs/culturemech/data/normalized_yaml/specialized/smn_rich.yaml);
+    Primary evidence: https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000773; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000773; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 10031-43-3

@@ -42,17 +42,65 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-11-08T10:16:10.968674+00:00'
+  curator: worker08:/root SCI-TENVIT-003 dependent source proposal
+  action: CORRECTED
+  changes: 'Withdraw unsupported D-specific CHEBI:31345 from the literal calcium D,L-pantothenate0.005G_PER_L
+    component and set native reference_scope UNMAPPED. Qualify the historical CAS-crosswalk
+    grounding note and explicitly limit decomposition to the Mc source table. Preserve
+    all ten names/amounts/units, other nine resolving references, four original history
+    events, identity, aliases,22-source statistics, original role objects and X100
+    metadata. Link a genuine existing-owner dependency to the reviewed NBRC903 comparator;
+    candidate association and cross-owner routing remain pending W04/coordinator,
+    with no owner merge or release approval. Original crosswalk note: CultureBotHT''s
+    compounds-to-CAS crosswalk grounds every Mc_vitamins constituent to CAS-backed
+    biotin, folic acid, pyridoxine hydrochloride, thiamine HCl, riboflavin, nicotinic
+    acid, calcium pantothenate, cyanocobalamin/vitamin B12, 4-aminobenzoic acid, and
+    lipoic acid records or synonyms.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001614; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001614; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   22 CultureBot media; samples: McCas, McCas_MOPS, McCas_formate_SO4…. No CAS-RN or
   CHEBI mapping available; reviewed on 2026-05-11 as an Mc-series vitamin stock/pre-mix
   rather than an exact ontology identity. Component-level recipe transcribed from
-  the CultureBotHT media definitions Mixes tab on 2026-09-07.'
+  the CultureBotHT media definitions Mixes tab on 2026-09-07.
+
+
+  This component assertion transcribes only the CultureBotHT Mc_vitamins Mixes block,
+  rows1112–1125: ten literal solutes in g/L with source metadata X100. COMPLETE is
+  closure of that printed immediate solute list, not a claim about carrier, final
+  volume, purchased lot or analytical composition. The JCM197/NBRC837/NBRC903 batch
+  tables retain their own literal unspecified calcium-pantothenate and Vitamin B12
+  labels, masses, added-water inputs and individual preparation profiles; they do
+  not inherit Mc D,L or per-litre assertions. No water, phosphate, gas, titrant or
+  X100 rescaling is added here.
+
+
+  SCI-TENVIT-003 dependent comparator correction, triggered by the existing NBRC903
+  occurrence CM_OCC:a181b24b7eb91c50c771bd1c1fc3012fd0cf28f45b49f2750c3d43bda9cdd531
+  in W08 case CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506.
+  The separately reviewed ten-vitamin sources and McCas protocol support a common
+  nominal laboratory recipe; generic CultureBot Wolfe also overlaps nominally. Final
+  occurrence association and cross-owner routing remain pending the bounded W04/coordinator
+  decision. Neither Mc nor CB is declared the exclusive owner, and no duplicate nominal
+  owner, merge, source-number identity or inherited owner/role/export approval is
+  introduced. This dependency claims zero Mc campaign occurrences; the authentic Mc
+  source statistics remain22. The other five occurrences in the mixed W08 case and
+  the external eight-case/71CM/84KG/six-exclusion envelope remain unchanged.'
 ingredient_type: STOCK_SOLUTION
 solution_type: VITAMIN_MIX
 components:
@@ -87,10 +135,14 @@ components:
   concentration_value: '0.005'
   concentration_unit: G_PER_L
 - component_name: calcium D,L-pantothenate
-  component_id: CHEBI:31345
-  reference_scope: MIM_CATALOG
+  reference_scope: UNMAPPED
   concentration_value: '0.005'
   concentration_unit: G_PER_L
+  source: CultureBotHT Mixes row1122 literally names calcium D,L-pantothenate at0.005g/L.
+    The compounds-to-CAS row92 combines D/L aliases with CAS137-08-6 and Sigma C8731;
+    CHEBI:31345 carries a D-specific structure. That conflicted crosswalk does not
+    establish the literal D,L form. No same-form child is verified in this bounded
+    correction; the name and amount are retained without a resolving ID.
 - component_name: vitamin B12
   component_id: CHEBI:176843
   reference_scope: MIM_CATALOG
@@ -120,10 +172,31 @@ component_assertion:
   - evidence_type: CURATED_DATASET
     source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
     source_record: compounds-to-CAS rows 28,81,92,131,191,271,299,349,354,441
-    notes: CultureBotHT's compounds-to-CAS crosswalk grounds every Mc_vitamins constituent
-      to CAS-backed biotin, folic acid, pyridoxine hydrochloride, thiamine HCl, riboflavin,
-      nicotinic acid, calcium pantothenate, cyanocobalamin/vitamin B12, 4-aminobenzoic
-      acid, and lipoic acid records or synonyms.
+    notes: The CultureBotHT compounds-to-CAS crosswalk supplies historical reference
+      context for the Mc inputs. Row92 combines calcium D,L-pantothenate with D-calcium
+      aliases, CAS137-08-6 and Sigma C8731; it cannot ground the explicit D,L input
+      to D-specific CHEBI:31345. That component remains UNMAPPED. The B12 crosswalk
+      is source-specific dictionary context, not proof of an actual purchased Mc vitamer
+      or of JCM/NBRC Vitamin B12 identity. Other inherited references remain unchanged
+      within their prior scope. The original blanket grounding note is retained verbatim
+      in the appended curation event.
+  - evidence_type: CURATED_DATASET
+    source: https://www.ebi.ac.uk/chebi/CHEBI:31345
+    source_record: CHEBI:31345; archived OLS4 response and CultureBotHT Mixes row1122/compounds-to-CAS
+      row92
+    notes: The primary ontology record supplies a stereospecific SMILES/InChI, D-calcium
+      pantothenate synonyms and CAS137-08-6. It does not establish the printed D,L
+      ingredient. The component-reference withdrawal is an LLM-assisted assessment,
+      not a new recipe input, owner identity or role assertion. Original acquisition
+      receipts and exact capture bytes are retained in the proposal evidence bundle.
+  notes: 'This component assertion transcribes only the CultureBotHT Mc_vitamins Mixes
+    block, rows1112–1125: ten literal solutes in g/L with source metadata X100. COMPLETE
+    is closure of that printed immediate solute list, not a claim about carrier, final
+    volume, purchased lot or analytical composition. The JCM197/NBRC837/NBRC903 batch
+    tables retain their own literal unspecified calcium-pantothenate and Vitamin B12
+    labels, masses, added-water inputs and individual preparation profiles; they do
+    not inherit Mc D,L or per-litre assertions. No water, phosphate, gas, titrant
+    or X100 rescaling is added here.'
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mc_vitamins
   ontology_label: Mc_vitamins

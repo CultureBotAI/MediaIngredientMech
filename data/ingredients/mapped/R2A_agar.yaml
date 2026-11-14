@@ -14,6 +14,12 @@ ontology_mapping:
       `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114).
       MICRO:0000541 ''R2A medium'' is the broth; this label says agar. Cross-reference:
       CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml).'
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2972
+    notes: The primary TOGO M2972 component is explicitly labelled Difco R2A agar,
+      and the preparation describes plant-stem contact with a medium surface. This
+      supports the agar interpretation of this occurrence and a source-provenance
+      enrichment of the existing R2A-agar owner.
 synonyms:
 - synonym_text: R2A agar (BD-Difco)
   synonym_type: CATALOG_VARIANT
@@ -25,7 +31,7 @@ synonyms:
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
-ingredient_type: UNDEFINED_MIXTURE
+ingredient_type: NAMED_MEDIUM
 occurrence_statistics:
   total_occurrences: 16
   media_count: 16
@@ -58,12 +64,47 @@ curation_history:
     (DB-Difco)'' (x2 CultureMech mentions); ''R2A agar (BD--Difco)'' (x1 CultureMech
     mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The primary TOGO M2972 component is explicitly labelled Difco R2A agar,
+    and the preparation describes plant-stem contact with a medium surface. This supports
+    the agar interpretation of this occurrence and a source-provenance enrichment
+    of the existing R2A-agar owner. Isolated proposal only; all native holds remain
+    preserved in source-case decisions.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[1] from MANUAL_CURATION to LLM_SUGGESTION:
+    The new source-specific agar interpretation was authored by the agent. The unchanged
+    inherited human-supplied MIM curation entry is preserved. Isolated successor proposal
+    only; all inherited source, role and export holds remain. Historical evidence
+    and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002175; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002175; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and
+  the preparation describes plant-stem contact with a medium surface. This supports
+  the agar interpretation of this occurrence and a source-provenance enrichment of
+  the existing R2A-agar owner. TOGO M2972 supplies occurrence-specific agar context
+  only. The bare R2A (Difco) label remains outside global aliases.
 mim_id: MIM:0002175
 legacy_identifiers:
 - MIM:R2A_agar

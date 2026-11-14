@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:aged_seawater
+preferred_term: Aged seawater preparation
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:aged_seawater
+  ontology_label: Aged seawater preparation
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900;
+      https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1347
+    notes: NBRC 1347 and JCM 995 identify aged seawater as a liquid input. JCM 995
+      uses 700 ml with other separately listed stock additions; NBRC 1347 specifies
+      1 L. JCM 900/149 references belong to Hutner stock context, not an aging protocol.
+      No aging time, sterilization, filtration or salinity is guessed. This class
+      is distinct from source-disjunctive filtered-aged-water OR DaigoSP choices in
+      38/116.
+notes: '#1201 isolated proposal: NBRC 1347 and JCM 995 identify aged seawater as a
+  liquid input. JCM 995 uses 700 ml with other separately listed stock additions;
+  NBRC 1347 specifies 1 L. JCM 900/149 references belong to Hutner stock context,
+  not an aging protocol. No aging time, sterilization, filtration or salinity is guessed.
+  This class is distinct from source-disjunctive filtered-aged-water OR DaigoSP choices
+  in 38/116. Aging duration/conditions are not stated; they constrain detailed reproducibility
+  but not the explicit aged-material scope. Raw source spellings are retained in case
+  evidence and this source scope; no new globally resolving source-local alias is
+  added. Full-owner publication approval and all source-specific holds remain pending.'
+curation_history:
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: NBRC 1347 and JCM 995 identify aged seawater as a liquid input. JCM 995
+    uses 700 ml with other separately listed stock additions; NBRC 1347 specifies
+    1 L. JCM 900/149 references belong to Hutner stock context, not an aging protocol.
+    No aging time, sterilization, filtration or salinity is guessed. This class is
+    distinct from source-disjunctive filtered-aged-water OR DaigoSP choices in 38/116.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.092735+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002964 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002964
+legacy_identifiers:
+- MIM:AgedSeawater
+- kgmicrobe.ingredient:aged_seawater

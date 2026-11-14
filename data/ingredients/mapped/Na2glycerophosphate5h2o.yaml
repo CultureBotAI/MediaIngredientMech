@@ -19,6 +19,18 @@ synonyms:
 - synonym_text: 'Na2Glycerophosphate•5H2O(CAS: 13408-09-8)'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: beta-Glycerol phosphate disodium salt pentahydrate
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: β-Na2glycerophosphate· 5H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: beta-Na2glycerophosphate·5H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2-ß-glycerophosphate x 5 H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 ingredient_type: SINGLE_INGREDIENT
 occurrence_statistics:
@@ -76,11 +88,29 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-11-08T05:18:40.490477+00:00'
+  curator: codex_worker09_source_review
+  action: ADDED_SYNONYMS
+  changes: 'Preserve source-reviewed exact raw aliases: beta-Glycerol phosphate disodium
+    salt pentahydrate, β-Na2glycerophosphate· 5H2O, beta-Na2glycerophosphate·5H2O,
+    Na2-ß-glycerophosphate x 5 H2O. Identity, hydrate and salt scope are retained.
+    This isolated candidate does not release current mapping holds or approve unrelated
+    synonyms/roles. Evidence: reports/all_unmatched_20261107/worker-09/salts/decisions.json
+    and evidence.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001803; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001803; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: 'CultureMech placeholder_id: 3; reviewed on 2026-05-11 and retained as an unmapped
   single ingredient pending exact sodium glycerophosphate pentahydrate/CAS reconciliation.'

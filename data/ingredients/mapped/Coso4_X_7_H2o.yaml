@@ -24,6 +24,13 @@ ontology_mapping:
       step 1: the label names a hydrate, ChEBI has the term, so nothing needs minting
       and no closeMatch question arises. The previous term carried no water while
       the label states it. Found by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: Replace only the anhydrous InChI/SMILES inherited via CHEBI53470 with the
+      exact seven-water structures directly reported by CHEBI91244. Preserve the heptahydrate
+      formula and CAS10026-24-1; provenance distinguishes the new structure source
+      from unchanged historical fields. This does not correct malformed source rows
+      or approve receiving concentrations.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -51,6 +58,13 @@ synonyms:
 - synonym_text: Cobalt sulfate heptahydrate
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: CoSO .7H2O
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[30] case_id=CM_NAME:2c217c36bf80b6dd437869bd28fd77efe1f3e40c539ea3e9926f93bd7c326709;
+    source=culturemech; source_case_id=CoSO .7H2O; CultureMech:000092 ingredients/6
+    (inputs/culturemech/data/normalized_yaml/algae/mp.yaml); CultureMech:000143 ingredients/9
+    (inputs/culturemech/data/normalized_yaml/algae/waris_h.yaml); Primary evidence:
+    https://bacmedia.dsmz.de/pdf/C56?ccno=CCAP1330%2F8; Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 828
@@ -152,20 +166,69 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: Replace only the anhydrous InChI/SMILES inherited via CHEBI53470 with the
+    exact seven-water structures directly reported by CHEBI91244. Preserve the heptahydrate
+    formula and CAS10026-24-1; provenance distinguishes the new structure source from
+    unchanged historical fields. This does not correct malformed source rows or approve
+    receiving concentrations. Original full before/predecessor objects and field lineage
+    are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations. Correct hydrate structure from
+    exact ChEBI term. Source binding: frozen preliminary-v5/shards/shard-03.json cases[30]
+    case_id=CM_NAME:2c217c36bf80b6dd437869bd28fd77efe1f3e40c539ea3e9926f93bd7c326709;
+    source=culturemech; source_case_id=CoSO .7H2O; CultureMech:000092 ingredients/6
+    (inputs/culturemech/data/normalized_yaml/algae/mp.yaml); CultureMech:000143 ingredients/9
+    (inputs/culturemech/data/normalized_yaml/algae/waris_h.yaml); Primary evidence:
+    https://bacmedia.dsmz.de/pdf/C56?ccno=CCAP1330%2F8; Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_Waris_H.pdf'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:28:39.842266+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: COMPOSED_PRIVATE_CURRENT_SOURCE_DELTAS
+  changes: Compose compatible current proposals w02::fc-chem-proposal-cobalt-heptahydrate-properties,
+    w03::c-cobalt-heptahydrate against their one authentic beforeimage. Keep every
+    current original history/event, source-case and occurrence binding, exact alias
+    source and rejected-label correction. Identical heptahydrate structures and equivalent
+    formula order are reconciled using the primary ChEBI display and both exact reported
+    provenance objects. This LLM-assisted private whole-payload composition grants
+    no independent scientific, owner, role, source-case or export approval and clears
+    no inherited hold.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000755; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000755; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:91244
 chemical_properties:
   cas_rn: 10026-24-1
-  data_source: PubChem (via CHEBI:53470)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Co.O4S.7H2O
-  inchi: InChI=1S/Co.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Co+2]
+  data_source: Primary CHEBI:91244; W02 OLS capture a-ontology-91244 and W03 ChEBI
+    capture c-fetch-69 independently report the same heptahydrate structures; both
+    exact source records and timestamps are retained below.
+  retrieval_date: '2026-11-08T05:29:01.443067+00:00'
+  molecular_formula: Co.7H2O.O4S
+  inchi: InChI=1S/Co.H2O4S.7H2O/c;1-5(2,3)4;;;;;;;/h;(H2,1,2,3,4);7*1H2/q+2;;;;;;;;/p-2
+  smiles: O.O.O.O.O.O.O.O=S(=O)([O-])[O-].[Co+2]
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT
@@ -178,6 +241,22 @@ nutritional_roles:
       Simple component'
     curator_note: Widespread use in media formulations (693 occurrences). High confidence
       based on 'Defined component' property.
+notes: 'Final W02 proposal correction (unapplied): Replace only the anhydrous InChI/SMILES
+  inherited via CHEBI53470 with the exact seven-water structures directly reported
+  by CHEBI91244. Preserve the heptahydrate formula and CAS10026-24-1; provenance distinguishes
+  the new structure source from unchanged historical fields. This does not correct
+  malformed source rows or approve receiving concentrations. All precise source, role,
+  duplicate-owner and publication holds remain; this claim-specific correction is
+  not whole-owner approval.
+
+
+  Coordinator property provenance (author composition only): {"basis":"No scientific
+  disagreement: exact InChI/SMILES/CAS agree; dot-component formula order is chemically
+  equivalent. Canonical displayed formula comes from the inspected primary ChEBI annotation.
+  retrieval_date is the latest actually reported source retrieval, not a new coordinator
+  fetch.","origin_properties":[{"origin_id":"w02::fc-chem-proposal-cobalt-heptahydrate-properties","chemical_properties":{"cas_rn":"10026-24-1","data_source":"InChI/SMILES:
+  primary CHEBI91244 capture a-ontology-91244; inherited formula/CAS preserved and
+  agree with that exact heptahydrate","retrieval_date":"2026-11-08T05:09:19.194016+00:00","molecular_formula":"Co.O4S.7H2O","inchi":"InChI=1S/Co.H2O4S.7H2O/c;1-5(2,3)4;;;;;;;/h;(H2,1,2,3,4);7*1H2/q+2;;;;;;;;/p-2","smiles":"O.O.O.O.O.O.O.O=S(=O)([O-])[O-].[Co+2]"}},{"origin_id":"w03::c-cobalt-heptahydrate","chemical_properties":{"cas_rn":"10026-24-1","data_source":"https://www.ebi.ac.uk/chebi/CHEBI:91244","retrieval_date":"2026-11-08T05:29:01.443067+00:00","molecular_formula":"Co.7H2O.O4S","inchi":"InChI=1S/Co.H2O4S.7H2O/c;1-5(2,3)4;;;;;;;/h;(H2,1,2,3,4);7*1H2/q+2;;;;;;;;/p-2","smiles":"O.O.O.O.O.O.O.O=S(=O)([O-])[O-].[Co+2]"}}]}'
 mim_id: MIM:0000755
 legacy_identifiers:
 - MIM:Coso4_X_7_H2o

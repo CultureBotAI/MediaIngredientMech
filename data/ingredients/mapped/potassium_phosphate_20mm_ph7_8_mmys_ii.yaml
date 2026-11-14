@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:potassium_phosphate_20mm_ph7_8_mmys_ii
+preferred_term: 20 mM potassium phosphate buffer, pH 7.8 (MMYS-II; JCM 194 / NBRC
+  372)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:potassium_phosphate_20mm_ph7_8_mmys_ii
+  ontology_label: 20 mM potassium phosphate buffer, pH 7.8 (MMYS-II; JCM 194 / NBRC
+    372)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=194
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      194 and NBRC 372 define Solution II of MMYS-II as 500 mL of 20 mM potassium
+      phosphate buffer, pH 7.8, sterilized separately. The final mixed medium pH 7.7-7.8
+      is not substituted for this stock specification.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=372
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      194 and NBRC 372 define Solution II of MMYS-II as 500 mL of 20 mM potassium
+      phosphate buffer, pH 7.8, sterilized separately. The final mixed medium pH 7.7-7.8
+      is not substituted for this stock specification.
+components:
+- component_name: Potassium phosphate
+  reference_scope: UNMAPPED
+  source: Salt species unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=194
+    source_record: 20 mM potassium phosphate buffer, pH 7.8 (MMYS-II; JCM 194 / NBRC
+      372)
+    notes: JCM 194 and NBRC 372 define Solution II of MMYS-II as 500 mL of 20 mM potassium
+      phosphate buffer, pH 7.8, sterilized separately. The final mixed medium pH 7.7-7.8
+      is not substituted for this stock specification.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=372
+    source_record: 20 mM potassium phosphate buffer, pH 7.8 (MMYS-II; JCM 194 / NBRC
+      372)
+    notes: JCM 194 and NBRC 372 define Solution II of MMYS-II as 500 mL of 20 mM potassium
+      phosphate buffer, pH 7.8, sterilized separately. The final mixed medium pH 7.7-7.8
+      is not substituted for this stock specification.
+  notes: Exact phosphate salts, ratio, solvent and titrant are absent; concentration/pH
+    and source use nevertheless establish the preparation boundary. Source-named parts
+    remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG
+    references identify only the supported constituent, not approval of that complete
+    owner.
+notes: JCM 194 and NBRC 372 define Solution II of MMYS-II as 500 mL of 20 mM potassium
+  phosphate buffer, pH 7.8, sterilized separately. The final mixed medium pH 7.7-7.8
+  is not substituted for this stock specification. Exact phosphate salts, ratio, solvent
+  and titrant are absent; concentration/pH and source use nevertheless establish the
+  preparation boundary. Provenance-only source text '20 mM Potassium phosphate buffer
+  (pH 7.8)' (case CM_NAME:1756d7568bc5fccde680b5e66c0cd507c9f01316038ae2a1cda4d137ffb0202d).
+  Provenance-only source text '20 mM Potassium phosphate buffer' (case CM_NAME:232f2cc81a44bcae4debd4d5f2b0a8a8f26346774a73f840e1bf872a31cdd9ff).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.965171+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003328 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003328
+legacy_identifiers:
+- MIM:potassium_phosphate_20mm_ph7_8_mmys_ii
+- kgmicrobe.ingredient:potassium_phosphate_20mm_ph7_8_mmys_ii

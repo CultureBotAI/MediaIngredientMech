@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:aburamycin_a
+identifier: CHEBI:202873
 preferred_term: Aburamycin A
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:aburamycin_a
-  ontology_label: Aburamycin A
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: CHEBI:202873
+  ontology_label: Chromomycin A2
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,7 +12,18 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:199303(A83094A), CHEBI:199353(A-90289 A), CHEBI:199611(A32390A). Pending
       curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+  - evidence_type: LITERATURE
+    source: https://www.bioaustralis.com/product_pdfs/override/BIA-C1518_product_sheet.pdf
+    notes: 'Propose CHEBI:202873 Chromomycin A2 from BioAustralis explicit Aburamycin
+      A synonym and matching C59H86O26 formula. Reject OLS raw-query hits Chromomycin
+      A3: the source A is a historical name, not permission to choose an A3 congener.
+      Preserve source preferred name. Exact primary-source capture and live ontology
+      record are in worker09 antibiotic evidence; this proposal does not clear publication
+      holds.'
+synonyms:
+- synonym_text: Chromomycin A2
+  synonym_type: EXACT_SYNONYM
+  source: https://www.bioaustralis.com/product_pdfs/override/BIA-C1518_product_sheet.pdf
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -53,15 +64,34 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Promote existing distinct source owner to CHEBI:202873 Chromomycin A2.
+    Proposal only; original mapping evidence preserved in before capture. No role,
+    whole-record, hold-removal or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000241; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000241; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier;
-  reviewed OLS candidates were not exact identity matches for the source label.'
+  reviewed OLS candidates were not exact identity matches for the source label.
+
+  2026-11-08 proposal: Promote existing distinct source owner to CHEBI:202873 Chromomycin
+  A2. Prior no-hit statements are historical search results; original history is preserved.
+  Fresh complete-payload review is required before publication.'
 physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
@@ -73,3 +103,4 @@ mim_id: MIM:0000241
 legacy_identifiers:
 - MIM:Aburamycin_A
 - kgmicrobe.compound:aburamycin_a
+- CHEBI:202873

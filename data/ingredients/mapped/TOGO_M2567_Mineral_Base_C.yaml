@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:togo_m2567_mineral_base_c
+preferred_term: TOGO M2567 mineral base C
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2567_mineral_base_c
+  ontology_label: TOGO M2567 mineral base C
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567
+    notes: 'TOGO M2567 YPS medium: Mineral base C defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Immediate components are two separate solutions; source does not specify hydrates
+  or carriers, so no pure-compound identities are assigned. Raw source labels retained
+  here, with recipe scope: ''Mineral base C''. Generic local labels are not published
+  as global synonyms. Occurrence statistics remain zero until source-specific membership
+  integration; frozen observations are fully recorded in the evidence decisions. Quantities
+  use literal source-batch units, not final culture concentrations. UNMAPPED component
+  references preserve source wording without inventing hydrate, stereoisomer or vitamer
+  groundings.'
+components:
+- component_name: Na2WO4 (10 mM solution)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Immediate input is a 10 mM solution with
+    unspecified hydrate/carrier, not neat sodium tungstate.'
+- component_name: FeCl3 (25 mM solution)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Immediate input is a 25 mM solution with
+    unspecified hydrate/carrier, not neat ferric chloride.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567
+    source_record: 'TOGO M2567 YPS medium: Mineral base C'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:01.623484+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined TOGO M2567 mineral base C with complete immediate
+    constituent enumeration and registry identity. Immediate components are two separate
+    solutions; source does not specify hydrates or carriers, so no pure-compound identities
+    are assigned. Isolated proposal only; independent and coordinator review remain
+    required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes. Earlier history and all source, scientific,
+    role, withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003184 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003184
+legacy_identifiers:
+- MIM:TOGO_M2567_Mineral_Base_C
+- kgmicrobe.ingredient:togo_m2567_mineral_base_c

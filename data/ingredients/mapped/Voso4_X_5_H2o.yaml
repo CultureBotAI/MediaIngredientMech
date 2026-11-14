@@ -9,6 +9,21 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: MIM issue1201 continuation; c-chebi-132758,c-chebi-87020
+    notes: The0.01%w/v token denotes a stock, while bareVOSO4 omits the five waters
+      required by this exact hydrate. Neither is an unconditional identity synonym
+      for CHEBI132758. Preserve both as REJECTED_LABEL, without changing the verified
+      pentahydrate identity or other original aliases.
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: 'Preserve vanadic sulfate pentahydrate as REJECTED_LABEL rather than an
+      exact vanadyl alias: CHEBI132758 classifies this text only as related, and no
+      inspected primary evidence establishes the ambiguous vanadic oxidation nomenclature
+      as unconditional exact V(IV) identity. Keep the explicit vanadyl pentahydrate
+      identity and valid five-water spellings, both CAS annotations/history, and earlier
+      stock/bare-token rejections. This does not select a different oxidation state
+      or source lot.'
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -20,14 +35,11 @@ synonyms:
 - synonym_text: VOSO4 . 5H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
-- synonym_text: VOSO4 x 5 H2O (0.01% w/v)
-  synonym_type: HYDRATE_FORM
-  source: kg_microbe
 - synonym_text: VOSO4.5H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: vanadic sulfate pentahydrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: vanadium oxide sulfate pentahydrate
   synonym_type: EXACT_SYNONYM
@@ -44,9 +56,15 @@ synonyms:
 - synonym_text: oxovanadium(2+) sulfate--water (1/5)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: VOSO4 x 5 H2O (0.01% w/v)
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
 - synonym_text: VOSO4
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
+- synonym_text: VSO5.5H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:cedf31d393b0b2162c4b02032af463a0af64aa720e4e37f416f164f621f7d39a
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 16
@@ -117,11 +135,98 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: VSO5.5H2O in TOGO M2262 is labelled vanadyl sulfate pentahydrate by the
+    primary source. VOSO4 and VSO5 have the same elemental composition; .5H2O explicitly
+    supplies five waters. ChEBI132758 exactly defines the pentahydrate, so this is
+    a formula-ordering alias, not the variable hydrate or dihydrate. The source micromolar
+    quantity remains contextual. Proposed only; integration requires content-bound
+    full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CORRECTED
+  changes: The0.01%w/v token denotes a stock, while bareVOSO4 omits the five waters
+    required by this exact hydrate. Neither is an unconditional identity synonym for
+    CHEBI132758. Preserve both as REJECTED_LABEL, without changing the verified pentahydrate
+    identity or other original aliases. All prior source, native-owner, SSSOM and
+    downstream holds remain in force; this isolated proposal is not publication approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-028. Origins:
+    w02::c2-proposal-vanadyl-stock-and-bare-aliases; w10::chem-proposal-113. Authentic
+    beforeimage, every authored event and all source-case/capture bindings are retained
+    in the adjacent trace. This is candidate composition, not corpus application,
+    owner merge, role approval, inherited support or release approval. Independent
+    whole-owner science review is required.'
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-028 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: 'Preserve vanadic sulfate pentahydrate as REJECTED_LABEL rather than an
+    exact vanadyl alias: CHEBI132758 classifies this text only as related, and no
+    inspected primary evidence establishes the ambiguous vanadic oxidation nomenclature
+    as unconditional exact V(IV) identity. Keep the explicit vanadyl pentahydrate
+    identity and valid five-water spellings, both CAS annotations/history, and earlier
+    stock/bare-token rejections. This does not select a different oxidation state
+    or source lot. Original full before/predecessor objects and field lineage are
+    preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.333314+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 1 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T10:01:15.204122+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private source-bound composition refresh TARGET-028 at frozen 2026-11-08T09:58:00.326701+00:00
+    input cutoff. Exact published source events remain verbatim; immutable prior candidate
+    and original owner retain all historical claims. Applied only the recorded claim-specific
+    #1201, #1226 corrections. This author event is not independent owner, role, source-membership
+    or release approval. W05-dependent groups remain pending and are not emitted in
+    this phase.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002632; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002632; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 14708-82-8
@@ -138,6 +243,16 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Mineral'
+notes: 'Current published W02 source correction (0c659aa4c121a5b1832bff699c28e30da577ca08,
+  c2-proposal-vanadyl-stock-and-bare-aliases): Final W02 proposal correction (unapplied):
+  Preserve vanadic sulfate pentahydrate as REJECTED_LABEL rather than an exact vanadyl
+  alias: CHEBI132758 classifies this text only as related, and no inspected primary
+  evidence establishes the ambiguous vanadic oxidation nomenclature as unconditional
+  exact V(IV) identity. Keep the explicit vanadyl pentahydrate identity and valid
+  five-water spellings, both CAS annotations/history, and earlier stock/bare-token
+  rejections. This does not select a different oxidation state or source lot. All
+  precise source, role, duplicate-owner and publication holds remain; this claim-specific
+  correction is not whole-owner approval.'
 mim_id: MIM:0002632
 legacy_identifiers:
 - MIM:Voso4_X_5_H2o

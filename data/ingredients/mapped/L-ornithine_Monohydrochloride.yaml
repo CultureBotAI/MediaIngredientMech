@@ -17,6 +17,9 @@ synonyms:
 - synonym_text: L-Ornithine monochlorohydrate/ornithine
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: L-Ornithine HCl
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen shard06 case CM_NAME:a632d00f64336d1f7f5d51f9680c2f9df316a97b0a7121fcf74c3bfc479f786e
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -61,11 +64,24 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
     nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: ADDED_SYNONYMS
+  changes: 'Added source-verified RAW_TEXT spelling/qualified-name aliases: L-Ornithine
+    HCl. No existing identity, mapping, role or count changed. Isolated proposal only;
+    no publication or inherited support approval.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001472; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001472; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 2 FEBA media formulations.
 chemical_properties:

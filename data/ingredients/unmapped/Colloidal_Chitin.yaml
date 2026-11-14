@@ -40,15 +40,38 @@ curation_history:
     that never decided anything is what #203 and #263 exist to undo. Any CURIE above
     is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:26:02.116293+00:00'
+  curator: codex_worker04_biological
+  action: ANNOTATED_SOURCE_BOUND_PROTOCOL
+  changes: 'Proposed annotation of primary DSMZ1681 protocol linked to MediaDive1506.
+    Maintains generic owner UNMAPPED and preserves commercial-powder alternative;
+    no exact chitin mapping or generic whole-owner preparation claim. Primary source:
+    https://bacmedia.dsmz.de/pdf/1681'
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002756; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:1506); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002756; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1506); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a prepared chitin substrate form pending
-  exact polymer preparation curation.
+  exact polymer preparation curation. Source-bound 2026-11-08 review: DSMZ1681, one
+  of the MediaDive1506 recipe uses, specifies commercial crab (shrimp) shell flakes
+  treated with hydrochloric acid, precipitated into cold water, centrifuged and washed
+  to pH6-6.5. The recipe lists 5g colloidal chitin and permits commercial chitin powder
+  as an alternative. This evidence describes that source protocol only; it does not
+  establish that every generic colloidal-chitin source is made by this method, identify
+  a single polymer fraction/acetylation state, or promote the owner to CHEBI:17029.
+  Full primary capture is retained in the worker04 source-review bundle.'
 ingredient_type: UNDEFINED_MIXTURE
 mim_id: MIM:0002756
 legacy_identifiers:

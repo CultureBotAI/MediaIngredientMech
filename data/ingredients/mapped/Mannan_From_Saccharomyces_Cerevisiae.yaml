@@ -1,24 +1,33 @@
 identifier: cas:9036-88-8
 preferred_term: Mannan from Saccharomyces cerevisiae
 ontology_mapping:
-  ontology_id: NCIT:C14271
-  ontology_label: Saccharomyces cerevisiae
-  ontology_source: NCIT
+  ontology_id: CHEBI:28808
+  ontology_label: mannan
+  ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 9036-88-8 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Superseded historical grounding: Imported from CultureBotHT. CAS-RN 9036-88-8
+      present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms).
+      Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='Mannan from Saccharomyces
-      cerevisiae'
+    notes: 'Superseded historical grounding: Parent class identified via stem-substring;
+      matched_via=''Mannan from Saccharomyces cerevisiae'''
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_28808
+    notes: Source-qualified Saccharomyces cerevisiae mannan CAS9036-88-8 remains distinct;
+      use skos:broadMatch to the mannan category. NCIT:C14271 is the organism, not
+      a material parent. Sigma M7504 COA supports the material CAS but does not assign
+      that supplier product to the recipe.
 synonyms:
 - synonym_text: filtered, Mannan from Saccharomyces cerevisiae
   synonym_type: RAW_TEXT
   source: culturebotht
+- synonym_text: mannan (Saccharomyces cerevisiae)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:edde03482aa2f4f915d7cab127975a3ecf620997013e5e4293710550f8e77024
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -68,20 +77,48 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-11-08T05:12:55.505566+00:00'
+  curator: all_unmatched_worker_10_bio_review
+  action: CORRECTED
+  changes: 'Proposed reviewed source-material aliases: [''mannan (Saccharomyces cerevisiae)''].
+    Preserve occurrence quantities and preparation stages; alias review does not approve
+    roles or complete publication payload. Correct organism parent NCIT:C14271 to
+    broader material CHEBI:28808 without changing cas:9036-88-8. Withdraw auto-backfilled
+    unrelated PubChem870 amylotetraose chemistry: {"inchi": "InChI=1S/C24H42O21/c25-1-5-9(29)10(30)15(35)22(40-5)44-19-7(3-27)42-24(17(37)12(19)32)45-20-8(4-28)41-23(16(36)13(20)33)43-18-6(2-26)39-21(38)14(34)11(18)31/h5-38H,1-4H2",
+    "molecular_formula": "C24H42O21", "pubchem_cid": 870, "smiles": "C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)OC4C(OC(C(C4O)O)O)CO)CO)CO)O)O)O)O"}.
+    Exact source-qualified ontology search remains bounded; no claim of exhaustive
+    absence.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.743367+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 2 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001599; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001599; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 9036-88-8
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C24H42O21
-  smiles: C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)OC4C(OC(C(C4O)O)O)CO)CO)CO)O)O)O)O
-  inchi: InChI=1S/C24H42O21/c25-1-5-9(29)10(30)15(35)22(40-5)44-19-7(3-27)42-24(17(37)12(19)32)45-20-8(4-28)41-23(16(36)13(20)33)43-18-6(2-26)39-21(38)14(34)11(18)31/h5-38H,1-4H2
-  pubchem_cid: 870
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

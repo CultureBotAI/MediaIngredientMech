@@ -1,45 +1,62 @@
-identifier: CHEBI:35366
+identifier: kgmicrobe.ingredient:fatty_acid_mixture_see_medium_no_266
 preferred_term: Fatty acid mixture (see Medium No. 266)
 ontology_mapping:
-  ontology_id: CHEBI:35366
-  ontology_label: fatty acid
-  ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  ontology_id: kgmicrobe.ingredient:fatty_acid_mixture_see_medium_no_266
+  ontology_label: Fatty acid mixture (see Medium No. 266)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+    notes: JCM266 defines a neutralized multicomponent fatty-acid stock. CHEBI35366
+      is not its whole identity; registry identity preserves this recipe-specific
+      preparation without a part-to-whole parent mapping.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf
+    notes: 'JCM 266 specifies four acids at 0.5 g each, 20 ml water and NaOH adjustment
+      to pH 7.5. DSMZ 119 uses the same generic mixture name for a different 23/27/27/27
+      ml acid input specification with 896 ml water. Therefore the generic labels
+      cannot globally select this JCM 266 stock. Retire these two active resolver
+      aliases without classifying the authentic source strings as chemically false.
+      Preserve their full structured provenance in the alias-disposition ledger and
+      here: [{"synonym_text": "Fatty acid mixture", "synonym_type": "RAW_TEXT", "source":
+      "culturemech:output/ingredient_occurrences.tsv"}, {"synonym_text": "Fatty acid
+      mixture (see below)", "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"}].
+      The original history is unchanged. All WITHHOLD and source/export obligations
+      remain.'
 synonyms:
 - synonym_text: Fatty acid
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: Fettsaeure
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: Fettsaeuren
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: acide gras
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: acides gras
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: acido graso
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: acidos grasos
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 - synonym_text: fatty acids
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Fatty acid mixture
-  synonym_type: RAW_TEXT
-  source: culturemech:output/ingredient_occurrences.tsv
-- synonym_text: Fatty acid mixture (see below)
-  synonym_type: RAW_TEXT
-  source: culturemech:output/ingredient_occurrences.tsv
+  synonym_type: REJECTED_LABEL
+  source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+    label cannot identify the whole JCM266 stock; retained as provenance.'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -101,18 +118,92 @@ curation_history:
     not resolve them: ''Fatty acid mixture'' (x3 CultureMech mentions); ''Fatty acid
     mixture (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:18:45.992728+00:00'
+  curator: worker05/source-review-proposal (Codex)
+  action: CORRECTED
+  changes: Replace erroneous CHEBI fatty-acid class identity with source-defined mixture
+    registry identity; remove inherited single-molecule structure, retain incompatible
+    molecular-class labels as REJECTED_LABEL; preserve existing mixture RAW_TEXT labels
+    without approving them, transcribe source inputs without final-volume inference.
+    Existing WITHHOLD remains.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. JCM 266 specifies four acids at
+    0.5 g each, 20 ml water and NaOH adjustment to pH 7.5. DSMZ 119 uses the same
+    generic mixture name for a different 23/27/27/27 ml acid input specification with
+    896 ml water. Therefore the generic labels cannot globally select this JCM 266
+    stock. Retire these two active resolver aliases without classifying the authentic
+    source strings as chemically false. Preserve their full structured provenance
+    in the alias-disposition ledger and here: [{"synonym_text": "Fatty acid mixture",
+    "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"},
+    {"synonym_text": "Fatty acid mixture (see below)", "synonym_type": "RAW_TEXT",
+    "source": "culturemech:output/ingredient_occurrences.tsv"}]. The original history
+    is unchanged. All WITHHOLD and source/export obligations remain. Report-only candidate;
+    separate final scientific review and coordinator integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001057; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-ingredient_type: SINGLE_INGREDIENT
-chemical_properties:
-  molecular_formula: CHO2R
-  smiles: '*C(=O)O'
-  data_source: CHEBI sqlite (oaklib)
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001057; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+ingredient_type: STOCK_SOLUTION
+components:
+- component_name: Valeric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: Isovaleric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: α-Methylbutyric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g; stereochemistry unspecified
+- component_name: Isobutyric acid
+  reference_scope: UNMAPPED
+  source: JCM266 input0.5g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: JCM266 input20ml, not asserted final volume
+- component_name: Concentrated NaOH solution
+  reference_scope: UNMAPPED
+  source: JCM266 pH-adjustment input, amount unspecified
+notes: 'JCM 266 specifies four acids at 0.5 g each, 20 ml water and NaOH adjustment
+  to pH 7.5. DSMZ 119 uses the same generic mixture name for a different 23/27/27/27
+  ml acid input specification with 896 ml water. Therefore the generic labels cannot
+  globally select this JCM 266 stock. Retire these two active resolver aliases without
+  classifying the authentic source strings as chemically false. Preserve their full
+  structured provenance in the alias-disposition ledger and here: [{"synonym_text":
+  "Fatty acid mixture", "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"},
+  {"synonym_text": "Fatty acid mixture (see below)", "synonym_type": "RAW_TEXT", "source":
+  "culturemech:output/ingredient_occurrences.tsv"}]. The original history is unchanged.
+  All WITHHOLD and source/export obligations remain.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+    source_record: JCM266 Fatty acid mixture
+    notes: Complete named preparation inputs at one level only; UNMAPPED component
+      references do not claim chemical identity. Numerical batch inputs remain in
+      source notes rather than unsupported normalized concentrations.
 mim_id: MIM:0001057
 legacy_identifiers:
 - MIM:Fatty_Acid_Mixture_See_Medium_No_266
 - CHEBI:35366
+- kgmicrobe.ingredient:fatty_acid_mixture_see_medium_no_266

@@ -19,6 +19,9 @@ ontology_mapping:
       in PSP tubers.'
     explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
+- synonym_text: K2HPO4 (anhydrous base)
+  synonym_type: RAW_TEXT
+  source: NBRC medium268 https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268
 - synonym_text: 'Role: Buffer; Properties: Defined component, Inorganic compound,
     Simple component'
   synonym_type: RAW_TEXT
@@ -70,7 +73,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: KH2HPO4
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Phosphoric acid, dipotassium salt
   synonym_type: EXACT_SYNONYM
@@ -92,7 +95,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: K2HPO
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: K2HPO4(Sigma P 3786)
   synonym_type: RAW_TEXT
@@ -251,11 +254,40 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-11-08T05:15:32.683727+00:00'
+  curator: Codex worker08 /root/inorganics
+  action: CORRECTED
+  changes: 'Add exact source spelling K2HPO4 (anhydrous base) to the existing anhydrous
+    owner. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:131527, https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=268;
+    capture keys: if-web-6e58176e2c88, if-web-ce1b21e3999c; see reports/all_unmatched_20261107/worker-08/research/inorganic_forms.
+    Proposed bytes only; all existing release holds retained.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype KH2HPO4, K2HPO as REJECTED_LABEL, preserving original text and provenance.
+    KH2HPO4 is a malformed literal formula and K2HPO is a truncated formula; neither
+    establishes global identity with dipotassium hydrogen phosphate. Preserve prior
+    hydrate, concentration-label and source holds; no source occurrence is chemically
+    corrected. All inherited history, scientific/source/role/export holds and original
+    before hash remain preserved. This is a proposal, pending independent whole-payload
+    review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001382; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001382; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7758-11-4

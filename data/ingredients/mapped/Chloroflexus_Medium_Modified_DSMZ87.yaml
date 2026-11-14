@@ -1,0 +1,126 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:chloroflexus_medium_modified_dsmz87
+preferred_term: Chloroflexus medium modified (DSMZ87)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:chloroflexus_medium_modified_dsmz87
+  ontology_label: Chloroflexus medium modified (DSMZ87)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf
+    notes: Current DSMZ87 explicitly specifies 1 ml neutralized sulfide solution per
+      90 ml medium and 0.03% final concentration, with its own stock prepared from
+      3 g Na2S·9H2O and 100 ml water. MICRO:0001830 quotes the historical 0.015% final
+      concentration and refers to DSMZ27. Other basal quantities agree, but full formulation
+      equivalence is not established. Use a source-qualified registry for the captured
+      current DSMZ87 preparation; no exact or broad mapping to the historical numbered
+      term is proposed.
+notes: Current DSMZ87 explicitly specifies 1 ml neutralized sulfide solution per 90
+  ml medium and 0.03% final concentration, with its own stock prepared from 3 g Na2S·9H2O
+  and 100 ml water. MICRO:0001830 quotes the historical 0.015% final concentration
+  and refers to DSMZ27. Other basal quantities agree, but full formulation equivalence
+  is not established. Use a source-qualified registry for the captured current DSMZ87
+  preparation; no exact or broad mapping to the historical numbered term is proposed.
+  The basal water input is 1050 ml as printed, without renormalization. DSMZ87a adds
+  vitamin CA; periodic later yeast feeding is outside the base. All source/owner/export
+  holds remain. Raw source text "Medium 87" remains provenance only.
+components:
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 1 g
+- component_name: Glycyl-glycine
+  reference_scope: UNMAPPED
+  source: 1 g
+- component_name: Na2HPO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: KNO3
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  source: 0.5 g
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 0.05 g
+- component_name: Fe(III) citrate solution (0.1 g/100 ml)
+  reference_scope: UNMAPPED
+  source: 5 ml
+- component_name: Trace element solution SL-6
+  reference_scope: UNMAPPED
+  source: 1 ml
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1050 ml listed
+- component_name: Neutralized sulfide solution (DSMZ87 current recipe)
+  reference_scope: UNMAPPED
+  source: '1 ml per 90 ml basal medium. Source stock: 3 g Na2S·9H2O in 100 ml water,
+    acid-adjusted to pH7; source states0.03% final concentration.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf
+    source_record: Chloroflexus medium modified (DSMZ87)
+    notes: Current DSMZ87 explicitly specifies 1 ml neutralized sulfide solution per
+      90 ml medium and 0.03% final concentration, with its own stock prepared from
+      3 g Na2S·9H2O and 100 ml water. MICRO:0001830 quotes the historical 0.015% final
+      concentration and refers to DSMZ27. Other basal quantities agree, but full formulation
+      equivalence is not established. Use a source-qualified registry for the captured
+      current DSMZ87 preparation; no exact or broad mapping to the historical numbered
+      term is proposed. One-level named preparation inputs only; component grounding
+      remains separate.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Current DSMZ87 explicitly specifies 1 ml neutralized sulfide solution
+    per 90 ml medium and 0.03% final concentration, with its own stock prepared from
+    3 g Na2S·9H2O and 100 ml water. MICRO:0001830 quotes the historical 0.015% final
+    concentration and refers to DSMZ27. Other basal quantities agree, but full formulation
+    equivalence is not established. Use a source-qualified registry for the captured
+    current DSMZ87 preparation; no exact or broad mapping to the historical numbered
+    term is proposed. Independent correction: Current DSMZ87 explicitly specifies
+    1 ml neutralized sulfide solution per 90 ml medium and 0.03% final concentration,
+    with its own stock prepared from 3 g Na2S·9H2O and 100 ml water. MICRO:0001830
+    quotes the historical 0.015% final concentration and refers to DSMZ27. Other basal
+    quantities agree, but full formulation equivalence is not established. Use a source-qualified
+    registry for the captured current DSMZ87 preparation; no exact or broad mapping
+    to the historical numbered term is proposed. Isolated proposal only; all source
+    and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002985 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002985
+legacy_identifiers:
+- MIM:Chloroflexus_Medium_Modified_DSMZ87
+- kgmicrobe.ingredient:chloroflexus_medium_modified_dsmz87

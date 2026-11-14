@@ -49,6 +49,9 @@ synonyms:
 - synonym_text: Sodium formate (Wako)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: NaCOOH
+  synonym_type: RAW_TEXT
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3211
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 222
@@ -178,11 +181,40 @@ curation_history:
     not resolve them: ''Sodium formate (Wako)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''NaCOOH'' as a bounded reagent alias; preserve identity,hydration,counterion,roles,status
+    and occurrence statistics. Concentration and source-nesting findings remain separate.
+    Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/. Proposal
+    only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. Report-only candidate; separate final scientific review
+    and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001776; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001776; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 141-53-7

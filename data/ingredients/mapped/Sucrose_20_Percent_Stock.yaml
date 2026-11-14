@@ -1,0 +1,95 @@
+preferred_term: Sucrose 20% w/v stock (JCM1013)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms:
+- synonym_text: Sucrose (20%, w/v)
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1013
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-11-08T05:47:55.813019+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CREATED
+  changes: Curate JCM1013 sucrose20%w/v stock, separate from pure sucrose and its10ml
+    receiving-medium dose. The sucrose concentration is explicitly20g per100ml of
+    stock; the source does not expressly identify solvent or final receiving volume,
+    which remain unasserted. Exact isolated payload; no maintained write. All prior
+    scientific/publication holds preserved.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Optionally link the explicitly named sucrose constituent
+    to existing Sucrose CHEBI:17992 using MIM_CATALOG. Retain PARTIAL completeness,
+    the explicit 20% w/v basis and unspecified solvent. Section 6 permits named UNMAPPED
+    components; the predecessor was not a schema or identity failure and this improvement
+    is not a release prerequisite. Isolated proposal only; no maintained data or source
+    membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003175 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+identifier: kgmicrobe.ingredient:sucrose_20_percent_stock
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sucrose_20_percent_stock
+  ontology_label: Sucrose 20% w/v stock (JCM1013)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1013
+    notes: Curate JCM1013 sucrose20%w/v stock, separate from pure sucrose and its10ml
+      receiving-medium dose. The sucrose concentration is explicitly20g per100ml of
+      stock; the source does not expressly identify solvent or final receiving volume,
+      which remain unasserted.
+solution_type: OTHER
+components:
+- component_name: Sucrose
+  reference_scope: MIM_CATALOG
+  concentration_value: '20'
+  concentration_unit: PERCENT_WV
+  component_id: CHEBI:17992
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1013
+    notes: Exact source stock label20%w/v; partial because solvent is not explicitly
+      specified. No receiving-medium concentration inferred.
+notes: 'Curate JCM1013 sucrose20%w/v stock, separate from pure sucrose and its10ml
+  receiving-medium dose. The sucrose concentration is explicitly20g per100ml of stock;
+  the source does not expressly identify solvent or final receiving volume, which
+  remain unasserted. Source-qualified proposal under issue1193. No ingredient roles,
+  assay outcomes, complete-owner support or release admission are approved. Preserve
+  all frozen source and owner holds; component uncertainty is stated separately from
+  whole-material identity. Occurrence statistics count current exact proposed-label
+  matches in the inspected CultureMech occurrence table; no shared-identifier expansion
+  or newly invented recipe membership.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. Optionally link the explicitly
+  named sucrose constituent to existing Sucrose CHEBI:17992 using MIM_CATALOG. Retain
+  PARTIAL completeness, the explicit 20% w/v basis and unspecified solvent. Section
+  6 permits named UNMAPPED components; the predecessor was not a schema or identity
+  failure and this improvement is not a release prerequisite. All original source,
+  organism, role, owner and export holds remain. Independent review of these exact
+  successor bytes is pending.'
+mim_id: MIM:0003175
+legacy_identifiers:
+- MIM:Sucrose_20_Percent_Stock
+- kgmicrobe.ingredient:sucrose_20_percent_stock

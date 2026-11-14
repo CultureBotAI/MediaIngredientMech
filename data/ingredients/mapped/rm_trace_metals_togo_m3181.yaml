@@ -1,0 +1,133 @@
+identifier: kgmicrobe.ingredient:rm_trace_metals_togo_m3181
+preferred_term: RM trace metals stock (TOGO M3181)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:rm_trace_metals_togo_m3181
+  ontology_label: RM trace metals stock (TOGO M3181)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    notes: TOGO M3181 narrative paragraph2 and trace-metals table paragraph10. Bounded
+      source-defined preparation identity, not an exact identity to an individual
+      constituent or an unqualified generic product.
+solution_type: TRACE_METAL_MIX
+synonyms:
+- synonym_text: Trace metals
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+components:
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '70'
+  concentration_unit: MG_PER_L
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG_PER_L
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '60'
+  concentration_unit: MG_PER_L
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: MG_PER_L
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG_PER_L
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG_PER_L
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '40'
+  concentration_unit: MG_PER_L
+- component_name: Concentrated HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: ML_PER_L
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: TOGO M3181 parsed trace-metals table paragraph10 explicitly prints Distilled
+    water1L. Membership retained; quantity omitted because additive-input versus final-volume
+    basis is not established by the narrative/preparation.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    source_record: TOGO M3181 comments paragraph2; components paragraph10
+    notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+      concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed
+      paragraph10 table; retain the narrative component and document that omission.
+      Paragraph10 separately prints Distilled water1L, so unquantified water membership
+      is retained with that exact source attribution. The narrative supplies no stock
+      solvent amount or mixing/final-volume procedure; do not interpret the parsed1L
+      as either water added or final stock volume. Reported per-litre salt/acid quantities
+      do not supply that procedure. UNKNOWN completeness records unresolved full preparation
+      closure across the narrative and demonstrably incomplete parsed representation,
+      independently of the unknown concentrated-HCl strength. Unknown acid strength
+      limits chemical specification; it is not by itself a reason to call the member
+      list incomplete.
+  notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+    concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed paragraph10
+    table; retain the narrative component and document that omission. Paragraph10
+    separately prints Distilled water1L, so unquantified water membership is retained
+    with that exact source attribution. The narrative supplies no stock solvent amount
+    or mixing/final-volume procedure; do not interpret the parsed1L as either water
+    added or final stock volume. Reported per-litre salt/acid quantities do not supply
+    that procedure. UNKNOWN completeness records unresolved full preparation closure
+    across the narrative and demonstrably incomplete parsed representation, independently
+    of the unknown concentrated-HCl strength. Unknown acid strength limits chemical
+    specification; it is not by itself a reason to call the member list incomplete.
+notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+  concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed paragraph10
+  table; retain the narrative component and document that omission. Paragraph10 separately
+  prints Distilled water1L, so unquantified water membership is retained with that
+  exact source attribution. The narrative supplies no stock solvent amount or mixing/final-volume
+  procedure; do not interpret the parsed1L as either water added or final stock volume.
+  Reported per-litre salt/acid quantities do not supply that procedure. UNKNOWN completeness
+  records unresolved full preparation closure across the narrative and demonstrably
+  incomplete parsed representation, independently of the unknown concentrated-HCl
+  strength. Unknown acid strength limits chemical specification; it is not by itself
+  a reason to call the member list incomplete. Trace metals is a local generic recipe
+  label and does not resolve globally. The receiving medium uses1mL stock per litre;
+  frozen flattened1G_PER_L values are not adopted. Iron citrate belongs to the receiving
+  RM medium, not to this stock. Named salts retain exact printed hydration state with
+  UNMAPPED child references. The stock differs from NBRC1117 SL7 and JCM187.
+curation_history:
+- timestamp: '2026-11-08T06:40:36.183483+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: CREATED
+  changes: Create bounded source-specific RM trace-stock proposal from the full primary
+    narrative, retain molybdate despite parsed-table omission, and leave acid strength,
+    solvent/final-volume procedure and component identity groundings unresolved.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T06:43:05.687105+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: CORRECTED
+  changes: Independent reviewer A identified explicit parsed-table water membership
+    and an imprecise closure rationale. Retain distilled water as an unquantified
+    component with paragraph10 provenance and printed1L in evidence only; separate
+    unknown acid strength from unresolved full preparation closure. Preserve initial
+    proposed payload and receipts in author-attempt-1.
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003332 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003332
+legacy_identifiers:
+- MIM:rm_trace_metals_togo_m3181
+- kgmicrobe.ingredient:rm_trace_metals_togo_m3181

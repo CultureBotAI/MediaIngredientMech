@@ -1,26 +1,34 @@
-identifier: FOODON:03315720
+identifier: MICRO:0000181
 preferred_term: Soy peptone
 ontology_mapping:
-  ontology_id: FOODON:03315720
-  ontology_label: vegetable protein, hydrolyzed
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: MICRO:0000181
+  ontology_label: soy peptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: CURATOR_JUDGMENT
-    source: cbclaw_foodon_promotion
-    notes: Commercial food mixture - FOODON is correct parent ontology. Soy peptone
-      is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable
-      protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH.
-  - evidence_type: MANUAL_CURATION
-    source: MIM curation (#260)
-    notes: 'Added ''Peptic digest of soybean meal'' as a EXACT_SYNONYM (#260): the
-      USP/compendial descriptor for soy peptone — the same product the record already
-      lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`.
-      Names the manufacturing process rather than a different substance. CultureMech
-      uses this surface form and label_index did not contain it, so the lookup missed.
-      No new record: FOODON:03315720 is this record''s identifier, and in MIM the
-      identifier IS the ontology CURIE, so a second record on it would be a duplicate
-      primary key rather than added coverage.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/ingredient/75
+    notes: Soy-derived complex digest material; FOODON03315720 includes other vegetable
+      hydrolysates and is not its identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000181
+    notes: Full active term and BD definition-source annotation support the generic
+      enzymatic soybean-flour digest identity. This interpretation excludes the erroneous
+      Hordeum vulgare parenthesis, branded Bacto/Soytone and papaic synonyms, and
+      product-specific numeric composition; it does not approve inherited peptic-process
+      aliases or branded-product equivalence.
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/ingredient/75
+    notes: Source ingredient 75 names generic Soy peptone and soybean/soymeal aliases
+      with no branded product identity. Read together with the manufacturer generic
+      soy-peptone definition, this supports the generic MICRO:0000181 scope; supplier,
+      specific enzyme, lot, physical form and source admission remain unresolved.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Printed page 26 defines generic soy peptones as enzymatic digests of soy
+      flour; page 33 distinguishes named products and processing. This supports the
+      generic material identity only and supplies no whole-stock composition, specific
+      enzyme, branded equivalence or role approval.
 synonyms:
 - synonym_text: Soy peptone
   synonym_type: EXACT_SYNONYM
@@ -32,22 +40,22 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: manual
 - synonym_text: Phytone peptone
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Phytone peptone (BD-BBL)
-  synonym_type: CATALOG_VARIANT
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Soytone (BD-Difco) or Phytone peptone (BD-BBL)
-  synonym_type: CATALOG_VARIANT
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: 'Properties: Undefined component'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: Soytone
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Bacto Soytone
-  synonym_type: CATALOG_VARIANT
+  synonym_type: REJECTED_LABEL
   source: merge_from_CHEBI:8150
 - synonym_text: Peptic digest of soybean meal
   synonym_type: EXACT_SYNONYM
@@ -114,11 +122,133 @@ curation_history:
     PMID/DOI citation for Soytone as a soybean-meal hydrolysate nitrogen source.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-11-08T05:47:55.843673+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein
+    identifier to a local material identity. Preserve source75 unspecified soy digest
+    and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto
+    Soytone or Phytone formula to it. Existing branded alias claims require separate
+    complete-owner reconciliation before export. Exact isolated payload; no maintained
+    write. All prior scientific/publication holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Primary product evidence identifies Soytone as an enzymatic soybean digest.
+    Record that evidence and the exact scope of the four-member family on the active
+    representative, without treating generic soy peptone, Soytone and every Phytone
+    product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate
+    identifier; Bacto_Soytone remains rejected. Isolated proposal only; all native
+    holds remain preserved in source-case decisions.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T06:54:14.519101+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Prepared isolated final-intake delta reconciliation TARGET-024. Origins:
+    w05::MATERIALS-C1193-soy-peptone-boundary; w08::op1201-soy-family-source-boundary.
+    Authentic beforeimage, every authored event and all source-case/capture bindings
+    are retained in the adjacent trace. This is candidate composition, not corpus
+    application, owner merge, role approval, inherited support or release approval.
+    Independent whole-owner science review is required.'
+- timestamp: '2026-11-08T07:05:36.702541+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Reject exactly the three reviewed Phytone-bearing Soy-owner identity claims
+    while preserving every original spelling/source and all other fields. Conclusion:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1212#issuecomment-6718503130.
+    Isolated candidate only; no maintained write, role approval, inherited support,
+    membership transfer or release approval. Exact whole-candidate independent review
+    remains required.'
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: MAPPED
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Retire five branded or alternative identity aliases on the
+    generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded
+    coordinator conclusion in issue 1212 comment 6718503130. Separate review of the
+    original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer
+    guide pages 13, 33 and 92 confirms distinct named products and processing; generic
+    soy digest is not their exact product identity. Preserve raw texts, original sources,
+    merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone.
+    This does not merge or select the competing W08/W10 owner deltas. Optionally classify
+    the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy
+    already excludes these texts; this is provenance classification only, with no
+    resolver change, filter change or release blocker. Isolated proposal only; no
+    maintained data or source membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-024 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:30:33.717645+00:00'
+  curator: Codex /root/buffer_hepes; W05 consolidated report-only parent correction
+  action: CORRECTED
+  changes: Replace the provisional local self-mapping with the supported generic MICRO:0000181
+    soy peptone identity under MAPPING_SEMANTICS section 3. The complete active term
+    and its BD definition-source discussion describe generic enzymatic soy-flour digest;
+    MediaDive ingredient 75 names Soy peptone with soybean/soymeal synonyms, and the
+    Thermo Fisher guide independently defines generic soy peptones as enzymatic digests
+    of soy flour. This is not an identity assertion for Phytone, Difco/Bacto Soytone
+    or any supplier, enzyme or lot. Do not import the erroneous Hordeum vulgare parenthesis,
+    branded/papaic synonyms, or annotated ash/NaCl numbers. Preserve all prior aliases
+    and five branded/alternative withdrawals, complete original histories, occurrence
+    totals, Bacto Soytone tombstone, source quarantines, sibling/incoming-reference
+    obligations, and physical-form/role/export holds. The inherited Peptic digest
+    of soybean meal alias is not newly supported or approved by this generic term
+    assessment. Isolated guarded successor proposal only; no maintained write or source
+    admission.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor TARGET-024 binds the actual published
+    W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen accepted source
+    heads. Exact #1193, #1212 claim corrections and genuine source-history appendices
+    are recorded in final-same-target-reconciliation-v4. Original combined bytes and
+    authentic maintained beforeimage remain preserved. This draft retains all case,
+    occurrence, role, preparation, product and release holds; source acceptance and
+    distinct final combined-byte review are not inferred. No maintained record or
+    export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002365; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002365; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 merged:
@@ -137,7 +267,77 @@ nutritional_roles:
     curator_note: Kwon et al. evaluated Soytone as a complex nitrogen source for Lactobacillus
       rhamnosus lactic acid fermentation, directly supporting soy peptone as a peptide/proteinaceous
       nutrient source.
+notes: 'Source-scoped proposal w05::MATERIALS-C1193-soy-peptone-boundary: Correct
+  generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein
+  identifier to a local material identity. Preserve source75 unspecified soy digest
+  and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone
+  or Phytone formula to it. Existing branded alias claims require separate complete-owner
+  reconciliation before export. Source-qualified proposal under issue1193. No ingredient
+  roles, assay outcomes, complete-owner support or release admission are approved.
+  Preserve all frozen source and owner holds; component uncertainty is stated separately
+  from whole-material identity.
+
+
+  Source-scoped proposal w08::op1201-soy-family-source-boundary: Primary product evidence
+  identifies Soytone as an enzymatic soybean digest. Record that evidence and the
+  exact scope of the four-member family on the active representative, without treating
+  generic soy peptone, Soytone and every Phytone product as a reviewed exact identity.
+  Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone
+  remains rejected. MediaDive667 and MediaDive102 use Soytone and Bacto Soytone respectively.
+  The Thermo/BD product evidence supports soybean-digest material, but does not allocate
+  the shared 1089/833 occurrence totals to catalog products. Soy_Peptone, Soya_Pepton
+  and Soya_Peptone were read in full, along with rejected Bacto_Soytone. Their existing
+  identities, aliases, counts and holds are preserved; this is a bounded provenance
+  proposal, not a completed family merge or product-equivalence approval. This note
+  does not ratify inherited exact synonyms. The historical #260 reference is left
+  verbatim as history; the live MIM issue260 is a hydration warning and is not used
+  as soy-equivalence approval.
+
+
+  Current coupled correction under https://github.com/CultureBotAI/MediaIngredientMech/issues/1212#issuecomment-6718503130:
+  ''Phytone peptone'' and ''Phytone peptone (BD-BBL)'' denote the distinct specific
+  Phytone product now represented by MICRO:0001795; they are not exact names of this
+  Soy_Peptone owner. ''Soytone (BD-Difco) or Phytone peptone (BD-BBL)'' expresses
+  product alternatives rather than one identity. All three original texts and sources
+  remain unchanged as REJECTED_LABEL provenance. This is rejection of their identity
+  claim on this owner, not rejection of the source facts. Other soy-product tokens,
+  shared-ID occurrences, source holds and whole-owner review obligations remain unresolved
+  where previously held. Original token objects: [{"source": "manual", "synonym_text":
+  "Phytone peptone", "synonym_type": "EXACT_SYNONYM"}, {"source": "manual", "synonym_text":
+  "Phytone peptone (BD-BBL)", "synonym_type": "CATALOG_VARIANT"}, {"source": "manual",
+  "synonym_text": "Soytone (BD-Difco) or Phytone peptone (BD-BBL)", "synonym_type":
+  "CATALOG_VARIANT"}]
+
+
+  Current published W05 #1212/#1193 source reconciliation also excludes Soytone and
+  Bacto Soytone from unconditional identity resolution on this generic Soy_Peptone
+  owner. The manufacturer guide distinguishes these branded digest products; their
+  original texts and sources remain REJECTED_LABEL. The three previously corrected
+  Phytone/alternative-product tokens remain rejected. Properties metadata is retained
+  as REJECTED_LABEL, without changing native filtering. This supersedes only the preceding
+  historical statement that these two Soytone token dispositions were pending; shared
+  occurrence assignment, product-owner continuity, Soya_Pepton/Soya_Peptone and the
+  rejected Bacto_Soytone record remain separately unresolved. No product merge or
+  source membership transfer is authorized.
+
+
+  Current published W05 source correction (108e213e96f7d423ee345ce265d692e79063127c,
+  W05-FINAL-MAT-032): Consolidated parent-grounding successor (prior scope text retained
+  as historical provenance): Replace the provisional local self-mapping with the supported
+  generic MICRO:0000181 soy peptone identity under MAPPING_SEMANTICS section 3. The
+  complete active term and its BD definition-source discussion describe generic enzymatic
+  soy-flour digest; MediaDive ingredient 75 names Soy peptone with soybean/soymeal
+  synonyms, and the Thermo Fisher guide independently defines generic soy peptones
+  as enzymatic digests of soy flour. This is not an identity assertion for Phytone,
+  Difco/Bacto Soytone or any supplier, enzyme or lot. Do not import the erroneous
+  Hordeum vulgare parenthesis, branded/papaic synonyms, or annotated ash/NaCl numbers.
+  Preserve all prior aliases and five branded/alternative withdrawals, complete original
+  histories, occurrence totals, Bacto Soytone tombstone, source quarantines, sibling/incoming-reference
+  obligations, and physical-form/role/export holds. The inherited Peptic digest of
+  soybean meal alias is not newly supported or approved by this generic term assessment.
+  Independent exact-byte review and root integration remain pending.'
 mim_id: MIM:0002365
 legacy_identifiers:
 - MIM:Soy_Peptone
 - FOODON:03315720
+- MICRO:0000181

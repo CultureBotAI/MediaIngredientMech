@@ -59,7 +59,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Methanol (10%)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Methanol**
   synonym_type: RAW_TEXT
@@ -151,11 +151,34 @@ curation_history:
     not resolve them: ''Methanol*'' (x3 CultureMech mentions); ''Methanol (10%)''
     (x1 CultureMech mentions); ''Methanol**'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:17:21.919974+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: CORRECTED
+  changes: Original ATCC2883 broth and agar recipes specify Methanol (filter sterilized),
+    3 ml added after autoclaving. This establishes a source-qualified treatment of
+    the methanol input, not a new mixture identity. No assay, solvent, dilution, filter
+    pore size or universal grade equivalence is inferred. The raw source wording remains
+    in this provenance note rather than an automatically resolving alias. The existing
+    Methanol (10%) label is a concentration-qualified recipe label; its exact original
+    stock-strength versus receiving-medium-dose context has not been established,
+    and either interpretation is unsuitable as an unrestricted molecular-identity
+    alias; it is retained as REJECTED_LABEL on the pure molecular methanol owner.
+    This bounded provenance amendment does not approve the whole inherited owner or
+    its remaining aliases.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001636; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001636; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 67-56-1
@@ -166,6 +189,21 @@ chemical_properties:
   smiles: CO
 kg_microbe_node_id: CHEBI:17790
 ingredient_type: SINGLE_INGREDIENT
+notes: Original ATCC2883 broth and agar recipes specify Methanol (filter sterilized),
+  3 ml added after autoclaving. This establishes a source-qualified treatment of the
+  methanol input, not a new mixture identity. No assay, solvent, dilution, filter
+  pore size or universal grade equivalence is inferred. The raw source wording remains
+  in this provenance note rather than an automatically resolving alias. The existing
+  Methanol (10%) label is a concentration-qualified recipe label; its exact original
+  stock-strength versus receiving-medium-dose context has not been established, and
+  either interpretation is unsuitable as an unrestricted molecular-identity alias;
+  it is retained as REJECTED_LABEL on the pure molecular methanol owner. All inherited
+  source, ingredient, full-owner and downstream publication holds remain.
+supplied_form:
+- name: Methanol (filter sterilized)
+  form: filter sterilized
+  notes: ATCC2883 source-qualified input. Assay and solvent are unstated; this is
+    a preparation treatment, not a separate identity.
 mim_id: MIM:0001636
 legacy_identifiers:
 - MIM:Methanol

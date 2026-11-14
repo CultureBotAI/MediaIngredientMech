@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:bd_difco_tc_yeastolate
+preferred_term: BD Difco TC Yeastolate
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_tc_yeastolate
+  ontology_label: BD Difco TC Yeastolate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=896
+    notes: Source-qualified complex preparation identity; no molecular composition,
+      taxon identity or universal product equivalence is asserted.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2179
+    notes: Source-qualified complex preparation identity; no molecular composition,
+      taxon identity or universal product equivalence is asserted.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2578
+    notes: Source-qualified complex preparation identity; no molecular composition,
+      taxon identity or universal product equivalence is asserted.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://pmc.ncbi.nlm.nih.gov/articles/PMC2267510/
+    notes: Source-qualified complex preparation identity; no molecular composition,
+      taxon identity or universal product equivalence is asserted.
+notes: This source-qualified commercial complex nutrient is BD-Difco TC Yeastolate
+  before the separate recipe processing steps. JCM896 explicitly names TC Yeastolate
+  (BD-Difco) as a weighed ingredient; its catalogue and lot are unstated. The two
+  TOGO2179/2578-derived recipe occurrences explicitly identify BD255772 in 10% and
+  2% preparations. The primary paper Characterization of yeastolate fractions that
+  promote insect cell growth and recombinant protein production (PMC2267510), methods
+  section Yeastolate and preparation of yeastolate fractions, independently identifies
+  Difco TC yeastolate catalogue255772 purchased from Becton Dickinson, then describes
+  dissolving and ultrafiltering it. The latter ultrafiltration and ethanol fractions
+  are subsequent preparations and are not intrinsic properties assigned to the product
+  here. The common TC product name and manufacturer support this bounded product-family
+  identity; a particular catalogue or lot is not retroactively assigned to JCM896.
+  Raw labels TC Yeastolate (BD-Difco) and TC Yeastolate (BD 255772) are retained as
+  occurrence provenance without global synonym approval. Do not merge this product
+  with generic yeast extract, historical Proteose Yeastolate Difco5577-15, the MICRO0000522
+  2%-autoclaved stock, or whole 2%/10% solutions. No composition, lot invariance,
+  catalogue-successor equivalence or individual nutrient role is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:39:05.750480+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed BD Difco TC Yeastolate with explicit source/product or process
+    boundaries. Unknown bulk chemistry is inherent to the preparation. No maintained
+    owner or source support changed.
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003211 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003211
+legacy_identifiers:
+- MIM:bd_difco_tc_yeastolate
+- kgmicrobe.ingredient:bd_difco_tc_yeastolate

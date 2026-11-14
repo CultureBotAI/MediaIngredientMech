@@ -17,6 +17,15 @@ ontology_mapping:
       is based on the enhanced cellular uptake of 2-deoxy-2-[18F]-fluoro-D-glucose
       (FDG).
     explanation: Auto-proposed; curator should rephrase or remove.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2287
+    notes: PrimaryM2287 explicitly lists D(+)glucose22mM; sixJCM originals spell D-Glucose.
+      CurrentCHEBI17634 verifies D-configuration. LowercaseD--glucose is separately
+      supported only by complete frozenJCM490/TOGOM491 solute occurrences, with no
+      live490/491 reconfirmation; it is not a whole-stock alias. Existing FDG-related
+      inherited mechanism evidence is a deferred owner defect, not recertified. Supports
+      only raw chemical aliases, not whole1MGlucose stocks or inherited unrelated
+      mechanism/role claims.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:glc_D'
   synonym_type: RAW_TEXT
@@ -55,6 +64,21 @@ synonyms:
 - synonym_text: aldehydo-D-glucose
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Dextrose (BD 215530)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.bd.com/en-us/products-and-solutions/products/product-page.215530
+- synonym_text: D--Glucose
+  synonym_type: EXACT_SYNONYM
+  source: 'all_unmatched_20261107_worker06: JCM379/381/429/476/709/710 and TogoM2287;
+    lowercase D--glucose only from frozen JCM490/TOGOM491 snapshots'
+- synonym_text: D (+) glucose
+  synonym_type: EXACT_SYNONYM
+  source: 'all_unmatched_20261107_worker06: JCM379/381/429/476/709/710 and TogoM2287;
+    lowercase D--glucose only from frozen JCM490/TOGOM491 snapshots'
+- synonym_text: D--glucose
+  synonym_type: EXACT_SYNONYM
+  source: 'all_unmatched_20261107_worker06: JCM379/381/429/476/709/710 and TogoM2287;
+    lowercase D--glucose only from frozen JCM490/TOGOM491 snapshots'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1250
@@ -164,11 +188,74 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''Dextrose (BD 215530)'' as a bounded reagent alias;
+    preserve identity,hydration,counterion,roles,status and occurrence statistics.
+    Concentration and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
+    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: 'Proposed three D-glucose raw spellings: two live-source-verified aliases
+    and lowercaseD--glucose supported by frozenJCM490/TOGOM491 snapshots, retainingD-stereochemistry
+    and excludingwhole1MGlucose stocks. Existing complete-owner publication payload
+    requires freshreview.'
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: MAPPED
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G11 from authentic common before
+    sha256=dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914. Origins:
+    worker05:CHEM-PROP-dextrose sha256=f78e5b3816d6b9cd364b866b5b93c5ad2f3baf41b2cfad4545ea426e0c356810;
+    worker06:A-P-D-GLUCOSE sha256=318fb75b1beb2c2a8b1635c3a499ca6025b3fe6c863f825529498d221d178d2a.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. Report-only candidate; separate final scientific review
+    and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-007 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000855; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000855; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 50-99-7

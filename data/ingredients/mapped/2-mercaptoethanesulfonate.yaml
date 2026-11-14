@@ -62,6 +62,18 @@ synonyms:
 - synonym_text: 2-Mercaptoethanesulfonic acid (Coenzyme M)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Coenzyme M (2-mercaptoethanesulfonic acid)
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[109] case_id=CM_NAME:d9efff2555033aab5f7a242c01e29d250203409c1ffe5a9a60fef3b6cd19dd54;
+    source=culturemech; source_case_id=Coenzyme M (2-mercaptoethanesulfonic acid);
+    CultureMech:009215 ingredients/36 (inputs/culturemech/data/normalized_yaml/archaea/modified_methanobacterium_medium_for_dsm_1093.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2660'
+- synonym_text: Mercaptoethanesulfonic acid
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:91616248b16f255fd8f94fd375154bdf9ba2d11c25d46748ec16666571248edf'
+- synonym_text: Co-enzyme M (mercaptoethanesulfonic acid)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:c6f01a98df13b5fa7961369ff7b92e99be19879b5aed4d7ff8f7283345779fcc
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 79
@@ -156,11 +168,63 @@ curation_history:
     not resolve them: ''2-Mercaptoethanesulfonic acid (Coenzyme M)'' (x2 CultureMech
     mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: The source explicitly parenthesizes mercaptoethanesulfonic acid after Co-enzyme
+    M, as a5g solute in a separate100X stock; the alias denotes only that solute.
+    ChEBI17905 defines that acid with formula C2H6O3S2, whereas sodium mesna and coenzyme
+    M anion are different scopes. The existing owner uses17905 despite its historical
+    -sulfonate display label, so this exact acid spelling can be linked without moving
+    identity. Proposed only; integration requires content-bound full-payload mapping
+    review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[109] case_id=CM_NAME:d9efff2555033aab5f7a242c01e29d250203409c1ffe5a9a60fef3b6cd19dd54;
+    source=culturemech; source_case_id=Coenzyme M (2-mercaptoethanesulfonic acid);
+    CultureMech:009215 ingredients/36 (inputs/culturemech/data/normalized_yaml/archaea/modified_methanobacterium_medium_for_dsm_1093.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2660'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Mercaptoethanesulfonic acid'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G08 from authentic common before
+    sha256=e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae. Origins:
+    worker03:c-coenzyme-m sha256=3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78;
+    worker07:B-PROPOSAL-2-mercaptoethanesulfonate sha256=7bcba93847a6f19f010b80f2f5b925137e044b2897d4078b8ba47f55aa3d182d;
+    worker10:chem-proposal-106 sha256=8efa1eea9fd92cfca0aef5f58c049aa82583c5ca80da3143709509576b86747c.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000079; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000079; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:17905
 chemical_properties:

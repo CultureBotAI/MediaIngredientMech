@@ -2,12 +2,12 @@ identifier: UNMAPPED_0494
 preferred_term: Poly[R-3-hydroxybutyric acid]
 synonyms:
 - synonym_text: Poly[R-3-hydroxybutyric acid]
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: mim-queue
 - synonym_text: Poly[(R)-3-hydroxybutyric acid]
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
-mapping_status: UNMAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -51,16 +51,35 @@ curation_history:
     not resolve them: ''Poly[(R)-3-hydroxybutyric acid]'' (x11 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Retire duplicate UNMAPPED_0494 only atomically with corrected R-specific
+    CHEBI:131525 owner; no merge into generic polymer. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef;
+    source=mediadive; source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
+  previous_status: UNMAPPED
+  new_status: REJECTED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002882; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002882; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:300); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a stereospecific
   PHB-like polymer surface form; not merged without exact CAS/stereochemistry evidence.
+  Proposed duplicate retirement is atomic with canonical target update; preserve source
+  provenance.
 ingredient_type: SINGLE_INGREDIENT
+representative: CHEBI:131525
 mim_id: MIM:0002882
 legacy_identifiers:
 - MIM:PolyR-3-hydroxybutyric_Acid

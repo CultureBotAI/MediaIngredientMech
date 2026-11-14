@@ -4,6 +4,10 @@ synonyms:
 - synonym_text: Rye grass
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Dried milled rye grass
+  synonym_type: RAW_TEXT
+  source: CCAP R75S primary medium recipe; source ingredient2362 supplied-form scope
+    independently matched
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -48,17 +52,44 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:41:41.191146+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: ANNOTATED
+  changes: Proposed preparation-state evidence and rawlabel for same dried,milled
+    ryegrass material; retainUNMAPPED0511 and unresolved botanical/procurement scope.
+    No new arbitrary source-specific owner.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002897; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:2362); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002897; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2362); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the exact lexical
   hit is a broader taxon parent, not the ingredient material identity. Classified
-  on 2026-05-11 as plant material pending material-level curation.
+  on 2026-05-11 as plant material pending material-level curation. Source-bound clarification:
+  CCAPR75S uses1g dried milled ryegrass as input to a seawater infusion, then removes
+  solids byGF/C filtration. This is the dry milled plant input, not the resultinginfusion
+  or a taxon. MediaDive ingredient2362 source context also explicitly specifies dried,milled.
+  Species, cultivar, plant part and procurement remain unknown; preserve UNMAPPED0511
+  and no taxon exactmapping.'
 ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Dried milled ryegrass
+  form: dried and milled plant material
+  notes: CCAP R75S explicitly uses dried milled ryegrass as input to an infusion;
+    MediaDive ingredient2362 also states dried,milled. Species, cultivar and plant
+    part remain unspecified. This supplied form is the input biomass, not the filtered
+    infusion.
 mim_id: MIM:0002897
 legacy_identifiers:
 - MIM:Rye_Grass

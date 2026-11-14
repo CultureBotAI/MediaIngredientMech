@@ -1,0 +1,98 @@
+identifier: kgmicrobe.ingredient:bd_difco_noble_agar
+preferred_term: Noble agar (BD-Difco)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_noble_agar
+  ontology_label: Noble agar (BD-Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.214220
+    notes: BD-Difco Noble agar is a named supplier grade supported by three source
+      occurrences and the manufacturer Noble product identity. The owner denotes the
+      grade, not a historical package-code crosswalk; current214220 is a supporting100g
+      presentation. Contradictory214050 case121 remains excluded.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/1B9FD4672C2B46019C7294BFBCD33998.ashx
+    notes: 'Successor reassessment: original ATCC1047/957 explicitly names optional
+      Noble agar(Difco0142). Historical primary studyPMID3769874 independently calls0142-01-8
+      DifcoNoble agar. This binds the legacy product to the named Noble grade without
+      claiming that package0142 was replaced by214220. Add case8 to the existing grade
+      owner alongside89/123; contradictory Noble/214050 case121 remains excluded.
+      Optional use is a recipe condition, not an ingredient alias.'
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+notes: 'BD-Difco Noble agar is a named supplier grade supported by three source occurrences
+  and the manufacturer Noble product identity. The owner denotes the grade, not a
+  historical package-code crosswalk; current214220 is a supporting100g presentation.
+  Contradictory214050 case121 remains unresolved and excluded. Raw source labels remain
+  in campaign case evidence; no unqualified global alias is added. This isolated proposal
+  does not clear inherited owner publication holds. Successor reassessment: original
+  ATCC1047/957 explicitly names optional Noble agar(Difco0142). Historical primary
+  studyPMID3769874 independently calls0142-01-8 DifcoNoble agar. This binds the legacy
+  product to the named Noble grade without claiming that package0142 was replaced
+  by214220. Add case8 to the existing grade owner alongside89/123; contradictory Noble/214050
+  case121 remains excluded. Optional use is a recipe condition, not an ingredient
+  alias.'
+curation_history:
+- timestamp: '2026-11-08T05:28:06.867869+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: BD-Difco Noble agar is a named supplier grade supported by three source
+    occurrences and the manufacturer Noble product identity. The owner denotes the
+    grade, not a historical package-code crosswalk; current214220 is a supporting100g
+    presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded.
+    Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CORRECTED
+  changes: 'Successor reassessment: original ATCC1047/957 explicitly names optional
+    Noble agar(Difco0142). Historical primary studyPMID3769874 independently calls0142-01-8
+    DifcoNoble agar. This binds the legacy product to the named Noble grade without
+    claiming that package0142 was replaced by214220. Add case8 to the existing grade
+    owner alongside89/123; contradictory Noble/214050 case121 remains excluded. Optional
+    use is a recipe condition, not an ingredient alias. Isolated successor proposal
+    only; published artifacts and maintained data unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.549883+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0,
+    /ontology_mapping/evidence/1 as LLM_SUGGESTION; preserve source citations, historical
+    evidence, and distinct ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002973 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: BD DIFCO Noble Agar
+  supplier: BD Difco
+  catalog_number: '214220'
+  form: Noble-grade agar
+  notes: Current100g presentation; no assertion that source recipes used this package
+    or that legacy0142 was replaced by214220.
+- name: Agar Noble (Difco0142)
+  supplier: Difco
+  catalog_number: '0142'
+  form: Noble-grade agar
+  notes: Historical presentation named in ATCC1047; no current-package replacement
+    asserted.
+synonyms:
+- synonym_text: Noble Agar (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: Source recipe explicitly identifies BD-Difco Noble grade
+- synonym_text: Agar Noble (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: Source recipe explicitly identifies BD-Difco Noble grade
+mim_id: MIM:0002973
+legacy_identifiers:
+- MIM:BD_Difco_Noble_Agar
+- kgmicrobe.ingredient:bd_difco_noble_agar

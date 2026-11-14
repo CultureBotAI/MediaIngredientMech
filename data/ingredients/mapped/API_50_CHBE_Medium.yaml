@@ -1,0 +1,70 @@
+synonyms:
+- synonym_text: API 50 CHB/E Medium
+  synonym_type: RAW_TEXT
+  source: API 50 CHB/E Medium
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:48:47.596191+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: Original TOGO M2832 names API50CHB/E assay medium. Official manufacturer
+    catalog identifies50430 liquid ampoules, distinct from CHL50410 and unfilled API50CH
+    strips. Exact internal composition is undisclosed in captured catalog; that does
+    not block the product identity. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002960 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+identifier: kgmicrobe.ingredient:api_50_chbe_medium
+preferred_term: API 50 CHB/E Medium (bioMerieux)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:api_50_chbe_medium
+  ontology_label: API 50 CHB/E Medium (bioMerieux)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.biomerieux.com/content/dam/biomerieux-com/under-construction/france/tarif-france-clinique-2025-vsp.pdf
+    notes: Original TOGO M2832 names API50CHB/E assay medium. Official manufacturer
+      catalog identifies50430 liquid ampoules, distinct from CHL50410 and unfilled
+      API50CH strips. Exact internal composition is undisclosed in captured catalog;
+      that does not block the product identity.
+supplied_form:
+- name: API 50 CHB/E Medium (bioMerieux)
+  supplier: bioMerieux
+  catalog_number: '50430'
+  notes: Original TOGO M2832 names API50CHB/E assay medium. Official manufacturer
+    catalog identifies50430 liquid ampoules, distinct from CHL50410 and unfilled API50CH
+    strips. Exact internal composition is undisclosed in captured catalog; that does
+    not block the product identity.
+notes: Original TOGO M2832 names API50CHB/E assay medium. Official manufacturer catalog
+  identifies50430 liquid ampoules, distinct from CHL50410 and unfilled API50CH strips.
+  Exact internal composition is undisclosed in captured catalog; that does not block
+  the product identity. No whole preparation is equated to an individual component.
+  Component list is undisclosed or partial; no unverified SKU for another form is
+  inferred.
+mim_id: MIM:0002960
+legacy_identifiers:
+- MIM:API_50_CHBE_Medium
+- kgmicrobe.ingredient:api_50_chbe_medium

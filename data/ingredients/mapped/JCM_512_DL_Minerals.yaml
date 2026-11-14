@@ -1,0 +1,125 @@
+identifier: kgmicrobe.ingredient:jcm_512_dl_minerals
+preferred_term: JCM 512 DL minerals
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_512_dl_minerals
+  ontology_label: JCM 512 DL minerals
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512
+    notes: Source-qualified multi-component stock identity. No molecular term or generic
+      seawater identity is asserted. Proposed fallback registry identity pending coordinator
+      integration and full content-bound review.
+components:
+- component_name: Nitrilotriacetic acid, trisodium salt
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: g per source batch
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: g per source batch
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: g per source batch
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: g per source batch
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g per source batch
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g per source batch
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g per source batch
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.13'
+  concentration_unit: g per source batch
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: g per source batch
+- component_name: AlK(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: g per source batch
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: g per source batch
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: g per source batch
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: g per source batch
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: g per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512
+    source_record: DL minerals (refrigerated) table
+    notes: All top-level source stock components transcribed. Nested stock identity
+      and unspecified forms remain source-stated; no chemical identity is guessed.
+  notes: Amounts retain the source batch basis, including the stated water amount,
+    rather than claiming a measured final volume or finished-medium concentrations.
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+notes: 'Isolated worker04 proposal. The complete stock is distinct from its components,
+  natural seawater, and finished medium. CultureMech raw unit discrepancies remain
+  in the campaign source cases and require separate upstream repair. Component reference_scope
+  UNMAPPED deliberately preserves source-stated chemical forms without asserting current
+  MIM equivalence. Raw source labels are retained here as contextual provenance only,
+  without resolving aliases: [''DL minerals (see below)''].'
+curation_history:
+- timestamp: '2026-11-08T05:26:00.860201+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Proposed exact source-qualified stock from DL minerals (refrigerated) table;
+    preserved original source label, component forms and batch quantities. No maintained
+    data or release status was changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:07.981851+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003074 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003074
+legacy_identifiers:
+- MIM:JCM_512_DL_Minerals
+- kgmicrobe.ingredient:jcm_512_dl_minerals

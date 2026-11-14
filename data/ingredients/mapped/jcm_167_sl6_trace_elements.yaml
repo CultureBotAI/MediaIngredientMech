@@ -1,0 +1,91 @@
+identifier: kgmicrobe.ingredient:jcm_167_sl6_trace_elements
+preferred_term: JCM 167 SL-6 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_167_sl6_trace_elements
+  ontology_label: JCM 167 SL-6 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.03'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.03'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167
+    source_record: JCM 167 SL-6 trace element solution
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: JCM1354 explicitly refers to the JCM167 stock. The stock table is adjusted
+    to pH3.6, with titrant identity and quantity unreported. Preserve this source-specific
+    pH and seven printed salts and their stated hydration; do not substitute another
+    SL6 source variant or SL4.
+notes: 'JCM1354 explicitly refers to the JCM167 stock. The stock table is adjusted
+  to pH3.6, with titrant identity and quantity unreported. Preserve this source-specific
+  pH and seven printed salts and their stated hydration; do not substitute another
+  SL6 source variant or SL4. Raw source label retained for this occurrence only: ''SL-6
+  Trace element solution (see Medium No. 167 )''. Generic wording is not a global
+  resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003275 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+synonyms:
+- synonym_text: SL-6 Trace element solution (see Medium No. 167 )
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167
+mim_id: MIM:0003275
+legacy_identifiers:
+- MIM:jcm_167_sl6_trace_elements
+- kgmicrobe.ingredient:jcm_167_sl6_trace_elements

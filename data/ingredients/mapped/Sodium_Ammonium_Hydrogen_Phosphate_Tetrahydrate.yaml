@@ -1,0 +1,174 @@
+identifier: cas:7783-13-3
+preferred_term: Sodium ammonium hydrogen phosphate tetrahydrate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:37586
+  ontology_label: sodium phosphate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:37586
+    notes: 'Issue1210 closest-supported-parent assessment: official CHEBI:37586 sodium
+      phosphate is below CHEBI:190300 inorganic phosphate salt and inorganic sodium
+      salt. The supplier structure has Na+, NH4+, hydrogenphosphate and four waters,
+      supporting this narrower sodium-phosphate class by chemical inference. This
+      is asymmetric form/class grounding only; CAS7783-13-3 remains the exact supplied
+      identity. Neither an exclusive disodium species nor any role is asserted.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.thermofisher.com/order/catalog/product/040320.22
+    notes: Substantive captured product040320.22 table states CAS7783-13-3, H13NNaO8P,209.067g/mol
+      and [NH4+].O.O.O.O.[Na+].OP([O-])([O-])=O. This repaired evidence binding supports
+      the mixed-cation tetrahydrate properties; the original incomplete worker08 response
+      is retained as acquisition history, not property proof.
+  - evidence_type: LLM_SUGGESTION
+    source: https://doi.org/10.1099/00221287-19-3-592
+    notes: Schaechter1958 Table1,p594,footnote(c) explicitly specifies Na(NH4)HPO4·4H2O
+      in salt solution(c). Applies to the nine frozen Schaechter occurrences only,
+      not the eight generic-form occurrences. Modern supplier procurement is not attributed
+      to this historical paper.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium694.pdf
+    notes: DSMZ694 explicitly lists NaNH4HPO4 x4H2O. The final intake binds worker08
+      two spelling-specific CM cases and MediaDive665 separately; no source quantities
+      or source membership is changed.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:190300
+    notes: Historical worker07 proposal used CHEBI:190300 inorganic phosphate salt.
+      Its original evidence/history is preserved; CHEBI:37586 is a narrower evidenced
+      class, so190300 is retained as ancestral context rather than a second or exact
+      identity mapping.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:190300
+    notes: Verified non-obsolete CHEBI190300 term record labels inorganic phosphate
+      salt and defines a phosphate salt lacking C-H bonds. Form-specific CAS remains
+      primary; no exact identity to the generic parent is claimed. Exact-name searches
+      found no suitable exact term; failed CAS text search is not absence proof.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.thermofisher.com/order/catalog/product/040320.22
+    notes: Supplier CAS7783-13-3/formula H13NNaO8P supports exact mixed-cation tetrahydrate;
+      CHEBI:37586 is an asymmetric class parent only. Local ChEBI255/NCIt26.02d bounded
+      lookup found no exact term; current separate OLS ChEBI/NCIt CAS and mixed-salt-name
+      searches also found no exact term; NCIT C29288 is an unrelated potassium/sodium
+      phosphate preparation. See shared-primary/retrievals-v4.json and v5.json.
+chemical_properties:
+  cas_rn: 7783-13-3
+  molecular_formula: H13NNaO8P
+  molecular_weight: 209.067
+  data_source: https://www.thermofisher.com/order/catalog/product/040320.22
+  retrieval_date: '2026-11-08T06:12:41.182Z'
+synonyms:
+- synonym_text: NaNH4HPO4·4H2O
+  synonym_type: EXACT
+  source: https://www.sigmaaldrich.com/US/en/product/sigald/04266
+- synonym_text: Na(NH4)HPO4·4H2O
+  synonym_type: RAW_TEXT
+  source: https://doi.org/10.1099/00221287-19-3-592
+- synonym_text: NaNH4HPO4 . 4H2O
+  synonym_type: RAW_TEXT
+  source: Frozen source culturemech NaNH4HPO4 . 4H2O; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium694.pdf
+- synonym_text: NaNH4HPO4 x 4 H2O
+  synonym_type: RAW_TEXT
+  source: Frozen source culturemech NaNH4HPO4 x 4 H2O; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium694.pdf
+notes: 'Schaechter1958 Table1 p594 footnote(c) establishes this tetrahydrate in the
+  nine source occurrences bound by proposal occurrence_ids.1.74g/L and50x concentrate
+  are source preparation context; frozen millimolar values are not edited. Generic
+  Sodium ammonium phosphate is deliberately not a resolving synonym: E2,Hassan andTseng
+  source forms remain unresolved. No modern supplier procurement is attributed to
+  the historical paper. Reconciled with worker08 source-specific DSMZ694 tetrahydrate
+  proposals under issue1210. The two independently proposed CAS identities refer to
+  one salt, not two maintained owners. The original worker07 and worker08 payloads,
+  complete histories, old parent choices and incomplete supplier capture remain archived.
+  CHEBI:37586 is a supported broader class, never an exact identity. All eight E2/Hassan/Tseng
+  generic-form holds remain unchanged; generic Sodium ammonium phosphate is not a
+  resolving alias. Current-origin bridge retains the exact W07 and W08 source profiles,
+  source-property acquisition history and their respective agent-authorship corrections.
+  Five older coordinator mapping judgments are retyped as LLM_SUGGESTION under issue1226;
+  the actual current W08 CURATOR_JUDGMENT remains attributed to its origin. The earlier
+  substantive coordinator Thermo capture and its property retrieval timestamp remain
+  separate from W08 original capture and timestamp. All original chemical forms, source
+  labels and source-subset exclusions remain unchanged; no generic-form occurrence
+  is assigned by the wider case envelope. Both origins are null-before isolated proposals,
+  not maintained predecessors.'
+curation_history:
+- timestamp: '2026-11-08T05:15:32.683727+00:00'
+  curator: Codex worker08 /root/inorganics
+  action: CREATED
+  changes: Isolated source-review proposal for tetrahydrate CAS7783-13-3 from DSMZ694
+    and Thermo040320.22. Asymmetric CHEBI37586 class anchor; no occurrence transfer,
+    role approval or release approval. Local and current OLS exact-term searches are
+    bounded negative evidence; native complete-payload and closest-parent review required
+    before application.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: CREATED_FROM_SOURCE_FORM_EVIDENCE
+  changes: Propose CAS7783-13-3 for exact Na(NH4)HPO4·4H2O source formula; broadMatch
+    to verified inorganic phosphate salt parent; nine source occurrences only. No
+    maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:38:48.606960+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: PRECISE_PARENT_EVIDENCE_REFERENCE
+  changes: Cite the captured exact CHEBI190300 term endpoint rather than the broad
+    search endpoint; parent identity, supplied form and mapping predicate are unchanged.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:55.913197+00:00'
+  curator: Codex /root/step7d_independent_review
+  action: RECONCILED_SAME_SUBSTANCE_PROPOSALS
+  changes: 'Issue1210: reconcile two unapplied CAS7783-13-3 tetrahydrate proposals
+    into one owner; preserve both original histories and raw form labels, bind substantive
+    supplier properties and select the narrower evidenced CHEBI:37586 class parent.
+    Nine Schaechter and four explicit worker08 CM occurrences plus MediaDive665 only;
+    eight generic-form holds remain. No application or release approval.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Bind CAS/formula supplier
+    evidence to full Thermo batch7 capture at its original 2026-11-08T05:08:47.015262+00:00
+    access time; batch6 was incomplete. Preserve the proposed CAS identity and asymmetric
+    parent predicate. All inherited history, scientific/source/role/export holds and
+    original before hash remain preserved. This is a proposal, pending independent
+    whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.289285+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T10:31:38.943111+00:00'
+  curator: Codex worker04 /root positive-candidate current-origin composition
+  action: COMPOSED_CURRENT_ORIGIN_PROVENANCE
+  changes: Private candidate successor of 6ad43fc99080da552d0054ab49612bd36036c29c736051a196c52ca151ce6883.
+    Retain exact reviewed predecessor scientific fields and all authentic source profiles/events;
+    bind current committed origins w07::B-PROPOSAL-Sodium_Ammonium_Hydrogen_Phosphate_Tetrahydrate,
+    w08::if-new-sodium-ammonium-phosphate-tetrahydrate. Retype only identified agent-authored
+    MappingEvidence under issue1226; append missing original correction events verbatim
+    and explicitly qualify isolated proposal lineage. No maintained application, source-case
+    acceptance increment, role approval, new component mapping or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003168 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003168
+legacy_identifiers:
+- MIM:Sodium_Ammonium_Hydrogen_Phosphate_Tetrahydrate
+- cas:7783-13-3

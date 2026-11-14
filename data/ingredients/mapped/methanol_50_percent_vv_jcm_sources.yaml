@@ -1,0 +1,105 @@
+identifier: kgmicrobe.ingredient:methanol_50_percent_vv_jcm_sources
+preferred_term: 50% v/v methanol stock (JCM1146/1147/1173/1173-2/1176/1415)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:methanol_50_percent_vv_jcm_sources
+  ontology_label: 50% v/v methanol stock (JCM1146/1147/1173/1173-2/1176/1415)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1146; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1147;
+      https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1176; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1415;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1228; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1229;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1260
+    notes: All six frozen occurrences state50%v/v methanol preparation; original JCM
+      or direct TOGO source corroborates the stated strength, including M1256 for
+      JCM1173. Sterilization alternatives are source-specific procedures and are not
+      chosen or generalized. No solvent is identified in the stock statement. Component
+      completeness is UNKNOWN. Unstated solvent, hydration, assay and final volume
+      are not invented. This is the named preparation at the cited source scope; no
+      full-formulation equivalence with other products is asserted. TOGO M1257 explicitly
+      declares original_media_id JCM_M1173-2 and links GRMD1173; M1256 declares JCM_M1173.
+      The former1174 active label was erroneous. All six source occurrence bindings
+      and50%v/v strength remain; no solvent or shared sterilization method is inferred.
+notes: All six frozen occurrences state50%v/v methanol preparation; original JCM or
+  direct TOGO source corroborates the stated strength, including M1256 for JCM1173.
+  Sterilization alternatives are source-specific procedures and are not chosen or
+  generalized. No solvent is identified in the stock statement. Component completeness
+  is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+  This is the named preparation at the cited source scope; no full-formulation equivalence
+  with other products is asserted. TOGO M1257 explicitly declares original_media_id
+  JCM_M1173-2 and links GRMD1173; M1256 declares JCM_M1173. The former1174 active
+  label was erroneous. All six source occurrence bindings and50%v/v strength remain;
+  no solvent or shared sterilization method is inferred.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: All six frozen occurrences state50%v/v methanol preparation; original JCM
+    or direct TOGO source corroborates the stated strength, including M1256 for JCM1173.
+    Sterilization alternatives are source-specific procedures and are not chosen or
+    generalized. No solvent is identified in the stock statement. Component completeness
+    is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+    This is the named preparation at the cited source scope; no full-formulation equivalence
+    with other products is asserted. Isolated proposal, pending independent and coordinator
+    review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:06:25.188715+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CORRECTED
+  changes: 'Issue1241 W02-F-TYPE: use existing solution_type OTHER. This prepared
+    methanol stock is not a concentrated mineral stock. No role or component identity
+    is inferred from this category correction. W02-F-METHANOL-SOURCE: TOGO M1257 explicitly
+    declares original_media_id JCM_M1173-2 and links GRMD1173; M1256 declares JCM_M1173.
+    The former1174 active label was erroneous. All six source occurrence bindings
+    and50%v/v strength remain; no solvent or shared sterilization method is inferred.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.178457+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003296 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+solution_type: OTHER
+components:
+- component_name: Methanol
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17790
+  concentration_value: '50'
+  concentration_unit: PERCENT_V_V
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1146; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1147;
+      https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1176; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1415;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1228; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1229;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1260
+    source_record: 50% (v/v) Methanol
+    notes: All six frozen occurrences state50%v/v methanol preparation; original JCM
+      or direct TOGO source corroborates the stated strength, including M1256 for
+      JCM1173. Sterilization alternatives are source-specific procedures and are not
+      chosen or generalized. No solvent is identified in the stock statement. TOGO
+      M1257 explicitly declares original_media_id JCM_M1173-2 and links GRMD1173;
+      M1256 declares JCM_M1173. The former1174 active label was erroneous. All six
+      source occurrence bindings and50%v/v strength remain; no solvent or shared sterilization
+      method is inferred.
+mim_id: MIM:0003296
+legacy_identifiers:
+- MIM:methanol_50_percent_vv_jcm_sources
+- kgmicrobe.ingredient:methanol_50_percent_vv_jcm_sources

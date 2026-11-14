@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753
+preferred_term: 0.1 M potassium phosphate buffer, pH 7.5 (DSMZ 833 / JCM 753)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753
+  ontology_label: 0.1 M potassium phosphate buffer, pH 7.5 (DSMZ 833 / JCM 753)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium833.pdf
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. DSMZ
+      833 Solution B and JCM 753 explicitly supply a 0.1 M potassium phosphate buffer
+      at pH 7.5, 10 mL per printed medium batch. These are source-defined stock specifications;
+      no exact salt recipe is asserted. DSMZ 833 autoclaves Solution B under nitrogen;
+      JCM 753 calls it an anaerobic autoclaved stock.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=753
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. DSMZ
+      833 Solution B and JCM 753 explicitly supply a 0.1 M potassium phosphate buffer
+      at pH 7.5, 10 mL per printed medium batch. These are source-defined stock specifications;
+      no exact salt recipe is asserted. DSMZ 833 autoclaves Solution B under nitrogen;
+      JCM 753 calls it an anaerobic autoclaved stock.
+components:
+- component_name: Potassium phosphate
+  reference_scope: UNMAPPED
+  source: Salt species and their proportions are unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium833.pdf
+    source_record: 0.1 M potassium phosphate buffer, pH 7.5 (DSMZ 833 / JCM 753)
+    notes: DSMZ 833 Solution B and JCM 753 explicitly supply a 0.1 M potassium phosphate
+      buffer at pH 7.5, 10 mL per printed medium batch. These are source-defined stock
+      specifications; no exact salt recipe is asserted. DSMZ 833 autoclaves Solution
+      B under nitrogen; JCM 753 calls it an anaerobic autoclaved stock.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=753
+    source_record: 0.1 M potassium phosphate buffer, pH 7.5 (DSMZ 833 / JCM 753)
+    notes: DSMZ 833 Solution B and JCM 753 explicitly supply a 0.1 M potassium phosphate
+      buffer at pH 7.5, 10 mL per printed medium batch. These are source-defined stock
+      specifications; no exact salt recipe is asserted. DSMZ 833 autoclaves Solution
+      B under nitrogen; JCM 753 calls it an anaerobic autoclaved stock.
+  notes: Potassium phosphate salt species, ratio, solvent and titrant are not specified.
+    They limit reconstruction and equivalence to other stocks, not the stated source
+    preparation identity. Source-named parts remain UNMAPPED where supplied form or
+    stock identity is not established. MIM_CATALOG references identify only the supported
+    constituent, not approval of that complete owner.
+notes: DSMZ 833 Solution B and JCM 753 explicitly supply a 0.1 M potassium phosphate
+  buffer at pH 7.5, 10 mL per printed medium batch. These are source-defined stock
+  specifications; no exact salt recipe is asserted. DSMZ 833 autoclaves Solution B
+  under nitrogen; JCM 753 calls it an anaerobic autoclaved stock. Potassium phosphate
+  salt species, ratio, solvent and titrant are not specified. They limit reconstruction
+  and equivalence to other stocks, not the stated source preparation identity. Provenance-only
+  source text 'Potassium phosphate buffer (pH 7.5)' (case CM_NAME:01dd93e5cf4b30e8b25b7c4321d92baee3e00ecb16efc03b2b691e1c469214f8).
+  Provenance-only source text '0.1 M Potassium phosphate buffer, pH 7.5' (case CM_NAME:7515e27a95e6262c56a3b2489af7b22e0413d7911c7ce0302ccc88b17bfaf6c4).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.941517+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003325 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003325
+legacy_identifiers:
+- MIM:potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753
+- kgmicrobe.ingredient:potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753

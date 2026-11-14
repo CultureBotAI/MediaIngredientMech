@@ -38,33 +38,45 @@ ontology_mapping:
       ''ammonium molybdate tetrahydrate'', the record''s exact label, on no other
       term. Section 3 step 1 with a unique synonym: SYNONYM_MATCH. The CAS stays on
       its registry row.'
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal heptamolybdate-tetrahydrate
+    notes: The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86
+      identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249
+      has one Mo and two ammoniums and is not its parent. The current wrong owner
+      already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate
+      formula; reject that residual polyanion alias and link the source to the existing
+      correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its
+      name/formula/mass and source CAS all specify four waters. Evidence and exact
+      frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: bisammonium dioxido(dioxo)molybdenum
   synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: (NH4)6Mo7O4
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)6Mo7O4 x 24 H2O
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)6MoO24·4H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)6MoO7O24
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)6MoO7O24 x 4 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)Mo7O24·4H2O
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: (NH4)MoO7O24
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: (NH4)MoO7O24 x 4 H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: ammonium heptamolybdate tetrahydrate
   synonym_type: RELATED_SYNONYM
@@ -72,6 +84,9 @@ synonyms:
 - synonym_text: ammonium paramolybdate tetrahydrate
   synonym_type: RELATED_SYNONYM
   source: CHEBI:86244
+- synonym_text: (NH4)6Mo7O24 x 4 H2O
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 12
@@ -170,11 +185,62 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal heptamolybdate-tetrahydrate: added aliases
+    [''(NH4)6Mo7O24 x 4 H2O'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[4] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-05: individually assess seven listed malformed molybdate
+    aliases; preserve demonstrated TOGO M412/JCM414 damaged-label RAW_TEXT and reject
+    unresolved/incompatible formula tokens. Original text/source and history retained.
+    CH-05: synonyms[1] ''(NH4)6Mo7O4'': reject_resolving_identity_preserve_text_and_source.
+    The literal formula has only O4 and omits hydrate water; no exact original-source
+    correction for this whole global token was established. CH-05: synonyms[3] ''(NH4)6MoO24·4H2O'':
+    reject_resolving_identity_preserve_text_and_source. TOGO1032/941 and original
+    JCM979/900 repeat the missing-Mo-count formula; the source does not independently
+    restore seven molybdenums. CH-05: synonyms[4] ''(NH4)6MoO7O24'': reject_resolving_identity_preserve_text_and_source.
+    The repeated-O malformed formula omits hydrate water; neither charge-balanced
+    heptamolybdate nor four-water identity is literally established. CH-05: synonyms[5]
+    ''(NH4)6MoO7O24 x 4 H2O'': reject_resolving_identity_preserve_text_and_source.
+    TOGO2346 links DSMZ600, whose Hutner salts explicitly reference DSMZ590; original
+    DSMZ590 repeats the malformed MoO7O24 formula. This chain does not correct its
+    oxygen/molybdenum notation. CH-05: synonyms[7] ''(NH4)MoO7O24'': reject_resolving_identity_preserve_text_and_source.
+    This literal token omits five ammoniums, has repeated oxygen notation and no hydrate
+    water; its complete four-water identity is not established. CH-05: synonyms[8]
+    ''(NH4)MoO7O24 x 4 H2O'': reject_resolving_identity_preserve_text_and_source.
+    Original DSMZ1144 repeats the malformed one-ammonium/repeated-O formula; a neighboring
+    Hutner recipe is not a source correction. CH-05: synonyms[6] ''(NH4)Mo7O24·4H2O'':
+    retain_proven_damaged_source_RAW_TEXT_with_occurrence_scope. Exact TOGO M412 source
+    metadata links JCM414. TOGO drops the ammonium subscript6 at the0.5g trace-stock
+    component; original JCM414 prints (NH4)6Mo7O24·4H2O. Retain this existing RAW_TEXT
+    under the documented damaged-label carve-out, not as a new exact formula or blanket
+    correction of other occurrences. M944 also links original JCM903 with the correct
+    six-ammonium formula. M1196 links JCM1118, which itself repeats the missing-six
+    formula; that occurrence remains unresolved and is not released by these two verified
+    typo bridges. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000327; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000327; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 12054-85-2

@@ -14,7 +14,7 @@ ontology_mapping:
       term.'
 synonyms:
 - synonym_text: anthraquinone-2,6-disulfonate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: culturebotht
 - synonym_text: Na2-9,10-anthraquinone-2,6-disulfonate
   synonym_type: EXACT_SYNONYM
@@ -65,11 +65,26 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Retype anthraquinone-2,6-disulfonate exact synonym as REJECTED_LABEL because
+    source521 and CAS853-68-9 identify the disodium salt; retain qualified Na2 alias
+    and supplied salt identity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000233; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000233; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 853-68-9

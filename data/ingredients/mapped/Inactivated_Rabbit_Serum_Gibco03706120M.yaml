@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:inactivated_rabbit_serum_gibco03706120m
+preferred_term: Inactivated rabbit serum, Gibco 037-06120M
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0002392
+  ontology_label: rabbit serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium403.pdf
+    notes: DSMZ403/TOGO M2366 SolutionD explicitly identifies inactivated rabbit serum
+      GIBCO037-06120M. The historical catalog and process qualifier support opaque
+      product scope without assigning a modern substitute or invented inactivation
+      schedule. Broader material parent only; distinct local preparation identity
+      remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.563174+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: DSMZ403/TOGO M2366 SolutionD explicitly identifies inactivated rabbit serum
+    GIBCO037-06120M. The historical catalog and process qualifier support opaque product
+    scope without assigning a modern substitute or invented inactivation schedule.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.848509+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003035 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: Inactivated rabbit serum
+  supplier: GIBCO
+  catalog_number: 037-06120M
+  notes: Historical source product; no identity asserted with Pel-Freez31125.
+notes: 'DSMZ403/TOGO M2366 SolutionD explicitly identifies inactivated rabbit serum
+  GIBCO037-06120M. The historical catalog and process qualifier support opaque product
+  scope without assigning a modern substitute or invented inactivation schedule. Source
+  labels retained as nonresolving provenance: [{"case_id": "CM_NAME:413fc820f6651bbf8ba375e8f471981dd6d55ca1d58b7f0ab4ca99d2066cd5a6",
+  "raw_label": "Rabbit serum, inactivated(GIBCO 037-06120M)"}]. No global generic
+  alias, supplier equivalence, role approval or complete publication approval is conferred.
+  Receiving-medium dose and unit repairs remain separate. Existing native holds and
+  rejected labels are preserved.'
+mim_id: MIM:0003035
+legacy_identifiers:
+- MIM:Inactivated_Rabbit_Serum_Gibco03706120M
+- kgmicrobe.ingredient:inactivated_rabbit_serum_gibco03706120m

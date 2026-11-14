@@ -55,6 +55,9 @@ synonyms:
 - synonym_text: cysteine . HCl
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: L-Cysteine x HCl
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:f1b3b15cedd796949480abb36205d46a00c5982a1ba994da5f7009bf9daa261f'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 302
@@ -172,11 +175,24 @@ curation_history:
     accession. Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe''s
     synonym list (#669).'
   llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'L-Cysteine x HCl'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001447; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001447; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 52-89-1

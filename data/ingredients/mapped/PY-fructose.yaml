@@ -74,18 +74,57 @@ curation_history:
     to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T09:30:25.502323+00:00'
+  curator: Codex worker05 /root/buffer_tris
+  action: WITHDRAW_UNSUPPORTED_COMPONENT_ID
+  changes: The raw PY-fructose observation is Clostridium formicaceticum. Andreesen
+    1970 publisher abstract confirms the organism and fructose metabolism but does
+    not expose the recipe or digest. Full text is subscription-only in the captured
+    free access. Later current culture media do not establish this historical PY formulation.
+    The inherited peptone expansion remains interpreted and ungrounded. Withdraw the
+    unsupported peptone component_id and set reference_scope UNMAPPED; retain its
+    existing component_name as historical interpretation, not a newly observed expanded
+    source label. The original assertion method and UNKNOWN/PARTIAL completeness remain
+    unchanged. This is a bounded part-reference correction only. Whole-owner identity,
+    raw labels, occurrence counts, quantities, unrelated components, all historical
+    evidence and source/role/export holds are preserved. Historical all-components-identified
+    statements describe prior states, not a new approval. No new MappingEvidence is
+    added; historical human/component evidence enums are not rewritten. Filed before
+    this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001977; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose); no
-  CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001977; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose); no
+  CAS-RN or CHEBI/NCIT match. Curator review needed. Successor dependency assessment:
+  The raw PY-fructose observation is Clostridium formicaceticum. Andreesen 1970 publisher
+  abstract confirms the organism and fructose metabolism but does not expose the recipe
+  or digest. Full text is subscription-only in the captured free access. Later current
+  culture media do not establish this historical PY formulation. The inherited peptone
+  expansion remains interpreted and ungrounded. Withdraw the unsupported peptone component_id
+  and set reference_scope UNMAPPED; retain its existing component_name as historical
+  interpretation, not a newly observed expanded source label. The original assertion
+  method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+  correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+  unrelated components, all historical evidence and source/role/export holds are preserved.
+  Historical all-components-identified statements describe prior states, not a new
+  approval. No new MappingEvidence is added; historical human/component evidence enums
+  are not rewritten.'
 components:
 - component_name: peptone
-  component_id: MICRO:0000178
-  reference_scope: MIM_CATALOG
+  reference_scope: UNMAPPED
   source: MIM curation (#213/#308)
 - component_name: yeast extract
   component_id: FOODON:03315426
@@ -103,8 +142,46 @@ component_assertion:
     source: scripts/decompose_py_media_and_ground_categories.py
     source_record: PY-fructose
     notes: The checked-in curation script records this expansion explicitly.
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: CSV row 4104 (header included), Bergey_Substrates_for_end_products
+      = 'PY-fructose', Clostridium formicaceticum
+    notes: Raw source name and taxon scope only; no claim this abbreviation or whole-medium
+      label independently proves the interpreted peptone constituent. Exact archive/member
+      bytes and complete source rows are preserved in buffer-parts-v1/dependencies/source-observations.json.
+      Independently re-extracted by /root/buffer_tris with LLM assistance; original
+      source scientists and skeptical review remain attributed in the preserved W03
+      packet.
+  - evidence_type: CURATED_DATASET
+    source: buffer-parts-v1/dependencies/source-assessment.json
+    source_record: PC07 data/ingredients/mapped/PY-fructose.yaml#components[0]
+    notes: The raw PY-fructose observation is Clostridium formicaceticum. Andreesen
+      1970 publisher abstract confirms the organism and fructose metabolism but does
+      not expose the recipe or digest. Full text is subscription-only in the captured
+      free access. Later current culture media do not establish this historical PY
+      formulation. The inherited peptone expansion remains interpreted and ungrounded.
+      Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED;
+      retain its existing component_name as historical interpretation, not a newly
+      observed expanded source label. The original assertion method and UNKNOWN/PARTIAL
+      completeness remain unchanged. Independent prior source work by /root/peptone_ambiguous_sources
+      and skeptical review by /root/peptone_skeptic are reused only at their exact
+      unchanged source-claim scope; neither approves these new payload bytes. Current
+      candidate author /root/buffer_tris; independent final byte review remains separate.
+  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe. Successor dependency assessment:
+    The raw PY-fructose observation is Clostridium formicaceticum. Andreesen 1970
+    publisher abstract confirms the organism and fructose metabolism but does not
+    expose the recipe or digest. Full text is subscription-only in the captured free
+    access. Later current culture media do not establish this historical PY formulation.
+    The inherited peptone expansion remains interpreted and ungrounded. Withdraw the
+    unsupported peptone component_id and set reference_scope UNMAPPED; retain its
+    existing component_name as historical interpretation, not a newly observed expanded
+    source label. The original assertion method and UNKNOWN/PARTIAL completeness remain
+    unchanged. This is a bounded part-reference correction only. Whole-owner identity,
+    raw labels, occurrence counts, quantities, unrelated components, all historical
+    evidence and source/role/export holds are preserved. Historical all-components-identified
+    statements describe prior states, not a new approval. No new MappingEvidence is
+    added; historical human/component evidence enums are not rewritten.'
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:py_fructose

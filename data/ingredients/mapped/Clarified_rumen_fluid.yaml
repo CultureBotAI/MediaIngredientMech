@@ -1,18 +1,42 @@
-identifier: MICRO:0000520
+identifier: kgmicrobe.ingredient:clarified_rumen_fluid
 preferred_term: Clarified rumen fluid
 ontology_mapping:
-  ontology_id: MICRO:0000520
-  ontology_label: clarified rumen fluid
-  ontology_source: MICRO
-  mapping_quality: EXACT_MATCH
-  match_level: EXACT
+  ontology_id: kgmicrobe.ingredient:clarified_rumen_fluid
+  ontology_label: Clarified rumen fluid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: LEXICAL_MATCH
-    source: culturemech:output/ingredient_occurrences.tsv
-    notes: Surface form appears in CultureMech's occurrence table and was grounded
-      to MICRO:0000520 on an exact match against the ontology label. Restored from
-      the record's own creation history (#541); the residual importer wrote this provenance
-      only into the published SSSOM.
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/medium/161
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Source permits cow or sheep; DSMZ212 corroborates. The variable processed-fluid
+      owner is deliberately species-unspecified. This does not equate species, protocol
+      or composition.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      JCM266 heat/centrifugation protocol leaves animal species unstated; retain it
+      separately from the DSMZ preparation.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000520
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Cow-specific definition cannot identify the entire source-unspecified owner.
+      No exact or broad mapping to this cow-only concept is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    notes: Agent-authored interpretation of the cited inspected source; classified
+      as LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226,
+      not human-supplied evidence. Exact candidate independent review remains required.
+      Source-backed local-scope conclusion supersedes W02 exact520 mapping evidence,
+      including its preparation-identity assertion and exact pointer-alias assertion.
+      Original objects and history remain archived in notes/trace. MICRO0001898 is
+      specific to DSMZ1310, not this generic/JCM owner.
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -36,13 +60,209 @@ curation_history:
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
   llm_assisted: false
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_SOURCE_ALIAS
+  changes: 'Add source-backed same-substance aliases: [''Rumen fluid, clarified''].'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed;
+    coordinator integration and independent review required.
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: ADDED_SYNONYMS
+  changes: Add source-bound exact alias(es) 'Rumen fluid, clarified (see below)'.
+    Isolated proposal only; coordinator must re-review changed owner and synchronize
+    native outputs before application.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CORRECTED
+  changes: 'The existing Clarified_rumen_fluid owner spans processed ruminal fluid.
+    Its MICRO0000520 exact target requires cow origin, but primary DSMZ161/212 expressly
+    allow cow OR sheep, while JCM266/355/1201 do not state an animal species. Reuse
+    the existing processed-fluid owner with a local registry identity rather than
+    create a duplicate or infer cow. This is a variable biological material, not an
+    assertion that every source preparation has identical species or composition.
+    JCM266 and DSMZ161 processing details remain distinct supplied forms; no unprocessed
+    rumen-fluid equivalence is asserted. Independent correction: The existing Clarified_rumen_fluid
+    owner spans processed ruminal fluid. Its MICRO0000520 exact target requires cow
+    origin, but primary DSMZ161/212 expressly allow cow OR sheep, while JCM266/355/1201
+    do not state an animal species. Reuse the existing processed-fluid owner with
+    a local registry identity rather than create a duplicate or infer cow. This is
+    a variable biological material, not an assertion that every source preparation
+    has identical species or composition. JCM266 and DSMZ161 processing details remain
+    distinct supplied forms; no unprocessed rumen-fluid equivalence is asserted. Isolated
+    proposal only; all source and release holds remain.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:05:36.702541+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Reconcile the generic processed-fluid scope, withdraw cow-only exact520
+    support and pointer aliases, preserve both protocol families and all authored
+    historical events. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591.
+    Isolated candidate only; no maintained write, role approval, inherited support,
+    membership transfer or release approval. Exact whole-candidate independent review
+    remains required.'
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: MAPPED
+- timestamp: '2026-11-08T07:13:06.049005+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only newly authored coordinator MappingEvidence MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226.
+    Preserve all original source URLs, interpretations, scientific fields and the
+    complete first-publication history prefix. The original private publication remains
+    immutable. No historical human evidence or ComponentEvidenceType is changed; no
+    scientific approval, inherited support or maintained application.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-006 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:19:50.168668+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 2 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor TARGET-006 binds the actual published
+    W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen accepted source
+    heads. Exact #1204, #1226 claim corrections and genuine source-history appendices
+    are recorded in final-same-target-reconciliation-v4. Original combined bytes and
+    authentic maintained beforeimage remain preserved. This draft retains all case,
+    occurrence, role, preparation, product and release holds; source acceptance and
+    distinct final combined-byte review are not inferred. No maintained record or
+    export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000720; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000720; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Rumen fluid, clarified
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02:CM_NAME:5b9a01c18f694309117620b29aee602b98ff2996301cb28f5c61fdbb347389c2
+- synonym_text: Rumen fluid, clarified (see below)
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen source case CM_NAME:d08c9e0edf98199867289615e953de26f3665566101d8d43ca0d93da6e07aedc
+- synonym_text: Rumen fluid, clarified (see Medium No. 266)
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen source case CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8;
+    original W05 proposal notes
+supplied_form:
+- name: Clarified rumen fluid prepared by JCM266
+  form: Heat-treated rumen-content supernatant
+  notes: JCM266:120°C15min then25000g15min; species unspecified. JCM355/1201 repeat
+    this process. This does not identify raw rumen contents.
+- name: Clarified rumen fluid prepared by DSMZ161/212
+  form: Heat-treated and centrifuged cow or sheep rumen fluid
+  notes: Primary source allows cow or sheep, muslin filtration,121°C15min then27000g20min
+    andanoxic sparging. Keep this protocol distinct from JCM266.
+notes: 'Historical proposal prose from w05::R1193-P-clarifiedrumen266; conflicting
+  identity/support claims are superseded by the current conclusion below: The existing
+  Clarified_rumen_fluid owner spans processed ruminal fluid. Its MICRO0000520 exact
+  target requires cow origin, but primary DSMZ161/212 expressly allow cow OR sheep,
+  while JCM266/355/1201 do not state an animal species. Reuse the existing processed-fluid
+  owner with a local registry identity rather than create a duplicate or infer cow.
+  This is a variable biological material, not an assertion that every source preparation
+  has identical species or composition. JCM266 and DSMZ161 processing details remain
+  distinct supplied forms; no unprocessed rumen-fluid equivalence is asserted. Historical
+  narrow-ontology grounding remains in original curation history and before snapshot;
+  its exact export row must be withdrawn on integration. Preserve every inherited
+  source hold, generic historical label and source-specific preparation boundary.
+  Verbatim assigned source label: "Rumen fluid, clarified (see Medium No. 266)". No
+  newly resolving source alias is added by this correction.
+
+
+  Historical mapping objects, preserved without live support transfer: {"authentic_before":
+  {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes": "Surface form appears
+  in CultureMech''s occurrence table and was grounded to MICRO:0000520 on an exact
+  match against the ontology label. Restored from the record''s own creation history
+  (#541); the residual importer wrote this provenance only into the published SSSOM.",
+  "source": "culturemech:output/ingredient_occurrences.tsv"}], "mapping_quality":
+  "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0000520", "ontology_label":
+  "clarified rumen fluid", "ontology_source": "MICRO"}, "w02::w02-proposal-clarified-rumen-fluid":
+  {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes": "Surface form appears
+  in CultureMech''s occurrence table and was grounded to MICRO:0000520 on an exact
+  match against the ontology label. Restored from the record''s own creation history
+  (#541); the residual importer wrote this provenance only into the published SSSOM.",
+  "source": "culturemech:output/ingredient_occurrences.tsv"}, {"evidence_type": "CURATOR_JUDGMENT",
+  "notes": "Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json
+  and captured primary/ontology evidence. Existing stock, form and evidence-quality
+  concerns remain held.", "source": "worker02 source review"}, {"evidence_type": "MANUAL_CURATION",
+  "notes": "Add source-bound exact alias(es) ''Rumen fluid, clarified (see below)''.
+  Sources: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1201; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1330;
+  https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=355; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3005;
+  https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M349; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1287",
+  "source": "reports/all_unmatched_20261107/worker-02/b/evidence.json"}], "mapping_quality":
+  "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0000520", "ontology_label":
+  "clarified rumen fluid", "ontology_source": "MICRO"}, "w05::R1193-P-clarifiedrumen266":
+  {"evidence": [{"evidence_type": "MANUAL_CURATION", "notes": "The existing Clarified_rumen_fluid
+  owner spans processed ruminal fluid. Its MICRO0000520 exact target requires cow
+  origin, but primary DSMZ161/212 expressly allow cow OR sheep, while JCM266/355/1201
+  do not state an animal species. Reuse the existing processed-fluid owner with a
+  local registry identity rather than create a duplicate or infer cow. This is a variable
+  biological material, not an assertion that every source preparation has identical
+  species or composition. JCM266 and DSMZ161 processing details remain distinct supplied
+  forms; no unprocessed rumen-fluid equivalence is asserted.", "source": "https://mediadive.dsmz.de/rest/medium/161"}],
+  "mapping_quality": "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:clarified_rumen_fluid",
+  "ontology_label": "Clarified rumen fluid", "ontology_source": "kgmicrobe.ingredient"}}
+
+
+  Current scope: species-unspecified, variable clarified/processed ruminal material.
+  The JCM and DSMZ preparation descriptions are distinct provenance, not identity-equivalent
+  recipes or universal composition. Generic ''Rumen fluid, clarified'' is a lexical
+  counterpart of this scope. Both ''(see below)'' and ''(see Medium No. 266)'' tokens
+  are source pointers: retained as REJECTED_LABEL with full context, not global identity
+  aliases. MICRO0000520 cow-only identity and all old exact520/preparation evidence
+  are explicitly superseded. MICRO0001898 applies specifically to DSMZ1310 and is
+  not a substitute for generic/JCM material. The three coupled MicrobeDecoder parents
+  only establish literal rumen fluid; their parts are separately ungrounded and no
+  longer assert clarification. No guessed animal species, gas component or protocol
+  equality. https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591'
 mim_id: MIM:0000720
 legacy_identifiers:
 - MIM:Clarified_rumen_fluid
 - MICRO:0000520
+- kgmicrobe.ingredient:clarified_rumen_fluid

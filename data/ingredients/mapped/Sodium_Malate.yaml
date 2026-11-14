@@ -9,6 +9,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: Retain Na malate, Na-malate and the truncated Sodium Malate And as non-resolving
+      provenance on the exact disodium(S)-malate owner. The generic names do not fix
+      sodium ratio/stereochemistry; source477 database CAS alone is not independent
+      stereo proof where the provider also assigns L identifiers to DL labels. Source1316
+      explicitly names a20% preparation, independently handled as a stock with unresolved
+      solute stereochemistry. Keep the previously rejected DL tokens and valid explicit
+      L names; do not change the preferred term, identity or select an alternative
+      source form.
 synonyms:
 - synonym_text: 'Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
@@ -20,34 +30,34 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: DL-Na-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Disodium L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2-DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Sodium Malate And
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: disodium (-)-malate
   synonym_type: EXACT_SYNONYM
@@ -65,7 +75,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: DL-Sodium malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: 'Properties: Organic compound, Simple component, Defined component'
   synonym_type: RAW_TEXT
@@ -212,11 +222,81 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:21:11.143703+00:00'
+  curator: all_unmatched_20261107_worker02_research_c
+  action: CORRECTED
+  changes: Retain five explicitly DL/racemic malate labels and their original sources
+    as REJECTED_LABEL on the CHEBI91261 disodium(S)-malate owner. Preserve all other
+    fields and history. This bounded correction does not resolve generic Na-malate
+    scope, role findings or historical SEM:6f60d965a284fea0b873. Proposal only; reviewed
+    evidence in reports/all_unmatched_20261107/worker-02/c/. Inherited publication
+    support is withdrawn for changed bytes; coordinator must re-review the complete
+    payload.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: REJECTED_WRONG_STEREOCHEMISTRY_ALIASES
+  changes: 'Reject explicit DL racemate synonyms from CHEBI:91261 disodium (S)-malate:
+    DL-Na-malate, Na-DL-malate, Na2-DL-malate, Sodium DL-malate, DL-Sodium malate.
+    Source cases remain unresolved for sodium stoichiometry; no reassignment to CHEBI:91260
+    is implied.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G04 from authentic common before
+    sha256=74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9. Origins:
+    worker02:c-proposal-reject-dl-aliases-on-l-malate sha256=e92c173f52dfffdac529265905957bf9f331ff010f4f6daedd1bd9d4e8ca087a;
+    worker07:B-PROPOSAL-Sodium_Malate sha256=3245a0ca7bdfd04d1ced60aead1af2e7c615de4eafdfd47e047f12497c3b26e9.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: Retain Na malate, Na-malate and the truncated Sodium Malate And as non-resolving
+    provenance on the exact disodium(S)-malate owner. The generic names do not fix
+    sodium ratio/stereochemistry; source477 database CAS alone is not independent
+    stereo proof where the provider also assigns L identifiers to DL labels. Source1316
+    explicitly names a20% preparation, independently handled as a stock with unresolved
+    solute stereochemistry. Keep the previously rejected DL tokens and valid explicit
+    L names; do not change the preferred term, identity or select an alternative source
+    form. Original full before/predecessor objects and field lineage are preserved
+    in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/. No
+    maintained data changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:01:15.204122+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private source-bound composition refresh TARGET-022 at frozen 2026-11-08T09:58:00.326701+00:00
+    input cutoff. Exact published source events remain verbatim; immutable prior candidate
+    and original owner retain all historical claims. Applied only the recorded claim-specific
+    #1201 corrections. This author event is not independent owner, role, source-membership
+    or release approval. W05-dependent groups remain pending and are not emitted in
+    this phase.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002326; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002326; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 138-09-0
@@ -241,6 +321,17 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+notes: 'Current published W02 source correction (0c659aa4c121a5b1832bff699c28e30da577ca08,
+  c-proposal-reject-dl-aliases-on-l-malate): Final W02 proposal correction (unapplied):
+  Retain Na malate, Na-malate and the truncated Sodium Malate And as non-resolving
+  provenance on the exact disodium(S)-malate owner. The generic names do not fix sodium
+  ratio/stereochemistry; source477 database CAS alone is not independent stereo proof
+  where the provider also assigns L identifiers to DL labels. Source1316 explicitly
+  names a20% preparation, independently handled as a stock with unresolved solute
+  stereochemistry. Keep the previously rejected DL tokens and valid explicit L names;
+  do not change the preferred term, identity or select an alternative source form.
+  All precise source, role, duplicate-owner and publication holds remain; this claim-specific
+  correction is not whole-owner approval.'
 mim_id: MIM:0002326
 legacy_identifiers:
 - MIM:Sodium_Malate

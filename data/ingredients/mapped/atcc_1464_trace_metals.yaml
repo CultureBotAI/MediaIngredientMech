@@ -1,0 +1,76 @@
+identifier: kgmicrobe.ingredient:atcc_1464_trace_metals
+preferred_term: ATCC 1464 trace metals stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1464_trace_metals
+  ontology_label: ATCC 1464 trace metals stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/BCDDD7524B3B4F88B1BDE51C6EFDBB75.ashx
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: CoCl2 . 6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '290'
+  concentration_unit: MG
+- component_name: Na2MoO4 . 2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '240'
+  concentration_unit: MG
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '17'
+  concentration_unit: MG
+- component_name: MnCl2 . 4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: MG
+- component_name: ZnSO4 . 7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '280'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/BCDDD7524B3B4F88B1BDE51C6EFDBB75.ashx
+    source_record: ATCC 1464 trace metals stock
+    notes: Verbatim constituent names and source batch quantities; water is a preparation
+      input. Child reference_scope UNMAPPED means no exact child identifier was independently
+      established.
+  notes: The ATCC1464 recipe lists these five salts with1 L distilled water and doses10
+    ml stock into the medium. Batch masses are retained; unqualifiedNa2SeO3 is not
+    silently converted to a hydrate.
+notes: 'The ATCC1464 recipe lists these five salts with1 L distilled water and doses10
+  ml stock into the medium. Batch masses are retained; unqualifiedNa2SeO3 is not silently
+  converted to a hydrate. Raw source labels retained without global resolving aliases:
+  ["Trace Metals"]. Occurrence-specific linkage is required; identical generic words
+  in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003203 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003203
+legacy_identifiers:
+- MIM:atcc_1464_trace_metals
+- kgmicrobe.ingredient:atcc_1464_trace_metals

@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:nbrc881_tween80_stock
+preferred_term: NBRC881 Tween80 stock
+synonyms:
+- synonym_text: Tween 80 solution**
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=881;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COMPLEX_UNDEFINED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc881_tween80_stock
+  ontology_label: NBRC881 Tween80 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=881
+    notes: Footnote**defines50gTween80 plus1Ldistilledwater; receivingdose10mL. The
+      source giveswateradded,notfinalvolumeadjustment. Thisstockdenotesanundefinedsurfactantpreparationinwater,notaneatpolysorbate80identityoroneidealizedmolecule.
+components:
+- component_name: Tween80
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: G_PER_L_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PREPARATION_WATER
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=881
+    source_record: NBRC881 Tween80 stock
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Footnote**defines50gTween80 plus1Ldistilledwater; receivingdose10mL. The source
+  giveswateradded,notfinalvolumeadjustment. Thisstockdenotesanundefinedsurfactantpreparationinwater,notaneatpolysorbate80identityoroneidealizedmolecule.
+  Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech;
+  no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.189395+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. Footnote**defines50gTween80 plus1Ldistilledwater;
+    receivingdose10mL. The source giveswateradded,notfinalvolumeadjustment. Thisstockdenotesanundefinedsurfactantpreparationinwater,notaneatpolysorbate80identityoroneidealizedmolecule.
+    No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.902048+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003116 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003116
+legacy_identifiers:
+- MIM:NBRC881_Tween80_Stock
+- kgmicrobe.ingredient:nbrc881_tween80_stock

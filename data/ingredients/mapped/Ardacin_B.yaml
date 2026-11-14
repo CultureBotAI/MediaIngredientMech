@@ -1,9 +1,9 @@
 identifier: kgmicrobe.compound:ardacin_b
 preferred_term: Ardacin B
 ontology_mapping:
-  ontology_id: NCIT:C169786
-  ontology_label: Ardacin
-  ontology_source: NCIT
+  ontology_id: CHEBI:24396
+  ontology_label: glycopeptide
+  ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
@@ -15,7 +15,25 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
     notes: Parent class identified via label-exact; matched_via='Ardacin'
-synonyms: []
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jstage.jst.go.jp/article/antibiotics1968/38/5/38_5_561/_pdf;
+      https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf; CHEBI:24396
+      via captured OLS4
+    notes: Primary Sitrin et al.1985 isolated aridicins A/B/C separately by preparative
+      HPLC and characterized B (Table1 empirical formula C82H84N8O30Cl4). Chung et
+      al.1986 printed652 explicitly states aridicin was renamed ardacin, and Figure1
+      distinguishes the B factor. The existing kgmicrobe.compound:ardacin_b owner
+      can therefore represent this distinct factor with an asymmetric glycopeptide-class
+      parent CHEBI:24396. This is not an exact or broader relation to generic NCIT:C169786
+      or CHEBI:753252 ardacin complex; those terms lack an independently inspected
+      factor-B definition. No supplier, pure preparation, CAS or reconstructed stereostructure
+      is invented. The exact relationship of the generic Ardacin ontology concepts
+      to factor B and any supplied commercial preparation/purity remain unverified.
+      These do not prevent a bounded distinct-factor representation.
+synonyms:
+- synonym_text: aridicin B
+  synonym_type: EXACT_SYNONYM
+  source: Sitrin et al.1985; Chung et al.1986 printed652 renaming footnote
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -44,13 +62,55 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C169786 (label-exact)
   llm_assisted: false
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: Primary Sitrin et al.1985 isolated aridicins A/B/C separately by preparative
+    HPLC and characterized B (Table1 empirical formula C82H84N8O30Cl4). Chung et al.1986
+    printed652 explicitly states aridicin was renamed ardacin, and Figure1 distinguishes
+    the B factor. The existing kgmicrobe.compound:ardacin_b owner can therefore represent
+    this distinct factor with an asymmetric glycopeptide-class parent CHEBI:24396.
+    This is not an exact or broader relation to generic NCIT:C169786 or CHEBI:753252
+    ardacin complex; those terms lack an independently inspected factor-B definition.
+    No supplier, pure preparation, CAS or reconstructed stereostructure is invented.
+    The exact relationship of the generic Ardacin ontology concepts to factor B and
+    any supplied commercial preparation/purity remain unverified. These do not prevent
+    a bounded distinct-factor representation. Isolated report-only proposal; no source,
+    role, whole-owner or export acceptance.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000376; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000376; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C82H84N8O30Cl4
+  data_source: Sitrin et al.1985 Table1 factorB, Journal of Antibiotics38:561–571;
+    exact primary table visually inspected. Empirical formula, no reconstructed stereostructure
+    or supplier purity.
+notes: Primary Sitrin et al.1985 isolated aridicins A/B/C separately by preparative
+  HPLC and characterized B (Table1 empirical formula C82H84N8O30Cl4). Chung et al.1986
+  printed652 explicitly states aridicin was renamed ardacin, and Figure1 distinguishes
+  the B factor. The existing kgmicrobe.compound:ardacin_b owner can therefore represent
+  this distinct factor with an asymmetric glycopeptide-class parent CHEBI:24396. This
+  is not an exact or broader relation to generic NCIT:C169786 or CHEBI:753252 ardacin
+  complex; those terms lack an independently inspected factor-B definition. No supplier,
+  pure preparation, CAS or reconstructed stereostructure is invented. The exact relationship
+  of the generic Ardacin ontology concepts to factor B and any supplied commercial
+  preparation/purity remain unverified. These do not prevent a bounded distinct-factor
+  representation. The earlier NCIT label-match mapping evidence is historical and
+  is superseded for the current parent assertion; no part-of-complex relationship
+  is serialized as exact/subclass identity.
 mim_id: MIM:0000376
 legacy_identifiers:
 - MIM:Ardacin_B

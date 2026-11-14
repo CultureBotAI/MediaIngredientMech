@@ -36,14 +36,40 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T06:01:21.600705+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CORRECTED
+  changes: Record the explicitly named Invitrogen pig-serum supplied form on the existing
+    porcine-serum owner. Supplier/catalog uncertainty does not block this bounded
+    provenance claim; no catalog number, processing state or equivalence with horse
+    serum is invented. Isolated successor proposal only; original published review
+    bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002089; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:967); no CAS-RN or
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002089; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:967); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+
+
+  Record the explicitly named Invitrogen pig-serum supplied form on the existing porcine-serum
+  owner. Supplier/catalog uncertainty does not block this bounded provenance claim;
+  no catalog number, processing state or equivalence with horse serum is invented.
+  Source labels retained as nonresolving provenance: [{"case_id": "CM_NAME:c5033da6c082cf089a2e354f2c57ca3f6ee97f4c688478a37642372122e1a041",
+  "raw_label": "Pig serum (Invitrogen)"}]. No global generic alias, supplier equivalence,
+  role approval or complete publication approval is conferred. Receiving-medium dose
+  and unit repairs remain separate. Existing native holds and rejected labels are
+  preserved.'
 ontology_mapping:
   ontology_id: MICRO:0001238
   ontology_label: porcine serum
@@ -55,6 +81,11 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0495; matched via 'Porcine serum' (name normalization);
       label-exact
 ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Pig serum
+  supplier: Invitrogen
+  notes: Explicit TOGO M2927 serum input, separately listed from horse serum; no catalog,
+    heat treatment or supplier equivalence inferred.
 mim_id: MIM:0002089
 legacy_identifiers:
 - MIM:Porcine_Serum

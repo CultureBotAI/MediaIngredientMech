@@ -70,19 +70,50 @@ curation_history:
     to 1 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:24:11.156405+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Withdraw unsupported FOODON03305103 grounding from first component and
+    retain its namedmaterial asUNMAPPED, after primary material/product-boundary review.
+    The imported ModifiedCookedMeatMedium record does not identify its modification
+    or a manufacturer recipe. Its legacy research row used the wrong existing CookedMeatMedium→FOODON
+    bridge. Primary cooked-meat manufacturer evidence includes beefheart and formulated
+    granules; no verified source selects pure skeletal cookedmeat or the new Oxoid
+    product. Retain a named cooked-meat material part as a bounded interpretation,
+    with preparation and ontology grounding unresolved. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001713; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001713; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. Follow-on source review: The
+  imported ModifiedCookedMeatMedium record does not identify its modification or a
+  manufacturer recipe. Its legacy research row used the wrong existing CookedMeatMedium→FOODON
+  bridge. Primary cooked-meat manufacturer evidence includes beefheart and formulated
+  granules; no verified source selects pure skeletal cookedmeat or the new Oxoid product.
+  Retain a named cooked-meat material part as a bounded interpretation, with preparation
+  and ontology grounding unresolved. Legacy first-part assertion retained here as
+  provenance, not active grounding: {"component_name": "meat (cooked)", "component_id":
+  "FOODON:03305103", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research
+  decomposition (#213/#308)"}.'
 components:
-- component_name: meat (cooked)
-  component_id: FOODON:03305103
-  reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
+- component_name: Cooked-meat material (source preparation unspecified)
+  reference_scope: UNMAPPED
+  source: Correction1193 dependent-reference review; literal ingredient material retained
+    without unsupported FoodOn or product identity.
 component_assertion:
   method: CURATED_INTERPRETATION
   completeness: PARTIAL
@@ -93,8 +124,29 @@ component_assertion:
     notes: 'Reviewed row: strategy=map_to_medium, confidence=high; Robertson''s cooked-meat
       anaerobe medium; repo ''Cooked meat medium'' already grounds to FOODON:03305103.
       Undefined parts: beef-heart granules, peptone, glucose.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+  - evidence_type: MANUAL_CURATION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/748
+    notes: The imported ModifiedCookedMeatMedium record does not identify its modification
+      or a manufacturer recipe. Its legacy research row used the wrong existing CookedMeatMedium→FOODON
+      bridge. Primary cooked-meat manufacturer evidence includes beefheart and formulated
+      granules; no verified source selects pure skeletal cookedmeat or the new Oxoid
+      product. Retain a named cooked-meat material part as a bounded interpretation,
+      with preparation and ontology grounding unresolved. This is a bounded correction
+      of the unsupported first-part grounding; all inherited whole-owner/source/export
+      holds remain.
+  - evidence_type: RECIPE_SOURCE
+    source: https://biotrading.com/assets/productinformatie/acumedia/tds/7110.pdf
+    notes: Manufacturer7110 comparator establishes that namedmeatgranules can contain
+      beefheart,animaldigest,dextrose andNaCl. It is not the selected formula or manufacturer
+      of this imported owner.
+  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe. Follow-on scope: The imported
+    ModifiedCookedMeatMedium record does not identify its modification or a manufacturer
+    recipe. Its legacy research row used the wrong existing CookedMeatMedium→FOODON
+    bridge. Primary cooked-meat manufacturer evidence includes beefheart and formulated
+    granules; no verified source selects pure skeletal cookedmeat or the new Oxoid
+    product. Retain a named cooked-meat material part as a bounded interpretation,
+    with preparation and ontology grounding unresolved.'
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:modified_cooked_meat_medium

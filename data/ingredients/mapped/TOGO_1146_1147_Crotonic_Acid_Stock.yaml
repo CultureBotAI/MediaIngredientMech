@@ -1,0 +1,75 @@
+identifier: kgmicrobe.ingredient:togo_1146_1147_crotonic_acid_stock
+preferred_term: TOGO 1146/1147 crotonic acid 0.5 M pH 7 stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_1146_1147_crotonic_acid_stock
+  ontology_label: TOGO 1146/1147 crotonic acid 0.5 M pH 7 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/medium/M1146
+    notes: Source-qualified formulation identity. No molecular exactMatch or generic-stock
+      equivalence is asserted. TOGO1146 and1147 list0.5M Crotonic acid(pH7.0) as a20ml
+      sterile anaerobic stock addition. The stated concentration and pH define the
+      source-qualified stock context; neutralizing reagent and solvent are not explicitly
+      specified and are not invented. No stock-to-receiving-medium mass or pure-acid
+      identity is asserted.
+synonyms:
+- synonym_text: 0.5 M Crotonic acid (pH 7.0)
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/medium/M1146
+components:
+- component_name: Crotonic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: MOLAR
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M1146
+    source_record: TOGO 1146/1147 crotonic acid 0.5 M pH 7 stock
+    notes: TOGO1146 and1147 list0.5M Crotonic acid(pH7.0) as a20ml sterile anaerobic
+      stock addition. The stated concentration and pH define the source-qualified
+      stock context; neutralizing reagent and solvent are not explicitly specified
+      and are not invented. No stock-to-receiving-medium mass or pure-acid identity
+      is asserted.
+  notes: Amounts retain their explicit stock or source-batch basis; no measured final
+    volume or receiving-medium concentration is inferred.
+notes: Isolated source-review proposal. Generic raw source spelling retained as nonresolving
+  provenance so this specific formulation cannot capture other preparations. TOGO1146
+  and1147 list0.5M Crotonic acid(pH7.0) as a20ml sterile anaerobic stock addition.
+  The stated concentration and pH define the source-qualified stock context; neutralizing
+  reagent and solvent are not explicitly specified and are not invented. No stock-to-receiving-medium
+  mass or pure-acid identity is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: Proposed source-qualified stock togo1146-crotonate-stock with source-stated
+    component scope. No maintained owner or publication selector was changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003178 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003178
+legacy_identifiers:
+- MIM:TOGO_1146_1147_Crotonic_Acid_Stock
+- kgmicrobe.ingredient:togo_1146_1147_crotonic_acid_stock

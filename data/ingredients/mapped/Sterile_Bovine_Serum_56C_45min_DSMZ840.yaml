@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:sterile_bovine_serum_56c_45min_dsmz840
+preferred_term: Sterile bovine serum heated at 56 C for 45 min (DSMZ 840)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: UBERON:0001977
+  ontology_label: blood serum
+  ontology_source: UBERON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf
+    notes: DSMZ840 and its tube/bottle variants explicitly require sterile bovine
+      serum heated56C45min. Developmental age remains unspecified and therefore does
+      not exclude fetal serum. The explicit56C45min protocol differs from explicit56C30min
+      and56C60min protocols; an unstated schedule does not establish a difference.
+      Different receiving doses do not split or block the same source-defined preparation.
+      Broader material parent only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.571218+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: DSMZ840 and its tube/bottle variants explicitly require sterile bovine
+    serum heated56C45min. The age remains unspecified; this is not fetal serum. Different
+    receiving doses do not split or block the same source-defined preparation. Isolated
+    successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: CORRECTED
+  changes: 'BIO-F04 source-bound successor correction: DSMZ840 and its tube/bottle
+    variants explicitly require sterile bovine serum heated56C45min. Developmental
+    age remains unspecified and therefore does not exclude fetal serum. The explicit56C45min
+    protocol differs from explicit56C30min and56C60min protocols; an unstated schedule
+    does not establish a difference. Different receiving doses do not split or block
+    the same source-defined preparation. Prior isolated proposal sv1-bio-sterile_bovine_serum_56c_45min_dsmz840
+    remains immutable; this event records proposal authorship only. Earlier history
+    is retained verbatim, including superseded wording.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003173 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: 'DSMZ840 and its tube/bottle variants explicitly require sterile bovine serum
+  heated56C45min. Developmental age remains unspecified and therefore does not exclude
+  fetal serum. The explicit56C45min protocol differs from explicit56C30min and56C60min
+  protocols; an unstated schedule does not establish a difference. Different receiving
+  doses do not split or block the same source-defined preparation. Source labels retained
+  as nonresolving provenance: [{"case_id": "CM_NAME:74dd03601e58fe60e5c79650cee65e6148b04ded88efff0ad9c2919cc24c4af6",
+  "raw_label": "sterile bovine serum (heat inactivated at 56°C for 45 min)"}]. No
+  global generic alias, supplier equivalence, role approval or complete publication
+  approval is conferred. Receiving-medium dose and unit repairs remain separate. Existing
+  native holds and rejected labels are preserved. Source-qualified naming is not proof
+  of a distinct preparation. Preserve unresolved cross-source relationships and evaluate
+  a common named partial scope or exact product/protocol bridge before simultaneous
+  installation. No role/export or whole-owner approval; all inherited holds remain.'
+mim_id: MIM:0003173
+legacy_identifiers:
+- MIM:Sterile_Bovine_Serum_56C_45min_DSMZ840
+- kgmicrobe.ingredient:sterile_bovine_serum_56c_45min_dsmz840

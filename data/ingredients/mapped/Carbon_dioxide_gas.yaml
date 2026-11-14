@@ -47,6 +47,9 @@ synonyms:
 - synonym_text: methanedione
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: CO2  gas
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:2fd24b92191b1d3cc4f26f9ea632e81b391c9d07396ccded0bb9d212035de90d
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 775
@@ -88,11 +91,28 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: TOGO M2679 identifies CO2 gas as a gas input. ChEBI16526 explicitly describes
+    gaseous carbon dioxide under normal conditions. The doubled space changes spelling
+    only; no carbonate salt, dissolved stock concentration or gas-mixture fraction
+    is inferred. Proposed only; integration requires content-bound full-payload mapping
+    review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000590; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000590; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:

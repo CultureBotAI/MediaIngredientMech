@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:union_carbide_sag_471
+preferred_term: Union Carbide SAG-471 antifoam
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:union_carbide_sag_471
+  ontology_label: Union Carbide SAG-471 antifoam
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2696
+    notes: TOGO M2696 explicitly names historical Union Carbide SAG-471. This is a
+      source-qualified commercial antifoam identity with unspecified composition and
+      dose. The current Momentive SAG471 technical sheet corroborates the product-name
+      family, but no identity with the modern formulation, no pure-PDMS identity,
+      component proportion, lot or recipe dose is asserted. Unknown historical formulation
+      details do not prevent preserving the established named product as an undefined
+      mixture.
+synonyms:
+- synonym_text: Antifoam (Union Carbide Corp., SAG-471)
+  synonym_type: EXACT_SYNONYM
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2696
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+notes: TOGO M2696 explicitly names historical Union Carbide SAG-471. This is a source-qualified
+  commercial antifoam identity with unspecified composition and dose. The current
+  Momentive SAG471 technical sheet corroborates the product-name family, but no identity
+  with the modern formulation, no pure-PDMS identity, component proportion, lot or
+  recipe dose is asserted. Unknown historical formulation details do not prevent preserving
+  the established named product as an undefined mixture. Isolated proposal; no maintained
+  source changes or inherited hold removal. Full publication and cross-shard duplicate
+  review remain required.
+curation_history:
+- timestamp: '2026-11-08T04:37:01.549706+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create the supported source-qualified named product identity without asserting
+    unavailable component or role claims.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.071602+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003196 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003196
+legacy_identifiers:
+- MIM:Union_Carbide_SAG_471
+- kgmicrobe.ingredient:union_carbide_sag_471

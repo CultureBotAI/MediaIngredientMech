@@ -20,13 +20,13 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: H2cit
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: citrate(1-)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: dihydrogen citrate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: Citric Acid•H2O
   synonym_type: RAW_TEXT
@@ -117,11 +117,32 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Retype monovalent citrate names as provenance-only REJECTED_LABEL; neutral
+    citric acid monohydrate is not citrate(1-). Preserve original source metadata
+    and unrelated claims for full-payload review. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[133] case_id=KG_CASE:3f818e36a8ba5a1e0e15da3ac90ebbe54008a59dff5363df7d7ee38240cf3bd8;
+    source=mediadive; source_case_id=mediadive.ingredient:786; Primary evidence: https://mediadive.dsmz.de/finder/Citric+acid+x+H2O///;
+    Primary evidence: https://mediadive.dsmz.de/ingredients/786; Primary evidence:
+    https://mediadive.dsmz.de/medium/848; Primary evidence: https://mediadive.dsmz.de/solution-finder/Citric+acid+x+H2O///?mainsol=1&optional=1;
+    Primary evidence: https://mediadive.dsmz.de/solutions/6273; Primary evidence:
+    https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium848.pdf'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000716; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000716; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 5949-29-1

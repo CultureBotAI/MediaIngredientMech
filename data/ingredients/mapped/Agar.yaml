@@ -17,21 +17,41 @@ ontology_mapping:
       5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71
       g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.'
     explanation: Auto-proposed; curator should rephrase or remove.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1144.pdf
+    notes: DSMZ1144 identifies Agar-agar (Difco),18g per recipe batch, without specifying
+      Bacto, Noble or another grade. NBRC1116 specifies purified agar12.5g and gives
+      OxoidL28 only as an example; it does not select LP0028 or specify the chosen
+      product performance. These are bounded supplier/grade annotations on agar, not
+      exact equivalence to a particular commercial grade or a new chemical identity.
+      Detached parenthetical qualifiers and role/property fragments are retained as
+      REJECTED_LABEL because they are not stand-alone ingredient names; complete existing
+      ingredient labels remain unchanged.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116
+    notes: DSMZ1144 identifies Agar-agar (Difco),18g per recipe batch, without specifying
+      Bacto, Noble or another grade. NBRC1116 specifies purified agar12.5g and gives
+      OxoidL28 only as an example; it does not select LP0028 or specify the chosen
+      product performance. These are bounded supplier/grade annotations on agar, not
+      exact equivalence to a particular commercial grade or a new chemical identity.
+      Detached parenthetical qualifiers and role/property fragments are retained as
+      REJECTED_LABEL because they are not stand-alone ingredient names; complete existing
+      ingredient labels remain unchanged.
 synonyms:
 - synonym_text: ( Noble)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: (alternative)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: (for solid medium)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: (for solid medium, alternative)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: (if appropriate)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: Agar
   synonym_type: EXACT_SYNONYM
@@ -40,13 +60,13 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: 'Role: Solidifying component'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: 'Properties: Undefined component, Complex component'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: ( modified)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: Agar (if needed)
   synonym_type: RAW_TEXT
@@ -75,6 +95,12 @@ synonyms:
 - synonym_text: Agar* (if needed)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Agar (alternative)
+  synonym_type: RAW_TEXT
+  source: culturemech frozen worker04 case CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166
+- synonym_text: Agar if required
+  synonym_type: RAW_TEXT
+  source: culturemech frozen worker04 case CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4456
@@ -203,11 +229,38 @@ curation_history:
     ''Agar (Purified)'' (x1 CultureMech mentions); ''Agar (if needed)*'' (x1 CultureMech
     mentions); ''Agar* (if needed)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:18:48.447621+00:00'
+  curator: worker04_media_source_review_proposal
+  action: ADDED_SYNONYMS
+  changes: Add the complete source labels ['Agar (alternative)', 'Agar if required'].
+    Identity/formulation boundary verified only as described in the media evidence;
+    existing unrelated payload is not newly approved. Isolated proposal only; no maintained
+    owner was changed and no publication hold is released.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.405230+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: DSMZ1144 identifies Agar-agar (Difco),18g per recipe batch, without specifying
+    Bacto, Noble or another grade. NBRC1116 specifies purified agar12.5g and gives
+    OxoidL28 only as an example; it does not select LP0028 or specify the chosen product
+    performance. These are bounded supplier/grade annotations on agar, not exact equivalence
+    to a particular commercial grade or a new chemical identity. Detached parenthetical
+    qualifiers and role/property fragments are retained as REJECTED_LABEL because
+    they are not stand-alone ingredient names; complete existing ingredient labels
+    remain unchanged. Historical events are preserved verbatim; this event qualifies/retracts
+    conflicting earlier inferences where explicitly described above.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000282; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000282; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 9002-18-0
@@ -222,6 +275,25 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: ' DSMZ1144 identifies Agar-agar (Difco),18g per recipe batch, without specifying
+  Bacto, Noble or another grade. NBRC1116 specifies purified agar12.5g and gives OxoidL28
+  only as an example; it does not select LP0028 or specify the chosen product performance.
+  These are bounded supplier/grade annotations on agar, not exact equivalence to a
+  particular commercial grade or a new chemical identity. Detached parenthetical qualifiers
+  and role/property fragments are retained as REJECTED_LABEL because they are not
+  stand-alone ingredient names; complete existing ingredient labels remain unchanged.
+  Existing whole-owner, role, source-specific and export holds remain; this isolated
+  proposal does not approve maintained data or releases.'
+supplied_form:
+- name: Agar-agar (Difco)
+  supplier: Difco
+  notes: DSMZ1144 names18g Agar-agar(Difco). Grade/catalog and physical purchase state
+    unspecified; not asserted Bacto or Noble.
+- name: Purified agar
+  form: purified agar
+  notes: NBRC1116 specifies12.5g purified agar and gives OxoidL28 as an example only.
+    Supplier/catalog are deliberately omitted because that example does not select
+    the used product; LP0028 specifications are not generalized to alternatives.
 mim_id: MIM:0000282
 legacy_identifiers:
 - MIM:Agar

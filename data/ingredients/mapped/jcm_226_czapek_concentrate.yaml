@@ -1,0 +1,98 @@
+identifier: kgmicrobe.ingredient:jcm_226_czapek_concentrate
+preferred_term: JCM 226 Czapek concentrate
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_226_czapek_concentrate
+  ontology_label: JCM 226 Czapek concentrate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226
+    notes: Source-specific multicomponent stock; registry identity does not assert
+      interchangeability with other recipes bearing this generic label.
+synonyms: []
+components:
+- component_name: NaNO3
+  component_id: CHEBI:63005
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: NaNO3'
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: KCl'
+- component_name: MgSO4 x 7 H2O
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: MgSO4·7H2O'
+- component_name: FeSO4 x 7 H2O
+  component_id: CHEBI:75836
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: FeSO4·7H2O'
+- component_name: ZnSO4 x 7 H2O
+  component_id: CHEBI:32312
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: ZnSO4·7H2O'
+- component_name: CuSO4 x 5 H2O
+  component_id: CHEBI:31440
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: CuSO4·5H2O'
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: 'Source ingredient spelling: Distilled water'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=226
+    source_record: jcm226
+    notes: JCM226 stock batch lists NaNO3 30g, KCl5g, MgSO4·7H2O5g, FeSO4·7H2O0.1g,
+      ZnSO4·7H2O0.1g, CuSO4·5H2O0.05g and distilled water100mL. These are batch ingredients,
+      not asserted concentrations per100mL finalsolution. Mainmedium addition is10mL;
+      frozen10G_PER_L is a separate unit defect.
+notes: JCM226 stock batch lists NaNO3 30g, KCl5g, MgSO4·7H2O5g, FeSO4·7H2O0.1g, ZnSO4·7H2O0.1g,
+  CuSO4·5H2O0.05g and distilled water100mL. These are batch ingredients, not asserted
+  concentrations per100mL finalsolution. Mainmedium addition is10mL; frozen10G_PER_L
+  is a separate unit defect. Raw source label 'Czapek concentrate (see below)' is
+  recorded in this evidence rather than as a global resolving alias because the label
+  is recipe-scoped. No EXACT_FORMULATION link to the whole medium is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose source-specific JCM 226 Czapek concentrate stock with complete
+    constituent list, original batch quantities in evidence and no guessed final-volume
+    concentrations.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:55:57.876916+00:00'
+  curator: Codex worker09
+  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
+  changes: 'Issue #1226 provenance-only correction for ma-stock-jcm_226_czapek_concentrate,
+    audit flag 573: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION. The complete assertion was newly supplied by the worker09 agent,
+    not a MIM human reviewer; the cited source author is distinct from the author
+    of this curation judgment. Preserved the complete source, notes and claim content,
+    all other mapping evidence (including the ambiguous historical Casamino wrapper
+    where present), component evidence, scientific fields and prior history. No identity,
+    source applicability, outcome, role, coalescence or export approval change. Audit:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
+    complete original evidence-object SHA256 4c142303c221bec2edaf4a8f96bae2883db899e2bae4c12379a3497335d6de15.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003277 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003277
+legacy_identifiers:
+- MIM:jcm_226_czapek_concentrate
+- kgmicrobe.ingredient:jcm_226_czapek_concentrate

@@ -12,11 +12,29 @@ ontology_mapping:
   - evidence_type: LITERATURE
     source: PubMed search ('p-Aminobenzoic acid')
     pmid: '31986050'
-    supports: SUPPORT
+    supports: PARTIAL
     snippet: The 1:1 cocrystal of the antifungal agent ketoconazole with p-aminobenzoic
       acid was successfully crystallized and systematically characterized by a physical
       and pharmacological point of view.
-    explanation: Auto-proposed; curator should rephrase or remove.
+    explanation: The preserved abstract snippet mentions a ketoconazole/PABA cocrystal.
+      This is adjacent chemical context; it does not independently establish the free-acid
+      owner identity, synonym equivalence, or a medium-specific vitamin role.
+  - evidence_type: LLM_SUGGESTION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Add source-bound exact alias(es) ''Paraamino benzoic acid''. Sources:
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3160; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3161;
+      https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_30753'
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: 'ABEE is retained as REJECTED_LABEL: the primary Cosmo Bio GlyScope brochure
+      explicitly identifies the ethyl ester, not CHEBI30753 free acid. The exact concentration
+      token p-aminobenzoic acid (0.3 μg/μL) is also non-resolving: NBRC1604 explicitly
+      adds10uL of that preparation and TOGO M3052 calls it4-aminobenzoic acid solution.
+      No solvent, complete stock recipe, receiving concentration or transfer to an
+      ester owner is inferred. Preserve the supported Paraamino benzoic acid alias.
+      PMID31986050 remains genuine cocrystal context, qualified PARTIAL rather than
+      exact-owner or role support; other charge aliases and provisional roles remain
+      unapproved.'
 synonyms:
 - synonym_text: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
     component'
@@ -46,7 +64,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: ABEE
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: PABA
   synonym_type: EXACT_SYNONYM
@@ -80,7 +98,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: p-aminobenzoic acid (0.3 μg/μL)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: 4-aminobenzoic acid zwitterion
   synonym_type: RAW_TEXT
@@ -91,6 +109,9 @@ synonyms:
 - synonym_text: 4-azaniumylbenzoate
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Paraamino benzoic acid
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:73beedc4877a52651a2da1b739bf1ac1cb6e8a1be8fee22a5b7591dad508b754
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2270
@@ -274,11 +295,49 @@ curation_history:
     ''4-azaniumylbenzoate''. Tokens already present on the kg-microbe ontology node
     were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: ADDED_SYNONYMS
+  changes: Add source-bound exact alias(es) 'Paraamino benzoic acid'. Isolated proposal
+    only; coordinator must re-review changed owner and synchronize native outputs
+    before application.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: 'ABEE is retained as REJECTED_LABEL: the primary Cosmo Bio GlyScope brochure
+    explicitly identifies the ethyl ester, not CHEBI30753 free acid. The exact concentration
+    token p-aminobenzoic acid (0.3 μg/μL) is also non-resolving: NBRC1604 explicitly
+    adds10uL of that preparation and TOGO M3052 calls it4-aminobenzoic acid solution.
+    No solvent, complete stock recipe, receiving concentration or transfer to an ester
+    owner is inferred. Preserve the supported Paraamino benzoic acid alias. PMID31986050
+    remains genuine cocrystal context, qualified PARTIAL rather than exact-owner or
+    role support; other charge aliases and provisional roles remain unapproved. Original
+    full before/predecessor objects and field lineage are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:49.994937+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 2 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001967; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001967; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 150-13-0
@@ -300,6 +359,16 @@ nutritional_roles:
       component'
     curator_note: Widespread use in media formulations (1968 occurrences). High confidence
       based on 'Defined component' property.
+notes: 'Final W02 proposal correction (unapplied): ABEE is retained as REJECTED_LABEL:
+  the primary Cosmo Bio GlyScope brochure explicitly identifies the ethyl ester, not
+  CHEBI30753 free acid. The exact concentration token p-aminobenzoic acid (0.3 μg/μL)
+  is also non-resolving: NBRC1604 explicitly adds10uL of that preparation and TOGO
+  M3052 calls it4-aminobenzoic acid solution. No solvent, complete stock recipe, receiving
+  concentration or transfer to an ester owner is inferred. Preserve the supported
+  Paraamino benzoic acid alias. PMID31986050 remains genuine cocrystal context, qualified
+  PARTIAL rather than exact-owner or role support; other charge aliases and provisional
+  roles remain unapproved. All precise source, role, duplicate-owner and publication
+  holds remain; this claim-specific correction is not whole-owner approval.'
 mim_id: MIM:0001967
 legacy_identifiers:
 - MIM:P-aminobenzoic_Acid

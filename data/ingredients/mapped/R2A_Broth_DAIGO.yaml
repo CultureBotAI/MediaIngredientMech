@@ -1,0 +1,220 @@
+identifier: kgmicrobe.ingredient:r2a_broth_daigo
+preferred_term: R2A broth powder (DAIGO)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:r2a_broth_daigo
+  ontology_label: R2A broth powder (DAIGO)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://labchem-wako.fujifilm.com/jp/product/detail/W01N0139-0168.html
+    notes: Agent-authored reconciliation of the exact captured source formulation
+      under MAPPING_SEMANTICS section 3; see https://github.com/CultureBotAI/MediaIngredientMech/issues/1237.
+      This proposes a local whole-preparation identity, not an exact chemical or component
+      identity, human confirmation, role approval or release approval.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+    notes: Agent-authored reconciliation of the exact captured source formulation
+      under MAPPING_SEMANTICS section 3; see https://github.com/CultureBotAI/MediaIngredientMech/issues/1237.
+      This proposes a local whole-preparation identity, not an exact chemical or component
+      identity, human confirmation, role approval or release approval.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+    notes: Specific DAIGO broth preparation; no exact ontology claim to R2Aagar or
+      internally inconsistent MICRO0000541.
+  - evidence_type: LLM_SUGGESTION
+    source: https://labchem-wako.fujifilm.com/jp/product/detail/W01N0139-0168.html
+    notes: JCM659 and NBRC991/1347 name Daigo R2A broth powder, with deliberate dilution
+      in each receiving medium. Manufacturer395-01681 identifies agar-free R2A broth
+      and its eight constituents; no automatic assignment of generic R2A broth cases1/129
+      or agar-containing records.
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Casamino acids
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Dipotassium hydrogen phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Magnesium sulfate heptahydrate
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+- component_name: Sodium pyruvate
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_PURIFIED_WATER
+  source: Manufacturer composition per 1 L purified water at standard reconstitution;
+    not the dose in a diluted receiving recipe.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://labchem-wako.fujifilm.com/jp/product/detail/W01N0139-0168.html
+    source_record: 395-01681; Japanese composition block
+    notes: Manufacturer lists all eight dry constituents, including magnesium sulfate
+      heptahydrate, per 1 L purified water. Water is a preparation addition and agar
+      is explicitly absent. This disclosure does not identify the peptone as BD-Difco
+      Proteose Peptone No.3 or the other complex constituents as any particular catalog
+      product.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=839
+    source_record: R2A broth recipe and DAIGO premix comment
+    notes: JCM839 lists its own named full-strength recipe, including BD-Difco constituents,
+      and identifies availability of DAIGO premix. Those recipe brand qualifications
+      are preserved in the source capture rather than imposed on the manufacturer
+      product composition.
+  notes: Complete immediate ingredient list relative to the cited source tables; unresolved
+    component identities and source-specific quantities remain explicit. No analytical
+    speciation, receiving-medium identity, role, or publication approval is asserted.
+notes: One named DAIGO dry broth product, not a prepared medium or R2A agar. Manufacturer
+  disclosure sums to 3.15 g of listed dry ingredients per preparation with 1 L purified
+  water; NBRC1455 instructs 3.2 g of product. Preserve both statements without inventing
+  a missing filler, changing a dose, or claiming measured final volume. JCM805 uses
+  0.32 g, JCM659 and NBRC991 use 1.6 g, and NBRC1347 uses 0.32 g in their receiving
+  recipes. Different receiving doses do not create new powder identities. The generic
+  DSMZ1537 R2A broth occurrences and the complete mixed MediaDive1402 case are not
+  assigned globally to DAIGO. Exact component procurement forms not supplied by the
+  table remain ungrounded; no generic peptone owner is substituted. Original published
+  proposal files and their full source cases, occurrences, evidence and historical
+  assertions are immutable in family-reconciliations-v1. Historical proposal events
+  below describe original isolated proposals, not maintained applications. Their former
+  identity/quantity choices are superseded only by this explicitly documented private
+  reconciliation. No current owner or corpus count is modified. Current-origin bridge
+  retains the exact W03 and W05 source profiles, their distinct evidence judgments
+  and provenance-correction events. The JCM839 BD-Difco recipe constituents remain
+  source context, not procurement claims for the DAIGO product. The manufacturer batch
+  table continues to define this dry-product candidate. All six case objects, generic
+  DSMZ1537 and mixed MediaDive1402 exclusions remain external scoped routing evidence;
+  no occurrence count is inferred. W05 source acceptance was pending at the pinned
+  planning cutoff. Both original proposals are null-before private creations, not
+  maintained owners.
+curation_history:
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed DAIGO broth identity and primary-source literal component transcription
+    with source-defined prepared-broth concentration denominator.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:48:47.596191+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: JCM659 and NBRC991/1347 name Daigo R2A broth powder, with deliberate dilution
+    in each receiving medium. Manufacturer395-01681 identifies agar-free R2A broth
+    and its eight constituents; no automatic assignment of generic R2A broth cases1/129
+    or agar-containing records. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:36:10.029860+00:00'
+  curator: codex_campaign_family_reconciliation
+  action: RECONCILED_PRIVATE_PROPOSAL
+  changes: 'For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237, reconcile
+    the published origin proposals [188, 474] using the full captured primary formulation
+    and source-case comparison. Preserve both original event histories verbatim; new
+    mapping evidence is LLM_SUGGESTION under #1226. This is a private candidate only,
+    with no fabricated maintained predecessor, scientific approval, component-owner
+    approval, role approval or release approval.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:16:40.476287+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-139. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:31:38.943111+00:00'
+  curator: Codex worker04 /root positive-candidate current-origin composition
+  action: COMPOSED_CURRENT_ORIGIN_PROVENANCE
+  changes: Private candidate successor of b1a306dd3db859d33b45532d38cd59b6d143341376a00f4311df911f284ad72a.
+    Retain exact reviewed predecessor scientific fields and all authentic source profiles/events;
+    bind current committed origins w03::b-proposal-daigo-r2a, w05::M1193-P-R2A-DAIGO.
+    append missing original correction events verbatim and explicitly qualify isolated
+    proposal lineage. No maintained application, source-case acceptance increment,
+    role approval, new component mapping or export approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003151 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: R2A Broth DAIGO
+  form: dehydrated broth powder
+  supplier: FUJIFILM Wako / LABOLOGY
+  catalog_number: 395-01681
+  notes: Current captured manufacturer/seller identification. Historical JCM sources
+    name Nihon Pharm.; that history does not assert identical supplier details for
+    every lot.
+synonyms:
+- synonym_text: R2A broth (DAIGO) (Nihon Pharm. Co.)
+  synonym_type: CATALOG_VARIANT
+  source: JCM805/JCM839 and NBRC1455
+- synonym_text: R2A Broth "DAIGO"
+  synonym_type: CATALOG_VARIANT
+  source: JCM805/JCM839 and NBRC1455
+- synonym_text: R2A broth (Daigo)
+  synonym_type: RAW_TEXT
+  source: R2A broth (Daigo)
+- synonym_text: R2A Broth (DAIGO)
+  synonym_type: RAW_TEXT
+  source: R2A Broth (DAIGO)
+mim_id: MIM:0003151
+legacy_identifiers:
+- MIM:R2A_Broth_DAIGO
+- kgmicrobe.ingredient:r2a_broth_daigo

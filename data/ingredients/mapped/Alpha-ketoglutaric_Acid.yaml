@@ -26,10 +26,10 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: unmapped_duplicate_review_2026_05_11
 - synonym_text: alpha-ketoglutamate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: merge_from_UNMAPPED_0323
 - synonym_text: alpha-ketoglutaric acid (100 mM).
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -126,11 +126,41 @@ curation_history:
     not resolve them: ''alpha-ketoglutaric acid (100 mM).'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CORRECTED
+  changes: 'Re-read the complete acid owner history: June16 research-based merge treated
+    alpha-ketoglutamate as alpha-ketoglutarate and then equated it with the acid.
+    Even if typo correction is accepted, CHEBI16810 defines the dianion whereas30915
+    is the acid; the history is not source2384 procurement proof. Propose changing
+    the ambiguous global alias to rejected provenance while retaining the historical
+    merge event and all role data. Isolated successor proposal only; no maintained
+    surfaces, roles, source bytes or publication holds changed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: 'CH-06: synonyms[6] ''alpha-ketoglutaric acid (100 mM).'': reject_resolving_identity_preserve_text_and_source.
+    TOGO2388 lists0.1ml of100mM alpha-ketoglutaric acid; the label specifies an aliquoted
+    stock. Solvent is unstated and not invented; keep separate from pure30915. Isolated
+    report-only successor; original sealed evidence/history retained. No role, owner/export
+    approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000309; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000309; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 328-50-7
@@ -154,6 +184,14 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+notes: 'Successor review: source2384 does not establish that alpha-ketoglutamate denotes
+  the acid; prior typo interpretation is historical, not proof of protonation/salt
+  identity. Preserve exact original alias/source as rejected provenance.
+
+
+  CH-06: The100mM source alias is a0.1ml stock addition in TOGO2388, not the pure-acid
+  identity. Preserve the exact raw string/source as rejected provenance. The distinct
+  ambiguous alpha-ketoglutamate2384 hold and prior history remain unchanged.'
 mim_id: MIM:0000309
 legacy_identifiers:
 - MIM:Alpha-ketoglutaric_Acid

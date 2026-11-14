@@ -1,9 +1,12 @@
-identifier: MICRO:0001363
+identifier: kgmicrobe.ingredient:liver_extract_concentrate
 preferred_term: Liver extract concentrate
 synonyms:
 - synonym_text: Liver extract concentrate
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Liver extract concentrate (NBCo)
+  synonym_type: RAW_TEXT
+  source: JCM11/JCM20; correction1193
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -42,25 +45,69 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:47:55.829207+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Give NBCo liver-extract concentrate its own local preparation identity
+    rather than sharing generic MICRO:0001363 with dry extract and infusion. Exact-label
+    current occurrences all belong to JCM11/JCM20 source families; Raka-Ray Liver_Concentrate
+    remains a separate unresolved owner. Record NBCo supplied form without inventing
+    concentration factor or species. Exact isolated payload; no maintained write.
+    All prior scientific/publication holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Isolated proposal only; no maintained data or source membership
+    change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001538; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001538; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Give NBCo liver-extract concentrate its
+  own local preparation identity rather than sharing generic MICRO:0001363 with dry
+  extract and infusion. Exact-label current occurrences all belong to JCM11/JCM20
+  source families; Raka-Ray Liver_Concentrate remains a separate unresolved owner.
+  Record NBCo supplied form without inventing concentration factor or species. Source-qualified
+  proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
+  or release admission are approved. Preserve all frozen source and owner holds; component
+  uncertainty is stated separately from whole-material identity.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.'
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
-  ontology_id: MICRO:0001363
-  ontology_label: liver extract
-  ontology_source: MICRO
-  mapping_quality: LEXICAL_MATCH
+  ontology_id: kgmicrobe.ingredient:liver_extract_concentrate
+  ontology_label: Liver extract concentrate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0431; matched via 'Liver extract concentrate';
-      stem-substring
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=20
+    notes: Source-qualified commercial concentrate; generic liver-extract term does
+      not denote exact supplied preparation.
 nutritional_roles:
 - role: PROTEIN_SOURCE
   confidence: 0.8
@@ -68,7 +115,13 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Liver extract concentrate (NBCo)
+  supplier: NBCo
+  notes: JCM11 and20/MediaDive1599 manufacturer qualifier; no product code or concentration
+    factor available.
 mim_id: MIM:0001538
 legacy_identifiers:
 - MIM:Liver_Extract_Concentrate
 - MICRO:0001363
+- kgmicrobe.ingredient:liver_extract_concentrate

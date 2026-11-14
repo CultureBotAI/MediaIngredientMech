@@ -22,9 +22,18 @@ ontology_mapping:
       the counterion and discarded the compound, collapsing unrelated ingredients
       onto one node. Chosen because it is the systematic name of TAPS. The record
       stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal taps-salt-alias
+    notes: Original DSMZ1344 names Taps17.4g atpH8.3. Manufacturer T5130/108320 nomenclature
+      independently establishes conventional TAPS as the free buffer CAS29915-38-6/CHEBI:191055,
+      while this owner is the separate CAS91000-53-2 sodium salt. Preserve rejection
+      of unqualified TAPS on the salt owner and propose a separate free-buffer owner.
+      This does not assert a specific Sigma purchase or infer salt identity from pH.
+      Automatic peptide metadata on MediaDive1188 is unrelated; all publication and
+      provisional-role holds remain.
 synonyms:
 - synonym_text: TAPS
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: culturebotht
 mapping_status: MAPPED
 occurrence_statistics:
@@ -81,11 +90,36 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal taps-salt-alias: added aliases []; rejected
+    provenance labels [''TAPS''] Subject to independent skeptical review and guarded
+    coordinator integration; inherited full-payload support must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[3] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-09: complete conventional free-TAPS association separately;
+    preserve sodium-salt alias rejection and qualify source/procurement uncertainty.
+    Isolated report-only successor; original sealed evidence/history retained. No
+    role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002442; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002442; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 91000-53-2

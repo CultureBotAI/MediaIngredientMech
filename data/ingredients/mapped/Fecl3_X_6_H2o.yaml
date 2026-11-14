@@ -69,6 +69,12 @@ synonyms:
 - synonym_text: FeCl3*6 H2O
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: FeCl .6H 0
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[66] case_id=CM_NAME:812926707601b18cb0f6a9eaaac1d8895d8d1d8fc3795df9305b1719d7cd0622;
+    source=culturemech; source_case_id=FeCl .6H 0; CultureMech:000142 ingredients/5
+    (inputs/culturemech/data/normalized_yaml/algae/walnes.yaml); Primary evidence:
+    https://www.ccap.ac.uk/wp-content/uploads/MR_Walnes.pdf'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 618
@@ -171,11 +177,29 @@ curation_history:
     (2%)''; ''FeCl3 x6H2O''; ''FeCl3*6 H2O''. Tokens already present on the kg-microbe
     ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[66] case_id=CM_NAME:812926707601b18cb0f6a9eaaac1d8895d8d1d8fc3795df9305b1719d7cd0622;
+    source=culturemech; source_case_id=FeCl .6H 0; CultureMech:000142 ingredients/5
+    (inputs/culturemech/data/normalized_yaml/algae/walnes.yaml); Primary evidence:
+    https://www.ccap.ac.uk/wp-content/uploads/MR_Walnes.pdf'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001071; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001071; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:86254
 chemical_properties:

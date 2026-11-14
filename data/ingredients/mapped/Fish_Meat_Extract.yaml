@@ -1,0 +1,69 @@
+preferred_term: Fish meat extract
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms: []
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-11-08T05:47:55.814364+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CREATED
+  changes: Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding
+    MediaDive solution as a distinct complex extract. Fish peptone and small dried
+    sardine are different material types; hydrolysis, species and extraction yield
+    are unspecified. Exact isolated payload; no maintained write. All prior scientific/publication
+    holds preserved.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Isolated proposal only; no maintained data or source membership
+    change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003020 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+identifier: kgmicrobe.ingredient:fish_meat_extract
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:fish_meat_extract
+  ontology_label: Fish meat extract
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=177
+    notes: Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding
+      MediaDive solution as a distinct complex extract. Fish peptone and small dried
+      sardine are different material types; hydrolysis, species and extraction yield
+      are unspecified.
+notes: 'Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding MediaDive
+  solution as a distinct complex extract. Fish peptone and small dried sardine are
+  different material types; hydrolysis, species and extraction yield are unspecified.
+  Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
+  complete-owner support or release admission are approved. Preserve all frozen source
+  and owner holds; component uncertainty is stated separately from whole-material
+  identity. Occurrence statistics count current exact proposed-label matches in the
+  inspected CultureMech occurrence table; no shared-identifier expansion or newly
+  invented recipe membership.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.'
+mim_id: MIM:0003020
+legacy_identifiers:
+- MIM:Fish_Meat_Extract
+- kgmicrobe.ingredient:fish_meat_extract

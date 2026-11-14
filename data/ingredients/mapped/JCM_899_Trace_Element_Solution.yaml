@@ -1,0 +1,123 @@
+identifier: kgmicrobe.ingredient:jcm_899_trace_element_solution
+preferred_term: JCM 899 trace element solution
+mapping_status: MAPPED
+synonyms:
+- synonym_text: Trace element solution (see Medium No. 899 )
+  synonym_type: REJECTED_LABEL
+  source: JCM899 named stock reference; frozen CultureMech shard06
+- synonym_text: Trace element solution* (see Medium No. 899 )
+  synonym_type: REJECTED_LABEL
+  source: JCM899 named stock reference; frozen CultureMech shard06
+curation_history:
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed exact source-defined JCM 899 trace element solution with primary
+    recipe component transcription and local registry identity. All child references
+    remain UNMAPPED; no source concentration correction or release change is applied.
+    Isolated proposal only; no publication or inherited support approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:36:24.206519+00:00'
+  curator: all_unmatched_20261107_worker06_successor_v3_research_a
+  action: CORRECTED
+  changes: 'W06-IR-002 / issue1217: retain the exact non-identifying raw labels and
+    their original sources as REJECTED_LABEL; The acidified JCM899 stock contains
+    ammonium iron/nickel sulfates and selenate, unlike JCM187 or439. Both bare899
+    pointers remain exact provenance only; the star marks local preparation context.
+    Preserve the qualified stock name, acid/water batch inputs and receiving sterilization
+    differences. Components, identifiers, mapping predicates and release holds are
+    unchanged. Source definition: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003079 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: Dissolve ammonium iron sulfate in25%HCl before diluting with water; add remaining
+  salts in source order. Water995ml and acid5ml are source batch inputs; no molarity
+  or percent basis beyond the source is inferred.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_899_trace_element_solution
+  ontology_label: JCM 899 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899
+    notes: Exact source-defined multicomponent stock registry identity; no whole-stock
+      identity with a single chemical or generic trace-element class.
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: (NH4)2Fe(SO4)2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '784.0'
+  concentration_unit: MG
+- component_name: 25% HCl
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: ML
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '238.0'
+  concentration_unit: MG
+- component_name: (NH4)2Ni(SO4)2•6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '395.0'
+  concentration_unit: MG
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '36.0'
+  concentration_unit: MG
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '33.0'
+  concentration_unit: MG
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '144.0'
+  concentration_unit: MG
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: MG
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  concentration_value: '94.0'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '6.0'
+  concentration_unit: MG
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99.0'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '995.0'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - supports: SUPPORT
+    evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899
+    source_record: Trace element solution
+    notes: Transcribed exact constituent names and source batch amounts from the captured
+      primary table. Component identities deliberately remain UNMAPPED; no hydrate/stereoisomer/registry
+      normalization is asserted.
+  notes: Amounts are source batch amounts, not inferred final-volume concentrations.
+    Water is retained. Source name/form qualifiers are preserved. Completeness concerns
+    the cited listed formulation; it is not analytical speciation or component-CURIE
+    approval. Dissolve ammonium iron sulfate in25%HCl before diluting with water;
+    add remaining salts in source order. Water995ml and acid5ml are source batch inputs;
+    no molarity or percent basis beyond the source is inferred.
+mim_id: MIM:0003079
+legacy_identifiers:
+- MIM:JCM_899_Trace_Element_Solution
+- kgmicrobe.ingredient:jcm_899_trace_element_solution

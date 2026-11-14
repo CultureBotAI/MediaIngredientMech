@@ -89,14 +89,119 @@ curation_history:
     now has a record, so the component resolves inside the catalog rather than out
     of it.'
   llm_assisted: false
+- timestamp: '2026-11-08T06:22:40.227349+00:00'
+  curator: Codex worker05 /root correction1193 integration
+  action: CORRECTED
+  changes: Dependency-only reference maintenance for the existing Clarified_rumen_fluid
+    owner after its reviewed cow-specific MICRO:0000520 identity is replaced by kgmicrobe.ingredient:clarified_rumen_fluid.
+    This changes only the destination of an already declared MIM_CATALOG component
+    link. It does not newly endorse the legacy label expansion to clarified fluid,
+    animal species, preparation protocol, mixture composition, quantities, roles or
+    underlying MicrobeDecoder observation. Raw substrate labels state rumen fluid;
+    historical research asserted clarification and a broad ontology comparison. Those
+    inherited claims remain subject to their own source-specific review and holds.
+    No identity equality with a particular JCM/DSMZ preparation is asserted. Apply
+    only together with the exact root rumen-owner correction; do not treat these dependent
+    owners as newly assigned source cases.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:05:36.702541+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Correct the one rumen-fluid component''s actual material claim, not merely
+    its destination. Preserve original preimage/authored history and all unrelated
+    fields. Conclusion: https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591.
+    Isolated candidate only; no maintained write, role approval, inherited support,
+    membership transfer or release approval. Exact whole-candidate independent review
+    remains required.'
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: MAPPED
+- timestamp: '2026-11-08T08:34:36.020247+00:00'
+  curator: Codex worker05 /root/chemicals_research postseal source review
+  action: CORRECTED
+  changes: The rumen-fluid component is retained at the literal source-label scope
+    as rumen fluid, UNMAPPED, with no component identifier. The recovered MicrobeDecoder
+    observation does not specify clarification, animal species, or a preparation protocol.
+    The full cited publication was not retrieved in this review; the captured access
+    failures cannot establish a protocol. This is unresolved processing, not evidence
+    that the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid
+    is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated
+    component identities, concentrations, whole-mixture identity and source holds
+    are unchanged. Inherited mapping-evidence objects and research evidence remain
+    historical provenance; their clarification claims and historical all-components-identified
+    counts do not describe this successor. The prior 2026-11-08 dependency-only redirect
+    event is preserved as superseded history. No generic UBERON grounding, recipe
+    equivalence, animal-origin claim or downstream approval is added. MicrobeDecoder
+    database.csv record 5903, Literature_Substrates_for_end_products = 'casitone +
+    yeast extract + rumen fluid'; full source-row capture and database SHA are retained
+    in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:06:11.896414+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: 'Private combined-source successor DEP-R1193-DEP-rumen-casitone binds the
+    actual published W05 108e213e96f7d423ee345ce265d692e79063127c and other frozen
+    accepted source heads. Exact #1176, #1204, #1237 claim corrections and genuine
+    source-history appendices are recorded in final-same-target-reconciliation-v4.
+    Original combined bytes and authentic maintained beforeimage remain preserved.
+    This draft retains all case, occurrence, role, preparation, product and release
+    holds; source acceptance and distinct final combined-byte review are not inferred.
+    No maintained record or export was applied.'
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000609; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000609; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+
+
+  Historical dependency-only proposal is retained in curation history and the immutable
+  trace; it is superseded because relinking would preserve an unsupported clarification
+  claim. Current #1204/#204 correction: the source label supports literal rumen fluid,
+  not clarified rumen fluid or a cow/JCM/DSMZ preparation. The processing claim and
+  both the former MICRO0000520 link and proposed local clarified-fluid retarget are
+  superseded. Preserve the named part as UNMAPPED without a component_id; no generic
+  UBERON grounding or preparation guess is approved. Source-specific processing and
+  whole-parent support remain withheld. Other parts, quantities, roles and completeness
+  values are unchanged and not newly endorsed. https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+
+
+  Current published W05 source correction (108e213e96f7d423ee345ce265d692e79063127c,
+  R1193-DEP-rumen-casitone): Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. The rumen-fluid component
+  is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no
+  component identifier. The recovered MicrobeDecoder observation does not specify
+  clarification, animal species, or a preparation protocol. The full cited publication
+  was not retrieved in this review; the captured access failures cannot establish
+  a protocol. This is unresolved processing, not evidence that the fluid was untreated.
+  The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid is withdrawn under
+  https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+  and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated component
+  identities, concentrations, whole-mixture identity and source holds are unchanged.
+  Inherited mapping-evidence objects and research evidence remain historical provenance;
+  their clarification claims and historical all-components-identified counts do not
+  describe this successor. The prior 2026-11-08 dependency-only redirect event is
+  preserved as superseded history. No generic UBERON grounding, recipe equivalence,
+  animal-origin claim or downstream approval is added. MicrobeDecoder database.csv
+  record 5903, Literature_Substrates_for_end_products = ''casitone + yeast extract
+  + rumen fluid''; full source-row capture and database SHA are retained in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.'
 ingredient_type: UNDEFINED_MIXTURE
 components:
 - component_name: casitone
@@ -107,9 +212,8 @@ components:
   component_id: FOODON:03315426
   reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
-- component_name: clarified rumen fluid
-  component_id: MICRO:0000520
-  reference_scope: MIM_CATALOG
+- component_name: rumen fluid
+  reference_scope: UNMAPPED
   source: microbedecoder research decomposition (#213/#308)
 component_assertion:
   method: LABEL_ENUMERATION
@@ -124,8 +228,58 @@ component_assertion:
     source_record: Casitone + Yeast Extract + Rumen Fluid
     notes: 'Reviewed row: strategy=split, confidence=high; Undefined rumen-anaerobe
       base.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: Casitone + Yeast Extract + Rumen Fluid
+    notes: 'Current #1204/#204 correction: the source label supports literal rumen
+      fluid, not clarified rumen fluid or a cow/JCM/DSMZ preparation. The processing
+      claim and both the former MICRO0000520 link and proposed local clarified-fluid
+      retarget are superseded. Preserve the named part as UNMAPPED without a component_id;
+      no generic UBERON grounding or preparation guess is approved. Source-specific
+      processing and whole-parent support remain withheld. Other parts, quantities,
+      roles and completeness values are unchanged and not newly endorsed. https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591'
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: database.csv record 5903; Literature_Substrates_for_end_products;
+      casitone + yeast extract + rumen fluid
+    notes: MicrobeDecoder database.csv record 5903, Literature_Substrates_for_end_products
+      = 'casitone + yeast extract + rumen fluid'; full source-row capture and database
+      SHA are retained in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
+      Reviewed by Codex worker05 /root/chemicals_research postseal source review with
+      LLM assistance. The unqualified label supports the retained rumen-fluid part
+      but does not establish clarification. Earlier CURATED_DATASET assertions are
+      preserved as superseded provenance for this component, not renewed scientific
+      support. Component evidence typing is distinct from MappingEvidence typing.
+  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe. Current #1204/#204 correction:
+    the source label supports literal rumen fluid, not clarified rumen fluid or a
+    cow/JCM/DSMZ preparation. The processing claim and both the former MICRO0000520
+    link and proposed local clarified-fluid retarget are superseded. Preserve the
+    named part as UNMAPPED without a component_id; no generic UBERON grounding or
+    preparation guess is approved. Source-specific processing and whole-parent support
+    remain withheld. Other parts, quantities, roles and completeness values are unchanged
+    and not newly endorsed. https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    Original part retained as historical provenance: {"component_id": "MICRO:0000520",
+    "component_name": "clarified rumen fluid", "reference_scope": "MIM_CATALOG", "source":
+    "microbedecoder research decomposition (#213/#308)"}
+
+
+    Current source component assessment: This is an ingredient/mixture has-part assertion,
+    not an identity mapping, variant hierarchy, or complete culturing recipe. The
+    rumen-fluid component is retained at the literal source-label scope as rumen fluid,
+    UNMAPPED, with no component identifier. The recovered MicrobeDecoder observation
+    does not specify clarification, animal species, or a preparation protocol. The
+    full cited publication was not retrieved in this review; the captured access failures
+    cannot establish a protocol. This is unresolved processing, not evidence that
+    the fluid was untreated. The former redirect to kgmicrobe.ingredient:clarified_rumen_fluid
+    is withdrawn under https://github.com/CultureBotAI/MediaIngredientMech/issues/1204#issuecomment-6718503591
+    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1237. Unrelated
+    component identities, concentrations, whole-mixture identity and source holds
+    are unchanged. Inherited mapping-evidence objects and research evidence remain
+    historical provenance; their clarification claims and historical all-components-identified
+    counts do not describe this successor. The prior 2026-11-08 dependency-only redirect
+    event is preserved as superseded history. No generic UBERON grounding, recipe
+    equivalence, animal-origin claim or downstream approval is added.'
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
   ontology_label: Casitone + Yeast Extract + Rumen Fluid

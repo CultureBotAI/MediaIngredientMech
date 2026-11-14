@@ -1,0 +1,60 @@
+identifier: CHEBI:16810
+preferred_term: 2-oxoglutarate(2-)
+ontology_mapping:
+  ontology_id: CHEBI:16810
+  ontology_label: 2-oxoglutarate(2-)
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal 2-oxoglutarate
+    notes: The label2-Oxoglutarate names an anion, and live CHEBI:16810 defines the
+      dianion from both carboxyl-group deprotonations. Under the repository's bare-anion
+      protonation rule, this is the appropriate neutral-medium species; it is not
+      exact identity to alpha-ketoglutaric acid30915. The14.6g stock amount may derive
+      from weighed acid, so that supplied-form and stock context remains separate
+      and unresolved. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
+synonyms:
+- synonym_text: 2-Oxoglutarate
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: 'Isolated source-review proposal 2-oxoglutarate: new exact ingredient identity;
+    added aliases [''2-Oxoglutarate'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002958 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+chemical_properties:
+  molecular_formula: C5H4O5
+  inchi: InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)/p-2
+  smiles: O=C([O-])CCC(=O)C(=O)[O-]
+  molecular_weight: 144.082
+  data_source: ChEBI via OLS4; exact captured primary ontology
+  retrieval_date: '2026-11-08T05:07:17.759921+00:00'
+mim_id: MIM:0002958
+legacy_identifiers:
+- MIM:2-Oxoglutarate
+- CHEBI:16810

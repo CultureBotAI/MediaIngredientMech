@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:rabbit_serum_pelfreez31125
+preferred_term: Sterile non-hemolyzed young rabbit serum, Pel-Freez 31125
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0002392
+  ontology_label: rabbit serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=896
+    notes: JCM896/TOGO M937 name Pel-Freez31125 young rabbit serum, sterile and non-hemolyzed.
+      The historical product identity and qualifiers suffice for an opaque supplied
+      preparation; no guessed current replacement, heat treatment or collection method.
+      Broader material parent only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.591095+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: JCM896/TOGO M937 name Pel-Freez31125 young rabbit serum, sterile and non-hemolyzed.
+    The historical product identity and qualifiers suffice for an opaque supplied
+    preparation; no guessed current replacement, heat treatment or collection method.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.916840+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003155 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: Young rabbit serum, sterile, non-hemolyzed
+  supplier: Pel-Freez
+  catalog_number: '31125'
+  notes: Historical source catalog; product qualifiers retained exactly.
+notes: 'JCM896/TOGO M937 name Pel-Freez31125 young rabbit serum, sterile and non-hemolyzed.
+  The historical product identity and qualifiers suffice for an opaque supplied preparation;
+  no guessed current replacement, heat treatment or collection method. Source labels
+  retained as nonresolving provenance: [{"case_id": "CM_NAME:f35ff91c244fc7f47eafcfeb3a3a62e5315556fd81a89333f1f5dd03151d1a36",
+  "raw_label": "Rabbit serum sterile non--hemolyzed young (Pel--Freez code No. 31125)"}].
+  No global generic alias, supplier equivalence, role approval or complete publication
+  approval is conferred. Receiving-medium dose and unit repairs remain separate. Existing
+  native holds and rejected labels are preserved.'
+mim_id: MIM:0003155
+legacy_identifiers:
+- MIM:Rabbit_Serum_PelFreez31125
+- kgmicrobe.ingredient:rabbit_serum_pelfreez31125

@@ -69,6 +69,9 @@ synonyms:
 - synonym_text: Sodium acetate(Fisher BP 333)
   synonym_type: RAW_TEXT
   source: MERGED_FROM Sodium acetate (#414)
+- synonym_text: CH3COONa
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:d254854b910ee9715dcc0f653dfd5b4a65c6f9e62d75ac0c4c4f22201395af8b'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1166
@@ -229,11 +232,24 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'CH3COONa'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001768; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001768; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 127-09-3

@@ -1,0 +1,91 @@
+identifier: kgmicrobe.ingredient:allen_m2231_phosphate_stock
+preferred_term: Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:allen_m2231_phosphate_stock
+  ontology_label: Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized
+  water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength
+  versus receiving-volume confusion, but does not verify that the literal seven-water
+  compound is chemically correct. Its component stays UNMAPPED; original unqualified
+  component case remains chemically held. Raw case labels remain only in evidence
+  and case-bound proposal links, not globally resolving synonyms. No occurrence count
+  transfer, source-hold release or receiving-medium dose correction is implied. Issue
+  1227 source-relative completeness: M2231 paragraph 9 enumerates literal K2HPO4·7H2O,
+  6 g, and deionized water, 1 L. The receiving recipe doses 5 ml of that stock. Both
+  printed inputs are retained; chemical validity of seven waters remains unresolved.
+  Completeness describes the literal printed input list only; it does not approve
+  a disputed chemical identity, a final volume or source membership transfer.'
+solution_type: OTHER
+components:
+- component_name: K2HPO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '6'
+  concentration_unit: G_PER_BATCH
+- component_name: Deionized water
+  reference_scope: MIM_CATALOG
+  component_id: kgmicrobe.ingredient:deionized_water
+  concentration_value: '1'
+  concentration_unit: L_PER_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    source_record: M2231
+    notes: M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized
+      water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength
+      versus receiving-volume confusion, but does not verify that the literal seven-water
+      compound is chemically correct. Its component stays UNMAPPED; original unqualified
+      component case remains chemically held. M2231 paragraph 9 enumerates literal
+      K2HPO4·7H2O, 6 g, and deionized water, 1 L. The receiving recipe doses 5 ml
+      of that stock. Both printed inputs are retained; chemical validity of seven
+      waters remains unresolved. Completeness describes the literal printed input
+      list only; it does not approve a disputed chemical identity, a final volume
+      or source membership transfer.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized
+    water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength
+    versus receiving-volume confusion, but does not verify that the literal seven-water
+    compound is chemically correct. Its component stays UNMAPPED; original unqualified
+    component case remains chemically held.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Set component_assertion.completeness
+    PARTIAL → COMPLETE. M2231 paragraph 9 enumerates literal K2HPO4·7H2O, 6 g, and
+    deionized water, 1 L. The receiving recipe doses 5 ml of that stock. Both printed
+    inputs are retained; chemical validity of seven waters remains unresolved. Completeness
+    describes the literal printed input list only; it does not approve a disputed
+    chemical identity, a final volume or source membership transfer. All inherited
+    history, scientific/source/role/export holds and original before hash remain preserved.
+    This is a proposal, pending independent whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003201 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003201
+legacy_identifiers:
+- MIM:allen_m2231_phosphate_stock
+- kgmicrobe.ingredient:allen_m2231_phosphate_stock

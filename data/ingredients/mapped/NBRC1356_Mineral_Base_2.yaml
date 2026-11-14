@@ -1,0 +1,122 @@
+identifier: kgmicrobe.ingredient:nbrc1356_mineral_base_2
+preferred_term: NBRC 1356 mineral base 2
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1356_mineral_base_2
+  ontology_label: NBRC 1356 mineral base 2
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    notes: 'NBRC 1356: **Mineral base 2 defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Source stock pH is 7.3; it is mixed with carbonate base 1 in 1:1 proportion.
+  The nitrogen atmosphere is a preparation condition, not a material component. Raw
+  source labels retained here, with recipe scope: ''Mineral base 2**''. Generic local
+  labels are not published as global synonyms. Occurrence statistics remain zero until
+  source-specific membership integration; frozen observations are fully recorded in
+  the evidence decisions. Quantities use literal source-batch units, not final culture
+  concentrations. Component references identify compatible active entities only after
+  source-form review. Remaining UNMAPPED components retain their precise form or nested-preparation
+  limits. Component names and quantities remain source-specific; no role or export
+  approval is inherited.'
+components:
+- component_name: NaCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '240'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:26710
+  source: 'Literal source component: NaCl. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names NaCl; the inspected active catalog and primary ontology
+    identity CHEBI:26710 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: NH4Cl
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:31206
+  source: 'Literal source component: NH4Cl. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names NH4Cl; the inspected active catalog and primary ontology
+    identity CHEBI:31206 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: K2HPO4
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:131527
+  source: 'Literal source component: K2HPO4. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names K2HPO4; the inspected active catalog and primary ontology
+    identity CHEBI:131527 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: KCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:32588
+  source: 'Literal source component: KCl. Issue 1227 IR003 component-specific adjudication:
+    The cited recipe names KCl; the inspected active catalog and primary ontology
+    identity CHEBI:32588 match this stated chemical form. Source spelling, amount,
+    unit and preparation boundary are preserved; no role, owner-wide or export approval
+    is transferred.'
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+  component_id: CHEBI:15377
+  source: 'Literal source component: Distilled water. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Distilled water; the inspected active catalog
+    and primary ontology identity CHEBI:15377 match this stated chemical form. Source
+    spelling, amount, unit and preparation boundary are preserved; no role, owner-wide
+    or export approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    source_record: 'NBRC 1356: **Mineral base 2'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:01.303750+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined NBRC 1356 mineral base 2 with complete immediate
+    constituent enumeration and registry identity. Source stock pH is 7.3; it is mixed
+    with carbonate base 1 in 1:1 proportion. The nitrogen atmosphere is a preparation
+    condition, not a material component. Isolated proposal only; independent and coordinator
+    review remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 5 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003113 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003113
+legacy_identifiers:
+- MIM:NBRC1356_Mineral_Base_2
+- kgmicrobe.ingredient:nbrc1356_mineral_base_2

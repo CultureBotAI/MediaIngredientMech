@@ -1,0 +1,66 @@
+identifier: kgmicrobe.ingredient:togo_m2596_anaerobic_sludge_supernatant
+preferred_term: TOGO M2596 anaerobic digester sludge supernatant
+synonyms:
+- synonym_text: Anaerobic digestor sludge supernatant (SS)
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:096b6808ce08382d9ea8264b1eb5cb53111cd5f2a4e711c04d92a56eff66bef5;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2596_anaerobic_sludge_supernatant
+  ontology_label: TOGO M2596 anaerobic digester sludge supernatant
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2596
+    notes: Source-defined Ithaca Area Wastewater Treatment Facility digester-sludge
+      preparation. Clarify30min at10400g, freeze at-20C, thaw and clarify30min at39000g;
+      adjustpH7 with1MHCl, prefilter0.8µm, purgeN2 and sterile-filter through0.8–0.2µm
+      membranes under anaerobic conditions. Sludge and acid are processing inputs,
+      not asserted final components. Source explicitly adds25%(v/v); optional lyophilized
+      material is not equated by a growth-performance observation. Distinct from DSMZ119
+      yeast-treated sludge fluid.
+notes: Source-defined Ithaca Area Wastewater Treatment Facility digester-sludge preparation.
+  Clarify30min at10400g, freeze at-20C, thaw and clarify30min at39000g; adjustpH7
+  with1MHCl, prefilter0.8µm, purgeN2 and sterile-filter through0.8–0.2µm membranes
+  under anaerobic conditions. Sludge and acid are processing inputs, not asserted
+  final components. Source explicitly adds25%(v/v); optional lyophilized material
+  is not equated by a growth-performance observation. Distinct from DSMZ119 yeast-treated
+  sludge fluid.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Source-defined Ithaca Area Wastewater Treatment Facility digester-sludge
+    preparation. Clarify30min at10400g, freeze at-20C, thaw and clarify30min at39000g;
+    adjustpH7 with1MHCl, prefilter0.8µm, purgeN2 and sterile-filter through0.8–0.2µm
+    membranes under anaerobic conditions. Sludge and acid are processing inputs, not
+    asserted final components. Source explicitly adds25%(v/v); optional lyophilized
+    material is not equated by a growth-performance observation. Distinct from DSMZ119
+    yeast-treated sludge fluid.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.540233+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-168. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003355 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003355
+legacy_identifiers:
+- MIM:togo_m2596_anaerobic_sludge_supernatant
+- kgmicrobe.ingredient:togo_m2596_anaerobic_sludge_supernatant

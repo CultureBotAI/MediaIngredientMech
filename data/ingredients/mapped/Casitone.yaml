@@ -32,6 +32,9 @@ synonyms:
 - synonym_text: Casitone (BD--Difco)
   synonym_type: CATALOG_VARIANT
   source: manual
+- synonym_text: Casein digest (Casitone, cat. no. 225930)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 282
@@ -70,11 +73,25 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Add exact CCAP catalog225930 surface form to Casitone. No equivalence to
+    tryptone products, roles or inherited complete payload approval.
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000608; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000608; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 nutritional_roles:

@@ -10,6 +10,9 @@ synonyms:
 - synonym_text: Fetal Bovine Serum (ATCC 30-2020)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Foetal calf serum
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen source case CM_NAME:f8dfc1320a2b71fd71dd2bceae3486e8e677ded030a52389f7afdeb0e3a3e505
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 122
@@ -67,11 +70,26 @@ curation_history:
     not resolve them: ''Fetal Bovine Serum (ATCC 30-2020)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:12:55.505566+00:00'
+  curator: all_unmatched_worker_10_bio_review
+  action: ADDED_SYNONYMS
+  changes: 'Proposed reviewed source-material aliases: [''Foetal calf serum'']. Preserve
+    occurrence quantities and preparation stages; alias review does not approve roles
+    or complete publication payload.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001092; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001092; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
   media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned,

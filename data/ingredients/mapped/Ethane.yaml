@@ -1,0 +1,48 @@
+identifier: CHEBI:42266
+preferred_term: ethane
+ontology_mapping:
+  ontology_id: CHEBI:42266
+  ontology_label: ethane
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/chebi/CHEBI:42266
+    notes: Primary exact compound page checked against all frozen source contexts;
+      source stocks/headspace and explicit other forms remain distinct. See worker08
+      organic_products evidence/decisions.
+synonyms:
+- synonym_text: Ethane
+  synonym_type: RAW_TEXT
+  source: culturemech:Ethane
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: CREATED
+  changes: Propose distinct compound owner from verified primary exact identity and
+    frozen occurrences. No stock or alternate supplied-form merge; no role approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH:
+    The cited ChEBI entry directly identifies ethane; source gas delivery is a separately
+    bounded applicability claim. Isolated successor proposal only; all inherited source,
+    role and export holds remain. Historical evidence and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003011 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003011
+legacy_identifiers:
+- MIM:Ethane
+- CHEBI:42266

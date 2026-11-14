@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:filtered_rabbit_serum_56c_30min_jcm946
+preferred_term: Filter-sterilized rabbit serum heated at 56 C for 30 min (JCM 946)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0002392
+  ontology_label: rabbit serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946
+    notes: JCM946/TOGO M993 explicitly specify rabbit serum heated56C30min and filter
+      sterilization before addition to the cooled base. The relative order of heating
+      and filtration is not stated. Both treatments remain in the bounded preparation;
+      no60minute equivalence and no need to repair the receiving-medium volume before
+      proposing identity. Broader material parent only; distinct local preparation
+      identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.566661+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: JCM946/TOGO M993 explicitly specify rabbit serum heated56C30min and prior
+    filter sterilization. Both treatments remain in the bounded preparation; no60minute
+    equivalence and no need to repair the receiving-medium volume before proposing
+    identity. Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: CORRECTED
+  changes: 'BIO-F05 source-bound successor correction: JCM946/TOGO M993 explicitly
+    specify rabbit serum heated56C30min and filter sterilization before addition to
+    the cooled base. The relative order of heating and filtration is not stated. Both
+    treatments remain in the bounded preparation; no60minute equivalence and no need
+    to repair the receiving-medium volume before proposing identity. Prior isolated
+    proposal sv1-bio-filtered_rabbit_serum_56c_30min_jcm946 remains immutable; this
+    event records proposal authorship only. Earlier history is retained verbatim,
+    including superseded wording.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003018 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: 'JCM946/TOGO M993 explicitly specify rabbit serum heated56C30min and filter
+  sterilization before addition to the cooled base. The relative order of heating
+  and filtration is not stated. Both treatments remain in the bounded preparation;
+  no60minute equivalence and no need to repair the receiving-medium volume before
+  proposing identity. Source labels retained as nonresolving provenance: [{"case_id":
+  "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f", "raw_label":
+  "Rabbit serum heat--inactivated at 56&#8451; for 30 min"}]. No global generic alias,
+  supplier equivalence, role approval or complete publication approval is conferred.
+  Receiving-medium dose and unit repairs remain separate. Existing native holds and
+  rejected labels are preserved. Source-qualified naming is not proof of a distinct
+  preparation. Preserve unresolved cross-source relationships and evaluate a common
+  named partial scope or exact product/protocol bridge before simultaneous installation.
+  No role/export or whole-owner approval; all inherited holds remain.'
+mim_id: MIM:0003018
+legacy_identifiers:
+- MIM:Filtered_Rabbit_Serum_56C_30min_JCM946
+- kgmicrobe.ingredient:filtered_rabbit_serum_56c_30min_jcm946

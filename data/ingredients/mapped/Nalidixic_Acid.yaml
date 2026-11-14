@@ -1,0 +1,57 @@
+identifier: CHEBI:100147
+preferred_term: nalidixic acid
+ontology_mapping:
+  ontology_id: CHEBI:100147
+  ontology_label: nalidixic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/chebi/CHEBI:100147
+    notes: ChEBI:100147 directly identifies nalidixic acid, distinct from its sodium
+      salt. Readable NBRC1301 primary composition names a 30 mg/ml nalidixic-acid
+      solution, separately filtered. NBRC1314 and TOGO M2023 could not be read; the
+      frozen 100 mg/ml occurrence is preserved but its primary-source applicability
+      remains held. This proposal identifies the acid component only, not either whole
+      stock.
+synonyms:
+- synonym_text: Nalidixic acid
+  synonym_type: RAW_TEXT
+  source: culturemech:Nalidixic acid
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: CREATED
+  changes: Propose distinct compound owner from verified primary exact identity and
+    frozen occurrences. No stock or alternate supplied-form merge; no role approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH:
+    ChEBI directly identifies the acid. NBRC1301 supplies independent stock context;
+    the unread NBRC1314 occurrence is explicitly held. Limit primary-source applicability
+    to readable NBRC1301; explicitly hold the NBRC1314 occurrence without rejecting
+    the supported acid identity. Isolated successor proposal only; all inherited source,
+    role and export holds remain. Historical evidence and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003129 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+notes: NBRC1301 supports nalidixic acid in its 30 mg/ml stock. Source occurrence CM_OCC:9b9a89f81c52463d464c370ab10bd2fe099e86ab4d2b17ceab5073aaf22c3cdd
+  (NBRC1314 / TOGO M2023) remains source-held pending readable exact primary evidence.
+  The normalized source note is not substituted for independent primary verification.
+  No occurrence, stock quantity or sodium-salt identity is altered.
+mim_id: MIM:0003129
+legacy_identifiers:
+- MIM:Nalidixic_Acid
+- CHEBI:100147

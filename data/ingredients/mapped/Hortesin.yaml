@@ -4,13 +4,18 @@ ontology_mapping:
   ontology_id: kgmicrobe.compound:hortesin
   ontology_label: Hortesin
   ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
     notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
       MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://patents.google.com/patent/US2972569A/en
+    notes: Original patentUS2972569A establishes the named isolated hortesin antibiotic.
+      Curate the existing local historical compound identity as FALLBACK_REGISTRY;
+      no modern structure, sequence or supplier equivalence is asserted.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -43,11 +48,39 @@ curation_history:
     to an external ontology identifier.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Original patentUS2972569A establishes the named isolated hortesin antibiotic.
+    Curate the existing local historical compound identity as FALLBACK_REGISTRY; no
+    modern structure, sequence or supplier equivalence is asserted. Proposal only;
+    inherited publication/role/source holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.160550+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001301; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001301; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 placeholder review: retained kgmicrobe.compound primary identifier;

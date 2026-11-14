@@ -38,6 +38,9 @@ synonyms:
 - synonym_text: pyridoxal-HCl (Sigma Aldrich)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Pyridoxal-HCl
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:abe0cbf11c1b41e2c63b1bbf2aa5838bc34bc3f5993e4e56f06ea1c026f3ea64
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 36
@@ -109,11 +112,28 @@ curation_history:
     not resolve them: ''Pyridoxal・HCl'' (x1 CultureMech mentions); ''pyridoxal-HCl
     (Sigma Aldrich)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: Both NBRC360/361-derived TOGO recipes explicitly say Pyridoxal-HCl in a
+    vitamin component. ChEBI131529 defines pyridoxal plus one molar equivalent HCl
+    and lists Pyridoxal HCl. This salt is distinct from pyridoxine hydrochloride and
+    pyridoxal phosphate; the hyphen spelling alone is the proposed change. Proposed
+    only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002149; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002149; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 65-22-5

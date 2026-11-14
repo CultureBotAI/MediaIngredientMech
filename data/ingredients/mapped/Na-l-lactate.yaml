@@ -18,7 +18,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Sodium D,L-Lactate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: sodium;(2S)-2-hydroxypropanoate
   synonym_type: EXACT_SYNONYM
@@ -36,6 +36,9 @@ synonyms:
 - synonym_text: (after autoclaving)
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: L--Sodium lactate
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:296f6046f0b1bbdca21a4be4c9ef4e98b5cba5e81442b19d92e5fb36c8ad747a
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 162
@@ -154,11 +157,24 @@ curation_history:
     autoclaving)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified exact-scope raw alias 'L--Sodium lactate'; Reject explicit
+    racemate alias Sodium D,L-Lactate on L-specific CHEBI232798; issue1170
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001779; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001779; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 867-56-1

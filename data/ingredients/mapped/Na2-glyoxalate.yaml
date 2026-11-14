@@ -1,5 +1,5 @@
 identifier: CHEBI:91251
-preferred_term: Na2-glyoxalate
+preferred_term: Sodium glyoxylate
 ontology_mapping:
   ontology_id: CHEBI:91251
   ontology_label: sodium glyoxylate
@@ -9,6 +9,11 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/ingredient/361
+    notes: Ingredient361 formula/mass entries agree with CHEBI91251 monosodium glyoxylate.
+      Recipe298b g/L-to-mmol/L arithmetic is a derived consistency check, not independent
+      experimental evidence. Raw Na2 label retained as rejected label.
 synonyms:
 - synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
     Simple component'
@@ -26,6 +31,10 @@ synonyms:
 - synonym_text: sodium oxoacetate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2-glyoxalate
+  synonym_type: REJECTED_LABEL
+  source: mediadive.ingredient:361; literal preserved, sodium count conflicts with
+    verified monosodium structure
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -87,11 +96,38 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Correct preferred label to sodium glyoxylate from source361 monosodium
+    chemistry; preserve original Na2-glyoxalate literal as provenance-only REJECTED_LABEL,
+    not an exact alias.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.754911+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001794; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001794; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 2706-75-4

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: kgmicrobe.compound:abyssomicin_b
   ontology_label: Abyssomicin B
   ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,11 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:70593(Abyssomicin I), CHEBI:216555(B-5354b), CHEBI:201526(Eprinomectin
       B1b). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jstage.jst.go.jp/article/antibiotics1968/57/4/57_4_271/_pdf
+    notes: The original2004 isolation report explicitly distinguishes abyssomicin
+      B from C and D. Curate existing B local identity as FALLBACK_REGISTRY without
+      borrowing congener chemistry.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -53,11 +58,39 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The original2004 isolation report explicitly distinguishes abyssomicin
+    B from C and D. Curate existing B local identity as FALLBACK_REGISTRY without
+    borrowing congener chemistry. Proposal only; inherited publication/role/source
+    holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.153349+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000242; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000242; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier;

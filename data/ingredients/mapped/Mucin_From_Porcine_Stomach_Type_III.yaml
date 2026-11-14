@@ -12,6 +12,11 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot
       media; samples: Surya_sugar_mix. Curator can promote to a CHEBI primary if/when
       CHEBI adds the term.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/DM/en/product/sigma/m1778
+    notes: 'Material-classification evidence only: Type III is partially purified
+      mucin powder, with variable bound sialic acid and undetermined overall composition;
+      no change to the existing registry mapping or supplier attribution.'
 synonyms:
 - synonym_text: Mucin from porcine stomach type III, bound sialic acid 0.5-1.5 %,
     Mucin from porcine stomach type III
@@ -47,17 +52,48 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CORRECTED
+  changes: Correct the Type III porcine-mucin ingredient_type from SINGLE_INGREDIENT
+    to UNDEFINED_MIXTURE using the actual biological preparation scope, preserving
+    the CAS and historical grade lineage. All prior source, native-owner, SSSOM and
+    downstream holds remain in force; this isolated proposal is not publication approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:19:50.276860+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 1 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001731; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001731; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 84082-64-4
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-ingredient_type: SINGLE_INGREDIENT
+ingredient_type: UNDEFINED_MIXTURE
+notes: ' Type III denotes a partially purified porcine-stomach mucin preparation,
+  not one chemically defined molecule. DSMZ1580 names this material but no supplier.
+  Sigma M1778 corroborates the type as partially purified powder and states its complete
+  sugar/amino-acid composition is undetermined. No product supplier is assigned to
+  DSMZ1580. Existing CAS84082-64-4 and Type II sibling remain unchanged; this classification
+  repair does not resolve their shared-registry/grade reconciliation or release holds.'
 mim_id: MIM:0001731
 legacy_identifiers:
 - MIM:Mucin_From_Porcine_Stomach_Type_III

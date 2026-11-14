@@ -9,6 +9,11 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_JUDGMENT
+    source: worker02 source review
+    notes: Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json
+      and captured primary/ontology evidence. Existing stock, form and evidence-quality
+      concerns remain held.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:urea'
   synonym_type: RAW_TEXT
@@ -58,6 +63,9 @@ synonyms:
 - synonym_text: Urea (Sigma U5218)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: (NH2)2CO
+  synonym_type: EXACT_SYNONYM
+  source: source_review_worker02:CM_NAME:120c45e9e156450992417609aa31e7dcec79c69a8e257db1f8306d81f552efe9
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 72
@@ -134,11 +142,25 @@ curation_history:
     urea''. Preserved original text and source metadata. No identity, mapping, role,
     or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:18:37.555660+00:00'
+  curator: codex_worker02_research_a
+  action: PROPOSED_SOURCE_ALIAS
+  changes: 'Add source-backed same-substance aliases: [''(NH2)2CO''].'
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Source-review proposal only; no maintained record or downstream data changed;
+    coordinator integration and independent review required.
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002590; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002590; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 57-13-6

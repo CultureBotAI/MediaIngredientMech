@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:bd_difco_yeast_carbon_base_family
+preferred_term: BD Difco yeast carbon base
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_yeast_carbon_base_family
+  ontology_label: BD Difco yeast carbon base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=887
+    notes: The primary recipe explicitly names Difco Yeast Carbon Base. The proposed
+      identity is the manufacturer-qualified product family, without an asserted historical
+      catalogue or lot.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.239110
+    notes: Current official product title corroborates the family and dehydrated media
+      category. Current239110 packaging is not projected onto NBRC887.
+supplied_form:
+- name: BD Difco Yeast Carbon Base
+  form: dehydrated basal medium
+  supplier: BD Difco
+  notes: The official current product page confirms this physical category. NBRC887
+    specifies the Difco family but no historic package, catalogue number or lot.
+notes: NBRC887 uses11.7g Difco Yeast Carbon Base while adding ammonium tartrate, CM-cellulose,
+  guaiacol and agar separately. This owner denotes the branded basal-mixture family;
+  those separately added receiving-medium ingredients are not assigned as its constituents.
+  Current BD239110(100g) confirms family identity, not a historicalSKU, packaging
+  size, invariant formulation or exact lot. Full constituent quantities and chemical
+  closure are unestablished. It is distinct from yeast nitrogen base, yeast extract,
+  individual carbon nutrients and the complete NBRC887 medium. Exact raw source label
+  Difco Yeast Carbon Base is retained as occurrence provenance only, with no generic
+  YCB/YNB synonym.
+curation_history:
+- timestamp: '2026-11-08T05:44:58.658086+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose primary-source-bound Difco Yeast Carbon Base family. Preserve historical
+    catalogue/formulation gaps; no full composition, whole-medium identity or source-release
+    approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003212 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003212
+legacy_identifiers:
+- MIM:bd_difco_yeast_carbon_base_family
+- kgmicrobe.ingredient:bd_difco_yeast_carbon_base_family

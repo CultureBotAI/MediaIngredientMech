@@ -54,6 +54,10 @@ synonyms:
 - synonym_text: Octadec-9-enoic acid
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: 'Oleic Acid (Sigma Cat # O-1008)'
+  synonym_type: CATALOG_VARIANT
+  source: worker01 source review CM_NAME:6d41fd9bd71580c07d2f69a01368de934cc782dfaac5ee81cb06b8180fbe0b6d;
+    evidence reports/all_unmatched_20261107/worker-01/shard/root_substances/decisions.fragment.json
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 17
@@ -131,11 +135,25 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T04:15:49.074743+00:00'
+  curator: codex-worker01
+  action: ADDED_SYNONYMS
+  changes: 'Add source-scoped CATALOG_VARIANT alias ''Oleic Acid (Sigma Cat # O-1008)'';
+    preserve existing identity and all other claims. Publication support requires
+    fresh content-bound review. Add current supplier specification in supplied_form;
+    historical lot purity is not asserted.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001944; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001944; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 112-80-1
@@ -152,6 +170,15 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Carbon Source'
+supplied_form:
+- name: Oleic acid, ≥99% (GC)
+  cas_rn: 112-80-1
+  supplier: Sigma-Aldrich
+  catalog_number: O1008
+  notes: Current supplier specification inspected 2026-11-08 at https://www.sigmaaldrich.com/RE/en/product/sial/o1008;
+    this is a present catalogue specification, not a claim about historical lot purity.
+    The frozen OADC recipes explicitly identify Sigma O-1008. The reagent is distinct
+    from the prepared OADC supplement.
 mim_id: MIM:0001944
 legacy_identifiers:
 - MIM:Oleic_Acid

@@ -76,6 +76,15 @@ synonyms:
 - synonym_text: Trisodium citrate·3H2O
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
+- synonym_text: Sodium citrate・2H2O
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:4827091fba1bdc2848111d132950a506cb8c033c3f46382e6970c614b29bbe2e
+- synonym_text: Sodium citrate·2H2O
+  synonym_type: RAW_TEXT
+  source: all-unmatched-20261107 worker07; CM_NAME:56b24cc1b0b3bc9ba068aa5bc87819f7507cd486457ef39081ccf60360bc7176
+- synonym_text: Sodium citrate tribasic dihydrate
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:cf88bfdbef318c58f3757a68bafd3096b4cff67f84d28e0b9da2572ce5e36e01'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 277
@@ -192,11 +201,31 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified exact-scope raw alias 'Sodium citrate・2H2O'; Add source-verified
+    exact-scope raw alias 'Sodium citrate·2H2O'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Sodium citrate tribasic dihydrate'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001832; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001832; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:

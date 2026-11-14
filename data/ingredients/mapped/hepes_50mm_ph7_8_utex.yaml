@@ -1,0 +1,133 @@
+identifier: kgmicrobe.ingredient:hepes_50mm_ph7_8_utex
+preferred_term: 50 mM HEPES buffer, pH 7.8 (UTEX vitamin stocks)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hepes_50mm_ph7_8_utex
+  ontology_label: 50 mM HEPES buffer, pH 7.8 (UTEX vitamin stocks)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://utex.org/products/vitamin-b-12
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. UTEX
+      vitamin B12, biotin and thiamine instructions prepare 200 mL of 50 mM HEPES
+      buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES entry
+      is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case were
+      read. Vitamins and their later filtration instructions are not imported into
+      this stand-alone buffer identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://utex.org/products/biotin-vitamin-solution
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. UTEX
+      vitamin B12, biotin and thiamine instructions prepare 200 mL of 50 mM HEPES
+      buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES entry
+      is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case were
+      read. Vitamins and their later filtration instructions are not imported into
+      this stand-alone buffer identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://utex.org/products/thiamine-vitamin-solution
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. UTEX
+      vitamin B12, biotin and thiamine instructions prepare 200 mL of 50 mM HEPES
+      buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES entry
+      is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case were
+      read. Vitamins and their later filtration instructions are not imported into
+      this stand-alone buffer identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/US/en/product/sigma/h3375
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. UTEX
+      vitamin B12, biotin and thiamine instructions prepare 200 mL of 50 mM HEPES
+      buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES entry
+      is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case were
+      read. Vitamins and their later filtration instructions are not imported into
+      this stand-alone buffer identity.
+components:
+- component_name: HEPES
+  reference_scope: MIM_CATALOG
+  source: UTEX specifies Sigma H3375, 2.4 g per 200 mL dH2O; source identifies the
+    HEPES acid reagent.
+  component_id: CHEBI:42334
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  source: UTEX explicitly states dH2O, 200 mL preparation basis.
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://utex.org/products/vitamin-b-12
+    source_record: 50 mM HEPES buffer, pH 7.8 (UTEX vitamin stocks)
+    notes: UTEX vitamin B12, biotin and thiamine instructions prepare 200 mL of 50
+      mM HEPES buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES
+      entry is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case
+      were read. Vitamins and their later filtration instructions are not imported
+      into this stand-alone buffer identity.
+  - evidence_type: RECIPE_SOURCE
+    source: https://utex.org/products/biotin-vitamin-solution
+    source_record: 50 mM HEPES buffer, pH 7.8 (UTEX vitamin stocks)
+    notes: UTEX vitamin B12, biotin and thiamine instructions prepare 200 mL of 50
+      mM HEPES buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES
+      entry is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case
+      were read. Vitamins and their later filtration instructions are not imported
+      into this stand-alone buffer identity.
+  - evidence_type: RECIPE_SOURCE
+    source: https://utex.org/products/thiamine-vitamin-solution
+    source_record: 50 mM HEPES buffer, pH 7.8 (UTEX vitamin stocks)
+    notes: UTEX vitamin B12, biotin and thiamine instructions prepare 200 mL of 50
+      mM HEPES buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES
+      entry is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case
+      were read. Vitamins and their later filtration instructions are not imported
+      into this stand-alone buffer identity.
+  notes: The pH-adjusting reagent and its amount are unspecified. The source recipe
+    supports HEPES and distilled water parts, but does not establish a complete final-species
+    composition. Source-named parts remain UNMAPPED where supplied form or stock identity
+    is not established. MIM_CATALOG references identify only the supported constituent,
+    not approval of that complete owner.
+notes: UTEX vitamin B12, biotin and thiamine instructions prepare 200 mL of 50 mM
+  HEPES buffer, adjust it to pH 7.8, and only then add the vitamin. The HEPES entry
+  is 2.4 g/200 mL dH2O, Sigma H3375. All 68 frozen occurrences of this case were read.
+  Vitamins and their later filtration instructions are not imported into this stand-alone
+  buffer identity. The pH-adjusting reagent and its amount are unspecified. The source
+  recipe supports HEPES and distilled water parts, but does not establish a complete
+  final-species composition. Provenance-only source text 'HEPES buffer pH 7.8' (case
+  CM_NAME:7483eaa7f39a065d133f8474f96eb831330dc913e50eab9adaf0a81a5e983f12). Generic
+  source-local labels are not added as globally resolving synonyms. No exact formulation
+  link to a receiving CultureMech medium is asserted. Source-snapshot receiving amounts
+  and embedded holds are preserved; stock-to-medium unit repair is separate from preparation
+  identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.998327+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0, 1, 2, 3 from human-only MANUAL_CURATION
+    to LLM_SUGGESTION. Exact sources, notes, quantities, scientific conclusions, unchanged
+    historical MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum
+    objects, prior history and all source/role/export holds remain unchanged. This
+    is provenance correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003242 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003242
+legacy_identifiers:
+- MIM:hepes_50mm_ph7_8_utex
+- kgmicrobe.ingredient:hepes_50mm_ph7_8_utex

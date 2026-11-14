@@ -1,0 +1,198 @@
+identifier: kgmicrobe.ingredient:inorganic_salts_starch_agar
+preferred_term: Inorganic salts-starch agar
+synonyms:
+- synonym_text: Inorganic salts-starch agar
+  synonym_type: RAW_TEXT
+  source: extracted_from_agar_yaml
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'Inorganic salts-starch agar' is a complete
+    media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator
+    re-mapping (likely FOODON complex medium, or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T06:32:39.244506+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:24839 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named inorganic salts-starch agar medium/formulation and
+    left unmapped; retained CHEBI inorganic salt parent mapping only as contextual
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Inorganic_Salts-starch_Agar-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — ### Mapping decision
+    CURIEs discussed: CHEBI:24839, CHEBI:2509. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Remove chemically invalid inorganic-salt parent from named ISP4 medium;
+    preserve UNMAPPED status and exact raw source name pending distinct formulation
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:16:29.175671+00:00'
+  curator: codex_worker10_successor_v2_isp4
+  action: COMPLETED_SOURCE_FORMULATION
+  changes: Promote authentic UNMAPPED_0123 named-medium owner to a local JCM58-bounded
+    prepared-formulation identity; preserve the1188 invalid-parent-removal event and
+    all earlier history. Transcribe all nine source batch inputs with complete source-list
+    assertion, retaining the unexpanded four-input trace recipe and an explicit W06entry548
+    reconciliation dependency. No source dose-to-yield conversion, hydration guess,
+    new trace owner, human MANUAL_CURATION evidence or release approval.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002822; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002822; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
+  a named medium/formulation, not agar or inorganic salt identity. JCM58 ISP4 verified
+  as a named multicomponent medium. CHEBI24839 inorganic salt was a stem-substring
+  match and is not a parent identity for the entire starch/agar formulation; no composition
+  promoted from label alone. Successor-v2 C-001 completes the captured JCM58 ISP-4
+  preparation on this authentic owner; the prior parent-removal event remains historical
+  and is not undone. This proposal denotes the prepared medium, not commercial dry
+  ISP Medium4 powder. The original1692 source record contributes1000mL of named prepared
+  medium; that source amount is not used as a normalization denominator. Existing
+  raw-name synonym, occurrence statistics and full history are preserved without approving
+  every possible cross-source ISP4/product equivalence. The only new whole identity
+  is a local registry identity; no CHEBI24839 grounding is reintroduced. Exact final
+  yield, soluble-starch product chemistry, K2HPO4 hydration and trace-stock owner
+  admission remain bounded limitations. Native owner, role, source and export holds
+  remain; no downstream source/release changes are authorized by this artifact.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:inorganic_salts_starch_agar
+  ontology_label: Inorganic salts-starch agar
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=58
+    notes: Source-grounded LLM-assisted proposal for the existing named-medium owner,
+      bounded to JCM58 ISP-4 prepared formulation. Captured 2026-11-08T05:08:38.285342+00:00;
+      SHA256 1aaeb1dd7a38141e4b231f0588d904ea2b46c12d0d939e1bcc1e133fe807084c. Whole
+      medium contains starch, salts, trace stock, agar and water; it is not agar or
+      inorganic salt identity. No exact whole-formulation ontology identifier was
+      established from the available evidence. Initial OLS requests failed; three
+      subsequent public OLS MICRO queries (inorganic salts starch agar, inorganic
+      salts-starch agar, ISP-4) succeeded on2026-11-08 and returned zero documents.
+      These bounded searches do not prove global ontology absence. Registry identity
+      preserves the source preparation without a guessed ontology parent. Independent
+      review and complete owner/export admission remain pending.
+components:
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G
+  source: Literal JCM58 input; no botanical origin, processing method or exact polymer/product
+    identity is supplied.
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+  source: Literal JCM58 formula, hydration unspecified. Do not import NBRC268 anhydrous-base
+    qualifier.
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G
+  component_id: CHEBI:31795
+  source: JCM58 prints MgSO4·7H2O; exact heptahydrate retained.
+- component_name: NaCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G
+  component_id: CHEBI:26710
+- component_name: (NH4)2SO4
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: G
+  component_id: CHEBI:62946
+- component_name: CaCO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: G
+  component_id: CHEBI:3311
+- component_name: Trace salts solution (JCM 58)
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: ML
+  source: JCM58 second table defines FeSO4·7H2O0.1g, MnCl2·4H2O0.1g, ZnSO4·7H2O0.1g
+    and distilled water100mL. These are nested-stock batch inputs, not additional
+    immediate inputs or normalized final-medium concentrations. Frozen W06 B-P-NBRC268-trace-salts
+    has the matching four-input table; coordinator must compare/admit that exact candidate
+    before resolving this reference. No new nested owner or silent adoption of its
+    identifier.
+- component_name: Agar
+  reference_scope: MIM_CATALOG
+  concentration_value: '20.0'
+  concentration_unit: G
+  component_id: CHEBI:2509
+  source: Unspecified agar input; JCM58 mentions commercial premixed ISP Medium4 availability
+    separately, not an exact catalog assignment for this constituent.
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L
+  component_id: CHEBI:15377
+  source: One liter of water is the printed preparation input. No final1L yield or
+    make-up volume is specified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=58
+    source_record: JCM medium58 INORGANIC SALTS-STARCH AGAR (ISP-4), first9-row table
+      and nested Trace salts solution4-row table
+    notes: 'Actual source capture 2026-11-08T05:08:38.285342+00:00; SHA256 1aaeb1dd7a38141e4b231f0588d904ea2b46c12d0d939e1bcc1e133fe807084c;
+      archived exact bytes at successor-v2/isp4/captures/jcm58.html. First table:
+      soluble starch10g, K2HPO4 1g, MgSO4·7H2O1g, NaCl1g, (NH4)2SO4 2g, CaCO3 2g,
+      trace salts solution1mL, agar20g, distilled water1L. Nested trace stock: FeSO4·7H2O0.1g,
+      MnCl2·4H2O0.1g, ZnSO4·7H2O0.1g and distilled water100mL. No trace expansion
+      or final-volume normalization performed.'
+  notes: COMPLETE means all nine immediate source-listed inputs, not complete molecular
+    composition or exact final yield. Amount units G/ML/L are literal per printed
+    source batch. The nested stock remains one immediate input; its four known preparation
+    inputs are retained in this assertion but not flattened into the medium. Unresolved
+    component identities and pending stock-owner reconciliation do not make the source
+    input list incomplete. JCM page states media autoclaving121C15min unless otherwise
+    stated and reports unadjusted pH7.0–7.4. Neither is a final-yield measurement;
+    no separate trace-stock sterilization schedule is inferred.
+mim_id: MIM:0002822
+legacy_identifiers:
+- MIM:Inorganic_Salts-starch_Agar
+- UNMAPPED_0123
+- kgmicrobe.ingredient:inorganic_salts_starch_agar

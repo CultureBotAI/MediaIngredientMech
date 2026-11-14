@@ -9,7 +9,18 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: mim-queue
     notes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:582; '
-synonyms: []
+synonyms:
+- synonym_text: Charcoal activated
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[70] case_id=CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82;
+    source=culturemech; source_case_id=Charcoal activated; CultureMech:008727 ingredients/2
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml);
+    CultureMech:008654 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2063;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2133'
+- synonym_text: Activated carbon
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:194ebe6f7c71ae935bb8a8828f20e412290132e2818d1690bed007e544195926
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 13
@@ -39,11 +50,56 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: NBRC1357 and DSMZ811 name activated carbon as a weighed solid. NCIT C77524
+    defines carbon treated to create adsorption pores, matching this material; untreated
+    Charcoal is not substituted. New ChEBI753771 is an unstructured two-star import
+    with an uninformative organic-molecule parent; this source-alias review retains
+    the established specific NCIT owner. Proposed only; integration requires content-bound
+    full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[70] case_id=CM_NAME:8b59bf2102adc1473c153bdb142987079ad6440c096a7b26982d41c900f32f82;
+    source=culturemech; source_case_id=Charcoal activated; CultureMech:008727 ingredients/2
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2133_BCYEα_Agar.yaml);
+    CultureMech:008654 ingredients/2 (inputs/culturemech/data/normalized_yaml/bacterial/buffered_charcoal_yeast_extract_bcye_agar.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2063;
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2133'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G07 from authentic common before
+    sha256=ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f. Origins:
+    worker03:c-activated-charcoal sha256=a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54;
+    worker10:chem-proposal-12 sha256=c86c3a119210131d2419880607f43378db2d8fafbf4811fce7ed380782b6106f.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000272; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000272; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 mim_id: MIM:0000272

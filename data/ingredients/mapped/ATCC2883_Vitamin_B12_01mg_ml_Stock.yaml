@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock
+preferred_term: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock
+  ontology_label: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC
+      2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately
+      described broth and agar preparations. Registry identity preserves this documented
+      preparation; no exact molecular mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC 2883
+  specifies the same 1 ml filter-sterilized 0.1 mg/ml B12 stock in its separately
+  described broth and agar preparations. The carrier and any additional stock constituents
+  are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin
+  form is inferred. This is a preparation record with UNKNOWN component completeness;
+  complete-formulation equivalence and source hold release are not asserted. Both
+  receiving recipes are explicitly given in one ATCC 2883 source with the same stock
+  specification. Their separately added 3 ml methanol is not assigned as B12 solvent.
+  The stock is not equated to JCM 1354 because its 0.01% basis is unstated. Quantities,
+  where present, describe the supplied stock, not the finished receiving medium. Raw
+  labels remain source-scoped in evidence; no global synonym, biological role, occurrence
+  count integration or downstream admission is proposed.
+components:
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG_PER_L
+  source: 'Issue 1227 IR003 retained limit: Generic B12 does not select a vitamer.
+    CHEBI:176843 is a class; CHEBI:17439 selects cyanocobalamin. Preserve source and
+    owner holds.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    source_record: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+    notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC
+      2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately
+      described broth and agar preparations. The carrier and any additional stock
+      constituents are unspecified. No water, ethanol, methanol, acid, preservative
+      or molecular vitamin form is inferred. This is a preparation record with UNKNOWN
+      component completeness; complete-formulation equivalence and source hold release
+      are not asserted. Both receiving recipes are explicitly given in one ATCC 2883
+      source with the same stock specification. Their separately added3 ml methanol
+      is not assigned as B12 solvent. The stock is not equated to JCM 1354 because
+      its0.01% basis is unstated.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.240586+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC2883
+    specifies the same1ml filter-sterilized0.1mg/ml B12 stock in its separately described
+    broth and agar preparations.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.120792+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR006: set UNKNOWN because the source does not
+    establish retained or full stock membership; no explicitly omitted constituent
+    list is claimed. Earlier history and all source, scientific, role, withheld and
+    downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002962 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002962
+legacy_identifiers:
+- MIM:ATCC2883_Vitamin_B12_01mg_ml_Stock
+- kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock

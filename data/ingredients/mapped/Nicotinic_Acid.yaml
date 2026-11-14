@@ -32,7 +32,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Nicotinate
-  synonym_type: EXACT
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Niacin
   synonym_type: EXACT
@@ -94,6 +94,9 @@ synonyms:
 - synonym_text: pyridine-3-carboxylic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Niacin (B3)
+  synonym_type: RAW_TEXT
+  source: https://mediadive.dsmz.de/medium/P5
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2222
@@ -204,11 +207,44 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''Niacin (B3)'' as a bounded reagent alias; preserve
+    identity,hydration,counterion,roles,status and occurrence statistics. Concentration
+    and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
+    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. CHEBI:32544 defines nicotinate as the carboxylate conjugate
+    base with charge -1 and formula C6H4NO2. This does not exactly identify neutral
+    nicotinic acid CHEBI:15940. Retain the historical manual source and literal but
+    mark the exact-identity alias REJECTED_LABEL on this neutral-acid owner. This
+    does not reject niacin or infer a supplied nicotinate salt. Report-only candidate;
+    separate final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001893; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001893; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 59-67-6
@@ -230,6 +266,11 @@ nutritional_roles:
       component'
     curator_note: Widespread use in media formulations (1998 occurrences). High confidence
       based on 'Defined component' property.
+notes: CHEBI:32544 defines nicotinate as the carboxylate conjugate base with charge
+  -1 and formula C6H4NO2. This does not exactly identify neutral nicotinic acid CHEBI:15940.
+  Retain the historical manual source and literal but mark the exact-identity alias
+  REJECTED_LABEL on this neutral-acid owner. This does not reject niacin or infer
+  a supplied nicotinate salt.
 mim_id: MIM:0001893
 legacy_identifiers:
 - MIM:Nicotinic_Acid

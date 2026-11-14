@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:dsmz_781_horse_dung_extract
+preferred_term: DSMZ 781 Horse dung extract
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_781_horse_dung_extract
+  ontology_label: DSMZ 781 Horse dung extract
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium781.pdf
+    notes: Protocol-qualified aqueous horse-dung extract. Distinct from dry cow manure,
+      whole dung and generic animal manure. Preparation provenance defines the proposed
+      local material; no molecular or ENVO parent mapping asserted.
+notes: 'DSMZ781 preparation: boil an average-sized piece of horse dung, fresh or frozen,
+  in 150 ml water in a water bath for two hours; filter and use immediately. The starting
+  dung mass and final extract yield are unspecified. The medium uses 100 ml extract
+  with 900 ml distilled water plus other ingredients. Starting dung/water are extraction
+  inputs, not asserted molecular constituents of the resulting filtrate, so no has-part
+  decomposition is supplied. The current DSMZ PDF does not state separate sterilization;
+  the frozen CultureMech note that does so remains a source discrepancy, not an added
+  identity property. Raw source label Dung extract is retained here as contextual
+  provenance only; no globally resolving generic alias is installed. Proposed payload
+  only; no maintained data or release decision changed.'
+curation_history:
+- timestamp: '2026-11-08T05:26:02.116293+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_MATERIAL_PROPOSAL
+  changes: Proposed protocol-qualified DSMZ781 horse-dung extract from primary preparation.
+    Retained unknown starting mass and extraction yield, source volume and preparation
+    discrepancy. No parent or molecular identity inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.017767+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003001 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003001
+legacy_identifiers:
+- MIM:DSMZ_781_Horse_Dung_Extract
+- kgmicrobe.ingredient:dsmz_781_horse_dung_extract

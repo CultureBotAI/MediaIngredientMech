@@ -61,6 +61,19 @@ synonyms:
 - synonym_text: HEPES (10mM)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HEPES (free acid)
+  synonym_type: RAW_TEXT
+  source: 'frozen preliminary-v5/shards/shard-03.json cases[59] case_id=CM_NAME:637edac40fcbf588526a8d556a971228a71b80b2ac02426e79115e09b388d883;
+    source=culturemech; source_case_id=HEPES (free acid); CultureMech:007577 ingredients/25
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1060_Freshwater_Medium_For_Soil_AOA.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1060'
+- synonym_text: N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical
+    Co., St. Louis, MO)
+  synonym_type: CATALOG_VARIANT
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2410
+- synonym_text: HEPES buffer (acid) (SIGMA H3375)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ403 / TOGO M2366; Sigma H3375 product and CHEBI:42334 verified
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 251
@@ -167,11 +180,93 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-11-08T05:15:31.789607+00:00'
+  curator: all_unmatched_worker_10_buffers_research
+  action: ADDED_SYNONYMS
+  changes: Added acid-qualified Sigma H3375 source spelling; no pH-adjusted stock
+    alias added.
+  new_status: MAPPED
+  llm_assisted: true
+  notes: Isolated proposal payload only; coordinator integration and complete content-bound
+    publication review remain required.
+  previous_status: MAPPED
+- timestamp: '2026-11-08T05:19:27.509502+00:00'
+  curator: Codex worker05 source review proposal
+  action: ANNOTATED
+  changes: 'Add source-supported ''N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid
+    (HEPES, Sigma Chemical Co., St. Louis, MO)'' as a bounded reagent alias; preserve
+    identity,hydration,counterion,roles,status and occurrence statistics. Concentration
+    and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
+    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
+    integration review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add source-verified surface form(s) while retaining supplied identity
+    and inherited full-payload review obligations.  Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[59] case_id=CM_NAME:637edac40fcbf588526a8d556a971228a71b80b2ac02426e79115e09b388d883;
+    source=culturemech; source_case_id=HEPES (free acid); CultureMech:007577 ingredients/25
+    (inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1060_Freshwater_Medium_For_Soil_AOA.yaml);
+    Primary evidence: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1060'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:10.346880+00:00'
+  curator: all-unmatched coordinator /root/next23_context
+  action: PREPARED_RECONCILED_PROPOSAL
+  changes: 'Prepared isolated compatible-delta union G06 from authentic common before
+    sha256=7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320. Origins:
+    worker03:c-hepes-freeacid sha256=7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2;
+    worker05:CHEM-PROP-hepes sha256=f8b81f0310cfd35fe0299a9caedb4b29c78723a47a3b4afa74e0d1f5ba228248;
+    worker10:buffers-hepes-acid-alias sha256=94839addc0148ff58983e980db87181058d0322230d78e5e8acca57e9b771bb2.
+    Complete origin case/occurrence/evidence trace accompanies candidate. This records
+    proposal composition, not corpus application, owner merge, inherited approval
+    transfer or release; independent review of combined bytes remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Replace campaign-only provenance on the newly proposed source aliases with
+    their exact primary recipe or supplier locators; retain the complete labels, types
+    and historical authorship. DSMZ 975 lists HEPES (10mM) as a weighed 2.38 g ingredient
+    in 1000 ml water. The 10 mM qualifier describes the receiving medium, unlike an
+    aliquoted stock. Preserve this exact inherited RAW_TEXT alias and its original
+    backfill provenance. Its source-specific applicability is supported by https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium975.pdf;
+    do not convert it to a distinct 10 mM stock or to the 1 M HEPES-KOH candidates.
+    Report-only candidate; separate final scientific review and coordinator integration
+    remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:44:55.751067+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED
+  changes: Private current-origin reconciliation of TARGET-010 at frozen remote cutoff
+    2026-11-08T08:34:35.730529+00:00. Exact per-object changes and preserved published
+    source history are recorded in final-same-target-reconciliation-v3. Existing scope
+    decisions and negative source/identity/role/export holds persist. Original private
+    candidate and authentic maintained preimage remain immutable. New combined bytes
+    require independent review; no maintained application or approval occurred.
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001281; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001281; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7365-45-9
@@ -190,6 +285,12 @@ physicochemical_roles:
       component'
     curator_note: Widespread use in media formulations (168 occurrences). High confidence
       based on 'Defined component' property.
+notes: 'Current published W05 source clarification: DSMZ 975 lists HEPES (10mM) as
+  a weighed 2.38 g ingredient in 1000 ml water. The 10 mM qualifier describes the
+  receiving medium, unlike an aliquoted stock. Preserve this exact inherited RAW_TEXT
+  alias and its original backfill provenance. Its source-specific applicability is
+  supported by https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium975.pdf; do
+  not convert it to a distinct 10 mM stock or to the 1 M HEPES-KOH candidates.'
 mim_id: MIM:0001281
 legacy_identifiers:
 - MIM:Hepes

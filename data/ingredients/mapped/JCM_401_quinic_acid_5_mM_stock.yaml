@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:jcm_401_quinic_acid_5mm_stock
+preferred_term: JCM 401 quinic acid 5 mM stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_401_quinic_acid_5mm_stock
+  ontology_label: JCM 401 quinic acid 5 mM stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://bacmedia.dsmz.de/pdf/J401
+    notes: Source-qualified stock identity with partial literal component assertion.
+      The recovered JCM401 PDF explicitly supplies 5 mM quinic acid as a stock addition.
+      Its receiving-medium 13 ml/1 ml water inconsistency does not prevent a source-qualified
+      partial stock record. No solvent, stereochemistry or final-medium concentration
+      is invented. Stock solvent and optical form remain unspecified; receiving-medium
+      volume inconsistency remains an independent source correction.
+synonyms:
+- synonym_text: 5 mM Quinic acid
+  synonym_type: REJECTED_LABEL
+  source: https://bacmedia.dsmz.de/pdf/J401
+components:
+- component_name: Quinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: mM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://bacmedia.dsmz.de/pdf/J401
+    source_record: JCM 401 quinic acid 5 mM stock
+    notes: The recovered JCM401 PDF explicitly supplies 5 mM quinic acid as a stock
+      addition. Its receiving-medium 13 ml/1 ml water inconsistency does not prevent
+      a source-qualified partial stock record. No solvent, stereochemistry or final-medium
+      concentration is invented. Stock solvent and optical form remain unspecified;
+      receiving-medium volume inconsistency remains an independent source correction.
+  notes: Unstated solvent and source chemical-form details remain unasserted. Concentration
+    is the stock claim, never the receiving-medium dose.
+notes: The recovered JCM401 PDF explicitly supplies 5 mM quinic acid as a stock addition.
+  Its receiving-medium 13 ml/1 ml water inconsistency does not prevent a source-qualified
+  partial stock record. No solvent, stereochemistry or final-medium concentration
+  is invented. Stock solvent and optical form remain unspecified; receiving-medium
+  volume inconsistency remains an independent source correction.
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: The recovered JCM401 PDF explicitly supplies 5 mM quinic acid as a stock
+    addition. Its receiving-medium 13 ml/1 ml water inconsistency does not prevent
+    a source-qualified partial stock record. No solvent, stereochemistry or final-medium
+    concentration is invented. Stock solvent and optical form remain unspecified;
+    receiving-medium volume inconsistency remains an independent source correction.
+    Isolated successor proposal only; no maintained surfaces, roles, source bytes
+    or publication holds changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003071 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003071
+legacy_identifiers:
+- MIM:JCM_401_quinic_acid_5_mM_stock
+- kgmicrobe.ingredient:jcm_401_quinic_acid_5mm_stock

@@ -1,0 +1,185 @@
+identifier: kgmicrobe.ingredient:deionized_water
+preferred_term: Deionized water
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:15377
+  ontology_label: water
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1191.pdf
+    notes: The source grade demineralized water is explicitly named in all nine admitted
+      ingredient1448 rows across DSMZ1191,1279,1600 and1793, including the source
+      abbreviations H2O demin. and Aqua dem. It is represented as a distinct preparation-qualified
+      solvent, with CHEBI15377 water as a broader molecular parent only. No ion-removal
+      method, conductivity, resistivity, reagent standard, quantitative purity or
+      universal sterility is asserted. The one sterile addition in DSMZ1600 retains
+      that operational qualifier in its recipe; this owner does not globally equate
+      sterile water, distilled water or tap water. The exact-name OLS search found
+      TransformON c_ROHSUO, but TFO is outside the maintained OntologySourceEnum and
+      its conductivity scope is not specified by these sources; the candidate is preserved
+      as context rather than silently adopted or reported absent.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537
+    notes: 'Ordinary unspecified ion-removal-grade water in the reviewed deionized/demineralized
+      source contexts. ELGA laboratory-water guide page 5 supports their ordinary
+      synonymous use and distinguishes distillation. The local preparation-grade identity
+      is narrower than molecular water: CHEBI:15377 is a broader parent only (NARROW_MATCH/native
+      broadMatch with mandatory local registry identity row). No universal treatment
+      method, purity, resistivity, ASTM/ISO class or sterility is asserted. DSMZ1600
+      sterile handling belongs only to its exact addition. Maintained Distilled_Water
+      and its historical Demineralized water REJECTED_LABEL remain untouched. No molecular-water
+      has-part edge is added. Genuine W06 DI WATER reuse of the W08 proposal is retained
+      through its existing source-case/occurrence bridge, not a fabricated seventh
+      proposal. DI WATER and H2O (deionized) stay source-specific; frozen unit discrepancies
+      do not become material concentrations. Original evidence items are retained
+      verbatim for their named source-specific origins; they are not inherited final
+      combined-owner approval.'
+synonyms:
+- synonym_text: Demineralized water
+  synonym_type: EXACT_SYNONYM
+  source: mediadive.ingredient:1448; original DSMZ1191/1279/1600/1793
+supplied_form:
+- name: Demineralized water
+  form: preparation-qualified water
+  notes: Source specifies the demineralized grade but no quantitative specification
+    or treatment route. Sterility is occurrence-specific.
+- name: Deionized water
+  form: unspecified ion-removal grade
+  notes: 'Ordinary unspecified ion-removal-grade water in the reviewed deionized/demineralized
+    source contexts. ELGA laboratory-water guide page 5 supports their ordinary synonymous
+    use and distinguishes distillation. The local preparation-grade identity is narrower
+    than molecular water: CHEBI:15377 is a broader parent only (NARROW_MATCH/native
+    broadMatch with mandatory local registry identity row). No universal treatment
+    method, purity, resistivity, ASTM/ISO class or sterility is asserted. DSMZ1600
+    sterile handling belongs only to its exact addition. Maintained Distilled_Water
+    and its historical Demineralized water REJECTED_LABEL remain untouched. No molecular-water
+    has-part edge is added. Genuine W06 DI WATER reuse of the W08 proposal is retained
+    through its existing source-case/occurrence bridge, not a fabricated seventh proposal.
+    DI WATER and H2O (deionized) stay source-specific; frozen unit discrepancies do
+    not become material concentrations.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: "Ordinary unspecified ion-removal-grade water in the reviewed deionized/demineralized\
+  \ source contexts. ELGA laboratory-water guide page 5 supports their ordinary synonymous\
+  \ use and distinguishes distillation. The local preparation-grade identity is narrower\
+  \ than molecular water: CHEBI:15377 is a broader parent only (NARROW_MATCH/native\
+  \ broadMatch with mandatory local registry identity row). No universal treatment\
+  \ method, purity, resistivity, ASTM/ISO class or sterility is asserted. DSMZ1600\
+  \ sterile handling belongs only to its exact addition. Maintained Distilled_Water\
+  \ and its historical Demineralized water REJECTED_LABEL remain untouched. No molecular-water\
+  \ has-part edge is added. Genuine W06 DI WATER reuse of the W08 proposal is retained\
+  \ through its existing source-case/occurrence bridge, not a fabricated seventh proposal.\
+  \ DI WATER and H2O (deionized) stay source-specific; frozen unit discrepancies do\
+  \ not become material concentrations.\nPrivate proposal only. Exact occurrence selectors\
+  \ and their original quantities, unsupported/withheld source associations and role/export\
+  \ holds remain in the bound routing ledger. No maintained owner merge, role approval,\
+  \ source-global mapping, source-release or export approval. Final complete candidate\
+  \ bytes require distinct independent review. \nZero occurrence statistics are an\
+  \ unintegrated candidate placeholder, not absence of source observations.\nOriginal\
+  \ w01 proposal KG26-PROP-161-IDENTITY (41b29b306e789baed6c95c01454154aac7fcfd3670e7a74e8114aba87c75b449),\
+  \ source-specific prior claims: The source grade demineralized water is explicitly\
+  \ named in all nine admitted ingredient1448 rows across DSMZ1191,1279,1600 and1793,\
+  \ including the source abbreviations H2O demin. and Aqua dem. It is represented\
+  \ as a distinct preparation-qualified solvent, with CHEBI15377 water as a broader\
+  \ molecular parent only. No ion-removal method, conductivity, resistivity, reagent\
+  \ standard, quantitative purity or universal sterility is asserted. The one sterile\
+  \ addition in DSMZ1600 retains that operational qualifier in its recipe; this owner\
+  \ does not globally equate sterile water, distilled water or tap water. The exact-name\
+  \ OLS search found TransformON c_ROHSUO, but TFO is outside the maintained OntologySourceEnum\
+  \ and its conductivity scope is not specified by these sources; the candidate is\
+  \ preserved as context rather than silently adopted or reported absent.\n\nOriginal\
+  \ w08 proposal if1201-new-deionized_water (b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc),\
+  \ source-specific prior claims: DSMZ 533 names H2O (deionized) in the main medium\
+  \ and trace stock, each as 1000 ml water. The identity retains the specified deionization\
+  \ treatment only: no resistivity, purity class, sterility or distillation claim.\
+  \ Water is not decomposed into a molecular-water component because treatment grade\
+  \ is not partonomy. Raw case labels remain only in evidence and case-bound proposal\
+  \ links, not globally resolving synonyms. No occurrence count transfer, source-hold\
+  \ release or receiving-medium dose correction is implied."
+curation_history:
+- timestamp: '2026-11-08T04:47:24.889403+00:00'
+  curator: worker01_add_media_identity
+  action: CREATED
+  changes: Isolated source-grade identity proposal with NARROW_MATCH broad-parent
+    grounding and mandatory registry sibling; preserve Distilled_Water and all historical
+    rejected-label boundaries. No maintained writes or inherited membership reassignment.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.405813+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: 'DSMZ 533 names H2O (deionized) in the main medium and trace stock, each
+    as 1000 ml water. The identity retains the specified deionization treatment only:
+    no resistivity, purity class, sterility or distillation claim. Water is not decomposed
+    into a molecular-water component because treatment grade is not partonomy.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. All inherited history, scientific/source/role/export
+    holds and original before hash remain preserved. This is a proposal, pending independent
+    whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:06:03.105882+00:00'
+  curator: worker02 /root
+  action: COMPOSED_NOMINAL_PROPOSAL
+  changes: 'Compose two authentic new-owner proposals into this private nominal scope
+    under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537.
+    Origins: KG26-PROP-161-IDENTITY SHA256 41b29b306e789baed6c95c01454154aac7fcfd3670e7a74e8114aba87c75b449,
+    if1201-new-deionized_water SHA256 b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc.
+    Original histories/evidence remain attributed to their original authors; this
+    is not a maintained-owner merge. Ordinary unspecified ion-removal-grade water
+    in the reviewed deionized/demineralized source contexts. ELGA laboratory-water
+    guide page 5 supports their ordinary synonymous use and distinguishes distillation.
+    The local preparation-grade identity is narrower than molecular water: CHEBI:15377
+    is a broader parent only (NARROW_MATCH/native broadMatch with mandatory local
+    registry identity row). No universal treatment method, purity, resistivity, ASTM/ISO
+    class or sterility is asserted. DSMZ1600 sterile handling belongs only to its
+    exact addition. Maintained Distilled_Water and its historical Demineralized water
+    REJECTED_LABEL remain untouched. No molecular-water has-part edge is added. Genuine
+    W06 DI WATER reuse of the W08 proposal is retained through its existing source-case/occurrence
+    bridge, not a fabricated seventh proposal. DI WATER and H2O (deionized) stay source-specific;
+    frozen unit discrepancies do not become material concentrations. Private proposal
+    only. Exact occurrence selectors and their original quantities, unsupported/withheld
+    source associations and role/export holds remain in the bound routing ledger.
+    No maintained owner merge, role approval, source-global mapping, source-release
+    or export approval. Final complete candidate bytes require distinct independent
+    review. '
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003220 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003220
+legacy_identifiers:
+- MIM:deionized_water
+- kgmicrobe.ingredient:deionized_water

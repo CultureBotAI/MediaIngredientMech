@@ -99,6 +99,9 @@ synonyms:
 - synonym_text: magnesium sulfate anhydrous
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Magnesium Sulfate (anhydrous)
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:cf553910f88e5d55105f2216147e0ad5506309a7e2af5a3566d407f92e5d8f9d'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 645
@@ -275,11 +278,24 @@ curation_history:
     #892, #893, #899).'
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Magnesium Sulfate (anhydrous)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001574; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001574; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7487-88-9

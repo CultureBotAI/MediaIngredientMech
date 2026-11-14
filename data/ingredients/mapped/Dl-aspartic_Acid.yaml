@@ -1,14 +1,20 @@
-identifier: CHEBI:22660
+identifier: cas:617-45-8
 preferred_term: DL-aspartic acid
 ontology_mapping:
   ontology_id: CHEBI:22660
   ontology_label: aspartic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.tcichemicals.com/US/en/p/A0544
+    notes: MediaDive1445 and TCI/NIST independently identify CAS617-45-8 as DL-aspartic
+      acid. CHEBI22660 is stereo-unspecified, not an equimolar-racemate definition;
+      preserve CAS identity with broader parent perSection3. TCI is corroboration,
+      not assigned as the source supplier.
 synonyms:
 - synonym_text: (+-)-Aspartic acid
   synonym_type: EXACT_SYNONYM
@@ -17,7 +23,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: 2-aminobutanedioic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: DL-Aminosuccinic acid
   synonym_type: EXACT_SYNONYM
@@ -88,19 +94,44 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Preserve DL racemate as CAS617-45-8 with broader CHEBI22660; reject unqualified
+    constitutional alias and remove stereo-unspecified structure assertions. Proposal
+    only; inherited publication/role/source holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.212169+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000968; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000968; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 617-45-8
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:54.392640+00:00'
   molecular_formula: C4H7NO4
-  inchi: InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)
-  smiles: NC(CC(=O)O)C(=O)O
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: AMINO_ACID_SOURCE
@@ -115,3 +146,4 @@ mim_id: MIM:0000968
 legacy_identifiers:
 - MIM:Dl-aspartic_Acid
 - CHEBI:22660
+- cas:617-45-8

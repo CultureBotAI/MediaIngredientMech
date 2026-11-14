@@ -37,14 +37,44 @@ curation_history:
     is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
     or reject.'
   llm_assisted: true
+- timestamp: '2026-11-08T05:25:00.167347+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: ANNOTATED
+  changes: Record verified source1754-to-JCM60 formulation provenance and explicit
+    lack of an established bridge from this generic Agar-extracted owner to that exact
+    recipe. Preserve all identifiers, mappings, synonyms, components, roles and counts.
+    Independent review requested this bounded enrichment instead of an implementation-only
+    deferral. Isolated proposal; no release approval.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002805; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002805; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
   a named medium/formulation, not agar identity.
+
+
+  Source-scoped review (2026-11-08): the frozen MediaDive ingredient1754 occurrence
+  names Glycerol-asparagine agar, supplies1000mL and refers to JCM medium60. The official
+  JCM60 recipe (https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=60), titled GLYCEROL-ASPARAGINE
+  AGAR (ISP-5), specifies L-asparagine1g, glycerol10g, K2HPO4 1g, agar15g, trace salts
+  solution1mL and distilled water1L, pH7.4. The trace stock contains0.1g each FeSO4.7H2O,
+  MnCl2.4H2O and ZnSO4.7H2O in100mL distilled water. This identifies the source1754
+  formulation only. This generic owner originated from an Agar synonym and has no
+  primary recipe/version provenance establishing equivalence to JCM60. Preserve UNMAPPED
+  status; no exact mapping, component assertion, new resolving alias, role or membership
+  transfer is authorized by this note. See reports/all_unmatched_20261107/worker-08/research/organic_products/decisions.json
+  case KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997.'
 ingredient_type: NAMED_MEDIUM
 mim_id: MIM:0002805
 legacy_identifiers:

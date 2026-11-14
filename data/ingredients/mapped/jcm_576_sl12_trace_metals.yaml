@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:jcm_576_sl12_trace_metals
+preferred_term: JCM 576 SL12 trace metal solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_576_sl12_trace_metals
+  ontology_label: JCM 576 SL12 trace metal solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=576
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+notes: 'MediaDive mediumJ576 explicitly contains solution4409 and the separate SL12
+  stock4411, corroborating the JCM576 primary table. EDTA disodium hydration remains
+  unspecified. All ten printed inputs are transcribed. DSMZ998 SL12 is a different
+  formulation lackingEDTA and printing manganese chloride dihydrate; genericSL12 is
+  not a resolving alias. The source addition is1ml in provider volume1005ml, i.e.0.09950248756%v/v,
+  while the frozen0.9950248756% is tenfold high. Raw labels retained as occurrence
+  provenance only: [''Trace element solution SL12''].'
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003283 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: EDTA·2Na
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: G
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '190.0'
+  concentration_unit: MG
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: MG
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '42.0'
+  concentration_unit: MG
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24.0'
+  concentration_unit: MG
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '18.0'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '300.0'
+  concentration_unit: MG
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=576
+    source_record: JCM 576 SL12 trace metal solution
+    notes: Literal preparation inputs; unspecified child forms and amounts stay unmapped.
+      These are not receiving-medium doses or post-reaction speciation.
+    supports: SUPPORT
+  notes: MediaDive mediumJ576 explicitly contains solution4409 and the separate SL12
+    stock4411, corroborating the JCM576 primary table. EDTA disodium hydration remains
+    unspecified. All ten printed inputs are transcribed. DSMZ998 SL12 is a different
+    formulation lackingEDTA and printing manganese chloride dihydrate; genericSL12
+    is not a resolving alias. The source addition is1ml in provider volume1005ml,
+    i.e.0.09950248756%v/v, while the frozen0.9950248756% is tenfold high.
+mim_id: MIM:0003283
+legacy_identifiers:
+- MIM:jcm_576_sl12_trace_metals
+- kgmicrobe.ingredient:jcm_576_sl12_trace_metals

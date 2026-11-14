@@ -1,0 +1,154 @@
+identifier: kgmicrobe.ingredient:roscoff_pcrs11_2019_gaffron_se_stock
+preferred_term: Roscoff PCR-S11 2019 Gaffron+Se trace metals stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:roscoff_pcrs11_2019_gaffron_se_stock
+  ontology_label: Roscoff PCR-S11 2019 Gaffron+Se trace metals stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf
+    notes: Source-qualified whole preparation/family identity only, with explicit
+      version and historical catalogue boundaries.
+notes: Roscoff PCR-S11 protocol2019 (DOI10.17504/protocols.io.sz3ef8n), section4,
+  defines this Gaffron+Se stock by adding the15listed solutes to500ml water then making
+  a final1L, refrigerated. The payload transcribes the printed mg/L column, not recalculated
+  rounded micromolar values. Actual PDF pages4–5 confirm cadmium nitrate Cd(NO3)2·4H2O
+  and potassium aluminium sulfate KAl(SO4)2·12H2O; these are not guesses from TOGO
+  malformed Cd(NO3).4H2O and KAI(SO4)2.12H2O. Raw TOGO text remains unchanged in evidence.
+  The protocol prints5.16mg/L ammonium molybdate tetrahydrate and1.5mg/L vanadyl sulfate
+  pentahydrate, with footnotes4.94 and1.52 respectively for the original recipe. Its
+  receiving medium uses0.1ml/L and states this gives twice the original PCR-S11 Gaffron
+  level. TOGO M2262 instead records0.5ml/L and a stock table roughly tenfold lower
+  (for example H3BO3 300uM versus this protocol3008.25uM; Ni salt3uM versus30uM).
+  These versions and inconsistent source-dose context are not collapsed. The frozen0.5G_PER_L
+  is also a volume/unit error. This concrete2019stock is a version-qualified related
+  preparation proposal, not automatic identity or composition assignment to the frozen
+  M2262 occurrence. Raw Trace metals Gaffron+Se is not a global alias. All child references
+  remain UNMAPPED, and no complete-medium release is implied. Protocol section6 states
+  that added nutrients have been autoclaved except vitamins; the listed Gaffron+Se
+  nutrient stock is therefore autoclaved before receiving-medium addition. No temperature
+  or duration is supplied or invented.
+curation_history:
+- timestamp: '2026-11-08T05:52:57.800919+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed Roscoff PCR-S11 2019 Gaffron+Se trace metals stock with explicit
+    primary-source scope and remaining limitations. No maintained data or source holds
+    changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:53:40.389110+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CORRECTED
+  changes: Preserved primary section6 autoclaving before medium addition, following
+    independent reviewer request. No unstated temperature/time or source-version equivalence.
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003333 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Boric acid (H3BO3)
+  reference_scope: UNMAPPED
+  concentration_value: '186'
+  concentration_unit: MG_PER_L
+- component_name: Manganese(II) sulfate monohydrate (MnSO4·H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '101'
+  concentration_unit: MG_PER_L
+- component_name: Sodium tungstate dihydrate (Na2WO4·2H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '1.98'
+  concentration_unit: MG_PER_L
+- component_name: Ammonium molybdate tetrahydrate ((NH4)6Mo7O24·4H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '5.16'
+  concentration_unit: MG_PER_L
+- component_name: Potassium bromide (KBr)
+  reference_scope: UNMAPPED
+  concentration_value: '7.14'
+  concentration_unit: MG_PER_L
+- component_name: Potassium iodide (KI)
+  reference_scope: UNMAPPED
+  concentration_value: '4.98'
+  concentration_unit: MG_PER_L
+- component_name: Zinc sulfate heptahydrate (ZnSO4·7H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '17.25'
+  concentration_unit: MG_PER_L
+- component_name: Cadmium nitrate tetrahydrate (Cd(NO3)2·4H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_L
+- component_name: Cobalt(II) nitrate hexahydrate (Co(NO3)2·6H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '8.76'
+  concentration_unit: MG_PER_L
+- component_name: Copper(II) sulfate pentahydrate (CuSO4·5H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '7.5'
+  concentration_unit: MG_PER_L
+- component_name: Nickel chloride hexahydrate (NiCl2·6H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '7.1'
+  concentration_unit: MG_PER_L
+- component_name: Chromium(III) nitrate nonahydrate (Cr(NO3)3·9H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '2.4'
+  concentration_unit: MG_PER_L
+- component_name: Vanadyl sulfate pentahydrate (VOSO4·5H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: MG_PER_L
+- component_name: Aluminium potassium sulfate dodecahydrate (KAl(SO4)2·12H2O)
+  reference_scope: UNMAPPED
+  concentration_value: '28.4'
+  concentration_unit: MG_PER_L
+- component_name: Selenium(IV) oxide (SeO2)
+  reference_scope: UNMAPPED
+  concentration_value: '3.3'
+  concentration_unit: MG_PER_L
+- component_name: Water
+  reference_scope: UNMAPPED
+  concentration_value: 500 ml initially; make final stock volume to 1 L
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf
+    source_record: Roscoff PCR-S11 protocol2019 section4 and Gaffron+Se addition insection6
+    supports: SUPPORT
+    notes: Actual PDF pages4–5 visually checked; all15solute names/formulas and mg/L
+      values transcribed. Water first500ml then finalvolume1L. No exact child ontology
+      identity asserted.
+  notes: Roscoff PCR-S11 protocol2019 (DOI10.17504/protocols.io.sz3ef8n), section4,
+    defines this Gaffron+Se stock by adding the15listed solutes to500ml water then
+    making a final1L, refrigerated. The payload transcribes the printed mg/L column,
+    not recalculated rounded micromolar values. Actual PDF pages4–5 confirm cadmium
+    nitrate Cd(NO3)2·4H2O and potassium aluminium sulfate KAl(SO4)2·12H2O; these are
+    not guesses from TOGO malformed Cd(NO3).4H2O and KAI(SO4)2.12H2O. Raw TOGO text
+    remains unchanged in evidence. The protocol prints5.16mg/L ammonium molybdate
+    tetrahydrate and1.5mg/L vanadyl sulfate pentahydrate, with footnotes4.94 and1.52
+    respectively for the original recipe. Its receiving medium uses0.1ml/L and states
+    this gives twice the original PCR-S11 Gaffron level. TOGO M2262 instead records0.5ml/L
+    and a stock table roughly tenfold lower (for example H3BO3 300uM versus this protocol3008.25uM;
+    Ni salt3uM versus30uM). These versions and inconsistent source-dose context are
+    not collapsed. The frozen0.5G_PER_L is also a volume/unit error. This concrete2019stock
+    is a version-qualified related preparation proposal, not automatic identity or
+    composition assignment to the frozen M2262 occurrence. Raw Trace metals Gaffron+Se
+    is not a global alias. All child references remain UNMAPPED, and no complete-medium
+    release is implied. Protocol section6 states that added nutrients have been autoclaved
+    except vitamins; the listed Gaffron+Se nutrient stock is therefore autoclaved
+    before receiving-medium addition. No temperature or duration is supplied or invented.
+mim_id: MIM:0003333
+legacy_identifiers:
+- MIM:roscoff_pcrs11_2019_gaffron_se_stock
+- kgmicrobe.ingredient:roscoff_pcrs11_2019_gaffron_se_stock

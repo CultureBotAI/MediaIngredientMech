@@ -13,6 +13,15 @@ ontology_mapping:
       to MICRO:0001715 on an exact match against the ontology label. Restored from
       the record's own creation history (#541); the residual importer wrote this provenance
       only into the published SSSOM.
+  - evidence_type: LLM_SUGGESTION
+    source: https://raw.githubusercontent.com/carrineblank/MicrO/73963269d9a681157d710f272f8e65e4f7e8897e/MicrOandImportModules/MicrO.owl
+    notes: DSMZ 601 and NBRC 1183 describe artificial sea water prepared from marine
+      aquarium salt mixtures without identifying a particular product. MicrO MICRO:0001715
+      defines the generic inorganic salts solution that mimics sea water, not one
+      fixed formula. The spacing variant Artificial sea water therefore belongs to
+      the existing generic Artificial seawater owner; no product-specific identity
+      is selected. Bounded spelling association only; no new endorsement of inherited
+      navigation aliases.
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 19
@@ -45,11 +54,36 @@ curation_history:
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
   llm_assisted: false
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: ADDED_SYNONYMS
+  changes: Added source-verified spacing variant Artificial sea water to existing
+    generic MICRO:0001715 owner; no supplier/formula selection or inherited-alias
+    approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.091870+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 1 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000387; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000387; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 synonyms:
 - synonym_text: Artificial seawater (see below)
@@ -58,6 +92,18 @@ synonyms:
 - synonym_text: Artificial seawater (see Medium No. 736 )
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Artificial sea water
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium601.pdf; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1183
+notes: DSMZ 601 and NBRC 1183 describe artificial sea water prepared from marine aquarium
+  salt mixtures without identifying a particular product. MicrO MICRO:0001715 defines
+  the generic inorganic salts solution that mimics sea water, not one fixed formula.
+  The spacing variant Artificial sea water therefore belongs to the existing generic
+  Artificial seawater owner; no product-specific identity is selected. Specific aquarium
+  product, batch formula and strength remain unknown; they are not prerequisites for
+  this spelling-only association to the existing explicitly generic ontology sense.
+  Provenance-only source text 'Artificial sea water' (case CM_NAME:e88d9dba7b6c89f143d72d69e57c72390ec19461c2bb1456f248e761559e41cd).
+  Inherited navigation aliases are not newly validated by this proposal.
 mim_id: MIM:0000387
 legacy_identifiers:
 - MIM:Artificial_seawater

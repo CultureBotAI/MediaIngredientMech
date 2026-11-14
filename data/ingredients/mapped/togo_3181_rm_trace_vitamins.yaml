@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:togo_3181_rm_trace_vitamins
+preferred_term: TOGO M3181 RM trace-vitamin stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_3181_rm_trace_vitamins
+  ontology_label: TOGO M3181 RM trace-vitamin stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    notes: Source-qualified whole stock identity. Generic source wording is not introduced
+      as a globally resolving alias.
+components:
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G
+- component_name: Thiamine
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    source_record: TOGO M3181 RM trace-vitamin stock
+    notes: Source names and stated quantities retained without inferred salt, hydrate,
+      stereochemistry or percentage basis.
+  notes: TOGO M3181 narrative paragraph4 and Trace vitamins table paragraph12 agree
+    on all three vitamins per litre; the table explicitly lists1L distilled water.
+    Current captured formulation is proposed without assuming an unlocated original
+    paper or historical lot invariant. Thiamine salt/hydrate and biotin stereochemistry
+    are not specified, so child identities stay UNMAPPED and closure is UNKNOWN. The
+    receiving RM medium uses1ml. The source discrepancy involving sodium molybdate
+    belongs to its separate trace-metal stock and is not imported into this vitamin
+    preparation.
+notes: TOGO M3181 narrative paragraph4 and Trace vitamins table paragraph12 agree
+  on all three vitamins per litre; the table explicitly lists1L distilled water. Current
+  captured formulation is proposed without assuming an unlocated original paper or
+  historical lot invariant. Thiamine salt/hydrate and biotin stereochemistry are not
+  specified, so child identities stay UNMAPPED and closure is UNKNOWN. The receiving
+  RM medium uses1ml. The source discrepancy involving sodium molybdate belongs to
+  its separate trace-metal stock and is not imported into this vitamin preparation.
+  Exact raw label "Trace vitamins" retained here as provenance. Applies only to CultureMech:009631
+  ingredients/11; no globally resolving alias is added.
+curation_history:
+- timestamp: '2026-11-08T05:35:11.685684+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Propose isolated source-qualified stock with literal components, occurrence
+    scope and explicit unresolved preparation details. No maintained data or release
+    state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003351 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003351
+legacy_identifiers:
+- MIM:togo_3181_rm_trace_vitamins
+- kgmicrobe.ingredient:togo_3181_rm_trace_vitamins

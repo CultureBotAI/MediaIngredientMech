@@ -46,7 +46,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: (NH4)2S4
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Ammonium Sulfate
   synonym_type: EXACT_SYNONYM
@@ -205,11 +205,32 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Quarantine active exact alias (NH4)2S4 as nonresolving REJECTED_LABEL.
+    Original JCM826 row1 repeats this literal oxygen-free formula and does not prove
+    ammonium sulfate; retain raw source provenance and current sulfate identity, chemistry
+    and inherited holds. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[175] case_id=KG_CASE:c856991d15fde0c056753101242e0681c00b899cb6a7a9bc51bc9a01674a45ca;
+    source=mediadive; source_case_id=mediadive.ingredient:1902; Primary evidence:
+    https://mediadive.dsmz.de/finder/%28NH4%292S4///; Primary evidence: https://mediadive.dsmz.de/ingredients/1902;
+    Primary evidence: https://mediadive.dsmz.de/medium/J826; Primary evidence: https://mediadive.dsmz.de/solution-finder/%28NH4%292S4///?mainsol=1&optional=1;
+    Primary evidence: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=826'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001875; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001875; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 kg_microbe_node_id: CHEBI:62946
 chemical_properties:

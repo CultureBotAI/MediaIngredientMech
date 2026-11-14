@@ -1,0 +1,48 @@
+identifier: kgmicrobe.ingredient:bd_difco_ynb_without_amino_acids_and_ammonium_sulfate_family
+preferred_term: BD Difco yeast nitrogen base without amino acids and ammonium sulfate
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_ynb_without_amino_acids_and_ammonium_sulfate_family
+  ontology_label: BD Difco yeast nitrogen base without amino acids and ammonium sulfate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=113
+    notes: Primary source explicitly supplies manufacturer and both exclusions; the
+      family identity does not assert a historical SKU/lot.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.233520
+    notes: Current official product title corroborates the two-exclusion BD-Difco
+      family. Packaging/catalogue evidence is current, not projected onto the historical
+      source recipe.
+notes: NBRC113 explicitly names Bacto-Yeast Nitrogen Base w/o Amino Acids and Ammonium
+  Sulfate (Difco),1.7g, while adding NH4Cl and amino acids separately. The current
+  officialBD233520 page identifies the same double-exclusion family (100g packaging).
+  This proposal denotes the manufacturer-qualified basal-mixture family with both
+  exclusions, not a retrospective claim that NBRC113 used SKU233520, a specific packaging
+  size or an invariant historical lot. It excludes completeYNB, products omitting
+  only amino acids, pure ammonium sulfate and the complete methanol medium. Full constituent
+  quantities, chemical closure and biological role are not asserted; separate medium
+  supplements are not part of this product. The raw source label is preserved here
+  as occurrence provenance, not a global synonym for every YNB product.
+curation_history:
+- timestamp: '2026-11-08T05:42:23.124907+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Propose source-qualified BD-Difco YNB double-exclusion family with explicit
+    inclusion/exclusion and historical catalogue limitations. No full composition,
+    whole-medium or release claim.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003213 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003213
+legacy_identifiers:
+- MIM:bd_difco_ynb_without_amino_acids_and_ammonium_sulfate_family
+- kgmicrobe.ingredient:bd_difco_ynb_without_amino_acids_and_ammonium_sulfate_family

@@ -1,20 +1,36 @@
-identifier: cas:5794-13-8
+identifier: NCIT:C87433
 preferred_term: L-Asparagine monohydrate
 ontology_mapping:
   ontology_id: NCIT:C87433
   ontology_label: Asparagine Monohydrate
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 5794-13-8 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: '[HISTORICAL: superseded by the exact NCIT CAS/form adjudication below;
+      retained as import provenance.] Imported from CultureBotHT. CAS-RN 5794-13-8
+      present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms).
+      Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='L-Asparagine monohydrate'
-synonyms: []
+    notes: '[HISTORICAL: superseded by the exact NCIT CAS/form adjudication below;
+      retained as import provenance.] Parent class identified via stem-substring;
+      matched_via=''L-Asparagine monohydrate'''
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C87433
+    notes: 'Explicit CAS lookup: the record CAS5794-13-8 uniquely matches NCIT:C87433
+      in the read-only local NCIt database. The official term response also records
+      CAS5794-13-8, C4H8N2O3.H2O and exact synonym L-Asparagine Monohydrate. This
+      is the exact L hydrate, not a generic parent or the distinct DL hydrate CAS69833-18-7.
+      Native canonical-label resolution returns Asparagine Monohydrate. The mapping
+      was established by this CAS lookup and is graded CAS_RN_LOOKUP.'
+synonyms:
+- synonym_text: L-Asparagine*H2O
+  synonym_type: RAW_TEXT
+  source: 'Frozen CultureMech:010435, MediaDive:P5, solutions/3/solutions/1/composition/3;
+    exact L-asparagine monohydrate supplier Sigma A8381: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/313/204/a8381pis.pdf
+    ; source stock dose is not asserted as final-medium concentration'
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -56,11 +72,39 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
     nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: ANNOTATED
+  changes: Add source-bound raw alias(es) L-Asparagine*H2O to existing same-scope
+    owner; preserve all other fields and retired labels. Isolated proposal only; no
+    release approval or hold removal. New alias assertion provenance identifies the
+    exact frozen source context and inspected primary recipe, ontology or supplier
+    URL.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: Adopt exact NCIT:C87433 identity with explicit CAS_RN_LOOKUP, preserve
+    historical CAS/form evidence and clarify the non-isomeric SMILES limitation. Isolated
+    successor proposal only; all inherited source, role and export holds remain. Historical
+    evidence and predecessor files are immutable.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001410; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001410; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 5794-13-8
@@ -78,7 +122,15 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: 'Issue1227 exact-form adjudication: NCIT:C87433 replaces the historical CAS-primary/parent
+  treatment under MAPPING_SEMANTICS section3. CAS5794-13-8, original source alias
+  and all history remain. The inherited non-isomeric SMILES encodes connectivity and
+  hydration but does not specify stereochemistry; it is retained as that limited representation,
+  not as evidence of a racemate. The separate stereo-specific InChI and exact L-hydrate
+  primary evidence establish the L form. No replacement structure, role approval or
+  source-hold release is inferred.'
 mim_id: MIM:0001410
 legacy_identifiers:
 - MIM:L-Asparagine_Monohydrate
 - cas:5794-13-8
+- NCIT:C87433

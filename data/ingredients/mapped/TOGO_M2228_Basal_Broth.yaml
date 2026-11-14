@@ -1,0 +1,88 @@
+identifier: kgmicrobe.ingredient:togo_m2228_basal_broth
+preferred_term: TOGO M2228 basal broth
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2228_basal_broth
+  ontology_label: TOGO M2228 basal broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2228
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Source absolute input amounts retained; no final-volume denominator inferred.
+  Solution1 separately contains water1400ml, BactoBHI15g, PPLO broth without crystalviolet16g
+  and Hanks balanced salts2500ml. Its detailed partial structure remains in captured
+  source. Raw assigned source label: Basal broth. Quantities in notes preserve source
+  preparation and are not final-medium concentrations. No global synonym is added
+  for this context-dependent label.'
+solution_type: COMPLEX_UNDEFINED
+components:
+- component_name: Yeast extract preparation
+  reference_scope: UNMAPPED
+  concentration_value: '180'
+  concentration_unit: ml
+- component_name: Phenol red solution
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ml
+- component_name: Bacitracin
+  reference_scope: UNMAPPED
+  concentration_value: '800'
+  concentration_unit: mg
+- component_name: Meticillin
+  reference_scope: UNMAPPED
+  concentration_value: '800'
+  concentration_unit: mg
+- component_name: Solution1 (TOGO M2228)
+  reference_scope: UNMAPPED
+  concentration_value: '557'
+  concentration_unit: ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2228
+    source_record: TOGO M2228 basal broth
+    notes: Source absolute input amounts retained; no final-volume denominator inferred.
+      Solution1 separately contains water1400ml, BactoBHI15g, PPLO broth without crystalviolet16g
+      and Hanks balanced salts2500ml. Its detailed partial structure remains in captured
+      source.
+  notes: Complete named source-batch input list at this decomposition level; UNMAPPED
+    references do not imply omitted ingredients. Nested stock composition and chemical
+    ambiguities remain separate.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Source absolute input amounts retained; no final-volume denominator inferred.
+    Solution1 separately contains water1400ml, BactoBHI15g, PPLO broth without crystalviolet16g
+    and Hanks balanced salts2500ml. Its detailed partial structure remains in captured
+    source.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.149811+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003180 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003180
+legacy_identifiers:
+- MIM:TOGO_M2228_Basal_Broth
+- kgmicrobe.ingredient:togo_m2228_basal_broth

@@ -5,10 +5,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: mim-queue
 - synonym_text: (add to make medium anoxic)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: QSY9 succinimidyl ester(1+)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -75,11 +75,38 @@ curation_history:
   changes: ontology_id CHEBI:91247 -> CHEBI:91248 while retaining local identifier
     kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution (#321).
   llm_assisted: false
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CORRECTED
+  changes: Mark unrelated QSY9 dye and the preparation instruction as REJECTED_LABEL
+    while preserving their original backfill provenance; no change to the stock identity,
+    unknown concentration or held solute relation.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T17:49:04.460114+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_FORM_PARENT_PREDICATE
+  changes: 'Private exact successor to selected0ca4e6c9 under https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813:
+    CLOSE_MATCH to NARROW_MATCH for the supported solution-of CHEBI91248 relation;
+    truthful LLM evidence/history appended. Preserve the distinct local stock identity,
+    parent ID/label, every old history/evidence object, W07 rejected labels, all source/stock/quantity
+    unknowns, roles and counts. No source application or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0001416; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0001416; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as an L-cysteine hydrochloride hydrate
@@ -89,7 +116,7 @@ ontology_mapping:
   ontology_id: CHEBI:91248
   ontology_label: L-cysteine hydrochloride hydrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#288)
@@ -115,6 +142,24 @@ ontology_mapping:
       hydrate-specific CHEBI:91248 ('L-cysteine hydrochloride hydrate'). The record
       still denotes a prepared solution, not the pure ChEBI compound, so it keeps
       its kgmicrobe.ingredient identifier and closeMatch grade.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813
+    notes: 'Claim-specific current form-of assessment under https://github.com/CultureBotAI/MediaIngredientMech/issues/901#issuecomment-6724895813.
+      JCM680 (https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=680; exact captured
+      HTML SHA25616525b97d468855002dda4489f4b2030d28a9a1d332828cc27a0f2e15b5b07f0)
+      explicitly names L-cysteine hydrochloride monohydrate solution. The active defining
+      CHEBI:91248 term is L-cysteine hydrochloride hydrate, a monohydrate of L-cysteine
+      hydrochloride (full OLS term capture SHA2567ef9e26cec1a5833d216a01df066c0b6a0bfba77bad16db354c690a7a814a683).
+      This remains a local prepared stock, not the pure solute. Current MAPPING_SEMANTICS
+      sections1/3 explicitly permit the solution-of broader-parent relation without
+      is_a or identity equivalence; native NARROW_MATCH therefore publishes skos:broadMatch
+      while retaining the local exact registry row. The historical #342/#321 rationale
+      and evidence are preserved, but no longer justify CLOSE_MATCH under the current
+      contract. The source10mL is an addition dose, not stock concentration; solvent,
+      concentration, stock pH, complete formulation and quantity interpretation remain
+      unknown. No solute CAS, structure, formula or role is assigned to the stock;
+      rejected instruction and QSY9 labels, counts and all original source decisions
+      remain unchanged.'
 mim_id: MIM:0001416
 legacy_identifiers:
 - MIM:L-Cysteine_X_HCl_X_H2O_Solution

@@ -1,0 +1,105 @@
+identifier: kgmicrobe.ingredient:nbrc_925_trace_elements_solution
+preferred_term: NBRC 925 trace elements solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_925_trace_elements_solution
+  ontology_label: NBRC 925 trace elements solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=925
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+notes: 'First dissolve NTA and adjust pH6.5 with NaOH, then add minerals. Final stock
+  pH7.0 is stated without naming a final readjustment reagent or amount; known NaOH
+  is retained unquantified. Closure is UNKNOWN. Stock inputs are not receiving-medium
+  concentrations. These stocks differ at selenium oxidation state/amount and the presence
+  of alum; no cross-recipe equality is inferred. Raw labels retained as occurrence
+  provenance only: [''Trace elements solution*''].'
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003316 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '4.1'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.36'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.09'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.018'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.09'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.017'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.009'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.018'
+  concentration_unit: G
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '1.6'
+  concentration_unit: MG
+- component_name: Na2WO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.6'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: NaOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=925
+    source_record: NBRC 925 trace elements solution
+    notes: Literal preparation inputs; unspecified child forms and amounts stay unmapped.
+      These are not receiving-medium doses or post-reaction speciation.
+    supports: SUPPORT
+  notes: First dissolve NTA and adjust pH6.5 with NaOH, then add minerals. Final stock
+    pH7.0 is stated without naming a final readjustment reagent or amount; known NaOH
+    is retained unquantified. Closure is UNKNOWN. Stock inputs are not receiving-medium
+    concentrations. These stocks differ at selenium oxidation state/amount and the
+    presence of alum; no cross-recipe equality is inferred.
+mim_id: MIM:0003316
+legacy_identifiers:
+- MIM:nbrc_925_trace_elements_solution
+- kgmicrobe.ingredient:nbrc_925_trace_elements_solution

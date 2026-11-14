@@ -16,6 +16,17 @@ ontology_mapping:
     snippet: Several reports have demonstrated that pharmacological concentrations
       of biotin have therapeutic effects on MetS.
     explanation: Auto-proposed; curator should rephrase or remove.
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal d-biotin-spellings
+    notes: D--Biotin preserves the D stereochemical designation despite duplicated
+      dashes. Live CHEBI:15956 contains the corresponding D-biotin identity and structure.
+      The punctuation variant can be attached to the existing biotin owner without
+      asserting a stock identity. D(+)--Biotin preserves the D-(+) optical designation;
+      CHEBI:15956 includes D-(+)-biotin and the matching stereostructure. Double dashes
+      are a formatting variant and can be preserved as an alias without broadening
+      to racemic biotin. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
 synonyms:
 - synonym_text: (alternative)
   synonym_type: RAW_TEXT
@@ -88,8 +99,14 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: unmapped_ols_exact_audit
 - synonym_text: Biotin (1 μg/μL)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: D--Biotin
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+- synonym_text: D(+)--Biotin
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2829
@@ -240,11 +257,38 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Biotin (1 μg/μL)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CORRECTED
+  changes: 'Isolated source-review proposal d-biotin-spellings: added aliases [''D--Biotin'',
+    ''D(+)--Biotin'']; rejected provenance labels [] Subject to independent skeptical
+    review and guarded coordinator integration; inherited full-payload support must
+    not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-06: synonyms[22] ''Biotin (1 μg/μL)'': reject_resolving_identity_preserve_text_and_source.
+    NBRC1604 uses10µl of1µg/µl biotin stock; the concentration belongs to the aliquoted
+    preparation, not the pure biotin owner. Isolated report-only successor; original
+    sealed evidence/history retained. No role, owner/export approval or inherited
+    source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000496; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000496; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 58-85-5

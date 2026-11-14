@@ -1,0 +1,95 @@
+identifier: cas:7446-07-3
+preferred_term: Tellurium dioxide
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:33305
+  ontology_label: tellurium molecular entity
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.chem-info.nite.go.jp/chem/english/ghs/m-nite-7446-07-3e.html
+    notes: CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is
+      subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from
+      elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO.
+      BareTeO is retained as rejected provenance rather than universal dioxide alias.
+      Concentrations at both stock levels remain source-scoped; no downstream export
+      correction is implied.
+chemical_properties:
+  cas_rn: 7446-07-3
+  molecular_formula: O2Te
+  data_source: NITE chemical information; PubChem CID62638
+  retrieval_date: '2026-11-08T05:49:52.389819+00:00'
+synonyms:
+- synonym_text: TeO2
+  synonym_type: EXACT_SYNONYM
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf
+- synonym_text: TeO
+  synonym_type: REJECTED_LABEL
+  source: Frozen CCAP UCM subscript-stripped occurrence; valid monoxide formula in
+    other contexts
+notes: 'CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is subscript-loss
+  corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from elemental telluriumCHEBI30452,
+  telluriteCHEBI30477, and tellurium monoxideTeO. BareTeO is retained as rejected
+  provenance rather than universal dioxide alias. Concentrations at both stock levels
+  remain source-scoped; no downstream export correction is implied. W05-FINAL-CHEM-NEW-01,
+  reported to the coordinator before this isolated fix: exact CAS 7446-07-3 tellurium
+  dioxide has the broader tellurium molecular entity parent CHEBI:33305. Coordinator
+  issue routing is now filed at https://github.com/CultureBotAI/MediaIngredientMech/issues/1240;
+  the separate Tris issue #1238 does not cover this owner. Set NARROW_MATCH so the
+  pinned native builder emits skos:broadMatch for the parent instead of the previous
+  closeMatch. Preserve the exact CAS display and all source/identity holds. The complete
+  native before/after projection is separately recorded; no global grade replacement
+  is implied.'
+curation_history:
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_VERIFIED_COMPOUND
+  changes: CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is
+    subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from
+    elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO.
+    BareTeO is retained as rejected provenance rather than universal dioxide alias.
+    Concentrations at both stock levels remain source-scoped; no downstream export
+    correction is implied.
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. W05-FINAL-CHEM-NEW-01, reported
+    to the coordinator before this isolated fix: exact CAS 7446-07-3 tellurium dioxide
+    has the broader tellurium molecular entity parent CHEBI:33305. Separate coordinator
+    issue routing remains pending; the Tris issue does not cover this owner. Set NARROW_MATCH
+    so the pinned native builder emits skos:broadMatch for the parent instead of the
+    previous closeMatch. Preserve the exact CAS display and all source/identity holds.
+    The complete native before/after projection is separately recorded; no global
+    grade replacement is implied. Report-only candidate; separate final scientific
+    review and coordinator integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:53:34.674470+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Update current issue-routing note after reading filed #1240. Preserve
+    the original before-fix referral and prior history; no scientific, component,
+    identity or grade change.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003187 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003187
+legacy_identifiers:
+- MIM:Tellurium_Dioxide
+- cas:7446-07-3

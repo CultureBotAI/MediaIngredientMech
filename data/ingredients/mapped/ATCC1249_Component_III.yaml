@@ -1,0 +1,102 @@
+identifier: kgmicrobe.ingredient:atcc1249_component_iii
+preferred_term: ATCC 1249 Component III
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: CARBON_SOURCE_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc1249_component_iii
+  ontology_label: ATCC 1249 Component III
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    notes: 'ATCC Medium 1249 Modified Baar medium: Component III defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Component III is prepared separately at pH 7.5 and then mixed with Components
+  I and II. Its generic sequence label is not a universal identity. Raw source labels
+  retained here, with recipe scope: ''Component III''. Generic local labels are not
+  published as global synonyms. Occurrence statistics remain zero until source-specific
+  membership integration; frozen observations are fully recorded in the evidence decisions.
+  Quantities use literal source-batch units, not final culture concentrations. Component
+  references identify compatible active entities only after source-form review. Remaining
+  UNMAPPED components retain their precise form or nested-preparation limits. Component
+  names and quantities remain source-specific; no role or export approval is inherited.'
+components:
+- component_name: Sodium Lactate
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:75228
+  source: 'Literal source component: Sodium Lactate. Issue 1227 IR003 component-specific
+    adjudication: ATCC1249 names sodium lactate without stereochemistry; CHEBI:75228
+    has stereo-unspecified structure, not a sodium L-lactate substitution.'
+- component_name: Yeast Extract
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: FOODON:03315426
+  source: 'Literal source component: Yeast Extract. Issue 1227 IR003 component-specific
+    adjudication: The cited recipe names Yeast Extract; the inspected active catalog
+    and primary ontology identity FOODON:03315426 match this stated chemical form.
+    Source spelling, amount, unit and preparation boundary are preserved; no role,
+    owner-wide or export approval is transferred.'
+- component_name: Deionized water
+  reference_scope: MIM_CATALOG
+  concentration_value: '400.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  component_id: kgmicrobe.ingredient:deionized_water
+  source: 'Literal source component: DI Water. Issue 1227 IR003 component-specific
+    adjudication: ATCC1249 explicitly names DI Water in Component III. Conditional
+    dependency on selected if1201-new-deionized_water, whose preparation identity
+    denotes deionization alone, without resistivity, purity, sterility or distillation
+    assertions. This is a proposed overlay entity, not yet a maintained owner; joint
+    integration and independent review are required. The source grade and 400 ml input
+    are preserved. The component display name uses the equivalent recognized catalog
+    label for native reference validation; the literal source name is preserved here.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    source_record: 'ATCC Medium 1249 Modified Baar medium: Component III'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:01.006217+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined ATCC 1249 Component III with complete immediate constituent
+    enumeration and registry identity. Component III is prepared separately at pH
+    7.5 and then mixed with Components I and II. Its generic sequence label is not
+    a universal identity. Isolated proposal only; independent and coordinator review
+    remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 3 compatible source components to
+    active catalog entities or explicitly conditional selected-proposal entities without
+    copying role or export approval. Earlier history and all source, scientific, role,
+    withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0002961 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0002961
+legacy_identifiers:
+- MIM:ATCC1249_Component_III
+- kgmicrobe.ingredient:atcc1249_component_iii

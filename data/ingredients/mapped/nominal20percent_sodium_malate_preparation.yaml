@@ -1,0 +1,76 @@
+identifier: kgmicrobe.ingredient:nominal20percent_sodium_malate_preparation
+preferred_term: Nominal 20% sodium malate preparation (DSMZ221)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nominal20percent_sodium_malate_preparation
+  ontology_label: Nominal 20% sodium malate preparation (DSMZ221)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium221.pdf
+    notes: DSMZ221 adds25mLof filter-sterilized20%Na-malate after medium sterilization.
+      Nominal20% is source-explicit, but its basis, solvent, sodium stoichiometry
+      and stereochemistry are not. The frozen ingredient1316 use is bound to this
+      preparation context; its L-specific database annotation is not accepted as the
+      component identity. Existing ferric malate stock is a different named solute
+      and pure sodium/disodium malate owners are not this stock. Issues811/868 and
+      all original chemical-owner holds remain. No exact whole-preparation identity
+      is established by inspected named chemical/catalogue owners. Registry scope
+      denotes the preparation, not a pure solute or a fully characterized formulation.
+synonyms: []
+notes: DSMZ221 adds25mLof filter-sterilized20%Na-malate after medium sterilization.
+  Nominal20% is source-explicit, but its basis, solvent, sodium stoichiometry and
+  stereochemistry are not. The frozen ingredient1316 use is bound to this preparation
+  context; its L-specific database annotation is not accepted as the component identity.
+  Existing ferric malate stock is a different named solute and pure sodium/disodium
+  malate owners are not this stock. Issues811/868 and all original chemical-owner
+  holds remain. Raw source labels remain non-resolving provenance in the frozen cases
+  and decision ledger. No exact full-medium formulation relationship, role or release
+  approval.
+components:
+- component_name: Na-malate (salt stoichiometry and stereochemistry unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium221.pdf
+    notes: DSMZ221 adds25mLof filter-sterilized20%Na-malate after medium sterilization.
+      Nominal20% is source-explicit, but its basis, solvent, sodium stoichiometry
+      and stereochemistry are not. The frozen ingredient1316 use is bound to this
+      preparation context; its L-specific database annotation is not accepted as the
+      component identity. Existing ferric malate stock is a different named solute
+      and pure sodium/disodium malate owners are not this stock. Issues811/868 and
+      all original chemical-owner holds remain.
+  notes: Only the source-named solute is established. Carrier and full constituent
+    closure are unknown, so no water or other constituent is inferred.
+curation_history:
+- timestamp: '2026-11-08T08:06:25.211360+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CREATED
+  changes: Issue1201 bounded preparation proposal after actual primary-source and
+    owner-overlap comparison. DSMZ221 adds25mLof filter-sterilized20%Na-malate after
+    medium sterilization. Nominal20% is source-explicit, but its basis, solvent, sodium
+    stoichiometry and stereochemistry are not. The frozen ingredient1316 use is bound
+    to this preparation context; its L-specific database annotation is not accepted
+    as the component identity. Existing ferric malate stock is a different named solute
+    and pure sodium/disodium malate owners are not this stock. Issues811/868 and all
+    original chemical-owner holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003317 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003317
+legacy_identifiers:
+- MIM:nominal20percent_sodium_malate_preparation
+- kgmicrobe.ingredient:nominal20percent_sodium_malate_preparation

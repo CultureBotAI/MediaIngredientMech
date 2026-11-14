@@ -51,11 +51,29 @@ curation_history:
     and amount are unchanged.'
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:01:06.081541+00:00'
+  curator: worker01-uw-borax-dependency-curation
+  action: RESCOPED_COMPONENT
+  changes: 'Proposal only for MIM #1168: components[10] sodium tetraborate decahydrate
+    reference CHEBI:131366 -> CHEBI:38888 follows the source-verified borax owner
+    correction. Mixes row 1612 confirms 0.0177 g/L. Component name, quantity, reference
+    scope, all other components, existing assertions and history are preserved; append
+    targeted source/structural evidence. No global ontology redirect or whole-record
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002583; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002583; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   9 CultureBot media; samples: CAAc, PM, MDC…. No CAS-RN or CHEBI mapping available;
@@ -115,7 +133,7 @@ components:
   concentration_value: '0.025'
   concentration_unit: G_PER_L
 - component_name: sodium tetraborate decahydrate
-  component_id: CHEBI:131366
+  component_id: CHEBI:38888
   reference_scope: MIM_CATALOG
   concentration_value: '0.0177'
   concentration_unit: G_PER_L
@@ -128,6 +146,20 @@ component_assertion:
     source_record: Mixes!1602:1612 UW concentrated base
     notes: CultureBotHT's media definitions Mixes tab defines UW concentrated base
       as an eleven-component 1000X concentrated mineral and trace-element base.
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!A1612:C1612; surrounding complete UW preparation block read
+    notes: Live primary sheet retrieved 2026-11-08T05:00:13.131Z explicitly gives
+      sodium tetraborate decahydrate 0.0177 g/L. Source component name, amount, unit
+      and MIM_CATALOG scope are preserved; only the referenced borax owner identifier
+      is updated.
+  - evidence_type: PUBLICATION
+    source: https://doi.org/10.1107/S1600536808010441
+    source_record: Gainsford et al. 2008, original crystal structure, p. 1
+    notes: Conventional sodium tetraborate decahydrate Na2B4O7·10H2O is structurally
+      Na2[B4O5(OH)4]·8H2O, matching CHEBI:38888. This changes this supplied-form reference
+      only; it does not redirect CHEBI:131366 globally or approve unrelated formulation/role
+      assertions.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:uw_concentrated_base
   ontology_label: UW concentrated base

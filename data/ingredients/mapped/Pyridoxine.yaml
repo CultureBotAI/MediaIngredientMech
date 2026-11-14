@@ -74,6 +74,9 @@ synonyms:
 - synonym_text: Pyridoxin
   synonym_type: RAW_TEXT
   source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: Pyridoxine (B6)
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:93d7544ba2c2e9b9d04070843fb92471c4c5c6656aec03cdbe1a012ebc5a4195
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 61
@@ -140,11 +143,28 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: ADDED_SYNONYMS
+  changes: MediaDive P5 explicitly names Pyridoxine(B6) in its water single stock,
+    and the frozen path is composition/0 of that stock. ChEBI16709 is pyridoxine,
+    not pyridoxal or an assumed hydrochloride. Vitamin-family abbreviation is qualified
+    by the exact compound name; no whole-stock identity or dose is approved. Proposed
+    only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002154; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002154; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 65-23-6

@@ -1,0 +1,144 @@
+identifier: kgmicrobe.ingredient:isp_7_himedia_m362
+preferred_term: ISP 7 medium powder (HiMedia M362)
+synonyms:
+- synonym_text: ISP 7 Medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: ISP 7 Medium (Himedia)
+  synonym_type: CATALOG_VARIANT
+  source: DSMZ1619
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1467); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named ISP 7 medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/ISP_7_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommended value | Evidence/qualification | No
+    ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:48:47.596191+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing ISP7 owner has only DSMZ1619 occurrences explicitly naming HiMedia.
+    Manufacturer M362 recipe corroborates 23.74g powder plus separately added15ml
+    glycerol; powder is distinct from the completed glycerol medium. Isolated proposal
+    only; whole-owner/source/export holds remain and integration requires separate
+    native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002819; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002819; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1467); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing ISP7 owner has only DSMZ1619 occurrences explicitly
+  naming HiMedia. Manufacturer M362 recipe corroborates 23.74g powder plus separately
+  added15ml glycerol; powder is distinct from the completed glycerol medium. The original
+  trace solution lists ferrous sulphate7H2O, copper chloride2H2O, cobalt chloride6H2O,
+  sodium molybdate2H2O, zinc chloride, boric acid, manganese chloride4H2O and sodium
+  tartrate. No nested component flattening or molecular identity inference.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:isp_7_himedia_m362
+  ontology_label: ISP 7 medium powder (HiMedia M362)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://exodocientifica.com.br/_technical-data/M362.pdf
+    notes: Existing ISP7 owner has only DSMZ1619 occurrences explicitly naming HiMedia.
+      Manufacturer M362 recipe corroborates 23.74g powder plus separately added15ml
+      glycerol; powder is distinct from the completed glycerol medium.
+supplied_form:
+- name: ISP Medium No.7 Tyrosine Agar
+  form: powder
+  supplier: HiMedia
+  catalog_number: M362
+  notes: Manufacturer technical data identification; source DSMZ1619 names HiMedia
+    and uses matching23.74g powder reconstitution.
+components:
+- component_name: L-Asparagine
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: L-Tyrosine
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Dipotassium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium sulphate heptahydrate
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Trace salt mixture
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://exodocientifica.com.br/_technical-data/M362.pdf
+    notes: Manufacturer-authored technical data mirrored by distributor. Six major
+      constituents transcribed at standard reconstitution; trace solution listed1ml
+      but its relationship to dry powder and trace-salt amounts is not converted to
+      dry mass. Glycerol15ml is separately added, not part of powder.
+mim_id: MIM:0002819
+legacy_identifiers:
+- MIM:ISP_7_Medium
+- UNMAPPED_0408
+- kgmicrobe.ingredient:isp_7_himedia_m362

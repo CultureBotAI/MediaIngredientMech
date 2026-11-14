@@ -1,0 +1,148 @@
+preferred_term: Hipolypepton
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Hipolypepton (FUJIFILM Wako)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:47:55.832499+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CREATED
+  changes: Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest
+    product distributed by Wako. The manufacturer catalog distinguishes soybean Hipolypepton
+    S/N/NS variants and identifies unqualified Hipolypepton as casein-derived. The
+    recipe alternative to Trypticase remains a choice, not an exact compound-label
+    synonym. Exact isolated payload; no maintained write. All prior scientific/publication
+    holds preserved.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Isolated proposal only; no maintained data or source membership
+    change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T10:35:07.974123+00:00'
+  curator: Codex /root/step7d_science_c
+  action: RECONCILED_SOURCE_PROPOSALS
+  changes: 'Private composition of the two genuine unsuffixed Hipolypepton new-owner
+    proposals under #1193/#1202/#1221/#1237. Preserve original parallel proposal histories
+    and immutable full originals. One readable product-family local handle replaces
+    competing application choices; add only the explicit JCM181 supplier-qualified
+    product alias and retain current catalog/old-lot limits. Do not resolve Trypticase
+    OR, infer final intact-casein parts, copy a seven-name lexical statistic as combined
+    ownership count, or clear the coupled Polypeptone alias/source/release holds.
+    No maintained record was created and distinct complete-candidate review is pending.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T11:02:18.725094+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_BROADER_GROUNDING
+  changes: 'Private successor for independently filed HIPOLYPEPTON-SCI-001, #1202
+    comment6720636341. Replace unexplained self-only FALLBACK_REGISTRY mapping with
+    NARROW_MATCH to the source-supported generic mesh:D010461 Peptones parent, retaining
+    the exact local named-product identity. Full NLM descriptor/concept and Wako unsuffixed
+    casein peptone evidence were read; broader Protein Hydrolysates and MICRO Bacto-scoped
+    annotations were assessed explicitly. Append truthful LLM evidence, preserve every
+    predecessor event and all existing source, OR, SKU/lot, count, role and release
+    limits. No maintained owner or export was changed; distinct complete-successor
+    review and TARGET019 coupling remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003030 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+identifier: kgmicrobe.ingredient:hipolypepton
+ontology_mapping:
+  ontology_id: mesh:D010461
+  ontology_label: Peptones
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf
+    notes: Official HIPOLYPEPTON Series section explicitly identifies the unsuffixed
+      product as casein-derived enzymatically degraded, dried and purified powder,
+      made by Nihon Pharmaceutical and distributed by Wako; SKU392-02115 is the current500g
+      presentation. S/N/NS soybean variants are different products. This is product/process-family
+      identity, not intact casein or a single peptide, nor exact historical lot equality.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+    notes: JCM181 explicitly specifies Hipolypepton (FUJIFILM Wako),5g. Combine that
+      source-qualified preparation with the unsuffixed product-family proposal, not
+      a separate distributor-named identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/ingredient/2060
+    notes: Source ingredient2060 is named Hipolypepton. Identity comparison uses the
+      current official product-family specification; no exact recipe-vintage/SKU or
+      generic Polypeptone equivalence is inferred.
+  - evidence_type: LLM_SUGGESTION
+    source: https://id.nlm.nih.gov/mesh/M0016245.json
+    notes: 'Section3step3 parent correction under #1202/HIPOLYPEPTON-SCI-001. The
+      active NLM Peptones descriptor D010461 names this preferred concept: protein
+      cleavage mixtures from partial acid or enzyme hydrolysis, readily water soluble,
+      with the full conventional nonprecipitation definition retained in the evidence
+      packet. The official Wako catalog explicitly calls unsuffixed Hipolypepton a
+      casein-made peptone produced by enzymatic degradation, purification and drying;
+      its separate unsuffixed Japanese panel corroborates water solubility. This supports
+      a broader generic Peptones relation, not exact product identity or a new lot-specific
+      precipitation/quality assay claim.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf
+    notes: The unsuffixed named Nihon/Wako product remains kgmicrobe.ingredient:hipolypepton.
+      Generic Peptones is the supported closer material parent than Protein Hydrolysates,
+      whose NLM definition includes partial or extensive hydrolysis. MICRO:0000178
+      has an animal-protein definition but also exact Bacto Peptone names and a Bacto-specific
+      source annotation; this packet does not import that vendor/product scope or
+      assign its numerical composition to Hipolypepton. Retain NARROW_MATCH to mesh:D010461
+      so the native row is broadMatch with a separate exact local registry sibling.
+      No fixed peptide composition, intact-casein part, role, historical lot/SKU equality
+      or Trypticase alternative approval follows.
+supplied_form:
+- name: Hipolypepton
+  supplier: Nihon Pharmaceutical; Wako distributor
+  catalog_number: 392-02115
+  form: powder
+  notes: Manufacturer catalog identifies casein-derived enzymatically degraded dried
+    purified powder; distinct S/N/NS soy variants excluded. Contemporary catalog product-family
+    evidence only; historical recipes do not establish this catalogue pack, lot or
+    exact historical formulation.
+notes: 'One reconciled unsuffixed Hipolypepton product-family proposal under #1193/#1202/#1221/#1237,
+  using the readable existing proposed local handle kgmicrobe.ingredient:hipolypepton.
+  Official Wako catalog identifies the Nihon Pharmaceutical casein-derived enzymatic
+  hydrolysate, dried and purified, and distinguishes S/N/NS soybean products. The
+  catalog describes casein sodium as raw material; this does not assert intact casein
+  or sodium caseinate as final has-parts. JCM181 names Hipolypepton (FUJIFILM Wako);
+  MediaDive2060 names Hipolypepton. Historical lot, catalogue/version and quantitative
+  composition remain unspecified. The TOGO M1424 literal Trypticase Peptone (BBL)
+  or Hipolypepton* remains an unresolved recipe choice: this candidate represents
+  only the Hipolypepton alternative, never that complete OR label or Trypticase identity.
+  Original seven-match occurrence_statistics belong to W05''s exact-label query and
+  are retained in its immutable source payload; they are not claimed as a complete
+  combined-owner count. All source cases, occurrence IDs, source histories, unknowns
+  and downstream holds remain in the trace. Current Polypeptone aliases require the
+  already reviewed coupled TARGET019 rejections before application/release; no generic
+  Polypeptone or alternative vendor identity is imported. No roles, fixed peptide
+  inventory, quantitative formulation, supported status or release approval is asserted.'
+mim_id: MIM:0003030
+legacy_identifiers:
+- MIM:Hipolypepton
+- kgmicrobe.ingredient:hipolypepton

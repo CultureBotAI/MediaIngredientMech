@@ -38,7 +38,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Rice starch
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Staerke
   synonym_type: EXACT_SYNONYM
@@ -71,7 +71,7 @@ synonyms:
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
 - synonym_text: Rice starch
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -211,11 +211,26 @@ curation_history:
     starch''. Preserved original text and source metadata. No identity, mapping, role,
     or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Reject rice-specific labels on generic starch; exact rice material has
+    a distinct ontology identity. Proposal only; inherited publication/role/source
+    holds remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002385; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002385; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 9005-25-8

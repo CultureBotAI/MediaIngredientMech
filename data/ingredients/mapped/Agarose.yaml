@@ -9,18 +9,27 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1326
+    notes: NBRC1326 specifies electrophoresis-grade agarose as an optional solidifier.
+      The polymer identity is agarose(CHEBI2511); electrophoresis grade is retained
+      as supplied-form information. Supplier, gel-strength and electroendosmosis specifications
+      are unstated and not inferred. No claim that every commercial agarose grade
+      is interchangeable, no conditional global synonym, and no new grade-specific
+      chemical identifier is needed for this bounded annotation. Existing unrelated
+      owner roles and synonyms are inherited, not newly endorsed.
 synonyms:
 - synonym_text: (for solid medium, alternative)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: 'Role: Solidifying component'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: (1->4)-3,6-anhydro-alpha-L-galactopyranosyl-(1->3)-beta-D-galactopyranan
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Sepharose
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: '[4)-3,6-An-alpha-L-Galp-(1->3)-beta-D-Galp-(1->]n'
   synonym_type: EXACT_SYNONYM
@@ -100,11 +109,47 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CORRECTED
+  changes: NBRC1326 specifies electrophoresis-grade agarose as an optional solidifier.
+    The polymer identity is agarose(CHEBI2511); electrophoresis grade is retained
+    as supplied-form information. Supplier, gel-strength and electroendosmosis specifications
+    are unstated and not inferred. No claim that every commercial agarose grade is
+    interchangeable, no conditional global synonym, and no new grade-specific chemical
+    identifier is needed for this bounded annotation. Existing unrelated owner roles
+    and synonyms are inherited, not newly endorsed. Isolated successor proposal only;
+    published artifacts and maintained data unchanged.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.570459+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: 'Sepharose is retained with its original kg_microbe provenance as REJECTED_LABEL
+    for exact agarose identity: Cytiva71709800AF describes spherical agarose-based
+    chromatography resins, including4B/6B and separately cross-linked CL variants,
+    supplied preswollen in20% ethanol. ChEBI:2511 lists Sepharose as a related synonym,
+    not an exact synonym. This does not assert all Sepharose products are cross-linked.
+    The two detached metadata strings are likewise retained as non-resolving REJECTED_LABEL.
+    Existing CARBON_SOURCE computational prediction and its provisional curator note
+    remain unchanged and unapproved; solidifier use neither validates nor disproves
+    organism-dependent utilization. The prior electrophoresis-grade supplied-form
+    annotation remains bounded to NBRC1326. Historical events are preserved verbatim;
+    this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/1
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.'
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000283; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000283; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 9012-36-6
@@ -124,6 +169,49 @@ nutritional_roles:
       (carbohydrate)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+notes: ' NBRC1326 specifies electrophoresis-grade agarose as an optional solidifier.
+  The polymer identity is agarose(CHEBI2511); electrophoresis grade is retained as
+  supplied-form information. Supplier, gel-strength and electroendosmosis specifications
+  are unstated and not inferred. No claim that every commercial agarose grade is interchangeable,
+  no conditional global synonym, and no new grade-specific chemical identifier is
+  needed for this bounded annotation. Existing unrelated owner roles and synonyms
+  are inherited, not newly endorsed. Prior labels and curation provenance: [{"synonym_text":
+  "(for solid medium, alternative)", "synonym_type": "RAW_TEXT", "source": "CultureMech"},
+  {"synonym_text": "Role: Solidifying component", "synonym_type": "RAW_TEXT", "source":
+  "CultureMech"}, {"synonym_text": "(1->4)-3,6-anhydro-alpha-L-galactopyranosyl-(1->3)-beta-D-galactopyranan",
+  "synonym_type": "EXACT_SYNONYM", "source": "kg_microbe"}, {"synonym_text": "Sepharose",
+  "synonym_type": "EXACT_SYNONYM", "source": "kg_microbe"}, {"synonym_text": "[4)-3,6-An-alpha-L-Galp-(1->3)-beta-D-Galp-(1->]n",
+  "synonym_type": "EXACT_SYNONYM", "source": "kg_microbe"}]. These historical source
+  labels are retained here; no generic label is asserted as an exact source formulation
+  synonym. Sepharose is retained with its original kg_microbe provenance as REJECTED_LABEL
+  for exact agarose identity: Cytiva71709800AF describes spherical agarose-based chromatography
+  resins, including4B/6B and separately cross-linked CL variants, supplied preswollen
+  in20% ethanol. ChEBI:2511 lists Sepharose as a related synonym, not an exact synonym.
+  This does not assert all Sepharose products are cross-linked. The two detached metadata
+  strings are likewise retained as non-resolving REJECTED_LABEL. Existing CARBON_SOURCE
+  computational prediction and its provisional curator note remain unchanged and unapproved;
+  solidifier use neither validates nor disproves organism-dependent utilization. The
+  prior electrophoresis-grade supplied-form annotation remains bounded to NBRC1326.
+  Existing whole-owner, role, source-specific and export holds remain; this isolated
+  proposal does not approve maintained data or releases.'
+supplied_form:
+- name: Agarose, electrophoresis grade
+  form: electrophoresis-grade agarose
+  notes: NBRC1326 optional solidifier; no supplier/catalog or grade performance specifications
+    stated. Identity polymer is agarose; grade remains a source qualification.
+culturemech_reference:
+  medium_id: CultureMech:008622
+  medium_name: sulfer_free_mineral_medium_sfmm
+  relationship: SIMILAR_COMPOSITION
+  source_path: inputs/culturemech/data/normalized_yaml/bacterial/sulfer_free_mineral_medium_sfmm.yaml
+  evidence: NBRC1326 specifies electrophoresis-grade agarose as an optional solidifier.
+    The polymer identity is agarose(CHEBI2511); electrophoresis grade is retained
+    as supplied-form information. Supplier, gel-strength and electroendosmosis specifications
+    are unstated and not inferred. No claim that every commercial agarose grade is
+    interchangeable, no conditional global synonym, and no new grade-specific chemical
+    identifier is needed for this bounded annotation. Existing unrelated owner roles
+    and synonyms are inherited, not newly endorsed. Exact ingredient occurrence CM_OCC:1d1f00ad18f1605bfef99eeed407fc6457f9e8b0d61fd0a70cd8f282643fdc90
+    at ingredients/7; this is not identity to the complete receiving recipe.
 mim_id: MIM:0000283
 legacy_identifiers:
 - MIM:Agarose

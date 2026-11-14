@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:sigma_d1501_calf_thymus_dna_sodium_salt
+preferred_term: Sigma D1501 calf thymus DNA sodium salt
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sigma_d1501_calf_thymus_dna_sodium_salt
+  ontology_label: Sigma D1501 calf thymus DNA sodium salt
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/US/en/product/sigma/d1501
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Exact Sigma D1501 product: calf-thymus DNA sodium salt, TypeI fibers; supplier
+  CAS73049-39-5 describes purchasable material, not a unique whole-molecule structure.
+  Frozen TOGO2785 explicitly citesD1501. Product composition is heterogeneous; no
+  generic DNA identity claim. Raw assigned source label: DNA sodium salt (Sigma, D1501).
+  Quantities in notes preserve source preparation and are not final-medium concentrations.
+  No global synonym is added for this context-dependent label.'
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: 'Propose exact source-qualified nominal ingredient and source partonomy.
+    Exact Sigma D1501 product: calf-thymus DNA sodium salt, TypeI fibers; supplier
+    CAS73049-39-5 describes purchasable material, not a unique whole-molecule structure.
+    Frozen TOGO2785 explicitly citesD1501. Product composition is heterogeneous; no
+    generic DNA identity claim.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.154834+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003165 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+supplied_form:
+- name: Deoxyribonucleic acid sodium salt from calf thymus
+  supplier: Sigma-Aldrich
+  catalog_number: D1501
+  form: Type I, fibers
+  cas_rn: 73049-39-5
+  notes: Primary exact supplier product page; no sequence or whole-material molecular
+    formula inferred.
+mim_id: MIM:0003165
+legacy_identifiers:
+- MIM:Sigma_D1501_Calf_Thymus_DNA_Sodium_Salt
+- kgmicrobe.ingredient:sigma_d1501_calf_thymus_dna_sodium_salt

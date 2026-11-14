@@ -11,6 +11,11 @@ ontology_mapping:
     notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
       MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://pmc.ncbi.nlm.nih.gov/articles/PMC518278/ (Maurice Welsch, Actinomycetin,
+      Journal of Bacteriology 53(1):101–102, 1947; PMID:16561239)
+    notes: Primary preparation description contradicts automatic SINGLE_INGREDIENT
+      classification; no exact compound or formulation promotion.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -43,16 +48,55 @@ curation_history:
     to an external ontology identifier.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CORRECTED
+  changes: The inspected Welsch1947 original pages identify actinomycetin as crude
+    culture filtrate potentially containing multiple active agents. This is sufficient
+    to repair the existing placeholder owner from auto-classified SINGLE_INGREDIENT
+    to UNDEFINED_MIXTURE now. It is not sufficient to promote a molecular identifier
+    or assert one exact product formulation; both independent source cases remain
+    attached. Isolated successor proposal only; no maintained surfaces, roles, source
+    bytes or publication holds changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:04:03.943442+00:00'
+  curator: worker04_root_independent_finding_correction_proposal
+  action: CORRECTED
+  changes: Correct the active Welsch citation to the actual inspected Journal of Bacteriology
+    article, PMC518278 pp101–102; the earlier Bacteriological Reviews11:99–148 citation
+    named a different article. Preserve the supported crude-filtrate/complex-mixture
+    interpretation and all prior events. Isolated proposal only; all source, role,
+    whole-owner and export holds remain.
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000267; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000267; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
 notes: '2026-05-09 placeholder review: retained kgmicrobe.compound primary identifier;
   no exact OLS candidate and no normalized local mapped duplicate were found in the
-  UNKNOWN_TERM no-hit review.'
-ingredient_type: SINGLE_INGREDIENT
+  UNKNOWN_TERM no-hit review. Primary Welsch1947 pp101–102 defines crude culture filtrate,
+  possibly containing more than one active agent. Correct type only; legacy placeholder
+  identity, source holds and lack of exact formulation remain.'
+ingredient_type: UNDEFINED_MIXTURE
 mim_id: MIM:0000267
 legacy_identifiers:
 - MIM:Actinomycetin

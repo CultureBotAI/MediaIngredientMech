@@ -1,0 +1,361 @@
+identifier: kgmicrobe.ingredient:nta_ferric_chloride_trace_element_stock_12_8g_recipe
+preferred_term: NTA–ferric chloride trace-element stock (12.8 g NTA nominal recipe)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nta_ferric_chloride_trace_element_stock_12_8g_recipe
+  ontology_label: NTA–ferric chloride trace-element stock (12.8 g NTA nominal recipe)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    notes: Exact source-defined multicomponent stock registry identity; no whole-stock
+      identity with a single chemical or generic trace-element class.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537
+    notes: One nominal NTA/ferric-chloride input recipe shared by NBRC1020/824 and
+      JCM284. The ten dry amounts in components are exact batch masses expressed in
+      grams, not final concentrations. NBRC prints four of these inputs in milligrams
+      (Co 24 mg, Cu 25 mg, boric acid 10 mg, molybdate 24 mg), exactly normalized
+      in the original proposal to 0.024/0.025/0.01/0.024 g; original source units
+      remain in the bound literal-source profiles. Water and KOH are globally unquantified.
+      NBRC1020/824 list distilled water 1 L and first dissolve NTA in 200 mL water,
+      adjusting that initial solution to pH 6.5 with KOH; the 200 mL is within the
+      listed preparation water. NBRC does not specify final stock pH or an explicit
+      final-volume instruction. JCM284 first dissolves NTA in 200 mL water with KOH
+      to pH 6.5, adds remaining salts, makes the final volume 1.0 L, then readjusts
+      to pH 7.0 with KOH. Only JCM establishes final 1 L/pH 7.0. No 1.2 L water, fixed
+      KOH amount/strength, common final concentration, equal final pH or post-reaction
+      species is asserted. COMPLETE describes the twelve explicitly named immediate
+      inputs (ten dry substances, distilled water, KOH), not analytical speciation.
+      The separate vitamin and Se/W preparations remain excluded. Original evidence
+      items are retained verbatim for their named source-specific origins; they are
+      not inherited final combined-owner approval.
+synonyms:
+- synonym_text: Trace element solution (see Medium No. 284 )
+  synonym_type: REJECTED_LABEL
+  source: JCM284 named stock reference; frozen CultureMech shard06
+- synonym_text: Trace element solution**
+  synonym_type: REJECTED_LABEL
+  source: NBRC1020/824 original raw label; exact source-local occurrence only, not
+    global resolution
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: MIM_CATALOG
+  concentration_value: '12.8'
+  concentration_unit: G
+  component_id: CHEBI:44557
+- component_name: FeCl3·6H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.35'
+  concentration_unit: G
+  component_id: CHEBI:86254
+- component_name: MnCl2·4H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G
+  component_id: CHEBI:86368
+- component_name: Cobalt chloride hexahydrate
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.024'
+  concentration_unit: G
+  component_id: CHEBI:53503
+  source: 'Literal primary recipe input: CoCl2·6H2O. Name serialization uses the current
+    catalog preferred term for CHEBI:53503; exact original formula/name, mass and
+    unit remain in the unmodified source profiles. Sources: NBRC1020/824 and JCM284;
+    C31-NTA-REF-001.'
+- component_name: CaCl2·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G
+  component_id: CHEBI:86158
+- component_name: ZnCl2
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G
+  component_id: CHEBI:49976
+- component_name: CuCl2·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.025'
+  concentration_unit: G
+  component_id: CHEBI:86318
+- component_name: H3BO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G
+  component_id: CHEBI:33118
+- component_name: Na2MoO4·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.024'
+  concentration_unit: G
+  component_id: CHEBI:75213
+- component_name: Nickel (II) chloride hexahydrate
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.12'
+  concentration_unit: G
+  component_id: CHEBI:53542
+  source: 'Literal primary recipe input: NiCl2·6H2O. Name serialization uses the current
+    catalog preferred term for CHEBI:53542; exact original formula/name, mass and
+    unit remain in the unmodified source profiles. Sources: NBRC1020/824 and JCM284;
+    C31-NTA-REF-001.'
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+- component_name: KOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    source_record: NBRC 1020/824 trace element solution
+    notes: Literal preparation inputs; unspecified child forms and amounts stay unmapped.
+      These are not receiving-medium doses or post-reaction speciation.
+    supports: SUPPORT
+  - supports: SUPPORT
+    evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    source_record: Trace element solution
+    notes: Transcribed exact constituent names and source batch amounts from the captured
+      primary table. Component identities deliberately remain UNMAPPED; no hydrate/stereoisomer/registry
+      normalization is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537
+    source_record: CENTRAL31-NTA nominal composition by worker02 /root (LLM-assisted
+      author)
+    notes: One nominal NTA/ferric-chloride input recipe shared by NBRC1020/824 and
+      JCM284. The ten dry amounts in components are exact batch masses expressed in
+      grams, not final concentrations. NBRC prints four of these inputs in milligrams
+      (Co 24 mg, Cu 25 mg, boric acid 10 mg, molybdate 24 mg), exactly normalized
+      in the original proposal to 0.024/0.025/0.01/0.024 g; original source units
+      remain in the bound literal-source profiles. Water and KOH are globally unquantified.
+      NBRC1020/824 list distilled water 1 L and first dissolve NTA in 200 mL water,
+      adjusting that initial solution to pH 6.5 with KOH; the 200 mL is within the
+      listed preparation water. NBRC does not specify final stock pH or an explicit
+      final-volume instruction. JCM284 first dissolves NTA in 200 mL water with KOH
+      to pH 6.5, adds remaining salts, makes the final volume 1.0 L, then readjusts
+      to pH 7.0 with KOH. Only JCM establishes final 1 L/pH 7.0. No 1.2 L water, fixed
+      KOH amount/strength, common final concentration, equal final pH or post-reaction
+      species is asserted. COMPLETE describes the twelve explicitly named immediate
+      inputs (ten dry substances, distilled water, KOH), not analytical speciation.
+      The separate vitamin and Se/W preparations remain excluded. ComponentEvidenceTypeEnum
+      MANUAL_CURATION records this curator-established interpretation; it is not the
+      human-only MappingEvidence enum or independent approval.
+  - evidence_type: MANUAL_CURATION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720405936
+    source_record: 'C31-NTA-REF-001: components[0:10] dry-input references, LLM-assisted
+      author correction'
+    notes: 'Codex /root/next23_context (LLM-assisted author), correcting filed C31-NTA-REF-001
+      after reading the full NBRC1020/824 and JCM284 primary tables and the independently
+      captured ChEBI definitions/formulas/structures. Ground only the ten explicit
+      weighed dry inputs: Nitrilotriacetic acid (NTA) = CHEBI:44557, FeCl3·6H2O =
+      CHEBI:86254, MnCl2·4H2O = CHEBI:86368, CoCl2·6H2O = CHEBI:53503, CaCl2·2H2O
+      = CHEBI:86158, ZnCl2 = CHEBI:49976, CuCl2·2H2O = CHEBI:86318, H3BO3 = CHEBI:33118,
+      Na2MoO4·2H2O = CHEBI:75213, NiCl2·6H2O = CHEBI:53542. These references denote
+      recipe inputs, not post-titration species or whole child-owner approval. The
+      exact source amount strings and G units, source-specific water/pH preparation
+      profiles, all original evidence/history, rejected source-local labels, NBRC1308
+      exclusion and unrelated MediaDive38/40 holds remain. Distilled-water grade and
+      unspecified KOH titrant remain UNMAPPED. The two displayed catalog names retain
+      their exact original CoCl2·6H2O/NiCl2·6H2O literals in component.source and
+      unchanged source profiles per https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720423542.
+      Historical all-UNMAPPED evidence describes the preserved predecessor; this entry
+      supersedes only the ten reference assertions. Ontology query SHA256 ab0e9c5f25c5ba2d44451fd92cd633518840aaa8201cc60c38484a396c4eba68;
+      child/source bindings and this exact successor are retained in the private correction
+      packet. No new primary retrieval, independent approval, role, owner, source-case
+      or release approval is asserted.'
+    supports: SUPPORT
+  notes: One nominal NTA/ferric-chloride input recipe shared by NBRC1020/824 and JCM284.
+    The ten dry amounts in components are exact batch masses expressed in grams, not
+    final concentrations. NBRC prints four of these inputs in milligrams (Co 24 mg,
+    Cu 25 mg, boric acid 10 mg, molybdate 24 mg), exactly normalized in the original
+    proposal to 0.024/0.025/0.01/0.024 g; original source units remain in the bound
+    literal-source profiles. Water and KOH are globally unquantified. NBRC1020/824
+    list distilled water 1 L and first dissolve NTA in 200 mL water, adjusting that
+    initial solution to pH 6.5 with KOH; the 200 mL is within the listed preparation
+    water. NBRC does not specify final stock pH or an explicit final-volume instruction.
+    JCM284 first dissolves NTA in 200 mL water with KOH to pH 6.5, adds remaining
+    salts, makes the final volume 1.0 L, then readjusts to pH 7.0 with KOH. Only JCM
+    establishes final 1 L/pH 7.0. No 1.2 L water, fixed KOH amount/strength, common
+    final concentration, equal final pH or post-reaction species is asserted. COMPLETE
+    describes the twelve explicitly named immediate inputs (ten dry substances, distilled
+    water, KOH), not analytical speciation. The separate vitamin and Se/W preparations
+    remain excluded. Original RECIPE_TRANSCRIPTION assertions and their distinct source
+    scopes are preserved in the following origin profiles and immutable originals.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: "One nominal NTA/ferric-chloride input recipe shared by NBRC1020/824 and JCM284.\
+  \ The ten dry amounts in components are exact batch masses expressed in grams, not\
+  \ final concentrations. NBRC prints four of these inputs in milligrams (Co 24 mg,\
+  \ Cu 25 mg, boric acid 10 mg, molybdate 24 mg), exactly normalized in the original\
+  \ proposal to 0.024/0.025/0.01/0.024 g; original source units remain in the bound\
+  \ literal-source profiles. Water and KOH are globally unquantified. NBRC1020/824\
+  \ list distilled water 1 L and first dissolve NTA in 200 mL water, adjusting that\
+  \ initial solution to pH 6.5 with KOH; the 200 mL is within the listed preparation\
+  \ water. NBRC does not specify final stock pH or an explicit final-volume instruction.\
+  \ JCM284 first dissolves NTA in 200 mL water with KOH to pH 6.5, adds remaining\
+  \ salts, makes the final volume 1.0 L, then readjusts to pH 7.0 with KOH. Only JCM\
+  \ establishes final 1 L/pH 7.0. No 1.2 L water, fixed KOH amount/strength, common\
+  \ final concentration, equal final pH or post-reaction species is asserted. COMPLETE\
+  \ describes the twelve explicitly named immediate inputs (ten dry substances, distilled\
+  \ water, KOH), not analytical speciation. The separate vitamin and Se/W preparations\
+  \ remain excluded.\nPrivate proposal only. Exact occurrence selectors and their\
+  \ original quantities, unsupported/withheld source associations and role/export\
+  \ holds remain in the bound routing ledger. No maintained owner merge, role approval,\
+  \ source-global mapping, source-release or export approval. Final complete candidate\
+  \ bytes require distinct independent review. \nZero occurrence statistics are an\
+  \ unintegrated candidate placeholder, not absence of source observations.\nOriginal\
+  \ w06 proposal A-P-NBRC1020-824-TRACE (5da073388a089a3217a5f20b030702a7140536a1c2a30db3553084ee6350ddf7),\
+  \ source-specific prior claims: Independently compared NBRC1020 and824 complete\
+  \ stock tables and preparation: all inputs and amounts match. Start dissolving NTA\
+  \ in200ml water and adjust pH6.5 with KOH. The200ml is part of listed preparation\
+  \ water, not an additional volume. Final stock pH and KOH amount/strength are not\
+  \ given. The separate Se/W solution in each receiving recipe is excluded. NBRC1020\
+  \ uses2ml and824 uses1ml; doses do not change stock identity. Raw labels retained\
+  \ as occurrence provenance only: ['Trace element solution**'].\nOriginal assertion\
+  \ method/completeness: RECIPE_TRANSCRIPTION/UNKNOWN. Independently compared NBRC1020\
+  \ and824 complete stock tables and preparation: all inputs and amounts match. Start\
+  \ dissolving NTA in200ml water and adjust pH6.5 with KOH. The200ml is part of listed\
+  \ preparation water, not an additional volume. Final stock pH and KOH amount/strength\
+  \ are not given. The separate Se/W solution in each receiving recipe is excluded.\
+  \ NBRC1020 uses2ml and824 uses1ml; doses do not change stock identity.\nLiteral\
+  \ original ordered input profile (amounts apply only to this source batch): [{\"\
+  component_name\":\"Nitrilotriacetic acid (NTA)\",\"reference_scope\":\"UNMAPPED\"\
+  ,\"concentration_value\":\"12.8\",\"concentration_unit\":\"G\"},{\"component_name\"\
+  :\"FeCl3·6H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\":\"1.35\"\
+  ,\"concentration_unit\":\"G\"},{\"component_name\":\"MnCl2·4H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.1\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"CoCl2·6H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.024\",\"concentration_unit\":\"G\"},{\"component_name\":\"CaCl2·2H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.1\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"ZnCl2\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.1\",\"concentration_unit\":\"G\"},{\"component_name\":\"CuCl2·2H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.025\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"H3BO3\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.01\",\"concentration_unit\":\"G\"},{\"component_name\":\"Na2MoO4·2H2O\",\"\
+  reference_scope\":\"UNMAPPED\",\"concentration_value\":\"0.024\",\"concentration_unit\"\
+  :\"G\"},{\"component_name\":\"NiCl2·6H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.12\",\"concentration_unit\":\"G\"},{\"component_name\":\"Distilled water\"\
+  ,\"reference_scope\":\"UNMAPPED\",\"concentration_value\":\"1\",\"concentration_unit\"\
+  :\"L\"},{\"component_name\":\"KOH\",\"reference_scope\":\"UNMAPPED\"}]\n\nOriginal\
+  \ w06 proposal C-P-JCM284-MINERALS (cd1d51c860fc2db38863b07673169764408a821a6e3836780201a7d87e87ebe5),\
+  \ source-specific prior claims: NTA is first dissolved in200ml water with KOH to\
+  \ pH6.5, then salts added and volume brought to1.0L; final pH7.0 with KOH. Water1L\
+  \ denotes total source stock volume, not1L plus200ml. Distinct from284vitamin and\
+  \ Se/W solutions.\nOriginal assertion method/completeness: RECIPE_TRANSCRIPTION/COMPLETE.\
+  \ Amounts are source batch amounts, not inferred final-volume concentrations. Water\
+  \ is retained. Source name/form qualifiers are preserved. Completeness concerns\
+  \ the cited listed formulation; it is not analytical speciation or component-CURIE\
+  \ approval. NTA is first dissolved in200ml water with KOH to pH6.5, then salts added\
+  \ and volume brought to1.0L; final pH7.0 with KOH. Water1L denotes total source\
+  \ stock volume, not1L plus200ml. Distinct from284vitamin and Se/W solutions.\nLiteral\
+  \ original ordered input profile (amounts apply only to this source batch): [{\"\
+  component_name\":\"Nitrilotriacetic acid\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"12.8\",\"concentration_unit\":\"G\"},{\"component_name\":\"FeCl3·6H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"1.35\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"MnCl2·4H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.1\",\"concentration_unit\":\"G\"},{\"component_name\":\"CoCl2·6H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.024\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"CaCl2·2H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.1\",\"concentration_unit\":\"G\"},{\"component_name\":\"ZnCl2\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.1\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"CuCl2·2H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.025\",\"concentration_unit\":\"G\"},{\"component_name\":\"H3BO3\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.01\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"Na2MoO4·2H2O\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"0.024\",\"concentration_unit\":\"G\"},{\"component_name\":\"NiCl2·6H2O\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"0.12\",\"concentration_unit\":\"G\"},{\"\
+  component_name\":\"Distilled water\",\"reference_scope\":\"UNMAPPED\",\"concentration_value\"\
+  :\"1.0\",\"concentration_unit\":\"L\"},{\"component_name\":\"KOH\",\"reference_scope\"\
+  :\"UNMAPPED\",\"concentration_value\":\"as needed for pH adjustment\",\"concentration_unit\"\
+  :\"VARIABLE\"}]"
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed exact source-defined JCM 284 trace element solution with primary
+    recipe component transcription and local registry identity. All child references
+    remain UNMAPPED; no source concentration correction or release change is applied.
+    Isolated proposal only; no publication or inherited support approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:36:24.206519+00:00'
+  curator: all_unmatched_20261107_worker06_successor_v3_research_a
+  action: CORRECTED
+  changes: 'W06-IR-002 / issue1217: retain the exact non-identifying raw labels and
+    their original sources as REJECTED_LABEL; This is JCM284 minerals, not its vitamins
+    or separate Se/W solution. The providerless number lacks the collection and table
+    identity. Retain the qualified name, initial200ml water within the final1L preparation
+    and unquantified KOH adjustments. Components, identifiers, mapping predicates
+    and release holds are unchanged. Source definition: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:06:03.105882+00:00'
+  curator: worker02 /root
+  action: COMPOSED_NOMINAL_PROPOSAL
+  changes: 'Compose two authentic new-owner proposals into this private nominal scope
+    under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720120537.
+    Origins: A-P-NBRC1020-824-TRACE SHA256 5da073388a089a3217a5f20b030702a7140536a1c2a30db3553084ee6350ddf7,
+    C-P-JCM284-MINERALS SHA256 cd1d51c860fc2db38863b07673169764408a821a6e3836780201a7d87e87ebe5.
+    Original histories/evidence remain attributed to their original authors; this
+    is not a maintained-owner merge. One nominal NTA/ferric-chloride input recipe
+    shared by NBRC1020/824 and JCM284. The ten dry amounts in components are exact
+    batch masses expressed in grams, not final concentrations. NBRC prints four of
+    these inputs in milligrams (Co 24 mg, Cu 25 mg, boric acid 10 mg, molybdate 24
+    mg), exactly normalized in the original proposal to 0.024/0.025/0.01/0.024 g;
+    original source units remain in the bound literal-source profiles. Water and KOH
+    are globally unquantified. NBRC1020/824 list distilled water 1 L and first dissolve
+    NTA in 200 mL water, adjusting that initial solution to pH 6.5 with KOH; the 200
+    mL is within the listed preparation water. NBRC does not specify final stock pH
+    or an explicit final-volume instruction. JCM284 first dissolves NTA in 200 mL
+    water with KOH to pH 6.5, adds remaining salts, makes the final volume 1.0 L,
+    then readjusts to pH 7.0 with KOH. Only JCM establishes final 1 L/pH 7.0. No 1.2
+    L water, fixed KOH amount/strength, common final concentration, equal final pH
+    or post-reaction species is asserted. COMPLETE describes the twelve explicitly
+    named immediate inputs (ten dry substances, distilled water, KOH), not analytical
+    speciation. The separate vitamin and Se/W preparations remain excluded. Private
+    proposal only. Exact occurrence selectors and their original quantities, unsupported/withheld
+    source associations and role/export holds remain in the bound routing ledger.
+    No maintained owner merge, role approval, source-global mapping, source-release
+    or export approval. Final complete candidate bytes require distinct independent
+    review. '
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T10:38:00.899347+00:00'
+  curator: Codex coordinator /root/next23_context
+  action: GROUNDED_SOURCE_INPUT_REFERENCES
+  changes: 'Correct C31-NTA-REF-001 under https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720405936:
+    add ten independently supported MIM_CATALOG dry-child references. Per https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720423542,
+    serialize only CoCl2·6H2O and NiCl2·6H2O with their current preferred catalog
+    names, retaining each exact formula literal in component.source and every old
+    source profile. Preserve all masses/units, two unresolved water/KOH children,
+    NBRC1308 and media holds, identity/status, historical evidence and ordered history.
+    Append this truthful LLM-assisted author event and claim-specific component evidence.
+    No maintained write, scientific self-approval or release.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003128 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+mim_id: MIM:0003128
+legacy_identifiers:
+- MIM:NTA_Ferric_Chloride_Trace_Element_Stock_12_8g_Recipe
+- kgmicrobe.ingredient:nta_ferric_chloride_trace_element_stock_12_8g_recipe

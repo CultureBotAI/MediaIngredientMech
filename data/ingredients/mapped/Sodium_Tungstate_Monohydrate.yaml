@@ -1,0 +1,73 @@
+identifier: kgmicrobe.compound:sodium_tungstate_monohydrate
+preferred_term: Sodium tungstate monohydrate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:63940
+  ontology_label: sodium tungstate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=392
+    notes: NBRC392,931 and809 explicitly specify Na2WO4·H2O across four frozen occurrences.
+      No competing formula appears in those source recipes. Absence of an exact ontology/CAS
+      and prevalence of dihydrate are not evidence to discard the stated one-water
+      form. Propose its own registry identity with sodium-tungstate parent; report
+      source-stated hydration without claiming a characterized crystal phase. No supplierCAS
+      or crystal-phase measurement is inferred.
+synonyms:
+- synonym_text: Na2WO4·H2O
+  synonym_type: HYDRATE_FORM
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=392
+notes: 'NBRC392,931 and809 explicitly specify Na2WO4·H2O across four frozen occurrences.
+  No competing formula appears in those source recipes. Absence of an exact ontology/CAS
+  and prevalence of dihydrate are not evidence to discard the stated one-water form.
+  Propose its own registry identity with sodium-tungstate parent; report source-stated
+  hydration without claiming a characterized crystal phase. No supplierCAS or crystal-phase
+  measurement is inferred.
+
+
+  CH-10 qualification: retain this distinct source-stated local hydrate identity and
+  exact formal water count under §3. No measured crystal phase, supplier purity, new
+  CAS or molecular mass is asserted. This does not release the separate source1201/#344/#896
+  owner conflict.'
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: NBRC392,931 and809 explicitly specify Na2WO4·H2O across four frozen occurrences.
+    No competing formula appears in those source recipes. Absence of an exact ontology/CAS
+    and prevalence of dihydrate are not evidence to discard the stated one-water form.
+    Propose its own registry identity with sodium-tungstate parent; report source-stated
+    hydration without claiming a characterized crystal phase. No supplierCAS or crystal-phase
+    measurement is inferred. Isolated successor proposal only; no maintained surfaces,
+    roles, source bytes or publication holds changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. CH-10 qualification: retain this distinct source-stated
+    local hydrate identity and exact formal water count under §3. No measured crystal
+    phase, supplier purity, new CAS or molecular mass is asserted. This does not release
+    the separate source1201/#344/#896 owner conflict. Isolated report-only successor;
+    original sealed evidence/history retained. No role, owner/export approval or inherited
+    source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ASSIGNED_MIM_ID
+  changes: '#1303: assigned MIM:0003172 to the explicitly reviewed distinct concept;
+    mapping and role holds unchanged.'
+  llm_assisted: true
+chemical_properties:
+  data_source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=392
+  molecular_formula: Na2WO4.H2O
+mim_id: MIM:0003172
+legacy_identifiers:
+- MIM:Sodium_Tungstate_Monohydrate
+- kgmicrobe.compound:sodium_tungstate_monohydrate
