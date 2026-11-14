@@ -1,6 +1,6 @@
-generation_date: '2026-11-11T09:13:50.933831+00:00'
-total_count: 3156
-mapped_count: 3086
+generation_date: '2026-11-14T05:30:50.372065+00:00'
+total_count: 3155
+mapped_count: 3085
 unmapped_count: 0
 ingredients:
 - identifier: CHEBI:338412
@@ -5875,7 +5875,7 @@ ingredients:
     ontology_id: CHEBI:15930
     ontology_label: atrazine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: local kg-microbe CHEBI transform
@@ -5952,6 +5952,29 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000068; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T17:31:05.738756+00:00'
+    curator: codex_three_method_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1386: proposed method-only correction EXACT_MATCH -> SYNONYM_MATCH.
+      Record the explicit May11 ontology-synonym route from the long triazine name
+      to atrazine CHEBI:15930. Current captured ChEBI marks that chemical name as
+      related synonym, and the prior #317 ruling explicitly supports this particular
+      identity. Preserve the original source spelling, structure, merged history and
+      rejected old CAS provenance; the merge does not erase the surviving synonym
+      route. Retain the permanent MIM ID, current identity and own-identifier exact
+      predicate, all earlier evidence/history and every residual source, structural-property,
+      role, quantity, preparation and export hold. This proposal grants no scientific,
+      source-binding or release approval; later deterministic confidence is not a
+      measured probability.
+
+
+      Proposal author: Codex /root/seven_cas_current_primary. Independent native scientific
+      review and guarded application remain pending. Exact model identifier was not
+      supplied to this proposal author.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not supplied to this proposal author)
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2120); curated to
     CHEBI:15930 atrazine by local CHEBI exact synonym review on 2026-05-11.
   kg_microbe_node_id: CHEBI:15930
@@ -21996,7 +22019,7 @@ ingredients:
     ontology_id: NCIT:C76253
     ontology_label: Acriflavine
     ontology_source: NCIT
-    mapping_quality: EXACT_MATCH
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -22065,6 +22088,28 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000264; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T17:31:05.738756+00:00'
+    curator: codex_three_method_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1386: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
+      Record the decisive reviewed FDA mixture and PRIMARY-versus-SUPERSEDED CAS adjudication
+      for the current exact NCIT identity; preserve the earlier label-exact parent
+      discovery as historical evidence. The current evidence explicitly supersedes
+      that earlier grounding. This is a method correction, not a new mixture identity
+      or global CAS withdrawal. Retain the permanent MIM ID, current identity and
+      own-identifier exact predicate, all earlier evidence/history and every residual
+      source, structural-property, role, quantity, preparation and export hold. This
+      proposal grants no scientific, source-binding or release approval; later deterministic
+      confidence is not a measured probability.
+
+
+      Proposal author: Codex /root/seven_cas_current_primary. Independent native scientific
+      review and guarded application remain pending. Exact model identifier was not
+      supplied to this proposal author.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not supplied to this proposal author)
   chemical_properties:
     cas_rn: 65589-70-0
     data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
@@ -30447,18 +30492,29 @@ ingredients:
   legacy_identifiers:
   - MIM:Aphidicolin
   - CHEBI:2766
-- identifier: mesh:C061361
+- identifier: mesh:M0170179
   preferred_term: Apidaecin IB
   ontology_mapping:
-    ontology_id: mesh:C061361
-    ontology_label: apidaecin
+    ontology_id: mesh:M0170179
+    ontology_label: apidaecin Ib
     ontology_source: MESH
-    mapping_quality: EXACT_MATCH
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: DATABASE_MATCH
-      source: OAK/OLS exact audit
-      notes: OLS audit matched Apidaecin IB to MESH:C061361 apidaecin through exact
-        synonym apidaecin Ib.
+      source: https://id.nlm.nih.gov/mesh/M0170179
+      notes: '#1377: official NLM2026 RDF declares apidaecin Ib as Concept M0170179
+        with preferred term T200184. Generic apidaecin M0170180 is the preferred concept
+        of C061361 and explicitly has narrower Ib, Ia and II concepts. Capture SHA256
+        c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28. This resolves
+        the named Ib concept locally from the pinned official archive, not by flattening
+        all SCR terms into exact synonyms.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: CultureBotHT compounds_to_cas.csv row 578; https://www.anaspec.com/en/catalog/apidaecin-ib-1-mg~cd4f5992-8c02-4a24-bac1-91b3cfbe0e96
+      notes: '#1377: original source explicitly names Apidaecin IB and AnaSpec AS-62044,
+        with no CAS. The inspected manufacturer page identifies that catalog product
+        as Apidaecin IB. Select the exact Ib concept, preserving source and preparation
+        limits; do not infer CAS, sequence, formula, quantity, lot, purity, activity
+        or source-binding approval from this mapping correction.'
   synonyms:
   - synonym_text: Apidaecin IB
     synonym_type: RAW_TEXT
@@ -30489,14 +30545,42 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000359; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
-  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11.
-  kg_microbe_node_id: mesh:C061361
+  - timestamp: '2026-11-12T10:58:55.163812+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1377: replace the false exact generic SCR identity mesh:C061361 with
+      reviewed exact subtype Concept mesh:M0170179 (apidaecin Ib), established by
+      official NLM2026 hierarchy and the explicit original Ib source/product. Mapping
+      method MANUAL_CURATION records this scope adjudication; an own-identifier SSSOM
+      relation remains exact under MAPPING_SEMANTICS section 0. Remove the stale generic
+      kg_microbe_node_id pointer without inventing a new imported KG node. Remove
+      only the rejected generic external identity from resolving legacy_identifiers
+      under conditional reviewed D2 policy; preserve MIM:0000359, MIM:Apidaecin_IB,
+      all source synonyms, occurrences, earlier events and scientific holds. Do not
+      mint, merge, split, add CAS/sequence/chemistry/procurement/roles/subclass claims,
+      retire holds or claim native application. Not applicable until final reviewed
+      owner-rejection policy and native successor are accepted. Rejected complete
+      original assertion: {"identifier":"mesh:C061361","kg_microbe_node_id":"mesh:C061361","legacy_identifiers":["MIM:Apidaecin_IB","mesh:C061361"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"OLS
+      audit matched Apidaecin IB to MESH:C061361 apidaecin through exact synonym apidaecin
+      Ib.","source":"OAK/OLS exact audit"}],"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C061361","ontology_label":"apidaecin","ontology_source":"MESH"}}.
+      NLM capture SHA256 c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
+  notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11. Current
+    private proposal #1377 corrects the former generic apidaecin exact mapping to
+    the explicitly named Ib NLM Concept mesh:M0170179. The generic mesh:C061361 association
+    is rejected only as this owner identity and remains fully preserved in history;
+    it must not remain a resolving alias or KG-node pointer. Permanent MIM:0000359
+    and the original filename alias remain. No source binding, sequence, CAS, supplied-form,
+    role or export approval is granted. Application depends on the finally reviewed
+    native successor and explicit owner-rejection policy.'
   ingredient_type: SINGLE_INGREDIENT
   mim_id: MIM:0000359
   legacy_identifiers:
   - MIM:Apidaecin_IB
-  - mesh:C061361
 - identifier: CHEBI:18388
   preferred_term: Apigenin
   ontology_mapping:
@@ -30564,7 +30648,7 @@ ingredients:
     ontology_id: CHEBI:2769
     ontology_label: apigenin 7,4'-dimethyl ether
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: MANUAL_CURATION
       source: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601
@@ -30629,6 +30713,29 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000361; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T17:31:05.738756+00:00'
+    curator: codex_three_method_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1386: proposed method-only correction EXACT_MATCH -> SYNONYM_MATCH.
+      Record the explicit reviewed ChEBI/KEGG synonym route to CHEBI:2769. The stored
+      name differs from the primary target label; the prior CHEBI:28887 stem-substring
+      target and imported CAS5728-44-9 were rejected by the existing identity correction.
+      The current ChEBI synonym assertion is related, with the specific identity supported
+      by the retained review; do not call it hasExactSynonym or infer CAS-first grounding.
+      Retain the permanent MIM ID, current identity and own-identifier exact predicate,
+      all earlier evidence/history and every residual source, structural-property,
+      role, quantity, preparation and export hold. This proposal grants no scientific,
+      source-binding or release approval; later deterministic confidence is not a
+      measured probability.
+
+
+      Proposal author: Codex /root/seven_cas_current_primary. Independent native scientific
+      review and guarded application remain pending. Exact model identifier was not
+      supplied to this proposal author.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not supplied to this proposal author)
   chemical_properties:
     cas_rn: 5128-44-9
     molecular_formula: C17H14O5
@@ -78114,19 +78221,32 @@ ingredients:
   legacy_identifiers:
   - MIM:D-histidine
   - CHEBI:27947
-- identifier: cas:138-86-7
+- identifier: CHEBI:15382
   preferred_term: d-limonene
   ontology_mapping:
-    ontology_id: cas:138-86-7
-    ontology_label: d-limonene
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:15382
+    ontology_label: (4R)-limonene
+    ontology_source: CHEBI
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 138-86-7 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
+      source: https://www.ebi.ac.uk/chebi/CHEBI:15382
+      notes: '#1381: released three-star ChEBI (4R)-limonene explicitly defines the
+        R form, lists d-limonene as a synonym and CAS 5989-27-5. Official API capture
+        SHA256 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e. Chemical
+        scope and stereochemical structure corroborate the named concept; no supplier,
+        lot, purity or source-binding assertion is inferred.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: CultureBotHT compounds_to_cas.csv line 728; https://www.ebi.ac.uk/chebi/CHEBI:15382;
+        https://www.ebi.ac.uk/chebi/CHEBI:748872
+      notes: '#1381: original source explicitly names d-limonene separately from its
+        DL-limonene row. Select the defined three-star R-form ontology entry. The
+        secondary two-star ChEMBL-submitted entry has the same stereochemical structure
+        but mixed DL synonym baggage; no such synonyms are imported. MANUAL_CURATION
+        records this explicit adjudication, not an automatic CAS or lexical lookup.
+        The prior malformed registry assertion and source bytes remain fully preserved
+        in curation history and the proposal evidence; all existing release/source/role
+        holds remain.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -78156,15 +78276,39 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000862; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T14:12:07.820445+00:00'
+    curator: codex_two_invalid_cas_source_proposals
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1381: private exact source-correction proposal. The raw source explicitly
+      names d-limonene; official three-star ChEBI15382 and government identity evidence
+      establish the R form/CAS5989-27-5. Resolve the duplicate two-star ChEBI entry
+      by matching structures and the explicit curated definition; do not conflate
+      the separately named DL source or import mixed synonyms. Replace the invalid
+      active primary/grounding/CAS property with CHEBI:15382 and sourced CAS 5989-27-5;
+      mapping quality MANUAL_CURATION records explicit source/form adjudication. Remove
+      only the disproved cas:138-86-7 resolving alias under the reviewed native owner-rejection
+      policy. Preserve MIM:0000862, filename, genuine MIM slug, preferred term, all
+      raw source synonyms, occurrences, original history, and all release/source/role
+      holds. Do not mint, merge, split, import roles/components/structures, approve
+      source bindings or declare publication. This proposal is not native application
+      or scientific release approval. Exact rejected original assertion and original
+      chemical-property provenance: {"chemical_properties":{"cas_rn":"138-86-7","data_source":"CultureBotHT
+      compounds_to_cas.csv","retrieval_date":"2026-04-29T06:51:33.117170+00:00"},"identifier":"cas:138-86-7","legacy_identifiers":["MIM:D-limonene","cas:138-86-7"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"Imported
+      from CultureBotHT. CAS-RN 138-86-7 present, but no CHEBI entry exists (checked
+      OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary
+      if/when CHEBI adds the term.","source":"CultureBotHT"}],"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:138-86-7","ontology_label":"d-limonene","ontology_source":"CAS"}}.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   chemical_properties:
-    cas_rn: 138-86-7
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    cas_rn: 5989-27-5
+    data_source: ChEBI:15382 official compound API; 84afdd2b6ff2743586f1ec3dffa8e807e52800380e7f864c1184e386d690f67e
+    retrieval_date: '2026-11-12T14:01:48.755315+00:00'
   ingredient_type: SINGLE_INGREDIENT
   mim_id: MIM:0000862
   legacy_identifiers:
   - MIM:D-limonene
-  - cas:138-86-7
 - identifier: CHEBI:15588
   preferred_term: D-malate
   synonyms:
@@ -87653,7 +87797,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Lipoate
-    synonym_type: EXACT
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: Thioctic acid
     synonym_type: RAW_TEXT
@@ -87791,6 +87935,31 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0000967; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T10:47:35.021305+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1376: proposed rejection of only the exact alias ''Lipoate'', EXACT
+      -> REJECTED_LABEL, retaining its literal text, original manual source and position.
+      The inspected official ChEBI statements identify CHEBI:30313 as the charge-minus-one
+      conjugate base, distinct from current neutral-acid owner CHEBI:16494. This is
+      positive charge/form evidence, not a spelling heuristic or medium-pH inference.
+      Original CultureBotHT acid/CAS source rows and prior decisions were inspected;
+      they do not justify this anion name as an exact acid identity. Primary finding
+      SHA256 c9e2e2f273933a1c1caa41a1bf0e740441a5b81b2c771173457823de2dc3194c; independent
+      finding decision SHA2565dfee10f99a2cb893cd0a18f9ec4c0d7ee16f5aa857310facb4afc50b95a63e6.
+      Captured ontology/source bytes remain in the pinned proposal evidence; no new
+      retrieval date or source-material procurement claim is introduced. #454/#633
+      generic/racemic acid decision, #634 R/S-only tombstone rejections, #635 routing,
+      #636 roles and #891 membership remain unchanged. Keep permanent ID, preferred
+      name, acid mapping/predicate/quality, stereochemistry, CAS, structures, other
+      aliases, original history, source quantities and roles unchanged. No anion owner,
+      merge, retargeting, source identity, subclass edge, role or export approval
+      follows. Exact afterimage and final generated row still require independent
+      review; all original scientific holds remain.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   kg_microbe_node_id: CHEBI:16494
   chemical_properties:
     cas_rn: 1077-28-7
@@ -134080,68 +134249,6 @@ ingredients:
   legacy_identifiers:
   - MIM:L-alliin
   - CHEBI:2596
-- identifier: CHEBI:86658
-  preferred_term: L-alpha-Phosphatidylcholine
-  ontology_mapping:
-    ontology_id: CHEBI:86658
-    ontology_label: L-alpha-Phosphatidylcholine
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: EBI OLS exact search
-      notes: OLS exact label match after transliterating the Greek-letter source label
-        to "L-alpha-Phosphatidylcholine".
-  synonyms:
-  - synonym_text: L-α-Phosphatidylcholine
-    synonym_type: EXACT_SYNONYM
-    source: mim-queue
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 4
-    media_count: 4
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:2082); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-06T00:00:00+00:00'
-    curator: unmapped_ols_exact_audit
-    action: MAPPED_FROM_UNMAPPED
-    changes: Mapped from the Greek-letter unmapped record to CHEBI:86658 after OLS
-      exact label match on the standard label L-alpha-Phosphatidylcholine; preserved
-      original source label as exact synonym.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.519106+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-11-08T22:01:42+00:00'
-    curator: codex
-    action: ASSIGNED_MIM_ID
-    changes: '#1265: assigned permanent MIM:0001438; retained mapping identifier and
-      legacy aliases.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2082); mapped by
-    OLS exact audit after Greek-letter transliteration.
-  kg_microbe_node_id: CHEBI:86658
-  ingredient_type: SINGLE_INGREDIENT
-  chemical_properties:
-    molecular_weight: 758.075
-    data_source: ChEBI
-    retrieval_date: '2026-05-23T08:31:03.146760+00:00'
-  mim_id: MIM:0001438
-  legacy_identifiers:
-  - MIM:L-alpha-Phosphatidylcholine
-  - CHEBI:86658
 - identifier: CHEBI:16467
   preferred_term: L-Arginine
   ontology_mapping:
@@ -145485,7 +145592,7 @@ ingredients:
     ontology_id: kgmicrobe.ingredient:lysozyme
     ontology_label: Lysozyme
     ontology_source: kgmicrobe.ingredient
-    mapping_quality: EXACT_MATCH
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -145548,6 +145655,20 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0001555; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T10:24:59.438113+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1375: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
+      The current grounding is established by the recorded contextual curator decision,
+      not the superseded lexical grounding. Retain the existing primary identifier,
+      own-identifier exact predicate, all evidence/history, original source scope
+      and unresolved scientific holds. This proposal grants no new scientific, source-binding,
+      role, quantity or export approval. A later regenerated deterministic confidence
+      grade is method provenance, not a measured probability.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   chemical_properties:
     data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
       original source claim preserved in source-records.json
@@ -218784,7 +218905,7 @@ ingredients:
     ontology_id: CHEBI:26580
     ontology_label: rifamycins
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
@@ -218850,6 +218971,20 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0002202; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T10:24:59.438113+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1263: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
+      The current grounding is established by the recorded contextual curator decision,
+      not the superseded lexical grounding. Retain the existing primary identifier,
+      own-identifier exact predicate, all evidence/history, original source scope
+      and unresolved scientific holds. This proposal grants no new scientific, source-binding,
+      role, quantity or export approval. A later regenerated deterministic confidence
+      grade is method provenance, not a measured probability.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
     rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
     resistance. None specifies SV or a CAS. Family indexing does not imply production
@@ -220501,19 +220636,31 @@ ingredients:
   legacy_identifiers:
   - MIM:S-3-hydroxybutyrate
   - CHEBI:11047
-- identifier: cas:9789-92-0
+- identifier: CHEBI:16680
   preferred_term: S-adenosyl Homocysteine
   ontology_mapping:
-    ontology_id: cas:9789-92-0
-    ontology_label: S-adenosyl Homocysteine
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:16680
+    ontology_label: S-adenosyl-L-homocysteine
+    ontology_source: CHEBI
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
+      source: https://www.ebi.ac.uk/chebi/CHEBI:16680
+      notes: '#1382: released three-star ChEBI S-adenosyl-L-homocysteine explicitly
+        defines the L-homocysteine derivative and records CAS 979-92-0. Its exact
+        S-(5''-adenosyl)-L-homocysteine synonym and stereochemical structure match
+        the named source/catalog material. Official API capture SHA256 c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82.
+        No role or optional structure/property bundle is imported.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: CultureBotHT compounds_to_cas.csv line 696; https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/320/327/a9384pis.pdf
+      notes: '#1382: the original row explicitly records Company Sigma, CatalogNumber
+        A9384 and S-(5′-Adenosyl)-L-homocysteine. The inspected official A9384 sheet
+        gives that L material and CAS 979-92-0, corroborating the ontology. Supplier
+        text capture SHA256 aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb.
+        L configuration is supported by the explicit source synonym/catalog; S- is
+        a sulfur locant, not stereochemical evidence. No actual purchased lot, purity,
+        hydrate, salt, solution concentration, occurrence or source-binding approval
+        is inferred. All existing release/source/role holds remain.'
   synonyms:
   - synonym_text: S-(5′-Adenosyl)-L-homocysteine
     synonym_type: EXACT_SYNONYM
@@ -220546,15 +220693,40 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0002227; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T14:12:07.820445+00:00'
+    curator: codex_two_invalid_cas_source_proposals
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1382: private exact source-correction proposal. The original source
+      explicitly supplies Sigma A9384 and the L synonym; the manufacturer product
+      sheet and official ChEBI16680 establish the same L material and CAS979-92-0.
+      Do not infer L configuration from the sulfur S locant or arithmetic checksum
+      repair. Replace the invalid active primary/grounding/CAS property with CHEBI:16680
+      and sourced CAS 979-92-0; mapping quality MANUAL_CURATION records explicit source/form
+      adjudication. Remove only the disproved cas:9789-92-0 resolving alias under
+      the reviewed native owner-rejection policy. Preserve MIM:0002227, filename,
+      genuine MIM slug, preferred term, all raw source synonyms, occurrences, original
+      history, and all release/source/role holds. Do not mint, merge, split, import
+      roles/components/structures, approve source bindings or declare publication.
+      This proposal is not native application or scientific release approval. Exact
+      rejected original assertion and original chemical-property provenance: {"chemical_properties":{"cas_rn":"9789-92-0","data_source":"CultureBotHT
+      compounds_to_cas.csv","retrieval_date":"2026-04-29T06:51:33.117170+00:00"},"identifier":"cas:9789-92-0","legacy_identifiers":["MIM:S-adenosyl_Homocysteine","cas:9789-92-0"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"Imported
+      from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry exists (checked
+      OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary
+      if/when CHEBI adds the term.","source":"CultureBotHT"}],"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:9789-92-0","ontology_label":"S-adenosyl
+      Homocysteine","ontology_source":"CAS"}}.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   chemical_properties:
-    cas_rn: 9789-92-0
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    cas_rn: 979-92-0
+    data_source: ChEBI:16680 official compound API; Sigma A9384 product information;
+      c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82
+    retrieval_date: '2026-11-12T14:05:02.326588+00:00'
   ingredient_type: SINGLE_INGREDIENT
   mim_id: MIM:0002227
   legacy_identifiers:
   - MIM:S-adenosyl_Homocysteine
-  - cas:9789-92-0
 - identifier: CHEBI:6000
   preferred_term: S-Isocorydine ()
   ontology_mapping:
@@ -232860,7 +233032,7 @@ ingredients:
     ontology_id: kgmicrobe.ingredient:sorbitan_monooleate
     ontology_label: Sorbitan Monooleate
     ontology_source: kgmicrobe.ingredient
-    mapping_quality: EXACT_MATCH
+    mapping_quality: MANUAL_CURATION
     match_level: EXACT
     evidence:
     - evidence_type: LEXICAL_MATCH
@@ -232919,6 +233091,20 @@ ingredients:
     changes: '#1265: assigned permanent MIM:0002360; retained mapping identifier and
       legacy aliases.'
     llm_assisted: true
+  - timestamp: '2026-11-12T10:24:59.438113+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1375: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
+      The current grounding is established by the recorded contextual curator decision,
+      not the superseded lexical grounding. Retain the existing primary identifier,
+      own-identifier exact predicate, all evidence/history, original source scope
+      and unresolved scientific holds. This proposal grants no new scientific, source-binding,
+      role, quantity or export approval. A later regenerated deterministic confidence
+      grade is method provenance, not a measured probability.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   notes: Use a local unresolved material identity for the two CultureMech ATCC 416
     recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact
     molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence.
@@ -268184,6 +268370,18 @@ ingredients:
     changes: '#1303: retained MIM:0002742; adopted exact current legacy owner and
       preserved original mint/source history; no scientific approval transferred.'
     llm_assisted: true
+  - timestamp: '2026-11-12T10:24:59.438113+00:00'
+    curator: codex_postadoption_source_proposal
+    action: PROPOSED_SOURCE_CORRECTION
+    changes: '#1367: proposed evidence-wording correction: MeSH M0319657 is an NLM
+      Concept, as explicitly typed in the captured primary JSON, rather than a descriptor.
+      Preserve cas:10294-41-4, mesh:M0319657, NARROW_MATCH/skos:broadMatch, exact
+      hydrate chemistry, all supplied-form/source evidence and all scientific holds.
+      This wording correction grants no new scientific or export approval.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a formula
     shorthand for a cerium nitrate hydrate; left unmapped pending exact formula/CAS
@@ -268205,7 +268403,7 @@ ingredients:
     - evidence_type: CURATOR_JUDGMENT
       source: https://id.nlm.nih.gov/mesh/M0319657.json
       notes: Closest verified eligible broader nitrate family in the captured name/CAS
-        search. NARROW_MATCH emits skos:broadMatch; descriptor is not exact hydrate
+        search. NARROW_MATCH emits skos:broadMatch; NLM Concept is not exact hydrate
         identity. Registry/identity row retains cas:10294-41-4. An exact SNOMED substance
         search hit exists but SNOMED is outside the frozen schema OntologySourceEnum.
   chemical_properties:
