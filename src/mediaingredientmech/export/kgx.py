@@ -23,6 +23,7 @@ from typing import Any
 
 import yaml
 
+from mediaingredientmech.additional_mappings import assertions as additional_assertions
 from mediaingredientmech.additional_mappings import row_assertion
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.stable_ids import MIM_PREFIX, validate_id
@@ -345,6 +346,15 @@ def build_graph(
             own_rows = [r for r in mappings if r["subject_id"] == identifier]
             for row in own_rows:
                 row_assertion(record, row)
+            # Completeness comes from the current owner, including held claims,
+            # rather than only from the SSSOM rows that happened to be supplied.
+            targets = Counter(row["object_id"] for row in own_rows)
+            for assertion in additional_assertions(record):
+                if targets[assertion["ontology_id"]] != 1:
+                    raise ValueError(
+                        "Additional ontology mapping requires one current bound SSSOM row: "
+                        f"{path} / {assertion['ontology_id']}"
+                    )
             if not any(
                 r["object_id"] == record["identifier"] and r["predicate_id"] == "skos:exactMatch"
                 for r in own_rows

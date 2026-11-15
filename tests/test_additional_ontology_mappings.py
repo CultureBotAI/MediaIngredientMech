@@ -1,5 +1,6 @@
 """Explicit secondary assertions preserve identity and cannot bypass review (#1418)."""
 
+import hashlib
 import json
 from copy import deepcopy
 from types import SimpleNamespace
@@ -427,3 +428,103 @@ def test_full_graph_retains_held_claim_but_release_and_supported_subset_refuse_u
         semantic_release.adjudicate_assertions(
             current, decisions, {"evidence": "hash"}, mandatory_open=holds
         )
+
+
+def completeness_table(mappings):
+    return table(mappings).replace(
+        b"# curie_map:\n", b"# curie_map:\n#   mesh: http://id.nlm.nih.gov/mesh/\n"
+    )
+
+
+def completeness_inputs(root, owner, status):
+    """A complete independent source pair; only test cases alter its SSSOM rows."""
+    owner[extra.FIELD][0]["review_status"] = status
+    if status == "WITHHOLD":
+        owner[extra.FIELD][0]["evidence"][0]["supports"] = "REFUTE"
+    unresolved = {
+        "mim_id": "MIM:0000002",
+        "identifier": "UNMAPPED_2",
+        "preferred_term": "Unresolved fixture",
+        "mapping_status": "UNMAPPED",
+    }
+    records = {}
+    for group, name, record in (("mapped", "Owner", owner), ("unmapped", "Unresolved", unresolved)):
+        relative = f"data/ingredients/{group}/{name}.yaml"
+        records[relative] = record
+        path = root / relative
+        path.parent.mkdir(parents=True)
+        path.write_text(yaml.safe_dump(record))
+        collection = root / "data/curated" / f"{group}_ingredients.yaml"
+        collection.parent.mkdir(exist_ok=True)
+        collection.write_text(yaml.safe_dump({"ingredients": [record]}))
+    source = root / "mappings/ingredient_mappings.sssom.tsv"
+    source.parent.mkdir()
+    source.write_bytes(completeness_table(rows(owner)))
+    return records, rows(owner), source
+
+
+@pytest.mark.parametrize("status", ["SUPPORTED", "WITHHOLD"])
+def test_complete_additional_projection_retains_review_inventory(owner, tmp_path, status):
+    from mediaingredientmech.export import kgx, supported_kgx
+    from mediaingredientmech.validation import semantic_release
+
+    records, mappings, _ = completeness_inputs(tmp_path, owner, status)
+    graph, _, _ = kgx.build_graph(tmp_path)
+    semantic_release.verify_projection(records, mappings, list(graph.nodes.values()), graph.edges)
+    assert len(graph.edges) == 2
+    assert {edge["subject"] for edge in graph.edges} == {owner["mim_id"]}
+    current = semantic_release.current_assertions(
+        records, mappings, dict.fromkeys(records, "fixture-hash"), "sssom-hash"
+    )
+    assert len(current) == 2
+    holds = semantic_release.additional_mapping_holds(current, mappings)
+    assert len(holds) == (1 if status == "WITHHOLD" else 0)
+    extra_edge = next(edge for edge in graph.edges if edge["object"] == "mesh:D123456")
+    if status == "WITHHOLD":
+        with pytest.raises(ValueError, match="withheld additional"):
+            supported_kgx._supported(extra_edge)
+        decisions = [{**row, "resolution_status": "OPEN"} for row in current]
+        assert semantic_release.adjudicate_assertions(current, decisions, {}, mandatory_open=holds)
+    else:
+        supported_kgx._supported(extra_edge)
+
+
+@pytest.mark.parametrize("status", ["SUPPORTED", "WITHHOLD"])
+@pytest.mark.parametrize("boundary", ["full_export", "semantic"])
+@pytest.mark.parametrize("change", ["omitted", "duplicated"])
+def test_full_projection_refuses_incomplete_additional_rows(
+    owner, tmp_path, status, boundary, change
+):
+    from mediaingredientmech.export import kgx
+    from mediaingredientmech.validation import semantic_release
+
+    records, mappings, source = completeness_inputs(tmp_path, owner, status)
+    graph, _, _ = kgx.build_graph(tmp_path)
+    # Keep the submitted graph consistent with the reduced/duplicated SSSOM.
+    # The current YAML assertion remains unchanged and is the completeness oracle.
+    if change == "omitted":
+        mappings.pop()
+        graph.edges.pop()
+        del graph.nodes["mesh:D123456"]
+    else:
+        mappings.append(deepcopy(mappings[-1]))
+        duplicate = {key: value for key, value in graph.edges[-1].items() if key != "id"}
+        duplicate["source_position"] = "3"
+        duplicate["id"] = (
+            "MIM.assertion:"
+            + hashlib.sha256(
+                json.dumps(duplicate, sort_keys=True, separators=(",", ":")).encode()
+            ).hexdigest()
+        )
+        graph.edges.append(duplicate)
+    source.write_bytes(completeness_table(mappings))
+    if boundary == "full_export":
+        output = tmp_path / "export"
+        with pytest.raises(ValueError):
+            kgx.export_graph(tmp_path, output)
+        assert not output.exists()
+    else:
+        with pytest.raises(ValueError):
+            semantic_release.verify_projection(
+                records, mappings, list(graph.nodes.values()), graph.edges
+            )

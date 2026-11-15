@@ -16,6 +16,7 @@ from pathlib import Path
 
 import yaml
 
+from mediaingredientmech.additional_mappings import assertions as additional_assertions
 from mediaingredientmech.additional_mappings import embedded_assertion, row_assertion
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.mapping_change_receipts import (
@@ -282,6 +283,15 @@ def verify_projection(records, mappings, nodes, edges):
             own = [row for row in mappings if row["subject_id"] == identifier]
             for row in own:
                 row_assertion(record, row)
+            # Independently require the full owner-declared set, even when an
+            # incomplete SSSOM and graph agree with each other.
+            targets = Counter(row["object_id"] for row in own)
+            for assertion in additional_assertions(record):
+                require(
+                    targets[assertion["ontology_id"]] == 1,
+                    "Additional ontology mapping requires one current bound SSSOM row: "
+                    f"{name} / {assertion['ontology_id']}",
+                )
             require(
                 any(
                     row["object_id"] == record["identifier"]
