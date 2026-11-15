@@ -9,6 +9,8 @@ from typing import Any
 
 import yaml
 
+from mediaingredientmech.additional_mappings import assertions
+
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schema" / "mediaingredientmech.yaml"
 
 # Enum values extracted at module load from the schema YAML so validation
@@ -260,6 +262,11 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
 
     if rec.get("ontology_mapping") is not None:
         _validate_ontology_mapping(rec["ontology_mapping"], f"{path}.ontology_mapping", msgs)
+
+    try:
+        assertions(rec)
+    except ValueError as exc:
+        msgs.append(ValidationMessage("error", f"{path}.additional_ontology_mappings", str(exc)))
 
     for i, syn in enumerate(rec.get("synonyms") or []):
         _validate_synonym(syn, f"{path}.synonyms[{i}]", msgs)

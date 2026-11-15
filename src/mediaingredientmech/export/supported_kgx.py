@@ -19,6 +19,7 @@ from pathlib import Path
 
 import yaml
 
+from mediaingredientmech.additional_mappings import embedded_assertion
 from mediaingredientmech.export.kgx import EDGE_COLUMNS, NODE_COLUMNS
 from mediaingredientmech.sssom_metadata import subset_date_metadata
 from mediaingredientmech.validation.semantic_release import local, require, rows, sha
@@ -53,6 +54,12 @@ def _supported(edge):
     """A disposition cannot override a currently explicit unsupported-evidence flag."""
     claim = json.loads(edge["assertion_json"])
     kind = edge["assertion_type"]
+    if kind == "mapping":
+        assertion = embedded_assertion(claim)
+        require(
+            assertion is None or assertion["review_status"] == "SUPPORTED",
+            "Approved subset contains a withheld additional mapping",
+        )
     if kind.endswith("_roles"):
         evidence = claim.get("evidence") or []
         require(
@@ -252,6 +259,7 @@ def _expected(root: Path, report_path: Path) -> tuple[dict, dict[str, bytes]]:
         "archive_members": ["manifest.json", "mim_nodes.tsv", "mim_edges.tsv"],
         "implementation": {
             "export/supported_kgx.py": sha(Path(__file__)),
+            "additional_mappings.py": sha(Path(__file__).parents[1] / "additional_mappings.py"),
             "sssom_metadata.py": sha(Path(__file__).parents[1] / "sssom_metadata.py"),
             "validation/semantic_release.py": sha(
                 Path(__file__).parents[1] / "validation/semantic_release.py"

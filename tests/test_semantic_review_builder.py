@@ -555,7 +555,7 @@ def main_review(tmp_path, monkeypatch):
         decision = {"source_position": 1, "row_sha256": row_sha256(mapping), "owner_record": owner, "disposition": disposition, "review_reason": "Independent current mapping-only fixture review", "review_evidence": "mapping-evidence.json", "evidence_key": "fixture"}
         write(root / "mapping-evidence.json", {"entries": {"fixture": {**{key: decision[key] for key in ("row_sha256", "disposition", "review_reason")}, "owner_record_sha256": current_sha}}})
         write(root / "reports/sssom_completion_20260921/review.json", {"schema_version": 1, "source_sssom": receipts.SSSOM_SOURCE, "source_sha256": source_sha, "record_inputs": {owner: current_sha}, "inputs": {"mapping-evidence.json": gate.sha(root / "mapping-evidence.json")}, "decisions": [decision]})
-        for relative_path in ("src/mediaingredientmech/validation/semantic_release.py", "src/mediaingredientmech/validation/mapping_change_receipts.py", "src/mediaingredientmech/record_refresh.py", str(PATH.relative_to(PATH.parents[3]))):
+        for relative_path in ("src/mediaingredientmech/additional_mappings.py", "src/mediaingredientmech/validation/semantic_release.py", "src/mediaingredientmech/validation/mapping_change_receipts.py", "src/mediaingredientmech/record_refresh.py", str(PATH.relative_to(PATH.parents[3]))):
             target = root / relative_path
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes((PATH.parents[3] / relative_path).read_bytes())

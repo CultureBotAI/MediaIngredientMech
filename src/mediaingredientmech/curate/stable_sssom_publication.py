@@ -23,6 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from mediaingredientmech.additional_mappings import assertions, row_assertion
 from mediaingredientmech.curate.adoption_filesystem import _new_owner
 from mediaingredientmech.curate.apply_receipt import reserve_receipt_outputs
 from mediaingredientmech.curate.publication_guard import (
@@ -887,6 +888,17 @@ def _selection(loaded):
     api = native()
     _, old_fields, old = read_sssom(Path(CANONICAL), content=loaded.before[CANONICAL].content)
     _, fields, candidate = read_sssom(Path("candidate"), content=loaded.candidate)
+    for record in loaded.records.values():
+        for assertion in assertions(record):
+            if record.get("mapping_status") == "MAPPED" and record.get("ontology_mapping"):
+                matches = [
+                    row
+                    for row in candidate
+                    if row["subject_id"] == assertion["subject_id"]
+                    and row["object_id"] == assertion["ontology_id"]
+                ]
+                require(len(matches) == 1, "complete additional assertion candidate required")
+                row_assertion(record, matches[0])
     require(old_fields == fields, "column migration requires a separate reviewed implementation")
     index = build_record_index(loaded.records)
     old_by_key: dict[tuple[str, str, str], list[dict]] = {}
@@ -917,6 +929,7 @@ def _selection(loaded):
         )
         before_rows = old_by_key.pop(key, [])
         proposed = dict(row)
+        assertion = row_assertion(loaded.records[owner], row)
         # Keep original source vocabulary and comments byte-for-byte as tokens /
         # substrings. Old validation stamps remain in history, not new approval.
         for field, separator in (("source", "|"), ("comment", " ")):
@@ -942,6 +955,9 @@ def _selection(loaded):
                 "reason": None,
             }
         )
+        if assertion is not None and assertion["review_status"] == "WITHHOLD":
+            items[-1]["mandatory_disposition"] = "INSTALL_WITHHOLD"
+            items[-1]["additional_mapping_review"] = assertion
         if position in cas_held:
             obligation = cas_held[position]
             require(
@@ -1492,7 +1508,7 @@ def _outputs(loaded):
         require(
             row.get("mandatory_disposition") is None
             or row["disposition"] == row["mandatory_disposition"],
-            "historical invalid CAS requires INSTALL_WITHHOLD regardless of review votes",
+            "held assertion requires INSTALL_WITHHOLD regardless of review votes",
         )
         row["disposition"], row["reason"] = None, None
     require(expected == draft, "complete derived selection differs; no arbitrary candidate edits")

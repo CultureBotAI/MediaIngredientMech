@@ -310,6 +310,9 @@ def reviewed_bundle(tmp_path):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes((Path(__file__).parents[1] / name).read_bytes())
         inputs.append(name)
+    name = "src/mediaingredientmech/additional_mappings.py"
+    (root / name).write_bytes((Path(__file__).parents[1] / name).read_bytes())
+    inputs.append(name)
     report = {
         "schema_version": 1,
         "mapping_change_receipts": [],

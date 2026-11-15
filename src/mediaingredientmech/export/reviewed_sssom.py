@@ -24,6 +24,7 @@ from pathlib import Path, PurePosixPath
 
 import yaml
 
+from mediaingredientmech.additional_mappings import row_assertion
 from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.review_claims import validate_review_decision
 from mediaingredientmech.sssom_metadata import subset_date_metadata
@@ -625,6 +626,10 @@ def load_review(root: Path, review_path: Path) -> dict:
         if type(position) is not int or not 1 <= position <= len(rows) or position in indexed:
             raise ValueError("Invalid/duplicate review source position")
         row, owner = rows[position - 1], owners[position - 1]
+        assertion = row_assertion(records[owner], row)
+        if assertion is not None and assertion["review_status"] == "WITHHOLD":
+            if decision.get("disposition") != "WITHHOLD":
+                raise ValueError("Additional ontology mapping is held by the current owner")
         validate_review_decision(
             decision,
             row,

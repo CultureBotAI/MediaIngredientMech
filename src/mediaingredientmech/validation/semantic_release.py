@@ -16,6 +16,7 @@ from pathlib import Path
 
 import yaml
 
+from mediaingredientmech.additional_mappings import embedded_assertion, row_assertion
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.mapping_change_receipts import (
     assertion_identity,
@@ -191,7 +192,21 @@ def current_assertions(records, mappings, record_hashes, sssom_sha):
     return result
 
 
-def adjudicate_assertions(expected, dispositions, inputs):
+def additional_mapping_holds(expected, mappings):
+    positions = {
+        str(position)
+        for position, row in enumerate(mappings, 1)
+        if (assertion := embedded_assertion(row)) is not None
+        and assertion["review_status"] == "WITHHOLD"
+    }
+    return {
+        row["assertion_id"]
+        for row in expected
+        if row["assertion_type"] == "mapping" and str(row["source_position"]) in positions
+    }
+
+
+def adjudicate_assertions(expected, dispositions, inputs, *, mandatory_open=()):
     """Every current assertion needs its own current, explicit review disposition."""
     wanted = {row["assertion_id"]: row for row in expected}
     actual = {row["assertion_id"]: row for row in dispositions}
@@ -207,6 +222,10 @@ def adjudicate_assertions(expected, dispositions, inputs):
         )
         status = decision.get("resolution_status")
         require(status in {"APPROVED", "OPEN"}, f"Unknown assertion disposition: {key}")
+        require(
+            key not in mandatory_open or status == "OPEN",
+            "Withheld additional mapping requires OPEN disposition",
+        )
         if status == "OPEN":
             blocking.append(key)
         else:
@@ -261,6 +280,8 @@ def verify_projection(records, mappings, nodes, edges):
                 f"Mapping subject differs from permanent record identity: {name}",
             )
             own = [row for row in mappings if row["subject_id"] == identifier]
+            for row in own:
+                row_assertion(record, row)
             require(
                 any(
                     row["object_id"] == record["identifier"]
@@ -785,6 +806,7 @@ def validate(root: Path, report_path: Path) -> dict:
         "mappings/ingredient_mappings.sssom.tsv",
         report["bundle"] + "/manifest.json",
         "src/mediaingredientmech/validation/semantic_release.py",
+        "src/mediaingredientmech/additional_mappings.py",
         "src/mediaingredientmech/validation/mapping_change_receipts.py",
     }
     if report.get("record_lineage"):
@@ -887,7 +909,12 @@ def validate(root: Path, report_path: Path) -> dict:
         records, mappings, record_hashes, inputs["mappings/ingredient_mappings.sssom.tsv"]
     )
     assertion_decisions = rows(local(root, report["assertion_dispositions"]))
-    blocking_assertions = adjudicate_assertions(current, assertion_decisions, inputs)
+    blocking_assertions = adjudicate_assertions(
+        current,
+        assertion_decisions,
+        inputs,
+        mandatory_open=additional_mapping_holds(current, mappings),
+    )
     hold_document = json.loads(local(root, report["release_holds"]).read_text())
     resolved_lineage = hold_lineage(
         chain,

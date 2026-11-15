@@ -27,6 +27,7 @@ MODULES = (
     "mediaingredientmech.curate.publication_guard",
     "mediaingredientmech.curate.adoption_filesystem",
     "mediaingredientmech.validation.write_validated",
+    "mediaingredientmech.additional_mappings",
     "mediaingredientmech.utils.yaml_handler",
 )
 SCRIPTS = (

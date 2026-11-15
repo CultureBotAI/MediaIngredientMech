@@ -228,13 +228,51 @@ Use `skos:broadMatch` when:
 
 Do **not** use `skos:broadMatch` when:
 
-- A more specific ontology term exists. Find that term and use
-  `skos:exactMatch` instead.
+- A more specific ontology term exists and this is the primary grounding.
+  Find that term and use `skos:exactMatch` instead. A separately evidenced
+  additional assertion follows the distinct contract below.
 - The MIM ingredient is a sibling of the ontology term, not a child.
 - The subject has no validated identity basis (Section 2). Rule B1 requires
   either the complete active permanent-owner/mint/lifecycle proof or the
   applicable historical filename/registry identity row. Neither branch grants
   scientific support to the asymmetric mapping.
+
+### Additional explicitly reviewed external assertions
+
+`ontology_mapping` remains the most-specific supported primary grounding.
+Optional `additional_ontology_mappings` retain separately justified external
+relations on the same permanent `mim_id`. For example, an exact primary target
+can coexist with a separately evidenced `skos:broadMatch` to another ontology
+concept. This is never permission to leave the primary at an inferior target.
+An exact additional assertion requires an exact/synonym primary grounding.
+
+Each additional assertion explicitly carries its permanent `subject_id`, target
+ID and label, ontology source, SKOS predicate, scoped `MappingEvidence`, reviewer,
+timezone-bearing review time, rationale, explicit mapping-method CURIE,
+`llm_assisted` attribution, and `SUPPORTED` or `WITHHOLD` status. Neither the
+reviewer name nor a mapping method implies human approval.
+Evidence must name its source, support disposition, and explanation connecting
+it to this particular owner/target/predicate. Supported assertions need support
+and cannot contain unresolved refutation. Repeated or conflicting targets,
+including the primary grounding or registry identity, are refused. Changing an
+assertion requires a new curation-history event and fresh source and row reviews.
+
+Native stable generation carries the complete assertion as structured JSON in
+the SSSOM comment, with its own evidence sources and reviewer attribution.
+It does not inherit the primary's evidence, synonyms, validation stamps or
+confidence. `WITHHOLD` proposals remain visible as candidate/history rows but
+must remain withheld through canonical selection and ordinary reviewed export.
+The full graph retains the claim for complete review; its assertion disposition
+must stay `OPEN`, and supported graph export refuses to publish it.
+No assertion silently clears source, role, scientific or release holds. The
+ordinary complete-row evidence review is still required even for `SUPPORTED`.
+
+Only explicitly authored targets are generated. There is no automatic ancestor
+expansion, alias activation, subclass projection, owner merge, change to the
+stable-ID registry, or change to the distinct source-to-MIM identity product.
+Records without additional assertions retain the existing single-grounding or
+MIM-only behavior. Additional assertions require permanent identity; the legacy
+filename-identity generator cannot export them.
 
 ### `skos:narrowMatch`
 

@@ -1,7 +1,7 @@
 """Export the active MIM corpus as a provenance-preserving, standalone KGX graph.
 
-Only assertions present in MIM are projected. Parent mappings become child-to-parent
-subclass edges under MIM's declared convention; original SSSOM rows remain intact.
+Only assertions present in MIM are projected. Parent mappings remain typed SKOS
+alignments, never subclass edges; original SSSOM rows remain intact.
 Components are material parts, never identity or recipe-variant relationships.
 """
 
@@ -23,6 +23,7 @@ from typing import Any
 
 import yaml
 
+from mediaingredientmech.additional_mappings import row_assertion
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.stable_ids import MIM_PREFIX, validate_id
 from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
@@ -287,6 +288,7 @@ def build_graph(
         DEFAULT_SCHEMA_PATH.with_name("mech_shared.yaml"),
         package / "sssom_grading.py",
         package / "stable_ids.py",
+        package / "additional_mappings.py",
         package / "validation/component_partonomy.py",
         package / "validation/write_validated.py",
     ]
@@ -341,6 +343,8 @@ def build_graph(
             if subjects != {identifier}:
                 raise ValueError(f"SSSOM subject differs from permanent record identity: {path}")
             own_rows = [r for r in mappings if r["subject_id"] == identifier]
+            for row in own_rows:
+                row_assertion(record, row)
             if not any(
                 r["object_id"] == record["identifier"] and r["predicate_id"] == "skos:exactMatch"
                 for r in own_rows

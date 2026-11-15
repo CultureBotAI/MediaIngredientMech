@@ -553,6 +553,7 @@ def evaluate(root, request_path, *, hold_payload_path=None, assessed=True):
     # verifiers used by this route, including the exact review parser/schema.
     implementation = {
         "src/mediaingredientmech/validation/semantic_release.py",
+        "src/mediaingredientmech/additional_mappings.py",
         "src/mediaingredientmech/validation/mapping_change_receipts.py",
         "src/mediaingredientmech/validation/reviewed_export_route.py",
         "src/mediaingredientmech/identity_projection.py",
