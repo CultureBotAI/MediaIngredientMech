@@ -28,7 +28,7 @@ def prepared(f):
     """Save genuine synthetic technical acceptance for the native prepared delta."""
     f.seal()
     stage = f.target / ".temp/correction-stage"
-    manifest = successor.prepare(f.target, f.path, stage)
+    manifest = getattr(f, "successor_api", successor).prepare(f.target, f.path, stage)
     path = stage / "manifest.json"
     relative = str(path.relative_to(f.target))
     target = {
@@ -61,7 +61,12 @@ def prepared(f):
     previous_root = original.root
     original.root = f.target
     try:
-        report = original.report("correction-technical", [target], sorted(inputs), scientific=False)
+        report = original.report(
+            getattr(f, "review_prefix", "correction-") + "technical",
+            [target],
+            sorted(inputs),
+            scientific=False,
+        )
         budget = manifest["operational_budget"]
         context = json.loads(f.context_path.read_bytes())
         dimensions = {
@@ -95,7 +100,7 @@ def prepared(f):
         pair = original.save_report(report)
     finally:
         original.root = previous_root
-    acceptance = f.target / "correction/acceptance.json"
+    acceptance = f.path.with_name("acceptance.json")
     write(
         acceptance,
         {

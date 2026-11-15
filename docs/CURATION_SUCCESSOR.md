@@ -6,6 +6,44 @@ replays adoption into that checkout nor edits the original receipt. The original
 root, HEAD, origin, captured producer, scientific inputs and native endpoint are
 verified through their own native producer before and after the correction.
 
+An additional correction can select `predecessor.kind: successor` with the same
+closed predecessor fields: actual `identity`, `stage`, `manifest`, `receipt`,
+`producer`, four `publication_beforeimages`, `publication_proof`, and qualified
+`historical_reviews`. The selected successor is reconstructed through **its own
+recorded successor producer**, including producers captured before chain support.
+Every completed hop remains at its actual root, with its original application,
+manifest, inputs, reports and outputs unchanged. The new target is a different
+real checkout; its complete starting owners, aggregates, ledgers and occupied
+lineage marker must equal that verified immediate predecessor. The native writer
+archives and replaces that marker as part of the newly accepted transition.
+
+The chain must end in an actual adoption and may contain at most eight successor
+ancestors. A structural precheck rejects repeated or overlapping roots and
+inconsistent request/manifest/receipt/marker links before recursive native
+execution. Each ancestor then passes its own full native verification; hashing a
+copied receipt, supplying matching owner bytes, or omitting an intermediate hop
+does not supply authority. Original qualified reviews remain exact, and later
+native publication obligations may extend that history. Current selected-owner
+holds must retain the most recent ancestor's exact residual holds, including
+when another owner was corrected in an intervening hop. All complete qualified
+ancestor evidence enters the new scientific context and technical closure.
+
+A prior native publication still requires its actual manifest, receipt and
+producer. Only its verified native mapping archives can authenticate a source
+endpoint whose four mapping paths have since been installed. A source-chain
+reference alone never authorizes different mapping bytes.
+
+To keep an existing delivery branch while preserving a historical endpoint,
+first finish every live invocation in that root. Native identities bind the
+actual path, origin, resolved HEAD, index entries and protected bytes; they do
+not bind a symbolic branch name. Detaching the historical checkout at its exact
+resolved HEAD can therefore free the branch for a distinct successor worktree,
+provided an immediate identity/byte comparison and native verification pass.
+Keep all historical paths and receipts where they were. Integrate reviewed code
+in the new target, verify its complete predecessor baseline, and acquire fresh
+request identity, science, preparation, fit and technical acceptance there. No
+live inspection or application may be moved or repointed during this operation.
+
 The successor starts with the complete adopted owner/aggregate/ID-ledger bytes
 and all four maintained mapping beforeimages, including explicit absences.
 Original records, reviews and qualified historical evidence remain immutable.

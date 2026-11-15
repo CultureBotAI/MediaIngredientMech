@@ -46,12 +46,14 @@ PUBLICATION = (
     "mappings/stable_sssom_publication.json",
 )
 LEDGERS = (str(REGISTRY_PATH), str(LIFECYCLE_PATH))
+MAX_SUCCESSOR_ANCESTRY = 8
 DESCRIPTION = "Exact reviewed source correction; permanent identity and residual holds retained"
 # This finite v1 does not change composition, roles, identity scope or source occurrences.
 EDITABLE = {
     "identifier",
     "mapping_status",
     "ontology_mapping",
+    "additional_ontology_mappings",
     "chemical_properties",
     "kg_microbe_node_id",
     "legacy_identifiers",
@@ -167,8 +169,43 @@ def _check_parents(parents):
         )
 
 
+def _ancestry(target, reference):
+    """Bound the real-root chain before invoking any recursively captured producer.
+
+    This is only a structural precheck. Each endpoint must subsequently pass its
+    own native reconstruction; matching JSON hashes never authorize a transition.
+    """
+    api = native()
+    roots = [target]
+    while True:
+        require(reference["kind"] in {"adoption", "successor"}, "unsupported predecessor kind")
+        root = api.root_path(reference["identity"]["root"], "ancestor")
+        for previous in roots:
+            _disjoint(previous, root)
+        roots.append(root)
+        require(len(roots) <= MAX_SUCCESSOR_ANCESTRY + 2, "successor ancestry limit exceeded")
+        if reference["kind"] == "adoption":
+            require(not os.path.lexists(root / MARKER), "branching or cyclic adoption lineage")
+            return
+        files = api.Inputs(root)
+        manifest = files.ref(reference["manifest"])
+        receipt = files.ref(reference["receipt"])
+        request = files.ref(manifest["request"])
+        marker = api.document(files.read(MARKER))
+        require(
+            marker["root"] == str(root)
+            and marker["request"] == manifest["request"]
+            and marker["predecessor"]
+            == request["predecessor"]
+            == manifest["predecessor"]
+            == receipt["predecessor"],
+            "branching or stale successor ancestry",
+        )
+        reference = request["predecessor"]
+
+
 class Predecessor:
-    """Actual unchanged adoption, executed only through its pinned native loader."""
+    """Unchanged real endpoint, executed through its own recorded native loader."""
 
     def __init__(self, target, reference):
         api = native()
@@ -186,12 +223,13 @@ class Predecessor:
                 "historical_reviews",
             },
         )
-        require(reference["kind"] == "adoption", "exactly one adoption predecessor required")
+        _ancestry(target, reference)
+        self.target = target
+        self.successor = reference["kind"] == "successor"
         api.keys(reference["identity"], {"root", "repository", "origin", "head", "index_sha256"})
         self.root = api.root_path(reference["identity"]["root"], "predecessor")
         _disjoint(target, self.root)
         require(_identity(self.root) == reference["identity"], "predecessor Git identity changed")
-        require(not os.path.lexists(self.root / MARKER), "branching or cyclic predecessor lineage")
         self.reference = copy.deepcopy(reference)
         self.files = api.Inputs(self.root)
         self.manifest = self.files.ref(reference["manifest"])
@@ -208,7 +246,9 @@ class Predecessor:
             "predecessor producer reference differs",
         )
         # The original loader and every executable byte must be part of the original receipt.
-        name = "src/mediaingredientmech/curate/adoption_producer.py"
+        name = "src/mediaingredientmech/curate/" + (
+            "curation_successor_producer.py" if self.successor else "adoption_producer.py"
+        )
         raw = self.files.read(name, reference["producer"]["files"][name])
         loader = types.ModuleType("_curation_original_adoption_" + uuid.uuid4().hex)
         loader.__file__ = str(self.root / name)
@@ -220,31 +260,68 @@ class Predecessor:
             == reference["producer"]["files"],
             "original producer closure differs",
         )
-        self.verify_native()
-        before = {
-            name: FrozenFile.capture(self.root / api.relative(ref["path"]))
-            for name, ref in self.receipt["beforeimages"].items()
-        }
-        self.loaded, checked, held, staged, _ = self.api._prepared(
-            self.root, self.stage, before=before
-        )
-        require(checked == self.manifest, "predecessor manifest changed during capture")
-        self.api._acceptance(self.loaded, held, self.receipt["acceptance"]["path"])
-        self.held = [
-            held,
-            *before.values(),
-            *staged.values(),
-            FrozenFile.capture(self.root / self.receipt["operational_fit"]["path"]),
-        ]
-        self.held.extend(
-            FrozenFile.capture(self.root / api.relative(ref["path"]))
-            for ref in self.receipt["retired_sources"].values()
-        )
-        self.owners = self.api.inventory(self.root)
+        if self.successor:
+            options = {}
+            if reference["publication_proof"] is not None:
+                proof = reference["publication_proof"]
+                publication_receipt = self.files.ref(proof["receipt"])
+                options = {
+                    "publication": {
+                        n: FrozenFile.capture(_path(self.root, r["path"])) if r else None
+                        for n, r in publication_receipt["beforeimages"].items()
+                    },
+                    "publication_receipt": self.files.files[proof["receipt"]["path"]],
+                }
+            self.endpoint = self.api.Endpoint(
+                self.root,
+                {
+                    "schema_version": 1,
+                    "capability": CAPABILITY,
+                    "root": str(self.root),
+                    **{key: reference[key] for key in ("stage", "manifest", "receipt", "producer")},
+                },
+                **options,
+            )
+            self.loaded = self.endpoint.loaded
+            self.held = self.endpoint.held
+            self.source_context = self.loaded.source_context
+            require(
+                all(
+                    spec in reference["historical_reviews"]
+                    for spec in self.loaded.request["predecessor"]["historical_reviews"]
+                ),
+                "inherited qualified review obligations changed",
+            )
+        else:
+            self.verify_native()
+            before = {
+                name: FrozenFile.capture(self.root / api.relative(ref["path"]))
+                for name, ref in self.receipt["beforeimages"].items()
+            }
+            self.loaded, checked, held, staged, _ = self.api._prepared(
+                self.root, self.stage, before=before
+            )
+            require(checked == self.manifest, "predecessor manifest changed during capture")
+            self.api._acceptance(self.loaded, held, self.receipt["acceptance"]["path"])
+            self.held = [
+                held,
+                *before.values(),
+                *staged.values(),
+                FrozenFile.capture(self.root / self.receipt["operational_fit"]["path"]),
+            ]
+            self.held.extend(
+                FrozenFile.capture(self.root / api.relative(ref["path"]))
+                for ref in self.receipt["retired_sources"].values()
+            )
+            self.source_context = self.loaded.context
+        self.owners = api.inventory(self.root)
         self.maintained = {
             **self.owners,
             **{name: FrozenFile.capture(self.root / name) for name in (*api.AGGREGATES, *LEDGERS)},
         }
+        self.marker = FrozenFile.capture(self.root / MARKER) if self.successor else None
+        if self.marker:
+            self.maintained[MARKER] = self.marker
         self.publication = _optional(self.root, PUBLICATION)
         self.publication_parents = _parents(self.root, PUBLICATION)
         require(
@@ -332,6 +409,7 @@ class Predecessor:
             pub._acceptance(publication, held, pub_receipt["acceptance"]["path"])
             self.held.extend([held, *staged.values(), *[f for f in archives.values() if f]])
             self.prior_publication = publication
+            self.publication_api, self.publication_stage = pub, pub_stage
             previous = api.document(self.publication[PUBLICATION[3]].content)
             while previous is not None:
                 require(
@@ -362,9 +440,18 @@ class Predecessor:
                 previous = previous["historical_publication"]
         else:
             require(reference["publication_proof"] is None, "unexpected prior publication proof")
+        if self.successor:
+            self.verify_native()
         self.check()
 
     def verify_native(self):
+        if self.successor:
+            if self.reference["publication_proof"] is not None:
+                proof = self.reference["publication_proof"]
+                return self.publication_api.verify_completed(
+                    self.root, self.publication_stage, self.root / proof["receipt"]["path"]
+                )
+            return self.endpoint.verify_native()
         result = self.api.verify_completed(
             self.root, self.stage, self.root / self.reference["receipt"]["path"]
         )
@@ -375,6 +462,9 @@ class Predecessor:
         return result
 
     def check(self):
+        # Keep the terminal adoption's marker absence live even when an older
+        # captured successor producer did not retain that negative observation.
+        _ancestry(self.target, self.reference)
         require(
             _identity(self.root) == self.reference["identity"], "predecessor Git context changed"
         )
@@ -382,7 +472,7 @@ class Predecessor:
         self.files.verify()
         self.loaded.check()
         require(
-            native().hashes(self.api.inventory(self.root)) == native().hashes(self.owners),
+            native().hashes(native().inventory(self.root)) == native().hashes(self.owners),
             "predecessor owner membership changed",
         )
         for frozen in (*self.maintained.values(), *self.held):
@@ -395,12 +485,25 @@ class Predecessor:
             require(_identity(inputs.root) == spec["identity"], "historical root changed")
             inputs.verify()
 
+    def inherited_holds(self, mim_id):
+        if not self.successor:
+            return None
+        op = self.loaded.operations.get(mim_id)
+        if op is not None:
+            return op["residual_holds"]
+        # Older recorded producers need not implement this new helper.
+        predecessor = self.loaded.predecessor
+        method = getattr(predecessor, "inherited_holds", None)
+        return method(mim_id) if method else None
+
     def closure(self):
-        groups: dict[str, dict[str, str | None]] = {}
+        groups: dict[str, dict[str, str | None]] = (
+            copy.deepcopy(self.loaded.predecessor.closure()) if self.successor else {}
+        )
         for root, files in [
             (self.root, self.files.files),
             (self.loaded.inputs.root, self.loaded.inputs.files),
-            (self.loaded.legacy.root, self.loaded.legacy.files),
+            *([] if self.successor else [(self.loaded.legacy.root, self.loaded.legacy.files)]),
             (self.root, self.maintained),
             *[(i.root, i.files) for _, i, _ in self.history],
         ]:
@@ -414,9 +517,9 @@ class Predecessor:
                 )
                 group[key] = pin
         for f in self.held:
-            groups.setdefault(str(self.root), {})[
-                str(f.path.relative_to(self.root))
-            ] = native().sha(f.content)
+            groups.setdefault(str(self.root), {})[str(f.path.relative_to(self.root))] = (
+                native().sha(f.content)
+            )
         for name, f in self.publication.items():
             groups.setdefault(str(self.root), {})[name] = native().sha(f.content) if f else None
         for name, frozen in self.loaded.claw.files.items():
@@ -429,9 +532,9 @@ class Predecessor:
                 *p.history_files,
                 *p.adoption_files,
             ):
-                groups.setdefault("absolute_prior_publication_evidence", {})[
-                    str(frozen.path)
-                ] = native().sha(frozen.content)
+                groups.setdefault("absolute_prior_publication_evidence", {})[str(frozen.path)] = (
+                    native().sha(frozen.content)
+                )
         return groups
 
 
@@ -502,8 +605,9 @@ def _validate_change(loaded, operation, before, after):
         operation["residual_holds"] == operation["inherited_holds"],
         "hold retirement is outside successor v1",
     )
-    old_aliases, new_aliases = set(before.get("legacy_identifiers", [])), set(
-        after.get("legacy_identifiers", [])
+    old_aliases, new_aliases = (
+        set(before.get("legacy_identifiers", [])),
+        set(after.get("legacy_identifiers", [])),
     )
     rejected = operation["rejected_identifiers"]
     require(
@@ -676,14 +780,25 @@ class Loaded:
             _optional_hashes(self.publication) == req["predecessor"]["publication_beforeimages"],
             "starting publication history differs",
         )
-        self.marker = (before or {}).get(MARKER)
-        require(self.marker is None, "unexpected old lineage marker")
-        if after_inventory is None:
-            require(not os.path.lexists(self.root / MARKER), "occupied successor marker")
+        self.marker = (
+            (before or {}).get(MARKER)
+            if after_inventory is not None
+            else _optional(self.root, (MARKER,))[MARKER]
+        )
+        expected_marker = self.predecessor.marker
+        require(
+            (self.marker is None and expected_marker is None)
+            or (
+                self.marker is not None
+                and expected_marker is not None
+                and self.marker.content == expected_marker.content
+            ),
+            "starting successor marker differs from verified predecessor",
+        )
         self.after_inventory = after_inventory
         self.source_context = self.inputs.ref(req["source_context"])
         require(
-            self.source_context == self.predecessor.loaded.context,
+            self.source_context == self.predecessor.source_context,
             "original source/origin/hold context changed",
         )
         self.claw = api.Claw(req["claw_root"])
@@ -732,6 +847,11 @@ class Loaded:
             require(op["evidence"], "correction evidence required")
             for ref in op["evidence"]:
                 self.inputs.read(ref["path"], ref["sha256"])
+            inherited = self.predecessor.inherited_holds(op["mim_id"])
+            require(
+                inherited is None or op["inherited_holds"] == inherited,
+                "prior successor residual holds changed or omitted",
+            )
             delta = _validate_change(self, op, records[name], after)
             if after.get("identifier") != records[name].get("identifier"):
                 aliases = index.aliases.get(after.get("identifier"), ())
@@ -824,7 +944,7 @@ class Loaded:
                 api.hashes(api.inventory(self.root)) == api.hashes(self.owners),
                 "target owner inventory changed",
             )
-            require(not os.path.lexists(self.root / MARKER), "successor marker appeared")
+            _optional_check(self.root, {MARKER: self.marker})
         elif states is None:
             self.inputs.verify(mutable)
             require(
@@ -1130,7 +1250,8 @@ def _states(loaded):
         **loaded.owners,
         **{n: loaded.inputs.files[n] for n in (*native().AGGREGATES, *LEDGERS)},
         **loaded.publication,
-        **{n: None for n in (*loaded.moves.values(), MARKER) if n not in loaded.owners},
+        **{n: None for n in loaded.moves.values() if n not in loaded.owners},
+        MARKER: loaded.marker,
     }
 
 

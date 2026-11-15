@@ -19,8 +19,9 @@ def ref(root, path):
 
 
 class SuccessorFixture:
-    def __init__(self, tmp, monkeypatch, *, publication_baseline=False):
+    def __init__(self, tmp, monkeypatch, *, publication_baseline=False, predecessor_sources=None):
         extra = {name: ROOT / name for name in {*successor._CAPTURE.files, *pub._CAPTURE.files}}
+        extra.update(predecessor_sources or {})
         self.original = completed_adoption(tmp / "original", monkeypatch, additional_sources=extra)
         original = self.original.root
         if publication_baseline:
@@ -168,7 +169,7 @@ class SuccessorFixture:
         write(self.path, self.request)
 
     def seal(self):
-        view = successor.inspect(self.target, self.path)
+        view = getattr(self, "successor_api", successor).inspect(self.target, self.path)
         for key, path in (("context", self.context_path), ("payloads", self.payloads_path)):
             write(path, view[key])
             self.request[key] = ref(self.target, path)
@@ -191,7 +192,9 @@ class SuccessorFixture:
                 for k in ("context", "payloads", "source_context", "operational_policy")
             ]
             inputs += [op["before"]["path"], op["proposal"]["path"], "primary.txt"]
-            report = f.report("correction-" + role, [target], inputs)
+            report = f.report(
+                getattr(self, "review_prefix", "correction-") + role, [target], inputs
+            )
             report["verdict"] = "pass"
             dims = {
                 "curation_action": "apply_exact_source_delta",
