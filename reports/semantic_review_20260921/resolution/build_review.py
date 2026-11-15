@@ -22,6 +22,7 @@ from mediaingredientmech.validation.mapping_change_receipts import (
 )
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
+    additional_mapping_holds,
     adjudicate_findings,
     current_assertions,
     evidence_gaps,
@@ -465,6 +466,7 @@ def main():
                    historical_evidence,
                    release_holds_path,
                    ROOT / "src/mediaingredientmech/validation/semantic_release.py",
+                   ROOT / "src/mediaingredientmech/additional_mappings.py",
                    ROOT / "src/mediaingredientmech/record_refresh.py",
                    ROOT / "src/mediaingredientmech/validation/mapping_change_receipts.py"]
     proof_files.append(mapping_review_path)
@@ -477,7 +479,9 @@ def main():
     inputs.update(chain["input_hashes"])
     blocking = adjudicate_findings(rows(BASE / "findings.tsv"), decisions, records, hashes, inputs,
                                    baseline_hashes=historical["inputs"], lineage=lineage)
-    blocking_assertions = adjudicate_assertions(current_assertions(records, mappings, hashes, sha(sssom_path)), assertion_rows, inputs)
+    current = current_assertions(records, mappings, hashes, sha(sssom_path))
+    blocking_assertions = adjudicate_assertions(current, assertion_rows, inputs,
+                                              mandatory_open=additional_mapping_holds(current, mappings))
     gaps = evidence_gaps(records)
     report = dict(schema_version=1, release_verdict="FAIL" if blocking or blocking_assertions or gaps else "PASS",
                   baseline_manifest=relative(BASE / "manifest.json"), baseline_findings=relative(BASE / "findings.tsv"),

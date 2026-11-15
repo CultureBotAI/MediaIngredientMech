@@ -70,6 +70,7 @@ CODE_PATHS = (Path(__file__), Path(guarded.__file__), ROOT / "scripts/bump_sssom
               ROOT / "src/mediaingredientmech/curate/apply_receipt.py",
               ROOT / "src/mediaingredientmech/curate/curation_event.py",
               ROOT / "src/mediaingredientmech/validation/write_validated.py",
+              ROOT / "src/mediaingredientmech/additional_mappings.py",
               ROOT / "src/mediaingredientmech/schema/mediaingredientmech.yaml")
 _LOADED_CODE = {p: p.read_bytes() for p in CODE_PATHS}
 

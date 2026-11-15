@@ -48,6 +48,7 @@ VERIFIERS = tuple(
         "ingredient_bundle_contract.py",
         "validation/mapping_change_receipts.py",
         "export/reviewed_sssom.py",
+        "additional_mappings.py",
         "curie.py",
         "mapping_scope.py",
         "review_claims.py",

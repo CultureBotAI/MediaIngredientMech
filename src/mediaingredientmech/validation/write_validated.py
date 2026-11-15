@@ -39,6 +39,8 @@ from linkml.validator import Validator
 from linkml.validator.plugins import JsonschemaValidationPlugin
 from linkml.validator.report import Severity, ValidationResult
 
+from mediaingredientmech.additional_mappings import assertions
+
 DEFAULT_SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schema" / "mediaingredientmech.yaml"
 
 _VALIDATORS: dict[Path, Validator] = {}
@@ -105,7 +107,19 @@ def validate_ingredient(
     validator = _get_validator(schema_path)
     tc = target_class or infer_target_class(record)
     report = validator.validate(record, target_class=tc)
-    return [r for r in report.results if r.severity == Severity.ERROR]
+    errors = [r for r in report.results if r.severity == Severity.ERROR]
+    records = record.get("ingredients", []) if tc == "IngredientCollection" else [record]
+    for item in records:
+        if isinstance(item, dict):
+            try:
+                assertions(item)
+            except ValueError as exc:
+                errors.append(
+                    ValidationResult(
+                        type="additional_mapping", severity=Severity.ERROR, message=str(exc)
+                    )
+                )
+    return errors
 
 
 def write_validated_ingredient(

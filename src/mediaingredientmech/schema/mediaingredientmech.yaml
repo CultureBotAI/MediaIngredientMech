@@ -144,6 +144,17 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Alternative names and raw text variants
+      additional_ontology_mappings:
+        range: AdditionalOntologyMapping
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Independently reviewed external assertions on this permanent owner.
+          Never a substitute for the most-specific primary ontology_mapping,
+          a source identity, an alias, or automatic ancestor expansion.
+        bindings:
+          - binds_value_of: ontology_id
+            obligation_level: REQUIRED
       mapping_status:
         range: MappingStatusEnum
         required: true
@@ -420,6 +431,60 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Evidence supporting this mapping
+
+  AdditionalOntologyMapping:
+    description: >-
+      One explicitly reviewed external assertion. WITHHOLD preserves the proposal
+      and its evidence but cannot enter supported export. Native cross-field
+      validation binds subject_id to mim_id and refuses conflicting targets.
+    attributes:
+      subject_id:
+        required: true
+        pattern: '^MIM:[0-9]{7}$'
+        description: Permanent mim_id of the owner reviewed for this assertion
+      ontology_id:
+        required: true
+        pattern: '^(CHEBI|FOODON|ENVO|UBERON|NCIT|mesh|BTO|MICRO):[A-Za-z0-9][A-Za-z0-9._~-]*$'
+        description: Explicit external ontology target; no inferred ancestors
+      ontology_label:
+        required: true
+        slot_uri: rdfs:label
+        description: Reviewed canonical label of the target
+      ontology_source:
+        required: true
+        range: OntologySourceEnum
+      predicate_id:
+        required: true
+        range: AdditionalMappingPredicateEnum
+      review_status:
+        required: true
+        range: AdditionalMappingReviewEnum
+      reviewed_by:
+        required: true
+        description: Identity of the reviewer who assessed this exact assertion
+      reviewed_at:
+        required: true
+        range: datetime
+      review_note:
+        required: true
+        description: Claim-specific rationale; does not clear other holds
+      llm_assisted:
+        required: true
+        range: boolean
+        description: Whether an LLM assisted this assessment; never infer human approval
+      mapping_justification:
+        required: true
+        pattern: '^semapv:[A-Za-z][A-Za-z0-9_]*$'
+        description: Explicitly assessed SSSOM mapping method; never inherited from primary
+      evidence:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: MappingEvidence
+        description: >-
+          Evidence for this exact owner/target/predicate. Each entry needs source,
+          supports and explanation. SUPPORTED requires supporting evidence and
+          no refutation; withheld proposals preserve contrary evidence.
 
   ChemicalProperties:
     description: Chemical structure and properties for CHEBI-mapped ingredients
@@ -1203,6 +1268,24 @@ enums:
         description: Assertion or observation obtained from a database or curated data resource.
       OTHER:
         description: A known study or data-source type outside these categories; explain it in notes or explanation.
+
+  AdditionalMappingPredicateEnum:
+    permissible_values:
+      skos:exactMatch:
+        description: Exact external identity, without replacing the MIM owner
+      skos:closeMatch:
+        description: Similarity without identity
+      skos:broadMatch:
+        description: The external target is broader than the MIM owner
+      skos:narrowMatch:
+        description: The external target is narrower than the MIM owner
+
+  AdditionalMappingReviewEnum:
+    permissible_values:
+      SUPPORTED:
+        description: Reviewed support; ordinary complete-row release review is still required
+      WITHHOLD:
+        description: Retained proposal that must stay out of supported export
 
   MappingStatusEnum:
     permissible_values:

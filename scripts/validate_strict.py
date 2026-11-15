@@ -165,6 +165,16 @@ def validate_one(path: Path) -> list[dict]:
         }]
 
     rows = []
+    if historical is None:
+        from mediaingredientmech.additional_mappings import assertions
+        records = instance.get("ingredients", []) if target_class == "IngredientCollection" else [instance]
+        for record in records:
+            if isinstance(record, dict):
+                try:
+                    assertions(record)
+                except ValueError as exc:
+                    rows.append({"file": str(path), "layer": "schema", "category": "additional_mapping",
+                                 "detail": "", "path": "additional_ontology_mappings", "message": str(exc)})
     for result in report.results:
         if result.severity != Severity.ERROR:
             continue

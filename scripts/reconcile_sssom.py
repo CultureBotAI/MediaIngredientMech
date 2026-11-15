@@ -55,6 +55,7 @@ from mediaingredientmech.sssom_grading import (  # noqa: E402
     justification_for,
 )
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
+from mediaingredientmech.additional_mappings import assertions, row_assertion  # noqa: E402
 
 # Object-id prefixes that denote an ONTOLOGY mapping row (vs a registry/identity
 # row such as cas: / kgmicrobe.*). The stale ontology row must be recognised by
@@ -117,6 +118,7 @@ def validate_stable_subjects(curated: dict, rows: list[dict]) -> None:
 
 
 def find_drift(curated: dict, rows: list[dict]) -> dict[str, list]:
+    _additional_rows(curated, rows)
     by_label: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
         by_label[row["subject_label"]].append(row)
@@ -242,9 +244,32 @@ def row_grade(row: dict) -> tuple[str, str, str]:
     )
 
 
+def _additional_rows(curated, rows):
+    """Refuse missing/stale extra claims; never rewrite them into the primary."""
+    extra = set()
+    by_subject = defaultdict(list)
+    for row in rows:
+        by_subject[row["subject_id"]].append(row)
+    for record in curated["ingredients"]:
+        values = assertions(record)
+        if record.get("mapping_status") != "MAPPED":
+            continue
+        owner_rows = by_subject[record.get("mim_id")]
+        for row in owner_rows:
+            row_assertion(record, row)
+        for item in values:
+            matches = [row for row in owner_rows if row["object_id"] == item["ontology_id"]]
+            if len(matches) != 1:
+                raise ValueError("Additional ontology mapping requires one current native row")
+            row_assertion(record, matches[0])
+            extra.add((item["subject_id"], item["ontology_id"]))
+    return extra
+
+
 def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int, int]:
     header, col_line, data_lines, rows = _read_sssom()
     validate_stable_subjects(curated, rows)
+    extra = _additional_rows(curated, rows)
     cols = col_line.rstrip("\n").split("\t")
     idx = {c: i for i, c in enumerate(cols)}
     expected = expected_mappings(curated)
@@ -257,6 +282,8 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int, int]:
     # "...for narrowMatch subject ... parent mesh:Dxxx").
     remap: dict[str, tuple[str, str, str, str]] = {}
     for r in rows:
+        if (r["subject_id"], r["object_id"]) in extra:
+            continue
         term = r["subject_label"]
         if term in expected and _is_ontology_row(r["object_id"]):
             new_id = expected[term]["ontology_id"]
@@ -272,6 +299,9 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int, int]:
             out.append(ln)
             continue
         f = ln.rstrip("\n").split("\t")
+        if (f[idx["subject_id"]], f[idx["object_id"]]) in extra:
+            out.append(ln)
+            continue
         term = f[idx["subject_label"]]
         if term not in expected:
             n_orphan += 1  # orphan subject: drop all of its rows

@@ -265,6 +265,7 @@ def code_inputs() -> dict[Path, bytes]:
         ROOT / "src/mediaingredientmech/curate/apply_receipt.py",
         ROOT / "src/mediaingredientmech/curate/curation_event.py",
         ROOT / "src/mediaingredientmech/validation/write_validated.py",
+        ROOT / "src/mediaingredientmech/additional_mappings.py",
         ROOT / "src/mediaingredientmech/schema/mediaingredientmech.yaml",
     ]
     return {path: regular(path) for path in paths}
