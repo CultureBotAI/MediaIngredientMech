@@ -7,9 +7,12 @@ A source correction preserves publication beforeimages and adds no release appro
 from __future__ import annotations
 
 import argparse
+import base64
 import builtins
 import copy
 import os
+import subprocess
+import sys
 import time
 import types
 import uuid
@@ -206,6 +209,108 @@ def _ancestry(target, reference):
         reference = request["predecessor"]
 
 
+_REPLAY_LAUNCH = (
+    "import sys; exec(compile(sys.argv[1], sys.argv[2], 'exec'), "
+    "{'__name__': '__main__', '__file__': sys.argv[2]})"
+)
+# This interpreter bootstrap is part of this captured source, not a replacement
+# for any historical producer. Only stdlib code runs before the entire inherited
+# file/ancestor snapshot is checked. The original replay and Claw transformations
+# then execute from their authenticated buffers in the fresh native child.
+_REPLAY_BOOTSTRAP = r"""
+import base64, builtins, hashlib, io, json, os, stat, subprocess, sys, types
+from pathlib import Path
+
+envelope = json.load(sys.stdin)
+files = {name: {**value, "content": base64.b64decode(value["content"], validate=True)}
+         for name, value in envelope["files"].items()}
+def require(value, message):
+    if not value:
+        raise ValueError("Authenticated replay child: " + message)
+def identity(info):
+    return [info.st_dev, info.st_ino]
+def location(path, value):
+    require(not any(p.is_symlink() for p in (path, *path.parents)), "filesystem alias")
+    for name, expected in value["parents"]:
+        require(identity(Path(name).stat()) == expected, "input parent changed")
+    info = path.lstat()
+    require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1, "file alias")
+    require(identity(info) == value["identity"], "file identity changed")
+def git(root, *args):
+    result = subprocess.run(["git", "--no-optional-locks", *args], cwd=root,
+                            capture_output=True, timeout=60)
+    require(result.returncode == 0, "Git identity unavailable")
+    return result.stdout
+def verify():
+    for root, expected in envelope["identities"].items():
+        require(os.path.samefile(root, git(root, "rev-parse", "--show-toplevel").decode().strip()),
+                "Git root changed")
+        require(git(root, "remote", "get-url", "origin").decode().strip() == expected["origin"]
+                and git(root, "rev-parse", "HEAD").decode().strip() == expected["head"]
+                and hashlib.sha256(git(root, "ls-files", "--stage", "-z")).hexdigest()
+                    == expected["index_sha256"], "Git identity changed")
+    for root, expected in envelope["heads"].items():
+        require(git(root, "rev-parse", "HEAD").decode().strip() == expected, "Claw HEAD changed")
+    for name in envelope["absences"]:
+        require(not os.path.lexists(name), "unexpected lineage marker")
+    for name, value in files.items():
+        path = Path(name)
+        location(path, value)
+        descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+        with os.fdopen(descriptor, "rb") as stream:
+            info = os.fstat(stream.fileno())
+            require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1
+                    and identity(info) == value["identity"], "opened file identity changed")
+            require(stream.read() == value["content"], "captured input changed")
+            info = os.fstat(stream.fileno())
+            require(info.st_nlink == 1 and identity(info) == value["identity"], "opened file changed")
+        location(path, value)
+
+verify()
+original_compile, original_exec, original_import = compile, exec, __import__
+compiled = {}
+private = types.ModuleType("builtins")
+private.__dict__.update(vars(builtins))
+private_subprocess = types.ModuleType("subprocess")
+private_subprocess.__dict__.update(vars(subprocess))
+def guarded_run(args, **kwargs):
+    require(isinstance(args, (list, tuple)) and args and args[0] == "git",
+            "unsupported nested producer child invocation")
+    return subprocess.run(args, **kwargs)
+private_subprocess.run = guarded_run
+def guarded_import(name, globals=None, locals=None, fromlist=(), level=0):
+    if name == "builtins" and level == 0:
+        return private
+    if name == "subprocess" and level == 0:
+        return private_subprocess
+    return original_import(name, globals, locals, fromlist, level)
+def guarded_compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1, **kwargs):
+    name = str(Path(filename).absolute())
+    require(name in envelope["code"], "unrecorded producer compilation: " + name)
+    verify()
+    captured = files[name]["content"]
+    supplied = source.encode("utf-8") if isinstance(source, str) else source
+    require(supplied == captured, "producer reread differs from authenticated buffer")
+    result = original_compile(captured, name, mode, flags, dont_inherit, optimize, **kwargs)
+    compiled[id(result)] = result
+    return result
+def guarded_exec(code, globals=None, locals=None, *, closure=None):
+    require(isinstance(code, types.CodeType) and compiled.get(id(code)) is code,
+            "execution requires authenticated compilation")
+    verify()
+    require(isinstance(globals, dict), "explicit producer namespace required")
+    globals.setdefault("__builtins__", private.__dict__)
+    return original_exec(code, globals, locals, **({"closure": closure} if closure else {}))
+private.__dict__.update(compile=guarded_compile, exec=guarded_exec, __import__=guarded_import)
+entry = envelope["entry"]
+sys.argv = [entry]
+sys.stdin = io.TextIOWrapper(io.BytesIO(base64.b64decode(envelope["input"], validate=True)))
+guarded_exec(guarded_compile(files[entry]["content"], entry, "exec"),
+             {"__name__": "__main__", "__file__": entry, "__builtins__": private.__dict__})
+verify()
+"""
+
+
 class _ProducerBytes:
     """Execute recorded producers from authenticated buffers, never a late reread.
 
@@ -244,6 +349,12 @@ class _ProducerBytes:
         self.builtins.__dict__.update(
             compile=self.compile, exec=self.execute, __import__=self.imported
         )
+        self.parent = getattr(subprocess, "_authenticated_producer_guard", None)
+        self._run = self.parent._run if self.parent is not None else subprocess.run
+        self.subprocess = types.ModuleType("subprocess")
+        self.subprocess.__dict__.update(vars(subprocess))
+        self.subprocess.run = self.run
+        self.subprocess._authenticated_producer_guard = self
         self.verify()
 
     def verify(self):
@@ -262,7 +373,66 @@ class _ProducerBytes:
     def imported(self, name, globals=None, locals=None, fromlist=(), level=0):
         if level == 0 and name == "builtins":
             return self.builtins
+        if level == 0 and name == "subprocess":
+            return self.subprocess
         return self._import(name, globals, locals, fromlist, level)
+
+    def run(self, args, **kwargs):
+        # Native Git reads are not producer execution and must not recurse into
+        # verify(), which itself checks Git provenance through these imports.
+        if isinstance(args, (list, tuple)) and args and args[0] == "git":
+            return self._run(args, **kwargs)
+        require(
+            isinstance(args, (list, tuple))
+            and len(args) == 5
+            and args[:3] == [sys.executable, "-c", _REPLAY_LAUNCH]
+            and isinstance(kwargs.get("input"), bytes)
+            and not kwargs.get("shell"),
+            "unsupported recorded producer child invocation",
+        )
+        entry = Path(args[4]).absolute()
+        require(
+            entry in self.files
+            and entry.as_posix().endswith("/src/mediaingredientmech/curate/stable_sssom_replay.py")
+            and args[3].encode("utf-8") == self.files[entry].content,
+            "recorded replay child source differs",
+        )
+        guards, current = [], self
+        while current is not None:
+            guards.append(current)
+            current = current.parent
+        envelope = {
+            "entry": str(entry),
+            "input": base64.b64encode(kwargs["input"]).decode("ascii"),
+            "files": {},
+            "code": [],
+            "identities": {},
+            "heads": {},
+            "absences": [],
+        }
+        for guard in guards:
+            guard.verify()
+            for frozen in (*guard.files.values(), *guard.metadata):
+                value = {
+                    "content": base64.b64encode(frozen.content).decode("ascii"),
+                    "identity": list(frozen.identity),
+                    "parents": [[str(path), list(identity)] for path, identity in frozen.parents],
+                }
+                previous = envelope["files"].setdefault(str(frozen.path), value)
+                require(previous == value, "conflicting inherited replay capture")
+            envelope["code"].extend(str(path) for path in guard.files)
+            for field in ("identities", "heads"):
+                for root, value in getattr(guard, field).items():
+                    previous = envelope[field].setdefault(str(root), value)
+                    require(previous == value, "conflicting inherited replay identity")
+            envelope["absences"].extend(str(path) for path in guard.absences)
+        result = self._run(
+            [sys.executable, "-c", _REPLAY_BOOTSTRAP],
+            **{**kwargs, "input": native().encoded(envelope)},
+        )
+        for guard in guards:
+            guard.verify()
+        return result
 
     def compile(self, source, filename, mode, flags=0, dont_inherit=False, optimize=-1, **kwargs):
         path = Path(filename).absolute()
