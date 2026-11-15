@@ -63,6 +63,16 @@ jobs:
           path: .temp/native-claw
           persist-credentials: false
 
+      # Additional-assertion integration uses its reviewed producer without
+      # changing the governance pin or historical campaign inputs (#1426).
+      - name: Checkout reviewed additional-assertion producer
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: 7070392fcb5e31282499a599f7147b56b96e5aca
+          path: .temp/additional-assertion-claw
+          persist-credentials: false
+
       # The worktree recipe regression test needs the real just executable.
       - uses: extractions/setup-just@v3
 
@@ -86,6 +96,7 @@ jobs:
       - name: Run pytest
         env:
           CLAW_SRC: ${{ github.workspace }}/.temp/native-claw/src
+          MIM_ADDITIONAL_ASSERTION_CLAW_SRC: ${{ github.workspace }}/.temp/additional-assertion-claw/src
         run: uv run --with pytest --with pytest-cov pytest
 
       - name: Enforce maintained-package coverage

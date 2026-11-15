@@ -60,6 +60,12 @@ def replay(request):
         native.KGM_UNIFIED_TSV,
         native.MIM_PUBLISHED_SSSOM,
     }
+    # The selected producer determines the input contract. New producers record
+    # this helper even when absent; old c1 producers never captured this path.
+    additional_source = root / "src/mediaingredientmech/additional_mappings.py"
+    has_additional_contract = hasattr(native._STABLE_PRODUCER, "additional_mapping_contract")
+    if has_additional_contract:
+        expected.add(additional_source)
     proposal_ref = request.get("registry_retirement_proposal")
     retirement = None
     if proposal_ref is not None:
@@ -86,6 +92,11 @@ def replay(request):
         )
     if set(snapshot) != expected:
         raise ValueError("complete native generation input membership differs")
+    row_options = {}
+    if has_additional_contract:
+        row_options["additional_contract"] = native._STABLE_PRODUCER.additional_mapping_contract(
+            snapshot[additional_source], additional_source
+        )
     records = {
         path: record
         for directory in directories
@@ -135,7 +146,8 @@ def replay(request):
             kg_labels = native.load_kgm_labels(kg_file)
         rows: list[dict] = []
         suppressions: list[Any] = []
-        for path, record in records.items():
+        for path in sorted(records):
+            record = records[path]
             rows.extend(
                 native._row_from_yaml(
                     path,
@@ -148,6 +160,7 @@ def replay(request):
                     suppressions=suppressions,
                     stable_subject=subjects[path],
                     registry_objects=compatibility.get(subjects[path], ()),
+                    **row_options,
                 )
             )
         # Same native ordering and subject/object dedup as _build_candidate.
@@ -197,7 +210,7 @@ def replay(request):
         },
         "producer_binding_scope": "source entrypoint plus captured local dependency graph; "
         "trusted caller/interpreter, not cryptographic runtime attestation",
-        "mapped_record_paths": [str(path) for path in records],
+        "mapped_record_paths": [str(path) for path in sorted(records)],
         "source_revisions": request["source_revisions"],
         "canonical_label_resolution": dict(sorted(labels.items())),
         "policy_evidence": list(native.OWNED_NAME_EVIDENCE),
