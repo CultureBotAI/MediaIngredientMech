@@ -63,11 +63,20 @@ SIDECAR_FIELDS = (
 _CAPTURE: Any = globals().get("_PRODUCER_CAPTURE")
 _ADOPTION: Any = None
 SOURCE_HANDOFF = "native-source-publication-handoff-v1"
-# This counterpart implements the completed-endpoint branch of this exact
-# source guard. A successor revision needs a new reviewed counterpart, never
-# an inferred exemption based on a claimed version string (#1401).
+# This counterpart implements the completed-endpoint branches of these exact
+# source guards. Both retain the same owner/input/archive/identity contract;
+# the repeat-curation source additionally retains authenticated ancestry and
+# producer execution, rechecked through source.predecessor below (#1423).
+# Another revision needs an explicitly reviewed counterpart, never an inferred
+# exemption based on a claimed version string (#1401).
 SOURCE_HANDOFF_SOURCE = "src/mediaingredientmech/curate/curation_successor.py"
-SOURCE_HANDOFF_SOURCE_SHA = "6b34ede05a681531d07715ea68a847692b90c51f25a0884d6f8a577eecd13766"
+SOURCE_HANDOFF_SOURCE_SHA = "a5ac25dbdbbbb0fecb88a3d7fb3a0bc338175be98ac09d71ae8e52644c28cd1b"
+SOURCE_HANDOFF_SOURCE_SHAS = frozenset(
+    {
+        "6b34ede05a681531d07715ea68a847692b90c51f25a0884d6f8a577eecd13766",  # #1401
+        SOURCE_HANDOFF_SOURCE_SHA,  # #1373, #1420, #1423
+    }
+)
 
 
 def native():
@@ -162,8 +171,8 @@ class _SourcePublicationGuard:
         self.capture.verify()
         actual = {name: self.api.sha(raw) for name, (raw, _) in self.capture.files.items()}
         require(
-            actual.get(SOURCE_HANDOFF_SOURCE) == SOURCE_HANDOFF_SOURCE_SHA
-            and self.producer["source_sha256"] == SOURCE_HANDOFF_SOURCE_SHA
+            actual.get(SOURCE_HANDOFF_SOURCE) in SOURCE_HANDOFF_SOURCE_SHAS
+            and self.producer["source_sha256"] == actual[SOURCE_HANDOFF_SOURCE]
             and self.producer["files"] == actual
             and self.producer["runtime"] == self.capture.runtime,
             "unsupported source handoff executable/dependency/runtime",
@@ -214,7 +223,7 @@ class _SourcePublicationGuard:
         return {
             "capability": SOURCE_HANDOFF,
             "source_manifest": self.endpoint.reference["manifest"],
-            "source_sha256": SOURCE_HANDOFF_SOURCE_SHA,
+            "source_sha256": self.producer["source_sha256"],
             "source_files": self.producer["files"],
             "source_runtime": self.producer["runtime"],
             "current_owner_inventory_sha256": self.api.digest(self.owners),
@@ -667,8 +676,9 @@ def generate(
             not os.path.lexists(root / "data/curation_successor.json"),
             "explicit successor endpoint required",
         )
-        adoption_stage, adoption_receipt = _path(root, adoption_stage), _path(
-            root, adoption_receipt
+        adoption_stage, adoption_receipt = (
+            _path(root, adoption_stage),
+            _path(root, adoption_receipt),
         )
         api.verify_completed(root, adoption_stage, adoption_receipt)
         adopted, adoption_files = _adoption_capture(root, adoption_stage, adoption_receipt)
@@ -915,7 +925,7 @@ def _selection(loaded):
                 *(entry["row"].get(field, "") for entry in before_rows),
                 row.get(field, ""),
             ]:
-                for token in (value.split("|") if field == "source" else [value]):
+                for token in value.split("|") if field == "source" else [value]:
                     if token and token not in values:
                         values.append(token)
             proposed[field] = separator.join(values)

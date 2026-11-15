@@ -41,6 +41,19 @@ unchanged loader, helper namespaces, native imports and dynamic exporter scripts
 wrong bytes, aliases and late replacement fail before that dependency executes.
 The original native reconstruction and terminal verification still run, including
 their runtime, source, scientific, lease and output checks.
+The recorded publication replay also retains this boundary in its fresh Python
+child: the child checks all initial file/ancestor identities and receives the
+authenticated buffers before importing any recorded dependency. The captured
+historical replay script and Claw transformations stay byte-for-byte unchanged;
+their complete input membership and output comparisons remain mandatory.
+
+Canonical publication has an explicit counterpart for the original source
+implementation and this repaired source (#1423). It records the actual selected
+source hash and still requires exact captured closure and runtime equality.
+An unknown source revision, even with consistently rehashed producer metadata,
+requires a separately reviewed counterpart. Further combined implementation
+changes require qualification and native correction-to-publication testing;
+an existing supported hash never grants approval to future source bytes.
 
 To keep an existing delivery branch while preserving a historical endpoint,
 first finish every live invocation in that root. Native identities bind the
