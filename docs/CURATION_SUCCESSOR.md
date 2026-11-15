@@ -33,6 +33,15 @@ producer. Only its verified native mapping archives can authenticate a source
 endpoint whose four mapping paths have since been installed. A source-chain
 reference alone never authorizes different mapping bytes.
 
+Before executing a historical loader, the successor authenticates every file in
+the recorded producer closure, with initial file and ancestor identities. Its
+private compiler/executor passes the authenticated captured buffers through the
+unchanged loader, helper namespaces, native imports and dynamic exporter scripts
+(#1420). An unchecked reread cannot become executable input; missing pins,
+wrong bytes, aliases and late replacement fail before that dependency executes.
+The original native reconstruction and terminal verification still run, including
+their runtime, source, scientific, lease and output checks.
+
 To keep an existing delivery branch while preserving a historical endpoint,
 first finish every live invocation in that root. Native identities bind the
 actual path, origin, resolved HEAD, index entries and protected bytes; they do

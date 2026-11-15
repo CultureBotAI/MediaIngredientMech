@@ -23,16 +23,17 @@ from tests.test_stable_id_adoption import ROOT, api, command, write
 class ChainFixture(SuccessorFixture):
     """Keep the actual first endpoint immutable in its own committed real root."""
 
-    def __init__(self, tmp, monkeypatch, *, predecessor_source=None):
-        source_name = "src/mediaingredientmech/curate/curation_successor.py"
+    def __init__(
+        self, tmp, monkeypatch, *, predecessor_sources=None, expected_predecessor_files=None
+    ):
         super().__init__(
             tmp,
             monkeypatch,
             publication_baseline=True,
-            predecessor_sources={source_name: predecessor_source} if predecessor_source else None,
+            predecessor_sources=predecessor_sources,
         )
         first_api = successor
-        if predecessor_source:
+        if predecessor_sources:
             loader = self.target / "src/mediaingredientmech/curate/curation_successor_producer.py"
             _, first_api = curation_successor_producer.load(self.target, loader.read_bytes())
             self.successor_api = first_api
@@ -41,13 +42,15 @@ class ChainFixture(SuccessorFixture):
         self.request["operations"][0]["residual_holds"] = [copy.deepcopy(hold)]
         write(self.path, self.request)
         stage, acceptance, manifest = prepared(self)
+        if expected_predecessor_files is not None:
+            assert manifest["producer"]["files"] == expected_predecessor_files
         receipt = self.target / ".temp/first-application"
         first_api.apply(self.target, stage, acceptance, receipt, enabled=True)
         self.first = self.target
         self.first_stage, self.first_receipt = stage, receipt / "application.json"
         self.first_evidence = receipt_evidence(self.first, stage, self.first_receipt)
         commit_paths(self.first, manifest["outputs"], "Commit first actual synthetic correction")
-        if predecessor_source:
+        if predecessor_sources:
             # A fresh CLI invocation captures the producer's current Git context
             # after the ordinary commit; the original manifest remains unchanged.
             _, first_api = curation_successor_producer.load(self.first, loader.read_bytes())
@@ -69,10 +72,11 @@ class ChainFixture(SuccessorFixture):
         }
         self.target = tmp / "second-successor"
         shutil.copytree(self.first, self.target, ignore=shutil.ignore_patterns(".temp"))
-        if predecessor_source:
-            shutil.copyfile(ROOT / source_name, self.target / source_name)
+        if predecessor_sources:
+            for source_name in predecessor_sources:
+                shutil.copyfile(ROOT / source_name, self.target / source_name)
             commit_paths(
-                self.target, [source_name], "Install successor-chain producer in new target"
+                self.target, predecessor_sources, "Install successor-chain producer in new target"
             )
         self.successor_api = successor
         self.review_prefix = "second-correction-"
@@ -128,9 +132,16 @@ def test_two_native_corrections_commit_verify_and_generate(tmp_path, monkeypatch
     two_native_corrections(tmp_path, monkeypatch)
 
 
-def two_native_corrections(tmp_path, monkeypatch, *, predecessor_source=None):
+def two_native_corrections(
+    tmp_path, monkeypatch, *, predecessor_sources=None, expected_predecessor_files=None
+):
     """Also reusable for a separately retained, actual historical producer source."""
-    f = ChainFixture(tmp_path, monkeypatch, predecessor_source=predecessor_source)
+    f = ChainFixture(
+        tmp_path,
+        monkeypatch,
+        predecessor_sources=predecessor_sources,
+        expected_predecessor_files=expected_predecessor_files,
+    )
     identity = successor._identity(f.first)
     command(f.first, "checkout", "--detach", identity["head"])
     assert successor._identity(f.first) == identity

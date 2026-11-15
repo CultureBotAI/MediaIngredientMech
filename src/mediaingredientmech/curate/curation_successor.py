@@ -177,16 +177,18 @@ def _ancestry(target, reference):
     """
     api = native()
     roots = [target]
+    references = []
     while True:
         require(reference["kind"] in {"adoption", "successor"}, "unsupported predecessor kind")
         root = api.root_path(reference["identity"]["root"], "ancestor")
         for previous in roots:
             _disjoint(previous, root)
         roots.append(root)
+        references.append(copy.deepcopy(reference))
         require(len(roots) <= MAX_SUCCESSOR_ANCESTRY + 2, "successor ancestry limit exceeded")
         if reference["kind"] == "adoption":
             require(not os.path.lexists(root / MARKER), "branching or cyclic adoption lineage")
-            return
+            return references
         files = api.Inputs(root)
         manifest = files.ref(reference["manifest"])
         receipt = files.ref(reference["receipt"])
@@ -202,6 +204,165 @@ def _ancestry(target, reference):
             "branching or stale successor ancestry",
         )
         reference = request["predecessor"]
+
+
+class _ProducerBytes:
+    """Execute recorded producers from authenticated buffers, never a late reread.
+
+    Historical loaders retain their own code and namespaces. A private builtins
+    module carries this boundary through helper execs, ``vars(builtins)``, native
+    imports and dynamically compiled exporter scripts. No process-wide module or
+    builtin is patched. Native capture, reconstruction and terminal checks remain
+    mandatory after this pre-execution boundary (#1420).
+    """
+
+    def __init__(self, sources, *, metadata=(), identities=None, heads=None, absences=()):
+        self.roots = tuple(sources)
+        self.files = {}
+        self.metadata = tuple(metadata)
+        self.identities = identities or {}
+        self.heads = heads or {}
+        self.absences = tuple(absences)
+        for root, pins in sources.items():
+            require(isinstance(pins, dict) and pins, "empty recorded producer closure")
+            for name, expected in pins.items():
+                path = _path(root, name)
+                frozen = FrozenFile.capture(path)
+                require(
+                    native().sha(frozen.content) == expected,
+                    "recorded producer bytes differ: " + name,
+                )
+                self.files[path] = frozen
+        self.compiled = {}
+        self._compile, self._exec, self._import = (
+            builtins.compile,
+            builtins.exec,
+            builtins.__import__,
+        )
+        self.builtins = types.ModuleType("builtins")
+        self.builtins.__dict__.update(vars(builtins))
+        self.builtins.__dict__.update(
+            compile=self.compile, exec=self.execute, __import__=self.imported
+        )
+        self.verify()
+
+    def verify(self):
+        for root, identity in self.identities.items():
+            require(_identity(root) == identity, "recorded producer Git identity changed")
+        for root, head in self.heads.items():
+            require(
+                native().git(root, "rev-parse", "HEAD").decode().strip() == head,
+                "recorded Claw HEAD changed",
+            )
+        for path in self.absences:
+            require(not os.path.lexists(path), "branching or cyclic adoption lineage")
+        for frozen in (*self.files.values(), *self.metadata):
+            frozen.verify()
+
+    def imported(self, name, globals=None, locals=None, fromlist=(), level=0):
+        if level == 0 and name == "builtins":
+            return self.builtins
+        return self._import(name, globals, locals, fromlist, level)
+
+    def compile(self, source, filename, mode, flags=0, dont_inherit=False, optimize=-1, **kwargs):
+        path = Path(filename).absolute()
+        require(path in self.files, "unrecorded producer compilation: " + str(path))
+        self.verify()
+        frozen = self.files[path]
+        supplied = source.encode("utf-8") if isinstance(source, str) else source
+        require(supplied == frozen.content, "producer reread differs from authenticated buffer")
+        # Even an unchanged reread never becomes the executable input.
+        code = self._compile(
+            frozen.content, str(frozen.path), mode, flags, dont_inherit, optimize, **kwargs
+        )
+        self.compiled[id(code)] = (code, frozen)
+        return code
+
+    def execute(self, code, globals=None, locals=None, *, closure=None):
+        require(
+            isinstance(code, types.CodeType),
+            "producer execution requires authenticated compilation",
+        )
+        require(
+            id(code) in self.compiled and self.compiled[id(code)][0] is code,
+            "producer code was not compiled from authenticated buffers",
+        )
+        self.verify()
+        require(isinstance(globals, dict), "explicit producer namespace required")
+        globals.setdefault("__builtins__", self.builtins.__dict__)
+        kwargs = {"closure": closure} if closure is not None else {}
+        return self._exec(code, globals, locals, **kwargs)
+
+    def load(self, root, name):
+        self.verify()
+        path = _path(root, name)
+        require(path in self.files, "recorded loader omitted from producer closure")
+        frozen = self.files[path]
+        loader = types.ModuleType("_authenticated_recorded_producer_" + uuid.uuid4().hex)
+        loader.__file__ = str(path)
+        loader.__dict__["__builtins__"] = self.builtins.__dict__
+        self.execute(self.compile(frozen.content, str(path), "exec"), loader.__dict__)
+        result = loader.load(root, frozen.content)
+        self.verify()
+        return result
+
+
+def _producer_bytes(references):
+    """Authenticate the complete recorded source ancestry before loading code."""
+    api = native()
+    sources, metadata, identities, heads, absences = {}, [], {}, {}, []
+
+    def include(root, pins):
+        group = sources.setdefault(root, {})
+        for name, expected in pins.items():
+            name = str(_path(root, name).relative_to(root))
+            require(
+                name not in group or group[name] == expected, "conflicting recorded producer pin"
+            )
+            group[name] = expected
+
+    def claw(value):
+        root = api.root_path(value["root"], "recorded Claw producer")
+        require(root not in heads or heads[root] == value["head"], "conflicting recorded Claw HEAD")
+        heads[root] = value["head"]
+        require(
+            api.git(root, "rev-parse", "HEAD").decode().strip() == value["head"],
+            "recorded Claw HEAD changed",
+        )
+        include(root, value["files"])
+
+    for reference in references:
+        root = api.root_path(reference["identity"]["root"], "recorded producer")
+        identities[root] = reference["identity"]
+        inputs = api.Inputs(root)
+        manifest = inputs.ref(reference["manifest"])
+        inputs.ref(reference["receipt"])
+        inputs.ref(manifest["request"])
+        require(
+            manifest["producer"] == reference["producer"], "recorded producer reference differs"
+        )
+        include(root, reference["producer"]["files"])
+        claw(manifest["claw"])
+        if reference["kind"] == "successor":
+            inputs.read(MARKER, manifest["outputs"][MARKER])
+        else:
+            absences.append(root / MARKER)
+        if reference["publication_proof"] is not None:
+            proof = reference["publication_proof"]
+            publication = inputs.ref(proof["manifest"])
+            inputs.ref(proof["receipt"])
+            require(
+                publication["producer"] == proof["producer"],
+                "recorded publication producer differs",
+            )
+            include(root, proof["producer"]["files"])
+            request = inputs.ref(publication["request"])
+            generation = inputs.ref(request["generation"])
+            claw(generation["claw"])
+        metadata.extend(inputs.files.values())
+    return _ProducerBytes(
+        sources, metadata=metadata, identities=identities, heads=heads, absences=absences
+    )
 
 
 class Predecessor:
@@ -223,7 +384,7 @@ class Predecessor:
                 "historical_reviews",
             },
         )
-        _ancestry(target, reference)
+        references = _ancestry(target, reference)
         self.target = target
         self.successor = reference["kind"] == "successor"
         api.keys(reference["identity"], {"root", "repository", "origin", "head", "index_sha256"})
@@ -249,12 +410,10 @@ class Predecessor:
         name = "src/mediaingredientmech/curate/" + (
             "curation_successor_producer.py" if self.successor else "adoption_producer.py"
         )
-        raw = self.files.read(name, reference["producer"]["files"][name])
-        loader = types.ModuleType("_curation_original_adoption_" + uuid.uuid4().hex)
-        loader.__file__ = str(self.root / name)
-        loader.__dict__["__builtins__"] = vars(builtins)
-        exec(compile(raw, loader.__file__, "exec"), loader.__dict__)
-        self.capture, self.api = loader.load(self.root, raw)
+        self.files.read(name, reference["producer"]["files"][name])
+        self.producer_bytes = _producer_bytes(references)
+        self.files.verify()
+        self.capture, self.api = self.producer_bytes.load(self.root, name)
         require(
             {k: api.sha(v[0]) for k, v in self.capture.files.items()}
             == reference["producer"]["files"],
@@ -382,12 +541,8 @@ class Predecessor:
                 "prior publication stage mismatch",
             )
             loader_name = "src/mediaingredientmech/curate/stable_publication_producer.py"
-            raw = self.files.read(loader_name, proof["producer"]["files"][loader_name])
-            loader = types.ModuleType("_original_publication_" + uuid.uuid4().hex)
-            loader.__file__ = str(self.root / loader_name)
-            loader.__dict__["__builtins__"] = vars(builtins)
-            exec(compile(raw, loader.__file__, "exec"), loader.__dict__)
-            capture, pub = loader.load(self.root, raw)
+            self.files.read(loader_name, proof["producer"]["files"][loader_name])
+            capture, pub = self.producer_bytes.load(self.root, loader_name)
             require(
                 {n: api.sha(v[0]) for n, v in capture.files.items()} == proof["producer"]["files"],
                 "prior publication producer differs",
@@ -465,6 +620,7 @@ class Predecessor:
         # Keep the terminal adoption's marker absence live even when an older
         # captured successor producer did not retain that negative observation.
         _ancestry(self.target, self.reference)
+        self.producer_bytes.verify()
         require(
             _identity(self.root) == self.reference["identity"], "predecessor Git context changed"
         )
