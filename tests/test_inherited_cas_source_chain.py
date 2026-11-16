@@ -20,7 +20,9 @@ import pytest
 from mediaingredientmech.curate import curation_successor as successor
 from mediaingredientmech.curate import stable_sssom_publication as publication
 from mediaingredientmech.validation import semantic_transition
+from mediaingredientmech.validation.write_validated import validate_ingredient
 from tests import stable_publication_fixture as fixtures
+from tests.pre_mint_schema import ROOT, SOURCE, SOURCE_COMMIT
 from tests.test_curation_successor import SuccessorFixture, ref
 from tests.test_curation_successor_history import (
     assert_exact_evidence,
@@ -30,6 +32,7 @@ from tests.test_curation_successor_history import (
 from tests.test_curation_successor_transition import maintained, prepared
 from tests.test_semantic_transition_cas import semantic_case_inputs
 from tests.test_stable_id_adoption import api, commit, initialize, write
+from tests.test_stable_id_migration import migration
 from tests.test_stable_sssom_publication import PublicationFixture, current_outputs
 
 CLAW_HEAD = "7070392fcb5e31282499a599f7147b56b96e5aca"
@@ -42,17 +45,67 @@ HELD_OWNER = "data/ingredients/mapped/Exact.yaml"
 SECOND_OWNER = "data/ingredients/unmapped/New.yaml"
 
 
+def _cas_originals(originals):
+    """Historical claims precede minting; aliases must be derived by the real mint."""
+    records = copy.deepcopy(originals)
+    assert [record["preferred_term"] for record in records] == ["Exact", "Move"]
+    records[0]["chemical_properties"] = {"cas_rn": HELD.removeprefix("CAS:")}
+    records[1]["identifier"] = RETIRED
+    records[1]["chemical_properties"] = {"cas_rn": RETIRED.removeprefix("cas:")}
+    return records
+
+
+def _initial_mint_witnesses(records):
+    """Fail before fixture construction, using native mint and both actual schemas."""
+    manifest = json.loads((SOURCE / "manifest.json").read_bytes())
+    assert manifest["source_commit"] == SOURCE_COMMIT
+    for entry in manifest["files"].values():
+        assert api.sha((ROOT / entry["snapshot_path"]).read_bytes()) == entry["sha256"]
+    schema = ROOT / manifest["files"]["mediaingredientmech.yaml"]["snapshot_path"]
+    witnesses = []
+    for number, (path, record) in enumerate(
+        zip((HELD_OWNER, RETIRED_OWNER), records, strict=True), 1
+    ):
+        # In particular, populated, empty and null administrative fields all fail
+        # the original mint guard. Do not sanitize them to make a fixture pass.
+        minted = migration.migrate_record(record, path, f"MIM:{number:07d}", "2026-01-01T00:00:00Z")
+        assert not validate_ingredient(record, schema_path=schema)
+        assert not validate_ingredient(minted, schema_path=ROOT / api.SCHEMA)
+        witnesses.append(minted)
+    return witnesses
+
+
+def _assert_mint_projection(original, witness, actual):
+    """The common fixture's event has its own attribution, but the science is exact."""
+    assert actual["mim_id"] == witness["mim_id"]
+    assert actual["legacy_identifiers"] == witness["legacy_identifiers"]
+    old_history = original.get("curation_history") or []
+    history = actual["curation_history"]
+    assert len(history) == len(old_history) + 1 and history[:-1] == old_history
+    event = history[-1]
+    assert event["action"] == "ASSIGNED_MIM_ID" and actual["mim_id"] in event["changes"]
+    reconstructed = {"curation_history": copy.deepcopy(old_history)}
+    api.record_curation_event(reconstructed, **event)
+    assert reconstructed["curation_history"] == history
+    restored = copy.deepcopy(actual)
+    del restored["mim_id"], restored["legacy_identifiers"]
+    restored["curation_history"] = copy.deepcopy(old_history)
+    assert restored == original
+
+
 def _source_fixture(tmp_path, monkeypatch):
     """Supply original source inputs before the actual native adoption runs."""
     original_constructor = fixtures.NativeReviewAdoptionFixture.__init__
 
     def constructor(self, *args, **kwargs):
-        records = copy.deepcopy(kwargs["original_records"])
-        records[0]["chemical_properties"] = {"cas_rn": HELD.removeprefix("CAS:")}
-        records[1]["legacy_identifiers"] = [RETIRED]
-        records[1]["chemical_properties"] = {"cas_rn": RETIRED.removeprefix("cas:")}
+        records = _cas_originals(kwargs["original_records"])
+        witnesses = _initial_mint_witnesses(records)
         kwargs["original_records"] = records
         original_constructor(self, *args, **kwargs)
+        for path, original, witness in zip(self.paths, records, witnesses, strict=True):
+            _assert_mint_projection(
+                original, witness, api.load_yaml((self.root / path).read_bytes())
+            )
 
     # This changes fixture inputs, never a validator, producer or writer.
     with pytest.MonkeyPatch.context() as inputs:
@@ -94,16 +147,10 @@ def _source_fixture(tmp_path, monkeypatch):
     f.request["predecessor"] = copy.deepcopy(f.endpoint)
 
     before = api.load_yaml((f.target / OLD_OWNER).read_bytes())
-    assert before["identifier"] == "UNMAPPED_1"
+    assert before["identifier"] == RETIRED
     assert RETIRED in before["legacy_identifiers"]
     assert before["chemical_properties"]["cas_rn"] == RETIRED.removeprefix("cas:")
-    after = copy.deepcopy(before)
-    after["legacy_identifiers"].remove(RETIRED)
-    del after["chemical_properties"]["cas_rn"]
-    if not after["chemical_properties"]:
-        del after["chemical_properties"]
-    after["notes"] = "Synthetic reviewed withdrawal; original invalid CAS remains in history."
-    _event(after, f.stamp, "withdrawal-primary", "Withdraw the invalid CAS alias and property.")
+    after = _withdraw_cas(before, f.stamp)
     api.write_validated_ingredient(after, f.proposal, schema_path=f.target / api.SCHEMA)
     hold = {"issue_key": "retained-quantity", "reason": "Source quantity remains unassessed"}
     f.request["operations"] = [
@@ -111,6 +158,23 @@ def _source_fixture(tmp_path, monkeypatch):
     ]
     write(f.path, f.request)
     return f, historical, rows
+
+
+def _withdraw_cas(before, stamp):
+    after = copy.deepcopy(before)
+    after["identifier"] = "UNMAPPED_1"
+    after["legacy_identifiers"].remove(RETIRED)
+    del after["chemical_properties"]["cas_rn"]
+    if not after["chemical_properties"]:
+        del after["chemical_properties"]
+    after["notes"] = "Synthetic reviewed withdrawal; original invalid CAS remains in history."
+    _event(
+        after,
+        stamp,
+        "withdrawal-primary",
+        "Withdraw the invalid CAS identifier, alias and property; use an unresolved placeholder.",
+    )
+    return after
 
 
 def _event(record, stamp, curator, summary):
