@@ -135,12 +135,21 @@ attestation status. A missing revision, wrong repository or false committed-byte
 claim is a refusal. This Git proof does not pretend to reproduce the original
 filesystem path or acquisition environment.
 
-For diagnostic CAS history, this adapter capability accepts exactly the reviewed
-native `stable_mim.py` implementation from Claw
-`4287dce16ee8b5f897bf70f915bdca9aa1484bb6` (SHA256
-`3a04bc0435c4f6801994901cffbde9005ca1f589723cc79b32d079fdf6f6ad33`).
+For diagnostic CAS history, this adapter capability accepts two exact reviewed
+native `stable_mim.py` implementations from Claw:
+
+- `4287dce16ee8b5f897bf70f915bdca9aa1484bb6` (SHA256
+  `3a04bc0435c4f6801994901cffbde9005ca1f589723cc79b32d079fdf6f6ad33`).
+- `7070392fcb5e31282499a599f7147b56b96e5aca` (SHA256
+  `2e43b009231d8ec6b1b9047b89294f2b850e136ff413aa327e5d085bc221bdb3`).
+  Its additional-mapping helper leaves the CAS implementation and dependencies
+  unchanged (#1437); this is an explicit whole-file qualification.
+
 That authority is checked before executing captured bytes; mutually rehashed
 producer declarations cannot select a different validation policy (#1395).
+Both the declared digest and the exact consumed buffer must match the same
+qualified implementation. Updating this adapter requires fresh source capture
+and review; an earlier report cannot certify changed executable bytes.
 This does not modify the producer or vendored pins. The original native CAS pair
 still has to bind each complete diagnostic claim, action and retained hold, with
 its exact captured evidence and independent reviewer identities. The consumer

@@ -2,6 +2,7 @@
 
 import json
 import subprocess
+from contextlib import contextmanager
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -138,8 +139,8 @@ def cas_request(f, row, owner):
     return path
 
 
-@pytest.fixture(scope="module")
-def cas_native(tmp_path_factory):
+@contextmanager
+def native_cas_fixture(directory, *, producer=None):
     """Real completed adoption, native CAS pairs, native CLI and captured replay."""
     patcher = pytest.MonkeyPatch()
     original = fixtures.NativeReviewAdoptionFixture.__init__
@@ -150,8 +151,19 @@ def cas_native(tmp_path_factory):
 
     patcher.setattr(fixtures.NativeReviewAdoptionFixture, "__init__", constructor)
     try:
-        f = PublicationFixture(tmp_path_factory.mktemp("cas-native"), patcher, None)
-        patch_producer(f.producer)
+        f = PublicationFixture(directory, patcher, None)
+        if producer is None:
+            patch_producer(f.producer)
+        else:
+            # Keep the original producer/receipts intact. The next genuine
+            # generation captures this separate producer's actual Git identity.
+            f.producer = directory / "selected-cas-producer"
+            subprocess.run(
+                ["git", "clone", "--no-hardlinks", "--no-local", str(producer), str(f.producer)],
+                check=True,
+                capture_output=True,
+                timeout=120,
+            )
         canonical = f.root / pub.CANONICAL
         _, fields, rows = pub.read_sssom(canonical)
         rows[0]["other"] += "|CAS:138-86-7"
@@ -173,6 +185,12 @@ def cas_native(tmp_path_factory):
         yield f
     finally:
         patcher.undo()
+
+
+@pytest.fixture(scope="module")
+def cas_native(tmp_path_factory):
+    with native_cas_fixture(tmp_path_factory.mktemp("cas-native")) as fixture:
+        yield fixture
 
 
 def test_native_cas_generation_replay_and_forced_unassessed_hold(cas_native):

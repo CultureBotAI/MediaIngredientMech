@@ -28,10 +28,17 @@ from mediaingredientmech.stable_ids import LIFECYCLE_PATH, REGISTRY_PATH
 CAPABILITY = "mim-semantic-transition-evidence/v1"
 LEDGERS = (str(REGISTRY_PATH), str(LIFECYCLE_PATH))
 POLICY = "src/mediaingredientmech/validation/semantic_transition.py"
-# #1395: this capability reuses exactly the reviewed native CAS policy from
-# culturebotai-claw 4287dce16ee8b5f897bf70f915bdca9aa1484bb6. This is an
-# adapter authority, not a modification of any producer or vendored pin.
-CAS_POLICY_SHA256 = "3a04bc0435c4f6801994901cffbde9005ca1f589723cc79b32d079fdf6f6ad33"
+# #1395/#1437: independently reviewed whole-file adapter authorities, never
+# caller-selected policy. The 707 addition is outside the unchanged CAS closure.
+# This does not modify any producer or vendored pin.
+CAS_POLICY_SHA256S = frozenset(
+    {
+        # culturebotai-claw 4287dce16ee8b5f897bf70f915bdca9aa1484bb6
+        "3a04bc0435c4f6801994901cffbde9005ca1f589723cc79b32d079fdf6f6ad33",
+        # culturebotai-claw 7070392fcb5e31282499a599f7147b56b96e5aca
+        "2e43b009231d8ec6b1b9047b89294f2b850e136ff413aa327e5d085bc221bdb3",
+    }
+)
 
 
 def require(value, message):
@@ -269,7 +276,7 @@ def _cas(evidence, root, generation, manifest, before, candidate, owners, source
     )
     raw = evidence.read(claw, {"path": name, "sha256": pin})
     require(
-        pin == CAS_POLICY_SHA256 and identity.sha(raw) == CAS_POLICY_SHA256,
+        pin in CAS_POLICY_SHA256S and identity.sha(raw) == pin,
         "CAS producer implementation is not the reviewed adapter authority",
     )
     native = types.ModuleType("_captured_semantic_cas_contract")
