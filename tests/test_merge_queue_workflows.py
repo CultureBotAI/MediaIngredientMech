@@ -79,6 +79,11 @@ def _assert_native_adoption_dependency(document, job):
     for scope in (document, job):
         assert "MIM_ADDITIONAL_ASSERTION_CLAW_SRC" not in scope.get("env", {})
         assert "PYTHONPATH" not in scope.get("env", {}), "source capture must not broaden package imports"
+    for step in steps:
+        if step is not runner:
+            assert not (
+                {"CLAW_SRC", "MIM_ADDITIONAL_ASSERTION_CLAW_SRC"} & step.get("env", {}).keys()
+            ), "source selectors belong only to the complete pytest invocation"
     assert "PYTHONPATH" not in runner.get("env", {}), "source capture must not broaden package imports"
     for step in (candidate, reader, dependency, additional, runner):
         assert "if" not in step and not step.get("continue-on-error"), "native setup and tests cannot silently skip"
@@ -271,6 +276,7 @@ def test_both_claw_roles_are_identified_independently_of_checkout_order():
     "wrong-repository", "candidate-overlap", "native-overlap", "nested-path",
     "crossed-paths", "crossed-refs", "missing-env", "wrong-env", "crossed-env",
     "global-env", "job-env", "global-pythonpath", "job-pythonpath",
+    "other-step-additional-env", "other-step-native-env",
     "credentials", "order", "skip", "ignored-failure",
 ])
 def test_additional_assertion_dependency_cannot_drift_or_skip(defect):
@@ -328,6 +334,9 @@ def test_additional_assertion_dependency_cannot_drift_or_skip(defect):
     elif defect in {"global-pythonpath", "job-pythonpath"}:
         scope = broken if defect == "global-pythonpath" else job
         scope.setdefault("env", {})["PYTHONPATH"] = ".temp/additional-assertion-claw/src"
+    elif defect in {"other-step-additional-env", "other-step-native-env"}:
+        name = variable if defect == "other-step-additional-env" else "CLAW_SRC"
+        additional.setdefault("env", {})[name] = runner["env"][name]
     elif defect == "credentials":
         options["persist-credentials"] = True
     elif defect == "order":
