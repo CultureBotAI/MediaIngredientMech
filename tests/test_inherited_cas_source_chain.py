@@ -726,7 +726,7 @@ def test_actual_withdrawal_keeps_original_pair_context_and_hold(inherited_owner_
         expected = "original source/hold context differs"
     elif attack == "pair":
         operation["primary"]["sha256"] = "0" * 64
-        expected = "review input closure differs"
+        expected = "^Curation successor: native review pair missing from exact review inputs$"
     else:
         operation["inherited_holds"] = operation["residual_holds"] = []
         expected = "stored corrective payloads differ|stored payloads differ|payload|hold"
