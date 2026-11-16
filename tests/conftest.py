@@ -15,6 +15,7 @@ import pytest
 
 from mediaingredientmech.validation.kg_microbe_dict import CACHE_DIR_ENV
 from tests.historical_correction_prestate import MODULE, ROOT, correction_context
+from tests.historical_partonomy_context import bind_context, requested_case
 from tests.historical_source_anchors import restore_requested_case, use_historical_schema
 from tests.pre_mint_schema import pre_mint_schema, pre_mint_schema_case  # noqa: F401
 
@@ -22,6 +23,18 @@ from tests.pre_mint_schema import pre_mint_schema, pre_mint_schema_case  # noqa:
 @pytest.fixture(autouse=True)
 def _isolated_dictionary_cache(tmp_path_factory, monkeypatch):
     monkeypatch.setenv(CACHE_DIR_ENV, str(tmp_path_factory.mktemp("kgm-cache")))
+
+
+@pytest.fixture(autouse=True)
+def _historical_partonomy_context(request, tmp_path_factory):
+    """#467: preserve dated assertions and test current corpus separately."""
+    case = request.node.originalname
+    if requested_case(request.path, case) is None:
+        yield
+        return
+    parent = tmp_path_factory.mktemp("historical-partonomy-467")
+    with bind_context(request.module, case, parent / "inputs"):
+        yield
 
 
 @pytest.fixture(autouse=True)
