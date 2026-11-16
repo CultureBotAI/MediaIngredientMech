@@ -76,6 +76,111 @@ def test_exact_rejection_retains_original_event_notes_placeholder_and_hold():
     assert operation["residual_holds"] == operation["inherited_holds"]
 
 
+def mapped_rejection():
+    """Keep old evidence verbatim while correcting the structured primary target."""
+    loaded, operation, before, after = proposed()
+    historical = {
+        "evidence_type": "DATABASE_MATCH",
+        "source": "https://example.invalid/synthetic-original-observation",
+        "notes": "Historical NCIT:C80300 attribution; retained without re-certification.",
+    }
+    before["ontology_mapping"]["evidence"] = [historical]
+    after.update(
+        identifier="NCIT:C80301", mapping_status="MAPPED", legacy_identifiers=["MIM:Example"]
+    )
+    after["ontology_mapping"] = {
+        "ontology_id": "NCIT:C80301",
+        "ontology_label": "Synthetic specific material",
+        "ontology_source": "NCIT",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [copy.deepcopy(historical)],
+    }
+    after["curation_history"][-1]["new_status"] = "MAPPED"
+    operation["after_path"] = operation["before"]["path"]
+    operation["delta"] = successor._delta(before, after)
+    return loaded, operation, before, after
+
+
+def historical_target_assertion(after, predicate, status):
+    return {
+        "subject_id": after["mim_id"],
+        "ontology_id": "NCIT:C80300",
+        "ontology_label": "Synthetic separately assessed target",
+        "ontology_source": "NCIT",
+        "predicate_id": predicate,
+        "review_status": status,
+        "reviewed_by": "synthetic-independent-assertion-reviewer",
+        "reviewed_at": "2026-11-11T00:00:00Z",
+        "review_note": "Synthetic scoped assessment; no hold clearance.",
+        "llm_assisted": True,
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "evidence": [
+            {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "https://example.invalid/separate-synthetic-evidence",
+                "supports": "SUPPORT" if status == "SUPPORTED" else "NO_EVIDENCE",
+                "explanation": "Synthetic evidence for this explicit disposition only.",
+            }
+        ],
+    }
+
+
+@pytest.mark.parametrize("target", ["NCIT:C80301", "NCIT:C803000"])
+def test_rejected_alias_history_is_preserved_without_substring_identity(target):
+    loaded, operation, before, after = mapped_rejection()
+    after["identifier"] = after["ontology_mapping"]["ontology_id"] = target
+    operation["delta"] = successor._delta(before, after)
+    exact_after = copy.deepcopy(after)
+    assert successor._validate_change(loaded, operation, before, after) == operation["delta"]
+    assert after == exact_after
+    assert after["ontology_mapping"]["evidence"] == before["ontology_mapping"]["evidence"]
+
+
+@pytest.mark.parametrize(
+    "predicate,status",
+    [
+        ("skos:broadMatch", "SUPPORTED"),
+        ("skos:narrowMatch", "SUPPORTED"),
+        ("skos:closeMatch", "SUPPORTED"),
+        ("skos:exactMatch", "WITHHOLD"),
+    ],
+)
+def test_rejected_alias_retains_separately_reviewed_inexact_or_withheld_assertion(
+    predicate, status
+):
+    loaded, operation, before, after = mapped_rejection()
+    after["additional_ontology_mappings"] = [historical_target_assertion(after, predicate, status)]
+    operation["delta"] = successor._delta(before, after)
+    exact_after = copy.deepcopy(after)
+    assert successor._validate_change(loaded, operation, before, after) == operation["delta"]
+    assert after == exact_after
+
+
+@pytest.mark.parametrize(
+    "case", ["primary", "additional-exact", "identifier", "legacy", "missing-model"]
+)
+def test_rejected_alias_cannot_remain_active_or_bypass_attribution(case):
+    loaded, operation, before, after = mapped_rejection()
+    # Remove the historical prose in these controls so refusal must concern the
+    # active assertion or attribution, not the former whole-JSON substring rule.
+    after["ontology_mapping"].pop("evidence")
+    if case == "primary":
+        after["ontology_mapping"]["ontology_id"] = "NCIT:C80300"
+    elif case == "additional-exact":
+        after["additional_ontology_mappings"] = [
+            historical_target_assertion(after, "skos:exactMatch", "SUPPORTED")
+        ]
+    elif case == "identifier":
+        after["identifier"] = "NCIT:C80300"
+    elif case == "legacy":
+        after["legacy_identifiers"].append("NCIT:C80300")
+    elif case == "missing-model":
+        after["curation_history"][-1].pop("llm_model")
+    operation["delta"] = successor._delta(before, after)
+    with pytest.raises(ValueError):
+        successor._validate_change(loaded, operation, before, after)
+
+
 @pytest.mark.parametrize(
     "case",
     [

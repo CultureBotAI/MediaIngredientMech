@@ -71,13 +71,14 @@ SOURCE_HANDOFF = "native-source-publication-handoff-v1"
 # Another revision needs an explicitly reviewed counterpart, never an inferred
 # exemption based on a claimed version string (#1401).
 SOURCE_HANDOFF_SOURCE = "src/mediaingredientmech/curate/curation_successor.py"
-SOURCE_HANDOFF_SOURCE_SHA = "7b37340f59057386c0ba4a4c85e70e14752b75ce4d362213749c90a9511648a0"
+SOURCE_HANDOFF_SOURCE_SHA = "ed8dcf4328c17fc8e78dab08f357fa53b60bd5c037ca85b3810dc6b3440973c9"
 SOURCE_HANDOFF_SOURCE_SHAS = frozenset(
     {
         "6b34ede05a681531d07715ea68a847692b90c51f25a0884d6f8a577eecd13766",  # #1401
         "a5ac25dbdbbbb0fecb88a3d7fb3a0bc338175be98ac09d71ae8e52644c28cd1b",  # Original repeat-curation counterpart
         "d64bb16c03c65566f466bec34fdc89d04d05357d8296c986aa40fe6e9a404798",  # Original #1420/#1425 defensive recovery
-        SOURCE_HANDOFF_SOURCE_SHA,  # #1430 type-only qualification; guards unchanged
+        "7b37340f59057386c0ba4a4c85e70e14752b75ce4d362213749c90a9511648a0",  # #1430 type-only recovery
+        SOURCE_HANDOFF_SOURCE_SHA,  # #1435 structured identity rejection; endpoint guards unchanged
     }
 )
 

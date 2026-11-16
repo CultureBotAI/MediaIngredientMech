@@ -24,13 +24,20 @@ class ChainFixture(SuccessorFixture):
     """Keep the actual first endpoint immutable in its own committed real root."""
 
     def __init__(
-        self, tmp, monkeypatch, *, predecessor_sources=None, expected_predecessor_files=None
+        self,
+        tmp,
+        monkeypatch,
+        *,
+        predecessor_sources=None,
+        expected_predecessor_files=None,
+        initial_identity="NCIT:C80300",
     ):
         super().__init__(
             tmp,
             monkeypatch,
             publication_baseline=True,
             predecessor_sources=predecessor_sources,
+            initial_identity=initial_identity,
         )
         first_api = successor
         if predecessor_sources:

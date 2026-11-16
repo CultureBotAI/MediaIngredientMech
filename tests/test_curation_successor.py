@@ -19,10 +19,23 @@ def ref(root, path):
 
 
 class SuccessorFixture:
-    def __init__(self, tmp, monkeypatch, *, publication_baseline=False, predecessor_sources=None):
+    def __init__(
+        self,
+        tmp,
+        monkeypatch,
+        *,
+        publication_baseline=False,
+        predecessor_sources=None,
+        initial_identity="NCIT:C80300",
+    ):
         extra = {name: ROOT / name for name in {*successor._CAPTURE.files, *pub._CAPTURE.files}}
         extra.update(predecessor_sources or {})
-        self.original = completed_adoption(tmp / "original", monkeypatch, additional_sources=extra)
+        self.original = completed_adoption(
+            tmp / "original",
+            monkeypatch,
+            additional_sources=extra,
+            initial_identity=initial_identity,
+        )
         original = self.original.root
         if publication_baseline:
             (original / pub.SUPPRESSIONS).write_bytes(pub._tsv(pub.SIDECAR_FIELDS, []))
@@ -110,6 +123,7 @@ class SuccessorFixture:
         owner = "data/ingredients/mapped/Exact.yaml"
         before = api.load_yaml(self.before[owner])
         after = copy.deepcopy(before)
+        after["identifier"] = after["ontology_mapping"]["ontology_id"] = "NCIT:C80300"
         after["ontology_mapping"]["mapping_quality"] = "MANUAL_CURATION"
         self.stamp = "2026-11-12T00:00:00Z"
         api.record_curation_event(
@@ -117,7 +131,11 @@ class SuccessorFixture:
             curator="synthetic-primary",
             timestamp=self.stamp,
             action="MANUAL_CURATION",
-            changes="Reviewed exact method-only correction; retain identity and all original evidence.",
+            changes=(
+                "Reviewed exact method-only correction; retain identity and all original evidence."
+                if initial_identity == "NCIT:C80300"
+                else "Synthetic primary correction; retain the old alias and historical evidence pending separate review."
+            ),
             previous_status="MAPPED",
             new_status="MAPPED",
             llm_assisted=True,
