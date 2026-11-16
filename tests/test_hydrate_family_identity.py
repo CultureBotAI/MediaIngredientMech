@@ -317,7 +317,10 @@ def test_late_specific_hydrates_have_single_sssom_exact_rows(sssom_rows, term, c
     assert rows[0]["other"].split("|") == other
 
 
-def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(records, sssom_rows):
+def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(
+    historical_owner_records, historical_owner_sssom
+):
+    records, sssom_rows = historical_owner_records, historical_owner_sssom
     record = _by_term(records, "L-Cysteine x HCl x H2O solution")
 
     assert record["identifier"] == ("kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution")
@@ -377,8 +380,9 @@ def test_variable_ferric_sulfate_hydrate_is_not_moved_to_the_monohydrate(records
     ],
 )
 def test_variable_sulfate_hydrates_are_locally_identified(
-    records, term, identifier, parent, parent_label
+    historical_owner_records, term, identifier, parent, parent_label
 ):
+    records = historical_owner_records
     record = _by_term(records, term)
 
     assert record["identifier"] == identifier
@@ -433,8 +437,9 @@ def test_variable_sulfate_hydrates_publish_parent_and_registry_rows(
     ],
 )
 def test_variable_sulfate_membership_rows_move_to_local_identity(
-    records, membership_rows, term, old, new, expected
+    historical_owner_records, historical_owner_membership, term, old, new, expected
 ):
+    records, membership_rows = historical_owner_records, historical_owner_membership
     assert _by_term(records, term)["identifier"] == new
     new_recipes = {row["recipe_id"] for row in membership_rows if row["mim_identifier"] == new}
     stale_old_recipes = {
@@ -446,7 +451,8 @@ def test_variable_sulfate_membership_rows_move_to_local_identity(
 
 
 @pytest.mark.parametrize("term", sorted(LOCAL_SULFATE_HYDRATES))
-def test_formula_supported_sulfates_have_local_identities(records, term):
+def test_formula_supported_sulfates_have_local_identities(sulfate_case_records, term):
+    records = sulfate_case_records
     identifier, parent, formula, _ = LOCAL_SULFATE_HYDRATES[term]
     record = _by_term(records, term)
     properties = record.get("chemical_properties") or {}

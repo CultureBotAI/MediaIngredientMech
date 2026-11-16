@@ -26,7 +26,7 @@ def producer(monkeypatch):
 
 
 @pytest.mark.parametrize("slug,allocation", ALLOCATIONS.items())
-def test_persisted_split_preserves_history_and_avoids_retired_id(slug, allocation):
+def test_persisted_split_preserves_history_and_avoids_retired_id(slug, allocation, historical_split_case):
     allocated, retired = allocation
     record = yaml.safe_load((ROOT / "data/ingredients/unmapped" / f"{slug}.yaml").read_text())
     assert record["identifier"] == allocated
