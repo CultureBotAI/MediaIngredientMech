@@ -42,3 +42,25 @@ corrections precede its first canonical publication.
 The four real campaign source corrections, their native assessment, changed
 actual generation and consumer/release review are separate work. A successful
 synthetic canary never authorizes public release or consumer installation.
+
+## Type-only qualification follow-up
+
+Issue #1430 records eight inherited mypy errors. The follow-up adds type
+declarations and explicitly qualifies the resulting successor source digest,
+retaining the previously tested digest. All function/method executable code
+compares equal after excluding line metadata; the new typing import and class
+annotation metadata are separately disclosed. The compile-only helper
+`scripts/adhoc/compare_type_only_sources.py` and its
+[results](reviews/native-release-recovery-types-20261115.json) are retained.
+Changing an executable guard condition makes the comparison fail.
+
+The original canary and its artifacts remain tied to their recorded source
+commit. They were not rerun or relabelled for this annotation-only follow-up.
+Exact source-counterpart admission/refusal and focused replay/assertion tests
+validate the final qualification separately. These checks do not replace real
+campaign science or release gates.
+
+The separate [published-predecessor result](reviews/native-published-predecessor-20261115.json)
+records a genuine native canonical application followed by predecessor admission
+and both missing-publication and missing-review refusals. It passed at the
+recorded pre-typing commit; predecessor bytes remained unchanged.

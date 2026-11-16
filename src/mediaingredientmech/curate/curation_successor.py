@@ -334,6 +334,8 @@ class _ProducerBytes:
     mandatory after this pre-execution boundary (#1420).
     """
 
+    subprocess: Any
+
     def __init__(self, sources, *, metadata=(), identities=None, heads=None, absences=()):
         self.roots = tuple(sources)
         self.files = {}
@@ -410,10 +412,13 @@ class _ProducerBytes:
             and args[3].encode("utf-8") == self.files[entry].content,
             "recorded replay child source differs",
         )
+        guards: list[_ProducerBytes]
+        current: _ProducerBytes | None
         guards, current = [], self
         while current is not None:
             guards.append(current)
             current = current.parent
+        envelope: dict[str, Any]
         envelope = {
             "entry": str(entry),
             "input": base64.b64encode(kwargs["input"]).decode("ascii"),
@@ -500,6 +505,8 @@ class _ProducerBytes:
 def _producer_bytes(references):
     """Authenticate the complete recorded source ancestry before loading code."""
     api = native()
+    sources: dict[Path, dict[str, str]]
+    heads: dict[Path, str]
     sources, metadata, identities, heads, absences = {}, [], {}, {}, []
 
     def include(root, pins):
