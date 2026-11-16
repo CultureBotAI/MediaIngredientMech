@@ -2,6 +2,7 @@
 
 import copy
 import json
+import os
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -9,15 +10,25 @@ import pytest
 import yaml
 
 from mediaingredientmech.validation import semantic_transition as transition
-from tests.test_cas_disposition_publication import cas_native  # noqa: F401
-from tests.test_stable_sssom_publication import api, pub
+from mediaingredientmech.validation.current_semantic_release import Inputs
+from tests.test_cas_disposition_publication import cas_native, native_cas_fixture  # noqa: F401
+from tests.test_stable_sssom_publication import api, pub, ref
+
+OLD_POLICY = "3a04bc0435c4f6801994901cffbde9005ca1f589723cc79b32d079fdf6f6ad33"
+CURRENT_POLICY = "2e43b009231d8ec6b1b9047b89294f2b850e136ff413aa327e5d085bc221bdb3"
+CURRENT_CLAW = "7070392fcb5e31282499a599f7147b56b96e5aca"
 
 
-@pytest.fixture(scope="module")
-def cas_evidence(cas_native):  # noqa: F811
-    f = cas_native
+def captured_cas_evidence(f, expected_policy):
     generation = json.loads(f.generation_receipt.read_bytes())
     manifest = json.loads((f.root / generation["outputs"]["manifest"]["path"]).read_bytes())
+    policy = str(f.producer / "src/kg_microbe_utils/stable_mim.py")
+    assert generation["claw"]["files"][policy] == expected_policy
+    assert manifest["producer_import_snapshot"][policy] == expected_policy
+    assert api.sha(Path(policy).read_bytes()) == expected_policy
+    if expected_policy == CURRENT_POLICY:
+        assert generation["claw"]["head"] == CURRENT_CLAW
+        assert api.git(f.producer, "rev-parse", "HEAD").decode().strip() == CURRENT_CLAW
     # Capture once. All checks below use exact bytes even if original files move.
     captured = {}
     for item in manifest["source_inputs"]:
@@ -28,6 +39,7 @@ def cas_evidence(cas_native):  # noqa: F811
 
     class Captured:
         inputs = SimpleNamespace(root=f.root)
+        fixture = f
 
         def read(self, root, ref):
             return captured[(str(Path(root) / ref["path"]), ref["sha256"])]
@@ -56,6 +68,22 @@ def cas_evidence(cas_native):  # noqa: F811
         owners,
         {"operations": [], "predecessor_owners": predecessor},
     )
+
+
+@pytest.fixture(scope="module", params=("original", "707"))
+def cas_evidence(request, cas_native, tmp_path_factory):  # noqa: F811
+    if request.param == "original":
+        yield captured_cas_evidence(cas_native, OLD_POLICY)
+        return
+    selected = os.environ.get("MIM_ADDITIONAL_ASSERTION_CLAW_SRC")
+    if not selected:
+        pytest.skip(
+            "Explicit pinned707 producer required; CI supplies the additional-Claw selector"
+        )
+    producer = Path(selected).resolve().parent
+    assert api.git(producer, "rev-parse", "HEAD").decode().strip() == CURRENT_CLAW
+    with native_cas_fixture(tmp_path_factory.mktemp("cas-native-707"), producer=producer) as f:
+        yield captured_cas_evidence(f, CURRENT_POLICY)
 
 
 def test_adoption_only_retained_cas_keeps_native_no_correction_contract(cas_evidence):
@@ -213,3 +241,117 @@ def test_1395_absence_cannot_erase_historical_or_current_cas_obligation(
 @pytest.mark.parametrize("token", ["CAS:7732-18-5", "12-34-5", "unrelated numeric source 12345"])
 def test_1395_valid_no_proof_and_native_non_cas_scope_remain_supported(cas_evidence, token):
     assert transition._cas(*without_proof(cas_evidence, token, token)) is None
+
+
+def test_one_approved_policy_cannot_claim_the_other_authority(cas_evidence):
+    args = list(cas_evidence)
+    args[2], args[3] = copy.deepcopy(args[2]), copy.deepcopy(args[3])
+    captured = args[0]
+    claw = args[2]["claw"]["root"]
+    name = "src/kg_microbe_utils/stable_mim.py"
+    absolute = str(Path(claw) / name)
+    actual_pin = args[2]["claw"]["files"][absolute]
+    actual_bytes = captured.read(claw, {"path": name, "sha256": actual_pin})
+    other_pin = CURRENT_POLICY if actual_pin == OLD_POLICY else OLD_POLICY
+    args[2]["claw"]["files"][absolute] = other_pin
+    args[3]["producer_import_snapshot"][absolute] = other_pin
+
+    class WrongAuthority:
+        def read(self, root, ref):
+            assert root == claw and ref == {"path": name, "sha256": other_pin}
+            return actual_bytes
+
+    args[0] = WrongAuthority()
+    with pytest.raises(ValueError, match="reviewed adapter authority"):
+        transition._cas(*args)
+
+
+def semantic_case_inputs(root, reference):
+    """Reconstruct the full baseline from genuine retained native beforeimages."""
+    evidence = transition.Evidence(Inputs(root), reference)
+    source = evidence.packet["sources"][0]
+    source_receipt = evidence.document(source["root"], source["receipt"])
+    baseline = {
+        name: evidence.read(source["root"], ref)
+        for name, ref in source_receipt["beforeimages"].items()
+    }
+    selected = evidence.packet["publication"]
+    receipt = evidence.document(selected["root"], selected["receipt"])
+    baseline[pub.CANONICAL] = evidence.read(
+        selected["root"], receipt["beforeimages"][pub.CANONICAL]
+    )
+    owners = {
+        str(path.relative_to(root)): path.read_bytes()
+        for path in root.glob("data/ingredients/*/*.yaml")
+    }
+    ledgers = {name: (root / name).read_bytes() for name in transition.LEDGERS}
+    return Inputs(root), reference, {"proof": SimpleNamespace(after=baseline)}, owners, ledgers
+
+
+def test_real_cas_publication_reconstructs_current_semantic_transition(cas_evidence):
+    """Original and707 policies retain actual generation, science and apply gates."""
+    f = cas_evidence[0].fixture
+    original_owners = {
+        str(path.relative_to(f.root)): path.read_bytes()
+        for path in f.root.glob("data/ingredients/*/*.yaml")
+    }
+    request, stage, _ = f.prepare()
+    acceptance = f.accept(request, stage)
+    destination = f.destination(request, "semantic-cas-application")
+    dry = pub.apply(f.root, stage, acceptance, destination, enabled=False)
+    assert dry["applied"] is False and dry["scientific_approval_added"] is False
+    assert not destination.exists()
+    application = pub.apply(f.root, stage, acceptance, destination, enabled=True)
+    assert application["state"] == "COMPLETE"
+    assert application["scientific_approval_added"] is False
+    verified = pub.verify_completed(f.root, stage, destination / "application.json")
+    assert verified["status"] == "COMPLETE_CURRENT_CANONICAL_CANDIDATE"
+    reference = transition.capture(
+        f.root, stage, destination / "application.json", "semantic-cas-evidence"
+    )
+    args = semantic_case_inputs(f.root, reference)
+    result = transition.verify(*args)
+    assert result["scope"] == "semantic_reconstruction_not_transaction_reexecution"
+    assert result["provenance"]["ordinary_release_review_required"] is True
+    assert result["provenance"]["scientific_approval_added"] is False
+    assert result["source"]["scientific_approval_added"] is False
+    held = [
+        row
+        for row in result["provenance"]["selection"]["rows"]
+        if row.get("mandatory_disposition") == "INSTALL_WITHHOLD"
+    ]
+    assert len(held) == 1
+    assert held[0]["disposition"] == "INSTALL_WITHHOLD"
+    assert (
+        held[0]["cas_disposition"]["historical_row"]
+        == pub.read_sssom(Path("before"), content=f.cas_before)[2][0]
+    )
+    assert "CAS:138-86-7" in held[0]["candidate_row"]["other"]
+    assert args[3] == original_owners
+    assert pub.read_sssom(f.root / pub.CANONICAL)[2][0]["validation_method"] == ""
+    # Durable actual native inputs support a separate exact-source reversion
+    # check without fabricating receipts or repeating an expensive generation.
+    (f.root / "semantic-cas-case.json").write_bytes(
+        api.encoded(
+            {
+                "root": str(f.root),
+                "packet": reference,
+                "policy_sha256": cas_evidence[2]["claw"]["files"][
+                    str(f.producer / "src/kg_microbe_utils/stable_mim.py")
+                ],
+                "generation": ref(f.root, f.generation_receipt),
+                "application": ref(f.root, destination / "application.json"),
+                "semantic_result": {
+                    "scope": result["scope"],
+                    "provenance_sha256": api.digest(result["provenance"]),
+                    "ordinary_release_review_required": result["provenance"][
+                        "ordinary_release_review_required"
+                    ],
+                    "scientific_approval_added": result["provenance"]["scientific_approval_added"],
+                    "source_scientific_approval_added": result["source"][
+                        "scientific_approval_added"
+                    ],
+                },
+            }
+        )
+    )
