@@ -216,7 +216,7 @@ def completed_adoption(
             "subject_id": "MIM:Exact",
             "subject_label": "Exact",
             "predicate_id": "skos:exactMatch",
-            "object_id": "NCIT:C80300",
+            "object_id": initial_identity,
             "object_label": "Maltose Monohydrate",
             "object_source": "obo:ncit.owl",
             "mapping_justification": "semapv:ManualMappingCuration",

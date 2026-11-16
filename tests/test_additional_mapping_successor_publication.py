@@ -175,6 +175,12 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
     rejected_alias = "NCIT:C990001"
     f = AdditionalAssertionChainFixture(tmp_path, monkeypatch, initial_identity=rejected_alias)
     completed("adoption_and_first_correction_verified")
+    _, _, original_rows = publication.read_sssom(f.target / publication.CANONICAL)
+    assert len(original_rows) == 1
+    original_exact = copy.deepcopy(original_rows[0])
+    assert original_exact["object_id"] == rejected_alias
+    assert original_exact["predicate_id"] == "skos:exactMatch"
+    assert original_exact["validation_method"] == "synthetic-prior-stamp"
     operation = f.request["operations"][0]
     selected = operation["after_path"]
     before_owner = api.load_yaml(f.before[selected])
@@ -308,6 +314,10 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
     assert {
         (row["subject_id"], row["predicate_id"], row["object_id"]) for row in installed
     } == expected_triples
+    assert not any(
+        row["object_id"] == rejected_alias and row["predicate_id"] == "skos:exactMatch"
+        for row in installed
+    )
     for row in installed:
         additional_mappings.row_assertion(after_owner, row)
         assert row["validation_method"] == ""
@@ -318,9 +328,27 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
         for entry in provenance["selection"]["rows"]
         if entry["proposed_row"] and entry["proposed_row"]["object_id"] == "NCIT:C80300"
     )
-    assert (
-        primary_selection["before_rows"][0]["row"]["validation_method"] == "synthetic-prior-stamp"
+    assert primary_selection["before_rows"] == []
+    removed_exact = next(
+        entry
+        for entry in provenance["selection"]["rows"]
+        if entry["proposed_row"] is None
+        and any(item["row"] == original_exact for item in entry["before_rows"])
     )
+    assert removed_exact["candidate_position"] is None
+    assert removed_exact["disposition"] == "REMOVE_WITH_HISTORY"
+    assert len(removed_exact["before_rows"]) == 1
+    assert removed_exact["before_rows"][0]["row"] == original_exact
+    assert removed_exact["before_rows"][0]["row"]["validation_method"] == "synthetic-prior-stamp"
+    broad_selection = next(
+        entry
+        for entry in provenance["selection"]["rows"]
+        if entry["proposed_row"]
+        and entry["proposed_row"]["object_id"] == rejected_alias
+        and entry["proposed_row"]["predicate_id"] == "skos:broadMatch"
+    )
+    assert broad_selection["disposition"] == "INSTALL_SUPPORTED"
+    assert broad_selection["before_rows"] == []
     assert api.load_yaml((f.target / selected).read_bytes()) == after_owner
     persisted_operation = json.loads(f.path.read_bytes())["operations"][0]
     assert persisted_operation["inherited_holds"] == persisted_operation["residual_holds"] == holds
