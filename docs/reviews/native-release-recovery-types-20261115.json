@@ -8,9 +8,11 @@
     ],
     "code_objects_checked": 9,
     "raw_code_equivalent": false,
+    "function_code_changes": [],
+    "normalized_structure_equivalent": true,
     "normalized_type_only_equivalent": true,
     "normalization": {
-      "bare_annotations": true,
+      "bare_annotations": "simple names with postponed evaluation only",
       "typing_imports": [
         "Any"
       ]
@@ -18,8 +20,7 @@
     "ignored_metadata": [
       "co_firstlineno",
       "co_linetable",
-      "co_filename",
-      "exclusive compiler class __firstlineno__ constant"
+      "co_filename"
     ],
     "compared_fields": [
       "co_argcount",
@@ -46,13 +47,18 @@
     "proposed_sha256": "7b37340f59057386c0ba4a4c85e70e14752b75ce4d362213749c90a9511648a0",
     "raw_differing_code_objects": [
       "<module>",
+      "Endpoint",
+      "Loaded",
+      "Predecessor",
       "_ProducerBytes"
     ],
     "code_objects_checked": 107,
     "raw_code_equivalent": false,
+    "function_code_changes": [],
+    "normalized_structure_equivalent": true,
     "normalized_type_only_equivalent": true,
     "normalization": {
-      "bare_annotations": true,
+      "bare_annotations": "simple names with postponed evaluation only",
       "typing_imports": [
         "Any"
       ]
@@ -60,8 +66,7 @@
     "ignored_metadata": [
       "co_firstlineno",
       "co_linetable",
-      "co_filename",
-      "exclusive compiler class __firstlineno__ constant"
+      "co_filename"
     ],
     "compared_fields": [
       "co_argcount",
@@ -92,16 +97,19 @@
     ],
     "code_objects_checked": 2,
     "raw_code_equivalent": false,
+    "function_code_changes": [
+      "require"
+    ],
+    "normalized_structure_equivalent": false,
     "normalized_type_only_equivalent": false,
     "normalization": {
-      "bare_annotations": true,
+      "bare_annotations": "simple names with postponed evaluation only",
       "typing_imports": []
     },
     "ignored_metadata": [
       "co_firstlineno",
       "co_linetable",
-      "co_filename",
-      "exclusive compiler class __firstlineno__ constant"
+      "co_filename"
     ],
     "compared_fields": [
       "co_argcount",
@@ -136,5 +144,27 @@
     "focused": "68 passed in 44.74 seconds; startup, replay, launcher, additional assertions, exact source counterpart admission/refusal"
   },
   "limits": "Raw module/class code differs for typing import and annotation metadata. Normalization is explicit; this is not a universal runtime-equivalence proof. The changed executable guard negative control is refused.",
-  "helper_sha256": "60253df7e1af325d276c21804dc7b5fe91bfdf3d9da8713b3fe8696e7053ee0d"
+  "helper_sha256": "f3a809f23cf58289d3db3bd10866ad4484516bc79edd559f0dc335e1e02ac816",
+  "helper_review_fixes": {
+    "issues": [
+      1432,
+      1433,
+      1434
+    ],
+    "supersedes_comparator_projection_commit": "4f78901301733e6bdd30fa00b8f080727bf403bb",
+    "changes": [
+      "Preserve executable annotation targets and evaluated annotations",
+      "Require unchanged raw function/method code, including local binding",
+      "Compare all ordinary constant stores",
+      "Preserve scalar types and float/complex bits"
+    ],
+    "tests": "12 comparator cases plus 7 launcher cases passed; Ruff and Black passed",
+    "mutations": {
+      "annotation_target_and_expression": "3 failed, 1 passed before restoration",
+      "ordinary_constant_store": "2 failed, 4 passed before restoration",
+      "scalar_types_and_bits": "5 failed, 7 passed before restoration",
+      "local_binding": "1 failed, 11 passed before restoration"
+    },
+    "final_validation_sha256": "a7aa2f9350f38c99f50ea43caa43fff4cb702fa54d87dd27f9a22e32cf24e0af"
+  }
 }

@@ -64,3 +64,11 @@ The separate [published-predecessor result](reviews/native-published-predecessor
 records a genuine native canonical application followed by predecessor admission
 and both missing-publication and missing-review refusals. It passed at the
 recorded pre-typing commit; predecessor bytes remained unchanged.
+
+Independent follow-up findings #1432–#1434 made the comparison helper more
+conservative: executable annotation targets, local-binding changes, ordinary
+constant stores and scalar type/bit distinctions cannot disappear. Twelve
+comparison regressions pass; targeted mutations make the relevant tests fail.
+The corrected helper regenerates only its type-comparison evidence for the same
+production source hashes. Original native canary and predecessor artifacts are
+preserved with their original tested commits.

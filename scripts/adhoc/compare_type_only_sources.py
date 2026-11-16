@@ -1,24 +1,27 @@
-"""Compare proposed type-only sources for issue #1430 (2026-11-15).
+"""Compare proposed type-only sources for issues #1430/#1432/#1433/#1434 (2026-11-15).
 
 Purpose: qualify a bounded annotation repair without executing historical code.
 Inputs: explicit original/proposed UTF-8 Python paths and named typing imports.
 Outputs: JSON to stdout and, optionally, a new output file; nonzero on mismatch.
 
 Report raw compiled-code differences before normalization. Normalization permits
-bare annotation metadata and explicitly selected typing imports; those additions
+simple-name bare annotations with postponed evaluation and selected typing imports; those additions
 can change metadata/import behavior. This is not universal runtime equivalence,
 source authentication, a sandbox proof, or replacement canary evidence. Guards,
 assignments, calls and annotations with assigned values remain in the comparison.
-Neither input is imported or executed. Python/compiler identity is reported.
+Function/method code must also remain unchanged before normalization, so local
+binding changes cannot disappear. Scalar constant types and floating-point bits
+are preserved. Neither input is imported or executed; interpreter identity is reported.
 """
 
 from __future__ import annotations
 
 import argparse
 import ast
-import dis
 import hashlib
+import inspect
 import json
+import marshal
 import sys
 import types
 from collections import defaultdict
@@ -43,45 +46,19 @@ CODE_FIELDS = (
 
 
 def fingerprint(code):
-    instructions = list(dis.get_instructions(code))
-
-    def is_class_line_store(index):
-        return (
-            index + 1 < len(instructions)
-            and instructions[index + 1].opname == "STORE_NAME"
-            and instructions[index + 1].argval == "__firstlineno__"
-        )
-
-    # Python 3.13 stores class line metadata in co_consts too. Normalize it only
-    # when that constant slot has no executable use outside the metadata store.
-    line_slots = {
-        instruction.arg
-        for index, instruction in enumerate(instructions)
-        if instruction.opname == "LOAD_CONST"
-        and is_class_line_store(index)
-        and all(
-            is_class_line_store(other)
-            for other, value in enumerate(instructions)
-            if value.opname == "LOAD_CONST" and value.arg == instruction.arg
-        )
-    }
-
     def constant(value):
         if isinstance(value, types.CodeType):
-            return fingerprint(value)
+            return ("code", fingerprint(value))
         if isinstance(value, tuple):
-            return tuple(constant(item) for item in value)
+            return ("tuple", tuple(constant(item) for item in value))
         if isinstance(value, frozenset):
-            return frozenset(constant(item) for item in value)
-        return value
+            return ("frozenset", frozenset(constant(item) for item in value))
+        return (type(value).__name__, marshal.dumps(value))
 
     return tuple((field, getattr(code, field)) for field in CODE_FIELDS) + (
         (
             "co_consts",
-            tuple(
-                ("compiler-class-firstlineno",) if index in line_slots else constant(item)
-                for index, item in enumerate(code.co_consts)
-            ),
+            tuple(constant(item) for item in code.co_consts),
         ),
     )
 
@@ -100,11 +77,21 @@ def inventory(code):
 
 
 class RemoveTypeMetadata(ast.NodeTransformer):
-    def __init__(self, imports):
+    def __init__(self, imports, postponed_annotations):
         self.imports = set(imports)
+        self.postponed_annotations = postponed_annotations
 
     def visit_AnnAssign(self, node):
-        return None if node.value is None else self.generic_visit(node)
+        # Attribute/subscript targets can execute calls even without a value.
+        # Without postponed annotations, annotation expressions can also execute.
+        if (
+            self.postponed_annotations
+            and node.value is None
+            and isinstance(node.target, ast.Name)
+            and node.simple == 1
+        ):
+            return None
+        return self.generic_visit(node)
 
     def visit_ImportFrom(self, node):
         if node.module == "typing":
@@ -120,13 +107,24 @@ def compare(original, proposed, imports=()):
     ]
     left, right = inventory(before), inventory(after)
     differing = []
+    function_changes = []
     for name in sorted(left.keys() | right.keys()):
         a, b = left[name], right[name]
         if [fingerprint(code) for code in a] != [fingerprint(code) for code in b]:
             differing.append(name)
+            if any(code.co_flags & inspect.CO_NEWLOCALS for code in (*a, *b)):
+                function_changes.append(name)
     normalized = []
     for raw in (original, proposed):
-        tree = RemoveTypeMetadata(imports).visit(ast.parse(raw))
+        tree = ast.parse(raw)
+        postponed = any(
+            isinstance(node, ast.ImportFrom)
+            and node.module == "__future__"
+            and node.level == 0
+            and any(item.name == "annotations" for item in node.names)
+            for node in tree.body
+        )
+        tree = RemoveTypeMetadata(imports, postponed).visit(tree)
         # Reparse canonical text so line offsets cannot influence compiler NOPs.
         normalized.append(
             compile(ast.unparse(tree), "<compared-source>", "exec", dont_inherit=True)
@@ -138,13 +136,19 @@ def compare(original, proposed, imports=()):
         "raw_differing_code_objects": differing,
         "code_objects_checked": sum(map(len, left.values())),
         "raw_code_equivalent": fingerprint(before) == fingerprint(after),
-        "normalized_type_only_equivalent": fingerprint(normalized[0]) == fingerprint(normalized[1]),
-        "normalization": {"bare_annotations": True, "typing_imports": sorted(imports)},
+        "function_code_changes": function_changes,
+        "normalized_structure_equivalent": fingerprint(normalized[0]) == fingerprint(normalized[1]),
+        "normalized_type_only_equivalent": (
+            not function_changes and fingerprint(normalized[0]) == fingerprint(normalized[1])
+        ),
+        "normalization": {
+            "bare_annotations": "simple names with postponed evaluation only",
+            "typing_imports": sorted(imports),
+        },
         "ignored_metadata": [
             "co_firstlineno",
             "co_linetable",
             "co_filename",
-            "exclusive compiler class __firstlineno__ constant",
         ],
         "compared_fields": [*CODE_FIELDS, "co_consts recursively"],
         "scope": "Compile only. Input modules are never imported or executed. Raw differences remain disclosed.",
