@@ -348,7 +348,9 @@ def test_real_cas_publication_reconstructs_current_semantic_transition(cas_evide
                         "ordinary_release_review_required"
                     ],
                     "scientific_approval_added": result["provenance"]["scientific_approval_added"],
-                    "source_scientific_approval_added": result["source"]["scientific_approval_added"],
+                    "source_scientific_approval_added": result["source"][
+                        "scientific_approval_added"
+                    ],
                 },
             }
         )
