@@ -232,3 +232,44 @@ def test_runtime_package_manager_hardlink_remains_allowed(installed):
     os.link(path, root.parent / "package-cache-link")
     result = successor._runtime_dependencies()
     assert result["modules"]["dotenv"] == str(path)
+
+
+def test_selected_dependency_refuses_wrong_base_environment(installed):
+    root, _ = installed
+    config = root.parents[2] / "pyvenv.cfg"
+    lines = config.read_text().splitlines()
+    assert sum(line.startswith("home =") for line in lines) == 1
+    config.write_text(
+        "\n".join(
+            (
+                "home = " + str(root.parents[2] / "unselected-interpreter")
+                if line.startswith("home =")
+                else line
+            )
+            for line in lines
+        )
+        + "\n"
+    )
+    with pytest.raises(ValueError, match="not an environment of the selected interpreter"):
+        successor._runtime_dependencies()
+    assert "dotenv" not in sys.modules
+
+
+def test_requirement_parser_project_shadow_refuses_before_first_import(tmp_path, monkeypatch):
+    shadow = tmp_path / "parser-shadow"
+    package = shadow / "packaging"
+    package.mkdir(parents=True)
+    marker = tmp_path / "PARSER_SHADOW_EXECUTED"
+    (package / "__init__.py").write_text(
+        f"from pathlib import Path\nPath({str(marker)!r}).write_text('unexpected parser import')\n"
+    )
+    # Model the selector's first import; no finder, metadata reader or guard is
+    # replaced. The real package metadata remains in its installed library.
+    for name in list(sys.modules):
+        if name == "packaging" or name.startswith("packaging."):
+            monkeypatch.delitem(sys.modules, name)
+    monkeypatch.syspath_prepend(str(shadow))
+    with pytest.raises(ValueError, match="requirement parser is shadowed"):
+        successor._runtime_dependencies()
+    assert "packaging" not in sys.modules
+    assert not marker.exists()
