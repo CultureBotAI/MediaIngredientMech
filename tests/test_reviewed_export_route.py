@@ -19,6 +19,10 @@ from mediaingredientmech.validation import reviewed_export_route as route
 from tests.test_reviewed_sssom import reviewed_fixture, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
+# The independently checked original #1325 endpoint, before campaign adoption.
+# Full repository history is already supplied by the ordinary pytest workflow.
+HISTORICAL_REVISION = "4f57a1f3a9ed6b20d2c103c4e7f46d14c6b571f5"
+HISTORICAL_TREE = "dbbe9d1e891ad818666db9ecb6018c3c0ea4b555"
 
 
 def git(root, *args):
@@ -364,9 +368,23 @@ def test_late_historical_drift_is_refused(current, history, monkeypatch):
         ordinary(current, history)
 
 
-@pytest.fixture(scope="module")
-def real_history(tmp_path_factory):
-    destination = tmp_path_factory.mktemp("native-history") / "checkout"
+def assert_historical_fixture(root):
+    assert git(root, "rev-parse", "HEAD") == HISTORICAL_REVISION, "wrong historical endpoint"
+    assert git(root, "rev-parse", "HEAD^{tree}") == HISTORICAL_TREE
+    assert git(root, "cat-file", "-t", projection.BASE_COMMIT) == "commit"
+    assert not (root / ".git/objects/info/alternates").exists()
+
+
+def clone_historical_fixture(source, destination):
+    # Fail explicitly in an incomplete clone; never replace the endpoint with
+    # current HEAD, fetch a moving ref, or skip the real historical proof.
+    for revision in (HISTORICAL_REVISION, projection.BASE_COMMIT):
+        try:
+            git(source, "cat-file", "-e", revision + "^{commit}")
+        except subprocess.CalledProcessError as error:
+            raise AssertionError(
+                "Historical routing fixture requires full Git history containing " + revision
+            ) from error
     subprocess.run(
         [
             "git",
@@ -374,16 +392,38 @@ def real_history(tmp_path_factory):
             "--no-hardlinks",
             "--dissociate",
             "--no-checkout",
-            str(ROOT),
+            str(source),
             str(destination),
         ],
         check=True,
         capture_output=True,
     )
-    revision = git(ROOT, "rev-parse", "HEAD")
-    git(destination, "checkout", "--detach", revision)
-    assert not (destination / ".git/objects/info/alternates").exists()
-    return destination, revision
+    git(destination, "checkout", "--detach", HISTORICAL_REVISION)
+    assert_historical_fixture(destination)
+    return destination, HISTORICAL_REVISION
+
+
+@pytest.fixture(scope="module")
+def real_history(tmp_path_factory):
+    destination = tmp_path_factory.mktemp("native-history") / "checkout"
+    return clone_historical_fixture(ROOT, destination)
+
+
+def test_real_history_fixture_uses_the_fixed_endpoint(real_history):
+    assert real_history[1] == HISTORICAL_REVISION
+    assert_historical_fixture(real_history[0])
+
+
+def test_historical_fixture_refuses_another_committed_endpoint(history):
+    with pytest.raises(AssertionError, match="wrong historical endpoint"):
+        assert_historical_fixture(history[0])
+
+
+def test_historical_fixture_requires_the_missing_endpoint_before_cloning(tmp_path, history):
+    destination = tmp_path / "missing-history"
+    with pytest.raises(AssertionError, match="full Git history containing " + HISTORICAL_REVISION):
+        clone_historical_fixture(history[0], destination)
+    assert not destination.exists()
 
 
 def test_real_native_projected_default_keeps_complete_proof(real_history):
