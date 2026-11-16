@@ -11,6 +11,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR_PIN = (ROOT / "scripts" / ".vendored_canon_ref").read_text().strip()
+# #1442: this reviewed producer is independent of the native governance pin.
+ADDITIONAL_ASSERTION_PIN = "7070392fcb5e31282499a599f7147b56b96e5aca"
 # Job/check names are an external ruleset contract. Renames require coordinated
 # settings changes; deriving this list from the workflows would hide a deletion.
 REQUIRED_JOBS = {
@@ -35,15 +37,23 @@ def _load(name):
 
 
 def _assert_native_adoption_dependency(document, job):
-    """#1323: pytest captures pinned source without replacing the MIM checkout."""
+    """#1323/#1442: pytest captures both pinned roles beside its event candidate."""
     steps = job["steps"]
     checkouts = [step for step in steps if step.get("uses", "").startswith("actions/checkout@")]
-    assert len(checkouts) == 2, "pytest needs its candidate and one native dependency"
+    assert len(checkouts) == 3, "pytest needs its candidate and exactly two Claw roles"
     dependencies = [step for step in checkouts
                     if step.get("with", {}).get("repository") == "CultureBotAI/culturebotai-claw"]
-    assert len(dependencies) == 1, "pytest needs the real native Claw source"
-    dependency = dependencies[0]
-    candidate = next(step for step in checkouts if step is not dependency)
+    assert len(dependencies) == 2, "pytest needs both real Claw source roles"
+    native = [step for step in dependencies
+              if step["with"].get("path") == ".temp/native-claw"]
+    additional = [step for step in dependencies
+                  if step["with"].get("path") == ".temp/additional-assertion-claw"]
+    assert len(native) == len(additional) == 1, "one checkout per distinct Claw role required"
+    dependency, additional = native[0], additional[0]
+    candidates = [step for step in checkouts
+                  if step.get("with", {}).get("repository") in (None, "${{ github.repository }}")]
+    assert len(candidates) == 1, "one event-bound MIM candidate required"
+    candidate = candidates[0]
     assert candidate.get("with", {}).get("path") in (None, "."), "keep the candidate at the job root"
     assert candidate.get("with", {}).get("fetch-depth") == 0, "retain the full candidate history"
     options = dependency["with"]
@@ -51,17 +61,26 @@ def _assert_native_adoption_dependency(document, job):
     assert options.get("ref") == "${{ steps.native-claw-pin.outputs.ref }}", "native source must read the existing pin"
     assert options.get("path") == ".temp/native-claw", "native source must be isolated and ignored"
     assert options.get("persist-credentials") is False
+    additional_options = additional["with"]
+    assert additional_options.get("ref") == ADDITIONAL_ASSERTION_PIN, "additional source must use its reviewed revision"
+    assert additional_options.get("path") == ".temp/additional-assertion-claw", "additional source must stay separate"
+    assert additional_options.get("persist-credentials") is False
     readers = [step for step in steps if step.get("id") == "native-claw-pin"]
     runners = [step for step in steps if step.get("name") == "Run pytest"]
     assert len(readers) == len(runners) == 1, "one pin reader and complete pytest invocation required"
     reader, runner = readers[0], runners[0]
     assert steps.index(candidate) < steps.index(reader) < steps.index(dependency) < steps.index(runner)
+    assert steps.index(candidate) < steps.index(additional) < steps.index(runner)
     assert reader.get("shell") == "bash"
     assert runner.get("env", {}).get("CLAW_SRC") == "${{ github.workspace }}/.temp/native-claw/src"
+    assert runner.get("env", {}).get("MIM_ADDITIONAL_ASSERTION_CLAW_SRC") == "${{ github.workspace }}/.temp/additional-assertion-claw/src"
     assert runner.get("run") == "uv run --with pytest --with pytest-cov pytest", "retain every native and pure test"
     assert "CLAW_SRC" not in document.get("env", {}) and "CLAW_SRC" not in job.get("env", {})
+    for scope in (document, job):
+        assert "MIM_ADDITIONAL_ASSERTION_CLAW_SRC" not in scope.get("env", {})
+        assert "PYTHONPATH" not in scope.get("env", {}), "source capture must not broaden package imports"
     assert "PYTHONPATH" not in runner.get("env", {}), "source capture must not broaden package imports"
-    for step in (candidate, reader, dependency, runner):
+    for step in (candidate, reader, dependency, additional, runner):
         assert "if" not in step and not step.get("continue-on-error"), "native setup and tests cannot silently skip"
 
 
@@ -206,7 +225,7 @@ def test_native_adoption_dependency_cannot_drift_or_skip(defect):
     job = broken["jobs"]["pytest"]
     steps = job["steps"]
     dependency = next(step for step in steps
-                      if step.get("with", {}).get("repository") == "CultureBotAI/culturebotai-claw")
+                      if step.get("with", {}).get("path") == ".temp/native-claw")
     reader = next(step for step in steps if step.get("id") == "native-claw-pin")
     runner = next(step for step in steps if step.get("name") == "Run pytest")
     if defect == "dependency":
@@ -229,6 +248,96 @@ def test_native_adoption_dependency_cannot_drift_or_skip(defect):
         dependency["if"] = "false"
     else:
         runner["run"] += " -k 'not stable_id_adoption'"
+    with pytest.raises(AssertionError):
+        _assert_required_workflow(broken, REQUIRED_JOBS["tests.yaml"])
+
+
+def test_both_claw_roles_are_identified_independently_of_checkout_order():
+    """#1442: the additional producer cannot become the native role by position."""
+    document = _load("tests.yaml")
+    _assert_required_workflow(document, REQUIRED_JOBS["tests.yaml"])
+    reordered = deepcopy(document)
+    steps = reordered["jobs"]["pytest"]["steps"]
+    native = next(i for i, step in enumerate(steps)
+                  if step.get("with", {}).get("path") == ".temp/native-claw")
+    additional = next(i for i, step in enumerate(steps)
+                      if step.get("with", {}).get("path") == ".temp/additional-assertion-claw")
+    steps[native], steps[additional] = steps[additional], steps[native]
+    _assert_required_workflow(reordered, REQUIRED_JOBS["tests.yaml"])
+
+
+@pytest.mark.parametrize("defect", [
+    "missing", "duplicate", "extra", "missing-pin", "mutable", "wrong-pin",
+    "wrong-repository", "candidate-overlap", "native-overlap", "nested-path",
+    "crossed-paths", "crossed-refs", "missing-env", "wrong-env", "crossed-env",
+    "global-env", "job-env", "global-pythonpath", "job-pythonpath",
+    "credentials", "order", "skip", "ignored-failure",
+])
+def test_additional_assertion_dependency_cannot_drift_or_skip(defect):
+    """#1442: both source roles are required without weakening any original gate."""
+    document = _load("tests.yaml")
+    _assert_required_workflow(document, REQUIRED_JOBS["tests.yaml"])
+    broken = deepcopy(document)
+    job = broken["jobs"]["pytest"]
+    steps = job["steps"]
+    native = next(step for step in steps
+                  if step.get("with", {}).get("path") == ".temp/native-claw")
+    additional = next(step for step in steps
+                      if step.get("with", {}).get("path") == ".temp/additional-assertion-claw")
+    runner = next(step for step in steps if step.get("name") == "Run pytest")
+    options = additional["with"]
+    variable = "MIM_ADDITIONAL_ASSERTION_CLAW_SRC"
+    if defect == "missing":
+        steps.remove(additional)
+    elif defect == "duplicate":
+        # Keep exactly three checkouts; cardinality alone must not admit this.
+        steps[steps.index(native)] = deepcopy(additional)
+    elif defect == "extra":
+        extra = deepcopy(additional)
+        extra["with"]["path"] = ".temp/extra-claw"
+        steps.insert(steps.index(runner), extra)
+    elif defect == "missing-pin":
+        del options["ref"]
+    elif defect == "mutable":
+        options["ref"] = "main"
+    elif defect == "wrong-pin":
+        options["ref"] = "a" * 40
+    elif defect == "wrong-repository":
+        options["repository"] = "other/culturebotai-claw"
+    elif defect == "candidate-overlap":
+        options["path"] = "."
+    elif defect == "native-overlap":
+        options["path"] = native["with"]["path"]
+    elif defect == "nested-path":
+        options["path"] = native["with"]["path"] + "/additional"
+    elif defect == "crossed-paths":
+        options["path"], native["with"]["path"] = native["with"]["path"], options["path"]
+    elif defect == "crossed-refs":
+        options["ref"], native["with"]["ref"] = native["with"]["ref"], options["ref"]
+    elif defect == "missing-env":
+        del runner["env"][variable]
+    elif defect == "wrong-env":
+        runner["env"][variable] += "/elsewhere"
+    elif defect == "crossed-env":
+        runner["env"][variable], runner["env"]["CLAW_SRC"] = (
+            runner["env"]["CLAW_SRC"], runner["env"][variable]
+        )
+    elif defect in {"global-env", "job-env"}:
+        scope = broken if defect == "global-env" else job
+        scope.setdefault("env", {})[variable] = runner["env"][variable]
+    elif defect in {"global-pythonpath", "job-pythonpath"}:
+        scope = broken if defect == "global-pythonpath" else job
+        scope.setdefault("env", {})["PYTHONPATH"] = ".temp/additional-assertion-claw/src"
+    elif defect == "credentials":
+        options["persist-credentials"] = True
+    elif defect == "order":
+        steps.remove(additional)
+        steps.append(additional)
+    elif defect == "skip":
+        additional["if"] = "false"
+    else:
+        assert defect == "ignored-failure"
+        additional["continue-on-error"] = True
     with pytest.raises(AssertionError):
         _assert_required_workflow(broken, REQUIRED_JOBS["tests.yaml"])
 
