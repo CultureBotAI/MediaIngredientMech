@@ -8,9 +8,13 @@ test's question. Every test gets its own.
 
 from __future__ import annotations
 
+from contextlib import ExitStack
+from pathlib import Path
+
 import pytest
 
 from mediaingredientmech.validation.kg_microbe_dict import CACHE_DIR_ENV
+from tests.historical_correction_prestate import MODULE, ROOT, correction_context
 from tests.historical_source_anchors import restore_requested_case, use_historical_schema
 from tests.pre_mint_schema import pre_mint_schema, pre_mint_schema_case  # noqa: F401
 
@@ -24,4 +28,21 @@ def _isolated_dictionary_cache(tmp_path_factory, monkeypatch):
 def _historical_step7c_source_anchors(request):
     """Keep the original evidence-bound source tests portable after publication."""
     use_historical_schema(request)
+    if Path(request.path) == ROOT / MODULE:
+        request.getfixturevalue("historical_correction_evidence")(request.module)
     restore_requested_case(request)
+
+
+@pytest.fixture
+def historical_correction_evidence(tmp_path_factory):
+    """#1441: scope original correction tests to their exact evidence prestate."""
+    with ExitStack() as stack:
+
+        def bind(module):
+            # Unrelated modules never allocate a context or read its archive.
+            if Path(module.__file__) != ROOT / MODULE:
+                return False
+            parent = tmp_path_factory.mktemp("historical-correction-1441")
+            return stack.enter_context(correction_context(module, parent / "evidence"))
+
+        yield bind

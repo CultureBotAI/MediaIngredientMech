@@ -191,8 +191,11 @@ def load_original(module):
 
 
 @pytest.mark.parametrize("module", [LABELS, CORRECTION])
-def test_restored_fixture_still_rejects_subsequent_anchor_corruption(tmp_path, module, pre_mint_schema_case):
+def test_restored_fixture_still_rejects_subsequent_anchor_corruption(
+    tmp_path, module, pre_mint_schema_case, historical_correction_evidence
+):
     original = load_original(module)
+    historical_correction_evidence(original)
     if module == LABELS:
         case = original.case.__wrapped__(tmp_path, original.writer.frozen_owners())
     else:
