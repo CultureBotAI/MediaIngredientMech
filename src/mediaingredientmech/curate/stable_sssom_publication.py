@@ -842,8 +842,8 @@ def _render_candidate(raw, fields, rows):
     return prelude.encode() + _tsv(fields, rows)
 
 
-def _cas_source_correction(manifest, endpoint, endpoint_ref):
-    """Require real reviewed source withdrawal, never a diagnostic success flag (#1383)."""
+def _cas_source_claims(manifest, endpoint_ref):
+    """Current claims still select the actual current endpoint, never an ancestor."""
     proof = manifest.get("cas_dispositions")
     if proof is None:
         return
@@ -851,39 +851,105 @@ def _cas_source_correction(manifest, endpoint, endpoint_ref):
     correction = claims["source_correction"]
     retired = [entry for entry in claims["entries"] if entry["action"] == "RETIRE_INVALID_CAS"]
     require(
-        not retired or (endpoint is not None and correction == endpoint_ref),
+        not retired or (endpoint_ref is not None and correction == endpoint_ref),
         "CAS retirement requires the genuinely selected source-correction endpoint",
     )
     if correction is not None:
         require(
-            endpoint is not None and correction == endpoint_ref,
+            endpoint_ref is not None and correction == endpoint_ref,
             "CAS source-correction proof differs",
         )
-    if endpoint is None:
-        return
-    operations = {
-        operation["mim_id"]: operation for operation in endpoint.loaded.request["operations"]
-    }
+    return claims
+
+
+def _cas_correction_steps(endpoint):
+    """Project already reconstructed native endpoints, including old producers (#1439).
+
+    This is not an ancestor loader. Only the real selected Endpoint and its
+    authenticated Predecessor objects supply this ordered proof; no caller
+    reference or copied receipt can introduce another source correction.
+    """
+    api = native()
+    steps: list[dict] = []
+    roots: list[Path] = []
+    limit = successor_native().MAX_SUCCESSOR_ANCESTRY + 1
+    while True:
+        root = endpoint.root
+        require(
+            all(not root.is_relative_to(p) and not p.is_relative_to(root) for p in roots),
+            "CAS correction roots overlap or cycle",
+        )
+        roots.append(root)
+        require(
+            len(roots) <= limit,
+            "CAS correction ancestry limit exceeded",
+        )
+        loaded = endpoint.loaded
+        operations = loaded.request["operations"]
+        steps.append(
+            {
+                "root": str(root),
+                "operations": operations,
+                "before": api.hashes(loaded.owners),
+                "after": endpoint.manifest["after_inventory"],
+                "selected_before": {
+                    op["mim_id"]: loaded.owners[op["before"]["path"]].content for op in operations
+                },
+            }
+        )
+        predecessor = loaded.predecessor
+        kind = predecessor.reference["kind"]
+        require(kind in {"adoption", "successor"}, "unsupported CAS correction predecessor")
+        if kind == "adoption":
+            break
+        endpoint = predecessor.endpoint
+    return list(reversed(steps))
+
+
+def _cas_source_withdrawals(claims, steps):
+    """Same owner proof for native publication and scoped semantic reconstruction."""
+    require(steps, "CAS source correction chain missing")
     for entry in claims["entries"]:
         owner = entry["owner"]
-        if entry["action"] == "RETIRE_INVALID_CAS":
-            operation = operations.get(owner["mim_id"])
+        retired = entry["action"] == "RETIRE_INVALID_CAS"
+        for step in reversed(steps):
+            operations = {op["mim_id"]: op for op in step["operations"]}
             require(
-                operation is not None
-                and operation["after_path"] == owner["path"]
-                and operation["proposal"]["sha256"] == owner["sha256"]
-                and entry["row"]["object_id"] in operation["rejected_identifiers"],
-                "CAS retirement lacks actual reviewed corrective owner/rejection",
+                step["after"].get(owner["path"]) == owner["sha256"],
+                "CAS owner differs from source correction postimage",
+            )
+            operation = operations.get(owner["mim_id"])
+            if operation is not None:
+                require(retired, "held owner was changed by source correction")
+                raw = step["selected_before"][owner["mim_id"]]
+                before = native().load_yaml(raw)
+                token = entry["row"]["object_id"]
+                require(
+                    operation["after_path"] == owner["path"]
+                    and operation["proposal"]["sha256"] == owner["sha256"]
+                    and native().sha(raw)
+                    == operation["before"]["sha256"]
+                    == step["before"].get(operation["before"]["path"])
+                    and operation["before"]["sha256"] != owner["sha256"]
+                    and token in before.get("legacy_identifiers", [])
+                    and token in operation["rejected_identifiers"],
+                    "CAS retirement lacks actual reviewed corrective owner/rejection",
+                )
+                # Stop at the latest selection, even if an older one would pass.
+                break
+            require(
+                step["before"].get(owner["path"]) == owner["sha256"],
+                "CAS owner differs from unchanged source complement",
             )
         else:
-            require(
-                owner["mim_id"] not in operations, "held owner was changed by source correction"
-            )
-            original = endpoint.loaded.predecessor.owners.get(owner["path"])
-            require(
-                original is not None and native().sha(original.content) == owner["sha256"],
-                "held owner differs from preserved adoption predecessor",
-            )
+            require(not retired, "CAS retirement lacks actual reviewed corrective owner/rejection")
+
+
+def _cas_source_correction(manifest, endpoint, endpoint_ref):
+    """Require real reviewed source withdrawal, never a diagnostic success flag (#1383)."""
+    claims = _cas_source_claims(manifest, endpoint_ref if endpoint is not None else None)
+    if claims is not None and endpoint is not None:
+        _cas_source_withdrawals(claims, _cas_correction_steps(endpoint))
 
 
 def _selection(loaded):

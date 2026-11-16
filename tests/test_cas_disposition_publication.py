@@ -256,11 +256,27 @@ def test_retirement_requires_actual_source_endpoint_and_reviewed_rejection():
         pub._cas_source_correction(manifest, None, endpoint_ref)
     operation = {
         "mim_id": "MIM:0000001",
+        "before": {
+            "path": entry["owner"]["path"],
+            "sha256": api.sha(api.encoded({"legacy_identifiers": ["cas:138-86-7"]})),
+        },
         "after_path": entry["owner"]["path"],
         "proposal": {"sha256": "a" * 64},
         "rejected_identifiers": [],
     }
-    endpoint = SimpleNamespace(loaded=SimpleNamespace(request={"operations": [operation]}))
+    endpoint = SimpleNamespace(
+        root=Path("/synthetic-current"),
+        manifest={"after_inventory": {entry["owner"]["path"]: entry["owner"]["sha256"]}},
+        loaded=SimpleNamespace(
+            request={"operations": [operation]},
+            owners={
+                entry["owner"]["path"]: SimpleNamespace(
+                    content=api.encoded({"legacy_identifiers": ["cas:138-86-7"]})
+                )
+            },
+            predecessor=SimpleNamespace(reference={"kind": "adoption"}),
+        ),
+    )
     with pytest.raises(ValueError, match="reviewed corrective"):
         pub._cas_source_correction(manifest, endpoint, endpoint_ref)
     operation["rejected_identifiers"] = ["cas:138-86-7"]
