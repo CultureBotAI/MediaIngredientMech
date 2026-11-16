@@ -47,6 +47,24 @@ authenticated buffers before importing any recorded dependency. The captured
 historical replay script and Claw transformations stay byte-for-byte unchanged;
 their complete input membership and output comparisons remain mandatory.
 
+Replay children use `-I -S -B`, including when an authenticated older guard
+constructs the replay envelope (#1448). The current shared launch boundary
+recognizes only the two exact recorded bootstrap bodies and preserves every
+non-runtime envelope field. It selects installed roots from the fixed PyYAML,
+python-dotenv, jsonschema, LinkML and LinkML-runtime dependencies, following
+their declared requirements, markers and extras. Each selected module anchor
+must belong to its own distribution's hashed RECORD and qualified interpreter
+environment; another distribution cannot supply that association. Namespace
+parents retain their separately recorded ownership.
+
+The parent and child check runtime metadata, module origins, file identities and
+ancestor identities. Only qualified installed library roots are appended in the
+child; arbitrary project/PYTHONPATH entries and Python startup hooks are not
+enabled. Installed package-manager hardlinks remain valid runtime inputs, while
+captured producer files retain the stricter original alias rules. Third-party
+packages remain trusted runtime dependencies: these checks do not claim to
+authenticate every transitive module byte or sandbox arbitrary package code.
+
 Canonical publication has an explicit counterpart for the original source
 implementation and this repaired source (#1423). It records the actual selected
 source hash and still requires exact captured closure and runtime equality.

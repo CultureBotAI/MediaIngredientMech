@@ -10,7 +10,14 @@ import argparse
 import base64
 import builtins
 import copy
+import csv
+import hashlib
+import importlib.machinery
+import importlib.metadata
+import io
+import json
 import os
+import stat
 import subprocess
 import sys
 import sysconfig
@@ -18,6 +25,7 @@ import time
 import types
 import uuid
 from datetime import datetime, timezone
+from email.parser import Parser
 from pathlib import Path
 from typing import Any
 
@@ -210,6 +218,381 @@ def _ancestry(target, reference):
         reference = request["predecessor"]
 
 
+_RUNTIME_SEEDS = {
+    "PyYAML": "yaml",
+    "python-dotenv": "dotenv",
+    "jsonschema": "jsonschema",
+    "linkml": "linkml",
+    "linkml-runtime": "linkml_runtime",
+}
+
+
+def _runtime_file(path, snapshot):
+    """Pin installed metadata/origins; package-manager hardlinks are permitted."""
+    path = Path(path).absolute()
+    no_alias(path)
+    for parent in path.parents:
+        info = parent.stat()
+        identity = [info.st_dev, info.st_ino]
+        require(
+            snapshot["directories"].setdefault(str(parent), identity) == identity,
+            "installed runtime parent changed",
+        )
+    before = path.stat()
+    require(stat.S_ISREG(before.st_mode), "installed runtime file is not regular")
+    with os.fdopen(os.open(path, os.O_RDONLY | os.O_NOFOLLOW), "rb") as stream:
+        opened = os.fstat(stream.fileno())
+        require(
+            (opened.st_dev, opened.st_ino) == (before.st_dev, before.st_ino),
+            "installed runtime file changed while opening",
+        )
+        raw = stream.read()
+    after = path.stat()
+    require(
+        (after.st_dev, after.st_ino) == (before.st_dev, before.st_ino),
+        "installed runtime file replaced",
+    )
+    value = {"identity": [after.st_dev, after.st_ino], "sha256": hashlib.sha256(raw).hexdigest()}
+    require(
+        snapshot["files"].setdefault(str(path), value) == value, "installed runtime file changed"
+    )
+    return raw
+
+
+def _runtime_root(root, snapshot):
+    """Accept an installed interpreter/venv library, never a project path entry."""
+    no_alias(root)
+    version = f"python{sys.version_info.major}.{sys.version_info.minor}"
+    require(
+        root.name in {"site-packages", "dist-packages"}
+        and root.parent.name in {version, "python3"}
+        and root.parent.parent.name in {"lib", "lib64"},
+        "dependency metadata is outside an installed runtime library",
+    )
+    prefix = root.parents[2]
+    base = Path(sys._base_executable).resolve()  # type: ignore[attr-defined]
+    _runtime_file(base, snapshot)
+    if prefix != Path(sys.base_prefix).resolve():
+        config = _runtime_file(prefix / "pyvenv.cfg", snapshot).decode("utf-8")
+        values = dict(line.split("=", 1) for line in config.splitlines() if "=" in line)
+        values = {key.strip(): value.strip() for key, value in values.items()}
+        versions = {values[key] for key in ("version", "version_info") if key in values}
+        require(
+            Path(values["home"]).resolve() == base.parent
+            and versions == {".".join(map(str, sys.version_info[:3]))}
+            and (prefix / "bin/python3").resolve() == base,
+            "dependency library is not an environment of the selected interpreter",
+        )
+    info = root.stat()
+    identity = [info.st_dev, info.st_ino]
+    require(
+        snapshot["directories"].setdefault(str(root), identity) == identity,
+        "installed runtime root changed",
+    )
+
+
+def _runtime_module(name, paths):
+    """Resolve namespace/package components without importing their code."""
+    locations = paths
+    result = []
+    for index in range(1, len(name.split(".")) + 1):
+        part = ".".join(name.split(".")[:index])
+        spec: Any = importlib.machinery.PathFinder.find_spec(part, locations)
+        require(spec is not None, "installed dependency module is unavailable: " + part)
+        loaded = sys.modules.get(part)
+        if loaded is not None:
+            require(
+                getattr(loaded, "__file__", None) == spec.origin,
+                "loaded dependency origin differs: " + part,
+            )
+            if spec.submodule_search_locations is not None:
+                require(
+                    list(getattr(loaded, "__path__", ())) == list(spec.submodule_search_locations),
+                    "loaded dependency search path differs: " + part,
+                )
+        if spec.origin is not None:
+            result.append((part, str(Path(spec.origin).absolute())))
+        locations = list(spec.submodule_search_locations or ())
+    return result
+
+
+def _runtime_distribution(name, snapshot):
+    distribution = importlib.metadata.distribution(name)
+    root = Path(str(distribution.locate_file(""))).absolute()
+    _runtime_root(root, snapshot)
+    files: Any = distribution.files
+    require(files, "installed dependency has no RECORD: " + name)
+    metadata = [
+        p
+        for p in files
+        if len(p.parts) == 2 and p.parts[0].endswith(".dist-info") and p.name == "METADATA"
+    ]
+    require(len(metadata) == 1, "installed dependency metadata is ambiguous")
+    info = root / metadata[0].parent
+    # Parse the captured buffers, not a second importlib.metadata read: a late
+    # METADATA/RECORD replacement cannot silently change the dependency graph.
+    record = _runtime_file(info / "RECORD", snapshot).decode("utf-8")
+    records = {}
+    for row in csv.reader(io.StringIO(record)):
+        require(len(row) == 3 and row[0] not in records, "invalid installed RECORD")
+        records[row[0]] = row[1]
+    raw = _runtime_file(root / metadata[0], snapshot)
+    require(
+        records.get(str(metadata[0]))
+        == "sha256=" + base64.urlsafe_b64encode(hashlib.sha256(raw).digest()).decode().rstrip("="),
+        "installed METADATA differs from RECORD",
+    )
+    direct = info / "direct_url.json"
+    if os.path.lexists(direct):
+        require(
+            not json.loads(_runtime_file(direct, snapshot)).get("dir_info", {}).get("editable"),
+            "editable dependency is not an installed runtime",
+        )
+    return root, Parser().parsestr(raw.decode("utf-8")), records
+
+
+def _runtime_dependencies():
+    """Select the actual fixed replay dependencies and their declared closure.
+
+    Installed third-party packages remain the trusted runtime, not captured MIM
+    producers. RECORD/origin checks qualify their roots without forwarding caller
+    path entries or executing site/.pth/customization hooks (#1448).
+    """
+    snapshot: dict[str, Any] = {
+        "prefix": sys.prefix,
+        "exec_prefix": sys.exec_prefix,
+        "paths": [],
+        "directories": {},
+        "files": {},
+        "modules": {},
+    }
+    # Qualify the requirement parser before its first possible import. This is
+    # the same installed packaging dependency already required by LinkML, not
+    # permission to execute a project/PYTHONPATH module with that name.
+    parser_root, parser_metadata, parser_records = _runtime_distribution("packaging", snapshot)
+    require(
+        parser_metadata["Name"].casefold() == "packaging"
+        and {
+            "packaging/__init__.py",
+            "packaging/requirements.py",
+            "packaging/specifiers.py",
+            "packaging/utils.py",
+        }
+        <= set(parser_records),
+        "requirement parser installation is incomplete",
+    )
+    for name, digest in parser_records.items():
+        path = Path(name)
+        if path.parts[0] != "packaging" or path.suffix != ".py":
+            continue
+        require(".." not in path.parts, "requirement parser path escapes its installation")
+        module = ".".join(path.with_suffix("").parts)
+        if module.endswith(".__init__"):
+            module = module[: -len(".__init__")]
+        require(
+            _runtime_module(module, sys.path) == _runtime_module(module, [str(parser_root)]),
+            "requirement parser is shadowed outside its installation",
+        )
+        raw = _runtime_file(parser_root / path, snapshot)
+        require(
+            digest
+            == "sha256="
+            + base64.urlsafe_b64encode(hashlib.sha256(raw).digest()).decode().rstrip("="),
+            "requirement parser differs from RECORD",
+        )
+        loaded = sys.modules.get(module)
+        require(
+            loaded is None or getattr(loaded, "__file__", None) == str(parser_root / path),
+            "loaded requirement parser differs from its installation",
+        )
+    _runtime_check(snapshot)
+    from packaging.requirements import Requirement
+    from packaging.specifiers import SpecifierSet
+    from packaging.utils import canonicalize_name
+
+    selected: dict[str, Any] = {}
+    extras: dict[str, set[str]] = {}
+    pending = [Requirement(name) for name in _RUNTIME_SEEDS]
+    while pending:
+        request = pending.pop()
+        key: str = canonicalize_name(request.name)
+        distribution = selected.get(key) or _runtime_distribution(request.name, snapshot)
+        _, metadata, _ = distribution
+        require(
+            canonicalize_name(metadata["Name"]) == key
+            and request.specifier.contains(metadata["Version"], prereleases=True),
+            "installed dependency metadata/version differs: " + key,
+        )
+        requested = set(request.extras) | extras.get(key, set())
+        if key in selected and requested == extras[key]:
+            continue
+        selected[key], extras[key] = distribution, requested
+        python = metadata.get("Requires-Python")
+        require(
+            not python
+            or SpecifierSet(python).contains(
+                ".".join(map(str, sys.version_info[:3])), prereleases=True
+            ),
+            "installed dependency excludes the selected Python",
+        )
+        for value in metadata.get_all("Requires-Dist", []):
+            dependency = Requirement(value)
+            if dependency.marker is None or any(
+                dependency.marker.evaluate({"extra": extra}) for extra in {"", *requested}
+            ):
+                pending.append(dependency)
+    records: dict[str, str] = {}
+    owned: dict[str, dict[str, str]] = {}
+    candidates: dict[str, list[str]] = {}
+    roots: set[str] = set()
+    for key, (root, _metadata, installed) in selected.items():
+        roots.add(str(root))
+        owned[key] = {}
+        candidates[key] = []
+        for name, digest in installed.items():
+            entry = Path(name)
+            if ".." in entry.parts or entry.is_absolute():
+                continue  # Wheel console scripts are outside the import library.
+            path = root / entry
+            owned[key][str(path)] = digest
+            require(
+                records.setdefault(str(path), digest) == digest,
+                "installed distributions disagree about a shared file",
+            )
+            if entry.suffix == ".py" and all(part.isidentifier() for part in entry.parts[:-1]):
+                parts = list(entry.with_suffix("").parts)
+                if parts[-1] == "__init__":
+                    parts.pop()
+                if parts and all(part.isidentifier() for part in parts):
+                    candidates[key].append(".".join(parts))
+        require(candidates[key], "installed dependency has no registered Python module: " + key)
+    # Preserve precedence only among independently qualified roots. No other
+    # parent sys.path/PYTHONPATH entry becomes accessible to the isolated child.
+    snapshot["paths"] = list(
+        dict.fromkeys(
+            str(Path(value).absolute())
+            for value in sys.path
+            if value and str(Path(value).absolute()) in roots
+        )
+    )
+    require(
+        set(snapshot["paths"]) == roots, "installed dependency roots are not on the parent path"
+    )
+    anchors: dict[str, str] = {
+        canonicalize_name(key): value for key, value in _RUNTIME_SEEDS.items()
+    }
+    for key, names in candidates.items():
+        name = anchors.get(key) or sorted(names, key=lambda value: (value.count("."), value))[0]
+        origins = _runtime_module(name, snapshot["paths"])
+        require(origins, "installed dependency has no registered origin")
+        require(
+            origins[-1][0] == name and owned[key].get(origins[-1][1], "").startswith("sha256="),
+            "dependency anchor is not bound to its own distribution RECORD/root",
+        )
+        # Check the normal parent resolution too, including any already-loaded
+        # anchor; a project/PYTHONPATH shadow cannot be promoted into the child.
+        require(
+            _runtime_module(name, sys.path) == origins,
+            "dependency is shadowed outside its installation",
+        )
+        for module, origin in origins:
+            # Namespace/package parents may belong to another selected wheel.
+            # Their provenance cannot supply the final anchor's own association.
+            digest = records.get(origin)
+            require(
+                digest is not None and digest.startswith("sha256="),
+                "dependency origin is not hashed in its installed RECORD",
+            )
+            raw = _runtime_file(Path(origin), snapshot)
+            require(
+                "sha256="
+                + base64.urlsafe_b64encode(hashlib.sha256(raw).digest()).decode().rstrip("=")
+                == digest,
+                "installed dependency origin differs from RECORD",
+            )
+            loaded = sys.modules.get(module)
+            require(
+                loaded is None or getattr(loaded, "__file__", None) == origin,
+                "loaded dependency origin differs from its installation",
+            )
+            snapshot["modules"][module] = origin
+    _runtime_check(snapshot)
+    return snapshot
+
+
+def _runtime_check(snapshot):
+    for name, expected in snapshot["directories"].items():
+        path = Path(name)
+        no_alias(path)
+        info = path.stat()
+        require(
+            path.is_dir() and [info.st_dev, info.st_ino] == expected,
+            "installed runtime directory changed",
+        )
+    current: dict[str, Any] = {"directories": {}, "files": {}}
+    for name, expected in snapshot["files"].items():
+        _runtime_file(Path(name), current)
+        require(current["files"][name] == expected, "installed runtime file changed")
+    for module, origin in snapshot["modules"].items():
+        require(
+            _runtime_module(module, snapshot["paths"])[-1] == (module, origin),
+            "installed runtime module origin changed",
+        )
+
+
+# Exact bootstrap literals from the supported a5ac25db and d64/7b/ed8 producers.
+# These are launch adapters, not alternate producer implementations. Retain the
+# original body and envelope; add isolated runtime qualification around it.
+_RECORDED_REPLAY_BOOTSTRAPS = frozenset(
+    {
+        "912bfafa61bc9fb1a22f60e07b92d5f39281cbac596b609b51bb72adff4b655b",
+        "acf55484373e9ef4ea3c1ca34c505e150b81d9b588c32932c1253fa21c36cd39",
+    }
+)
+_RUNTIME_BOOTSTRAP = r"""
+import hashlib, importlib.machinery, io, json, os, stat, sys
+from pathlib import Path
+_runtime_input = sys.stdin.buffer.read()
+_runtime = json.loads(_runtime_input)["runtime"]
+def _runtime_require(value, message):
+    if not value:
+        raise ValueError("Authenticated replay child: installed runtime " + message)
+def _runtime_verify():
+    for name, expected in _runtime["directories"].items():
+        path = Path(name)
+        _runtime_require(not any(p.is_symlink() for p in (path, *path.parents)), "directory alias")
+        info = path.stat()
+        _runtime_require(path.is_dir() and [info.st_dev, info.st_ino] == expected, "directory changed")
+    for name, expected in _runtime["files"].items():
+        path = Path(name)
+        _runtime_require(not path.is_symlink(), "file alias")
+        with os.fdopen(os.open(path, os.O_RDONLY | os.O_NOFOLLOW), "rb") as stream:
+            before = os.fstat(stream.fileno())
+            _runtime_require(stat.S_ISREG(before.st_mode)
+                and [before.st_dev, before.st_ino] == expected["identity"], "file identity changed")
+            _runtime_require(hashlib.sha256(stream.read()).hexdigest() == expected["sha256"], "file changed")
+            after = path.stat()
+            _runtime_require([after.st_dev, after.st_ino] == expected["identity"], "file replaced")
+    for module, origin in _runtime["modules"].items():
+        paths = _runtime["paths"]
+        spec = None
+        parts = module.split(".")
+        for index in range(1, len(parts) + 1):
+            spec = importlib.machinery.PathFinder.find_spec(".".join(parts[:index]), paths)
+            _runtime_require(spec is not None, "module disappeared")
+            paths = list(spec.submodule_search_locations or ())
+        _runtime_require(spec.origin == origin, "module origin changed")
+_runtime_require(sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode,
+                 "requires isolated startup")
+_runtime_verify()
+sys.prefix, sys.exec_prefix = _runtime["prefix"], _runtime["exec_prefix"]
+for _runtime_path in _runtime["paths"]:
+    if _runtime_path not in sys.path:
+        sys.path.append(_runtime_path)
+sys.stdin = io.TextIOWrapper(io.BytesIO(_runtime_input))
+"""
+
+
 _REPLAY_LAUNCH = (
     "import sys; exec(compile(sys.argv[1], sys.argv[2], 'exec'), "
     "{'__name__': '__main__', '__file__': sys.argv[2]})"
@@ -365,7 +748,11 @@ class _ProducerBytes:
             compile=self.compile, exec=self.execute, __import__=self.imported
         )
         self.parent = getattr(subprocess, "_authenticated_producer_guard", None)
-        self._run = self.parent._run if self.parent is not None else subprocess.run
+        self._raw_run = subprocess.run
+        self._runtime = None
+        # Historical guards retain parent._run. Keep runtime qualification at
+        # that shared boundary, including their original envelope construction.
+        self._run = self.parent._run if self.parent is not None else self._runtime_run
         self.subprocess = types.ModuleType("subprocess")
         self.subprocess.__dict__.update(vars(subprocess))
         self.subprocess.run = self.run
@@ -391,6 +778,50 @@ class _ProducerBytes:
         if level == 0 and name == "subprocess":
             return self.subprocess
         return self._import(name, globals, locals, fromlist, level)
+
+    def _runtime_run(self, args, **kwargs):
+        if isinstance(args, (list, tuple)) and args and args[0] == "git":
+            return self._raw_run(args, **kwargs)
+        require(
+            isinstance(args, (list, tuple))
+            and (
+                (len(args) == 3 and args[:2] == [sys.executable, "-c"])
+                or (len(args) == 6 and args[:5] == [sys.executable, "-I", "-S", "-B", "-c"])
+            )
+            and isinstance(args[-1], str)
+            and hashlib.sha256(args[-1].encode()).hexdigest() in _RECORDED_REPLAY_BOOTSTRAPS
+            and isinstance(kwargs.get("input"), bytes)
+            and not kwargs.get("shell"),
+            "unsupported authenticated replay bootstrap",
+        )
+        envelope = json.loads(kwargs["input"])
+        require(
+            set(envelope)
+            in (
+                {"entry", "input", "files", "code", "identities", "heads", "absences"},
+                {"entry", "input", "files", "code", "identities", "heads", "absences", "runtime"},
+            ),
+            "unsupported authenticated replay envelope",
+        )
+        if self._runtime is None:
+            self._runtime = _runtime_dependencies()
+        _runtime_check(self._runtime)
+        envelope["runtime"] = self._runtime
+        # The exact recorded bootstrap runs unchanged, between current runtime
+        # checks. Producer buffers, identities, inputs and native checks survive.
+        result = self._raw_run(
+            [
+                sys.executable,
+                "-I",
+                "-S",
+                "-B",
+                "-c",
+                _RUNTIME_BOOTSTRAP + args[-1] + "\n_runtime_verify()\n",
+            ],
+            **{**kwargs, "input": native().encoded(envelope)},
+        )
+        _runtime_check(self._runtime)
+        return result
 
     def run(self, args, **kwargs):
         # Native Git reads are not producer execution and must not recurse into
