@@ -261,6 +261,19 @@ promotion, owner merge, or ontology-parent/subclass inference occurs here.
 
 ### Ordinary CAS provenance after relocation (#1411)
 
+Repeated source corrections retain reviewed CAS withdrawals through the selected
+endpoint's authenticated ancestry (#1439). New diagnostic claims and their
+independent native review pair still bind the current acquisition HEAD, canonical
+table, owner bytes and current endpoint. They cannot select an arbitrary ancestor
+or reuse an old pair as current approval.
+
+For a retired CAS row, the latest correction selecting its owner must contain the
+actual removal of that resolving CAS alias, the reviewed rejection, and the exact
+current owner postimage. Every later correction must leave that owner unselected
+and byte-identical. A later selection cannot be skipped to find an earlier
+withdrawal. Held owners remain unchanged throughout the chain; complete historical
+WITHHOLD rows and all existing invalid-token and active-identity checks still apply.
+
 The ordinary review retains the original CAS request's absolute acquisition
 path; moving the publication to another checkout must not rewrite that path.
 For a relocated publication with CAS dispositions, explicitly add

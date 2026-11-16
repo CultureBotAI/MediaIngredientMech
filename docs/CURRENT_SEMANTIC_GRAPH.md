@@ -127,6 +127,20 @@ Unsupported transition shapes fail explicitly and need a separately reviewed
 extension; an arbitrary rehashed receipt or saved successful verifier result is
 never a replacement for reconstruction.
 
+For repeated source corrections, the transition capsule captures every ordered
+step back through adoption (#1439), within the native ancestry bound. Reconstruction
+checks each immediate predecessor's kind, original root, stage, manifest, receipt
+and producer, along with complete owner inventories, immutable ID ledgers, markers,
+original review pairs, source context and inherited holds. Duplicate, nested,
+omitted or reordered source roots are not interchangeable evidence.
+
+The CAS consumer uses those reconstructed per-correction owner proofs. It must
+find the latest operation selecting a retired owner, verify the actual rejected
+alias and exact current postimage, and preserve those bytes through every later
+unselected correction. Current diagnostic claims still select the final endpoint;
+the historical withdrawal is not a new scientific approval. Adoption-only and
+single-correction evidence retain their existing routes.
+
 The consumer's genuine MediaIngredientMech Git object database must contain the
 original adoption, source-correction, installation and diagnostic CAS review
 revisions. Native `source_provenance` validates

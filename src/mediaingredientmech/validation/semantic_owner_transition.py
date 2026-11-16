@@ -614,6 +614,12 @@ def verify_owner_steps(
 ):
     """Reconstruct scoped owner semantics; never assert original transaction replay."""
     schema_root = Path(schema_root)
+    require(
+        isinstance(steps, list)
+        and 1 <= len(steps) <= successor.MAX_SUCCESSOR_ANCESTRY + 2
+        and steps[0]["kind"] == "adoption",
+        "complete bounded source chain through adoption required",
+    )
     owners, ledgers = dict(baseline_owners), dict(baseline_ledgers)
     _records(owners, ledgers)
     captured: dict[tuple[str, str, str], bytes] = {}
@@ -639,10 +645,21 @@ def verify_owner_steps(
 
     source_operations, retained_contexts = [], []
     step_proofs: list[dict] = []
+    corrections: list[dict] = []
+    prior_manifest, prior_request, prior_marker = None, None, None
+    inherited_holds: dict[str, list] = {}
     final_operations, predecessor_owners = [], dict(owners)
     for number, step in enumerate(steps):
         adoption.keys(step, {"kind", "root", "receipt", "manifest", "request", "afterimages"})
         kind, root = step["kind"], step["root"]
+        require(
+            all(
+                not Path(root).is_relative_to(Path(prior["root"]))
+                and not Path(prior["root"]).is_relative_to(Path(root))
+                for prior in step_proofs
+            ),
+            "source roots overlap or cycle",
+        )
         require(kind in {"adoption", "curation"}, "unknown owner transition")
         require(kind != "adoption" or number == 0, "adoption must precede source corrections")
         receipt, manifest, request = [
@@ -707,6 +724,11 @@ def verify_owner_steps(
             if raw is None:
                 raw = get(root, {"path": name, "sha256": pin})
             require(adoption.sha(raw) == pin, "manifest input differs")
+        # Retain the complete original producer evidence without executing it or
+        # pretending that semantic reconstruction replays its transaction.
+        for name, pin in manifest["producer"]["files"].items():
+            require(manifest["inputs"].get(name) == pin, "source producer input differs")
+            get(root, {"path": name, "sha256": pin})
         get(root, receipt["acceptance"])
         old_records, registry = _records(owners, ledgers)
         if kind == "adoption":
@@ -780,13 +802,25 @@ def verify_owner_steps(
                 prior = step_proofs[-1]
                 predecessor = request["predecessor"]
                 require(
-                    prior["kind"] == "adoption"
-                    and predecessor["kind"] == "adoption"
+                    predecessor["kind"]
+                    == ("adoption" if prior["kind"] == "adoption" else "successor")
                     and predecessor["identity"]["root"] == prior["root"]
                     and predecessor["receipt"] == prior["receipt"]
-                    and predecessor["manifest"] == prior["manifest"],
-                    "curation predecessor is not the selected adoption",
+                    and predecessor["manifest"] == prior["manifest"]
+                    and predecessor["stage"] == str(Path(prior["manifest"]["path"]).parent)
+                    and prior_manifest is not None
+                    and predecessor["producer"] == prior_manifest["producer"],
+                    "curation predecessor is not the immediate selected source step",
                 )
+                if prior["kind"] == "curation":
+                    require(
+                        prior_request is not None
+                        and all(
+                            item in predecessor["historical_reviews"]
+                            for item in prior_request["predecessor"]["historical_reviews"]
+                        ),
+                        "inherited qualified review obligations changed",
+                    )
             source_context = adoption.document(get(root, request["source_context"]))
             if retained_contexts:
                 require(
@@ -798,6 +832,11 @@ def verify_owner_steps(
             index = build_record_index(old_records)
             require(request["operations"], "empty curation transition")
             for operation in request["operations"]:
+                if operation["mim_id"] in inherited_holds:
+                    require(
+                        operation["inherited_holds"] == inherited_holds[operation["mim_id"]],
+                        "inherited source holds changed",
+                    )
                 old, new = operation["before"]["path"], operation["after_path"]
                 owner_path(new)
                 require(old in owners and old not in selected, "duplicate/missing selected owner")
@@ -875,12 +914,14 @@ def verify_owner_steps(
             require(
                 receipt["publication_beforeimages"]
                 == manifest["publication_beforeimages"]
+                == request["predecessor"]["publication_beforeimages"]
                 == {
                     name: adoption.sha(before[name]) if before[name] is not None else None
                     for name in successor.PUBLICATION
                 },
                 "curation publication history differs",
             )
+            require(before[successor.MARKER] == prior_marker, "preceding source marker differs")
             require(
                 adoption.document(outputs[successor.MARKER])
                 == {
@@ -944,7 +985,25 @@ def verify_owner_steps(
             receipt["completed_operations"] == events, "native completed operation order differs"
         )
         owners, ledgers = after_owners, next_ledgers
+        if kind == "curation":
+            corrections.append(
+                {
+                    "root": root,
+                    "operations": copy.deepcopy(request["operations"]),
+                    "before": hashes(predecessor_owners),
+                    "after": hashes(after_owners),
+                    "selected_before": {
+                        op["mim_id"]: predecessor_owners[op["before"]["path"]]
+                        for op in request["operations"]
+                    },
+                }
+            )
+            inherited_holds.update(
+                {op["mim_id"]: copy.deepcopy(op["residual_holds"]) for op in request["operations"]}
+            )
         step_proofs.append(copy.deepcopy(step))
+        prior_manifest, prior_request = manifest, request
+        prior_marker = outputs.get(successor.MARKER)
     require(
         owners == current_owners and ledgers == current_ledgers,
         "current owner/ledger endpoint differs",
@@ -959,6 +1018,7 @@ def verify_owner_steps(
         "operations": final_operations,
         "predecessor_owners": predecessor_owners,
         "source_operations": source_operations,
+        "corrections": corrections,
         "retained_contexts": retained_contexts,
         "scientific_approval_added": False,
         "scope": "semantic_reconstruction_only",

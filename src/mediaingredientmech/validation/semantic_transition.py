@@ -391,20 +391,12 @@ def _cas(evidence, root, generation, manifest, before, candidate, owners, source
         == proof,
         "CAS mandatory held/retired accounting differs",
     )
-    endpoint = None
-    if generation.get("curation_successor") is not None:
-        endpoint = SimpleNamespace(
-            loaded=SimpleNamespace(
-                request={"operations": source["operations"]},
-                predecessor=SimpleNamespace(
-                    owners={
-                        name: SimpleNamespace(content=raw)
-                        for name, raw in source["predecessor_owners"].items()
-                    }
-                ),
-            )
-        )
-    publication._cas_source_correction(manifest, endpoint, generation.get("curation_successor"))
+    endpoint_ref = generation.get("curation_successor")
+    selected_claims = publication._cas_source_claims(manifest, endpoint_ref)
+    if selected_claims is not None and endpoint_ref is not None:
+        # These steps come only from verify_owner_steps' complete reconstruction,
+        # not a caller-selected ancestor or an asserted diagnostic pass (#1439).
+        publication._cas_source_withdrawals(selected_claims, source["corrections"])
 
 
 def verify(inputs, packet_ref, history, owners, ledgers):
@@ -786,18 +778,34 @@ def capture(root, stage, receipt_path, output):
     sources: list[dict] = []
     if "curation_successor" in generation:
         endpoint = document(root, generation["curation_successor"])
-        current, req = source_step(
-            "curation", endpoint["root"], endpoint["receipt"], endpoint["manifest"]
-        )
-        predecessor = req["predecessor"]
-        require(predecessor["kind"] == "adoption", "unsupported predecessor chain")
-        adopted, _ = source_step(
-            "adoption",
-            predecessor["identity"]["root"],
-            predecessor["receipt"],
-            predecessor["manifest"],
-        )
-        sources.extend((adopted, current))
+        kind, original = "curation", endpoint["root"]
+        receipt_ref, native_manifest_ref = endpoint["receipt"], endpoint["manifest"]
+        limit = publication.successor_native().MAX_SUCCESSOR_ANCESTRY + 2
+        while True:
+            require(
+                len(sources) < limit,
+                "source ancestry limit exceeded",
+            )
+            require(
+                all(
+                    not Path(original).is_relative_to(Path(step["root"]))
+                    and not Path(step["root"]).is_relative_to(Path(original))
+                    for step in sources
+                ),
+                "source roots overlap or cycle",
+            )
+            current, req = source_step(kind, original, receipt_ref, native_manifest_ref)
+            sources.append(current)
+            if kind == "adoption":
+                break
+            predecessor = req["predecessor"]
+            require(
+                predecessor["kind"] in {"adoption", "successor"}, "unsupported predecessor chain"
+            )
+            kind = "adoption" if predecessor["kind"] == "adoption" else "curation"
+            original = predecessor["identity"]["root"]
+            receipt_ref, native_manifest_ref = predecessor["receipt"], predecessor["manifest"]
+        sources.reverse()
     else:
         selected = generation["adoption"]
         receipt = document(root, selected["receipt"])
