@@ -13,6 +13,7 @@ import copy
 import os
 import subprocess
 import sys
+import sysconfig
 import time
 import types
 import uuid
@@ -266,7 +267,19 @@ def verify():
             require(info.st_nlink == 1 and identity(info) == value["identity"], "opened file changed")
         location(path, value)
 
+require(sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode,
+        "isolated startup required")
 verify()
+# The parent selects the existing interpreter's installed dependency directories.
+# Do not run site.main()/addsitedir(): they execute .pth and customization code.
+# Python 3.13 normally sets virtualenv prefixes in site, which -S also suppresses.
+# Local producers still come only from the captured loaders, never ambient src.
+sys.prefix = envelope["runtime"]["prefix"]
+sys.exec_prefix = envelope["runtime"]["exec_prefix"]
+for name in envelope["runtime"]["paths"]:
+    require(isinstance(name, str) and Path(name).is_absolute(), "invalid runtime path")
+    if name not in sys.path:
+        sys.path.append(name)
 original_compile, original_exec, original_import = compile, exec, __import__
 compiled = {}
 private = types.ModuleType("builtins")
@@ -320,6 +333,8 @@ class _ProducerBytes:
     builtin is patched. Native capture, reconstruction and terminal checks remain
     mandatory after this pre-execution boundary (#1420).
     """
+
+    subprocess: Any
 
     def __init__(self, sources, *, metadata=(), identities=None, heads=None, absences=()):
         self.roots = tuple(sources)
@@ -397,13 +412,23 @@ class _ProducerBytes:
             and args[3].encode("utf-8") == self.files[entry].content,
             "recorded replay child source differs",
         )
+        guards: list[_ProducerBytes]
+        current: _ProducerBytes | None
         guards, current = [], self
         while current is not None:
             guards.append(current)
             current = current.parent
+        envelope: dict[str, Any]
         envelope = {
             "entry": str(entry),
             "input": base64.b64encode(kwargs["input"]).decode("ascii"),
+            "runtime": {
+                "prefix": sys.prefix,
+                "exec_prefix": sys.exec_prefix,
+                "paths": list(
+                    dict.fromkeys(sysconfig.get_path(key) for key in ("purelib", "platlib"))
+                ),
+            },
             "files": {},
             "code": [],
             "identities": {},
@@ -427,7 +452,7 @@ class _ProducerBytes:
                     require(previous == value, "conflicting inherited replay identity")
             envelope["absences"].extend(str(path) for path in guard.absences)
         result = self._run(
-            [sys.executable, "-c", _REPLAY_BOOTSTRAP],
+            [sys.executable, "-I", "-S", "-B", "-c", _REPLAY_BOOTSTRAP],
             **{**kwargs, "input": native().encoded(envelope)},
         )
         for guard in guards:
@@ -480,6 +505,8 @@ class _ProducerBytes:
 def _producer_bytes(references):
     """Authenticate the complete recorded source ancestry before loading code."""
     api = native()
+    sources: dict[Path, dict[str, str]]
+    heads: dict[Path, str]
     sources, metadata, identities, heads, absences = {}, [], {}, {}, []
 
     def include(root, pins):
@@ -729,7 +756,17 @@ class Predecessor:
                 for n, r in pub_receipt["beforeimages"].items()
             }
             publication, _, held, staged, _ = pub._prepared(
-                self.root, pub_stage, before=archives, historical=True
+                self.root,
+                pub_stage,
+                before=archives,
+                historical=True,
+                # The successor route requires its already authenticated native
+                # receipt; legacy adoption publishers retain their old signature.
+                **(
+                    {"publication_receipt": self.files.files[proof["receipt"]["path"]]}
+                    if self.successor
+                    else {}
+                ),
             )
             pub._acceptance(publication, held, pub_receipt["acceptance"]["path"])
             self.held.extend([held, *staged.values(), *[f for f in archives.values() if f]])
@@ -843,9 +880,9 @@ class Predecessor:
                 )
                 group[key] = pin
         for f in self.held:
-            groups.setdefault(str(self.root), {})[str(f.path.relative_to(self.root))] = (
-                native().sha(f.content)
-            )
+            groups.setdefault(str(self.root), {})[
+                str(f.path.relative_to(self.root))
+            ] = native().sha(f.content)
         for name, f in self.publication.items():
             groups.setdefault(str(self.root), {})[name] = native().sha(f.content) if f else None
         for name, frozen in self.loaded.claw.files.items():
@@ -858,9 +895,9 @@ class Predecessor:
                 *p.history_files,
                 *p.adoption_files,
             ):
-                groups.setdefault("absolute_prior_publication_evidence", {})[str(frozen.path)] = (
-                    native().sha(frozen.content)
-                )
+                groups.setdefault("absolute_prior_publication_evidence", {})[
+                    str(frozen.path)
+                ] = native().sha(frozen.content)
         return groups
 
 

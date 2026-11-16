@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 from datetime import datetime
+from typing import Any
 
 FIELD = "additional_ontology_mappings"
 MARKER = "additional_ontology_mapping="
@@ -192,6 +193,7 @@ def embedded_assertion(row):
     comment = row.get("comment", "")
     if MARKER not in comment:
         return None
+    item: Any
     offset, item = 0, None
     while (position := comment.find(MARKER, offset)) != -1:
         start = position + len(MARKER)

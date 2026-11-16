@@ -129,3 +129,43 @@ def test_replay_child_refuses_changed_top_level_before_launch(replay_child, monk
     with pytest.raises(ValueError, match="Captured input changed"):
         run()
     assert not launches
+
+
+@pytest.mark.parametrize("drift", [False, True])
+def test_actual_replay_child_skips_startup_hook_before_authentication(
+    replay_child, monkeypatch, drift
+):
+    """A harmless known startup marker cannot precede either native or guard refusal."""
+    root, claw, guard, _, run = replay_child
+    marker = root / "STARTUP_EXECUTED.txt"
+    (claw / "src/sitecustomize.py").write_text(
+        f"from pathlib import Path\nPath({str(marker)!r}).write_text('startup executed')\n"
+    )
+    original = guard._run
+    children = []
+
+    def launch(args, **kwargs):
+        if args[0] != "git" and drift:
+            (claw / "scripts/kgm_unified_mappings.py").write_bytes(SENTINEL)
+        result = original(args, **kwargs)
+        if args[0] != "git":
+            children.append((args, kwargs, result))
+        return result
+
+    monkeypatch.setattr(guard, "_run", launch)
+    with pytest.raises(ValueError):
+        run()
+    assert len(children) == 1
+    args, kwargs, result = children[0]
+    assert not marker.exists(), "Python startup executed uncaptured customization code"
+    assert args[1:5] == ["-I", "-S", "-B", "-c"]
+    assert kwargs["env"]["PYTHONPATH"] == os.pathsep.join((str(claw / "src"), str(root / "src")))
+    assert kwargs["env"]["MEDIAINGREDIENTMECH_ROOT"] == str(root)
+    assert result.returncode != 0
+    if drift:
+        assert b"Authenticated replay child:" in result.stderr
+        assert b"UNAUTHENTICATED_REPLAY_CHILD_DEPENDENCY_EXECUTED" not in result.stderr
+    else:
+        # Actual captured Claw and its installed yaml/dotenv dependencies loaded.
+        # The intentionally incomplete fixture then reaches native membership.
+        assert b"complete native generation input membership differs" in result.stderr

@@ -1,0 +1,170 @@
+{
+  "final-additional_mappings": {
+    "python": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+    "original_sha256": "767c70e3e8e687dece495593e5ab00e2d14f93b2f452061c13520e40a8eb5f84",
+    "proposed_sha256": "003889c4477de81dd41cfc97416aa14d5e9e9622dc6b23e3310e0b90f2794c38",
+    "raw_differing_code_objects": [
+      "<module>"
+    ],
+    "code_objects_checked": 9,
+    "raw_code_equivalent": false,
+    "function_code_changes": [],
+    "normalized_structure_equivalent": true,
+    "normalized_type_only_equivalent": true,
+    "normalization": {
+      "bare_annotations": "simple names with postponed evaluation only",
+      "typing_imports": [
+        "Any"
+      ]
+    },
+    "ignored_metadata": [
+      "co_firstlineno",
+      "co_linetable",
+      "co_filename"
+    ],
+    "compared_fields": [
+      "co_argcount",
+      "co_posonlyargcount",
+      "co_kwonlyargcount",
+      "co_nlocals",
+      "co_stacksize",
+      "co_flags",
+      "co_code",
+      "co_names",
+      "co_varnames",
+      "co_freevars",
+      "co_cellvars",
+      "co_name",
+      "co_qualname",
+      "co_exceptiontable",
+      "co_consts recursively"
+    ],
+    "scope": "Compile only. Input modules are never imported or executed. Raw differences remain disclosed."
+  },
+  "final-curation_successor": {
+    "python": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+    "original_sha256": "d64bb16c03c65566f466bec34fdc89d04d05357d8296c986aa40fe6e9a404798",
+    "proposed_sha256": "7b37340f59057386c0ba4a4c85e70e14752b75ce4d362213749c90a9511648a0",
+    "raw_differing_code_objects": [
+      "<module>",
+      "Endpoint",
+      "Loaded",
+      "Predecessor",
+      "_ProducerBytes"
+    ],
+    "code_objects_checked": 107,
+    "raw_code_equivalent": false,
+    "function_code_changes": [],
+    "normalized_structure_equivalent": true,
+    "normalized_type_only_equivalent": true,
+    "normalization": {
+      "bare_annotations": "simple names with postponed evaluation only",
+      "typing_imports": [
+        "Any"
+      ]
+    },
+    "ignored_metadata": [
+      "co_firstlineno",
+      "co_linetable",
+      "co_filename"
+    ],
+    "compared_fields": [
+      "co_argcount",
+      "co_posonlyargcount",
+      "co_kwonlyargcount",
+      "co_nlocals",
+      "co_stacksize",
+      "co_flags",
+      "co_code",
+      "co_names",
+      "co_varnames",
+      "co_freevars",
+      "co_cellvars",
+      "co_name",
+      "co_qualname",
+      "co_exceptiontable",
+      "co_consts recursively"
+    ],
+    "scope": "Compile only. Input modules are never imported or executed. Raw differences remain disclosed."
+  },
+  "guard-negative-control": {
+    "python": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+    "original_sha256": "7c1a44688ee2e08e9f5ef551aba73f3f13895f04dff6664ac274f3e37882a491",
+    "proposed_sha256": "b9ac7e17c1df567d0e0e8f0a4b19b1ad62c391d2483d001a42395e60361efc24",
+    "raw_differing_code_objects": [
+      "<module>",
+      "require"
+    ],
+    "code_objects_checked": 2,
+    "raw_code_equivalent": false,
+    "function_code_changes": [
+      "require"
+    ],
+    "normalized_structure_equivalent": false,
+    "normalized_type_only_equivalent": false,
+    "normalization": {
+      "bare_annotations": "simple names with postponed evaluation only",
+      "typing_imports": []
+    },
+    "ignored_metadata": [
+      "co_firstlineno",
+      "co_linetable",
+      "co_filename"
+    ],
+    "compared_fields": [
+      "co_argcount",
+      "co_posonlyargcount",
+      "co_kwonlyargcount",
+      "co_nlocals",
+      "co_stacksize",
+      "co_flags",
+      "co_code",
+      "co_names",
+      "co_varnames",
+      "co_freevars",
+      "co_cellvars",
+      "co_name",
+      "co_qualname",
+      "co_exceptiontable",
+      "co_consts recursively"
+    ],
+    "scope": "Compile only. Input modules are never imported or executed. Raw differences remain disclosed.",
+    "inputs": {
+      "original": "def require(value):\n    if not value:\n        raise ValueError(\"refused\")\n",
+      "proposed": "def require(value):\n    if value:\n        raise ValueError(\"refused\")\n"
+    }
+  },
+  "issue": 1430,
+  "purpose": "Type-only source qualification after the retained successful native canary; original canary hashes remain unchanged.",
+  "source_canary_commit": "cf44010e54c4b51ade2c94d2528068039ac15985",
+  "validation": {
+    "mypy": "Success: no issues found in 87 source files (actual final source)",
+    "ruff": "passed (three source files and retained helper)",
+    "black": "passed (three source files and retained helper)",
+    "focused": "68 passed in 44.74 seconds; startup, replay, launcher, additional assertions, exact source counterpart admission/refusal"
+  },
+  "limits": "Raw module/class code differs for typing import and annotation metadata. Normalization is explicit; this is not a universal runtime-equivalence proof. The changed executable guard negative control is refused.",
+  "helper_sha256": "f3a809f23cf58289d3db3bd10866ad4484516bc79edd559f0dc335e1e02ac816",
+  "helper_review_fixes": {
+    "issues": [
+      1432,
+      1433,
+      1434
+    ],
+    "supersedes_comparator_projection_commit": "4f78901301733e6bdd30fa00b8f080727bf403bb",
+    "changes": [
+      "Preserve executable annotation targets and evaluated annotations",
+      "Require unchanged raw function/method code, including local binding",
+      "Compare all ordinary constant stores",
+      "Preserve scalar types and float/complex bits"
+    ],
+    "tests": "12 comparator cases plus 7 launcher cases passed; Ruff and Black passed",
+    "mutations": {
+      "annotation_target_and_expression": "3 failed, 1 passed before restoration",
+      "ordinary_constant_store": "2 failed, 4 passed before restoration",
+      "scalar_types_and_bits": "5 failed, 7 passed before restoration",
+      "local_binding": "1 failed, 11 passed before restoration"
+    },
+    "final_validation_sha256": "a7aa2f9350f38c99f50ea43caa43fff4cb702fa54d87dd27f9a22e32cf24e0af"
+  }
+}
