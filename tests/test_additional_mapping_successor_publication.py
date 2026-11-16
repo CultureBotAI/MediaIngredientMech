@@ -172,14 +172,25 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
         progress.append(phase)
         write(tmp_path / "combined-progress.json", {"completed": progress})
 
-    f = AdditionalAssertionChainFixture(tmp_path, monkeypatch)
+    rejected_alias = "NCIT:C990001"
+    f = AdditionalAssertionChainFixture(tmp_path, monkeypatch, initial_identity=rejected_alias)
     completed("adoption_and_first_correction_verified")
+    _, _, original_rows = publication.read_sssom(f.target / publication.CANONICAL)
+    assert len(original_rows) == 1
+    original_exact = copy.deepcopy(original_rows[0])
+    assert original_exact["object_id"] == rejected_alias
+    assert original_exact["predicate_id"] == "skos:exactMatch"
+    assert original_exact["validation_method"] == "synthetic-prior-stamp"
     operation = f.request["operations"][0]
     selected = operation["after_path"]
     before_owner = api.load_yaml(f.before[selected])
     after_owner = api.load_yaml(f.proposal.read_bytes())
+    assert rejected_alias in before_owner["legacy_identifiers"]
+    historical_evidence = copy.deepcopy(before_owner["ontology_mapping"]["evidence"])
+    assert rejected_alias in historical_evidence[0]["notes"]
+    after_owner["legacy_identifiers"].remove(rejected_alias)
     after_owner["ontology_mapping"]["mapping_quality"] = "EXACT_MATCH"
-    after_owner["ontology_mapping"]["evidence"] = [
+    after_owner["ontology_mapping"]["evidence"] = historical_evidence + [
         {"evidence_type": "DATABASE_MATCH", "source": "primary.txt"}
     ]
     f.assertion_evidence = ["synthetic-broad-evidence.txt", "synthetic-held-evidence.txt"]
@@ -197,12 +208,15 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
             owner, "NCIT:C990002", "skos:closeMatch", "WITHHOLD", f.assertion_evidence[1], f.stamp
         ),
     ]
-    after_owner["curation_history"][-1][
-        "changes"
-    ] = "Synthetic exact primary with independently evidenced broad assertion and held close proposal."
+    after_owner["curation_history"][-1]["changes"] = (
+        "Synthetic exact primary with independently evidenced broad assertion and held close proposal; "
+        "remove the old resolving alias while preserving its historical evidence and typed broad relation."
+    )
     f.proposal.write_text(yaml.safe_dump(after_owner, sort_keys=False))
     operation.update(
-        proposal=ref(f.target, f.proposal), delta=successor._delta(before_owner, after_owner)
+        proposal=ref(f.target, f.proposal),
+        delta=successor._delta(before_owner, after_owner),
+        rejected_identifiers=[rejected_alias],
     )
     write(f.path, f.request)
     holds = copy.deepcopy(operation["inherited_holds"])
@@ -226,6 +240,11 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
         == "COMPLETE_CURRENT_SOURCE_SUCCESSOR"
     )
     assert api.load_yaml((f.target / selected).read_bytes()) == after_owner
+    assert rejected_alias not in after_owner["legacy_identifiers"]
+    assert (
+        after_owner["ontology_mapping"]["evidence"][: len(historical_evidence)]
+        == historical_evidence
+    )
     assert after_owner["curation_history"][:-1] == before_owner["curation_history"]
     completed("second_correction_dry_run_apply_commit_verify")
     endpoint = f.path.with_name("endpoint.json")
@@ -295,6 +314,10 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
     assert {
         (row["subject_id"], row["predicate_id"], row["object_id"]) for row in installed
     } == expected_triples
+    assert not any(
+        row["object_id"] == rejected_alias and row["predicate_id"] == "skos:exactMatch"
+        for row in installed
+    )
     for row in installed:
         additional_mappings.row_assertion(after_owner, row)
         assert row["validation_method"] == ""
@@ -305,12 +328,31 @@ def test_two_corrections_publish_independent_assertions_and_keep_holds(tmp_path,
         for entry in provenance["selection"]["rows"]
         if entry["proposed_row"] and entry["proposed_row"]["object_id"] == "NCIT:C80300"
     )
-    assert (
-        primary_selection["before_rows"][0]["row"]["validation_method"] == "synthetic-prior-stamp"
+    assert primary_selection["before_rows"] == []
+    removed_exact = next(
+        entry
+        for entry in provenance["selection"]["rows"]
+        if entry["proposed_row"] is None
+        and any(item["row"] == original_exact for item in entry["before_rows"])
     )
+    assert removed_exact["candidate_position"] is None
+    assert removed_exact["disposition"] == "REMOVE_WITH_HISTORY"
+    assert len(removed_exact["before_rows"]) == 1
+    assert removed_exact["before_rows"][0]["row"] == original_exact
+    assert removed_exact["before_rows"][0]["row"]["validation_method"] == "synthetic-prior-stamp"
+    broad_selection = next(
+        entry
+        for entry in provenance["selection"]["rows"]
+        if entry["proposed_row"]
+        and entry["proposed_row"]["object_id"] == rejected_alias
+        and entry["proposed_row"]["predicate_id"] == "skos:broadMatch"
+    )
+    assert broad_selection["disposition"] == "INSTALL_SUPPORTED"
+    assert broad_selection["before_rows"] == []
     assert api.load_yaml((f.target / selected).read_bytes()) == after_owner
     persisted_operation = json.loads(f.path.read_bytes())["operations"][0]
     assert persisted_operation["inherited_holds"] == persisted_operation["residual_holds"] == holds
+    assert persisted_operation["rejected_identifiers"] == [rejected_alias]
     assert not (f.target / f.original.held).exists()
     assert maintained(f.first) == f.first_maintained
     assert maintained(f.adoption) == f.adoption_maintained

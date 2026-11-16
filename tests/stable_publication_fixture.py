@@ -142,7 +142,7 @@ class NativeReviewAdoptionFixture(Fixture):
 
 
 def completed_adoption(
-    tmp: Path, monkeypatch, *, additional_sources=None
+    tmp: Path, monkeypatch, *, additional_sources=None, initial_identity="NCIT:C80300"
 ) -> NativeReviewAdoptionFixture:
     """Return three current owners and an actually verified adoption receipt.
 
@@ -158,14 +158,28 @@ def completed_adoption(
         additional_sources=additional_sources,
         original_records=[
             {
-                "identifier": "NCIT:C80300",
+                "identifier": initial_identity,
                 "preferred_term": "Exact",
                 "mapping_status": "MAPPED",
                 "ontology_mapping": {
-                    "ontology_id": "NCIT:C80300",
+                    "ontology_id": initial_identity,
                     "ontology_label": "Maltose Monohydrate",
                     "ontology_source": "NCIT",
                     "mapping_quality": "EXACT_MATCH",
+                    **(
+                        {
+                            "evidence": [
+                                {
+                                    "evidence_type": "DATABASE_MATCH",
+                                    "source": "primary.txt",
+                                    "notes": "Synthetic historical attribution to "
+                                    + initial_identity,
+                                }
+                            ]
+                        }
+                        if initial_identity != "NCIT:C80300"
+                        else {}
+                    ),
                 },
                 "synonyms": [{"synonym_text": "New", "synonym_type": "RAW_TEXT"}],
                 "curation_history": [],
@@ -202,7 +216,7 @@ def completed_adoption(
             "subject_id": "MIM:Exact",
             "subject_label": "Exact",
             "predicate_id": "skos:exactMatch",
-            "object_id": "NCIT:C80300",
+            "object_id": initial_identity,
             "object_label": "Maltose Monohydrate",
             "object_source": "obo:ncit.owl",
             "mapping_justification": "semapv:ManualMappingCuration",

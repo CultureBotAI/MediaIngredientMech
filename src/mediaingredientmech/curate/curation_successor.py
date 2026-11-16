@@ -988,12 +988,24 @@ def _validate_change(loaded, operation, before, after):
         ),
         "only the reviewed restored placeholder may be added as an alias",
     )
+    primary_mapping = after.get("ontology_mapping") or {}
+    require(isinstance(primary_mapping, dict), "invalid active ontology mapping")
+    require(
+        all(alias != primary_mapping.get("ontology_id") for alias in rejected),
+        "rejected identifier remains in active ontology mapping",
+    )
+    # #1435: historical evidence can name the rejected identity without making
+    # it resolving. Separately reviewed inexact relations and WITHHOLD proposals
+    # retain their own meaning; a supported exact assertion would restore it.
     require(
         all(
-            alias not in api.encoded(after.get("ontology_mapping", {})).decode()
-            for alias in rejected
+            item.get("ontology_id") not in rejected
+            for item in (after.get("additional_ontology_mappings") or [])
+            if isinstance(item, dict)
+            and item.get("review_status") == "SUPPORTED"
+            and item.get("predicate_id") == "skos:exactMatch"
         ),
-        "rejected identifier remains in active ontology mapping",
+        "rejected identifier remains in supported additional exact mapping",
     )
     # Raw tokens remain present; false labels are explicitly non-searchable native evidence.
     old_synonyms = before.get("synonyms", [])

@@ -90,6 +90,15 @@ alias. A genuine historical placeholder may be restored as the selected primary
 identifier, with collision checks and separate current scientific support.
 These decisions are owner-scoped, never global deletion of the external term.
 
+The rejection check uses structured active targets, not substrings in retained
+evidence or notes (#1435). A rejected resolving alias cannot remain the primary
+`ontology_id` or a `SUPPORTED` additional `skos:exactMatch`. Its original evidence
+may remain verbatim, and separately assessed broad, narrow or close assertions
+retain their typed meaning. A `WITHHOLD` exact hypothesis also remains withheld;
+neither retaining it nor mentioning the old identifier clears a hold or grants
+publication approval. Every proposed event still needs its genuine author, time
+and LLM model attribution; assembly must not manufacture missing attribution.
+
 ## Explicit inputs and native commands
 
 The JSON request is closed and names the actual successor Git identity, exact
