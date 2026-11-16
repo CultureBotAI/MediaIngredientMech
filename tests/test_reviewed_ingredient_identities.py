@@ -21,7 +21,7 @@ def rows(path):
         return list(csv.DictReader((s for s in handle if not s.startswith("#")), delimiter="\t"))
 
 
-def test_ncit_current_cas_evidence_agrees_with_promoted_records():
+def test_ncit_current_cas_evidence_agrees_with_promoted_records(historical_identity_case):
     native = json.loads((EVIDENCE / "native-authorities.json").read_text())["ncit"]
     before = json.loads((EVIDENCE / "source-records.json").read_text())["before_records"]
     for slug, item in before.items():
@@ -54,7 +54,7 @@ def test_stereospecific_structures_keep_the_independently_verified_form():
         assert props["molecular_formula"] == expected["MolecularFormula"]
 
 
-def test_bsa_recipe_membership_and_supplier_preparations_stay_separate():
+def test_bsa_recipe_membership_and_supplier_preparations_stay_separate(historical_identity_case):
     occurrences = json.loads((EVIDENCE / "bsa-recipe-occurrences.json").read_text())["occurrences"]
     expected = {item["recipe_id"] for item in occurrences}
     members = rows(ROOT / "mappings/culturemech_recipe_membership.tsv")

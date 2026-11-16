@@ -233,8 +233,9 @@ def test_surviving_lipoic_record_has_one_vitamin_role(
 
 
 def test_wolfe_vitamin_components_use_generic_lipoic_acid(
-    mapped_records: dict[str, dict],
+    historical_wolfe_records: dict[str, dict],
 ) -> None:
+    mapped_records = historical_wolfe_records
     for term in ("ATCC Wolfe's vitamin mix", "Wolfe's vitamin mix"):
         components = mapped_records[term]["components"]
         thioctic = [
