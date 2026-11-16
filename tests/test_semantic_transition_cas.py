@@ -341,7 +341,15 @@ def test_real_cas_publication_reconstructs_current_semantic_transition(cas_evide
                 ],
                 "generation": ref(f.root, f.generation_receipt),
                 "application": ref(f.root, destination / "application.json"),
-                "semantic_result": result,
+                "semantic_result": {
+                    "scope": result["scope"],
+                    "provenance_sha256": api.digest(result["provenance"]),
+                    "ordinary_release_review_required": result["provenance"][
+                        "ordinary_release_review_required"
+                    ],
+                    "scientific_approval_added": result["provenance"]["scientific_approval_added"],
+                    "source_scientific_approval_added": result["source"]["scientific_approval_added"],
+                },
             }
         )
     )
