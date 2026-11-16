@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic native correction/publication mechanism canary; no campaign science or public release approval",
+  "base_revision": "05e353fe640259d450dce9f9db781f31c525974b",
+  "tested_revision": "cf44010e54c4b51ade2c94d2528068039ac15985",
+  "claw_revision": "7070392fcb5e31282499a599f7147b56b96e5aca",
+  "started_at": "2026-11-15T23:32:10.079299+00:00",
+  "finished_at": "2026-11-16T00:07:06.673938+00:00",
+  "status": "PASSED",
+  "exit_code": 0,
+  "source_sha256": {
+    "tests/test_additional_mapping_successor_publication.py": "2d0b161d4813c839a244dbaf2a4678efabea98d69f933ec764b31851a720c0e8",
+    "src/mediaingredientmech/curate/curation_successor.py": "d64bb16c03c65566f466bec34fdc89d04d05357d8296c986aa40fe6e9a404798",
+    "src/mediaingredientmech/curate/stable_sssom_publication.py": "7785de337a6ee2f70a3e57d8fc3948b6f2e54cc36022f24087f97f4e0b81b75e",
+    "src/mediaingredientmech/curate/stable_sssom_replay.py": "b5a27ee4fb5ce780d2e47e5f30def464fb64f25eb59a7ed1e05087e37f0d4b6a"
+  },
+  "launcher_sha256": "c450b54463804b0705ec952d8c1c53671f0bcb05e0d59b88a138c14193b93102",
+  "raw_command_sha256": "1e7b8c7cd5d2e90bae5c4dbbb3e699c6c3ba4a5aee815d8deeca57b0fb833fb6",
+  "raw_result_sha256": "b6dd245ae5f2cfa615bba5751db3fad77bc48091809d04a55647680350f04cae",
+  "log_sha256": "6ba6a3170cea9b4700f8e3f09b70a10456b0e5e9bfe170754fc83c15d05e3c1b",
+  "completed_phases": [
+    "adoption_and_first_correction_verified",
+    "second_correction_dry_run_apply_commit_verify",
+    "captured_claw_generation_and_native_sssom_validation",
+    "canonical_prepare_dry_run_apply_verify_with_history_and_holds"
+  ],
+  "artifacts": {
+    "fixtures/test_two_corrections_publish_i0/combined-progress.json": {
+      "bytes": 252,
+      "sha256": "12d56209307778cac975161a5e809efe7041536b9987515ab46b267f0bb97f9f"
+    },
+    "fixtures/test_two_corrections_publish_i0/original/legacy/application.json": {
+      "bytes": 3155,
+      "sha256": "d0192b30176533d0252eaf0831d83583dc326e6144c5781440371d4fa9bf3bf4"
+    },
+    "fixtures/test_two_corrections_publish_i0/original/target/.temp/application/application.json": {
+      "bytes": 4014,
+      "sha256": "1392c6a35a8b9b84142af26a2d1b63ab400b2a026f517a1e167cb9c091122ac0"
+    },
+    "fixtures/test_two_corrections_publish_i0/original/target/.temp/prepare/manifest.json": {
+      "bytes": 22325,
+      "sha256": "8e411cbfe7a57b8c2ff0e17d4273a1a47d71a27a440a60582ae034403ccb921e"
+    },
+    "fixtures/test_two_corrections_publish_i0/original/target/mappings/ingredient_mappings.sssom.tsv": {
+      "bytes": 769,
+      "sha256": "85e9a737a87cf604d44d83221c188187857e9a606995cde23e4552b50cba500d"
+    },
+    "fixtures/test_two_corrections_publish_i0/original/target/mappings/suppressed_aliases.tsv": {
+      "bytes": 98,
+      "sha256": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/additional-assertion-generation/candidate.sssom.tsv": {
+      "bytes": 4253,
+      "sha256": "6fd22ea0197451bbe199dbe097565a73e1cf2c40663d81c8d2fe5b0b8b42a7ec"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/additional-assertion-generation/generation.json": {
+      "bytes": 16191,
+      "sha256": "ac8e7604144c169b117a6055d8ffec603306868ae9996b5a34d854f134d3f4d9"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/additional-assertion-generation/receipt.json": {
+      "bytes": 50780,
+      "sha256": "a1ef517a8f869bb73889b89f491dac80e817cffe7c9a0ce12cedba3b2cc8ee70"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/additional-assertion-generation/suppressed_aliases.tsv": {
+      "bytes": 558,
+      "sha256": "9d223371a84aac93c0224e869b20beea058b4ed535d7234e97af940f7165aa89"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/additional-source-application/application.json": {
+      "bytes": 17682,
+      "sha256": "8736e72734f8a40c4070e08253b84ab5d3b75ff82f7702abbe87a739068c3e6f"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/correction-stage/manifest.json": {
+      "bytes": 57021,
+      "sha256": "2df0ae6aa13fa3590ca5d6244e842664c2c60dde863f2a462b2c4c11936dfdff"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/publication-001-additional-applied/application.json": {
+      "bytes": 2535,
+      "sha256": "c09767db735851ca47eec44ac66cfa36cf4f07fc581ae6b0352e3ea1c791f1c3"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/publication-001-prepared/candidate/mappings/ingredient_mappings.sssom.tsv": {
+      "bytes": 4444,
+      "sha256": "8b649d6571394477cfaa22e8fdcd9235cb77e760ba93e02a10b1de4f58f121f8"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/publication-001-prepared/candidate/mappings/stable_sssom_publication.json": {
+      "bytes": 70392,
+      "sha256": "5c6eba76c15892e01d43f2f0246fdee132532bf91a496be3f81a263642da1f6e"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/publication-001-prepared/candidate/mappings/suppressed_aliases.tsv": {
+      "bytes": 558,
+      "sha256": "9d223371a84aac93c0224e869b20beea058b4ed535d7234e97af940f7165aa89"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/.temp/publication-001-prepared/manifest.json": {
+      "bytes": 83558,
+      "sha256": "f36213630ec0d7c429e24b76b62256d236246768eb29db011fe39dc0dd885bf4"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/mappings/ingredient_mappings.sssom.tsv": {
+      "bytes": 4444,
+      "sha256": "8b649d6571394477cfaa22e8fdcd9235cb77e760ba93e02a10b1de4f58f121f8"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/mappings/stable_sssom_publication.json": {
+      "bytes": 70392,
+      "sha256": "5c6eba76c15892e01d43f2f0246fdee132532bf91a496be3f81a263642da1f6e"
+    },
+    "fixtures/test_two_corrections_publish_i0/second-successor/mappings/suppressed_aliases.tsv": {
+      "bytes": 558,
+      "sha256": "9d223371a84aac93c0224e869b20beea058b4ed535d7234e97af940f7165aa89"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/.temp/application/application.json": {
+      "bytes": 4014,
+      "sha256": "1392c6a35a8b9b84142af26a2d1b63ab400b2a026f517a1e167cb9c091122ac0"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/.temp/correction-stage/manifest.json": {
+      "bytes": 44838,
+      "sha256": "ffe1260c41efaccf3b677edd21fafa4df7c2de884c92cf002ebfa55191c7fead"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/.temp/first-application/application.json": {
+      "bytes": 15915,
+      "sha256": "ac22d446c3a857dfdc140613ab0928804541cd0917e2c4c9c35aef63f0de3a75"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/.temp/prepare/manifest.json": {
+      "bytes": 22325,
+      "sha256": "8e411cbfe7a57b8c2ff0e17d4273a1a47d71a27a440a60582ae034403ccb921e"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/mappings/ingredient_mappings.sssom.tsv": {
+      "bytes": 769,
+      "sha256": "85e9a737a87cf604d44d83221c188187857e9a606995cde23e4552b50cba500d"
+    },
+    "fixtures/test_two_corrections_publish_i0/successor/mappings/suppressed_aliases.tsv": {
+      "bytes": 98,
+      "sha256": "675720ff302b6e852dee454dd9f937a6c6fdcb595998254183c30326ee6ce22a"
+    }
+  },
+  "scientific_approval_added": false,
+  "public_release_approval_added": false,
+  "source_review_sha256": "67b46f9220bfc8cfed8f1ed912fc364890d6005ea9d575004e0f3603e05747fa",
+  "scope_limits": [
+    "Synthetic NCIT owners and evidence; actual maintained corpus unchanged.",
+    "Real generator, native paired review, technical acceptance, lease, prepare, dry-run, apply and verify APIs ran intact.",
+    "Published-successor predecessor admission is covered by its separate regression test.",
+    "Frozen real campaign ChEBI evidence, corrected-source regeneration and downstream release acceptance remain separate."
+  ]
+}
