@@ -829,7 +829,10 @@ def prepare(handoff, handoff_pin, output, python, *, root=ROOT, producer_root=No
             ],
         )
         check_snapshot(handoff, inputs)
-        check_snapshot(root, record_hashes)
+        require(
+            mim_snapshot(root)[2] == record_hashes,
+            "MIM owner membership/bytes changed during preparation",
+        )
         reviewed_sssom._check_snapshot(native)
         products = {
             path.relative_to(stage).as_posix(): fingerprint(path)

@@ -405,6 +405,27 @@ def test_changed_mim_owner_or_added_owner_invalidates_prior_intake(handoff):
         intake.verify_intake(output, pin, root)
 
 
+def test_prepare_refuses_owner_added_after_initial_snapshot(handoff, monkeypatch):
+    root, source, pin, review, _positive, _ledger = handoff
+    added = root / "data/ingredients/mapped/Added_during_prepare.yaml"
+    output = root / "refused-new-owner-intake"
+    original = intake.candidate
+
+    def add_conflicting_owner(*args, **kwargs):
+        result = original(*args, **kwargs)
+        if not added.exists():
+            added.write_text(
+                "identifier: CHEBI:999\npreferred_term: Alpha\nmapping_status: MAPPED\n"
+            )
+        return result
+
+    monkeypatch.setattr(intake, "candidate", add_conflicting_owner)
+    with pytest.raises(ValueError, match="owner membership/bytes changed"):
+        intake.prepare(source, pin, output, Path(sys.executable), root=root, review=review)
+    assert added.is_file()  # The new ambiguous owner really appeared mid-prepare.
+    assert not output.exists()
+
+
 def test_unknown_contract_and_overlapping_output_refuse_before_writes(handoff):
     root, source, pin, review, _positive, _ledger = handoff
     with pytest.raises(ValueError, match="overlaps"):

@@ -125,3 +125,34 @@ separate native SSSOM parser/schema QC result too.
 A later integrated release must explicitly select the source revision,
 reconcile current KGM inputs and complete the applicable scientific/publication
 gates. This workflow does not close independent campaign release trackers.
+
+## Isolated verification package
+
+After the consumer code and review evidence are committed, use
+`scripts/adhoc/package_culturemech_intake_1453.py build` with the exact
+`--consumer-commit`, `--intake`/`--intake-sha256`, `--review`, and
+`--reviewed`/`--reviewed-sha256`. Each `--supplement` copies an additional
+repository-relative evidence directory, such as the complete owner partitions
+and immutable narrative reviews. `--output` must name a new directory outside
+the inputs and authoritative data directories.
+
+The package contains a source archive, an extracted consumer with the exact
+owner/canonical inputs, frozen intake, binding review, reviewed products and a
+complete file manifest. It replays native verification from the copied inputs
+before publication. Retain the printed `package.json` SHA256 independently.
+Transfer this directory to a new isolated location; use an existing compatible
+environment without changing an active checkout or installing dependencies.
+
+From the delivered package's `consumer` directory:
+
+```bash
+PYTHONPATH=src python -B scripts/adhoc/package_culturemech_intake_1453.py verify \
+  --package .. --expected-package-sha256 <independently-recorded-package-sha256>
+```
+
+Write any captured stdout receipt outside the package. The verifier suppresses
+bytecode writes before native imports and refuses missing, changed or extra
+files; adding a log inside the package invalidates its manifest. The source
+archive records the exact consumer commit but does not include Git history.
+Native byte replay therefore remains separate from repository-wide historical
+structured-review provenance checks.
