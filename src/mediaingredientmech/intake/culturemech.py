@@ -20,8 +20,9 @@ import tempfile
 from collections import Counter, defaultdict
 from contextlib import contextmanager
 from pathlib import Path
+from typing import Any, TypedDict
 
-import yaml
+import yaml  # type: ignore[import-untyped]  # Locked PyYAML has no stubs; validate parsed values below.
 
 from mediaingredientmech.export import reviewed_sssom
 from mediaingredientmech.review_claims import payload_sha256, validate_review_decision
@@ -29,7 +30,15 @@ from mediaingredientmech.synonym_policy import is_resolving_synonym
 
 ROOT = Path(__file__).resolve().parents[3]
 REVIEW = "reports/sssom_completion_20260921/review.json"
-CONTRACTS = {
+
+
+class SourceContract(TypedDict):
+    positive_actions: set[str]
+    actions: set[str]
+    held_product: str | None
+
+
+CONTRACTS: dict[str, SourceContract] = {
     "culturemech-direct-ingredients-v2": {
         "positive_actions": {"ADD", "REPLACE", "SET_CONCENTRATION"},
         "actions": {"ADD", "REMOVE", "REPLACE", "SET_CONCENTRATION"},
@@ -246,7 +255,7 @@ def verify_handoff(handoff, pin):
     require(actual["sha256"] == coverage["coverage_sha256"], "Coverage ledger hash mismatch")
     snapshots["coverage/coverage.tsv"] = actual
     require(coverage["queue_sha256"] == receipt["queue_sha256"], "Coverage queue pin mismatch")
-    queued = {}
+    queued: dict[str, str] = {}
     with csv_reader(handoff / "original-review-queue.tsv") as reader:
         queue_rows = list(reader)
     for row in queue_rows:
@@ -363,7 +372,7 @@ def candidate(case, index, records, hashes, native):
     context = case["context"]
     matches = sorted(index.get(context["preferred_term"].casefold(), ()))
     owners = [name for name in matches if records[name].get("mapping_status") != "REJECTED"]
-    result = {
+    result: dict[str, Any] = {
         "owners": owners,
         "rejected_owners": sorted(set(matches) - set(owners)),
         "supported_canonical_rows": [],
@@ -406,7 +415,9 @@ def candidate(case, index, records, hashes, native):
 
 def collect_cases(bundle, destination, manifest):
     policy = CONTRACTS[manifest["contract"]]
-    cases, positive, events = {}, {}, {}
+    cases: dict[str, dict[str, Any]] = {}
+    positive: dict[tuple[str, str], dict[str, str]] = {}
+    events: dict[tuple[str, str, str], str] = {}
     ledger_coordinates = set()
     base_count = context_count = 0
     fields = None
@@ -430,6 +441,7 @@ def collect_cases(bundle, destination, manifest):
                         reader.fieldnames == fields + ["counts_as_presence"],
                         "Ledger columns differ",
                     )
+                assert writer is not None  # Both product paths initialize or reuse the writer.
                 for position, raw in enumerate(reader, 1):
                     row = checked_row(raw)
                     action, role = row["change_action"], row["descriptor_role"]
@@ -592,7 +604,8 @@ def collect_held_cases(bundle, destination, manifest):
     """Keep source holds separate; resolve identities without asserting presence."""
     if not CONTRACTS[manifest["contract"]]["held_product"]:
         return []
-    cases, coordinates, labels = {}, set(), set()
+    cases: dict[str, dict[str, Any]] = {}
+    coordinates, labels = set(), set()
     with (
         csv_reader(bundle / HELD_PRODUCT) as reader,
         (destination / "source-held-mentions.tsv").open(
@@ -903,7 +916,8 @@ def finalize(intake, pin, review_path, output, *, root=ROOT):
         require(key in cases and key not in decisions, "Unexpected/duplicate review case")
         decisions[key] = decision
     require(set(decisions) == set(cases), "Review must explicitly dispose every intake case")
-    rows, proofs = [], {}
+    rows = []
+    proofs: dict[str, Any] = {}
     for key, case in cases.items():
         decision = decisions[key]
         candidate = case["candidate"]
