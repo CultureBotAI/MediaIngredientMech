@@ -6,6 +6,9 @@ regression here is a regression of something we already paid for once.
 
 from __future__ import annotations
 
+import json
+import shutil
+
 import pytest
 
 from mediaingredientmech.curie import CurieNormalizer, Verdict
@@ -53,8 +56,17 @@ def test_real_chebi_accession_passes(n):
 
 # ---- MicrO malformed-IRI guard --------------------------------------------
 
-def test_unverified_micro_id_is_blocked(n):
-    """MICRO:0002390 is minted under …/obo/MicrO.owl/… and will not round-trip."""
+def test_unverified_micro_id_is_blocked(n, tmp_path, monkeypatch):
+    """A legacy IRI still needs its explicit, separately checked source admission."""
+    from mediaingredientmech import micro_source
+
+    target = tmp_path / "micro"
+    shutil.copytree(micro_source.SOURCE, target)
+    path = target / "manifest.json"
+    manifest = json.loads(path.read_text())
+    del manifest["reviewed_terms"]["MICRO:0002390"]
+    path.write_text(json.dumps(manifest))
+    monkeypatch.setattr(micro_source, "_reviewed_terms", lambda: micro_source.load_source(target))
     v = n.normalize("MICRO:0002390")
     assert not v and v.problem == "MICRO_UNVERIFIED"
 
