@@ -424,7 +424,7 @@
                         <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
                         <li><strong>Color &amp; shape:</strong> Categorical grouping (default: mapping status - <span style="color: #2a78d6;">blue filled circle = mapped</span>, <span style="color: #eb6834;">orange hollow ring = unmapped</span>)</li>
                         <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
-                        <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes). Unknown values use fixed 3-pixel markers; known zero uses the numeric scale.</li>
+                        <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes). Unknown values use fixed 5-pixel markers; known zero uses the numeric scale.</li>
                         <li><strong>Hover:</strong> View detailed metadata tooltip</li>
                         <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
                         <li><strong>Zoom/Pan:</strong> Use mouse wheel to zoom, click and drag to pan</li>
@@ -456,7 +456,7 @@
                 ? Math.max(maximum, row[key]) : maximum, 1);
         }
         function metricRadius(row, key, scale) {
-            return hasOccurrenceCount(row[key]) ? scale(row[key]) : 3;
+            return hasOccurrenceCount(row[key]) ? scale(row[key]) : 5;
         }
         function occurrenceCoverageText(row) {
             const state = row.occurrence_statistics_state;

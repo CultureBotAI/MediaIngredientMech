@@ -128,7 +128,11 @@ const rows=[
 ].map((r,i)=>({...r,id:'MIM:000000'+i,umap_x:i,umap_y:i,mapping_status:'MAPPED',num_synonyms:1}));
 context.fixture=rows;
 vm.runInContext('ingredientData=fixture; renderUMAP(); buildTable();',context);
-assert.deepEqual(radii[0],[3,5,15]);
+assert.deepEqual(radii[0],[5,5,15]);
+// #110 F004: missing counts must remain visible at the established 5px floor.
+assert.ok(radii[0].every(radius => radius >= 5));
+assert.equal(rows[0].total_occurrences, null);
+assert.equal(rows[0].media_count, null);
 assert.deepEqual(Array.from(domains[0]),[0,16]);
 const table=elements.get('data-table-el').innerHTML;
 assert.ok(table.includes('<td>Unknown</td><td>Unknown</td>'));
@@ -142,8 +146,9 @@ assert.ok(!tooltip.includes('Coverage <not complete>'));
 handlers.mouseover.call({}, {pageX:0,pageY:0},rows[1]);
 assert.ok(tooltip.includes('Occurrences: 0'));
 const radiusArgs=[];
-assert.equal(context.metricRadius(rows[0],'media_count',v=>{radiusArgs.push(v);return v;}),3);
+assert.equal(context.metricRadius(rows[0],'media_count',v=>{radiusArgs.push(v);return v;}),5);
 assert.equal(radiusArgs.length,0);
+assert.equal(rows[0].media_count, null);
 assert.equal(context.metricRadius(rows[1],'media_count',v=>{radiusArgs.push(v);return v;}),0);
 assert.deepEqual(radiusArgs,[0]);
 assert.equal(context.metricMaximum([{x:null},{x:undefined},{x:0},{x:'99'},{x:false}],'x'),1);
