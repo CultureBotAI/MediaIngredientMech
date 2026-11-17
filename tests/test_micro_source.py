@@ -20,11 +20,14 @@ def test_reviewed_source_terms_and_original_iris():
         "MICRO:0002393": "Proteose Peptone No. 2",
         "MICRO:0002392": "rabbit serum",
         "MICRO:0002250": "V-8 juice",
+        "MICRO:0002115": "defibrinated blood",
+        "MICRO:0002390": "Oxoid Blood Agar Base No. 2",
+        "MICRO:0002399": "water-lysed sheep blood",
     }
     for term in terms.values():
         assert term.iri.endswith("MicrO.owl/" + term.curie.replace(":", "_"))
         assert unquote(unquote(curie_to_url(term.curie))).endswith(term.iri)
-    assert source_term("MICRO:0002390") is None
+    assert source_term("MICRO:0002401") is None  # new parent is context only
     assert source_term("MICRO:0000180") is None  # context node, not a new source approval
 
 
