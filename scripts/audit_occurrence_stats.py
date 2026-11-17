@@ -9,9 +9,9 @@ Checks every record for:
   MEDIA_GT_OCC    — media_count greater than total_occurrences (impossible)
 
 --check (default) prints issues and exits 1 if any (CI gate).
---fix backfills MISSING records with total_occurrences=0 / media_count=0 (these
-are ontology-derived records that were never tracked in media counting) and records
-a curation event. It does NOT touch the other categories — those need judgement.
+Explicit validated UNKNOWN coverage is accepted for truly absent statistics.
+--fix refuses missing records: absence is not evidence of zero. Counts-only
+writes still require qualified source evidence and the native guarded workflow.
 
 Usage:
     python scripts/audit_occurrence_stats.py
@@ -24,7 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.occurrence_coverage import Coverage, default_coverage, occurrence_view
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 DATA = Path("data/curated/mapped_ingredients.yaml")
@@ -38,10 +38,17 @@ def record_address(record: dict) -> tuple[str, str]:
     )
 
 
-def find_issues(records: list[dict]) -> dict[str, list]:
-    issues = {"missing": [], "rejected_nonzero": [], "negative": [], "media_gt_occ": []}
+def find_issues(records: list[dict], coverage: Coverage | None = None) -> dict[str, list]:
+    issues = {"missing": [], "rejected_nonzero": [], "negative": [], "media_gt_occ": [], "invalid_type": [], "coverage": []}
     for r in records:
         address = record_address(r)
+        if "occurrence_statistics" not in r and coverage is not None:
+            try:
+                if occurrence_view(r, coverage=coverage)["occurrence_statistics_state"] == "UNKNOWN":
+                    continue
+            except ValueError as exc:
+                issues["coverage"].append((address, str(exc)))
+                continue
         st = r.get("occurrence_statistics")
         # Treat absent, non-mapping, or partially-populated stats as MISSING; the
         # later numeric checks then only run when both counts are present.
@@ -53,7 +60,16 @@ def find_issues(records: list[dict]) -> dict[str, list]:
         if occ is None or mc is None:
             issues["missing"].append(address)
             continue
-        if r.get("mapping_status") == "REJECTED" and occ > 0:
+        if type(occ) is not int or type(mc) is not int:
+            issues["invalid_type"].append(address)
+            continue
+        if coverage is not None:
+            try:
+                if coverage.for_record(r) is not None:
+                    issues["coverage"].append((address, "UNKNOWN cannot override stored counts"))
+            except ValueError as exc:
+                issues["coverage"].append((address, str(exc)))
+        if r.get("mapping_status") == "REJECTED" and (occ > 0 or mc > 0):
             issues["rejected_nonzero"].append((address, occ))
         if occ < 0 or mc < 0:
             issues["negative"].append((address, occ, mc))
@@ -63,44 +79,23 @@ def find_issues(records: list[dict]) -> dict[str, list]:
 
 
 def backfill_missing(records: list[dict], missing: list[tuple[str, str]]) -> int:
-    """Backfill exactly addressed records; reject ambiguous document addresses."""
-    by_address: dict[tuple[str, str], dict] = {}
-    for record in records:
-        address = record_address(record)
-        if address in by_address:
-            raise ValueError(f"Duplicate occurrence-audit record address: {address}")
-        by_address[address] = record
-
-    for address in missing:
-        rec = by_address[address]
-        st = rec.get("occurrence_statistics")
-        st = st if isinstance(st, dict) else {}
-        # Preserve any value that is present; only fill the missing count(s).
-        rec["occurrence_statistics"] = {
-            "total_occurrences": st.get("total_occurrences") or 0,
-            "media_count": st.get("media_count") or 0,
-        }
-        record_curation_event(
-            rec,
-            curator="audit_occurrence_stats",
-            action="CORRECTED",
-            changes="Backfilled missing occurrence_statistics (0/0): ontology-derived "
-            "record with no tracked media occurrences.",
-        )
-    return len(missing)
+    """Refuse inferred zeros; use the qualified guarded counts-only workflow."""
+    if missing:
+        raise ValueError("Cannot infer zero from missing statistics; use reviewed coverage or evidence-qualified counts")
+    return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--fix", action="store_true", help="Backfill MISSING with 0/0")
+    parser.add_argument("--fix", action="store_true", help="Legacy option; refuses unproven zero filling")
     args = parser.parse_args()
 
     curator = IngredientCurator(data_path=DATA, curator_name="audit_occurrence_stats")
     curator.load()
-    issues = find_issues(curator.records)
+    issues = find_issues(curator.records, default_coverage(Path.cwd()))
 
     print("occurrence_statistics audit:")
-    for k in ("missing", "rejected_nonzero", "negative", "media_gt_occ"):
+    for k in issues:
         print(f"  {k}: {len(issues[k])}", issues[k][:8] if issues[k] else "")
 
     if not args.fix:
@@ -108,13 +103,14 @@ def main() -> int:
         if total == 0:
             print("\nOK: occurrence_statistics are consistent.")
             return 0
-        print(f"\n{total} issue(s). Backfill MISSING with --fix; resolve others by hand.")
+        print(f"\n{total} issue(s). Resolve missing counts with reviewed coverage/evidence; do not infer zero.")
         return 1
 
-    n = backfill_missing(curator.records, issues["missing"])
-    curator.save()
-    print(f"\nBackfilled {n} record(s). (Other categories, if any, left for manual review.)")
-    return 0
+    backfill_missing(curator.records, issues["missing"])
+    # No automatic record writes are allowed by this audit (#1431).
+    print("No records changed; numeric and coverage findings still require resolution.")
+    return 1 if any(issues.values()) else 0
+
 
 
 if __name__ == "__main__":

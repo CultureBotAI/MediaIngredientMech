@@ -21,11 +21,12 @@ import yaml
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from mediaingredientmech.occurrence_coverage import Coverage, default_coverage, occurrence_view
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 
-def analyze_ingredients(curator: IngredientCurator) -> dict:
+def analyze_ingredients(curator: IngredientCurator, coverage: Coverage | None = None) -> dict:
     """Analyze all ingredients for role statistics.
 
     Args:
@@ -74,9 +75,8 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
                 or record.get("identifier")
             ),
             "preferred_term": record.get("preferred_term"),
-            "occurrence_count": record.get("occurrence_statistics", {}).get(
-                "total_occurrences", 0
-            ),
+            "occurrence_count": occurrence_view(record, coverage=coverage)["total_occurrences"],
+            **{k: v for k, v in occurrence_view(record, coverage=coverage).items() if k.startswith("occurrence_statistics_")},
             "role_count": len(facet_roles),
             "roles": [],
         }
@@ -116,9 +116,12 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
 
         stats["top_ingredients"].append(ingredient_info)
 
+    stats["owners_without_known_counts"] = sum(i["occurrence_count"] is None for i in stats["top_ingredients"])
+
+    # Sort known counts first; a sorting sentinel is never exported as a count.
     # Sort top ingredients by occurrence
     stats["top_ingredients"] = sorted(
-        stats["top_ingredients"], key=lambda x: x["occurrence_count"], reverse=True
+        stats["top_ingredients"], key=lambda x: (x["occurrence_count"] is not None, x["occurrence_count"] if x["occurrence_count"] is not None else -1), reverse=True
     )[:20]  # Keep top 20
 
     return stats
@@ -148,6 +151,7 @@ def generate_report(stats: dict, output_path: Path):
     report = {
         "generation_date": datetime.now(timezone.utc).isoformat(),
         "summary": {
+            "role_owners_without_known_occurrence_counts": stats.get("owners_without_known_counts", 0),
             "total_ingredients": total_ingredients,
             "with_roles": with_roles,
             "coverage_percentage": round(with_roles / total_ingredients * 100, 1)
@@ -240,7 +244,7 @@ def print_summary(report: dict):
     for i, ing in enumerate(report["top_20_ingredients"][:5], 1):
         roles_str = ", ".join(ing["roles"])
         print(
-            f"  {i}. {ing['preferred_term']:30s} ({ing['occurrence_count']:5d} occ, {ing['role_count']} roles: {roles_str})"
+            f"  {i}. {ing['preferred_term']:30s} ({str(ing['occurrence_count']) if ing['occurrence_count'] is not None else 'Unknown'} occ, {ing['role_count']} roles: {roles_str})"
         )
 
 
@@ -261,7 +265,7 @@ def main():
     print(f"Loaded {len(curator.records)} records")
 
     # Analyze ingredients
-    stats = analyze_ingredients(curator)
+    stats = analyze_ingredients(curator, default_coverage(Path.cwd()))
 
     # Generate report
     output_path = Path("data/analysis/role_statistics_report.yaml")

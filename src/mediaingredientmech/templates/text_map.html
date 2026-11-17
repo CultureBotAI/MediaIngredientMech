@@ -695,7 +695,7 @@
                     <strong>${esc(best.title)}</strong><br>
                     <span>Record: ${esc(best.id)} (${esc(best.identifier)})</span><br>
                     <span>Status: ${esc(best.mapping_status)} | Source: ${esc(best.ontology_source)}</span><br>
-                    <span>Type: ${esc(best.ingredient_type)} | Media: ${esc(best.media_count)}</span>
+                    <span>Type: ${esc(best.ingredient_type)} | Media: ${Number.isInteger(best.media_count) && best.media_count >= 0 ? esc(best.media_count) : 'Unknown'}</span>
                 `;
             } else {
                 tooltip.style.display = "none";

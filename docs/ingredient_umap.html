@@ -424,7 +424,7 @@
                         <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
                         <li><strong>Color &amp; shape:</strong> Categorical grouping (default: mapping status - <span style="color: #2a78d6;">blue filled circle = mapped</span>, <span style="color: #eb6834;">orange hollow ring = unmapped</span>)</li>
                         <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
-                        <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
+                        <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes). Unknown values use fixed 3-pixel markers; known zero uses the numeric scale.</li>
                         <li><strong>Hover:</strong> View detailed metadata tooltip</li>
                         <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
                         <li><strong>Zoom/Pan:</strong> Use mouse wheel to zoom, click and drag to pan</li>
@@ -443,6 +443,28 @@
         let ingredientData = [];
         let circles = null;
         let currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
+
+        // #1431: unknown metrics use a fixed marker, never a numeric-zero fallback.
+        function hasOccurrenceCount(value) {
+            return Number.isInteger(value) && value >= 0;
+        }
+        function occurrenceCountText(value) {
+            return hasOccurrenceCount(value) ? value.toLocaleString() : 'Unknown';
+        }
+        function metricMaximum(rows, key) {
+            return rows.reduce((maximum, row) => hasOccurrenceCount(row[key])
+                ? Math.max(maximum, row[key]) : maximum, 1);
+        }
+        function metricRadius(row, key, scale) {
+            return hasOccurrenceCount(row[key]) ? scale(row[key]) : 3;
+        }
+        function occurrenceCoverageText(row) {
+            const state = row.occurrence_statistics_state;
+            if (state !== 'UNKNOWN' && state !== 'MISSING') return '';
+            const label = state === 'UNKNOWN' ? 'Media usage unknown' : 'Media usage not declared';
+            const text = label + (row.occurrence_statistics_reason ? ': ' + row.occurrence_statistics_reason : '');
+            return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
 
         // Validated CVD-safe categorical palette (assign in order; 9th+ -> Other grey).
         const CAT8 = ['#2a78d6', '#1baf7a', '#eda100', '#008300',
@@ -640,7 +662,7 @@
             // Size scale
             let currentSizeBy = (document.getElementById('size-by') && document.getElementById('size-by').value) || 'total_occurrences';
             const sizeScale = d3.scaleSqrt()
-                .domain([0, d3.max(ingredientData, d => d[currentSizeBy])])
+                .domain([0, metricMaximum(ingredientData, currentSizeBy)])
                 .range([5, 15]);
 
             // Color scale - special handling for mapping_status to highlight unmapped
@@ -718,7 +740,7 @@
                 .join('circle')
                 .attr('cx', d => xScale(d.umap_x))
                 .attr('cy', d => yScale(d.umap_y))
-                .attr('r', d => sizeScale(d[currentSizeBy] || 1))
+                .attr('r', d => metricRadius(d, currentSizeBy, sizeScale))
                 .attr('fill', d => isHollow(d, currentColorBy) ? 'none' : colorScale(d[currentColorBy] || 'Unknown'))
                 .attr('fill-opacity', 0.7)
                 .attr('stroke', restStroke)
@@ -749,8 +771,9 @@
                             <div class="tooltip-row">Status: ${d.mapping_status}</div>
                             ${d.molecular_formula ? `<div class="tooltip-row">Formula: ${d.molecular_formula}</div>` : ''}
                             ${d.cas_rn ? `<div class="tooltip-row">CAS-RN: ${d.cas_rn}</div>` : ''}
-                            <div class="tooltip-row">Occurrences: ${d.total_occurrences}</div>
-                            <div class="tooltip-row">Media count: ${d.media_count}</div>
+                            <div class="tooltip-row">Occurrences: ${occurrenceCountText(d.total_occurrences)}</div>
+                            <div class="tooltip-row">Media count: ${occurrenceCountText(d.media_count)}</div>
+                            ${occurrenceCoverageText(d) ? `<div class="tooltip-row">${occurrenceCoverageText(d)}</div>` : ''}
                             <div class="tooltip-row">Synonyms: ${d.num_synonyms}</div>
                         `);
                 })
@@ -782,10 +805,10 @@
 
             document.getElementById('size-by').addEventListener('change', (e) => {
                 currentSizeBy = e.target.value;
-                sizeScale.domain([0, d3.max(ingredientData, d => d[currentSizeBy])]);
+                sizeScale.domain([0, metricMaximum(ingredientData, currentSizeBy)]);
                 circles.transition()
                     .duration(300)
-                    .attr('r', d => sizeScale(d[currentSizeBy] || 1));
+                    .attr('r', d => metricRadius(d, currentSizeBy, sizeScale));
                 syncQueryToUrl();
             });
 
@@ -828,7 +851,8 @@
             const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             const head = '<thead><tr>' + cols.map(c => `<th>${c[1]}</th>`).join('') + '</tr></thead>';
             const rows = ingredientData.map(d =>
-                '<tr>' + cols.map(c => `<td>${esc(d[c[0]])}</td>`).join('') + '</tr>'
+                '<tr>' + cols.map(c => `<td>${esc(['total_occurrences', 'media_count'].includes(c[0])
+                    ? occurrenceCountText(d[c[0]]) : d[c[0]])}</td>`).join('') + '</tr>'
             ).join('');
             el.innerHTML = head + '<tbody>' + rows + '</tbody>';
         }

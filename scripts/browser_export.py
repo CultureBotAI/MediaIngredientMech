@@ -26,8 +26,8 @@ from collections.abc import Mapping
 from mediaingredientmech.render_ingredient_pages import slug_for
 from mediaingredientmech.stable_ids import resolver_url  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.occurrence_coverage import Coverage, default_coverage, occurrence_view
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
-    effective_occurrence_statistics,
     membership_counts,
 )
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
@@ -39,6 +39,7 @@ def extract_ingredient_for_browser(
     ingredient: dict,
     source_file: str,
     counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+    coverage: Coverage | None = None,
 ) -> dict:
     """Extract ingredient data into browser-friendly format.
 
@@ -74,9 +75,7 @@ def extract_ingredient_for_browser(
             synonyms.append(synonym_text)
 
     # Statistics
-    media_count, total_occurrences = effective_occurrence_statistics(
-        ingredient, counts_by_id
-    )
+    occurrence = occurrence_view(ingredient, counts_by_id, coverage)
 
     # Curation info
     curation_history = ingredient.get('curation_history', [])
@@ -120,8 +119,7 @@ def extract_ingredient_for_browser(
         'mapping_quality': mapping_quality,
         'synonyms': synonyms,
         'synonym_count': len(synonyms),
-        'total_occurrences': total_occurrences,
-        'media_count': media_count,
+        **occurrence,
         'last_curated': last_curated,
         'curator': curator,
         'source_file': source_file,
@@ -157,6 +155,7 @@ def export_ingredients_to_json(
         else ingredients_dir.parent.parent / "mappings" / "culturemech_recipe_membership.tsv"
     )
     counts_by_id = membership_counts(resolved_membership)
+    coverage = default_coverage(ingredients_dir.parent.parent)
 
     all_ingredients = []
     failures: list[str] = []
@@ -171,6 +170,7 @@ def export_ingredients_to_json(
                     ingredient,
                     f"mapped/{yaml_file.name}",
                     counts_by_id=counts_by_id,
+                    coverage=coverage,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
@@ -189,6 +189,7 @@ def export_ingredients_to_json(
                     ingredient,
                     f"unmapped/{yaml_file.name}",
                     counts_by_id=counts_by_id,
+                    coverage=coverage,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
@@ -212,6 +213,7 @@ def export_ingredients_to_json(
     # Create export data
     export_data = {
         'metadata': {
+            'occurrence_count_coverage': {state: sum(r['occurrence_statistics_state'] == state for r in all_ingredients) for state in ('RECORDED', 'MEMBERSHIP', 'UNKNOWN', 'MISSING')},
             'generated': datetime.now(timezone.utc).isoformat(),
             'total_ingredients': stats['total'],
             'mapped_count': stats['mapped'],

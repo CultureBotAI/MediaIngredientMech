@@ -1,6 +1,6 @@
 """Guard test: occurrence_statistics stay consistent in the curated collection.
 
-Asserts no record is missing occurrence_statistics, no REJECTED record reports
+Asserts every record has valid counts or explicit verified UNKNOWN coverage; no REJECTED record reports
 occurrences, no negative counts, and media_count never exceeds total_occurrences.
 """
 
@@ -8,6 +8,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
 import yaml
 
 ROOT = Path(__file__).parent.parent
@@ -27,14 +28,14 @@ def _load_audit():
 def test_occurrence_stats_consistent():
     audit = _load_audit()
     data = yaml.safe_load((ROOT / "data" / "curated" / "mapped_ingredients.yaml").read_text())
-    issues = audit.find_issues(data["ingredients"])
+    issues = audit.find_issues(data["ingredients"], audit.default_coverage(ROOT))
     assert all(len(v) == 0 for v in issues.values()), (
         "occurrence_statistics inconsistencies found:\n"
         + "\n".join(f"  {k}: {v}" for k, v in issues.items() if v)
     )
 
 
-def test_backfill_addresses_shared_identifier_siblings_by_preferred_term():
+def test_backfill_refuses_unproven_zero_and_preserves_shared_identifier_siblings():
     audit = _load_audit()
     dry = {
         "identifier": "CHEBI:1",
@@ -51,6 +52,7 @@ def test_backfill_addresses_shared_identifier_siblings_by_preferred_term():
     issues = audit.find_issues(records)
 
     assert issues["missing"] == [("CHEBI:1", "salt hydrate")]
-    assert audit.backfill_missing(records, issues["missing"]) == 1
+    with pytest.raises(ValueError, match="Cannot infer zero"):
+        audit.backfill_missing(records, issues["missing"])
     assert dry["occurrence_statistics"] == {"total_occurrences": 4, "media_count": 2}
-    assert wet["occurrence_statistics"] == {"total_occurrences": 0, "media_count": 0}
+    assert "occurrence_statistics" not in wet
