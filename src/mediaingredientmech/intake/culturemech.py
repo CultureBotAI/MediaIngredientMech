@@ -32,6 +32,24 @@ ROOT = Path(__file__).resolve().parents[3]
 REVIEW = "reports/sssom_completion_20260921/review.json"
 
 
+class UniqueOwnerLoader(yaml.CSafeLoader):
+    """Reject duplicate keys, including merge-expanded overrides (#1467)."""
+
+    def construct_mapping(self, node, deep=False):
+        # Disjoint merges retain native safe-loader semantics. Overrides create
+        # repeated keys and must not silently choose an owner identity/status.
+        self.flatten_mapping(node)
+        seen = set()
+        for key_node, _value_node in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            if key in seen:
+                raise ValueError(
+                    f"Duplicate YAML mapping key {key!r} at line {key_node.start_mark.line + 1}"
+                )
+            seen.add(key)
+        return super().construct_mapping(node, deep=deep)
+
+
 class SourceContract(TypedDict):
     positive_actions: set[str]
     actions: set[str]
@@ -354,7 +372,10 @@ def mim_snapshot(root):
         require(path.is_file() and not path.is_symlink(), f"Nonregular input: {path}")
         data = path.read_bytes()
         hashes[name] = {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
-        record = yaml.load(data, Loader=yaml.CSafeLoader)
+        try:
+            record = yaml.load(data, Loader=UniqueOwnerLoader)
+        except (ValueError, yaml.YAMLError) as exc:
+            raise ValueError(f"Invalid MIM owner YAML {name}: {exc}") from exc
         require(isinstance(record, dict), "Invalid MIM record")
         records[name] = record
         labels = {str(record.get("preferred_term") or "")}

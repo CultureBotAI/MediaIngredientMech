@@ -54,6 +54,11 @@ rejected labels. Classifications distinguish agreeing ID and label, missing
 source ID, conflicting ID, ambiguous owners, known unmapped owners and no active
 owner. A candidate does not authorize an identity binding.
 
+Owner YAML is hashed and parsed from the same byte snapshot. Repeated mapping
+keys, including nested keys and merge-expanded overrides, are refused. Disjoint
+YAML merges retain safe-loader behavior; a repeated key never silently selects
+an identity or status.
+
 `counts_as_presence` is inventory membership, not a physical-presence assertion.
 Zero-concentration targets remain change events. `REMOVE` and old `REPLACE`
 descriptors remain context-only, including labels absent from positive inventory.

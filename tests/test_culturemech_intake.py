@@ -48,6 +48,37 @@ def test_owner_snapshot_hash_and_candidate_share_exact_bytes(tmp_path, monkeypat
     assert hashes[name] == {"sha256": hashlib.sha256(before).hexdigest(), "bytes": len(before)}
 
 
+@pytest.mark.parametrize(
+    "extra",
+    [
+        "mapping_status: REJECTED\n",
+        "ontology_mapping:\n  ontology_id: CHEBI:1\n  ontology_id: CHEBI:2\n",
+        "defaults: &owner\n  mapping_status: REJECTED\n<<: *owner\n",
+    ],
+)
+def test_owner_snapshot_refuses_duplicate_or_merge_overridden_keys(tmp_path, extra):
+    path = tmp_path / "data/ingredients/mapped/owner.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text("preferred_term: Alpha\nidentifier: CHEBI:1\nmapping_status: MAPPED\n" + extra)
+    with pytest.raises(ValueError, match=r"Invalid MIM owner YAML.*Duplicate YAML mapping key"):
+        intake.mim_snapshot(tmp_path)
+
+
+def test_owner_snapshot_keeps_disjoint_safe_yaml_merge(tmp_path):
+    path = tmp_path / "data/ingredients/mapped/owner.yaml"
+    path.parent.mkdir(parents=True)
+    raw = (
+        b"defaults: &identity\n  identifier: CHEBI:1\n"
+        b"<<: *identity\npreferred_term: Alpha\nmapping_status: MAPPED\n"
+    )
+    path.write_bytes(raw)
+    index, records, hashes = intake.mim_snapshot(tmp_path)
+    name = path.relative_to(tmp_path).as_posix()
+    assert records[name]["identifier"] == "CHEBI:1"
+    assert index["alpha"] == {name}
+    assert hashes[name]["sha256"] == hashlib.sha256(raw).hexdigest()
+
+
 FIELDS = [
     "recipe_id",
     "recipe_label",

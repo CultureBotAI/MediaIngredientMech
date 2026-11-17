@@ -17,6 +17,69 @@ from mediaingredientmech.intake import culturemech as intake
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def validate_coverage(decision, case):
+    """Require exhaustive support review or actual blocking witnesses (#1465)."""
+    payloads = {
+        "descriptor": case["descriptors"],
+        "change": case.get("change_payloads", {}),
+        "held": case.get("held_payloads", {}),
+    }
+    inspected = {}
+    for kind, members in payloads.items():
+        values = decision[f"inspected_{kind}_sha256"]
+        intake.require(
+            isinstance(values, list)
+            and all(isinstance(value, str) for value in values)
+            and len(set(values)) == len(values)
+            and set(values) <= set(members),
+            "Inspected payload is not a unique case member",
+        )
+        inspected[kind] = set(values)
+    if decision["disposition"] == "SUPPORTED":
+        intake.require(
+            all(inspected[kind] == set(members) for kind, members in payloads.items()),
+            "Supported author payload review is incomplete",
+        )
+        return
+    witnesses = decision.get("blocking_witnesses")
+    intake.require(isinstance(witnesses, list) and witnesses, "WITHHOLD needs blocking witnesses")
+    for witness in witnesses:
+        intake.require(isinstance(witness, dict), "Invalid blocking witness")
+        kind, sha = witness.get("payload_kind"), witness.get("sha256")
+        intake.require(
+            isinstance(kind, str)
+            and isinstance(sha, str)
+            and kind in payloads
+            and sha in inspected[kind]
+            and sha in payloads[kind],
+            "Blocking witness is not an inspected case member",
+        )
+        payload = payloads[kind][sha]
+        intake.require(intake.payload_sha256(payload) == sha, "Stale blocking witness hash")
+        pointer, reason = witness.get("field_path"), witness.get("reason")
+        intake.require(
+            isinstance(pointer, str)
+            and pointer.startswith("/")
+            and isinstance(reason, str)
+            and reason.strip(),
+            "Blocking witness needs an exact field and concrete reason",
+        )
+        value = payload
+        try:
+            for token in pointer[1:].split("/"):
+                if "~" in token.replace("~1", "").replace("~0", ""):
+                    raise ValueError("Invalid JSON pointer escape")
+                token = token.replace("~1", "/").replace("~0", "~")
+                if isinstance(value, list):
+                    if not token.isdecimal() or (len(token) > 1 and token.startswith("0")):
+                        raise ValueError("Invalid JSON array index")
+                    value = value[int(token)]
+                else:
+                    value = value[token]
+        except (KeyError, TypeError, ValueError, IndexError) as exc:
+            raise ValueError("Blocking witness field is absent") from exc
+
+
 def assemble(source, pin, authors, output, *, root=ROOT):
     source, output, root = source.resolve(), output.resolve(), root.resolve()
     authors = [path.resolve() for path in authors]
@@ -46,21 +109,13 @@ def assemble(source, pin, authors, output, *, root=ROOT):
                 decision["row_sha256"] == intake.payload_sha256(case), "Stale author case"
             )
             intake.require(
-                set(decision["inspected_descriptor_sha256"]) == set(case["descriptors"]),
-                "Author descriptor review is incomplete",
-            )
-            intake.require(
-                set(decision["inspected_change_sha256"]) == set(case.get("change_payloads", {}))
-                and set(decision["inspected_held_sha256"]) == set(case.get("held_payloads", {})),
-                "Author change/held payload review is incomplete",
-            )
-            intake.require(
                 decision["disposition"] in {"SUPPORTED", "WITHHOLD"}
                 and isinstance(decision["review_reason"], str)
                 and decision["review_reason"].strip()
                 and decision["evidence_locators"],
                 "Missing explicit scientific disposition/evidence",
             )
+            validate_coverage(decision, case)
             supplied[key] = decision
     eligible = {key for key, case in cases.items() if case["candidate"]["supported_canonical_rows"]}
     intake.require(set(supplied) == eligible, "Every eligible case needs an authored review")
@@ -128,6 +183,19 @@ def assemble(source, pin, authors, output, *, root=ROOT):
             "evidence_locators": locators,
             "intake_sha256": pin,
             "review_packet_sha256": packet_pin,
+            "review_coverage": (
+                {
+                    field: supplied[key].get(field, [])
+                    for field in (
+                        "inspected_descriptor_sha256",
+                        "inspected_change_sha256",
+                        "inspected_held_sha256",
+                        "blocking_witnesses",
+                    )
+                }
+                if key in supplied
+                else {"kind": "native_canonical_eligibility_gate"}
+            ),
         }
         decisions.append(decision)
     output.parent.mkdir(parents=True, exist_ok=True)
