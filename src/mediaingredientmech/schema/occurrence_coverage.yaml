@@ -1,0 +1,135 @@
+id: https://culturebotai.github.io/MediaIngredientMech/occurrence-coverage
+name: occurrence-coverage
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mimcov: https://culturebotai.github.io/MediaIngredientMech/occurrence-coverage/
+default_prefix: mimcov
+default_range: string
+imports:
+  - linkml:types
+classes:
+  OccurrenceCoverage:
+    tree_root: true
+    description: Explicit occurrence completeness; grants no source identity or mapping approval.
+    attributes:
+      contract:
+        required: true
+        pattern: '^mim-occurrence-coverage-v1$'
+      created_at:
+        range: datetime
+        required: true
+      declarations:
+        range: UnknownOccurrenceCoverage
+        multivalued: true
+        inlined_as_list: true
+        required: true
+        minimum_cardinality: 1
+  UnknownOccurrenceCoverage:
+    attributes:
+      mim_id:
+        required: true
+        pattern: '^MIM:[0-9]{7}$'
+      owner_sha256:
+        required: true
+        pattern: '^[0-9a-f]{64}$'
+      owner_content_sha256:
+        required: true
+        pattern: '^[0-9a-f]{64}$'
+      state:
+        required: true
+        pattern: '^UNKNOWN$'
+      reason_code:
+        range: UnknownReason
+        required: true
+      reason:
+        required: true
+        pattern: '\S'
+      evidence:
+        range: CoverageEvidence
+        multivalued: true
+        inlined_as_list: true
+        required: true
+        minimum_cardinality: 1
+      source_coverage:
+        range: SourceCoverage
+        multivalued: true
+        inlined_as_list: true
+        required: true
+        minimum_cardinality: 1
+      observations:
+        range: QualifiedSourceObservation
+        multivalued: true
+        inlined_as_list: true
+  CoverageEvidence:
+    attributes:
+      path:
+        required: true
+      sha256:
+        required: true
+        pattern: '^[0-9a-f]{64}$'
+      description:
+        required: true
+        pattern: '\S'
+  SourceCoverage:
+    attributes:
+      source:
+        required: true
+      revision:
+        required: true
+      evidence_path:
+        required: true
+      source_sha256:
+        required: true
+        pattern: '^[0-9a-f]{64}$'
+      scanned_at:
+        range: datetime
+        required: true
+      row_count:
+        range: integer
+        required: true
+        minimum_value: 0
+      distinct_media_count:
+        range: integer
+        minimum_value: 0
+      scope:
+        required: true
+        pattern: '\S'
+  QualifiedSourceObservation:
+    description: >-
+      Observed source-scoped prevalence only, never complete media usage or an
+      identity assertion. Scientific attribution requires its independent reviews.
+    attributes:
+      source:
+        required: true
+      unit:
+        range: ObservationUnit
+        required: true
+      count:
+        range: integer
+        minimum_value: 0
+        required: true
+      scope:
+        required: true
+        pattern: '\S'
+      evidence_path:
+        required: true
+      primary_review_path:
+        required: true
+      skeptical_review_path:
+        required: true
+      attribution:
+        required: true
+        pattern: '^REVIEWED_SOURCE_SCOPE$'
+enums:
+  UnknownReason:
+    permissible_values:
+      INCOMPLETE_SOURCE_COVERAGE:
+      SOURCE_REVIEW_PENDING:
+      SOURCE_ATTRIBUTION_WITHHELD:
+      NO_SUPPORTED_OWNER_ATTRIBUTION:
+  ObservationUnit:
+    permissible_values:
+      CAPTURED_SOURCE_OCCURRENCE:
+      SOURCE_LISTING:
+      DISTINCT_MEDIA_IN_COVERED_SUBSET:
+      NONMEDIA_OBSERVATION:

@@ -19,8 +19,8 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
+from mediaingredientmech.occurrence_coverage import Coverage, default_coverage, occurrence_view
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
-    effective_occurrence_statistics,
     membership_counts,
 )
 
@@ -37,14 +37,16 @@ def load_records(path: Path) -> list[dict]:
 def _total_occurrences(
     record: dict,
     counts_by_id: Mapping[str, tuple[int, int]] | None = None,
-) -> int:
-    return effective_occurrence_statistics(record, counts_by_id)[1]
+    coverage: Coverage | None = None,
+) -> int | None:
+    return occurrence_view(record, counts_by_id, coverage)["total_occurrences"]
 
 
 def generate_json_index(
     records: list[dict],
     output_path: Path,
     counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+    coverage: Coverage | None = None,
 ) -> None:
     """Generate JSON index with key fields."""
     index = []
@@ -55,7 +57,8 @@ def generate_json_index(
             'mim_id': record.get('mim_id'),
             'preferred_term': record.get('preferred_term'),
             'mapping_status': record.get('mapping_status'),
-            'occurrences': _total_occurrences(record, counts_by_id),
+            'occurrences': _total_occurrences(record, counts_by_id, coverage),
+            **{k: v for k, v in occurrence_view(record, counts_by_id, coverage).items() if k.startswith('occurrence_statistics_')},
         }
 
         # Add ontology mapping if exists
@@ -77,6 +80,7 @@ def generate_csv_index(
     records: list[dict],
     output_path: Path,
     counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+    coverage: Coverage | None = None,
 ) -> None:
     """Generate CSV index with key fields."""
     with open(output_path, 'w', newline='') as f:
@@ -94,6 +98,9 @@ def generate_csv_index(
             'mapping_quality',
             'occurrences',
             'mim_id',
+            'occurrence_statistics_state',
+            'occurrence_statistics_reason',
+            'occurrence_statistics_provenance',
         ])
 
         # Rows
@@ -106,8 +113,11 @@ def generate_csv_index(
                 om.get('ontology_id', ''),
                 om.get('ontology_source', ''),
                 om.get('mapping_quality', ''),
-                _total_occurrences(record, counts_by_id),
+                _total_occurrences(record, counts_by_id, coverage),
                 record.get('mim_id', ''),
+                occurrence_view(record, counts_by_id, coverage)['occurrence_statistics_state'],
+                occurrence_view(record, counts_by_id, coverage)['occurrence_statistics_reason'],
+                json.dumps(occurrence_view(record, counts_by_id, coverage).get('occurrence_statistics_provenance', {}), sort_keys=True),
             ])
 
     print(f"✓ Created {output_path} ({len(records)} records)")
@@ -118,6 +128,7 @@ def generate_markdown_index(
     output_path: Path,
     title: str,
     counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+    coverage: Coverage | None = None,
 ) -> None:
     """Generate Markdown index with formatted tables."""
     lines = [f"# {title}\n"]
@@ -127,14 +138,16 @@ def generate_markdown_index(
     mapped = sum(1 for r in records if r.get('mapping_status') == 'MAPPED')
     unmapped = sum(1 for r in records if r.get('mapping_status') == 'UNMAPPED')
     other = total - mapped - unmapped
-    total_occurrences = sum(_total_occurrences(r, counts_by_id) for r in records)
+    counts = [_total_occurrences(r, counts_by_id, coverage) for r in records]
+    total_occurrences = sum(value for value in counts if value is not None)
+    unknown_counts = sum(value is None for value in counts)
 
     lines.append(f"**Total Records**: {total}\n")
     lines.append(f"**Mapped**: {mapped} ({mapped/total*100:.1f}%)\n")
     lines.append(f"**Unmapped**: {unmapped} ({unmapped/total*100:.1f}%)\n")
     if other:
         lines.append(f"**Other statuses**: {other} ({other/total*100:.1f}%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS\n")
-    lines.append(f"**Total Occurrences**: {total_occurrences:,}\n")
+    lines.append(f"**Known-count occurrence subtotal**: {total_occurrences:,}; **owners without known counts**: {unknown_counts}\n")
     lines.append("\n---\n\n")
 
     # Mapped ingredients table
@@ -154,7 +167,7 @@ def generate_markdown_index(
                 f"| {om.get('ontology_id', '')} "
                 f"| {om.get('ontology_source', '')} "
                 f"| {om.get('mapping_quality', '')} "
-                f"| {_total_occurrences(record, counts_by_id)} |\n"
+                f"| {_total_occurrences(record, counts_by_id, coverage) if _total_occurrences(record, counts_by_id, coverage) is not None else 'Unknown'} |\n"
             )
 
         lines.append("\n")
@@ -173,7 +186,7 @@ def generate_markdown_index(
                 f"| {record.get('identifier', '')} "
                 f"| {record.get('preferred_term', '')} "
                 f"| {record.get('mapping_status', '')} "
-                f"| {_total_occurrences(record, counts_by_id)} |\n"
+                f"| {_total_occurrences(record, counts_by_id, coverage) if _total_occurrences(record, counts_by_id, coverage) is not None else 'Unknown'} |\n"
             )
 
         lines.append("\n")
@@ -198,7 +211,7 @@ def generate_markdown_index(
                 f"| {status or ''} "
                 f"| {om.get('ontology_id', '')} "
                 f"| {record.get('representative', '')} "
-                f"| {_total_occurrences(record, counts_by_id)} |\n"
+                f"| {_total_occurrences(record, counts_by_id, coverage) if _total_occurrences(record, counts_by_id, coverage) is not None else 'Unknown'} |\n"
             )
 
         lines.append("\n")
@@ -233,29 +246,30 @@ def main(argv: list[str] | None = None):
     print()
 
     counts_by_id = membership_counts(Path("mappings/culturemech_recipe_membership.tsv"))
+    coverage = default_coverage(Path.cwd())
 
     output_dir = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate JSON
     print("Generating JSON indexes...")
-    generate_json_index(mapped_records, output_dir / 'mapped_ingredients_index.json', counts_by_id)
-    generate_json_index(unmapped_records, output_dir / 'unmapped_ingredients_index.json', counts_by_id)
-    generate_json_index(all_records, output_dir / 'all_ingredients_index.json', counts_by_id)
+    generate_json_index(mapped_records, output_dir / 'mapped_ingredients_index.json', counts_by_id, coverage)
+    generate_json_index(unmapped_records, output_dir / 'unmapped_ingredients_index.json', counts_by_id, coverage)
+    generate_json_index(all_records, output_dir / 'all_ingredients_index.json', counts_by_id, coverage)
     print()
 
     # Generate CSV
     print("Generating CSV indexes...")
-    generate_csv_index(mapped_records, output_dir / 'mapped_ingredients_index.csv', counts_by_id)
-    generate_csv_index(unmapped_records, output_dir / 'unmapped_ingredients_index.csv', counts_by_id)
-    generate_csv_index(all_records, output_dir / 'all_ingredients_index.csv', counts_by_id)
+    generate_csv_index(mapped_records, output_dir / 'mapped_ingredients_index.csv', counts_by_id, coverage)
+    generate_csv_index(unmapped_records, output_dir / 'unmapped_ingredients_index.csv', counts_by_id, coverage)
+    generate_csv_index(all_records, output_dir / 'all_ingredients_index.csv', counts_by_id, coverage)
     print()
 
     # Generate Markdown
     print("Generating Markdown indexes...")
-    generate_markdown_index(mapped_records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index', counts_by_id)
-    generate_markdown_index(unmapped_records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index', counts_by_id)
-    generate_markdown_index(all_records, output_dir / 'ALL_INGREDIENTS.md', 'Complete Ingredients Index', counts_by_id)
+    generate_markdown_index(mapped_records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index', counts_by_id, coverage)
+    generate_markdown_index(unmapped_records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index', counts_by_id, coverage)
+    generate_markdown_index(all_records, output_dir / 'ALL_INGREDIENTS.md', 'Complete Ingredients Index', counts_by_id, coverage)
     print()
 
     print("=" * 80)

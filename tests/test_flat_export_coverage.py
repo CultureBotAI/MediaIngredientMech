@@ -71,7 +71,9 @@ def test_csv_stable_id_is_appended_after_existing_synonyms(export_lists, tmp_pat
     out = tmp_path / "all.csv"
     export_lists.export_to_csv([rec("CHEBI:1", "X")], out)
     header = out.read_text().splitlines()[0].split(",")
-    assert header[-2:] == ["synonyms", "mim_id"]
+    # #1431 appends coverage columns without moving any existing column.
+    assert header[9:11] == ["synonyms", "mim_id"]
+    assert header[11:] == ["occurrence_statistics_state", "occurrence_statistics_reason", "occurrence_statistics_provenance"]
     assert header[:9] == ["identifier", "ontology_id", "preferred_term", "mapping_status",
                           "ontology_label", "ontology_source", "mapping_quality",
                           "total_occurrences", "media_count"]
@@ -138,6 +140,9 @@ def build(tmp_path, records, csv_rows, header=None):
     (
         tmp_path / "src" / "mediaingredientmech" / "utils" / "culturemech_occurrences.py"
     ).write_text(OCCURRENCES.read_text())
+    # Include the actual new producer dependency; retain all negative gate assertions.
+    coverage_module = ROOT / "src" / "mediaingredientmech" / "occurrence_coverage.py"
+    (tmp_path / "src" / "mediaingredientmech" / "occurrence_coverage.py").write_text(coverage_module.read_text())
     return tmp_path
 
 

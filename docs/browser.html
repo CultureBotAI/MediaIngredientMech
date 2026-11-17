@@ -592,6 +592,27 @@
             document.getElementById('status-summary').textContent = [...statusCounts.entries()].sort().map(([status, count]) => `${status}: ${count}`).join(' · ');
         }
 
+        // #1431: absent counts are not measured zero; keep unknowns after numeric counts.
+        function hasOccurrenceCount(value) {
+            return Number.isInteger(value) && value >= 0;
+        }
+        function occurrenceCountText(value) {
+            return hasOccurrenceCount(value) ? value.toLocaleString() : 'Unknown';
+        }
+        function compareOccurrenceCounts(a, b, key) {
+            const aKnown = hasOccurrenceCount(a[key]);
+            const bKnown = hasOccurrenceCount(b[key]);
+            if (aKnown !== bKnown) return aKnown ? -1 : 1;
+            return (aKnown ? b[key] - a[key] : 0)
+                || String(a.preferred_term || '').localeCompare(String(b.preferred_term || ''));
+        }
+        function occurrenceCoverageText(row) {
+            const state = row.occurrence_statistics_state;
+            if (state !== 'UNKNOWN' && state !== 'MISSING') return '';
+            const label = state === 'UNKNOWN' ? 'Media usage unknown' : 'Media usage not declared';
+            return label + (row.occurrence_statistics_reason ? ': ' + row.occurrence_statistics_reason : '');
+        }
+
         // Apply filters
         function applyFilters() {
             if (!dataReady) return;
@@ -628,9 +649,9 @@
             } else if (sortBy === 'name-desc') {
                 filteredIngredients.sort((a, b) => String(b.preferred_term || '').localeCompare(String(a.preferred_term || '')));
             } else if (sortBy === 'media-desc') {
-                filteredIngredients.sort((a, b) => (b.media_count || 0) - (a.media_count || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+                filteredIngredients.sort((a, b) => compareOccurrenceCounts(a, b, 'media_count'));
             } else if (sortBy === 'occurrences-desc') {
-                filteredIngredients.sort((a, b) => (b.total_occurrences || 0) - (a.total_occurrences || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+                filteredIngredients.sort((a, b) => compareOccurrenceCounts(a, b, 'total_occurrences'));
             } else if (sortBy === 'synonyms-desc') {
                 filteredIngredients.sort((a, b) => (b.synonym_count || (b.synonyms && b.synonyms.length) || 0) - (a.synonym_count || (a.synonyms && a.synonyms.length) || 0));
             }
@@ -669,11 +690,16 @@
                             <span class="meta-label">ID:</span> ${ing.id}
                         </div>
                         <div class="meta-item">
-                            <span class="meta-label">Occurrences:</span> ${ing.total_occurrences || 0}
+                            <span class="meta-label">Occurrences:</span> ${occurrenceCountText(ing.total_occurrences)}
                         </div>
                         <div class="meta-item">
-                            <span class="meta-label">Media Count:</span> ${ing.media_count || 0}
+                            <span class="meta-label">Media Count:</span> ${occurrenceCountText(ing.media_count)}
                         </div>
+                        ${occurrenceCoverageText(ing) ? `
+                        <div class="meta-item">
+                            ${escapeHtml(occurrenceCoverageText(ing))}
+                        </div>
+                        ` : ''}
                         ${ing.curator ? `
                         <div class="meta-item">
                             <span class="meta-label">Curator:</span> ${ing.curator}

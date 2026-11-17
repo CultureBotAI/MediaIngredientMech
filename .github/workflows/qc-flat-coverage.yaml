@@ -37,10 +37,12 @@ jobs:
       # The freshness half runs export_lists.py, so this needs the exporter's
       # own deps — click and rich as well as PyYAML. The public-site build also
       # renders the schema using LinkML runtime (same range as pyproject.toml).
+      # A present occurrence companion requires the full closed-schema validator
+      # from LinkML, not just linkml-runtime (#1431).
       # Still no OAK, ontology build or claw checkout, so it runs standalone rather than behind
       # `just qc`, which needs all three.
       - name: Install deps
-        run: python3 -m pip install pyyaml click rich jinja2 'linkml-runtime>=1.7.0,<1.10'
+        run: python3 -m pip install pyyaml click rich jinja2 'linkml-runtime>=1.7.0,<1.10' 'linkml>=1.7.0,<1.10'
 
       - name: Check every curated label is published
         run: python3 scripts/check_flat_export_coverage.py

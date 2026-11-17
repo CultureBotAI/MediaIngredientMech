@@ -28,6 +28,7 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+from mediaingredientmech.occurrence_coverage import default_coverage, occurrence_view
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
@@ -362,6 +363,7 @@ def build_visualization_data(
         List of ingredient data dictionaries
     """
     visualization_data = []
+    coverage = default_coverage(ingredients_dir.parent.parent)
 
     # Index every per-record YAML once by its filename-derived MIM record CURIE.
     # `identifier` is a semantic identity and reviewed sibling records may share
@@ -392,6 +394,8 @@ def build_visualization_data(
             continue
         ingredient, category, src_path = entry
 
+        # Invalid occurrence coverage must fail, never silently shorten the graph.
+        occurrence = occurrence_view(ingredient, coverage=coverage)
         # Build the visualization record from the indexed ingredient.
         try:
             # Extract metadata
@@ -410,11 +414,6 @@ def build_visualization_data(
             ontology_label = ontology_mapping.get('ontology_label', '')
             ontology_source = ontology_mapping.get('ontology_source', '')
             mapping_quality = ontology_mapping.get('mapping_quality', '')
-
-            # Statistics
-            stats = ingredient.get('occurrence_statistics', {})
-            total_occurrences = stats.get('total_occurrences', 0)
-            media_count = stats.get('media_count', 0)
 
             # Synonyms
             synonyms = ingredient.get('synonyms', [])
@@ -437,8 +436,7 @@ def build_visualization_data(
                 'ontology_id': ontology_id,
                 'ontology_label': ontology_label,
                 'mapping_quality': mapping_quality,
-                'total_occurrences': total_occurrences,
-                'media_count': media_count,
+                **occurrence,
                 'num_synonyms': num_synonyms,
                 'molecular_formula': molecular_formula,
                 'cas_rn': cas_rn,

@@ -55,6 +55,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+from mediaingredientmech.occurrence_coverage import Coverage, default_coverage, occurrence_view
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 INGREDIENTS = ROOT / "data" / "ingredients"
@@ -69,6 +70,9 @@ STABLE_NODE_FIELDS = (
     "mapping_quality",
     "total_occurrences",
     "media_count",
+    "occurrence_statistics_state",
+    "occurrence_statistics_reason",
+    "occurrence_statistics_provenance",
     "num_synonyms",
     "molecular_formula",
     "cas_rn",
@@ -80,6 +84,7 @@ def visualization_metadata(
     record: dict,
     category: str,
     record_key: str,
+    coverage: Coverage | None = None,
 ) -> dict[str, object]:
     """Return the non-coordinate visualization fields derived from one record."""
     preferred_term = record.get("preferred_term", "Unknown")
@@ -87,7 +92,7 @@ def visualization_metadata(
         preferred_term = f"Unnamed Component ({record_key})"
 
     ontology_mapping = record.get("ontology_mapping") or {}
-    stats = record.get("occurrence_statistics", {})
+    occurrence = occurrence_view(record, coverage=coverage)
     synonyms = record.get("synonyms", [])
     chem_props = record.get("chemical_properties") or {}
     return {
@@ -98,8 +103,7 @@ def visualization_metadata(
         "ontology_id": ontology_mapping.get("ontology_id", ""),
         "ontology_label": ontology_mapping.get("ontology_label", ""),
         "mapping_quality": ontology_mapping.get("mapping_quality", ""),
-        "total_occurrences": stats.get("total_occurrences", 0),
-        "media_count": stats.get("media_count", 0),
+        **occurrence,
         "num_synonyms": len(synonyms),
         "molecular_formula": chem_props.get("molecular_formula") or "",
         "cas_rn": chem_props.get("cas_rn") or "",
@@ -110,6 +114,7 @@ def visualization_metadata(
 def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, dict[str, object]]:
     """Return file-backed record CURIE -> stable visualization metadata."""
     records: dict[str, dict[str, object]] = {}
+    coverage = default_coverage(ingredients_root.parent.parent)
     for category in ("mapped", "unmapped"):
         for path in (ingredients_root / category).glob("*.yaml"):
             try:
@@ -121,7 +126,7 @@ def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, dict[str, ob
             record_key = record.get("mim_id") or mim_curie_for_stem(path.stem)
             if record_key in records:
                 raise ValueError(f"Duplicate visualization record key: {record_key}")
-            records[record_key] = visualization_metadata(record, category, record_key)
+            records[record_key] = visualization_metadata(record, category, record_key, coverage)
     return records
 
 
