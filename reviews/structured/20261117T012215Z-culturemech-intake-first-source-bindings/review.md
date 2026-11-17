@@ -1,0 +1,9921 @@
+# CultureMech v3 intake source bindings, owner indices 0 through 108
+
+- Review: 20261117T012215Z-culturemech-intake-first-source-bindings
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-17T01:22:14Z
+- Finished UTC: 2026-11-17T01:22:15Z
+- Reviewer: Codex bundle_impl (self_review)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Explicit source-binding decisions for all161 canonical-eligible cases in109 assigned owner groups. Every supported case received complete distinct descriptor/change/held scientific-payload inspection. Holds retain concrete inspected blocking witnesses and quarantine the full unchanged case. No owner, canonical row, source quantity or growth claim is repaired or promoted.
+
+## Scope And Provenance
+
+Complete assigned-case disposition coverage, with exact per-case evidence and bounded payload-read declarations.
+
+Selection: Pinned final v3 partition owner indices0 through108 inclusive; no selection by flags or matching label alone.
+Coverage: full; 161 reviewed / 161 in the declared population.
+Source: working_tree at Git base fda3e6db69f4f379983d99d923192b171de1f390.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| case-01f1352e7d21de82 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=01f1352e7d21de826b5dfef5d1ccf50ad9117bb05b8314523922bb2ea439d92c] | snapshot_row | Carbon monoxide |
+| case-022ccc2cc9a596c4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=022ccc2cc9a596c43a83963884d20fcd99bf8e916980e2185005f396a631d5ff] | snapshot_row | cholesterol lipid concentrate |
+| case-02c1797bfd5b517c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=02c1797bfd5b517cfe0145a5d38039cb3b6b135f22fe8d2c7ff63eaa3afb4f72] | snapshot_row | CO2 |
+| case-049c670f2bb6779c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=049c670f2bb6779cc2d20ecb6d16f0c721dbfd6d27b0d8b4afa64b1d7e31f845] | snapshot_row | D-glucuronic acid |
+| case-04dffe7b7de2b15c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=04dffe7b7de2b15c3242c8bc0deaec199656f9e20f8ca109f90cca7782fe6f6b] | snapshot_row | (R)-Lactate |
+| case-06757b9134c61a83 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=06757b9134c61a8340c622ee258ab060ee2dbd6e53feb588f347f15805766318] | snapshot_row | Cell lysate |
+| case-075dcca17ab6ac07 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=075dcca17ab6ac072038e2df152932ba3f7372a1d8c2400b8733c918f13724e2] | snapshot_row | Cytosine |
+| case-0787833dbd869a3e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=0787833dbd869a3eb8c0cb96de1957e180c719cf3da585db0e3f0f8eb3e23251] | snapshot_row | Cupric chloride |
+| case-083bbae451c96d9c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=083bbae451c96d9ca221b0d31d2b9146c9b38ef2562545ad32046a440bc1f323] | snapshot_row | beta-D-Glucose |
+| case-0b724e2a19ae3508 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=0b724e2a19ae3508d8c4031a9eca5e348da720eec44e1456550157c3ad07ef4b] | snapshot_row | Asialofetuin |
+| case-0f421b3552e374fc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=0f421b3552e374fc40033a2637f73adfba0ac58a8caaa041fca721588677e40e] | snapshot_row | Cellulose powder |
+| case-0f739a012bbda9c0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=0f739a012bbda9c0a25afe3ae1423f05ba9a5c14c91c08846590e5b956a01131] | snapshot_row | Aminoacids |
+| case-0fa3c3f2c848ca11 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=0fa3c3f2c848ca114741ab0756a15c1f5a634b6bd214964134a2084c0b9f8da3] | snapshot_row | Benzyl alcohol |
+| case-14d997a357ffbe63 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=14d997a357ffbe636b6f9770796ebbde4da7a5eec048f116d27fe428f6bf81c6] | snapshot_row | Co(NO3)2・6H2O |
+| case-165a5eee355d3bf5 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=165a5eee355d3bf5ae71fdf818d089238c45d79dd51ff01140dad4a203f2be42] | snapshot_row | Cefoxitin |
+| case-168e84a5fc2f7fe4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=168e84a5fc2f7fe412ad4275bf796e74e2cd64b5416eada44425108e2ec57817] | snapshot_row | 4-Guanidinobutyric acid |
+| case-18a6e6ba3c4a165f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=18a6e6ba3c4a165f2879eda193e6b5766d43c0b731c1dcd86d4f0ab0ec6831d0] | snapshot_row | Artificial seawater (see below) |
+| case-1aed15690dd84c0c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=1aed15690dd84c0cfdf02461910d9f02a5e7016dc0473f4413c123576ab7fda3] | snapshot_row | CaCl2 x 6 H2O |
+| case-1c4bde9e3cd430ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=1c4bde9e3cd430ba956ceb66084e5e30817a706b1d02cb1b4b14c793c3b0f878] | snapshot_row | Beef |
+| case-1d61f5a2491cea4d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=1d61f5a2491cea4d35175fa858992e867ffe2d00684062ee49f747f9991e984f] | snapshot_row | Cr(NO3)3 x 7 H2O |
+| case-1dc3c1fb63229c28 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=1dc3c1fb63229c28c0e058ce01eeadc3b578e3b03b98ae3a5076321b5cde6088] | snapshot_row | Carbon dioxide gas |
+| case-1e00b1674fa1397a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=1e00b1674fa1397abfd9efff9e32085b825eb57ae353cbbaeb0dbab5c8959c1a] | snapshot_row | Artificial Sea Salt |
+| case-201c3570562f0585 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=201c3570562f05850889855ab1396592ccf1cad039532819989719c7788d4c8a] | snapshot_row | Cyanuric acid |
+| case-222667d612daca5b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=222667d612daca5b56df57dff60004d9d3504579399a81a9fbccf67b297146f6] | snapshot_row | D-Aspartate |
+| case-222fcfc4aefb5798 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=222fcfc4aefb5798cbeea94ff861611d7ca4db9a7ee1aec23972951aa1880f4c] | snapshot_row | crotonic acid |
+| case-25449533c1a24f16 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=25449533c1a24f16dd6cd409cd2591d30f75c8ced176d8cc9d4d8f434e76ae76] | snapshot_row | CO2 |
+| case-25a05580d9b99ba9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=25a05580d9b99ba93a0355b4426363dfe5de3815cca792c9dcbd6f7f96b0f359] | snapshot_row | Ascorbate |
+| case-270ec1303f56e35f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=270ec1303f56e35feebc388807a5fe175f196b7523e9af1974d9b2f23a67cdd1] | snapshot_row | D-cycloserine |
+| case-2770b25757b52022 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2770b25757b5202210cc19a34b492d9c7a98449b6451e8439dc9dfed19c839de] | snapshot_row | Defibrinated horse blood |
+| case-29c514535553751c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=29c514535553751cf29579564b128eb3fc6070e17996bb48adca085c578f4eb2] | snapshot_row | (-)-Quinic acid |
+| case-2c51ed72121e9a77 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2c51ed72121e9a777ed7b58f74c38f676f8e632e8317bd4eff7b77fdf1a2aa51] | snapshot_row | brain–heart infusion agar |
+| case-2d46189d88f9e0a4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2d46189d88f9e0a490c98f7ba1599e647082c8aba382efd090905011f94afdd9] | snapshot_row | Cr2(SO4)3 x n H2O |
+| case-2d497087da7cc978 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2d497087da7cc978990073253b4d4959a3e3ef9a2c4dd42f7d9962e251655db4] | snapshot_row | bovine serum albumin |
+| case-2d6e55a4ac3ee1bb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2d6e55a4ac3ee1bb2615de839a5df588dfccca1df1629940a59491d038e1d50f] | snapshot_row | Borate |
+| case-2e073990fbdc07a6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2e073990fbdc07a652d6299376c82ae02e548aa3c53af7949d9ac84ad8f164f7] | snapshot_row | Blood |
+| case-2f0de93daca3000c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2f0de93daca3000c6322d2c75d9f871705cbff401a74fbcd63d053de3a91d975] | snapshot_row | Charcoal |
+| case-2f256c77fff65edd | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2f256c77fff65edd752670755260693c176a9b27c26513c12eaa6059be9228c2] | snapshot_row | CO2 |
+| case-2f8a21a26931b695 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2f8a21a26931b6958405e108f1f4fb8799243891131e58c21d2755080a09bc25] | snapshot_row | Calcium lactate |
+| case-2fb97b7900558e75 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=2fb97b7900558e75c9ddca631ab02fd15fd2921d3c8a970e7afde4aa5d3e348a] | snapshot_row | CO2 |
+| case-30edcb5540bf3b17 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=30edcb5540bf3b170ce0f84cfd7105026fac719035bb9ebd93a766b18132741c] | snapshot_row | NH4+ |
+| case-30eeaebe767b3637 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=30eeaebe767b36370b20f6de25f4abf8eb823f982e391f1611c432da23c01911] | snapshot_row | CaCl2·6H2O |
+| case-339698f1b792b730 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=339698f1b792b730862fc5ffe9d801872a983bad3ca85909572a0fb2b02908f8] | snapshot_row | Butyl vinyl ether |
+| case-3c17c0df33f20b47 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=3c17c0df33f20b47f5d4c9e043a10d7d203fe12e5a3771c299e33d42bff0711e] | snapshot_row | 5-methyluridine |
+| case-3c4294ebef0cd697 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=3c4294ebef0cd6976d7cd08afa1ae9db17363a7ea59f6dfca756d996f31fb4a0] | snapshot_row | Bovine serum albumin |
+| case-3c50fc3ba26ff406 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=3c50fc3ba26ff406e62659f04d27e91dc0ba33d8db155e48c0a30cd04749ca7f] | snapshot_row | D-Alanine |
+| case-3c73f9321f28a35a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=3c73f9321f28a35a9892ab5a8e66ba1ba04705476fd4106136bfe6608254dd74] | snapshot_row | #Ar |
+| case-3fa1d1b9f99efb4a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=3fa1d1b9f99efb4ab17e7fe859d08f3ed3e50cb87ed1a6eaf35a96d9d23eceaa] | snapshot_row | Cresol |
+| case-40873f3920d6f6a1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=40873f3920d6f6a1db415ac6fca068a11be0de9db8b1749c5d86010ed01f978c] | snapshot_row | acetone |
+| case-4241abb8e9fdaea1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=4241abb8e9fdaea101e74ee1833a41c1c1da62bd247b064eddc2cfc160f22cbb] | snapshot_row | CO2 |
+| case-4479b8347accf833 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=4479b8347accf83343a281cc370ad7e53cbe05c0a6d9eb3ec1b3a8cbb67c8ac0] | snapshot_row | CO2 |
+| case-46642d545884352f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=46642d545884352ffa928a77f2a31327537800aa9ccbd5ff5629c7185ba03d4b] | snapshot_row | Benzoate |
+| case-47508a3adea64241 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=47508a3adea64241e7a1b54afbef8714b21e18c4d1111d773dfb36a88b12e8d7] | snapshot_row | Carbon source solution |
+| case-486682d8673ec613 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=486682d8673ec613786770e31bf55b52122a8c5baa20f27be8275a4106ee40d6] | snapshot_row | Benzoic acid |
+| case-489e2cce45d9fcee | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=489e2cce45d9fcee731efd60ac21fc8fa6ee303a7f3bf5142e5ba2c8250741c4] | snapshot_row | D-Glucarate |
+| case-4a444e5108b6971f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=4a444e5108b6971f3c6593b1c0d02a4203265c36a364e61a71191ae9f8b0faa9] | snapshot_row | Defibrinated horse blood (TCS Biologicals) |
+| case-4e3fc52a283747e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=4e3fc52a283747e6bd97a2ac30ad1f3eb67c1484501ad192f26f7bb6444f4801] | snapshot_row | BaCl2 x 2 H2O |
+| case-531623d7728ca1af | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=531623d7728ca1af1ef7b6edef14175f588b31bfe2e8179b22868a7adf4fc244] | snapshot_row | Ca-folinate |
+| case-55ac78af84c1b6c8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=55ac78af84c1b6c846eaffb22d60194097ef0e2ecd6aa45a826e66693c5451d2] | snapshot_row | Cobalt(II) nitrate hexahydrate |
+| case-5674be2b2411c0a9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=5674be2b2411c0a98f2f924f56877b7a7ed006b955f89a040728657fac7e594b] | snapshot_row | 4-Hydroxybenzaldehyde |
+| case-56f12fd065dbec3f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=56f12fd065dbec3f71ca4eaddcd28ac047ced43f3c3edd4d3e2024a881c423e4] | snapshot_row | CO2 |
+| case-573a8aed48a707c2 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=573a8aed48a707c29495136e89e5405b0f9556ab2000a62ab8c723071a70433c] | snapshot_row | Cresol red |
+| case-5bcb2af0997a7423 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=5bcb2af0997a74232a4a15d73241bd5f9abb325359c7dd3ec8541086ba572985] | snapshot_row | Beef heart |
+| case-5cf09b02abfe2656 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=5cf09b02abfe2656d5e461f31db83c1263923d68f18cc4c212b4502d36e5e792] | snapshot_row | D-Gluconic acid |
+| case-6108052f2508ac65 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=6108052f2508ac6575514da47c8841a281e0db56bb97ff469fbc0b8509e69a3f] | snapshot_row | CaCl2.6H2O |
+| case-619fba0e79bd925b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=619fba0e79bd925bea4a786e89b7dacc4b40eedf145eac019d1bba7f1405a604] | snapshot_row | 2-Furoic acid |
+| case-623dde3c257babbb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=623dde3c257babbbea834de888c656f13ec45980e619a3679c1357ab78208c6b] | snapshot_row | Copper |
+| case-63fbe57cd3babefe | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=63fbe57cd3babefe76ec93c3b769457ca1887cddae15b12dad682265b596b307] | snapshot_row | Creatinine |
+| case-642a6453d399c8ae | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=642a6453d399c8ae2ad21bb8db99cafa6490153496a2389def54ea14833b46c2] | snapshot_row | Columbia agar base |
+| case-65d19440d8044198 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=65d19440d804419894c5876f56179f213830c7951870e98dbc16090c91021fae] | snapshot_row | CO2 |
+| case-667f6ee1916f3482 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=667f6ee1916f34829e6520d8458ca47080dbc96d755c37e06dde90d2e37e850d] | snapshot_row | CO2 |
+| case-676e27f90f2ca371 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=676e27f90f2ca371646f85ae69bb691f1377a4e555c76eba48522126d1f8cffc] | snapshot_row | CaCl2 . 7H2O |
+| case-685287e6fa22ce1d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=685287e6fa22ce1dfc7c6bfbd35067fce829c72bfc80065ef9f3274d0f682a14] | snapshot_row | Cystine |
+| case-692e558734b6f189 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=692e558734b6f189deb258aa3529ea1a573c6d40a110c346f8226c1a06172342] | snapshot_row | BaCl2 |
+| case-6b333af101a0b916 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=6b333af101a0b9166a7ea5533989a01ffc781a74869503b806cfa02ae52d3e7b] | snapshot_row | Apple Juice |
+| case-6b4546aeb2b57314 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=6b4546aeb2b573146c198712b3367a4814381c9963a82e419af7e2a47fc8f156] | snapshot_row | CaHPO4 |
+| case-6f3ccd311a073f1f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=6f3ccd311a073f1f43ae991d33befdff79b73e41f95c92e57e0d425951c207b2] | snapshot_row | CO2 |
+| case-6fa5cc783ef2ab0f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=6fa5cc783ef2ab0fe30b1ca39d6543b994daa008168d6f35acbda10d5fab1ac3] | snapshot_row | Aspartate |
+| case-70cb09ade6935dc4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=70cb09ade6935dc4a66f18897093b204d1e66f93322d0fdac1cae3b25ad57dcd] | snapshot_row | CaCl2・6 H2O |
+| case-71d42cd78920da58 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=71d42cd78920da585ccf0ce9fe61e0b425e6e6c52dce9975ebcb67cf0afc90f9] | snapshot_row | D-Glucose 6-phosphate |
+| case-731fdd45136e6810 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=731fdd45136e68105495546dce75bac0c81a00fb6618b93287b41a48470ae4a1] | snapshot_row | Calcium |
+| case-7596c7c0a15c93aa | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7596c7c0a15c93aad9efbf29244b8f4bbfb9ad16dff1f35ee638cb4ef8a9c8e9] | snapshot_row | CO2 |
+| case-75995ea07db3cdc6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=75995ea07db3cdc67ac180e0068b30d27b9df5460a03b4af36f70f7c0c7f0d39] | snapshot_row | Baker's yeast |
+| case-75cc21f68f7c24c7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=75cc21f68f7c24c70fdd21cea63b210c476d7942900d4a7b5d079dded23b7ede] | snapshot_row | CO2 |
+| case-76e2e8c8282a85ea | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=76e2e8c8282a85eab03414e54e4a9526b511858f0a3d7f234c64480bd33b1df2] | snapshot_row | Anaerobic water |
+| case-77e001312d6b6603 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=77e001312d6b6603d45ffe4f148005f87a6b7ca9ebfd30c9849a0ee0e45e231e] | snapshot_row | Benzylcyanide |
+| case-7816d9ac4687571c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7816d9ac4687571c34849f4c66d72093c807e1e94719ed7670e3d0ea0062646d] | snapshot_row | 0.5 M Nitrilotriacetic acid, disodium salt |
+| case-7a54eb7a4c55b5ac | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7a54eb7a4c55b5acdda7034454ff1d6a93358de5744d4d7e7042201b473629af] | snapshot_row | CO2 |
+| case-7cae5a5b7b73d3a8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7cae5a5b7b73d3a84773364d9282a1a24fb74c187aae230b605f128d567f6bb2] | snapshot_row | Cl- |
+| case-7ce014451bbe85f1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7ce014451bbe85f105f7fe1610bab9a7d0e46648947f97cbc62ddf84751cd403] | snapshot_row | Arsenate |
+| case-7ced97de79fe3814 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=7ced97de79fe38147318bf8d3d0333d59332e93f8dafd1a36221583f4590bf17] | snapshot_row | D-Mannose |
+| case-80a712170c6d28ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=80a712170c6d28ba05f9f285c47b63ef4569a6e706b1e09aa8754f33227c00b3] | snapshot_row | CO2 |
+| case-8542b4ae4f2bd7e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=8542b4ae4f2bd7e6c8921e5287242e7f96311ae9b834e9c0e5604b73119688b9] | snapshot_row | Choline |
+| case-86fd9453e711ff71 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=86fd9453e711ff711816635df5f727e6e86bd3aef344b13983d4f16b6ce5e66f] | snapshot_row | 3-Indolyl acetic acid |
+| case-8898ca0ff0613326 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=8898ca0ff0613326a4e116d623c8a356826c450d801aa4b481ab2b14ef78a5f9] | snapshot_row | Antipyrine |
+| case-89b5d1371f6b0c7c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=89b5d1371f6b0c7c8930a0cb8cf0a64bbfef3c45682fedb216ecdab0a3dffc51] | snapshot_row | CO2 |
+| case-8a120bdffd7488ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=8a120bdffd7488ba1640beae884ba9e1af5433f30a256f30497fbdc55a39d593] | snapshot_row | benzene |
+| case-8b8cd58861a0f289 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=8b8cd58861a0f28967f856165645683579d9bf185b2f05218bdf39d0305fe583] | snapshot_row | CO2 |
+| case-8ee01e4e5b7445f5 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=8ee01e4e5b7445f5882a111afb3545864f51312c136e611d4d630fe0d81a1f0d] | snapshot_row | D-Glucose 6-phosphate |
+| case-90a4e97134f2ccee | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=90a4e97134f2cceed8fd23d9c9222f25e505c0293f376ec5f4d1566f5a86e4d8] | snapshot_row | Chocolate agar |
+| case-911c0899099348a6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=911c0899099348a68ff40a0313deaf740049351b015d89f39f3a4194c34da0f5] | snapshot_row | Co(NO3)2 x 6 H2O |
+| case-97e084115638e98f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=97e084115638e98fc6758ed39975f9d4ea9bb205a87455c46c0f3c7791acbd7d] | snapshot_row | 2'-Deoxyinosine |
+| case-9aafef893f46d681 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=9aafef893f46d681733bae176dbc4cc695becd97f5b889a366a68df327cb63c2] | snapshot_row | 2'-Deoxyuridine |
+| case-9bebf2dec0e4e5b0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=9bebf2dec0e4e5b0e2db507bdde437e620195525c9cb744bc40b907d11b3a981] | snapshot_row | Crotonic acid (ALDRICH 113018) |
+| case-a0651624438bd707 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a0651624438bd707636aa33f3a547e90ba72a7fc8a1846f8d9a7aac305fcdeb3] | snapshot_row | CO2 |
+| case-a140503a9a82236f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a140503a9a82236fc8efc9c8a6d893cb90a0b22b287efc845def24f3a3e64c1e] | snapshot_row | CAPSO |
+| case-a2838b1187a747a8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a2838b1187a747a8ec46a1fc7eb2ea23e1d218016bb83728e0194b8844c7b301] | snapshot_row | Activated charcoal |
+| case-a35898ba396305dc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a35898ba396305dc1a0cb09976034cb70e56d51f18a9edf4c67a898b3dd9c465] | snapshot_row | 4-hydroxybenzoic acid |
+| case-a41a9945169fc3de | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a41a9945169fc3deb58c19e3e2f21979ea9ece6719ecaae788b0bd134e70012d] | snapshot_row | CuCl2 |
+| case-a5a7c3209f4bd51e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a5a7c3209f4bd51eaf5a76a8a01d59b310561fe16e94c6d932550b4b12590d74] | snapshot_row | D-mannose |
+| case-a95288ddbcbc4509 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=a95288ddbcbc450909e874c853545f6933295cfe90ce0d52dfec672887231ccb] | snapshot_row | Ca(NO3)2 |
+| case-ab0eedc422381cbc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ab0eedc422381cbcc50504fd6b6c419348754b62d5c838ea09c021ee74d1e15e] | snapshot_row | Choline chloride |
+| case-ae04caa55fe59069 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ae04caa55fe590697004086cb398e8070b88d4f32d55b0dad4607f95abc1724e] | snapshot_row | Co(NO3)2 · 6H2O |
+| case-ae9572ea8c1ffd93 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ae9572ea8c1ffd93d4648598494a5e77ade4e95acece7cc65f2577a04efe1688] | snapshot_row | CO2 |
+| case-b1f8adc06f883411 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b1f8adc06f883411d5c71414782451de1fd4e3bd97dc7b8acab2d95307c51bb5] | snapshot_row | Biphenyl |
+| case-b221231fe8357484 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b221231fe83574843715c085b7cd393a84f902cadc3e4104392916879a4e8490] | snapshot_row | CO2 |
+| case-b27b4e0701b204e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b27b4e0701b204e6a9919f53072a85106b141efbb45c58b59348920465c3036b] | snapshot_row | Decanoic acid |
+| case-b28cdde06366ce79 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b28cdde06366ce7968148b1eee34421ac431048684d89cb507615f70daabb9f2] | snapshot_row | Artificial seawater |
+| case-b2f395bcc3e5d1be | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b2f395bcc3e5d1bec50a2ea6a7082a074188ad47b9ddc1a3070626a6eff015b8] | snapshot_row | CO2 |
+| case-b3a540ca9bb6ec82 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b3a540ca9bb6ec828331ccd9ab7edfb64211f6a415d317ee30fee3f3f30c17d4] | snapshot_row | 5-fluorouracil |
+| case-b3fd3be6a836d88e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b3fd3be6a836d88e4640aed9a7b682dcfc6fb783130515ce3438982262a09fb2] | snapshot_row | Ar |
+| case-b43059bd4d533f65 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b43059bd4d533f65f08b13bb87068abddf0075bb1122743e8adf1b28a0682313] | snapshot_row | 4-Hydroxybenzoic acid |
+| case-b5e2fc3e34357209 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=b5e2fc3e34357209a492f5d42d3d89af3ffd9cd060d83d043a0d26d3f7602307] | snapshot_row | Co(NO3)2.6H2O |
+| case-bf14e85a596fe5f7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=bf14e85a596fe5f7a92278fde3eefe63d50e790001ce55dbf7aba62735852e51] | snapshot_row | Carrot |
+| case-c2a85cd5f94a73d7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c2a85cd5f94a73d732b9b4cae7ce92f3b17a03bc31ddc959963e9749dc9c812a] | snapshot_row | Beef brain powder |
+| case-c5e0653364f2b661 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c5e0653364f2b6613bb74171caf810a30f212cbb7515602dd97e29af1a578e85] | snapshot_row | D-Methionine |
+| case-c7c4da0c0b3dc79f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c7c4da0c0b3dc79fc26b261d43d2a53e724e452e750ffa9d34837113f526e663] | snapshot_row | Acetoin |
+| case-c84d38d267ad7dcb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c84d38d267ad7dcb4e7df4d471dd22082f21baa831e2d5c048aaa0e68de879de] | snapshot_row | CO2 |
+| case-c878f30e5f397f8e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c878f30e5f397f8e7fce93e69ab54f9fb7c001a60442df0171a4d2f2416b6802] | snapshot_row | Co(NO3)2 . 6H2O |
+| case-c8ce23344ae00a5f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=c8ce23344ae00a5ff1d7008a1cc5619bcec7343f313d577dced38ec86b6f828b] | snapshot_row | Cystein |
+| case-cadbcb97562b7743 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=cadbcb97562b77438297642b334d4f03096fa475d25adbe6811f37c2ed1c5c9c] | snapshot_row | Cefpodoxime |
+| case-cf3475364310c77b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=cf3475364310c77bb757621f6e005d58838d8f24ac12db49d9f719ed48cfaead] | snapshot_row | Adenosine |
+| case-d0855f94860f1de9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d0855f94860f1de96273906705764f6439bd3b7052afbbe396f4c0a4c1e89907] | snapshot_row | Calcium malate |
+| case-d13d06bd89f57b14 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d13d06bd89f57b140286eb3eae79ae69ddbb887ce7583916aca69c819eb7abaf] | snapshot_row | Cd(NO3)2 x 4 H2O |
+| case-d23fddc72c400308 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d23fddc72c4003082d770642cc7daed1a9a308c7234c1f992fe07903533189b2] | snapshot_row | 1-Butanol |
+| case-d37dfbf0abe3ecbc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d37dfbf0abe3ecbcbf99f0f6870efd4b94449b36ae7c7be8c011b065fc1db6a1] | snapshot_row | 2-Sulfobenzoic acid |
+| case-d6beb0069466ad90 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d6beb0069466ad90d35248cfe2ba0b2634201a105492e8ca3332db906f2313ff] | snapshot_row | Crotonic acid |
+| case-d93455d8e1131d6e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d93455d8e1131d6ef8bde09f4aa1d3c4a206db001ce3465bd43c73e0cf0b6d39] | snapshot_row | DL vitamins (see below) |
+| case-d97cd220d4c7a33a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=d97cd220d4c7a33a009f777c269cd80c5779af49fb5183d3f2be88c3ccdfa32f] | snapshot_row | biphenyl |
+| case-ddb4d0bc41a8f9e4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ddb4d0bc41a8f9e4d578c08ff8f4017be711b60f24a2e568edd503aecc27c298] | snapshot_row | 2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine |
+| case-dedff48b8a0c5821 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=dedff48b8a0c5821656982a5363f95708b4a1811fe008d0c5552338227c0302b] | snapshot_row | Corn meal |
+| case-e333bc3dfe3d3d42 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=e333bc3dfe3d3d4269014b674c8c8fda0a7dd12ae2b662487a673e91d6e750e7] | snapshot_row | clarified rumen fluid |
+| case-e59b7d77dabe525d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=e59b7d77dabe525d9dd02e91ac34004df2331b44b1ada696623428827051ff83] | snapshot_row | Clarified rumen fluid |
+| case-e6f49728f415eef2 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=e6f49728f415eef261d4f86e30971666e6e96d8adfa1f1ac4f479a3fadaf2ee2] | snapshot_row | Brain heart infusion |
+| case-e8cef33db5eb1ee8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=e8cef33db5eb1ee82a24a228bb9839709f4e5d195b94b8f61d5482a5a93c0f2c] | snapshot_row | Co(NO3)2·6H2O |
+| case-e9f6f790b468582b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=e9f6f790b468582bcdc702f452884e41f70f36ed286b9df6f0f57a4d2f92c3c4] | snapshot_row | Cobalt nitrate hexahydrate |
+| case-ea0c03f694530f78 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ea0c03f694530f78191f8c7e575647cf2151878234e901eb403fbf59d2f100ee] | snapshot_row | D-Arabinose |
+| case-edf194d68c9d39b0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=edf194d68c9d39b084864946cd0cb612719e0dac44597a85e42dc19ba7c50d39] | snapshot_row | Bovine albumin |
+| case-edf8b8254e516059 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=edf8b8254e516059f1c5a1e80059af6312b272dbee973e44867006f67e7250e8] | snapshot_row | Creatine |
+| case-eeaff3d249f6cfda | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=eeaff3d249f6cfdac1c288e8ee4f0b5330ec26547699f709ebea483b4e77c22a] | snapshot_row | Congo red |
+| case-ef1fb135697ab7fd | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=ef1fb135697ab7fd55166aced36f65046d75c992dd3d041159f14bcf54710652] | snapshot_row | clarified rumen fluid |
+| case-f0b290d112f66b8d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f0b290d112f66b8de34d8b37d200d836ca84c38647375f787abcf7ea2a9694df] | snapshot_row | BaCl2・2H2O |
+| case-f26fdcf7b3f89359 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f26fdcf7b3f89359c67dc106b60a8cca0c9eb47139cbe69a70d4a66447a670e3] | snapshot_row | CO2 |
+| case-f378749c026b393f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f378749c026b393f5a86b71db01dff6c1dfa5b57da046d8b13d3f9f613ef5628] | snapshot_row | Maize meal |
+| case-f3f2ce2edf1a2496 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f3f2ce2edf1a249654f9f813304b1207c9cf28b4e2120238e462d3375b62c643] | snapshot_row | CaCl2 x 7 H2O |
+| case-f5b8559d53af9d3b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f5b8559d53af9d3b2b1d47901ed4bf57860912a7feda73e492c99ee554734e14] | snapshot_row | Artificial Seawater |
+| case-f5dab94a70b629e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f5dab94a70b629e6b50e9bf0ae1b61e3d5b094f9223bc5ca48710d3fbe682820] | snapshot_row | Al2(SO4)3 x 18 H2O |
+| case-f7d9a7ca8d706c4a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f7d9a7ca8d706c4ad5540080c229ea1d93fa529af7e8274e74fcca31ea7ec6cf] | snapshot_row | CO2 |
+| case-f92646ca40de10a3 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=f92646ca40de10a3c1ba114656577a41ce5df298b610aa905a9ee5af462ebc42] | snapshot_row | Co(NO3)2 x 6H2O |
+| case-fb7825971b329722 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=fb7825971b32972251ce5356e91928f28a7eb7c507b31275372834590a80473f] | snapshot_row | 4-Hydroxybenzoic Acid |
+| case-fc601e133874bed7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=fc601e133874bed795f055cc05b1ddf5a94d35f5b5d441a522deb8efc8aecc99] | snapshot_row | Cytidine |
+| case-fe345dbc05b393c7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json # decisions[case_id=fe345dbc05b393c7b2e1e7a35711bf8d1cd89025c095005860dfbf45e9f6afaf] | snapshot_row | 4-Hydroxy-L-proline |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native full-support and actual blocking-witness membership | passed | True | case-01f1352e7d21de82, case-022ccc2cc9a596c4, case-02c1797bfd5b517c, case-049c670f2bb6779c, case-04dffe7b7de2b15c, case-06757b9134c61a83, case-075dcca17ab6ac07, case-0787833dbd869a3e, case-083bbae451c96d9c, case-0b724e2a19ae3508, case-0f421b3552e374fc, case-0f739a012bbda9c0, case-0fa3c3f2c848ca11, case-14d997a357ffbe63, case-165a5eee355d3bf5, case-168e84a5fc2f7fe4, case-18a6e6ba3c4a165f, case-1aed15690dd84c0c, case-1c4bde9e3cd430ba, case-1d61f5a2491cea4d, case-1dc3c1fb63229c28, case-1e00b1674fa1397a, case-201c3570562f0585, case-222667d612daca5b, case-222fcfc4aefb5798, case-25449533c1a24f16, case-25a05580d9b99ba9, case-270ec1303f56e35f, case-2770b25757b52022, case-29c514535553751c, case-2c51ed72121e9a77, case-2d46189d88f9e0a4, case-2d497087da7cc978, case-2d6e55a4ac3ee1bb, case-2e073990fbdc07a6, case-2f0de93daca3000c, case-2f256c77fff65edd, case-2f8a21a26931b695, case-2fb97b7900558e75, case-30edcb5540bf3b17, case-30eeaebe767b3637, case-339698f1b792b730, case-3c17c0df33f20b47, case-3c4294ebef0cd697, case-3c50fc3ba26ff406, case-3c73f9321f28a35a, case-3fa1d1b9f99efb4a, case-40873f3920d6f6a1, case-4241abb8e9fdaea1, case-4479b8347accf833, case-46642d545884352f, case-47508a3adea64241, case-486682d8673ec613, case-489e2cce45d9fcee, case-4a444e5108b6971f, case-4e3fc52a283747e6, case-531623d7728ca1af, case-55ac78af84c1b6c8, case-5674be2b2411c0a9, case-56f12fd065dbec3f, case-573a8aed48a707c2, case-5bcb2af0997a7423, case-5cf09b02abfe2656, case-6108052f2508ac65, case-619fba0e79bd925b, case-623dde3c257babbb, case-63fbe57cd3babefe, case-642a6453d399c8ae, case-65d19440d8044198, case-667f6ee1916f3482, case-676e27f90f2ca371, case-685287e6fa22ce1d, case-692e558734b6f189, case-6b333af101a0b916, case-6b4546aeb2b57314, case-6f3ccd311a073f1f, case-6fa5cc783ef2ab0f, case-70cb09ade6935dc4, case-71d42cd78920da58, case-731fdd45136e6810, case-7596c7c0a15c93aa, case-75995ea07db3cdc6, case-75cc21f68f7c24c7, case-76e2e8c8282a85ea, case-77e001312d6b6603, case-7816d9ac4687571c, case-7a54eb7a4c55b5ac, case-7cae5a5b7b73d3a8, case-7ce014451bbe85f1, case-7ced97de79fe3814, case-80a712170c6d28ba, case-8542b4ae4f2bd7e6, case-86fd9453e711ff71, case-8898ca0ff0613326, case-89b5d1371f6b0c7c, case-8a120bdffd7488ba, case-8b8cd58861a0f289, case-8ee01e4e5b7445f5, case-90a4e97134f2ccee, case-911c0899099348a6, case-97e084115638e98f, case-9aafef893f46d681, case-9bebf2dec0e4e5b0, case-a0651624438bd707, case-a140503a9a82236f, case-a2838b1187a747a8, case-a35898ba396305dc, case-a41a9945169fc3de, case-a5a7c3209f4bd51e, case-a95288ddbcbc4509, case-ab0eedc422381cbc, case-ae04caa55fe59069, case-ae9572ea8c1ffd93, case-b1f8adc06f883411, case-b221231fe8357484, case-b27b4e0701b204e6, case-b28cdde06366ce79, case-b2f395bcc3e5d1be, case-b3a540ca9bb6ec82, case-b3fd3be6a836d88e, case-b43059bd4d533f65, case-b5e2fc3e34357209, case-bf14e85a596fe5f7, case-c2a85cd5f94a73d7, case-c5e0653364f2b661, case-c7c4da0c0b3dc79f, case-c84d38d267ad7dcb, case-c878f30e5f397f8e, case-c8ce23344ae00a5f, case-cadbcb97562b7743, case-cf3475364310c77b, case-d0855f94860f1de9, case-d13d06bd89f57b14, case-d23fddc72c400308, case-d37dfbf0abe3ecbc, case-d6beb0069466ad90, case-d93455d8e1131d6e, case-d97cd220d4c7a33a, case-ddb4d0bc41a8f9e4, case-dedff48b8a0c5821, case-e333bc3dfe3d3d42, case-e59b7d77dabe525d, case-e6f49728f415eef2, case-e8cef33db5eb1ee8, case-e9f6f790b468582b, case-ea0c03f694530f78, case-edf194d68c9d39b0, case-edf8b8254e516059, case-eeaff3d249f6cfda, case-ef1fb135697ab7fd, case-f0b290d112f66b8d, case-f26fdcf7b3f89359, case-f378749c026b393f, case-f3f2ce2edf1a2496, case-f5b8559d53af9d3b, case-f5dab94a70b629e6, case-f7d9a7ca8d706c4a, case-f92646ca40de10a3, case-fb7825971b329722, case-fc601e133874bed7, case-fe345dbc05b393c7 | The assembler validate_coverage function accepted every exact case: all scientific payload hashes for support, nonempty recomputed member/field witnesses for holds. |
+
+## Scientific And Domain Assessments
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-01f1352e7d21de82.
+
+The complete descriptor explicitly identifies carbon monoxide/CHEBI:17245 and retains a gas property. It agrees with the current CO molecular owner, not carbon dioxide or a gas-mixture identity. Both modified-P7/TOGO M3153 source scopes were inspected. Variable gas amount, pressure, composition of any carrier mixture and dissolved concentration remain unapproved.
+
+Source/evidence locators: ["owner-0062.json: complete descriptor edb987c5, two source routes and current CO structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-022ccc2cc9a596c4.
+
+Both complete descriptors, source routes and the pending-component-curation stock owner were inspected. Exact source preparation correspondence remains unresolved; numeric cross-prefix agreement and a narrow cholesterol mapping do not establish concentrate equivalence. Withhold the unchanged case under1498, without claiming different compositions or converting the concentrate into pure cholesterol. Amount fields remain retained and unapproved.
+
+Source/evidence locators: ["owner-0073.json: both complete descriptors and current stock notes/NARROW_MATCH boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1498"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-02c1797bfd5b517c.
+
+The complete descriptor/change identifies CO2 as the gas component in PCC11802 multi-cultivator aeration, with the retained PMID31932622 excerpt explicitly stating1%CO2 bubbling. This supports component identity only in that stage; it does not transfer the condition to every shaker culture or assert a dissolved-carbon dose.
+
+Source/evidence locators: ["owner-0064.json: complete change93383ffe and bacterial/bg11.yaml /variants/2/ingredient_changes/0", "PMID:31932622 retained primary excerpt"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-049c670f2bb6779c.
+
+Both complete descriptors and both OMIZ-PAT/solution3067 routes were inspected. The explicit sodium-salt qualifier conflicts with exact free-acid identity; the owner's raw synonym does not resolve the counter-ion. Withhold the unchanged aggregate under1512 without inventing a replacement salt/hydrate identifier or approving concentration.
+
+Source/evidence locators: ["owner-0104.json: both descriptors, both source scopes and current C6H10O7 owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1512"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-04dffe7b7de2b15c.
+
+Both descriptors name the R-lactate species and retain the D-lactate cross-reference. The current owner is the same R-lactate anion, with explicit stereochemical structure; no counterion or supplied salt identity is asserted in either descriptor. Binding is limited to that ionic concept. The two reported millimolar values and any particular purchasable lactate salt remain separate, unapproved claims.
+
+Source/evidence locators: ["owner-0001.json: complete two descriptors, two ingredient coordinates, owner identifier/structure and D-lactate history", "canonical source_position 5 / exact identity row 68bb4aabf5cc0f19041a96d289463c024634400d6af251a33b8293afb88b3369"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-06757b9134c61a83.
+
+Both complete descriptors preserve generic cell lysate from the same CultureBotHT filtered-groundwater series, matching the owner's generic BTO cell-lysate material concept. No species-specific lysate composition or particular lysis protocol is asserted by the binding. Both dilution-series source routes were inspected; the1/250 and1/2500 quantities and carbon-source function remain separate from identity support.
+
+Source/evidence locators: ["owner-0069.json: both complete descriptors, two source scopes and current generic lysate owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-075dcca17ab6ac07.
+
+All eight complete descriptors retain cytosine/CHEBI:16040/CAS71-30-7, matching the current free-base identity. All nineteen source routes were read. This does not substitute cytidine, approve dose or infer growth.
+
+Source/evidence locators: ["owner-0095.json: eight complete descriptors, nineteen routes and current cytosine owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-0787833dbd869a3e.
+
+All20 complete descriptors explicitly name cupric chloride/CHEBI:49553, agreeing with the nominal copper(II) chloride owner without a conflicting hydrate qualification. All59 routes were read. The MediaDB330/331 notes explicitly limit amount evidence to database assertions; this binding does not promote a source lead into verified article provenance or approve molarity.
+
+Source/evidence locators: ["owner-0090.json: all20 cupric-chloride descriptors,59 routes and current copper(II) chloride owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-083bbae451c96d9c.
+
+All ten complete source descriptors explicitly preserve beta-D-glucose and CHEBI:15903, agreeing with the current anomer-specific owner. All sixteen source ingredient routes were inspected. This supports the asserted beta-D molecular identity only, not a claim that aqueous glucose remains exclusively that anomer, nor approval of any listed amount.
+
+Source/evidence locators: ["owner-0043.json: all ten descriptors, sixteen source scopes and owner beta-D structure", "native canonical row retained in the pinned candidate"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-0b724e2a19ae3508.
+
+Both complete descriptors name asialofetuin, one retaining MediaDive compound2150, consistent with the owner's named desialylated-fetuin material. No contrary intact-fetuin, species, product grade or preparation identity is asserted. Support remains at that material scope and does not reconcile the 1 versus100 g/L quantities or assert a unique glycoform composition.
+
+Source/evidence locators: ["owner-0030.json: both descriptors and current MeSH:C017029 owner/source2150 provenance; native row05d32aa2d33f1f6e0f8861de24bb9684a34a1b2244b28a0f47383c8994d73a99"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-0f421b3552e374fc.
+
+The sole complete descriptor names cellulose powder, matching the owner's powder-qualified FOODON material. The TOGO cellulose-agar ingredient route was inspected. Support preserves the powder form rather than asserting a particular cellulose polymer grade, source, purity, dose or carbon-utilization result.
+
+Source/evidence locators: ["owner-0070.json: descriptor23c3f2a3, TOGO M57 source route and current powder-qualified owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-0f739a012bbda9c0.
+
+The complete descriptor names MediaDive Aminoacids stock at 10 percent v/v but additionally grounds it to the amino-acid chemical class. The current owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition. Native own-registry support does not resolve this conflicting embedded descriptor identity. All three source composition occurrences remain retained and withheld under issue1475.
+
+Source/evidence locators: ["owner-0020.json: sole descriptor, current owner stock notes and all three composition scopes", "https://www.ebi.ac.uk/chebi/CHEBI:33709 inspected2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1475"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-0fa3c3f2c848ca11.
+
+Both complete descriptors and retained donor-table snippets name benzyl alcohol, consistent with CHEBI:17987 and the owner's hydroxymethyl-benzene structure. This is distinct from phenol or a benzyl ether. Binding excludes the dose, Fe(III)/cobalt culture context and growth inference.
+
+Source/evidence locators: ["owner-0041.json: both descriptors/excerpts, two MediaDB source paths and current owner structure", "native rowf0910cfd29af0e50355407cfa78d34e017279baf6fcf62c38464a32381c3a84a"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-14d997a357ffbe63.
+
+All six complete TOGO descriptors explicitly specify cobalt dinitrate with six waters and CHEBI:86214, agreeing with the owner formula/CAS10026-22-9. All six source routes were read. The hydrate-specific identity does not approve their differing trace/stock doses or mineral function.
+
+Source/evidence locators: ["owner-0078.json: six descriptors and six routes of14d997a3; current Co.6H2O.2NO3 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-165a5eee355d3bf5.
+
+The complete descriptor explicitly names cefoxitin and CHEBI:209807, agreeing with the owner's cephamycin structure. The C.difficile-supplemented BHI source scope preserves the separate named ingredient; no sodium salt, formulation mixture or antimicrobial efficacy is inferred. Variable dose remains unapproved.
+
+Source/evidence locators: ["owner-0067.json: descriptor a2a92e1d, sole source route and current cefoxitin structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-168e84a5fc2f7fe4.
+
+All four descriptors consistently name 4-guanidinobutyric acid and retain CHEBI:15728, CAS 463-00-3 and MW 145.16, agreeing with the owner's specific free-acid structure. Carbon/exometabolite-mixture names identify the containing source formulations, not a different chemical entity. Quantities and mixture-wide composition are not approved by this binding.
+
+Source/evidence locators: ["owner-0010.json: all four descriptors, four source signatures and complete owner CAS/structure", "canonical source_position 201 / row b372bd127e9dda2327c67e3ba3230ab725f3b2c23d44022e3f36b7e401c14778"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-18a6e6ba3c4a165f.
+
+The unresolved preparation pointer prevents exact mixture identity support. A generic artificial-seawater category is not evidence that the source-specific formulation equals one maintained ingredient preparation. The entire case remains retained and withheld pending source formulation binding; no composition or volume conversion is invented. Issue1479.
+
+Source/evidence locators: ["owner-0028.json: descriptor7b9e050030c9d02faec921672dc61a47e9ddd7b98e0114b63cd1905365297013 and owner lexical-grounding history", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-1aed15690dd84c0c.
+
+All37 complete descriptors explicitly retain calcium chloride with six waters, compatible hydrate-specific CHEBI:91243 and provider173 excerpts. The current owner has six-water structure and corrected hydrate CAS7774-34-7. All62 source ingredient/composition routes were inspected. Identity support preserves six waters and does not approve the different stock/medium amounts or receiving-medium dilution.
+
+Source/evidence locators: ["owner-0055.json: all37 descriptors read through exact field/template reconstruction, all62 source scopes, current hydrate-specific owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-1c4bde9e3cd430ba.
+
+Both complete descriptors explicitly specify a dehydrated beef infusion. The current candidate denotes beef meat rather than that prepared extraction product. Exact label agreement cannot erase the retained preparation note; all source occurrences remain withheld under issue1482, without inferring extraction yield or composition.
+
+Source/evidence locators: ["owner-0035.json: both descriptors and current owner", "primary/ncit-C71932.json SHA2b26eac544c8a14bac7317a069dc116a839bcf04a4190b2d289166b245233e7f, live definition inspected2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1482"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-1d61f5a2491cea4d.
+
+All three complete descriptors explicitly retain chromium trinitrate with seven waters, including the exact provider1574 excerpt, matching the current heptahydrate structure. All three main/stock routes were read. Support does not infer another hydrate, validate dose conversion or approve trace-element effects.
+
+Source/evidence locators: ["owner-0084.json: three descriptors, solution5814 source excerpt, three routes and current Cr.7H2O.3NO3 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-1dc3c1fb63229c28.
+
+All44 complete scientific descriptors and713 source scopes were inspected. They retain carbon dioxide/CHEBI:16526 as a gas component, agreeing with the owner's CO2 structure. Headspace, dispensing, preparation and autoclave contexts remain distinct; the binding does not equate a carrier mixture or aqueous bicarbonate with CO2, infer dissolved dose, or approve growth or gas-pressure claims.
+
+Source/evidence locators: ["owner-0064.json: all44 descriptors and713 routes of1dc3c1fb, current Carbon_dioxide_gas owner and native row"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-1e00b1674fa1397a.
+
+The current owner is a composition-unknown local preparation sourced from MediaDive2146. Other source descriptors retain that accession, but the inspected blocking descriptor supplies only a generic mixture name and dose; exact preparation correspondence across the complete case is unproven. The whole unchanged case is withheld without claiming that the formulations necessarily differ or replacing the mixture with pure salts. Issue1479 retains the follow-up.
+
+Source/evidence locators: ["owner-0027.json: blocking descriptor40dc431dfe3f4a4fd57a3b412837c80acf23555f7d3ef4bf88bf950e4a6bf798 and current local-preparation owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-201c3570562f0585.
+
+Both complete descriptors identify cyanuric acid, with compatible CHEBI:38028/provider2118 grounding and no salt or preparation qualifier. The current owner preserves that acid concept; both source routes were read. Support excludes0.645g/L and nitrogen-utilization effects.
+
+Source/evidence locators: ["owner-0091.json: two descriptors, two source routes and current cyanuric-acid owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-222667d612daca5b.
+
+The complete source descriptor retains D-aspartate/CHEBI:29994 and KEGG asp-D, agreeing with the maintained D-aspartate dianion under the native bare-anion naming contract. The source route was inspected. This does not infer an unspecified counter-ion, approve solution protonation at a given pH, or certify dose.
+
+Source/evidence locators: ["owner-0101.json: complete descriptor, aspartate-salt medium route and current D-aspartate2- structure", "MAPPING_SEMANTICS.md: bare-anion naming policy"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-222fcfc4aefb5798.
+
+All three complete descriptors retain crotonic acid and CHEBI:41131, agreeing with the owner's trans-but-2-enoic-acid structure. All five TOGO routes were inspected. Support does not convert the acid to crotonate or approve amount, stereochemical purity or carbon-utilization claims.
+
+Source/evidence locators: ["owner-0089.json: three descriptors, five routes of222fcfc4 and current E-crotonic-acid owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-25449533c1a24f16.
+
+The complete PCC11801 change preserves CO2 as the component of ambient-air bubbling in the multi-cultivator source experiment. The retained PMID30413737 excerpt provides the0.04%gas context. Support binds the named molecular component without approving dose, extrapolating to other culture modes or converting gas fraction to liquid concentration.
+
+Source/evidence locators: ["owner-0064.json: complete change and bacterial/bg11.yaml /variants/1/ingredient_changes/0", "PMID:30413737 retained primary excerpt"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-25a05580d9b99ba9.
+
+All four complete descriptors explicitly retain an L-ascorbate cross-reference but the propagated term and candidate owner are generic ascorbate. The bare-anion protonation convention does not authorize removing an explicit stereochemical qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement remain intact; no narrower identity is automatically substituted. WITHHOLD pending source-specific resolution under issue1474.
+
+Source/evidence locators: ["owner-0029.json: all four descriptors and current generic owner", "https://www.ebi.ac.uk/chebi/CHEBI:22651 inspected2026-11-17, incoming L-ascorbate CHEBI:38290 subclass", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1474"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-270ec1303f56e35f.
+
+The sole complete descriptor explicitly names D-cycloserine/CHEBI:40009, agreeing with the current 4R cycloserine owner. The BHI supplement scope was read. VARIABLE amount, antimicrobial efficacy and actual use are not approved by this identity binding.
+
+Source/evidence locators: ["owner-0097.json: sole complete descriptor, BHI source scope and D-specific owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2770b25757b52022.
+
+All eight complete descriptors explicitly preserve defibrinated horse blood, and collection/preparation notes retain the same species and defibrination qualification. All eight source routes were read. Broad UBERON blood annotations do not contradict those explicit retained form/species fields; the candidate itself preserves defibrinated horse blood, rather than collapsing it to generic blood or serum. Support excludes sterility certification, lot composition, dose and performance.
+
+Source/evidence locators: ["owner-0108.json: eight complete descriptors, all eight TOGO/Columbia/BL/GAM routes and exact defibrinated-horse owner MICRO:0001572"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-29c514535553751c.
+
+Both complete descriptors explicitly identify (-)-quinic acid, matching the owner's optical form and CHEBI:17521 identity. The MediaDive solution-5605 excerpt names this acid as an input; the containing iron-quinate solution does not turn this ingredient into an asserted iron complex. The six ingredient/composition coordinates retain their separate recipes. This supports only the named acid binding, not its concentration, stock dilution or a growth claim.
+
+Source/evidence locators: ["owner-0000.json: complete owner_payload, both descriptors and six source_mentions", "descriptor db1585ebcedc88f207ab0e4e4f3569adf53ead3427a8c3850c7d9df732b3f35c: MediaDive solution 5605 recipe[1] excerpt", "canonical source_position 2 / exact identity row 790355293c3ba0b3b8586bfe9587670c6b2aba101d4932ddd22cb3f56a4ced1a"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2c51ed72121e9a77.
+
+The complete descriptor explicitly names brain-heart-infusion agar, agreeing with the owner's same named agar preparation concept MICRO:0000566. The source recipe's separate calf-blood/antibiotic supplementation is not folded into this ingredient identity. The1g/L amount and a specific manufacturer's formulation remain outside this binding.
+
+Source/evidence locators: ["owner-0050.json: sole descriptor and source scope; current named-agar owner and native exact-synonym row"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-2d46189d88f9e0a4.
+
+Both complete descriptors and three routes were inspected. Their variable-hydrate label and embedded anhydrous grounding remain unreconciled despite the matching local resolver result. Withhold the unchanged aggregate under1502 without assigning a water count, molecular weight or replacement chemical identity.
+
+Source/evidence locators: ["owner-0083.json: both descriptors, solution5294 exact variable-hydrate excerpt and current #321 owner boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1502"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2d497087da7cc978.
+
+The sole complete source descriptor states unqualified bovine serum albumin with CAS9048-46-8, agreeing with the maintained generic BSA protein-family owner NCIT:C85253. The specialized7h9 source scope introduces no supplied-fraction or stock-preparation qualification in this case. Support excludes concentration and does not extend to the separately grouped qualified stock/Fraction V aggregate.
+
+Source/evidence locators: ["owner-0048.json: descriptor646bfbb0239cc5eb37521696ea3a86ecb739eb316725df13fd0471f4f3081bc0, specialized/7h9 scope and current supplied-form-aware owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2d6e55a4ac3ee1bb.
+
+Both complete TAP descriptors explicitly use the same generic borate concept CHEBI:22908 as the maintained owner. Support stays at that stated concept level and does not select a counter-ion, hydrate, particular polyborate species or actual solution speciation. The0.184mM amount remains outside this identity decision.
+
+Source/evidence locators: ["owner-0046.json: both complete descriptors, TAP auto and hetero/mixo scopes and owner borate mapping"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2e073990fbdc07a6.
+
+The sole complete descriptor names generic blood without an animal-species or processing qualifier, matching the generic blood material owner UBERON:0000178. Its TOGO M2581 source scope is retained. Support does not imply a particular species, defibrination or other treatment, nor acceptance of the5percentw/v amount.
+
+Source/evidence locators: ["owner-0045.json: sole descriptor a29e3a667b9277fda835356fc9bc5eb89da94a318bf452bc6956fa7d865e3fa5, source scope and current owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2f0de93daca3000c.
+
+All four complete descriptors consistently identify charcoal/CHEBI:91090 or provider745, agreeing with the current charcoal material owner. All five ingredient/composition routes were inspected. The decision does not silently qualify this material as activated charcoal, elemental carbon or a particular adsorbent grade, and does not approve concentration or activity.
+
+Source/evidence locators: ["owner-0071.json: four descriptors, five source routes and current charcoal owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-2f256c77fff65edd.
+
+Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for this exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload and source route were read; its unresolved source claim cannot be converted into verified CO2 identity or presence merely because the label names CO2. No new identity, dose, or buffering mechanism is inferred.
+
+Source/evidence locators: ["owner-0064.json: held91db2a74 and bacterial/chopped_meat_medium_atcc_1490_with_formate_and_fumarate_atcc_9733.yaml /variants/1/ingredient_mentions/1"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2f8a21a26931b695.
+
+The complete NBRC225 descriptor names calcium lactate without a stereochemical, hydrate or supplied-preparation qualifier. The current FOODON owner preserves the same generic salt-material concept and does not narrow it to a particular lactate enantiomer or hydrate. The TOGO M1453 source route was inspected;10g/L is not approved by this identity binding.
+
+Source/evidence locators: ["owner-0059.json: sole descriptor71972152, TOGO M1453 source scope and current generic calcium-lactate owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-2fb97b7900558e75.
+
+The complete AMS1 serine-source change specifies CO2 sparging after autoclaving and before subsequent air sparging. The Carini2013 methods excerpt names that gas, compatible with the owner. Support preserves this ordered preparation stage and does not equate CO2 with the final buffering mixture or approve five-hour duration, pH or dissolved dose.
+
+Source/evidence locators: ["owner-0064.json: change1fbd0409 and bacterial/ams1_pyruvate_serine.yaml /variants/0/ingredient_changes/20", "https://doi.org/10.1038/ismej.2012.122"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-30edcb5540bf3b17.
+
+All three complete descriptors explicitly assert NH4+ and CHEBI:28938, matching the charged ammonium owner. MediaDB TAP and Vogel source labels/notes preserve the ionic concept rather than selecting an unstated ammonium salt. The unusual reported amount in Vogel medium, all other doses and actual solution speciation remain outside this identity decision.
+
+Source/evidence locators: ["owner-0021.json: all three descriptors and owner charged formula/structure; native exact row3ff21d337a7a2282d089f4b81cf2b8dfbaa6676c25dc1f43a499672dcee4468f"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-30eeaebe767b3637.
+
+All four complete descriptors explicitly denote CaCl2 with six waters using a middle-dot separator, agreeing with the current hexahydrate owner. All five source scopes were inspected. Orthographic hydrate notation does not alter stoichiometry; amounts and actual solution hydration/speciation are excluded.
+
+Source/evidence locators: ["owner-0055.json: all four descriptors and five routes of case30eeaebe; six-water owner structure/CAS"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-339698f1b792b730.
+
+Both complete descriptors name butyl vinyl ether, and the MediaDive compound391-bearing descriptor identifies the same source material retained by the current MeSH owner. None asserts an alternate butyl isomer or supplied mixture. All four Methanothrix/Methanosaeta/solution routes remain separate. Support is chemical identity only, not the5g/L dose or a biological effect.
+
+Source/evidence locators: ["owner-0052.json: both descriptors, four source routes and current source391/MeSH owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-3c17c0df33f20b47.
+
+Both complete descriptors identify 5-methyluridine/ribothymidine with CAS 1463-10-1, agreeing with the owner's ribose-containing nucleoside and CHEBI:45996. This does not collapse it to deoxythymidine. All ten NLDM source scopes remain separately retained; pH, omitted nutrients and micromolar amount are outside this identity approval.
+
+Source/evidence locators: ["owner-0014.json: both descriptors, ten NLDM source paths and owner CAS/ribofuranosyl structure", "native row a922ec5b7d6213fc94291c4aef2c14bb74f50ecdd4c57b3a4f0f0ad19695c51f"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-3c4294ebef0cd697.
+
+All fourteen scientific descriptor payloads and sixteen source scopes were inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations with plain protein entries, while the candidate's native contract distinguishes those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves this unresolved form relation under issue1486. It does not imply that a quantity-only uncertainty disproves BSA solute identity, nor demote the separate unqualified case.
+
+Source/evidence locators: ["owner-0048.json: all14 descriptors, current owner supplied_form evidence and all16 source routes", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1486"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-3c50fc3ba26ff406.
+
+Both complete descriptors explicitly preserve D-alanine/CHEBI:15570 and compatible KEGG ala-D notation, agreeing with the owner's D-specific structure. Both CDM-LP/TOGO M1556 routes were inspected. No L/racemate inference or approval of the differing dose fields is made.
+
+Source/evidence locators: ["owner-0096.json: both descriptors, both routes and current D-alanine stereochemistry"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-3c73f9321f28a35a.
+
+The complete #Ar descriptor retains CHEBI:49474 argon(0), and the owner's exact chemical scope is neutral elemental argon with this raw source label retained. The hash-prefixed label is not interpreted as another species. Identity support does not approve the questionable percent-w/v amount or imply a dissolved-gas concentration.
+
+Source/evidence locators: ["owner-0025.json: descriptor c7e0b70e39da762d1877cc56e4c66f6c69d45891c9615a7e2bed108fe125a349 and current argon structure/raw alias; native row97c38f93c17a6dd5b98cb1c82be8092f5ced4043d70298343471964e4ef88c27"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-3fa1d1b9f99efb4a.
+
+Both complete descriptors name generic cresol, compatible with the current unspecific cresol concept rather than an inferred ortho/meta/para isomer. All four source routes were inspected. Binding the retained ingredient label does not endorse presence in a recipe whose name describes replacement, apply the replacement automatically, or approve1mM or growth.
+
+Source/evidence locators: ["owner-0087.json: both descriptors, four source routes including replacement-labelled record and generic CHEBI:25399 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-40873f3920d6f6a1.
+
+The complete descriptor identifies acetone as the ingredient and CHEBI:15347, matching the owner's propan-2-one structure and CAS 67-64-1. A solvent role is not a competing material identity. The reported 1 g/L dose and solvent-function claim remain outside this binding.
+
+Source/evidence locators: ["owner-0016.json: complete descriptor d1e4104623040f71ecd526c21fd4974210bfa484e54f431056263d57f63b64c3, TOGO_M899 scope and owner chemistry", "native row f83d40e07d73d4956a5d10225c64df3c6561207a575a0170f02128ce5c0d2e6e"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-4241abb8e9fdaea1.
+
+The complete DSM25939 change names CO2 within the post-inoculation H2/CO2 headspace, explicitly bound to the DSM119 strain instruction. The named component matches the owner. Identity support retains this stage and strain-specific source route without approving pressure, pH, dissolved dose or growth.
+
+Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium /variants/12/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-4479b8347accf833.
+
+The complete DSM9575 change identifies CO2 as a component of the DSM119 post-inoculation H2/CO2 headspace. Support is restricted to that gas identity and exact stage; the2bar overpressure is retained without conversion to a liquid concentration or inferred growth performance.
+
+Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium /variants/8/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-46642d545884352f.
+
+Both complete descriptors name benzoate, retain CHEBI:16150 and quote benzoate in the source donor table. This agrees with the current anion owner and does not choose an unstated sodium or other salt. The dose, cobalt-medium context and actual solution speciation are not approved by the identity binding.
+
+Source/evidence locators: ["owner-0039.json: both source excerpts/descriptors, two MediaDB scopes and owner anion structure", "native row39a4279f34f018e24d2408ee31261dc45a95ac2d8ad4fc8b5dc443c55e5af604"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-47508a3adea64241.
+
+The complete sole descriptor and current local stock owner were inspected. The owner explicitly awaits component-level curation, and numeric accession agreement across two prefixes is not independent supplied-preparation evidence. Withhold the unchanged case under1490 without claiming the stocks are demonstrably different, inventing components, or substituting a carbon role/element identity.
+
+Source/evidence locators: ["owner-0063.json: sole descriptor63f9c866 and current STOCK_SOLUTION provenance/notes", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1490"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-486682d8673ec613.
+
+Both complete descriptors explicitly name benzoic acid and CHEBI:30746, agreeing with the current free-acid structure/CAS65-85-0. The four-carbon-mixture note names the containing formulation, not a salt or different supplied ingredient. Identity support does not imply actual protonation at each listed pH or approve either dose.
+
+Source/evidence locators: ["owner-0040.json: both descriptors, nine TOGO/UGA source paths and owner free-acid structure", "native row069dd10265b7e2e2fd930db85e57ce5e19a7ad9a8bc8b0d3cc32f34749536f55"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-489e2cce45d9fcee.
+
+The complete descriptor explicitly retains D-glucarate/CHEBI:30612 and compatible KEGG glcr notation, agreeing with the owner's D-glucarate dianion under the native bare-anion naming policy. The liquid-MA route was inspected. No free-acid or counter-ion substitution, dose certification or growth claim is made.
+
+Source/evidence locators: ["owner-0102.json: sole complete descriptor, liquid-MA source route and current D-glucarate2- owner", "MAPPING_SEMANTICS.md: bare-anion naming policy"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-4a444e5108b6971f.
+
+The complete supplier-qualified descriptor explicitly retains defibrinated horse blood, agreeing with the maintained same supplied-form/species concept. Its broad blood ontology field is not substituted for the more specific preserved source label. The Bordet-Gengou source route was read. Support does not certify TCS lot composition, sterility,15percent dose or growth.
+
+Source/evidence locators: ["owner-0108.json: sole TCS-qualified descriptor4789b9ca, TOGO M2851 source route and exact defibrinated-horse owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-4e3fc52a283747e6.
+
+All five complete descriptors explicitly preserve two waters of hydration, including exact MediaDive solution2830/4724 ingredient excerpts and the JCM776 cross-reference. The current owner has the same barium-chloride dihydrate formula and CAS10326-27-9. Source stock versus receiving-medium quantities stay separate; no reduction to the anhydrous salt is approved.
+
+Source/evidence locators: ["owner-0033.json: five descriptors of case4e3fc52a2837, all ten source scopes and hydrate-specific owner", "native row1b973d7e4819028bc45398fb8a205d7bcf6f638c9f51030720ff8cbf3e702e45"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-531623d7728ca1af.
+
+All three complete descriptors preserve calcium folinate, supported by exact Ca-folinate MediaDive781 ingredient excerpts and compatible embedded CHEBI:31340. The owner retains the calcium salt and does not select an unstated folinate6-position stereoisomer. All seven recipe/cofactor-stock routes were inspected; stock doses and receiving-medium dilution are excluded from this salt-identity decision.
+
+Source/evidence locators: ["owner-0053.json: all three descriptors, solution1730/4340 excerpts, seven source routes and owner calcium-folinate structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-55ac78af84c1b6c8.
+
+All eleven complete descriptors explicitly name cobalt(II) nitrate hexahydrate with compatible CAS10026-22-9/CHEBI:86214. The69 source routes retain their independent medium/stock contexts. This is support for the stated six-water salt, not unspecified cobalt nitrate, a dissolved-ion speciation or any final-dose calculation.
+
+Source/evidence locators: ["owner-0078.json: eleven complete descriptors,69 routes of55ac78af and current hydrate-specific chemistry"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-5674be2b2411c0a9.
+
+Both complete descriptors and retained source snippets explicitly name para-hydroxybenzaldehyde, matching the owner's 4-hydroxy positional isomer and CHEBI:17597 structure. The CoCl2 and CoSO4 recipe contexts do not alter the aldehyde identity. The cited 0.5 mM donor amount and any growth interpretation remain outside this identity binding.
+
+Source/evidence locators: ["owner-0009.json: both full descriptors, both recipe scopes and complete owner structure", "doi:10.1007/BF00290916 Table 2 excerpt preserved in both descriptors: p-hydroxybenzaldehyde", "canonical source_position 179 / row f1eefed8d4bdbd15462962782337ce0af14ff33b9581d0857ea951d66b5ec268"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-56f12fd065dbec3f.
+
+The complete Sakai2019 held payload explicitly identifies CO2 as the component of the H2/CO2 headspace mixture, consistent with the molecular owner. Identity support is restricted to that named gas component. The OPERATION hold remains intact with counts_as_presence=false: this is not an aqueous ingredient assertion or evidence of growth, and the reported negative HS1T experiment remains negative.
+
+Source/evidence locators: ["owner-0064.json: held743c41a3, source Methods3.2.3.3 excerpt, archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml /variants/1/ingredient_mentions/1", "https://soka.repo.nii.ac.jp/record/39772/files/kogakukenkyuka_SAKAI-HIROYUKI%28%E5%85%A8%E6%96%87%29.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-573a8aed48a707c2.
+
+Both complete descriptors retain cresol red/CHEBI:86218, and the exact provider1436 source excerpt names that dye. The owner's cresolsulfophthalein structure agrees; this is not cresol or a different red indicator. Both stock/ingredient routes were read. Dose, indicator performance and final dilution remain excluded.
+
+Source/evidence locators: ["owner-0088.json: both descriptors, solution3273 exact excerpt, two routes and current CAS1733-12-6 dye owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-5bcb2af0997a7423.
+
+The complete case includes an explicit heart infusion constituent, but its candidate is whole beef heart and its embedded term denotes heart anatomy. Preparing an infusion changes the supplied material scope; matching a tissue label cannot prove identity. All158 occurrence coordinates remain retained and withheld under issue1482; this does not claim all158 individual recipe contexts were manually read.
+
+Source/evidence locators: ["owner-0037.json: all three scientific descriptors and current owner; blocking supplier/BHI infusion descriptor40eff9db", "primary/foodon-00004410.json SHA54ff02dc4444824d8349f2401680ea920fb8f150ea96f8e92ea813a3ce01c866 and primary/uberon-0000948.json SHAc658bbcacd89befa47e3bd4859f176db247b3ce67483b6590c91d0865d41aed4", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1482"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-5cf09b02abfe2656.
+
+All three complete descriptors explicitly name D-gluconic acid, consistent with the current D-acid owner. Their KEGG shorthand and gluconate-labelled medium routes do not state a specific counter-ion; all four routes were read. Support binds the retained named chemical identity, without selecting a salt, asserting solution protonation or approving molarity.
+
+Source/evidence locators: ["owner-0098.json: all three descriptors, four E2/liquid-MM/M63/M9 routes and current CHEBI:33198 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-6108052f2508ac65.
+
+The sole complete descriptor explicitly states CaCl2.6H2O and the same hydrate-specific CHEBI:91243 as the current owner. The chemically-defined-medium scope retains that ingredient identity; no conversion to anhydrous calcium chloride or approval of0.33g/L is made.
+
+Source/evidence locators: ["owner-0055.json: descriptorba49593b and chemically_defined_medium route; current six-water owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-619fba0e79bd925b.
+
+Both complete descriptors specify the 2-position furoic acid and CHEBI:30845, consistent with the owner's carboxylic-acid structure and CAS 88-14-2. The ingredient and composition coordinates retain their own recipe scopes; neither descriptor asserts a salt or a stock identity. Support binds the acid identity only, without concentration or receiving-medium dilution approval.
+
+Source/evidence locators: ["owner-0007.json: complete owner, both descriptors and both source scope signatures", "canonical source_position 88 / row 73ace973b05bbe7c0c964df80fb24e8e97abc34c093af2f15a4515d2fc10151c"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-623dde3c257babbb.
+
+Both complete TAP descriptors and both routes were inspected. Their copper(2+) grounding is not reconciled by the generic-label/local-ID candidate. Preserve both occurrences but withhold this aggregate under1501 pending source-specific species resolution; do not assert which copper ion or salt was physically supplied.
+
+Source/evidence locators: ["owner-0081.json: both descriptors and current #631 local-identity rationale", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1501"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-63fbe57cd3babefe.
+
+Both complete descriptors identify creatinine/CHEBI:16737 and the exact provider570 excerpt agrees with the owner's cyclic creatinine structure. All five routes were read. The decision does not substitute creatine, approve5.48355g/L or infer metabolism/growth.
+
+Source/evidence locators: ["owner-0086.json: both descriptors, solution1218 excerpt, five source routes and current creatinine structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-642a6453d399c8ae.
+
+All six complete descriptors identify Columbia agar base as the named base medium, consistent with the MICRO owner. The DSM429/693 notes keep horse/sheep blood supplements separate from this base identity; all52 source routes were read. Support does not establish a supplier-specific formula or approve700/1000g/L and1000percent legacy values, final volume or growth.
+
+Source/evidence locators: ["owner-0079.json: six descriptors, DSM429/693 retained notes,52 routes and generic named-base owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-65d19440d8044198.
+
+The complete glucose6-phosphate AMS1 change explicitly inherits Carini2013 CO2-then-air preparation through Carini2014. It names CO2 as the gas component before later organic additions, agreeing with the owner. This does not independently verify assay pH, phosphorus chemistry, gas dose or final growth.
+
+Source/evidence locators: ["owner-0064.json: complete change bdeaad33 and bacterial/MEDIADB_480_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/Carini2013 retained methods linkage"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-667f6ee1916f3482.
+
+The complete AMS1 glycine-source change retains Carini2013's ordered CO2 then air sparging after autoclaving. The named CO2 gas agrees with the molecular owner. Identity support remains at this preparation stage and does not approve final pH, exposure duration, carbon availability or equate the complete medium with the gas.
+
+Source/evidence locators: ["owner-0064.json: change1fbd0409 and bacterial/ams1_pyruvate_glycine.yaml /variants/0/ingredient_changes/20", "https://doi.org/10.1038/ismej.2012.122"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-676e27f90f2ca371.
+
+The complete descriptor's hydration label and embedded identity remain inconsistent. The maintained local seven-water source identity does not resolve that anhydrous grounding, so this entire unchanged case is withheld under1488 without selecting another hydrate or inferring a verified chemical substance from the literal count.
+
+Source/evidence locators: ["owner-0056.json: exact sole descriptor and current owner corrections321/334/342/344", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1488"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-685287e6fa22ce1d.
+
+The complete descriptor names cystine/CHEBI:17376, matching the current disulfide structure without specified stereochemistry. The CDM-LAB route was inspected. This does not equate cystine with reduced cysteine, infer an enantiomer or approve50g/L/nitrogen function.
+
+Source/evidence locators: ["owner-0093.json: sole descriptor b42c8cb6, source route and current disulfide owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-692e558734b6f189.
+
+All four complete descriptors specify BaCl2 with compatible barium-chloride identifiers; the exact MediaDive solution5083 excerpt preserves that formula. They do not name the separately reviewed dihydrate. Binding retains the nominal BaCl2 chemical identity without certifying a purchased grade, measured water content, stock dilution or the disparate amount fields.
+
+Source/evidence locators: ["owner-0032.json: four full descriptors, seven ingredient/composition source paths and owner BaCl2 structure/CAS10361-37-2", "native rowcaada46ff011273aacb70ca504e7601780438635a4cb5fa63fc59860df00cd95"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-6b333af101a0b916.
+
+The sole complete descriptor explicitly denotes apple juice as a complex food material, consistent with the maintained FOODON apple-juice concept. It does not assert concentrate, clarified juice, a product brand or a pure sugar. Support remains at this named food-material scope without approving an exact composition, nutrient effect or 200 g/L dose.
+
+Source/evidence locators: ["owner-0024.json: complete descriptor d6ba7c404c9e487e27e44cc3a04620d9d0802786c6dcbf3b7eca81b67a28e330 and current owner FOODON:00001059; native row070e51c634b8190f49f9eb115c6cc17135d8319d75b4e3883bb66fd90394c3a7"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-6b4546aeb2b57314.
+
+All four complete descriptors preserve nominal CaHPO4 and calcium hydrogenphosphate CHEBI:32596, matching the owner's1:1 calcium/hydrogenphosphate structure. The exact solution6217 excerpt confirms the ingredient label. All four stock/main routes were inspected; zero/variable amounts do not change the named identity, and support does not assert physical presence, a particular hydrate, or approve dose.
+
+Source/evidence locators: ["owner-0057.json: four descriptors, source6217 excerpt, four source routes and current salt structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-6f3ccd311a073f1f.
+
+The complete Matsui2018 high-CO2 aeration change identifies CO2 in the1%gas arm, distinct from the alternative ambient-air arm. This agrees with the molecular owner and preserves the aeration stage. Support does not combine alternative arms, infer dissolved amount or approve physiological outcomes.
+
+Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium /variants/1/ingredient_changes/1", "https://doi.org/10.1104/pp.18.00453"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-6fa5cc783ef2ab0f.
+
+All six complete descriptors consistently retain aspartate and CHEBI:29995, without an explicit stereochemical or supplied-salt claim. Current MAPPING_SEMANTICS.md specifically grounds bare Aspartate to this stereo-agnostic dianion; issue319 is closed and that maintained rule takes precedence over the historical counterargument retained in owner notes. This is concept normalization under that rule, not independent proof of actual medium protonation or approval of P5 MEM-stock quantities/dilutions.
+
+Source/evidence locators: ["owner-0031.json: all six descriptors including complete P5 stock evidence and current owner mapping history", "MAPPING_SEMANTICS.md lines449–479", "https://github.com/CultureBotAI/MediaIngredientMech/issues/319 inspected2026-11-17", "native rowd42eab590c65aacb29898af0f18d5445951ea5bfcf03101553ffe2aa787a02cf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-70cb09ade6935dc4.
+
+The sole complete TOGO M2849 descriptor names CaCl2 with six waters and CHEBI:91243. The alternate hydrate separator retains the same explicit six-water stoichiometry as the current owner. Mineral function and1.3g/L dose remain outside the identity approval.
+
+Source/evidence locators: ["owner-0055.json: descriptor0edc3912, TOGO M2849 route and current six-water owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-71d42cd78920da58.
+
+The complete descriptor and complete replacement event were inspected. This case records the historical replaced label D-Glucose6-phosphate, so its D-specific identity is factual context for the old target. The event explicitly replaces that assertion with generic glucose6-phosphate because the Carini primary source does not certify D/L. Support is solely the historical old-label binding: no positive occurrence, actual reagent stereochemistry, dose or assay outcome is inferred.
+
+Source/evidence locators: ["owner-0103.json: complete old-target descriptor60371a50 and replacement payload6b1f6ce0, variant0/change20/replaced_ingredient scope", "https://doi.org/10.1038/ncomms5346", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1511"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-731fdd45136e6810.
+
+Both complete TAP descriptors explicitly embed calcium(2+) CHEBI:29108, matching the charged-ion owner and distinguishing the rejected generic Calcium owner. The source's generic surface label is qualified by those retained identity fields. Identity support does not select an unstated calcium salt, infer counter-ion or approve0.34mM/actual speciation.
+
+Source/evidence locators: ["owner-0058.json: both descriptors, TAP auto/hetero-mixo routes and current Ca2+ structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-7596c7c0a15c93aa.
+
+The complete DSM2030 source change explicitly names CO2 in the H2/CO2 atmosphere supplied after inoculation. The owner binds this molecular component without treating the mixed gas, pH6.5 or2bar instruction as an ingredient identity or approved aqueous dose.
+
+Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium /variants/2/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-75995ea07db3cdc6.
+
+All eight descriptor payloads retain baker's yeast as the material, supported by the exact MediaDive compound17 excerpts. The maintained FOODON owner is the same named yeast material, not yeast extract, a specific strain or a composition-defined stock. Identity support preserves that scope while excluding viability, strain identity, preparation concentration and the percent-v/v quantity interpretation.
+
+Source/evidence locators: ["owner-0034.json: eight descriptors, seventeen source paths, exact MediaDive9/9a and solution9/10 ingredient excerpts, current owner", "native row5607318f3835161a6c406a1a43b986faae17cec7778fe7d21a235377561add7e"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-75cc21f68f7c24c7.
+
+The complete DSM25945 change preserves the DSM119 instruction for a post-inoculation H2/CO2 atmosphere. CO2 molecular identity agrees with the owner; the distinct strain/pH instruction and gas pressure remain source context rather than an approved dose or growth assertion.
+
+Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium /variants/13/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-76e2e8c8282a85ea.
+
+Both complete descriptors explicitly name anaerobic water, preserving the anoxic qualification of the current ENVO owner. Support is limited to that named water material/state; it is not a verification of oxygen measurements, sterilization, recipe composition or the 100/300 g/L amount fields.
+
+Source/evidence locators: ["owner-0022.json: both complete descriptors and current owner ENVO:01000173 synonym evidence; native row25fdc8f387f5cb51d6e6b2ea7aba70f52267d3b50b858dfe5ac727a44c92c75d"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-77e001312d6b6603.
+
+Both complete descriptors preserve benzyl cyanide/phenylacetonitrile, matching the current owner's methylene-separated nitrile structure and CHEBI:25979. The MediaDive compound2166 provenance and exact named synonym agree; no benzonitrile substitution is made. Identity support excludes the0.12g/L amount and nitrogen-source function.
+
+Source/evidence locators: ["owner-0042.json: both descriptors, mineral-medium/MediaDive951 scopes and owner structural synonym evidence", "native row6f90f8746a9ea1c90c370a4baf32944c2ecf0b7e371c333ee1feb1b8750dc68c"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-7816d9ac4687571c.
+
+The final descriptors name a 0.5 M disodium NTA preparation but both embed CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term. The candidate MIM registry stock explicitly separates that disodium preparation from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove this source-form conflict. Both occurrences are retained; no stock-to-solute replacement or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up: CultureMech #792.
+
+Source/evidence locators: ["owner-0002.json: both complete descriptors and stock owner components/component_assertion/rejected synonyms", "https://www.ebi.ac.uk/chebi/CHEBI:132766: definition 3:1 sodium:nitrilotriacetate and formula C6H6NO6.3Na, inspected 2026-11-17", "https://github.com/CultureBotAI/CultureMech/issues/792"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-7a54eb7a4c55b5ac.
+
+The complete Tsuji2021 low-sodium comparison explicitly retains CO2 in the0.04%air arm named by the primary abstract. This supports gas-component identity while keeping it distinct from the5%arm. Full methods, dose, growth efficacy and dissolved concentration are not claimed to be verified.
+
+Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium /variants/2/ingredient_changes/4", "https://doi.org/10.1007/s10126-021-10037-4 retained primary abstract"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-7cae5a5b7b73d3a8.
+
+All four complete descriptors explicitly identify Cl-/chloride, with compatible CHEBI:17996 and KEGG:cl grounding. The current owner is the same anion; no counter-ion or elemental chlorine is inferred. All five TAP/Vogel/synbase routes were inspected. Amount differences and actual solution speciation are outside this identity binding.
+
+Source/evidence locators: ["owner-0076.json: four full descriptors, five source routes and current chloride owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-7ce014451bbe85f1.
+
+Both complete descriptors consistently identify arsenate with CHEBI:29125 and retain after-autoclaving context; neither asserts arsenite, a counterion or a specific supplied salt. The current owner explicitly rejects arsenite aliases. Support follows the maintained bare-anion concept convention and does not certify solution speciation, an unstated salt or the reported dose.
+
+Source/evidence locators: ["owner-0026.json: both descriptors and current owner charged structure/rejected arsenite labels", "MAPPING_SEMANTICS.md protonation-state convention", "native row7424003f71423b2fab5daf36c297d72f52c71f34b2ba828573126b284512d47d"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-7ced97de79fe3814.
+
+All eleven complete descriptors and twelve routes were read. One member contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate is withheld under1513 while every occurrence remains available. This is not a claim that the other eleven routes have the same conflict; no concentration or D/L resolution is guessed.
+
+Source/evidence locators: ["owner-0105.json: all eleven descriptors and twelve routes, especially P5 Mix5 descriptor5f5564bf with source_identity_conflict", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1513"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-80a712170c6d28ba.
+
+The complete Tsuji2021 change explicitly identifies CO2 in the5%aeration arm of the low-sodium comparison. The primary abstract supplies that gas identity, compatible with the owner. Support does not merge the ambient-air comparator, verify inaccessible full methods or establish a liquid dose or growth claim.
+
+Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium /variants/2/ingredient_changes/3", "https://doi.org/10.1007/s10126-021-10037-4 retained primary abstract"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-8542b4ae4f2bd7e6.
+
+All three complete descriptors retain choline/CHEBI:15354, including the exact provider611 vitamin-stock excerpt and compatible KEGG cross-reference. The current owner represents the choline cation, without an inferred counter-ion. All four source routes were inspected; the identity decision does not substitute choline chloride or approve stock/final amounts.
+
+Source/evidence locators: ["owner-0074.json: three descriptors, solution1328 exact excerpt, four routes and current choline cation structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-86fd9453e711ff71.
+
+All four descriptors identify indole-3-acetic acid, including the exact MediaDive compound 1548 ingredient excerpt in solution 5113. The current owner is that acid with CAS 87-51-4 and explicitly rejects its historical ethyl-hexenoate mislabels. None of the source descriptors revives those rejected compounds. Parent aromatic-fatty-acid solution context is preserved; support is for the named ingredient, not the mixture, source quantities or final-medium dose.
+
+Source/evidence locators: ["owner-0008.json: all four descriptors, five source signatures and complete owner including rejected aliases", "MediaDive solution 5113 recipe[3] exact excerpt retained in descriptor d526b004642918f8735418948fc75915dc696c9b871f20fb9ae60abb1af25875", "canonical source_position 150 / row 1a517e0dd653e2967c42ed189120362e6a2fc173dcb71a4517c8d2c077a8fc3c"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-8898ca0ff0613326.
+
+Both complete descriptors identify antipyrine/phenazone and retain compatible CHEBI:31225 or MediaDive compound412 identity. The solution703 recipe excerpt names antipyrine as the ingredient, consistent with the owner's specific pyrazolone structure/CAS60-80-0. The parent medium/solution and 1 g/L amount are not treated as the chemical identity.
+
+Source/evidence locators: ["owner-0023.json: both descriptors, retained solution703 recipe[0] excerpt and current owner structure; native row097bc9bd6754865eacba5c52a3bf85aa6ec3ee0215645f2d6f55349661de4ed9"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-89b5d1371f6b0c7c.
+
+The complete phosphoserine AMS1 change retains the explicit Carini2014-to-2013 preparation linkage and ordered CO2 then air sparging. The molecular gas identity matches the owner; the phosphoserine assay, final pH and dissolved dose are not inferred from this binding.
+
+Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_484_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/2013 retained primary preparation excerpts"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-8a120bdffd7488ba.
+
+The complete descriptor names benzene with CHEBI:16716 but includes a generic Solution property. The primary DSMZ944a recipe resolves the identity scope: it explicitly uses benzene as the solute in distilled-water stock; the separate source solution is not being equated with pure benzene. Identity binding is supported for the named solute. The31.2g/L base amount is independently contradicted by source stock/addition arithmetic and is NOT approved; CultureMech793 tracks that unchanged-base defect and optional variant applicability.
+
+Source/evidence locators: ["owner-0038.json: sole descriptor, current benzene structure and TOGO M2474 scope", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium944a.pdf page1 opening modification, inspected2026-11-17; retained primary/DSMZ_Medium944a.pdf", "https://github.com/CultureBotAI/CultureMech/issues/793", "native row5bd9c45634f0b9b155805ad470eafd0d3ac2693b4eff0fefb0597ee0ecca2602"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-8b8cd58861a0f289.
+
+The complete2-aminoethylphosphonic-acid AMS1 change names the CO2 preparation gas through the explicit Carini2014-to-2013 methods linkage. It preserves the ordered sparging stage and does not assert an assay-specific pH, approve the phosphorus compound or infer liquid CO2 amount.
+
+Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_483_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/2013 retained source linkage"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-8ee01e4e5b7445f5.
+
+The complete base descriptor and corresponding source correction were read. Exact source binding to the D-specific owner would certify an unsupported stereochemical narrowing for the actual reagent. Withhold this unchanged base case under1511, preserving the separate historical old-target context and every input row.
+
+Source/evidence locators: ["owner-0103.json: complete base descriptor226943d5 and same-recipe replacement evidence6b1f6ce0", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1511"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-90a4e97134f2ccee.
+
+Both complete TOGO descriptors explicitly name chocolate agar as the supplied medium material, compatible with the generic named-medium MICRO owner. Both source routes were inspected. Support does not select a supplier formula, equate the medium with agar alone, infer unreported amount or approve its growth claims.
+
+Source/evidence locators: ["owner-0072.json: both full descriptors, TOGO M2858/M2977 routes and current named chocolate-agar owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-911c0899099348a6.
+
+All60 complete descriptors and152 source routes were inspected, including exact MediaDive541 and UTEX/JCM hydrate-qualified source excerpts. Each preserves cobalt dinitrate hexahydrate, compatible with the owner's explicit six waters and divalent cobalt. Preparation and stock scopes remain distinct. Conflicting printed molarity annotations, legacy merged amount values and percentage fields are retained but not approved or converted by this identity decision.
+
+Source/evidence locators: ["owner-0078.json: all60 descriptors reconstructed/read in pages0–24,25–44,45–59; all152 routes; current CHEBI:86214/CAS10026-22-9 owner", "Retained UTEX G9/Bold/minor-nutrient, DSM590 and MediaDive541 ingredient excerpts"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-97e084115638e98f.
+
+All four complete descriptors identify 2'-deoxyinosine with CHEBI:28997 and CAS 890-38-0, agreeing with the owner's specific nucleoside identity and structure. The soil-carbon and exometabolite-mixture references describe the containing formulation, not a competing ingredient identity. Quantities and mixture-wide composition remain outside this identity approval.
+
+Source/evidence locators: ["owner-0005.json: all four descriptors, source scope signatures, owner CAS/structure and CAS lookup provenance", "canonical source_position 83 / row e09ef5127284e433cd63c3e30c128fe1c6e099d5367bb8077df0d354d69735bd"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-9aafef893f46d681.
+
+All four complete descriptors identify 2'-deoxyuridine with CHEBI:16450 and CAS 951-78-0, matching the current owner's nucleoside identity and structure. The differing mg/L and micromolar quantities and parent carbon-mixture provenance are retained without becoming new identity or formulation claims. Support applies only to the explicitly named compound.
+
+Source/evidence locators: ["owner-0006.json: all four descriptors, source scope signatures and owner CAS/structure", "canonical source_position 85 / row a5469c34d21e310ba3c9e092664e79622774134ee112ca10e9ba4e7d98049711"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-9bebf2dec0e4e5b0.
+
+The complete descriptor names crotonic acid ALDRICH113018. Independent manufacturer-page inspection confirms113018 as trans-2-butenoic acid/CAS107-93-7 with the same E InChI as the owner. The single source route was read. Support is the named chemical identity, not a batch-purity, dose or growth certification.
+
+Source/evidence locators: ["owner-0089.json: sole catalogue-qualified descriptor and TOGO M2527 route", "https://www.sigmaaldrich.com/US/en/product/aldrich/113018 manufacturer identity/structure viewed2026-11-17; local manual observation .temp/1453/crotonic-catalog-primary-observation.md"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a0651624438bd707.
+
+The complete phosphite-arm AMS1 change identifies CO2 during inherited Carini2013 inorganic-medium preparation, followed by air. This supports the gas component identity independently of the unresolved phosphite counter-ion/form. Final pH, liquid concentration and phosphorus chemistry remain outside the decision.
+
+Source/evidence locators: ["owner-0064.json: complete change bdeaad33 and bacterial/MEDIADB_479_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/2013 retained primary excerpts"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a140503a9a82236f.
+
+All three complete descriptors identify CAPSO, with the correct hydroxy-propanesulfonic-acid CHEBI:183882 structure rather than CAPS. The exact provider1762 excerpt and three RT2 routes preserve this ingredient identity. The extraordinary5930g/L provider-declared value and its2mL volume basis are explicitly outside this identity support; the decision does not certify their physical validity, dilution or buffer performance.
+
+Source/evidence locators: ["owner-0061.json: all three descriptors, solution4184 exact excerpt, three RT2 routes and current CAPSO structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a2838b1187a747a8.
+
+All eight distinct descriptors explicitly retain activated charcoal, with MediaDive compound582 and exact retained recipe excerpts where present. The current owner denotes activated charcoal as a material, not elemental carbon or the containing agar/blood medium. Support preserves that named material scope without asserting a unique chemical formula, product grade, concentration or biological effect.
+
+Source/evidence locators: ["owner-0017.json: all eight descriptor payloads and thirteen ingredient/composition source scopes", "MediaDive medium435/1052 and solution2128/869 exact ingredient excerpts retained in descriptors", "native row 67735ce085c295e8c7c59a8cc9ddb553f188585f016d923dfdb454503539260d"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a35898ba396305dc.
+
+The complete UI-medium descriptor explicitly specifies 4-hydroxybenzoic free acid in both identifier fields. This agrees with the owner's para-hydroxy acid structure and does not denote an ester, salt or ortho isomer. The carbon-source role and 0.414 g/L amount are retained but not approved by the identity binding.
+
+Source/evidence locators: ["owner-0012.json: descriptor 0b3b275a8f36bf1b4400e51ab9461691ed736c20668287e00b36fcec7d25c35f, TOGO_M504_UI_Medium scope and current owner structure", "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a41a9945169fc3de.
+
+All28 complete descriptors retain nominal CuCl2/CHEBI:49553, with exact provider261/JCM1219 input-solute excerpts and no conflicting hydrated source label. All99 routes were inspected. The binding concerns the named salt/input solute, not the entire10mM stock; it does not approve concentration, infer a specific hydrate from an unspecified label, or validate user-contributed P10 biology.
+
+Source/evidence locators: ["owner-0090.json: all28 CuCl2 descriptors,99 routes, retained JCM1219/MediaDive261 source excerpts and current salt owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a5a7c3209f4bd51e.
+
+The complete separate source descriptor explicitly identifies D-mannose/CHEBI:16024 as an alternative carbon-source arm, agreeing with the generic D-mannose owner. Primary ChEBI inspection confirms D-mannopyranose is subordinate to that concept and lists both commonly encountered CAS numbers; no false CAS or anomer conflict is inferred. Support does not assert simultaneous use of all alternative substrates, approve0.2percent or infer growth.
+
+Source/evidence locators: ["owner-0105.json: descriptor119a1fca and minimal-media TOGO M2313 alternative scope", "https://www.ebi.ac.uk/chebi/CHEBI:16024", "https://www.ebi.ac.uk/chebi/CHEBI:4208"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-a95288ddbcbc4509.
+
+Every complete descriptor preserves Ca(NO3)2 and compatible calcium-nitrate identifiers; exact provider excerpts retain that nominal salt formula. The current owner explicitly corrected the historical cadmium-nitrate conflation, and no inspected source descriptor reintroduces Cd. All37 source routes were inspected. Support binds nominal calcium nitrate without asserting purchased hydration state, converting mass between hydrates, or approving concentration/dilution.
+
+Source/evidence locators: ["owner-0054.json: all complete descriptors, exact MediaDive266 ingredient excerpts,37 source routes and corrected calcium-nitrate owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ab0eedc422381cbc.
+
+All22 complete descriptors preserve choline chloride/CHEBI:133341, compatible CAS67-48-1 and the owner's explicit chloride salt structure. Exact provider115 excerpts agree. All46 source routes were inspected. This salt-specific support remains distinct from the choline cation and excludes concentration, stock-to-final dilution and biological effects.
+
+Source/evidence locators: ["owner-0075.json: all22 descriptors, solution3067/5043 exact ingredient excerpts,46 source routes and current chloride-salt owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ae04caa55fe59069.
+
+All three complete descriptors explicitly preserve Co(NO3)2 with six waters and compatible CHEBI:86214, matching the hydrate-specific owner. All three recipe routes were inspected. The decision excludes concentrations, dilution and growth claims.
+
+Source/evidence locators: ["owner-0078.json: three descriptors and three routes ofae04caa5; current six-water owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ae9572ea8c1ffd93.
+
+The complete methylphosphonic-acid AMS1 change preserves CO2 as the gas in the linked Carini2013 preparation stage. Molecular identity agrees with the owner; ordered CO2/air steps remain separate and do not establish assay pH, gas quantity or phosphorus-compound identity.
+
+Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_482_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/2013 retained methods linkage"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b1f8adc06f883411.
+
+All three complete descriptors name biphenyl, with direct CHEBI:17097 or MediaDive compound2105 where present, matching the owner's two-ring biphenyl identity. The W-medium, named-biphenyl medium and MediaDive919 scopes preserve the ingredient rather than the whole formulation. Doses and carbon-source function remain outside this identity support.
+
+Source/evidence locators: ["owner-0044.json: all three descriptors of caseb1f8adc0, three source routes and current owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b221231fe8357484.
+
+The complete ribose5-phosphate AMS1 change names CO2 in the explicitly linked Carini2013 preparation method, before air and later organics. Support is the molecular gas component only, without extrapolating assay pH, dose or ribose-phosphate form.
+
+Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_481_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21", "Carini2014/2013 retained preparation evidence"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b27b4e0701b204e6.
+
+The complete P5 descriptor and all its preparation prose explicitly identify decanoic acid as the input solute in a separately prepared aqueous stock, matching the linear C10 free-acid owner. The full stock-composition route was read. Support binds the named solute, not the entire stock or final Mix5, and excludes heat stability, source dilution, amount and growth.
+
+Source/evidence locators: ["owner-0107.json: complete descriptorab1d7225, source P5 single-stock/Mix5 evidence and nested stock route; current CHEBI:30813 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-b28cdde06366ce79.
+
+The inspected opaque NBRC1273 preparation is sufficient to block an exact preparation-identity binding for this grouped case. The retained packet includes other named source seawater matrices, but no single composition or equivalence is inferred. All occurrences remain available; the generic category can guide follow-up without granting exact identity. Issue1479.
+
+Source/evidence locators: ["owner-0028.json: descriptor161c1549fa53f549b99957a50644bf4d309a1bd9bdab805caffcaa07776fa12f NBRC1273 note and current owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b2f395bcc3e5d1be.
+
+The complete Ignicoccus change names CO2 in the final H2/CO2 bottle headspace described by the Koschnitzki2017 methods. It remains distinct from the N2/CO2 purge and N2/H2 chamber stages. Identity support is for CO2 as a component and does not infer liquid quantity, pressure equivalence or growth.
+
+Source/evidence locators: ["owner-0064.json: complete change99e66 and archaea/ignicoccus_medium_for_dsm_18386 /variants/0/ingredient_changes/6", "https://doi.org/10.5283/epub.34741 page28 retained methods excerpt"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b3a540ca9bb6ec82.
+
+The sole complete descriptor identifies the 5-fluorinated uracil compound, consistent with CHEBI:46345 and the owner's fluoropyrimidinedione structure/CAS 51-21-8. No salt or preparation qualification is supplied. Its 100 g/L value is not validated or endorsed by this identity decision.
+
+Source/evidence locators: ["owner-0013.json: sole descriptor c15be1b5c0bf81757a3f51c3d31b30333b37e6421119be45eacf4570862b8b31 and TOGO_M2825 scope", "native row 27b89db2c15c5ea0b71bf3c0866d7d5cc9831289d2f2a9f9d91bb9a74438fa52"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b3fd3be6a836d88e.
+
+The complete descriptor explicitly identifies Ar/argon(0) and describes an argon gas stream during distribution of the medium. This agrees with the elemental argon owner. The gas-stream preparation context is preserved; no liquid dose, partial pressure or growth effect is inferred from the VARIABLE field.
+
+Source/evidence locators: ["owner-0025.json: descriptor6038a4f67f0b64f9d50448a7ac34e96c3708c646cfd643fd0dd42f7981b5209d, MediaDiveJ1289/TOGOM1385 preparation note and owner chemistry; native row97c38f93c17a6dd5b98cb1c82be8092f5ced4043d70298343471964e4ef88c27"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b43059bd4d533f65.
+
+Both complete descriptors retain 4-hydroxybenzoic acid; the exact MediaDive solution 2076 recipe[0] excerpt names compound 923 with that positional acid. CHEBI:30763 and the current owner's free-acid structure agree. Parent main-solution context is not mapped as this ingredient, and no dilution or concentration claim is approved.
+
+Source/evidence locators: ["owner-0012.json: both descriptors in case b43059bd4d53, cryptoanaerobacter and MediaDive2076 scopes", "MediaDive solution 2076 recipe[0] excerpt in descriptor 8fa298c3dccdef37928eb72209c8d45394a829417e063bbe9cc6c1320cb96bd1", "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-b5e2fc3e34357209.
+
+All six complete descriptors retain the six-water cobalt nitrate form, including explicit notes documenting the CCAP subscript restoration. The seven source routes and current hydrate owner were inspected. Support does not infer an anhydrous salt, approve historical curation methods wholesale or certify the reported amounts.
+
+Source/evidence locators: ["owner-0078.json: six full descriptors including CCAP MR_BB/MR_SP/MR_UCM notes, seven routes and current CHEBI:86214 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-bf14e85a596fe5f7.
+
+All five complete descriptors identify carrot as the input material. Peeled/cut notes and the explicit pre-decoction stage retain carrot identity rather than claiming the filtered extract is whole carrot. The current carrot owner is compatible at that material scope. All five recipe/composition routes were inspected; extraction yield, fixed composition, final-medium amount and biological effects remain outside this binding.
+
+Source/evidence locators: ["owner-0065.json: five complete descriptors, source5502/1765 preparation context, five source routes and current carrot owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c2a85cd5f94a73d7.
+
+All three complete descriptors preserve beef brain powder, and the exact MediaDive solution3810 ingredient excerpt plus TOGO M148/J157 context identify that supplied powder material. The local owner explicitly preserves powder specificity beyond its broader beef-brain ontology parent. Binding is to the local powder identity only; it does not assert equality to whole brain, a fixed composition, product grade, dose or biological effect.
+
+Source/evidence locators: ["owner-0036.json: three descriptors, three source scopes, source1660 exact excerpt and local powder-specific owner", "native own-registry row005953a737b961f7ee0b77469b3c596e544e2acdbf7336fa01fd1f8e29f6dcab"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c5e0653364f2b661.
+
+The complete descriptor explicitly identifies D-methionine/CHEBI:16867 with KEGG met-D notation, agreeing with the maintained D structure. The methionine-salt-medium route does not add a counter-ion to this ingredient descriptor. Dose, L/racemate identity and growth remain outside support.
+
+Source/evidence locators: ["owner-0099.json: sole complete descriptor, Schaechter source route and D-methionine owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c7c4da0c0b3dc79f.
+
+All five complete descriptors name acetoin without selecting an enantiomer, and the owner likewise represents stereochemically unspecified acetoin. The DSM strain-specific and NBRC/archived-recipe notes do not introduce a different supplied chemical form. Identity support excludes the different doses, carbon/energy roles and strain growth claims.
+
+Source/evidence locators: ["owner-0015.json: all five descriptors with DSM3246/3247, NBRC1016 and archived DSM327 notes and all source scopes", "owner unspecified-stereo structure and native row 322378640a3d27e8e0788af6418ec88a414d792af950d12937e1bdc8cfc921d5"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c84d38d267ad7dcb.
+
+The complete Scenedesmus ABC009 change identifies CO2 in the phototrophic BG11 aeration arm described in PMID34584038. The2%CO2 arm remains distinct from air. Support binds the molecular component without approving the0.5vvm flow, liquid dose, complete medium or growth outcome.
+
+Source/evidence locators: ["owner-0064.json: complete change and algae/bg11 /variants/2/ingredient_changes/1", "PMID:34584038 retained primary methods excerpt"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c878f30e5f397f8e.
+
+All three complete descriptors explicitly assert the six-water cobalt nitrate salt, matching CHEBI:86214 and the owner formula. All six source routes were read. Different stock/medium amount fields and mineral roles remain unapproved by this identity support.
+
+Source/evidence locators: ["owner-0078.json: three descriptors and six source routes ofc878f30e; current hydrate-specific owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-c8ce23344ae00a5f.
+
+Both complete Cystein descriptors retain stereochemically unspecified cysteine/CHEBI:15356, matching the owner's structure without an unstated L/D or hydrochloride narrowing. Both source routes were inspected. Support excludes dose, reducing activity and solution speciation.
+
+Source/evidence locators: ["owner-0092.json: both full descriptors, AM5/solution3531 routes and current non-stereospecific cysteine structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-cadbcb97562b7743.
+
+The complete NBRC1300 descriptor explicitly identifies cefpodoxime/CHEBI:3504 as the named stock solute, matching the current free-cefpodoxime structure rather than an unstated prodrug. The source route is nested stock composition, so support does not equate the entire stock with pure cefpodoxime or approve10mg/mL, solvent, final dilution or antimicrobial effect.
+
+Source/evidence locators: ["owner-0068.json: sole complete descriptor31e719f2, LB antibiotic-stock composition route and current cefpodoxime structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-cf3475364310c77b.
+
+All six descriptors preserve adenosine, CHEBI:16335 and CAS58-61-7, agreeing with the owner's adenine riboside structure. None denotes adenine alone or a phosphorylated nucleotide. The NLDM/exometabolite/soil-mixture source contexts and their dose differences remain separate from this identity support.
+
+Source/evidence locators: ["owner-0018.json: all six descriptors and fourteen source paths, current owner CAS/riboside structure", "native row cbb6f60ac51da172c1a508d93f29158d1112f2713f2bdcf7c4692a8396b8765f"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d0855f94860f1de9.
+
+All three complete descriptors preserve calcium malate, including exact MediaDive J62/solution3689 ingredient excerpts and provider1614. The current FOODON owner is the same generic calcium-malate material, with no unstated stereochemistry/hydrate imposed. All three glycerol-calcium-malate recipe/composition routes were inspected. Amounts, mineral function and downstream formulation are excluded.
+
+Source/evidence locators: ["owner-0060.json: all three descriptors, primary excerpts retained in source, three source scopes and current owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d13d06bd89f57b14.
+
+All four complete descriptors retain cadmium nitrate with four waters, agreeing with the current hydrate-specific structure/CAS10022-68-1. The P4 page excerpt explicitly names the tetrahydrate stock solute and the solution5814 excerpt agrees. All four stock/main source routes were inspected. This does not approve stock-to-final dilution arithmetic, trace-metal dose or growth, and does not collapse to anhydrous cadmium nitrate.
+
+Source/evidence locators: ["owner-0066.json: all four descriptors, retained MediaDive P4/5814 exact excerpts, four source routes and owner tetrahydrate chemistry"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d23fddc72c400308.
+
+All four complete descriptors explicitly assert1-butanol, matching the current butan-1-ol structure/CAS71-36-3 rather than another butanol isomer. The retained donor-table excerpts support amounts but are not independently treated as isomer evidence; identity support binds the full asserted source descriptor. All four freshwater/butanol-challenge routes were inspected. Doses and challenge outcomes remain outside scope.
+
+Source/evidence locators: ["owner-0051.json: all four descriptors, four source routes and owner primary-alcohol structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d37dfbf0abe3ecbc.
+
+Both complete descriptors identify the same 2-substituted sulfobenzoic acid as the native owner; the MediaDive compound 2116 and source scope signatures retain this positional isomer without a salt or hydrate assertion. Binding supports that named chemical concept only. The differing 50 percent-v/v and 50 g/L source quantities are not reconciled or approved by this identity decision, and no concentration-qualified preparation is equated with a pure substance.
+
+Source/evidence locators: ["owner-0003.json: both descriptors, MediaDive compound 2116, owner ontology label and source scope signatures", "canonical source_position 74 / row af4796ff8ea28e367c02d5ffc2a2ede87d0482855d89a25fa278728937b164f3"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d6beb0069466ad90.
+
+All24 complete descriptors retain crotonic acid/CHEBI:41131 or provider255 with exact acid-labelled source excerpts, consistent with the current E-acid owner. All37 routes were read, including crotonate-stock preparation: the ingredient is the named input solute, not an assertion that the final sodium-crotonate stock is free acid. Percentage fields, neutralization outcomes, amounts and growth remain outside identity support.
+
+Source/evidence locators: ["owner-0089.json: all24 descriptors and37 routes, exact MediaDive255 excerpts and current E-acid structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-d93455d8e1131d6e.
+
+The complete descriptor, A1 source route, full owner component recipe and primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity remains unresolved because of concentration-basis and thiamine-HCl versus thiamine discrepancies. Withhold under1514 without silently applying a dilution or treating the imported10g/L as a valid primary amount.
+
+Source/evidence locators: ["owner-0106.json: complete descriptor and current ten-component owner", "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512 DL vitamins table viewed2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1514"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-d97cd220d4c7a33a.
+
+The sole complete basal-salt-medium descriptor explicitly names biphenyl and agrees with the current CHEBI:17097 biphenyl owner. No derivative, supplied mixture or alternate ring connection is asserted. The1g/L dose and carbon-source function are not approved by this identity binding.
+
+Source/evidence locators: ["owner-0044.json: descriptor and basal_salt_medium_with_biphenyl source scope of cased97cd220"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ddb4d0bc41a8f9e4.
+
+The fully specified triazine substituents in both descriptors match the owner's atrazine structure and CHEBI:15930 identity; MediaDive compound 2120 carries the same structural name. Parentheses differ only in rendering of those explicit substituents. The source's g/L versus mg/L values and the owner's historical method-grade issue are not approved here; this decision preserves the chemical identity and does not revive an erroneous historical CAS identifier.
+
+Source/evidence locators: ["owner-0004.json: both complete descriptors, current owner InChI/ontology identity and source signatures", "canonical source_position 80 / row 41dde03ab5e1fe466dad51d2aeb20c153be5e36f2b4d121a799308dc36cb7bb1", "MIM issue 1386 explicitly preserves the reviewed atrazine identity while separately correcting grounding-method provenance"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-dedff48b8a0c5821.
+
+Both complete descriptors identify corn meal as the preparation input, and the DSM191 note explicitly distinguishes that input from the later filtered extract. The generic FOODON cornmeal owner agrees at the input-material scope. All six routes were inspected; support does not equate the filtrate with corn meal or approve extraction yield, final dose or medium performance.
+
+Source/evidence locators: ["owner-0082.json: two complete corn-meal descriptors, solution318 exact excerpt, six routes and current FOODON material"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-e333bc3dfe3d3d42.
+
+The complete DSM16632 REPLACE event explicitly names clarified rumen fluid as the new material and sludge fluid as the old target, with exact DSM119 evidence. The generic clarified-fluid owner preserves the preparation qualification. Support concerns the new named material only; it does not approve same-volume arithmetic, expand medium1310, or make the removed sludge a positive occurrence.
+
+Source/evidence locators: ["owner-0077.json: full d20e3aab change/66cf718c descriptor and archaeal methanobacterium variant10 source scope", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-e59b7d77dabe525d.
+
+All ten complete descriptors explicitly retain clarified rumen fluid, agreeing with the generic preparation-qualified MICRO owner. Exact provider2618/P2 excerpts support the named input; all ten source routes were inspected. Identity support does not approve300/500percent annotations, infer density or universal composition, or treat stock inputs as final-medium doses.
+
+Source/evidence locators: ["owner-0077.json: all ten descriptors, P2 and solutions277/446/453 exact excerpts, ten source routes and current owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-e6f49728f415eef2.
+
+All thirteen complete descriptors preserve the named brain-heart-infusion preparation, with MediaDive compound186 and exact provider ingredient excerpts where present. The candidate itself is the generic BHI preparation concept, so no raw-tissue substitution is made. All22 source routes remain separately retained; support does not equate distinct suppliers or formula batches, approve their doses, or infer a fixed composition.
+
+Source/evidence locators: ["owner-0049.json: all13 descriptors,22 source routes, MediaDive solution144/470 excerpts and current BHI owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-e8cef33db5eb1ee8.
+
+All eight complete descriptors preserve Co(NO3)2·6H2O, including the two descriptors without embedded ontology fields whose literal formula still specifies the hydrate. The current owner has the same cobalt(II) dinitrate six-water identity; all twelve source routes were inspected. Amount, role and stock-dilution claims are excluded.
+
+Source/evidence locators: ["owner-0078.json: eight full descriptors, twelve routes ofe8cef33d and current hydrate chemistry"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-e9f6f790b468582b.
+
+All three complete standalone-stock descriptors retain cobalt nitrate hexahydrate and source excerpts explicitly printing Co(NO3)2·6H2O, agreeing with the owner. Supplier references qualify the same hydrate and introduce no competing form. All three stock routes were inspected; stock amount and receiving-medium conversions are not approved.
+
+Source/evidence locators: ["owner-0078.json: three full descriptors, UTEX Bold/G9/minor-nutrient source excerpts and three stock routes"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ea0c03f694530f78.
+
+All six complete descriptors retain D-arabinose, with compatible CHEBI:17108/CAS10323-20-3 and explicit provider1355 D-arabinose naming. All six source routes were inspected. Support preserves D stereochemistry without selecting an unstated ring/anomer or approving concentration.
+
+Source/evidence locators: ["owner-0100.json: six descriptors, OMIZ-PAT/SGW/soil/solution3069 routes and current D-sugar owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-edf194d68c9d39b0.
+
+The case includes Fraction V albumin, but its candidate is generic bovine albumin. The unresolved relation is between the specified supplied fraction and the generic identity, not merely the existence of a supplier or uncertain quantity. The complete unchanged case is withheld with the actual member witness under issue1486; no form is erased or inferred.
+
+Source/evidence locators: ["owner-0047.json: complete six-descriptor scientific display and generic owner; precise blocking witness414f1ecb", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1486"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-edf8b8254e516059.
+
+All five complete descriptors name creatine/CHEBI:16919, with matching provider763 excerpts and no conflicting hydrate or salt qualification. The owner represents creatine's acyclic structure, distinct from creatinine. All six routes were read; amounts, dilution and growth-factor claims remain outside support.
+
+Source/evidence locators: ["owner-0085.json: five descriptors, solutions4240/1672 exact excerpts, six routes and current creatine structure/CAS57-00-1"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-eeaff3d249f6cfda.
+
+All three complete descriptors preserve Congo red/CHEBI:34653, and exact MediaDive1708 excerpts name the same dye. The current owner represents the disodium Congo-red material, with no competing source form. All three routes were inspected. Support does not approve0.025g/L or indicator performance.
+
+Source/evidence locators: ["owner-0080.json: three complete descriptors, J250/solution3934 exact excerpts, three routes and current dye structure/CAS573-58-0"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-ef1fb135697ab7fd.
+
+All four complete descriptors retain clarified rumen fluid, including a JCM266 preparation excerpt explicitly describing centrifuged supernatant. The current owner is the corresponding generic clarified material, not unprocessed rumen contents or a fixed recipe. All five source routes were inspected; KOMODO amount assertions, sterilization performance, density and final-medium dose remain outside support.
+
+Source/evidence locators: ["owner-0077.json: four complete descriptors and five routes; retained JCM266 and KOMODO161/212 source excerpts"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f0b290d112f66b8d.
+
+The sole descriptor's middle-dot formula explicitly denotes BaCl2 with two waters, agreeing with CHEBI:86153 and the current dihydrate owner. Rendering the hydrate separator differently does not change stoichiometry. This supports the hydrate-specific identity, not mineral function or the stated0.1g/L dose.
+
+Source/evidence locators: ["owner-0033.json: descriptor4165c1fc0be15560bfddb5219de14a1f771044bae3b19a3ad7b44e0b1ba7cc6c and TOGO M805 scope", "native row1b973d7e4819028bc45398fb8a205d7bcf6f638c9f51030720ff8cbf3e702e45"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f26fdcf7b3f89359.
+
+The complete2ASW Matsui2018 change retains CO2 as the high-CO2 aeration component, separately from ambient-air treatment. Identity support is gas-component specific and does not approve the entire2ASW formulation, a liquid carbon dose or biological response.
+
+Source/evidence locators: ["owner-0064.json: complete change and algae/2asw /variants/0/ingredient_changes/2", "https://doi.org/10.1104/pp.18.00453"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f378749c026b393f.
+
+All three complete descriptors name maize meal, the same generic ground-corn material as the current cornmeal owner. The JCM1054 preparation explicitly distinguishes maize input from its subsequent sardine-containing extract. All three routes were read; support does not merge sardine or extracted medium into the meal identity, or approve20g/L/dilution.
+
+Source/evidence locators: ["owner-0082.json: three maize-meal descriptors, solution5116/JCM1054 retained excerpts and three routes"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-f3f2ce2edf1a2496.
+
+The actually inspected solution884 descriptor retains a literal seven-water source label and an incompatible anhydrous identity field. This concrete witness quarantines the complete unchanged aggregate under1488. The decision does not claim every remaining aggregate descriptor or recipe context was manually read, and does not reinterpret percentage basis, molecular weight or hydration count.
+
+Source/evidence locators: ["owner-0056.json: complete descriptor6b824d26 and current local owner CLOSE_MATCH boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1488"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: concern. Targets: case-f5b8559d53af9d3b.
+
+The sole descriptor names an NBRC IMK artificial-seawater input without enough formulation information to establish exact preparation identity against the generic MICRO owner. The source label and amount remain intact; withholding does not assert absence or prove that this formulation differs from another. Issue1479.
+
+Source/evidence locators: ["owner-0028.json: complete descriptoracc4d209aba3ad543147d64447e67e7a6af146a87bb54757ce650b4f60add10b and current owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f5dab94a70b629e6.
+
+Both source descriptors and their exact MediaDive ingredient excerpts explicitly specify aluminium sulfate with eighteen waters. The owner preserves this octadecahydrate and matching CHEBI:74779/CAS7784-31-8, rather than anhydrous aluminium sulfate. Support is hydrate-specific and excludes the 0.014 g/L dose or any inferred dilution.
+
+Source/evidence locators: ["owner-0019.json: both complete descriptors, mediumJ1323/solution5484 source excerpts and owner eighteen-water formula", "native row 53749fd66a009ab5067e3f7f0f0028606ab402a17884c2a3f4fd2bea7efa8d5b"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f7d9a7ca8d706c4a.
+
+All72 complete descriptors and146 source scopes preserve the named carbon-dioxide component, compatible with CHEBI:16526 and the maintained molecular owner. TOGO gas labels and retained recipe excerpts identify the component without establishing the containing mixture's identity. Null or variable amounts remain unknown rather than zero, and gas percentages are not converted into liquid concentrations. Support excludes dose, pressure and physiological claims.
+
+Source/evidence locators: ["owner-0064.json: all72 descriptors, all146 scopes of f7d9a7ca and current CO2 owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-f92646ca40de10a3.
+
+Both complete descriptors explicitly name Co(NO3)2 x6H2O and CHEBI:86214, matching the current hexahydrate owner. Both stock/ingredient routes were inspected, including the JCM149 amount note. Hydrate identity support does not validate49.4g/L or24.8mg/L as interchangeable amounts or imply a working dose.
+
+Source/evidence locators: ["owner-0078.json: both descriptors, both routes off92646ca and current hydrate owner"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-fb7825971b329722.
+
+The complete MOPS-rich-medium descriptor names the 4-hydroxy free acid, with CHEBI:30763 and CAS 99-96-7 agreeing with the owner. Capitalization changes no positional or supplied-form information. Identity support excludes its 0.01 mM amount and any role or growth assertion.
+
+Source/evidence locators: ["owner-0012.json: descriptor de14a97740ab1d704ff81b21d4e36fe5be3bd90b136b0591f427a764458a9fb8, mops_rich_defined_media_nocarbon scope and owner CAS/structure", "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-fc601e133874bed7.
+
+All seven complete descriptors identify cytidine with compatible CHEBI:17562/CAS65-46-3, agreeing with the current riboside owner rather than cytosine or a phosphorylated nucleotide. All fifteen source routes were inspected. Identity support excludes amount, dilution and nutritional effects.
+
+Source/evidence locators: ["owner-0094.json: seven descriptors, fifteen TOGO/NLDM/SGW/soil routes and current cytidine structure"]
+
+### Exact source binding to the native canonical-eligible owner
+
+identity: supported. Targets: case-fe345dbc05b393c7.
+
+Both source descriptors preserve the L-proline backbone and 4-hydroxyl position of CHEBI:18240. The owner likewise leaves the hydroxyl-bearing stereocentre unspecified; no trans/cis or extra stereochemical narrowing is inferred. Identity binding excludes the two supplied millimolar amounts.
+
+Source/evidence locators: ["owner-0011.json: both complete descriptors and basal_synthetic_medium_vitamins/cdm_lp source scopes", "owner chemical_properties InChI t3?,4- and exact native row 0d71cc9ff66a9e765e2d66cd377afc7846d950a51457b0a076435b2437a1a9c8"]
+
+## Findings
+
+### withhold-022ccc2cc9a596c4: Source binding withheld: cholesterol lipid concentrate
+
+major / open / confirmed; issue key: culturemech-intake-binding-022ccc2cc9a596c4.
+
+Both complete descriptors, source routes and the pending-component-curation stock owner were inspected. Exact source preparation correspondence remains unresolved; numeric cross-prefix agreement and a narrow cholesterol mapping do not establish concentrate equivalence. Withhold the unchanged case under1498, without claiming different compositions or converting the concentrate into pure cholesterol. Amount fields remain retained and unapproved.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-049c670f2bb6779c: Source binding withheld: D-glucuronic acid
+
+major / open / confirmed; issue key: culturemech-intake-binding-049c670f2bb6779c.
+
+Both complete descriptors and both OMIZ-PAT/solution3067 routes were inspected. The explicit sodium-salt qualifier conflicts with exact free-acid identity; the owner's raw synonym does not resolve the counter-ion. Withhold the unchanged aggregate under1512 without inventing a replacement salt/hydrate identifier or approving concentration.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-0f739a012bbda9c0: Source binding withheld: Aminoacids
+
+major / open / confirmed; issue key: culturemech-intake-binding-0f739a012bbda9c0.
+
+The complete descriptor names MediaDive Aminoacids stock at 10 percent v/v but additionally grounds it to the amino-acid chemical class. The current owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition. Native own-registry support does not resolve this conflicting embedded descriptor identity. All three source composition occurrences remain retained and withheld under issue1475.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-18a6e6ba3c4a165f: Source binding withheld: Artificial seawater (see below)
+
+major / open / confirmed; issue key: culturemech-intake-binding-18a6e6ba3c4a165f.
+
+The unresolved preparation pointer prevents exact mixture identity support. A generic artificial-seawater category is not evidence that the source-specific formulation equals one maintained ingredient preparation. The entire case remains retained and withheld pending source formulation binding; no composition or volume conversion is invented. Issue1479.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-1c4bde9e3cd430ba: Source binding withheld: Beef
+
+major / open / confirmed; issue key: culturemech-intake-binding-1c4bde9e3cd430ba.
+
+Both complete descriptors explicitly specify a dehydrated beef infusion. The current candidate denotes beef meat rather than that prepared extraction product. Exact label agreement cannot erase the retained preparation note; all source occurrences remain withheld under issue1482, without inferring extraction yield or composition.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-1e00b1674fa1397a: Source binding withheld: Artificial Sea Salt
+
+major / open / confirmed; issue key: culturemech-intake-binding-1e00b1674fa1397a.
+
+The current owner is a composition-unknown local preparation sourced from MediaDive2146. Other source descriptors retain that accession, but the inspected blocking descriptor supplies only a generic mixture name and dose; exact preparation correspondence across the complete case is unproven. The whole unchanged case is withheld without claiming that the formulations necessarily differ or replacing the mixture with pure salts. Issue1479 retains the follow-up.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-25a05580d9b99ba9: Source binding withheld: Ascorbate
+
+major / open / confirmed; issue key: culturemech-intake-binding-25a05580d9b99ba9.
+
+All four complete descriptors explicitly retain an L-ascorbate cross-reference but the propagated term and candidate owner are generic ascorbate. The bare-anion protonation convention does not authorize removing an explicit stereochemical qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement remain intact; no narrower identity is automatically substituted. WITHHOLD pending source-specific resolution under issue1474.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-2d46189d88f9e0a4: Source binding withheld: Cr2(SO4)3 x n H2O
+
+major / open / confirmed; issue key: culturemech-intake-binding-2d46189d88f9e0a4.
+
+Both complete descriptors and three routes were inspected. Their variable-hydrate label and embedded anhydrous grounding remain unreconciled despite the matching local resolver result. Withhold the unchanged aggregate under1502 without assigning a water count, molecular weight or replacement chemical identity.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-2f256c77fff65edd: Source binding withheld: CO2
+
+major / open / confirmed; issue key: culturemech-intake-binding-2f256c77fff65edd.
+
+Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for this exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload and source route were read; its unresolved source claim cannot be converted into verified CO2 identity or presence merely because the label names CO2. No new identity, dose, or buffering mechanism is inferred.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-3c4294ebef0cd697: Source binding withheld: Bovine serum albumin
+
+major / open / confirmed; issue key: culturemech-intake-binding-3c4294ebef0cd697.
+
+All fourteen scientific descriptor payloads and sixteen source scopes were inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations with plain protein entries, while the candidate's native contract distinguishes those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves this unresolved form relation under issue1486. It does not imply that a quantity-only uncertainty disproves BSA solute identity, nor demote the separate unqualified case.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-47508a3adea64241: Source binding withheld: Carbon source solution
+
+major / open / confirmed; issue key: culturemech-intake-binding-47508a3adea64241.
+
+The complete sole descriptor and current local stock owner were inspected. The owner explicitly awaits component-level curation, and numeric accession agreement across two prefixes is not independent supplied-preparation evidence. Withhold the unchanged case under1490 without claiming the stocks are demonstrably different, inventing components, or substituting a carbon role/element identity.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-5bcb2af0997a7423: Source binding withheld: Beef heart
+
+major / open / confirmed; issue key: culturemech-intake-binding-5bcb2af0997a7423.
+
+The complete case includes an explicit heart infusion constituent, but its candidate is whole beef heart and its embedded term denotes heart anatomy. Preparing an infusion changes the supplied material scope; matching a tissue label cannot prove identity. All158 occurrence coordinates remain retained and withheld under issue1482; this does not claim all158 individual recipe contexts were manually read.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-623dde3c257babbb: Source binding withheld: Copper
+
+major / open / confirmed; issue key: culturemech-intake-binding-623dde3c257babbb.
+
+Both complete TAP descriptors and both routes were inspected. Their copper(2+) grounding is not reconciled by the generic-label/local-ID candidate. Preserve both occurrences but withhold this aggregate under1501 pending source-specific species resolution; do not assert which copper ion or salt was physically supplied.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-676e27f90f2ca371: Source binding withheld: CaCl2 . 7H2O
+
+major / open / confirmed; issue key: culturemech-intake-binding-676e27f90f2ca371.
+
+The complete descriptor's hydration label and embedded identity remain inconsistent. The maintained local seven-water source identity does not resolve that anhydrous grounding, so this entire unchanged case is withheld under1488 without selecting another hydrate or inferring a verified chemical substance from the literal count.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-7816d9ac4687571c: Source binding withheld: 0.5 M Nitrilotriacetic acid, disodium salt
+
+major / open / confirmed; issue key: culturemech-intake-binding-7816d9ac4687571c.
+
+The final descriptors name a 0.5 M disodium NTA preparation but both embed CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term. The candidate MIM registry stock explicitly separates that disodium preparation from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove this source-form conflict. Both occurrences are retained; no stock-to-solute replacement or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up: CultureMech #792.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-7ced97de79fe3814: Source binding withheld: D-Mannose
+
+major / open / confirmed; issue key: culturemech-intake-binding-7ced97de79fe3814.
+
+All eleven complete descriptors and twelve routes were read. One member contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate is withheld under1513 while every occurrence remains available. This is not a claim that the other eleven routes have the same conflict; no concentration or D/L resolution is guessed.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-8ee01e4e5b7445f5: Source binding withheld: D-Glucose 6-phosphate
+
+major / open / confirmed; issue key: culturemech-intake-binding-8ee01e4e5b7445f5.
+
+The complete base descriptor and corresponding source correction were read. Exact source binding to the D-specific owner would certify an unsupported stereochemical narrowing for the actual reagent. Withhold this unchanged base case under1511, preserving the separate historical old-target context and every input row.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-b28cdde06366ce79: Source binding withheld: Artificial seawater
+
+major / open / confirmed; issue key: culturemech-intake-binding-b28cdde06366ce79.
+
+The inspected opaque NBRC1273 preparation is sufficient to block an exact preparation-identity binding for this grouped case. The retained packet includes other named source seawater matrices, but no single composition or equivalence is inferred. All occurrences remain available; the generic category can guide follow-up without granting exact identity. Issue1479.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-d93455d8e1131d6e: Source binding withheld: DL vitamins (see below)
+
+major / open / confirmed; issue key: culturemech-intake-binding-d93455d8e1131d6e.
+
+The complete descriptor, A1 source route, full owner component recipe and primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity remains unresolved because of concentration-basis and thiamine-HCl versus thiamine discrepancies. Withhold under1514 without silently applying a dilution or treating the imported10g/L as a valid primary amount.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-edf194d68c9d39b0: Source binding withheld: Bovine albumin
+
+major / open / confirmed; issue key: culturemech-intake-binding-edf194d68c9d39b0.
+
+The case includes Fraction V albumin, but its candidate is generic bovine albumin. The unresolved relation is between the specified supplied fraction and the generic identity, not merely the existence of a supplier or uncertain quantity. The complete unchanged case is withheld with the actual member witness under issue1486; no form is erased or inferred.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-f3f2ce2edf1a2496: Source binding withheld: CaCl2 x 7 H2O
+
+major / open / confirmed; issue key: culturemech-intake-binding-f3f2ce2edf1a2496.
+
+The actually inspected solution884 descriptor retains a literal seven-water source label and an incompatible anhydrous identity field. This concrete witness quarantines the complete unchanged aggregate under1488. The decision does not claim every remaining aggregate descriptor or recipe context was manually read, and does not reinterpret percentage basis, molecular weight or hydration count.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+### withhold-f5b8559d53af9d3b: Source binding withheld: Artificial Seawater
+
+major / open / confirmed; issue key: culturemech-intake-binding-f5b8559d53af9d3b.
+
+The sole descriptor names an NBRC IMK artificial-seawater input without enough formulation information to establish exact preparation identity against the generic MICRO owner. The source label and amount remain intact; withholding does not assert absence or prove that this formulation differs from another. Issue1479.
+
+Disposition: The complete unchanged case is quarantined; inspected member hashes and actual blocking witnesses remain in the durable decision JSON.
+
+## Recommended Actions And Acceptance Checks
+
+### reconcile-withhold-022ccc2cc9a596c4
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-049c670f2bb6779c
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-0f739a012bbda9c0
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-18a6e6ba3c4a165f
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-1c4bde9e3cd430ba
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-1e00b1674fa1397a
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-25a05580d9b99ba9
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-2d46189d88f9e0a4
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-2f256c77fff65edd
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-3c4294ebef0cd697
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-47508a3adea64241
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-5bcb2af0997a7423
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-623dde3c257babbb
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-676e27f90f2ca371
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-7816d9ac4687571c
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-7ced97de79fe3814
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-8ee01e4e5b7445f5
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-b28cdde06366ce79
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-d93455d8e1131d6e
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-edf194d68c9d39b0
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-f3f2ce2edf1a2496
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+### reconcile-withhold-f5b8559d53af9d3b
+
+Reconcile the exact source-to-owner identity discrepancy before replacing this WITHHOLD disposition; preserve the frozen intake.
+
+- Inspect the exact blocking witness and its primary source; do not infer salt, hydrate, stereochemistry or preparation equivalence from label matching.
+- Any corrected source/owner must receive a new payload-bound review and regenerated native supported/withheld products; preserve this observation unchanged.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| evidence-01f1352e7d21de82 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=01f1352e7d21de826b5dfef5d1ccf50ad9117bb05b8314523922bb2ea439d92c]; full payload SHA256 e89acf2fc206490ca754d349b5b01a5591bd376b2d87950e3543d14f95e129d3 | supports | The complete descriptor explicitly identifies carbon monoxide/CHEBI:17245 and retains a gas property. It agrees with the current CO molecular owner, not carbon dioxide or a gas-mixture identity. Both modified-P7/TOGO M3153 source scopes were inspected. Variable gas amount, pressure, composition of any carrier mixture and dissolved concentration remain unapproved. |
+| evidence-022ccc2cc9a596c4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=022ccc2cc9a596c43a83963884d20fcd99bf8e916980e2185005f396a631d5ff]; full payload SHA256 f53cfc8e421a4e3a36c04111b156b435998b9ca1edeb6e82aeed0ce7eb1cee6b | partial | Both complete descriptors, source routes and the pending-component-curation stock owner were inspected. Exact source preparation correspondence remains unresolved; numeric cross-prefix agreement and a narrow cholesterol mapping do not establish concentrate equivalence. Withhold the unchanged case under1498, without claiming different compositions or converting the concentrate into pure cholesterol. Amount fields remain retained and unapproved. |
+| evidence-02c1797bfd5b517c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=02c1797bfd5b517cfe0145a5d38039cb3b6b135f22fe8d2c7ff63eaa3afb4f72]; full payload SHA256 73eeef262d1841ee553634a3d186896393008400a1bf563195a72aaace5f4cca | supports | The complete descriptor/change identifies CO2 as the gas component in PCC11802 multi-cultivator aeration, with the retained PMID31932622 excerpt explicitly stating1%CO2 bubbling. This supports component identity only in that stage; it does not transfer the condition to every shaker culture or assert a dissolved-carbon dose. |
+| evidence-049c670f2bb6779c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=049c670f2bb6779cc2d20ecb6d16f0c721dbfd6d27b0d8b4afa64b1d7e31f845]; full payload SHA256 128f01c55be15e15739f0b392e445293f587a276d28d1a5bc9bf4c53006812f4 | partial | Both complete descriptors and both OMIZ-PAT/solution3067 routes were inspected. The explicit sodium-salt qualifier conflicts with exact free-acid identity; the owner's raw synonym does not resolve the counter-ion. Withhold the unchanged aggregate under1512 without inventing a replacement salt/hydrate identifier or approving concentration. |
+| evidence-04dffe7b7de2b15c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=04dffe7b7de2b15c3242c8bc0deaec199656f9e20f8ca109f90cca7782fe6f6b]; full payload SHA256 beda45479c1d9b230ae79e9972dc1c9ec8586b651c0ea9a5a9c316ac03a0d385 | supports | Both descriptors name the R-lactate species and retain the D-lactate cross-reference. The current owner is the same R-lactate anion, with explicit stereochemical structure; no counterion or supplied salt identity is asserted in either descriptor. Binding is limited to that ionic concept. The two reported millimolar values and any particular purchasable lactate salt remain separate, unapproved claims. |
+| evidence-06757b9134c61a83 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=06757b9134c61a8340c622ee258ab060ee2dbd6e53feb588f347f15805766318]; full payload SHA256 8d550c334252c71bf6eae50f7790da8135c35ddc64822e1a063966034f07240b | supports | Both complete descriptors preserve generic cell lysate from the same CultureBotHT filtered-groundwater series, matching the owner's generic BTO cell-lysate material concept. No species-specific lysate composition or particular lysis protocol is asserted by the binding. Both dilution-series source routes were inspected; the1/250 and1/2500 quantities and carbon-source function remain separate from identity support. |
+| evidence-075dcca17ab6ac07 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=075dcca17ab6ac072038e2df152932ba3f7372a1d8c2400b8733c918f13724e2]; full payload SHA256 8ae2dbfa1db400f802a11d71354e0db5bd3ed6ff9c235cdcbb6a5f5d49a1b0cf | supports | All eight complete descriptors retain cytosine/CHEBI:16040/CAS71-30-7, matching the current free-base identity. All nineteen source routes were read. This does not substitute cytidine, approve dose or infer growth. |
+| evidence-0787833dbd869a3e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=0787833dbd869a3eb8c0cb96de1957e180c719cf3da585db0e3f0f8eb3e23251]; full payload SHA256 a526529f18ffd156e641846f2cf2c3ad51017ad86685f87093683f51365d8788 | supports | All20 complete descriptors explicitly name cupric chloride/CHEBI:49553, agreeing with the nominal copper(II) chloride owner without a conflicting hydrate qualification. All59 routes were read. The MediaDB330/331 notes explicitly limit amount evidence to database assertions; this binding does not promote a source lead into verified article provenance or approve molarity. |
+| evidence-083bbae451c96d9c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=083bbae451c96d9ca221b0d31d2b9146c9b38ef2562545ad32046a440bc1f323]; full payload SHA256 93e2d7363a92c1b1dac6311f3285961ac41381d5e2e7c0173e92dafe9ab9cfcc | supports | All ten complete source descriptors explicitly preserve beta-D-glucose and CHEBI:15903, agreeing with the current anomer-specific owner. All sixteen source ingredient routes were inspected. This supports the asserted beta-D molecular identity only, not a claim that aqueous glucose remains exclusively that anomer, nor approval of any listed amount. |
+| evidence-0b724e2a19ae3508 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=0b724e2a19ae3508d8c4031a9eca5e348da720eec44e1456550157c3ad07ef4b]; full payload SHA256 c2553a6bb9797e605c97e4861db13d3e5562a96b41fa7d24de6c68277009107e | supports | Both complete descriptors name asialofetuin, one retaining MediaDive compound2150, consistent with the owner's named desialylated-fetuin material. No contrary intact-fetuin, species, product grade or preparation identity is asserted. Support remains at that material scope and does not reconcile the 1 versus100 g/L quantities or assert a unique glycoform composition. |
+| evidence-0f421b3552e374fc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=0f421b3552e374fc40033a2637f73adfba0ac58a8caaa041fca721588677e40e]; full payload SHA256 cc12aeef8741be28a155160a08a2a4b717ba1da7724ef1220d123ae155441a55 | supports | The sole complete descriptor names cellulose powder, matching the owner's powder-qualified FOODON material. The TOGO cellulose-agar ingredient route was inspected. Support preserves the powder form rather than asserting a particular cellulose polymer grade, source, purity, dose or carbon-utilization result. |
+| evidence-0f739a012bbda9c0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=0f739a012bbda9c0a25afe3ae1423f05ba9a5c14c91c08846590e5b956a01131]; full payload SHA256 cb345e8bdbf7285f115854e6ac45243d268fa3a9d20f00b6ce9c98af838c1f45 | partial | The complete descriptor names MediaDive Aminoacids stock at 10 percent v/v but additionally grounds it to the amino-acid chemical class. The current owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition. Native own-registry support does not resolve this conflicting embedded descriptor identity. All three source composition occurrences remain retained and withheld under issue1475. |
+| evidence-0fa3c3f2c848ca11 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=0fa3c3f2c848ca114741ab0756a15c1f5a634b6bd214964134a2084c0b9f8da3]; full payload SHA256 41dac233e9ba9f967eb36a2922a23d1a9e0686a9229181109fd9f002d36bfb2c | supports | Both complete descriptors and retained donor-table snippets name benzyl alcohol, consistent with CHEBI:17987 and the owner's hydroxymethyl-benzene structure. This is distinct from phenol or a benzyl ether. Binding excludes the dose, Fe(III)/cobalt culture context and growth inference. |
+| evidence-14d997a357ffbe63 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=14d997a357ffbe636b6f9770796ebbde4da7a5eec048f116d27fe428f6bf81c6]; full payload SHA256 9b30fc0b7c3ba3b980eeacf40db9dd5ebb3f1667cdaf3f1621e7ec6574dd50de | supports | All six complete TOGO descriptors explicitly specify cobalt dinitrate with six waters and CHEBI:86214, agreeing with the owner formula/CAS10026-22-9. All six source routes were read. The hydrate-specific identity does not approve their differing trace/stock doses or mineral function. |
+| evidence-165a5eee355d3bf5 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=165a5eee355d3bf5ae71fdf818d089238c45d79dd51ff01140dad4a203f2be42]; full payload SHA256 2f9306c1db0dd2353a7864e94f6f586bf176cc78f321839311b0fe2735dd2b57 | supports | The complete descriptor explicitly names cefoxitin and CHEBI:209807, agreeing with the owner's cephamycin structure. The C.difficile-supplemented BHI source scope preserves the separate named ingredient; no sodium salt, formulation mixture or antimicrobial efficacy is inferred. Variable dose remains unapproved. |
+| evidence-168e84a5fc2f7fe4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=168e84a5fc2f7fe412ad4275bf796e74e2cd64b5416eada44425108e2ec57817]; full payload SHA256 8412f9d37b4d22968d19bfc0cc7b32e3761a0812cb71c415c5f033bcb92fb919 | supports | All four descriptors consistently name 4-guanidinobutyric acid and retain CHEBI:15728, CAS 463-00-3 and MW 145.16, agreeing with the owner's specific free-acid structure. Carbon/exometabolite-mixture names identify the containing source formulations, not a different chemical entity. Quantities and mixture-wide composition are not approved by this binding. |
+| evidence-18a6e6ba3c4a165f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=18a6e6ba3c4a165f2879eda193e6b5766d43c0b731c1dcd86d4f0ab0ec6831d0]; full payload SHA256 736711afd57e61c09b89afee131f6495568eb7177ef4af4a0351267d88798185 | partial | The unresolved preparation pointer prevents exact mixture identity support. A generic artificial-seawater category is not evidence that the source-specific formulation equals one maintained ingredient preparation. The entire case remains retained and withheld pending source formulation binding; no composition or volume conversion is invented. Issue1479. |
+| evidence-1aed15690dd84c0c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=1aed15690dd84c0cfdf02461910d9f02a5e7016dc0473f4413c123576ab7fda3]; full payload SHA256 23095bc23f0cd44ee5a540eac09cc07082ae8acd530abada1a1e3f6165e31096 | supports | All37 complete descriptors explicitly retain calcium chloride with six waters, compatible hydrate-specific CHEBI:91243 and provider173 excerpts. The current owner has six-water structure and corrected hydrate CAS7774-34-7. All62 source ingredient/composition routes were inspected. Identity support preserves six waters and does not approve the different stock/medium amounts or receiving-medium dilution. |
+| evidence-1c4bde9e3cd430ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=1c4bde9e3cd430ba956ceb66084e5e30817a706b1d02cb1b4b14c793c3b0f878]; full payload SHA256 7cde551c6e1181f880d1c4df810d7efe86b802eb1877275ce387be5def3789b4 | partial | Both complete descriptors explicitly specify a dehydrated beef infusion. The current candidate denotes beef meat rather than that prepared extraction product. Exact label agreement cannot erase the retained preparation note; all source occurrences remain withheld under issue1482, without inferring extraction yield or composition. |
+| evidence-1d61f5a2491cea4d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=1d61f5a2491cea4d35175fa858992e867ffe2d00684062ee49f747f9991e984f]; full payload SHA256 0e0ed8e485c6e3811aa9f89eecb9e6474e6614c2635dd267a3106142f33672c0 | supports | All three complete descriptors explicitly retain chromium trinitrate with seven waters, including the exact provider1574 excerpt, matching the current heptahydrate structure. All three main/stock routes were read. Support does not infer another hydrate, validate dose conversion or approve trace-element effects. |
+| evidence-1dc3c1fb63229c28 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=1dc3c1fb63229c28c0e058ce01eeadc3b578e3b03b98ae3a5076321b5cde6088]; full payload SHA256 90d851314092246e461953c7f9a55472c7d4a173b2bd33a377bebed2560a674d | supports | All44 complete scientific descriptors and713 source scopes were inspected. They retain carbon dioxide/CHEBI:16526 as a gas component, agreeing with the owner's CO2 structure. Headspace, dispensing, preparation and autoclave contexts remain distinct; the binding does not equate a carrier mixture or aqueous bicarbonate with CO2, infer dissolved dose, or approve growth or gas-pressure claims. |
+| evidence-1e00b1674fa1397a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=1e00b1674fa1397abfd9efff9e32085b825eb57ae353cbbaeb0dbab5c8959c1a]; full payload SHA256 84ae3b51ca71183bd00fad62ecb9788c68c0020c7b6ea3b62d85552335d235c2 | partial | The current owner is a composition-unknown local preparation sourced from MediaDive2146. Other source descriptors retain that accession, but the inspected blocking descriptor supplies only a generic mixture name and dose; exact preparation correspondence across the complete case is unproven. The whole unchanged case is withheld without claiming that the formulations necessarily differ or replacing the mixture with pure salts. Issue1479 retains the follow-up. |
+| evidence-201c3570562f0585 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=201c3570562f05850889855ab1396592ccf1cad039532819989719c7788d4c8a]; full payload SHA256 e0376a3d3a424d5d74ac3a54cf4fc93ac6712212aaf1b71350f7b4dd0dcd99f2 | supports | Both complete descriptors identify cyanuric acid, with compatible CHEBI:38028/provider2118 grounding and no salt or preparation qualifier. The current owner preserves that acid concept; both source routes were read. Support excludes0.645g/L and nitrogen-utilization effects. |
+| evidence-222667d612daca5b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=222667d612daca5b56df57dff60004d9d3504579399a81a9fbccf67b297146f6]; full payload SHA256 f6148117fdfb680507d15292d6cb00c851fc14c54650137fc17a8baa34753506 | supports | The complete source descriptor retains D-aspartate/CHEBI:29994 and KEGG asp-D, agreeing with the maintained D-aspartate dianion under the native bare-anion naming contract. The source route was inspected. This does not infer an unspecified counter-ion, approve solution protonation at a given pH, or certify dose. |
+| evidence-222fcfc4aefb5798 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=222fcfc4aefb5798cbeea94ff861611d7ca4db9a7ee1aec23972951aa1880f4c]; full payload SHA256 8e59482b57b8ee9227279aa3cf5213c8b0f17fc6c748a614bcfa5990e765c9dc | supports | All three complete descriptors retain crotonic acid and CHEBI:41131, agreeing with the owner's trans-but-2-enoic-acid structure. All five TOGO routes were inspected. Support does not convert the acid to crotonate or approve amount, stereochemical purity or carbon-utilization claims. |
+| evidence-25449533c1a24f16 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=25449533c1a24f16dd6cd409cd2591d30f75c8ced176d8cc9d4d8f434e76ae76]; full payload SHA256 8ae3f08541ab5368bf79ed752fcb0efd5b51d562660b95f42bdd56ceb36781ec | supports | The complete PCC11801 change preserves CO2 as the component of ambient-air bubbling in the multi-cultivator source experiment. The retained PMID30413737 excerpt provides the0.04%gas context. Support binds the named molecular component without approving dose, extrapolating to other culture modes or converting gas fraction to liquid concentration. |
+| evidence-25a05580d9b99ba9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=25a05580d9b99ba93a0355b4426363dfe5de3815cca792c9dcbd6f7f96b0f359]; full payload SHA256 e2796c36afa8c909f3d77d1617d5b4caab199eebd16f0841727f0f1e97d10f06 | partial | All four complete descriptors explicitly retain an L-ascorbate cross-reference but the propagated term and candidate owner are generic ascorbate. The bare-anion protonation convention does not authorize removing an explicit stereochemical qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement remain intact; no narrower identity is automatically substituted. WITHHOLD pending source-specific resolution under issue1474. |
+| evidence-270ec1303f56e35f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=270ec1303f56e35feebc388807a5fe175f196b7523e9af1974d9b2f23a67cdd1]; full payload SHA256 d207ef6f5cda7d862cc040622cfe0b39028d644c892be7b776ab44a389b74f29 | supports | The sole complete descriptor explicitly names D-cycloserine/CHEBI:40009, agreeing with the current 4R cycloserine owner. The BHI supplement scope was read. VARIABLE amount, antimicrobial efficacy and actual use are not approved by this identity binding. |
+| evidence-2770b25757b52022 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2770b25757b5202210cc19a34b492d9c7a98449b6451e8439dc9dfed19c839de]; full payload SHA256 e8a8bcbdc5c3ff9bf0dd39db48ace107ec6af9b4dfd4d86ba6c1ca72a3cdb1b5 | supports | All eight complete descriptors explicitly preserve defibrinated horse blood, and collection/preparation notes retain the same species and defibrination qualification. All eight source routes were read. Broad UBERON blood annotations do not contradict those explicit retained form/species fields; the candidate itself preserves defibrinated horse blood, rather than collapsing it to generic blood or serum. Support excludes sterility certification, lot composition, dose and performance. |
+| evidence-29c514535553751c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=29c514535553751cf29579564b128eb3fc6070e17996bb48adca085c578f4eb2]; full payload SHA256 62aadb92e0b1380d1eaebcab33bbc97db6fbc8c824da1f9570e1f704bd007fb0 | supports | Both complete descriptors explicitly identify (-)-quinic acid, matching the owner's optical form and CHEBI:17521 identity. The MediaDive solution-5605 excerpt names this acid as an input; the containing iron-quinate solution does not turn this ingredient into an asserted iron complex. The six ingredient/composition coordinates retain their separate recipes. This supports only the named acid binding, not its concentration, stock dilution or a growth claim. |
+| evidence-2c51ed72121e9a77 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2c51ed72121e9a777ed7b58f74c38f676f8e632e8317bd4eff7b77fdf1a2aa51]; full payload SHA256 b7dd12e96fe0289dc817d2e920b502b427a9a7c5245e60bef960a46fcd65ece6 | supports | The complete descriptor explicitly names brain-heart-infusion agar, agreeing with the owner's same named agar preparation concept MICRO:0000566. The source recipe's separate calf-blood/antibiotic supplementation is not folded into this ingredient identity. The1g/L amount and a specific manufacturer's formulation remain outside this binding. |
+| evidence-2d46189d88f9e0a4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2d46189d88f9e0a490c98f7ba1599e647082c8aba382efd090905011f94afdd9]; full payload SHA256 38721a4c099e88d4c5448b2e6fd751ae64f2486d176ebf535c84b9bf7be02105 | partial | Both complete descriptors and three routes were inspected. Their variable-hydrate label and embedded anhydrous grounding remain unreconciled despite the matching local resolver result. Withhold the unchanged aggregate under1502 without assigning a water count, molecular weight or replacement chemical identity. |
+| evidence-2d497087da7cc978 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2d497087da7cc978990073253b4d4959a3e3ef9a2c4dd42f7d9962e251655db4]; full payload SHA256 02adf9e1295068a83d0ee967bbaf249e09ad09f6b1c37f555fcd2ec0f68fc451 | supports | The sole complete source descriptor states unqualified bovine serum albumin with CAS9048-46-8, agreeing with the maintained generic BSA protein-family owner NCIT:C85253. The specialized7h9 source scope introduces no supplied-fraction or stock-preparation qualification in this case. Support excludes concentration and does not extend to the separately grouped qualified stock/Fraction V aggregate. |
+| evidence-2d6e55a4ac3ee1bb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2d6e55a4ac3ee1bb2615de839a5df588dfccca1df1629940a59491d038e1d50f]; full payload SHA256 8fc2b44bc20285386094b068371ff283d27873ed56fbc62c5ef10d6bd6f2cefd | supports | Both complete TAP descriptors explicitly use the same generic borate concept CHEBI:22908 as the maintained owner. Support stays at that stated concept level and does not select a counter-ion, hydrate, particular polyborate species or actual solution speciation. The0.184mM amount remains outside this identity decision. |
+| evidence-2e073990fbdc07a6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2e073990fbdc07a652d6299376c82ae02e548aa3c53af7949d9ac84ad8f164f7]; full payload SHA256 35d3c89cbe94380c6863b5b4fa048656244954a27602c32595cfde0587cc656a | supports | The sole complete descriptor names generic blood without an animal-species or processing qualifier, matching the generic blood material owner UBERON:0000178. Its TOGO M2581 source scope is retained. Support does not imply a particular species, defibrination or other treatment, nor acceptance of the5percentw/v amount. |
+| evidence-2f0de93daca3000c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2f0de93daca3000c6322d2c75d9f871705cbff401a74fbcd63d053de3a91d975]; full payload SHA256 f656474905231051ecec954dc82f18719c5d31a1d708b1bed8171e8ad65956da | supports | All four complete descriptors consistently identify charcoal/CHEBI:91090 or provider745, agreeing with the current charcoal material owner. All five ingredient/composition routes were inspected. The decision does not silently qualify this material as activated charcoal, elemental carbon or a particular adsorbent grade, and does not approve concentration or activity. |
+| evidence-2f256c77fff65edd | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2f256c77fff65edd752670755260693c176a9b27c26513c12eaa6059be9228c2]; full payload SHA256 93a3e03406a179fcb75efb12e1be49340ec2dd58331252aecf4c1341e148765b | partial | Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for this exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload and source route were read; its unresolved source claim cannot be converted into verified CO2 identity or presence merely because the label names CO2. No new identity, dose, or buffering mechanism is inferred. |
+| evidence-2f8a21a26931b695 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2f8a21a26931b6958405e108f1f4fb8799243891131e58c21d2755080a09bc25]; full payload SHA256 483939eaa353cd936ed6d1e826f369451750b1cec02e181ba158d987eccabec2 | supports | The complete NBRC225 descriptor names calcium lactate without a stereochemical, hydrate or supplied-preparation qualifier. The current FOODON owner preserves the same generic salt-material concept and does not narrow it to a particular lactate enantiomer or hydrate. The TOGO M1453 source route was inspected;10g/L is not approved by this identity binding. |
+| evidence-2fb97b7900558e75 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=2fb97b7900558e75c9ddca631ab02fd15fd2921d3c8a970e7afde4aa5d3e348a]; full payload SHA256 1a4e5bc557b041cff9bddc1d0567a95af5f3857ea396980adfbe7817d64db975 | supports | The complete AMS1 serine-source change specifies CO2 sparging after autoclaving and before subsequent air sparging. The Carini2013 methods excerpt names that gas, compatible with the owner. Support preserves this ordered preparation stage and does not equate CO2 with the final buffering mixture or approve five-hour duration, pH or dissolved dose. |
+| evidence-30edcb5540bf3b17 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=30edcb5540bf3b170ce0f84cfd7105026fac719035bb9ebd93a766b18132741c]; full payload SHA256 a8ec4100dd628ac3c697d69aa4810c21314b7d7c80b0f50caa52075a80bccb04 | supports | All three complete descriptors explicitly assert NH4+ and CHEBI:28938, matching the charged ammonium owner. MediaDB TAP and Vogel source labels/notes preserve the ionic concept rather than selecting an unstated ammonium salt. The unusual reported amount in Vogel medium, all other doses and actual solution speciation remain outside this identity decision. |
+| evidence-30eeaebe767b3637 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=30eeaebe767b36370b20f6de25f4abf8eb823f982e391f1611c432da23c01911]; full payload SHA256 1d94438b88fe34dc13e2a56b95b50ca9177032cfe15831625ab8350b43bb3329 | supports | All four complete descriptors explicitly denote CaCl2 with six waters using a middle-dot separator, agreeing with the current hexahydrate owner. All five source scopes were inspected. Orthographic hydrate notation does not alter stoichiometry; amounts and actual solution hydration/speciation are excluded. |
+| evidence-339698f1b792b730 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=339698f1b792b730862fc5ffe9d801872a983bad3ca85909572a0fb2b02908f8]; full payload SHA256 8db09a4e37f5785a9cb4c3b4656e79717f203d94ed045b67400f2331883b208e | supports | Both complete descriptors name butyl vinyl ether, and the MediaDive compound391-bearing descriptor identifies the same source material retained by the current MeSH owner. None asserts an alternate butyl isomer or supplied mixture. All four Methanothrix/Methanosaeta/solution routes remain separate. Support is chemical identity only, not the5g/L dose or a biological effect. |
+| evidence-3c17c0df33f20b47 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=3c17c0df33f20b47f5d4c9e043a10d7d203fe12e5a3771c299e33d42bff0711e]; full payload SHA256 ac8795a86136bf509985e86d185b2ce55ef3c30d6bf3c735d4b3b4134715320a | supports | Both complete descriptors identify 5-methyluridine/ribothymidine with CAS 1463-10-1, agreeing with the owner's ribose-containing nucleoside and CHEBI:45996. This does not collapse it to deoxythymidine. All ten NLDM source scopes remain separately retained; pH, omitted nutrients and micromolar amount are outside this identity approval. |
+| evidence-3c4294ebef0cd697 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=3c4294ebef0cd6976d7cd08afa1ae9db17363a7ea59f6dfca756d996f31fb4a0]; full payload SHA256 3d36ff64af1c4778f1afe921372a474a394b063bec5d752c61c378c7b96c8ec6 | partial | All fourteen scientific descriptor payloads and sixteen source scopes were inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations with plain protein entries, while the candidate's native contract distinguishes those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves this unresolved form relation under issue1486. It does not imply that a quantity-only uncertainty disproves BSA solute identity, nor demote the separate unqualified case. |
+| evidence-3c50fc3ba26ff406 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=3c50fc3ba26ff406e62659f04d27e91dc0ba33d8db155e48c0a30cd04749ca7f]; full payload SHA256 972253d9277e4af9273e49f9d5cee63ac0e136ee07bc9b4441e067e8732ddd0d | supports | Both complete descriptors explicitly preserve D-alanine/CHEBI:15570 and compatible KEGG ala-D notation, agreeing with the owner's D-specific structure. Both CDM-LP/TOGO M1556 routes were inspected. No L/racemate inference or approval of the differing dose fields is made. |
+| evidence-3c73f9321f28a35a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=3c73f9321f28a35a9892ab5a8e66ba1ba04705476fd4106136bfe6608254dd74]; full payload SHA256 13acc5f82b08756770003c5da70e5be4ba7c222b618326d9c351b1cb7fe8d67e | supports | The complete #Ar descriptor retains CHEBI:49474 argon(0), and the owner's exact chemical scope is neutral elemental argon with this raw source label retained. The hash-prefixed label is not interpreted as another species. Identity support does not approve the questionable percent-w/v amount or imply a dissolved-gas concentration. |
+| evidence-3fa1d1b9f99efb4a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=3fa1d1b9f99efb4ab17e7fe859d08f3ed3e50cb87ed1a6eaf35a96d9d23eceaa]; full payload SHA256 3b3461d175a399a127809ec2f0caa25f4b805773c50851e3f53a2c2456d2d18c | supports | Both complete descriptors name generic cresol, compatible with the current unspecific cresol concept rather than an inferred ortho/meta/para isomer. All four source routes were inspected. Binding the retained ingredient label does not endorse presence in a recipe whose name describes replacement, apply the replacement automatically, or approve1mM or growth. |
+| evidence-40873f3920d6f6a1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=40873f3920d6f6a1db415ac6fca068a11be0de9db8b1749c5d86010ed01f978c]; full payload SHA256 f1118e9961294a6a413ec8d0af7fa6d0314739a0bc1f221890fa14c7f339d915 | supports | The complete descriptor identifies acetone as the ingredient and CHEBI:15347, matching the owner's propan-2-one structure and CAS 67-64-1. A solvent role is not a competing material identity. The reported 1 g/L dose and solvent-function claim remain outside this binding. |
+| evidence-4241abb8e9fdaea1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=4241abb8e9fdaea101e74ee1833a41c1c1da62bd247b064eddc2cfc160f22cbb]; full payload SHA256 13eaae85e13374bf0f46a27b1686f074e6220bc65ee796deec07976a2b9cd722 | supports | The complete DSM25939 change names CO2 within the post-inoculation H2/CO2 headspace, explicitly bound to the DSM119 strain instruction. The named component matches the owner. Identity support retains this stage and strain-specific source route without approving pressure, pH, dissolved dose or growth. |
+| evidence-4479b8347accf833 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=4479b8347accf83343a281cc370ad7e53cbe05c0a6d9eb3ec1b3a8cbb67c8ac0]; full payload SHA256 a1ec29edd1443f2cdd292fb16c3a3a667c8cdaaf8363860304b5430b9fcbf860 | supports | The complete DSM9575 change identifies CO2 as a component of the DSM119 post-inoculation H2/CO2 headspace. Support is restricted to that gas identity and exact stage; the2bar overpressure is retained without conversion to a liquid concentration or inferred growth performance. |
+| evidence-46642d545884352f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=46642d545884352ffa928a77f2a31327537800aa9ccbd5ff5629c7185ba03d4b]; full payload SHA256 7d878550b9c6905f5c7b7d655c37cfffc55fab4955d0ceb34c84139e8c5d38c9 | supports | Both complete descriptors name benzoate, retain CHEBI:16150 and quote benzoate in the source donor table. This agrees with the current anion owner and does not choose an unstated sodium or other salt. The dose, cobalt-medium context and actual solution speciation are not approved by the identity binding. |
+| evidence-47508a3adea64241 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=47508a3adea64241e7a1b54afbef8714b21e18c4d1111d773dfb36a88b12e8d7]; full payload SHA256 a96140d72c8c73069fd588f1ad5e1a2acee52c5097805884dc1cb155763ae1c3 | partial | The complete sole descriptor and current local stock owner were inspected. The owner explicitly awaits component-level curation, and numeric accession agreement across two prefixes is not independent supplied-preparation evidence. Withhold the unchanged case under1490 without claiming the stocks are demonstrably different, inventing components, or substituting a carbon role/element identity. |
+| evidence-486682d8673ec613 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=486682d8673ec613786770e31bf55b52122a8c5baa20f27be8275a4106ee40d6]; full payload SHA256 032c79d28397c07e8dc483154674eaa6401c3026dd2b95e36735ce01d9de7da6 | supports | Both complete descriptors explicitly name benzoic acid and CHEBI:30746, agreeing with the current free-acid structure/CAS65-85-0. The four-carbon-mixture note names the containing formulation, not a salt or different supplied ingredient. Identity support does not imply actual protonation at each listed pH or approve either dose. |
+| evidence-489e2cce45d9fcee | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=489e2cce45d9fcee731efd60ac21fc8fa6ee303a7f3bf5142e5ba2c8250741c4]; full payload SHA256 f13e6d7c1c1cf9b16196259f59cb5a9b7c25e6a0b8e42a8e2aad836facc7a4bc | supports | The complete descriptor explicitly retains D-glucarate/CHEBI:30612 and compatible KEGG glcr notation, agreeing with the owner's D-glucarate dianion under the native bare-anion naming policy. The liquid-MA route was inspected. No free-acid or counter-ion substitution, dose certification or growth claim is made. |
+| evidence-4a444e5108b6971f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=4a444e5108b6971f3c6593b1c0d02a4203265c36a364e61a71191ae9f8b0faa9]; full payload SHA256 008cee95084dd52f891a242c321968b42ee682c2d29cde65aed2b38b9ca98f59 | supports | The complete supplier-qualified descriptor explicitly retains defibrinated horse blood, agreeing with the maintained same supplied-form/species concept. Its broad blood ontology field is not substituted for the more specific preserved source label. The Bordet-Gengou source route was read. Support does not certify TCS lot composition, sterility,15percent dose or growth. |
+| evidence-4e3fc52a283747e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=4e3fc52a283747e6bd97a2ac30ad1f3eb67c1484501ad192f26f7bb6444f4801]; full payload SHA256 3c17583cd46469c30c77d819ebc38214f1f7c55171b1e94904ec16b1e7cb0c2a | supports | All five complete descriptors explicitly preserve two waters of hydration, including exact MediaDive solution2830/4724 ingredient excerpts and the JCM776 cross-reference. The current owner has the same barium-chloride dihydrate formula and CAS10326-27-9. Source stock versus receiving-medium quantities stay separate; no reduction to the anhydrous salt is approved. |
+| evidence-531623d7728ca1af | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=531623d7728ca1af1ef7b6edef14175f588b31bfe2e8179b22868a7adf4fc244]; full payload SHA256 6bfac46d655fc7322aaf6cc73bf04aed913c5228b19bcecc2dd2085faf9c983f | supports | All three complete descriptors preserve calcium folinate, supported by exact Ca-folinate MediaDive781 ingredient excerpts and compatible embedded CHEBI:31340. The owner retains the calcium salt and does not select an unstated folinate6-position stereoisomer. All seven recipe/cofactor-stock routes were inspected; stock doses and receiving-medium dilution are excluded from this salt-identity decision. |
+| evidence-55ac78af84c1b6c8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=55ac78af84c1b6c846eaffb22d60194097ef0e2ecd6aa45a826e66693c5451d2]; full payload SHA256 273d9139e6eea04fd1aa8d8a99a9df77f79eddb2f639595161ee04be8f967788 | supports | All eleven complete descriptors explicitly name cobalt(II) nitrate hexahydrate with compatible CAS10026-22-9/CHEBI:86214. The69 source routes retain their independent medium/stock contexts. This is support for the stated six-water salt, not unspecified cobalt nitrate, a dissolved-ion speciation or any final-dose calculation. |
+| evidence-5674be2b2411c0a9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=5674be2b2411c0a98f2f924f56877b7a7ed006b955f89a040728657fac7e594b]; full payload SHA256 4d6fefe9a13e5046e67c686cb67fa39cc8e43cfc91b8e9e11aa4a64708fcdcd9 | supports | Both complete descriptors and retained source snippets explicitly name para-hydroxybenzaldehyde, matching the owner's 4-hydroxy positional isomer and CHEBI:17597 structure. The CoCl2 and CoSO4 recipe contexts do not alter the aldehyde identity. The cited 0.5 mM donor amount and any growth interpretation remain outside this identity binding. |
+| evidence-56f12fd065dbec3f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=56f12fd065dbec3f71ca4eaddcd28ac047ced43f3c3edd4d3e2024a881c423e4]; full payload SHA256 e75aaa03b6761a08467de50d6ef281b63991b8740b8be7c3f5d53ef0cbfbbe7f | supports | The complete Sakai2019 held payload explicitly identifies CO2 as the component of the H2/CO2 headspace mixture, consistent with the molecular owner. Identity support is restricted to that named gas component. The OPERATION hold remains intact with counts_as_presence=false: this is not an aqueous ingredient assertion or evidence of growth, and the reported negative HS1T experiment remains negative. |
+| evidence-573a8aed48a707c2 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=573a8aed48a707c29495136e89e5405b0f9556ab2000a62ab8c723071a70433c]; full payload SHA256 4b76d96b46ee9b8363b0706f631f07601e43e5db018fe3147e6d98848f6997e7 | supports | Both complete descriptors retain cresol red/CHEBI:86218, and the exact provider1436 source excerpt names that dye. The owner's cresolsulfophthalein structure agrees; this is not cresol or a different red indicator. Both stock/ingredient routes were read. Dose, indicator performance and final dilution remain excluded. |
+| evidence-5bcb2af0997a7423 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=5bcb2af0997a74232a4a15d73241bd5f9abb325359c7dd3ec8541086ba572985]; full payload SHA256 c23c2aa451e8431e532e81138d168c2411866afd4d6f077bc493d6700f90d340 | partial | The complete case includes an explicit heart infusion constituent, but its candidate is whole beef heart and its embedded term denotes heart anatomy. Preparing an infusion changes the supplied material scope; matching a tissue label cannot prove identity. All158 occurrence coordinates remain retained and withheld under issue1482; this does not claim all158 individual recipe contexts were manually read. |
+| evidence-5cf09b02abfe2656 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=5cf09b02abfe2656d5e461f31db83c1263923d68f18cc4c212b4502d36e5e792]; full payload SHA256 a5b26a098b78749db95eead66a2c764bb8dd80fe40fce01c8c1d93b22a83ac1d | supports | All three complete descriptors explicitly name D-gluconic acid, consistent with the current D-acid owner. Their KEGG shorthand and gluconate-labelled medium routes do not state a specific counter-ion; all four routes were read. Support binds the retained named chemical identity, without selecting a salt, asserting solution protonation or approving molarity. |
+| evidence-6108052f2508ac65 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=6108052f2508ac6575514da47c8841a281e0db56bb97ff469fbc0b8509e69a3f]; full payload SHA256 ad1892a738411850eca38ff5156bdb2eb4e05aa6ca210de009eb0d58cb9e4a7c | supports | The sole complete descriptor explicitly states CaCl2.6H2O and the same hydrate-specific CHEBI:91243 as the current owner. The chemically-defined-medium scope retains that ingredient identity; no conversion to anhydrous calcium chloride or approval of0.33g/L is made. |
+| evidence-619fba0e79bd925b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=619fba0e79bd925bea4a786e89b7dacc4b40eedf145eac019d1bba7f1405a604]; full payload SHA256 a875e6d666aea4339df4246afb63ccf147facdf26b0fc40707c88cf003de4165 | supports | Both complete descriptors specify the 2-position furoic acid and CHEBI:30845, consistent with the owner's carboxylic-acid structure and CAS 88-14-2. The ingredient and composition coordinates retain their own recipe scopes; neither descriptor asserts a salt or a stock identity. Support binds the acid identity only, without concentration or receiving-medium dilution approval. |
+| evidence-623dde3c257babbb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=623dde3c257babbbea834de888c656f13ec45980e619a3679c1357ab78208c6b]; full payload SHA256 23ae619a211e51d89b685ccae983f387ff4e942b3b9f9da62093e8a47e89f757 | partial | Both complete TAP descriptors and both routes were inspected. Their copper(2+) grounding is not reconciled by the generic-label/local-ID candidate. Preserve both occurrences but withhold this aggregate under1501 pending source-specific species resolution; do not assert which copper ion or salt was physically supplied. |
+| evidence-63fbe57cd3babefe | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=63fbe57cd3babefe76ec93c3b769457ca1887cddae15b12dad682265b596b307]; full payload SHA256 cbb2f1132b3ba1a6f5c86da4966b7ebc7a491f1c0a02cd4008c6af6b6b825dac | supports | Both complete descriptors identify creatinine/CHEBI:16737 and the exact provider570 excerpt agrees with the owner's cyclic creatinine structure. All five routes were read. The decision does not substitute creatine, approve5.48355g/L or infer metabolism/growth. |
+| evidence-642a6453d399c8ae | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=642a6453d399c8ae2ad21bb8db99cafa6490153496a2389def54ea14833b46c2]; full payload SHA256 e97bc91a39ad9b0b129183de437617769970c8bb6ba50531a47568ef7e82c696 | supports | All six complete descriptors identify Columbia agar base as the named base medium, consistent with the MICRO owner. The DSM429/693 notes keep horse/sheep blood supplements separate from this base identity; all52 source routes were read. Support does not establish a supplier-specific formula or approve700/1000g/L and1000percent legacy values, final volume or growth. |
+| evidence-65d19440d8044198 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=65d19440d804419894c5876f56179f213830c7951870e98dbc16090c91021fae]; full payload SHA256 938e19e08fff819571ed79fcb78ec72d0c11f47875d2e82bdaaae305be9a3f50 | supports | The complete glucose6-phosphate AMS1 change explicitly inherits Carini2013 CO2-then-air preparation through Carini2014. It names CO2 as the gas component before later organic additions, agreeing with the owner. This does not independently verify assay pH, phosphorus chemistry, gas dose or final growth. |
+| evidence-667f6ee1916f3482 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=667f6ee1916f34829e6520d8458ca47080dbc96d755c37e06dde90d2e37e850d]; full payload SHA256 c31f8dfff3902b1b8d4133009e2435b74a66721ea82d2831985c8e2b0490e2b6 | supports | The complete AMS1 glycine-source change retains Carini2013's ordered CO2 then air sparging after autoclaving. The named CO2 gas agrees with the molecular owner. Identity support remains at this preparation stage and does not approve final pH, exposure duration, carbon availability or equate the complete medium with the gas. |
+| evidence-676e27f90f2ca371 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=676e27f90f2ca371646f85ae69bb691f1377a4e555c76eba48522126d1f8cffc]; full payload SHA256 be3dd6cd8735afbb4ea0a6c998381035e265958008caa32c95a8d2c99e1af65a | partial | The complete descriptor's hydration label and embedded identity remain inconsistent. The maintained local seven-water source identity does not resolve that anhydrous grounding, so this entire unchanged case is withheld under1488 without selecting another hydrate or inferring a verified chemical substance from the literal count. |
+| evidence-685287e6fa22ce1d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=685287e6fa22ce1dfc7c6bfbd35067fce829c72bfc80065ef9f3274d0f682a14]; full payload SHA256 a80ba8b8f4272f9ef45194ebff4db893a3d1bb2500aa101c9e12322e850752f4 | supports | The complete descriptor names cystine/CHEBI:17376, matching the current disulfide structure without specified stereochemistry. The CDM-LAB route was inspected. This does not equate cystine with reduced cysteine, infer an enantiomer or approve50g/L/nitrogen function. |
+| evidence-692e558734b6f189 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=692e558734b6f189deb258aa3529ea1a573c6d40a110c346f8226c1a06172342]; full payload SHA256 6cefae89ad000b457fc4c67084a51df56c91d524971d01782068bade6d21bc62 | supports | All four complete descriptors specify BaCl2 with compatible barium-chloride identifiers; the exact MediaDive solution5083 excerpt preserves that formula. They do not name the separately reviewed dihydrate. Binding retains the nominal BaCl2 chemical identity without certifying a purchased grade, measured water content, stock dilution or the disparate amount fields. |
+| evidence-6b333af101a0b916 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=6b333af101a0b9166a7ea5533989a01ffc781a74869503b806cfa02ae52d3e7b]; full payload SHA256 80fb6aa7d3904fa10e388a17ed1a1b3ac88403845ac66fd6a8be8682cda82181 | supports | The sole complete descriptor explicitly denotes apple juice as a complex food material, consistent with the maintained FOODON apple-juice concept. It does not assert concentrate, clarified juice, a product brand or a pure sugar. Support remains at this named food-material scope without approving an exact composition, nutrient effect or 200 g/L dose. |
+| evidence-6b4546aeb2b57314 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=6b4546aeb2b573146c198712b3367a4814381c9963a82e419af7e2a47fc8f156]; full payload SHA256 56830344842110d8949c15a382b6cbf6e965a8d096d86a3237bae0b108b262ce | supports | All four complete descriptors preserve nominal CaHPO4 and calcium hydrogenphosphate CHEBI:32596, matching the owner's1:1 calcium/hydrogenphosphate structure. The exact solution6217 excerpt confirms the ingredient label. All four stock/main routes were inspected; zero/variable amounts do not change the named identity, and support does not assert physical presence, a particular hydrate, or approve dose. |
+| evidence-6f3ccd311a073f1f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=6f3ccd311a073f1f43ae991d33befdff79b73e41f95c92e57e0d425951c207b2]; full payload SHA256 3a737f4bec7a4350ddd5265e3ac710b7fa965384fbcf7941c1b1f298453f3f6f | supports | The complete Matsui2018 high-CO2 aeration change identifies CO2 in the1%gas arm, distinct from the alternative ambient-air arm. This agrees with the molecular owner and preserves the aeration stage. Support does not combine alternative arms, infer dissolved amount or approve physiological outcomes. |
+| evidence-6fa5cc783ef2ab0f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=6fa5cc783ef2ab0fe30b1ca39d6543b994daa008168d6f35acbda10d5fab1ac3]; full payload SHA256 333d0114356cf4477d4d27a7a8de6a22e8fcfd951fba86736cd79601c7cc9adb | supports | All six complete descriptors consistently retain aspartate and CHEBI:29995, without an explicit stereochemical or supplied-salt claim. Current MAPPING_SEMANTICS.md specifically grounds bare Aspartate to this stereo-agnostic dianion; issue319 is closed and that maintained rule takes precedence over the historical counterargument retained in owner notes. This is concept normalization under that rule, not independent proof of actual medium protonation or approval of P5 MEM-stock quantities/dilutions. |
+| evidence-70cb09ade6935dc4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=70cb09ade6935dc4a66f18897093b204d1e66f93322d0fdac1cae3b25ad57dcd]; full payload SHA256 59af1de95e851c4b42079fb8b9a210e0fb90890ffe7faf896a5a06be57a7afa2 | supports | The sole complete TOGO M2849 descriptor names CaCl2 with six waters and CHEBI:91243. The alternate hydrate separator retains the same explicit six-water stoichiometry as the current owner. Mineral function and1.3g/L dose remain outside the identity approval. |
+| evidence-71d42cd78920da58 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=71d42cd78920da585ccf0ce9fe61e0b425e6e6c52dce9975ebcb67cf0afc90f9]; full payload SHA256 ecb2ee17f422386d760c8177c9fc98ea18cec2b6a5ffc3ab5ab37ac4a492dc8f | supports | The complete descriptor and complete replacement event were inspected. This case records the historical replaced label D-Glucose6-phosphate, so its D-specific identity is factual context for the old target. The event explicitly replaces that assertion with generic glucose6-phosphate because the Carini primary source does not certify D/L. Support is solely the historical old-label binding: no positive occurrence, actual reagent stereochemistry, dose or assay outcome is inferred. |
+| evidence-731fdd45136e6810 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=731fdd45136e68105495546dce75bac0c81a00fb6618b93287b41a48470ae4a1]; full payload SHA256 a20e31d4ed80e9b6fa96057b3b5e6145372a5ce04b1e0c90867733120c58763c | supports | Both complete TAP descriptors explicitly embed calcium(2+) CHEBI:29108, matching the charged-ion owner and distinguishing the rejected generic Calcium owner. The source's generic surface label is qualified by those retained identity fields. Identity support does not select an unstated calcium salt, infer counter-ion or approve0.34mM/actual speciation. |
+| evidence-7596c7c0a15c93aa | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7596c7c0a15c93aad9efbf29244b8f4bbfb9ad16dff1f35ee638cb4ef8a9c8e9]; full payload SHA256 6e2aa3b488684e3d644614acc3554778051d5e73bab0f7f76c474f8cbc2def5a | supports | The complete DSM2030 source change explicitly names CO2 in the H2/CO2 atmosphere supplied after inoculation. The owner binds this molecular component without treating the mixed gas, pH6.5 or2bar instruction as an ingredient identity or approved aqueous dose. |
+| evidence-75995ea07db3cdc6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=75995ea07db3cdc67ac180e0068b30d27b9df5460a03b4af36f70f7c0c7f0d39]; full payload SHA256 e2ab41fcf2301ddb24a3efdec3cd8a25e35ea5029773716e0421a6c09c4676c8 | supports | All eight descriptor payloads retain baker's yeast as the material, supported by the exact MediaDive compound17 excerpts. The maintained FOODON owner is the same named yeast material, not yeast extract, a specific strain or a composition-defined stock. Identity support preserves that scope while excluding viability, strain identity, preparation concentration and the percent-v/v quantity interpretation. |
+| evidence-75cc21f68f7c24c7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=75cc21f68f7c24c70fdd21cea63b210c476d7942900d4a7b5d079dded23b7ede]; full payload SHA256 a8ffcaa4270ab529bb4d7a2e2f4ea305e9403045d007921e5f9c179488c35362 | supports | The complete DSM25945 change preserves the DSM119 instruction for a post-inoculation H2/CO2 atmosphere. CO2 molecular identity agrees with the owner; the distinct strain/pH instruction and gas pressure remain source context rather than an approved dose or growth assertion. |
+| evidence-76e2e8c8282a85ea | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=76e2e8c8282a85eab03414e54e4a9526b511858f0a3d7f234c64480bd33b1df2]; full payload SHA256 88673453a29433c8ab5d29e66750acc2f81829b1af97af8ad331e55af04b0414 | supports | Both complete descriptors explicitly name anaerobic water, preserving the anoxic qualification of the current ENVO owner. Support is limited to that named water material/state; it is not a verification of oxygen measurements, sterilization, recipe composition or the 100/300 g/L amount fields. |
+| evidence-77e001312d6b6603 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=77e001312d6b6603d45ffe4f148005f87a6b7ca9ebfd30c9849a0ee0e45e231e]; full payload SHA256 b8cad5d734b7e1954f89c3b1584f5e831a7bd702ca0aa8e717c68c9497b940e2 | supports | Both complete descriptors preserve benzyl cyanide/phenylacetonitrile, matching the current owner's methylene-separated nitrile structure and CHEBI:25979. The MediaDive compound2166 provenance and exact named synonym agree; no benzonitrile substitution is made. Identity support excludes the0.12g/L amount and nitrogen-source function. |
+| evidence-7816d9ac4687571c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7816d9ac4687571c34849f4c66d72093c807e1e94719ed7670e3d0ea0062646d]; full payload SHA256 a96a00e7b1cf75b776511b87668322165aeed566ba3be5a174d0834d8497f0b2 | partial | The final descriptors name a 0.5 M disodium NTA preparation but both embed CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term. The candidate MIM registry stock explicitly separates that disodium preparation from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove this source-form conflict. Both occurrences are retained; no stock-to-solute replacement or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up: CultureMech #792. |
+| evidence-7a54eb7a4c55b5ac | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7a54eb7a4c55b5acdda7034454ff1d6a93358de5744d4d7e7042201b473629af]; full payload SHA256 708997a4ed47cb7a82e0b290401d9a98b3af739bb7f376f1b036187c2fb4e51b | supports | The complete Tsuji2021 low-sodium comparison explicitly retains CO2 in the0.04%air arm named by the primary abstract. This supports gas-component identity while keeping it distinct from the5%arm. Full methods, dose, growth efficacy and dissolved concentration are not claimed to be verified. |
+| evidence-7cae5a5b7b73d3a8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7cae5a5b7b73d3a84773364d9282a1a24fb74c187aae230b605f128d567f6bb2]; full payload SHA256 6e677886ee9dae1fed7d824dae582ce4ca0d441a9e141c9259945a6c253d54b5 | supports | All four complete descriptors explicitly identify Cl-/chloride, with compatible CHEBI:17996 and KEGG:cl grounding. The current owner is the same anion; no counter-ion or elemental chlorine is inferred. All five TAP/Vogel/synbase routes were inspected. Amount differences and actual solution speciation are outside this identity binding. |
+| evidence-7ce014451bbe85f1 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7ce014451bbe85f105f7fe1610bab9a7d0e46648947f97cbc62ddf84751cd403]; full payload SHA256 05cfcf5bc777b4b9dc12ad9cac4fc0aab3e7045579d8c35442418868c408a959 | supports | Both complete descriptors consistently identify arsenate with CHEBI:29125 and retain after-autoclaving context; neither asserts arsenite, a counterion or a specific supplied salt. The current owner explicitly rejects arsenite aliases. Support follows the maintained bare-anion concept convention and does not certify solution speciation, an unstated salt or the reported dose. |
+| evidence-7ced97de79fe3814 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=7ced97de79fe38147318bf8d3d0333d59332e93f8dafd1a36221583f4590bf17]; full payload SHA256 bd39d00c20ce7e48f46fb46052394483c30e93f74d42d5d7e14b8febab97dcf2 | partial | All eleven complete descriptors and twelve routes were read. One member contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate is withheld under1513 while every occurrence remains available. This is not a claim that the other eleven routes have the same conflict; no concentration or D/L resolution is guessed. |
+| evidence-80a712170c6d28ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=80a712170c6d28ba05f9f285c47b63ef4569a6e706b1e09aa8754f33227c00b3]; full payload SHA256 97596e921b3b07c1dc1582ba007e17fb986b60ccc3daff4657f7b6ac0b7bc3d4 | supports | The complete Tsuji2021 change explicitly identifies CO2 in the5%aeration arm of the low-sodium comparison. The primary abstract supplies that gas identity, compatible with the owner. Support does not merge the ambient-air comparator, verify inaccessible full methods or establish a liquid dose or growth claim. |
+| evidence-8542b4ae4f2bd7e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=8542b4ae4f2bd7e6c8921e5287242e7f96311ae9b834e9c0e5604b73119688b9]; full payload SHA256 db915771a499e6614d5e3950690bf36fc4b52129ca34d0bdcdf770b2fc29fe80 | supports | All three complete descriptors retain choline/CHEBI:15354, including the exact provider611 vitamin-stock excerpt and compatible KEGG cross-reference. The current owner represents the choline cation, without an inferred counter-ion. All four source routes were inspected; the identity decision does not substitute choline chloride or approve stock/final amounts. |
+| evidence-86fd9453e711ff71 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=86fd9453e711ff711816635df5f727e6e86bd3aef344b13983d4f16b6ce5e66f]; full payload SHA256 3383a193a2fa98d34f8a4a178be19c4e4982d2268e02e9d3401869d8b6ef8274 | supports | All four descriptors identify indole-3-acetic acid, including the exact MediaDive compound 1548 ingredient excerpt in solution 5113. The current owner is that acid with CAS 87-51-4 and explicitly rejects its historical ethyl-hexenoate mislabels. None of the source descriptors revives those rejected compounds. Parent aromatic-fatty-acid solution context is preserved; support is for the named ingredient, not the mixture, source quantities or final-medium dose. |
+| evidence-8898ca0ff0613326 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=8898ca0ff0613326a4e116d623c8a356826c450d801aa4b481ab2b14ef78a5f9]; full payload SHA256 e4bc0a210b96ee108cac0276a6b3df21eddd74eeb33185a1048f3299219f2a10 | supports | Both complete descriptors identify antipyrine/phenazone and retain compatible CHEBI:31225 or MediaDive compound412 identity. The solution703 recipe excerpt names antipyrine as the ingredient, consistent with the owner's specific pyrazolone structure/CAS60-80-0. The parent medium/solution and 1 g/L amount are not treated as the chemical identity. |
+| evidence-89b5d1371f6b0c7c | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=89b5d1371f6b0c7c8930a0cb8cf0a64bbfef3c45682fedb216ecdab0a3dffc51]; full payload SHA256 416488efa8ce74399565e060d919978f3c0e697f6c09b7c2ca10de339290d22e | supports | The complete phosphoserine AMS1 change retains the explicit Carini2014-to-2013 preparation linkage and ordered CO2 then air sparging. The molecular gas identity matches the owner; the phosphoserine assay, final pH and dissolved dose are not inferred from this binding. |
+| evidence-8a120bdffd7488ba | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=8a120bdffd7488ba1640beae884ba9e1af5433f30a256f30497fbdc55a39d593]; full payload SHA256 117928da6efef60b1e61096d19b6c135de9c70f05fd7223eae4399d7345e11ee | supports | The complete descriptor names benzene with CHEBI:16716 but includes a generic Solution property. The primary DSMZ944a recipe resolves the identity scope: it explicitly uses benzene as the solute in distilled-water stock; the separate source solution is not being equated with pure benzene. Identity binding is supported for the named solute. The31.2g/L base amount is independently contradicted by source stock/addition arithmetic and is NOT approved; CultureMech793 tracks that unchanged-base defect and optional variant applicability. |
+| evidence-8b8cd58861a0f289 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=8b8cd58861a0f28967f856165645683579d9bf185b2f05218bdf39d0305fe583]; full payload SHA256 23e1213edebfeaec1d3627a22bced92ab131c13783c27d35ec3ec45b79592903 | supports | The complete2-aminoethylphosphonic-acid AMS1 change names the CO2 preparation gas through the explicit Carini2014-to-2013 methods linkage. It preserves the ordered sparging stage and does not assert an assay-specific pH, approve the phosphorus compound or infer liquid CO2 amount. |
+| evidence-8ee01e4e5b7445f5 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=8ee01e4e5b7445f5882a111afb3545864f51312c136e611d4d630fe0d81a1f0d]; full payload SHA256 479341f9cbfd803ebaa03478edf1b20264dcd09a6316ee630a1bb28f631c164b | partial | The complete base descriptor and corresponding source correction were read. Exact source binding to the D-specific owner would certify an unsupported stereochemical narrowing for the actual reagent. Withhold this unchanged base case under1511, preserving the separate historical old-target context and every input row. |
+| evidence-90a4e97134f2ccee | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=90a4e97134f2cceed8fd23d9c9222f25e505c0293f376ec5f4d1566f5a86e4d8]; full payload SHA256 155f9df95d74faa833dae1b6ef778e2a34de1a7bd343bd92b32b5486bf2752cb | supports | Both complete TOGO descriptors explicitly name chocolate agar as the supplied medium material, compatible with the generic named-medium MICRO owner. Both source routes were inspected. Support does not select a supplier formula, equate the medium with agar alone, infer unreported amount or approve its growth claims. |
+| evidence-911c0899099348a6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=911c0899099348a68ff40a0313deaf740049351b015d89f39f3a4194c34da0f5]; full payload SHA256 dafb26600e72c9c51601c44d9aaa627becccefc720b85268b74151319e84ee91 | supports | All60 complete descriptors and152 source routes were inspected, including exact MediaDive541 and UTEX/JCM hydrate-qualified source excerpts. Each preserves cobalt dinitrate hexahydrate, compatible with the owner's explicit six waters and divalent cobalt. Preparation and stock scopes remain distinct. Conflicting printed molarity annotations, legacy merged amount values and percentage fields are retained but not approved or converted by this identity decision. |
+| evidence-97e084115638e98f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=97e084115638e98fc6758ed39975f9d4ea9bb205a87455c46c0f3c7791acbd7d]; full payload SHA256 54957684783d0ec335f4e8bec758231d2c5fdf0e09ee35a474604c8357eedf27 | supports | All four complete descriptors identify 2'-deoxyinosine with CHEBI:28997 and CAS 890-38-0, agreeing with the owner's specific nucleoside identity and structure. The soil-carbon and exometabolite-mixture references describe the containing formulation, not a competing ingredient identity. Quantities and mixture-wide composition remain outside this identity approval. |
+| evidence-9aafef893f46d681 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=9aafef893f46d681733bae176dbc4cc695becd97f5b889a366a68df327cb63c2]; full payload SHA256 28fd573e93ea0f9706a14a3e48f4664d7d6ee6ba62480fe94bcd0ee00e722403 | supports | All four complete descriptors identify 2'-deoxyuridine with CHEBI:16450 and CAS 951-78-0, matching the current owner's nucleoside identity and structure. The differing mg/L and micromolar quantities and parent carbon-mixture provenance are retained without becoming new identity or formulation claims. Support applies only to the explicitly named compound. |
+| evidence-9bebf2dec0e4e5b0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=9bebf2dec0e4e5b0e2db507bdde437e620195525c9cb744bc40b907d11b3a981]; full payload SHA256 a805468d84a7786340d388c0f193f64d6541d30e35525898b856e96047e8df7c | supports | The complete descriptor names crotonic acid ALDRICH113018. Independent manufacturer-page inspection confirms113018 as trans-2-butenoic acid/CAS107-93-7 with the same E InChI as the owner. The single source route was read. Support is the named chemical identity, not a batch-purity, dose or growth certification. |
+| evidence-a0651624438bd707 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a0651624438bd707636aa33f3a547e90ba72a7fc8a1846f8d9a7aac305fcdeb3]; full payload SHA256 45f537f38c487b9e95b69bdf47059084aea5a88a84fbc2321420ba031d139eed | supports | The complete phosphite-arm AMS1 change identifies CO2 during inherited Carini2013 inorganic-medium preparation, followed by air. This supports the gas component identity independently of the unresolved phosphite counter-ion/form. Final pH, liquid concentration and phosphorus chemistry remain outside the decision. |
+| evidence-a140503a9a82236f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a140503a9a82236fc8efc9c8a6d893cb90a0b22b287efc845def24f3a3e64c1e]; full payload SHA256 1225bf880676fe160d7a0b48c6bc87b013118568b51a4e95f0ab92f1b8f5988d | supports | All three complete descriptors identify CAPSO, with the correct hydroxy-propanesulfonic-acid CHEBI:183882 structure rather than CAPS. The exact provider1762 excerpt and three RT2 routes preserve this ingredient identity. The extraordinary5930g/L provider-declared value and its2mL volume basis are explicitly outside this identity support; the decision does not certify their physical validity, dilution or buffer performance. |
+| evidence-a2838b1187a747a8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a2838b1187a747a8ec46a1fc7eb2ea23e1d218016bb83728e0194b8844c7b301]; full payload SHA256 9d798a04db0ef4c013222161a62ff19d836662a0efa0078eb85df0a9b9e80fe8 | supports | All eight distinct descriptors explicitly retain activated charcoal, with MediaDive compound582 and exact retained recipe excerpts where present. The current owner denotes activated charcoal as a material, not elemental carbon or the containing agar/blood medium. Support preserves that named material scope without asserting a unique chemical formula, product grade, concentration or biological effect. |
+| evidence-a35898ba396305dc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a35898ba396305dc1a0cb09976034cb70e56d51f18a9edf4c67a898b3dd9c465]; full payload SHA256 1c19fd2daaa68f99e4fcf49862d8854f136802a35ad30d246d7ed8400427add3 | supports | The complete UI-medium descriptor explicitly specifies 4-hydroxybenzoic free acid in both identifier fields. This agrees with the owner's para-hydroxy acid structure and does not denote an ester, salt or ortho isomer. The carbon-source role and 0.414 g/L amount are retained but not approved by the identity binding. |
+| evidence-a41a9945169fc3de | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a41a9945169fc3deb58c19e3e2f21979ea9ece6719ecaae788b0bd134e70012d]; full payload SHA256 58e0ef2d5d447d2e44f06894e935780e057329823c7145cedcc9fdb900209155 | supports | All28 complete descriptors retain nominal CuCl2/CHEBI:49553, with exact provider261/JCM1219 input-solute excerpts and no conflicting hydrated source label. All99 routes were inspected. The binding concerns the named salt/input solute, not the entire10mM stock; it does not approve concentration, infer a specific hydrate from an unspecified label, or validate user-contributed P10 biology. |
+| evidence-a5a7c3209f4bd51e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a5a7c3209f4bd51eaf5a76a8a01d59b310561fe16e94c6d932550b4b12590d74]; full payload SHA256 e1b8f246e2f8f0c1c70f871891f7f4ba1f671143e7ab646ad76050446b8dd051 | supports | The complete separate source descriptor explicitly identifies D-mannose/CHEBI:16024 as an alternative carbon-source arm, agreeing with the generic D-mannose owner. Primary ChEBI inspection confirms D-mannopyranose is subordinate to that concept and lists both commonly encountered CAS numbers; no false CAS or anomer conflict is inferred. Support does not assert simultaneous use of all alternative substrates, approve0.2percent or infer growth. |
+| evidence-a95288ddbcbc4509 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=a95288ddbcbc450909e874c853545f6933295cfe90ce0d52dfec672887231ccb]; full payload SHA256 7642bec6b1953530db4d4ea8df94a8ac1089fae3d5e9ff9f7b983fb6c0e7f8f5 | supports | Every complete descriptor preserves Ca(NO3)2 and compatible calcium-nitrate identifiers; exact provider excerpts retain that nominal salt formula. The current owner explicitly corrected the historical cadmium-nitrate conflation, and no inspected source descriptor reintroduces Cd. All37 source routes were inspected. Support binds nominal calcium nitrate without asserting purchased hydration state, converting mass between hydrates, or approving concentration/dilution. |
+| evidence-ab0eedc422381cbc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ab0eedc422381cbcc50504fd6b6c419348754b62d5c838ea09c021ee74d1e15e]; full payload SHA256 b96f3de5f3c3ea9922a089be88420e7f8ddc5504da71c6221c436219112255d7 | supports | All22 complete descriptors preserve choline chloride/CHEBI:133341, compatible CAS67-48-1 and the owner's explicit chloride salt structure. Exact provider115 excerpts agree. All46 source routes were inspected. This salt-specific support remains distinct from the choline cation and excludes concentration, stock-to-final dilution and biological effects. |
+| evidence-ae04caa55fe59069 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ae04caa55fe590697004086cb398e8070b88d4f32d55b0dad4607f95abc1724e]; full payload SHA256 3e5ee8b7a99b4b75f2edcefa301502f5a895a85d14f46a01ca0cff9a06291ab4 | supports | All three complete descriptors explicitly preserve Co(NO3)2 with six waters and compatible CHEBI:86214, matching the hydrate-specific owner. All three recipe routes were inspected. The decision excludes concentrations, dilution and growth claims. |
+| evidence-ae9572ea8c1ffd93 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ae9572ea8c1ffd93d4648598494a5e77ade4e95acece7cc65f2577a04efe1688]; full payload SHA256 0064350b63e1c4733ce1878e53cbd0b15fcf65e237ee40c11fb91e519ca35aa2 | supports | The complete methylphosphonic-acid AMS1 change preserves CO2 as the gas in the linked Carini2013 preparation stage. Molecular identity agrees with the owner; ordered CO2/air steps remain separate and do not establish assay pH, gas quantity or phosphorus-compound identity. |
+| evidence-b1f8adc06f883411 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b1f8adc06f883411d5c71414782451de1fd4e3bd97dc7b8acab2d95307c51bb5]; full payload SHA256 972e60c9d098f478574f66397158fd146467b8d64da4e2d0460679ea67f50852 | supports | All three complete descriptors name biphenyl, with direct CHEBI:17097 or MediaDive compound2105 where present, matching the owner's two-ring biphenyl identity. The W-medium, named-biphenyl medium and MediaDive919 scopes preserve the ingredient rather than the whole formulation. Doses and carbon-source function remain outside this identity support. |
+| evidence-b221231fe8357484 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b221231fe83574843715c085b7cd393a84f902cadc3e4104392916879a4e8490]; full payload SHA256 37558732fc5371ce06daf189971b7ef2fb96bbc2ea6213c908216be3205fe265 | supports | The complete ribose5-phosphate AMS1 change names CO2 in the explicitly linked Carini2013 preparation method, before air and later organics. Support is the molecular gas component only, without extrapolating assay pH, dose or ribose-phosphate form. |
+| evidence-b27b4e0701b204e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b27b4e0701b204e6a9919f53072a85106b141efbb45c58b59348920465c3036b]; full payload SHA256 18e80d935e71c34c1373f5672b17d3b8576555d323d1f54c7b37d9d718597128 | supports | The complete P5 descriptor and all its preparation prose explicitly identify decanoic acid as the input solute in a separately prepared aqueous stock, matching the linear C10 free-acid owner. The full stock-composition route was read. Support binds the named solute, not the entire stock or final Mix5, and excludes heat stability, source dilution, amount and growth. |
+| evidence-b28cdde06366ce79 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b28cdde06366ce7968148b1eee34421ac431048684d89cb507615f70daabb9f2]; full payload SHA256 35bd4d43add55f8ec8680d367e041480551a825f039d013e85f25ac538728c46 | partial | The inspected opaque NBRC1273 preparation is sufficient to block an exact preparation-identity binding for this grouped case. The retained packet includes other named source seawater matrices, but no single composition or equivalence is inferred. All occurrences remain available; the generic category can guide follow-up without granting exact identity. Issue1479. |
+| evidence-b2f395bcc3e5d1be | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b2f395bcc3e5d1bec50a2ea6a7082a074188ad47b9ddc1a3070626a6eff015b8]; full payload SHA256 889e3c906b1988b8b5f7f3899755d4a309a091f4839a2120b0df6218aeddbe05 | supports | The complete Ignicoccus change names CO2 in the final H2/CO2 bottle headspace described by the Koschnitzki2017 methods. It remains distinct from the N2/CO2 purge and N2/H2 chamber stages. Identity support is for CO2 as a component and does not infer liquid quantity, pressure equivalence or growth. |
+| evidence-b3a540ca9bb6ec82 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b3a540ca9bb6ec828331ccd9ab7edfb64211f6a415d317ee30fee3f3f30c17d4]; full payload SHA256 ad16b947076cd98e8166f961498c074bc28b9a74956577e42b63c668d3079cd4 | supports | The sole complete descriptor identifies the 5-fluorinated uracil compound, consistent with CHEBI:46345 and the owner's fluoropyrimidinedione structure/CAS 51-21-8. No salt or preparation qualification is supplied. Its 100 g/L value is not validated or endorsed by this identity decision. |
+| evidence-b3fd3be6a836d88e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b3fd3be6a836d88e4640aed9a7b682dcfc6fb783130515ce3438982262a09fb2]; full payload SHA256 02d56a0bb0016ff9d4a7dde8ca10c37bd09cf57fe9cc7d6537943fdaf7d56a15 | supports | The complete descriptor explicitly identifies Ar/argon(0) and describes an argon gas stream during distribution of the medium. This agrees with the elemental argon owner. The gas-stream preparation context is preserved; no liquid dose, partial pressure or growth effect is inferred from the VARIABLE field. |
+| evidence-b43059bd4d533f65 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b43059bd4d533f65f08b13bb87068abddf0075bb1122743e8adf1b28a0682313]; full payload SHA256 66456df539defd7d37f7c263500210372d5faa8803a7d2b370b2a6de041d9920 | supports | Both complete descriptors retain 4-hydroxybenzoic acid; the exact MediaDive solution 2076 recipe[0] excerpt names compound 923 with that positional acid. CHEBI:30763 and the current owner's free-acid structure agree. Parent main-solution context is not mapped as this ingredient, and no dilution or concentration claim is approved. |
+| evidence-b5e2fc3e34357209 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=b5e2fc3e34357209a492f5d42d3d89af3ffd9cd060d83d043a0d26d3f7602307]; full payload SHA256 2bafff1c4b9a34afc19ccdaf7d7f816efc28513aa4e347abc6486ef68340a591 | supports | All six complete descriptors retain the six-water cobalt nitrate form, including explicit notes documenting the CCAP subscript restoration. The seven source routes and current hydrate owner were inspected. Support does not infer an anhydrous salt, approve historical curation methods wholesale or certify the reported amounts. |
+| evidence-bf14e85a596fe5f7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=bf14e85a596fe5f7a92278fde3eefe63d50e790001ce55dbf7aba62735852e51]; full payload SHA256 2052e917c1cec7af9fc9c30b1eba8326ab8cf9a7c403b4d7cc001ae314c5e4b8 | supports | All five complete descriptors identify carrot as the input material. Peeled/cut notes and the explicit pre-decoction stage retain carrot identity rather than claiming the filtered extract is whole carrot. The current carrot owner is compatible at that material scope. All five recipe/composition routes were inspected; extraction yield, fixed composition, final-medium amount and biological effects remain outside this binding. |
+| evidence-c2a85cd5f94a73d7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c2a85cd5f94a73d732b9b4cae7ce92f3b17a03bc31ddc959963e9749dc9c812a]; full payload SHA256 bf4ded7fb11b0a6d9751c90e69301fd4a2b0801abdbc2e30c61a43f164cc299c | supports | All three complete descriptors preserve beef brain powder, and the exact MediaDive solution3810 ingredient excerpt plus TOGO M148/J157 context identify that supplied powder material. The local owner explicitly preserves powder specificity beyond its broader beef-brain ontology parent. Binding is to the local powder identity only; it does not assert equality to whole brain, a fixed composition, product grade, dose or biological effect. |
+| evidence-c5e0653364f2b661 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c5e0653364f2b6613bb74171caf810a30f212cbb7515602dd97e29af1a578e85]; full payload SHA256 b4b3e1197d3858265e7130e0bc6d44ea2c2852afa94db8319fa699e10d5c6689 | supports | The complete descriptor explicitly identifies D-methionine/CHEBI:16867 with KEGG met-D notation, agreeing with the maintained D structure. The methionine-salt-medium route does not add a counter-ion to this ingredient descriptor. Dose, L/racemate identity and growth remain outside support. |
+| evidence-c7c4da0c0b3dc79f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c7c4da0c0b3dc79fc26b261d43d2a53e724e452e750ffa9d34837113f526e663]; full payload SHA256 c44a028238ac08a7c5a411dbed6b8e2c32b6527304376afb59cf7d4893296710 | supports | All five complete descriptors name acetoin without selecting an enantiomer, and the owner likewise represents stereochemically unspecified acetoin. The DSM strain-specific and NBRC/archived-recipe notes do not introduce a different supplied chemical form. Identity support excludes the different doses, carbon/energy roles and strain growth claims. |
+| evidence-c84d38d267ad7dcb | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c84d38d267ad7dcb4e7df4d471dd22082f21baa831e2d5c048aaa0e68de879de]; full payload SHA256 768c9eeba60b8dc36bedee977d0b4f9546b1c423df137a87d2815740240bae53 | supports | The complete Scenedesmus ABC009 change identifies CO2 in the phototrophic BG11 aeration arm described in PMID34584038. The2%CO2 arm remains distinct from air. Support binds the molecular component without approving the0.5vvm flow, liquid dose, complete medium or growth outcome. |
+| evidence-c878f30e5f397f8e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c878f30e5f397f8e7fce93e69ab54f9fb7c001a60442df0171a4d2f2416b6802]; full payload SHA256 9bde200faf939987822c1eec33144a3819457e3f6e2db3ff6da92111222a59ab | supports | All three complete descriptors explicitly assert the six-water cobalt nitrate salt, matching CHEBI:86214 and the owner formula. All six source routes were read. Different stock/medium amount fields and mineral roles remain unapproved by this identity support. |
+| evidence-c8ce23344ae00a5f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=c8ce23344ae00a5ff1d7008a1cc5619bcec7343f313d577dced38ec86b6f828b]; full payload SHA256 aa0e19b9e0682637e1aa809561881dd500fa9f90ba30b59d7318acbd81b9a67c | supports | Both complete Cystein descriptors retain stereochemically unspecified cysteine/CHEBI:15356, matching the owner's structure without an unstated L/D or hydrochloride narrowing. Both source routes were inspected. Support excludes dose, reducing activity and solution speciation. |
+| evidence-cadbcb97562b7743 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=cadbcb97562b77438297642b334d4f03096fa475d25adbe6811f37c2ed1c5c9c]; full payload SHA256 32006596015e5403b6b15748c69361ff291cc1752e28d7dd64ed25e8f5247c11 | supports | The complete NBRC1300 descriptor explicitly identifies cefpodoxime/CHEBI:3504 as the named stock solute, matching the current free-cefpodoxime structure rather than an unstated prodrug. The source route is nested stock composition, so support does not equate the entire stock with pure cefpodoxime or approve10mg/mL, solvent, final dilution or antimicrobial effect. |
+| evidence-cf3475364310c77b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=cf3475364310c77bb757621f6e005d58838d8f24ac12db49d9f719ed48cfaead]; full payload SHA256 6788d7ef1d0f452cb102b769f0c21175a8eb00c21c8bcb18d83043e257bb6a52 | supports | All six descriptors preserve adenosine, CHEBI:16335 and CAS58-61-7, agreeing with the owner's adenine riboside structure. None denotes adenine alone or a phosphorylated nucleotide. The NLDM/exometabolite/soil-mixture source contexts and their dose differences remain separate from this identity support. |
+| evidence-d0855f94860f1de9 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d0855f94860f1de96273906705764f6439bd3b7052afbbe396f4c0a4c1e89907]; full payload SHA256 7ad9cdcc7546a1998b284ba7f4dc8c450e237878d45139544066df2822101035 | supports | All three complete descriptors preserve calcium malate, including exact MediaDive J62/solution3689 ingredient excerpts and provider1614. The current FOODON owner is the same generic calcium-malate material, with no unstated stereochemistry/hydrate imposed. All three glycerol-calcium-malate recipe/composition routes were inspected. Amounts, mineral function and downstream formulation are excluded. |
+| evidence-d13d06bd89f57b14 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d13d06bd89f57b140286eb3eae79ae69ddbb887ce7583916aca69c819eb7abaf]; full payload SHA256 f48e5f0aa5046cab63656776e67417a47f8bac22ba113c2064287c3a8590cb0f | supports | All four complete descriptors retain cadmium nitrate with four waters, agreeing with the current hydrate-specific structure/CAS10022-68-1. The P4 page excerpt explicitly names the tetrahydrate stock solute and the solution5814 excerpt agrees. All four stock/main source routes were inspected. This does not approve stock-to-final dilution arithmetic, trace-metal dose or growth, and does not collapse to anhydrous cadmium nitrate. |
+| evidence-d23fddc72c400308 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d23fddc72c4003082d770642cc7daed1a9a308c7234c1f992fe07903533189b2]; full payload SHA256 bcb33f5b49c4137cf083bc7eb2f4697d31828bc23126272aef27dfb55fc23477 | supports | All four complete descriptors explicitly assert1-butanol, matching the current butan-1-ol structure/CAS71-36-3 rather than another butanol isomer. The retained donor-table excerpts support amounts but are not independently treated as isomer evidence; identity support binds the full asserted source descriptor. All four freshwater/butanol-challenge routes were inspected. Doses and challenge outcomes remain outside scope. |
+| evidence-d37dfbf0abe3ecbc | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d37dfbf0abe3ecbcbf99f0f6870efd4b94449b36ae7c7be8c011b065fc1db6a1]; full payload SHA256 8d4a25e0f741ec90e6bd658b9c29055c3f1a1ad1f3692e758f17e18c1d440503 | supports | Both complete descriptors identify the same 2-substituted sulfobenzoic acid as the native owner; the MediaDive compound 2116 and source scope signatures retain this positional isomer without a salt or hydrate assertion. Binding supports that named chemical concept only. The differing 50 percent-v/v and 50 g/L source quantities are not reconciled or approved by this identity decision, and no concentration-qualified preparation is equated with a pure substance. |
+| evidence-d6beb0069466ad90 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d6beb0069466ad90d35248cfe2ba0b2634201a105492e8ca3332db906f2313ff]; full payload SHA256 f612ddb785557697a75326fb9c777e7be5265a7d98c26fca4c30ee4538e09748 | supports | All24 complete descriptors retain crotonic acid/CHEBI:41131 or provider255 with exact acid-labelled source excerpts, consistent with the current E-acid owner. All37 routes were read, including crotonate-stock preparation: the ingredient is the named input solute, not an assertion that the final sodium-crotonate stock is free acid. Percentage fields, neutralization outcomes, amounts and growth remain outside identity support. |
+| evidence-d93455d8e1131d6e | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d93455d8e1131d6ef8bde09f4aa1d3c4a206db001ce3465bd43c73e0cf0b6d39]; full payload SHA256 160dd3f10fb74ce2e11880d83e22b2afe2b78cb7115df1d5bacd883c285ae791 | partial | The complete descriptor, A1 source route, full owner component recipe and primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity remains unresolved because of concentration-basis and thiamine-HCl versus thiamine discrepancies. Withhold under1514 without silently applying a dilution or treating the imported10g/L as a valid primary amount. |
+| evidence-d97cd220d4c7a33a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=d97cd220d4c7a33a009f777c269cd80c5779af49fb5183d3f2be88c3ccdfa32f]; full payload SHA256 8d7f81c00649b2c76d4b86ce0ad1d17aef57683ed56563e681a15fba3adca61a | supports | The sole complete basal-salt-medium descriptor explicitly names biphenyl and agrees with the current CHEBI:17097 biphenyl owner. No derivative, supplied mixture or alternate ring connection is asserted. The1g/L dose and carbon-source function are not approved by this identity binding. |
+| evidence-ddb4d0bc41a8f9e4 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ddb4d0bc41a8f9e4d578c08ff8f4017be711b60f24a2e568edd503aecc27c298]; full payload SHA256 f7dcd49aa8fd438b11cbebff1caeaacd424d0df7dd7c9935b498faed84ae2175 | supports | The fully specified triazine substituents in both descriptors match the owner's atrazine structure and CHEBI:15930 identity; MediaDive compound 2120 carries the same structural name. Parentheses differ only in rendering of those explicit substituents. The source's g/L versus mg/L values and the owner's historical method-grade issue are not approved here; this decision preserves the chemical identity and does not revive an erroneous historical CAS identifier. |
+| evidence-dedff48b8a0c5821 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=dedff48b8a0c5821656982a5363f95708b4a1811fe008d0c5552338227c0302b]; full payload SHA256 0dc371e2014305a6ac3371d37cf6d083caf83dc3abbc1f6f920b53d952ca6a30 | supports | Both complete descriptors identify corn meal as the preparation input, and the DSM191 note explicitly distinguishes that input from the later filtered extract. The generic FOODON cornmeal owner agrees at the input-material scope. All six routes were inspected; support does not equate the filtrate with corn meal or approve extraction yield, final dose or medium performance. |
+| evidence-e333bc3dfe3d3d42 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=e333bc3dfe3d3d4269014b674c8c8fda0a7dd12ae2b662487a673e91d6e750e7]; full payload SHA256 1982dfb29723baf66775048583e2389f00e12f1fd7f4ed22aeac2c712b5eacb0 | supports | The complete DSM16632 REPLACE event explicitly names clarified rumen fluid as the new material and sludge fluid as the old target, with exact DSM119 evidence. The generic clarified-fluid owner preserves the preparation qualification. Support concerns the new named material only; it does not approve same-volume arithmetic, expand medium1310, or make the removed sludge a positive occurrence. |
+| evidence-e59b7d77dabe525d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=e59b7d77dabe525d9dd02e91ac34004df2331b44b1ada696623428827051ff83]; full payload SHA256 43bf4bc6d9d60809b8498bb796546ba2f715a97f6be093c5cf65f68c570b761f | supports | All ten complete descriptors explicitly retain clarified rumen fluid, agreeing with the generic preparation-qualified MICRO owner. Exact provider2618/P2 excerpts support the named input; all ten source routes were inspected. Identity support does not approve300/500percent annotations, infer density or universal composition, or treat stock inputs as final-medium doses. |
+| evidence-e6f49728f415eef2 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=e6f49728f415eef261d4f86e30971666e6e96d8adfa1f1ac4f479a3fadaf2ee2]; full payload SHA256 527be285ea4c90b76e31ed5ba761eabe29836cd9b03365af487808718fa8831c | supports | All thirteen complete descriptors preserve the named brain-heart-infusion preparation, with MediaDive compound186 and exact provider ingredient excerpts where present. The candidate itself is the generic BHI preparation concept, so no raw-tissue substitution is made. All22 source routes remain separately retained; support does not equate distinct suppliers or formula batches, approve their doses, or infer a fixed composition. |
+| evidence-e8cef33db5eb1ee8 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=e8cef33db5eb1ee82a24a228bb9839709f4e5d195b94b8f61d5482a5a93c0f2c]; full payload SHA256 c9543c028e019b15976fec3e93c071a7f39dffb69f5e029b3bcd7edcae9085eb | supports | All eight complete descriptors preserve Co(NO3)2·6H2O, including the two descriptors without embedded ontology fields whose literal formula still specifies the hydrate. The current owner has the same cobalt(II) dinitrate six-water identity; all twelve source routes were inspected. Amount, role and stock-dilution claims are excluded. |
+| evidence-e9f6f790b468582b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=e9f6f790b468582bcdc702f452884e41f70f36ed286b9df6f0f57a4d2f92c3c4]; full payload SHA256 55a2c5ed79009691bc060a3fa578bc0c7e2ca25f38968c117454dba8fb57c7c5 | supports | All three complete standalone-stock descriptors retain cobalt nitrate hexahydrate and source excerpts explicitly printing Co(NO3)2·6H2O, agreeing with the owner. Supplier references qualify the same hydrate and introduce no competing form. All three stock routes were inspected; stock amount and receiving-medium conversions are not approved. |
+| evidence-ea0c03f694530f78 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ea0c03f694530f78191f8c7e575647cf2151878234e901eb403fbf59d2f100ee]; full payload SHA256 856dc6d644ac8040dbad7a1c74e26ed7209aabfc5dd3475f5f2519284e4c611e | supports | All six complete descriptors retain D-arabinose, with compatible CHEBI:17108/CAS10323-20-3 and explicit provider1355 D-arabinose naming. All six source routes were inspected. Support preserves D stereochemistry without selecting an unstated ring/anomer or approving concentration. |
+| evidence-edf194d68c9d39b0 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=edf194d68c9d39b084864946cd0cb612719e0dac44597a85e42dc19ba7c50d39]; full payload SHA256 426c47cca0698b525e9189aaed6c9eaf2278665166aa94f0d904971eb4707672 | partial | The case includes Fraction V albumin, but its candidate is generic bovine albumin. The unresolved relation is between the specified supplied fraction and the generic identity, not merely the existence of a supplier or uncertain quantity. The complete unchanged case is withheld with the actual member witness under issue1486; no form is erased or inferred. |
+| evidence-edf8b8254e516059 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=edf8b8254e516059f1c5a1e80059af6312b272dbee973e44867006f67e7250e8]; full payload SHA256 c998ac9dafc6c4dbf5cf010c4f8cea56fa18051262c2417c20cca0e7c134d966 | supports | All five complete descriptors name creatine/CHEBI:16919, with matching provider763 excerpts and no conflicting hydrate or salt qualification. The owner represents creatine's acyclic structure, distinct from creatinine. All six routes were read; amounts, dilution and growth-factor claims remain outside support. |
+| evidence-eeaff3d249f6cfda | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=eeaff3d249f6cfdac1c288e8ee4f0b5330ec26547699f709ebea483b4e77c22a]; full payload SHA256 fbd8963c6724dd20e876972c5ce6c42607a3db47d2a8160833fce65f997bd628 | supports | All three complete descriptors preserve Congo red/CHEBI:34653, and exact MediaDive1708 excerpts name the same dye. The current owner represents the disodium Congo-red material, with no competing source form. All three routes were inspected. Support does not approve0.025g/L or indicator performance. |
+| evidence-ef1fb135697ab7fd | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=ef1fb135697ab7fd55166aced36f65046d75c992dd3d041159f14bcf54710652]; full payload SHA256 535e5062d00ee4df6b978aa0ae668dd01405455d7f5116a7c48720aabd73b4f5 | supports | All four complete descriptors retain clarified rumen fluid, including a JCM266 preparation excerpt explicitly describing centrifuged supernatant. The current owner is the corresponding generic clarified material, not unprocessed rumen contents or a fixed recipe. All five source routes were inspected; KOMODO amount assertions, sterilization performance, density and final-medium dose remain outside support. |
+| evidence-f0b290d112f66b8d | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f0b290d112f66b8de34d8b37d200d836ca84c38647375f787abcf7ea2a9694df]; full payload SHA256 3a836e1a356d24214b9b0bdb18a03a0ac5da41012bd7bf0d0b84ec429d47f9c2 | supports | The sole descriptor's middle-dot formula explicitly denotes BaCl2 with two waters, agreeing with CHEBI:86153 and the current dihydrate owner. Rendering the hydrate separator differently does not change stoichiometry. This supports the hydrate-specific identity, not mineral function or the stated0.1g/L dose. |
+| evidence-f26fdcf7b3f89359 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f26fdcf7b3f89359c67dc106b60a8cca0c9eb47139cbe69a70d4a66447a670e3]; full payload SHA256 6fd5769d59c239c0fbf7657b20d61b5f1f804b27293a255296fcbd5131107e18 | supports | The complete2ASW Matsui2018 change retains CO2 as the high-CO2 aeration component, separately from ambient-air treatment. Identity support is gas-component specific and does not approve the entire2ASW formulation, a liquid carbon dose or biological response. |
+| evidence-f378749c026b393f | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f378749c026b393f5a86b71db01dff6c1dfa5b57da046d8b13d3f9f613ef5628]; full payload SHA256 6d8fa4bf74a81d928893a4eab821c84a97869c963bcfc1cb635631b0b61b519c | supports | All three complete descriptors name maize meal, the same generic ground-corn material as the current cornmeal owner. The JCM1054 preparation explicitly distinguishes maize input from its subsequent sardine-containing extract. All three routes were read; support does not merge sardine or extracted medium into the meal identity, or approve20g/L/dilution. |
+| evidence-f3f2ce2edf1a2496 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f3f2ce2edf1a249654f9f813304b1207c9cf28b4e2120238e462d3375b62c643]; full payload SHA256 6d3e8702513aaedc44e0e355ddc21c8aa6a5c88998e094567bb323b76888b798 | partial | The actually inspected solution884 descriptor retains a literal seven-water source label and an incompatible anhydrous identity field. This concrete witness quarantines the complete unchanged aggregate under1488. The decision does not claim every remaining aggregate descriptor or recipe context was manually read, and does not reinterpret percentage basis, molecular weight or hydration count. |
+| evidence-f5b8559d53af9d3b | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f5b8559d53af9d3b2b1d47901ed4bf57860912a7feda73e492c99ee554734e14]; full payload SHA256 e4b8a965024101dad6e60c4f9cd45b6ead4b20308a881969ca7b4528017e5153 | partial | The sole descriptor names an NBRC IMK artificial-seawater input without enough formulation information to establish exact preparation identity against the generic MICRO owner. The source label and amount remain intact; withholding does not assert absence or prove that this formulation differs from another. Issue1479. |
+| evidence-f5dab94a70b629e6 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f5dab94a70b629e6b50e9bf0ae1b61e3d5b094f9223bc5ca48710d3fbe682820]; full payload SHA256 2ceac5f01508a1204fcc12a166841c331e226f6d830b1b0bd512317e71d392c3 | supports | Both source descriptors and their exact MediaDive ingredient excerpts explicitly specify aluminium sulfate with eighteen waters. The owner preserves this octadecahydrate and matching CHEBI:74779/CAS7784-31-8, rather than anhydrous aluminium sulfate. Support is hydrate-specific and excludes the 0.014 g/L dose or any inferred dilution. |
+| evidence-f7d9a7ca8d706c4a | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f7d9a7ca8d706c4ad5540080c229ea1d93fa529af7e8274e74fcca31ea7ec6cf]; full payload SHA256 0cc43f7bc3a547d28ad6cfe1b7c136d8bda105d4539f03c7197ddaf08aac2a69 | supports | All72 complete descriptors and146 source scopes preserve the named carbon-dioxide component, compatible with CHEBI:16526 and the maintained molecular owner. TOGO gas labels and retained recipe excerpts identify the component without establishing the containing mixture's identity. Null or variable amounts remain unknown rather than zero, and gas percentages are not converted into liquid concentrations. Support excludes dose, pressure and physiological claims. |
+| evidence-f92646ca40de10a3 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=f92646ca40de10a3c1ba114656577a41ce5df298b610aa905a9ee5af462ebc42]; full payload SHA256 9fffac0dbf27fdfa30873111052053c00820829ad63ae654442bb2b7cffa4613 | supports | Both complete descriptors explicitly name Co(NO3)2 x6H2O and CHEBI:86214, matching the current hexahydrate owner. Both stock/ingredient routes were inspected, including the JCM149 amount note. Hydrate identity support does not validate49.4g/L or24.8mg/L as interchangeable amounts or imply a working dose. |
+| evidence-fb7825971b329722 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=fb7825971b32972251ce5356e91928f28a7eb7c507b31275372834590a80473f]; full payload SHA256 6190d26987837e3e9f6b35af40e0c1107c149cf85d6da3989944804fec59882f | supports | The complete MOPS-rich-medium descriptor names the 4-hydroxy free acid, with CHEBI:30763 and CAS 99-96-7 agreeing with the owner. Capitalization changes no positional or supplied-form information. Identity support excludes its 0.01 mM amount and any role or growth assertion. |
+| evidence-fc601e133874bed7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=fc601e133874bed795f055cc05b1ddf5a94d35f5b5d441a522deb8efc8aecc99]; full payload SHA256 1e7552a1ce22f6c3c74239bbf5fbea9291467eb643eb2f4d82e7e3c013f34f8e | supports | All seven complete descriptors identify cytidine with compatible CHEBI:17562/CAS65-46-3, agreeing with the current riboside owner rather than cytosine or a phosphorylated nucleotide. All fifteen source routes were inspected. Identity support excludes amount, dilution and nutritional effects. |
+| evidence-fe345dbc05b393c7 | reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json; decisions[case_id=fe345dbc05b393c7b2e1e7a35711bf8d1cd89025c095005860dfbf45e9f6afaf]; full payload SHA256 6a299856e26ee531372812d17949967ffe86f8ecc6459176820856835725c977 | supports | Both source descriptors preserve the L-proline backbone and 4-hydroxyl position of CHEBI:18240. The owner likewise leaves the hydroxyl-bearing stereocentre unspecified; no trans/cis or extra stereochemical narrowing is inferred. Identity binding excludes the two supplied millimolar amounts. |
+
+## Limits And Additional Notes
+
+- Report-consolidation timestamps are recorded here; the case-level scientific inspection occurred during the preceding2026-11-16/17 session and is preserved in the explicit decisions and source locators.
+- Canonical eligibility is the separately pinned native2026-09-21 mapping review; this review does not create a new global SSSOM release or adopt the active campaign.
+- Identity support excludes dose, growth, whole-stock equivalence and unspecified supplied forms except where the individual reason explicitly establishes the scoped material correspondence.
+- Per-case WITHHOLD inspected hashes are the authoritative minimum coverage; a blocking witness may quarantine an aggregate without claiming unread payloads were reviewed.
+- Prepared intake, full owner packets and original producer remain immutable ignored evidence; the durable decisions retain their exact hashes and source pins. Final native intake finalization and independent product/QC verification remain required.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261117T012215Z-culturemech-intake-first-source-bindings
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: CultureMech v3 intake source bindings, owner indices 0 through 108
+started_at: '2026-11-17T01:22:14Z'
+finished_at: '2026-11-17T01:22:15Z'
+reviewer:
+  identity: Codex bundle_impl
+  kind: agent
+  independence: self_review
+  independence_basis: Author of these binding decisions and intake implementation,
+    and contributor to some upstream CultureMech curation. The frozen maintained MIM
+    owners were not changed. Independent sampled cross-review is separately recorded;
+    no independent double-review of all cases is claimed.
+skill: lbnl-mech-record-review; native docs/record-reviews.md and MAPPING_SEMANTICS.md
+completion: completed
+verdict: needs_curation
+native_verdict: 139 SUPPORTED; 22 WITHHOLD; identity-only source binding
+scientific_review: true
+summary: Explicit source-binding decisions for all161 canonical-eligible cases in109
+  assigned owner groups. Every supported case received complete distinct descriptor/change/held
+  scientific-payload inspection. Holds retain concrete inspected blocking witnesses
+  and quarantine the full unchanged case. No owner, canonical row, source quantity
+  or growth claim is repaired or promoted.
+source:
+  git_revision: fda3e6db69f4f379983d99d923192b171de1f390
+  state: working_tree
+  inputs:
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0000.json
+    sha256: 2699a2fc42ff649214d8e9847c6972fa5451832c80985f20b6d41e09b5b0f39a
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0001.json
+    sha256: 8217c87096c1d6a550586343bb764ea9dd37ceb250904a99a70b4559cbe25b7d
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0002.json
+    sha256: ef9d8277545bb540dbd835b140e17c3c0d389a71ce22af87d173d9461d9bbb79
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0003.json
+    sha256: ed45bdf6921e481b2091097f6bbe5719db9d4c889dc64603e6b43a3454e8f038
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0004.json
+    sha256: d4253cf76d99c3b678c55404150b6cde1e7af53c70c44024ea9dec679226c7e5
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0005.json
+    sha256: 0a30fee3467df42c5b7194dc54d90c8e6bb435d3043335acd44205305089fe24
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0006.json
+    sha256: dd957dda3e68acddbd3d2e82be8bd56c78a739c9cdec395864a086cf00d62e09
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0007.json
+    sha256: 6a3625524bcde369cf31f877ddd0db25ddc9a2d0d1d1f911946173842c3c3147
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0008.json
+    sha256: f85262c698c732cc243bd95849be0305689cf632a0142f5e6b475b5c58033912
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0009.json
+    sha256: dd00c0a4fd705dfeb4bf69eeff0eab4c6cdc6d921a16287a34107abafa111ac2
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0010.json
+    sha256: 6b00eb7e094e81fa6aa501af6872217f395ceb2ec8a55521bca94fdeff82f4f8
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0011.json
+    sha256: 9e88dbf41a58fd1b4ff90c66790e03c3c3d606881208e1ebad8b6cf23c2dc178
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0012.json
+    sha256: 6ca880bdf0a5995b28cacc95c0400f9276c1614ee26958fd406a05bd07d8b5be
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0013.json
+    sha256: b543597720e20f5129f98bfe3bd42b5555309ca732d8d9cf6def0277380c42df
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0014.json
+    sha256: 75784f38cb4c98b981726af4953954ac7ed3b67aaae9ddc215dd0ddf7353067f
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0015.json
+    sha256: 7a3add3eae6924aa7404e8391b139e9dbffdfbb99d46d3ca3550e294b2b97fa2
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0016.json
+    sha256: d0c46047770cae6a0178f377077d2512e5d31889fc19d4df9c346468e8e3679f
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0017.json
+    sha256: cc7d5e79613689613458c5d7fd11565a4b8814e1ad8f701f3b38e2428c550858
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0018.json
+    sha256: 78cfa0aef736697776cc7ed7c8c5785af099e91f1d9affd2eac150869fcf78f6
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0019.json
+    sha256: 546f5b7c74772a03428448c2bf8fdd6644774c104e8dfecf8ac61c89a21e5411
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0020.json
+    sha256: c588df824714e5d1c66704682be3c4a0312b6b7962158067c041b679e54bb4fd
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0021.json
+    sha256: eeb78c9406f78058abe65277b43a71f88dfa6a702abd8654c8bacd84ba24a9f5
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0022.json
+    sha256: b56cad1e95fec39752e57f2b8bbb40639f07078aab08f6c7173b227132bf0e97
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0023.json
+    sha256: 2ace0129b6d1823d1163cc60270224f2b35e331b5cdd4ce1b29867b239252079
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0024.json
+    sha256: 80e844ebbda8504979a74307d4842bde74291b8056565c3f094fa500219b7071
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0025.json
+    sha256: 23a1f2ee0ad0c14f2ef3257a2171b79cec0efc20afd800cfb773242deed45c87
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0026.json
+    sha256: 0ad3d559e13230f134d9c994c6d3a900604adbc018b878b9aa3b6684e350f110
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0027.json
+    sha256: 65dbb93a9293c62dec931e24e03c1587c1714cead466e3b9993a0bbd94a22e01
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0028.json
+    sha256: 0cf74ab2e5d5fac3e78454ec98072daf263067b27e010f6edfff9af5578651e0
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0029.json
+    sha256: f1de73c29bb403993c4def8e146c2502df16f39b01d137904c8eeb5857298066
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0030.json
+    sha256: 538502a4bcd566a8230c3e688574a3b33d4d55ab2029487262908650c6234290
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0031.json
+    sha256: 05bb0c3edde4de8e251534003ddc398aab699f4fe1a231cf89508790d2da3896
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0032.json
+    sha256: e630b5491f38fd7edfc21c1e4eecc75b729dacd6fd93390512922756057b01aa
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0033.json
+    sha256: b0da105deeb0ee6cfe6509b9fbb4e447dc8412aa3db6fe59ae9eac8edb1e51bd
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0034.json
+    sha256: 5610fe0af9ddc9c12814dabad156324c798259793648ac33d1de8db91d5d5d35
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0035.json
+    sha256: bf26af2afe16a9f51d6eb57e0521c47858684038c70f426d9db6dcbb74507211
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0036.json
+    sha256: b235a62c26f7439aa3c78367e538788bcf18df7047be138e114c0ae9fea73128
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0037.json
+    sha256: 6f6d63a7140d2664ccfda1dae9c0c69ed8a91a661f3f097db36b0cd05853f329
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0038.json
+    sha256: 2896a9e7bfce615c698e411d54e490757b63a96aa79d58a27e7a60c2bff4b608
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0039.json
+    sha256: 3a7c2c6dd6dff047971f89ba6aa1853ad0e16434cd24fdc82530b86aa3a5d764
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0040.json
+    sha256: bf186ffd6be1a63aa0be80f4a0fa49675687c7a79bb11b88ab96c2dd42589a5f
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0041.json
+    sha256: be900cddd2ff8218a12bc23d33bf4db71baff2072144109a4a35ad3b38903eff
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0042.json
+    sha256: 322e9a5fbc32c0f1a64bbdf41368198fc045533d7df42ac4b5da04f536c2b835
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0043.json
+    sha256: 0ffaf67a3b2192060e31313179433b4ff8f2165d52ef80fc41969cac441f8371
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0044.json
+    sha256: 1541d89065aa14e41bec2886e30362200f7a92096f45109b0c7eb6f959036023
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0045.json
+    sha256: 1de6758630f17aeafb4c094e668a1898ca5523d6ff982b4f44657dba7717d439
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0046.json
+    sha256: 85a371ceb8caf184a03b3f10a084aeeefb821811e8eb3c8ec4627b6d4a56d8ef
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0047.json
+    sha256: f036364e05ed963957596dd85a8c76150f2a3287ba1a28c4e4c4fe45c249ab8b
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0048.json
+    sha256: a76261bf99da1a1b1eef3cb2172199fd1b4765101a1fc56c5ab7815db7194a16
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0049.json
+    sha256: 3774008cee0828aac7e528377516dcabf1f447866a73f73a2061c02494824b99
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0050.json
+    sha256: 55d1bde53b9c167b407c8e8055784ba510e22ad81c0bbd344a572eb461c40d4f
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0051.json
+    sha256: c8e034638b2e9cec326b5665eff1b891bddeee7f4271d9b93e20cf7d680830ff
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0052.json
+    sha256: 60af4ef930236e0d10609151d09432efa1c1ed36a5bc9e9f9a90894007eb443c
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0053.json
+    sha256: e1337a36a673438a32eaf4f082dfb7838b643962a3241782502ce367c03915c7
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0054.json
+    sha256: 9d0804732b9345a6ac8dd1added41093996598a2114ad41ea848270bf68f3660
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0055.json
+    sha256: 5127bcd0bd3a9490a54bdd8f2530f6945efa0d8d92896a74aa6dfd0da97c7054
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0056.json
+    sha256: 71fefacef1a98c93a5a1c0f86c9b9b429a44fbeca7e82a54a3bb5a9e9532417a
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0057.json
+    sha256: 75bc7db2df246fa66172891bd633ab3e0c70356bba05f76b6295a45579f64df4
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0058.json
+    sha256: 12829d188356715c0eb6ac7fd8dec44194038ce9d8f3b3589ca1b61cc6a8c7c6
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0059.json
+    sha256: 478788ba0625089aac1db7ba419dc127afc3d8ba06da54621292bfeed39bc8f1
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0060.json
+    sha256: adbc2882420e792b9c483faaaeef7d948ceb10f831cfcd7b5b2e9a62e3c08ebb
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0061.json
+    sha256: 4dc56ba38444ed91a5ec69cb048393f4c1efe1cc1ba4e4daa5474a6cca787f05
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0062.json
+    sha256: 07cd80faee3c049ae4563deef98c1fc72a8ffd5cc75c0a4aa9567f1b0b4d5fba
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0063.json
+    sha256: 812bf0eabf7c14eaad4c65b7f1fc306013a4155ba3ba398f09de294499e9718e
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0064.json
+    sha256: e579195126e5cc69ca500f62dfe129468e287625d7e4b1cafa3e58f9be3eab6c
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0065.json
+    sha256: f56bc975e4dcccb3f188bdbfd2190422b9680012b46c6127abe520ebbeb3326d
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0066.json
+    sha256: f5c27c1acbcc15d0114a5e2c1d077422686fe82d2334472450d12483949ec5e0
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0067.json
+    sha256: 82b96d25895fe26a838d8e6f21b15244c4adf95d04f43720040b35a65ef018ed
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0068.json
+    sha256: 02d910917c92163bff19d42b747e7b5acec921e91a47db2ad33128208aeccfc4
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0069.json
+    sha256: 0c2dd4b2babfeb97f27a775a41e87810cdf8f7cf4707b764b60ccca1012888c2
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0070.json
+    sha256: 359e85ca98ad74100b42834d7f94da60879f1792f17701067adcf611e1633892
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0071.json
+    sha256: 7c2ac46e35daeb02b3b068e5587785e482fe6c560c0e748c7c5e642b41c29b00
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0072.json
+    sha256: 77a59833e6417ade61bb1bfa1b2b454316017f721a56d5c459253449357ace08
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0073.json
+    sha256: c78f850c70254bbd75e0eef599631492db3653dc7e2621486534564716273cc4
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0074.json
+    sha256: 1346b2bbe264f5a278dc8febc7249b04cb8f4701aa5b2defa6665d37800409dc
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0075.json
+    sha256: 99228522ec2d9f8f757b82e2f60166b71af587dd05814bb21c1e6bce71383b34
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0076.json
+    sha256: a28d25e0be54ec0380de1eb93ab8d442a8c03b1f9565888da5c25952f26855a7
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0077.json
+    sha256: c81e7a42a4bc97895c21d2302bcb8cc984bb18b6b27d9daa203f0511c32e2fd3
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0078.json
+    sha256: c064c2a5cbf7ad9af2ac987ce751c9edeceaaa5db1c8510b6e96f56998a3c249
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0079.json
+    sha256: af2bfbbbbf6474ebc04e60be0feeb7778b851aa70854d41b7fa28e23d4942b8a
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0080.json
+    sha256: b02e99ce1cf5e21316597ebf7c19e3761e249ac8184f8e44493d5bb52c25992a
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0081.json
+    sha256: 46b14bdb50a9021629dc7bb394a5a52f7f9e8010fe82577c4baaed9d76f33b52
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0082.json
+    sha256: 5f8738e542f149bd3418b05a1d3531ecd93cffa3b6e5e27c1a7103efe7a96945
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0083.json
+    sha256: 68ac4c05b4e94549f138f514cb311c975839005ed85bfc2eea849d377145c900
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0084.json
+    sha256: 678abd0741778ba447501518e929688b694e38c968e7381183687b14793078ea
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0085.json
+    sha256: fa3aaf1aeceab10f2b057b9f7f503475d3cae9db1f05359d59ea5d8902cf4d76
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0086.json
+    sha256: a4413b3d97d4c1857c8b188f27eeba0648555d67da3a3831ff568634b14b98e6
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0087.json
+    sha256: 63282624f31ea9f78565b0bf801e50e97d449759f45b0c500103cfa1712f5876
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0088.json
+    sha256: 5361e7031d67e5dd8014d265c7ccc3356e70f0f08a94e5639d4b64297a0a5f56
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0089.json
+    sha256: 8f594f56daf5fadf6c60790fd175f5c5be04e072109789a73caf9179409cb71c
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0090.json
+    sha256: b24c908e50cb8264417034a7e31c87e67af022cd3286052555df4cde88bce64c
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0091.json
+    sha256: 5f8071794d052d240f2b37d88376b54b8a0dcdd22bbe9f734447ad9ff48fb917
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0092.json
+    sha256: b8ca8cf3c7ba9a49ebe82d87d946ed638dcb006f849d47436343e9dc1ed5f479
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0093.json
+    sha256: 3983c98e224eab4e568eee7281ec46a3d3819e27c0c1fcff0878f0c3418008b7
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0094.json
+    sha256: a1db7ac59a37e373a1365a1d5c6859de89e84fb4f50ad5a1f4566f652f810367
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0095.json
+    sha256: 66b529b7051bd265b0204ba29fb2a0e9173434d4f6d0ea41e96e60b25715d577
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0096.json
+    sha256: eb9839b502e9d3ccb028562b6ba41c1d4dcfc7457caddbb38aaa893e11ecd95c
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0097.json
+    sha256: 3bb45ffa086e14adbdcb993e9e4ed232c39972646dba553cdbd7bbcc8f0011bc
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0098.json
+    sha256: e59d72396b457cd6a7ebb2ecfacaffd8a5be5cad1d06aff91ba999129ed763c6
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0099.json
+    sha256: 1a7ddecaef9757f5a667daef1e25c5128a9176a1515822ce4783ef2eac8aeb29
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0100.json
+    sha256: 14efade4bce833b44a44894047e3f41767ec4090f5c46be49e50c6a3833d1198
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0101.json
+    sha256: 611df59c153c8c9121414f06d17356fc6b1c4781ff1f7fb7761e26ea75d4e89a
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0102.json
+    sha256: 33b6f191c391aafcfa0229d3009e48bd39a5ec6208fad44f17b671c3f4cea5de
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0103.json
+    sha256: c0d48962956867324584219882a5084f5d021701e0b9ca114142d2219d2c7949
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0104.json
+    sha256: 12c9de57f887796047e09eeacc3817817211f010346170c9d560856cb225d7ed
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0105.json
+    sha256: 8efd62fa638fde5db1a5890a8651db8f9372e3e41f4598a5c8d4807935a249cd
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0106.json
+    sha256: 630ffa9cf71d8a60f755b89399d9d5d54694c2744a0ed43a2ff2e11effad9822
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0107.json
+    sha256: d1739a2dc3e643921aadf3dbd8693a0db654a280c8ff8deebef7495b9c860422
+    role: context
+  - path: .temp/1453/review-partitions-final-v3-6f1b1d18a5/owner-0108.json
+    sha256: 0b58ae29fc94b07c23248eaaea219af3b1de74818291c0d732a0c9b92f2bffa3
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/(-)-quinic_Acid.yaml
+    sha256: 9c9368ef44de08cbd59138916d2a120db321b5bddd69b8610a66f140d0d3898a
+    role: context
+  - path: data/ingredients/mapped/(R)-lactate.yaml
+    sha256: 5ecdb54c8474811127e8bb01b8d7753004065329b1574864c8140d635c6ae93d
+    role: context
+  - path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    sha256: 91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f
+    role: context
+  - path: data/ingredients/mapped/2-Sulfobenzoic_Acid.yaml
+    sha256: d0e38cbadd34fc3225b53af8c9f57782b12f7b640df03f1da28ed9e3c3e7d95f
+    role: context
+  - path: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+    sha256: 30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b
+    role: context
+  - path: data/ingredients/mapped/2-deoxyinosine.yaml
+    sha256: 3b564e63bc115d18b1076b7bdcf5bd8c4b4266b97e5643cf5e267f5d0d9976f5
+    role: context
+  - path: data/ingredients/mapped/2-deoxyuridine.yaml
+    sha256: 83bfa7a3eff6ca4f5bb7075f09697ce983dd2847f19333f70a33fdf575831647
+    role: context
+  - path: data/ingredients/mapped/2-furoic_Acid.yaml
+    sha256: e1168333c113af616dcadf4d9f651ff17ef0540bcac6e82832dbeda8a8bdbb45
+    role: context
+  - path: data/ingredients/mapped/3-indolyl_Acetic_Acid.yaml
+    sha256: c72fab92961e79927836c2873ef13c86121ee6b349f0d48ec916e518ede67feb
+    role: context
+  - path: data/ingredients/mapped/4-Hydroxybenzaldehyde.yaml
+    sha256: 26708596b1e101638e7244d761c1ca228529d533069bd6e2ebad6985e61b0744
+    role: context
+  - path: data/ingredients/mapped/4-guanidinobutyric_Acid.yaml
+    sha256: b9c8bbc818efe488bb61564f51aed9a937eb048c23f3f0c5ba03ae1e6c8600e6
+    role: context
+  - path: data/ingredients/mapped/4-hydroxy-L-proline.yaml
+    sha256: c7db743c965f3c410f21127d5c94b44e8cd57862228e75dce3c6416cac353ebc
+    role: context
+  - path: data/ingredients/mapped/4-hydroxybenzoic_Acid.yaml
+    sha256: cae1ec3d296a45ead933f3b9ba692af141c9634d7e453c0f44d30e94f42a2beb
+    role: context
+  - path: data/ingredients/mapped/5-fluorouracil.yaml
+    sha256: f81af2351b4f738839ee1a9b37d8ac576b3c810e45641b6d99a572dc06b19075
+    role: context
+  - path: data/ingredients/mapped/5-methyluridine.yaml
+    sha256: e73fc94a76689f7c94c818a0c187f87e33b48db9f6ee0c44223cf08edc6ff9cc
+    role: context
+  - path: data/ingredients/mapped/Acetoin.yaml
+    sha256: bf6c9d292b40b667f2e85f6bf6ea888d21c1ae1ed615791442ae087e21457307
+    role: context
+  - path: data/ingredients/mapped/Acetone.yaml
+    sha256: f2b64c225de9b0718988d4215155bf4126ff0cf6d518b5e9e92b7dc3d9f6c37d
+    role: context
+  - path: data/ingredients/mapped/Activated_Charcoal.yaml
+    sha256: ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f
+    role: context
+  - path: data/ingredients/mapped/Adenosine.yaml
+    sha256: dd3ed82188597446a71bf198f1fe37450b0db3a25737e69793ab41ffbc73a13e
+    role: context
+  - path: data/ingredients/mapped/Al2_So43_X_18_H2o.yaml
+    sha256: c9cc4a7da494d3a42f1cb9b0b06a84d7d9dd8de2a68cb75f0f22270ce16964f1
+    role: context
+  - path: data/ingredients/mapped/Aminoacids.yaml
+    sha256: 5cc935f8dd913d7caa89c5ee3362cc84f1f0a7072f4c7170a971b70283190cbd
+    role: context
+  - path: data/ingredients/mapped/Ammonium.yaml
+    sha256: b31c98cdd0fcc6f15cd6004839b327258499fc37a5b3b506773920c42d0da49c
+    role: context
+  - path: data/ingredients/mapped/Anaerobic_water.yaml
+    sha256: b8bfa22be7bbff832ecc3dfc4fa10915b1d3dccfb22bd2a1bf0be3f0ed6ef77d
+    role: context
+  - path: data/ingredients/mapped/Antipyrine.yaml
+    sha256: fcb1db31d792335516ff6663ae85ae0d57963eab434555719e95b8439087cc1f
+    role: context
+  - path: data/ingredients/mapped/Apple_Juice.yaml
+    sha256: 18436f7037c5b8756da87c89e5822bdc6d2c2d9424180b7c8bc7acee81e33125
+    role: context
+  - path: data/ingredients/mapped/Argon.yaml
+    sha256: f23d597db4f89e424226dc081fdf2665d7056ad1bd3b29688c74ae517e334a26
+    role: context
+  - path: data/ingredients/mapped/Arsenate.yaml
+    sha256: 1800c74a927601a321c46499e6e01347f36c6ebc1226e61da363df50eca17e15
+    role: context
+  - path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    sha256: effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389
+    role: context
+  - path: data/ingredients/mapped/Artificial_seawater.yaml
+    sha256: 9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708
+    role: context
+  - path: data/ingredients/mapped/Ascorbate.yaml
+    sha256: d0e6eec8dbf77fa91a395491b76d8ad30e90dbe0be8afcf9fab3a8e3a237bc29
+    role: context
+  - path: data/ingredients/mapped/Asialofetuin.yaml
+    sha256: ebce115c4feccd534b8418f5c784268570a079b50966006a8f9c7787e9db82a7
+    role: context
+  - path: data/ingredients/mapped/Aspartate.yaml
+    sha256: 0fda5bbe5b55faa59692b792882be73020eba0a72b6345301cf836d91627e102
+    role: context
+  - path: data/ingredients/mapped/Bacl2.yaml
+    sha256: 6897b00923cf7c3bdbb1294158605e9c7351bc5e574cf0507645397a0db55b45
+    role: context
+  - path: data/ingredients/mapped/Bacl2_X_2_H2o.yaml
+    sha256: fd93d85f945ad57319ae5cfdb3601d0c82aa1ba00ec03a6786707cbe0cbc9f5d
+    role: context
+  - path: data/ingredients/mapped/Bakers_Yeast.yaml
+    sha256: 11eda0e05a1a8abf2779d8eb421548e31e82d06387dfa388d8526b6523a0154e
+    role: context
+  - path: data/ingredients/mapped/Beef.yaml
+    sha256: 5a06d79cb88d7f859bddc27600500b9f15c558218ea394eea32b20e9ee7f87e7
+    role: context
+  - path: data/ingredients/mapped/Beef_Brain_Powder.yaml
+    sha256: 9bdfb13d95e4140a9933254a20bdcab449311e70cfe334b001a5713d1526c51d
+    role: context
+  - path: data/ingredients/mapped/Beef_Heart.yaml
+    sha256: ca7de3785bc0a6469a5d60f48de97a49c0c7e460ea11d801bfe6367b1e76dc34
+    role: context
+  - path: data/ingredients/mapped/Benzene.yaml
+    sha256: bb28e5b155b0d6657faa0c8ce1049f943d8d4faef63b935aa499414c3641f0db
+    role: context
+  - path: data/ingredients/mapped/Benzoate.yaml
+    sha256: 688160b60b65cef68b133e7d63b13af3618a9711fcc3aac3f0c1c62edeb3ced2
+    role: context
+  - path: data/ingredients/mapped/Benzoic_Acid.yaml
+    sha256: eb8f7def79edf30707720bc56a5e9a48d4af2a2c2da83f3e22176b3093fba1ba
+    role: context
+  - path: data/ingredients/mapped/Benzyl_Alcohol.yaml
+    sha256: 17875b649e9f76fc4d06352c5be42bc1141d6fb2fc798774e5b113172ffeb6d6
+    role: context
+  - path: data/ingredients/mapped/Benzylcyanide.yaml
+    sha256: f5070c267f1729a61ce6285f1380e9f2c6cb778457c565099b8db962a0ba62d3
+    role: context
+  - path: data/ingredients/mapped/Beta-d-glucose.yaml
+    sha256: 6a4f74d836ab7764a706beeda671e69d12ee8dbbf0c917d862f9071bf189b6ed
+    role: context
+  - path: data/ingredients/mapped/Biphenyl.yaml
+    sha256: 95e33e768ce26bad86b32a93bad7dfad4aaa206702691e8e5f48831f168676f0
+    role: context
+  - path: data/ingredients/mapped/Blood.yaml
+    sha256: d1bb0db849599b2b88a480bca03dcd2ae09684f2735c7f68b79df8d0c3273330
+    role: context
+  - path: data/ingredients/mapped/Borate.yaml
+    sha256: 47d232e6b2feae8db5cec613ee636cf03ecb0db924f0bd24a943317deabbac54
+    role: context
+  - path: data/ingredients/mapped/Bovine_Albumin.yaml
+    sha256: 6fede17cd3c2e2547278ae75d0b11cdb8d0aaafaa498a186155c567fdaae22f8
+    role: context
+  - path: data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    sha256: 43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094
+    role: context
+  - path: data/ingredients/mapped/Brain_Heart_Infusion.yaml
+    sha256: 77230cb3783ad3fbeb96695e96958441f8d0c9ac6f5a9595ac1816a72b7d86d8
+    role: context
+  - path: data/ingredients/mapped/Brainheart_infusion_agar.yaml
+    sha256: 91ee4f1cf64b77ba8d04420abb5ce512335ece0650aad718bd7a5d8898b409d5
+    role: context
+  - path: data/ingredients/mapped/Butanol.yaml
+    sha256: 70fd5a6dc5e57685eaf13c6644d50054cdcbbab29062111e8180d9dfb0c63507
+    role: context
+  - path: data/ingredients/mapped/Butyl_Vinyl_Ether.yaml
+    sha256: 4e36af0b3c64aa0d4636a78cf165174ebbb413e9a4d6915c06b62bec92cfedbe
+    role: context
+  - path: data/ingredients/mapped/Ca-folinate.yaml
+    sha256: e6077448154006195021c507f681b7a4bcf115979bdf0a3f3de69040dc73532f
+    role: context
+  - path: data/ingredients/mapped/Ca_No32.yaml
+    sha256: 49012605fd008e5152cd647dda7f7a10dcd2f10468b0d2b68efc7339fea638ba
+    role: context
+  - path: data/ingredients/mapped/Cacl2_X_6_H2o.yaml
+    sha256: 0fa44f37504187cf2cf9aaeb415c5d514210c39e5373c1e67b3ec6ed55e2b243
+    role: context
+  - path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    sha256: e52628c1c1ebc62037537e9de3136970898fe69ed07573a55c2d8ca7361c9071
+    role: context
+  - path: data/ingredients/mapped/Cahpo4.yaml
+    sha256: 38d08a6f3481b6043a8aad4237f02bfff1d5a2b9183738127572a3efcbdeb353
+    role: context
+  - path: data/ingredients/mapped/Calcium(2).yaml
+    sha256: 06e0f96b60b9cfe46f1f1477e8ae904d7cadbe8c4b8bd442089d6c64a228c0e7
+    role: context
+  - path: data/ingredients/mapped/Calcium_lactate.yaml
+    sha256: 493bd692d85806d346eab734d6547eb9d7b9524febcdea6afeaa95b74809668e
+    role: context
+  - path: data/ingredients/mapped/Calcium_malate.yaml
+    sha256: ab20349b0a9cc9f773315049a9c6a87ce5092e769f77371f5f7c59aa427efdc7
+    role: context
+  - path: data/ingredients/mapped/Capso.yaml
+    sha256: 8eb0cec492d455e339f9a172cbc884c0a56ef2b0ccfa29d94cebc30e01a19351
+    role: context
+  - path: data/ingredients/mapped/Carbon_Monoxide.yaml
+    sha256: be622a5615f098d660d9c32e686163e4f7269387ca5bf93d53dd8b6d482e0ae2
+    role: context
+  - path: data/ingredients/mapped/Carbon_Source_Solution.yaml
+    sha256: ae316566ac12ddb90a77de07f06443ac47f8510c3ef847ee351ad585909c145d
+    role: context
+  - path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    sha256: d39e65eaa0bf672e2a7e7ef8474dc36cfcc610a8f023fffa9b13ac628bf0bd0f
+    role: context
+  - path: data/ingredients/mapped/Carrot.yaml
+    sha256: f0fe4bf07e2264dcb21c6f4bd343575f2ae546e41b26e893be51e55aa441022f
+    role: context
+  - path: data/ingredients/mapped/Cd_No32_X_4_H2o.yaml
+    sha256: 851ad01767bff5c89d46b377f8ad79ef0393610c6a3a8a03805016ca449b2a02
+    role: context
+  - path: data/ingredients/mapped/Cefoxitin.yaml
+    sha256: a85fb01c585cd9b0214cde69ab6ff858f64de83b9e2b6790c49c2627bf71f9ba
+    role: context
+  - path: data/ingredients/mapped/Cefpodoxime.yaml
+    sha256: 8144009afa9fbef569b6bedb0a25fe0b4dc414fcbc61a8ea476330b6b4ed25ae
+    role: context
+  - path: data/ingredients/mapped/Cell_Lysate.yaml
+    sha256: 4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420
+    role: context
+  - path: data/ingredients/mapped/Cellulose_powder.yaml
+    sha256: 6096e233f612baac5b7ff43e23db7f8b16f8098d6222e59f4ca21d3509dab3d5
+    role: context
+  - path: data/ingredients/mapped/Charcoal.yaml
+    sha256: 32f0a0c3b6a4883bd86f7c47240f4bb4d8c0233e571c914b22dae31492e31281
+    role: context
+  - path: data/ingredients/mapped/Chocolate_agar.yaml
+    sha256: 298972ff0308eefab29fd59a28d21e2f25c1498aaf4c128ed20ee11593107002
+    role: context
+  - path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    sha256: 568d325ff4ba6d9fa7aafe321d824ee34d1b963702d4772a92f73125b1138ef9
+    role: context
+  - path: data/ingredients/mapped/Choline.yaml
+    sha256: 9f43030c0440cd5bd0d1871141ffd5e5a9849674d43496b5606a11001c7fa245
+    role: context
+  - path: data/ingredients/mapped/Choline_Chloride.yaml
+    sha256: c3854baa0cbe4e1e2ab0b9803c510c2d648596b3cbc01181e3dea2b1b3b6403b
+    role: context
+  - path: data/ingredients/mapped/Cl.yaml
+    sha256: cc21346fda1e00202745de248140369c7be4ac971acd094a2edb76eedcaf0076
+    role: context
+  - path: data/ingredients/mapped/Clarified_rumen_fluid.yaml
+    sha256: e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967
+    role: context
+  - path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    sha256: 8e7f1d2eacb03c665af878935add83bc686d9bd7dd1b3cd601b29a21af37caa4
+    role: context
+  - path: data/ingredients/mapped/Columbia_Agar_Base.yaml
+    sha256: 10bd005c332938345cfecb46144339c7e56e8d47b04b12420b0137f68c5805b7
+    role: context
+  - path: data/ingredients/mapped/Congo_Red.yaml
+    sha256: aa4ba08e35d821c24685f51f79b99e3e01ca5fbc0c340e23f975c598c02dacef
+    role: context
+  - path: data/ingredients/mapped/Copper.yaml
+    sha256: 70540f6b852e736bbc5f96d7786262715a85d83611e16d73d302128df11e27f5
+    role: context
+  - path: data/ingredients/mapped/Corn_Meal.yaml
+    sha256: deea94b71b43bbd26c2dec5da7b3f0de0db1cd31d2a001c49ddd0af5b871c7f9
+    role: context
+  - path: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
+    sha256: 0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504
+    role: context
+  - path: data/ingredients/mapped/Cr_No33_X_7_H2o.yaml
+    sha256: 6683961b990fa61347d479b74da01b28658ef083dbe7c78fc3d3809dc221c401
+    role: context
+  - path: data/ingredients/mapped/Creatine.yaml
+    sha256: 032c5ace97ce962ddf8586ac8e75396b47a1702f60cae24624c30dbb2032ab85
+    role: context
+  - path: data/ingredients/mapped/Creatinine.yaml
+    sha256: 6e6cc90e3aed158765ffd3e4de6e234d4df291f7fd426d8df0b4a04bc9cdb420
+    role: context
+  - path: data/ingredients/mapped/Cresol.yaml
+    sha256: 87886c72e9eb3d159db42f24a5dc514bd6bcb4eefda4bca206c16a9ef9e2feca
+    role: context
+  - path: data/ingredients/mapped/Cresol_Red.yaml
+    sha256: 79d23db10a9bd95d6c51c5d3434e1510f32265d797ba8e5219b2a977dcab9988
+    role: context
+  - path: data/ingredients/mapped/Crotonic_Acid.yaml
+    sha256: 15b9193b55b19ca84f58db0a095c543a925a1536cc15762734e6aaf17ba9c943
+    role: context
+  - path: data/ingredients/mapped/Cucl2.yaml
+    sha256: 3af3e72dbcc28ff48e3ec4b266bc172de6b290923c3b094121cea09bee146420
+    role: context
+  - path: data/ingredients/mapped/Cyanuric_acid.yaml
+    sha256: 321c05e2f24f864ae79f2ba30303d73943a0ce0e8049ba700bb614de620addf2
+    role: context
+  - path: data/ingredients/mapped/Cysteine.yaml
+    sha256: 91eebbb9397c2f88e483ebe2a97c96546138be9d09e72cab5b667154443055ed
+    role: context
+  - path: data/ingredients/mapped/Cystine.yaml
+    sha256: be9423ee0e7cf5a7572c50a0c566c385988cd7fe01c2bbbf6fc0f5193df4fa56
+    role: context
+  - path: data/ingredients/mapped/Cytidine.yaml
+    sha256: 413b03baf922b48926a8e24cf488a13b53524aa62880429bf11d88537afe52fd
+    role: context
+  - path: data/ingredients/mapped/Cytosine.yaml
+    sha256: bf9f041fc6ad34dedb67b3afe7168cad0ffb50a3565a9e257c51a02465c9416e
+    role: context
+  - path: data/ingredients/mapped/D-Alanine.yaml
+    sha256: 339e66c0d8cd147d235511dc025429b213cd70036bc987966c5f923ac02a1605
+    role: context
+  - path: data/ingredients/mapped/D-Cycloserine.yaml
+    sha256: 2e83721009ea217aee1c60016dc93a9d90843e9e05c3a69dd1c7ebce530601d4
+    role: context
+  - path: data/ingredients/mapped/D-Gluconic_acid.yaml
+    sha256: f6bcc42e7c94d8ade5517f28f75c3ff31cb62b52af2c64eb9c0fcef1eecc9fcd
+    role: context
+  - path: data/ingredients/mapped/D-Methionine.yaml
+    sha256: 4f5efa885ac3389c757f7fa257d2e620dec4d926480b7801090b2bf4b867cdec
+    role: context
+  - path: data/ingredients/mapped/D-arabinose.yaml
+    sha256: 0e501cbf834599bb55d18abbca320bd1aa95be31cf0742bafe3cd95484997581
+    role: context
+  - path: data/ingredients/mapped/D-aspartate.yaml
+    sha256: 085e677f05cb6f3f380a9092efbd96f4d8f116e87f8a26317fe4c174316beeb0
+    role: context
+  - path: data/ingredients/mapped/D-glucarate.yaml
+    sha256: 205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f
+    role: context
+  - path: data/ingredients/mapped/D-glucose_6-phosphate.yaml
+    sha256: 8cbbd58b5550de35ba5372d408c4da81ed6ef4cda04286f1cf1c06009bb1c730
+    role: context
+  - path: data/ingredients/mapped/D-glucuronic_Acid.yaml
+    sha256: 8fed0bf74a3fde5711734cf0958a007bba8145b491dde6ec0d5a499328e7efea
+    role: context
+  - path: data/ingredients/mapped/D-mannose.yaml
+    sha256: 7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937
+    role: context
+  - path: data/ingredients/mapped/DL_Vitamins.yaml
+    sha256: 41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad
+    role: context
+  - path: data/ingredients/mapped/Decanoic_Acid.yaml
+    sha256: 95c6d480fa485c4fe47963ba898147e353c68ff9a005ad9a9c9e40970da223d1
+    role: context
+  - path: data/ingredients/mapped/Defibrinated_horse_blood.yaml
+    sha256: 9e5c9eb2624156ad752a630d1875e836985da7fa6a187aeda2b7053593496168
+    role: context
+  - path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+    sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+    role: target
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: ab301d1f66276cdfeefea79080ce49f26ebb02c1920a53c71512c14b283b16cf
+    role: context
+targets:
+- target_id: case-01f1352e7d21de82
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=01f1352e7d21de826b5dfef5d1ccf50ad9117bb05b8314523922bb2ea439d92c]
+  label: Carbon monoxide
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_Monoxide.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-022ccc2cc9a596c4
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=022ccc2cc9a596c43a83963884d20fcd99bf8e916980e2185005f396a631d5ff]
+  label: cholesterol lipid concentrate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-02c1797bfd5b517c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=02c1797bfd5b517cfe0145a5d38039cb3b6b135f22fe8d2c7ff63eaa3afb4f72]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-049c670f2bb6779c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=049c670f2bb6779cc2d20ecb6d16f0c721dbfd6d27b0d8b4afa64b1d7e31f845]
+  label: D-glucuronic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucuronic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-04dffe7b7de2b15c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=04dffe7b7de2b15c3242c8bc0deaec199656f9e20f8ca109f90cca7782fe6f6b]
+  label: (R)-Lactate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/(R)-lactate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-06757b9134c61a83
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=06757b9134c61a8340c622ee258ab060ee2dbd6e53feb588f347f15805766318]
+  label: Cell lysate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cell_Lysate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-075dcca17ab6ac07
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=075dcca17ab6ac072038e2df152932ba3f7372a1d8c2400b8733c918f13724e2]
+  label: Cytosine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cytosine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-0787833dbd869a3e
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=0787833dbd869a3eb8c0cb96de1957e180c719cf3da585db0e3f0f8eb3e23251]
+  label: Cupric chloride
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cucl2.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-083bbae451c96d9c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=083bbae451c96d9ca221b0d31d2b9146c9b38ef2562545ad32046a440bc1f323]
+  label: beta-D-Glucose
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-d-glucose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-0b724e2a19ae3508
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=0b724e2a19ae3508d8c4031a9eca5e348da720eec44e1456550157c3ad07ef4b]
+  label: Asialofetuin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Asialofetuin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-0f421b3552e374fc
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=0f421b3552e374fc40033a2637f73adfba0ac58a8caaa041fca721588677e40e]
+  label: Cellulose powder
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cellulose_powder.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-0f739a012bbda9c0
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=0f739a012bbda9c0a25afe3ae1423f05ba9a5c14c91c08846590e5b956a01131]
+  label: Aminoacids
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Aminoacids.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-0fa3c3f2c848ca11
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=0fa3c3f2c848ca114741ab0756a15c1f5a634b6bd214964134a2084c0b9f8da3]
+  label: Benzyl alcohol
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzyl_Alcohol.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-14d997a357ffbe63
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=14d997a357ffbe636b6f9770796ebbde4da7a5eec048f116d27fe428f6bf81c6]
+  label: Co(NO3)2・6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-165a5eee355d3bf5
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=165a5eee355d3bf5ae71fdf818d089238c45d79dd51ff01140dad4a203f2be42]
+  label: Cefoxitin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cefoxitin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-168e84a5fc2f7fe4
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=168e84a5fc2f7fe412ad4275bf796e74e2cd64b5416eada44425108e2ec57817]
+  label: 4-Guanidinobutyric acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-guanidinobutyric_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-18a6e6ba3c4a165f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=18a6e6ba3c4a165f2879eda193e6b5766d43c0b731c1dcd86d4f0ab0ec6831d0]
+  label: Artificial seawater (see below)
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-1aed15690dd84c0c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=1aed15690dd84c0cfdf02461910d9f02a5e7016dc0473f4413c123576ab7fda3]
+  label: CaCl2 x 6 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-1c4bde9e3cd430ba
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=1c4bde9e3cd430ba956ceb66084e5e30817a706b1d02cb1b4b14c793c3b0f878]
+  label: Beef
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-1d61f5a2491cea4d
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=1d61f5a2491cea4d35175fa858992e867ffe2d00684062ee49f747f9991e984f]
+  label: Cr(NO3)3 x 7 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cr_No33_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-1dc3c1fb63229c28
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=1dc3c1fb63229c28c0e058ce01eeadc3b578e3b03b98ae3a5076321b5cde6088]
+  label: Carbon dioxide gas
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-1e00b1674fa1397a
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=1e00b1674fa1397abfd9efff9e32085b825eb57ae353cbbaeb0dbab5c8959c1a]
+  label: Artificial Sea Salt
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-201c3570562f0585
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=201c3570562f05850889855ab1396592ccf1cad039532819989719c7788d4c8a]
+  label: Cyanuric acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cyanuric_acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-222667d612daca5b
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=222667d612daca5b56df57dff60004d9d3504579399a81a9fbccf67b297146f6]
+  label: D-Aspartate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-aspartate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-222fcfc4aefb5798
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=222fcfc4aefb5798cbeea94ff861611d7ca4db9a7ee1aec23972951aa1880f4c]
+  label: crotonic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crotonic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-25449533c1a24f16
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=25449533c1a24f16dd6cd409cd2591d30f75c8ced176d8cc9d4d8f434e76ae76]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-25a05580d9b99ba9
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=25a05580d9b99ba93a0355b4426363dfe5de3815cca792c9dcbd6f7f96b0f359]
+  label: Ascorbate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ascorbate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-270ec1303f56e35f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=270ec1303f56e35feebc388807a5fe175f196b7523e9af1974d9b2f23a67cdd1]
+  label: D-cycloserine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Cycloserine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2770b25757b52022
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2770b25757b5202210cc19a34b492d9c7a98449b6451e8439dc9dfed19c839de]
+  label: Defibrinated horse blood
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Defibrinated_horse_blood.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-29c514535553751c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=29c514535553751cf29579564b128eb3fc6070e17996bb48adca085c578f4eb2]
+  label: (-)-Quinic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/(-)-quinic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2c51ed72121e9a77
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2c51ed72121e9a777ed7b58f74c38f676f8e632e8317bd4eff7b77fdf1a2aa51]
+  label: brain–heart infusion agar
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Brainheart_infusion_agar.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2d46189d88f9e0a4
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2d46189d88f9e0a490c98f7ba1599e647082c8aba382efd090905011f94afdd9]
+  label: Cr2(SO4)3 x n H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2d497087da7cc978
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2d497087da7cc978990073253b4d4959a3e3ef9a2c4dd42f7d9962e251655db4]
+  label: bovine serum albumin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2d6e55a4ac3ee1bb
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2d6e55a4ac3ee1bb2615de839a5df588dfccca1df1629940a59491d038e1d50f]
+  label: Borate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Borate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2e073990fbdc07a6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2e073990fbdc07a652d6299376c82ae02e548aa3c53af7949d9ac84ad8f164f7]
+  label: Blood
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Blood.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2f0de93daca3000c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2f0de93daca3000c6322d2c75d9f871705cbff401a74fbcd63d053de3a91d975]
+  label: Charcoal
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Charcoal.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2f256c77fff65edd
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2f256c77fff65edd752670755260693c176a9b27c26513c12eaa6059be9228c2]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2f8a21a26931b695
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2f8a21a26931b6958405e108f1f4fb8799243891131e58c21d2755080a09bc25]
+  label: Calcium lactate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Calcium_lactate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-2fb97b7900558e75
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=2fb97b7900558e75c9ddca631ab02fd15fd2921d3c8a970e7afde4aa5d3e348a]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-30edcb5540bf3b17
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=30edcb5540bf3b170ce0f84cfd7105026fac719035bb9ebd93a766b18132741c]
+  label: NH4+
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ammonium.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-30eeaebe767b3637
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=30eeaebe767b36370b20f6de25f4abf8eb823f982e391f1611c432da23c01911]
+  label: CaCl2·6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-339698f1b792b730
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=339698f1b792b730862fc5ffe9d801872a983bad3ca85909572a0fb2b02908f8]
+  label: Butyl vinyl ether
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Butyl_Vinyl_Ether.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-3c17c0df33f20b47
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=3c17c0df33f20b47f5d4c9e043a10d7d203fe12e5a3771c299e33d42bff0711e]
+  label: 5-methyluridine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/5-methyluridine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-3c4294ebef0cd697
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=3c4294ebef0cd6976d7cd08afa1ae9db17363a7ea59f6dfca756d996f31fb4a0]
+  label: Bovine serum albumin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-3c50fc3ba26ff406
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=3c50fc3ba26ff406e62659f04d27e91dc0ba33d8db155e48c0a30cd04749ca7f]
+  label: D-Alanine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Alanine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-3c73f9321f28a35a
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=3c73f9321f28a35a9892ab5a8e66ba1ba04705476fd4106136bfe6608254dd74]
+  label: '#Ar'
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Argon.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-3fa1d1b9f99efb4a
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=3fa1d1b9f99efb4ab17e7fe859d08f3ed3e50cb87ed1a6eaf35a96d9d23eceaa]
+  label: Cresol
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cresol.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-40873f3920d6f6a1
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=40873f3920d6f6a1db415ac6fca068a11be0de9db8b1749c5d86010ed01f978c]
+  label: acetone
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Acetone.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-4241abb8e9fdaea1
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=4241abb8e9fdaea101e74ee1833a41c1c1da62bd247b064eddc2cfc160f22cbb]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-4479b8347accf833
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=4479b8347accf83343a281cc370ad7e53cbe05c0a6d9eb3ec1b3a8cbb67c8ac0]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-46642d545884352f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=46642d545884352ffa928a77f2a31327537800aa9ccbd5ff5629c7185ba03d4b]
+  label: Benzoate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzoate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-47508a3adea64241
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=47508a3adea64241e7a1b54afbef8714b21e18c4d1111d773dfb36a88b12e8d7]
+  label: Carbon source solution
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_Source_Solution.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-486682d8673ec613
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=486682d8673ec613786770e31bf55b52122a8c5baa20f27be8275a4106ee40d6]
+  label: Benzoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-489e2cce45d9fcee
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=489e2cce45d9fcee731efd60ac21fc8fa6ee303a7f3bf5142e5ba2c8250741c4]
+  label: D-Glucarate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucarate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-4a444e5108b6971f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=4a444e5108b6971f3c6593b1c0d02a4203265c36a364e61a71191ae9f8b0faa9]
+  label: Defibrinated horse blood (TCS Biologicals)
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Defibrinated_horse_blood.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-4e3fc52a283747e6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=4e3fc52a283747e6bd97a2ac30ad1f3eb67c1484501ad192f26f7bb6444f4801]
+  label: BaCl2 x 2 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bacl2_X_2_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-531623d7728ca1af
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=531623d7728ca1af1ef7b6edef14175f588b31bfe2e8179b22868a7adf4fc244]
+  label: Ca-folinate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ca-folinate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-55ac78af84c1b6c8
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=55ac78af84c1b6c846eaffb22d60194097ef0e2ecd6aa45a826e66693c5451d2]
+  label: Cobalt(II) nitrate hexahydrate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-5674be2b2411c0a9
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=5674be2b2411c0a98f2f924f56877b7a7ed006b955f89a040728657fac7e594b]
+  label: 4-Hydroxybenzaldehyde
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-Hydroxybenzaldehyde.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-56f12fd065dbec3f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=56f12fd065dbec3f71ca4eaddcd28ac047ced43f3c3edd4d3e2024a881c423e4]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-573a8aed48a707c2
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=573a8aed48a707c29495136e89e5405b0f9556ab2000a62ab8c723071a70433c]
+  label: Cresol red
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cresol_Red.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-5bcb2af0997a7423
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=5bcb2af0997a74232a4a15d73241bd5f9abb325359c7dd3ec8541086ba572985]
+  label: Beef heart
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef_Heart.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-5cf09b02abfe2656
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=5cf09b02abfe2656d5e461f31db83c1263923d68f18cc4c212b4502d36e5e792]
+  label: D-Gluconic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Gluconic_acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-6108052f2508ac65
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=6108052f2508ac6575514da47c8841a281e0db56bb97ff469fbc0b8509e69a3f]
+  label: CaCl2.6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-619fba0e79bd925b
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=619fba0e79bd925bea4a786e89b7dacc4b40eedf145eac019d1bba7f1405a604]
+  label: 2-Furoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-furoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-623dde3c257babbb
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=623dde3c257babbbea834de888c656f13ec45980e619a3679c1357ab78208c6b]
+  label: Copper
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Copper.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-63fbe57cd3babefe
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=63fbe57cd3babefe76ec93c3b769457ca1887cddae15b12dad682265b596b307]
+  label: Creatinine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Creatinine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-642a6453d399c8ae
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=642a6453d399c8ae2ad21bb8db99cafa6490153496a2389def54ea14833b46c2]
+  label: Columbia agar base
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Columbia_Agar_Base.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-65d19440d8044198
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=65d19440d804419894c5876f56179f213830c7951870e98dbc16090c91021fae]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-667f6ee1916f3482
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=667f6ee1916f34829e6520d8458ca47080dbc96d755c37e06dde90d2e37e850d]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-676e27f90f2ca371
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=676e27f90f2ca371646f85ae69bb691f1377a4e555c76eba48522126d1f8cffc]
+  label: CaCl2 . 7H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-685287e6fa22ce1d
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=685287e6fa22ce1dfc7c6bfbd35067fce829c72bfc80065ef9f3274d0f682a14]
+  label: Cystine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cystine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-692e558734b6f189
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=692e558734b6f189deb258aa3529ea1a573c6d40a110c346f8226c1a06172342]
+  label: BaCl2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bacl2.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-6b333af101a0b916
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=6b333af101a0b9166a7ea5533989a01ffc781a74869503b806cfa02ae52d3e7b]
+  label: Apple Juice
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Apple_Juice.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-6b4546aeb2b57314
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=6b4546aeb2b573146c198712b3367a4814381c9963a82e419af7e2a47fc8f156]
+  label: CaHPO4
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cahpo4.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-6f3ccd311a073f1f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=6f3ccd311a073f1f43ae991d33befdff79b73e41f95c92e57e0d425951c207b2]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-6fa5cc783ef2ab0f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=6fa5cc783ef2ab0fe30b1ca39d6543b994daa008168d6f35acbda10d5fab1ac3]
+  label: Aspartate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Aspartate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-70cb09ade6935dc4
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=70cb09ade6935dc4a66f18897093b204d1e66f93322d0fdac1cae3b25ad57dcd]
+  label: CaCl2・6 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-71d42cd78920da58
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=71d42cd78920da585ccf0ce9fe61e0b425e6e6c52dce9975ebcb67cf0afc90f9]
+  label: D-Glucose 6-phosphate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucose_6-phosphate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-731fdd45136e6810
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=731fdd45136e68105495546dce75bac0c81a00fb6618b93287b41a48470ae4a1]
+  label: Calcium
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Calcium(2).yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7596c7c0a15c93aa
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7596c7c0a15c93aad9efbf29244b8f4bbfb9ad16dff1f35ee638cb4ef8a9c8e9]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-75995ea07db3cdc6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=75995ea07db3cdc67ac180e0068b30d27b9df5460a03b4af36f70f7c0c7f0d39]
+  label: Baker's yeast
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bakers_Yeast.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-75cc21f68f7c24c7
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=75cc21f68f7c24c70fdd21cea63b210c476d7942900d4a7b5d079dded23b7ede]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-76e2e8c8282a85ea
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=76e2e8c8282a85eab03414e54e4a9526b511858f0a3d7f234c64480bd33b1df2]
+  label: Anaerobic water
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Anaerobic_water.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-77e001312d6b6603
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=77e001312d6b6603d45ffe4f148005f87a6b7ca9ebfd30c9849a0ee0e45e231e]
+  label: Benzylcyanide
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzylcyanide.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7816d9ac4687571c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7816d9ac4687571c34849f4c66d72093c807e1e94719ed7670e3d0ea0062646d]
+  label: 0.5 M Nitrilotriacetic acid, disodium salt
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7a54eb7a4c55b5ac
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7a54eb7a4c55b5acdda7034454ff1d6a93358de5744d4d7e7042201b473629af]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7cae5a5b7b73d3a8
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7cae5a5b7b73d3a84773364d9282a1a24fb74c187aae230b605f128d567f6bb2]
+  label: Cl-
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cl.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7ce014451bbe85f1
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7ce014451bbe85f105f7fe1610bab9a7d0e46648947f97cbc62ddf84751cd403]
+  label: Arsenate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Arsenate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-7ced97de79fe3814
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=7ced97de79fe38147318bf8d3d0333d59332e93f8dafd1a36221583f4590bf17]
+  label: D-Mannose
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-mannose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-80a712170c6d28ba
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=80a712170c6d28ba05f9f285c47b63ef4569a6e706b1e09aa8754f33227c00b3]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-8542b4ae4f2bd7e6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=8542b4ae4f2bd7e6c8921e5287242e7f96311ae9b834e9c0e5604b73119688b9]
+  label: Choline
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Choline.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-86fd9453e711ff71
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=86fd9453e711ff711816635df5f727e6e86bd3aef344b13983d4f16b6ce5e66f]
+  label: 3-Indolyl acetic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/3-indolyl_Acetic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-8898ca0ff0613326
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=8898ca0ff0613326a4e116d623c8a356826c450d801aa4b481ab2b14ef78a5f9]
+  label: Antipyrine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Antipyrine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-89b5d1371f6b0c7c
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=89b5d1371f6b0c7c8930a0cb8cf0a64bbfef3c45682fedb216ecdab0a3dffc51]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-8a120bdffd7488ba
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=8a120bdffd7488ba1640beae884ba9e1af5433f30a256f30497fbdc55a39d593]
+  label: benzene
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzene.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-8b8cd58861a0f289
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=8b8cd58861a0f28967f856165645683579d9bf185b2f05218bdf39d0305fe583]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-8ee01e4e5b7445f5
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=8ee01e4e5b7445f5882a111afb3545864f51312c136e611d4d630fe0d81a1f0d]
+  label: D-Glucose 6-phosphate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucose_6-phosphate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-90a4e97134f2ccee
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=90a4e97134f2cceed8fd23d9c9222f25e505c0293f376ec5f4d1566f5a86e4d8]
+  label: Chocolate agar
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Chocolate_agar.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-911c0899099348a6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=911c0899099348a68ff40a0313deaf740049351b015d89f39f3a4194c34da0f5]
+  label: Co(NO3)2 x 6 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-97e084115638e98f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=97e084115638e98fc6758ed39975f9d4ea9bb205a87455c46c0f3c7791acbd7d]
+  label: 2'-Deoxyinosine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-deoxyinosine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-9aafef893f46d681
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=9aafef893f46d681733bae176dbc4cc695becd97f5b889a366a68df327cb63c2]
+  label: 2'-Deoxyuridine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-deoxyuridine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-9bebf2dec0e4e5b0
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=9bebf2dec0e4e5b0e2db507bdde437e620195525c9cb744bc40b907d11b3a981]
+  label: Crotonic acid (ALDRICH 113018)
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crotonic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a0651624438bd707
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a0651624438bd707636aa33f3a547e90ba72a7fc8a1846f8d9a7aac305fcdeb3]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a140503a9a82236f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a140503a9a82236fc8efc9c8a6d893cb90a0b22b287efc845def24f3a3e64c1e]
+  label: CAPSO
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Capso.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a2838b1187a747a8
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a2838b1187a747a8ec46a1fc7eb2ea23e1d218016bb83728e0194b8844c7b301]
+  label: Activated charcoal
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Activated_Charcoal.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a35898ba396305dc
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a35898ba396305dc1a0cb09976034cb70e56d51f18a9edf4c67a898b3dd9c465]
+  label: 4-hydroxybenzoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-hydroxybenzoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a41a9945169fc3de
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a41a9945169fc3deb58c19e3e2f21979ea9ece6719ecaae788b0bd134e70012d]
+  label: CuCl2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cucl2.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a5a7c3209f4bd51e
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a5a7c3209f4bd51eaf5a76a8a01d59b310561fe16e94c6d932550b4b12590d74]
+  label: D-mannose
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-mannose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-a95288ddbcbc4509
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=a95288ddbcbc450909e874c853545f6933295cfe90ce0d52dfec672887231ccb]
+  label: Ca(NO3)2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ca_No32.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ab0eedc422381cbc
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ab0eedc422381cbcc50504fd6b6c419348754b62d5c838ea09c021ee74d1e15e]
+  label: Choline chloride
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Choline_Chloride.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ae04caa55fe59069
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ae04caa55fe590697004086cb398e8070b88d4f32d55b0dad4607f95abc1724e]
+  label: Co(NO3)2 · 6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ae9572ea8c1ffd93
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ae9572ea8c1ffd93d4648598494a5e77ade4e95acece7cc65f2577a04efe1688]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b1f8adc06f883411
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b1f8adc06f883411d5c71414782451de1fd4e3bd97dc7b8acab2d95307c51bb5]
+  label: Biphenyl
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Biphenyl.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b221231fe8357484
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b221231fe83574843715c085b7cd393a84f902cadc3e4104392916879a4e8490]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b27b4e0701b204e6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b27b4e0701b204e6a9919f53072a85106b141efbb45c58b59348920465c3036b]
+  label: Decanoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Decanoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b28cdde06366ce79
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b28cdde06366ce7968148b1eee34421ac431048684d89cb507615f70daabb9f2]
+  label: Artificial seawater
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b2f395bcc3e5d1be
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b2f395bcc3e5d1bec50a2ea6a7082a074188ad47b9ddc1a3070626a6eff015b8]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b3a540ca9bb6ec82
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b3a540ca9bb6ec828331ccd9ab7edfb64211f6a415d317ee30fee3f3f30c17d4]
+  label: 5-fluorouracil
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/5-fluorouracil.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b3fd3be6a836d88e
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b3fd3be6a836d88e4640aed9a7b682dcfc6fb783130515ce3438982262a09fb2]
+  label: Ar
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Argon.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b43059bd4d533f65
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b43059bd4d533f65f08b13bb87068abddf0075bb1122743e8adf1b28a0682313]
+  label: 4-Hydroxybenzoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-hydroxybenzoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-b5e2fc3e34357209
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=b5e2fc3e34357209a492f5d42d3d89af3ffd9cd060d83d043a0d26d3f7602307]
+  label: Co(NO3)2.6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-bf14e85a596fe5f7
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=bf14e85a596fe5f7a92278fde3eefe63d50e790001ce55dbf7aba62735852e51]
+  label: Carrot
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carrot.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c2a85cd5f94a73d7
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c2a85cd5f94a73d732b9b4cae7ce92f3b17a03bc31ddc959963e9749dc9c812a]
+  label: Beef brain powder
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef_Brain_Powder.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c5e0653364f2b661
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c5e0653364f2b6613bb74171caf810a30f212cbb7515602dd97e29af1a578e85]
+  label: D-Methionine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Methionine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c7c4da0c0b3dc79f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c7c4da0c0b3dc79fc26b261d43d2a53e724e452e750ffa9d34837113f526e663]
+  label: Acetoin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Acetoin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c84d38d267ad7dcb
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c84d38d267ad7dcb4e7df4d471dd22082f21baa831e2d5c048aaa0e68de879de]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c878f30e5f397f8e
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c878f30e5f397f8e7fce93e69ab54f9fb7c001a60442df0171a4d2f2416b6802]
+  label: Co(NO3)2 . 6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-c8ce23344ae00a5f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=c8ce23344ae00a5ff1d7008a1cc5619bcec7343f313d577dced38ec86b6f828b]
+  label: Cystein
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cysteine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-cadbcb97562b7743
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=cadbcb97562b77438297642b334d4f03096fa475d25adbe6811f37c2ed1c5c9c]
+  label: Cefpodoxime
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cefpodoxime.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-cf3475364310c77b
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=cf3475364310c77bb757621f6e005d58838d8f24ac12db49d9f719ed48cfaead]
+  label: Adenosine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Adenosine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d0855f94860f1de9
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d0855f94860f1de96273906705764f6439bd3b7052afbbe396f4c0a4c1e89907]
+  label: Calcium malate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Calcium_malate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d13d06bd89f57b14
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d13d06bd89f57b140286eb3eae79ae69ddbb887ce7583916aca69c819eb7abaf]
+  label: Cd(NO3)2 x 4 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cd_No32_X_4_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d23fddc72c400308
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d23fddc72c4003082d770642cc7daed1a9a308c7234c1f992fe07903533189b2]
+  label: 1-Butanol
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Butanol.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d37dfbf0abe3ecbc
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d37dfbf0abe3ecbcbf99f0f6870efd4b94449b36ae7c7be8c011b065fc1db6a1]
+  label: 2-Sulfobenzoic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Sulfobenzoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d6beb0069466ad90
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d6beb0069466ad90d35248cfe2ba0b2634201a105492e8ca3332db906f2313ff]
+  label: Crotonic acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crotonic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d93455d8e1131d6e
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d93455d8e1131d6ef8bde09f4aa1d3c4a206db001ce3465bd43c73e0cf0b6d39]
+  label: DL vitamins (see below)
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL_Vitamins.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-d97cd220d4c7a33a
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=d97cd220d4c7a33a009f777c269cd80c5779af49fb5183d3f2be88c3ccdfa32f]
+  label: biphenyl
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Biphenyl.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ddb4d0bc41a8f9e4
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ddb4d0bc41a8f9e4d578c08ff8f4017be711b60f24a2e568edd503aecc27c298]
+  label: 2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-dedff48b8a0c5821
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=dedff48b8a0c5821656982a5363f95708b4a1811fe008d0c5552338227c0302b]
+  label: Corn meal
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Corn_Meal.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-e333bc3dfe3d3d42
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=e333bc3dfe3d3d4269014b674c8c8fda0a7dd12ae2b662487a673e91d6e750e7]
+  label: clarified rumen fluid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Clarified_rumen_fluid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-e59b7d77dabe525d
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=e59b7d77dabe525d9dd02e91ac34004df2331b44b1ada696623428827051ff83]
+  label: Clarified rumen fluid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Clarified_rumen_fluid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-e6f49728f415eef2
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=e6f49728f415eef261d4f86e30971666e6e96d8adfa1f1ac4f479a3fadaf2ee2]
+  label: Brain heart infusion
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Brain_Heart_Infusion.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-e8cef33db5eb1ee8
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=e8cef33db5eb1ee82a24a228bb9839709f4e5d195b94b8f61d5482a5a93c0f2c]
+  label: Co(NO3)2·6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-e9f6f790b468582b
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=e9f6f790b468582bcdc702f452884e41f70f36ed286b9df6f0f57a4d2f92c3c4]
+  label: Cobalt nitrate hexahydrate
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ea0c03f694530f78
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ea0c03f694530f78191f8c7e575647cf2151878234e901eb403fbf59d2f100ee]
+  label: D-Arabinose
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-arabinose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-edf194d68c9d39b0
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=edf194d68c9d39b084864946cd0cb612719e0dac44597a85e42dc19ba7c50d39]
+  label: Bovine albumin
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-edf8b8254e516059
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=edf8b8254e516059f1c5a1e80059af6312b272dbee973e44867006f67e7250e8]
+  label: Creatine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Creatine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-eeaff3d249f6cfda
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=eeaff3d249f6cfdac1c288e8ee4f0b5330ec26547699f709ebea483b4e77c22a]
+  label: Congo red
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Congo_Red.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-ef1fb135697ab7fd
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=ef1fb135697ab7fd55166aced36f65046d75c992dd3d041159f14bcf54710652]
+  label: clarified rumen fluid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Clarified_rumen_fluid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f0b290d112f66b8d
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f0b290d112f66b8de34d8b37d200d836ca84c38647375f787abcf7ea2a9694df]
+  label: BaCl2・2H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bacl2_X_2_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f26fdcf7b3f89359
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f26fdcf7b3f89359c67dc106b60a8cca0c9eb47139cbe69a70d4a66447a670e3]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f378749c026b393f
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f378749c026b393f5a86b71db01dff6c1dfa5b57da046d8b13d3f9f613ef5628]
+  label: Maize meal
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Corn_Meal.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f3f2ce2edf1a2496
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f3f2ce2edf1a249654f9f813304b1207c9cf28b4e2120238e462d3375b62c643]
+  label: CaCl2 x 7 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f5b8559d53af9d3b
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f5b8559d53af9d3b2b1d47901ed4bf57860912a7feda73e492c99ee554734e14]
+  label: Artificial Seawater
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f5dab94a70b629e6
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f5dab94a70b629e6b50e9bf0ae1b61e3d5b094f9223bc5ca48710d3fbe682820]
+  label: Al2(SO4)3 x 18 H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Al2_So43_X_18_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f7d9a7ca8d706c4a
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f7d9a7ca8d706c4ad5540080c229ea1d93fa529af7e8274e74fcca31ea7ec6cf]
+  label: CO2
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-f92646ca40de10a3
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=f92646ca40de10a3c1ba114656577a41ce5df298b610aa905a9ee5af462ebc42]
+  label: Co(NO3)2 x 6H2O
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-fb7825971b329722
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=fb7825971b32972251ce5356e91928f28a7eb7c507b31275372834590a80473f]
+  label: 4-Hydroxybenzoic Acid
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-hydroxybenzoic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-fc601e133874bed7
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=fc601e133874bed795f055cc05b1ddf5a94d35f5b5d441a522deb8efc8aecc99]
+  label: Cytidine
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cytidine.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+- target_id: case-fe345dbc05b393c7
+  path: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  selector: decisions[case_id=fe345dbc05b393c7b2e1e7a35711bf8d1cd89025c095005860dfbf45e9f6afaf]
+  label: 4-Hydroxy-L-proline
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/4-hydroxy-L-proline.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+scope:
+  description: Complete assigned-case disposition coverage, with exact per-case evidence
+    and bounded payload-read declarations.
+  selection: Pinned final v3 partition owner indices0 through108 inclusive; no selection
+    by flags or matching label alone.
+  coverage: full
+  population_size: 161
+  reviewed_target_ids:
+  - case-01f1352e7d21de82
+  - case-022ccc2cc9a596c4
+  - case-02c1797bfd5b517c
+  - case-049c670f2bb6779c
+  - case-04dffe7b7de2b15c
+  - case-06757b9134c61a83
+  - case-075dcca17ab6ac07
+  - case-0787833dbd869a3e
+  - case-083bbae451c96d9c
+  - case-0b724e2a19ae3508
+  - case-0f421b3552e374fc
+  - case-0f739a012bbda9c0
+  - case-0fa3c3f2c848ca11
+  - case-14d997a357ffbe63
+  - case-165a5eee355d3bf5
+  - case-168e84a5fc2f7fe4
+  - case-18a6e6ba3c4a165f
+  - case-1aed15690dd84c0c
+  - case-1c4bde9e3cd430ba
+  - case-1d61f5a2491cea4d
+  - case-1dc3c1fb63229c28
+  - case-1e00b1674fa1397a
+  - case-201c3570562f0585
+  - case-222667d612daca5b
+  - case-222fcfc4aefb5798
+  - case-25449533c1a24f16
+  - case-25a05580d9b99ba9
+  - case-270ec1303f56e35f
+  - case-2770b25757b52022
+  - case-29c514535553751c
+  - case-2c51ed72121e9a77
+  - case-2d46189d88f9e0a4
+  - case-2d497087da7cc978
+  - case-2d6e55a4ac3ee1bb
+  - case-2e073990fbdc07a6
+  - case-2f0de93daca3000c
+  - case-2f256c77fff65edd
+  - case-2f8a21a26931b695
+  - case-2fb97b7900558e75
+  - case-30edcb5540bf3b17
+  - case-30eeaebe767b3637
+  - case-339698f1b792b730
+  - case-3c17c0df33f20b47
+  - case-3c4294ebef0cd697
+  - case-3c50fc3ba26ff406
+  - case-3c73f9321f28a35a
+  - case-3fa1d1b9f99efb4a
+  - case-40873f3920d6f6a1
+  - case-4241abb8e9fdaea1
+  - case-4479b8347accf833
+  - case-46642d545884352f
+  - case-47508a3adea64241
+  - case-486682d8673ec613
+  - case-489e2cce45d9fcee
+  - case-4a444e5108b6971f
+  - case-4e3fc52a283747e6
+  - case-531623d7728ca1af
+  - case-55ac78af84c1b6c8
+  - case-5674be2b2411c0a9
+  - case-56f12fd065dbec3f
+  - case-573a8aed48a707c2
+  - case-5bcb2af0997a7423
+  - case-5cf09b02abfe2656
+  - case-6108052f2508ac65
+  - case-619fba0e79bd925b
+  - case-623dde3c257babbb
+  - case-63fbe57cd3babefe
+  - case-642a6453d399c8ae
+  - case-65d19440d8044198
+  - case-667f6ee1916f3482
+  - case-676e27f90f2ca371
+  - case-685287e6fa22ce1d
+  - case-692e558734b6f189
+  - case-6b333af101a0b916
+  - case-6b4546aeb2b57314
+  - case-6f3ccd311a073f1f
+  - case-6fa5cc783ef2ab0f
+  - case-70cb09ade6935dc4
+  - case-71d42cd78920da58
+  - case-731fdd45136e6810
+  - case-7596c7c0a15c93aa
+  - case-75995ea07db3cdc6
+  - case-75cc21f68f7c24c7
+  - case-76e2e8c8282a85ea
+  - case-77e001312d6b6603
+  - case-7816d9ac4687571c
+  - case-7a54eb7a4c55b5ac
+  - case-7cae5a5b7b73d3a8
+  - case-7ce014451bbe85f1
+  - case-7ced97de79fe3814
+  - case-80a712170c6d28ba
+  - case-8542b4ae4f2bd7e6
+  - case-86fd9453e711ff71
+  - case-8898ca0ff0613326
+  - case-89b5d1371f6b0c7c
+  - case-8a120bdffd7488ba
+  - case-8b8cd58861a0f289
+  - case-8ee01e4e5b7445f5
+  - case-90a4e97134f2ccee
+  - case-911c0899099348a6
+  - case-97e084115638e98f
+  - case-9aafef893f46d681
+  - case-9bebf2dec0e4e5b0
+  - case-a0651624438bd707
+  - case-a140503a9a82236f
+  - case-a2838b1187a747a8
+  - case-a35898ba396305dc
+  - case-a41a9945169fc3de
+  - case-a5a7c3209f4bd51e
+  - case-a95288ddbcbc4509
+  - case-ab0eedc422381cbc
+  - case-ae04caa55fe59069
+  - case-ae9572ea8c1ffd93
+  - case-b1f8adc06f883411
+  - case-b221231fe8357484
+  - case-b27b4e0701b204e6
+  - case-b28cdde06366ce79
+  - case-b2f395bcc3e5d1be
+  - case-b3a540ca9bb6ec82
+  - case-b3fd3be6a836d88e
+  - case-b43059bd4d533f65
+  - case-b5e2fc3e34357209
+  - case-bf14e85a596fe5f7
+  - case-c2a85cd5f94a73d7
+  - case-c5e0653364f2b661
+  - case-c7c4da0c0b3dc79f
+  - case-c84d38d267ad7dcb
+  - case-c878f30e5f397f8e
+  - case-c8ce23344ae00a5f
+  - case-cadbcb97562b7743
+  - case-cf3475364310c77b
+  - case-d0855f94860f1de9
+  - case-d13d06bd89f57b14
+  - case-d23fddc72c400308
+  - case-d37dfbf0abe3ecbc
+  - case-d6beb0069466ad90
+  - case-d93455d8e1131d6e
+  - case-d97cd220d4c7a33a
+  - case-ddb4d0bc41a8f9e4
+  - case-dedff48b8a0c5821
+  - case-e333bc3dfe3d3d42
+  - case-e59b7d77dabe525d
+  - case-e6f49728f415eef2
+  - case-e8cef33db5eb1ee8
+  - case-e9f6f790b468582b
+  - case-ea0c03f694530f78
+  - case-edf194d68c9d39b0
+  - case-edf8b8254e516059
+  - case-eeaff3d249f6cfda
+  - case-ef1fb135697ab7fd
+  - case-f0b290d112f66b8d
+  - case-f26fdcf7b3f89359
+  - case-f378749c026b393f
+  - case-f3f2ce2edf1a2496
+  - case-f5b8559d53af9d3b
+  - case-f5dab94a70b629e6
+  - case-f7d9a7ca8d706c4a
+  - case-f92646ca40de10a3
+  - case-fb7825971b329722
+  - case-fc601e133874bed7
+  - case-fe345dbc05b393c7
+checks:
+- check_id: payload-membership
+  name: Native full-support and actual blocking-witness membership
+  status: passed
+  required: true
+  summary: 'The assembler validate_coverage function accepted every exact case: all
+    scientific payload hashes for support, nonempty recomputed member/field witnesses
+    for holds.'
+  target_ids:
+  - case-01f1352e7d21de82
+  - case-022ccc2cc9a596c4
+  - case-02c1797bfd5b517c
+  - case-049c670f2bb6779c
+  - case-04dffe7b7de2b15c
+  - case-06757b9134c61a83
+  - case-075dcca17ab6ac07
+  - case-0787833dbd869a3e
+  - case-083bbae451c96d9c
+  - case-0b724e2a19ae3508
+  - case-0f421b3552e374fc
+  - case-0f739a012bbda9c0
+  - case-0fa3c3f2c848ca11
+  - case-14d997a357ffbe63
+  - case-165a5eee355d3bf5
+  - case-168e84a5fc2f7fe4
+  - case-18a6e6ba3c4a165f
+  - case-1aed15690dd84c0c
+  - case-1c4bde9e3cd430ba
+  - case-1d61f5a2491cea4d
+  - case-1dc3c1fb63229c28
+  - case-1e00b1674fa1397a
+  - case-201c3570562f0585
+  - case-222667d612daca5b
+  - case-222fcfc4aefb5798
+  - case-25449533c1a24f16
+  - case-25a05580d9b99ba9
+  - case-270ec1303f56e35f
+  - case-2770b25757b52022
+  - case-29c514535553751c
+  - case-2c51ed72121e9a77
+  - case-2d46189d88f9e0a4
+  - case-2d497087da7cc978
+  - case-2d6e55a4ac3ee1bb
+  - case-2e073990fbdc07a6
+  - case-2f0de93daca3000c
+  - case-2f256c77fff65edd
+  - case-2f8a21a26931b695
+  - case-2fb97b7900558e75
+  - case-30edcb5540bf3b17
+  - case-30eeaebe767b3637
+  - case-339698f1b792b730
+  - case-3c17c0df33f20b47
+  - case-3c4294ebef0cd697
+  - case-3c50fc3ba26ff406
+  - case-3c73f9321f28a35a
+  - case-3fa1d1b9f99efb4a
+  - case-40873f3920d6f6a1
+  - case-4241abb8e9fdaea1
+  - case-4479b8347accf833
+  - case-46642d545884352f
+  - case-47508a3adea64241
+  - case-486682d8673ec613
+  - case-489e2cce45d9fcee
+  - case-4a444e5108b6971f
+  - case-4e3fc52a283747e6
+  - case-531623d7728ca1af
+  - case-55ac78af84c1b6c8
+  - case-5674be2b2411c0a9
+  - case-56f12fd065dbec3f
+  - case-573a8aed48a707c2
+  - case-5bcb2af0997a7423
+  - case-5cf09b02abfe2656
+  - case-6108052f2508ac65
+  - case-619fba0e79bd925b
+  - case-623dde3c257babbb
+  - case-63fbe57cd3babefe
+  - case-642a6453d399c8ae
+  - case-65d19440d8044198
+  - case-667f6ee1916f3482
+  - case-676e27f90f2ca371
+  - case-685287e6fa22ce1d
+  - case-692e558734b6f189
+  - case-6b333af101a0b916
+  - case-6b4546aeb2b57314
+  - case-6f3ccd311a073f1f
+  - case-6fa5cc783ef2ab0f
+  - case-70cb09ade6935dc4
+  - case-71d42cd78920da58
+  - case-731fdd45136e6810
+  - case-7596c7c0a15c93aa
+  - case-75995ea07db3cdc6
+  - case-75cc21f68f7c24c7
+  - case-76e2e8c8282a85ea
+  - case-77e001312d6b6603
+  - case-7816d9ac4687571c
+  - case-7a54eb7a4c55b5ac
+  - case-7cae5a5b7b73d3a8
+  - case-7ce014451bbe85f1
+  - case-7ced97de79fe3814
+  - case-80a712170c6d28ba
+  - case-8542b4ae4f2bd7e6
+  - case-86fd9453e711ff71
+  - case-8898ca0ff0613326
+  - case-89b5d1371f6b0c7c
+  - case-8a120bdffd7488ba
+  - case-8b8cd58861a0f289
+  - case-8ee01e4e5b7445f5
+  - case-90a4e97134f2ccee
+  - case-911c0899099348a6
+  - case-97e084115638e98f
+  - case-9aafef893f46d681
+  - case-9bebf2dec0e4e5b0
+  - case-a0651624438bd707
+  - case-a140503a9a82236f
+  - case-a2838b1187a747a8
+  - case-a35898ba396305dc
+  - case-a41a9945169fc3de
+  - case-a5a7c3209f4bd51e
+  - case-a95288ddbcbc4509
+  - case-ab0eedc422381cbc
+  - case-ae04caa55fe59069
+  - case-ae9572ea8c1ffd93
+  - case-b1f8adc06f883411
+  - case-b221231fe8357484
+  - case-b27b4e0701b204e6
+  - case-b28cdde06366ce79
+  - case-b2f395bcc3e5d1be
+  - case-b3a540ca9bb6ec82
+  - case-b3fd3be6a836d88e
+  - case-b43059bd4d533f65
+  - case-b5e2fc3e34357209
+  - case-bf14e85a596fe5f7
+  - case-c2a85cd5f94a73d7
+  - case-c5e0653364f2b661
+  - case-c7c4da0c0b3dc79f
+  - case-c84d38d267ad7dcb
+  - case-c878f30e5f397f8e
+  - case-c8ce23344ae00a5f
+  - case-cadbcb97562b7743
+  - case-cf3475364310c77b
+  - case-d0855f94860f1de9
+  - case-d13d06bd89f57b14
+  - case-d23fddc72c400308
+  - case-d37dfbf0abe3ecbc
+  - case-d6beb0069466ad90
+  - case-d93455d8e1131d6e
+  - case-d97cd220d4c7a33a
+  - case-ddb4d0bc41a8f9e4
+  - case-dedff48b8a0c5821
+  - case-e333bc3dfe3d3d42
+  - case-e59b7d77dabe525d
+  - case-e6f49728f415eef2
+  - case-e8cef33db5eb1ee8
+  - case-e9f6f790b468582b
+  - case-ea0c03f694530f78
+  - case-edf194d68c9d39b0
+  - case-edf8b8254e516059
+  - case-eeaff3d249f6cfda
+  - case-ef1fb135697ab7fd
+  - case-f0b290d112f66b8d
+  - case-f26fdcf7b3f89359
+  - case-f378749c026b393f
+  - case-f3f2ce2edf1a2496
+  - case-f5b8559d53af9d3b
+  - case-f5dab94a70b629e6
+  - case-f7d9a7ca8d706c4a
+  - case-f92646ca40de10a3
+  - case-fb7825971b329722
+  - case-fc601e133874bed7
+  - case-fe345dbc05b393c7
+evidence:
+- evidence_id: evidence-01f1352e7d21de82
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=01f1352e7d21de826b5dfef5d1ccf50ad9117bb05b8314523922bb2ea439d92c];
+    full payload SHA256 e89acf2fc206490ca754d349b5b01a5591bd376b2d87950e3543d14f95e129d3
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly identifies carbon monoxide/CHEBI:17245
+    and retains a gas property. It agrees with the current CO molecular owner, not
+    carbon dioxide or a gas-mixture identity. Both modified-P7/TOGO M3153 source scopes
+    were inspected. Variable gas amount, pressure, composition of any carrier mixture
+    and dissolved concentration remain unapproved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-022ccc2cc9a596c4
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=022ccc2cc9a596c43a83963884d20fcd99bf8e916980e2185005f396a631d5ff];
+    full payload SHA256 f53cfc8e421a4e3a36c04111b156b435998b9ca1edeb6e82aeed0ce7eb1cee6b
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Both complete descriptors, source routes and the pending-component-curation
+    stock owner were inspected. Exact source preparation correspondence remains unresolved;
+    numeric cross-prefix agreement and a narrow cholesterol mapping do not establish
+    concentrate equivalence. Withhold the unchanged case under1498, without claiming
+    different compositions or converting the concentrate into pure cholesterol. Amount
+    fields remain retained and unapproved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-02c1797bfd5b517c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=02c1797bfd5b517cfe0145a5d38039cb3b6b135f22fe8d2c7ff63eaa3afb4f72];
+    full payload SHA256 73eeef262d1841ee553634a3d186896393008400a1bf563195a72aaace5f4cca
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor/change identifies CO2 as the gas component in PCC11802
+    multi-cultivator aeration, with the retained PMID31932622 excerpt explicitly stating1%CO2
+    bubbling. This supports component identity only in that stage; it does not transfer
+    the condition to every shaker culture or assert a dissolved-carbon dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-049c670f2bb6779c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=049c670f2bb6779cc2d20ecb6d16f0c721dbfd6d27b0d8b4afa64b1d7e31f845];
+    full payload SHA256 128f01c55be15e15739f0b392e445293f587a276d28d1a5bc9bf4c53006812f4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Both complete descriptors and both OMIZ-PAT/solution3067 routes were inspected.
+    The explicit sodium-salt qualifier conflicts with exact free-acid identity; the
+    owner's raw synonym does not resolve the counter-ion. Withhold the unchanged aggregate
+    under1512 without inventing a replacement salt/hydrate identifier or approving
+    concentration.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-04dffe7b7de2b15c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=04dffe7b7de2b15c3242c8bc0deaec199656f9e20f8ca109f90cca7782fe6f6b];
+    full payload SHA256 beda45479c1d9b230ae79e9972dc1c9ec8586b651c0ea9a5a9c316ac03a0d385
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both descriptors name the R-lactate species and retain the D-lactate cross-reference.
+    The current owner is the same R-lactate anion, with explicit stereochemical structure;
+    no counterion or supplied salt identity is asserted in either descriptor. Binding
+    is limited to that ionic concept. The two reported millimolar values and any particular
+    purchasable lactate salt remain separate, unapproved claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-06757b9134c61a83
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=06757b9134c61a8340c622ee258ab060ee2dbd6e53feb588f347f15805766318];
+    full payload SHA256 8d550c334252c71bf6eae50f7790da8135c35ddc64822e1a063966034f07240b
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors preserve generic cell lysate from the same CultureBotHT
+    filtered-groundwater series, matching the owner's generic BTO cell-lysate material
+    concept. No species-specific lysate composition or particular lysis protocol is
+    asserted by the binding. Both dilution-series source routes were inspected; the1/250
+    and1/2500 quantities and carbon-source function remain separate from identity
+    support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-075dcca17ab6ac07
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=075dcca17ab6ac072038e2df152932ba3f7372a1d8c2400b8733c918f13724e2];
+    full payload SHA256 8ae2dbfa1db400f802a11d71354e0db5bd3ed6ff9c235cdcbb6a5f5d49a1b0cf
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eight complete descriptors retain cytosine/CHEBI:16040/CAS71-30-7,
+    matching the current free-base identity. All nineteen source routes were read.
+    This does not substitute cytidine, approve dose or infer growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-0787833dbd869a3e
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=0787833dbd869a3eb8c0cb96de1957e180c719cf3da585db0e3f0f8eb3e23251];
+    full payload SHA256 a526529f18ffd156e641846f2cf2c3ad51017ad86685f87093683f51365d8788
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All20 complete descriptors explicitly name cupric chloride/CHEBI:49553,
+    agreeing with the nominal copper(II) chloride owner without a conflicting hydrate
+    qualification. All59 routes were read. The MediaDB330/331 notes explicitly limit
+    amount evidence to database assertions; this binding does not promote a source
+    lead into verified article provenance or approve molarity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-083bbae451c96d9c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=083bbae451c96d9ca221b0d31d2b9146c9b38ef2562545ad32046a440bc1f323];
+    full payload SHA256 93e2d7363a92c1b1dac6311f3285961ac41381d5e2e7c0173e92dafe9ab9cfcc
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All ten complete source descriptors explicitly preserve beta-D-glucose
+    and CHEBI:15903, agreeing with the current anomer-specific owner. All sixteen
+    source ingredient routes were inspected. This supports the asserted beta-D molecular
+    identity only, not a claim that aqueous glucose remains exclusively that anomer,
+    nor approval of any listed amount.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-0b724e2a19ae3508
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=0b724e2a19ae3508d8c4031a9eca5e348da720eec44e1456550157c3ad07ef4b];
+    full payload SHA256 c2553a6bb9797e605c97e4861db13d3e5562a96b41fa7d24de6c68277009107e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors name asialofetuin, one retaining MediaDive compound2150,
+    consistent with the owner's named desialylated-fetuin material. No contrary intact-fetuin,
+    species, product grade or preparation identity is asserted. Support remains at
+    that material scope and does not reconcile the 1 versus100 g/L quantities or assert
+    a unique glycoform composition.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-0f421b3552e374fc
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=0f421b3552e374fc40033a2637f73adfba0ac58a8caaa041fca721588677e40e];
+    full payload SHA256 cc12aeef8741be28a155160a08a2a4b717ba1da7724ef1220d123ae155441a55
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor names cellulose powder, matching the owner's
+    powder-qualified FOODON material. The TOGO cellulose-agar ingredient route was
+    inspected. Support preserves the powder form rather than asserting a particular
+    cellulose polymer grade, source, purity, dose or carbon-utilization result.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-0f739a012bbda9c0
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=0f739a012bbda9c0a25afe3ae1423f05ba9a5c14c91c08846590e5b956a01131];
+    full payload SHA256 cb345e8bdbf7285f115854e6ac45243d268fa3a9d20f00b6ce9c98af838c1f45
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete descriptor names MediaDive Aminoacids stock at 10 percent
+    v/v but additionally grounds it to the amino-acid chemical class. The current
+    owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition.
+    Native own-registry support does not resolve this conflicting embedded descriptor
+    identity. All three source composition occurrences remain retained and withheld
+    under issue1475.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-0fa3c3f2c848ca11
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=0fa3c3f2c848ca114741ab0756a15c1f5a634b6bd214964134a2084c0b9f8da3];
+    full payload SHA256 41dac233e9ba9f967eb36a2922a23d1a9e0686a9229181109fd9f002d36bfb2c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors and retained donor-table snippets name benzyl
+    alcohol, consistent with CHEBI:17987 and the owner's hydroxymethyl-benzene structure.
+    This is distinct from phenol or a benzyl ether. Binding excludes the dose, Fe(III)/cobalt
+    culture context and growth inference.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-14d997a357ffbe63
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=14d997a357ffbe636b6f9770796ebbde4da7a5eec048f116d27fe428f6bf81c6];
+    full payload SHA256 9b30fc0b7c3ba3b980eeacf40db9dd5ebb3f1667cdaf3f1621e7ec6574dd50de
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six complete TOGO descriptors explicitly specify cobalt dinitrate with
+    six waters and CHEBI:86214, agreeing with the owner formula/CAS10026-22-9. All
+    six source routes were read. The hydrate-specific identity does not approve their
+    differing trace/stock doses or mineral function.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-165a5eee355d3bf5
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=165a5eee355d3bf5ae71fdf818d089238c45d79dd51ff01140dad4a203f2be42];
+    full payload SHA256 2f9306c1db0dd2353a7864e94f6f586bf176cc78f321839311b0fe2735dd2b57
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly names cefoxitin and CHEBI:209807, agreeing
+    with the owner's cephamycin structure. The C.difficile-supplemented BHI source
+    scope preserves the separate named ingredient; no sodium salt, formulation mixture
+    or antimicrobial efficacy is inferred. Variable dose remains unapproved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-168e84a5fc2f7fe4
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=168e84a5fc2f7fe412ad4275bf796e74e2cd64b5416eada44425108e2ec57817];
+    full payload SHA256 8412f9d37b4d22968d19bfc0cc7b32e3761a0812cb71c415c5f033bcb92fb919
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four descriptors consistently name 4-guanidinobutyric acid and retain
+    CHEBI:15728, CAS 463-00-3 and MW 145.16, agreeing with the owner's specific free-acid
+    structure. Carbon/exometabolite-mixture names identify the containing source formulations,
+    not a different chemical entity. Quantities and mixture-wide composition are not
+    approved by this binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-18a6e6ba3c4a165f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=18a6e6ba3c4a165f2879eda193e6b5766d43c0b731c1dcd86d4f0ab0ec6831d0];
+    full payload SHA256 736711afd57e61c09b89afee131f6495568eb7177ef4af4a0351267d88798185
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The unresolved preparation pointer prevents exact mixture identity support.
+    A generic artificial-seawater category is not evidence that the source-specific
+    formulation equals one maintained ingredient preparation. The entire case remains
+    retained and withheld pending source formulation binding; no composition or volume
+    conversion is invented. Issue1479.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-1aed15690dd84c0c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=1aed15690dd84c0cfdf02461910d9f02a5e7016dc0473f4413c123576ab7fda3];
+    full payload SHA256 23095bc23f0cd44ee5a540eac09cc07082ae8acd530abada1a1e3f6165e31096
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All37 complete descriptors explicitly retain calcium chloride with six
+    waters, compatible hydrate-specific CHEBI:91243 and provider173 excerpts. The
+    current owner has six-water structure and corrected hydrate CAS7774-34-7. All62
+    source ingredient/composition routes were inspected. Identity support preserves
+    six waters and does not approve the different stock/medium amounts or receiving-medium
+    dilution.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-1c4bde9e3cd430ba
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=1c4bde9e3cd430ba956ceb66084e5e30817a706b1d02cb1b4b14c793c3b0f878];
+    full payload SHA256 7cde551c6e1181f880d1c4df810d7efe86b802eb1877275ce387be5def3789b4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Both complete descriptors explicitly specify a dehydrated beef infusion.
+    The current candidate denotes beef meat rather than that prepared extraction product.
+    Exact label agreement cannot erase the retained preparation note; all source occurrences
+    remain withheld under issue1482, without inferring extraction yield or composition.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-1d61f5a2491cea4d
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=1d61f5a2491cea4d35175fa858992e867ffe2d00684062ee49f747f9991e984f];
+    full payload SHA256 0e0ed8e485c6e3811aa9f89eecb9e6474e6614c2635dd267a3106142f33672c0
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors explicitly retain chromium trinitrate with
+    seven waters, including the exact provider1574 excerpt, matching the current heptahydrate
+    structure. All three main/stock routes were read. Support does not infer another
+    hydrate, validate dose conversion or approve trace-element effects.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-1dc3c1fb63229c28
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=1dc3c1fb63229c28c0e058ce01eeadc3b578e3b03b98ae3a5076321b5cde6088];
+    full payload SHA256 90d851314092246e461953c7f9a55472c7d4a173b2bd33a377bebed2560a674d
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All44 complete scientific descriptors and713 source scopes were inspected.
+    They retain carbon dioxide/CHEBI:16526 as a gas component, agreeing with the owner's
+    CO2 structure. Headspace, dispensing, preparation and autoclave contexts remain
+    distinct; the binding does not equate a carrier mixture or aqueous bicarbonate
+    with CO2, infer dissolved dose, or approve growth or gas-pressure claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-1e00b1674fa1397a
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=1e00b1674fa1397abfd9efff9e32085b825eb57ae353cbbaeb0dbab5c8959c1a];
+    full payload SHA256 84ae3b51ca71183bd00fad62ecb9788c68c0020c7b6ea3b62d85552335d235c2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The current owner is a composition-unknown local preparation sourced from
+    MediaDive2146. Other source descriptors retain that accession, but the inspected
+    blocking descriptor supplies only a generic mixture name and dose; exact preparation
+    correspondence across the complete case is unproven. The whole unchanged case
+    is withheld without claiming that the formulations necessarily differ or replacing
+    the mixture with pure salts. Issue1479 retains the follow-up.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-201c3570562f0585
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=201c3570562f05850889855ab1396592ccf1cad039532819989719c7788d4c8a];
+    full payload SHA256 e0376a3d3a424d5d74ac3a54cf4fc93ac6712212aaf1b71350f7b4dd0dcd99f2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify cyanuric acid, with compatible CHEBI:38028/provider2118
+    grounding and no salt or preparation qualifier. The current owner preserves that
+    acid concept; both source routes were read. Support excludes0.645g/L and nitrogen-utilization
+    effects.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-222667d612daca5b
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=222667d612daca5b56df57dff60004d9d3504579399a81a9fbccf67b297146f6];
+    full payload SHA256 f6148117fdfb680507d15292d6cb00c851fc14c54650137fc17a8baa34753506
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete source descriptor retains D-aspartate/CHEBI:29994 and KEGG
+    asp-D, agreeing with the maintained D-aspartate dianion under the native bare-anion
+    naming contract. The source route was inspected. This does not infer an unspecified
+    counter-ion, approve solution protonation at a given pH, or certify dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-222fcfc4aefb5798
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=222fcfc4aefb5798cbeea94ff861611d7ca4db9a7ee1aec23972951aa1880f4c];
+    full payload SHA256 8e59482b57b8ee9227279aa3cf5213c8b0f17fc6c748a614bcfa5990e765c9dc
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors retain crotonic acid and CHEBI:41131, agreeing
+    with the owner's trans-but-2-enoic-acid structure. All five TOGO routes were inspected.
+    Support does not convert the acid to crotonate or approve amount, stereochemical
+    purity or carbon-utilization claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-25449533c1a24f16
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=25449533c1a24f16dd6cd409cd2591d30f75c8ced176d8cc9d4d8f434e76ae76];
+    full payload SHA256 8ae3f08541ab5368bf79ed752fcb0efd5b51d562660b95f42bdd56ceb36781ec
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete PCC11801 change preserves CO2 as the component of ambient-air
+    bubbling in the multi-cultivator source experiment. The retained PMID30413737
+    excerpt provides the0.04%gas context. Support binds the named molecular component
+    without approving dose, extrapolating to other culture modes or converting gas
+    fraction to liquid concentration.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-25a05580d9b99ba9
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=25a05580d9b99ba93a0355b4426363dfe5de3815cca792c9dcbd6f7f96b0f359];
+    full payload SHA256 e2796c36afa8c909f3d77d1617d5b4caab199eebd16f0841727f0f1e97d10f06
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: All four complete descriptors explicitly retain an L-ascorbate cross-reference
+    but the propagated term and candidate owner are generic ascorbate. The bare-anion
+    protonation convention does not authorize removing an explicit stereochemical
+    qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement
+    remain intact; no narrower identity is automatically substituted. WITHHOLD pending
+    source-specific resolution under issue1474.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-270ec1303f56e35f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=270ec1303f56e35feebc388807a5fe175f196b7523e9af1974d9b2f23a67cdd1];
+    full payload SHA256 d207ef6f5cda7d862cc040622cfe0b39028d644c892be7b776ab44a389b74f29
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor explicitly names D-cycloserine/CHEBI:40009,
+    agreeing with the current 4R cycloserine owner. The BHI supplement scope was read.
+    VARIABLE amount, antimicrobial efficacy and actual use are not approved by this
+    identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2770b25757b52022
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2770b25757b5202210cc19a34b492d9c7a98449b6451e8439dc9dfed19c839de];
+    full payload SHA256 e8a8bcbdc5c3ff9bf0dd39db48ace107ec6af9b4dfd4d86ba6c1ca72a3cdb1b5
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eight complete descriptors explicitly preserve defibrinated horse blood,
+    and collection/preparation notes retain the same species and defibrination qualification.
+    All eight source routes were read. Broad UBERON blood annotations do not contradict
+    those explicit retained form/species fields; the candidate itself preserves defibrinated
+    horse blood, rather than collapsing it to generic blood or serum. Support excludes
+    sterility certification, lot composition, dose and performance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-29c514535553751c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=29c514535553751cf29579564b128eb3fc6070e17996bb48adca085c578f4eb2];
+    full payload SHA256 62aadb92e0b1380d1eaebcab33bbc97db6fbc8c824da1f9570e1f704bd007fb0
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors explicitly identify (-)-quinic acid, matching
+    the owner's optical form and CHEBI:17521 identity. The MediaDive solution-5605
+    excerpt names this acid as an input; the containing iron-quinate solution does
+    not turn this ingredient into an asserted iron complex. The six ingredient/composition
+    coordinates retain their separate recipes. This supports only the named acid binding,
+    not its concentration, stock dilution or a growth claim.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2c51ed72121e9a77
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2c51ed72121e9a777ed7b58f74c38f676f8e632e8317bd4eff7b77fdf1a2aa51];
+    full payload SHA256 b7dd12e96fe0289dc817d2e920b502b427a9a7c5245e60bef960a46fcd65ece6
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly names brain-heart-infusion agar, agreeing
+    with the owner's same named agar preparation concept MICRO:0000566. The source
+    recipe's separate calf-blood/antibiotic supplementation is not folded into this
+    ingredient identity. The1g/L amount and a specific manufacturer's formulation
+    remain outside this binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2d46189d88f9e0a4
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2d46189d88f9e0a490c98f7ba1599e647082c8aba382efd090905011f94afdd9];
+    full payload SHA256 38721a4c099e88d4c5448b2e6fd751ae64f2486d176ebf535c84b9bf7be02105
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Both complete descriptors and three routes were inspected. Their variable-hydrate
+    label and embedded anhydrous grounding remain unreconciled despite the matching
+    local resolver result. Withhold the unchanged aggregate under1502 without assigning
+    a water count, molecular weight or replacement chemical identity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2d497087da7cc978
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2d497087da7cc978990073253b4d4959a3e3ef9a2c4dd42f7d9962e251655db4];
+    full payload SHA256 02adf9e1295068a83d0ee967bbaf249e09ad09f6b1c37f555fcd2ec0f68fc451
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete source descriptor states unqualified bovine serum albumin
+    with CAS9048-46-8, agreeing with the maintained generic BSA protein-family owner
+    NCIT:C85253. The specialized7h9 source scope introduces no supplied-fraction or
+    stock-preparation qualification in this case. Support excludes concentration and
+    does not extend to the separately grouped qualified stock/Fraction V aggregate.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2d6e55a4ac3ee1bb
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2d6e55a4ac3ee1bb2615de839a5df588dfccca1df1629940a59491d038e1d50f];
+    full payload SHA256 8fc2b44bc20285386094b068371ff283d27873ed56fbc62c5ef10d6bd6f2cefd
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete TAP descriptors explicitly use the same generic borate concept
+    CHEBI:22908 as the maintained owner. Support stays at that stated concept level
+    and does not select a counter-ion, hydrate, particular polyborate species or actual
+    solution speciation. The0.184mM amount remains outside this identity decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2e073990fbdc07a6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2e073990fbdc07a652d6299376c82ae02e548aa3c53af7949d9ac84ad8f164f7];
+    full payload SHA256 35d3c89cbe94380c6863b5b4fa048656244954a27602c32595cfde0587cc656a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor names generic blood without an animal-species
+    or processing qualifier, matching the generic blood material owner UBERON:0000178.
+    Its TOGO M2581 source scope is retained. Support does not imply a particular species,
+    defibrination or other treatment, nor acceptance of the5percentw/v amount.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2f0de93daca3000c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2f0de93daca3000c6322d2c75d9f871705cbff401a74fbcd63d053de3a91d975];
+    full payload SHA256 f656474905231051ecec954dc82f18719c5d31a1d708b1bed8171e8ad65956da
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors consistently identify charcoal/CHEBI:91090
+    or provider745, agreeing with the current charcoal material owner. All five ingredient/composition
+    routes were inspected. The decision does not silently qualify this material as
+    activated charcoal, elemental carbon or a particular adsorbent grade, and does
+    not approve concentration or activity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2f256c77fff65edd
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2f256c77fff65edd752670755260693c176a9b27c26513c12eaa6059be9228c2];
+    full payload SHA256 93a3e03406a179fcb75efb12e1be49340ec2dd58331252aecf4c1341e148765b
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for this
+    exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload and source
+    route were read; its unresolved source claim cannot be converted into verified
+    CO2 identity or presence merely because the label names CO2. No new identity,
+    dose, or buffering mechanism is inferred.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2f8a21a26931b695
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2f8a21a26931b6958405e108f1f4fb8799243891131e58c21d2755080a09bc25];
+    full payload SHA256 483939eaa353cd936ed6d1e826f369451750b1cec02e181ba158d987eccabec2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete NBRC225 descriptor names calcium lactate without a stereochemical,
+    hydrate or supplied-preparation qualifier. The current FOODON owner preserves
+    the same generic salt-material concept and does not narrow it to a particular
+    lactate enantiomer or hydrate. The TOGO M1453 source route was inspected;10g/L
+    is not approved by this identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-2fb97b7900558e75
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=2fb97b7900558e75c9ddca631ab02fd15fd2921d3c8a970e7afde4aa5d3e348a];
+    full payload SHA256 1a4e5bc557b041cff9bddc1d0567a95af5f3857ea396980adfbe7817d64db975
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete AMS1 serine-source change specifies CO2 sparging after autoclaving
+    and before subsequent air sparging. The Carini2013 methods excerpt names that
+    gas, compatible with the owner. Support preserves this ordered preparation stage
+    and does not equate CO2 with the final buffering mixture or approve five-hour
+    duration, pH or dissolved dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-30edcb5540bf3b17
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=30edcb5540bf3b170ce0f84cfd7105026fac719035bb9ebd93a766b18132741c];
+    full payload SHA256 a8ec4100dd628ac3c697d69aa4810c21314b7d7c80b0f50caa52075a80bccb04
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors explicitly assert NH4+ and CHEBI:28938,
+    matching the charged ammonium owner. MediaDB TAP and Vogel source labels/notes
+    preserve the ionic concept rather than selecting an unstated ammonium salt. The
+    unusual reported amount in Vogel medium, all other doses and actual solution speciation
+    remain outside this identity decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-30eeaebe767b3637
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=30eeaebe767b36370b20f6de25f4abf8eb823f982e391f1611c432da23c01911];
+    full payload SHA256 1d94438b88fe34dc13e2a56b95b50ca9177032cfe15831625ab8350b43bb3329
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors explicitly denote CaCl2 with six waters using
+    a middle-dot separator, agreeing with the current hexahydrate owner. All five
+    source scopes were inspected. Orthographic hydrate notation does not alter stoichiometry;
+    amounts and actual solution hydration/speciation are excluded.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-339698f1b792b730
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=339698f1b792b730862fc5ffe9d801872a983bad3ca85909572a0fb2b02908f8];
+    full payload SHA256 8db09a4e37f5785a9cb4c3b4656e79717f203d94ed045b67400f2331883b208e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors name butyl vinyl ether, and the MediaDive compound391-bearing
+    descriptor identifies the same source material retained by the current MeSH owner.
+    None asserts an alternate butyl isomer or supplied mixture. All four Methanothrix/Methanosaeta/solution
+    routes remain separate. Support is chemical identity only, not the5g/L dose or
+    a biological effect.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-3c17c0df33f20b47
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=3c17c0df33f20b47f5d4c9e043a10d7d203fe12e5a3771c299e33d42bff0711e];
+    full payload SHA256 ac8795a86136bf509985e86d185b2ce55ef3c30d6bf3c735d4b3b4134715320a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify 5-methyluridine/ribothymidine with CAS
+    1463-10-1, agreeing with the owner's ribose-containing nucleoside and CHEBI:45996.
+    This does not collapse it to deoxythymidine. All ten NLDM source scopes remain
+    separately retained; pH, omitted nutrients and micromolar amount are outside this
+    identity approval.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-3c4294ebef0cd697
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=3c4294ebef0cd6976d7cd08afa1ae9db17363a7ea59f6dfca756d996f31fb4a0];
+    full payload SHA256 3d36ff64af1c4778f1afe921372a474a394b063bec5d752c61c378c7b96c8ec6
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: All fourteen scientific descriptor payloads and sixteen source scopes were
+    inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations
+    with plain protein entries, while the candidate's native contract distinguishes
+    those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves
+    this unresolved form relation under issue1486. It does not imply that a quantity-only
+    uncertainty disproves BSA solute identity, nor demote the separate unqualified
+    case.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-3c50fc3ba26ff406
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=3c50fc3ba26ff406e62659f04d27e91dc0ba33d8db155e48c0a30cd04749ca7f];
+    full payload SHA256 972253d9277e4af9273e49f9d5cee63ac0e136ee07bc9b4441e067e8732ddd0d
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors explicitly preserve D-alanine/CHEBI:15570 and
+    compatible KEGG ala-D notation, agreeing with the owner's D-specific structure.
+    Both CDM-LP/TOGO M1556 routes were inspected. No L/racemate inference or approval
+    of the differing dose fields is made.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-3c73f9321f28a35a
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=3c73f9321f28a35a9892ab5a8e66ba1ba04705476fd4106136bfe6608254dd74];
+    full payload SHA256 13acc5f82b08756770003c5da70e5be4ba7c222b618326d9c351b1cb7fe8d67e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: 'The complete #Ar descriptor retains CHEBI:49474 argon(0), and the owner''s
+    exact chemical scope is neutral elemental argon with this raw source label retained.
+    The hash-prefixed label is not interpreted as another species. Identity support
+    does not approve the questionable percent-w/v amount or imply a dissolved-gas
+    concentration.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-3fa1d1b9f99efb4a
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=3fa1d1b9f99efb4ab17e7fe859d08f3ed3e50cb87ed1a6eaf35a96d9d23eceaa];
+    full payload SHA256 3b3461d175a399a127809ec2f0caa25f4b805773c50851e3f53a2c2456d2d18c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors name generic cresol, compatible with the current
+    unspecific cresol concept rather than an inferred ortho/meta/para isomer. All
+    four source routes were inspected. Binding the retained ingredient label does
+    not endorse presence in a recipe whose name describes replacement, apply the replacement
+    automatically, or approve1mM or growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-40873f3920d6f6a1
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=40873f3920d6f6a1db415ac6fca068a11be0de9db8b1749c5d86010ed01f978c];
+    full payload SHA256 f1118e9961294a6a413ec8d0af7fa6d0314739a0bc1f221890fa14c7f339d915
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor identifies acetone as the ingredient and CHEBI:15347,
+    matching the owner's propan-2-one structure and CAS 67-64-1. A solvent role is
+    not a competing material identity. The reported 1 g/L dose and solvent-function
+    claim remain outside this binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-4241abb8e9fdaea1
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=4241abb8e9fdaea101e74ee1833a41c1c1da62bd247b064eddc2cfc160f22cbb];
+    full payload SHA256 13eaae85e13374bf0f46a27b1686f074e6220bc65ee796deec07976a2b9cd722
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete DSM25939 change names CO2 within the post-inoculation H2/CO2
+    headspace, explicitly bound to the DSM119 strain instruction. The named component
+    matches the owner. Identity support retains this stage and strain-specific source
+    route without approving pressure, pH, dissolved dose or growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-4479b8347accf833
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=4479b8347accf83343a281cc370ad7e53cbe05c0a6d9eb3ec1b3a8cbb67c8ac0];
+    full payload SHA256 a1ec29edd1443f2cdd292fb16c3a3a667c8cdaaf8363860304b5430b9fcbf860
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete DSM9575 change identifies CO2 as a component of the DSM119
+    post-inoculation H2/CO2 headspace. Support is restricted to that gas identity
+    and exact stage; the2bar overpressure is retained without conversion to a liquid
+    concentration or inferred growth performance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-46642d545884352f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=46642d545884352ffa928a77f2a31327537800aa9ccbd5ff5629c7185ba03d4b];
+    full payload SHA256 7d878550b9c6905f5c7b7d655c37cfffc55fab4955d0ceb34c84139e8c5d38c9
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors name benzoate, retain CHEBI:16150 and quote benzoate
+    in the source donor table. This agrees with the current anion owner and does not
+    choose an unstated sodium or other salt. The dose, cobalt-medium context and actual
+    solution speciation are not approved by the identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-47508a3adea64241
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=47508a3adea64241e7a1b54afbef8714b21e18c4d1111d773dfb36a88b12e8d7];
+    full payload SHA256 a96140d72c8c73069fd588f1ad5e1a2acee52c5097805884dc1cb155763ae1c3
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete sole descriptor and current local stock owner were inspected.
+    The owner explicitly awaits component-level curation, and numeric accession agreement
+    across two prefixes is not independent supplied-preparation evidence. Withhold
+    the unchanged case under1490 without claiming the stocks are demonstrably different,
+    inventing components, or substituting a carbon role/element identity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-486682d8673ec613
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=486682d8673ec613786770e31bf55b52122a8c5baa20f27be8275a4106ee40d6];
+    full payload SHA256 032c79d28397c07e8dc483154674eaa6401c3026dd2b95e36735ce01d9de7da6
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors explicitly name benzoic acid and CHEBI:30746,
+    agreeing with the current free-acid structure/CAS65-85-0. The four-carbon-mixture
+    note names the containing formulation, not a salt or different supplied ingredient.
+    Identity support does not imply actual protonation at each listed pH or approve
+    either dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-489e2cce45d9fcee
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=489e2cce45d9fcee731efd60ac21fc8fa6ee303a7f3bf5142e5ba2c8250741c4];
+    full payload SHA256 f13e6d7c1c1cf9b16196259f59cb5a9b7c25e6a0b8e42a8e2aad836facc7a4bc
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly retains D-glucarate/CHEBI:30612 and
+    compatible KEGG glcr notation, agreeing with the owner's D-glucarate dianion under
+    the native bare-anion naming policy. The liquid-MA route was inspected. No free-acid
+    or counter-ion substitution, dose certification or growth claim is made.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-4a444e5108b6971f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=4a444e5108b6971f3c6593b1c0d02a4203265c36a364e61a71191ae9f8b0faa9];
+    full payload SHA256 008cee95084dd52f891a242c321968b42ee682c2d29cde65aed2b38b9ca98f59
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete supplier-qualified descriptor explicitly retains defibrinated
+    horse blood, agreeing with the maintained same supplied-form/species concept.
+    Its broad blood ontology field is not substituted for the more specific preserved
+    source label. The Bordet-Gengou source route was read. Support does not certify
+    TCS lot composition, sterility,15percent dose or growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-4e3fc52a283747e6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=4e3fc52a283747e6bd97a2ac30ad1f3eb67c1484501ad192f26f7bb6444f4801];
+    full payload SHA256 3c17583cd46469c30c77d819ebc38214f1f7c55171b1e94904ec16b1e7cb0c2a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All five complete descriptors explicitly preserve two waters of hydration,
+    including exact MediaDive solution2830/4724 ingredient excerpts and the JCM776
+    cross-reference. The current owner has the same barium-chloride dihydrate formula
+    and CAS10326-27-9. Source stock versus receiving-medium quantities stay separate;
+    no reduction to the anhydrous salt is approved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-531623d7728ca1af
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=531623d7728ca1af1ef7b6edef14175f588b31bfe2e8179b22868a7adf4fc244];
+    full payload SHA256 6bfac46d655fc7322aaf6cc73bf04aed913c5228b19bcecc2dd2085faf9c983f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors preserve calcium folinate, supported by
+    exact Ca-folinate MediaDive781 ingredient excerpts and compatible embedded CHEBI:31340.
+    The owner retains the calcium salt and does not select an unstated folinate6-position
+    stereoisomer. All seven recipe/cofactor-stock routes were inspected; stock doses
+    and receiving-medium dilution are excluded from this salt-identity decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-55ac78af84c1b6c8
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=55ac78af84c1b6c846eaffb22d60194097ef0e2ecd6aa45a826e66693c5451d2];
+    full payload SHA256 273d9139e6eea04fd1aa8d8a99a9df77f79eddb2f639595161ee04be8f967788
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eleven complete descriptors explicitly name cobalt(II) nitrate hexahydrate
+    with compatible CAS10026-22-9/CHEBI:86214. The69 source routes retain their independent
+    medium/stock contexts. This is support for the stated six-water salt, not unspecified
+    cobalt nitrate, a dissolved-ion speciation or any final-dose calculation.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-5674be2b2411c0a9
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=5674be2b2411c0a98f2f924f56877b7a7ed006b955f89a040728657fac7e594b];
+    full payload SHA256 4d6fefe9a13e5046e67c686cb67fa39cc8e43cfc91b8e9e11aa4a64708fcdcd9
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors and retained source snippets explicitly name
+    para-hydroxybenzaldehyde, matching the owner's 4-hydroxy positional isomer and
+    CHEBI:17597 structure. The CoCl2 and CoSO4 recipe contexts do not alter the aldehyde
+    identity. The cited 0.5 mM donor amount and any growth interpretation remain outside
+    this identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-56f12fd065dbec3f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=56f12fd065dbec3f71ca4eaddcd28ac047ced43f3c3edd4d3e2024a881c423e4];
+    full payload SHA256 e75aaa03b6761a08467de50d6ef281b63991b8740b8be7c3f5d53ef0cbfbbe7f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: 'The complete Sakai2019 held payload explicitly identifies CO2 as the component
+    of the H2/CO2 headspace mixture, consistent with the molecular owner. Identity
+    support is restricted to that named gas component. The OPERATION hold remains
+    intact with counts_as_presence=false: this is not an aqueous ingredient assertion
+    or evidence of growth, and the reported negative HS1T experiment remains negative.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-573a8aed48a707c2
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=573a8aed48a707c29495136e89e5405b0f9556ab2000a62ab8c723071a70433c];
+    full payload SHA256 4b76d96b46ee9b8363b0706f631f07601e43e5db018fe3147e6d98848f6997e7
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors retain cresol red/CHEBI:86218, and the exact
+    provider1436 source excerpt names that dye. The owner's cresolsulfophthalein structure
+    agrees; this is not cresol or a different red indicator. Both stock/ingredient
+    routes were read. Dose, indicator performance and final dilution remain excluded.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-5bcb2af0997a7423
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=5bcb2af0997a74232a4a15d73241bd5f9abb325359c7dd3ec8541086ba572985];
+    full payload SHA256 c23c2aa451e8431e532e81138d168c2411866afd4d6f077bc493d6700f90d340
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete case includes an explicit heart infusion constituent, but
+    its candidate is whole beef heart and its embedded term denotes heart anatomy.
+    Preparing an infusion changes the supplied material scope; matching a tissue label
+    cannot prove identity. All158 occurrence coordinates remain retained and withheld
+    under issue1482; this does not claim all158 individual recipe contexts were manually
+    read.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-5cf09b02abfe2656
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=5cf09b02abfe2656d5e461f31db83c1263923d68f18cc4c212b4502d36e5e792];
+    full payload SHA256 a5b26a098b78749db95eead66a2c764bb8dd80fe40fce01c8c1d93b22a83ac1d
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors explicitly name D-gluconic acid, consistent
+    with the current D-acid owner. Their KEGG shorthand and gluconate-labelled medium
+    routes do not state a specific counter-ion; all four routes were read. Support
+    binds the retained named chemical identity, without selecting a salt, asserting
+    solution protonation or approving molarity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-6108052f2508ac65
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=6108052f2508ac6575514da47c8841a281e0db56bb97ff469fbc0b8509e69a3f];
+    full payload SHA256 ad1892a738411850eca38ff5156bdb2eb4e05aa6ca210de009eb0d58cb9e4a7c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor explicitly states CaCl2.6H2O and the same
+    hydrate-specific CHEBI:91243 as the current owner. The chemically-defined-medium
+    scope retains that ingredient identity; no conversion to anhydrous calcium chloride
+    or approval of0.33g/L is made.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-619fba0e79bd925b
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=619fba0e79bd925bea4a786e89b7dacc4b40eedf145eac019d1bba7f1405a604];
+    full payload SHA256 a875e6d666aea4339df4246afb63ccf147facdf26b0fc40707c88cf003de4165
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors specify the 2-position furoic acid and CHEBI:30845,
+    consistent with the owner's carboxylic-acid structure and CAS 88-14-2. The ingredient
+    and composition coordinates retain their own recipe scopes; neither descriptor
+    asserts a salt or a stock identity. Support binds the acid identity only, without
+    concentration or receiving-medium dilution approval.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-623dde3c257babbb
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=623dde3c257babbbea834de888c656f13ec45980e619a3679c1357ab78208c6b];
+    full payload SHA256 23ae619a211e51d89b685ccae983f387ff4e942b3b9f9da62093e8a47e89f757
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: Both complete TAP descriptors and both routes were inspected. Their copper(2+)
+    grounding is not reconciled by the generic-label/local-ID candidate. Preserve
+    both occurrences but withhold this aggregate under1501 pending source-specific
+    species resolution; do not assert which copper ion or salt was physically supplied.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-63fbe57cd3babefe
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=63fbe57cd3babefe76ec93c3b769457ca1887cddae15b12dad682265b596b307];
+    full payload SHA256 cbb2f1132b3ba1a6f5c86da4966b7ebc7a491f1c0a02cd4008c6af6b6b825dac
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify creatinine/CHEBI:16737 and the exact
+    provider570 excerpt agrees with the owner's cyclic creatinine structure. All five
+    routes were read. The decision does not substitute creatine, approve5.48355g/L
+    or infer metabolism/growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-642a6453d399c8ae
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=642a6453d399c8ae2ad21bb8db99cafa6490153496a2389def54ea14833b46c2];
+    full payload SHA256 e97bc91a39ad9b0b129183de437617769970c8bb6ba50531a47568ef7e82c696
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six complete descriptors identify Columbia agar base as the named base
+    medium, consistent with the MICRO owner. The DSM429/693 notes keep horse/sheep
+    blood supplements separate from this base identity; all52 source routes were read.
+    Support does not establish a supplier-specific formula or approve700/1000g/L and1000percent
+    legacy values, final volume or growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-65d19440d8044198
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=65d19440d804419894c5876f56179f213830c7951870e98dbc16090c91021fae];
+    full payload SHA256 938e19e08fff819571ed79fcb78ec72d0c11f47875d2e82bdaaae305be9a3f50
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete glucose6-phosphate AMS1 change explicitly inherits Carini2013
+    CO2-then-air preparation through Carini2014. It names CO2 as the gas component
+    before later organic additions, agreeing with the owner. This does not independently
+    verify assay pH, phosphorus chemistry, gas dose or final growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-667f6ee1916f3482
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=667f6ee1916f34829e6520d8458ca47080dbc96d755c37e06dde90d2e37e850d];
+    full payload SHA256 c31f8dfff3902b1b8d4133009e2435b74a66721ea82d2831985c8e2b0490e2b6
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete AMS1 glycine-source change retains Carini2013's ordered CO2
+    then air sparging after autoclaving. The named CO2 gas agrees with the molecular
+    owner. Identity support remains at this preparation stage and does not approve
+    final pH, exposure duration, carbon availability or equate the complete medium
+    with the gas.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-676e27f90f2ca371
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=676e27f90f2ca371646f85ae69bb691f1377a4e555c76eba48522126d1f8cffc];
+    full payload SHA256 be3dd6cd8735afbb4ea0a6c998381035e265958008caa32c95a8d2c99e1af65a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete descriptor's hydration label and embedded identity remain
+    inconsistent. The maintained local seven-water source identity does not resolve
+    that anhydrous grounding, so this entire unchanged case is withheld under1488
+    without selecting another hydrate or inferring a verified chemical substance from
+    the literal count.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-685287e6fa22ce1d
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=685287e6fa22ce1dfc7c6bfbd35067fce829c72bfc80065ef9f3274d0f682a14];
+    full payload SHA256 a80ba8b8f4272f9ef45194ebff4db893a3d1bb2500aa101c9e12322e850752f4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor names cystine/CHEBI:17376, matching the current
+    disulfide structure without specified stereochemistry. The CDM-LAB route was inspected.
+    This does not equate cystine with reduced cysteine, infer an enantiomer or approve50g/L/nitrogen
+    function.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-692e558734b6f189
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=692e558734b6f189deb258aa3529ea1a573c6d40a110c346f8226c1a06172342];
+    full payload SHA256 6cefae89ad000b457fc4c67084a51df56c91d524971d01782068bade6d21bc62
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors specify BaCl2 with compatible barium-chloride
+    identifiers; the exact MediaDive solution5083 excerpt preserves that formula.
+    They do not name the separately reviewed dihydrate. Binding retains the nominal
+    BaCl2 chemical identity without certifying a purchased grade, measured water content,
+    stock dilution or the disparate amount fields.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-6b333af101a0b916
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=6b333af101a0b9166a7ea5533989a01ffc781a74869503b806cfa02ae52d3e7b];
+    full payload SHA256 80fb6aa7d3904fa10e388a17ed1a1b3ac88403845ac66fd6a8be8682cda82181
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor explicitly denotes apple juice as a complex
+    food material, consistent with the maintained FOODON apple-juice concept. It does
+    not assert concentrate, clarified juice, a product brand or a pure sugar. Support
+    remains at this named food-material scope without approving an exact composition,
+    nutrient effect or 200 g/L dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-6b4546aeb2b57314
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=6b4546aeb2b573146c198712b3367a4814381c9963a82e419af7e2a47fc8f156];
+    full payload SHA256 56830344842110d8949c15a382b6cbf6e965a8d096d86a3237bae0b108b262ce
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors preserve nominal CaHPO4 and calcium hydrogenphosphate
+    CHEBI:32596, matching the owner's1:1 calcium/hydrogenphosphate structure. The
+    exact solution6217 excerpt confirms the ingredient label. All four stock/main
+    routes were inspected; zero/variable amounts do not change the named identity,
+    and support does not assert physical presence, a particular hydrate, or approve
+    dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-6f3ccd311a073f1f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=6f3ccd311a073f1f43ae991d33befdff79b73e41f95c92e57e0d425951c207b2];
+    full payload SHA256 3a737f4bec7a4350ddd5265e3ac710b7fa965384fbcf7941c1b1f298453f3f6f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete Matsui2018 high-CO2 aeration change identifies CO2 in the1%gas
+    arm, distinct from the alternative ambient-air arm. This agrees with the molecular
+    owner and preserves the aeration stage. Support does not combine alternative arms,
+    infer dissolved amount or approve physiological outcomes.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-6fa5cc783ef2ab0f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=6fa5cc783ef2ab0fe30b1ca39d6543b994daa008168d6f35acbda10d5fab1ac3];
+    full payload SHA256 333d0114356cf4477d4d27a7a8de6a22e8fcfd951fba86736cd79601c7cc9adb
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six complete descriptors consistently retain aspartate and CHEBI:29995,
+    without an explicit stereochemical or supplied-salt claim. Current MAPPING_SEMANTICS.md
+    specifically grounds bare Aspartate to this stereo-agnostic dianion; issue319
+    is closed and that maintained rule takes precedence over the historical counterargument
+    retained in owner notes. This is concept normalization under that rule, not independent
+    proof of actual medium protonation or approval of P5 MEM-stock quantities/dilutions.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-70cb09ade6935dc4
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=70cb09ade6935dc4a66f18897093b204d1e66f93322d0fdac1cae3b25ad57dcd];
+    full payload SHA256 59af1de95e851c4b42079fb8b9a210e0fb90890ffe7faf896a5a06be57a7afa2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete TOGO M2849 descriptor names CaCl2 with six waters and
+    CHEBI:91243. The alternate hydrate separator retains the same explicit six-water
+    stoichiometry as the current owner. Mineral function and1.3g/L dose remain outside
+    the identity approval.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-71d42cd78920da58
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=71d42cd78920da585ccf0ce9fe61e0b425e6e6c52dce9975ebcb67cf0afc90f9];
+    full payload SHA256 ecb2ee17f422386d760c8177c9fc98ea18cec2b6a5ffc3ab5ab37ac4a492dc8f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: 'The complete descriptor and complete replacement event were inspected.
+    This case records the historical replaced label D-Glucose6-phosphate, so its D-specific
+    identity is factual context for the old target. The event explicitly replaces
+    that assertion with generic glucose6-phosphate because the Carini primary source
+    does not certify D/L. Support is solely the historical old-label binding: no positive
+    occurrence, actual reagent stereochemistry, dose or assay outcome is inferred.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-731fdd45136e6810
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=731fdd45136e68105495546dce75bac0c81a00fb6618b93287b41a48470ae4a1];
+    full payload SHA256 a20e31d4ed80e9b6fa96057b3b5e6145372a5ce04b1e0c90867733120c58763c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete TAP descriptors explicitly embed calcium(2+) CHEBI:29108,
+    matching the charged-ion owner and distinguishing the rejected generic Calcium
+    owner. The source's generic surface label is qualified by those retained identity
+    fields. Identity support does not select an unstated calcium salt, infer counter-ion
+    or approve0.34mM/actual speciation.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7596c7c0a15c93aa
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7596c7c0a15c93aad9efbf29244b8f4bbfb9ad16dff1f35ee638cb4ef8a9c8e9];
+    full payload SHA256 6e2aa3b488684e3d644614acc3554778051d5e73bab0f7f76c474f8cbc2def5a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete DSM2030 source change explicitly names CO2 in the H2/CO2 atmosphere
+    supplied after inoculation. The owner binds this molecular component without treating
+    the mixed gas, pH6.5 or2bar instruction as an ingredient identity or approved
+    aqueous dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-75995ea07db3cdc6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=75995ea07db3cdc67ac180e0068b30d27b9df5460a03b4af36f70f7c0c7f0d39];
+    full payload SHA256 e2ab41fcf2301ddb24a3efdec3cd8a25e35ea5029773716e0421a6c09c4676c8
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eight descriptor payloads retain baker's yeast as the material, supported
+    by the exact MediaDive compound17 excerpts. The maintained FOODON owner is the
+    same named yeast material, not yeast extract, a specific strain or a composition-defined
+    stock. Identity support preserves that scope while excluding viability, strain
+    identity, preparation concentration and the percent-v/v quantity interpretation.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-75cc21f68f7c24c7
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=75cc21f68f7c24c70fdd21cea63b210c476d7942900d4a7b5d079dded23b7ede];
+    full payload SHA256 a8ffcaa4270ab529bb4d7a2e2f4ea305e9403045d007921e5f9c179488c35362
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete DSM25945 change preserves the DSM119 instruction for a post-inoculation
+    H2/CO2 atmosphere. CO2 molecular identity agrees with the owner; the distinct
+    strain/pH instruction and gas pressure remain source context rather than an approved
+    dose or growth assertion.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-76e2e8c8282a85ea
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=76e2e8c8282a85eab03414e54e4a9526b511858f0a3d7f234c64480bd33b1df2];
+    full payload SHA256 88673453a29433c8ab5d29e66750acc2f81829b1af97af8ad331e55af04b0414
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors explicitly name anaerobic water, preserving the
+    anoxic qualification of the current ENVO owner. Support is limited to that named
+    water material/state; it is not a verification of oxygen measurements, sterilization,
+    recipe composition or the 100/300 g/L amount fields.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-77e001312d6b6603
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=77e001312d6b6603d45ffe4f148005f87a6b7ca9ebfd30c9849a0ee0e45e231e];
+    full payload SHA256 b8cad5d734b7e1954f89c3b1584f5e831a7bd702ca0aa8e717c68c9497b940e2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors preserve benzyl cyanide/phenylacetonitrile, matching
+    the current owner's methylene-separated nitrile structure and CHEBI:25979. The
+    MediaDive compound2166 provenance and exact named synonym agree; no benzonitrile
+    substitution is made. Identity support excludes the0.12g/L amount and nitrogen-source
+    function.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7816d9ac4687571c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7816d9ac4687571c34849f4c66d72093c807e1e94719ed7670e3d0ea0062646d];
+    full payload SHA256 a96a00e7b1cf75b776511b87668322165aeed566ba3be5a174d0834d8497f0b2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: 'The final descriptors name a 0.5 M disodium NTA preparation but both embed
+    CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term.
+    The candidate MIM registry stock explicitly separates that disodium preparation
+    from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove
+    this source-form conflict. Both occurrences are retained; no stock-to-solute replacement
+    or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up:
+    CultureMech #792.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7a54eb7a4c55b5ac
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7a54eb7a4c55b5acdda7034454ff1d6a93358de5744d4d7e7042201b473629af];
+    full payload SHA256 708997a4ed47cb7a82e0b290401d9a98b3af739bb7f376f1b036187c2fb4e51b
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete Tsuji2021 low-sodium comparison explicitly retains CO2 in
+    the0.04%air arm named by the primary abstract. This supports gas-component identity
+    while keeping it distinct from the5%arm. Full methods, dose, growth efficacy and
+    dissolved concentration are not claimed to be verified.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7cae5a5b7b73d3a8
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7cae5a5b7b73d3a84773364d9282a1a24fb74c187aae230b605f128d567f6bb2];
+    full payload SHA256 6e677886ee9dae1fed7d824dae582ce4ca0d441a9e141c9259945a6c253d54b5
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors explicitly identify Cl-/chloride, with compatible
+    CHEBI:17996 and KEGG:cl grounding. The current owner is the same anion; no counter-ion
+    or elemental chlorine is inferred. All five TAP/Vogel/synbase routes were inspected.
+    Amount differences and actual solution speciation are outside this identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7ce014451bbe85f1
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7ce014451bbe85f105f7fe1610bab9a7d0e46648947f97cbc62ddf84751cd403];
+    full payload SHA256 05cfcf5bc777b4b9dc12ad9cac4fc0aab3e7045579d8c35442418868c408a959
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors consistently identify arsenate with CHEBI:29125
+    and retain after-autoclaving context; neither asserts arsenite, a counterion or
+    a specific supplied salt. The current owner explicitly rejects arsenite aliases.
+    Support follows the maintained bare-anion concept convention and does not certify
+    solution speciation, an unstated salt or the reported dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-7ced97de79fe3814
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=7ced97de79fe38147318bf8d3d0333d59332e93f8dafd1a36221583f4590bf17];
+    full payload SHA256 bd39d00c20ce7e48f46fb46052394483c30e93f74d42d5d7e14b8febab97dcf2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: All eleven complete descriptors and twelve routes were read. One member
+    contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate
+    is withheld under1513 while every occurrence remains available. This is not a
+    claim that the other eleven routes have the same conflict; no concentration or
+    D/L resolution is guessed.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-80a712170c6d28ba
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=80a712170c6d28ba05f9f285c47b63ef4569a6e706b1e09aa8754f33227c00b3];
+    full payload SHA256 97596e921b3b07c1dc1582ba007e17fb986b60ccc3daff4657f7b6ac0b7bc3d4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete Tsuji2021 change explicitly identifies CO2 in the5%aeration
+    arm of the low-sodium comparison. The primary abstract supplies that gas identity,
+    compatible with the owner. Support does not merge the ambient-air comparator,
+    verify inaccessible full methods or establish a liquid dose or growth claim.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-8542b4ae4f2bd7e6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=8542b4ae4f2bd7e6c8921e5287242e7f96311ae9b834e9c0e5604b73119688b9];
+    full payload SHA256 db915771a499e6614d5e3950690bf36fc4b52129ca34d0bdcdf770b2fc29fe80
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors retain choline/CHEBI:15354, including the
+    exact provider611 vitamin-stock excerpt and compatible KEGG cross-reference. The
+    current owner represents the choline cation, without an inferred counter-ion.
+    All four source routes were inspected; the identity decision does not substitute
+    choline chloride or approve stock/final amounts.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-86fd9453e711ff71
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=86fd9453e711ff711816635df5f727e6e86bd3aef344b13983d4f16b6ce5e66f];
+    full payload SHA256 3383a193a2fa98d34f8a4a178be19c4e4982d2268e02e9d3401869d8b6ef8274
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four descriptors identify indole-3-acetic acid, including the exact
+    MediaDive compound 1548 ingredient excerpt in solution 5113. The current owner
+    is that acid with CAS 87-51-4 and explicitly rejects its historical ethyl-hexenoate
+    mislabels. None of the source descriptors revives those rejected compounds. Parent
+    aromatic-fatty-acid solution context is preserved; support is for the named ingredient,
+    not the mixture, source quantities or final-medium dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-8898ca0ff0613326
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=8898ca0ff0613326a4e116d623c8a356826c450d801aa4b481ab2b14ef78a5f9];
+    full payload SHA256 e4bc0a210b96ee108cac0276a6b3df21eddd74eeb33185a1048f3299219f2a10
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify antipyrine/phenazone and retain compatible
+    CHEBI:31225 or MediaDive compound412 identity. The solution703 recipe excerpt
+    names antipyrine as the ingredient, consistent with the owner's specific pyrazolone
+    structure/CAS60-80-0. The parent medium/solution and 1 g/L amount are not treated
+    as the chemical identity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-89b5d1371f6b0c7c
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=89b5d1371f6b0c7c8930a0cb8cf0a64bbfef3c45682fedb216ecdab0a3dffc51];
+    full payload SHA256 416488efa8ce74399565e060d919978f3c0e697f6c09b7c2ca10de339290d22e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete phosphoserine AMS1 change retains the explicit Carini2014-to-2013
+    preparation linkage and ordered CO2 then air sparging. The molecular gas identity
+    matches the owner; the phosphoserine assay, final pH and dissolved dose are not
+    inferred from this binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-8a120bdffd7488ba
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=8a120bdffd7488ba1640beae884ba9e1af5433f30a256f30497fbdc55a39d593];
+    full payload SHA256 117928da6efef60b1e61096d19b6c135de9c70f05fd7223eae4399d7345e11ee
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: 'The complete descriptor names benzene with CHEBI:16716 but includes a
+    generic Solution property. The primary DSMZ944a recipe resolves the identity scope:
+    it explicitly uses benzene as the solute in distilled-water stock; the separate
+    source solution is not being equated with pure benzene. Identity binding is supported
+    for the named solute. The31.2g/L base amount is independently contradicted by
+    source stock/addition arithmetic and is NOT approved; CultureMech793 tracks that
+    unchanged-base defect and optional variant applicability.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-8b8cd58861a0f289
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=8b8cd58861a0f28967f856165645683579d9bf185b2f05218bdf39d0305fe583];
+    full payload SHA256 23e1213edebfeaec1d3627a22bced92ab131c13783c27d35ec3ec45b79592903
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete2-aminoethylphosphonic-acid AMS1 change names the CO2 preparation
+    gas through the explicit Carini2014-to-2013 methods linkage. It preserves the
+    ordered sparging stage and does not assert an assay-specific pH, approve the phosphorus
+    compound or infer liquid CO2 amount.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-8ee01e4e5b7445f5
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=8ee01e4e5b7445f5882a111afb3545864f51312c136e611d4d630fe0d81a1f0d];
+    full payload SHA256 479341f9cbfd803ebaa03478edf1b20264dcd09a6316ee630a1bb28f631c164b
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete base descriptor and corresponding source correction were read.
+    Exact source binding to the D-specific owner would certify an unsupported stereochemical
+    narrowing for the actual reagent. Withhold this unchanged base case under1511,
+    preserving the separate historical old-target context and every input row.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-90a4e97134f2ccee
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=90a4e97134f2cceed8fd23d9c9222f25e505c0293f376ec5f4d1566f5a86e4d8];
+    full payload SHA256 155f9df95d74faa833dae1b6ef778e2a34de1a7bd343bd92b32b5486bf2752cb
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete TOGO descriptors explicitly name chocolate agar as the supplied
+    medium material, compatible with the generic named-medium MICRO owner. Both source
+    routes were inspected. Support does not select a supplier formula, equate the
+    medium with agar alone, infer unreported amount or approve its growth claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-911c0899099348a6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=911c0899099348a68ff40a0313deaf740049351b015d89f39f3a4194c34da0f5];
+    full payload SHA256 dafb26600e72c9c51601c44d9aaa627becccefc720b85268b74151319e84ee91
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All60 complete descriptors and152 source routes were inspected, including
+    exact MediaDive541 and UTEX/JCM hydrate-qualified source excerpts. Each preserves
+    cobalt dinitrate hexahydrate, compatible with the owner's explicit six waters
+    and divalent cobalt. Preparation and stock scopes remain distinct. Conflicting
+    printed molarity annotations, legacy merged amount values and percentage fields
+    are retained but not approved or converted by this identity decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-97e084115638e98f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=97e084115638e98fc6758ed39975f9d4ea9bb205a87455c46c0f3c7791acbd7d];
+    full payload SHA256 54957684783d0ec335f4e8bec758231d2c5fdf0e09ee35a474604c8357eedf27
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors identify 2'-deoxyinosine with CHEBI:28997
+    and CAS 890-38-0, agreeing with the owner's specific nucleoside identity and structure.
+    The soil-carbon and exometabolite-mixture references describe the containing formulation,
+    not a competing ingredient identity. Quantities and mixture-wide composition remain
+    outside this identity approval.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-9aafef893f46d681
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=9aafef893f46d681733bae176dbc4cc695becd97f5b889a366a68df327cb63c2];
+    full payload SHA256 28fd573e93ea0f9706a14a3e48f4664d7d6ee6ba62480fe94bcd0ee00e722403
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors identify 2'-deoxyuridine with CHEBI:16450
+    and CAS 951-78-0, matching the current owner's nucleoside identity and structure.
+    The differing mg/L and micromolar quantities and parent carbon-mixture provenance
+    are retained without becoming new identity or formulation claims. Support applies
+    only to the explicitly named compound.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-9bebf2dec0e4e5b0
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=9bebf2dec0e4e5b0e2db507bdde437e620195525c9cb744bc40b907d11b3a981];
+    full payload SHA256 a805468d84a7786340d388c0f193f64d6541d30e35525898b856e96047e8df7c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor names crotonic acid ALDRICH113018. Independent
+    manufacturer-page inspection confirms113018 as trans-2-butenoic acid/CAS107-93-7
+    with the same E InChI as the owner. The single source route was read. Support
+    is the named chemical identity, not a batch-purity, dose or growth certification.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a0651624438bd707
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a0651624438bd707636aa33f3a547e90ba72a7fc8a1846f8d9a7aac305fcdeb3];
+    full payload SHA256 45f537f38c487b9e95b69bdf47059084aea5a88a84fbc2321420ba031d139eed
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete phosphite-arm AMS1 change identifies CO2 during inherited
+    Carini2013 inorganic-medium preparation, followed by air. This supports the gas
+    component identity independently of the unresolved phosphite counter-ion/form.
+    Final pH, liquid concentration and phosphorus chemistry remain outside the decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a140503a9a82236f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a140503a9a82236fc8efc9c8a6d893cb90a0b22b287efc845def24f3a3e64c1e];
+    full payload SHA256 1225bf880676fe160d7a0b48c6bc87b013118568b51a4e95f0ab92f1b8f5988d
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors identify CAPSO, with the correct hydroxy-propanesulfonic-acid
+    CHEBI:183882 structure rather than CAPS. The exact provider1762 excerpt and three
+    RT2 routes preserve this ingredient identity. The extraordinary5930g/L provider-declared
+    value and its2mL volume basis are explicitly outside this identity support; the
+    decision does not certify their physical validity, dilution or buffer performance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a2838b1187a747a8
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a2838b1187a747a8ec46a1fc7eb2ea23e1d218016bb83728e0194b8844c7b301];
+    full payload SHA256 9d798a04db0ef4c013222161a62ff19d836662a0efa0078eb85df0a9b9e80fe8
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eight distinct descriptors explicitly retain activated charcoal, with
+    MediaDive compound582 and exact retained recipe excerpts where present. The current
+    owner denotes activated charcoal as a material, not elemental carbon or the containing
+    agar/blood medium. Support preserves that named material scope without asserting
+    a unique chemical formula, product grade, concentration or biological effect.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a35898ba396305dc
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a35898ba396305dc1a0cb09976034cb70e56d51f18a9edf4c67a898b3dd9c465];
+    full payload SHA256 1c19fd2daaa68f99e4fcf49862d8854f136802a35ad30d246d7ed8400427add3
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete UI-medium descriptor explicitly specifies 4-hydroxybenzoic
+    free acid in both identifier fields. This agrees with the owner's para-hydroxy
+    acid structure and does not denote an ester, salt or ortho isomer. The carbon-source
+    role and 0.414 g/L amount are retained but not approved by the identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a41a9945169fc3de
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a41a9945169fc3deb58c19e3e2f21979ea9ece6719ecaae788b0bd134e70012d];
+    full payload SHA256 58e0ef2d5d447d2e44f06894e935780e057329823c7145cedcc9fdb900209155
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All28 complete descriptors retain nominal CuCl2/CHEBI:49553, with exact
+    provider261/JCM1219 input-solute excerpts and no conflicting hydrated source label.
+    All99 routes were inspected. The binding concerns the named salt/input solute,
+    not the entire10mM stock; it does not approve concentration, infer a specific
+    hydrate from an unspecified label, or validate user-contributed P10 biology.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a5a7c3209f4bd51e
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a5a7c3209f4bd51eaf5a76a8a01d59b310561fe16e94c6d932550b4b12590d74];
+    full payload SHA256 e1b8f246e2f8f0c1c70f871891f7f4ba1f671143e7ab646ad76050446b8dd051
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete separate source descriptor explicitly identifies D-mannose/CHEBI:16024
+    as an alternative carbon-source arm, agreeing with the generic D-mannose owner.
+    Primary ChEBI inspection confirms D-mannopyranose is subordinate to that concept
+    and lists both commonly encountered CAS numbers; no false CAS or anomer conflict
+    is inferred. Support does not assert simultaneous use of all alternative substrates,
+    approve0.2percent or infer growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-a95288ddbcbc4509
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=a95288ddbcbc450909e874c853545f6933295cfe90ce0d52dfec672887231ccb];
+    full payload SHA256 7642bec6b1953530db4d4ea8df94a8ac1089fae3d5e9ff9f7b983fb6c0e7f8f5
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Every complete descriptor preserves Ca(NO3)2 and compatible calcium-nitrate
+    identifiers; exact provider excerpts retain that nominal salt formula. The current
+    owner explicitly corrected the historical cadmium-nitrate conflation, and no inspected
+    source descriptor reintroduces Cd. All37 source routes were inspected. Support
+    binds nominal calcium nitrate without asserting purchased hydration state, converting
+    mass between hydrates, or approving concentration/dilution.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ab0eedc422381cbc
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ab0eedc422381cbcc50504fd6b6c419348754b62d5c838ea09c021ee74d1e15e];
+    full payload SHA256 b96f3de5f3c3ea9922a089be88420e7f8ddc5504da71c6221c436219112255d7
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All22 complete descriptors preserve choline chloride/CHEBI:133341, compatible
+    CAS67-48-1 and the owner's explicit chloride salt structure. Exact provider115
+    excerpts agree. All46 source routes were inspected. This salt-specific support
+    remains distinct from the choline cation and excludes concentration, stock-to-final
+    dilution and biological effects.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ae04caa55fe59069
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ae04caa55fe590697004086cb398e8070b88d4f32d55b0dad4607f95abc1724e];
+    full payload SHA256 3e5ee8b7a99b4b75f2edcefa301502f5a895a85d14f46a01ca0cff9a06291ab4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors explicitly preserve Co(NO3)2 with six waters
+    and compatible CHEBI:86214, matching the hydrate-specific owner. All three recipe
+    routes were inspected. The decision excludes concentrations, dilution and growth
+    claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ae9572ea8c1ffd93
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ae9572ea8c1ffd93d4648598494a5e77ade4e95acece7cc65f2577a04efe1688];
+    full payload SHA256 0064350b63e1c4733ce1878e53cbd0b15fcf65e237ee40c11fb91e519ca35aa2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete methylphosphonic-acid AMS1 change preserves CO2 as the gas
+    in the linked Carini2013 preparation stage. Molecular identity agrees with the
+    owner; ordered CO2/air steps remain separate and do not establish assay pH, gas
+    quantity or phosphorus-compound identity.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b1f8adc06f883411
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b1f8adc06f883411d5c71414782451de1fd4e3bd97dc7b8acab2d95307c51bb5];
+    full payload SHA256 972e60c9d098f478574f66397158fd146467b8d64da4e2d0460679ea67f50852
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors name biphenyl, with direct CHEBI:17097 or
+    MediaDive compound2105 where present, matching the owner's two-ring biphenyl identity.
+    The W-medium, named-biphenyl medium and MediaDive919 scopes preserve the ingredient
+    rather than the whole formulation. Doses and carbon-source function remain outside
+    this identity support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b221231fe8357484
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b221231fe83574843715c085b7cd393a84f902cadc3e4104392916879a4e8490];
+    full payload SHA256 37558732fc5371ce06daf189971b7ef2fb96bbc2ea6213c908216be3205fe265
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete ribose5-phosphate AMS1 change names CO2 in the explicitly
+    linked Carini2013 preparation method, before air and later organics. Support is
+    the molecular gas component only, without extrapolating assay pH, dose or ribose-phosphate
+    form.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b27b4e0701b204e6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b27b4e0701b204e6a9919f53072a85106b141efbb45c58b59348920465c3036b];
+    full payload SHA256 18e80d935e71c34c1373f5672b17d3b8576555d323d1f54c7b37d9d718597128
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete P5 descriptor and all its preparation prose explicitly identify
+    decanoic acid as the input solute in a separately prepared aqueous stock, matching
+    the linear C10 free-acid owner. The full stock-composition route was read. Support
+    binds the named solute, not the entire stock or final Mix5, and excludes heat
+    stability, source dilution, amount and growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b28cdde06366ce79
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b28cdde06366ce7968148b1eee34421ac431048684d89cb507615f70daabb9f2];
+    full payload SHA256 35bd4d43add55f8ec8680d367e041480551a825f039d013e85f25ac538728c46
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The inspected opaque NBRC1273 preparation is sufficient to block an exact
+    preparation-identity binding for this grouped case. The retained packet includes
+    other named source seawater matrices, but no single composition or equivalence
+    is inferred. All occurrences remain available; the generic category can guide
+    follow-up without granting exact identity. Issue1479.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b2f395bcc3e5d1be
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b2f395bcc3e5d1bec50a2ea6a7082a074188ad47b9ddc1a3070626a6eff015b8];
+    full payload SHA256 889e3c906b1988b8b5f7f3899755d4a309a091f4839a2120b0df6218aeddbe05
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete Ignicoccus change names CO2 in the final H2/CO2 bottle headspace
+    described by the Koschnitzki2017 methods. It remains distinct from the N2/CO2
+    purge and N2/H2 chamber stages. Identity support is for CO2 as a component and
+    does not infer liquid quantity, pressure equivalence or growth.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b3a540ca9bb6ec82
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b3a540ca9bb6ec828331ccd9ab7edfb64211f6a415d317ee30fee3f3f30c17d4];
+    full payload SHA256 ad16b947076cd98e8166f961498c074bc28b9a74956577e42b63c668d3079cd4
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete descriptor identifies the 5-fluorinated uracil compound,
+    consistent with CHEBI:46345 and the owner's fluoropyrimidinedione structure/CAS
+    51-21-8. No salt or preparation qualification is supplied. Its 100 g/L value is
+    not validated or endorsed by this identity decision.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b3fd3be6a836d88e
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b3fd3be6a836d88e4640aed9a7b682dcfc6fb783130515ce3438982262a09fb2];
+    full payload SHA256 02d56a0bb0016ff9d4a7dde8ca10c37bd09cf57fe9cc7d6537943fdaf7d56a15
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly identifies Ar/argon(0) and describes
+    an argon gas stream during distribution of the medium. This agrees with the elemental
+    argon owner. The gas-stream preparation context is preserved; no liquid dose,
+    partial pressure or growth effect is inferred from the VARIABLE field.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b43059bd4d533f65
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b43059bd4d533f65f08b13bb87068abddf0075bb1122743e8adf1b28a0682313];
+    full payload SHA256 66456df539defd7d37f7c263500210372d5faa8803a7d2b370b2a6de041d9920
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors retain 4-hydroxybenzoic acid; the exact MediaDive
+    solution 2076 recipe[0] excerpt names compound 923 with that positional acid.
+    CHEBI:30763 and the current owner's free-acid structure agree. Parent main-solution
+    context is not mapped as this ingredient, and no dilution or concentration claim
+    is approved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-b5e2fc3e34357209
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=b5e2fc3e34357209a492f5d42d3d89af3ffd9cd060d83d043a0d26d3f7602307];
+    full payload SHA256 2bafff1c4b9a34afc19ccdaf7d7f816efc28513aa4e347abc6486ef68340a591
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six complete descriptors retain the six-water cobalt nitrate form,
+    including explicit notes documenting the CCAP subscript restoration. The seven
+    source routes and current hydrate owner were inspected. Support does not infer
+    an anhydrous salt, approve historical curation methods wholesale or certify the
+    reported amounts.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-bf14e85a596fe5f7
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=bf14e85a596fe5f7a92278fde3eefe63d50e790001ce55dbf7aba62735852e51];
+    full payload SHA256 2052e917c1cec7af9fc9c30b1eba8326ab8cf9a7c403b4d7cc001ae314c5e4b8
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All five complete descriptors identify carrot as the input material. Peeled/cut
+    notes and the explicit pre-decoction stage retain carrot identity rather than
+    claiming the filtered extract is whole carrot. The current carrot owner is compatible
+    at that material scope. All five recipe/composition routes were inspected; extraction
+    yield, fixed composition, final-medium amount and biological effects remain outside
+    this binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c2a85cd5f94a73d7
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c2a85cd5f94a73d732b9b4cae7ce92f3b17a03bc31ddc959963e9749dc9c812a];
+    full payload SHA256 bf4ded7fb11b0a6d9751c90e69301fd4a2b0801abdbc2e30c61a43f164cc299c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors preserve beef brain powder, and the exact
+    MediaDive solution3810 ingredient excerpt plus TOGO M148/J157 context identify
+    that supplied powder material. The local owner explicitly preserves powder specificity
+    beyond its broader beef-brain ontology parent. Binding is to the local powder
+    identity only; it does not assert equality to whole brain, a fixed composition,
+    product grade, dose or biological effect.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c5e0653364f2b661
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c5e0653364f2b6613bb74171caf810a30f212cbb7515602dd97e29af1a578e85];
+    full payload SHA256 b4b3e1197d3858265e7130e0bc6d44ea2c2852afa94db8319fa699e10d5c6689
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete descriptor explicitly identifies D-methionine/CHEBI:16867
+    with KEGG met-D notation, agreeing with the maintained D structure. The methionine-salt-medium
+    route does not add a counter-ion to this ingredient descriptor. Dose, L/racemate
+    identity and growth remain outside support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c7c4da0c0b3dc79f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c7c4da0c0b3dc79fc26b261d43d2a53e724e452e750ffa9d34837113f526e663];
+    full payload SHA256 c44a028238ac08a7c5a411dbed6b8e2c32b6527304376afb59cf7d4893296710
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All five complete descriptors name acetoin without selecting an enantiomer,
+    and the owner likewise represents stereochemically unspecified acetoin. The DSM
+    strain-specific and NBRC/archived-recipe notes do not introduce a different supplied
+    chemical form. Identity support excludes the different doses, carbon/energy roles
+    and strain growth claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c84d38d267ad7dcb
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c84d38d267ad7dcb4e7df4d471dd22082f21baa831e2d5c048aaa0e68de879de];
+    full payload SHA256 768c9eeba60b8dc36bedee977d0b4f9546b1c423df137a87d2815740240bae53
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete Scenedesmus ABC009 change identifies CO2 in the phototrophic
+    BG11 aeration arm described in PMID34584038. The2%CO2 arm remains distinct from
+    air. Support binds the molecular component without approving the0.5vvm flow, liquid
+    dose, complete medium or growth outcome.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c878f30e5f397f8e
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c878f30e5f397f8e7fce93e69ab54f9fb7c001a60442df0171a4d2f2416b6802];
+    full payload SHA256 9bde200faf939987822c1eec33144a3819457e3f6e2db3ff6da92111222a59ab
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors explicitly assert the six-water cobalt nitrate
+    salt, matching CHEBI:86214 and the owner formula. All six source routes were read.
+    Different stock/medium amount fields and mineral roles remain unapproved by this
+    identity support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-c8ce23344ae00a5f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=c8ce23344ae00a5ff1d7008a1cc5619bcec7343f313d577dced38ec86b6f828b];
+    full payload SHA256 aa0e19b9e0682637e1aa809561881dd500fa9f90ba30b59d7318acbd81b9a67c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete Cystein descriptors retain stereochemically unspecified cysteine/CHEBI:15356,
+    matching the owner's structure without an unstated L/D or hydrochloride narrowing.
+    Both source routes were inspected. Support excludes dose, reducing activity and
+    solution speciation.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-cadbcb97562b7743
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=cadbcb97562b77438297642b334d4f03096fa475d25adbe6811f37c2ed1c5c9c];
+    full payload SHA256 32006596015e5403b6b15748c69361ff291cc1752e28d7dd64ed25e8f5247c11
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete NBRC1300 descriptor explicitly identifies cefpodoxime/CHEBI:3504
+    as the named stock solute, matching the current free-cefpodoxime structure rather
+    than an unstated prodrug. The source route is nested stock composition, so support
+    does not equate the entire stock with pure cefpodoxime or approve10mg/mL, solvent,
+    final dilution or antimicrobial effect.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-cf3475364310c77b
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=cf3475364310c77bb757621f6e005d58838d8f24ac12db49d9f719ed48cfaead];
+    full payload SHA256 6788d7ef1d0f452cb102b769f0c21175a8eb00c21c8bcb18d83043e257bb6a52
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six descriptors preserve adenosine, CHEBI:16335 and CAS58-61-7, agreeing
+    with the owner's adenine riboside structure. None denotes adenine alone or a phosphorylated
+    nucleotide. The NLDM/exometabolite/soil-mixture source contexts and their dose
+    differences remain separate from this identity support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d0855f94860f1de9
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d0855f94860f1de96273906705764f6439bd3b7052afbbe396f4c0a4c1e89907];
+    full payload SHA256 7ad9cdcc7546a1998b284ba7f4dc8c450e237878d45139544066df2822101035
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors preserve calcium malate, including exact
+    MediaDive J62/solution3689 ingredient excerpts and provider1614. The current FOODON
+    owner is the same generic calcium-malate material, with no unstated stereochemistry/hydrate
+    imposed. All three glycerol-calcium-malate recipe/composition routes were inspected.
+    Amounts, mineral function and downstream formulation are excluded.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d13d06bd89f57b14
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d13d06bd89f57b140286eb3eae79ae69ddbb887ce7583916aca69c819eb7abaf];
+    full payload SHA256 f48e5f0aa5046cab63656776e67417a47f8bac22ba113c2064287c3a8590cb0f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors retain cadmium nitrate with four waters,
+    agreeing with the current hydrate-specific structure/CAS10022-68-1. The P4 page
+    excerpt explicitly names the tetrahydrate stock solute and the solution5814 excerpt
+    agrees. All four stock/main source routes were inspected. This does not approve
+    stock-to-final dilution arithmetic, trace-metal dose or growth, and does not collapse
+    to anhydrous cadmium nitrate.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d23fddc72c400308
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d23fddc72c4003082d770642cc7daed1a9a308c7234c1f992fe07903533189b2];
+    full payload SHA256 bcb33f5b49c4137cf083bc7eb2f4697d31828bc23126272aef27dfb55fc23477
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors explicitly assert1-butanol, matching the
+    current butan-1-ol structure/CAS71-36-3 rather than another butanol isomer. The
+    retained donor-table excerpts support amounts but are not independently treated
+    as isomer evidence; identity support binds the full asserted source descriptor.
+    All four freshwater/butanol-challenge routes were inspected. Doses and challenge
+    outcomes remain outside scope.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d37dfbf0abe3ecbc
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d37dfbf0abe3ecbcbf99f0f6870efd4b94449b36ae7c7be8c011b065fc1db6a1];
+    full payload SHA256 8d4a25e0f741ec90e6bd658b9c29055c3f1a1ad1f3692e758f17e18c1d440503
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify the same 2-substituted sulfobenzoic
+    acid as the native owner; the MediaDive compound 2116 and source scope signatures
+    retain this positional isomer without a salt or hydrate assertion. Binding supports
+    that named chemical concept only. The differing 50 percent-v/v and 50 g/L source
+    quantities are not reconciled or approved by this identity decision, and no concentration-qualified
+    preparation is equated with a pure substance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d6beb0069466ad90
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d6beb0069466ad90d35248cfe2ba0b2634201a105492e8ca3332db906f2313ff];
+    full payload SHA256 f612ddb785557697a75326fb9c777e7be5265a7d98c26fca4c30ee4538e09748
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: 'All24 complete descriptors retain crotonic acid/CHEBI:41131 or provider255
+    with exact acid-labelled source excerpts, consistent with the current E-acid owner.
+    All37 routes were read, including crotonate-stock preparation: the ingredient
+    is the named input solute, not an assertion that the final sodium-crotonate stock
+    is free acid. Percentage fields, neutralization outcomes, amounts and growth remain
+    outside identity support.'
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d93455d8e1131d6e
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d93455d8e1131d6ef8bde09f4aa1d3c4a206db001ce3465bd43c73e0cf0b6d39];
+    full payload SHA256 160dd3f10fb74ce2e11880d83e22b2afe2b78cb7115df1d5bacd883c285ae791
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The complete descriptor, A1 source route, full owner component recipe and
+    primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity
+    remains unresolved because of concentration-basis and thiamine-HCl versus thiamine
+    discrepancies. Withhold under1514 without silently applying a dilution or treating
+    the imported10g/L as a valid primary amount.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-d97cd220d4c7a33a
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=d97cd220d4c7a33a009f777c269cd80c5779af49fb5183d3f2be88c3ccdfa32f];
+    full payload SHA256 8d7f81c00649b2c76d4b86ce0ad1d17aef57683ed56563e681a15fba3adca61a
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole complete basal-salt-medium descriptor explicitly names biphenyl
+    and agrees with the current CHEBI:17097 biphenyl owner. No derivative, supplied
+    mixture or alternate ring connection is asserted. The1g/L dose and carbon-source
+    function are not approved by this identity binding.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ddb4d0bc41a8f9e4
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ddb4d0bc41a8f9e4d578c08ff8f4017be711b60f24a2e568edd503aecc27c298];
+    full payload SHA256 f7dcd49aa8fd438b11cbebff1caeaacd424d0df7dd7c9935b498faed84ae2175
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The fully specified triazine substituents in both descriptors match the
+    owner's atrazine structure and CHEBI:15930 identity; MediaDive compound 2120 carries
+    the same structural name. Parentheses differ only in rendering of those explicit
+    substituents. The source's g/L versus mg/L values and the owner's historical method-grade
+    issue are not approved here; this decision preserves the chemical identity and
+    does not revive an erroneous historical CAS identifier.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-dedff48b8a0c5821
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=dedff48b8a0c5821656982a5363f95708b4a1811fe008d0c5552338227c0302b];
+    full payload SHA256 0dc371e2014305a6ac3371d37cf6d083caf83dc3abbc1f6f920b53d952ca6a30
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors identify corn meal as the preparation input,
+    and the DSM191 note explicitly distinguishes that input from the later filtered
+    extract. The generic FOODON cornmeal owner agrees at the input-material scope.
+    All six routes were inspected; support does not equate the filtrate with corn
+    meal or approve extraction yield, final dose or medium performance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-e333bc3dfe3d3d42
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=e333bc3dfe3d3d4269014b674c8c8fda0a7dd12ae2b662487a673e91d6e750e7];
+    full payload SHA256 1982dfb29723baf66775048583e2389f00e12f1fd7f4ed22aeac2c712b5eacb0
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete DSM16632 REPLACE event explicitly names clarified rumen fluid
+    as the new material and sludge fluid as the old target, with exact DSM119 evidence.
+    The generic clarified-fluid owner preserves the preparation qualification. Support
+    concerns the new named material only; it does not approve same-volume arithmetic,
+    expand medium1310, or make the removed sludge a positive occurrence.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-e59b7d77dabe525d
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=e59b7d77dabe525d9dd02e91ac34004df2331b44b1ada696623428827051ff83];
+    full payload SHA256 43bf4bc6d9d60809b8498bb796546ba2f715a97f6be093c5cf65f68c570b761f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All ten complete descriptors explicitly retain clarified rumen fluid, agreeing
+    with the generic preparation-qualified MICRO owner. Exact provider2618/P2 excerpts
+    support the named input; all ten source routes were inspected. Identity support
+    does not approve300/500percent annotations, infer density or universal composition,
+    or treat stock inputs as final-medium doses.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-e6f49728f415eef2
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=e6f49728f415eef261d4f86e30971666e6e96d8adfa1f1ac4f479a3fadaf2ee2];
+    full payload SHA256 527be285ea4c90b76e31ed5ba761eabe29836cd9b03365af487808718fa8831c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All thirteen complete descriptors preserve the named brain-heart-infusion
+    preparation, with MediaDive compound186 and exact provider ingredient excerpts
+    where present. The candidate itself is the generic BHI preparation concept, so
+    no raw-tissue substitution is made. All22 source routes remain separately retained;
+    support does not equate distinct suppliers or formula batches, approve their doses,
+    or infer a fixed composition.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-e8cef33db5eb1ee8
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=e8cef33db5eb1ee82a24a228bb9839709f4e5d195b94b8f61d5482a5a93c0f2c];
+    full payload SHA256 c9543c028e019b15976fec3e93c071a7f39dffb69f5e029b3bcd7edcae9085eb
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All eight complete descriptors preserve Co(NO3)2·6H2O, including the two
+    descriptors without embedded ontology fields whose literal formula still specifies
+    the hydrate. The current owner has the same cobalt(II) dinitrate six-water identity;
+    all twelve source routes were inspected. Amount, role and stock-dilution claims
+    are excluded.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-e9f6f790b468582b
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=e9f6f790b468582bcdc702f452884e41f70f36ed286b9df6f0f57a4d2f92c3c4];
+    full payload SHA256 55a2c5ed79009691bc060a3fa578bc0c7e2ca25f38968c117454dba8fb57c7c5
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete standalone-stock descriptors retain cobalt nitrate hexahydrate
+    and source excerpts explicitly printing Co(NO3)2·6H2O, agreeing with the owner.
+    Supplier references qualify the same hydrate and introduce no competing form.
+    All three stock routes were inspected; stock amount and receiving-medium conversions
+    are not approved.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ea0c03f694530f78
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ea0c03f694530f78191f8c7e575647cf2151878234e901eb403fbf59d2f100ee];
+    full payload SHA256 856dc6d644ac8040dbad7a1c74e26ed7209aabfc5dd3475f5f2519284e4c611e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All six complete descriptors retain D-arabinose, with compatible CHEBI:17108/CAS10323-20-3
+    and explicit provider1355 D-arabinose naming. All six source routes were inspected.
+    Support preserves D stereochemistry without selecting an unstated ring/anomer
+    or approving concentration.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-edf194d68c9d39b0
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=edf194d68c9d39b084864946cd0cb612719e0dac44597a85e42dc19ba7c50d39];
+    full payload SHA256 426c47cca0698b525e9189aaed6c9eaf2278665166aa94f0d904971eb4707672
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The case includes Fraction V albumin, but its candidate is generic bovine
+    albumin. The unresolved relation is between the specified supplied fraction and
+    the generic identity, not merely the existence of a supplier or uncertain quantity.
+    The complete unchanged case is withheld with the actual member witness under issue1486;
+    no form is erased or inferred.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-edf8b8254e516059
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=edf8b8254e516059f1c5a1e80059af6312b272dbee973e44867006f67e7250e8];
+    full payload SHA256 c998ac9dafc6c4dbf5cf010c4f8cea56fa18051262c2417c20cca0e7c134d966
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All five complete descriptors name creatine/CHEBI:16919, with matching
+    provider763 excerpts and no conflicting hydrate or salt qualification. The owner
+    represents creatine's acyclic structure, distinct from creatinine. All six routes
+    were read; amounts, dilution and growth-factor claims remain outside support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-eeaff3d249f6cfda
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=eeaff3d249f6cfdac1c288e8ee4f0b5330ec26547699f709ebea483b4e77c22a];
+    full payload SHA256 fbd8963c6724dd20e876972c5ce6c42607a3db47d2a8160833fce65f997bd628
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors preserve Congo red/CHEBI:34653, and exact
+    MediaDive1708 excerpts name the same dye. The current owner represents the disodium
+    Congo-red material, with no competing source form. All three routes were inspected.
+    Support does not approve0.025g/L or indicator performance.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-ef1fb135697ab7fd
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=ef1fb135697ab7fd55166aced36f65046d75c992dd3d041159f14bcf54710652];
+    full payload SHA256 535e5062d00ee4df6b978aa0ae668dd01405455d7f5116a7c48720aabd73b4f5
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All four complete descriptors retain clarified rumen fluid, including a
+    JCM266 preparation excerpt explicitly describing centrifuged supernatant. The
+    current owner is the corresponding generic clarified material, not unprocessed
+    rumen contents or a fixed recipe. All five source routes were inspected; KOMODO
+    amount assertions, sterilization performance, density and final-medium dose remain
+    outside support.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f0b290d112f66b8d
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f0b290d112f66b8de34d8b37d200d836ca84c38647375f787abcf7ea2a9694df];
+    full payload SHA256 3a836e1a356d24214b9b0bdb18a03a0ac5da41012bd7bf0d0b84ec429d47f9c2
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The sole descriptor's middle-dot formula explicitly denotes BaCl2 with
+    two waters, agreeing with CHEBI:86153 and the current dihydrate owner. Rendering
+    the hydrate separator differently does not change stoichiometry. This supports
+    the hydrate-specific identity, not mineral function or the stated0.1g/L dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f26fdcf7b3f89359
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f26fdcf7b3f89359c67dc106b60a8cca0c9eb47139cbe69a70d4a66447a670e3];
+    full payload SHA256 6fd5769d59c239c0fbf7657b20d61b5f1f804b27293a255296fcbd5131107e18
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete2ASW Matsui2018 change retains CO2 as the high-CO2 aeration
+    component, separately from ambient-air treatment. Identity support is gas-component
+    specific and does not approve the entire2ASW formulation, a liquid carbon dose
+    or biological response.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f378749c026b393f
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f378749c026b393f5a86b71db01dff6c1dfa5b57da046d8b13d3f9f613ef5628];
+    full payload SHA256 6d8fa4bf74a81d928893a4eab821c84a97869c963bcfc1cb635631b0b61b519c
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All three complete descriptors name maize meal, the same generic ground-corn
+    material as the current cornmeal owner. The JCM1054 preparation explicitly distinguishes
+    maize input from its subsequent sardine-containing extract. All three routes were
+    read; support does not merge sardine or extracted medium into the meal identity,
+    or approve20g/L/dilution.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f3f2ce2edf1a2496
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f3f2ce2edf1a249654f9f813304b1207c9cf28b4e2120238e462d3375b62c643];
+    full payload SHA256 6d3e8702513aaedc44e0e355ddc21c8aa6a5c88998e094567bb323b76888b798
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The actually inspected solution884 descriptor retains a literal seven-water
+    source label and an incompatible anhydrous identity field. This concrete witness
+    quarantines the complete unchanged aggregate under1488. The decision does not
+    claim every remaining aggregate descriptor or recipe context was manually read,
+    and does not reinterpret percentage basis, molecular weight or hydration count.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f5b8559d53af9d3b
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f5b8559d53af9d3b2b1d47901ed4bf57860912a7feda73e492c99ee554734e14];
+    full payload SHA256 e4b8a965024101dad6e60c4f9cd45b6ead4b20308a881969ca7b4528017e5153
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: partial
+  summary: The sole descriptor names an NBRC IMK artificial-seawater input without
+    enough formulation information to establish exact preparation identity against
+    the generic MICRO owner. The source label and amount remain intact; withholding
+    does not assert absence or prove that this formulation differs from another. Issue1479.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f5dab94a70b629e6
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f5dab94a70b629e6b50e9bf0ae1b61e3d5b094f9223bc5ca48710d3fbe682820];
+    full payload SHA256 2ceac5f01508a1204fcc12a166841c331e226f6d830b1b0bd512317e71d392c3
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both source descriptors and their exact MediaDive ingredient excerpts explicitly
+    specify aluminium sulfate with eighteen waters. The owner preserves this octadecahydrate
+    and matching CHEBI:74779/CAS7784-31-8, rather than anhydrous aluminium sulfate.
+    Support is hydrate-specific and excludes the 0.014 g/L dose or any inferred dilution.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f7d9a7ca8d706c4a
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f7d9a7ca8d706c4ad5540080c229ea1d93fa529af7e8274e74fcca31ea7ec6cf];
+    full payload SHA256 0cc43f7bc3a547d28ad6cfe1b7c136d8bda105d4539f03c7197ddaf08aac2a69
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All72 complete descriptors and146 source scopes preserve the named carbon-dioxide
+    component, compatible with CHEBI:16526 and the maintained molecular owner. TOGO
+    gas labels and retained recipe excerpts identify the component without establishing
+    the containing mixture's identity. Null or variable amounts remain unknown rather
+    than zero, and gas percentages are not converted into liquid concentrations. Support
+    excludes dose, pressure and physiological claims.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-f92646ca40de10a3
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=f92646ca40de10a3c1ba114656577a41ce5df298b610aa905a9ee5af462ebc42];
+    full payload SHA256 9fffac0dbf27fdfa30873111052053c00820829ad63ae654442bb2b7cffa4613
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both complete descriptors explicitly name Co(NO3)2 x6H2O and CHEBI:86214,
+    matching the current hexahydrate owner. Both stock/ingredient routes were inspected,
+    including the JCM149 amount note. Hydrate identity support does not validate49.4g/L
+    or24.8mg/L as interchangeable amounts or imply a working dose.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-fb7825971b329722
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=fb7825971b32972251ce5356e91928f28a7eb7c507b31275372834590a80473f];
+    full payload SHA256 6190d26987837e3e9f6b35af40e0c1107c149cf85d6da3989944804fec59882f
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: The complete MOPS-rich-medium descriptor names the 4-hydroxy free acid,
+    with CHEBI:30763 and CAS 99-96-7 agreeing with the owner. Capitalization changes
+    no positional or supplied-form information. Identity support excludes its 0.01
+    mM amount and any role or growth assertion.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-fc601e133874bed7
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=fc601e133874bed795f055cc05b1ddf5a94d35f5b5d441a522deb8efc8aecc99];
+    full payload SHA256 1e7552a1ce22f6c3c74239bbf5fbea9291467eb643eb2f4d82e7e3c013f34f8e
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: All seven complete descriptors identify cytidine with compatible CHEBI:17562/CAS65-46-3,
+    agreeing with the current riboside owner rather than cytosine or a phosphorylated
+    nucleotide. All fifteen source routes were inspected. Identity support excludes
+    amount, dilution and nutritional effects.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+- evidence_id: evidence-fe345dbc05b393c7
+  kind: record_content
+  reference: reports/culturemech_intake_1453/first-source-binding-review-20261117-r2/decisions.json
+  locator: decisions[case_id=fe345dbc05b393c7b2e1e7a35711bf8d1cd89025c095005860dfbf45e9f6afaf];
+    full payload SHA256 6a299856e26ee531372812d17949967ffe86f8ecc6459176820856835725c977
+  accessed_at: '2026-11-17T01:22:14Z'
+  support: supports
+  summary: Both source descriptors preserve the L-proline backbone and 4-hydroxyl
+    position of CHEBI:18240. The owner likewise leaves the hydroxyl-bearing stereocentre
+    unspecified; no trans/cis or extra stereochemical narrowing is inferred. Identity
+    binding excludes the two supplied millimolar amounts.
+  snapshot_sha256: b11e5881c85c3df0e920d66e38ad35819df92046629ed4bc4a8403a7011f4022
+assessments:
+- assessment_id: assessment-01f1352e7d21de82
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly identifies carbon monoxide/CHEBI:17245
+    and retains a gas property. It agrees with the current CO molecular owner, not
+    carbon dioxide or a gas-mixture identity. Both modified-P7/TOGO M3153 source scopes
+    were inspected. Variable gas amount, pressure, composition of any carrier mixture
+    and dissolved concentration remain unapproved.
+  target_ids:
+  - case-01f1352e7d21de82
+  evidence_ids:
+  - evidence-01f1352e7d21de82
+  details: 'Source/evidence locators: ["owner-0062.json: complete descriptor edb987c5,
+    two source routes and current CO structure"]'
+- assessment_id: assessment-022ccc2cc9a596c4
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Both complete descriptors, source routes and the pending-component-curation
+    stock owner were inspected. Exact source preparation correspondence remains unresolved;
+    numeric cross-prefix agreement and a narrow cholesterol mapping do not establish
+    concentrate equivalence. Withhold the unchanged case under1498, without claiming
+    different compositions or converting the concentrate into pure cholesterol. Amount
+    fields remain retained and unapproved.
+  target_ids:
+  - case-022ccc2cc9a596c4
+  evidence_ids:
+  - evidence-022ccc2cc9a596c4
+  details: 'Source/evidence locators: ["owner-0073.json: both complete descriptors
+    and current stock notes/NARROW_MATCH boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1498"]'
+- assessment_id: assessment-02c1797bfd5b517c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor/change identifies CO2 as the gas component in PCC11802
+    multi-cultivator aeration, with the retained PMID31932622 excerpt explicitly stating1%CO2
+    bubbling. This supports component identity only in that stage; it does not transfer
+    the condition to every shaker culture or assert a dissolved-carbon dose.
+  target_ids:
+  - case-02c1797bfd5b517c
+  evidence_ids:
+  - evidence-02c1797bfd5b517c
+  details: 'Source/evidence locators: ["owner-0064.json: complete change93383ffe and
+    bacterial/bg11.yaml /variants/2/ingredient_changes/0", "PMID:31932622 retained
+    primary excerpt"]'
+- assessment_id: assessment-049c670f2bb6779c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Both complete descriptors and both OMIZ-PAT/solution3067 routes were inspected.
+    The explicit sodium-salt qualifier conflicts with exact free-acid identity; the
+    owner's raw synonym does not resolve the counter-ion. Withhold the unchanged aggregate
+    under1512 without inventing a replacement salt/hydrate identifier or approving
+    concentration.
+  target_ids:
+  - case-049c670f2bb6779c
+  evidence_ids:
+  - evidence-049c670f2bb6779c
+  details: 'Source/evidence locators: ["owner-0104.json: both descriptors, both source
+    scopes and current C6H10O7 owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1512"]'
+- assessment_id: assessment-04dffe7b7de2b15c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both descriptors name the R-lactate species and retain the D-lactate cross-reference.
+    The current owner is the same R-lactate anion, with explicit stereochemical structure;
+    no counterion or supplied salt identity is asserted in either descriptor. Binding
+    is limited to that ionic concept. The two reported millimolar values and any particular
+    purchasable lactate salt remain separate, unapproved claims.
+  target_ids:
+  - case-04dffe7b7de2b15c
+  evidence_ids:
+  - evidence-04dffe7b7de2b15c
+  details: 'Source/evidence locators: ["owner-0001.json: complete two descriptors,
+    two ingredient coordinates, owner identifier/structure and D-lactate history",
+    "canonical source_position 5 / exact identity row 68bb4aabf5cc0f19041a96d289463c024634400d6af251a33b8293afb88b3369"]'
+- assessment_id: assessment-06757b9134c61a83
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors preserve generic cell lysate from the same CultureBotHT
+    filtered-groundwater series, matching the owner's generic BTO cell-lysate material
+    concept. No species-specific lysate composition or particular lysis protocol is
+    asserted by the binding. Both dilution-series source routes were inspected; the1/250
+    and1/2500 quantities and carbon-source function remain separate from identity
+    support.
+  target_ids:
+  - case-06757b9134c61a83
+  evidence_ids:
+  - evidence-06757b9134c61a83
+  details: 'Source/evidence locators: ["owner-0069.json: both complete descriptors,
+    two source scopes and current generic lysate owner"]'
+- assessment_id: assessment-075dcca17ab6ac07
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eight complete descriptors retain cytosine/CHEBI:16040/CAS71-30-7,
+    matching the current free-base identity. All nineteen source routes were read.
+    This does not substitute cytidine, approve dose or infer growth.
+  target_ids:
+  - case-075dcca17ab6ac07
+  evidence_ids:
+  - evidence-075dcca17ab6ac07
+  details: 'Source/evidence locators: ["owner-0095.json: eight complete descriptors,
+    nineteen routes and current cytosine owner"]'
+- assessment_id: assessment-0787833dbd869a3e
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All20 complete descriptors explicitly name cupric chloride/CHEBI:49553,
+    agreeing with the nominal copper(II) chloride owner without a conflicting hydrate
+    qualification. All59 routes were read. The MediaDB330/331 notes explicitly limit
+    amount evidence to database assertions; this binding does not promote a source
+    lead into verified article provenance or approve molarity.
+  target_ids:
+  - case-0787833dbd869a3e
+  evidence_ids:
+  - evidence-0787833dbd869a3e
+  details: 'Source/evidence locators: ["owner-0090.json: all20 cupric-chloride descriptors,59
+    routes and current copper(II) chloride owner"]'
+- assessment_id: assessment-083bbae451c96d9c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All ten complete source descriptors explicitly preserve beta-D-glucose
+    and CHEBI:15903, agreeing with the current anomer-specific owner. All sixteen
+    source ingredient routes were inspected. This supports the asserted beta-D molecular
+    identity only, not a claim that aqueous glucose remains exclusively that anomer,
+    nor approval of any listed amount.
+  target_ids:
+  - case-083bbae451c96d9c
+  evidence_ids:
+  - evidence-083bbae451c96d9c
+  details: 'Source/evidence locators: ["owner-0043.json: all ten descriptors, sixteen
+    source scopes and owner beta-D structure", "native canonical row retained in the
+    pinned candidate"]'
+- assessment_id: assessment-0b724e2a19ae3508
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors name asialofetuin, one retaining MediaDive compound2150,
+    consistent with the owner's named desialylated-fetuin material. No contrary intact-fetuin,
+    species, product grade or preparation identity is asserted. Support remains at
+    that material scope and does not reconcile the 1 versus100 g/L quantities or assert
+    a unique glycoform composition.
+  target_ids:
+  - case-0b724e2a19ae3508
+  evidence_ids:
+  - evidence-0b724e2a19ae3508
+  details: 'Source/evidence locators: ["owner-0030.json: both descriptors and current
+    MeSH:C017029 owner/source2150 provenance; native row05d32aa2d33f1f6e0f8861de24bb9684a34a1b2244b28a0f47383c8994d73a99"]'
+- assessment_id: assessment-0f421b3552e374fc
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor names cellulose powder, matching the owner's
+    powder-qualified FOODON material. The TOGO cellulose-agar ingredient route was
+    inspected. Support preserves the powder form rather than asserting a particular
+    cellulose polymer grade, source, purity, dose or carbon-utilization result.
+  target_ids:
+  - case-0f421b3552e374fc
+  evidence_ids:
+  - evidence-0f421b3552e374fc
+  details: 'Source/evidence locators: ["owner-0070.json: descriptor23c3f2a3, TOGO
+    M57 source route and current powder-qualified owner"]'
+- assessment_id: assessment-0f739a012bbda9c0
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete descriptor names MediaDive Aminoacids stock at 10 percent
+    v/v but additionally grounds it to the amino-acid chemical class. The current
+    owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition.
+    Native own-registry support does not resolve this conflicting embedded descriptor
+    identity. All three source composition occurrences remain retained and withheld
+    under issue1475.
+  target_ids:
+  - case-0f739a012bbda9c0
+  evidence_ids:
+  - evidence-0f739a012bbda9c0
+  details: 'Source/evidence locators: ["owner-0020.json: sole descriptor, current
+    owner stock notes and all three composition scopes", "https://www.ebi.ac.uk/chebi/CHEBI:33709
+    inspected2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1475"]'
+- assessment_id: assessment-0fa3c3f2c848ca11
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors and retained donor-table snippets name benzyl
+    alcohol, consistent with CHEBI:17987 and the owner's hydroxymethyl-benzene structure.
+    This is distinct from phenol or a benzyl ether. Binding excludes the dose, Fe(III)/cobalt
+    culture context and growth inference.
+  target_ids:
+  - case-0fa3c3f2c848ca11
+  evidence_ids:
+  - evidence-0fa3c3f2c848ca11
+  details: 'Source/evidence locators: ["owner-0041.json: both descriptors/excerpts,
+    two MediaDB source paths and current owner structure", "native rowf0910cfd29af0e50355407cfa78d34e017279baf6fcf62c38464a32381c3a84a"]'
+- assessment_id: assessment-14d997a357ffbe63
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six complete TOGO descriptors explicitly specify cobalt dinitrate with
+    six waters and CHEBI:86214, agreeing with the owner formula/CAS10026-22-9. All
+    six source routes were read. The hydrate-specific identity does not approve their
+    differing trace/stock doses or mineral function.
+  target_ids:
+  - case-14d997a357ffbe63
+  evidence_ids:
+  - evidence-14d997a357ffbe63
+  details: 'Source/evidence locators: ["owner-0078.json: six descriptors and six routes
+    of14d997a3; current Co.6H2O.2NO3 owner"]'
+- assessment_id: assessment-165a5eee355d3bf5
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly names cefoxitin and CHEBI:209807, agreeing
+    with the owner's cephamycin structure. The C.difficile-supplemented BHI source
+    scope preserves the separate named ingredient; no sodium salt, formulation mixture
+    or antimicrobial efficacy is inferred. Variable dose remains unapproved.
+  target_ids:
+  - case-165a5eee355d3bf5
+  evidence_ids:
+  - evidence-165a5eee355d3bf5
+  details: 'Source/evidence locators: ["owner-0067.json: descriptor a2a92e1d, sole
+    source route and current cefoxitin structure"]'
+- assessment_id: assessment-168e84a5fc2f7fe4
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four descriptors consistently name 4-guanidinobutyric acid and retain
+    CHEBI:15728, CAS 463-00-3 and MW 145.16, agreeing with the owner's specific free-acid
+    structure. Carbon/exometabolite-mixture names identify the containing source formulations,
+    not a different chemical entity. Quantities and mixture-wide composition are not
+    approved by this binding.
+  target_ids:
+  - case-168e84a5fc2f7fe4
+  evidence_ids:
+  - evidence-168e84a5fc2f7fe4
+  details: 'Source/evidence locators: ["owner-0010.json: all four descriptors, four
+    source signatures and complete owner CAS/structure", "canonical source_position
+    201 / row b372bd127e9dda2327c67e3ba3230ab725f3b2c23d44022e3f36b7e401c14778"]'
+- assessment_id: assessment-18a6e6ba3c4a165f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The unresolved preparation pointer prevents exact mixture identity support.
+    A generic artificial-seawater category is not evidence that the source-specific
+    formulation equals one maintained ingredient preparation. The entire case remains
+    retained and withheld pending source formulation binding; no composition or volume
+    conversion is invented. Issue1479.
+  target_ids:
+  - case-18a6e6ba3c4a165f
+  evidence_ids:
+  - evidence-18a6e6ba3c4a165f
+  details: 'Source/evidence locators: ["owner-0028.json: descriptor7b9e050030c9d02faec921672dc61a47e9ddd7b98e0114b63cd1905365297013
+    and owner lexical-grounding history", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]'
+- assessment_id: assessment-1aed15690dd84c0c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All37 complete descriptors explicitly retain calcium chloride with six
+    waters, compatible hydrate-specific CHEBI:91243 and provider173 excerpts. The
+    current owner has six-water structure and corrected hydrate CAS7774-34-7. All62
+    source ingredient/composition routes were inspected. Identity support preserves
+    six waters and does not approve the different stock/medium amounts or receiving-medium
+    dilution.
+  target_ids:
+  - case-1aed15690dd84c0c
+  evidence_ids:
+  - evidence-1aed15690dd84c0c
+  details: 'Source/evidence locators: ["owner-0055.json: all37 descriptors read through
+    exact field/template reconstruction, all62 source scopes, current hydrate-specific
+    owner"]'
+- assessment_id: assessment-1c4bde9e3cd430ba
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Both complete descriptors explicitly specify a dehydrated beef infusion.
+    The current candidate denotes beef meat rather than that prepared extraction product.
+    Exact label agreement cannot erase the retained preparation note; all source occurrences
+    remain withheld under issue1482, without inferring extraction yield or composition.
+  target_ids:
+  - case-1c4bde9e3cd430ba
+  evidence_ids:
+  - evidence-1c4bde9e3cd430ba
+  details: 'Source/evidence locators: ["owner-0035.json: both descriptors and current
+    owner", "primary/ncit-C71932.json SHA2b26eac544c8a14bac7317a069dc116a839bcf04a4190b2d289166b245233e7f,
+    live definition inspected2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1482"]'
+- assessment_id: assessment-1d61f5a2491cea4d
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors explicitly retain chromium trinitrate with
+    seven waters, including the exact provider1574 excerpt, matching the current heptahydrate
+    structure. All three main/stock routes were read. Support does not infer another
+    hydrate, validate dose conversion or approve trace-element effects.
+  target_ids:
+  - case-1d61f5a2491cea4d
+  evidence_ids:
+  - evidence-1d61f5a2491cea4d
+  details: 'Source/evidence locators: ["owner-0084.json: three descriptors, solution5814
+    source excerpt, three routes and current Cr.7H2O.3NO3 owner"]'
+- assessment_id: assessment-1dc3c1fb63229c28
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All44 complete scientific descriptors and713 source scopes were inspected.
+    They retain carbon dioxide/CHEBI:16526 as a gas component, agreeing with the owner's
+    CO2 structure. Headspace, dispensing, preparation and autoclave contexts remain
+    distinct; the binding does not equate a carrier mixture or aqueous bicarbonate
+    with CO2, infer dissolved dose, or approve growth or gas-pressure claims.
+  target_ids:
+  - case-1dc3c1fb63229c28
+  evidence_ids:
+  - evidence-1dc3c1fb63229c28
+  details: 'Source/evidence locators: ["owner-0064.json: all44 descriptors and713
+    routes of1dc3c1fb, current Carbon_dioxide_gas owner and native row"]'
+- assessment_id: assessment-1e00b1674fa1397a
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The current owner is a composition-unknown local preparation sourced from
+    MediaDive2146. Other source descriptors retain that accession, but the inspected
+    blocking descriptor supplies only a generic mixture name and dose; exact preparation
+    correspondence across the complete case is unproven. The whole unchanged case
+    is withheld without claiming that the formulations necessarily differ or replacing
+    the mixture with pure salts. Issue1479 retains the follow-up.
+  target_ids:
+  - case-1e00b1674fa1397a
+  evidence_ids:
+  - evidence-1e00b1674fa1397a
+  details: 'Source/evidence locators: ["owner-0027.json: blocking descriptor40dc431dfe3f4a4fd57a3b412837c80acf23555f7d3ef4bf88bf950e4a6bf798
+    and current local-preparation owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]'
+- assessment_id: assessment-201c3570562f0585
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify cyanuric acid, with compatible CHEBI:38028/provider2118
+    grounding and no salt or preparation qualifier. The current owner preserves that
+    acid concept; both source routes were read. Support excludes0.645g/L and nitrogen-utilization
+    effects.
+  target_ids:
+  - case-201c3570562f0585
+  evidence_ids:
+  - evidence-201c3570562f0585
+  details: 'Source/evidence locators: ["owner-0091.json: two descriptors, two source
+    routes and current cyanuric-acid owner"]'
+- assessment_id: assessment-222667d612daca5b
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete source descriptor retains D-aspartate/CHEBI:29994 and KEGG
+    asp-D, agreeing with the maintained D-aspartate dianion under the native bare-anion
+    naming contract. The source route was inspected. This does not infer an unspecified
+    counter-ion, approve solution protonation at a given pH, or certify dose.
+  target_ids:
+  - case-222667d612daca5b
+  evidence_ids:
+  - evidence-222667d612daca5b
+  details: 'Source/evidence locators: ["owner-0101.json: complete descriptor, aspartate-salt
+    medium route and current D-aspartate2- structure", "MAPPING_SEMANTICS.md: bare-anion
+    naming policy"]'
+- assessment_id: assessment-222fcfc4aefb5798
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors retain crotonic acid and CHEBI:41131, agreeing
+    with the owner's trans-but-2-enoic-acid structure. All five TOGO routes were inspected.
+    Support does not convert the acid to crotonate or approve amount, stereochemical
+    purity or carbon-utilization claims.
+  target_ids:
+  - case-222fcfc4aefb5798
+  evidence_ids:
+  - evidence-222fcfc4aefb5798
+  details: 'Source/evidence locators: ["owner-0089.json: three descriptors, five routes
+    of222fcfc4 and current E-crotonic-acid owner"]'
+- assessment_id: assessment-25449533c1a24f16
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete PCC11801 change preserves CO2 as the component of ambient-air
+    bubbling in the multi-cultivator source experiment. The retained PMID30413737
+    excerpt provides the0.04%gas context. Support binds the named molecular component
+    without approving dose, extrapolating to other culture modes or converting gas
+    fraction to liquid concentration.
+  target_ids:
+  - case-25449533c1a24f16
+  evidence_ids:
+  - evidence-25449533c1a24f16
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and bacterial/bg11.yaml
+    /variants/1/ingredient_changes/0", "PMID:30413737 retained primary excerpt"]'
+- assessment_id: assessment-25a05580d9b99ba9
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: All four complete descriptors explicitly retain an L-ascorbate cross-reference
+    but the propagated term and candidate owner are generic ascorbate. The bare-anion
+    protonation convention does not authorize removing an explicit stereochemical
+    qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement
+    remain intact; no narrower identity is automatically substituted. WITHHOLD pending
+    source-specific resolution under issue1474.
+  target_ids:
+  - case-25a05580d9b99ba9
+  evidence_ids:
+  - evidence-25a05580d9b99ba9
+  details: 'Source/evidence locators: ["owner-0029.json: all four descriptors and
+    current generic owner", "https://www.ebi.ac.uk/chebi/CHEBI:22651 inspected2026-11-17,
+    incoming L-ascorbate CHEBI:38290 subclass", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1474"]'
+- assessment_id: assessment-270ec1303f56e35f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor explicitly names D-cycloserine/CHEBI:40009,
+    agreeing with the current 4R cycloserine owner. The BHI supplement scope was read.
+    VARIABLE amount, antimicrobial efficacy and actual use are not approved by this
+    identity binding.
+  target_ids:
+  - case-270ec1303f56e35f
+  evidence_ids:
+  - evidence-270ec1303f56e35f
+  details: 'Source/evidence locators: ["owner-0097.json: sole complete descriptor,
+    BHI source scope and D-specific owner"]'
+- assessment_id: assessment-2770b25757b52022
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eight complete descriptors explicitly preserve defibrinated horse blood,
+    and collection/preparation notes retain the same species and defibrination qualification.
+    All eight source routes were read. Broad UBERON blood annotations do not contradict
+    those explicit retained form/species fields; the candidate itself preserves defibrinated
+    horse blood, rather than collapsing it to generic blood or serum. Support excludes
+    sterility certification, lot composition, dose and performance.
+  target_ids:
+  - case-2770b25757b52022
+  evidence_ids:
+  - evidence-2770b25757b52022
+  details: 'Source/evidence locators: ["owner-0108.json: eight complete descriptors,
+    all eight TOGO/Columbia/BL/GAM routes and exact defibrinated-horse owner MICRO:0001572"]'
+- assessment_id: assessment-29c514535553751c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors explicitly identify (-)-quinic acid, matching
+    the owner's optical form and CHEBI:17521 identity. The MediaDive solution-5605
+    excerpt names this acid as an input; the containing iron-quinate solution does
+    not turn this ingredient into an asserted iron complex. The six ingredient/composition
+    coordinates retain their separate recipes. This supports only the named acid binding,
+    not its concentration, stock dilution or a growth claim.
+  target_ids:
+  - case-29c514535553751c
+  evidence_ids:
+  - evidence-29c514535553751c
+  details: 'Source/evidence locators: ["owner-0000.json: complete owner_payload, both
+    descriptors and six source_mentions", "descriptor db1585ebcedc88f207ab0e4e4f3569adf53ead3427a8c3850c7d9df732b3f35c:
+    MediaDive solution 5605 recipe[1] excerpt", "canonical source_position 2 / exact
+    identity row 790355293c3ba0b3b8586bfe9587670c6b2aba101d4932ddd22cb3f56a4ced1a"]'
+- assessment_id: assessment-2c51ed72121e9a77
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly names brain-heart-infusion agar, agreeing
+    with the owner's same named agar preparation concept MICRO:0000566. The source
+    recipe's separate calf-blood/antibiotic supplementation is not folded into this
+    ingredient identity. The1g/L amount and a specific manufacturer's formulation
+    remain outside this binding.
+  target_ids:
+  - case-2c51ed72121e9a77
+  evidence_ids:
+  - evidence-2c51ed72121e9a77
+  details: 'Source/evidence locators: ["owner-0050.json: sole descriptor and source
+    scope; current named-agar owner and native exact-synonym row"]'
+- assessment_id: assessment-2d46189d88f9e0a4
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Both complete descriptors and three routes were inspected. Their variable-hydrate
+    label and embedded anhydrous grounding remain unreconciled despite the matching
+    local resolver result. Withhold the unchanged aggregate under1502 without assigning
+    a water count, molecular weight or replacement chemical identity.
+  target_ids:
+  - case-2d46189d88f9e0a4
+  evidence_ids:
+  - evidence-2d46189d88f9e0a4
+  details: 'Source/evidence locators: ["owner-0083.json: both descriptors, solution5294
+    exact variable-hydrate excerpt and current #321 owner boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1502"]'
+- assessment_id: assessment-2d497087da7cc978
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete source descriptor states unqualified bovine serum albumin
+    with CAS9048-46-8, agreeing with the maintained generic BSA protein-family owner
+    NCIT:C85253. The specialized7h9 source scope introduces no supplied-fraction or
+    stock-preparation qualification in this case. Support excludes concentration and
+    does not extend to the separately grouped qualified stock/Fraction V aggregate.
+  target_ids:
+  - case-2d497087da7cc978
+  evidence_ids:
+  - evidence-2d497087da7cc978
+  details: 'Source/evidence locators: ["owner-0048.json: descriptor646bfbb0239cc5eb37521696ea3a86ecb739eb316725df13fd0471f4f3081bc0,
+    specialized/7h9 scope and current supplied-form-aware owner"]'
+- assessment_id: assessment-2d6e55a4ac3ee1bb
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete TAP descriptors explicitly use the same generic borate concept
+    CHEBI:22908 as the maintained owner. Support stays at that stated concept level
+    and does not select a counter-ion, hydrate, particular polyborate species or actual
+    solution speciation. The0.184mM amount remains outside this identity decision.
+  target_ids:
+  - case-2d6e55a4ac3ee1bb
+  evidence_ids:
+  - evidence-2d6e55a4ac3ee1bb
+  details: 'Source/evidence locators: ["owner-0046.json: both complete descriptors,
+    TAP auto and hetero/mixo scopes and owner borate mapping"]'
+- assessment_id: assessment-2e073990fbdc07a6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor names generic blood without an animal-species
+    or processing qualifier, matching the generic blood material owner UBERON:0000178.
+    Its TOGO M2581 source scope is retained. Support does not imply a particular species,
+    defibrination or other treatment, nor acceptance of the5percentw/v amount.
+  target_ids:
+  - case-2e073990fbdc07a6
+  evidence_ids:
+  - evidence-2e073990fbdc07a6
+  details: 'Source/evidence locators: ["owner-0045.json: sole descriptor a29e3a667b9277fda835356fc9bc5eb89da94a318bf452bc6956fa7d865e3fa5,
+    source scope and current owner"]'
+- assessment_id: assessment-2f0de93daca3000c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors consistently identify charcoal/CHEBI:91090
+    or provider745, agreeing with the current charcoal material owner. All five ingredient/composition
+    routes were inspected. The decision does not silently qualify this material as
+    activated charcoal, elemental carbon or a particular adsorbent grade, and does
+    not approve concentration or activity.
+  target_ids:
+  - case-2f0de93daca3000c
+  evidence_ids:
+  - evidence-2f0de93daca3000c
+  details: 'Source/evidence locators: ["owner-0071.json: four descriptors, five source
+    routes and current charcoal owner"]'
+- assessment_id: assessment-2f256c77fff65edd
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for this
+    exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload and source
+    route were read; its unresolved source claim cannot be converted into verified
+    CO2 identity or presence merely because the label names CO2. No new identity,
+    dose, or buffering mechanism is inferred.
+  target_ids:
+  - case-2f256c77fff65edd
+  evidence_ids:
+  - evidence-2f256c77fff65edd
+  details: 'Source/evidence locators: ["owner-0064.json: held91db2a74 and bacterial/chopped_meat_medium_atcc_1490_with_formate_and_fumarate_atcc_9733.yaml
+    /variants/1/ingredient_mentions/1"]'
+- assessment_id: assessment-2f8a21a26931b695
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete NBRC225 descriptor names calcium lactate without a stereochemical,
+    hydrate or supplied-preparation qualifier. The current FOODON owner preserves
+    the same generic salt-material concept and does not narrow it to a particular
+    lactate enantiomer or hydrate. The TOGO M1453 source route was inspected;10g/L
+    is not approved by this identity binding.
+  target_ids:
+  - case-2f8a21a26931b695
+  evidence_ids:
+  - evidence-2f8a21a26931b695
+  details: 'Source/evidence locators: ["owner-0059.json: sole descriptor71972152,
+    TOGO M1453 source scope and current generic calcium-lactate owner"]'
+- assessment_id: assessment-2fb97b7900558e75
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete AMS1 serine-source change specifies CO2 sparging after autoclaving
+    and before subsequent air sparging. The Carini2013 methods excerpt names that
+    gas, compatible with the owner. Support preserves this ordered preparation stage
+    and does not equate CO2 with the final buffering mixture or approve five-hour
+    duration, pH or dissolved dose.
+  target_ids:
+  - case-2fb97b7900558e75
+  evidence_ids:
+  - evidence-2fb97b7900558e75
+  details: 'Source/evidence locators: ["owner-0064.json: change1fbd0409 and bacterial/ams1_pyruvate_serine.yaml
+    /variants/0/ingredient_changes/20", "https://doi.org/10.1038/ismej.2012.122"]'
+- assessment_id: assessment-30edcb5540bf3b17
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors explicitly assert NH4+ and CHEBI:28938,
+    matching the charged ammonium owner. MediaDB TAP and Vogel source labels/notes
+    preserve the ionic concept rather than selecting an unstated ammonium salt. The
+    unusual reported amount in Vogel medium, all other doses and actual solution speciation
+    remain outside this identity decision.
+  target_ids:
+  - case-30edcb5540bf3b17
+  evidence_ids:
+  - evidence-30edcb5540bf3b17
+  details: 'Source/evidence locators: ["owner-0021.json: all three descriptors and
+    owner charged formula/structure; native exact row3ff21d337a7a2282d089f4b81cf2b8dfbaa6676c25dc1f43a499672dcee4468f"]'
+- assessment_id: assessment-30eeaebe767b3637
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors explicitly denote CaCl2 with six waters using
+    a middle-dot separator, agreeing with the current hexahydrate owner. All five
+    source scopes were inspected. Orthographic hydrate notation does not alter stoichiometry;
+    amounts and actual solution hydration/speciation are excluded.
+  target_ids:
+  - case-30eeaebe767b3637
+  evidence_ids:
+  - evidence-30eeaebe767b3637
+  details: 'Source/evidence locators: ["owner-0055.json: all four descriptors and
+    five routes of case30eeaebe; six-water owner structure/CAS"]'
+- assessment_id: assessment-339698f1b792b730
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors name butyl vinyl ether, and the MediaDive compound391-bearing
+    descriptor identifies the same source material retained by the current MeSH owner.
+    None asserts an alternate butyl isomer or supplied mixture. All four Methanothrix/Methanosaeta/solution
+    routes remain separate. Support is chemical identity only, not the5g/L dose or
+    a biological effect.
+  target_ids:
+  - case-339698f1b792b730
+  evidence_ids:
+  - evidence-339698f1b792b730
+  details: 'Source/evidence locators: ["owner-0052.json: both descriptors, four source
+    routes and current source391/MeSH owner"]'
+- assessment_id: assessment-3c17c0df33f20b47
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify 5-methyluridine/ribothymidine with CAS
+    1463-10-1, agreeing with the owner's ribose-containing nucleoside and CHEBI:45996.
+    This does not collapse it to deoxythymidine. All ten NLDM source scopes remain
+    separately retained; pH, omitted nutrients and micromolar amount are outside this
+    identity approval.
+  target_ids:
+  - case-3c17c0df33f20b47
+  evidence_ids:
+  - evidence-3c17c0df33f20b47
+  details: 'Source/evidence locators: ["owner-0014.json: both descriptors, ten NLDM
+    source paths and owner CAS/ribofuranosyl structure", "native row a922ec5b7d6213fc94291c4aef2c14bb74f50ecdd4c57b3a4f0f0ad19695c51f"]'
+- assessment_id: assessment-3c4294ebef0cd697
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: All fourteen scientific descriptor payloads and sixteen source scopes were
+    inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations
+    with plain protein entries, while the candidate's native contract distinguishes
+    those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves
+    this unresolved form relation under issue1486. It does not imply that a quantity-only
+    uncertainty disproves BSA solute identity, nor demote the separate unqualified
+    case.
+  target_ids:
+  - case-3c4294ebef0cd697
+  evidence_ids:
+  - evidence-3c4294ebef0cd697
+  details: 'Source/evidence locators: ["owner-0048.json: all14 descriptors, current
+    owner supplied_form evidence and all16 source routes", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1486"]'
+- assessment_id: assessment-3c50fc3ba26ff406
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors explicitly preserve D-alanine/CHEBI:15570 and
+    compatible KEGG ala-D notation, agreeing with the owner's D-specific structure.
+    Both CDM-LP/TOGO M1556 routes were inspected. No L/racemate inference or approval
+    of the differing dose fields is made.
+  target_ids:
+  - case-3c50fc3ba26ff406
+  evidence_ids:
+  - evidence-3c50fc3ba26ff406
+  details: 'Source/evidence locators: ["owner-0096.json: both descriptors, both routes
+    and current D-alanine stereochemistry"]'
+- assessment_id: assessment-3c73f9321f28a35a
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: 'The complete #Ar descriptor retains CHEBI:49474 argon(0), and the owner''s
+    exact chemical scope is neutral elemental argon with this raw source label retained.
+    The hash-prefixed label is not interpreted as another species. Identity support
+    does not approve the questionable percent-w/v amount or imply a dissolved-gas
+    concentration.'
+  target_ids:
+  - case-3c73f9321f28a35a
+  evidence_ids:
+  - evidence-3c73f9321f28a35a
+  details: 'Source/evidence locators: ["owner-0025.json: descriptor c7e0b70e39da762d1877cc56e4c66f6c69d45891c9615a7e2bed108fe125a349
+    and current argon structure/raw alias; native row97c38f93c17a6dd5b98cb1c82be8092f5ced4043d70298343471964e4ef88c27"]'
+- assessment_id: assessment-3fa1d1b9f99efb4a
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors name generic cresol, compatible with the current
+    unspecific cresol concept rather than an inferred ortho/meta/para isomer. All
+    four source routes were inspected. Binding the retained ingredient label does
+    not endorse presence in a recipe whose name describes replacement, apply the replacement
+    automatically, or approve1mM or growth.
+  target_ids:
+  - case-3fa1d1b9f99efb4a
+  evidence_ids:
+  - evidence-3fa1d1b9f99efb4a
+  details: 'Source/evidence locators: ["owner-0087.json: both descriptors, four source
+    routes including replacement-labelled record and generic CHEBI:25399 owner"]'
+- assessment_id: assessment-40873f3920d6f6a1
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor identifies acetone as the ingredient and CHEBI:15347,
+    matching the owner's propan-2-one structure and CAS 67-64-1. A solvent role is
+    not a competing material identity. The reported 1 g/L dose and solvent-function
+    claim remain outside this binding.
+  target_ids:
+  - case-40873f3920d6f6a1
+  evidence_ids:
+  - evidence-40873f3920d6f6a1
+  details: 'Source/evidence locators: ["owner-0016.json: complete descriptor d1e4104623040f71ecd526c21fd4974210bfa484e54f431056263d57f63b64c3,
+    TOGO_M899 scope and owner chemistry", "native row f83d40e07d73d4956a5d10225c64df3c6561207a575a0170f02128ce5c0d2e6e"]'
+- assessment_id: assessment-4241abb8e9fdaea1
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete DSM25939 change names CO2 within the post-inoculation H2/CO2
+    headspace, explicitly bound to the DSM119 strain instruction. The named component
+    matches the owner. Identity support retains this stage and strain-specific source
+    route without approving pressure, pH, dissolved dose or growth.
+  target_ids:
+  - case-4241abb8e9fdaea1
+  evidence_ids:
+  - evidence-4241abb8e9fdaea1
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium
+    /variants/12/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]'
+- assessment_id: assessment-4479b8347accf833
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete DSM9575 change identifies CO2 as a component of the DSM119
+    post-inoculation H2/CO2 headspace. Support is restricted to that gas identity
+    and exact stage; the2bar overpressure is retained without conversion to a liquid
+    concentration or inferred growth performance.
+  target_ids:
+  - case-4479b8347accf833
+  evidence_ids:
+  - evidence-4479b8347accf833
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium
+    /variants/8/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]'
+- assessment_id: assessment-46642d545884352f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors name benzoate, retain CHEBI:16150 and quote benzoate
+    in the source donor table. This agrees with the current anion owner and does not
+    choose an unstated sodium or other salt. The dose, cobalt-medium context and actual
+    solution speciation are not approved by the identity binding.
+  target_ids:
+  - case-46642d545884352f
+  evidence_ids:
+  - evidence-46642d545884352f
+  details: 'Source/evidence locators: ["owner-0039.json: both source excerpts/descriptors,
+    two MediaDB scopes and owner anion structure", "native row39a4279f34f018e24d2408ee31261dc45a95ac2d8ad4fc8b5dc443c55e5af604"]'
+- assessment_id: assessment-47508a3adea64241
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete sole descriptor and current local stock owner were inspected.
+    The owner explicitly awaits component-level curation, and numeric accession agreement
+    across two prefixes is not independent supplied-preparation evidence. Withhold
+    the unchanged case under1490 without claiming the stocks are demonstrably different,
+    inventing components, or substituting a carbon role/element identity.
+  target_ids:
+  - case-47508a3adea64241
+  evidence_ids:
+  - evidence-47508a3adea64241
+  details: 'Source/evidence locators: ["owner-0063.json: sole descriptor63f9c866 and
+    current STOCK_SOLUTION provenance/notes", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1490"]'
+- assessment_id: assessment-486682d8673ec613
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors explicitly name benzoic acid and CHEBI:30746,
+    agreeing with the current free-acid structure/CAS65-85-0. The four-carbon-mixture
+    note names the containing formulation, not a salt or different supplied ingredient.
+    Identity support does not imply actual protonation at each listed pH or approve
+    either dose.
+  target_ids:
+  - case-486682d8673ec613
+  evidence_ids:
+  - evidence-486682d8673ec613
+  details: 'Source/evidence locators: ["owner-0040.json: both descriptors, nine TOGO/UGA
+    source paths and owner free-acid structure", "native row069dd10265b7e2e2fd930db85e57ce5e19a7ad9a8bc8b0d3cc32f34749536f55"]'
+- assessment_id: assessment-489e2cce45d9fcee
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly retains D-glucarate/CHEBI:30612 and
+    compatible KEGG glcr notation, agreeing with the owner's D-glucarate dianion under
+    the native bare-anion naming policy. The liquid-MA route was inspected. No free-acid
+    or counter-ion substitution, dose certification or growth claim is made.
+  target_ids:
+  - case-489e2cce45d9fcee
+  evidence_ids:
+  - evidence-489e2cce45d9fcee
+  details: 'Source/evidence locators: ["owner-0102.json: sole complete descriptor,
+    liquid-MA source route and current D-glucarate2- owner", "MAPPING_SEMANTICS.md:
+    bare-anion naming policy"]'
+- assessment_id: assessment-4a444e5108b6971f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete supplier-qualified descriptor explicitly retains defibrinated
+    horse blood, agreeing with the maintained same supplied-form/species concept.
+    Its broad blood ontology field is not substituted for the more specific preserved
+    source label. The Bordet-Gengou source route was read. Support does not certify
+    TCS lot composition, sterility,15percent dose or growth.
+  target_ids:
+  - case-4a444e5108b6971f
+  evidence_ids:
+  - evidence-4a444e5108b6971f
+  details: 'Source/evidence locators: ["owner-0108.json: sole TCS-qualified descriptor4789b9ca,
+    TOGO M2851 source route and exact defibrinated-horse owner"]'
+- assessment_id: assessment-4e3fc52a283747e6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All five complete descriptors explicitly preserve two waters of hydration,
+    including exact MediaDive solution2830/4724 ingredient excerpts and the JCM776
+    cross-reference. The current owner has the same barium-chloride dihydrate formula
+    and CAS10326-27-9. Source stock versus receiving-medium quantities stay separate;
+    no reduction to the anhydrous salt is approved.
+  target_ids:
+  - case-4e3fc52a283747e6
+  evidence_ids:
+  - evidence-4e3fc52a283747e6
+  details: 'Source/evidence locators: ["owner-0033.json: five descriptors of case4e3fc52a2837,
+    all ten source scopes and hydrate-specific owner", "native row1b973d7e4819028bc45398fb8a205d7bcf6f638c9f51030720ff8cbf3e702e45"]'
+- assessment_id: assessment-531623d7728ca1af
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors preserve calcium folinate, supported by
+    exact Ca-folinate MediaDive781 ingredient excerpts and compatible embedded CHEBI:31340.
+    The owner retains the calcium salt and does not select an unstated folinate6-position
+    stereoisomer. All seven recipe/cofactor-stock routes were inspected; stock doses
+    and receiving-medium dilution are excluded from this salt-identity decision.
+  target_ids:
+  - case-531623d7728ca1af
+  evidence_ids:
+  - evidence-531623d7728ca1af
+  details: 'Source/evidence locators: ["owner-0053.json: all three descriptors, solution1730/4340
+    excerpts, seven source routes and owner calcium-folinate structure"]'
+- assessment_id: assessment-55ac78af84c1b6c8
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eleven complete descriptors explicitly name cobalt(II) nitrate hexahydrate
+    with compatible CAS10026-22-9/CHEBI:86214. The69 source routes retain their independent
+    medium/stock contexts. This is support for the stated six-water salt, not unspecified
+    cobalt nitrate, a dissolved-ion speciation or any final-dose calculation.
+  target_ids:
+  - case-55ac78af84c1b6c8
+  evidence_ids:
+  - evidence-55ac78af84c1b6c8
+  details: 'Source/evidence locators: ["owner-0078.json: eleven complete descriptors,69
+    routes of55ac78af and current hydrate-specific chemistry"]'
+- assessment_id: assessment-5674be2b2411c0a9
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors and retained source snippets explicitly name
+    para-hydroxybenzaldehyde, matching the owner's 4-hydroxy positional isomer and
+    CHEBI:17597 structure. The CoCl2 and CoSO4 recipe contexts do not alter the aldehyde
+    identity. The cited 0.5 mM donor amount and any growth interpretation remain outside
+    this identity binding.
+  target_ids:
+  - case-5674be2b2411c0a9
+  evidence_ids:
+  - evidence-5674be2b2411c0a9
+  details: 'Source/evidence locators: ["owner-0009.json: both full descriptors, both
+    recipe scopes and complete owner structure", "doi:10.1007/BF00290916 Table 2 excerpt
+    preserved in both descriptors: p-hydroxybenzaldehyde", "canonical source_position
+    179 / row f1eefed8d4bdbd15462962782337ce0af14ff33b9581d0857ea951d66b5ec268"]'
+- assessment_id: assessment-56f12fd065dbec3f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: 'The complete Sakai2019 held payload explicitly identifies CO2 as the component
+    of the H2/CO2 headspace mixture, consistent with the molecular owner. Identity
+    support is restricted to that named gas component. The OPERATION hold remains
+    intact with counts_as_presence=false: this is not an aqueous ingredient assertion
+    or evidence of growth, and the reported negative HS1T experiment remains negative.'
+  target_ids:
+  - case-56f12fd065dbec3f
+  evidence_ids:
+  - evidence-56f12fd065dbec3f
+  details: 'Source/evidence locators: ["owner-0064.json: held743c41a3, source Methods3.2.3.3
+    excerpt, archaea/sulfolobus_medium_anaerobic_for_dsm_2162.yaml /variants/1/ingredient_mentions/1",
+    "https://soka.repo.nii.ac.jp/record/39772/files/kogakukenkyuka_SAKAI-HIROYUKI%28%E5%85%A8%E6%96%87%29.pdf"]'
+- assessment_id: assessment-573a8aed48a707c2
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors retain cresol red/CHEBI:86218, and the exact
+    provider1436 source excerpt names that dye. The owner's cresolsulfophthalein structure
+    agrees; this is not cresol or a different red indicator. Both stock/ingredient
+    routes were read. Dose, indicator performance and final dilution remain excluded.
+  target_ids:
+  - case-573a8aed48a707c2
+  evidence_ids:
+  - evidence-573a8aed48a707c2
+  details: 'Source/evidence locators: ["owner-0088.json: both descriptors, solution3273
+    exact excerpt, two routes and current CAS1733-12-6 dye owner"]'
+- assessment_id: assessment-5bcb2af0997a7423
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete case includes an explicit heart infusion constituent, but
+    its candidate is whole beef heart and its embedded term denotes heart anatomy.
+    Preparing an infusion changes the supplied material scope; matching a tissue label
+    cannot prove identity. All158 occurrence coordinates remain retained and withheld
+    under issue1482; this does not claim all158 individual recipe contexts were manually
+    read.
+  target_ids:
+  - case-5bcb2af0997a7423
+  evidence_ids:
+  - evidence-5bcb2af0997a7423
+  details: 'Source/evidence locators: ["owner-0037.json: all three scientific descriptors
+    and current owner; blocking supplier/BHI infusion descriptor40eff9db", "primary/foodon-00004410.json
+    SHA54ff02dc4444824d8349f2401680ea920fb8f150ea96f8e92ea813a3ce01c866 and primary/uberon-0000948.json
+    SHAc658bbcacd89befa47e3bd4859f176db247b3ce67483b6590c91d0865d41aed4", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1482"]'
+- assessment_id: assessment-5cf09b02abfe2656
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors explicitly name D-gluconic acid, consistent
+    with the current D-acid owner. Their KEGG shorthand and gluconate-labelled medium
+    routes do not state a specific counter-ion; all four routes were read. Support
+    binds the retained named chemical identity, without selecting a salt, asserting
+    solution protonation or approving molarity.
+  target_ids:
+  - case-5cf09b02abfe2656
+  evidence_ids:
+  - evidence-5cf09b02abfe2656
+  details: 'Source/evidence locators: ["owner-0098.json: all three descriptors, four
+    E2/liquid-MM/M63/M9 routes and current CHEBI:33198 owner"]'
+- assessment_id: assessment-6108052f2508ac65
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor explicitly states CaCl2.6H2O and the same
+    hydrate-specific CHEBI:91243 as the current owner. The chemically-defined-medium
+    scope retains that ingredient identity; no conversion to anhydrous calcium chloride
+    or approval of0.33g/L is made.
+  target_ids:
+  - case-6108052f2508ac65
+  evidence_ids:
+  - evidence-6108052f2508ac65
+  details: 'Source/evidence locators: ["owner-0055.json: descriptorba49593b and chemically_defined_medium
+    route; current six-water owner"]'
+- assessment_id: assessment-619fba0e79bd925b
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors specify the 2-position furoic acid and CHEBI:30845,
+    consistent with the owner's carboxylic-acid structure and CAS 88-14-2. The ingredient
+    and composition coordinates retain their own recipe scopes; neither descriptor
+    asserts a salt or a stock identity. Support binds the acid identity only, without
+    concentration or receiving-medium dilution approval.
+  target_ids:
+  - case-619fba0e79bd925b
+  evidence_ids:
+  - evidence-619fba0e79bd925b
+  details: 'Source/evidence locators: ["owner-0007.json: complete owner, both descriptors
+    and both source scope signatures", "canonical source_position 88 / row 73ace973b05bbe7c0c964df80fb24e8e97abc34c093af2f15a4515d2fc10151c"]'
+- assessment_id: assessment-623dde3c257babbb
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: Both complete TAP descriptors and both routes were inspected. Their copper(2+)
+    grounding is not reconciled by the generic-label/local-ID candidate. Preserve
+    both occurrences but withhold this aggregate under1501 pending source-specific
+    species resolution; do not assert which copper ion or salt was physically supplied.
+  target_ids:
+  - case-623dde3c257babbb
+  evidence_ids:
+  - evidence-623dde3c257babbb
+  details: 'Source/evidence locators: ["owner-0081.json: both descriptors and current
+    #631 local-identity rationale", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1501"]'
+- assessment_id: assessment-63fbe57cd3babefe
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify creatinine/CHEBI:16737 and the exact
+    provider570 excerpt agrees with the owner's cyclic creatinine structure. All five
+    routes were read. The decision does not substitute creatine, approve5.48355g/L
+    or infer metabolism/growth.
+  target_ids:
+  - case-63fbe57cd3babefe
+  evidence_ids:
+  - evidence-63fbe57cd3babefe
+  details: 'Source/evidence locators: ["owner-0086.json: both descriptors, solution1218
+    excerpt, five source routes and current creatinine structure"]'
+- assessment_id: assessment-642a6453d399c8ae
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six complete descriptors identify Columbia agar base as the named base
+    medium, consistent with the MICRO owner. The DSM429/693 notes keep horse/sheep
+    blood supplements separate from this base identity; all52 source routes were read.
+    Support does not establish a supplier-specific formula or approve700/1000g/L and1000percent
+    legacy values, final volume or growth.
+  target_ids:
+  - case-642a6453d399c8ae
+  evidence_ids:
+  - evidence-642a6453d399c8ae
+  details: 'Source/evidence locators: ["owner-0079.json: six descriptors, DSM429/693
+    retained notes,52 routes and generic named-base owner"]'
+- assessment_id: assessment-65d19440d8044198
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete glucose6-phosphate AMS1 change explicitly inherits Carini2013
+    CO2-then-air preparation through Carini2014. It names CO2 as the gas component
+    before later organic additions, agreeing with the owner. This does not independently
+    verify assay pH, phosphorus chemistry, gas dose or final growth.
+  target_ids:
+  - case-65d19440d8044198
+  evidence_ids:
+  - evidence-65d19440d8044198
+  details: 'Source/evidence locators: ["owner-0064.json: complete change bdeaad33
+    and bacterial/MEDIADB_480_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21",
+    "Carini2014/Carini2013 retained methods linkage"]'
+- assessment_id: assessment-667f6ee1916f3482
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete AMS1 glycine-source change retains Carini2013's ordered CO2
+    then air sparging after autoclaving. The named CO2 gas agrees with the molecular
+    owner. Identity support remains at this preparation stage and does not approve
+    final pH, exposure duration, carbon availability or equate the complete medium
+    with the gas.
+  target_ids:
+  - case-667f6ee1916f3482
+  evidence_ids:
+  - evidence-667f6ee1916f3482
+  details: 'Source/evidence locators: ["owner-0064.json: change1fbd0409 and bacterial/ams1_pyruvate_glycine.yaml
+    /variants/0/ingredient_changes/20", "https://doi.org/10.1038/ismej.2012.122"]'
+- assessment_id: assessment-676e27f90f2ca371
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete descriptor's hydration label and embedded identity remain
+    inconsistent. The maintained local seven-water source identity does not resolve
+    that anhydrous grounding, so this entire unchanged case is withheld under1488
+    without selecting another hydrate or inferring a verified chemical substance from
+    the literal count.
+  target_ids:
+  - case-676e27f90f2ca371
+  evidence_ids:
+  - evidence-676e27f90f2ca371
+  details: 'Source/evidence locators: ["owner-0056.json: exact sole descriptor and
+    current owner corrections321/334/342/344", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1488"]'
+- assessment_id: assessment-685287e6fa22ce1d
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor names cystine/CHEBI:17376, matching the current
+    disulfide structure without specified stereochemistry. The CDM-LAB route was inspected.
+    This does not equate cystine with reduced cysteine, infer an enantiomer or approve50g/L/nitrogen
+    function.
+  target_ids:
+  - case-685287e6fa22ce1d
+  evidence_ids:
+  - evidence-685287e6fa22ce1d
+  details: 'Source/evidence locators: ["owner-0093.json: sole descriptor b42c8cb6,
+    source route and current disulfide owner"]'
+- assessment_id: assessment-692e558734b6f189
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors specify BaCl2 with compatible barium-chloride
+    identifiers; the exact MediaDive solution5083 excerpt preserves that formula.
+    They do not name the separately reviewed dihydrate. Binding retains the nominal
+    BaCl2 chemical identity without certifying a purchased grade, measured water content,
+    stock dilution or the disparate amount fields.
+  target_ids:
+  - case-692e558734b6f189
+  evidence_ids:
+  - evidence-692e558734b6f189
+  details: 'Source/evidence locators: ["owner-0032.json: four full descriptors, seven
+    ingredient/composition source paths and owner BaCl2 structure/CAS10361-37-2",
+    "native rowcaada46ff011273aacb70ca504e7601780438635a4cb5fa63fc59860df00cd95"]'
+- assessment_id: assessment-6b333af101a0b916
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor explicitly denotes apple juice as a complex
+    food material, consistent with the maintained FOODON apple-juice concept. It does
+    not assert concentrate, clarified juice, a product brand or a pure sugar. Support
+    remains at this named food-material scope without approving an exact composition,
+    nutrient effect or 200 g/L dose.
+  target_ids:
+  - case-6b333af101a0b916
+  evidence_ids:
+  - evidence-6b333af101a0b916
+  details: 'Source/evidence locators: ["owner-0024.json: complete descriptor d6ba7c404c9e487e27e44cc3a04620d9d0802786c6dcbf3b7eca81b67a28e330
+    and current owner FOODON:00001059; native row070e51c634b8190f49f9eb115c6cc17135d8319d75b4e3883bb66fd90394c3a7"]'
+- assessment_id: assessment-6b4546aeb2b57314
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors preserve nominal CaHPO4 and calcium hydrogenphosphate
+    CHEBI:32596, matching the owner's1:1 calcium/hydrogenphosphate structure. The
+    exact solution6217 excerpt confirms the ingredient label. All four stock/main
+    routes were inspected; zero/variable amounts do not change the named identity,
+    and support does not assert physical presence, a particular hydrate, or approve
+    dose.
+  target_ids:
+  - case-6b4546aeb2b57314
+  evidence_ids:
+  - evidence-6b4546aeb2b57314
+  details: 'Source/evidence locators: ["owner-0057.json: four descriptors, source6217
+    excerpt, four source routes and current salt structure"]'
+- assessment_id: assessment-6f3ccd311a073f1f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete Matsui2018 high-CO2 aeration change identifies CO2 in the1%gas
+    arm, distinct from the alternative ambient-air arm. This agrees with the molecular
+    owner and preserves the aeration stage. Support does not combine alternative arms,
+    infer dissolved amount or approve physiological outcomes.
+  target_ids:
+  - case-6f3ccd311a073f1f
+  evidence_ids:
+  - evidence-6f3ccd311a073f1f
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium
+    /variants/1/ingredient_changes/1", "https://doi.org/10.1104/pp.18.00453"]'
+- assessment_id: assessment-6fa5cc783ef2ab0f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six complete descriptors consistently retain aspartate and CHEBI:29995,
+    without an explicit stereochemical or supplied-salt claim. Current MAPPING_SEMANTICS.md
+    specifically grounds bare Aspartate to this stereo-agnostic dianion; issue319
+    is closed and that maintained rule takes precedence over the historical counterargument
+    retained in owner notes. This is concept normalization under that rule, not independent
+    proof of actual medium protonation or approval of P5 MEM-stock quantities/dilutions.
+  target_ids:
+  - case-6fa5cc783ef2ab0f
+  evidence_ids:
+  - evidence-6fa5cc783ef2ab0f
+  details: 'Source/evidence locators: ["owner-0031.json: all six descriptors including
+    complete P5 stock evidence and current owner mapping history", "MAPPING_SEMANTICS.md
+    lines449–479", "https://github.com/CultureBotAI/MediaIngredientMech/issues/319
+    inspected2026-11-17", "native rowd42eab590c65aacb29898af0f18d5445951ea5bfcf03101553ffe2aa787a02cf"]'
+- assessment_id: assessment-70cb09ade6935dc4
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete TOGO M2849 descriptor names CaCl2 with six waters and
+    CHEBI:91243. The alternate hydrate separator retains the same explicit six-water
+    stoichiometry as the current owner. Mineral function and1.3g/L dose remain outside
+    the identity approval.
+  target_ids:
+  - case-70cb09ade6935dc4
+  evidence_ids:
+  - evidence-70cb09ade6935dc4
+  details: 'Source/evidence locators: ["owner-0055.json: descriptor0edc3912, TOGO
+    M2849 route and current six-water owner"]'
+- assessment_id: assessment-71d42cd78920da58
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: 'The complete descriptor and complete replacement event were inspected.
+    This case records the historical replaced label D-Glucose6-phosphate, so its D-specific
+    identity is factual context for the old target. The event explicitly replaces
+    that assertion with generic glucose6-phosphate because the Carini primary source
+    does not certify D/L. Support is solely the historical old-label binding: no positive
+    occurrence, actual reagent stereochemistry, dose or assay outcome is inferred.'
+  target_ids:
+  - case-71d42cd78920da58
+  evidence_ids:
+  - evidence-71d42cd78920da58
+  details: 'Source/evidence locators: ["owner-0103.json: complete old-target descriptor60371a50
+    and replacement payload6b1f6ce0, variant0/change20/replaced_ingredient scope",
+    "https://doi.org/10.1038/ncomms5346", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1511"]'
+- assessment_id: assessment-731fdd45136e6810
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete TAP descriptors explicitly embed calcium(2+) CHEBI:29108,
+    matching the charged-ion owner and distinguishing the rejected generic Calcium
+    owner. The source's generic surface label is qualified by those retained identity
+    fields. Identity support does not select an unstated calcium salt, infer counter-ion
+    or approve0.34mM/actual speciation.
+  target_ids:
+  - case-731fdd45136e6810
+  evidence_ids:
+  - evidence-731fdd45136e6810
+  details: 'Source/evidence locators: ["owner-0058.json: both descriptors, TAP auto/hetero-mixo
+    routes and current Ca2+ structure"]'
+- assessment_id: assessment-7596c7c0a15c93aa
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete DSM2030 source change explicitly names CO2 in the H2/CO2 atmosphere
+    supplied after inoculation. The owner binds this molecular component without treating
+    the mixed gas, pH6.5 or2bar instruction as an ingredient identity or approved
+    aqueous dose.
+  target_ids:
+  - case-7596c7c0a15c93aa
+  evidence_ids:
+  - evidence-7596c7c0a15c93aa
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium
+    /variants/2/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]'
+- assessment_id: assessment-75995ea07db3cdc6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eight descriptor payloads retain baker's yeast as the material, supported
+    by the exact MediaDive compound17 excerpts. The maintained FOODON owner is the
+    same named yeast material, not yeast extract, a specific strain or a composition-defined
+    stock. Identity support preserves that scope while excluding viability, strain
+    identity, preparation concentration and the percent-v/v quantity interpretation.
+  target_ids:
+  - case-75995ea07db3cdc6
+  evidence_ids:
+  - evidence-75995ea07db3cdc6
+  details: 'Source/evidence locators: ["owner-0034.json: eight descriptors, seventeen
+    source paths, exact MediaDive9/9a and solution9/10 ingredient excerpts, current
+    owner", "native row5607318f3835161a6c406a1a43b986faae17cec7778fe7d21a235377561add7e"]'
+- assessment_id: assessment-75cc21f68f7c24c7
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete DSM25945 change preserves the DSM119 instruction for a post-inoculation
+    H2/CO2 atmosphere. CO2 molecular identity agrees with the owner; the distinct
+    strain/pH instruction and gas pressure remain source context rather than an approved
+    dose or growth assertion.
+  target_ids:
+  - case-75cc21f68f7c24c7
+  evidence_ids:
+  - evidence-75cc21f68f7c24c7
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and methanobacterium_medium
+    /variants/13/ingredient_changes/1", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]'
+- assessment_id: assessment-76e2e8c8282a85ea
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors explicitly name anaerobic water, preserving the
+    anoxic qualification of the current ENVO owner. Support is limited to that named
+    water material/state; it is not a verification of oxygen measurements, sterilization,
+    recipe composition or the 100/300 g/L amount fields.
+  target_ids:
+  - case-76e2e8c8282a85ea
+  evidence_ids:
+  - evidence-76e2e8c8282a85ea
+  details: 'Source/evidence locators: ["owner-0022.json: both complete descriptors
+    and current owner ENVO:01000173 synonym evidence; native row25fdc8f387f5cb51d6e6b2ea7aba70f52267d3b50b858dfe5ac727a44c92c75d"]'
+- assessment_id: assessment-77e001312d6b6603
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors preserve benzyl cyanide/phenylacetonitrile, matching
+    the current owner's methylene-separated nitrile structure and CHEBI:25979. The
+    MediaDive compound2166 provenance and exact named synonym agree; no benzonitrile
+    substitution is made. Identity support excludes the0.12g/L amount and nitrogen-source
+    function.
+  target_ids:
+  - case-77e001312d6b6603
+  evidence_ids:
+  - evidence-77e001312d6b6603
+  details: 'Source/evidence locators: ["owner-0042.json: both descriptors, mineral-medium/MediaDive951
+    scopes and owner structural synonym evidence", "native row6f90f8746a9ea1c90c370a4baf32944c2ecf0b7e371c333ee1feb1b8750dc68c"]'
+- assessment_id: assessment-7816d9ac4687571c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: 'The final descriptors name a 0.5 M disodium NTA preparation but both embed
+    CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term.
+    The candidate MIM registry stock explicitly separates that disodium preparation
+    from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove
+    this source-form conflict. Both occurrences are retained; no stock-to-solute replacement
+    or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up:
+    CultureMech #792.'
+  target_ids:
+  - case-7816d9ac4687571c
+  evidence_ids:
+  - evidence-7816d9ac4687571c
+  details: 'Source/evidence locators: ["owner-0002.json: both complete descriptors
+    and stock owner components/component_assertion/rejected synonyms", "https://www.ebi.ac.uk/chebi/CHEBI:132766:
+    definition 3:1 sodium:nitrilotriacetate and formula C6H6NO6.3Na, inspected 2026-11-17",
+    "https://github.com/CultureBotAI/CultureMech/issues/792"]'
+- assessment_id: assessment-7a54eb7a4c55b5ac
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete Tsuji2021 low-sodium comparison explicitly retains CO2 in
+    the0.04%air arm named by the primary abstract. This supports gas-component identity
+    while keeping it distinct from the5%arm. Full methods, dose, growth efficacy and
+    dissolved concentration are not claimed to be verified.
+  target_ids:
+  - case-7a54eb7a4c55b5ac
+  evidence_ids:
+  - evidence-7a54eb7a4c55b5ac
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium
+    /variants/2/ingredient_changes/4", "https://doi.org/10.1007/s10126-021-10037-4
+    retained primary abstract"]'
+- assessment_id: assessment-7cae5a5b7b73d3a8
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors explicitly identify Cl-/chloride, with compatible
+    CHEBI:17996 and KEGG:cl grounding. The current owner is the same anion; no counter-ion
+    or elemental chlorine is inferred. All five TAP/Vogel/synbase routes were inspected.
+    Amount differences and actual solution speciation are outside this identity binding.
+  target_ids:
+  - case-7cae5a5b7b73d3a8
+  evidence_ids:
+  - evidence-7cae5a5b7b73d3a8
+  details: 'Source/evidence locators: ["owner-0076.json: four full descriptors, five
+    source routes and current chloride owner"]'
+- assessment_id: assessment-7ce014451bbe85f1
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors consistently identify arsenate with CHEBI:29125
+    and retain after-autoclaving context; neither asserts arsenite, a counterion or
+    a specific supplied salt. The current owner explicitly rejects arsenite aliases.
+    Support follows the maintained bare-anion concept convention and does not certify
+    solution speciation, an unstated salt or the reported dose.
+  target_ids:
+  - case-7ce014451bbe85f1
+  evidence_ids:
+  - evidence-7ce014451bbe85f1
+  details: 'Source/evidence locators: ["owner-0026.json: both descriptors and current
+    owner charged structure/rejected arsenite labels", "MAPPING_SEMANTICS.md protonation-state
+    convention", "native row7424003f71423b2fab5daf36c297d72f52c71f34b2ba828573126b284512d47d"]'
+- assessment_id: assessment-7ced97de79fe3814
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: All eleven complete descriptors and twelve routes were read. One member
+    contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate
+    is withheld under1513 while every occurrence remains available. This is not a
+    claim that the other eleven routes have the same conflict; no concentration or
+    D/L resolution is guessed.
+  target_ids:
+  - case-7ced97de79fe3814
+  evidence_ids:
+  - evidence-7ced97de79fe3814
+  details: 'Source/evidence locators: ["owner-0105.json: all eleven descriptors and
+    twelve routes, especially P5 Mix5 descriptor5f5564bf with source_identity_conflict",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1513"]'
+- assessment_id: assessment-80a712170c6d28ba
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete Tsuji2021 change explicitly identifies CO2 in the5%aeration
+    arm of the low-sodium comparison. The primary abstract supplies that gas identity,
+    compatible with the owner. Support does not merge the ambient-air comparator,
+    verify inaccessible full methods or establish a liquid dose or growth claim.
+  target_ids:
+  - case-80a712170c6d28ba
+  evidence_ids:
+  - evidence-80a712170c6d28ba
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and algae/F_2_Medium
+    /variants/2/ingredient_changes/3", "https://doi.org/10.1007/s10126-021-10037-4
+    retained primary abstract"]'
+- assessment_id: assessment-8542b4ae4f2bd7e6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors retain choline/CHEBI:15354, including the
+    exact provider611 vitamin-stock excerpt and compatible KEGG cross-reference. The
+    current owner represents the choline cation, without an inferred counter-ion.
+    All four source routes were inspected; the identity decision does not substitute
+    choline chloride or approve stock/final amounts.
+  target_ids:
+  - case-8542b4ae4f2bd7e6
+  evidence_ids:
+  - evidence-8542b4ae4f2bd7e6
+  details: 'Source/evidence locators: ["owner-0074.json: three descriptors, solution1328
+    exact excerpt, four routes and current choline cation structure"]'
+- assessment_id: assessment-86fd9453e711ff71
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four descriptors identify indole-3-acetic acid, including the exact
+    MediaDive compound 1548 ingredient excerpt in solution 5113. The current owner
+    is that acid with CAS 87-51-4 and explicitly rejects its historical ethyl-hexenoate
+    mislabels. None of the source descriptors revives those rejected compounds. Parent
+    aromatic-fatty-acid solution context is preserved; support is for the named ingredient,
+    not the mixture, source quantities or final-medium dose.
+  target_ids:
+  - case-86fd9453e711ff71
+  evidence_ids:
+  - evidence-86fd9453e711ff71
+  details: 'Source/evidence locators: ["owner-0008.json: all four descriptors, five
+    source signatures and complete owner including rejected aliases", "MediaDive solution
+    5113 recipe[3] exact excerpt retained in descriptor d526b004642918f8735418948fc75915dc696c9b871f20fb9ae60abb1af25875",
+    "canonical source_position 150 / row 1a517e0dd653e2967c42ed189120362e6a2fc173dcb71a4517c8d2c077a8fc3c"]'
+- assessment_id: assessment-8898ca0ff0613326
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify antipyrine/phenazone and retain compatible
+    CHEBI:31225 or MediaDive compound412 identity. The solution703 recipe excerpt
+    names antipyrine as the ingredient, consistent with the owner's specific pyrazolone
+    structure/CAS60-80-0. The parent medium/solution and 1 g/L amount are not treated
+    as the chemical identity.
+  target_ids:
+  - case-8898ca0ff0613326
+  evidence_ids:
+  - evidence-8898ca0ff0613326
+  details: 'Source/evidence locators: ["owner-0023.json: both descriptors, retained
+    solution703 recipe[0] excerpt and current owner structure; native row097bc9bd6754865eacba5c52a3bf85aa6ec3ee0215645f2d6f55349661de4ed9"]'
+- assessment_id: assessment-89b5d1371f6b0c7c
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete phosphoserine AMS1 change retains the explicit Carini2014-to-2013
+    preparation linkage and ordered CO2 then air sparging. The molecular gas identity
+    matches the owner; the phosphoserine assay, final pH and dissolved dose are not
+    inferred from this binding.
+  target_ids:
+  - case-89b5d1371f6b0c7c
+  evidence_ids:
+  - evidence-89b5d1371f6b0c7c
+  details: 'Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_484_AMS1_Pyruvate_Glycine.yaml
+    /variants/0/ingredient_changes/21", "Carini2014/2013 retained primary preparation
+    excerpts"]'
+- assessment_id: assessment-8a120bdffd7488ba
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: 'The complete descriptor names benzene with CHEBI:16716 but includes a
+    generic Solution property. The primary DSMZ944a recipe resolves the identity scope:
+    it explicitly uses benzene as the solute in distilled-water stock; the separate
+    source solution is not being equated with pure benzene. Identity binding is supported
+    for the named solute. The31.2g/L base amount is independently contradicted by
+    source stock/addition arithmetic and is NOT approved; CultureMech793 tracks that
+    unchanged-base defect and optional variant applicability.'
+  target_ids:
+  - case-8a120bdffd7488ba
+  evidence_ids:
+  - evidence-8a120bdffd7488ba
+  details: 'Source/evidence locators: ["owner-0038.json: sole descriptor, current
+    benzene structure and TOGO M2474 scope", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium944a.pdf
+    page1 opening modification, inspected2026-11-17; retained primary/DSMZ_Medium944a.pdf",
+    "https://github.com/CultureBotAI/CultureMech/issues/793", "native row5bd9c45634f0b9b155805ad470eafd0d3ac2693b4eff0fefb0597ee0ecca2602"]'
+- assessment_id: assessment-8b8cd58861a0f289
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete2-aminoethylphosphonic-acid AMS1 change names the CO2 preparation
+    gas through the explicit Carini2014-to-2013 methods linkage. It preserves the
+    ordered sparging stage and does not assert an assay-specific pH, approve the phosphorus
+    compound or infer liquid CO2 amount.
+  target_ids:
+  - case-8b8cd58861a0f289
+  evidence_ids:
+  - evidence-8b8cd58861a0f289
+  details: 'Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_483_AMS1_Pyruvate_Glycine.yaml
+    /variants/0/ingredient_changes/21", "Carini2014/2013 retained source linkage"]'
+- assessment_id: assessment-8ee01e4e5b7445f5
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete base descriptor and corresponding source correction were read.
+    Exact source binding to the D-specific owner would certify an unsupported stereochemical
+    narrowing for the actual reagent. Withhold this unchanged base case under1511,
+    preserving the separate historical old-target context and every input row.
+  target_ids:
+  - case-8ee01e4e5b7445f5
+  evidence_ids:
+  - evidence-8ee01e4e5b7445f5
+  details: 'Source/evidence locators: ["owner-0103.json: complete base descriptor226943d5
+    and same-recipe replacement evidence6b1f6ce0", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1511"]'
+- assessment_id: assessment-90a4e97134f2ccee
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete TOGO descriptors explicitly name chocolate agar as the supplied
+    medium material, compatible with the generic named-medium MICRO owner. Both source
+    routes were inspected. Support does not select a supplier formula, equate the
+    medium with agar alone, infer unreported amount or approve its growth claims.
+  target_ids:
+  - case-90a4e97134f2ccee
+  evidence_ids:
+  - evidence-90a4e97134f2ccee
+  details: 'Source/evidence locators: ["owner-0072.json: both full descriptors, TOGO
+    M2858/M2977 routes and current named chocolate-agar owner"]'
+- assessment_id: assessment-911c0899099348a6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All60 complete descriptors and152 source routes were inspected, including
+    exact MediaDive541 and UTEX/JCM hydrate-qualified source excerpts. Each preserves
+    cobalt dinitrate hexahydrate, compatible with the owner's explicit six waters
+    and divalent cobalt. Preparation and stock scopes remain distinct. Conflicting
+    printed molarity annotations, legacy merged amount values and percentage fields
+    are retained but not approved or converted by this identity decision.
+  target_ids:
+  - case-911c0899099348a6
+  evidence_ids:
+  - evidence-911c0899099348a6
+  details: 'Source/evidence locators: ["owner-0078.json: all60 descriptors reconstructed/read
+    in pages0–24,25–44,45–59; all152 routes; current CHEBI:86214/CAS10026-22-9 owner",
+    "Retained UTEX G9/Bold/minor-nutrient, DSM590 and MediaDive541 ingredient excerpts"]'
+- assessment_id: assessment-97e084115638e98f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors identify 2'-deoxyinosine with CHEBI:28997
+    and CAS 890-38-0, agreeing with the owner's specific nucleoside identity and structure.
+    The soil-carbon and exometabolite-mixture references describe the containing formulation,
+    not a competing ingredient identity. Quantities and mixture-wide composition remain
+    outside this identity approval.
+  target_ids:
+  - case-97e084115638e98f
+  evidence_ids:
+  - evidence-97e084115638e98f
+  details: 'Source/evidence locators: ["owner-0005.json: all four descriptors, source
+    scope signatures, owner CAS/structure and CAS lookup provenance", "canonical source_position
+    83 / row e09ef5127284e433cd63c3e30c128fe1c6e099d5367bb8077df0d354d69735bd"]'
+- assessment_id: assessment-9aafef893f46d681
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors identify 2'-deoxyuridine with CHEBI:16450
+    and CAS 951-78-0, matching the current owner's nucleoside identity and structure.
+    The differing mg/L and micromolar quantities and parent carbon-mixture provenance
+    are retained without becoming new identity or formulation claims. Support applies
+    only to the explicitly named compound.
+  target_ids:
+  - case-9aafef893f46d681
+  evidence_ids:
+  - evidence-9aafef893f46d681
+  details: 'Source/evidence locators: ["owner-0006.json: all four descriptors, source
+    scope signatures and owner CAS/structure", "canonical source_position 85 / row
+    a5469c34d21e310ba3c9e092664e79622774134ee112ca10e9ba4e7d98049711"]'
+- assessment_id: assessment-9bebf2dec0e4e5b0
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor names crotonic acid ALDRICH113018. Independent
+    manufacturer-page inspection confirms113018 as trans-2-butenoic acid/CAS107-93-7
+    with the same E InChI as the owner. The single source route was read. Support
+    is the named chemical identity, not a batch-purity, dose or growth certification.
+  target_ids:
+  - case-9bebf2dec0e4e5b0
+  evidence_ids:
+  - evidence-9bebf2dec0e4e5b0
+  details: 'Source/evidence locators: ["owner-0089.json: sole catalogue-qualified
+    descriptor and TOGO M2527 route", "https://www.sigmaaldrich.com/US/en/product/aldrich/113018
+    manufacturer identity/structure viewed2026-11-17; local manual observation .temp/1453/crotonic-catalog-primary-observation.md"]'
+- assessment_id: assessment-a0651624438bd707
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete phosphite-arm AMS1 change identifies CO2 during inherited
+    Carini2013 inorganic-medium preparation, followed by air. This supports the gas
+    component identity independently of the unresolved phosphite counter-ion/form.
+    Final pH, liquid concentration and phosphorus chemistry remain outside the decision.
+  target_ids:
+  - case-a0651624438bd707
+  evidence_ids:
+  - evidence-a0651624438bd707
+  details: 'Source/evidence locators: ["owner-0064.json: complete change bdeaad33
+    and bacterial/MEDIADB_479_AMS1_Pyruvate_Glycine.yaml /variants/0/ingredient_changes/21",
+    "Carini2014/2013 retained primary excerpts"]'
+- assessment_id: assessment-a140503a9a82236f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors identify CAPSO, with the correct hydroxy-propanesulfonic-acid
+    CHEBI:183882 structure rather than CAPS. The exact provider1762 excerpt and three
+    RT2 routes preserve this ingredient identity. The extraordinary5930g/L provider-declared
+    value and its2mL volume basis are explicitly outside this identity support; the
+    decision does not certify their physical validity, dilution or buffer performance.
+  target_ids:
+  - case-a140503a9a82236f
+  evidence_ids:
+  - evidence-a140503a9a82236f
+  details: 'Source/evidence locators: ["owner-0061.json: all three descriptors, solution4184
+    exact excerpt, three RT2 routes and current CAPSO structure"]'
+- assessment_id: assessment-a2838b1187a747a8
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eight distinct descriptors explicitly retain activated charcoal, with
+    MediaDive compound582 and exact retained recipe excerpts where present. The current
+    owner denotes activated charcoal as a material, not elemental carbon or the containing
+    agar/blood medium. Support preserves that named material scope without asserting
+    a unique chemical formula, product grade, concentration or biological effect.
+  target_ids:
+  - case-a2838b1187a747a8
+  evidence_ids:
+  - evidence-a2838b1187a747a8
+  details: 'Source/evidence locators: ["owner-0017.json: all eight descriptor payloads
+    and thirteen ingredient/composition source scopes", "MediaDive medium435/1052
+    and solution2128/869 exact ingredient excerpts retained in descriptors", "native
+    row 67735ce085c295e8c7c59a8cc9ddb553f188585f016d923dfdb454503539260d"]'
+- assessment_id: assessment-a35898ba396305dc
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete UI-medium descriptor explicitly specifies 4-hydroxybenzoic
+    free acid in both identifier fields. This agrees with the owner's para-hydroxy
+    acid structure and does not denote an ester, salt or ortho isomer. The carbon-source
+    role and 0.414 g/L amount are retained but not approved by the identity binding.
+  target_ids:
+  - case-a35898ba396305dc
+  evidence_ids:
+  - evidence-a35898ba396305dc
+  details: 'Source/evidence locators: ["owner-0012.json: descriptor 0b3b275a8f36bf1b4400e51ab9461691ed736c20668287e00b36fcec7d25c35f,
+    TOGO_M504_UI_Medium scope and current owner structure", "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]'
+- assessment_id: assessment-a41a9945169fc3de
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All28 complete descriptors retain nominal CuCl2/CHEBI:49553, with exact
+    provider261/JCM1219 input-solute excerpts and no conflicting hydrated source label.
+    All99 routes were inspected. The binding concerns the named salt/input solute,
+    not the entire10mM stock; it does not approve concentration, infer a specific
+    hydrate from an unspecified label, or validate user-contributed P10 biology.
+  target_ids:
+  - case-a41a9945169fc3de
+  evidence_ids:
+  - evidence-a41a9945169fc3de
+  details: 'Source/evidence locators: ["owner-0090.json: all28 CuCl2 descriptors,99
+    routes, retained JCM1219/MediaDive261 source excerpts and current salt owner"]'
+- assessment_id: assessment-a5a7c3209f4bd51e
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete separate source descriptor explicitly identifies D-mannose/CHEBI:16024
+    as an alternative carbon-source arm, agreeing with the generic D-mannose owner.
+    Primary ChEBI inspection confirms D-mannopyranose is subordinate to that concept
+    and lists both commonly encountered CAS numbers; no false CAS or anomer conflict
+    is inferred. Support does not assert simultaneous use of all alternative substrates,
+    approve0.2percent or infer growth.
+  target_ids:
+  - case-a5a7c3209f4bd51e
+  evidence_ids:
+  - evidence-a5a7c3209f4bd51e
+  details: 'Source/evidence locators: ["owner-0105.json: descriptor119a1fca and minimal-media
+    TOGO M2313 alternative scope", "https://www.ebi.ac.uk/chebi/CHEBI:16024", "https://www.ebi.ac.uk/chebi/CHEBI:4208"]'
+- assessment_id: assessment-a95288ddbcbc4509
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Every complete descriptor preserves Ca(NO3)2 and compatible calcium-nitrate
+    identifiers; exact provider excerpts retain that nominal salt formula. The current
+    owner explicitly corrected the historical cadmium-nitrate conflation, and no inspected
+    source descriptor reintroduces Cd. All37 source routes were inspected. Support
+    binds nominal calcium nitrate without asserting purchased hydration state, converting
+    mass between hydrates, or approving concentration/dilution.
+  target_ids:
+  - case-a95288ddbcbc4509
+  evidence_ids:
+  - evidence-a95288ddbcbc4509
+  details: 'Source/evidence locators: ["owner-0054.json: all complete descriptors,
+    exact MediaDive266 ingredient excerpts,37 source routes and corrected calcium-nitrate
+    owner"]'
+- assessment_id: assessment-ab0eedc422381cbc
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All22 complete descriptors preserve choline chloride/CHEBI:133341, compatible
+    CAS67-48-1 and the owner's explicit chloride salt structure. Exact provider115
+    excerpts agree. All46 source routes were inspected. This salt-specific support
+    remains distinct from the choline cation and excludes concentration, stock-to-final
+    dilution and biological effects.
+  target_ids:
+  - case-ab0eedc422381cbc
+  evidence_ids:
+  - evidence-ab0eedc422381cbc
+  details: 'Source/evidence locators: ["owner-0075.json: all22 descriptors, solution3067/5043
+    exact ingredient excerpts,46 source routes and current chloride-salt owner"]'
+- assessment_id: assessment-ae04caa55fe59069
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors explicitly preserve Co(NO3)2 with six waters
+    and compatible CHEBI:86214, matching the hydrate-specific owner. All three recipe
+    routes were inspected. The decision excludes concentrations, dilution and growth
+    claims.
+  target_ids:
+  - case-ae04caa55fe59069
+  evidence_ids:
+  - evidence-ae04caa55fe59069
+  details: 'Source/evidence locators: ["owner-0078.json: three descriptors and three
+    routes ofae04caa5; current six-water owner"]'
+- assessment_id: assessment-ae9572ea8c1ffd93
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete methylphosphonic-acid AMS1 change preserves CO2 as the gas
+    in the linked Carini2013 preparation stage. Molecular identity agrees with the
+    owner; ordered CO2/air steps remain separate and do not establish assay pH, gas
+    quantity or phosphorus-compound identity.
+  target_ids:
+  - case-ae9572ea8c1ffd93
+  evidence_ids:
+  - evidence-ae9572ea8c1ffd93
+  details: 'Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_482_AMS1_Pyruvate_Glycine.yaml
+    /variants/0/ingredient_changes/21", "Carini2014/2013 retained methods linkage"]'
+- assessment_id: assessment-b1f8adc06f883411
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors name biphenyl, with direct CHEBI:17097 or
+    MediaDive compound2105 where present, matching the owner's two-ring biphenyl identity.
+    The W-medium, named-biphenyl medium and MediaDive919 scopes preserve the ingredient
+    rather than the whole formulation. Doses and carbon-source function remain outside
+    this identity support.
+  target_ids:
+  - case-b1f8adc06f883411
+  evidence_ids:
+  - evidence-b1f8adc06f883411
+  details: 'Source/evidence locators: ["owner-0044.json: all three descriptors of
+    caseb1f8adc0, three source routes and current owner"]'
+- assessment_id: assessment-b221231fe8357484
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete ribose5-phosphate AMS1 change names CO2 in the explicitly
+    linked Carini2013 preparation method, before air and later organics. Support is
+    the molecular gas component only, without extrapolating assay pH, dose or ribose-phosphate
+    form.
+  target_ids:
+  - case-b221231fe8357484
+  evidence_ids:
+  - evidence-b221231fe8357484
+  details: 'Source/evidence locators: ["owner-0064.json: change bdeaad33 and bacterial/MEDIADB_481_AMS1_Pyruvate_Glycine.yaml
+    /variants/0/ingredient_changes/21", "Carini2014/2013 retained preparation evidence"]'
+- assessment_id: assessment-b27b4e0701b204e6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete P5 descriptor and all its preparation prose explicitly identify
+    decanoic acid as the input solute in a separately prepared aqueous stock, matching
+    the linear C10 free-acid owner. The full stock-composition route was read. Support
+    binds the named solute, not the entire stock or final Mix5, and excludes heat
+    stability, source dilution, amount and growth.
+  target_ids:
+  - case-b27b4e0701b204e6
+  evidence_ids:
+  - evidence-b27b4e0701b204e6
+  details: 'Source/evidence locators: ["owner-0107.json: complete descriptorab1d7225,
+    source P5 single-stock/Mix5 evidence and nested stock route; current CHEBI:30813
+    owner"]'
+- assessment_id: assessment-b28cdde06366ce79
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The inspected opaque NBRC1273 preparation is sufficient to block an exact
+    preparation-identity binding for this grouped case. The retained packet includes
+    other named source seawater matrices, but no single composition or equivalence
+    is inferred. All occurrences remain available; the generic category can guide
+    follow-up without granting exact identity. Issue1479.
+  target_ids:
+  - case-b28cdde06366ce79
+  evidence_ids:
+  - evidence-b28cdde06366ce79
+  details: 'Source/evidence locators: ["owner-0028.json: descriptor161c1549fa53f549b99957a50644bf4d309a1bd9bdab805caffcaa07776fa12f
+    NBRC1273 note and current owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]'
+- assessment_id: assessment-b2f395bcc3e5d1be
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete Ignicoccus change names CO2 in the final H2/CO2 bottle headspace
+    described by the Koschnitzki2017 methods. It remains distinct from the N2/CO2
+    purge and N2/H2 chamber stages. Identity support is for CO2 as a component and
+    does not infer liquid quantity, pressure equivalence or growth.
+  target_ids:
+  - case-b2f395bcc3e5d1be
+  evidence_ids:
+  - evidence-b2f395bcc3e5d1be
+  details: 'Source/evidence locators: ["owner-0064.json: complete change99e66 and
+    archaea/ignicoccus_medium_for_dsm_18386 /variants/0/ingredient_changes/6", "https://doi.org/10.5283/epub.34741
+    page28 retained methods excerpt"]'
+- assessment_id: assessment-b3a540ca9bb6ec82
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete descriptor identifies the 5-fluorinated uracil compound,
+    consistent with CHEBI:46345 and the owner's fluoropyrimidinedione structure/CAS
+    51-21-8. No salt or preparation qualification is supplied. Its 100 g/L value is
+    not validated or endorsed by this identity decision.
+  target_ids:
+  - case-b3a540ca9bb6ec82
+  evidence_ids:
+  - evidence-b3a540ca9bb6ec82
+  details: 'Source/evidence locators: ["owner-0013.json: sole descriptor c15be1b5c0bf81757a3f51c3d31b30333b37e6421119be45eacf4570862b8b31
+    and TOGO_M2825 scope", "native row 27b89db2c15c5ea0b71bf3c0866d7d5cc9831289d2f2a9f9d91bb9a74438fa52"]'
+- assessment_id: assessment-b3fd3be6a836d88e
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly identifies Ar/argon(0) and describes
+    an argon gas stream during distribution of the medium. This agrees with the elemental
+    argon owner. The gas-stream preparation context is preserved; no liquid dose,
+    partial pressure or growth effect is inferred from the VARIABLE field.
+  target_ids:
+  - case-b3fd3be6a836d88e
+  evidence_ids:
+  - evidence-b3fd3be6a836d88e
+  details: 'Source/evidence locators: ["owner-0025.json: descriptor6038a4f67f0b64f9d50448a7ac34e96c3708c646cfd643fd0dd42f7981b5209d,
+    MediaDiveJ1289/TOGOM1385 preparation note and owner chemistry; native row97c38f93c17a6dd5b98cb1c82be8092f5ced4043d70298343471964e4ef88c27"]'
+- assessment_id: assessment-b43059bd4d533f65
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors retain 4-hydroxybenzoic acid; the exact MediaDive
+    solution 2076 recipe[0] excerpt names compound 923 with that positional acid.
+    CHEBI:30763 and the current owner's free-acid structure agree. Parent main-solution
+    context is not mapped as this ingredient, and no dilution or concentration claim
+    is approved.
+  target_ids:
+  - case-b43059bd4d533f65
+  evidence_ids:
+  - evidence-b43059bd4d533f65
+  details: 'Source/evidence locators: ["owner-0012.json: both descriptors in case
+    b43059bd4d53, cryptoanaerobacter and MediaDive2076 scopes", "MediaDive solution
+    2076 recipe[0] excerpt in descriptor 8fa298c3dccdef37928eb72209c8d45394a829417e063bbe9cc6c1320cb96bd1",
+    "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]'
+- assessment_id: assessment-b5e2fc3e34357209
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six complete descriptors retain the six-water cobalt nitrate form,
+    including explicit notes documenting the CCAP subscript restoration. The seven
+    source routes and current hydrate owner were inspected. Support does not infer
+    an anhydrous salt, approve historical curation methods wholesale or certify the
+    reported amounts.
+  target_ids:
+  - case-b5e2fc3e34357209
+  evidence_ids:
+  - evidence-b5e2fc3e34357209
+  details: 'Source/evidence locators: ["owner-0078.json: six full descriptors including
+    CCAP MR_BB/MR_SP/MR_UCM notes, seven routes and current CHEBI:86214 owner"]'
+- assessment_id: assessment-bf14e85a596fe5f7
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All five complete descriptors identify carrot as the input material. Peeled/cut
+    notes and the explicit pre-decoction stage retain carrot identity rather than
+    claiming the filtered extract is whole carrot. The current carrot owner is compatible
+    at that material scope. All five recipe/composition routes were inspected; extraction
+    yield, fixed composition, final-medium amount and biological effects remain outside
+    this binding.
+  target_ids:
+  - case-bf14e85a596fe5f7
+  evidence_ids:
+  - evidence-bf14e85a596fe5f7
+  details: 'Source/evidence locators: ["owner-0065.json: five complete descriptors,
+    source5502/1765 preparation context, five source routes and current carrot owner"]'
+- assessment_id: assessment-c2a85cd5f94a73d7
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors preserve beef brain powder, and the exact
+    MediaDive solution3810 ingredient excerpt plus TOGO M148/J157 context identify
+    that supplied powder material. The local owner explicitly preserves powder specificity
+    beyond its broader beef-brain ontology parent. Binding is to the local powder
+    identity only; it does not assert equality to whole brain, a fixed composition,
+    product grade, dose or biological effect.
+  target_ids:
+  - case-c2a85cd5f94a73d7
+  evidence_ids:
+  - evidence-c2a85cd5f94a73d7
+  details: 'Source/evidence locators: ["owner-0036.json: three descriptors, three
+    source scopes, source1660 exact excerpt and local powder-specific owner", "native
+    own-registry row005953a737b961f7ee0b77469b3c596e544e2acdbf7336fa01fd1f8e29f6dcab"]'
+- assessment_id: assessment-c5e0653364f2b661
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete descriptor explicitly identifies D-methionine/CHEBI:16867
+    with KEGG met-D notation, agreeing with the maintained D structure. The methionine-salt-medium
+    route does not add a counter-ion to this ingredient descriptor. Dose, L/racemate
+    identity and growth remain outside support.
+  target_ids:
+  - case-c5e0653364f2b661
+  evidence_ids:
+  - evidence-c5e0653364f2b661
+  details: 'Source/evidence locators: ["owner-0099.json: sole complete descriptor,
+    Schaechter source route and D-methionine owner"]'
+- assessment_id: assessment-c7c4da0c0b3dc79f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All five complete descriptors name acetoin without selecting an enantiomer,
+    and the owner likewise represents stereochemically unspecified acetoin. The DSM
+    strain-specific and NBRC/archived-recipe notes do not introduce a different supplied
+    chemical form. Identity support excludes the different doses, carbon/energy roles
+    and strain growth claims.
+  target_ids:
+  - case-c7c4da0c0b3dc79f
+  evidence_ids:
+  - evidence-c7c4da0c0b3dc79f
+  details: 'Source/evidence locators: ["owner-0015.json: all five descriptors with
+    DSM3246/3247, NBRC1016 and archived DSM327 notes and all source scopes", "owner
+    unspecified-stereo structure and native row 322378640a3d27e8e0788af6418ec88a414d792af950d12937e1bdc8cfc921d5"]'
+- assessment_id: assessment-c84d38d267ad7dcb
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete Scenedesmus ABC009 change identifies CO2 in the phototrophic
+    BG11 aeration arm described in PMID34584038. The2%CO2 arm remains distinct from
+    air. Support binds the molecular component without approving the0.5vvm flow, liquid
+    dose, complete medium or growth outcome.
+  target_ids:
+  - case-c84d38d267ad7dcb
+  evidence_ids:
+  - evidence-c84d38d267ad7dcb
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and algae/bg11
+    /variants/2/ingredient_changes/1", "PMID:34584038 retained primary methods excerpt"]'
+- assessment_id: assessment-c878f30e5f397f8e
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors explicitly assert the six-water cobalt nitrate
+    salt, matching CHEBI:86214 and the owner formula. All six source routes were read.
+    Different stock/medium amount fields and mineral roles remain unapproved by this
+    identity support.
+  target_ids:
+  - case-c878f30e5f397f8e
+  evidence_ids:
+  - evidence-c878f30e5f397f8e
+  details: 'Source/evidence locators: ["owner-0078.json: three descriptors and six
+    source routes ofc878f30e; current hydrate-specific owner"]'
+- assessment_id: assessment-c8ce23344ae00a5f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete Cystein descriptors retain stereochemically unspecified cysteine/CHEBI:15356,
+    matching the owner's structure without an unstated L/D or hydrochloride narrowing.
+    Both source routes were inspected. Support excludes dose, reducing activity and
+    solution speciation.
+  target_ids:
+  - case-c8ce23344ae00a5f
+  evidence_ids:
+  - evidence-c8ce23344ae00a5f
+  details: 'Source/evidence locators: ["owner-0092.json: both full descriptors, AM5/solution3531
+    routes and current non-stereospecific cysteine structure"]'
+- assessment_id: assessment-cadbcb97562b7743
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete NBRC1300 descriptor explicitly identifies cefpodoxime/CHEBI:3504
+    as the named stock solute, matching the current free-cefpodoxime structure rather
+    than an unstated prodrug. The source route is nested stock composition, so support
+    does not equate the entire stock with pure cefpodoxime or approve10mg/mL, solvent,
+    final dilution or antimicrobial effect.
+  target_ids:
+  - case-cadbcb97562b7743
+  evidence_ids:
+  - evidence-cadbcb97562b7743
+  details: 'Source/evidence locators: ["owner-0068.json: sole complete descriptor31e719f2,
+    LB antibiotic-stock composition route and current cefpodoxime structure"]'
+- assessment_id: assessment-cf3475364310c77b
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six descriptors preserve adenosine, CHEBI:16335 and CAS58-61-7, agreeing
+    with the owner's adenine riboside structure. None denotes adenine alone or a phosphorylated
+    nucleotide. The NLDM/exometabolite/soil-mixture source contexts and their dose
+    differences remain separate from this identity support.
+  target_ids:
+  - case-cf3475364310c77b
+  evidence_ids:
+  - evidence-cf3475364310c77b
+  details: 'Source/evidence locators: ["owner-0018.json: all six descriptors and fourteen
+    source paths, current owner CAS/riboside structure", "native row cbb6f60ac51da172c1a508d93f29158d1112f2713f2bdcf7c4692a8396b8765f"]'
+- assessment_id: assessment-d0855f94860f1de9
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors preserve calcium malate, including exact
+    MediaDive J62/solution3689 ingredient excerpts and provider1614. The current FOODON
+    owner is the same generic calcium-malate material, with no unstated stereochemistry/hydrate
+    imposed. All three glycerol-calcium-malate recipe/composition routes were inspected.
+    Amounts, mineral function and downstream formulation are excluded.
+  target_ids:
+  - case-d0855f94860f1de9
+  evidence_ids:
+  - evidence-d0855f94860f1de9
+  details: 'Source/evidence locators: ["owner-0060.json: all three descriptors, primary
+    excerpts retained in source, three source scopes and current owner"]'
+- assessment_id: assessment-d13d06bd89f57b14
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors retain cadmium nitrate with four waters,
+    agreeing with the current hydrate-specific structure/CAS10022-68-1. The P4 page
+    excerpt explicitly names the tetrahydrate stock solute and the solution5814 excerpt
+    agrees. All four stock/main source routes were inspected. This does not approve
+    stock-to-final dilution arithmetic, trace-metal dose or growth, and does not collapse
+    to anhydrous cadmium nitrate.
+  target_ids:
+  - case-d13d06bd89f57b14
+  evidence_ids:
+  - evidence-d13d06bd89f57b14
+  details: 'Source/evidence locators: ["owner-0066.json: all four descriptors, retained
+    MediaDive P4/5814 exact excerpts, four source routes and owner tetrahydrate chemistry"]'
+- assessment_id: assessment-d23fddc72c400308
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors explicitly assert1-butanol, matching the
+    current butan-1-ol structure/CAS71-36-3 rather than another butanol isomer. The
+    retained donor-table excerpts support amounts but are not independently treated
+    as isomer evidence; identity support binds the full asserted source descriptor.
+    All four freshwater/butanol-challenge routes were inspected. Doses and challenge
+    outcomes remain outside scope.
+  target_ids:
+  - case-d23fddc72c400308
+  evidence_ids:
+  - evidence-d23fddc72c400308
+  details: 'Source/evidence locators: ["owner-0051.json: all four descriptors, four
+    source routes and owner primary-alcohol structure"]'
+- assessment_id: assessment-d37dfbf0abe3ecbc
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify the same 2-substituted sulfobenzoic
+    acid as the native owner; the MediaDive compound 2116 and source scope signatures
+    retain this positional isomer without a salt or hydrate assertion. Binding supports
+    that named chemical concept only. The differing 50 percent-v/v and 50 g/L source
+    quantities are not reconciled or approved by this identity decision, and no concentration-qualified
+    preparation is equated with a pure substance.
+  target_ids:
+  - case-d37dfbf0abe3ecbc
+  evidence_ids:
+  - evidence-d37dfbf0abe3ecbc
+  details: 'Source/evidence locators: ["owner-0003.json: both descriptors, MediaDive
+    compound 2116, owner ontology label and source scope signatures", "canonical source_position
+    74 / row af4796ff8ea28e367c02d5ffc2a2ede87d0482855d89a25fa278728937b164f3"]'
+- assessment_id: assessment-d6beb0069466ad90
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: 'All24 complete descriptors retain crotonic acid/CHEBI:41131 or provider255
+    with exact acid-labelled source excerpts, consistent with the current E-acid owner.
+    All37 routes were read, including crotonate-stock preparation: the ingredient
+    is the named input solute, not an assertion that the final sodium-crotonate stock
+    is free acid. Percentage fields, neutralization outcomes, amounts and growth remain
+    outside identity support.'
+  target_ids:
+  - case-d6beb0069466ad90
+  evidence_ids:
+  - evidence-d6beb0069466ad90
+  details: 'Source/evidence locators: ["owner-0089.json: all24 descriptors and37 routes,
+    exact MediaDive255 excerpts and current E-acid structure"]'
+- assessment_id: assessment-d93455d8e1131d6e
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The complete descriptor, A1 source route, full owner component recipe and
+    primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity
+    remains unresolved because of concentration-basis and thiamine-HCl versus thiamine
+    discrepancies. Withhold under1514 without silently applying a dilution or treating
+    the imported10g/L as a valid primary amount.
+  target_ids:
+  - case-d93455d8e1131d6e
+  evidence_ids:
+  - evidence-d93455d8e1131d6e
+  details: 'Source/evidence locators: ["owner-0106.json: complete descriptor and current
+    ten-component owner", "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512
+    DL vitamins table viewed2026-11-17", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1514"]'
+- assessment_id: assessment-d97cd220d4c7a33a
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole complete basal-salt-medium descriptor explicitly names biphenyl
+    and agrees with the current CHEBI:17097 biphenyl owner. No derivative, supplied
+    mixture or alternate ring connection is asserted. The1g/L dose and carbon-source
+    function are not approved by this identity binding.
+  target_ids:
+  - case-d97cd220d4c7a33a
+  evidence_ids:
+  - evidence-d97cd220d4c7a33a
+  details: 'Source/evidence locators: ["owner-0044.json: descriptor and basal_salt_medium_with_biphenyl
+    source scope of cased97cd220"]'
+- assessment_id: assessment-ddb4d0bc41a8f9e4
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The fully specified triazine substituents in both descriptors match the
+    owner's atrazine structure and CHEBI:15930 identity; MediaDive compound 2120 carries
+    the same structural name. Parentheses differ only in rendering of those explicit
+    substituents. The source's g/L versus mg/L values and the owner's historical method-grade
+    issue are not approved here; this decision preserves the chemical identity and
+    does not revive an erroneous historical CAS identifier.
+  target_ids:
+  - case-ddb4d0bc41a8f9e4
+  evidence_ids:
+  - evidence-ddb4d0bc41a8f9e4
+  details: 'Source/evidence locators: ["owner-0004.json: both complete descriptors,
+    current owner InChI/ontology identity and source signatures", "canonical source_position
+    80 / row 41dde03ab5e1fe466dad51d2aeb20c153be5e36f2b4d121a799308dc36cb7bb1", "MIM
+    issue 1386 explicitly preserves the reviewed atrazine identity while separately
+    correcting grounding-method provenance"]'
+- assessment_id: assessment-dedff48b8a0c5821
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors identify corn meal as the preparation input,
+    and the DSM191 note explicitly distinguishes that input from the later filtered
+    extract. The generic FOODON cornmeal owner agrees at the input-material scope.
+    All six routes were inspected; support does not equate the filtrate with corn
+    meal or approve extraction yield, final dose or medium performance.
+  target_ids:
+  - case-dedff48b8a0c5821
+  evidence_ids:
+  - evidence-dedff48b8a0c5821
+  details: 'Source/evidence locators: ["owner-0082.json: two complete corn-meal descriptors,
+    solution318 exact excerpt, six routes and current FOODON material"]'
+- assessment_id: assessment-e333bc3dfe3d3d42
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete DSM16632 REPLACE event explicitly names clarified rumen fluid
+    as the new material and sludge fluid as the old target, with exact DSM119 evidence.
+    The generic clarified-fluid owner preserves the preparation qualification. Support
+    concerns the new named material only; it does not approve same-volume arithmetic,
+    expand medium1310, or make the removed sludge a positive occurrence.
+  target_ids:
+  - case-e333bc3dfe3d3d42
+  evidence_ids:
+  - evidence-e333bc3dfe3d3d42
+  details: 'Source/evidence locators: ["owner-0077.json: full d20e3aab change/66cf718c
+    descriptor and archaeal methanobacterium variant10 source scope", "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf"]'
+- assessment_id: assessment-e59b7d77dabe525d
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All ten complete descriptors explicitly retain clarified rumen fluid, agreeing
+    with the generic preparation-qualified MICRO owner. Exact provider2618/P2 excerpts
+    support the named input; all ten source routes were inspected. Identity support
+    does not approve300/500percent annotations, infer density or universal composition,
+    or treat stock inputs as final-medium doses.
+  target_ids:
+  - case-e59b7d77dabe525d
+  evidence_ids:
+  - evidence-e59b7d77dabe525d
+  details: 'Source/evidence locators: ["owner-0077.json: all ten descriptors, P2 and
+    solutions277/446/453 exact excerpts, ten source routes and current owner"]'
+- assessment_id: assessment-e6f49728f415eef2
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All thirteen complete descriptors preserve the named brain-heart-infusion
+    preparation, with MediaDive compound186 and exact provider ingredient excerpts
+    where present. The candidate itself is the generic BHI preparation concept, so
+    no raw-tissue substitution is made. All22 source routes remain separately retained;
+    support does not equate distinct suppliers or formula batches, approve their doses,
+    or infer a fixed composition.
+  target_ids:
+  - case-e6f49728f415eef2
+  evidence_ids:
+  - evidence-e6f49728f415eef2
+  details: 'Source/evidence locators: ["owner-0049.json: all13 descriptors,22 source
+    routes, MediaDive solution144/470 excerpts and current BHI owner"]'
+- assessment_id: assessment-e8cef33db5eb1ee8
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All eight complete descriptors preserve Co(NO3)2·6H2O, including the two
+    descriptors without embedded ontology fields whose literal formula still specifies
+    the hydrate. The current owner has the same cobalt(II) dinitrate six-water identity;
+    all twelve source routes were inspected. Amount, role and stock-dilution claims
+    are excluded.
+  target_ids:
+  - case-e8cef33db5eb1ee8
+  evidence_ids:
+  - evidence-e8cef33db5eb1ee8
+  details: 'Source/evidence locators: ["owner-0078.json: eight full descriptors, twelve
+    routes ofe8cef33d and current hydrate chemistry"]'
+- assessment_id: assessment-e9f6f790b468582b
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete standalone-stock descriptors retain cobalt nitrate hexahydrate
+    and source excerpts explicitly printing Co(NO3)2·6H2O, agreeing with the owner.
+    Supplier references qualify the same hydrate and introduce no competing form.
+    All three stock routes were inspected; stock amount and receiving-medium conversions
+    are not approved.
+  target_ids:
+  - case-e9f6f790b468582b
+  evidence_ids:
+  - evidence-e9f6f790b468582b
+  details: 'Source/evidence locators: ["owner-0078.json: three full descriptors, UTEX
+    Bold/G9/minor-nutrient source excerpts and three stock routes"]'
+- assessment_id: assessment-ea0c03f694530f78
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All six complete descriptors retain D-arabinose, with compatible CHEBI:17108/CAS10323-20-3
+    and explicit provider1355 D-arabinose naming. All six source routes were inspected.
+    Support preserves D stereochemistry without selecting an unstated ring/anomer
+    or approving concentration.
+  target_ids:
+  - case-ea0c03f694530f78
+  evidence_ids:
+  - evidence-ea0c03f694530f78
+  details: 'Source/evidence locators: ["owner-0100.json: six descriptors, OMIZ-PAT/SGW/soil/solution3069
+    routes and current D-sugar owner"]'
+- assessment_id: assessment-edf194d68c9d39b0
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The case includes Fraction V albumin, but its candidate is generic bovine
+    albumin. The unresolved relation is between the specified supplied fraction and
+    the generic identity, not merely the existence of a supplier or uncertain quantity.
+    The complete unchanged case is withheld with the actual member witness under issue1486;
+    no form is erased or inferred.
+  target_ids:
+  - case-edf194d68c9d39b0
+  evidence_ids:
+  - evidence-edf194d68c9d39b0
+  details: 'Source/evidence locators: ["owner-0047.json: complete six-descriptor scientific
+    display and generic owner; precise blocking witness414f1ecb", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1486"]'
+- assessment_id: assessment-edf8b8254e516059
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All five complete descriptors name creatine/CHEBI:16919, with matching
+    provider763 excerpts and no conflicting hydrate or salt qualification. The owner
+    represents creatine's acyclic structure, distinct from creatinine. All six routes
+    were read; amounts, dilution and growth-factor claims remain outside support.
+  target_ids:
+  - case-edf8b8254e516059
+  evidence_ids:
+  - evidence-edf8b8254e516059
+  details: 'Source/evidence locators: ["owner-0085.json: five descriptors, solutions4240/1672
+    exact excerpts, six routes and current creatine structure/CAS57-00-1"]'
+- assessment_id: assessment-eeaff3d249f6cfda
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors preserve Congo red/CHEBI:34653, and exact
+    MediaDive1708 excerpts name the same dye. The current owner represents the disodium
+    Congo-red material, with no competing source form. All three routes were inspected.
+    Support does not approve0.025g/L or indicator performance.
+  target_ids:
+  - case-eeaff3d249f6cfda
+  evidence_ids:
+  - evidence-eeaff3d249f6cfda
+  details: 'Source/evidence locators: ["owner-0080.json: three complete descriptors,
+    J250/solution3934 exact excerpts, three routes and current dye structure/CAS573-58-0"]'
+- assessment_id: assessment-ef1fb135697ab7fd
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All four complete descriptors retain clarified rumen fluid, including a
+    JCM266 preparation excerpt explicitly describing centrifuged supernatant. The
+    current owner is the corresponding generic clarified material, not unprocessed
+    rumen contents or a fixed recipe. All five source routes were inspected; KOMODO
+    amount assertions, sterilization performance, density and final-medium dose remain
+    outside support.
+  target_ids:
+  - case-ef1fb135697ab7fd
+  evidence_ids:
+  - evidence-ef1fb135697ab7fd
+  details: 'Source/evidence locators: ["owner-0077.json: four complete descriptors
+    and five routes; retained JCM266 and KOMODO161/212 source excerpts"]'
+- assessment_id: assessment-f0b290d112f66b8d
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The sole descriptor's middle-dot formula explicitly denotes BaCl2 with
+    two waters, agreeing with CHEBI:86153 and the current dihydrate owner. Rendering
+    the hydrate separator differently does not change stoichiometry. This supports
+    the hydrate-specific identity, not mineral function or the stated0.1g/L dose.
+  target_ids:
+  - case-f0b290d112f66b8d
+  evidence_ids:
+  - evidence-f0b290d112f66b8d
+  details: 'Source/evidence locators: ["owner-0033.json: descriptor4165c1fc0be15560bfddb5219de14a1f771044bae3b19a3ad7b44e0b1ba7cc6c
+    and TOGO M805 scope", "native row1b973d7e4819028bc45398fb8a205d7bcf6f638c9f51030720ff8cbf3e702e45"]'
+- assessment_id: assessment-f26fdcf7b3f89359
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete2ASW Matsui2018 change retains CO2 as the high-CO2 aeration
+    component, separately from ambient-air treatment. Identity support is gas-component
+    specific and does not approve the entire2ASW formulation, a liquid carbon dose
+    or biological response.
+  target_ids:
+  - case-f26fdcf7b3f89359
+  evidence_ids:
+  - evidence-f26fdcf7b3f89359
+  details: 'Source/evidence locators: ["owner-0064.json: complete change and algae/2asw
+    /variants/0/ingredient_changes/2", "https://doi.org/10.1104/pp.18.00453"]'
+- assessment_id: assessment-f378749c026b393f
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All three complete descriptors name maize meal, the same generic ground-corn
+    material as the current cornmeal owner. The JCM1054 preparation explicitly distinguishes
+    maize input from its subsequent sardine-containing extract. All three routes were
+    read; support does not merge sardine or extracted medium into the meal identity,
+    or approve20g/L/dilution.
+  target_ids:
+  - case-f378749c026b393f
+  evidence_ids:
+  - evidence-f378749c026b393f
+  details: 'Source/evidence locators: ["owner-0082.json: three maize-meal descriptors,
+    solution5116/JCM1054 retained excerpts and three routes"]'
+- assessment_id: assessment-f3f2ce2edf1a2496
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The actually inspected solution884 descriptor retains a literal seven-water
+    source label and an incompatible anhydrous identity field. This concrete witness
+    quarantines the complete unchanged aggregate under1488. The decision does not
+    claim every remaining aggregate descriptor or recipe context was manually read,
+    and does not reinterpret percentage basis, molecular weight or hydration count.
+  target_ids:
+  - case-f3f2ce2edf1a2496
+  evidence_ids:
+  - evidence-f3f2ce2edf1a2496
+  details: 'Source/evidence locators: ["owner-0056.json: complete descriptor6b824d26
+    and current local owner CLOSE_MATCH boundary", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1488"]'
+- assessment_id: assessment-f5b8559d53af9d3b
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: concern
+  summary: The sole descriptor names an NBRC IMK artificial-seawater input without
+    enough formulation information to establish exact preparation identity against
+    the generic MICRO owner. The source label and amount remain intact; withholding
+    does not assert absence or prove that this formulation differs from another. Issue1479.
+  target_ids:
+  - case-f5b8559d53af9d3b
+  evidence_ids:
+  - evidence-f5b8559d53af9d3b
+  details: 'Source/evidence locators: ["owner-0028.json: complete descriptoracc4d209aba3ad543147d64447e67e7a6af146a87bb54757ce650b4f60add10b
+    and current owner", "https://github.com/CultureBotAI/MediaIngredientMech/issues/1479"]'
+- assessment_id: assessment-f5dab94a70b629e6
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both source descriptors and their exact MediaDive ingredient excerpts explicitly
+    specify aluminium sulfate with eighteen waters. The owner preserves this octadecahydrate
+    and matching CHEBI:74779/CAS7784-31-8, rather than anhydrous aluminium sulfate.
+    Support is hydrate-specific and excludes the 0.014 g/L dose or any inferred dilution.
+  target_ids:
+  - case-f5dab94a70b629e6
+  evidence_ids:
+  - evidence-f5dab94a70b629e6
+  details: 'Source/evidence locators: ["owner-0019.json: both complete descriptors,
+    mediumJ1323/solution5484 source excerpts and owner eighteen-water formula", "native
+    row 53749fd66a009ab5067e3f7f0f0028606ab402a17884c2a3f4fd2bea7efa8d5b"]'
+- assessment_id: assessment-f7d9a7ca8d706c4a
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All72 complete descriptors and146 source scopes preserve the named carbon-dioxide
+    component, compatible with CHEBI:16526 and the maintained molecular owner. TOGO
+    gas labels and retained recipe excerpts identify the component without establishing
+    the containing mixture's identity. Null or variable amounts remain unknown rather
+    than zero, and gas percentages are not converted into liquid concentrations. Support
+    excludes dose, pressure and physiological claims.
+  target_ids:
+  - case-f7d9a7ca8d706c4a
+  evidence_ids:
+  - evidence-f7d9a7ca8d706c4a
+  details: 'Source/evidence locators: ["owner-0064.json: all72 descriptors, all146
+    scopes of f7d9a7ca and current CO2 owner"]'
+- assessment_id: assessment-f92646ca40de10a3
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both complete descriptors explicitly name Co(NO3)2 x6H2O and CHEBI:86214,
+    matching the current hexahydrate owner. Both stock/ingredient routes were inspected,
+    including the JCM149 amount note. Hydrate identity support does not validate49.4g/L
+    or24.8mg/L as interchangeable amounts or imply a working dose.
+  target_ids:
+  - case-f92646ca40de10a3
+  evidence_ids:
+  - evidence-f92646ca40de10a3
+  details: 'Source/evidence locators: ["owner-0078.json: both descriptors, both routes
+    off92646ca and current hydrate owner"]'
+- assessment_id: assessment-fb7825971b329722
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: The complete MOPS-rich-medium descriptor names the 4-hydroxy free acid,
+    with CHEBI:30763 and CAS 99-96-7 agreeing with the owner. Capitalization changes
+    no positional or supplied-form information. Identity support excludes its 0.01
+    mM amount and any role or growth assertion.
+  target_ids:
+  - case-fb7825971b329722
+  evidence_ids:
+  - evidence-fb7825971b329722
+  details: 'Source/evidence locators: ["owner-0012.json: descriptor de14a97740ab1d704ff81b21d4e36fe5be3bd90b136b0591f427a764458a9fb8,
+    mops_rich_defined_media_nocarbon scope and owner CAS/structure", "native row 93b1e25739190367c212cc75dbc4fad00b7a6cfc406804e0c95a9f5b9beb7b83"]'
+- assessment_id: assessment-fc601e133874bed7
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: All seven complete descriptors identify cytidine with compatible CHEBI:17562/CAS65-46-3,
+    agreeing with the current riboside owner rather than cytosine or a phosphorylated
+    nucleotide. All fifteen source routes were inspected. Identity support excludes
+    amount, dilution and nutritional effects.
+  target_ids:
+  - case-fc601e133874bed7
+  evidence_ids:
+  - evidence-fc601e133874bed7
+  details: 'Source/evidence locators: ["owner-0094.json: seven descriptors, fifteen
+    TOGO/NLDM/SGW/soil routes and current cytidine structure"]'
+- assessment_id: assessment-fe345dbc05b393c7
+  area: identity
+  topic: Exact source binding to the native canonical-eligible owner
+  outcome: supported
+  summary: Both source descriptors preserve the L-proline backbone and 4-hydroxyl
+    position of CHEBI:18240. The owner likewise leaves the hydroxyl-bearing stereocentre
+    unspecified; no trans/cis or extra stereochemical narrowing is inferred. Identity
+    binding excludes the two supplied millimolar amounts.
+  target_ids:
+  - case-fe345dbc05b393c7
+  evidence_ids:
+  - evidence-fe345dbc05b393c7
+  details: 'Source/evidence locators: ["owner-0011.json: both complete descriptors
+    and basal_synthetic_medium_vitamins/cdm_lp source scopes", "owner chemical_properties
+    InChI t3?,4- and exact native row 0d71cc9ff66a9e765e2d66cd377afc7846d950a51457b0a076435b2437a1a9c8"]'
+findings:
+- finding_id: withhold-022ccc2cc9a596c4
+  issue_key: culturemech-intake-binding-022ccc2cc9a596c4
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: cholesterol lipid concentrate'
+  description: Both complete descriptors, source routes and the pending-component-curation
+    stock owner were inspected. Exact source preparation correspondence remains unresolved;
+    numeric cross-prefix agreement and a narrow cholesterol mapping do not establish
+    concentrate equivalence. Withhold the unchanged case under1498, without claiming
+    different compositions or converting the concentrate into pure cholesterol. Amount
+    fields remain retained and unapproved.
+  target_ids:
+  - case-022ccc2cc9a596c4
+  evidence_ids:
+  - evidence-022ccc2cc9a596c4
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1498
+- finding_id: withhold-049c670f2bb6779c
+  issue_key: culturemech-intake-binding-049c670f2bb6779c
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: D-glucuronic acid'
+  description: Both complete descriptors and both OMIZ-PAT/solution3067 routes were
+    inspected. The explicit sodium-salt qualifier conflicts with exact free-acid identity;
+    the owner's raw synonym does not resolve the counter-ion. Withhold the unchanged
+    aggregate under1512 without inventing a replacement salt/hydrate identifier or
+    approving concentration.
+  target_ids:
+  - case-049c670f2bb6779c
+  evidence_ids:
+  - evidence-049c670f2bb6779c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucuronic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1512
+- finding_id: withhold-0f739a012bbda9c0
+  issue_key: culturemech-intake-binding-0f739a012bbda9c0
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Aminoacids'
+  description: The complete descriptor names MediaDive Aminoacids stock at 10 percent
+    v/v but additionally grounds it to the amino-acid chemical class. The current
+    owner explicitly preserves a source-specific STOCK_SOLUTION with unknown composition.
+    Native own-registry support does not resolve this conflicting embedded descriptor
+    identity. All three source composition occurrences remain retained and withheld
+    under issue1475.
+  target_ids:
+  - case-0f739a012bbda9c0
+  evidence_ids:
+  - evidence-0f739a012bbda9c0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Aminoacids.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /chebi_term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1475
+- finding_id: withhold-18a6e6ba3c4a165f
+  issue_key: culturemech-intake-binding-18a6e6ba3c4a165f
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Artificial seawater (see below)'
+  description: The unresolved preparation pointer prevents exact mixture identity
+    support. A generic artificial-seawater category is not evidence that the source-specific
+    formulation equals one maintained ingredient preparation. The entire case remains
+    retained and withheld pending source formulation binding; no composition or volume
+    conversion is invented. Issue1479.
+  target_ids:
+  - case-18a6e6ba3c4a165f
+  evidence_ids:
+  - evidence-18a6e6ba3c4a165f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /preferred_term
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1479
+- finding_id: withhold-1c4bde9e3cd430ba
+  issue_key: culturemech-intake-binding-1c4bde9e3cd430ba
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Beef'
+  description: Both complete descriptors explicitly specify a dehydrated beef infusion.
+    The current candidate denotes beef meat rather than that prepared extraction product.
+    Exact label agreement cannot erase the retained preparation note; all source occurrences
+    remain withheld under issue1482, without inferring extraction yield or composition.
+  target_ids:
+  - case-1c4bde9e3cd430ba
+  evidence_ids:
+  - evidence-1c4bde9e3cd430ba
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1482
+- finding_id: withhold-1e00b1674fa1397a
+  issue_key: culturemech-intake-binding-1e00b1674fa1397a
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Artificial Sea Salt'
+  description: The current owner is a composition-unknown local preparation sourced
+    from MediaDive2146. Other source descriptors retain that accession, but the inspected
+    blocking descriptor supplies only a generic mixture name and dose; exact preparation
+    correspondence across the complete case is unproven. The whole unchanged case
+    is withheld without claiming that the formulations necessarily differ or replacing
+    the mixture with pure salts. Issue1479 retains the follow-up.
+  target_ids:
+  - case-1e00b1674fa1397a
+  evidence_ids:
+  - evidence-1e00b1674fa1397a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /preferred_term
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1479
+- finding_id: withhold-25a05580d9b99ba9
+  issue_key: culturemech-intake-binding-25a05580d9b99ba9
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Ascorbate'
+  description: All four complete descriptors explicitly retain an L-ascorbate cross-reference
+    but the propagated term and candidate owner are generic ascorbate. The bare-anion
+    protonation convention does not authorize removing an explicit stereochemical
+    qualifier. The seven occurrences and the MediaDB289 unavailable-amount statement
+    remain intact; no narrower identity is automatically substituted. WITHHOLD pending
+    source-specific resolution under issue1474.
+  target_ids:
+  - case-25a05580d9b99ba9
+  evidence_ids:
+  - evidence-25a05580d9b99ba9
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ascorbate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1474
+- finding_id: withhold-2d46189d88f9e0a4
+  issue_key: culturemech-intake-binding-2d46189d88f9e0a4
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Cr2(SO4)3 x n H2O'
+  description: Both complete descriptors and three routes were inspected. Their variable-hydrate
+    label and embedded anhydrous grounding remain unreconciled despite the matching
+    local resolver result. Withhold the unchanged aggregate under1502 without assigning
+    a water count, molecular weight or replacement chemical identity.
+  target_ids:
+  - case-2d46189d88f9e0a4
+  evidence_ids:
+  - evidence-2d46189d88f9e0a4
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1502
+- finding_id: withhold-2f256c77fff65edd
+  issue_key: culturemech-intake-binding-2f256c77fff65edd
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: CO2'
+  description: Preserve the existing SOURCE_CLAIM/IDENTITY_FORM/QUANTITY hold for
+    this exact ATCC1490 carbonate/CO2-buffered mention. The complete held payload
+    and source route were read; its unresolved source claim cannot be converted into
+    verified CO2 identity or presence merely because the label names CO2. No new identity,
+    dose, or buffering mechanism is inferred.
+  target_ids:
+  - case-2f256c77fff65edd
+  evidence_ids:
+  - evidence-2f256c77fff65edd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /reason
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+- finding_id: withhold-3c4294ebef0cd697
+  issue_key: culturemech-intake-binding-3c4294ebef0cd697
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Bovine serum albumin'
+  description: All fourteen scientific descriptor payloads and sixteen source scopes
+    were inspected. The aggregate mixes qualified Fraction V and liquid supplied preparations
+    with plain protein entries, while the candidate's native contract distinguishes
+    those supplied forms from exact generic synonyms. Whole-case WITHHOLD preserves
+    this unresolved form relation under issue1486. It does not imply that a quantity-only
+    uncertainty disproves BSA solute identity, nor demote the separate unqualified
+    case.
+  target_ids:
+  - case-3c4294ebef0cd697
+  evidence_ids:
+  - evidence-3c4294ebef0cd697
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1486
+- finding_id: withhold-47508a3adea64241
+  issue_key: culturemech-intake-binding-47508a3adea64241
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Carbon source solution'
+  description: The complete sole descriptor and current local stock owner were inspected.
+    The owner explicitly awaits component-level curation, and numeric accession agreement
+    across two prefixes is not independent supplied-preparation evidence. Withhold
+    the unchanged case under1490 without claiming the stocks are demonstrably different,
+    inventing components, or substituting a carbon role/element identity.
+  target_ids:
+  - case-47508a3adea64241
+  evidence_ids:
+  - evidence-47508a3adea64241
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_Source_Solution.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1490
+- finding_id: withhold-5bcb2af0997a7423
+  issue_key: culturemech-intake-binding-5bcb2af0997a7423
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Beef heart'
+  description: The complete case includes an explicit heart infusion constituent,
+    but its candidate is whole beef heart and its embedded term denotes heart anatomy.
+    Preparing an infusion changes the supplied material scope; matching a tissue label
+    cannot prove identity. All158 occurrence coordinates remain retained and withheld
+    under issue1482; this does not claim all158 individual recipe contexts were manually
+    read.
+  target_ids:
+  - case-5bcb2af0997a7423
+  evidence_ids:
+  - evidence-5bcb2af0997a7423
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef_Heart.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1482
+- finding_id: withhold-623dde3c257babbb
+  issue_key: culturemech-intake-binding-623dde3c257babbb
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Copper'
+  description: Both complete TAP descriptors and both routes were inspected. Their
+    copper(2+) grounding is not reconciled by the generic-label/local-ID candidate.
+    Preserve both occurrences but withhold this aggregate under1501 pending source-specific
+    species resolution; do not assert which copper ion or salt was physically supplied.
+  target_ids:
+  - case-623dde3c257babbb
+  evidence_ids:
+  - evidence-623dde3c257babbb
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Copper.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1501
+- finding_id: withhold-676e27f90f2ca371
+  issue_key: culturemech-intake-binding-676e27f90f2ca371
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: CaCl2 . 7H2O'
+  description: The complete descriptor's hydration label and embedded identity remain
+    inconsistent. The maintained local seven-water source identity does not resolve
+    that anhydrous grounding, so this entire unchanged case is withheld under1488
+    without selecting another hydrate or inferring a verified chemical substance from
+    the literal count.
+  target_ids:
+  - case-676e27f90f2ca371
+  evidence_ids:
+  - evidence-676e27f90f2ca371
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1488
+- finding_id: withhold-7816d9ac4687571c
+  issue_key: culturemech-intake-binding-7816d9ac4687571c
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: 0.5 M Nitrilotriacetic acid, disodium salt'
+  description: 'The final descriptors name a 0.5 M disodium NTA preparation but both
+    embed CHEBI:132766, the trisodium pure salt, in term and mediaingredientmech_chebi_term.
+    The candidate MIM registry stock explicitly separates that disodium preparation
+    from trisodium NTA and rejects the latter aliases. Resolver agreement cannot remove
+    this source-form conflict. Both occurrences are retained; no stock-to-solute replacement
+    or conversion of the conflicting 4.8 g/L versus 4.8 mL input is approved. Follow-up:
+    CultureMech #792.'
+  target_ids:
+  - case-7816d9ac4687571c
+  evidence_ids:
+  - evidence-7816d9ac4687571c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/CultureMech/issues/792
+- finding_id: withhold-7ced97de79fe3814
+  issue_key: culturemech-intake-binding-7ced97de79fe3814
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: D-Mannose'
+  description: All eleven complete descriptors and twelve routes were read. One member
+    contains an explicit unresolved D/L source conflict, so the whole unchanged aggregate
+    is withheld under1513 while every occurrence remains available. This is not a
+    claim that the other eleven routes have the same conflict; no concentration or
+    D/L resolution is guessed.
+  target_ids:
+  - case-7ced97de79fe3814
+  evidence_ids:
+  - evidence-7ced97de79fe3814
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-mannose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1513
+- finding_id: withhold-8ee01e4e5b7445f5
+  issue_key: culturemech-intake-binding-8ee01e4e5b7445f5
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: D-Glucose 6-phosphate'
+  description: The complete base descriptor and corresponding source correction were
+    read. Exact source binding to the D-specific owner would certify an unsupported
+    stereochemical narrowing for the actual reagent. Withhold this unchanged base
+    case under1511, preserving the separate historical old-target context and every
+    input row.
+  target_ids:
+  - case-8ee01e4e5b7445f5
+  evidence_ids:
+  - evidence-8ee01e4e5b7445f5
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucose_6-phosphate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /preferred_term
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1511
+- finding_id: withhold-b28cdde06366ce79
+  issue_key: culturemech-intake-binding-b28cdde06366ce79
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Artificial seawater'
+  description: The inspected opaque NBRC1273 preparation is sufficient to block an
+    exact preparation-identity binding for this grouped case. The retained packet
+    includes other named source seawater matrices, but no single composition or equivalence
+    is inferred. All occurrences remain available; the generic category can guide
+    follow-up without granting exact identity. Issue1479.
+  target_ids:
+  - case-b28cdde06366ce79
+  evidence_ids:
+  - evidence-b28cdde06366ce79
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1479
+- finding_id: withhold-d93455d8e1131d6e
+  issue_key: culturemech-intake-binding-d93455d8e1131d6e
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: DL vitamins (see below)'
+  description: The complete descriptor, A1 source route, full owner component recipe
+    and primary JCM512 DL-vitamin recipe were inspected. Exact prepared-stock identity
+    remains unresolved because of concentration-basis and thiamine-HCl versus thiamine
+    discrepancies. Withhold under1514 without silently applying a dilution or treating
+    the imported10g/L as a valid primary amount.
+  target_ids:
+  - case-d93455d8e1131d6e
+  evidence_ids:
+  - evidence-d93455d8e1131d6e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL_Vitamins.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /preferred_term
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1514
+- finding_id: withhold-edf194d68c9d39b0
+  issue_key: culturemech-intake-binding-edf194d68c9d39b0
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Bovine albumin'
+  description: The case includes Fraction V albumin, but its candidate is generic
+    bovine albumin. The unresolved relation is between the specified supplied fraction
+    and the generic identity, not merely the existence of a supplier or uncertain
+    quantity. The complete unchanged case is withheld with the actual member witness
+    under issue1486; no form is erased or inferred.
+  target_ids:
+  - case-edf194d68c9d39b0
+  evidence_ids:
+  - evidence-edf194d68c9d39b0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /notes
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1486
+- finding_id: withhold-f3f2ce2edf1a2496
+  issue_key: culturemech-intake-binding-f3f2ce2edf1a2496
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: CaCl2 x 7 H2O'
+  description: The actually inspected solution884 descriptor retains a literal seven-water
+    source label and an incompatible anhydrous identity field. This concrete witness
+    quarantines the complete unchanged aggregate under1488. The decision does not
+    claim every remaining aggregate descriptor or recipe context was manually read,
+    and does not reinterpret percentage basis, molecular weight or hydration count.
+  target_ids:
+  - case-f3f2ce2edf1a2496
+  evidence_ids:
+  - evidence-f3f2ce2edf1a2496
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /chebi_term/id
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1488
+- finding_id: withhold-f5b8559d53af9d3b
+  issue_key: culturemech-intake-binding-f5b8559d53af9d3b
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Source binding withheld: Artificial Seawater'
+  description: The sole descriptor names an NBRC IMK artificial-seawater input without
+    enough formulation information to establish exact preparation identity against
+    the generic MICRO owner. The source label and amount remain intact; withholding
+    does not assert absence or prove that this formulation differs from another. Issue1479.
+  target_ids:
+  - case-f5b8559d53af9d3b
+  evidence_ids:
+  - evidence-f5b8559d53af9d3b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  field_paths:
+  - /source
+  disposition_reason: The complete unchanged case is quarantined; inspected member
+    hashes and actual blocking witnesses remain in the durable decision JSON.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1479
+actions:
+- action_id: reconcile-withhold-022ccc2cc9a596c4
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-022ccc2cc9a596c4
+  target_ids:
+  - case-022ccc2cc9a596c4
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-049c670f2bb6779c
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-049c670f2bb6779c
+  target_ids:
+  - case-049c670f2bb6779c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucuronic_Acid.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-0f739a012bbda9c0
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-0f739a012bbda9c0
+  target_ids:
+  - case-0f739a012bbda9c0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Aminoacids.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-18a6e6ba3c4a165f
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-18a6e6ba3c4a165f
+  target_ids:
+  - case-18a6e6ba3c4a165f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-1c4bde9e3cd430ba
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-1c4bde9e3cd430ba
+  target_ids:
+  - case-1c4bde9e3cd430ba
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-1e00b1674fa1397a
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-1e00b1674fa1397a
+  target_ids:
+  - case-1e00b1674fa1397a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-25a05580d9b99ba9
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-25a05580d9b99ba9
+  target_ids:
+  - case-25a05580d9b99ba9
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ascorbate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-2d46189d88f9e0a4
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-2d46189d88f9e0a4
+  target_ids:
+  - case-2d46189d88f9e0a4
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-2f256c77fff65edd
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-2f256c77fff65edd
+  target_ids:
+  - case-2f256c77fff65edd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_dioxide_gas.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-3c4294ebef0cd697
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-3c4294ebef0cd697
+  target_ids:
+  - case-3c4294ebef0cd697
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-47508a3adea64241
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-47508a3adea64241
+  target_ids:
+  - case-47508a3adea64241
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Carbon_Source_Solution.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-5bcb2af0997a7423
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-5bcb2af0997a7423
+  target_ids:
+  - case-5bcb2af0997a7423
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beef_Heart.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-623dde3c257babbb
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-623dde3c257babbb
+  target_ids:
+  - case-623dde3c257babbb
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Copper.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-676e27f90f2ca371
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-676e27f90f2ca371
+  target_ids:
+  - case-676e27f90f2ca371
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-7816d9ac4687571c
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-7816d9ac4687571c
+  target_ids:
+  - case-7816d9ac4687571c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-7ced97de79fe3814
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-7ced97de79fe3814
+  target_ids:
+  - case-7ced97de79fe3814
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-mannose.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-8ee01e4e5b7445f5
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-8ee01e4e5b7445f5
+  target_ids:
+  - case-8ee01e4e5b7445f5
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucose_6-phosphate.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-b28cdde06366ce79
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-b28cdde06366ce79
+  target_ids:
+  - case-b28cdde06366ce79
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-d93455d8e1131d6e
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-d93455d8e1131d6e
+  target_ids:
+  - case-d93455d8e1131d6e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL_Vitamins.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-edf194d68c9d39b0
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-edf194d68c9d39b0
+  target_ids:
+  - case-edf194d68c9d39b0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bovine_Albumin.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-f3f2ce2edf1a2496
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-f3f2ce2edf1a2496
+  target_ids:
+  - case-f3f2ce2edf1a2496
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cacl2_X_7_H2o.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+- action_id: reconcile-withhold-f5b8559d53af9d3b
+  description: Reconcile the exact source-to-owner identity discrepancy before replacing
+    this WITHHOLD disposition; preserve the frozen intake.
+  finding_ids:
+  - withhold-f5b8559d53af9d3b
+  target_ids:
+  - case-f5b8559d53af9d3b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_seawater.yaml
+    role: Maintained candidate identity; frozen source corrections belong in CultureMech
+  acceptance_checks:
+  - Inspect the exact blocking witness and its primary source; do not infer salt,
+    hydrate, stereochemistry or preparation equivalence from label matching.
+  - Any corrected source/owner must receive a new payload-bound review and regenerated
+    native supported/withheld products; preserve this observation unchanged.
+limitations:
+- Report-consolidation timestamps are recorded here; the case-level scientific inspection
+  occurred during the preceding2026-11-16/17 session and is preserved in the explicit
+  decisions and source locators.
+- Canonical eligibility is the separately pinned native2026-09-21 mapping review;
+  this review does not create a new global SSSOM release or adopt the active campaign.
+- Identity support excludes dose, growth, whole-stock equivalence and unspecified
+  supplied forms except where the individual reason explicitly establishes the scoped
+  material correspondence.
+- Per-case WITHHOLD inspected hashes are the authoritative minimum coverage; a blocking
+  witness may quarantine an aggregate without claiming unread payloads were reviewed.
+- Prepared intake, full owner packets and original producer remain immutable ignored
+  evidence; the durable decisions retain their exact hashes and source pins. Final
+  native intake finalization and independent product/QC verification remain required.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1453
+- https://github.com/CultureBotAI/MediaIngredientMech/pull/1460
+```
