@@ -1,4 +1,4 @@
-generation_date: '2026-11-03T06:18:42.852366+00:00'
+generation_date: '2026-11-08T02:36:44.839158+00:00'
 total_count: 2681
 mapped_count: 2611
 unmapped_count: 0
@@ -162408,6 +162408,9 @@ ingredients:
   - synonym_text: Sodium acetate·3H2O
     synonym_type: RAW_TEXT
     source: MERGED_FROM_kgmicrobe.compound:sodium_acetate3h2o
+  - synonym_text: Na acetate x 3 H2O
+    synonym_type: HYDRATE_FORM
+    source: https://mediadive.dsmz.de/download/ingredient/1315/json
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 116
@@ -162481,6 +162484,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-11-08T02:30:29.266291+00:00'
+    curator: claude
+    action: ADDED_SOURCE_ALIAS
+    changes: 'MediaDive ingredient 1315 explicitly pairs Na acetate x 3 H2O with CAS
+      6131-90-4; ChEBI:32138 and PubChem CID23665404 corroborate sodium acetate trihydrate.
+      Retain MediaDive''s discrepant hydrogen count in archived source evidence; do
+      not copy it into chemistry. Add only the exact source spelling, with no change
+      to identity, role, occurrence count, supplied form or prior history. #1149.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   chemical_properties:
     cas_rn: 6131-90-4
     data_source: PubChem API

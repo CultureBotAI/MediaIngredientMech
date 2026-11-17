@@ -1,0 +1,91 @@
+{
+  "scripts": {
+    "scripts/curate_mediadive_acetate_alias.py": "3c0087a02c42c4555fb64191ab609a3464b797d991919883667a271a027f1f0e",
+    "scripts/publish_mediadive_acetate_alias.py": "624aaa31aaa203cbe79ab14dca398a6212c39267ff14a213706165eaf6d9a776"
+  },
+  "results": [
+    {
+      "returned_success": true,
+      "case": "owner_hardlink",
+      "before_sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+      "owner_after_sha256": "e40c53508299872bd9c72067421e3b08329ff5fb88925e099fa9f8bf911def0f",
+      "unrelated_after_sha256": "e40c53508299872bd9c72067421e3b08329ff5fb88925e099fa9f8bf911def0f",
+      "unrelated_modified": true
+    },
+    {
+      "returned_success": true,
+      "case": "canonical_hardlink",
+      "before_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+      "canonical_after_sha256": "2cc823b8df8db8ec0390762aa58d4fbebd2d6bdd2ca1654f64f7638af75e8f91",
+      "unrelated_after_sha256": "2cc823b8df8db8ec0390762aa58d4fbebd2d6bdd2ca1654f64f7638af75e8f91",
+      "unrelated_modified": true
+    },
+    {
+      "returned_success": true,
+      "case": "late_manifest_change",
+      "original_manifest_sha256": "b751d3bfe91fb3c8556620e990aef93afae88191ca9cd8bfff4872898a2816cd",
+      "mutated_manifest_sha256": "d812fa4e15964a14748ff865dabda7c13e9592c287bece5c14789ccb0bbf86e9",
+      "mutated_manifest_declares_validation": "FAILED",
+      "receipt": {
+        "issue": 1149,
+        "approval": "NONE",
+        "owner_sha256": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376",
+        "native_manifest_sha256": "d812fa4e15964a14748ff865dabda7c13e9592c287bece5c14789ccb0bbf86e9",
+        "native_candidate_sha256": "0a5697d67e4bf19367a74d3ac4a29b101f13b17c8da672745451b3fb585f79db",
+        "before_sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+        "after_before_header_sha256": "2cc823b8df8db8ec0390762aa58d4fbebd2d6bdd2ca1654f64f7638af75e8f91",
+        "canonical_source": "mappings/ingredient_mappings.sssom.tsv",
+        "row_projection": {
+          "before": {
+            "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+            "subject_label": "Sodium acetate trihydrate",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:32138",
+            "object_label": "sodium acetate trihydrate",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=merge_minted_hydrate_duplicates]|kgm:mediaingredientmech_reviewed[curator=synonym_expansion_cbclaw]",
+            "mapping_date": "2026-08-27",
+            "confidence": "0.8",
+            "comment": "",
+            "other": "Na-acetate x 3 H2O|Sodium acetate x 3 H2O|sodium acetate--water (1/3)|Sodium acetate\u00b73H2O|CAS:6131-90-4",
+            "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+          },
+          "native_candidate": {
+            "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+            "subject_label": "Sodium acetate trihydrate",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:32138",
+            "object_label": "sodium acetate trihydrate",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureMech|MIM:curator=claude|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "Na-acetate x 3 H2O|Sodium acetate x 3 H2O|sodium acetate--water (1/3)|Sodium acetate\u00b73H2O|Na acetate x 3 H2O|CAS:6131-90-4",
+            "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+          },
+          "after": {
+            "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+            "subject_label": "Sodium acetate trihydrate",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:32138",
+            "object_label": "sodium acetate trihydrate",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=merge_minted_hydrate_duplicates]|kgm:mediaingredientmech_reviewed[curator=synonym_expansion_cbclaw]|MIM:MediaDive ingredient 1315; MIM issue 1149",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.8",
+            "comment": "",
+            "other": "Na-acetate x 3 H2O|Sodium acetate x 3 H2O|sodium acetate--water (1/3)|Sodium acetate\u00b73H2O|CAS:6131-90-4|Na acetate x 3 H2O",
+            "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+          }
+        },
+        "preservation": "Historical confidence, source vocabulary and validation stamp retained; no unrelated row adopted."
+      }
+    }
+  ],
+  "all_fixture_paths": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/reviewer/publication-boundaries-v1",
+  "maintained_files_modified": false
+}

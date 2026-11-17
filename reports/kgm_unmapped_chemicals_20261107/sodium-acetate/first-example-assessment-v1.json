@@ -1,0 +1,477 @@
+{
+  "schema": "bounded-candidate-science-v1",
+  "created_at": "2026-11-08T02:30:26.099876+00:00",
+  "author": "Codex science subagent /root/step7d_science_c; author assessment, not independent final review",
+  "scope": "One complete existing-record alias pilot before any batch",
+  "git_base": "0dac278466699129a083343a921c2e0ca18a9ab4",
+  "target_id": "MIM:Sodium_Acetate_Trihydrate",
+  "owner_path": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+  "owner_sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+  "record": {
+    "identifier": "CHEBI:32138",
+    "preferred_term": "Sodium acetate trihydrate",
+    "ontology_mapping": {
+      "ontology_id": "CHEBI:32138",
+      "ontology_label": "sodium acetate trihydrate",
+      "ontology_source": "CHEBI",
+      "mapping_quality": "EXACT_MATCH",
+      "evidence": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "CultureMech",
+          "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+        }
+      ]
+    },
+    "synonyms": [
+      {
+        "synonym_text": "Role: Buffer; Properties: Organic compound, Defined component, Simple component",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      {
+        "synonym_text": "Role: Buffer; Properties: Organic compound, Simple component, Defined component",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      {
+        "synonym_text": "Na-acetate x 3 H2O",
+        "synonym_type": "HYDRATE_FORM",
+        "source": "manual"
+      },
+      {
+        "synonym_text": "Sodium acetate x 3 H2O",
+        "synonym_type": "HYDRATE_FORM",
+        "source": "manual"
+      },
+      {
+        "synonym_text": "sodium acetate--water (1/3)",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "chebi_synonym_review"
+      },
+      {
+        "synonym_text": "Sodium acetate·3H2O",
+        "synonym_type": "RAW_TEXT",
+        "source": "MERGED_FROM_kgmicrobe.compound:sodium_acetate3h2o"
+      }
+    ],
+    "mapping_status": "MAPPED",
+    "occurrence_statistics": {
+      "total_occurrences": 116,
+      "media_count": 116
+    },
+    "curation_history": [
+      {
+        "timestamp": "2026-03-09T06:54:18.022301+00:00",
+        "curator": "import_from_culturemech",
+        "action": "IMPORTED",
+        "changes": "Initial import from CultureMech pipeline",
+        "new_status": "MAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-04-05T19:53:50.704926+00:00",
+        "curator": "fetch_cas_rn_from_pubchem",
+        "action": "ADDED_CAS_RN",
+        "changes": "Added CAS-RN:6131-90-4 from PubChem API via name lookup (Sodium acetate trihydrate)",
+        "new_status": "MAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-04-17T12:00:00+00:00",
+        "curator": "synonym_expansion_cbclaw",
+        "action": "ADDED_SYNONYMS",
+        "changes": "Added 2 synonyms for unmapped CultureMech surface forms",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-05-01T07:35:36.206070+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-01T08:08:32.294485+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+        "changes": "molecular_formula=C2H3O2.3H2O.Na; inchi=InChI=1S/C2H4O2.Na.3H2O/c1-2(3)4;;;;/h1H3,(H,3,4);; smiles=CC(=O)[O-].[H]O[H].[H]O[H].[H]O[H].[Na+]",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-02T03:12:18.304232+00:00",
+        "curator": "auto_classify_ingredient_type",
+        "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+        "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-29T23:35:36.112795+00:00",
+        "curator": "extract_roles_from_synonyms",
+        "action": "ANNOTATED",
+        "changes": "Added media role: BUFFER (confidence: 1.00)"
+      },
+      {
+        "timestamp": "2026-06-09T05:23:46.832497+00:00",
+        "curator": "correct_stale_ontology_labels.py",
+        "action": "CORRECTED",
+        "changes": "ontology_label 'Sodium acetate trihydrate' -> 'sodium acetate trihydrate': synced to canonical CHEBI label (preferred_term 'Sodium acetate trihydrate' unchanged)."
+      },
+      {
+        "timestamp": "2026-07-20T00:00:00+00:00",
+        "curator": "migrate_media_roles_to_facets",
+        "action": "ANNOTATED",
+        "changes": "Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER"
+      },
+      {
+        "timestamp": "2026-08-13T00:00:00+00:00",
+        "curator": "merge_minted_hydrate_duplicates",
+        "action": "MERGED_FROM",
+        "changes": "Absorbed 'Sodium acetate·3H2O' (#321), which differs from this record only in notation the merge pass does not recognise as the same substance, so it escaped dedup and was grounded to the anhydrous parent. It had just been minted 'kgmicrobe.compound:sodium_acetate3h2o' on the false premise that ChEBI has no term for this hydrate — ChEBI label search for the trihydrate of the minted-off parent. Occurrences 6/6 + 2/2 -> 8/8. Raw label kept as a RAW_TEXT synonym.",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-08-27T03:16:39.519826+00:00",
+        "curator": "refresh_occurrence_statistics",
+        "action": "CORRECTED",
+        "changes": "occurrence_statistics 8/8 -> 116/116 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+      }
+    ],
+    "chemical_properties": {
+      "cas_rn": "6131-90-4",
+      "data_source": "PubChem API",
+      "retrieval_date": "2026-04-05T19:53:50.704884+00:00",
+      "molecular_formula": "C2H3O2.3H2O.Na",
+      "inchi": "InChI=1S/C2H4O2.Na.3H2O/c1-2(3)4;;;;/h1H3,(H,3,4);;3*1H2/q;+1;;;/p-1",
+      "smiles": "CC(=O)[O-].[H]O[H].[H]O[H].[H]O[H].[Na+]"
+    },
+    "kg_microbe_node_id": "CHEBI:32138",
+    "ingredient_type": "SINGLE_INGREDIENT",
+    "physicochemical_roles": [
+      {
+        "role": "BUFFER",
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "reference_type": "DATABASE_ENTRY",
+            "reference_text": "Imported from CultureMech pipeline",
+            "curator_note": "Original role text: Buffer"
+          }
+        ]
+      }
+    ]
+  },
+  "source_target": {
+    "source_id": "mediadive.ingredient:1315",
+    "source_label": "Na acetate x 3 H2O",
+    "native_identity_target": "",
+    "queue_disposition": "STILL_UNMAPPED",
+    "raw_compound_label": "Na acetate x 3 H2O",
+    "raw_compound_id": "1315",
+    "raw_record_found": "True",
+    "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+    "raw_record_json": "{\"amount\": 0.5, \"compound\": \"Na acetate x 3 H2O\", \"compound_id\": 1315, \"g_l\": 0.5, \"optional\": 0, \"recipe_order\": 6, \"unit\": \"g\"}"
+  },
+  "disposition": "PROPOSE_NARROW_ALIAS_ADDITION",
+  "identity_decision": "Evidence supports adding exact raw MediaDive label to the existing sodium acetate trihydrate owner; no new record or identity promotion.",
+  "proposed_operations": [
+    {
+      "op": "append_synonym_if_absent",
+      "value": {
+        "synonym_text": "Na acetate x 3 H2O",
+        "synonym_type": "HYDRATE_FORM",
+        "source": "https://mediadive.dsmz.de/ingredients/1315"
+      }
+    },
+    {
+      "op": "append_curation_history_through_native_writer",
+      "curator": "claude",
+      "llm_assisted": true,
+      "action": "ADDED_SYNONYMS",
+      "changes": "Add source-confirmed MediaDive1315 raw label Na acetate x 3 H2O to existing sodium acetate trihydrate CHEBI32138; source CAS6131-90-4, current ChEBI hydrate structure and PubChemCID23665404 agree. No identity, form, role or status change."
+    }
+  ],
+  "unchanged_fields": [
+    "identifier",
+    "preferred_term",
+    "ontology_mapping",
+    "mapping_status",
+    "chemical_properties",
+    "occurrence_statistics",
+    "kg_microbe_node_id",
+    "ingredient_type",
+    "physicochemical_roles",
+    "all prior synonyms and history"
+  ],
+  "current_canonical_rows": [
+    {
+      "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+      "subject_label": "Sodium acetate trihydrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:32138",
+      "object_label": "sodium acetate trihydrate",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=merge_minted_hydrate_duplicates]|kgm:mediaingredientmech_reviewed[curator=synonym_expansion_cbclaw]",
+      "mapping_date": "2026-08-27",
+      "confidence": "0.8",
+      "comment": "",
+      "other": "Na-acetate x 3 H2O|Sodium acetate x 3 H2O|sodium acetate--water (1/3)|Sodium acetate·3H2O|CAS:6131-90-4",
+      "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+    }
+  ],
+  "current_consumed_disposition": {
+    "source_position": "2556",
+    "row_sha256": "0db2d944a0f53ddab08db2c729e1ed2ef6927f2cac9d6b2dc57f9b9d2ed9cc2e",
+    "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+    "predicate_id": "skos:exactMatch",
+    "object_id": "CHEBI:32138",
+    "owner_record": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+    "owner_record_sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+    "disposition": "SUPPORTED",
+    "review_reason": "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.",
+    "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+    "evidence_key": "2556"
+  },
+  "new_other_tokens": [
+    "Na-acetate x 3 H2O",
+    "Sodium acetate x 3 H2O",
+    "sodium acetate--water (1/3)",
+    "Sodium acetate·3H2O",
+    "CAS:6131-90-4",
+    "Na acetate x 3 H2O"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "mediadive-1315",
+      "source_kind": "primary database assertion",
+      "url": "https://mediadive.dsmz.de/download/ingredient/1315/json",
+      "capture": "science/first-example-captures-v2/mediadive-1315.json",
+      "sha256": "93d213c95d4619c2135836a993d13ed54229f3920a241147d5f4e0eb69bf5d72",
+      "accessed_at": "2026-11-08T02:26:56.068872+00:00"
+    },
+    {
+      "evidence_id": "chebi-32138",
+      "source_kind": "primary database assertion",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_32138",
+      "capture": "science/first-example-captures-v2/chebi-32138.json",
+      "sha256": "360383e4c9a6f04c00a315b76ca0a0bbf59e93638368db930e67acec7e1dd388",
+      "accessed_at": "2026-11-08T02:26:56.983671+00:00"
+    },
+    {
+      "evidence_id": "pubchem-cas6131-synonyms",
+      "source_kind": "primary database assertion",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6131-90-4/synonyms/JSON",
+      "capture": "science/first-example-captures-v2/pubchem-cas6131-synonyms.json",
+      "sha256": "5035690cedd4523533fd1023e1bfd9d92f4a90841101d551fb96f6371d4b0072",
+      "accessed_at": "2026-11-08T02:26:57.606269+00:00"
+    }
+  ],
+  "rubric": [
+    {
+      "dimension": "identity",
+      "outcome": "supported",
+      "assessment": "Current live owner CHEBI:32138 names sodium acetate trihydrate. MediaDive1315 explicitly names three waters and gives CAS6131-90-4; current ChEBI xref and PubChem CID23665404 concur. No identity, salt, stereo or hydration change."
+    },
+    {
+      "dimension": "mapping",
+      "outcome": "supported",
+      "assessment": "Keep identifier, ontology_id CHEBI:32138, canonical label sodium acetate trihydrate, skos:exactMatch, EXACT_MATCH grade and MAPPED status. This proposal adds an independently confirmed raw-source synonym; it does not regrade original lexical grounding to CAS_RN_LOOKUP."
+    },
+    {
+      "dimension": "synonyms",
+      "outcome": "supported with export qualification",
+      "assessment": "Existing five canonical tokens are same-hydrate names or CAS6131-90-4: Na-acetate x 3 H2O; Sodium acetate x 3 H2O; sodium acetate--water (1/3); Sodium acetate·3H2O; CAS:6131-90-4. Proposed sixth token is Na acetate x 3 H2O. Two YAML Role:/Properties: strings are provenance-only raw text and correctly absent from canonical other; retain them without publishing as names. Search of every per-record YAML, including ignored paths, found no other exact casefold owner or synonym for the new token."
+    },
+    {
+      "dimension": "supplied_form",
+      "outcome": "supported",
+      "assessment": "The target is the solid trihydrate scope, not generic sodium acetate or a molarity-qualified stock solution. No new supplied_form or catalogue is inferred. Raw admitted MediaDive occurrence is0.5g and g_l0.5, without solution-qualifier attribute."
+    },
+    {
+      "dimension": "chemical_properties",
+      "outcome": "supported with source caveat",
+      "assessment": "Current CAS, formula C2H3O2.3H2O.Na, InChI and SMILES agree exactly with inspected current ChEBI32138. MediaDive JSON spells formula C2H4O2.3H2O.Na (one excessH); do not copy that automated metadata. Name, CAS and hydration agree independently. Preserve all current chemistry values and history."
+    },
+    {
+      "dimension": "components",
+      "outcome": "not applicable",
+      "assessment": "SINGLE_INGREDIENT has no components/component_assertion. Hydration is retained in chemical identity and structure, not invented mixture partonomy."
+    },
+    {
+      "dimension": "roles",
+      "outcome": "not newly approved",
+      "assessment": "Existing BUFFER role retains CultureMech DATABASE_ENTRY/import provenance. No source recipe-specific buffering performance or organism-dependent role was independently established in this bounded identity/alias review. No role approval, new role, role deletion or release of role claims is proposed."
+    },
+    {
+      "dimension": "occurrences",
+      "outcome": "preserve source-bound historical and maintained counts",
+      "assessment": "YAML total/media count is116/116 with dated CultureMech revision15a4da5c08 event. Current recipe-membership table has122 rows for CHEBI32138; generated indexes expose122. These are distinct historical/count surfaces and no occurrence refresh is proposed here. Fresh MediaDive queue occurrences are hard-coded and are not measured recipe frequencies. Source ID1315 and admitted raw record retained."
+    },
+    {
+      "dimension": "environment",
+      "outcome": "not applicable",
+      "assessment": "No environmental_context exists on the exact record and no environment claim is inferred."
+    },
+    {
+      "dimension": "discussions_and_datasets",
+      "outcome": "no new claims",
+      "assessment": "No discussions or dataset payload occurs on this exact record. Current record, prior full record report and relevant issues were read; this does not erase wider historical backlog."
+    },
+    {
+      "dimension": "audit_and_prior_decisions",
+      "outcome": "supported with immutable history",
+      "assessment": "Preserve eleven existing curation events. #321/#334/#341 establish hydrate-specific identity and prior merge target; their historical narrowMatch wording is superseded by current semantics. #1025 preserves preparation-qualified source-fallback holds and does not authorize conflation. hydrate_review.tsv1315 required source confirmation; current primary MediaDive/ChEBI/PubChem supplies that confirmation for this exact raw label only."
+    },
+    {
+      "dimension": "release_boundary",
+      "outcome": "new content-bound review required",
+      "assessment": "Exact consumed official export0dac currently SUPPORTS the byte-identical row and ownerhashf5ffd70e. Adding a synonym/history changes owner and row bytes, so inherited content-bound support does not transfer automatically. This assessment supports only the exact identity plus all six same-hydrate tokens; publisher must use native content-bound followup and keep all unrelated holds/roles unchanged."
+    }
+  ],
+  "current_checks": [
+    {
+      "name": "inspect",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "scripts/record_review.py",
+        "inspect",
+        "--targets",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/first-example-validation-v1/targets.json",
+        "--input",
+        "MAPPING_SEMANTICS.md",
+        "--input",
+        "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "--input",
+        "mappings/ingredient_mappings.sssom.tsv",
+        "--input",
+        "data/curated/mapped_ingredients.yaml"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree",
+      "finished_at": "2026-11-08T02:28:38.601969+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "c9923c481c8a2348648bab5b45ca68e67cead2c0a5dcd4af0cdec64684974152",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "strict",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "scripts/validate_strict.py",
+        "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/first-example-validation-v1/strict-errors.tsv",
+        "--workers",
+        "1"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree",
+      "finished_at": "2026-11-08T02:28:39.537203+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fee3124e1aefbbd192e5bdd7887484dc52542f0b9978771a39ddf9ad562e1276"
+    },
+    {
+      "name": "terms",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/linkml-term-validator",
+        "validate-data",
+        "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+        "-s",
+        "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "-t",
+        "IngredientRecord",
+        "--labels"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree",
+      "finished_at": "2026-11-08T02:28:40.775209+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "native_inspect": {
+    "status": "inspection_only",
+    "repository": "CultureBotAI/MediaIngredientMech",
+    "source": {
+      "git_revision": "0dac278466699129a083343a921c2e0ca18a9ab4",
+      "state": "working_tree",
+      "inputs": [
+        {
+          "path": "MAPPING_SEMANTICS.md",
+          "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+          "role": "context"
+        },
+        {
+          "path": "data/curated/mapped_ingredients.yaml",
+          "sha256": "774718362b921a560f8474a5d77874f2779e44ac5a6afc992040084a701ea628",
+          "role": "context"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+          "sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+          "role": "target"
+        },
+        {
+          "path": "mappings/ingredient_mappings.sssom.tsv",
+          "sha256": "d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6",
+          "role": "context"
+        },
+        {
+          "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+          "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+          "role": "context"
+        }
+      ]
+    },
+    "targets": [
+      {
+        "target_id": "MIM:Sodium_Acetate_Trihydrate",
+        "path": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+        "label": "Sodium acetate trihydrate",
+        "kind": "record",
+        "owner_paths": [
+          {
+            "repository": "CultureBotAI/MediaIngredientMech",
+            "path": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+            "role": "maintained ingredient record"
+          }
+        ]
+      }
+    ]
+  },
+  "current_search": {
+    "scope": "All data/ingredients/**/*.yaml via Path.rglob, including ignored files; labels and every typed synonym inspected, casefold exact",
+    "new_token_hits": [],
+    "aggregate_equal": true
+  },
+  "prior_issues": [
+    {
+      "number": 321,
+      "path": "science/first-example-github-v1/issue321.json",
+      "comments_path": "science/first-example-github-v1/issue321-comments.json"
+    },
+    {
+      "number": 334,
+      "path": "science/first-example-github-v2/issue334.json",
+      "comments_path": "science/first-example-github-v2/issue334-comments.json"
+    },
+    {
+      "number": 341,
+      "path": "science/first-example-github-v2/issue341.json",
+      "comments_path": "science/first-example-github-v2/issue341-comments.json"
+    },
+    {
+      "number": 1025,
+      "path": "science/first-example-github-v2/issue1025.json",
+      "comments_path": "science/first-example-github-v2/issue1025-comments.json"
+    }
+  ],
+  "issue_dedup": "Current all-state sodium acetate search returned13 issue/PR hits. No exact raw1315-alias task in their bodies; parent should file scoped current issue before applying. Search includes comments, current bodies/comments for321/334/341/1025 were read.",
+  "limitations": [
+    "No data edited, no GitHub mutation, no scientific or release approval enacted.",
+    "No whole-corpus claim or primary experimental role reassessment.",
+    "Native final structured save and independent final-head review remain parent work.",
+    "Source MediaDive automated formula discrepancy is preserved in evidence; it is not adopted."
+  ]
+}

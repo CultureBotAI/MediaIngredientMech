@@ -1,0 +1,39 @@
+[
+  {
+    "name": "strict",
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+      "scripts/validate_strict.py",
+      "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+      "--out",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/sodium-final-review-v1/strict-errors.tsv",
+      "--workers",
+      "1"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree",
+    "started_at": "2026-11-08T02:39:24.506591Z",
+    "finished_at": "2026-11-08T02:39:25.432728Z",
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3f299017073e40f54a5197b31ccb675008684d4cf939805de3ab5f5156e1719d"
+  },
+  {
+    "name": "terms",
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/linkml-term-validator",
+      "validate-data",
+      "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+      "-s",
+      "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "-t",
+      "IngredientRecord",
+      "--labels"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree",
+    "started_at": "2026-11-08T02:39:25.432766Z",
+    "finished_at": "2026-11-08T02:39:26.467611Z",
+    "exit_code": 0,
+    "stdout_sha256": "23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

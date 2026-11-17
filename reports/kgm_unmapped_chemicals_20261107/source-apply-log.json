@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+      "shape": "source_alias_addition",
+      "before_yaml_sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+      "after_yaml_sha256": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376",
+      "change": "Add HYDRATE_FORM alias 'Na acetate x 3 H2O'; append one history event.",
+      "verification": "MediaDive ingredient 1315 explicitly pairs Na acetate x 3 H2O with CAS 6131-90-4; ChEBI:32138 and PubChem CID23665404 corroborate sodium acetate trihydrate. Retain MediaDive's discrepant hydrogen count in archived source evidence; do not copy it into chemistry. Add only the exact source spelling, with no change to identity, role, occurrence count, supplied form or prior history. #1149."
+    },
+    {
+      "source_record": "data/ingredients/unmapped/3-methylacetate.yaml",
+      "shape": "source_provenance_note",
+      "before_yaml_sha256": "98d0af6ac0a86e2ae354ffeb39933840658bfec5550a0b2e81a1f59246eb604a",
+      "after_yaml_sha256": "3ce45f6d8c8757b762b1d57fb5dd7c0c9907a8dd2829ab1431d2f522e98bf0aa",
+      "change": "Correct active source-provenance notes; append one event; preserve REJECTED status.",
+      "verification": "Correct active source-origin notes only (#1151): raw database.csv SHA256=0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95, record19685 canonical SHA256=f96206bc73f8fa93d7a144e6f4f586e8e464d23b31d8093a0d510bc5d272302a, contains 3-methylacetate in original prose and structured minor-product field. Retain unresolved identity, REJECTED status, all raw synonyms, counts and prior history; add no ontology mapping, replacement identity, role or release approval. The original primary paper was not independently re-read in this provenance check."
+    }
+  ]
+}

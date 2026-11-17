@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/step7d_independent_review/final_scope",
+  "reviewed_at_utc": "2026-11-08T02:59:21.686080+00:00",
+  "base": "0dac278466699129a083343a921c2e0ca18a9ab4",
+  "head": "cd76b3e5d3475545f68b65cd765a876ca61e0a2b",
+  "scope": "Independent committed-tree test/workflow, companion and assertion-disposition subreview; no execution of tests or GitHub checks",
+  "verdict": "PASS within bounded scope",
+  "findings": [],
+  "existing_test_workflow_changes": {
+    ".github/workflows/qc-reviewed-sssom.yaml": {
+      "before_sha256": "766506487be710bf26423bd08e3ce1a2a12be997ca40ef55edd036d43b9a6374",
+      "after_sha256": "849fe71376f666ba0b6db133022b5b0b3aa4c2366b78f2d6c0e3d97352c0c422",
+      "only_change": "one exact companion selector substitution"
+    },
+    "tests/test_ingredient_bundle.py": {
+      "before_sha256": "b05ddfdf94d313d102213481bb32a66657ebfed9ac6f5dba893fd9c24e77beaa",
+      "after_sha256": "84a14994318bfd0a5358f286a5018941ca1af59413d01654e80baa8e3ccf5263",
+      "only_change": "one exact companion selector substitution"
+    }
+  },
+  "existing_test_ast_unchanged_except_review_literal": true,
+  "new_tests": {
+    "tests/test_companion_retained_histories.py": {
+      "sha256": "caad37ce7f831b299d6a38568e4a4a853409ac035a54af71b499bb0e3ceda0f8",
+      "test_function_count": 2,
+      "assert_statement_count": 0,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_kgm_publication_boundaries.py": {
+      "sha256": "57d405feae3a3dd2875b0a815ee6931926501f98d59077810d949306b8788d08",
+      "test_function_count": 7,
+      "assert_statement_count": 14,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_mediadive_acetate_alias.py": {
+      "sha256": "3d13b1e6585868000bff48f53721f8288bf05a5279c27f06bab3e66f4f22b89c",
+      "test_function_count": 4,
+      "assert_statement_count": 9,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_microbedecoder_methylacetate_provenance.py": {
+      "sha256": "8dcfc4dd36f6343a4d86b142aaec9e348aaaf4bcf732d04e4aa27c9b2b3d1b68",
+      "test_function_count": 5,
+      "assert_statement_count": 20,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_reconcile_kgm_chemical_queue.py": {
+      "sha256": "a7f9d7e3d936b5d070ba41455762b7f42d737aa65091b6ff6edb5fa06fbe68a0",
+      "test_function_count": 31,
+      "assert_statement_count": 62,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_source_alias_projection.py": {
+      "sha256": "eeed37fd4cc95dba093bf5e7aa2063936603db70f49374baf7ea5cef12eb9aa8",
+      "test_function_count": 4,
+      "assert_statement_count": 4,
+      "skip_xfail_importorskip_calls": []
+    },
+    "tests/test_source_provenance_projection.py": {
+      "sha256": "1d37db569bcfc2a9a120e259326239a0222caf3cebf8ac24260b50d254b1c15b",
+      "test_function_count": 1,
+      "assert_statement_count": 0,
+      "skip_xfail_importorskip_calls": []
+    }
+  },
+  "protected_inputs_unchanged": {
+    ".github/workflows/qc-evidence.yaml": "288ef1795582105763952c4104d1455c1fef273a65528949f1e558d39c7306f3",
+    "scripts/.vendored_canon_ref": "0b149759f0cae8c48e6175432125374296fbdf27c9d23d0868b7e4a056780ad7",
+    "MAPPING_SEMANTICS.md": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+    "justfile": "a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a",
+    ".python-version": "02e735b3dfe1c32833eb550b7ff8ffa17f5f2bc3fa1e7bae61a8f5a3883ce398"
+  },
+  "assertion_disposition_source": {
+    "path": "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv",
+    "before_sha256": "cabe9bbca2b5ad2b0ab79cec238f01307183579167fcf6dff50e509b9ff9745d",
+    "after_sha256": "88ea97166c4281737a473e63da5048730b22469294a6e717d4f2e312cba71034",
+    "rows": 4519,
+    "types": {
+      "nutritional_roles": 721,
+      "component": 502,
+      "physicochemical_roles": 259,
+      "recipe_reference": 2,
+      "environment": 13,
+      "cellular_metabolic_roles": 8,
+      "mapping": 3014
+    },
+    "nonmapping_changes": [
+      {
+        "data_position": 1210,
+        "key": [
+          "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+          "physicochemical_roles",
+          "1"
+        ],
+        "delta": {
+          "source_record_sha256": {
+            "before": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+            "after": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376"
+          },
+          "resolution_status": {
+            "before": "APPROVED",
+            "after": "OPEN"
+          },
+          "review_reason": {
+            "before": "Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment.",
+            "after": "No current positive scientific disposition; unresolved evidence or record findings remain."
+          },
+          "review_evidence": {
+            "before": "reports/semantic_review_20260921/resolution/roles/inherited-role-review.json",
+            "after": ""
+          }
+        }
+      }
+    ],
+    "every_other_nonmapping_row_byte_identical": true,
+    "mapping_resolution_status_changes": [],
+    "all_changed_row_count": 3015,
+    "mapping_changed_row_count": 3014,
+    "mapping_changed_field_counts": {
+      "source_record_sha256": 3014,
+      "assertion_id": 1,
+      "assertion_sha256": 1,
+      "review_reason": 1
+    },
+    "complete_row_diff_private_archive_sha256": "97d75db79a71dd7ae912e72fb081b9d2c4beb43cc6d21e296cef7f25b5b050c6"
+  },
+  "role_material": "BUFFER",
+  "companion": {
+    "before_path": "reports/owned_name_deferred_669_20261103/companion-review.json",
+    "after_path": "reports/kgm_unmapped_chemicals_20261107/companion-review.json",
+    "sha256": "ac305758168ffe30c2d37d2f0cd73fab152e61c95ab1bd99e98750ec8f139068",
+    "owner_count": 20,
+    "decisions_count": 51,
+    "decisions_identical": true,
+    "owner_inputs_identical": true,
+    "claims_file": "reports/ingredient_bundle_20260924/claims.json",
+    "claims_sha256": "52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b",
+    "claims_byte_identical": true,
+    "v2_product_byte_identical": true
+  },
+  "production_source_diff_inventory": [
+    {
+      "status": "A",
+      "path": "scripts/correct_microbedecoder_methylacetate_provenance.py",
+      "sha256": "e236f416d3c0bc3486f1611c5fc6880c2507dce22275f1a50482d202c03421dd"
+    },
+    {
+      "status": "A",
+      "path": "scripts/curate_mediadive_acetate_alias.py",
+      "sha256": "acfdc2580ad84dd5b02c62b6946a9d6e954bf52af565fd4f17d922335c758bb4"
+    },
+    {
+      "status": "A",
+      "path": "scripts/publish_mediadive_acetate_alias.py",
+      "sha256": "c42c2e58e1efa0cc2c1950b0496afbac823bd5409fbc31474f5a5ac0dfccbd08"
+    },
+    {
+      "status": "A",
+      "path": "scripts/reconcile_kgm_chemical_queue.py",
+      "sha256": "beace018fdcd0dbf1cca9a1ad0e82e3d719692e1d843444096c0beeda765b2df"
+    },
+    {
+      "status": "A",
+      "path": "scripts/refresh_kgm_source_policy_manifest.py",
+      "sha256": "a77209058973603577f14bb276fce974594442b692cd727b0715761dc474adc9"
+    },
+    {
+      "status": "A",
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b"
+    },
+    {
+      "status": "M",
+      "path": "src/mediaingredientmech/ingredient_bundle_refresh.py",
+      "sha256": "d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3"
+    },
+    {
+      "status": "A",
+      "path": "src/mediaingredientmech/source_alias_refresh.py",
+      "sha256": "94b054569f5ecc084b913817b62017f3432dcfda8eb3a76f8f3138d677e4809a"
+    }
+  ],
+  "limitations": [
+    "Read-only audit against committed cd76, excluding later uncommitted README clarification.",
+    "No full-suite or CI success claimed; no native scientific approval or downstream adoption is inferred.",
+    "This subreview confirms disposition preservation and bounded test scope, not a new scientific assessment of all corpus claims.",
+    "All 3,014 mapping disposition rows refresh source_record_sha256 because their source_record is the canonical SSSOM file. Only one additionally changes assertion_id, assertion_sha256 and review_reason. Mapping resolution statuses remain unchanged."
+  ],
+  "private_preliminary_artifacts": {
+    "assessment.json": "Complete diff, private and verbose; use this bounded successor for reporting.",
+    "assessment-bounded-v2.json": "Superseded: explanatory limitation mistakenly named review_evidence; v3 corrects it to observed source_record_sha256."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/step7d_independent_review/queue_adversarial",
+  "observed_at": "2026-11-08T02:44:42.779370+00:00",
+  "scope": "Independent bounded source reconciliation implementation review; no final-head approval or scientific identity approval. Native parent reviewer incorporates this component.",
+  "targets": {
+    "scripts/reconcile_kgm_chemical_queue.py": "3a044cb9d991a07e521090d0daa925b18b7749414db1172a42dc1ccd1c929750",
+    "tests/test_reconcile_kgm_chemical_queue.py": "b6b3967540c788a4cf48bbcbc4dc7fb30ecd280a24948f57f17c85a242bc2792"
+  },
+  "actual_replay": {
+    "exit_code": 0,
+    "candidate_count": 549,
+    "counts_by_source": {
+      "mediadive": 415,
+      "metatraits": 82,
+      "metatraits_gtdb": 42,
+      "microbedecoder": 10
+    },
+    "mim_records": 2956,
+    "current_dispositions": {
+      "SUPPORTED": 1739,
+      "WITHHOLD": 1275
+    },
+    "consumed_counts": {
+      "source": 3014,
+      "supported": 1739,
+      "withhold": 1275
+    },
+    "current_source_equals_consumed_source": false,
+    "microbedecoder_ids": 10,
+    "microbedecoder_hold_assertions": 225,
+    "all_microbedecoder_identity_approved_false": true,
+    "scientific_approval_added": false
+  },
+  "tests": {
+    "focused_passed": 42,
+    "failed": 0,
+    "note": "Pytest inherited coverage flags and wrote ignored shared-root .coverage/htmlcov; parent notified; no tracked/scientific files changed."
+  },
+  "source_inventory_check": "source-inventory-check-v1.json",
+  "finding": [
+    {
+      "id": "reconciliation-output-parent-race",
+      "severity": "minor",
+      "target": "scripts/reconcile_kgm_chemical_queue.py",
+      "lines": [
+        373,
+        378,
+        443,
+        446
+      ],
+      "status": "open",
+      "problem": "Output path guards run only before native review and hash work. A parent switched to an upstream symlink after preflight redirects all four report writes into the protected upstream tree and run returns success.",
+      "proof": "parent-swap-result-v1.json",
+      "reproduction": "probe_output_parent_swap_v1.py",
+      "required_change": "Revalidate/reserve the output path at publication and reject late symlink/alias redirection. Preserve exclusive output creation and existing input/data/upstream guards. Add a regression for the reproduced late parent swap."
+    }
+  ],
+  "limits": [
+    "Actual production implementation remains mutable; final committed-head review is separate.",
+    "Input replay validated the sealed snapshot; this does not prove current external KG files stayed unchanged after capture.",
+    "Exact lexical matches remain observations, not identity approval."
+  ]
+}

@@ -77,6 +77,15 @@ class OwnedNameSuppressionContext:
     manifest_sha256: str
 
 
+@dataclass(frozen=True)
+class SourceAliasAdditionContext:
+    """Pinned #1149 spelling addition outside the companion cohort."""
+
+    root: Path
+    baseline: str
+    manifest_sha256: str
+
+
 def _form_require(condition, message):
     if not condition:
         raise ValueError("Form projection: " + message)
@@ -151,6 +160,8 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
                 "form_projection_updates",
                 "registry_correction_updates",
                 "stock_cas_removal_updates",
+                "owned_name_suppression_updates",
+                "source_alias_addition_updates",
             },
             "unknown manifest shape",
         )
@@ -170,10 +181,20 @@ def _verify_policy_projection(prior, before, current, context, *, registry=False
         "form_projection_updates",
         "registry_correction_updates",
         "stock_cas_removal_updates",
+        "owned_name_suppression_updates",
+        "source_alias_addition_updates",
     }
     for other_key in histories - {update_key}:
         _form_require(
-            (other_key in old) == (other_key in new) and old.get(other_key) == new.get(other_key),
+            (other_key in old) == (other_key in new)
+            and (
+                other_key not in old
+                or (
+                    isinstance(old[other_key], list)
+                    and isinstance(new[other_key], list)
+                    and canonical_json(old[other_key]) == canonical_json(new[other_key])
+                )
+            ),
             "other typed update history changed",
         )
     prefix, updates = old.get(update_key, []), new.get(update_key)
@@ -415,6 +436,7 @@ def verify_unchanged_cohort(
     registry_correction=None,
     stock_cas_removal=None,
     owned_name_suppression=None,
+    source_alias_addition=None,
 ):
     """Return a dependency-only successor and complete selected-claim evidence."""
     if (
@@ -425,6 +447,7 @@ def verify_unchanged_cohort(
                 registry_correction,
                 stock_cas_removal,
                 owned_name_suppression,
+                source_alias_addition,
             )
         )
         > 1
@@ -482,6 +505,13 @@ def verify_unchanged_cohort(
 
         projection = verify_owned_name_suppression(prior, before, current, owned_name_suppression)
         allowed.update((POLICY_MANIFEST, POLICY_SIDECAR, POLICY_BASELINE))
+    if source_alias_addition is not None:
+        if POLICY_MANIFEST not in changed:
+            raise ValueError("Source alias addition requested without a changed policy manifest")
+        from mediaingredientmech.source_alias_refresh import verify_source_alias_addition
+
+        projection = verify_source_alias_addition(prior, before, current, source_alias_addition)
+        allowed.add(POLICY_MANIFEST)
     if changed - allowed:
         raise ValueError(
             "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
@@ -605,6 +635,8 @@ def verify_unchanged_cohort(
                 else "registry_correction" if registry_correction is not None else "form_projection"
             )
         )
+        if source_alias_addition is not None:
+            key = "source_alias_addition"
         audit[key] = projection
     return successor, audit
 
@@ -723,11 +755,16 @@ def main(argv=None):
         "--owned-name-suppression-manifest-sha256",
         help="Explicit #669 export-only successor pin; sources and companion science stay exact",
     )
+    projection_options.add_argument(
+        "--source-alias-addition-manifest-sha256",
+        help="Explicit #1149 source-alias successor pin; no inherited scientific approval",
+    )
     args = parser.parse_args(argv)
     if (
         args.registry_correction_manifest_sha256 is not None
         or args.stock_cas_removal_manifest_sha256 is not None
         or args.owned_name_suppression_manifest_sha256 is not None
+        or args.source_alias_addition_manifest_sha256 is not None
     ):
         _form_require(args.root.absolute() == args.root.resolve(), "aliased context root")
     root = args.root.resolve()
@@ -780,6 +817,11 @@ def main(argv=None):
         if args.owned_name_suppression_manifest_sha256 is not None
         else None
     )
+    source_alias_addition = (
+        SourceAliasAdditionContext(root, baseline, args.source_alias_addition_manifest_sha256)
+        if args.source_alias_addition_manifest_sha256 is not None
+        else None
+    )
     successor, audit = verify_unchanged_cohort(
         prior,
         before,
@@ -790,6 +832,7 @@ def main(argv=None):
         registry_correction=registry_correction,
         stock_cas_removal=stock_cas_removal,
         owned_name_suppression=owned_name_suppression,
+        source_alias_addition=source_alias_addition,
     )
     new_bytes = encode(successor)
     audit.update(
@@ -819,6 +862,8 @@ def main(argv=None):
             else "registry_correction" if registry_correction is not None else "form_projection"
         )
     )
+    if source_alias_addition is not None:
+        proof_key = "source_alias_addition"
     owned_name_source_roles: set[str] = set()
     if proof_key == "owned_name_suppression" and proof_key in audit:
         from mediaingredientmech.owned_name_suppression_refresh import recheck_inventory
@@ -844,7 +889,12 @@ def main(argv=None):
                 raise ValueError("Projection receipt inventory changed during verification")
             for name in audit[proof_key]["input_sha256"]:
                 _form_member(root, name)
-            if proof_key in {"registry_correction", "stock_cas_removal", "owned_name_suppression"}:
+            if proof_key in {
+                "registry_correction",
+                "stock_cas_removal",
+                "owned_name_suppression",
+                "source_alias_addition",
+            }:
                 from mediaingredientmech.registry_correction_refresh import receipt_inventory
 
                 if receipt_inventory(root) != set(audit[proof_key]["receipt_paths"]):

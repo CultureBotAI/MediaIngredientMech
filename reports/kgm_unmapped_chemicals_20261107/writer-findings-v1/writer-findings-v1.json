@@ -1,0 +1,28 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "scope": "Independent adversarial implementation review; private fixtures only; no maintained mutations.",
+  "proof": "reviewer/publication-boundaries-v1/result.json",
+  "probe": "reviewer/probe_publication_boundaries_v1.py",
+  "findings": [
+    {
+      "finding_id": "source-alias-writers-hardlink-side-effects",
+      "issue_key": "mim-source-alias-writer-hardlink-scope",
+      "severity": "medium",
+      "targets": ["scripts/curate_mediadive_acetate_alias.py", "scripts/publish_mediadive_acetate_alias.py"],
+      "summary": "Writers check symlinks but accept an existing hard link on the mutation target, causing unrelated linked files to be overwritten.",
+      "reproduction": "Create a second hard link to the exact permitted source YAML or canonical TSV in a private fixture, invoke normal --apply, and observe success with both paths changed to identical new bytes. Native guarded YAML validation does not protect filesystem alias scope.",
+      "expected": "Reject nonregular/aliased mutation targets and recheck the actual target and inputs at the write boundary; preserve unrelated link bytes. Cover hard links and aliases introduced after reservation. Assess the new policy manifest writer for the same direct-write pattern.",
+      "actual_cases": ["owner_hardlink", "canonical_hardlink"]
+    },
+    {
+      "finding_id": "source-alias-publisher-unverified-late-manifest",
+      "issue_key": "mim-source-alias-publisher-late-manifest",
+      "severity": "medium",
+      "targets": ["scripts/publish_mediadive_acetate_alias.py"],
+      "summary": "Publication rechecks canonical/owner only, then hashes a fresh unvalidated generation manifest for the receipt.",
+      "reproduction": "After the real receipt reservation yields, replace manifest contents with source_revisions.claw all-zero and external_sssom_validation FAILED. Publisher returns success, changes canonical, and writes native_manifest_sha256 equal to this unverified replacement rather than the validated capture.",
+      "expected": "Capture immutable candidate/manifest bytes and identities, recheck all evidence inputs before mutation and after publication, and record exactly the validated hash. Add late-manifest/candidate drift regressions; no success receipt on drift.",
+      "actual_cases": ["late_manifest_change"]
+    }
+  ]
+}

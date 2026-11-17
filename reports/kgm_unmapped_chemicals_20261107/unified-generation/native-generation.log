@@ -1,0 +1,33 @@
+============================================================
+BUILDING UNIFIED INGREDIENT MAPPING
+============================================================
+
+Loading MIM ingredient records...
+  2956 MIM records → 7917 name entries, 1783 CHEBI, 2610 ontology IDs
+
+  8719 MIM label-index labels (trusted verdicts outrank recipe term.ids)
+Scanning CultureMech ingredient occurrences...
+  15915 records → 201119 root and 8211 inline-stock occurrences, 4170 unique ingredient names
+
+Resolved: 2840 matched to MIM, 1330 not in MIM
+
+============================================================
+UNIFIED MAPPING COVERAGE REPORT
+============================================================
+Total unique ingredient names:  4170
+Have CHEBI ID:                  2049  (49%)
+  - from CultureMech term.id:   1674
+  - from MIM (fallback):        375
+Have CAS-RN:                    1888  (45%)
+Have KG-Microbe node ID:        1200  (28%)
+Matched to MIM record:          2840  (68%)
+Fully mapped (CHEBI + CAS):     1758  (42%)
+
+Status breakdown:
+  MAPPED                    2630
+  UNMAPPED                  1424
+  TERM_ID_NO_MIM            93
+  CHEBI_NO_MIM              23
+
+
+✅ TSV written to reports/kgm_unmapped_chemicals_20261107/unified-generation/candidate.tsv  (4170 rows)

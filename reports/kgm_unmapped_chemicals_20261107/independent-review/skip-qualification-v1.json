@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/step7d_independent_review/final_scope",
+  "at_utc": "2026-11-08T03:13:14.435567+00:00",
+  "base": "0dac278466699129a083343a921c2e0ca18a9ab4",
+  "committed_head": "cd76b3e5d3475545f68b65cd765a876ca61e0a2b",
+  "scope": "Read-only completed local suite log and unchanged source skip controls; no rerun, no dependency mutation, no CI claim.",
+  "log": {
+    "path": "reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log",
+    "sha256": "c4051a8e76801a6af0ed30ff0731c967ea1b4c7cf321962f30658be9f130c72c",
+    "collected": 5423,
+    "passed": 4898,
+    "skipped": 525,
+    "warnings": 31,
+    "seconds": 1257.4,
+    "marker_counts_match_summary": true,
+    "per_test_dynamic_skip_reasons_present": false
+  },
+  "modules": [
+    {
+      "module": "tests/test_correct_diketo_bacdive_evidence.py",
+      "observed_skip_markers": 6,
+      "observed_pass_markers": 24,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "9ca603ae82b0b65d0be6b3afed009eda043f9bf690394973787123356aad12bc",
+      "after_sha256": "9ca603ae82b0b65d0be6b3afed009eda043f9bf690394973787123356aad12bc",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 117,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Native Claw transaction integration is optional')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "70ce997797fb179e0735a2bfb1dc5c691fbadd393dd3adfb69f3c64b35bec343"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_correct_hydrate_stock_chemistry_871_268.py",
+      "observed_skip_markers": 24,
+      "observed_pass_markers": 29,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "fef4cf75d7ded15fe5ab5cb70cff310a142519608823250afd6bd478458f3750",
+      "after_sha256": "fef4cf75d7ded15fe5ab5cb70cff310a142519608823250afd6bd478458f3750",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 46,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native transaction required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5d20451a2d0ffda824a168d04e14f76477bcc0840bc5a2021e6012bb505e6d7d"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_correct_izalpinin_cas.py",
+      "observed_skip_markers": 54,
+      "observed_pass_markers": 28,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "8e9fec8161726fa7c1284622d19fe0fb2eaa202c9a644656c429908eefefbbf9",
+      "after_sha256": "8e9fec8161726fa7c1284622d19fe0fb2eaa202c9a644656c429908eefefbbf9",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 97,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native publisher required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5155524f6c1ba90b78357d23e0abe0fa4b6378b71b8018a825410d58d9f468a8"
+        },
+        {
+          "line": 383,
+          "function": "native_case",
+          "call": "pytest.skip('Explicit merged producer path required for native integration')",
+          "containing_if_conditions": [
+            "not producer_env"
+          ],
+          "call_ast_sha256": "22d18112e0eb667879ef9d31db34193a1a31d564908b8840e7566580a31b43a1"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_correct_melezitose_parent.py",
+      "observed_skip_markers": 76,
+      "observed_pass_markers": 21,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "5553fef8f9107cf8bddc2845b174bc0b4a821942428752b3d02303f96d32a512",
+      "after_sha256": "5553fef8f9107cf8bddc2845b174bc0b4a821942428752b3d02303f96d32a512",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 201,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native publisher required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5155524f6c1ba90b78357d23e0abe0fa4b6378b71b8018a825410d58d9f468a8"
+        },
+        {
+          "line": 424,
+          "function": "native_case",
+          "call": "pytest.skip('Explicit merged producer path required for native integration')",
+          "containing_if_conditions": [
+            "not producer_env"
+          ],
+          "call_ast_sha256": "22d18112e0eb667879ef9d31db34193a1a31d564908b8840e7566580a31b43a1"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_correct_sodium_perchlorate_parent.py",
+      "observed_skip_markers": 35,
+      "observed_pass_markers": 31,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "7d71b6af8e5727f058c7bc7678c3f46df501bcb5931d0f9ed40d1d284a267489",
+      "after_sha256": "7d71b6af8e5727f058c7bc7678c3f46df501bcb5931d0f9ed40d1d284a267489",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 95,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native publisher required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5155524f6c1ba90b78357d23e0abe0fa4b6378b71b8018a825410d58d9f468a8"
+        },
+        {
+          "line": 343,
+          "function": "native_case",
+          "call": "pytest.skip('Explicit merged producer path required for native integration')",
+          "containing_if_conditions": [
+            "not producer_env"
+          ],
+          "call_ast_sha256": "22d18112e0eb667879ef9d31db34193a1a31d564908b8840e7566580a31b43a1"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_curate_lithium_glycerophosphate.py",
+      "observed_skip_markers": 33,
+      "observed_pass_markers": 16,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c",
+      "after_sha256": "db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 33,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Native Claw transaction integration is optional')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "70ce997797fb179e0735a2bfb1dc5c691fbadd393dd3adfb69f3c64b35bec343"
+        },
+        {
+          "line": 373,
+          "function": "test_actual_native_generator_two_rows_and_replayed_stamps",
+          "call": "pytest.skip('Native merged producer is an optional explicit integration dependency')",
+          "containing_if_conditions": [
+            "not path.is_file()"
+          ],
+          "call_ast_sha256": "7fc79ab33294cdfcd188f659124b5bd4864b8983de685ad6f23cd3d0df39e20a"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_curate_step7c_source_labels.py",
+      "observed_skip_markers": 11,
+      "observed_pass_markers": 22,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "07dc71958650182138a4847bcad59163f6b426e97e080f2b69c8e47ccefe17e1",
+      "after_sha256": "07dc71958650182138a4847bcad59163f6b426e97e080f2b69c8e47ccefe17e1",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 34,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Native Claw transaction integration is optional')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "70ce997797fb179e0735a2bfb1dc5c691fbadd393dd3adfb69f3c64b35bec343"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_curate_wc_stock_751.py",
+      "observed_skip_markers": 6,
+      "observed_pass_markers": 28,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "81583ff310310332a293545ff6760a2bbc49276f057618eea0f03a256e254aec",
+      "after_sha256": "81583ff310310332a293545ff6760a2bbc49276f057618eea0f03a256e254aec",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 45,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native transaction required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5d20451a2d0ffda824a168d04e14f76477bcc0840bc5a2021e6012bb505e6d7d"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_curie_normalizer.py",
+      "observed_skip_markers": 1,
+      "observed_pass_markers": 20,
+      "category_from_source_only": "existing_data_condition",
+      "before_sha256": "2ea9814deff7821a5026f54e8aef3225c4abf0c2ec8a6392d5fb45f65ab8e8be",
+      "after_sha256": "2ea9814deff7821a5026f54e8aef3225c4abf0c2ec8a6392d5fb45f65ab8e8be",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 118,
+          "function": "test_equivalent_term_picks_highest_ranked_exact_match",
+          "call": "pytest.skip('no multi-prefix exactMatch subject in this SSSOM')",
+          "containing_if_conditions": [
+            "not multi"
+          ],
+          "call_ast_sha256": "a828b09ca1bca0208e8e02ae83e25fa855212ef2d0b4ad4f3a671e8483d9ddfa"
+        },
+        {
+          "line": 134,
+          "function": "test_narrow_match_is_not_offered_as_equivalent",
+          "call": "pytest.skip('every subject has an exactMatch')",
+          "containing_if_conditions": [
+            "not narrow_only"
+          ],
+          "call_ast_sha256": "b45fddd87391ce06054ee57c5377fbb2398b04fb752eb0a5d0d33b6fd65bd79e"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_merge_carnitine_hydrochloride.py",
+      "observed_skip_markers": 114,
+      "observed_pass_markers": 18,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "5d3296736e0549371680c5f3847d639015769f766384ac0147d1e3c840e12d34",
+      "after_sha256": "5d3296736e0549371680c5f3847d639015769f766384ac0147d1e3c840e12d34",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 36,
+          "function": "case",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 548,
+          "function": "test_real_native_builder_prior_stamp_replay_emits_the_bounded_claims",
+          "call": "pytest.skip('Native Claw producer source is not configured')",
+          "containing_if_conditions": [
+            "not source_root"
+          ],
+          "call_ast_sha256": "22ff17c6a2d72b11db9976c3541819cbf63c2e3c1b2bd2d9eb315bb9f0cca453"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_owned_name_policy.py",
+      "observed_skip_markers": 13,
+      "observed_pass_markers": 16,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "d49ae61e0de0cfd399d90cd3fd8e3af60d694843e24f3868b3433143d1ce3f17",
+      "after_sha256": "d49ae61e0de0cfd399d90cd3fd8e3af60d694843e24f3868b3433143d1ce3f17",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 186,
+          "function": "native_case",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 322,
+          "function": "test_actual_native_producer_rows_and_rejected_kg_alias_boundary",
+          "call": "pytest.importorskip('kg_microbe_write.registry')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "eb5d2d4836e6c8480bcb2a17ea10efac5d8b4b102e8a836da86ce471a47e7bba"
+        },
+        {
+          "line": 339,
+          "function": "test_actual_native_producer_still_refuses_mixed_origin_modules",
+          "call": "pytest.importorskip('kg_microbe_write.registry')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "eb5d2d4836e6c8480bcb2a17ea10efac5d8b4b102e8a836da86ce471a47e7bba"
+        },
+        {
+          "line": 305,
+          "function": "producer_probe",
+          "call": "pytest.skip('Separate merged Claw producer source profile is not configured')",
+          "containing_if_conditions": [
+            "'MIM_OWNED_NAME_PRODUCER_ROOT' not in os.environ"
+          ],
+          "call_ast_sha256": "ba3c00d0fbe39f88a373f5f59e79be97b4aa6b465504bf59d1dcf4f803887d77"
+        },
+        {
+          "line": 341,
+          "function": "test_actual_native_producer_still_refuses_mixed_origin_modules",
+          "call": "pytest.skip('Separate merged Claw producer source profile is not configured')",
+          "containing_if_conditions": [
+            "'MIM_OWNED_NAME_PRODUCER_ROOT' not in os.environ"
+          ],
+          "call_ast_sha256": "ba3c00d0fbe39f88a373f5f59e79be97b4aa6b465504bf59d1dcf4f803887d77"
+        },
+        {
+          "line": 345,
+          "function": "test_actual_native_producer_still_refuses_mixed_origin_modules",
+          "call": "pytest.skip('Mixed-origin control requires the separate pinned native checkout')",
+          "containing_if_conditions": [
+            "pinned == producer"
+          ],
+          "call_ast_sha256": "aebe5155208062e6e0de3909b9d3999fae3ba6255b4eba66c6770233fb3140b2"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_owned_name_policy_promotion.py",
+      "observed_skip_markers": 19,
+      "observed_pass_markers": 1,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "d92d1a35140662eefbf023a7d91a588c1f2a07ec53a330e3084b05e5af2f1a5d",
+      "after_sha256": "d92d1a35140662eefbf023a7d91a588c1f2a07ec53a330e3084b05e5af2f1a5d",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 61,
+          "function": "native_case",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 64,
+          "function": "native_case",
+          "call": "pytest.skip('Explicit merged producer path required for native publication integration')",
+          "containing_if_conditions": [
+            "not producer_env"
+          ],
+          "call_ast_sha256": "49a985b1551f32dda58975f7ee79546dd9a79f740dcbc4057a73662eb61f1301"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_promote_heptahydrate_ncit.py",
+      "observed_skip_markers": 53,
+      "observed_pass_markers": 48,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "f66ed31afe15b907f517cc1cc78b5a5678bdeb8a9ca58458f02479f876a9c758",
+      "after_sha256": "f66ed31afe15b907f517cc1cc78b5a5678bdeb8a9ca58458f02479f876a9c758",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 304,
+          "function": "test_native_transaction_integration_when_claw_available",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 316,
+          "function": "test_valid_competing_owner_after_reservation_blocks_original_paths",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 365,
+          "function": "test_promotion_refuses_preexisting_valid_competing_owner",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        },
+        {
+          "line": 398,
+          "function": "test_reserved_evidence_replacement_refuses_with_native_transaction",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_promote_stock_cas_removal.py",
+      "observed_skip_markers": 33,
+      "observed_pass_markers": 18,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "c1605b4d41db72389b3a11c03090d4a4b2fb940096858b1309c730bf13e5a39c",
+      "after_sha256": "c1605b4d41db72389b3a11c03090d4a4b2fb940096858b1309c730bf13e5a39c",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 149,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native transaction required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5d20451a2d0ffda824a168d04e14f76477bcc0840bc5a2021e6012bb505e6d7d"
+        },
+        {
+          "line": 317,
+          "function": "stock_producer_path",
+          "call": "pytest.skip('Explicit MIM_STOCK_CAS_PRODUCER_ROOT required for native integration')",
+          "containing_if_conditions": [
+            "not producer_env"
+          ],
+          "call_ast_sha256": "28119ed6f7c5bbe37b20444d52a277c80c18db67388a4c83912ad3e446865e40"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_remove_stale_kg_microbe_nodes.py",
+      "observed_skip_markers": 23,
+      "observed_pass_markers": 24,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "a00ed189af4e02f5b757e362d37b814d7fbc14958aa40ebc6dbc794e23e59514",
+      "after_sha256": "a00ed189af4e02f5b757e362d37b814d7fbc14958aa40ebc6dbc794e23e59514",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 46,
+          "function": "native_runtime",
+          "call": "pytest.importorskip('kg_microbe_write', reason='Real native transaction required')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "5d20451a2d0ffda824a168d04e14f76477bcc0840bc5a2021e6012bb505e6d7d"
+        }
+      ]
+    },
+    {
+      "module": "tests/test_repair_heptahydrate_membership.py",
+      "observed_skip_markers": 24,
+      "observed_pass_markers": 42,
+      "category_from_source_only": "optional_claw_native_runtime_or_explicit_producer_profile",
+      "before_sha256": "a615daeb6276bcf32a3d879efa9b09a4c1c379751ee8a9330f66fb9ab7b384b3",
+      "after_sha256": "a615daeb6276bcf32a3d879efa9b09a4c1c379751ee8a9330f66fb9ab7b384b3",
+      "entire_module_byte_identical": true,
+      "skip_control_asts_identical": true,
+      "skip_controls": [
+        {
+          "line": 62,
+          "function": "native_available",
+          "call": "pytest.importorskip('kg_microbe_write')",
+          "containing_if_conditions": [],
+          "call_ast_sha256": "b8c4327966afb243a7015bb5759b193e51f8c9071552ad4637ec253d7709aa6f"
+        }
+      ]
+    }
+  ],
+  "source_based_skip_groups": {
+    "optional_claw_native_runtime_or_explicit_producer_profile": 524,
+    "existing_data_condition": 1
+  },
+  "new_test_files": [
+    {
+      "path": "tests/test_companion_retained_histories.py",
+      "sha256": "caad37ce7f831b299d6a38568e4a4a853409ac035a54af71b499bb0e3ceda0f8",
+      "observed_pass_markers": 39,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_kgm_publication_boundaries.py",
+      "sha256": "57d405feae3a3dd2875b0a815ee6931926501f98d59077810d949306b8788d08",
+      "observed_pass_markers": 64,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_mediadive_acetate_alias.py",
+      "sha256": "3d13b1e6585868000bff48f53721f8288bf05a5279c27f06bab3e66f4f22b89c",
+      "observed_pass_markers": 5,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_microbedecoder_methylacetate_provenance.py",
+      "sha256": "8dcfc4dd36f6343a4d86b142aaec9e348aaaf4bcf732d04e4aa27c9b2b3d1b68",
+      "observed_pass_markers": 9,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_reconcile_kgm_chemical_queue.py",
+      "sha256": "a7f9d7e3d936b5d070ba41455762b7f42d737aa65091b6ff6edb5fa06fbe68a0",
+      "observed_pass_markers": 47,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_source_alias_projection.py",
+      "sha256": "eeed37fd4cc95dba093bf5e7aa2063936603db70f49374baf7ea5cef12eb9aa8",
+      "observed_pass_markers": 13,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    },
+    {
+      "path": "tests/test_source_provenance_projection.py",
+      "sha256": "1d37db569bcfc2a9a120e259326239a0222caf3cebf8ac24260b50d254b1c15b",
+      "observed_pass_markers": 6,
+      "observed_skip_markers": 0,
+      "skip_controls": []
+    }
+  ],
+  "new_test_pass_count": 183,
+  "finding_count": 0,
+  "qualification": "The log records 524 skips in 15 unchanged modules whose source gates native integration on kg_microbe_write and, in some tests, explicitly configured Claw producer profiles; one skip occurs in the unchanged CURIE normalizer module with corpus-dependent skip branches. This is source-based attribution, not proof of each individual runtime reason. The log does not print skipped node IDs/reasons. No assertion, skip control or gate was weakened. Native producer/review evidence from separate executed commands must remain separate from this local pytest result.",
+  "limitations": [
+    "Do not describe this local suite as exercising all 5,423 tests or all optional native integration cases.",
+    "No test rerun was performed.",
+    "No GitHub CI result is inferred from this local log."
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), three invalid CAS assertions (#753), and three exact MICRO identity restorations using pinned KGX source (#759). No role approval. Four chemical scope decisions (five records), with Sorbitan local identity only and external molecular grounding held.",
+  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), three invalid CAS assertions (#753), and three exact MICRO identity restorations using pinned KGX source (#759). No role approval. Four chemical scope decisions (five records), with Sorbitan local identity only and external molecular grounding held. The exact #1149 sodium acetate trihydrate source-alias row has a fresh content-bound mapping-only review; no role approval.",
   "decisions": [
     {
       "mapping": {
@@ -1256,6 +1256,48 @@
         "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e",
         "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5",
         "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sodium_Acetate_Trihydrate",
+        "subject_label": "Sodium acetate trihydrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:32138",
+        "object_label": "sodium acetate trihydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=merge_minted_hydrate_duplicates]|kgm:mediaingredientmech_reviewed[curator=synonym_expansion_cbclaw]|MIM:MediaDive ingredient 1315; MIM issue 1149",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.8",
+        "comment": "",
+        "other": "Na-acetate x 3 H2O|Sodium acetate x 3 H2O|sodium acetate--water (1/3)|Sodium acetate·3H2O|CAS:6131-90-4|Na acetate x 3 H2O",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "ee9011110eb8256a19b79af6f1872e4b0a2fce7ce7bf93ba3596073d00c53ed6",
+      "owner_record": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+      "owner_record_sha256": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376",
+      "disposition": "SUPPORTED",
+      "reason": "Fresh mapping-only review of the exact changed owner and complete six-token row (#1149), after receipt27 withdrew inherited approval. The explicit trihydrate identity and each remaining/new name are supported. No role, occurrence count, whole-record scientific status or other withheld mapping is approved; historical confidence and validation stamps are retained as provenance.",
+      "identity_review": "MediaDive1315 pairs its exact source name with CAS6131-90-4. ChEBI:32138 denotes sodium acetate trihydrate, formula C2H3O2.3H2O.Na, with three water components in the InChI; PubChemCID23665404 corroborates the CAS/name. This is database evidence for the same hydrate, not the anhydrous salt or a stock. The excess hydrogen in MediaDive automated formula is retained as a discrepancy and not copied. Full current row and all six tokens were assessed in the immutable scientific review.",
+      "token_reviews": {
+        "Na-acetate x 3 H2O": "KEEP: sodium acetate with three waters; the exact same stoichiometric hydrate as CHEBI:32138, not anhydrous sodium acetate.",
+        "Sodium acetate x 3 H2O": "KEEP: explicit trihydrate stoichiometry matches the ChEBI formula and InChI with three waters.",
+        "sodium acetate--water (1/3)": "KEEP: inspected exact ChEBI:32138 synonym; 1:3 sodium acetate/water stoichiometry.",
+        "Sodium acetate·3H2O": "KEEP: equivalent explicit hydrate notation preserved from the prior duplicate; three waters remain part of identity.",
+        "CAS:6131-90-4": "KEEP: registry display alias for the trihydrate, corroborated by ChEBI, PubChem CID23665404 and MediaDive1315. Not an expandable uppercase CURIE.",
+        "Na acetate x 3 H2O": "KEEP: the exact MediaDive1315 source label is explicitly paired with CAS6131-90-4. ChEBI and PubChem independently corroborate the trihydrate; MediaDive's discrepant hydrogen count is not imported."
+      },
+      "evidence_inputs": {
+        "reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.yaml": "649f610d9828ed931b479f6197f11703a17c1dd0615d4fbf35a98a85171927f9",
+        "reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.md": "00754f3e4a66d850c494c0db305f20d7cfaa14ff692bbb5720f5141484f83bbc",
+        "reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json": "93d213c95d4619c2135836a993d13ed54229f3920a241147d5f4e0eb69bf5d72",
+        "reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json": "360383e4c9a6f04c00a315b76ca0a0bbf59e93638368db930e67acec7e1dd388",
+        "reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json": "5035690cedd4523533fd1023e1bfd9d92f4a90841101d551fb96f6371d4b0072",
+        "reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/manifest.json": "09a5e0a2061dffda77bacb49cf51cfd41e0c711d1944f4033c3ac4c86628a72e",
+        "reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/readback.json": "01acb7dde413cd4b68df8a7560bf33acc466fd9092b1d6fe413bfc1e7d473c85",
+        "reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json": "7e85407431d709192b3a702027fab9b398eb239570f901d8cdfd812a06602dec"
       },
       "resolved_negative_reviews": []
     }
