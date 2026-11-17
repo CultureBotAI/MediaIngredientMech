@@ -22,6 +22,13 @@ because it overwrote MIM-owned curation with a lossy aggregate projection
 apply reviewed changes through focused MIM curation workflows. Stable recipe
 references and lossless occurrence edges are tracked in #447 and #449.
 
+For a pinned structured-variant handoff, use the separate
+[CultureMech source intake](../../../../docs/culturemech-source-intake.md)
+workflow (#1453). It retains stage, evidence, literal quantities and negative
+context, regenerates native reviewed mapping partitions, and requires explicit
+source-binding review. It does not alter an active campaign's frozen inputs or
+turn a candidate label match into scientific approval.
+
 ### Outbound updates
 
 No supported direct CultureMech exporter exists in this repository. Publish the

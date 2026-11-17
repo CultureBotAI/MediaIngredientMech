@@ -129,6 +129,11 @@ qc-reviewed-sssom report="reports/sssom_completion_20260921/review.json" output=
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
     uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
 
+# Immutable source intake and complete native source-binding review (#1453).
+# Uses a new output directory; never mutates an active campaign or MIM records.
+culturemech-intake *args:
+    uv run --frozen python -m mediaingredientmech.intake.culturemech "$@"
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
