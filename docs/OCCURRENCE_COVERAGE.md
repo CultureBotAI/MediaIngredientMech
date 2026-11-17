@@ -83,6 +83,11 @@ Related: #1431, #486, #196, #820. No merge, public release or KG installation is
 implied by this contract.
 
 Duplicate YAML keys and aliased evidence files are refused (#1463/#1464).
+Companion YAML also refuses anchors, aliases and explicit tags. Owner YAML uses
+the native duplicate-checking loader so ordinary shared evidence sequences from
+the guarded serializer remain readable, for selected and unselected owners.
+Merge keys, explicit tags, recursive aliases and non-string keys remain refused;
+this compatibility does not change an owner or its byte/content binding.
 Source names within a declaration select exactly one pinned version. Native
 review pairs may be copied unchanged under the companion directory at their
 canonical `reviews/structured/<review_id>/review.yaml` paths, with both files

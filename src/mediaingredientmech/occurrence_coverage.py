@@ -25,6 +25,7 @@ from linkml.validator import Validator  # type: ignore[import-untyped]
 from linkml.validator.plugins import JsonschemaValidationPlugin  # type: ignore[import-untyped]
 from linkml.validator.report import Severity  # type: ignore[import-untyped]
 
+from mediaingredientmech.mapping_scope import _load_yaml
 from mediaingredientmech.utils.culturemech_occurrences import effective_occurrence_statistics
 
 SCHEMA = Path(__file__).parent / "schema" / "occurrence_coverage.yaml"
@@ -41,9 +42,7 @@ class _UnambiguousLoader(yaml.SafeLoader):
             or getattr(event, "anchor", None)
             or getattr(event, "tag", None)
         ):
-            raise ValueError(
-                "coverage/owner YAML must not contain aliases, anchors or explicit tags"
-            )
+            raise ValueError("coverage YAML must not contain aliases, anchors or explicit tags")
         return super().compose_node(parent, index)
 
     def construct_mapping(self, node, deep=False):
@@ -60,6 +59,40 @@ def _load_document(raw: bytes) -> dict[str, Any]:
     result = yaml.load(raw, Loader=_UnambiguousLoader)
     if not isinstance(result, dict):
         raise ValueError("coverage/owner document must contain one mapping")
+    return result
+
+
+def _load_owner_document(raw: bytes) -> dict[str, Any]:
+    """#1463: native writers share evidence sequences; the companion stays strict."""
+    try:
+        if any(getattr(event, "tag", None) for event in yaml.parse(raw)):
+            raise ValueError("owner YAML must not contain explicit tags")
+        result = _load_yaml(raw.decode("utf-8"))
+    except (ValueError, yaml.YAMLError) as exc:
+        raise ValueError(f"invalid owner YAML (duplicate keys refused): {exc}") from exc
+    if not isinstance(result, dict):
+        raise ValueError("owner document must contain one mapping")
+    active: set[int] = set()
+    checked: set[int] = set()
+
+    def check(value):
+        if not isinstance(value, (dict, list)):
+            return
+        identity = id(value)
+        if identity in active:
+            raise ValueError("recursive owner YAML alias")
+        if identity in checked:
+            return
+        active.add(identity)
+        if isinstance(value, dict):
+            if any(not isinstance(key, str) for key in value):
+                raise ValueError("non-string owner YAML key")
+        for child in value.values() if isinstance(value, dict) else value:
+            check(child)
+        active.remove(identity)
+        checked.add(identity)
+
+    check(result)
     return result
 
 
@@ -303,7 +336,7 @@ def load_coverage(path: Path, ingredients_root: Path) -> Coverage:
     for state in ("mapped", "unmapped"):
         for owner in (ingredients_root / state).glob("*.yaml"):
             data = owner.read_bytes()
-            record = _load_document(data)
+            record = _load_owner_document(data)
             if isinstance(record, dict) and record.get("mim_id") in owners:
                 owners[record["mim_id"]].append((record, data, owner))
     for mim_id, item in declarations.items():
