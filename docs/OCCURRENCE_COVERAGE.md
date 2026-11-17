@@ -32,7 +32,13 @@ current input hashes, distinct primary/skeptical reviewers and skeptical
 independence, and a supported quantity assessment whose evidence-linked
 `occurrence_claim_sha256` dimension binds the exact owner bytes, source revision
 and hash, count, unit and scope. The `observation_claim` helper computes that
-digest. Review references alone are not approval; actual scientific assessment
+digest. A supported assessment cannot cancel a concern, unknown outcome or
+refuting evidence for that exact claim. Same-owner quantity holds with missing,
+malformed or evidence-free claim bindings also block qualification; a valid
+binding to a distinct claim preserves unrelated limitations. Native findings
+have no claim dimension, so unresolved same-owner quantity findings (including
+accepted risk) block until resolved or rejected. These checks do not reinterpret
+identity or role decisions. Review references alone are not approval; actual scientific assessment
 and normal source/identity gates remain required. UNKNOWN declarations with no
 observations do not require an invented numeric review. Existing source/SSSOM reviews and every
 SUPPORTED/WITHHOLD gate remain required.

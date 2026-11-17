@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import re
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime
@@ -151,12 +152,48 @@ def _observation_reviews(
         ):
             raise ValueError("occurrence review targets another owner")
         supportive = {ev["evidence_id"] for ev in review["evidence"] if ev["support"] == "supports"}
-        matching = [
+        refuting = {ev["evidence_id"] for ev in review["evidence"] if ev["support"] == "refutes"}
+        quantity = [
             a
             for a in review["assessments"]
-            if a["area"] == "quantity"
-            and a["outcome"] == "supported"
-            and item["mim_id"] in a["target_ids"]
+            if a["area"] == "quantity" and item["mim_id"] in a["target_ids"]
+        ]
+        for assessment in quantity:
+            dimensions = assessment.get("dimensions", [])
+            bindings = [d for d in dimensions if d["name"] == "occurrence_claim_sha256"]
+            bound_claim = None
+            if (
+                len(bindings) == 1
+                and re.fullmatch(r"[0-9a-f]{64}", bindings[0]["value"])
+                and bindings[0]["evidence_ids"]
+            ):
+                bound_claim = bindings[0]["value"]
+            refs = set(assessment["evidence_ids"])
+            for dimension in dimensions:
+                refs.update(dimension["evidence_ids"])
+            disputed = (
+                assessment["outcome"] in {"concern", "unknown"}
+                or bool(refuting.intersection(refs))
+                or (bound_claim == claim and assessment["outcome"] != "supported")
+            )
+            # #1464: a positive assessment cannot cancel a hold on the same
+            # claim. Missing/malformed bindings cannot prove it is unrelated.
+            if disputed and bound_claim in {None, claim}:
+                raise ValueError("occurrence review has an unresolved or ambiguous quantity claim")
+        # Native findings have owner/category/evidence fields but no claim
+        # dimension. Do not guess that an unresolved same-owner quantity
+        # finding is unrelated, or treat an accepted risk as count support.
+        if any(
+            f["category"] == "quantity"
+            and item["mim_id"] in f["target_ids"]
+            and f["status"] not in {"resolved", "rejected"}
+            for f in review["findings"]
+        ):
+            raise ValueError("occurrence review has an unresolved owner quantity finding")
+        matching = [
+            a
+            for a in quantity
+            if a["outcome"] == "supported"
             and supportive.intersection(a["evidence_ids"])
             and any(
                 d["name"] == "occurrence_claim_sha256"

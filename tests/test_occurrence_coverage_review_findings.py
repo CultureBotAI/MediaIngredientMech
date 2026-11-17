@@ -149,3 +149,150 @@ def test_1464_arbitrary_json_is_not_a_native_count_review(tmp_path):
     save(bundle, doc)
     with pytest.raises(ValueError):
         load_coverage(bundle, root)
+
+
+def write_changed_native_review(bundle, doc, path, review):
+    """Keep the native shape, Markdown, hashes and provenance genuinely valid."""
+    native = _review_contract()
+    native.validate_review(review)
+    path.write_text(native._dump_document(review))
+    path.with_name("review.md").write_text(native.render_markdown(review))
+    for changed in (path, path.with_name("review.md")):
+        refresh_evidence(doc, bundle, changed)
+    save(bundle, doc)
+
+
+@pytest.mark.parametrize("role", ["primary", "skeptical"])
+@pytest.mark.parametrize("outcome", ["concern", "unknown", "not_applicable"])
+def test_1464_positive_assessment_cannot_cancel_exact_claim_hold(tmp_path, role, outcome):
+    root, _, _, bundle, doc = write_bundle(tmp_path)
+    obs = add_native_observation_reviews(bundle, doc)
+    path = bundle.parent / obs[f"{role}_review_path"]
+    review = _review_contract().load_document(path.read_bytes())
+    review.update(verdict="pass_with_limitations", limitations=["Exact quantity is unsettled."])
+    hold = copy.deepcopy(review["assessments"][0])
+    hold.update(assessment_id="count-hold", outcome=outcome)
+    review["assessments"].append(hold)
+    write_changed_native_review(bundle, doc, path, review)
+    with pytest.raises(ValueError, match="unresolved or ambiguous quantity claim"):
+        load_coverage(bundle, root)
+
+
+@pytest.mark.parametrize("binding", ["missing", "malformed", "no_evidence"])
+def test_1464_unbound_quantity_concern_is_not_an_unrelated_limitation(tmp_path, binding):
+    root, _, _, bundle, doc = write_bundle(tmp_path)
+    obs = add_native_observation_reviews(bundle, doc)
+    path = bundle.parent / obs["skeptical_review_path"]
+    review = _review_contract().load_document(path.read_bytes())
+    review.update(verdict="pass_with_limitations", limitations=["Quantity remains unresolved."])
+    hold = copy.deepcopy(review["assessments"][0])
+    hold.update(assessment_id="count-hold", outcome="concern")
+    if binding == "missing":
+        del hold["dimensions"]
+    elif binding == "malformed":
+        hold["dimensions"][0]["value"] = "not-an-exact-digest"
+    else:
+        hold["dimensions"][0].update(value="0" * 64, evidence_ids=[])
+    review["assessments"].append(hold)
+    write_changed_native_review(bundle, doc, path, review)
+    with pytest.raises(ValueError, match="unresolved or ambiguous quantity claim"):
+        load_coverage(bundle, root)
+
+
+@pytest.mark.parametrize("location", ["assessment", "dimension"])
+@pytest.mark.parametrize("same_claim", [True, False])
+def test_1464_refuting_evidence_is_scoped_to_its_quantity_claim(tmp_path, location, same_claim):
+    root, _, _, bundle, doc = write_bundle(tmp_path)
+    obs = add_native_observation_reviews(bundle, doc)
+    path = bundle.parent / obs["skeptical_review_path"]
+    review = _review_contract().load_document(path.read_bytes())
+    review.update(verdict="pass_with_limitations", limitations=["A quantity is disputed."])
+    review["evidence"].append(
+        {**review["evidence"][0], "evidence_id": "counter", "support": "refutes"}
+    )
+    assessment = review["assessments"][0]
+    if not same_claim:
+        assessment = copy.deepcopy(assessment)
+        assessment["assessment_id"] = "distinct-count"
+        assessment["dimensions"][0]["value"] = "0" * 64
+        review["assessments"].append(assessment)
+    target = assessment if location == "assessment" else assessment["dimensions"][0]
+    target["evidence_ids"].append("counter")
+    write_changed_native_review(bundle, doc, path, review)
+    if same_claim:
+        with pytest.raises(ValueError, match="unresolved or ambiguous quantity claim"):
+            load_coverage(bundle, root)
+    else:
+        assert (
+            load_coverage(bundle, root).declarations["MIM:0000001"]["observations"][0]["count"] == 7
+        )
+
+
+@pytest.mark.parametrize("outcome", ["concern", "unknown"])
+def test_1464_explicit_distinct_claim_limitation_remains_accepted(tmp_path, outcome):
+    root, _, _, bundle, doc = write_bundle(tmp_path)
+    obs = add_native_observation_reviews(bundle, doc)
+    path = bundle.parent / obs["skeptical_review_path"]
+    review = _review_contract().load_document(path.read_bytes())
+    review.update(
+        verdict="pass_with_limitations", limitations=["A distinct quantity is unsettled."]
+    )
+    hold = copy.deepcopy(review["assessments"][0])
+    hold.update(assessment_id="distinct-count", outcome=outcome)
+    hold["dimensions"][0]["value"] = "0" * 64
+    review["assessments"].append(hold)
+    write_changed_native_review(bundle, doc, path, review)
+    assert load_coverage(bundle, root).declarations["MIM:0000001"]["observations"][0]["count"] == 7
+
+
+@pytest.mark.parametrize("status", ["open", "deferred", "accepted_risk", "resolved", "rejected"])
+def test_1464_native_quantity_findings_require_resolution(tmp_path, status):
+    root, _, _, bundle, doc = write_bundle(tmp_path)
+    obs = add_native_observation_reviews(bundle, doc)
+    path = bundle.parent / obs["skeptical_review_path"]
+    review = _review_contract().load_document(path.read_bytes())
+    review.update(
+        verdict="pass_with_limitations", limitations=["Quantity finding disposition retained."]
+    )
+    finding = {
+        "finding_id": "quantity-hold",
+        "issue_key": "quantity-hold",
+        "category": "quantity",
+        "severity": "minor",
+        "status": status,
+        "certainty": "confirmed",
+        "title": "Quantity disputed",
+        "description": "The source-scoped observation remains disputed.",
+        "target_ids": ["MIM:0000001"],
+        "evidence_ids": ["source"],
+        "ownership_note": "Synthetic owner fixture",
+    }
+    if status != "open":
+        finding["disposition_reason"] = "Synthetic disposition for this regression."
+    if status in {"accepted_risk", "resolved", "rejected"}:
+        finding["previous_occurrences"] = [
+            {
+                "repository": review["repository"],
+                "review_id": "earlier-fixture",
+                "finding_id": "quantity-hold",
+            }
+        ]
+    review["findings"].append(finding)
+    review["actions"].append(
+        {
+            "action_id": "resolve-count",
+            "description": "Resolve the quantity finding.",
+            "finding_ids": ["quantity-hold"],
+            "target_ids": ["MIM:0000001"],
+            "ownership_note": "Synthetic owner fixture",
+            "acceptance_checks": ["Reviewed disposition"],
+        }
+    )
+    write_changed_native_review(bundle, doc, path, review)
+    if status in {"resolved", "rejected"}:
+        assert (
+            load_coverage(bundle, root).declarations["MIM:0000001"]["observations"][0]["count"] == 7
+        )
+    else:
+        with pytest.raises(ValueError, match="unresolved owner quantity finding"):
+            load_coverage(bundle, root)
