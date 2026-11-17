@@ -18,15 +18,15 @@ from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
 from types import ModuleType
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import yaml  # type: ignore[import-untyped]
-from linkml.validator import Validator  # type: ignore[import-untyped]
-from linkml.validator.plugins import JsonschemaValidationPlugin  # type: ignore[import-untyped]
-from linkml.validator.report import Severity  # type: ignore[import-untyped]
 
 from mediaingredientmech.mapping_scope import _load_yaml
 from mediaingredientmech.utils.culturemech_occurrences import effective_occurrence_statistics
+
+if TYPE_CHECKING:
+    from linkml.validator import Validator  # type: ignore[import-untyped]
 
 SCHEMA = Path(__file__).parent / "schema" / "occurrence_coverage.yaml"
 DEFAULT_COVERAGE = Path(__file__).resolve().parents[2] / "mappings" / "occurrence_coverage.yaml"
@@ -294,6 +294,11 @@ def _evidence_file(root: Path, name: str) -> Path:
 
 @lru_cache(maxsize=1)
 def _validator() -> Validator:
+    # #1431: standalone readers need LinkML only when validating a companion.
+    # Missing dependencies must propagate; they never authorize UNKNOWN.
+    from linkml.validator import Validator
+    from linkml.validator.plugins import JsonschemaValidationPlugin  # type: ignore[import-untyped]
+
     return Validator(
         schema=str(SCHEMA), validation_plugins=[JsonschemaValidationPlugin(closed=True)]
     )
@@ -319,6 +324,8 @@ def load_coverage(path: Path, ingredients_root: Path) -> Coverage:
     Evidence binding is not scientific approval: actual reasons and observations
     still require the independent review used for publication of the companion.
     """
+    from linkml.validator.report import Severity  # type: ignore[import-untyped]
+
     raw = path.read_bytes()
     doc = _load_document(raw)
     report = _validator().validate(doc, target_class="OccurrenceCoverage")

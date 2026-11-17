@@ -63,6 +63,12 @@ numeric checks. `audit_occurrence_stats.py --fix` refuses to infer zeros; qualif
 count corrections still use the existing guarded counts-only workflow (#486,
 #820). An UNKNOWN declaration does not widen that workflow's editable sections.
 
+Standalone flat readers without a companion do not import the LinkML validator.
+A present companion always requires the full `linkml` dependency declared in
+`pyproject.toml`, including in the flat-coverage CI environment (#1431).
+`linkml-runtime` alone is insufficient. A missing validator raises an error;
+the reader never discards the companion or treats it as validated UNKNOWN.
+
 Browser, list, index, visualization and role outputs use nullable numeric values
 and explicit `occurrence_statistics_state`, `occurrence_statistics_reason`, and
 (for UNKNOWN) `occurrence_statistics_provenance`. States are RECORDED, MEMBERSHIP
