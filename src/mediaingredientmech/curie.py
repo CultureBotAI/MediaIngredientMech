@@ -133,7 +133,11 @@ def mim_curie_for_stem(stem: str) -> str:
 # checked the way the refusal note prescribes: is_defining_ontology=true, not
 # obsolete, and the canonical …/obo/MICRO_nnnnnnn IRI round-trips on OLS4. The
 # control MICRO:0002115 'defibrinated blood' 404s on that IRI, so the check
-# discriminates rather than passing everything.
+# discriminates rather than passing everything. Its separately supported legacy
+# IRI is admitted through micro_source, never through this canonical-only set.
+# Issue #1477 adds :0000181 / :0001736 / :0001795 from the complete retained OLS
+# responses in ontology_sources/micro/admission-1477.json (defining, nonobsolete,
+# exact canonical IRI). This is identifier admission, not mapping approval.
 MICRO_VERIFIED = {
     "MICRO:0000082",
     "MICRO:0000094",
@@ -143,6 +147,7 @@ MICRO_VERIFIED = {
     "MICRO:0000176",
     "MICRO:0000178",
     "MICRO:0000180",
+    "MICRO:0000181",
     "MICRO:0000182",
     "MICRO:0000183",
     "MICRO:0000193",
@@ -197,7 +202,9 @@ MICRO_VERIFIED = {
     "MICRO:0001709",
     "MICRO:0001715",
     "MICRO:0001723",
+    "MICRO:0001736",
     "MICRO:0001773",
+    "MICRO:0001795",
 }
 
 

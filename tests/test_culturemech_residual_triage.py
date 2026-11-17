@@ -422,7 +422,7 @@ class TestMicroRoundTripGuard:
     """Looking a term up by obo_id must not defeat the reason MICRO is gated.
 
     Unreviewed legacy MicrO.owl IRIs must not be admitted by an obo_id lookup
-    alone. Canonical OLS verification and the three separately reviewed KGX
+    alone. Canonical OLS verification and the separately reviewed KGX
     exceptions are distinct evidence paths; the normalizer owns their union.
     """
 
@@ -467,6 +467,9 @@ class TestMicroRoundTripGuard:
         ("MICRO:0002393", "Proteose Peptone No. 2"),
         ("MICRO:0002392", "rabbit serum"),
         ("MICRO:0002250", "V-8 juice"),
+        ("MICRO:0002115", "defibrinated blood"),
+        ("MICRO:0002390", "Oxoid Blood Agar Base No. 2"),
+        ("MICRO:0002399", "water-lysed sheep blood"),
     ])
     def test_reviewed_legacy_labels_use_the_pinned_source(self, promote, monkeypatch, curie, label):
         def no_network(*args, **kwargs):

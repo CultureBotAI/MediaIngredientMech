@@ -1,35 +1,22 @@
 {
   "schema_version": 1,
   "source_repository": "https://github.com/Knowledge-Graph-Hub/kg-microbe",
-  "copied_at_utc": "2026-09-23T16:52:46.327868+00:00",
-  "scope": "Three reviewed legacy-IRI MICRO identities. Other snapshot terms are context, not additional approvals.",
+  "scope": "Six explicitly reviewed legacy-IRI MICRO identities. Other snapshot terms are context, not additional admissions or mapping approvals.",
   "files": {
     "micro_nodes.tsv": {
-      "sha256": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282",
-      "records": 90,
-      "upstream_source": "data/transformed/ontologies_stubs/micro_nodes.tsv",
-      "upstream_sha256": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282",
-      "upstream_records": 90,
-      "source_modified_utc": "2026-09-21T09:05:30.412837+00:00",
-      "extraction": "complete current referenced subset, byte-for-byte"
+      "sha256": "022ed0d47b7886594d6a325b86cc805475dce93c745e87bb4514f56256935613",
+      "records": 94,
+      "provenance": "admission-1477.json"
     },
     "micro_edges.tsv": {
-      "sha256": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
-      "records": 89,
-      "upstream_source": "data/transformed/ontologies_stubs/micro_edges.tsv",
-      "upstream_sha256": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
-      "upstream_records": 89,
-      "source_modified_utc": "2026-09-21T09:05:30.422835+00:00",
-      "extraction": "complete current referenced subset, byte-for-byte"
+      "sha256": "2c72cc64ddb42a46eeaec5d3631479848dc29e846d5e7eb7b38006dc0065e3f2",
+      "records": 93,
+      "provenance": "admission-1477.json"
     },
     "legacy_nodes.tsv": {
-      "sha256": "8253245c7c618e624d763fed397afe4c21a75a043b0140e94207989176796716",
-      "records": 6,
-      "upstream_source": "data/transformed_20260621/ontologies/micro_nodes.tsv",
-      "upstream_sha256": "3bf0202f7a8fc34f777b3e03a44ec2d68a4544895a9d00c3cf551854098a1329",
-      "upstream_records": 17647,
-      "source_modified_utc": "2026-05-02T23:54:46.533697+00:00",
-      "extraction": "verbatim cell values: reviewed classes and immediate parents"
+      "sha256": "45e4452b660afae9f397abf3dabf67e1baeec77e3a5a2c403dbd73bb5ea84ed8",
+      "records": 12,
+      "provenance": "admission-1477.json"
     }
   },
   "reviewed_terms": {
@@ -53,7 +40,61 @@
       "parents": [
         "MICRO:0000167"
       ]
+    },
+    "MICRO:0002115": {
+      "label": "defibrinated blood",
+      "iri": "http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002115",
+      "parents": [
+        "MICRO:0001233"
+      ]
+    },
+    "MICRO:0002390": {
+      "label": "Oxoid Blood Agar Base No. 2",
+      "iri": "http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002390",
+      "parents": [
+        "MICRO:0000067"
+      ]
+    },
+    "MICRO:0002399": {
+      "label": "water-lysed sheep blood",
+      "iri": "http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002399",
+      "parents": [
+        "MICRO:0002401"
+      ]
     }
   },
-  "legacy_note": "The archived nodes preserve the original MicrO.owl IRIs. The archived edge table has no edges for these three classes; parent relationships are supported by the current KGX edge table only."
+  "legacy_note": "Original six archived rows are unchanged. Six appended rows preserve original IRIs from the native MIREOT graph and native TSV metadata. Parent edges are actual native KGX output, not inferred ingredient relationships. See admission-1477.json.",
+  "base_snapshot": {
+    "copied_at_utc": "2026-09-23T16:52:46.327868+00:00",
+    "files": {
+      "micro_nodes.tsv": {
+        "sha256": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282",
+        "records": 90,
+        "upstream_source": "data/transformed/ontologies_stubs/micro_nodes.tsv",
+        "upstream_sha256": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282",
+        "upstream_records": 90,
+        "source_modified_utc": "2026-09-21T09:05:30.412837+00:00",
+        "extraction": "complete current referenced subset, byte-for-byte"
+      },
+      "micro_edges.tsv": {
+        "sha256": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
+        "records": 89,
+        "upstream_source": "data/transformed/ontologies_stubs/micro_edges.tsv",
+        "upstream_sha256": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
+        "upstream_records": 89,
+        "source_modified_utc": "2026-09-21T09:05:30.422835+00:00",
+        "extraction": "complete current referenced subset, byte-for-byte"
+      },
+      "legacy_nodes.tsv": {
+        "sha256": "8253245c7c618e624d763fed397afe4c21a75a043b0140e94207989176796716",
+        "records": 6,
+        "upstream_source": "data/transformed_20260621/ontologies/micro_nodes.tsv",
+        "upstream_sha256": "3bf0202f7a8fc34f777b3e03a44ec2d68a4544895a9d00c3cf551854098a1329",
+        "upstream_records": 17647,
+        "source_modified_utc": "2026-05-02T23:54:46.533697+00:00",
+        "extraction": "verbatim cell values: reviewed classes and immediate parents"
+      }
+    },
+    "legacy_note": "The archived nodes preserve the original MicrO.owl IRIs. The archived edge table has no edges for these three classes; parent relationships are supported by the current KGX edge table only."
+  }
 }
