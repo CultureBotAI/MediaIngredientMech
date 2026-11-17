@@ -21,9 +21,9 @@ from types import ModuleType
 from typing import Any
 
 import yaml  # type: ignore[import-untyped]
-from linkml.validator import Validator
-from linkml.validator.plugins import JsonschemaValidationPlugin
-from linkml.validator.report import Severity
+from linkml.validator import Validator  # type: ignore[import-untyped]
+from linkml.validator.plugins import JsonschemaValidationPlugin  # type: ignore[import-untyped]
+from linkml.validator.report import Severity  # type: ignore[import-untyped]
 
 from mediaingredientmech.utils.culturemech_occurrences import effective_occurrence_statistics
 
