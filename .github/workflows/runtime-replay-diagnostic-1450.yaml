@@ -76,6 +76,9 @@ jobs:
       - name: Set up Python
         run: uv python install 3.13
 
+      - name: Select the installed Python patch for this run
+        run: python3 -I scripts/select_ci_python_patch.py
+
       - name: Install runtime dependencies
         # --frozen fails if uv.lock is stale (no silent re-resolve in CI). Runtime
         # deps only; pytest/pytest-cov are layered via `uv run --with` below so the
@@ -101,6 +104,7 @@ jobs:
               '.github/workflows/tests.yaml',
               '.github/workflows/runtime-replay-diagnostic-1450.yaml',
               'scripts/runtime_root_diagnostic.py',
+              'scripts/select_ci_python_patch.py',
               'scripts/.vendored_canon_ref',
               'src/mediaingredientmech/curate/curation_successor.py',
               'src/mediaingredientmech/curate/stable_sssom_replay.py',
@@ -118,6 +122,14 @@ jobs:
               'platform': platform.platform(),
               'packages': {name: importlib.metadata.version(name) for name in ('pytest', 'pytest-cov', 'PyYAML', 'python-dotenv', 'rfc3339-validator')},
               'inputs_sha256': {name: sha(name) for name in names},
+              'python_selection': json.loads(Path('.temp/runtime-ci-diagnostic-1450/python-selection.json').read_text()),
+              'environment_config_sha256': sha('.venv/pyvenv.cfg'),
+              'environment_config_fields': {
+                  key.strip(): value.strip()
+                  for line in Path('.venv/pyvenv.cfg').read_text().splitlines() if '=' in line
+                  for key, value in [line.split('=', 1)]
+                  if key.strip() in {'home', 'version', 'version_info'}
+              },
               'scope': 'Selected runtime modules only; no full-suite or release conclusion',
           }
           Path('.temp/runtime-ci-diagnostic-1450/runtime.json').write_text(json.dumps(record, indent=2) + '\n')
@@ -148,6 +160,7 @@ jobs:
           path: |
             .temp/runtime-ci-diagnostic-1450/uv-version.txt
             .temp/runtime-ci-diagnostic-1450/runtime.json
+            .temp/runtime-ci-diagnostic-1450/python-selection.json
             .temp/runtime-ci-diagnostic-1450/pytest.log
             .temp/runtime-ci-diagnostic-1450/pytest.xml
             .temp/runtime-ci-diagnostic-1450/runtime-root-operands-*.json
