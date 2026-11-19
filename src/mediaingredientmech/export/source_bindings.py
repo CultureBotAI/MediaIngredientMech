@@ -18,6 +18,7 @@ import types
 from pathlib import Path
 from typing import Any, Protocol, TypedDict, runtime_checkable
 
+from mediaingredientmech.export import culturemech_replay
 from mediaingredientmech.export import reviewed_sssom as external
 from mediaingredientmech.mapping_scope import _load_yaml
 from mediaingredientmech.review_claims import payload_sha256
@@ -80,6 +81,9 @@ PRODUCER_PATHS = (
     "src/mediaingredientmech/sssom_metadata.py",
     "src/mediaingredientmech/identity_projection.py",
     "src/mediaingredientmech/export/source_producer.py",
+    "src/mediaingredientmech/export/culturemech_replay.py",
+    "src/mediaingredientmech/export/culturemech_replay_process.py",
+    *culturemech_replay.RESOURCES,
 )
 PRODUCER_AUXILIARY = ("uv.lock", "pyproject.toml", ".python-version")
 ALGORITHM = "mim-source-identity-sha256-v1"
@@ -164,6 +168,8 @@ class _Inputs:
         self.hashes: dict[str, str] = {}
         self.bytes: dict[str, bytes] = {}
         self.reports: dict[str, tuple[dict[str, Any], dict[str, str], dict[str, str]]] = {}
+        self.cm_replay = None
+        self.cm_required_inputs = {}
         self.git_head = _require_capture().start_context(self.root)
 
     def read(self, name, expected=None):
@@ -373,7 +379,8 @@ def _prepare(root, review_path):
             "inputs",
             "external_review",
             "cases",
-        },
+        }
+        | ({"culturemech_intake_replay"} if "culturemech_intake_replay" in review else set()),
     )
     _require(
         review["schema_version"] == 1 and review["capability"] == CAPABILITY, "unsupported contract"
@@ -449,6 +456,25 @@ def _prepare(root, review_path):
     registry = parse_registry(inputs.bytes[str(REGISTRY_PATH)], inputs.bytes[str(LIFECYCLE_PATH)])
     records = {name: _load_yaml(inputs.bytes[name].decode()) for name in inventory}
     validate_records(registry, records)
+    if "culturemech_intake_replay" in review:
+        inputs.cm_replay = culturemech_replay.Selection(inputs, review["culturemech_intake_replay"])
+        _keys(review["external_review"], {"path", "sha256"})
+        ref = review["external_review"]
+        inputs.read(ref["path"], ref["sha256"])
+        historical_external = external.load_review(inputs.root, inputs.root / ref["path"])
+        current_external = {ref["path"]: ref["sha256"]}
+        for path, digest in historical_external["input_snapshot"].items():
+            name = path.relative_to(inputs.root).as_posix()
+            inputs.read(name, digest)
+            current_external[name] = digest
+        inputs.cm_required_inputs = {
+            **inputs.cm_replay.required_inputs,
+            **review["record_inputs"],
+            **review["ledger_inputs"],
+            **current_external,
+            source["nodes"]: source["nodes_sha256"],
+            source["occurrences"]: source["occurrences_sha256"],
+        }
     cases = review["cases"]
     _require(
         isinstance(cases, list) and len(cases) == len(rows), "cases must cover every source row"
@@ -519,7 +545,8 @@ def inspect_candidates(root, review_path):
         "inputs": {
             name: digest
             for name, digest in inputs.hashes.items()
-            if name in review["record_inputs"]
+            if name in inputs.cm_required_inputs
+            or name in review["record_inputs"]
             or name in review["ledger_inputs"]
             or name in {review["source"]["nodes"], review["source"]["occurrences"]}
         },
@@ -536,6 +563,7 @@ def _load(root, review_path):
         owner, identifier = payload["owner_record"], payload["source_id"]
         record = records[owner] if owner else {}
         required = {
+            **inputs.cm_required_inputs,
             source["nodes"]: source["nodes_sha256"],
             source["occurrences"]: source["occurrences_sha256"],
             **review["ledger_inputs"],
@@ -620,6 +648,7 @@ def expected_products(root, review_path, *, _generation_receipt=None):
     inputs, review, cases, external_products, external_manifest, occurrence_count = _load(
         root, review_path
     )
+    cm_proof = culturemech_replay.replay(inputs.cm_replay) if inputs.cm_replay else None
     products = {"external-" + name: raw for name, raw in external_products.items()}
     for status, name in (
         ("SUPPORTED", "source-bindings.sssom.tsv"),
@@ -681,8 +710,18 @@ def expected_products(root, review_path, *, _generation_receipt=None):
         "inputs": inputs.hashes,
         "files": {name: _sha(raw) for name, raw in products.items()},
     }
+    if cm_proof is not None:
+        manifest["required_capabilities"].append(culturemech_replay.CAPABILITY)
+        manifest["culturemech_intake_replay"] = cm_proof
     products["manifest.json"] = _json(manifest)
-    inputs.recheck()
+    if inputs.cm_replay:
+        _require(
+            sorted(review["record_inputs"]) == _inventory(inputs.root),
+            "record inventory changed during integration export",
+        )
+        inputs.cm_replay.recheck()
+    else:
+        inputs.recheck()
     return products, manifest
 
 
@@ -791,7 +830,11 @@ def export_candidate(root, review_path, output):
 def consumer_claims(root, review_path, output, *, capabilities):
     """Validated candidate assertions; never infer ontology identity or subclass."""
     _require(CAPABILITY in capabilities, "consumer lacks required capability")
-    validate_candidate(root, review_path, output)
+    manifest = validate_candidate(root, review_path, output)
+    _require(
+        set(manifest["required_capabilities"]) <= set(capabilities),
+        "consumer lacks required integration capability",
+    )
     cases = json.loads((Path(output) / "source-decisions.json").read_bytes())
     claims = []
     for case in cases:

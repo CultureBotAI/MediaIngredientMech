@@ -32,6 +32,7 @@ The closed top-level JSON object has these fields (version 1):
 | `inputs` | Exact paths/hashes for both authoritative native `review.yaml` / derived `review.md` pairs and any additional captured evidence |
 | `external_review` | `{ "path": "…", "sha256": "…" }` identifying an ordinary current complete review of this root's `mappings/ingredient_mappings.sssom.tsv` |
 | `cases` | One case per source row, in original order; no omissions or duplicate positions |
+| `culturemech_intake_replay` | Optional exact `{ "path": "…", "sha256": "…" }` selecting the immutable CM intake `package.json`; see the replay contract below |
 
 `source` has exactly `nodes`, `nodes_sha256`, `occurrences`,
 `occurrences_sha256`, `id_column`, `label_column`, `occurrence_id_column`,
@@ -223,6 +224,49 @@ dependency, runtime and selected-input context while retaining the original
 generation origin rather than falsely replacing it with the validator's path.
 Consumers should pin the complete candidate manifest at their acceptance
 boundary; descriptive origin strings are never read or executed as input paths.
+
+## Original CultureMech preparation and review replay (#1431)
+
+The optional package declaration adds `culturemech-intake-v3-replay-v1` only after
+the native exporter reconstructs both original source-to-prepared and
+prepared-to-reviewed products. Ordinary requests omit that capability and proof.
+No copied success flag, rehashed artifact inventory or reviewed-only replay can
+stand in for original preparation.
+
+The supported package records two real implementation histories: preparation
+at `57961ca8651fc9803694d49a2a23849d0f8186ba`, and later strict verification at
+`53b7237e941534ce53493fce705ef954d143f90d`. The immutable code capsule retains the
+original preparation bytes and historical canonical helpers. They execute in a
+finite private namespace, with authentic materialized filenames, so preparation
+computes its own original implementation fingerprint. Later duplicate-key and
+complete-owner-membership guards run around both stages. Historical canonical
+inputs stay separate from the current permanent-ID corpus and canonical review.
+
+Inspection binds the full original package/source/owner/canonical/review closure
+and the current owner/registry/canonical closure into both native scientific
+reports. Export then performs both reconstructions in an exclusively owned
+`.temp/native-culturemech-replay/` directory, retaining diagnostic scratch. Every
+prepared and reviewed member and byte must match. Source archive membership and
+hashes are checked before the real CM verifier runs. The bounded child uses
+isolated, no-site, no-bytecode startup with an explicit minimal environment; it
+checks parent-frozen executable/script/ancestor identities before compiling the
+captured script bytes. Installed runtime hardlinks retain their existing policy;
+script/source aliases remain forbidden. This records the actual replay runtime,
+not an invented observation of the original MIM preparation environment.
+
+On success, `manifest.culturemech_intake_replay` contains exactly four
+`{path, sha256}` declarations—`source_manifest`, `prepared_intake`,
+`reviewed_intake`, `binding_review`—each also present identically in
+`manifest.inputs`, and `counts` with exactly `positive_inventory`, `context_only`,
+`held`, `supported_bindings`, `withheld_bindings`. Consumers must accept both
+required capabilities and run native reconstruction. A changed source table,
+historical case, owner, canonical evidence, dependency, report or input membership
+withdraws the corresponding prior proof.
+
+Replay does not select current KG-Microbe inputs, reconcile changed owners,
+invent scientific dispositions or promote the separately accepted intake into a
+combined release. Explicit consumer selection and complete row reconciliation,
+including context, held and zero-valued observations, remain separate gates.
 
 The old filename-based MIM addresses remain historical aliases, not new source
 identity approvals. This candidate contract neither rewrites those historical
