@@ -8,6 +8,7 @@ or weakens MIM's runtime guards.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import os
@@ -63,12 +64,17 @@ def select_patch(request):
     }
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--output", required=True, type=Path, help="New JSON selection receipt path"
+    )
+    args = parser.parse_args(argv)
     request = os.environ["UV_PYTHON"]
     if request != Path(".python-version").read_text().strip():
         raise ValueError("CI request differs from maintained .python-version")
     record = select_patch(request)
-    output = Path(".temp/runtime-ci-diagnostic-1450/python-selection.json")
+    output = args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("x", encoding="utf-8") as handle:
         json.dump(record, handle, indent=2)
