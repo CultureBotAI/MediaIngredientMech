@@ -143,6 +143,9 @@ def build(tmp_path, records, csv_rows, header=None):
     # Include the actual new producer dependency; retain all negative gate assertions.
     coverage_module = ROOT / "src" / "mediaingredientmech" / "occurrence_coverage.py"
     (tmp_path / "src" / "mediaingredientmech" / "occurrence_coverage.py").write_text(coverage_module.read_text())
+    # #1431: preserve the real coverage producer's direct import dependency.
+    mapping_scope_module = ROOT / "src" / "mediaingredientmech" / "mapping_scope.py"
+    (tmp_path / "src" / "mediaingredientmech" / "mapping_scope.py").write_bytes(mapping_scope_module.read_bytes())
     return tmp_path
 
 
@@ -181,7 +184,10 @@ def test_gate_fails_when_the_synonyms_column_is_missing_entirely(tmp_path):
 def test_gate_fails_when_the_flat_artifact_is_absent(tmp_path):
     repo = build(tmp_path, [rec("CHEBI:1", "X")], [])
     (repo / "docs" / "data" / "all_ingredients.csv").unlink()
-    assert run(repo).returncode == 2
+    out = run(repo)
+    assert out.returncode == 2
+    assert "docs/data/all_ingredients.csv does not exist" in out.stdout
+    assert "cannot import export_lists.py" not in out.stdout
 
 
 # --- detritus filtering and separator safety (#231 review) ------------------
