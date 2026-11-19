@@ -130,6 +130,15 @@ def _table(raw, required):
     return rows
 
 
+def _sssom_rows(raw):
+    """Skip only initial metadata; quoted hash-prefixed lines are TSV data (#1405)."""
+    lines = raw.decode("utf-8").splitlines(keepends=True)
+    end = 0
+    while end < len(lines) and lines[end].startswith("#"):
+        end += 1
+    return _table("".join(lines[end:]).encode("utf-8"), ("subject_id", "predicate_id", "object_id"))
+
+
 def source_selector(position, source_id):
     """Exact native snapshot-row selector; display labels are never a key."""
     return json.dumps(
@@ -714,14 +723,7 @@ def validate_sssom_partitions(output, manifest):
         ("external-withheld_mappings.sssom.tsv", manifest["external_counts"]["withhold"]),
     ):
         path = Path(output) / name
-        rows = _table(
-            "".join(
-                line
-                for line in path.read_text().splitlines(keepends=True)
-                if not line.startswith("#")
-            ).encode(),
-            ("subject_id", "predicate_id", "object_id"),
-        )
+        rows = _sssom_rows(path.read_bytes())
         native = parse_sssom_table(path, strict=True)
         _require(
             len(rows)
