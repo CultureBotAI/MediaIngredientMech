@@ -1,0 +1,303 @@
+.....FFFFF.......FFFFFF                                                  [100%]
+=================================== FAILURES ===================================
+_ test_invalid_history_cannot_outrank_a_valid_curation_date[\uff12\uff10\uff12\uff15-01-01] _
+
+invalid = '２０２５-01-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x107812850>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '２０２５-01-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         + ２０２５-01-01
+
+tests/test_mapping_date.py:80: AssertionError
+_ test_invalid_history_cannot_outrank_a_valid_curation_date[\u0662\u0660\u0662\u0665-01-01] _
+
+invalid = '٢٠٢٥-01-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x107812990>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '٢٠٢٥-01-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         + ٢٠٢٥-01-01
+
+tests/test_mapping_date.py:80: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-02-30] _____
+
+invalid = '2026-02-30'
+capsys = <_pytest.capture.CaptureFixture object at 0x10788cb00>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+        assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+        warning = capsys.readouterr().out
+>       assert 'Water.yaml' in warning and invalid in warning
+E       AssertionError: assert ('Water.yaml' in '')
+
+tests/test_mapping_date.py:82: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-13-01] _____
+
+invalid = '2026-13-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x10788cd60>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '2026-13-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         ?        - -
+E         + 2026-13-01
+E         ?       ++
+
+tests/test_mapping_date.py:80: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-10-150] ____
+
+invalid = '2026-10-150'
+capsys = <_pytest.capture.CaptureFixture object at 0x1078cb0b0>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+        assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+        warning = capsys.readouterr().out
+>       assert 'Water.yaml' in warning and invalid in warning
+E       AssertionError: assert ('Water.yaml' in '')
+
+tests/test_mapping_date.py:82: AssertionError
+________________ test_missing_row_date_is_preserved_for_rule_f _________________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_missing_row_date_is_prese0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1079585f0>
+
+    def test_missing_row_date_is_preserved_for_rule_f(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+>       run_builder(tmp_path, monkeypatch,
+                    [{'mapping_date': '2026-10-15'}, {'mapping_date': ''}], path)
+
+tests/test_mim_sssom_header_dates.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_mim_sssom_header_dates.py:39: in run_builder
+    builder.main()
+scripts/build_mim_ingredient_sssom.py:1246: in main
+    _write_sssom(final, args.output)
+scripts/build_mim_ingredient_sssom.py:1044: in _write_sssom
+    version = _mapping_set_version(rows)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'subject_id': 'MIM:record0', 'object_id': 'CHEBI:1', 'predicate_id': 'skos:exactMatch', 'mapping_date': '2026-10-15'}, {'subject_id': 'MIM:record1', 'object_id': 'CHEBI:2', 'predicate_id': 'skos:exactMatch', 'mapping_date': ''}]
+
+    def _mapping_set_version(rows: list[dict]) -> str:
+        """Bind header dates to emitted curation dates (MIM Rule G, #681).
+    
+        Reject unusable dates before opening the output. A build clock cannot
+        supply missing curation provenance, even if another row has a valid date.
+        """
+        if not rows:
+            raise ValueError("Cannot derive mapping_date from an empty mapping set")
+        dates = []
+        for row in rows:
+            value = row.get("mapping_date", "")
+            if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+>               raise ValueError(f"Invalid mapping_date for {row.get('subject_id')}: {value!r}")
+E               ValueError: Invalid mapping_date for MIM:record1: ''
+
+scripts/build_mim_ingredient_sssom.py:1032: ValueError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+_______ test_all_dateless_subjects_are_reported_before_replacing_output ________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_all_dateless_subjects_are0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10785a4e0>
+
+    def test_all_dateless_subjects_are_reported_before_replacing_output(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+        path.write_text('previous output\n')
+        with pytest.raises(ValueError, match='mapping_date') as error:
+            run_builder(tmp_path, monkeypatch, [{'mapping_date': ''}, {}], path)
+        assert 'MIM:record0' in str(error.value)
+>       assert 'MIM:record1' in str(error.value)
+E       assert 'MIM:record1' in "Invalid mapping_date for MIM:record0: ''"
+E        +  where "Invalid mapping_date for MIM:record0: ''" = str(ValueError("Invalid mapping_date for MIM:record0: ''"))
+E        +    where ValueError("Invalid mapping_date for MIM:record0: ''") = <ExceptionInfo ValueError("Invalid mapping_date for MIM:record0: ''") tblen=5>.value
+
+tests/test_mim_sssom_header_dates.py:85: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+______ test_all_malformed_row_dates_are_reported_before_replacing_output _______
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_all_malformed_row_dates_a0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10788bd90>
+
+    def test_all_malformed_row_dates_are_reported_before_replacing_output(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+        path.write_text('previous output\n')
+        with pytest.raises(ValueError, match='mapping_date') as error:
+            run_builder(tmp_path, monkeypatch, [
+                {'mapping_date': '2026-10-15'},
+                {'mapping_date': '2026-02-30'},
+                {'mapping_date': '２０２６-10-15'},
+            ], path)
+        assert 'MIM:record1' in str(error.value)
+>       assert 'MIM:record2' in str(error.value)
+E       assert 'MIM:record2' in "Invalid mapping_date for MIM:record1: '2026-02-30'"
+E        +  where "Invalid mapping_date for MIM:record1: '2026-02-30'" = str(ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'"))
+E        +    where ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'") = <ExceptionInfo ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'") tblen=5>.value
+
+tests/test_mim_sssom_header_dates.py:99: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+_ test_non_ascii_history_date_cannot_replace_output[\uff12\uff10\uff12\uff16-10-15] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_non_ascii_history_date_ca0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10788a350>
+history_date = '２０２６-10-15'
+
+    @pytest.mark.parametrize('history_date', ['２０２６-10-15', '٢٠٢٦-10-15'])
+    def test_non_ascii_history_date_cannot_replace_output(tmp_path, monkeypatch, history_date):
+        """#682: exercise native row extraction as well as the CLI's write guard."""
+        inputs = tmp_path / 'inputs'
+        inputs.mkdir()
+        record = inputs / 'Water.yaml'
+        record.write_text(
+            'identifier: CHEBI:15377\n'
+            'preferred_term: water\n'
+            'mapping_status: MAPPED\n'
+            'ontology_mapping:\n'
+            '  ontology_id: CHEBI:15377\n'
+            '  ontology_label: water\n'
+            '  mapping_quality: EXACT_MATCH\n'
+            'curation_history:\n'
+            f'  - timestamp: "{history_date}T00:00:00Z"\n',
+            encoding='utf-8',
+        )
+>       assert builder._row_from_yaml(record, {}, {}, {}, {})[0]['mapping_date'] == ''
+E       AssertionError: assert '２０２６-10-15' == ''
+E         
+E         + ２０２６-10-15
+
+tests/test_mim_sssom_header_dates.py:121: AssertionError
+_ test_non_ascii_history_date_cannot_replace_output[\u0662\u0660\u0662\u0666-10-15] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_non_ascii_history_date_ca1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10706d980>
+history_date = '٢٠٢٦-10-15'
+
+    @pytest.mark.parametrize('history_date', ['２０２６-10-15', '٢٠٢٦-10-15'])
+    def test_non_ascii_history_date_cannot_replace_output(tmp_path, monkeypatch, history_date):
+        """#682: exercise native row extraction as well as the CLI's write guard."""
+        inputs = tmp_path / 'inputs'
+        inputs.mkdir()
+        record = inputs / 'Water.yaml'
+        record.write_text(
+            'identifier: CHEBI:15377\n'
+            'preferred_term: water\n'
+            'mapping_status: MAPPED\n'
+            'ontology_mapping:\n'
+            '  ontology_id: CHEBI:15377\n'
+            '  ontology_label: water\n'
+            '  mapping_quality: EXACT_MATCH\n'
+            'curation_history:\n'
+            f'  - timestamp: "{history_date}T00:00:00Z"\n',
+            encoding='utf-8',
+        )
+>       assert builder._row_from_yaml(record, {}, {}, {}, {})[0]['mapping_date'] == ''
+E       AssertionError: assert '٢٠٢٦-10-15' == ''
+E         
+E         + ٢٠٢٦-10-15
+
+tests/test_mim_sssom_header_dates.py:121: AssertionError
+_____________ test_dateless_record_reaches_rule_f_as_an_empty_cell _____________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7919/test_dateless_record_reaches_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1077984d0>
+capsys = <_pytest.capture.CaptureFixture object at 0x1078a6ad0>
+
+    def test_dateless_record_reaches_rule_f_as_an_empty_cell(tmp_path, monkeypatch, capsys):
+        """Native YAML extraction and CLI output keep every dateless record visible."""
+        inputs = tmp_path / 'records'
+        inputs.mkdir()
+        base = (
+            'identifier: CHEBI:15377\n'
+            'mapping_status: MAPPED\n'
+            'ontology_mapping:\n'
+            '  ontology_id: CHEBI:15377\n'
+            '  ontology_label: water\n'
+            '  mapping_quality: EXACT_MATCH\n'
+        )
+        (inputs / 'Dated.yaml').write_text(base + 'preferred_term: Dated\n'
+            'curation_history:\n  - timestamp: "2026-10-15T00:00:00Z"\n')
+        (inputs / 'Dateless.yaml').write_text(base + 'preferred_term: Dateless\n')
+        output = tmp_path / 'mapping.tsv'
+        monkeypatch.setattr(builder, 'MIM_INGREDIENTS_DIR', inputs)
+        monkeypatch.setattr(builder, 'require_mech_roots', lambda *a, **kw: None)
+        monkeypatch.setattr(builder, '_load_residual_categorization', lambda: {})
+        monkeypatch.setattr(builder, '_load_kgm_source_index', lambda: {})
+        monkeypatch.setattr(builder, '_load_kgm_labels', lambda: {})
+        monkeypatch.setattr(builder, '_load_chebi_labels', lambda *a: {'CHEBI:15377': 'water'})
+        monkeypatch.setattr(sys, 'argv', ['builder', '--no-validate', '--no-preserve-validation',
+                                       '--output', str(output)])
+>       builder.main()
+
+tests/test_mim_sssom_header_dates.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_mim_ingredient_sssom.py:1246: in main
+    _write_sssom(final, args.output)
+scripts/build_mim_ingredient_sssom.py:1044: in _write_sssom
+    version = _mapping_set_version(rows)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'subject_id': 'MIM:Dated', 'subject_label': 'Dated', 'predicate_id': 'skos:exactMatch', 'object_id': 'CHEBI:15377', ..._id': 'MIM:Dateless', 'subject_label': 'Dateless', 'predicate_id': 'skos:exactMatch', 'object_id': 'CHEBI:15377', ...}]
+
+    def _mapping_set_version(rows: list[dict]) -> str:
+        """Bind header dates to emitted curation dates (MIM Rule G, #681).
+    
+        Reject unusable dates before opening the output. A build clock cannot
+        supply missing curation provenance, even if another row has a valid date.
+        """
+        if not rows:
+            raise ValueError("Cannot derive mapping_date from an empty mapping set")
+        dates = []
+        for row in rows:
+            value = row.get("mapping_date", "")
+            if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+>               raise ValueError(f"Invalid mapping_date for {row.get('subject_id')}: {value!r}")
+E               ValueError: Invalid mapping_date for MIM:Dateless: ''
+
+scripts/build_mim_ingredient_sssom.py:1032: ValueError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Dateless.yaml; emitting an empty mapping_date (#542)
+----------------------------- Captured stderr call -----------------------------
+Scanning 2 MIM ingredient YAMLs...
+Fetching rdfs:labels for 1 CHEBI ids from OAK...
+  resolved 1 / 1
+=========================== short test summary info ============================
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[\uff12\uff10\uff12\uff15-01-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[\u0662\u0660\u0662\u0665-01-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-02-30]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-13-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-10-150]
+FAILED tests/test_mim_sssom_header_dates.py::test_missing_row_date_is_preserved_for_rule_f
+FAILED tests/test_mim_sssom_header_dates.py::test_all_dateless_subjects_are_reported_before_replacing_output
+FAILED tests/test_mim_sssom_header_dates.py::test_all_malformed_row_dates_are_reported_before_replacing_output
+FAILED tests/test_mim_sssom_header_dates.py::test_non_ascii_history_date_cannot_replace_output[\uff12\uff10\uff12\uff16-10-15]
+FAILED tests/test_mim_sssom_header_dates.py::test_non_ascii_history_date_cannot_replace_output[\u0662\u0660\u0662\u0666-10-15]
+FAILED tests/test_mim_sssom_header_dates.py::test_dateless_record_reaches_rule_f_as_an_empty_cell
+11 failed, 12 passed in 0.10s

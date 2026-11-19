@@ -1,0 +1,348 @@
+{
+  "reviewed_at": "2026-11-01T00:14:12.046711+00:00",
+  "repository": "CultureBotAI/culturebotai-claw",
+  "head": "9294730aeb19d269899177678db87406f4251555",
+  "comparison_base": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+  "full_pr_base": "18774380e032acb6da0d195214c59368cd47594f",
+  "reviewer": "/root/sssom_adversarial_review",
+  "independence": "Did not author the source changes, regression tests, issue requests or generation evidence. Independent date subreview delegated to /root/sssom_adversarial_review/date_probe. No code/data edits, remote mutations, provider calls, merges or branch deletion performed.",
+  "verdict": "pass_with_limitations",
+  "findings": [],
+  "new_finding_issues": [],
+  "scope": "Exact committed generator follow-up for issues 684-686, plus preservation of earlier B5/K/G repairs. Native science/identity rules inspected; API and output failure boundaries checked. Review is not a scientific approval or claim of merge.",
+  "changed_paths_since_prior_head": [
+    "scripts/build_mim_ingredient_sssom.py",
+    "tests/test_mapping_date.py",
+    "tests/test_mim_sssom_header_dates.py",
+    "tests/test_sssom_identity_row.py"
+  ],
+  "full_pr_paths": [
+    "M\tscripts/build_mim_ingredient_sssom.py",
+    "M\ttests/test_mapping_date.py",
+    "A\ttests/test_mim_sssom_header_dates.py",
+    "M\ttests/test_mim_synonym_scope.py",
+    "M\ttests/test_sssom_identity_row.py"
+  ],
+  "inspected_paths": [
+    {
+      "path": "claw/AGENTS.md",
+      "sha256": "c7f13df6e99628b5023da5941bf45581b3fdf9addc8cb6b1c5917324b23fde44"
+    },
+    {
+      "path": "mim/AGENTS.md",
+      "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf"
+    },
+    {
+      "path": "mim/MAPPING_SEMANTICS.md",
+      "sha256": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805"
+    },
+    {
+      "path": "mim/scripts/validate_sssom_invariants.py",
+      "sha256": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77"
+    },
+    {
+      "path": "claw/scripts/build_mim_ingredient_sssom.py",
+      "sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e"
+    },
+    {
+      "path": "claw/tests/test_sssom_identity_row.py",
+      "sha256": "e913eaabd9918b1681c16437049bb616e66a69da796fafb74ebc8272d8e4abb3"
+    },
+    {
+      "path": "claw/tests/test_mapping_date.py",
+      "sha256": "b923f7b8df8d5ce5c16680e06cfb0d069f465e5fb12a2418dc22c8d1a9527fab"
+    },
+    {
+      "path": "claw/tests/test_mim_sssom_header_dates.py",
+      "sha256": "38f2a865e68111b495f44714f2ea9e29cadce5ec6d86bdde1ada3881b0580666"
+    },
+    {
+      "path": "claw/tests/test_mim_synonym_scope.py",
+      "sha256": "0b6930d2c778ae5743fd3e9d73bd5f18fc4515075e20e3d656327f42c6d7d3a6"
+    },
+    {
+      "path": "mim/data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+      "sha256": "eca7428c811737e50f6146e617e8e6530a96c07d8be51069abf11aaf31aae98c"
+    }
+  ],
+  "issue_outcomes": [
+    {
+      "issue": 684,
+      "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/684",
+      "outcome": "resolved in inspected code",
+      "evidence": "Curated local namespace controls B1 alias even when primary slug differs. Actual sodium nitrate stock YAML retains its exact ingredient primary and receives an ingredient subject alias. Every shared old/new row payload is unchanged."
+    },
+    {
+      "issue": 685,
+      "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/685",
+      "outcome": "resolved in inspected code",
+      "evidence": "Mixed-case primary is preserved exactly while lowercase B1 alias uses the same namespace. Independent encoded/mixed-case matrix passes both native B1 and B5; avoiding alias synthesis by casefold alone would not satisfy B1."
+    },
+    {
+      "issue": 686,
+      "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/686",
+      "outcome": "resolved in inspected code",
+      "evidence": "Calendar-valid ASCII history dates supply header date; invalid history warns and cannot outrank valid entries. Empty dates remain explicit native Rule F diagnostics if another row supplies header date. Entirely dateless and malformed emitted-date failures report all tested offenders and preserve destination bytes."
+    }
+  ],
+  "commands_and_results": [
+    {
+      "name": "independent_followup_registry",
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "../followup-684-686/adversarial_registry.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+      "started_at": "2026-11-01T00:13:00.890764+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T00:13:10.984277+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/independent_followup_registry.log",
+      "log_sha256": "0cbc33cf799f5bd910a8c8e7637d07ee5fa6f13a052cb9a4cf4cc22171984d4b"
+    },
+    {
+      "name": "independent_followup_identity_tests",
+      "argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "../followup-684-686/adversarial-registry-pytest",
+        "tests/test_sssom_identity_row.py",
+        "tests/test_mim_synonym_scope.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+      "started_at": "2026-11-01T00:13:14.598217+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T00:13:15.028181+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/independent_followup_identity_tests.log",
+      "log_sha256": "a14fa067ec2a3d4b3c51e0cca765d805b728b30b05ede0b0768c446c1e62ec0e"
+    },
+    {
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--no-cov",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/adversarial-date/pytest",
+        "tests/test_mapping_date.py",
+        "tests/test_mim_sssom_header_dates.py"
+      ],
+      "exit_code": 0,
+      "result": "23 date regression tests passed. Combined with independent61 identity/synonym tests,84 focused tests passed.",
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/adversarial-date/pytest.log",
+      "log_sha256": "3d3e88e1af1edb0cf2f7e1214436a5b256154c2a4ab96a0090c42537295e37bd"
+    },
+    {
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/adversarial-date/probe.py"
+      ],
+      "exit_code": 0,
+      "result": "Native YAML\u2192main\u2192TSV\u2192native F/G probe, all-dateless destination preservation,17 malformed emitted-date cases, calendar/Unicode/type/order controls passed. See date result for exact invocation and observations."
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "18774380e032acb6da0d195214c59368cd47594f..9294730aeb19d269899177678db87406f4251555"
+      ],
+      "exit_code": 0,
+      "result": "No whitespace errors."
+    }
+  ],
+  "independent_registry_probe": {
+    "checked_at": "2026-11-01T00:13:10.975540+00:00",
+    "head": "9294730aeb19d269899177678db87406f4251555",
+    "base": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+    "builder_sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e",
+    "synthetic_count": 270,
+    "prior_namespace_failures_resolved": 30,
+    "native_B1_B5": "pass for every synthetic case and changed real record",
+    "real_records_probed": 2680,
+    "real_changed_records": [
+      {
+        "record": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+        "record_sha256": "eca7428c811737e50f6146e617e8e6530a96c07d8be51069abf11aaf31aae98c",
+        "primary": "kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29",
+        "removed": [
+          "kgmicrobe.compound:sodium_nitrate_070_m_stock"
+        ],
+        "added": [
+          "kgmicrobe.ingredient:sodium_nitrate_070_m_stock"
+        ]
+      }
+    ],
+    "limitations": [
+      "Whole-source row comparison deliberately uses empty enrichment inputs; complete native regeneration and ontology validation are owned by the parent task."
+    ],
+    "findings": [],
+    "source_unchanged": true
+  },
+  "independent_date_probe": {
+    "started_at": "2026-11-01T00:13:46.128501+00:00",
+    "finished_at": "2026-11-01T00:13:48.530020+00:00",
+    "head": "9294730aeb19d269899177678db87406f4251555",
+    "compared_to": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+    "status_porcelain_after": "",
+    "inspected_sha256": {
+      "claw/AGENTS.md": "c7f13df6e99628b5023da5941bf45581b3fdf9addc8cb6b1c5917324b23fde44",
+      "claw/scripts/build_mim_ingredient_sssom.py": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e",
+      "claw/tests/test_mapping_date.py": "b923f7b8df8d5ce5c16680e06cfb0d069f465e5fb12a2418dc22c8d1a9527fab",
+      "claw/tests/test_mim_sssom_header_dates.py": "38f2a865e68111b495f44714f2ea9e29cadce5ec6d86bdde1ada3881b0580666",
+      "mim/MAPPING_SEMANTICS.md": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+      "mim/scripts/validate_sssom_invariants.py": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77"
+    },
+    "scope": "Issue #686 date behavior only; source read-only, no provider calls.",
+    "probes": [
+      {
+        "probe": "native YAML -> CLI -> native F/G",
+        "rows": {
+          "MIM:BadHistory": "",
+          "MIM:Dated": "2026-10-15",
+          "MIM:ImplicitDate": "2024-02-29",
+          "MIM:ImplicitDateTime": "2025-12-30",
+          "MIM:NoHistory": ""
+        },
+        "rule_f_rejected_subjects": [
+          "MIM:BadHistory",
+          "MIM:NoHistory"
+        ],
+        "rule_g_rejects": 0,
+        "passed": true
+      },
+      {
+        "probe": "mixed dateless native CLI default SSSOM validation and independent schema CLI",
+        "command": [
+          "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/sssom",
+          "validate",
+          "-V",
+          "JsonSchema",
+          "-V",
+          "PrefixMapCompleteness",
+          "-V",
+          "StrictCurieFormat",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/adversarial-date/mixed-default-schema/existing.tsv"
+        ],
+        "exit_code": 0,
+        "rule_f_rejected_subjects": [
+          "MIM:BadHistory",
+          "MIM:NoHistory"
+        ],
+        "rule_g_rejects": 0,
+        "passed": true
+      },
+      {
+        "probe": "all dateless CLI reports every subject without overwrite",
+        "error": "Cannot derive mapping_date: all subjects are dateless: MIM:Empty, MIM:Impossible, MIM:Missing, MIM:Unicode",
+        "passed": true
+      },
+      {
+        "probe": "all 17 malformed emitted dates rejected with complete error and no overwrite",
+        "error": "Invalid mapping_date values (all offenders): MIM:Invalid00: '\uff12\uff10\uff12\uff16-10-15'; MIM:Invalid01: '\u0662\u0660\u0662\u0666-10-15'; MIM:Invalid02: '2026-\u0661\u0660-15'; MIM:Invalid03: '0000-01-01'; MIM:Invalid04: '1900-02-29'; MIM:Invalid05: '2100-02-29'; MIM:Invalid06: '2026-02-29'; MIM:Invalid07: '2026-10-15\\n'; MIM:Invalid08: '2026-10-15 '; MIM:Invalid09: ' 2026-10-15'; MIM:Invalid10: '20261015'; MIM:Invalid11: '2026-W41-4'; MIM:Invalid12: None; MIM:Invalid13: 20261015; MIM:Invalid14: True; MIM:Invalid15: []; MIM:Invalid16: {}",
+        "passed": true
+      },
+      {
+        "probe": "calendar extremes, century leap years, order independence and blank-cell controls",
+        "valid_controls": [
+          "0001-01-01",
+          "1600-02-29",
+          "2000-02-29",
+          "2024-02-29",
+          "9999-12-31"
+        ],
+        "passed": true
+      }
+    ],
+    "test_command": [
+      "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--no-cov",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/adversarial-date/pytest",
+      "tests/test_mapping_date.py",
+      "tests/test_mim_sssom_header_dates.py"
+    ],
+    "test_exit": 0,
+    "test_log_sha256": "3d3e88e1af1edb0cf2f7e1214436a5b256154c2a4ab96a0090c42537295e37bd",
+    "findings": [],
+    "limitations": [
+      "Only F/G native functions run on independent fixture; full native validator and full suite owned by parent/root.",
+      "Calendar prefixes are deliberate: timestamp time/timezone validity is outside this date helper contract."
+    ]
+  },
+  "test_coverage_assessment": [
+    "Actual sodium nitrate stock and synthetic reverse namespace controls distinguish curated primary namespace from ontology-parent inference.",
+    "Independent270-case matrix crosses both local namespaces, matching/mixed/different slugs, encoded/non-ASCII filenames, five ontology parent families and three mapping grades;30 cases differ from prior generator and now retain one local namespace.",
+    "Native B1 and B5 run on every matrix case and the changed actual record, so passing a builder-only assertion cannot hide a mismatch with current MIM invariant semantics.",
+    "Real-source comparison reads2,680 mapped YAML files with identical empty enrichment inputs. Only sodium nitrate stock changes; old/new shared row payloads are byte-for-value identical. No primary identifier, predicate, synonym or curation date is silently rewritten.",
+    "Native F/G integration confirms both dateless synthetic subjects remain visible to Rule F; an all-dateless CLI run names all four subjects and leaves sentinel output unchanged.17 malformed emitted dates all appear in one refusal before writing.",
+    "Date tests cover ASCII/calendar parsing, invalid-history coexistence with a valid date, fullwidth/Arabic-Indic forms, implicit YAML date/datetime values, leap centuries and years0001/9999; no wall-clock fallback was introduced.",
+    "Public CLI options and helper call signatures remain unchanged. Empty-date behavior is deliberately restored to the documented native Rule F boundary; no native validator or exemption baseline was changed.",
+    "An additional mixed dated/dateless fixture passed default builder validation without --no-validate and independent SSSOM JsonSchema/PrefixMapCompleteness/StrictCurieFormat validation; native F still names exactly both dateless subjects and G passes."
+  ],
+  "limitations": [
+    "Complete native regeneration, full CLAW suite, mypy and broader CI checks are owned by the parent task and are not claimed as independently rerun here.",
+    "Whole-source row comparison uses empty enrichment/residual dictionaries to isolate this delta; it is not fresh ontology validation or a replacement for actual generator replay.",
+    "Scientific identity decisions and historical WITHHOLD mappings remain outside this mechanical review. No namespace was selected beyond retaining the existing curated local primary namespace.",
+    "Date extraction intentionally validates the date prefix; timestamp time-of-day/timezone validity is outside this helper contract.",
+    "Rule B5 still groups namespace conflicts by subject plus casefolded slug. This review verifies the builder no longer introduces cross-namespace aliases in the tested paths; it does not claim a new validator-wide scientific identity policy."
+  ],
+  "artifact_hashes": [
+    {
+      "path": "followup-684-686/adversarial_registry.py",
+      "sha256": "edc6ac64fb93ac1bea0db92dd56698f50c9af0fcb5060450227c8dd0246f47af"
+    },
+    {
+      "path": "followup-684-686/adversarial-registry-result.json",
+      "sha256": "51d45ca9f0ba2f2481a5db7f24b74bd85ca8c84ca1420b1cc47bd1950143adfd"
+    },
+    {
+      "path": "followup-684-686/adversarial-registry-probe.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "followup-684-686/adversarial-date/probe.py",
+      "sha256": "2ba0c57464c799ae42c5a036a4b6045592f3d370d24ee862dd303d85bf42d3f2"
+    },
+    {
+      "path": "followup-684-686/adversarial-date/result.json",
+      "sha256": "243962a45cc342b295ace1afae180c1e91b470bce145773edbdbb0f90180764c"
+    },
+    {
+      "path": "followup-684-686/adversarial-date/pytest.log",
+      "sha256": "3d3e88e1af1edb0cf2f7e1214436a5b256154c2a4ab96a0090c42537295e37bd"
+    },
+    {
+      "path": "followup-684-686/issue-684.json",
+      "sha256": "b89ded85a97cbfcf5ca0ff7ad6b900cd031f6154c27f5480eca7cdedcabcd003"
+    },
+    {
+      "path": "followup-684-686/issue-685.json",
+      "sha256": "045f5788c96ecf815969c9b29b34a293b290227b1a7e48c4576e3c54b3ae5a55"
+    },
+    {
+      "path": "followup-684-686/issue-686.json",
+      "sha256": "f6912412f68a7a62fdf072879831702844017c9c47306a1d590b18ee9f3ac925"
+    }
+  ],
+  "source_unchanged": true
+}

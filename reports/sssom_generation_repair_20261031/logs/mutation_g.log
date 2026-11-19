@@ -1,0 +1,27 @@
+F......                                                                  [100%]
+=================================== FAILURES ===================================
+______________ test_header_dates_follow_newest_row_not_build_date ______________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7898/test_header_dates_follow_newes0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1095436f0>
+
+    def test_header_dates_follow_newest_row_not_build_date(tmp_path, monkeypatch):
+        rows = [{'mapping_date': date} for date in ('2026-10-01', '2026-10-15', '2026-09-30')]
+        path = tmp_path / 'mapping.tsv'
+        run_builder(tmp_path, monkeypatch, rows, path)
+        text = path.read_text()
+>       assert '# mapping_set_version: "2026-10-15"\n' in text
+E       assert '# mapping_set_version: "2026-10-15"\n' in '# curie_map:\n#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"\n#   FOODON: "http://purl.obolibrary.org/obo/FOODON_...exactMatch\tCHEBI:2\t\t\t\t\t2026-10-15\t\t\t\t\nMIM:record2\t\tskos:exactMatch\tCHEBI:3\t\t\t\t\t2026-09-30\t\t\t\t\n'
+
+tests/test_mim_sssom_header_dates.py:47: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+Wrote 3 rows to /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7898/test_header_dates_follow_newes0/mapping.tsv
+  (skipped 0 MIM records without a supported ontology_id prefix: CHEBI:, FOODON:, UBERON:, ENVO:, NCIT:, MICRO:, mesh:, BTO:, kgmicrobe.compound:, kgmicrobe.ingredient:, cas:)
+Predicate breakdown:
+  skos:exactMatch          3
+Object-prefix breakdown:
+  CHEBI:     3
+=========================== short test summary info ============================
+FAILED tests/test_mim_sssom_header_dates.py::test_header_dates_follow_newest_row_not_build_date
+1 failed, 6 passed in 0.06s

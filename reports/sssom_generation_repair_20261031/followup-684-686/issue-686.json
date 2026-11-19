@@ -1,0 +1,8 @@
+{
+  "body": "Found in an independent adversarial review of #683 (head `8f837d505b948a25965b0b2a001a4c7691c840fc`). Fails closed (nothing invalid is written), but the behaviour and messages are wrong.\n\n**Where:** `scripts/build_mim_ingredient_sssom.py`, header-date derivation (around L1011\u20131031) and `_mapping_date` (around L516\u2013545).\n\n**What happens:**\n1. Before #683 a record without a curation-history timestamp got an empty `mapping_date` and MIM Rule F routed it to curator review. Now a single such record, or one malformed history entry, aborts the build of all ~2,980 rows, and the error names only the first offender.\n2. The `_mapping_date` docstring and warning (\"emitting an empty mapping_date\") no longer describe what happens.\n3. `_mapping_date` still matches with `\\d` and selects with a string max, so an *older* entry written with full-width digits (`\uff12\uff10\uff12\uff15-01-01`) sorts above ASCII `2026-10-15` and the build aborts with a misleading message.\n\n**Suggested fix:** use `[0-9]` in `_mapping_date`; collect and report every offending record in one error (or restore the documented empty-date/Rule F path if that is the intended contract); update the docstring and warning; add tests for a dateless record and a full-width-digit history entry.\n",
+  "comments": [],
+  "number": 686,
+  "state": "OPEN",
+  "title": "MIM SSSOM build aborts on one dateless row; _mapping_date uses \\d and a string max",
+  "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/686"
+}

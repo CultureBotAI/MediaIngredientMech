@@ -1,0 +1,11 @@
+Independent adversarial re-review passed with the stated limits; no new findings or finding issues.
+
+Reviewed exact CLAW head `9294730aeb19d269899177678db87406f4251555` against prior reviewed head `8f837d505b948a25965b0b2a001a4c7691c840fc`, and checked full PR scope against `18774380e032acb6da0d195214c59368cd47594f`. The source tree remained clean.
+
+Issues [684](https://github.com/CultureBotAI/culturebotai-claw/issues/684) and [685](https://github.com/CultureBotAI/culturebotai-claw/issues/685) are resolved in this code: the required lowercase subject alias retains the curated local namespace even when the primary slug differs or uses mixed case. Independent probes covered 270 cases across both namespaces, three slug shapes, five parent families and three mapping grades, with native B1/B5 passing throughout. Comparing extraction across 2,680 actual mapped records changed only the sodium nitrate stock alias from compound to ingredient; its curated identity and all shared row payloads remained unchanged.
+
+Issue [686](https://github.com/CultureBotAI/culturebotai-claw/issues/686) is resolved in this code: invalid history cannot outrank valid ASCII calendar dates, mixed dated/dateless output preserves the native Rule F path, and entirely dateless or malformed emitted dates fail before replacing existing output. The independent YAML-to-CLI probe produced exactly two native F rejections and zero G rejections; four entirely dateless subjects and 17 malformed emitted dates were fully reported on their refusal paths.
+
+Independent focused tests passed: 61 identity/synonym tests and 23 date tests, 84 total. The date probes also covered Unicode, implicit YAML dates/datetimes, leap centuries, year boundaries and destination preservation. Default builder validation and independent SSSOM schema/CURIE checks also accepted the mixed dated/dateless diagnostic output, leaving exactly its two dateless subjects to native Rule F. No validator or exemption baseline was weakened.
+
+This review does not claim the parent-owned full suite, mypy or complete native regeneration. The real-source comparison used identical empty enrichment inputs to isolate the change. Scientific identity decisions and historical holds remain unchanged. Detailed commands, exact hashes, scope and observations are in [the JSON report](adversarial-review-code.json).

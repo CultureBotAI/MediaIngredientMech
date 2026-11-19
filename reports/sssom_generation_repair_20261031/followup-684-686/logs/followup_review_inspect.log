@@ -1,0 +1,763 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "bb65a909e5f56b2400f64a2e363d9ad60a2996a9",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".claude/skills/review-sssom-output/SKILL.md",
+        "sha256": "2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5",
+        "role": "context"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+        "role": "context"
+      },
+      {
+        "path": "UNIFIED_INGREDIENT_MAPPING.tsv",
+        "sha256": "a9bfb265b6a92e495c241d57fb637096ec6af398af7e87ea026574444672cc40",
+        "role": "context"
+      },
+      {
+        "path": "conf/id_label_targets.yaml",
+        "sha256": "3931943e0f0d4fe9477b946df84aa39348ebaba302c2eeac46becfdea29ff817",
+        "role": "context"
+      },
+      {
+        "path": "conf/record_review.yaml",
+        "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+        "role": "context"
+      },
+      {
+        "path": "data/curated/mapped_ingredients.yaml",
+        "sha256": "4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b",
+        "role": "context"
+      },
+      {
+        "path": "data/curated/unmapped_ingredients.yaml",
+        "sha256": "8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+        "sha256": "eca7428c811737e50f6146e617e8e6530a96c07d8be51069abf11aaf31aae98c",
+        "role": "context"
+      },
+      {
+        "path": "docs/SSSOM_RELEASE.md",
+        "sha256": "dd726c781166ad45735b65f98ffeee5852e19d99ccfac9b9d53932d48947079e",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-review-profile.md",
+        "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-reviews.md",
+        "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+        "role": "context"
+      },
+      {
+        "path": "mappings/ingredient_mappings.sssom.tsv",
+        "sha256": "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9",
+        "role": "target"
+      },
+      {
+        "path": "mappings/other_cross_record_baseline.tsv",
+        "sha256": "b717cfa99d0ad0e386fe2dc9d8c93b6b0d902fbfdbd3358f5a149697ee71e41b",
+        "role": "context"
+      },
+      {
+        "path": "output/sssom-followup-684-686/ingredient_mappings.sssom.tsv",
+        "sha256": "9fff31e31008a4aba70de846febe9f7de07770d84e86e4e7730c9acc69fffe31",
+        "role": "target"
+      },
+      {
+        "path": "output/sssom-followup-684-686/native-rejected-rows.tsv",
+        "sha256": "e638bc52978e8503320e3386814dcdb5bc6b1c1c72e96487ba327ea58701f127",
+        "role": "context"
+      },
+      {
+        "path": "output/sssom-repair/final-code-replay-r2.sssom.tsv",
+        "sha256": "04159ba36b221d1c8ebf6e281972c846a333cf4fe5e868b06bb5326f2b02e3a7",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_completion_20260921/review.json",
+        "sha256": "6c74c7cc3eb8075ec18e20ab594a9b5eae9910b08b98c9d0746b3374af6c7ac6",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/README.md",
+        "sha256": "544ca2c8f79d60187a11596d993bca16a5bd2396e46f932207cfaf343ed99e52",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/adversarial-registry-result.json",
+        "sha256": "51d45ca9f0ba2f2481a5db7f24b74bd85ca8c84ca1420b1cc47bd1950143adfd",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/adversarial-review-code.json",
+        "sha256": "7ac5d05e51eb2dcb329af74e5efab83c4e41edbd45f2886b50dc3502b15ab254",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/adversarial-review-code.md",
+        "sha256": "218b778a02294a62636a2909eb7a028412dbcf5c18fc50c0b8a9f83a8fe25b4f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/adversarial_registry.py",
+        "sha256": "edc6ac64fb93ac1bea0db92dd56698f50c9af0fcb5060450227c8dd0246f47af",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/author_review.py",
+        "sha256": "c9d0038467451d5351fb0cddbd5ae5120c846e5766c23177a8b229d0724c476d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/baseline-b4-actual.json",
+        "sha256": "a93b970ed6afa525c13ac834d47bad8767f4ca7869dfc851cba3611d32785fbd",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/candidate-b4-actual.json",
+        "sha256": "a4ee7fcff999f8c881627d62b8fedb1bed2e370da991db6bcbe57ee01f60828c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/candidate-comparison.json",
+        "sha256": "266ff3f69585da30906715786c39faf25b27bb34dd95b39282c26391dcd20742",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/candidate-id-label-config.json",
+        "sha256": "9b457a186327ef9fcd84ef440e0a3f44deecc65c665de7e8373571204ba8a72b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/candidate-id-label-config.yaml",
+        "sha256": "ffba1d6fec331af194a6591f6ed8939dfd2cbfbc96aa29e6a4126c42f977d669",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/candidate-native-drift.json",
+        "sha256": "2429604ab6b30758b72696906bcc2a341cacb8d1a01a9047409cb360a82fd4d1",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/canonical-candidate-changes.json",
+        "sha256": "8a1a6344116146d87d4ce48519b25db3dfd4b9a775ade0d6587fc5f845a3a8f9",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/capture_validation_inputs.py",
+        "sha256": "355cdb5f3e5e0f2d3e58a9feb763919c7c50d300e0dae17a75fc40f329a02960",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/check_b1_b5.py",
+        "sha256": "91354b065c475439af5dcb49c341af82aad85fa96fa05ab7f4043a91f20c3e62",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/check_b4_actual.py",
+        "sha256": "d83c6b1defab1dbbe3a61fe5687721f209c17e8bbfa9c7472d96ec83f23d520a",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/claw-pr-preflight.json",
+        "sha256": "dec7ef0301105e3066b7034271546c5f08b1d4e5edf1cc0e1006a2b115784e96",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/compare_candidates.py",
+        "sha256": "746f7ab7ad10ac3cb06806491fa5c542a4bbe309d4d13e1bddad1b78d6775b65",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/date-contract.json",
+        "sha256": "4b2ae778b2ad314cee47cf1b4bbaf4f7e4cd45da692125d857c1cd21a1e95cc4",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/date-mutation-results.json",
+        "sha256": "c5b5c24393a9f896e130da4787b72930bc2fa25b9722df8bcdf9fc36a2599b62",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/generation-result.json",
+        "sha256": "0b30ab393f7c4ea403d18f653142bbb40f2fb28a7f71e9014f4ab2ed4b1c0ac9",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/generation-start.json",
+        "sha256": "0493feb031cbb53bff4c0276385a94da67b2e914fff906e1dbc38f227e57ba66",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/generator-followup.patch",
+        "sha256": "095ae6173d2c3a9c51ca2137bc7f67c4a928968a3058b22c57e7870cb8f9460e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/historical-rule-k-holds.json",
+        "sha256": "a3ab2487192691c441a53cd6a33ba48bb3272dbec67fe8819ef5b15a8e575334",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/issue-684.json",
+        "sha256": "b89ded85a97cbfcf5ca0ff7ad6b900cd031f6154c27f5480eca7cdedcabcd003",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/issue-685.json",
+        "sha256": "045f5788c96ecf815969c9b29b34a293b290227b1a7e48c4576e3c54b3ae5a55",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/issue-686.json",
+        "sha256": "f6912412f68a7a62fdf072879831702844017c9c47306a1d590b18ee9f3ac925",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/locked_generation.py",
+        "sha256": "b4acc68c765aa3230b62f7561f6ce79e75daaa1fe72d439ed97a65517cc62511",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_green.json",
+        "sha256": "e438afe9e2f48f480228fdabf1aa26e619162e02e967adca659d0015b821f09f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_green.log",
+        "sha256": "56064bd35b8b5b212acf7d72c7a8c2e8f8a15498cb878a3f44734087398eaa70",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_mutation.json",
+        "sha256": "5cba6c93c57ab15c0caa839f62e787af97b97bfa7f14f04005d84faef44610d1",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_mutation.log",
+        "sha256": "2319a501303728d69f2503cc584091b1c7287fe1885658f7eb93bf5f0cb4afb0",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_native_b1_b5.json",
+        "sha256": "c3bc2b9d47f190b4c1cf81be59a05a9c1c63f2c669d1925bedb8b16b936a38cf",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_native_b1_b5.log",
+        "sha256": "3cd708da04cf603976e60593214493a03ad16586199d6d5b8af0973c10a7bd88",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_red.json",
+        "sha256": "16b6e21966b88cdb08e54ee871e827edaf9d62b4a27afc36204d80b9e48b6135",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_red.log",
+        "sha256": "cfbaf2f235fa47726ab5068230ebe2a4c16a33041e67ba99c3c802b2ee2120b0",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_restored.json",
+        "sha256": "1811493528a821a405294d44c16ebb0163fefed69e45ea6635e1c3cd170a2e43",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_restored.log",
+        "sha256": "56064bd35b8b5b212acf7d72c7a8c2e8f8a15498cb878a3f44734087398eaa70",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_ruff.json",
+        "sha256": "90e9ddfe32310c9845e50bf0e5ddd13de359e52fb1cc2bd731ed8b30cc33be93",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_ruff.log",
+        "sha256": "ab960078234ac3697fb507c8fdadea23ac7e81c44106a364eadf43bd5b0a42b6",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_ruff_offline.json",
+        "sha256": "5433fa6222eee9fd5960b37a672c4d92762295701debcec717fad3dd7c2f1faf",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup684_ruff_offline.log",
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_green.json",
+        "sha256": "34bc4d3d8703cd114fa2e134e046cb4ee004069ede6d9cd57fcd308207fb995d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_green.log",
+        "sha256": "92255cd92a064074a66b46e5ca14f00e91042146d69627ec984664821f3a5d81",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_mutation_mapping_date.json",
+        "sha256": "35d7143b57ed9fc5d568e8da68dc6ef745233e1db69db4134779f39d222c652f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_mutation_mapping_date.log",
+        "sha256": "39253bad335d22a61599b6adb361d7ce747ce9af67547ca21cd6ff70d595e572",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_mutation_mapping_set_version.json",
+        "sha256": "b34738c2d450cd0ff54fe158d5fd4c36128fb7470e29d23b39e1226af0f2fc00",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_mutation_mapping_set_version.log",
+        "sha256": "b165a9a5567393672ad2b19893291d9e25e8fc698a5cd953af60af431c292594",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_red.json",
+        "sha256": "9b8d726547d48a810ec9faf7d9ff2c188b78680c6692336177be89d07c2753f3",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup686_red.log",
+        "sha256": "4f81cddfd71608c0a38907e45f3cd64fd435713c2f2f778ef0f32eadc67c5076",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_b4_actual.json",
+        "sha256": "823c5cf69471facde0d81fe35142fd6b253413983ba0c9bcfee253ddcde56815",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_b4_actual.log",
+        "sha256": "2dc591600b6984cf158d2eaf18d714516fc4a5dba63aa84f3f5aeaf7b05ca66e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_curie.json",
+        "sha256": "7c5cdc2a1904cadf40fdffc08f23ad4d126fe69e421ce33f52efb1d474ebbf11",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_curie.log",
+        "sha256": "6676b7749496134b25fcfb996fc3a5fed1106c96ba37f1c13735b6800ca48fad",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_products.json",
+        "sha256": "94aaf96723f483286fd897869ffddec25bc64492f6fede9d41991e5a56840ee8",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_products.log",
+        "sha256": "1fa143fbbbdb204cfca441d722014ca3b2ab5eda915eb2f6de1b7dc997e1d335",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_reconcile.json",
+        "sha256": "2e0e0a4efa09ad34c0283fae4cd3eb59d3fdca3381cc88a213c07a6ca91d766c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_reconcile.log",
+        "sha256": "8bf18010d973e92de327bf8580964cbe3306206d7191c45a7b1731df9c7d61d7",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_subjects.json",
+        "sha256": "f636ee115560ee279641e1a502fb393120f74e501cbb2226b1095c3a658d37fe",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_baseline_subjects.log",
+        "sha256": "a16772841d62c8f1f9be43c85a24d0e9c1e687b6ec493652fd2c5be113da7762",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_b4_actual.json",
+        "sha256": "56784668fe4f56bda9345c3cbdee43a23ebe5a01562dff0ce0f9a6b26566aa5a",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_b4_actual.log",
+        "sha256": "18f5e330290bcd99ff8fba6b38e29a7d501d863493834219d6de51c6a5a29acd",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_curie.json",
+        "sha256": "0a06ee4a818251c95c0a8387cd070b033359015c56101dc324725e71dbd8f194",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_curie.log",
+        "sha256": "31ca9b6d8a11e0181035e649476ee2a2c01b4b1cc04d7df1c6f0ebb182fab99e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_invariants.json",
+        "sha256": "720a9f73b86b58974a8eff8dcff55d7f6b38621a22c6cbac0985a9254b8ef8a5",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_invariants.log",
+        "sha256": "614aed9ff60f6b713118d760bfbf23d452531ffcc336fd089b0ebbfb74a2eb43",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_products.json",
+        "sha256": "31509c6f67351b740dc469e17eb728329d4f5080205c031ad1de6dd5f4882dad",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_products.log",
+        "sha256": "b0695b05145765cb47f8ce259be004e003f012c9fdc69ecc502c598d22a8f38d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_schema.json",
+        "sha256": "31bd61a1fc27a8171289cd5a505e934656c0ec91021417dc34f4f6065e90a4a0",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_candidate_schema.log",
+        "sha256": "6bb3a5fb4906f5382c09aa0eb0a8e6dbe45d2fe31c6dd726e030e30461fa4c2c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_capture_inputs.json",
+        "sha256": "27da133dd832e69c1985c4ead154901b27c3e1c579968a7f7a87175c98f4c30a",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_capture_inputs.log",
+        "sha256": "bf4e7c23f25bce4f887ada80c00b2a2f587e2d6caa15275b077916a02fd07ce2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates.json",
+        "sha256": "3c1105bd82034180e3e312df73031d21bbbdd96a96e7e0116ae6cf0c92d6081b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates.log",
+        "sha256": "a03d239c21d000fa89843765fef95481fd8df2922142b7e9762f0a598e32a28d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates_final.json",
+        "sha256": "1ead259875e68597323dcae39002e97bcbd9cd7e2d571597e56777c5a0f38ade",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates_final.log",
+        "sha256": "266ff3f69585da30906715786c39faf25b27bb34dd95b39282c26391dcd20742",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates_retry.json",
+        "sha256": "a771984087cf024c722a5a9f7d6f98e00d0958342f131fe4003016bb65943df9",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_compare_candidates_retry.log",
+        "sha256": "57978937674f4e99d64986c89d01026fb7d48f628592d75ecd1dd58852391a3e",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_config_validate.json",
+        "sha256": "0da8e656c9f27df17d890928a841e4c9529b7101fb2d68f1a54db0545d38db59",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_config_validate.log",
+        "sha256": "8530b860a1a29e581c4807df15a46ddfbbe0a16a8485e6339366c14ca44cb24c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_focused.json",
+        "sha256": "64bf7d13fd479b94515434765d4f51bc3eb078a4e7f01e859b39ac89a6c9c034",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_focused.log",
+        "sha256": "cd69b353884e21a1527ed705ef0ce9ed7af14246b850fed98c52974e5131154c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_focused_restored.json",
+        "sha256": "b82fb496ec3f5fe328fb65666b93275c106900a6ec08d5f7d6940a84cc0ca82d",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_focused_restored.log",
+        "sha256": "cd69b353884e21a1527ed705ef0ce9ed7af14246b850fed98c52974e5131154c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_full_qc.json",
+        "sha256": "ba8fc27bf764f313658b19bb9a7e16ea1ccac7c7bfa21167778f1aa9242e4ddc",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_full_qc.log",
+        "sha256": "00c92232a98db7fd0c00bfaad7a407ce386e48930912b123fdb9150e2b305a00",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_full_tests.json",
+        "sha256": "0d600c4a8c1fe2c9d40b380077e536785c2f7bc69cac2bb1c800c4f51916587b",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_full_tests.log",
+        "sha256": "8990e85b0a29a76e7fc64b910a7883c26b2e1544272b7d4d3d947e30b054caeb",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_generate_candidate.json",
+        "sha256": "31dd39b9e0caae7114d3a7576eeb6e444efdf1b771428038057222dfaadd9903",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_generate_candidate.log",
+        "sha256": "9035c77289683a4e178d8d3fbffe379841a645c7160fc37827f21770144e656f",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_lint.json",
+        "sha256": "ed736fbcc1abf9092a411d83f557bc4b7348d17500de1d2eb968ee6602449683",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_lint.log",
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_mypy.json",
+        "sha256": "c736fcca82367caff072a523de0eaeaa271e96e8f0b9f677f375fce3e81d6a52",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_mypy.log",
+        "sha256": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_rule_f_integration.json",
+        "sha256": "268876b8b09105a6fefd96ebb2ff1957ecc874b4855f033669c131686e4009bb",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_rule_f_integration.log",
+        "sha256": "a237187037282eb9a823a8c7865129999ce33618ceae7896757d56680ca80ce2",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_safety_coverage.json",
+        "sha256": "04e7a03783e46174d7b5df77156f4aadfc0b9675119416d8fa9f7144b0893d99",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/logs/followup_safety_coverage.log",
+        "sha256": "90fc585c5e2ac307496927dd7dcc250d711e1419be9211038e6850ccb26aee5a",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/mim-pr-preflight.json",
+        "sha256": "1ccbebed654407e2cf87b69200f4352be56f654eea6dc1d1be8b386ab8541521",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/old-candidate-changes.json",
+        "sha256": "42ff29f9bcbd4d1545998020eb705664cea668f52a19ced698090826031c5bff",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/original-41-remediation.json",
+        "sha256": "15646d0468a3bb985eb0f4510968c338f1fc764a3dcc75719e84289267df83bf",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/other-field-changes.json",
+        "sha256": "ef4eb44db9a5f9f4f311633250044a0f0a8704a77de4c5d544a5269c1e27db68",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/overlap-pr-snapshots.json",
+        "sha256": "cb44be1357eba398a5555529d61ab447e59755ae120788e60f7f1f7e614d8d95",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/path-overlap.json",
+        "sha256": "7596a73e052f8a3f31d591c4648980cfcae839d7849c442b5a38d7d951d26977",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/post-validation-preservation.json",
+        "sha256": "a199df86c51d669c6ff5b9214d23a838ab592eda0039cf7cf93347f0e4deacf9",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/previous-candidate-changes.json",
+        "sha256": "48c95563717636db4a98697922e3f2c840c8a62b8a2a20ccf7e63c6f583300b9",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/prove_rule_f_integration.py",
+        "sha256": "41d7fcf4e66ab3ec1bfa0ec4cac24314dd41cc64381813654cf4496eea7d07a3",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/recipes/run.py",
+        "sha256": "4666d3c7428ff05b28492675fe75182c87a80dbc1925e29d8911f21c68a2d2c8",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/review-targets.json",
+        "sha256": "23d84ac8d61c7ca70622efd5353412e8e8c332f904d257eec58940d8db3ff30c",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/native-rule-f-rejects.tsv",
+        "sha256": "afcd76f28988eee0a50a6f245fc782aa184642dc1b6ae65dd81ed3c9b9cbc17a",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/receipt.json",
+        "sha256": "19c412100d7cb54659808d6c1821476b80f0d4cf9c723937a8883f5d7af393bd",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/records/Dated.yaml",
+        "sha256": "5824513df338c3447c434c8ee280f3fa09c93ce5a002d5f8853a9881291dba72",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/records/Dateless_One.yaml",
+        "sha256": "aea26f011fd36c07ddc031b367d75f9ef7d638b2fbc3cc544c29d78253f154bc",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/records/Dateless_Two.yaml",
+        "sha256": "91e6468ffbdfbeea67b05a00f198d7c12ba6d988c57f3646f8b7a64f84d6d8dc",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/rule-f-integration/synthetic.sssom.tsv",
+        "sha256": "dd53b1cf36dbc9ee3007528682de51410538a721ef7ee173885b99da90206edf",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/source-baseline.json",
+        "sha256": "10069d0e920c60a7f36d0c6e31cbbdbf849c2e26227d76d9b96a4d0020ca3694",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_generation_repair_20261031/followup-684-686/validation-inputs.json",
+        "sha256": "9523ad34a1477521a95c1dd6216d80262a50d83fd56f68ad00d0983e49ae82ab",
+        "role": "context"
+      },
+      {
+        "path": "reviews/structured/20261031T214143Z-sssom-current-inputs-mechanical/review.yaml",
+        "sha256": "56a5186a8db1280d39a0e4c021bd79de77d2dd0116c026e3e754a128c30e594e",
+        "role": "context"
+      },
+      {
+        "path": "reviews/structured/20261031T233012Z-sssom-native-repair-mechanical/review.yaml",
+        "sha256": "f36a34f9adc63223b55710ed721cf0127c78ed4db9cfe27531ef1eab02c75a59",
+        "role": "context"
+      },
+      {
+        "path": "schema/record_review.yaml",
+        "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+        "role": "context"
+      },
+      {
+        "path": "scripts/reconcile_sssom.py",
+        "sha256": "7a0d1b248a1ae1777a827bde4e795474531db565c17b35beaab66fb2631daba7",
+        "role": "context"
+      },
+      {
+        "path": "scripts/validate_sssom_invariants.py",
+        "sha256": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "canonical",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "label": "Unchanged maintained canonical mapping: 2,987 rows",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained identity/mapping/synonym owner; no curation change in this run."
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "External SSSOM generator; follow-up 684-686 at exact 9294730aeb19d269899177678db87406f4251555; prior repairs retained."
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+          "role": "Maintained primary identifier and parent relation for the generated B1 alias namespace change; record bytes unchanged."
+        }
+      ]
+    },
+    {
+      "target_id": "candidate",
+      "path": "output/sssom-followup-684-686/ingredient_mappings.sssom.tsv",
+      "label": "Final 9294730 diagnostic candidate: 2,980 rows; not promoted",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained identity/mapping/synonym owner; no curation change in this run."
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "External SSSOM generator; follow-up 684-686 at exact 9294730aeb19d269899177678db87406f4251555; prior repairs retained."
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml",
+          "role": "Maintained primary identifier and parent relation for the generated B1 alias namespace change; record bytes unchanged."
+        }
+      ]
+    }
+  ]
+}

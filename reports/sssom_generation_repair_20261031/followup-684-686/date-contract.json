@@ -1,0 +1,15 @@
+{
+  "issue": "https://github.com/CultureBotAI/culturebotai-claw/issues/686",
+  "choice": "Restore documented empty-date/native Rule F diagnostic path; no clock or mtime fallback.",
+  "basis": [
+    "MAPPING_SEMANTICS.md delegates SSSOM validation to scripts/validate_sssom_invariants.py and specifies per-row rejects and failed publication gates. It does not require aborting generation for one dateless record.",
+    "Native evaluate_rule_f documents empty mapping_date plus warning and curator reject routing; evaluate_rule_g anchors header to newest dated row."
+  ],
+  "behavior": {
+    "mixed_dated_and_dateless": "Generate all rows with empty cells unchanged and header from maximum valid calendar date; native Rule F rejects dateless rows.",
+    "all_dateless": "No truthful header date exists; report all affected subject IDs and refuse before opening output.",
+    "malformed_nonempty_emitted_dates": "Aggregate all malformed values with subject IDs and refuse before opening output.",
+    "history_entries": "Only ASCII ISO calendar-valid date prefixes qualify. Warn about invalid entries, ignore them, then select calendar maximum; no valid entries yields empty."
+  },
+  "head": "9294730aeb19d269899177678db87406f4251555"
+}

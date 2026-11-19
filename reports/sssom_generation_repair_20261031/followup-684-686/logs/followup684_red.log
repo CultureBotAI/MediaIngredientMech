@@ -1,0 +1,204 @@
+..........................FFFFF.....................                     [100%]
+=================================== FAILURES ===================================
+______ test_b1_requires_the_subject_slug_even_with_another_local_identity ______
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/test-tmp/followup684-red/test_b1_requires_the_subject_s0')
+
+    def test_b1_requires_the_subject_slug_even_with_another_local_identity(tmp_path):
+        """#684: retain B1's subject slug in the curated identity's namespace."""
+        rows = rows_for(tmp_path, stem="Thing", identifier="kgmicrobe.ingredient:other",
+                        ontology_id="CHEBI:17634", quality="NARROW_MATCH")
+    
+        assert len(rows) == 3
+>       assert {(r["object_id"], r["predicate_id"]) for r in rows} == {
+            ("CHEBI:17634", "skos:broadMatch"),
+            ("kgmicrobe.ingredient:other", "skos:exactMatch"),
+            ("kgmicrobe.ingredient:thing", "skos:exactMatch"),
+        }
+E       AssertionError: assert {('CHEBI:1763...:exactMatch')} == {('CHEBI:1763...:exactMatch')}
+E         
+E         Extra items in the left set:
+E         ('kgmicrobe.compound:thing', 'skos:exactMatch')
+E         Extra items in the right set:
+E         ('kgmicrobe.ingredient:thing', 'skos:exactMatch')
+E         Use -v to get more diff
+
+tests/test_sssom_identity_row.py:300: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Thing.yaml; emitting an empty mapping_date (#542)
+___ test_b1_stock_alias_retains_the_curated_namespace_with_a_different_slug ____
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/test-tmp/followup684-red/test_b1_stock_alias_retains_th0')
+
+    def test_b1_stock_alias_retains_the_curated_namespace_with_a_different_slug(tmp_path):
+        """#684: the real Sodium_Nitrate_070_M_Stock identity predates its filename.
+    
+        Preserve that curated identity and add the filename-based B1 handle in the
+        same namespace; the broader sodium nitrate compound does not type the stock.
+        """
+        identifier = "kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29"
+        rows = rows_for(
+            tmp_path, stem="Sodium_Nitrate_070_M_Stock", identifier=identifier,
+            ontology_id="CHEBI:63005", quality="NARROW_MATCH",
+            ingredient_type="STOCK_SOLUTION", label="Sodium nitrate (0.70 M stock)",
+        )
+    
+        assert len(rows) == 3
+>       assert {(r["object_id"], r["predicate_id"]) for r in rows} == {
+            ("CHEBI:63005", "skos:broadMatch"),
+            (identifier, "skos:exactMatch"),
+            ("kgmicrobe.ingredient:sodium_nitrate_070_m_stock", "skos:exactMatch"),
+        }
+E       AssertionError: assert {('CHEBI:6300...:exactMatch')} == {('CHEBI:6300...:exactMatch')}
+E         
+E         Extra items in the left set:
+E         ('kgmicrobe.compound:sodium_nitrate_070_m_stock', 'skos:exactMatch')
+E         Extra items in the right set:
+E         ('kgmicrobe.ingredient:sodium_nitrate_070_m_stock', 'skos:exactMatch')
+E         Use -v to get more diff
+
+tests/test_sssom_identity_row.py:321: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Sodium_Nitrate_070_M_Stock.yaml; emitting an empty mapping_date (#542)
+_ test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.ingredient:MES_Buffer-CHEBI:39010-kgmicrobe.ingredient:mes_buffer] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/test-tmp/followup684-red/test_b1_canonical_alias_keeps_0')
+identifier = 'kgmicrobe.ingredient:MES_Buffer', ontology_id = 'CHEBI:39010'
+expected_alias = 'kgmicrobe.ingredient:mes_buffer'
+
+    @pytest.mark.parametrize(
+        ("identifier", "ontology_id", "expected_alias"),
+        [
+            ("kgmicrobe.ingredient:MES_Buffer", "CHEBI:39010",
+             "kgmicrobe.ingredient:mes_buffer"),
+            ("kgmicrobe.compound:MES_Buffer", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+            ("kgmicrobe.compound:another_slug", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+        ],
+    )
+    def test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug(
+        tmp_path, identifier, ontology_id, expected_alias,
+    ):
+        """#685: preserve original spelling without a B5 namespace collision.
+    
+        B1 requires the lowercase subject slug, so merely skipping the backfill
+        case-insensitively would not satisfy it for a mixed-case primary identity.
+        """
+        rows = rows_for(tmp_path, stem="MES_Buffer", identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH")
+    
+        assert len(rows) == 3
+>       assert {(r["object_id"], r["predicate_id"]) for r in rows} == {
+            (ontology_id, "skos:broadMatch"),
+            (identifier, "skos:exactMatch"),
+            (expected_alias, "skos:exactMatch"),
+        }
+E       AssertionError: assert {('CHEBI:3901...:exactMatch')} == {('CHEBI:3901...:exactMatch')}
+E         
+E         Extra items in the left set:
+E         ('kgmicrobe.compound:mes_buffer', 'skos:exactMatch')
+E         Extra items in the right set:
+E         ('kgmicrobe.ingredient:mes_buffer', 'skos:exactMatch')
+E         Use -v to get more diff
+
+tests/test_sssom_identity_row.py:353: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in MES_Buffer.yaml; emitting an empty mapping_date (#542)
+_ test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.compound:MES_Buffer-FOODON:00001234-kgmicrobe.compound:mes_buffer] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/test-tmp/followup684-red/test_b1_canonical_alias_keeps_1')
+identifier = 'kgmicrobe.compound:MES_Buffer', ontology_id = 'FOODON:00001234'
+expected_alias = 'kgmicrobe.compound:mes_buffer'
+
+    @pytest.mark.parametrize(
+        ("identifier", "ontology_id", "expected_alias"),
+        [
+            ("kgmicrobe.ingredient:MES_Buffer", "CHEBI:39010",
+             "kgmicrobe.ingredient:mes_buffer"),
+            ("kgmicrobe.compound:MES_Buffer", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+            ("kgmicrobe.compound:another_slug", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+        ],
+    )
+    def test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug(
+        tmp_path, identifier, ontology_id, expected_alias,
+    ):
+        """#685: preserve original spelling without a B5 namespace collision.
+    
+        B1 requires the lowercase subject slug, so merely skipping the backfill
+        case-insensitively would not satisfy it for a mixed-case primary identity.
+        """
+        rows = rows_for(tmp_path, stem="MES_Buffer", identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH")
+    
+        assert len(rows) == 3
+>       assert {(r["object_id"], r["predicate_id"]) for r in rows} == {
+            (ontology_id, "skos:broadMatch"),
+            (identifier, "skos:exactMatch"),
+            (expected_alias, "skos:exactMatch"),
+        }
+E       AssertionError: assert {('FOODON:000...:exactMatch')} == {('FOODON:000...:exactMatch')}
+E         
+E         Extra items in the left set:
+E         ('kgmicrobe.ingredient:mes_buffer', 'skos:exactMatch')
+E         Extra items in the right set:
+E         ('kgmicrobe.compound:mes_buffer', 'skos:exactMatch')
+E         Use -v to get more diff
+
+tests/test_sssom_identity_row.py:353: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in MES_Buffer.yaml; emitting an empty mapping_date (#542)
+_ test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.compound:another_slug-FOODON:00001234-kgmicrobe.compound:mes_buffer] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/test-tmp/followup684-red/test_b1_canonical_alias_keeps_2')
+identifier = 'kgmicrobe.compound:another_slug', ontology_id = 'FOODON:00001234'
+expected_alias = 'kgmicrobe.compound:mes_buffer'
+
+    @pytest.mark.parametrize(
+        ("identifier", "ontology_id", "expected_alias"),
+        [
+            ("kgmicrobe.ingredient:MES_Buffer", "CHEBI:39010",
+             "kgmicrobe.ingredient:mes_buffer"),
+            ("kgmicrobe.compound:MES_Buffer", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+            ("kgmicrobe.compound:another_slug", "FOODON:00001234",
+             "kgmicrobe.compound:mes_buffer"),
+        ],
+    )
+    def test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug(
+        tmp_path, identifier, ontology_id, expected_alias,
+    ):
+        """#685: preserve original spelling without a B5 namespace collision.
+    
+        B1 requires the lowercase subject slug, so merely skipping the backfill
+        case-insensitively would not satisfy it for a mixed-case primary identity.
+        """
+        rows = rows_for(tmp_path, stem="MES_Buffer", identifier=identifier,
+                        ontology_id=ontology_id, quality="NARROW_MATCH")
+    
+        assert len(rows) == 3
+>       assert {(r["object_id"], r["predicate_id"]) for r in rows} == {
+            (ontology_id, "skos:broadMatch"),
+            (identifier, "skos:exactMatch"),
+            (expected_alias, "skos:exactMatch"),
+        }
+E       AssertionError: assert {('FOODON:000...:exactMatch')} == {('FOODON:000...:exactMatch')}
+E         
+E         Extra items in the left set:
+E         ('kgmicrobe.ingredient:mes_buffer', 'skos:exactMatch')
+E         Extra items in the right set:
+E         ('kgmicrobe.compound:mes_buffer', 'skos:exactMatch')
+E         Use -v to get more diff
+
+tests/test_sssom_identity_row.py:353: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in MES_Buffer.yaml; emitting an empty mapping_date (#542)
+=========================== short test summary info ============================
+FAILED tests/test_sssom_identity_row.py::test_b1_requires_the_subject_slug_even_with_another_local_identity
+FAILED tests/test_sssom_identity_row.py::test_b1_stock_alias_retains_the_curated_namespace_with_a_different_slug
+FAILED tests/test_sssom_identity_row.py::test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.ingredient:MES_Buffer-CHEBI:39010-kgmicrobe.ingredient:mes_buffer]
+FAILED tests/test_sssom_identity_row.py::test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.compound:MES_Buffer-FOODON:00001234-kgmicrobe.compound:mes_buffer]
+FAILED tests/test_sssom_identity_row.py::test_b1_canonical_alias_keeps_namespace_for_mixed_case_or_other_slug[kgmicrobe.compound:another_slug-FOODON:00001234-kgmicrobe.compound:mes_buffer]
+5 failed, 47 passed in 0.11s

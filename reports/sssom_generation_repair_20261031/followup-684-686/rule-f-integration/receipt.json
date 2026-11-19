@@ -1,0 +1,78 @@
+{
+  "captured_at": "2026-11-01T00:12:23.480968+00:00",
+  "status": "PASS",
+  "row_count": 3,
+  "rule_f_reject_count": 2,
+  "rejects": [
+    {
+      "row_number": 2,
+      "row": {
+        "subject_id": "MIM:Dateless_One",
+        "subject_label": "Dateless_One",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:15377",
+        "object_label": "water",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "",
+        "mapping_date": "",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": ""
+      },
+      "reason": "mapping_date is empty for subject 'MIM:Dateless_One' \u2014 the record has no parseable curation_history timestamp, so the builder had no date to publish (#550)"
+    },
+    {
+      "row_number": 3,
+      "row": {
+        "subject_id": "MIM:Dateless_Two",
+        "subject_label": "Dateless_Two",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:15377",
+        "object_label": "water",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "",
+        "mapping_date": "",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": ""
+      },
+      "reason": "mapping_date is empty for subject 'MIM:Dateless_Two' \u2014 the record has no parseable curation_history timestamp, so the builder had no date to publish (#550)"
+    }
+  ],
+  "rule_g_findings": 0,
+  "scope": "Native YAML extraction and CLI writer with synthetic offline label/KG inputs, then unmodified native Rule F evaluation and reject writer. Real corpus and generator source unchanged. This proves diagnostic rejection routing, not scientific validity of fixture labels.",
+  "artifacts": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw/scripts/build_mim_ingredient_sssom.py",
+      "sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/mim/scripts/validate_sssom_invariants.py",
+      "sha256": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/rule-f-integration/synthetic.sssom.tsv",
+      "sha256": "dd53b1cf36dbc9ee3007528682de51410538a721ef7ee173885b99da90206edf"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/rule-f-integration/native-rule-f-rejects.tsv",
+      "sha256": "afcd76f28988eee0a50a6f245fc782aa184642dc1b6ae65dd81ed3c9b9cbc17a"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/rule-f-integration/records/Dated.yaml",
+      "sha256": "5824513df338c3447c434c8ee280f3fa09c93ce5a002d5f8853a9881291dba72"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/rule-f-integration/records/Dateless_One.yaml",
+      "sha256": "aea26f011fd36c07ddc031b367d75f9ef7d638b2fbc3cc544c29d78253f154bc"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/followup-684-686/rule-f-integration/records/Dateless_Two.yaml",
+      "sha256": "91e6468ffbdfbeea67b05a00f198d7c12ba6d988c57f3646f8b7a64f84d6d8dc"
+    }
+  ]
+}

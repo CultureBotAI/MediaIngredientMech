@@ -1,0 +1,8 @@
+{
+  "body": "Found in an independent adversarial review of #683 (head `8f837d505b948a25965b0b2a001a4c7691c840fc`). Pre-existing, not a regression of #683, but it contradicts #683's stated principle (\"do not infer a competing identity from the ontology parent's prefix\").\n\n**Where:** `scripts/build_mim_ingredient_sssom.py`, B1 backfill (around L911\u2013951 at the PR head).\n\n**What happens:** the skip check only recognises `kgmicrobe.{ingredient,compound}:<subject slug>`. When a record's curated `kgmicrobe.*` identifier uses a *different* slug, the backfill still derives a namespace from the parent's prefix and adds a second local identity.\n\n**Real case in canonical MIM:** `MIM:Sodium_Nitrate_070_M_Stock` (STOCK_SOLUTION) has identifier `kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29` and a broadMatch to CHEBI:63005, and also receives `kgmicrobe.compound:sodium_nitrate_070_m_stock`, so it has local identities in two namespaces. Rule B5 misses it because it groups by subject *and* slug. The new test `test_b1_requires_the_subject_slug_even_with_another_local_identity` (`tests/test_sssom_identity_row.py`) currently asserts this ingredient + compound output as expected.\n\n**Suggested fix:** when the curated identifier is a `kgmicrobe.*` CURIE, write the B1 row in that identifier's namespace (or skip the backfill), update that test, and consider grouping Rule B5 by subject only.\n",
+  "comments": [],
+  "number": 684,
+  "state": "OPEN",
+  "title": "MIM SSSOM builder adds a parent-prefix registry identity when the curated kgmicrobe slug differs (Sodium_Nitrate_070_M_Stock)",
+  "url": "https://github.com/CultureBotAI/culturebotai-claw/issues/684"
+}
