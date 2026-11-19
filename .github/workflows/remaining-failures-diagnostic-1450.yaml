@@ -1,0 +1,215 @@
+name: Remaining failure diagnostic (1450)
+
+# Non-gating evidence only. Existing required workflows/tests/pins stay intact.
+on:
+  push:
+    branches:
+      - diagnose/remaining-failures-1450-20261119
+permissions:
+  contents: read
+env:
+  UV_PYTHON: "3.13"
+  RECORD_REVIEW_BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before || (github.event_name == 'workflow_dispatch' && 'HEAD') || 'INVALID-REVIEW-BASE' }}
+jobs:
+  remaining-failure-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - scope: chain-publication
+            module: tests/test_curation_successor_chain_publication.py
+            seconds: 1200
+          - scope: identity-projection-bundle
+            module: tests/test_identity_projection_bundle.py
+            seconds: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Native adoption fixtures capture real transaction/lease source files.
+      # Reuse the existing immutable pin without installing Claw or its providers.
+      - name: Read immutable native Claw revision
+        id: native-claw-pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          pin_path = Path("scripts/.vendored_canon_ref")
+          if pin_path.is_symlink() or not pin_path.is_file():
+              raise SystemExit("Canonical pin must be a regular, non-symlink file")
+          with pin_path.open("rb") as stream:
+              pin = stream.read(64)
+          if re.fullmatch(rb"[0-9a-f]{40}\n?", pin) is None:
+              raise SystemExit("Canonical pin must contain one full lowercase commit SHA")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write("ref=" + pin.decode("ascii").strip() + "\n")
+          PY
+
+      - name: Checkout pinned native Claw fixture source
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: ${{ steps.native-claw-pin.outputs.ref }}
+          path: .temp/native-claw
+          persist-credentials: false
+
+      # Additional-assertion integration uses its reviewed producer without
+      # changing the governance pin or historical campaign inputs (#1426).
+      - name: Checkout reviewed additional-assertion producer
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: 7070392fcb5e31282499a599f7147b56b96e5aca
+          path: .temp/additional-assertion-claw
+          persist-credentials: false
+
+      # The worktree recipe regression test needs the real just executable.
+      - uses: extractions/setup-just@v3
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      # A full observed patch keeps uv environment metadata authenticated (#1450).
+      - name: Select the installed Python patch for this run
+        run: python3 -I scripts/select_ci_python_patch.py --output .temp/ci-python-selection.json
+
+      - name: Install runtime dependencies
+        # --frozen fails if uv.lock is stale (no silent re-resolve in CI). Runtime
+        # deps only; pytest/pytest-cov are layered via `uv run --with` below so the
+        # heavy py>=3.12 dev extras (edison-client / deep-research-client) aren't
+        # pulled for a hermetic unit-test run.
+        run: uv sync --frozen
+
+      - name: Record exact source, runtime and resource baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .temp/remaining-failures-1450
+          uv --version | tee .temp/remaining-failures-1450/uv-version.txt
+          free -b > .temp/remaining-failures-1450/memory-before.txt
+          df -B1 . > .temp/remaining-failures-1450/disk-before.txt
+          uv run --with pytest --with pytest-cov python - <<'PYCODE'
+          import hashlib, importlib.metadata, json, os, platform, subprocess, sys
+          from pathlib import Path
+          base = '64105e7e666bddaf1a65efc44c13e3a74737eab0'
+          workflow = '.github/workflows/remaining-failures-diagnostic-1450.yaml'
+          git = lambda *args: subprocess.check_output(['git', *args], text=True, timeout=30).strip()
+          changed = git('diff', '--name-only', base, 'HEAD').splitlines()
+          if changed != [workflow]:
+              raise SystemExit('Diagnostic source differs from reviewed base beyond the new workflow')
+          if git('status', '--porcelain', '--untracked-files=no'):
+              raise SystemExit('Tracked source is dirty before diagnostic')
+          names = (
+              '.python-version', 'pyproject.toml', 'uv.lock',
+              '.github/workflows/tests.yaml', workflow,
+              'scripts/select_ci_python_patch.py', 'scripts/.vendored_canon_ref',
+              'tests/test_curation_successor_chain_publication.py',
+              'tests/test_curation_successor_publication.py',
+              'tests/test_curation_successor.py', 'tests/test_curation_successor_transition.py',
+              'tests/test_stable_sssom_publication.py', 'tests/stable_publication_fixture.py',
+              'tests/test_identity_projection_bundle.py', 'tests/conftest.py',
+              'src/mediaingredientmech/curate/curation_successor.py',
+              'src/mediaingredientmech/curate/stable_sssom_publication.py',
+              'src/mediaingredientmech/identity_projection.py',
+              'src/mediaingredientmech/identity_projection_bundle.py',
+          )
+          sha = lambda path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          cg = Path('/sys/fs/cgroup/memory.events')
+          record = {
+              'head': git('rev-parse', 'HEAD'), 'base': base,
+              'base_tree': git('rev-parse', base + '^{tree}'),
+              'changed_from_base': changed,
+              'python': sys.version, 'executable': sys.executable,
+              'executable_sha256': sha(sys.executable),
+              'base_executable': getattr(sys, '_base_executable', None),
+              'prefix': sys.prefix, 'base_prefix': sys.base_prefix,
+              'platform': platform.platform(), 'cpu_count': os.cpu_count(),
+              'packages': {name: importlib.metadata.version(name) for name in ('pytest', 'pytest-cov', 'PyYAML', 'python-dotenv', 'rfc3339-validator')},
+              'inputs_sha256': {name: sha(name) for name in names},
+              'python_selection': json.loads(Path('.temp/ci-python-selection.json').read_text()),
+              'claw_heads': {name: subprocess.check_output(['git', '-C', '.temp/' + name, 'rev-parse', 'HEAD'], text=True, timeout=30).strip() for name in ('native-claw', 'additional-assertion-claw')},
+              'cgroup_memory_events_before': cg.read_text() if cg.is_file() else None,
+              'scope': 'Two separately executed module diagnostics; not full-suite or release qualification',
+          }
+          path = Path('.temp/remaining-failures-1450/runtime.json')
+          with path.open('x') as stream:
+              stream.write(json.dumps(record, indent=2) + '\n')
+          print(json.dumps(record, indent=2))
+          expected_patch = '3.13.18'
+          expected_binary = '318659dbea813cd6c0fc7f5f6b5599611e3138fa9002fb58f8beb19cc3973ecf'
+          if record['python_selection']['actual_patch_request'] != expected_patch or record['executable_sha256'] != expected_binary:
+              raise SystemExit('Actual selected runtime differs from prior qualified Linux runtime; retain evidence and stop before tests')
+          PYCODE
+
+      - name: Retain pre-test identity before potentially failing execution
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaining-failures-preflight-${{ matrix.scope }}-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            .temp/remaining-failures-1450/runtime.json
+            .temp/remaining-failures-1450/uv-version.txt
+            .temp/remaining-failures-1450/memory-before.txt
+            .temp/remaining-failures-1450/disk-before.txt
+            .temp/ci-python-selection.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Run one unchanged module with first-failure terminal evidence
+        env:
+          CLAW_SRC: ${{ github.workspace }}/.temp/native-claw/src
+          MIM_ADDITIONAL_ASSERTION_CLAW_SRC: ${{ github.workspace }}/.temp/additional-assertion-claw/src
+        shell: bash
+        run: |
+          set -uo pipefail
+          date -u +%FT%TZ > .temp/remaining-failures-1450/started-at.txt
+          set +e
+          /usr/bin/time -v -o .temp/remaining-failures-1450/process-resource.txt \
+            timeout --signal=TERM --kill-after=30s '${{ matrix.seconds }}s' \
+            uv run --with pytest --with pytest-cov pytest \
+              '${{ matrix.module }}' \
+              -vv --tb=long --maxfail=1 -ra --durations=20 \
+              --basetemp=.temp/remaining-failures-1450/fixtures \
+              --junitxml=.temp/remaining-failures-1450/pytest.xml \
+              2>&1 | tee .temp/remaining-failures-1450/pytest.log
+          pipeline_status=("${PIPESTATUS[@]}")
+          set -e
+          command_result=${pipeline_status[0]}
+          capture_result=${pipeline_status[1]}
+          result=$command_result
+          if test "$command_result" -eq 0 && test "$capture_result" -ne 0; then
+            result=125
+          fi
+          printf '{"command_exit_code": %s, "log_capture_exit_code": %s, "selected_exit_code": %s}\n' "$command_result" "$capture_result" "$result" > .temp/remaining-failures-1450/terminal.json
+          date -u +%FT%TZ > .temp/remaining-failures-1450/finished-at.txt
+          free -b > .temp/remaining-failures-1450/memory-after.txt
+          df -B1 . > .temp/remaining-failures-1450/disk-after.txt
+          if test -r /sys/fs/cgroup/memory.events; then
+            cat /sys/fs/cgroup/memory.events > .temp/remaining-failures-1450/cgroup-memory-events-after.txt
+          fi
+          exit "$result"
+
+      - name: Retain actual terminal evidence without claiming missing JUnit exists
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaining-failures-terminal-${{ matrix.scope }}-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            .temp/remaining-failures-1450/*.json
+            .temp/remaining-failures-1450/*.txt
+            .temp/remaining-failures-1450/*.log
+            .temp/remaining-failures-1450/*.xml
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
