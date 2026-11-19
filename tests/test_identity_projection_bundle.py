@@ -24,11 +24,31 @@ def inputs():
     return review, sources
 
 
-def test_current_inputs_cannot_reuse_fixed_historical_authority(inputs):
-    """#1325: the historical positive fixture never approves changed current bytes."""
-    review, _ = inputs
-    current = {name: (ROOT / name).read_bytes() for name in bundle.declared_sources(review)}
-    with pytest.raises(ValueError, match="^Identity projection: projected companion source hash differs$"):
+@pytest.mark.parametrize("drift", ["owner", "registry", "missing_owner"])
+def test_current_inputs_cannot_reuse_fixed_historical_authority(inputs, drift):
+    """#1325: changed or missing inputs cannot inherit the fixed review's authority."""
+    from dataclasses import replace
+
+    from mediaingredientmech.stable_ids import Registry, dump_registry, parse_registry
+
+    review, current = deepcopy(inputs)
+    owner = next(iter(review["record_inputs"]))
+    expected = "projected companion source hash differs"
+    if drift == "owner":
+        record = yaml.safe_load(current[owner])
+        record["preferred_term"] += " (controlled post-review change)"
+        current[owner] = yaml.safe_dump(record).encode()
+    elif drift == "registry":
+        registry = parse_registry(current[ip.REGISTRY], current[ip.LIFECYCLE])
+        first = registry.entries[0]
+        changed = replace(first, label_at_minting=first.label_at_minting + " changed")
+        current[ip.REGISTRY] = dump_registry(
+            Registry((changed, *registry.entries[1:]), registry.events)
+        )
+    else:
+        del current[owner]
+        expected = "projected companion source inventory differs"
+    with pytest.raises(ValueError, match="^Identity projection: " + expected + "$"):
         reviewed_products(review, current)
 
 
