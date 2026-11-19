@@ -780,7 +780,7 @@ def capture(root, stage, receipt_path, output):
         endpoint = document(root, generation["curation_successor"])
         kind, original = "curation", endpoint["root"]
         receipt_ref, native_manifest_ref = endpoint["receipt"], endpoint["manifest"]
-        limit = publication.successor_native().MAX_SUCCESSOR_ANCESTRY + 2
+        limit = publication.successor_ancestry_limit() + 2
         while True:
             require(
                 len(sources) < limit,
