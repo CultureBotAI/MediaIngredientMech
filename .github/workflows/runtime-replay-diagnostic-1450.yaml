@@ -100,6 +100,7 @@ jobs:
               '.python-version', 'pyproject.toml', 'uv.lock',
               '.github/workflows/tests.yaml',
               '.github/workflows/runtime-replay-diagnostic-1450.yaml',
+              'scripts/runtime_root_diagnostic.py',
               'scripts/.vendored_canon_ref',
               'src/mediaingredientmech/curate/curation_successor.py',
               'src/mediaingredientmech/curate/stable_sssom_replay.py',
@@ -130,7 +131,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          uv run --with pytest --with pytest-cov pytest \
+          uv run --with pytest --with pytest-cov python scripts/runtime_root_diagnostic.py \
             tests/test_curation_successor_replay_child.py \
             tests/test_curation_successor_runtime_dependencies.py \
             tests/test_curation_successor_runtime_replay.py \
@@ -149,6 +150,7 @@ jobs:
             .temp/runtime-ci-diagnostic-1450/runtime.json
             .temp/runtime-ci-diagnostic-1450/pytest.log
             .temp/runtime-ci-diagnostic-1450/pytest.xml
+            .temp/runtime-ci-diagnostic-1450/runtime-root-operands-*.json
             .temp/runtime-ci-diagnostic-1450/fixtures/**/stdout.log
             .temp/runtime-ci-diagnostic-1450/fixtures/**/stderr.log
             .temp/runtime-ci-diagnostic-1450/fixtures/**/pytest.xml
