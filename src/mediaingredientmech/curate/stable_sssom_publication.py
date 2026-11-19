@@ -16,6 +16,7 @@ import json
 import os
 import subprocess
 import sys
+import threading
 import time
 import types
 import uuid
@@ -63,6 +64,8 @@ SIDECAR_FIELDS = (
 )
 _CAPTURE: Any = globals().get("_PRODUCER_CAPTURE")
 _ADOPTION: Any = None
+_SUCCESSOR_ANCESTRY_POLICY: tuple[int, Any] | None = None
+_SUCCESSOR_ANCESTRY_LOCK = threading.Lock()
 SOURCE_HANDOFF = "native-source-publication-handoff-v1"
 # This counterpart implements the completed-endpoint branches of these exact
 # source guards. Both retain the same owner/input/archive/identity contract;
@@ -112,6 +115,38 @@ def successor_native():
         "successor capture differs from selected publication producer",
     )
     return implementation
+
+
+def successor_ancestry_limit() -> int:
+    """Retain one verified scalar policy per publication capture (#1545).
+
+    Direct successor factories remain fresh. Keep the original child capture
+    for currentness checks, never refresh it after drift or reuse its mutable
+    implementation as the policy. Existing module and borrower lifetimes stay
+    unchanged; this only bounds successful scalar-lookup capture allocation.
+    """
+    global _SUCCESSOR_ANCESTRY_POLICY
+    with _SUCCESSOR_ANCESTRY_LOCK:
+        _CAPTURE.verify()
+        policy = _SUCCESSOR_ANCESTRY_POLICY
+        if policy is None:
+            implementation = successor_native()
+            policy = (implementation.MAX_SUCCESSOR_ANCESTRY, implementation._CAPTURE)
+        value, child = policy
+        require(type(value) is int, "successor ancestry policy must be an actual integer")
+        child.verify()
+        require(
+            child.root == _CAPTURE.root
+            and all(
+                name in _CAPTURE.files and captured == _CAPTURE.files[name]
+                for name, captured in child.files.items()
+            ),
+            "successor policy capture differs from selected publication producer",
+        )
+        _CAPTURE.verify()
+        if _SUCCESSOR_ANCESTRY_POLICY is None:
+            _SUCCESSOR_ANCESTRY_POLICY = policy
+        return value
 
 
 def _successor(root, reference, files, *, before=None, publication_receipt=None):
@@ -873,7 +908,7 @@ def _cas_correction_steps(endpoint):
     api = native()
     steps: list[dict] = []
     roots: list[Path] = []
-    limit = successor_native().MAX_SUCCESSOR_ANCESTRY + 1
+    limit = successor_ancestry_limit() + 1
     while True:
         root = endpoint.root
         require(
