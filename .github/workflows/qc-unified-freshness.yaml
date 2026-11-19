@@ -36,9 +36,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      # Deliberately no deps, no claw checkout and no CultureMech: this gate
-      # hashes MIM's own records and the artifact, which is all that staleness
-      # needs. Rebuilding is a local, three-checkout operation (#359).
+      # The identity-only exception replays its exact YAML preimages.
+      # Rebuilding still remains a separate local operation (#359).
+      - name: Install the offline proof parser
+        run: python3 -m pip install pyyaml
       - name: Check the unified snapshot is current with data/ingredients
         run: python3 scripts/check_unified_freshness.py --check
 

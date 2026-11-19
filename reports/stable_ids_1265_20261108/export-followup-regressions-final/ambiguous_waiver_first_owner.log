@@ -1,0 +1,64 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver[False] _______
+
+tmp_path = PosixPath('<repo>/.temp/export-followup-export-followup-regressions-final/pytest-ambiguous_waiver_first_owner/test_ambiguous_legacy_alias_ca0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109d69cd0>
+reverse = False
+
+    @pytest.mark.parametrize('reverse', [False, True])
+    def test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver(tmp_path, monkeypatch, reverse):
+        mod = script('validate_sssom_invariants')
+        paths = []
+        for number in [1, 2]:
+            path = tmp_path / f'{number}.yaml'
+            path.write_text(yaml.safe_dump({'mim_id': f'MIM:{number:07d}',
+                'identifier': f'CHEBI:{number}', 'preferred_term': str(number),
+                'legacy_identifiers': ['MIM:Legacy'], 'mapping_status': 'MAPPED'}))
+            paths.append((f'MIM:{number:07d}', path))
+        if reverse:
+            paths.reverse()
+        monkeypatch.setattr(mod, '_subject_to_path', lambda: dict(paths))
+        baseline = tmp_path / 'baseline.tsv'
+        baseline.write_text('subject_id\ttoken\nMIM:Legacy\tOther substance\n')
+        monkeypatch.setattr(mod, 'OTHER_BASELINE', baseline)
+        assert ('MIM:0000001', 'other substance') not in mod._other_baseline()
+>       assert ('MIM:0000002', 'other substance') not in mod._other_baseline()
+E       AssertionError: assert ('MIM:0000002', 'other substance') not in frozenset({('MIM:0000002', 'other substance')})
+E        +  where frozenset({('MIM:0000002', 'other substance')}) = <functools._lru_cache_wrapper object at 0x109d00e00>()
+E        +    where <functools._lru_cache_wrapper object at 0x109d00e00> = <module 'validate_sssom_invariants' from '<repo>/...p/export-followup-export-followup-regressions-final/ambiguous_waiver_first_owner/scripts/validate_sssom_invariants.py'>._other_baseline
+
+tests/test_stable_id_exports.py:103: AssertionError
+_______ test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver[True] _______
+
+tmp_path = PosixPath('<repo>/.temp/export-followup-export-followup-regressions-final/pytest-ambiguous_waiver_first_owner/test_ambiguous_legacy_alias_ca1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109efb5c0>
+reverse = True
+
+    @pytest.mark.parametrize('reverse', [False, True])
+    def test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver(tmp_path, monkeypatch, reverse):
+        mod = script('validate_sssom_invariants')
+        paths = []
+        for number in [1, 2]:
+            path = tmp_path / f'{number}.yaml'
+            path.write_text(yaml.safe_dump({'mim_id': f'MIM:{number:07d}',
+                'identifier': f'CHEBI:{number}', 'preferred_term': str(number),
+                'legacy_identifiers': ['MIM:Legacy'], 'mapping_status': 'MAPPED'}))
+            paths.append((f'MIM:{number:07d}', path))
+        if reverse:
+            paths.reverse()
+        monkeypatch.setattr(mod, '_subject_to_path', lambda: dict(paths))
+        baseline = tmp_path / 'baseline.tsv'
+        baseline.write_text('subject_id\ttoken\nMIM:Legacy\tOther substance\n')
+        monkeypatch.setattr(mod, 'OTHER_BASELINE', baseline)
+        assert ('MIM:0000001', 'other substance') not in mod._other_baseline()
+>       assert ('MIM:0000002', 'other substance') not in mod._other_baseline()
+E       AssertionError: assert ('MIM:0000002', 'other substance') not in frozenset({('MIM:0000002', 'other substance')})
+E        +  where frozenset({('MIM:0000002', 'other substance')}) = <functools._lru_cache_wrapper object at 0x109dbb7f0>()
+E        +    where <functools._lru_cache_wrapper object at 0x109dbb7f0> = <module 'validate_sssom_invariants' from '<repo>/...p/export-followup-export-followup-regressions-final/ambiguous_waiver_first_owner/scripts/validate_sssom_invariants.py'>._other_baseline
+
+tests/test_stable_id_exports.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../../../../../dev::test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver[False]
+FAILED ../../../../../../../../dev::test_ambiguous_legacy_alias_cannot_transfer_synonym_waiver[True]
+2 failed, 11 deselected in 0.06s

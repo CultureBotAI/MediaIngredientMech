@@ -24,6 +24,7 @@ import yaml
 from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.review_claims import validate_review_decision
 from mediaingredientmech.sssom_metadata import subset_date_metadata
+from mediaingredientmech.stable_ids import validate_id
 from mediaingredientmech.synonym_policy import is_resolving_synonym_text
 
 PRODUCTS = (
@@ -135,7 +136,10 @@ def _owners(
             continue
         records[owner] = record
         labels[record["preferred_term"]].add(owner)
-        subjects[mim_curie_for_stem(path.stem)].add(owner)
+        subject = (
+            validate_id(record["mim_id"]) if "mim_id" in record else mim_curie_for_stem(path.stem)
+        )
+        subjects[subject].add(owner)
     owners = []
     for row in rows:
         by_label = labels[row["subject_label"]]
@@ -145,6 +149,21 @@ def _owners(
             raise ValueError(f"No unique independent owner for {row['subject_id']}")
         owners.append(next(iter(candidates)))
     return owners, records
+
+
+def registry_identity_candidates(record: dict, subject: str) -> set[str]:
+    """Retain Rule B1's original registry identity, never invent a numeric alias."""
+    aliases = record.get("legacy_identifiers", []) if "mim_id" in record else [subject]
+    candidates = {
+        value
+        for value in [record.get("identifier", ""), *aliases]
+        if value.startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))
+    }
+    for alias in aliases:
+        if alias.startswith("MIM:"):
+            slug = alias.removeprefix("MIM:").lower()
+            candidates.update(f"kgmicrobe.{kind}:{slug}" for kind in ("ingredient", "compound"))
+    return candidates
 
 
 def _safe_synonyms(row: dict, record: dict) -> None:
@@ -186,6 +205,10 @@ def load_review(root: Path, review_path: Path) -> dict:
     review_sha = hashlib.sha256(review_bytes).hexdigest()
     snapshots = {review_path: review_sha}
     review = _json_bytes(review_bytes, str(review_path))
+    if "identity_projection" in review:
+        from mediaingredientmech.identity_projection import load_projected_mapping_review
+
+        return load_projected_mapping_review(root, review_path)
     if review.get("schema_version") != 1:
         raise ValueError("Unsupported review schema")
     source = _relative(root, review["source_sssom"])
@@ -241,12 +264,16 @@ def load_review(root: Path, review_path: Path) -> dict:
         for row in selected
         if row["predicate_id"] == "skos:exactMatch"
     }
+    owner_by_subject = {
+        row["subject_id"]: records[owner] for row, owner in zip(rows, owners, strict=True)
+    }
     for row in selected:
         if row["predicate_id"] in {"skos:narrowMatch", "skos:broadMatch"}:
-            slug = row["subject_id"].removeprefix("MIM:").lower()
             if not any(
-                (row["subject_id"], f"kgmicrobe.{kind}:{slug}") in identities
-                for kind in ("ingredient", "compound")
+                (row["subject_id"], candidate) in identities
+                for candidate in registry_identity_candidates(
+                    owner_by_subject[row["subject_id"]], row["subject_id"]
+                )
             ):
                 raise ValueError(
                     f"Supported asymmetric mapping lacks registry identity sibling (Rule B1): {row['subject_id']}"

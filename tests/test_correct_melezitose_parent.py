@@ -15,6 +15,11 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound sources under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
     "melezitose_parent", ROOT / "scripts/correct_melezitose_parent.py"

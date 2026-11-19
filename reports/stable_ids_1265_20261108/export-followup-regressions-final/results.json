@@ -1,0 +1,94 @@
+{
+  "issues": [
+    1265,
+    1267
+  ],
+  "observed_at": "2026-11-08T22:31:50.410117+00:00",
+  "input_sha256": {
+    "scripts/adhoc/project_text_map_ids_1265.py": "c03c6bf9ff713582e789e57533c4d53741cd22d610f5ad50714befa342b5a05a",
+    "scripts/embed_records.py": "7cf43f7735ee81bf4560a5fe9cef59edd65043187a91c329f5fc9dd12200fe66",
+    "scripts/validate_sssom_invariants.py": "a1615dac1bff25b9d9e79e4fa7aceb5ce06b3ea790b87e20e7b00948bf71764d",
+    "tests/test_stable_id_exports.py": "0f1cc0a3e405ef1146089276e226341106ac2fec0abfde583239b9e1cbd31422"
+  },
+  "results": [
+    {
+      "case": "control",
+      "selection": "ambiguous_legacy_alias_cannot_transfer_synonym_waiver or embedding_ or text_map_projection_",
+      "exit_code": 0,
+      "expected_result": true,
+      "log": "control.log"
+    },
+    {
+      "case": "ambiguous_waiver_first_owner",
+      "selection": "ambiguous_legacy_alias_cannot_transfer_synonym_waiver",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "ambiguous_waiver_first_owner.log"
+    },
+    {
+      "case": "embedding_filename_identity",
+      "selection": "embedding_record_identity",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "embedding_filename_identity.log"
+    },
+    {
+      "case": "embedding_filename_url",
+      "selection": "embedding_record_identity",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "embedding_filename_url.log"
+    },
+    {
+      "case": "embedding_missing_id_fallback",
+      "selection": "embedding_collection_refuses",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "embedding_missing_id_fallback.log"
+    },
+    {
+      "case": "text_map_keeps_slug_identity",
+      "selection": "text_map_projection_changes",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_keeps_slug_identity.log"
+    },
+    {
+      "case": "text_map_keeps_old_address",
+      "selection": "text_map_projection_changes",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_keeps_old_address.log"
+    },
+    {
+      "case": "text_map_changes_coordinates",
+      "selection": "text_map_projection_changes",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_changes_coordinates.log"
+    },
+    {
+      "case": "text_map_unknown_owner_fallback",
+      "selection": "text_map_projection_refuses_unknown_or_ambiguous_owners and unknown_url",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_unknown_owner_fallback.log"
+    },
+    {
+      "case": "text_map_duplicate_identity",
+      "selection": "text_map_projection_refuses_unknown_or_ambiguous_owners and duplicate_id",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_duplicate_identity.log"
+    },
+    {
+      "case": "text_map_duplicate_url",
+      "selection": "text_map_projection_refuses_unknown_or_ambiguous_owners and duplicate_url",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "text_map_duplicate_url.log"
+    }
+  ],
+  "maintained_source_edits": false,
+  "models_or_network": "NOT USED"
+}

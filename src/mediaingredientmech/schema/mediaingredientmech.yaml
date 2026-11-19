@@ -13,6 +13,7 @@ see_also:
 prefixes:
   linkml: https://w3id.org/linkml/
   mediaingredientmech: https://w3id.org/mediaingredientmech/
+  MIM: https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   FOODON: http://purl.obolibrary.org/obo/FOODON_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
@@ -100,13 +101,23 @@ classes:
       identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation).
       Can serve as root element for individual YAML files or as elements in IngredientCollection.
     attributes:
-      identifier:
+      mim_id:
         identifier: true
         required: true
+        pattern: '^MIM:(?!0000000)[0-9]{7}(?![\s\S])'
         description: >-
-          Semantic identifier for the record and its LinkML identifier slot,
-          but not a guaranteed unique document address: reviewed duplicate
-          families may share a CURIE. For mapped ingredients this is the
+          Permanent opaque record identifier from the append-only MIM registry.
+          Preserved through name, filename, mapping and status changes; never reused.
+      legacy_identifiers:
+        multivalued: true
+        description: >-
+          Preserved former identifiers and slug-based aliases. Aliases may be shared
+          by distinct records and must not be used as unique record keys.
+      identifier:
+        required: true
+        description: >-
+          Chemical/material mapping identifier retained independently of the
+          permanent mim_id. Reviewed duplicate families may share this CURIE. For mapped ingredients this is the
           primary ontology, registry, or local identity (e.g. `CHEBI:26710`,
           `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped
           ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested

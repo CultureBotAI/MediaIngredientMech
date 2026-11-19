@@ -53,6 +53,12 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002072; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: SELECTIVE_AGENT
@@ -61,3 +67,7 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0002072
+legacy_identifiers:
+- MIM:Pluramycin_A
+- kgmicrobe.compound:pluramycin_a

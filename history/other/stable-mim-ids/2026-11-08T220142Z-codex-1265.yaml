@@ -1,0 +1,29 @@
+history_version: 1
+target:
+  kind: other
+  path: data/ids/mim_id_registry.tsv
+  slug: stable-mim-ids
+session:
+  id: 2026-11-08T220142Z-codex-1265
+  timestamp: '2026-11-08T22:01:42Z'
+  actors:
+  - type: ai_agent
+    name: codex
+    agent_tool: codex
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1265
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - identifiers
+  summary: Assign permanent MIM identities to all 2956 ingredient records.
+  details: >-
+    Deterministic lexical repository-relative path order assigns MIM:0000001
+    through MIM:0002956. Existing filenames, semantic mapping identifiers,
+    scientific assertions, mapping statuses and prior curation events are retained.
+    Legacy slug and mapping identifiers remain aliases. The hash-bound migration
+    receipt is reports/stable_ids_1265_20261108/migration.json. This is an
+    administrative identity migration and adds no scientific approval. Immutable
+    mint rows and append-only lifecycle events preserve future retirements and merges.

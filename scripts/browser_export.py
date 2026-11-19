@@ -24,7 +24,7 @@ if str(_src) not in sys.path:
 
 from collections.abc import Mapping
 from mediaingredientmech.render_ingredient_pages import slug_for
-from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+from mediaingredientmech.stable_ids import resolver_url  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
     effective_occurrence_statistics,
@@ -52,6 +52,8 @@ def extract_ingredient_for_browser(
     """
     # Core fields
     identifier = ingredient.get('identifier', 'UNKNOWN')
+    mim_id = ingredient.get('mim_id')
+    stable_url = resolver_url(mim_id)
     preferred_term = ingredient.get('preferred_term', 'Unknown')
     mapping_status = ingredient.get('mapping_status', 'UNKNOWN')
 
@@ -100,11 +102,16 @@ def extract_ingredient_for_browser(
         searchable = f"{searchable} {ontology_id.lower()}"
     if component_search:
         searchable = f"{searchable} {component_search.lower()}"
+    for alias in [mim_id, *(ingredient.get('legacy_identifiers') or [])]:
+        if alias.lower() not in searchable.split():
+            searchable = f"{searchable} {alias.lower()}"
 
     # Create browser record
     record = {
         'id': identifier,
-        'record_id': mim_curie_for_stem(Path(source_file).stem),
+        'record_id': mim_id,
+        'stable_url': stable_url,
+        'legacy_identifiers': ingredient.get('legacy_identifiers') or [],
         'preferred_term': preferred_term,
         'mapping_status': mapping_status,
         'ontology_id': ontology_id,
@@ -197,6 +204,10 @@ def export_ingredients_to_json(
         console.print("[red]Refusing to write a short catalog — it deploys to Pages "
                       "and nothing downstream would notice the gap.[/red]")
         sys.exit(1)
+
+    identifiers = [row['record_id'] for row in all_ingredients]
+    if len(identifiers) != len(set(identifiers)):
+        raise ValueError("Duplicate stable MIM IDs in browser catalog")
 
     # Create export data
     export_data = {

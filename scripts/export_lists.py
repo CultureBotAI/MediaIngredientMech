@@ -159,6 +159,7 @@ def export_to_json(
     for ing in ingredients:
         record = {
             "identifier": ing.get("identifier", ""),
+            "mim_id": ing.get("mim_id", ""),
             "ontology_id": _ontology_id(ing),
             "preferred_term": ing.get("preferred_term", ""),
             "mapping_status": ing.get("mapping_status", ""),
@@ -215,6 +216,7 @@ def export_to_csv(
         # appended, not inserted: a consumer indexing columns positionally keeps
         # working, and one reading by header name picks it up. Issue #229.
         "synonyms",
+        "mim_id",
     ]
 
     with open(output_path, "w", newline="") as f:
@@ -224,6 +226,7 @@ def export_to_csv(
         for ing in ingredients:
             row = {
                 "identifier": ing.get("identifier", ""),
+            "mim_id": ing.get("mim_id", ""),
                 "ontology_id": _ontology_id(ing),
                 "preferred_term": ing.get("preferred_term", ""),
                 "mapping_status": ing.get("mapping_status", ""),
@@ -291,11 +294,11 @@ def export_label_index(ingredients: list[dict], output_path: Path):
         seen_labels = {preferred.lower()} | {x.lower() for x in _synonyms(ing)}
         if preferred:
             rows.append({"label": preferred, "match_type": "preferred_term",
-                         "identifier": ident, "preferred_term": preferred,
+                         "identifier": ident, "mim_id": ing.get("mim_id", ""), "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
         for syn in _synonyms(ing):
             rows.append({"label": syn, "match_type": "synonym",
-                         "identifier": ident, "preferred_term": preferred,
+                         "identifier": ident, "mim_id": ing.get("mim_id", ""), "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
         # The mapped TERM's own label, as a third way in. Many records are named
         # by formula (`KOH`, `KI`, `NaH2PO4•H2O`) while consumers write the
@@ -309,7 +312,7 @@ def export_label_index(ingredients: list[dict], output_path: Path):
             and _resolves_by_ontology_label(ing)
         ):
             rows.append({"label": onto_label, "match_type": "ontology_label",
-                         "identifier": ident, "preferred_term": preferred,
+                         "identifier": ident, "mim_id": ing.get("mim_id", ""), "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
     # Order within a label, most significant first:
     #   0. OWNERSHIP. A record whose own `preferred_term` IS this label makes a
@@ -427,7 +430,7 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # and one reading by header name picks it up — same rule as the synonyms
     # column in #229.
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
-                  "ontology_id", "mapping_status", "ambiguity"]
+                  "ontology_id", "mapping_status", "ambiguity", "mim_id"]
     with open(output_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         w.writeheader()

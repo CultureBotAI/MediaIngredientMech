@@ -1,0 +1,152 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1265",
+  "findings": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1269",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1273",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1274"
+  ],
+  "date": "2026-11-08",
+  "source_files_modified": false,
+  "probes": [
+    {
+      "probe": "duplicate_yaml_key_guard",
+      "test": "tests/test_identity_projection.py::test_rehashed_duplicate_scientific_yaml_key_is_refused",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "duplicate_yaml_key_guard"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "557499da745b679302a96a248d488f8b4d5f3bc47efb47546055587821476019",
+      "exit_code": 1,
+      "failed_tests": 2,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "a0f4a8577015fe38b73271a510535cee2e49e7af734c7ee43719fbb7dd5728a6"
+    },
+    {
+      "probe": "complete_mint_inventory_authority",
+      "test": "tests/test_identity_projection_bundle.py::test_coherently_shifted_complete_mint_inventory_is_not_portable_authority",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "complete_mint_inventory_authority"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "c3fdd9d3201b39cfd4a9f2193c78fd17f0d07c0530ca917698ddcad708e31f39",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "3b32b0d9cb1493278d5ef569141ac188d00370eacd99d6c74233835fbf91227e"
+    },
+    {
+      "probe": "freshness_prior_drift",
+      "test": "tests/test_identity_projection_frozen.py::test_frozen_initial_transition_independent_of_subsequent_current_edits",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "freshness_prior_drift"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "5a72a35880d824de3c56a56a22a453a18db4a571bce62f7106e2b5e2fdf95aa8",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "c6f54641436e5307824b515ded3d81e0b4e4c0f2ad720c4fb44e111dc7561a75"
+    },
+    {
+      "probe": "freshness_later_drift",
+      "test": "tests/test_identity_projection_frozen.py::test_frozen_initial_transition_independent_of_subsequent_current_edits",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "freshness_later_drift"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "5a72a35880d824de3c56a56a22a453a18db4a571bce62f7106e2b5e2fdf95aa8",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "00a7cff3d4cfe4a87755691c075a059589ae51a5f47ea6d6687aa1da8ac6f83e"
+    },
+    {
+      "probe": "record_science_guard",
+      "test": "tests/test_identity_projection.py::test_rehashed_record_mutations_are_not_identity_only[biology]",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "record_science_guard"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "5a72a35880d824de3c56a56a22a453a18db4a571bce62f7106e2b5e2fdf95aa8",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "b66e2def11707cbd361232f204d5c3ef818ec7e60270cbb0e5fe342d09ece79c"
+    },
+    {
+      "probe": "sssom_subject_only_guard",
+      "test": "tests/test_identity_projection.py::test_rehashed_mapping_mutation_refused",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "sssom_subject_only_guard"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "f45b11cd4487259da82c74037ec0c7b7dd7f2388af8fa86a0146c168cb925bb6",
+      "exit_code": 1,
+      "failed_tests": 4,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "48cbf802f7a88f7347c56dcd6e7a5a9a05b0e8e5bd45bb435c11b4f97037ba73"
+    },
+    {
+      "probe": "negative_hold_preservation",
+      "test": "tests/test_identity_projection_graph.py::test_identity_projection_never_promotes_negative_disposition",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/adhoc/check_identity_projection_mutations_1265.py",
+        "--probe",
+        "negative_hold_preservation"
+      ],
+      "baseline_exit_code": 0,
+      "baseline_output_sha256": "5a72a35880d824de3c56a56a22a453a18db4a571bce62f7106e2b5e2fdf95aa8",
+      "exit_code": 1,
+      "failed_tests": 1,
+      "status": "KILLED",
+      "mutation_killed": true,
+      "full_output_sha256": "8a1284124f57e161fc53e177ce50a38e500b84d4e278a64a8dbbc626191b0fbb"
+    }
+  ]
+}

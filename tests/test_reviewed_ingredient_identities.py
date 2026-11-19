@@ -6,6 +6,8 @@ from pathlib import Path
 
 import yaml
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "reports/sssom_completion_20260921/mapping_review/identity-review-20260924"
 
@@ -87,7 +89,7 @@ def test_historical_acriflavine_cas_does_not_escape_into_active_mappings():
     active = [
         r
         for r in rows(ROOT / "mappings/ingredient_mappings.sssom.tsv")
-        if r["subject_id"] == "MIM:Acriflavine"
+        if r["subject_id"] == current_subject("MIM:Acriflavine")
     ]
     assert len(active) == 1 and active[0]["object_id"] == "NCIT:C76253"
     assert active[0]["other"] == ""
@@ -101,7 +103,7 @@ def test_lysozyme_keeps_local_identity_without_inventing_a_replacement_cas():
     active = [
         r
         for r in rows(ROOT / "mappings/ingredient_mappings.sssom.tsv")
-        if r["subject_id"] == "MIM:Lysozyme"
+        if r["subject_id"] == current_subject("MIM:Lysozyme")
     ]
     assert len(active) == 1
     assert active[0]["object_id"] == local and active[0]["other"] == ""

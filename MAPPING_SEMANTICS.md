@@ -32,6 +32,26 @@ A "row" is one tab-separated line in that file.
 
 ---
 
+## Permanent record identity
+
+Every ingredient has a required opaque `mim_id`, such as `MIM:0000001`.
+SSSOM subjects and current MIM record joins use that ID. The record's
+`identifier` remains its existing external, registry or unresolved mapping
+value; `ontology_mapping` remains a separate scientific assertion. Preserve
+former identifiers in `legacy_identifiers`. Mapped, unmapped and rejected
+mapping states all retain permanent record IDs.
+
+IDs come from the append-only mint registry and lifecycle ledger; a rename,
+label correction, mapping update or directory move never re-mints the record.
+Filenames are kept. Retired or merged IDs remain registered and resolve to
+an active replacement. See [stable MIM IDs](docs/STABLE_MIM_IDS.md).
+
+The named MIM subjects in historical worked examples below (for example
+`MIM:Vermont_Soil`) are legacy aliases, not a current ID-allocation rule.
+Resolve them to the record's numeric `mim_id` before constructing a new row.
+Do not rewrite earlier releases or their review receipts. Neither allocating
+an ID nor resolving an alias grants mapping or scientific-review authority.
+
 ## 0. Grounding quality and identity predicates are independent
 
 `ontology_mapping.mapping_quality` records how the ontology grounding was
@@ -101,7 +121,7 @@ Use `skos:exactMatch` when:
   the same level of specificity (e.g. `MIM:Glucose` ↔ `CHEBI:17234 "glucose"`,
   `MIM:Sodium_chloride` ↔ `CHEBI:26710 "sodium chloride"`).
 - You are emitting a **registry/identity row** (see Section 2), pairing a
-  `MIM:<slug>` subject with its `kgmicrobe.{ingredient,compound}:<slug>`
+  `MIM:<seven-digit-id>` subject with its `kgmicrobe.{ingredient,compound}:<slug>`
   primary id.
 
 Do **not** use `skos:exactMatch` when:
@@ -177,7 +197,7 @@ Do **not** use `skos:broadMatch` when:
   `skos:exactMatch` instead.
 - The MIM ingredient is a sibling of the ontology term, not a child.
 - You omit the registry row (Section 2). Every `broadMatch` from a
-  `MIM:<slug>` subject **must** be accompanied by a registry exactMatch
+  `MIM:<seven-digit-id>` subject **must** be accompanied by a registry exactMatch
   row. This is enforced by **Rule B1**, which keys on both asymmetric
   predicates and so was unaffected by the #390 flip.
 
@@ -204,10 +224,10 @@ new one is worth a second look.
 MIM uses two **independent kinds of mapping rows** for any ingredient that
 also asserts a `broadMatch` to an OBO term:
 
-1. **Ontology row** — `MIM:<slug> skos:broadMatch <ENVO|CHEBI|FOODON|…>:<id>`
+1. **Ontology row** — `MIM:<seven-digit-id> skos:broadMatch <ENVO|CHEBI|FOODON|…>:<id>`
    anchors the MIM child to its OBO parent. The object_id is an external
    ontology term.
-2. **Registry/identity row** — `MIM:<slug> skos:exactMatch
+2. **Registry/identity row** — `MIM:<seven-digit-id> skos:exactMatch
    kgmicrobe.{ingredient,compound}:<slug>` declares that the MIM subject
    has its own primary id in the kg-microbe namespace. The object_id is a
    first-class kg-microbe CURIE.
@@ -224,7 +244,7 @@ The registry row is also the **single channel** by which downstream
 consumers resolve a MIM subject to its kg-microbe primary id without
 conflating it with the OBO parent.
 
-### Worked example: `MIM:Vermont_Soil`
+### Historical worked example: `MIM:Vermont_Soil`
 
 `MIM:Vermont_Soil` is one of many soil-source ingredients in the MIM
 data set. There is no ENVO term for Vermont soil specifically; the
@@ -265,14 +285,16 @@ from the MIM subject to a CURIE.
 
 ### Naming convention
 
-The registry CURIE always uses the same slug as the MIM subject:
+A `kgmicrobe.*` mapping target retains its own historical semantic slug.
+It is not derived from the numeric MIM subject. Locate the current record by
+`mim_id` and use its preserved mapping identifier and the applicable scientific
+mapping rule. For example, the historical alias `MIM:Vermont_Soil` can lead to
+a permanent MIM ID whose local mapping remains
+`kgmicrobe.ingredient:vermont_soil`; never mint `kgmicrobe.ingredient:0000001`
+from a record's numeric suffix.
 
-- `MIM:Vermont_Soil` → `kgmicrobe.ingredient:vermont_soil`
-- `MIM:Glucose` → `kgmicrobe.compound:glucose`
-- `MIM:KH2PO4` → `kgmicrobe.compound:kh2po4`
-
-Slug normalization: lowercase, underscore-separated, no special
-characters. The `ingredient` vs `compound` namespace split mirrors the
+For new local mapping targets, slug normalization remains lowercase,
+underscore-separated, with no special characters. The `ingredient` vs `compound` namespace split mirrors the
 type assigned by the auto-classifier (`scripts/classify_ingredient_type.py`
 in claw): pure compounds use `kgmicrobe.compound:`, complex/biological
 materials use `kgmicrobe.ingredient:`.
@@ -758,7 +780,7 @@ parent/child. They cannot both be true.
 
 **Rule B2** rejects this: at most one row per `(subject_id, object_id)`
 pair. **Rule B3** also rejects this specific shape: for any subject
-`MIM:<slug>` and any OBO-parent target `Y`, if `broadMatch Y` is
+`MIM:<seven-digit-id>` and any OBO-parent target `Y`, if `broadMatch Y` is
 asserted, then `exactMatch Y` must NOT be.
 
 **Antidote**: pick `broadMatch` (the parent IS broader; Vermont Soil
@@ -782,8 +804,8 @@ CURIE. As described in Section 2, this means downstream consumers
 that resolve "Vermont Soil" by `subject_label` get back the parent
 `ENVO:00001998` instead of a Vermont-specific child id.
 
-**Rule B1** rejects this: every `MIM:<slug>` subject that has any row
-must have exactly one row of the form `MIM:<slug> skos:exactMatch
+**Rule B1** rejects this: every `MIM:<seven-digit-id>` subject that has any row
+must have exactly one row of the form `MIM:<seven-digit-id> skos:exactMatch
 kgmicrobe.{ingredient,compound}:<slug>`.
 
 **Antidote**: mint the registry CURIE first, then add the registry row.
@@ -857,10 +879,10 @@ This is the right option when the row reflects genuinely incorrect data.
 1. Locate the underlying ingredient YAML in
    `data/ingredients/mapped/<Slug>.yaml` (or
    `data/ingredients/unmapped/<Slug>.yaml` for in-progress entries).
-   The MIM subject id maps directly to the file stem:
-   `MIM:Vermont_Soil` → `data/ingredients/mapped/Vermont_Soil.yaml`.
-   Note that filenames preserve the slug case from the subject id
-   (`Vermont_Soil`, not `vermont_soil`).
+   Find the current record by its `mim_id`; the numeric subject does not map
+   to a file stem. `CurieNormalizer.resolve()` can resolve an unambiguous
+   historical subject first. Keep filenames unchanged unless a separate
+   curation change requires a rename; the permanent ID survives either way.
 2. Fix the field that produced the bad row. Examples by rule:
    - **Rule A**: re-curate the `ontology_mappings` entry for the
      ingredient — remove the wrong CHEBI/ENVO id and set the correct
@@ -953,7 +975,7 @@ Exit codes:
 
 Rule B1 is **strict by default**: every narrow/broadMatch subject
 must carry a sibling
-`MIM:<slug> skos:exactMatch kgmicrobe.{ingredient,compound}:<slug_lc>`
+`MIM:<seven-digit-id> skos:exactMatch kgmicrobe.{ingredient,compound}:<slug_lc>`
 registry row, and a missing registry row contributes to exit-2 just
 like Rules A, B2, and B3. The original 162-subject backlog (that
 PR #4 shipped warn-only to accommodate) was cleared by the claw
@@ -1220,9 +1242,9 @@ graph's `organism_scope`.
 **L5. Mixtures use `COMPONENT` edges**, and each component's own record owns its
 speciation and mechanism (Section 6).
 
-**L6. No projection onto `MIM:<slug>`.** A bridge is never projected onto the
-`MIM:<slug>` node and never exported as `same_as` or `exact_match`; has-part on
-`MIM:<slug>` stays reserved for `components`. As with a `skos:broadMatch` row
+**L6. No projection onto `MIM:<seven-digit-id>`.** A bridge is never projected onto the
+`MIM:<seven-digit-id>` node and never exported as `same_as` or `exact_match`; has-part on
+`MIM:<seven-digit-id>` stays reserved for `components`. As with a `skos:broadMatch` row
 (#245), a bridge relates two distinct nodes and never makes them one.
 
 ### 7.4 Delegation (`SPECIATION`)

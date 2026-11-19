@@ -113,7 +113,9 @@ MediaIngredientMech/
 
 ## Mapping Semantics
 
-See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:exactMatch` / `skos:closeMatch` / `skos:narrowMatch` / `skos:broadMatch`), the registry/identity row pattern pairing `MIM:<slug>` with `kgmicrobe.{ingredient,compound}:<slug>`, common mistakes by Rule id, and the curator workflow when CI rejects a row in `mappings/ingredient_mappings.sssom.tsv`.
+Each ingredient has a permanent `mim_id` such as `MIM:0000001`, separate from its ontology or registry mapping `identifier`. See [Stable MIM IDs](docs/STABLE_MIM_IDS.md) for resolver URLs, historical aliases, and downstream migration guidance.
+
+See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:exactMatch` / `skos:closeMatch` / `skos:narrowMatch` / `skos:broadMatch`), the registry/identity row pattern pairing a permanent MIM ID with its existing `kgmicrobe.{ingredient,compound}:<mapping-slug>` target, common mistakes by Rule id, and the curator workflow when CI rejects a row in `mappings/ingredient_mappings.sssom.tsv`.
 
 ## Documentation
 
@@ -123,6 +125,7 @@ See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:
 - [Environmental Context](docs/schema/environmental_context.md) - ENVO-based environmental linking
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
 - [Mapping Semantics](MAPPING_SEMANTICS.md) - SSSOM predicate semantics and registry/identity row pattern
+- [Stable MIM IDs](docs/STABLE_MIM_IDS.md) - Permanent record identity, resolver and consumer migration
 - [Component Partonomy](docs/stock_components.md) - Typed has-part references, evidence, and validation
 - [Causal Graph Contract](docs/CAUSAL_GRAPH_CONTRACT.md) - Ingredient mechanism graphs, active-species bridges, and links to sibling Mechs
 - [MIM KGX Export](docs/KGX_EXPORT.md) - Standalone ingredient graph with mappings, roles, components, and provenance

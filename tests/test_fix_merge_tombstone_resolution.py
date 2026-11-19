@@ -41,7 +41,8 @@ def test_persisted_split_preserves_history_and_avoids_retired_id(slug, allocatio
     assert "#1021" in correction["changes"]
 
 
-def test_producer_recreation_uses_fresh_placeholders(producer, tmp_path, monkeypatch):
+def test_producer_recreation_uses_fresh_placeholders(producer, tmp_path, monkeypatch, pre_mint_schema_case):
+    """Replay the historical #1021 creation under its pre-mint schema."""
     monkeypatch.setattr(producer, "TARGETS", ())
     monkeypatch.setattr(producer, "UNMAPPED_DIR", tmp_path)
     assert producer.main(["--apply"]) == 0
@@ -57,7 +58,9 @@ def test_second_required_repair_preserves_history_and_then_is_idempotent(produce
     repair = producer.TARGETS[0]
     record_path = ROOT / "data/ingredients/mapped" / f"{repair.slug}.yaml"
     record = yaml.safe_load(record_path.read_text())
-    assert record["curation_history"][-1]["action"] == "REPAIRED_TOMBSTONE_RESOLUTION"
+    scientific_history = [event for event in record["curation_history"]
+                          if event["action"] != "ASSIGNED_MIM_ID"]
+    assert scientific_history[-1]["action"] == "REPAIRED_TOMBSTONE_RESOLUTION"
     history = copy.deepcopy(record["curation_history"])
     record.pop("representative")
     source = tmp_path / f"{repair.slug}.yaml"

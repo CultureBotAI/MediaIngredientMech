@@ -20,6 +20,8 @@ import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_MODEL = "BAAI/bge-large-en-v1.5"
+sys.path.insert(0, str(REPO_ROOT / "src"))
+from mediaingredientmech.stable_ids import validate_id  # noqa: E402
 
 
 def slug_for_source(category: str, path: Path) -> str:
@@ -131,7 +133,7 @@ def collect_records(ingredients_dir: Path) -> list[dict[str, Any]]:
             if status == "REJECTED":
                 continue
 
-            record_id = record_key_for_stem(path.stem)
+            record_id = validate_id(rec.get("mim_id"))
             preferred = str(rec.get("preferred_term") or path.stem).strip()
             if preferred.startswith("empty_"):
                 preferred = f"Unnamed Component ({record_id})"
@@ -165,8 +167,7 @@ def collect_records(ingredients_dir: Path) -> list[dict[str, Any]]:
                 if isinstance(stats, dict)
                 else 0
             )
-            slug = slug_for_source(category, path)
-            detail_url = f"records/ingredient/{slug}.html"
+            detail_url = "ingredient/" + record_id.replace(":", "_")
 
             records.append(
                 {

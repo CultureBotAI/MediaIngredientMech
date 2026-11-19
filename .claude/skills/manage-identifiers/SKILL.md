@@ -1,159 +1,97 @@
 ---
 name: manage-identifiers
-description: Use this skill to manage MediaIngredientMech record identifiers. In MIM the record `identifier` is the primary ontology, registry, or local identity CURIE for a mapped ingredient, or an `UNMAPPED_NNNN` placeholder for an unmapped one; it may differ from the separate ontology grounding target and there is no sequential MIM id. Use when adding or importing records, minting placeholders, promoting an unmapped record, or reconciling identifier collisions. Sequential `RepoName:NNNNNN` ids, where used, belong to sister-repository contracts.
+description: Manage permanent MediaIngredientMech record IDs, append-only mint and lifecycle ledgers, and preserved legacy identifiers. Every ingredient has a required opaque mim_id such as MIM:0000001. Its existing identifier remains an ontology, registry or unresolved mapping value. Use for record creation, promotion, rename, merge, retirement and ambiguous legacy-reference resolution.
 category: workflow
 requires_database: false
 requires_internet: false
-version: 2.0.0
+version: 3.0.0
 ---
 
-# Identifier Management (MediaIngredientMech)
+# Identifier management
 
-## Overview — MIM uses CURIE identifiers, not sequential ids
+Every record under `data/ingredients/mapped/` or `data/ingredients/unmapped/`
+has a permanent `mim_id`. Mapping status, label corrections, filename changes
+and promotion between directories do not change it. Keep existing filenames;
+the ID does not derive from them.
 
-MediaIngredientMech is a **multi-file collection**: every ingredient is its own YAML file
-under `data/ingredients/mapped/` (mapped) or `data/ingredients/unmapped/` (unmapped). The
-identifying field is **`identifier`** (the schema's `identifier: true` slot on
-`IngredientRecord`), and its value is:
+Read `MAPPING_SEMANTICS.md` for scientific mapping policy and
+`docs/STABLE_MIM_IDS.md` for the migration and consumer contract. The previous
+legacy `id` field stays retired; this contract introduces the distinct required
+field `mim_id`.
 
-- **Mapped record** → its primary ontology, registry, or local identity **CURIE**
-  (e.g. `identifier: CHEBI:9532` or `kgmicrobe.compound:sugars`). It often equals
-  `ontology_mapping.ontology_id`, but registry/local identities legitimately
-  differ from ontology grounding targets at any evidence-backed mapping quality.
-  Prefixes in use include `CHEBI:`,
-  `cas:` (~248), `kgmicrobe.compound:` (~64), `mesh:` (~61), `MICRO:` (~44), `NCIT:` (~31),
-  `FOODON:` (~26), `kgmicrobe.ingredient:` (~25), `ENVO:` (~10).
-- **Unmapped record** → an **`UNMAPPED_NNNN`** placeholder (zero-padded 4-digit, e.g.
-  `UNMAPPED_0001`); ~380 records.
+| Field | Purpose |
+| --- | --- |
+| `mim_id` | Permanent opaque record key, `MIM:` plus seven digits, starting at `MIM:0000001` |
+| `identifier` | Existing ontology, registry, local mapping or unresolved placeholder value |
+| `ontology_mapping` | Evidence-backed mapping target, grade and provenance |
+| `legacy_identifiers` | Preserved former mapping/placeholder values and filename-based MIM aliases |
 
-> **There is no `MediaIngredientMech:NNNNNN` sequential id in MIM.** The legacy separate id
-> was removed (`scripts/migrate_drop_legacy_ontology_id.py`); records carry only `identifier`.
-> Sister repositories may define their own sequential `RepoName:NNNNNN` ids;
-> consult each repository's current schema and identifier instructions. MIM's
-> retired copy of that generic guidance is historical material in `ATTIC/`.
+A permanent record ID establishes no ontology equivalence or scientific review.
+Known duplicate mapping values may occur on distinct records; their permanent
+MIM IDs remain distinct until a reviewed merge explicitly retires one.
 
-## When to Use This Skill
+## New records
 
-- Adding or importing an ingredient record (set its `identifier` correctly)
-- Minting the next `UNMAPPED_NNNN` placeholder for a new unmapped ingredient
-- Promoting an unmapped record to its resolved CURIE once it's mapped
-- Reconciling identifier collisions / duplicates, or auditing identifier↔mapping consistency
+1. Check the current corpus and aliases for an existing ingredient. An ambiguous
+   legacy identifier requires disambiguation; never choose the first record.
+2. Resolve and verify the owned repository and acquire its normal short write
+   lock. Re-read both ledgers under that lock:
+   `data/ids/mim_id_registry.tsv` and `data/ids/mim_id_lifecycle.tsv`.
+3. Use `mediaingredientmech.stable_ids.allocate_ids` to plan IDs. Supply current
+   registry state and a mapping keyed by exact repository-relative new-record
+   paths, with a date in `YYYY-MM-DD` format. It allocates missing IDs in sorted
+   path order and preserves existing assignments. It is a pure planner, not a
+   writer or lock manager. Never compute a new ID from file counts or invent a
+   sequence in a separate script.
+4. Assign each planned `mim_id` to its record. Keep the scientifically justified
+   `identifier`; preserve previous identifiers and filename CURIEs in
+   `legacy_identifiers`. Do not replace an unresolved value with a fabricated
+   ontology match. The sibling
+   [`map-media-ingredients`](../map-media-ingredients/SKILL.md) skill owns mapping
+   curation, and [`merge-ingredients`](../merge-ingredients/SKILL.md) owns merges.
+5. Stage the record changes and newly appended registry rows together through
+   the native validated writer workflow. Validate the complete candidate corpus
+   and ledgers before promotion; do not leave an allocated ID without a record
+   or a record without a registered ID. Preserve field order and append a
+   `curation_history` event. The allocator alone does not provide an atomic
+   multi-file write.
+6. Synchronize individual and aggregate records in the correct direction and
+   regenerate the affected published artifacts. Run the identity gate and
+   applicable native QC before committing the bounded batch.
 
----
+## Existing records, merges and retirement
 
-## Identifier Format
+Changing a label, mapping value, mapping status or file path retains `mim_id`.
+Before replacing `identifier`, preserve the previous value in
+`legacy_identifiers` and record the evidence-backed transition in history.
+An ingredient with `mapping_status: REJECTED` still has an active permanent ID;
+mapping rejection is not ID retirement.
 
-| Record state | `identifier` value | Example |
-|---|---|---|
-| **Mapped** | primary ontology, registry, or local identity CURIE | `CHEBI:26710`, `cas:7647-14-5`, `kgmicrobe.compound:foo` |
-| **Unmapped** | `UNMAPPED_NNNN` (4-digit, zero-padded) | `UNMAPPED_0042` |
+Mint rows are immutable. A reviewed merge or retirement appends one terminal
+event using `stable_ids.append_lifecycle`, with `status: merged` or `retired`,
+an already minted `replaced_by` ID, a UTC timestamp and a reason. Never edit the
+original mint row, delete an old event, reuse an ID or create a replacement
+cycle. Transfer the preserved aliases to the surviving record as appropriate.
+Every replacement chain must reach exactly one active current record.
 
-Schema pattern for CURIE identifiers (`src/mediaingredientmech/schema/mediaingredientmech.yaml`):
-`^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$`. Consult
-`MAPPING_SEMANTICS.md` before choosing between a direct ontology identity and a
-registry/local identity with separate ontology grounding.
+## Resolution and checks
 
----
+`MIM:` expands to
+`https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_`.
+The Pages builder creates stable ID routes and retirement/replacement pages,
+while retaining current filename-based record pages. A w3id redirect is a
+separate future change requiring approval.
 
-## Core Workflow
+`CurieNormalizer.resolve()` reads the registry and current corpus, follows
+replacement chains and returns a current permanent ID for an unambiguous
+preserved alias. Shared external aliases remain stored; lookup refuses them
+with `AMBIGUOUS_ALIAS`. A mapping identifier is not a unique record address.
 
-Records are one file per ingredient. Choosing/curating the ontology mapping is the
-[`map-media-ingredients`](../map-media-ingredients/SKILL.md) skill; consolidating duplicates is
-[`merge-ingredients`](../merge-ingredients/SKILL.md). This skill is about the **`identifier`
-value** itself.
-
-### 1. Mapped record — choose the primary identity
-
-The identifier is **not** minted sequentially. For a direct ontology identity,
-it is the selected ontology term and the two fields agree:
-
-```yaml
-identifier: CHEBI:26710          # == ontology_mapping.ontology_id
-preferred_term: sodium chloride
-ontology_mapping:
-  ontology_id: CHEBI:26710
-  ontology_label: sodium chloride
-  ontology_source: CHEBI
-```
-
-For a registry/local identity, keep that primary identifier and record the
-ontology grounding independently, with the correct mapping quality:
-
-```yaml
-identifier: kgmicrobe.compound:sugars
-preferred_term: Sugars
-ontology_mapping:
-  ontology_id: CHEBI:16646
-  ontology_label: carbohydrate
-  ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
-```
-
-### 2. Unmapped record — mint the next `UNMAPPED_NNNN`
-
-Find the highest existing placeholder across all record files, then add 1:
-
-```bash
-# quick check
-grep -rhoE 'UNMAPPED_[0-9]{4}' data/ingredients/ | sort -u | tail -1
-```
-
-```python
-import re, pathlib
-nums = [int(m.group(1))
-        for p in pathlib.Path('data/ingredients').rglob('*.yaml')
-        for m in re.finditer(r'^identifier:\s*UNMAPPED_(\d{4})', p.read_text(), re.M)]
-next_id = f"UNMAPPED_{(max(nums, default=0) + 1):04d}"
-```
-
-Write the new record as its own file `data/ingredients/unmapped/<slug>.yaml` with
-`identifier: <next_id>`, `mapping_status: UNMAPPED`, and a `curation_history` entry. Save with
-`sort_keys=False` to preserve field order.
-
-### 3. Promote an unmapped record to its primary identity
-
-When an `UNMAPPED_NNNN` ingredient is resolved, change `identifier` from the
-placeholder to the evidence-backed ontology, registry, or local identity CURIE,
-flip `mapping_status`, move the file from `unmapped/` to `mapped/`, and append a
-`curation_history` entry recording the transition. Populate ontology grounding
-separately under `MAPPING_SEMANTICS.md`; never silently drop provenance.
-
----
-
-## Validation
-
-- **Format:** every `identifier` is a valid CURIE (schema pattern above) **or** `UNMAPPED_NNNN`.
-- **Mapped state:** a mapped record must not retain an `UNMAPPED_NNNN` placeholder;
-  equality with the ontology grounding is not required.
-- **Duplicate-family control:** ontology identifiers can be shared by known
-  duplicate families; `mappings/duplicate_identifier_baseline.tsv` records the
-  accepted baseline and QC rejects unreviewed drift. Do not treat `identifier`
-  as a unique document address.
-- **Gate:** `just validate-strict` (closed-schema), `just validate-terms[-all]`, and
-  `just validate-products` (Engine B id↔label) enforce the above.
-
----
-
-## Best Practices
-
-### DO
-- **Choose the mapped identifier from identity evidence** and treat ontology
-  grounding as a separate decision when a registry/local identity is needed.
-- **Mint `UNMAPPED_NNNN` as highest+1**, zero-padded to 4 digits, scanning all record files.
-- **Append `curation_history`** on every identifier assignment or change; save `sort_keys=False`.
-- **Preserve provenance** when promoting `UNMAPPED_NNNN` → CURIE (record it in history).
-
-### DON'T
-- **Don't invent `MediaIngredientMech:NNNNNN` ids** — MIM does not use a sequential record id.
-- **Don't force equality** between `identifier` and ontology grounding when
-  `MAPPING_SEMANTICS.md` requires a distinct registry/identity row.
-- **Don't reuse a retired `UNMAPPED_NNNN`** number, and don't renumber existing placeholders.
-- **Don't use `sort_keys=True`** when saving (breaks field order).
-
----
-
-## Sister-repository identifiers
-
-Do not copy MIM identifier rules into another repository. CultureMech,
-CommunityMech, and other X-Mech projects own their current record-addressing
-contracts. Check their live schema and instructions before minting an id.
+Run `just qc-stable-ids` for the current inventory. The supported validator
+`scripts/validate_stable_ids.py` accepts `--base` with a full trusted ancestor
+commit and `--require-history` to enforce append-only history as CI does.
+The gate checks exactly one ID per record, uniqueness, complete active-registry
+coverage, immutable earlier rows, and replacement-chain validity. Also run
+`just validate-strict`, the native SSSOM and round-trip checks, and Pages/browser
+freshness checks appropriate to the batch. Do not alter historical receipts to
+make them describe the new identity representation.

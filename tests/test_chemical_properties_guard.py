@@ -20,6 +20,7 @@ from mediaingredientmech.utils.chemical_properties_client import OlsChemicalProp
 def record(label="water", oid="CHEBI:15377", **changes):
     rec = {
         "identifier": oid,
+        "mim_id": "MIM:0000001",
         "preferred_term": label,
         "mapping_status": "MAPPED",
         "ingredient_type": "SINGLE_INGREDIENT",

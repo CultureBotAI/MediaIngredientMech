@@ -72,12 +72,16 @@ def test_every_published_subject_resolves_to_a_record_file():
     assert not unresolved, f"{len(unresolved)} unresolvable: {unresolved[:5]}"
 
 
-def test_escaped_subjects_resolve_to_their_unescaped_filenames():
-    escaped = sorted({r["subject_id"] for r in rows() if "~" in r["subject_id"]})
-
-    assert escaped, "fixture: the published set carries ~HEX subjects"
-    for subject in escaped:
-        path = validator._yaml_path_for_subject(subject)
-        assert path.exists(), f"{subject} -> {path.name}"
-        assert "~" not in path.stem, (
-            f"{subject} resolved to a literal-stem path rather than the real file")
+def test_numeric_subjects_resolve_even_when_legacy_filename_required_escaping():
+    import yaml
+    escaped = []
+    for row in rows():
+        path = validator._yaml_path_for_subject(row["subject_id"])
+        record = yaml.safe_load(path.read_text())
+        if any("~" in alias for alias in record.get("legacy_identifiers", [])):
+            escaped.append((row["subject_id"], path, record))
+    assert escaped, "fixture: current records preserve escaped legacy aliases"
+    for subject, path, record in escaped:
+        assert subject == record["mim_id"]
+        assert path.exists()
+        assert "~" not in path.stem

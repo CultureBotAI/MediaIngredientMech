@@ -29,6 +29,12 @@ curation_history:
   changes: Promoted UNMAPPED_0637 -> kgmicrobe.compound:potassium_5-ketogluconate
     "5-dehydro-D-gluconate" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM
     row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002098; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:potassium_5_ketogluconate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -43,3 +49,7 @@ ontology_mapping:
       CHEBI has the anion CHEBI:58143 but no term for the potassium salt, so MAPPING_SEMANTICS.md
       Section 3 applies: a registry identifier plus a narrowMatch to the parent, rather
       than asserting the salt IS its parent (#213).'
+mim_id: MIM:0002098
+legacy_identifiers:
+- MIM:Potassium_5-ketogluconate
+- kgmicrobe.compound:potassium_5-ketogluconate

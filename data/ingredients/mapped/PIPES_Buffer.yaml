@@ -49,6 +49,12 @@ curation_history:
     not resolve them: ''PIPES buffer (Sigma)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001973; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:867); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
@@ -63,3 +69,7 @@ ontology_mapping:
     notes: 'A PIPES buffer is a prepared solution of PIPES, not the compound (STOCK_SOLUTION
       vs SINGLE_INGREDIENT). Follows the stock-solution convention: kgmicrobe.ingredient:
       mint with a narrowMatch to the compound (#114).'
+mim_id: MIM:0001973
+legacy_identifiers:
+- MIM:PIPES_Buffer
+- kgmicrobe.ingredient:pipes_buffer

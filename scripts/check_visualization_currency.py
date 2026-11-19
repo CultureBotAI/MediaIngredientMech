@@ -118,7 +118,7 @@ def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, dict[str, ob
                 continue
             if not isinstance(record, dict) or record.get("mapping_status") == "REJECTED":
                 continue
-            record_key = mim_curie_for_stem(path.stem)
+            record_key = record.get("mim_id") or mim_curie_for_stem(path.stem)
             if record_key in records:
                 raise ValueError(f"Duplicate visualization record key: {record_key}")
             records[record_key] = visualization_metadata(record, category, record_key)

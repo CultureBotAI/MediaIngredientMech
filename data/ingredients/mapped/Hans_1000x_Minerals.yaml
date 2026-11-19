@@ -33,6 +33,12 @@ curation_history:
   changes: Promoted UNMAPPED_0146 -> kgmicrobe.ingredient:hans_1000x_minerals "Hans
     1000x minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
     row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001265; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available. Reviewed on 2026-05-11 as a concentrated mineral stock/pre-mix
   pending component-level recipe curation.
@@ -51,3 +57,7 @@ ontology_mapping:
       is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
       mint with no parent, because a multi-component mix does not narrow to any single
       compound (#288).'
+mim_id: MIM:0001265
+legacy_identifiers:
+- MIM:Hans_1000x_Minerals
+- kgmicrobe.ingredient:hans_1000x_minerals

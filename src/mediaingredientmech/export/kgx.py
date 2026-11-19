@@ -24,6 +24,7 @@ from typing import Any
 import yaml
 
 from mediaingredientmech.sssom_grading import predicate_for
+from mediaingredientmech.stable_ids import MIM_PREFIX, validate_id
 from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
 from mediaingredientmech.validation.write_validated import DEFAULT_SCHEMA_PATH, validate_ingredient
 
@@ -81,7 +82,7 @@ EDGE_COLUMNS = (
     "assertion_json",
 )
 CURIE_MAP = {
-    "MIM": "https://github.com/CultureBotAI/MediaIngredientMech/blob/main/data/ingredients/mapped/",
+    "MIM": MIM_PREFIX,
     "MIM.unmapped": "https://w3id.org/mediaingredientmech/unmapped/",
     "MIM.component": "https://w3id.org/mediaingredientmech/component/",
     "MIM.role": "https://w3id.org/mediaingredientmech/role/",
@@ -285,6 +286,7 @@ def build_graph(
         DEFAULT_SCHEMA_PATH,
         DEFAULT_SCHEMA_PATH.with_name("mech_shared.yaml"),
         package / "sssom_grading.py",
+        package / "stable_ids.py",
         package / "validation/component_partonomy.py",
         package / "validation/write_validated.py",
     ]
@@ -321,6 +323,9 @@ def build_graph(
     graph = Graph()
     active = []
     excluded = []
+    record_ids = [validate_id(record.get("mim_id")) for _, record in records]
+    if len(set(record_ids)) != len(record_ids):
+        raise ValueError("Duplicate permanent MIM record identity")
     for path, record in records:
         if RETIRED_HIERARCHY.intersection(record):
             raise ValueError(f"Retired hierarchy field in {path}")
@@ -332,7 +337,9 @@ def build_graph(
             subjects = by_label.get(record["preferred_term"], set())
             if len(subjects) != 1:
                 raise ValueError(f"No unique SSSOM subject for {path}")
-            identifier = next(iter(subjects))
+            identifier = record["mim_id"]
+            if subjects != {identifier}:
+                raise ValueError(f"SSSOM subject differs from permanent record identity: {path}")
             own_rows = [r for r in mappings if r["subject_id"] == identifier]
             if not any(
                 r["object_id"] == record["identifier"] and r["predicate_id"] == "skos:exactMatch"
@@ -352,7 +359,7 @@ def build_graph(
                 ):
                     raise ValueError(f"Stale SSSOM grounding or direction for {path}")
         elif status in {"UNMAPPED", "AMBIGUOUS"}:
-            identifier = "MIM.unmapped:" + record["identifier"]
+            identifier = record["mim_id"]
         else:
             raise ValueError(f"Unsupported active mapping status: {status}")
         review = reviews.get(path, {})

@@ -27,6 +27,7 @@ RETIRED_FIELDS = {
     "role_inheritance": True,
 }
 BASE_RECORD = {
+    "mim_id": "MIM:0000001",
     "identifier": "CHEBI:15377",
     "preferred_term": "water",
     "mapping_status": "MAPPED",

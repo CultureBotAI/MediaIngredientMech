@@ -25,7 +25,9 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = Path("reports/owned_name_deferred_669_20261103/companion-review.json")
+REVIEW = Path("reports/stable_ids_1265_20261108/companion-review.json")
+HISTORICAL_REVIEW = Path("reports/owned_name_deferred_669_20261103/companion-review.json")
+ARCHIVE = ROOT / "reports/stable_ids_1265_20261108/historical-companion"
 
 
 def test_current_corpus_companion_matches_release_workflow():
@@ -43,14 +45,14 @@ def test_current_corpus_companion_matches_release_workflow():
 
 @pytest.fixture(scope="module")
 def inputs():
-    review = read_json((ROOT / REVIEW).read_bytes())
+    review = read_json((ARCHIVE / HISTORICAL_REVIEW).read_bytes())
     names = {
         review["base_review"],
         review["claims_file"],
         *review["inputs"],
         *review["record_inputs"],
     }
-    sources = {name: (ROOT / name).read_bytes() for name in names}
+    sources = {name: (ARCHIVE / name).read_bytes() for name in names}
     return review, sources
 
 

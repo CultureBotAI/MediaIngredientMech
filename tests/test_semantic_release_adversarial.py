@@ -199,7 +199,7 @@ def test_untampered_projection_is_accepted(projection):
 
 
 @pytest.mark.parametrize("kind,field,replacement", [
-    ("cellular_metabolic_roles", "subject", "MIM:opaque_water_b"),
+    ("cellular_metabolic_roles", "subject", "MIM:0000002"),
     ("cellular_metabolic_roles", "object", "CHEBI:15377"),
     ("cellular_metabolic_roles", "predicate", "biolink:exact_match"),
     ("cellular_metabolic_roles", "metabolic_context", "all organisms, all conditions"),
@@ -233,7 +233,7 @@ def test_narrow_mapping_requires_the_opposite_orientation(projection, tmp_path):
     path = tmp_path / "mappings/ingredient_mappings.sssom.tsv"
     path.write_text(
         path.read_text()
-        + "MIM:opaque_water_a\tWater A\tskos:narrowMatch\tFOODON:00000002\tfixture child\t0.9\n"
+        + "MIM:0000001\tWater A\tskos:narrowMatch\tFOODON:00000002\tfixture child\t0.9\n"
     )
     projection["mappings"] = list(csv.DictReader(
         (line for line in path.read_text().splitlines() if not line.startswith("#")),
@@ -245,7 +245,7 @@ def test_narrow_mapping_requires_the_opposite_orientation(projection, tmp_path):
                 if row["assertion_type"] == "mapping"
                 and json.loads(row["assertion_json"])["predicate_id"] == "skos:narrowMatch")
     assert (edge["subject"], edge["predicate"], edge["object"]) == (
-        "FOODON:00000002", "biolink:broad_match", "MIM:opaque_water_a"
+        "FOODON:00000002", "biolink:broad_match", "MIM:0000001"
     )
     assert edge["relation"] == "skos:broadMatch"
     check_projection(projection)

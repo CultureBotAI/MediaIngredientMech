@@ -98,7 +98,7 @@ Name: mediaingredientmech-schema
 | [environment_term](environment_term.md) | ENVO term CURIE (e |
 | [environmental_context](environmental_context.md) | Environmental contexts where this ingredient is relevant |
 | [evidence](evidence.md) | Evidence supporting this mapping |
-| [evidence_source](evidence_source.md) | How the snippet was obtained (e |
+| [evidence_source](evidence_source.md) | Study or data-source type behind the cited evidence, not the curation method ... |
 | [evidence_type](evidence_type.md) | Type of evidence |
 | [excerpt](excerpt.md) | Relevant excerpt or quote from the source |
 | [experiment_id](experiment_id.md) | Stable local id (optional; for cross-reference) |
@@ -114,13 +114,14 @@ Name: mediaingredientmech-schema
 | [grounding](grounding.md) | CURIE for the node; for a sibling-Mech record, that record's identifier, whic... |
 | [grounding_notes](grounding_notes.md) |  |
 | [grounding_status](grounding_status.md) |  |
-| [identifier](identifier.md) | Semantic identifier for the record and its LinkML identifier slot, but not a ... |
+| [identifier](identifier.md) | Chemical/material mapping identifier retained independently of the permanent ... |
 | [inchi](inchi.md) | IUPAC International Chemical Identifier |
 | [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs whole named mediu... |
 | [ingredients](ingredients.md) | List of all ingredient records |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | KG-Microbe node ID for this ingredient when found in the KG exactly |
 | [kind](kind.md) |  |
 | [label](label.md) | Canonical label of the grounding (ChEBI/GO label, or the sibling record's lab... |
+| [legacy_identifiers](legacy_identifiers.md) | Preserved former identifiers and slug-based aliases |
 | [llm_assisted](llm_assisted.md) | Whether LLM assistance was used |
 | [llm_model](llm_model.md) | LLM model identifier (if llm_assisted=true) |
 | [mapped_count](mapped_count.md) | Number of mapped ingredients |
@@ -133,6 +134,7 @@ Name: mediaingredientmech-schema
 | [merged](merged.md) | List of record `identifier`s merged into this representative |
 | [metabolic_context](metabolic_context.md) | Pathway or metabolic context (e |
 | [method](method.md) | Method used to derive the constituent list |
+| [mim_id](mim_id.md) | Permanent opaque record identifier from the append-only MIM registry |
 | [model_systems](model_systems.md) | Systems to use (e |
 | [molecular_formula](molecular_formula.md) | Molecular formula (e |
 | [molecular_weight](molecular_weight.md) | Molecular weight in g/mol |
@@ -247,6 +249,7 @@ Name: mediaingredientmech-schema
 | [DiscussionKindEnum](DiscussionKindEnum.md) | Kind of unresolved / in-progress item captured by a Discussion |
 | [DiscussionStatusEnum](DiscussionStatusEnum.md) | Lifecycle status for a Discussion |
 | [EnvironmentRelevanceEnum](EnvironmentRelevanceEnum.md) | Describes why an ingredient is relevant to a particular environment |
+| [EvidenceSourceEnum](EvidenceSourceEnum.md) | Study or data-source type providing a claim's evidence |
 | [EvidenceSupportEnum](EvidenceSupportEnum.md) | How a cited reference relates to the claim it is attached to |
 | [EvidenceTypeEnum](EvidenceTypeEnum.md) |  |
 | [IngredientGraphKindEnum](IngredientGraphKindEnum.md) | What a graph explains |

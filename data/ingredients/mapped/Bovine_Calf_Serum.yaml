@@ -45,6 +45,12 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Calf serum (Gibco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000521; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2061); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -57,3 +63,7 @@ ontology_mapping:
     source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0343; matched via 'Bovine calf serum'; stem-substring
 ingredient_type: UNDEFINED_MIXTURE
+mim_id: MIM:0000521
+legacy_identifiers:
+- MIM:Bovine_Calf_Serum
+- MICRO:0001709

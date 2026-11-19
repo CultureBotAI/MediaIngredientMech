@@ -55,6 +55,12 @@ curation_history:
     not resolve them: ''Modified trace vitamins (see below)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001715; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a modified trace vitamin stock mixture
   pending component list and formulation-specific curation.
@@ -72,3 +78,7 @@ ontology_mapping:
       is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
       mint with no parent, because a multi-component mix does not narrow to any single
       compound (#288).'
+mim_id: MIM:0001715
+legacy_identifiers:
+- MIM:Modified_Trace_Vitamins
+- kgmicrobe.ingredient:modified_trace_vitamins

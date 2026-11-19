@@ -98,7 +98,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mediaingredientmech = ["schema/*.yaml", "profiles/*.yaml", "profiles/*.json", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
+mediaingredientmech = ["schema/*.yaml", "schema/historical/*.yaml", "schema/historical/*.json", "templates/*.j2", "templates/*.css", "templates/*.html", "templates/_partials/*.j2", "profiles/*.yaml", "profiles/*.json", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

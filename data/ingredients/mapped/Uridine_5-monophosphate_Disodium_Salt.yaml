@@ -40,6 +40,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002593; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 3387-36-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C9H13N2O9P.2Na/c12-5-1-2-11(9(15)10-5)8-7(14)6(13)4(20-8)3-19-21(16,17)18;;/h1-2,4,6-8,13-14H,3H2,(H,10,12,15)(H2,16,17,18);;/q;2*+1/p-2/t4-,6-,7-,8-;;/m1../s1
   pubchem_cid: 169020
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002593
+legacy_identifiers:
+- MIM:Uridine_5-monophosphate_Disodium_Salt
+- cas:3387-36-8

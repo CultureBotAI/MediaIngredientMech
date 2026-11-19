@@ -66,12 +66,12 @@ def test_csv_publishes_a_merged_label(export_lists, tmp_path):
     assert rows[0]["identifier"] == "CHEBI:16004", "must resolve to the merge target"
 
 
-def test_csv_synonyms_column_is_appended_last(export_lists, tmp_path):
-    """Positional consumers keep working only if the column goes on the end."""
+def test_csv_stable_id_is_appended_after_existing_synonyms(export_lists, tmp_path):
+    """New identity columns preserve the positions of earlier published columns."""
     out = tmp_path / "all.csv"
     export_lists.export_to_csv([rec("CHEBI:1", "X")], out)
     header = out.read_text().splitlines()[0].split(",")
-    assert header[-1] == "synonyms"
+    assert header[-2:] == ["synonyms", "mim_id"]
     assert header[:9] == ["identifier", "ontology_id", "preferred_term", "mapping_status",
                           "ontology_label", "ontology_source", "mapping_quality",
                           "total_occurrences", "media_count"]
@@ -231,7 +231,7 @@ def test_null_ontology_mapping_does_not_drop_the_record(browser_export):
     """`ontology_mapping: null` is valid on an unmapped record. `.get(k, {})`
     returned None, `None.get()` raised, the per-file except swallowed it and the
     run still exited 0 — so TAPSO vanished from the deployed catalog (#233)."""
-    rec = {"identifier": "UNMAPPED_1", "preferred_term": "TAPSO",
+    rec = {"mim_id": "MIM:0000001", "identifier": "UNMAPPED_1", "preferred_term": "TAPSO",
            "mapping_status": "UNMAPPED", "ontology_mapping": None,
            "synonyms": None, "occurrence_statistics": None}
     out = browser_export.extract_ingredient_for_browser(rec, "Tapso.yaml")
@@ -240,6 +240,7 @@ def test_null_ontology_mapping_does_not_drop_the_record(browser_export):
 
 def test_browser_export_preserves_and_indexes_component_partonomy(browser_export):
     rec = {
+        "mim_id": "MIM:0000001",
         "identifier": "kgmicrobe.ingredient:test_mix",
         "preferred_term": "Test mix",
         "mapping_status": "MAPPED",
@@ -265,6 +266,7 @@ def test_browser_export_preserves_and_indexes_component_partonomy(browser_export
 
 def test_browser_export_does_not_change_search_text_without_components(browser_export):
     rec = {
+        "mim_id": "MIM:0000001",
         "identifier": "CHEBI:1",
         "preferred_term": "Test ingredient",
         "mapping_status": "MAPPED",
@@ -275,12 +277,13 @@ def test_browser_export_does_not_change_search_text_without_components(browser_e
         "synonyms": [{"synonym_text": "example synonym"}],
     }
     out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
-    expected = "Test ingredient test chemical example synonym CHEBI:1".lower()
+    expected = "Test ingredient test chemical example synonym CHEBI:1 MIM:0000001".lower()
     assert out["searchable"] == expected
 
 
 def test_browser_export_indexes_distinct_mapped_identifier_once(browser_export):
     rec = {
+        "mim_id": "MIM:0000001",
         "identifier": "MediaIngredientMech:000001",
         "preferred_term": "Test ingredient",
         "ontology_mapping": {"ontology_id": "CHEBI:1", "ontology_label": "test chemical"},
@@ -293,6 +296,7 @@ def test_browser_export_indexes_distinct_mapped_identifier_once(browser_export):
 
 def test_browser_export_deduplicates_identifier_case_in_search(browser_export):
     rec = {
+        "mim_id": "MIM:0000001",
         "identifier": "CHEBI:1",
         "preferred_term": "Test ingredient",
         "ontology_mapping": {"ontology_id": "chebi:1", "ontology_label": "test chemical"},

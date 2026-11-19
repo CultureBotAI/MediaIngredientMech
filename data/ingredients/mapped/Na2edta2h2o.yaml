@@ -159,6 +159,12 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001802; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6381-92-6
   data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'
@@ -176,3 +182,7 @@ physicochemical_roles:
       (chelator (role))'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+mim_id: MIM:0001802
+legacy_identifiers:
+- MIM:Na2edta2h2o
+- CHEBI:64758

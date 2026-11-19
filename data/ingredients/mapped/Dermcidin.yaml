@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_UPGRADE_TO_MESH
   changes: primary UNMAPPED_0249 → mesh:C442243 via name normalization to 'Dermcidin'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000919; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -33,3 +39,7 @@ ontology_mapping:
     source: MESH via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0249; matched via 'Dermcidin' (name normalization);
       label-exact
+mim_id: MIM:0000919
+legacy_identifiers:
+- MIM:Dermcidin
+- mesh:C442243

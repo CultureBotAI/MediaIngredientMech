@@ -66,6 +66,12 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000761; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
   sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
@@ -96,3 +102,7 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+mim_id: MIM:0000761
+legacy_identifiers:
+- MIM:CrKSO42_X_12_H2O
+- cas:7788-99-0

@@ -18,11 +18,17 @@ import sys
 from pathlib import Path
 
 import pytest
+
 import yaml
 
 from mediaingredientmech.export.reviewed_sssom import _owners
 from mediaingredientmech.utils.culturemech_occurrences import membership_counts
 from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound sources under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = Path(os.environ.get("MIM_DEPENDENCY_TEST_SOURCE_ROOT", ROOT))
@@ -114,6 +120,12 @@ def test_native_browser_and_label_index_expose_corrected_salt_and_preserve_sibli
     lists = load("scripts/export_lists.py")
     records = {path: yaml.safe_load(after[path]) for path in writer.OWNERS}
     controls = copy.deepcopy(evidence["distinct_controls"])
+    # This current-browser probe adapts copied historical dictionaries only;
+    # checksum-bound proposal bytes and historical review receipts stay intact.
+    export_controls = copy.deepcopy(controls)
+    for number, native in enumerate([*records.values(), *export_controls.values()], 1):
+        native["mim_id"] = f"MIM:{number:07d}"
+    expected_export_controls = copy.deepcopy(export_controls)
     path = put(tmp_path, writer.MEMBERSHIP, after[writer.MEMBERSHIP])
     counts = membership_counts(path)
     for owner in (SURVIVOR, TOMBSTONE):
@@ -124,7 +136,7 @@ def test_native_browser_and_label_index_expose_corrected_salt_and_preserve_sibli
         expected = (0, 0) if owner == TOMBSTONE else counts[NEW]
         assert (public["media_count"], public["total_occurrences"]) == expected
     output = tmp_path / "label_index.csv"
-    lists.export_label_index([*records.values(), *controls.values()], output)
+    lists.export_label_index([*records.values(), *export_controls.values()], output)
     with output.open() as stream:
         rows = list(csv.DictReader(stream))
     for name in ("Carnitine Hydrochloride", "Carnitine (Dl) Hydrochloride"):
@@ -137,6 +149,7 @@ def test_native_browser_and_label_index_expose_corrected_salt_and_preserve_sibli
         rejected = {s["synonym_text"].casefold() for s in records[owner].get("synonyms", []) if s["synonym_type"] == "REJECTED_LABEL"}
         assert not [r for r in rows if r["identifier"] == NEW and r["label"].casefold() in rejected]
     assert controls == evidence["distinct_controls"]
+    assert export_controls == expected_export_controls
 
 
 def test_native_mapping_owner_selection_excludes_the_rejected_duplicate(proposal, tmp_path):

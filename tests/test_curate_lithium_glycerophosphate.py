@@ -12,6 +12,11 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound source operations under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("lithium_writer", ROOT / "scripts/curate_lithium_glycerophosphate.py")
 writer = importlib.util.module_from_spec(spec)

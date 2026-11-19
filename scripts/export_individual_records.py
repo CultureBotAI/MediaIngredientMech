@@ -29,7 +29,8 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
-from mediaingredientmech.utils.yaml_handler import load_yaml, save_yaml
+from mediaingredientmech.stable_ids import StableIdError, validate_id  # noqa: E402
+from mediaingredientmech.utils.yaml_handler import load_yaml, save_yaml  # noqa: E402
 
 console = Console()
 
@@ -40,6 +41,13 @@ console = Console()
 # `just gen-discussions-data`), not by the MIM curator, and has never been
 # aggregated back into data/curated/. Preserve it across a round-trip.
 PER_RECORD_AUTHORED_FIELDS: tuple[str, ...] = ("discussions",)
+
+
+def _record_id(record: dict) -> str:
+    try:
+        return validate_id(record.get("mim_id"))
+    except StableIdError as exc:
+        raise click.ClickException(str(exc)) from exc
 
 
 def iter_record_files(ingredients_root: Path):
@@ -70,7 +78,9 @@ def iter_record_files(ingredients_root: Path):
 class PreservedFields:
     """Per-record-authored fields recovered from disk, looked up by a move-stable key.
 
-    Two indexes, because neither key is stable across every move:
+    `by_mim_id` is authoritative for permanent identities, including simultaneous
+    name/mapping changes. A stable ID never falls back to another record's keys.
+    Historical records without MIM IDs retain two legacy continuity indexes:
     * `by_identifier` — survives a display-name normalisation when the semantic
       identifier is unique among records (identifier stable,
       filename/preferred_term change). Shared identifiers are deliberately not
@@ -82,11 +92,14 @@ class PreservedFields:
       attributing a discussion to the wrong record.
     """
 
+    by_mim_id: dict[str, dict] = field(default_factory=dict)
     by_identifier: dict[str, dict] = field(default_factory=dict)
     by_preferred_term: dict[str, dict] = field(default_factory=dict)
 
     def for_record(self, record: dict) -> dict:
-        """Authored fields to merge into `record`, or {} if none. Identifier first."""
+        """Use permanent identity; legacy hints apply only to records without it."""
+        if record.get("mim_id") is not None:
+            return self.by_mim_id.get(_record_id(record), {})
         ident = record.get("identifier")
         if ident and ident in self.by_identifier:
             return self.by_identifier[ident]
@@ -126,6 +139,11 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
         authored = {
             fname: record[fname] for fname in PER_RECORD_AUTHORED_FIELDS if record.get(fname)
         }
+        if record.get("mim_id") is not None:
+            mim_id = _record_id(record)
+            if mim_id in result.by_mim_id:
+                raise click.ClickException(f"Duplicate existing MIM ID: {mim_id}")
+            result.by_mim_id[mim_id] = authored
         ident = record.get("identifier")
         if ident:
             if ident in seen_identifiers:
@@ -160,16 +178,20 @@ class FilenameIndex:
     one historical rule, so no single rule reproduces it — reusing the name a
     record already has is the only stable answer.
 
-    Indexed by both keys for the same reason as `PreservedFields`: `identifier`
+    Permanent `mim_id` is authoritative, even when label and mapping change.
+    Historical records without it use both legacy keys as `PreservedFields`: `identifier`
     survives a display-name change, `preferred_term` survives an identifier change
     (promotion UNMAPPED_NNNN->CHEBI:x, demotion, remap).
     """
 
+    by_mim_id: dict[str, str] = field(default_factory=dict)
     by_identifier: dict[str, str] = field(default_factory=dict)
     by_preferred_term: dict[str, str] = field(default_factory=dict)
 
     def for_record(self, record: dict) -> str | None:
         """The stem this record already uses, or None if it is new."""
+        if record.get("mim_id") is not None:
+            return self.by_mim_id.get(_record_id(record))
         ident = record.get("identifier")
         if ident and ident in self.by_identifier:
             return self.by_identifier[ident]
@@ -197,6 +219,11 @@ def collect_existing_filenames(ingredients_root: Path) -> FilenameIndex:
         if not isinstance(record, dict):
             continue
         stem = path.stem
+        if record.get("mim_id") is not None:
+            mim_id = _record_id(record)
+            if mim_id in result.by_mim_id:
+                raise click.ClickException(f"Duplicate existing MIM ID: {mim_id}")
+            result.by_mim_id[mim_id] = stem
         ident = record.get("identifier")
         if ident:
             # A duplicate identifier cannot pick a single name; leave those
@@ -220,6 +247,8 @@ def assert_unambiguous_record_moves(
     ingredients: list[dict],
     existing_names: FilenameIndex,
     shared_identifiers: set[str] | None = None,
+    *,
+    same_directory: bool = False,
 ) -> None:
     """Reject incoming records whose two continuity keys name different files.
 
@@ -234,6 +263,23 @@ def assert_unambiguous_record_moves(
     disabled for those records and the unambiguous preferred term is the only
     continuity hint. All other two-key conflicts must be curated explicitly.
     """
+    stable_mode = bool(existing_names.by_mim_id) or any("mim_id" in item for item in ingredients)
+    if stable_mode:
+        seen: set[str] = set()
+        stems: dict[str, str] = {}
+        for ingredient in ingredients:
+            identifier = _record_id(ingredient)
+            if identifier in seen:
+                raise click.ClickException(f"Duplicate incoming MIM ID: {identifier}")
+            seen.add(identifier)
+            stem = existing_names.by_mim_id.get(identifier)
+            if same_directory and stem is not None:
+                if stem.casefold() in stems:
+                    raise click.ClickException(
+                        "Stable MIM IDs claim conflicting existing filenames"
+                    )
+                stems[stem.casefold()] = identifier
+        return
     shared_identifiers = set(shared_identifiers or ())
     conflicts: list[str] = []
     for ingredient in ingredients:
@@ -372,7 +418,10 @@ def export_collection_to_individual_files(
     # record. Run this before clearing anything so an ambiguous remap fails
     # closed and leaves the per-record tree untouched.
     assert_unambiguous_record_moves(
-        ingredients, existing_names, shared_identifiers=shared_identifiers
+        ingredients,
+        existing_names,
+        shared_identifiers=shared_identifiers,
+        same_directory=True,
     )
 
     # Create output directory and clear any stale per-record files, so
@@ -391,6 +440,11 @@ def export_collection_to_individual_files(
     # same file on a case-insensitive filesystem, so a case-sensitive set lets
     # the second record silently overwrite the first (cf. #299).
     taken: set[str] = set()
+    reserved = {
+        existing_names.by_mim_id[item["mim_id"]].lower(): item["mim_id"]
+        for item in ingredients
+        if item.get("mim_id") in existing_names.by_mim_id
+    }
 
     for ingredient in ingredients:
         preferred_term = ingredient.get("preferred_term", "Unknown")
@@ -400,7 +454,7 @@ def export_collection_to_individual_files(
         # and renames the corpus behind git's back on a case-insensitive
         # filesystem. Only genuinely new records get a name from scratch.
         stable = existing_names.for_record(ingredient)
-        if ingredient.get("identifier") in shared_identifiers:
+        if not ingredient.get("mim_id") and ingredient.get("identifier") in shared_identifiers:
             # Fall back to the term index / a derived name; the identifier
             # cannot pick between the records that share it.
             stable = existing_names.by_preferred_term.get(preferred_term)
@@ -410,7 +464,10 @@ def export_collection_to_individual_files(
             base_filename = sanitize_filename(preferred_term)
             filename = base_filename
             suffix = 1
-            while filename.lower() in taken:
+            while filename.lower() in taken or (
+                filename.lower() in reserved
+                and reserved[filename.lower()] != ingredient.get("mim_id")
+            ):
                 suffix += 1
                 filename = f"{base_filename}_{suffix}"
             if suffix > 1:
@@ -432,7 +489,7 @@ def export_collection_to_individual_files(
         # collection does not carry, so export does not wipe them. Only fill
         # gaps — a value present in the collection wins.
         authored = preserved.for_record(ingredient)
-        if ingredient.get("identifier") in shared_identifiers:
+        if not ingredient.get("mim_id") and ingredient.get("identifier") in shared_identifiers:
             # The incoming collection can introduce a new shared identifier
             # that the old per-record tree could not know was ambiguous. Fall
             # back to the unambiguous term or preserve nothing; never graft one
@@ -513,7 +570,7 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     # Index per-record-authored fields BEFORE the per-category clear loop wipes
     # any files (a record may move mapped<->unmapped, so scan the whole tree).
     preserved = collect_preserved_fields(output_dir_path)
-    n_preserved = len(preserved.by_identifier)
+    n_preserved = len(preserved.by_mim_id) if preserved.by_mim_id else len(preserved.by_identifier)
     if n_preserved:
         console.print(
             f"[dim]Preserving per-record fields "
@@ -532,6 +589,8 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     for _, collection_file in collection_files:
         incoming = load_yaml(collection_file)
         records = incoming.get("ingredients", [])
+        if existing_names.by_mim_id or any("mim_id" in record for record in records):
+            assert_unambiguous_record_moves(records, existing_names, same_directory=True)
         incoming_records.extend(records)
         incoming_identifier_counts.update(
             str(record.get("identifier")) for record in records if record.get("identifier")

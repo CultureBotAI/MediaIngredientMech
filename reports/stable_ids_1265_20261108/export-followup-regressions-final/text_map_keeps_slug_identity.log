@@ -1,0 +1,33 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_text_map_projection_changes_only_identity_and_address __________
+
+text_map_projection = (<module 'text_map_projection_1265' from '<repo>/...edients/unmapped/Unknown.yaml': {'mim_id': 'MIM:0000002'}}, '<html><script>\nconst MAP_DATA = ', ';\n</script></html>')
+
+    def test_text_map_projection_changes_only_identity_and_address(text_map_projection):
+        import json
+        from copy import deepcopy
+    
+        mod, html, payload, records, prefix, suffix = text_map_projection
+        original_records = deepcopy(records)
+        changed, count = mod.project_html(html, records)
+        assert count == 2
+        assert changed.startswith(prefix) and changed.endswith(suffix)
+        actual = json.loads(changed[len(prefix):-len(suffix)])
+        expected = deepcopy(payload)
+        for number, point in enumerate(expected['points'], 1):
+            point['id'] = f'MIM:{number:07d}'
+            point['url'] = f'ingredient/MIM_{number:07d}'
+>       assert actual == expected, 'Only addresses change; layout, science and generation metadata stay frozen'
+E       AssertionError: Only addresses change; layout, science and generation metadata stay frozen
+E       assert {'count': 2, ...e-model', ...} == {'count': 2, ...e-model', ...}
+E         
+E         Omitting 4 identical items, use -vv to show
+E         Differing items:
+E         {'points': [{'id': 'MIM:Salt_mix', 'identifier': 'CHEBI:1', 'mapping_status': 'MAPPED', 'px': 0.25, ...}, {'id': 'MIM:Unknown', 'identifier': 'UNMAPPED_0042', 'mapping_status': 'UNMAPPED', 'px': -0.75, ...}]} != {'points': [{'id': 'MIM:0000001', 'identifier': 'CHEBI:1', 'mapping_status': 'MAPPED', 'px': 0.25, ...}, {'id': 'MIM:0000002', 'identifier': 'UNMAPPED_0042', 'mapping_status': 'UNMAPPED', 'px': -0.75, ...}]}
+E         Use -v to get more diff
+
+tests/test_stable_id_exports.py:191: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../../../../../dev::test_text_map_projection_changes_only_identity_and_address
+1 failed, 12 deselected in 0.06s

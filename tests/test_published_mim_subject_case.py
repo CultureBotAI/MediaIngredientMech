@@ -134,14 +134,22 @@ def subjects() -> set[str]:
 
 @pytest.fixture(scope="module")
 def aliases() -> dict[str, str]:
+    import yaml
     with ALIASES.open(newline="", encoding="utf-8") as f:
-        return {r["old_curie"]: r["current_curie"]
-                for r in csv.DictReader(f, delimiter="\t")}
+        result = {r["old_curie"]: r["current_curie"]
+                  for r in csv.DictReader(f, delimiter="\t")}
+    for group in ("mapped", "unmapped"):
+        for path in (ROOT / "data/ingredients" / group).glob("*.yaml"):
+            record = yaml.safe_load(path.read_text())
+            for alias in record.get("legacy_identifiers", []):
+                if alias.startswith("MIM:"):
+                    result.setdefault(alias, record["mim_id"])
+    return result
 
 
 @pytest.fixture(scope="module")
 def live() -> set[str]:
-    return {mim_curie_for_stem(p.stem)
+    return {__import__("yaml").safe_load(p.read_text())["mim_id"]
             for d in ("mapped", "unmapped")
             for p in (ROOT / "data" / "ingredients" / d).glob("*.yaml")}
 

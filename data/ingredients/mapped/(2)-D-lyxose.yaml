@@ -79,6 +79,12 @@ curation_history:
     SSSOM row was dropped — so they no longer reached KGX. These are real chemical
     names (D-Lyx, D-lyxo-pentose, the systematic forms), not notation noise.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000003; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -104,3 +110,7 @@ supplied_form:
   notes: The CAS ChEBI attaches to CHEBI:16789, the open-chain form. It is what a
     lab orders; the record is grounded at the class term so the graph node reads sensibly,
     and publish_cas_as_synonym.py republishes this CAS as a synonym on that node.
+mim_id: MIM:0000003
+legacy_identifiers:
+- MIM:~282~29-D-lyxose
+- CHEBI:62318

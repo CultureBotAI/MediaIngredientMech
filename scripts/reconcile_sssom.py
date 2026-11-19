@@ -105,6 +105,17 @@ def _read_sssom():
     return header, body[0], body[1:], rows
 
 
+def validate_stable_subjects(curated: dict, rows: list[dict]) -> None:
+    """Do not infer or rewrite a permanent subject from a display label."""
+    identities = {record["preferred_term"]: record["mim_id"]
+                  for record in curated["ingredients"] if record.get("mim_id")
+                  and record.get("mapping_status") == "MAPPED"}
+    for row in rows:
+        expected = identities.get(row["subject_label"])
+        if expected and row["subject_id"] != expected:
+            raise ValueError(f"SSSOM permanent subject mismatch: {row['subject_label']}")
+
+
 def find_drift(curated: dict, rows: list[dict]) -> dict[str, list]:
     by_label: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
@@ -233,6 +244,7 @@ def row_grade(row: dict) -> tuple[str, str, str]:
 
 def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int, int]:
     header, col_line, data_lines, rows = _read_sssom()
+    validate_stable_subjects(curated, rows)
     cols = col_line.rstrip("\n").split("\t")
     idx = {c: i for i, c in enumerate(cols)}
     expected = expected_mappings(curated)
@@ -346,6 +358,7 @@ def main() -> int:
 
     curated = yaml.safe_load(CURATED.read_text())
     _, _, _, rows = _read_sssom()
+    validate_stable_subjects(curated, rows)
     drift = find_drift(curated, rows)
     total = sum(len(v) for v in drift.values())
 

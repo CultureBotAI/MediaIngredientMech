@@ -25,6 +25,7 @@ the tests below pin the rows and the declaration *together*.
 """
 
 import csv
+from tests.stable_id_helpers import legacy_registry_slug
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -115,6 +116,7 @@ def test_no_script_emits_the_legacy_literal():
     input_consumers = {
         Path("src/mediaingredientmech/export/kgx.py"),
         Path("src/mediaingredientmech/validation/semantic_release.py"),
+        Path("src/mediaingredientmech/identity_projection.py"),  # historical read-only verifier
     }
     offenders = []
     for folder in ("scripts", "src"):
@@ -153,7 +155,7 @@ def test_every_asymmetric_subject_has_its_registry_row():
         subject = r["subject_id"]
         if not subject.startswith("MIM:"):
             continue
-        slug = subject[4:].lower()
+        slug = legacy_registry_slug(subject)
         ok = any(
             s["predicate_id"] == "skos:exactMatch"
             and s["object_id"].startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))

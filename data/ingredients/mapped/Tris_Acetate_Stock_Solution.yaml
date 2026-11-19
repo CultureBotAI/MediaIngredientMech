@@ -43,6 +43,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002552; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 4'
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
@@ -67,3 +73,7 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0002552
+legacy_identifiers:
+- MIM:Tris_Acetate_Stock_Solution
+- CHEBI:66869

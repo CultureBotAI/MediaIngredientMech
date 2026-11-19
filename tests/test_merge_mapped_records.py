@@ -40,8 +40,8 @@ def mod():
     return _load()
 
 
-def rec(curie, term, occ=(0, 0), syns=(), status="MAPPED", roles=None):
-    r = {"identifier": curie, "preferred_term": term, "mapping_status": status,
+def rec(mim_id, curie, term, occ=(0, 0), syns=(), status="MAPPED", roles=None):
+    r = {"mim_id": mim_id, "identifier": curie, "preferred_term": term, "mapping_status": status,
          "synonyms": [{"synonym_text": s, "synonym_type": "RAW_TEXT"} for s in syns],
          "occurrence_statistics": {"total_occurrences": occ[0], "media_count": occ[1]}}
     if roles:
@@ -50,7 +50,7 @@ def rec(curie, term, occ=(0, 0), syns=(), status="MAPPED", roles=None):
 
 
 def test_one_refuses_an_ambiguous_curie(mod):
-    recs = [rec("CHEBI:1", "A"), rec("CHEBI:1", "B")]
+    recs = [rec("MIM:0000001", "CHEBI:1", "A"), rec("MIM:0000002", "CHEBI:1", "B")]
     with pytest.raises(SystemExit, match="expected exactly 1"):
         mod.one(recs, "CHEBI:1", None, "--from")
     assert mod.one(recs, "CHEBI:1", "B", "--from")["preferred_term"] == "B"
@@ -88,8 +88,8 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     """The repo's semantics: counts move to the representative, the source
     becomes a REJECTED tombstone reporting zero — not a deletion."""
     coll = {"total_count": 2, "mapped_count": 2,
-            "ingredients": [rec("CHEBI:1", "Winner", (10, 4)),
-                            rec("CHEBI:2", "Loser", (6, 3), syns=("alt",),
+            "ingredients": [rec("MIM:0000001", "CHEBI:1", "Winner", (10, 4)),
+                            rec("MIM:0000002", "CHEBI:2", "Loser", (6, 3), syns=("alt",),
                                 roles=[{"role": "CARBON_SOURCE"}])]}
     src = tmp_path / "mapped.yaml"
     src.write_text(yaml.safe_dump(coll))
@@ -125,12 +125,12 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
 
 
 def test_physicochemical_roles_union_onto_the_survivor(mod, tmp_path, monkeypatch):
-    loser = rec("CHEBI:1", "Loser")
+    loser = rec("MIM:0000002", "CHEBI:1", "Loser")
     loser["physicochemical_roles"] = [{"role": "BUFFER"}]
     coll = {
         "total_count": 2,
         "mapped_count": 2,
-        "ingredients": [rec("CHEBI:1", "Winner"), loser],
+        "ingredients": [rec("MIM:0000001", "CHEBI:1", "Winner"), loser],
     }
     src = tmp_path / "mapped.yaml"
     src.write_text(yaml.safe_dump(coll))
@@ -169,7 +169,7 @@ def test_physicochemical_roles_union_onto_the_survivor(mod, tmp_path, monkeypatc
 
 
 def test_refuses_when_either_record_is_not_mapped(mod, tmp_path, monkeypatch):
-    coll = {"ingredients": [rec("CHEBI:1", "A"), rec("CHEBI:2", "B", status="REJECTED")]}
+    coll = {"ingredients": [rec("MIM:0000001", "CHEBI:1", "A"), rec("MIM:0000002", "CHEBI:2", "B", status="REJECTED")]}
     src = tmp_path / "m.yaml"
     src.write_text(yaml.safe_dump(coll))
     monkeypatch.setattr(mod, "MAPPED", src)

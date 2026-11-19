@@ -15,6 +15,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).parent.parent
 CURATED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -478,7 +480,7 @@ def test_formula_supported_sulfate_sssom_has_parent_and_registry_rows(
 
 
 def test_mgso4_middle_dot_hexahydrate_publishes_on_local_identity(sssom_rows):
-    rows = {row["object_id"]: row for row in sssom_rows if row["subject_id"] == "MIM:Mgso4_X_6_H2o"}
+    rows = {row["object_id"]: row for row in sssom_rows if row["subject_id"] == current_subject("MIM:Mgso4_X_6_H2o")}
 
     assert "MgSO4·6H2O" in rows["CHEBI:32599"]["other"].split("|")
     assert "MgSO4·6H2O" in rows["kgmicrobe.compound:mgso4_x_6_h2o"]["other"].split("|")
@@ -528,7 +530,7 @@ def test_reviewed_hydrate_memberships_are_split_from_anhydrous_parents(
 def test_citric_bullet_duplicate_is_merged_into_monohydrate(records, sssom_rows):
     duplicate = _by_term(records, "Citric Acid•H2O")
     monohydrate = _by_term(records, "Citric acid x H2O")
-    row = [row for row in sssom_rows if row["subject_id"] == "MIM:Citric_Acid_X_H2o"][0]
+    row = [row for row in sssom_rows if row["subject_id"] == current_subject("MIM:Citric_Acid_X_H2o")][0]
     synonyms = {
         synonym["synonym_text"]
         for synonym in monohydrate.get("synonyms") or []

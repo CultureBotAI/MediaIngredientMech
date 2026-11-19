@@ -618,11 +618,11 @@ Nothing in this subsection exists yet. The plan is one `causal_edge` assertion
 per exported edge (`source_position` `<graph_id>/<edge_id>`), using the Biolink
 predicate from section 4 with `relation` set to `predicate_id`. Grounded nodes
 keep their CURIE, and the anchor uses its identifier, which the SSSOM identity
-row already joins to `MIM:<slug>`. `organism_scope` becomes the species context
+row already joins to the permanent `MIM:<seven-digit-id>`. `organism_scope` becomes the species context
 of non-chemistry edges only. Edges that KG-Microbe already has are not exported:
 ChEBI-axiom chemistry, `COMPONENT` edges (exported as components) and
 `FORM_OF_PARENT` edges (in the SSSOM), and nothing new is emitted on
-`MIM:<slug>`. Publication is review-gated: an independent projection in
+the MIM record ID. Publication is review-gated: an independent projection in
 `semantic_release.py`, and a causal branch in `supported_kgx.py` that, among
 other conditions, admits an edge only if its graph is `MECHANISTIC`, its bases
 are confirmed at report time and it connects to the anchor through approved

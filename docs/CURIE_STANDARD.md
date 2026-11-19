@@ -1,157 +1,87 @@
 # MIM CURIE standard
 
-What an external repository should cite when it wants to refer to a MIM
-ingredient, and what MIM guarantees about it. Written in response to issue #119,
-where CommunityMech needed a stable join key and there wasn't a documented one.
+Use a record's permanent `mim_id`, such as `MIM:0000001`, when referring to a MIM
+ingredient. It stays fixed when the label, mapping, filename or storage directory
+changes. The existing `identifier` remains a mapping or unresolved-placeholder
+value; it is not a unique record key.
 
-Implementation: `src/mediaingredientmech/curie.py` (`CurieNormalizer`).
-Run it: `just curie-check MIM:Tryptone` or `just curie-validate`.
+Implementation: `src/mediaingredientmech/stable_ids.py` and
+`src/mediaingredientmech/curie.py`. See [stable IDs and consumer migration](STABLE_MIM_IDS.md).
 
----
+| Reference | Meaning and stability |
+| --- | --- |
+| `MIM:` followed by seven digits | Permanent registered ingredient record ID; never reused |
+| Historical `MIM:<filename-stem>` | Preserved alias; resolve against the current corpus and historical alias map |
+| Historical placeholder or external identifier | Preserved when present in `legacy_identifiers`; may refer to several records |
+| An `skos:exactMatch` object | A separately supported mapping; scientific scope still governs substitution |
 
-## The short version
+## Registry and public URL
 
-| You want to… | Cite | Stability |
-|---|---|---|
-| refer to a MIM **record** | `MIM:<name>` | **not rename-stable** — resolve through the alias map |
-| assert **equivalence** to an ontology term | the `skos:exactMatch` object | as stable as the ontology |
-| refer to something MIM only **close/narrow** matches | `MIM:<name>` only | — |
+The `MIM:` prefix expands to
+`https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_`.
+For example, `MIM:0000001` expands to
+`https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_0000001`.
+The Pages build creates a directory-index resolver at that route. It locates the
+current record by `mim_id`, and preserves pages for retired or merged IDs with
+their replacement links. Existing filename-based record pages remain available;
+filenames are not renamed by the ID migration.
 
-**Do not** persist `MIM:<name>` as a bare foreign key without also resolving it
-through `mappings/mim_curie_aliases.tsv` on read.
+`data/ids/mim_id_registry.tsv` retains immutable mint rows;
+`data/ids/mim_id_lifecycle.tsv` appends terminal retirement/merge events. Unknown
+IDs, cycles, duplicate current IDs and incomplete active-record coverage fail
+validation. An ID's lifecycle is separate from the record's mapping status.
 
-## 1. `MIM:<name>` is identity, not a stable key
+The current generation of a site is established by its Pages build/deployment
+checks. Source changes alone do not prove a URL is live. w3id is deferred to a
+separately approved change.
 
-The SSSOM subject is derived from the ingredient YAML's filename stem
-(`build_mim_ingredient_sssom._mim_curie`), with non-URL-safe characters escaped
-`~HEX`. Filenames move: `git log --diff-filter=R -- data/ingredients/` shows
-**205 renames**, of which **113** changed a CURIE and are published as aliases.
+## Legacy references and ambiguity
 
-Two routine operations rename a record:
+Each current record retains former identifiers in `legacy_identifiers`. The
+existing `mappings/mim_curie_aliases.tsv` remains useful for historical filename
+renames. `CurieNormalizer.resolve()` follows these references to permanent IDs.
+It does not derive current identity from filenames or a preferred ontology term.
 
-- **unmapped → mapped promotion**: `unmapped/NH42CO3.yaml` →
-  `mapped/Nh42co3.yaml`, so `MIM:NH42CO3` → `MIM:Nh42co3`.
-- **normalisation of the display name**, including case-only edits:
-  `1-Naphtylacetic_Acid` → `1-naphtylacetic_Acid`.
-
-Neither is a data error — they are curation working as intended — so the rename
-rate will not go to zero.
-
-**The contract:** MIM publishes `mappings/mim_curie_aliases.tsv`
-(`old_curie → current_curie`, with the dates and chain length). Aliases are
-transitively folded, so `A→B→C` publishes both `A→C` and `B→C`; a consumer never
-needs more than one hop. An alias is withheld if its target no longer exists or
-if the old name has since been reused, so a published alias never misdirects.
-
-Regenerate with `just curie-aliases` after any rename.
-
-## 2. Prefix registry
-
-Recognised prefixes, in the exact case MIM emits:
-
-`MIM`, `CHEBI`, `FOODON`, `UBERON`, `ENVO`, `NCIT`, `MICRO`, `BTO`, `GO`,
-`NCBITaxon`, `mesh`, `cas`, `kgmicrobe.compound`, `kgmicrobe.ingredient`,
-`mediadive.{ingredient,medium,solution}`, `CultureMech`, `CommunityMech`,
-`TraitMech`.
-
-Anything else is `UNKNOWN_PREFIX` and is **rejected, not ignored** — that is what
-turns a typo (`CHBEI:`) into an error instead of a silent skip. Prefix case is
-normalised on the way in, so `chebi:15377` resolves to `CHEBI:15377`.
-
-## 3. Two identifier hazards the normalizer checks
-
-**Foreign identifiers wearing an OBO prefix.** PubChem CIDs have appeared as
-`CHEBI:` ids — `CHEBI:10716816` was asserted for "Nicotinate". The normalizer
-rejects accessions above a per-ontology ceiling.
-
-This check is **weak and deliberately loose**: real CHEBI accessions reach at
-least **747,127** (`gepotidacin`), and several of the PubChem CIDs found in this
-codebase (`503742`, `867561`, `501520`) are 6-digit values sitting *inside* the
-real CHEBI range. A ceiling catches only the egregious cases. **It is not a
-substitute for checking that the id resolves**, and must never be the sole reason
-to reject an id an ontology can confirm.
-
-**MicrO's legacy IRIs.** Some MicrO classes use
-`…/obo/MicrO.owl/MICRO_nnnnnnn` rather than `…/obo/MICRO_nnnnnnn`. A canonical
-IRI lookup can therefore fail even when the class exists in the ontology.
-`curie.py` accepts either its OLS-verified allowlist or an individually reviewed
-entry in the [pinned KG-Microbe source](../src/mediaingredientmech/ontology_sources/micro/README.md).
-The latter validates archived labels, class status, current parent relationships,
-and original IRIs offline; the surrounding snapshot nodes are not blanket approvals.
-
-The source-backed entries are `MICRO:0002393` (Proteose Peptone No. 2),
-`MICRO:0002392` (rabbit serum), and `MICRO:0002250` (V-8 juice).
-Use `mediaingredientmech.micro_source.source_term(curie).iri` for their original
-ontology IRIs. Ingredient-page links use these legacy IRIs. Their `MICRO:`
-identifiers follow KG-Microbe's KGX convention; expanding the normal OBO prefix
-alone does not recover their original IRIs. This does not claim that OLS marks
-them as defining-ontology terms. `python scripts/verify_micro_ids.py` reports
-these source-backed results separately from canonical OLS verification.
-
-An exact MICRO identity takes precedence over a CAS/local fallback. A verified
-CAS RN remains in `chemical_properties.cas_rn` (or `supplied_form.cas_rn` when
-it identifies that form), and travels as `CAS:<rn>` in SSSOM `other` on symmetric
-rows. In KG-Microbe node output the appropriate annotation is `xref=cas:<rn>`;
-it does not replace the MICRO ID or justify an identity assertion from a broad
-mapping. The three restored records have no verified CAS RN in this source.
-
-## 4. Which ontology term does a MIM ingredient mean?
-
-A selection rule, not a lookup. **180 of 1,876 subjects carry more than one
-mapping** (up to 3), e.g.:
-
-```
-MIM:14-B-D-Galactobiose -> CHEBI:36226 | cas:2152-98-9 | kgmicrobe.compound:14-b-d-galactobiose
-```
-
-`CurieNormalizer.equivalent_term()` applies:
-
-1. **Filter to `skos:exactMatch`.** Only that predicate asserts the two denote the
-   same thing. `closeMatch` and `broadMatch` are excluded — a `broadMatch` row means
-   the MIM subject is *more specific* than the object, so citing the object as an equivalent
-   silently generalises the ingredient. Of 2,200 published rows, 1,720 are
-   `exactMatch` and **480 are not**.
-2. **Rank the survivors by prefix**: ontology terms (CHEBI < FOODON < UBERON <
-   ENVO < MICRO < BTO < NCIT < GO) before registry ids (`mesh`, `cas`) before
-   local placeholders (`kgmicrobe.*`).
-
-The rule never reaches past the `exactMatch` set to grab a better-ranked prefix
-that is only a close match. When a subject has no exact match, the call returns
-`NO_EXACT_MATCH` — a refusal, not a guess — so a caller cannot mistake a
-`broadMatch` for an equivalence.
-
-## 5. For consumers
+An alias shared by several records produces `AMBIGUOUS_ALIAS`; consumers must
+provide record-specific evidence instead of choosing the first result. Stable
+registered IDs retain their own authority even if a legacy spelling collides.
+Do not decode old `~HEX` filename aliases to invent public paths.
 
 ```python
 from mediaingredientmech.curie import CurieNormalizer
 
-n = CurieNormalizer()
+normalizer = CurieNormalizer()
+reference = normalizer.resolve("MIM:0000001")
+if not reference:
+    raise ValueError(reference.problem)
+permanent_id = reference.curie
 
-v = n.resolve("MIM:1-Naphtylacetic_Acid")
-# v.curie == "MIM:1-naphtylacetic_Acid"; v.note records the rename
+legacy = normalizer.resolve("MIM:Tryptone")
+# A known unambiguous alias resolves to a numeric MIM ID; inspect the verdict.
 
-e = n.equivalent_term("MIM:Tryptone")
-# e.curie == "MICRO:0000182"
-
-bad = n.normalize("CHBEI:15377")
-# not bad  -> bad.problem == "UNKNOWN_PREFIX"
+mapping = normalizer.equivalent_term(permanent_id)
+# An absent or insufficiently exact mapping remains NO_MAPPING/NO_EXACT_MATCH.
 ```
 
-Every call returns a `Verdict`, falsy on failure with a `problem` code
-(`UNKNOWN_PREFIX`, `MALFORMED`, `ACCESSION_OUT_OF_RANGE`, `MICRO_UNVERIFIED`,
-`UNKNOWN_SUBJECT`, `NO_MAPPING`, `NO_EXACT_MATCH`) and a human-readable `note`.
+The normalizer uses a current local registry and corpus. For another verified
+snapshot, pass its root as `repo_root`. It performs no network access.
 
-**Recommended pattern for a repo like CommunityMech:** store the `exactMatch`
-ontology term as the join key, and keep `MIM:<name>` alongside as provenance,
-resolved through the alias map on read. That gives you a key MIM does not churn
-and a pointer back to the curated record.
+## Mapping semantics remain separate
 
-## 6. What this standard does not yet give you
+`equivalent_term()` filters to `skos:exactMatch` before ranking targets by the
+maintained prefix preference. `skos:closeMatch`, `broadMatch` and `narrowMatch`
+do not become equivalences because the subject now has a permanent ID. The
+selected mapping is not a replacement for MIM record identity.
 
-There is **no immutable surrogate id**. `MIM:<name>` plus the alias map is
-resolvable but not immutable, and the record's own `identifier:` field is a poor
-substitute — 182 of 1,878 mapped records have `identifier != ontology_id`, and
-identifiers are themselves corrected (one carried `CHEBI:867561`, a PubChem CID).
+`normalize()` still checks syntax, recognized prefix spelling and known malformed
+identifier hazards. Prefix case is canonicalized, unknown prefixes fail, and
+accession ceilings are only a weak typo/foreign-identifier guard. Ontology
+existence and scientific identity require separate evidence. For legacy MicrO
+IRIs, the maintained reviewed
+[source snapshot](../src/mediaingredientmech/ontology_sources/micro/README.md)
+continues to determine valid original IRIs.
 
-If a consumer needs a genuinely immutable key, that is a mint-and-backfill change
-across 2,258 records and should be its own issue.
+Verdicts are falsy on failure and retain a `problem` and `note`, including
+`UNKNOWN_SUBJECT`, `AMBIGUOUS_ALIAS`, `ALIAS_CYCLE`, `UNKNOWN_PREFIX`,
+`MALFORMED`, `ACCESSION_OUT_OF_RANGE`, `MICRO_UNVERIFIED`, `NO_MAPPING` and
+`NO_EXACT_MATCH`. Never convert a failed lookup to a guessed ontology identity.

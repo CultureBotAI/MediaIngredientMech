@@ -8,6 +8,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).parent.parent
 CURATED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -89,7 +91,7 @@ def test_n_acetyl_d_glucosamine_is_not_mapped_to_peptidoglycan_residue(
     }
 
     sssom_rows = [
-        row for row in sssom_rows if row["subject_id"] == "MIM:N-acetyl-d-glucosamine"
+        row for row in sssom_rows if row["subject_id"] == current_subject("MIM:N-acetyl-d-glucosamine")
     ]
     assert len(sssom_rows) == 1
     assert sssom_rows[0]["object_id"] == "CHEBI:506227"

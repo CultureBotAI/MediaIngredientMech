@@ -92,6 +92,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000975; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:58.519606+00:00'
@@ -107,3 +113,7 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Nitrogen Source'
+mim_id: MIM:0000975
+legacy_identifiers:
+- MIM:Dl-tryptophan
+- CHEBI:57912

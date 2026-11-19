@@ -30,6 +30,12 @@ curation_history:
   changes: Promoted UNMAPPED_0112 -> kgmicrobe.ingredient:chu_stock_solution "Chu
     Stock Solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
     row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000700; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 1'
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
@@ -46,3 +52,7 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+mim_id: MIM:0000700
+legacy_identifiers:
+- MIM:Chu_Stock_Solution
+- kgmicrobe.ingredient:chu_stock_solution

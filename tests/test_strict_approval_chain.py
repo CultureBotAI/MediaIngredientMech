@@ -7,6 +7,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.pre_mint_state import pre_mint_catalogue  # noqa: F401
+
 ROOT = Path(__file__).resolve().parents[1]
 ASSEMBLER_PATH = ROOT / "reports/sssom_completion_20260921/assemble_review.py"
 SPEC = importlib.util.spec_from_file_location("strict_approval_chain_assembler", ASSEMBLER_PATH)
@@ -15,7 +17,7 @@ SPEC.loader.exec_module(assembler)
 
 
 @pytest.mark.parametrize("stem", ["Aromatic_Compound", "Arsenate"])
-def test_mapping_change_receipt_cannot_renew_corrected_identity_approval(monkeypatch, stem):
+def test_mapping_change_receipt_cannot_renew_corrected_identity_approval(monkeypatch, stem, pre_mint_catalogue):
     """Keep the row and parsed record unchanged, but change its exact YAML bytes.
 
     A later mapping-change receipt can account for the new owner hash in the

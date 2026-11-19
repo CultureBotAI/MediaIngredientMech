@@ -3,11 +3,6 @@
 # Slot: evidence_source 
 
 
-_How the snippet was obtained (e.g. abstract, full_text, figure, supplement, database). Free-form to stay self-contained._
-
-
-
-
 
 URI: [mediaingredientmech:evidence_source](https://w3id.org/mediaingredientmech/evidence_source)
 Alias: evidence_source
@@ -22,6 +17,8 @@ Alias: evidence_source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |  no  |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
@@ -43,13 +40,6 @@ Alias: evidence_source
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
-
-
-
 
 ## Mappings
 
@@ -66,13 +56,10 @@ Alias: evidence_source
 <details>
 ```yaml
 name: evidence_source
-description: How the snippet was obtained (e.g. abstract, full_text, figure, supplement,
-  database). Free-form to stay self-contained.
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: evidence_source
-owner: SupportingReference
 domain_of:
+- MappingEvidence
+- ComponentEvidence
 - SupportingReference
 range: string
 

@@ -37,6 +37,12 @@ curation_history:
   changes: Promoted UNMAPPED_0031 -> kgmicrobe.ingredient:enrichment_solution_for_seawater_medium
     "Enrichment Solution for Seawater Medium" (FALLBACK_REGISTRY); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001010; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 as a seawater-medium
   enrichment stock/pre-mix pending component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
@@ -55,3 +61,7 @@ ontology_mapping:
       a lab preparation rather than a substance. Takes the STOCK_SOLUTION convention
       used by the existing mapped records: a kgmicrobe.ingredient: mint, with no parent
       because a multi-component mix does not narrow to any single compound (#114).'
+mim_id: MIM:0001010
+legacy_identifiers:
+- MIM:Enrichment_Solution_For_Seawater_Medium
+- kgmicrobe.ingredient:enrichment_solution_for_seawater_medium

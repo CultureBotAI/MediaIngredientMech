@@ -40,6 +40,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002172; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6119-47-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C20H24N2O2.ClH.2H2O/c1-3-13-12-22-9-7-14(13)10-19(22)20(23)16-6-8-21-18-5-4-15(24-2)11-17(16)18;;;/h3-6,8,11,13-14,19-20,23H,1,7,9-10,12H2,2H3;1H;2*1H2/t13-,14-,19-,20+;;;/m0.../s1
   pubchem_cid: 16211283
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002172
+legacy_identifiers:
+- MIM:Quinine_Hdrochloride
+- cas:6119-47-7

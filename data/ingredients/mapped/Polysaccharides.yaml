@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0658 -> CHEBI:18154 "polysaccharide" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002087; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:polysaccharides); no
   CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +46,7 @@ ontology_mapping:
     source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
       PR #201) + local CHEBI verification'
     notes: Polysaccharides synonym of CHEBI:18154 polysaccharide.
+mim_id: MIM:0002087
+legacy_identifiers:
+- MIM:Polysaccharides
+- CHEBI:18154

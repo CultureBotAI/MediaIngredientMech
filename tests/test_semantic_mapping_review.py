@@ -9,6 +9,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.pre_mint_state import pre_mint_catalogue  # noqa: F401
+
 from mediaingredientmech.export import reviewed_sssom as reviewed
 from mediaingredientmech.export.kgx import export_graph
 from mediaingredientmech.validation import semantic_release as gate
@@ -53,7 +55,7 @@ def paired_review(tmp_path):
     report = json.loads(report_path.read_text())
     source = root / "mappings/ingredient_mappings.sssom.tsv"
     mapping = {
-        "subject_id": "MIM:Water",
+        "subject_id": "MIM:0000001",
         "subject_label": "Water",
         "predicate_id": "skos:exactMatch",
         "object_id": "CHEBI:15377",
@@ -203,7 +205,7 @@ def test_valid_review_for_different_sssom_cannot_approve_graph_payload(paired_re
         gate.validate(root, path)
 
 
-def test_real_mim_resolution_cannot_delete_its_pinned_mapping_review():
+def test_real_mim_resolution_cannot_delete_its_pinned_mapping_review(pre_mint_catalogue):
     module = load_module(
         "real_resolved_hold", Path(__file__).with_name("test_semantic_hold_resolution.py")
     )

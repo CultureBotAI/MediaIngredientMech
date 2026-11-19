@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0847 -> kgmicrobe.compound:tetrabromopyrrole "Tetrabromopyrrole"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002466; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrabromopyrrole);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -43,3 +49,7 @@ ontology_mapping:
       record the cached MeSH build predates -- the same situation as the mesh_scr_exceptions
       block in conf/id_label_targets.yaml. Promote this record to that MeSH id once
       the build carries it (#213).'
+mim_id: MIM:0002466
+legacy_identifiers:
+- MIM:Tetrabromopyrrole
+- kgmicrobe.compound:tetrabromopyrrole

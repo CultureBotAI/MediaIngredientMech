@@ -38,6 +38,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002551; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 38748-32-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +52,7 @@ chemical_properties:
   inchi: InChI=1S/C20H24O6/c1-8(2)18-13(25-18)14-20(26-14)17(3)5-4-9-10(7-23-15(9)21)11(17)6-12-19(20,24-12)16(18)22/h8,11-14,16,22H,4-7H2,1-3H3/t11-,12-,13-,14-,16+,17-,18-,19+,20+/m0/s1
   smiles: '[H][C@@]12C[C@@H]3O[C@@]34[C@H](O)[C@@]3(C(C)C)O[C@@]3([H])[C@@H]3O[C@@]34[C@@]1(C)CCC1=C2COC1=O'
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002551
+legacy_identifiers:
+- MIM:Triptolide
+- CHEBI:9747

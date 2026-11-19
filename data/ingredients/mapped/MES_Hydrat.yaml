@@ -66,6 +66,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001559; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged to
   anhydrous MES or MES sodium salt.
@@ -86,3 +92,7 @@ ontology_mapping:
       recommends adding exactly that number. No hydrate-specific ontology term exists:
       CHEBI:39005 is the ANHYDROUS acid, a different substance by formula weight,
       so it is the narrowMatch parent rather than the identity.'
+mim_id: MIM:0001559
+legacy_identifiers:
+- MIM:MES_Hydrat
+- cas:145224-94-8

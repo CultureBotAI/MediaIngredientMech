@@ -55,7 +55,7 @@ just research-ingredient falcon <mapped|unmapped> <slug>
 4. Read the report's References section. Treat Falcon output as leads; verify identity, formula, hydrate state, composition, and ontology grounding against cited source metadata/snippets before editing.
 5. Curate only locally supported fields:
    `mapping_status`, `ontology_mapping`, `chemical_properties`, `synonyms`, `notes`, `kg_microbe_node_id`, `ingredient_type`, and `curation_history`.
-6. Keep edits narrow and schema-consistent. Preserve filenames and existing identifiers unless the task is explicitly an identifier repair.
+6. Keep edits narrow and schema-consistent. Preserve permanent `mim_id` values, filenames, and existing mapping identifiers. An identifier repair changes mapping fields or aliases, never reassigns the permanent ID. New records require native allocation following [`manage-identifiers`](../manage-identifiers/SKILL.md).
 7. Do not identity-map complex mixtures, media formulations, vitamin/trace solutions, buffers, extracts, seawater preparations, or catalog preparations to generic parents. Use non-identity semantics or leave them unmapped for curator review.
 
 ## Mapping Semantics
@@ -64,8 +64,8 @@ Use `MAPPING_SEMANTICS.md` as the authority for SSSOM predicate decisions:
 
 - `skos:exactMatch`: true identity only; bidirectional substitution is safe.
 - `skos:closeMatch`: related but not substitutable.
-- `skos:broadMatch`: MIM ingredient is more specific than the ontology parent, so the parent is the broader concept; must have a registry exact row for the same `MIM:<slug>`. (This was `skos:narrowMatch` until #390, which under SKOS asserts the reverse.)
-- Registry rows use `MIM:<slug> skos:exactMatch kgmicrobe.{ingredient,compound}:<slug_lc>`.
+- `skos:broadMatch`: MIM ingredient is more specific than the ontology parent, so the parent is the broader concept; must have a registry exact row for the same permanent `MIM:<seven-digit-id>`. (This was `skos:narrowMatch` until #390, which under SKOS asserts the reverse.)
+- Registry rows use `MIM:<seven-digit-id> skos:exactMatch kgmicrobe.{ingredient,compound}:<mapping-slug>`. Keep the established mapping target; do not derive it from the numeric MIM suffix.
 
 When SSSOM rows change, update `mappings/ingredient_mappings.sssom.tsv` consistently with the YAML and run:
 

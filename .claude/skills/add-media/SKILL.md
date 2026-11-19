@@ -99,7 +99,8 @@ Follow `MAPPING_SEMANTICS.md` §3 and `src/mediaingredientmech/schema/mediaingre
    - `UNDEFINED_MIXTURE`: Complex mixture or source-specific blend with variable/undefined composition (e.g., peptone, yeast extract, or a multi-component medium treated as an undefined mixture).
    - `SINGLE_INGREDIENT`: Single chemical substance.
 
-2. **Primary `identifier` & `ontology_mapping`**:
+2. **Permanent identity and mapping `identifier` & `ontology_mapping`**:
+   - **Every new record**: Allocate its required permanent `mim_id` through the native registry workflow in [`manage-identifiers`](../manage-identifiers/SKILL.md), and retain historical lookup values in `legacy_identifiers`. The scientific mapping choices below do not replace or alter that permanent ID.
    - **Exact ontology term exists**: Use `CHEBI:`, `FOODON:`, `MICRO:`, `ENVO:`, or `NCIT:` as `identifier` and `ontology_mapping.ontology_id` with `mapping_quality: EXACT_MATCH` (or `SYNONYM_MATCH` / `CAS_RN_LOOKUP`). Do **not** map a specific numbered formulation (e.g., Marine Agar 2216) to a merely similar `MICRO:` term unless composition equivalence is verified.
    - **Named medium, stock solution, or complex preparation with no exact ontology term**: Mint `kgmicrobe.ingredient:<slug>` (lowercase, underscore-separated ASCII slug matching the file stem):
      ```yaml
@@ -119,7 +120,7 @@ Follow `MAPPING_SEMANTICS.md` §3 and `src/mediaingredientmech/schema/mediaingre
          notes: Named multi-component mineral stock solution; minted under kgmicrobe.ingredient because no single CHEBI/FOODON/MICRO term denotes this exact preparation.
      ```
    - **Broader ontology parent exists (`skos:broadMatch`)**: If anchoring the record to a broader parent term in `ontology_mapping.ontology_id` (`mapping_quality: BROAD_MATCH` or `NARROW_MATCH`), keep `identifier: kgmicrobe.ingredient:<slug>` (or `cas:<rn>`) and ensure `mappings/ingredient_mappings.sssom.tsv` includes **both** the `skos:broadMatch` row to the OBO parent and the mandatory Rule B1 `skos:exactMatch` registry sibling row to `kgmicrobe.ingredient:<slug>`.
-   - **Unresolvable / awaiting expert curation**: Mint the next sequential `UNMAPPED_NNNN` placeholder (see [`manage-identifiers`](../manage-identifiers/SKILL.md)), set `mapping_status: UNMAPPED`, and place the file in `data/ingredients/unmapped/<Slug>.yaml`. <!-- refcheck: ignore -->
+   - **Unresolvable / awaiting expert curation**: Preserve an existing `UNMAPPED_NNNN` mapping placeholder, or verify a new placeholder is unused in both record surfaces before writing it. Set `mapping_status: UNMAPPED` and place the file in `data/ingredients/unmapped/<Slug>.yaml`. This placeholder is not the permanent `mim_id`; never infer a fresh permanent ID from it. <!-- refcheck: ignore -->
 
 ---
 

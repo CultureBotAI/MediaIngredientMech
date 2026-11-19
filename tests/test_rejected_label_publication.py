@@ -31,6 +31,7 @@ validator = _load(
 
 def _record():
     return {
+        "mim_id": "MIM:0000001",
         "identifier": "CHEBI:1",
         "preferred_term": "Reviewed material",
         "mapping_status": "MAPPED",

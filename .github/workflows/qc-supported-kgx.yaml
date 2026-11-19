@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v3
       - name: Install locked runtime
         run: uv sync --frozen
@@ -28,11 +30,11 @@ jobs:
         run: |
           uv run --frozen python -m mediaingredientmech.export.supported_kgx \
             --root . \
-            --report reports/semantic_review_20260921/resolution/current-review.json \
+            --report reports/stable_ids_1265_20261108/semantic-review.json \
             --output output/mim-kgx-710-supported
           uv run --frozen python -m mediaingredientmech.export.supported_kgx \
             --root . \
-            --report reports/semantic_review_20260921/resolution/current-review.json \
+            --report reports/stable_ids_1265_20261108/semantic-review.json \
             --output output/mim-kgx-710-supported --validate-only
       - name: Validate supported SSSOM
         run: |

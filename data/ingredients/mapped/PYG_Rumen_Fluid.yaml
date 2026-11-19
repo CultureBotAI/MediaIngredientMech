@@ -93,6 +93,12 @@ curation_history:
     now has a record, so the component resolves inside the catalog rather than out
     of it.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001985; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -138,3 +144,7 @@ ontology_mapping:
       anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
       ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
       an undefined preparation. No concentrations are recorded: the label states none.'
+mim_id: MIM:0001985
+legacy_identifiers:
+- MIM:PYG_Rumen_Fluid
+- kgmicrobe.ingredient:pyg_rumen_fluid

@@ -38,6 +38,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001491; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 103890-78-4
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +52,7 @@ chemical_properties:
   inchi: InChI=1S/C26H33NO6/c1-8-31-24(29)21-16(3)27-17(4)22(25(30)32-9-2)23(21)19-13-11-10-12-18(19)14-15-20(28)33-26(5,6)7/h10-15,23,27H,8-9H2,1-7H3/b15-14+
   smiles: CCOC(=O)C1=C(C)NC(C)=C(C(=O)OCC)C1c1ccccc1/C=C/C(=O)OC(C)(C)C
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001491
+legacy_identifiers:
+- MIM:Lacidipine
+- CHEBI:135737

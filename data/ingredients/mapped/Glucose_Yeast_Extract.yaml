@@ -71,6 +71,12 @@ curation_history:
     to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001193; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -108,3 +114,7 @@ ontology_mapping:
       anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
       ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
       an undefined preparation. No concentrations are recorded: the label states none.'
+mim_id: MIM:0001193
+legacy_identifiers:
+- MIM:Glucose_Yeast_Extract
+- kgmicrobe.ingredient:glucose_yeast_extract

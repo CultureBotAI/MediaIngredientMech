@@ -5,6 +5,10 @@ from copy import deepcopy
 from pathlib import Path
 
 import pytest
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 import yaml
 
 from mediaingredientmech import ingredient_bundle_refresh as refresh

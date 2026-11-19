@@ -31,6 +31,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0110 -> kgmicrobe.ingredient:minor_nutrients "Minor Nutrients"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001699; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 as a named minor-nutrient
   stock/pre-mix pending component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
@@ -48,3 +54,7 @@ ontology_mapping:
       it, and none could -- it is a lab preparation rather than a substance. Takes
       the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint, no parent because
       a multi-component mix does not narrow to a single compound (#114).'
+mim_id: MIM:0001699
+legacy_identifiers:
+- MIM:Minor_Nutrients
+- kgmicrobe.ingredient:minor_nutrients

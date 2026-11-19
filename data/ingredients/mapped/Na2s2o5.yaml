@@ -111,6 +111,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001819; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7681-57-4
   data_source: PubChem API
@@ -127,3 +133,7 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+mim_id: MIM:0001819
+legacy_identifiers:
+- MIM:Na2s2o5
+- CHEBI:114786

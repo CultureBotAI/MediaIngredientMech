@@ -11,7 +11,6 @@
 
 | Identifier | Preferred Term | Status | Occurrences |
 |---|---|---|---|
-| UNMAPPED_0818 | X | UNMAPPED | 101 |
 | UNMAPPED_0196 | 2-Carene-3-One | UNMAPPED | 0 |
 | UNMAPPED_0182 | 2-methyladeninyl cobamide | UNMAPPED | 0 |
 | UNMAPPED_0190 | 2',2'-Bisepigallocatechin Digallate | UNMAPPED | 0 |
@@ -34,8 +33,8 @@
 | UNMAPPED_0232 | Asolectin from soybean | UNMAPPED | 0 |
 | UNMAPPED_0221 | Avantafiber | UNMAPPED | 0 |
 | UNMAPPED_0187 | Avocatin A | UNMAPPED | 0 |
-| UNMAPPED_0237 | b-Glucan from Beet (1,2-b-Glucan) | UNMAPPED | 0 |
 | UNMAPPED_0247 | b-glucan from Barley | UNMAPPED | 0 |
+| UNMAPPED_0237 | b-Glucan from Beet (1,2-b-Glucan) | UNMAPPED | 0 |
 | UNMAPPED_0235 | B-glucan from yeast | UNMAPPED | 0 |
 | UNMAPPED_0113 | BCYE agar | UNMAPPED | 0 |
 | UNMAPPED_0169 | BC Lignin Sorghum | UNMAPPED | 0 |
@@ -53,6 +52,7 @@
 | UNMAPPED_0339 | Blood Agar Base | UNMAPPED | 0 |
 | UNMAPPED_0340 | Blood agar No 2 | UNMAPPED | 0 |
 | UNMAPPED_0051 | Bold 1NV Medium | UNMAPPED | 2 |
+| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0344 | Bovine horn meal | UNMAPPED | 0 |
 | UNMAPPED_0345 | Bovine serum | UNMAPPED | 0 |
 | UNMAPPED_0116 | Brewer anaerobic agar | UNMAPPED | 0 |
@@ -63,6 +63,7 @@
 | UNMAPPED_0170 | Calf brains | UNMAPPED | 7 |
 | UNMAPPED_0229 | Calprotectin S1 | UNMAPPED | 0 |
 | UNMAPPED_0230 | Calprotectin S1S2 | UNMAPPED | 0 |
+| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0355 | CeNO33 x 6 H2O | UNMAPPED | 0 |
 | UNMAPPED_0354 | Cellulose MN 300 | UNMAPPED | 0 |
 | UNMAPPED_0356 | Cereal leaves | UNMAPPED | 0 |
@@ -180,6 +181,7 @@
 | UNMAPPED_0457 | N-Z amine | UNMAPPED | 0 |
 | UNMAPPED_0460 | Na-Nitrilotriacetat | UNMAPPED | 0 |
 | UNMAPPED_0463 | Na-tetrathionate | UNMAPPED | 0 |
+| UNMAPPED_0851 | Na2MoO4 x H2O | UNMAPPED | 0 |
 | UNMAPPED_0475 | Na3-NTA x H2O | UNMAPPED | 0 |
 | UNMAPPED_0477 | NaSiO3 x 9 H2O | UNMAPPED | 0 |
 | UNMAPPED_0050 | Natural sea-salt | UNMAPPED | 2 |
@@ -242,6 +244,7 @@
 | UNMAPPED_0553 | Trace minerals see Medium No. 151 | UNMAPPED | 0 |
 | UNMAPPED_0554 | Trace minerals see Medium No. 197 | UNMAPPED | 0 |
 | UNMAPPED_0555 | Trace vitamins solution see Medium No. 284 | UNMAPPED | 0 |
+| UNMAPPED_0852 | Trisodium citrate x 3 H2O | UNMAPPED | 0 |
 | UNMAPPED_0557 | Trypticase soy agar | UNMAPPED | 0 |
 | UNMAPPED_0252 | Trypticase soy broth | UNMAPPED | 0 |
 | UNMAPPED_0138 | Tryptone soya broth (Oxoid) | UNMAPPED | 0 |
@@ -261,6 +264,7 @@
 | UNMAPPED_0577 | Whole egg | UNMAPPED | 0 |
 | UNMAPPED_0579 | Wilkins-Chalgren-Anaerobe-Broth | UNMAPPED | 0 |
 | UNMAPPED_0578 | Wilkins Chalgrene Anaerobe Broth | UNMAPPED | 0 |
+| UNMAPPED_0818 | X | UNMAPPED | 101 |
 | UNMAPPED_0174 | Xyloglucan (hepta+octa+nona saccharides) | UNMAPPED | 0 |
 | UNMAPPED_0583 | YM broth | UNMAPPED | 0 |
 | UNMAPPED_0208 | Yacontrol (Yacon root syrup) | UNMAPPED | 0 |
@@ -269,26 +273,22 @@
 | UNMAPPED_0272 | ZMB_ALS | UNMAPPED | 33 |
 | UNMAPPED_0150 | Zinc-NTA | UNMAPPED | 0 |
 | UNMAPPED_0587 | α-D-Glucose monohydrate | UNMAPPED | 0 |
-| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
-| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
-| UNMAPPED_0851 | Na2MoO4 x H2O | UNMAPPED | 0 |
-| UNMAPPED_0852 | Trisodium citrate x 3 H2O | UNMAPPED | 0 |
 
 ## Other Statuses
 
 | Identifier | Preferred Term | Status | Ontology ID | Representative | Occurrences |
 |---|---|---|---|---|---|
-| UNMAPPED_0049 | Ca | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 4-Diamino-6 | REJECTED |  |  | 0 |
 | CHEBI:41189 | 4-diol | REJECTED |  |  | 0 |
 | UNMAPPED_0651 | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | REJECTED |  |  | 0 |
+| UNMAPPED_0740 | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0049 | Ca | REJECTED |  |  | 0 |
 | UNMAPPED_0710 | DL-2-gamma-aminobutyrate | REJECTED |  |  | 0 |
 | UNMAPPED_0688 | Esculin Hydrolysate | REJECTED |  |  | 0 |
 | UNMAPPED_0731 | Gelatin Hydrolyzed | REJECTED |  |  | 0 |
 | UNMAPPED_0817 | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 | Tetrazolium | REJECTED |  |  | 0 |
-| UNMAPPED_0740 | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
 

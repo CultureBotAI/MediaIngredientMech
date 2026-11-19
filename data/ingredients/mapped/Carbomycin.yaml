@@ -45,6 +45,12 @@ curation_history:
     is not. A term this repo can resolve and label-check is the better published mapping,
     and that judgement does not expire when the build catches up. Do not re-ground
     to CHEBI:756054 without a new curator decision.'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000587; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 ontology_mapping:
   ontology_id: NCIT:C166659
   ontology_label: Carbomycin
@@ -55,3 +61,7 @@ ontology_mapping:
     source: MIM curation (#213)
     notes: 'Exact NCIT label match; CHEBI:756054 is live upstream but absent from
       the local build (#249, #213).'
+mim_id: MIM:0000587
+legacy_identifiers:
+- MIM:Carbomycin
+- NCIT:C166659

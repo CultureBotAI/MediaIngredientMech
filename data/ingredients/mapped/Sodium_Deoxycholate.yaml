@@ -44,6 +44,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002305; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 302-95-4
   data_source: CultureBotHT compounds_to_cas.csv
@@ -52,3 +58,7 @@ chemical_properties:
   inchi: InChI=1S/C24H40O4.Na/c1-14(4-9-22(27)28)18-7-8-19-17-6-5-15-12-16(25)10-11-23(15,2)20(17)13-21(26)24(18,19)3;/h14-21,25-26H,4-13H2,1-3H3,(H,27,28);/q;+1/p-1/t14-,15-,16-,17+,18-,19+,20+,21+,23+,24-;/m1./s1
   smiles: '[H][C@]12CC[C@]3([H])[C@]([H])(C[C@H](O)[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)[O-])[C@@]1(C)CC[C@@H](O)C2.[Na+]'
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002305
+legacy_identifiers:
+- MIM:Sodium_Deoxycholate
+- CHEBI:9177

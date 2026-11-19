@@ -40,6 +40,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001037; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 624-89-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +54,7 @@ chemical_properties:
   inchi: InChI=1S/C3H8S/c1-3-4-2/h3H2,1-2H3
   smiles: CCSC
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001037
+legacy_identifiers:
+- MIM:Ethyl_Methyl_Sulfide
+- CHEBI:231886

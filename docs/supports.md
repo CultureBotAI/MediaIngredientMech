@@ -18,6 +18,7 @@ Alias: supports
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |  no  |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
@@ -58,6 +59,7 @@ name: supports
 alias: supports
 domain_of:
 - MappingEvidence
+- ComponentEvidence
 - SupportingReference
 range: string
 

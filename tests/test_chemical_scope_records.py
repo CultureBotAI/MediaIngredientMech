@@ -6,6 +6,8 @@ from pathlib import Path
 
 import yaml
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -47,7 +49,7 @@ def test_sorbitan_occurrences_remain_local_without_molecular_equivalence():
             for row in csv.DictReader(
                 (line for line in handle if not line.startswith("#")), delimiter="\t"
             )
-            if row["subject_id"] == "MIM:Sorbitan_Monooleate"
+            if row["subject_id"] == current_subject("MIM:Sorbitan_Monooleate")
         ]
     assert len(mappings) == 1
     assert mappings[0]["object_id"] == local

@@ -1,0 +1,33 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1281",
+  "observed_at": "2026-11-09T00:30:43.119174+00:00",
+  "purpose": "Make the complete native graph and negative-review proof hermetic in artifact-absent CI",
+  "inputs": {
+    "source_head": "9b48738b677fc2a4566733b282c861773a6f5dd9",
+    "test": "tests/test_identity_projection_graph.py",
+    "helper": "scripts/adhoc/check_hermetic_graph_mutation_1281.py",
+    "sha256": {
+      "tests/test_identity_projection_graph.py": "060efdfbf6c9c09cdb2ef799539d373310aa983c87195cbe81625ce25ce34c65",
+      "scripts/adhoc/check_hermetic_graph_mutation_1281.py": "eb32ee3ecc2451702ac1397279720ce01037bff436dc22b18a335dc7d274e234"
+    }
+  },
+  "focused_tests": {
+    "passed": 8,
+    "warnings": 12,
+    "log": "focused-tests.log"
+  },
+  "mutation": {
+    "control": "PASS",
+    "native_export_removed": "KILLED: FileNotFoundError for isolated output/mim-kgx-710-full/manifest.json",
+    "receipt": "mutation/results.json"
+  },
+  "static_checks": [
+    "ruff check: PASS",
+    "git diff --check: PASS"
+  ],
+  "independent_review": "Read-only review by a separate agent found no issue; exact committed-head re-review remains parent-owned.",
+  "production_or_scientific_changes": false,
+  "commit_or_push": "NOT PERFORMED",
+  "network_or_provider_calls": false,
+  "proof_integrity": "No mocks or expectations changed; complete native export, historical proof, path safety, recheck and exact successor/disposition bytes retained."
+}

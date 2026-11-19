@@ -233,6 +233,8 @@ def verify_projection(records, mappings, nodes, edges):
     Do not import the exporter: a bug in its direction or endpoint logic must not
     become its own expected answer. JSON payload equality alone is insufficient.
     """
+    from mediaingredientmech.stable_ids import validate_id
+
     node_by_id = {node["id"]: node for node in nodes}
     require(len(node_by_id) == len(nodes), "Duplicate graph node ID")
     expected_nodes = {}
@@ -247,14 +249,17 @@ def verify_projection(records, mappings, nodes, edges):
     for name, record in records.items():
         if record["mapping_status"] == "REJECTED":
             continue
+        identifier = validate_id(record.get("mim_id"))
         if record["mapping_status"] == "MAPPED":
             candidates = {
                 row["subject_id"]
                 for row in mappings
                 if row["subject_label"] == record["preferred_term"]
             }
-            require(len(candidates) == 1, f"No unique mapping subject for {name}")
-            identifier = next(iter(candidates))
+            require(
+                candidates == {identifier},
+                f"Mapping subject differs from permanent record identity: {name}",
+            )
             own = [row for row in mappings if row["subject_id"] == identifier]
             require(
                 any(
@@ -283,7 +288,6 @@ def verify_projection(records, mappings, nodes, edges):
             require(
                 record["mapping_status"] in {"UNMAPPED", "AMBIGUOUS"}, "Unsupported active status"
             )
-            identifier = "MIM.unmapped:" + record["identifier"]
         require(identifier not in expected_nodes, "Ingredient node identity collision")
         local_ids[name] = identifier
         expected_nodes[identifier] = {
@@ -756,6 +760,12 @@ def validate_release_holds(
 def validate(root: Path, report_path: Path) -> dict:
     root = root.resolve()
     report = json.loads(report_path.read_text())
+    if "identity_projection" in report:
+        from mediaingredientmech.identity_projection_graph import (
+            validate as validate_identity_projection,
+        )
+
+        return validate_identity_projection(root, report_path)
     require(report["schema_version"] == 1, "Unsupported review schema")
     require(bool(report.get("release_holds")), "Missing release-hold proof")
     inputs = report["inputs"]

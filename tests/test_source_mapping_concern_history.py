@@ -20,8 +20,16 @@ STEMS = ("14-Butanediol", "5-dehydro-D-gluconate", "Phenethylamine_Hydrochloride
          "Wc_Trace_Elements_Solution")
 
 
+@pytest.fixture(scope="module", autouse=True)
+def historical_inputs():
+    from tests.pre_mint_state import fixed_base_reads
+    from mediaingredientmech.identity_projection import record_paths
+    with fixed_base_reads(ROOT, record_paths(ROOT, historical=True) + ["mappings/ingredient_mappings.sssom.tsv"]):
+        yield
+
+
 @pytest.fixture(scope="module")
-def native_context():
+def native_context(historical_inputs):
     here = PATH.parent
     return {
         "chain": assembler.verify_mapping_chain(ROOT),
@@ -163,7 +171,7 @@ def assert_receipt_rows_withheld(chain, decisions):
     return touched
 
 
-def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_context):
+def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_context, tmp_path):
     """Compute native output in memory; never overwrite archived/current files."""
     here = PATH.parent
     preserved = {path: path.read_bytes() for path in (
@@ -174,7 +182,8 @@ def test_native_assembly_keeps_all_holds_and_exact_negative_evidence(native_cont
     )}
     previous = json.loads(preserved[here / "review.json"])
     previous_evidence = json.loads(preserved[here / "mapping-evidence.json"])
-    result = assembler.assemble()
+    from tests.historical_review_root import assemble_at_baseline
+    result = assemble_at_baseline(tmp_path)
     review = json.loads(result["review.json"])
     evidence = json.loads(result["mapping-evidence.json"])
     old_decisions = {item["source_position"]: item for item in previous["decisions"]}

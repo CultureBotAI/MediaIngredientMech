@@ -62,6 +62,12 @@ curation_history:
     that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
     remains skos:exactMatch under Rule D (#438), independently of mapping quality.
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000013; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 22059-21-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -79,6 +85,10 @@ nutritional_roles:
       (amino acid)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+mim_id: MIM:0000013
+legacy_identifiers:
+- MIM:1-aminocyclopropane-1-carboxylate
+- CHEBI:18053
 discussions:
 - discussion_id: kgscan-afcc7416ff5f
   prompt: 'Knowledge gap for 1-aminocyclopropane-1-carboxylate: This systematic review

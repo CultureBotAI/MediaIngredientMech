@@ -19,6 +19,7 @@ def apply_case(tmp_path, monkeypatch):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     record = {
+        "mim_id": "MIM:0000001",
         "identifier": "kgmicrobe.compound:carnitine_hydrochloride",
         "preferred_term": "Carnitine Hydrochloride", "mapping_status": "MAPPED",
         "ontology_mapping": {"ontology_id": "CHEBI:17126", "ontology_label": "carnitine",

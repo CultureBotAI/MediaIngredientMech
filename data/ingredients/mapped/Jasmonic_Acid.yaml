@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001376; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6894-38-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C12H18O3/c1-2-3-4-5-10-9(8-12(14)15)6-7-11(10)13/h3-4,9-10H,2,5-8H2,1H3,(H,14,15)/b4-3-/t9-,10-/m1/s1
   smiles: CC/C=CC[C@H]1C(=O)CC[C@@H]1CC(=O)O
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001376
+legacy_identifiers:
+- MIM:Jasmonic_Acid
+- CHEBI:18292
