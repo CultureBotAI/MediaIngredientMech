@@ -7,7 +7,7 @@
 <tbody>
 {% for ds in ingredient.datasets %}
 <tr>
-  <td>{{ ds.title or ds.accession }}{% if ds.description %}<br><span class="muted small prewrap">{{ ds.description }}</span>{% endif %}</td>
+  <td>{{ ds.title or ds.accession }}{% if ds.description %}<br><span class="muted small prewrap">{{ ds.description|linked_text }}</span>{% endif %}</td>
   <td>{% if ds.dataset_type %}<span class="badge">{{ ds.dataset_type }}</span>{% endif %}</td>
   <td class="small">{{ ds.repository or '' }}</td>
   <td class="small">{% if ds.url %}<a href="{{ ds.url }}" rel="nofollow noreferrer">{{ ds.accession or ds.url }}</a>{% else %}{{ ds.accession or '' }}{% endif %}</td>

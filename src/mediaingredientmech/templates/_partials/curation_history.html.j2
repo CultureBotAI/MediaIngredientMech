@@ -20,7 +20,7 @@
       <span class="badge small">{{ ev.new_status }}</span>
     {% endif %}
   </td>
-  <td class="prewrap small">{{ ev.changes or '' }}</td>
+  <td class="prewrap small">{% if ev.changes %}{{ ev.changes|linked_text }}{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>

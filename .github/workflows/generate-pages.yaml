@@ -15,6 +15,9 @@ on:
       - "uv.lock"
       - "pyproject.toml"
       - ".github/workflows/generate-pages.yaml"
+      # The published discussion index and the route template it is generated with.
+      - "app/discussions/**"
+      - "conf/discussions_config.yaml"
   workflow_dispatch:
 
 permissions:

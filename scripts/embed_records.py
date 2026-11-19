@@ -23,7 +23,10 @@ DEFAULT_MODEL = "BAAI/bge-large-en-v1.5"
 
 
 def slug_for_source(category: str, path: Path) -> str:
-    stem = re.sub(r"[^A-Za-z0-9._-]+", "_", path.stem).strip("_") or "ingredient"
+    # Must name the page render_ingredient_pages.slug_for() publishes. Stripping
+    # the "_" that a leading or trailing parenthesis becomes sent the text map's
+    # points for records such as (-)-anisomycin to a 404.
+    stem = re.sub(r"[^A-Za-z0-9._-]+", "_", path.stem)
     return f"{category}/{stem}"
 
 

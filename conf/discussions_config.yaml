@@ -4,4 +4,6 @@ record_glob: ../data/ingredients/**/*.yaml
 name_fields: [preferred_term, name]
 id_field: identifier
 discussions_field: discussions
-page_url_template: "../../pages/ingredient/{category}/{stem}.html#discussions"
+# Relative to app/discussions/ in the published site; the record pages live
+# under records/ingredient/ there (scripts/build_pages_site.py).
+page_url_template: "../../records/ingredient/{category}/{stem}.html#discussions"

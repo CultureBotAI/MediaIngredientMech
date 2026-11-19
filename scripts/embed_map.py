@@ -48,7 +48,18 @@ def main() -> int:
         default=REPO_ROOT / "src" / "mediaingredientmech" / "templates" / "text_map.html",
         help="HTML template path",
     )
+    parser.add_argument(
+        "--render-only",
+        action="store_true",
+        help="Re-render --html-out from the coordinates already in --json-out, without "
+        "projecting; use after a template change so the published map is not re-cut",
+    )
     args = parser.parse_args()
+
+    if args.render_only:
+        payload = json.loads(args.json_out.read_text(encoding="utf-8"))
+        write_html(args.template, payload, args.html_out)
+        return 0
 
     data = np.load(args.input, allow_pickle=True)
     embeddings = np.asarray(data["embeddings"], dtype=np.float32)
@@ -113,12 +124,16 @@ def main() -> int:
     args.json_out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {args.json_out}")
 
-    template_html = args.template.read_text(encoding="utf-8")
-    rendered_html = template_html.replace("__MAP_DATA_JSON__", json.dumps(payload).replace("</", "<\\/"))
-    args.html_out.parent.mkdir(parents=True, exist_ok=True)
-    args.html_out.write_text(rendered_html, encoding="utf-8")
-    print(f"Wrote {args.html_out}")
+    write_html(args.template, payload, args.html_out)
     return 0
+
+
+def write_html(template: Path, payload: dict, html_out: Path) -> None:
+    template_html = template.read_text(encoding="utf-8")
+    rendered_html = template_html.replace("__MAP_DATA_JSON__", json.dumps(payload).replace("</", "<\\/"))
+    html_out.parent.mkdir(parents=True, exist_ok=True)
+    html_out.write_text(rendered_html, encoding="utf-8")
+    print(f"Wrote {html_out}")
 
 
 if __name__ == "__main__":

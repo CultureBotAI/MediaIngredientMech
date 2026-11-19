@@ -47,5 +47,7 @@
       retry.addEventListener('click', () => select(point)); panel.append(retry);
     }
   }
-  window.MimRecords = {select};
+  // `pages` resolves to the same exact lookup: record id -> catalog row, or null
+  // when an id is shared; the data tables link each row through it.
+  window.MimRecords = {select, pages: records};
 })();

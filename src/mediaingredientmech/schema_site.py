@@ -7,7 +7,7 @@ from urllib.parse import quote
 from linkml_runtime.dumpers import json_dumper  # type: ignore[import-untyped]
 from linkml_runtime.utils.schemaview import SchemaView  # type: ignore[import-untyped]
 
-from mediaingredientmech.render_ingredient_pages import structured_value
+from mediaingredientmech.render_ingredient_pages import LICENCE_HTML, structured_value
 
 
 def write_schema_site(schema: Path, output: Path) -> list[str]:
@@ -26,9 +26,11 @@ def write_schema_site(schema: Path, output: Path) -> list[str]:
             '<meta name="viewport" content="width=device-width, initial-scale=1">'
             f"<title>{escape(title)} — MediaIngredientMech schema</title>"
             '<link rel="stylesheet" href="../records/style.css">'
+            '<a class="skip-link" href="#main-content">Skip to main content</a>'
             '<nav><a href="../index.html">Home</a> · <a href="index.html">Schema index</a> · '
             '<a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>'
-            f"<main><h1>{escape(title)}</h1>{content}</main>"
+            f'<main id="main-content"><h1>{escape(title)}</h1>{content}</main>'
+            f"<footer><p>{LICENCE_HTML}</p></footer>"
             '<script src="../theme-toggle.js"></script></html>'
         )
 
