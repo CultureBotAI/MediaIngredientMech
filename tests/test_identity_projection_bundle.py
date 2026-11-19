@@ -10,12 +10,26 @@ from mediaingredientmech import identity_projection_bundle as bundle
 from mediaingredientmech.ingredient_bundle_contract import reviewed_products
 
 ROOT = Path(__file__).resolve().parents[1]
+# #1325: this is the authentic projected-after snapshot, not the pre-mint
+# scientific baseline or permission to reuse this review for current owners.
+PROJECTED_FIXTURE_REVISION = "4160478b442c6762d81b1862ae7de9eccda27430"
 
 
 @pytest.fixture(scope="module")
 def inputs():
-    review = ip.document((ROOT / bundle.REVIEW).read_bytes())
-    return review, {name: (ROOT / name).read_bytes() for name in bundle.declared_sources(review)}
+    raw = ip.revision_files(ROOT, PROJECTED_FIXTURE_REVISION, [bundle.REVIEW])[bundle.REVIEW]
+    assert raw == (ROOT / bundle.REVIEW).read_bytes()
+    review = ip.document(raw)
+    sources = ip.revision_files(ROOT, PROJECTED_FIXTURE_REVISION, list(bundle.declared_sources(review)))
+    return review, sources
+
+
+def test_current_inputs_cannot_reuse_fixed_historical_authority(inputs):
+    """#1325: the historical positive fixture never approves changed current bytes."""
+    review, _ = inputs
+    current = {name: (ROOT / name).read_bytes() for name in bundle.declared_sources(review)}
+    with pytest.raises(ValueError, match="^Identity projection: projected companion source hash differs$"):
+        reviewed_products(review, current)
 
 
 def test_portable_projection_preserves_every_nonidentity_field(inputs):
@@ -68,8 +82,17 @@ def test_rehashed_portable_projection_cannot_refresh_science(inputs, attack):
         original["decisions"][0]["review_reason"] = "new scientific decision"
         sources[name] = ip.encode(original)
         review["inputs"][name] = ip.sha(sources[name])
-    with pytest.raises(ValueError, match="Identity projection"):
+    with pytest.raises(ValueError, match="Identity projection") as failure:
         reviewed_products(review, sources)
+    # #1325: each coherent attack must reach its own guard, not an unrelated
+    # stale-fixture hash failure before the historical/scientific assertion.
+    expected_guard = {
+        "scientific_field": "migration changed a biological or other preexisting field",
+        "history": "historical curation events changed",
+        "authority": "companion projection authority differs",
+        "original_review": "companion authority is not the fixed historical review",
+    }
+    assert str(failure.value) == "Identity projection: " + expected_guard[attack]
 
 
 def test_native_companion_owner_uses_current_id_but_archive_keeps_legacy_address():
@@ -84,6 +107,7 @@ def test_native_companion_owner_uses_current_id_but_archive_keeps_legacy_address
 def test_coherently_shifted_complete_mint_inventory_is_not_portable_authority(inputs):
     """#1269: all attacker-controlled hashes agree, but fixed Git mint order must win."""
     from dataclasses import replace
+
     from mediaingredientmech.stable_ids import Mint, Registry, dump_registry, parse_registry
     review, sources = deepcopy(inputs)
     manifest = ip.document(sources[ip.MANIFEST])
