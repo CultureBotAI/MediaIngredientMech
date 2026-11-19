@@ -362,6 +362,37 @@ def _require_unique_source_uris(identifiers: list[str], prefixes: dict[str, str]
         seen[uri] = identifier
 
 
+def _integrated_request_inputs(inputs, review):
+    """Require generic integration evidence without report hash cycles (#1431)."""
+    pairs = {}
+    for case in review["cases"]:
+        for role in ("primary", "skeptic"):
+            reference = case[role]
+            if reference is None:  # Inspection precedes report creation.
+                continue
+            _keys(reference, {"path", "target_id", "assessment_id"})
+            path = reference["path"]
+            _require(isinstance(path, str) and path, "invalid native report path")
+            markdown = str(Path(path).with_name("review.md"))
+            pair = {path, markdown}
+            pinned = pair & review["inputs"].keys()
+            if not pinned:
+                continue
+            _require(pinned == pair, "native report pair must be pinned")
+            pairs[path] = markdown
+    excluded: set[str] = set()
+    if pairs:
+        native = _native(inputs)
+        for path, markdown in pairs.items():
+            # Canonical location, schema, ID and derived Markdown must all agree.
+            # Scientific/target admission still runs for every use in _assessment.
+            native.parse_review_bundle(
+                path, inputs.bytes[path], inputs.bytes[markdown], inputs.root / SCHEMA
+            )
+            excluded.update((path, markdown))
+    return {name: digest for name, digest in review["inputs"].items() if name not in excluded}
+
+
 def _prepare(root, review_path):
     inputs = _Inputs(root)
     review_path = Path(review_path)
@@ -509,6 +540,10 @@ def _prepare(root, review_path):
             "holds": case["holds"],
         }
         payloads.append(payload)
+    if inputs.cm_replay:
+        # Exemptions affect only generic request inputs, never the existing
+        # historical/current required closure. Both reports receive this union.
+        inputs.cm_required_inputs.update(_integrated_request_inputs(inputs, review))
     return inputs, review, payloads, records, inventory, len(occurrences)
 
 
