@@ -23,6 +23,8 @@ LOADER = "src/mediaingredientmech/export/source_producer.py"
 MODULES = (
     "mediaingredientmech.export.source_bindings",
     "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.export.culturemech_replay",
+    "mediaingredientmech.export.culturemech_replay_process",
     "mediaingredientmech.additional_mappings",
     "mediaingredientmech.native_acquisition",
     "mediaingredientmech.stable_ids",
@@ -40,6 +42,19 @@ AUXILIARY = (
     "uv.lock",
     "pyproject.toml",
     ".python-version",
+    *(
+        "src/mediaingredientmech/export/_culturemech_capsule/v1/" + name
+        for name in (
+            "manifest.json",
+            "intake.culturemech.py.txt",
+            "intake.culturemech_review.py.txt",
+            "export.reviewed_sssom.py.txt",
+            "curie.py.txt",
+            "review_claims.py.txt",
+            "sssom_metadata.py.txt",
+            "synonym_policy.py.txt",
+        )
+    ),
 )
 RUNTIME_PACKAGES = ("sssom", "curies", "linkml", "linkml-runtime", "jsonschema", "pandas", "PyYAML")
 
