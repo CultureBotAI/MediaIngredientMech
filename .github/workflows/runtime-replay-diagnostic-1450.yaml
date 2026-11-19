@@ -1,0 +1,158 @@
+name: Linux runtime replay diagnostic (1450)
+
+# Bounded evidence for issue 1450; not a required check or release gate.
+# Existing tests.yaml, coverage enforcement, data gates and pins are unchanged.
+on:
+  push:
+    branches:
+      - fix/runtime-ci-diagnosis-20261119
+
+permissions:
+  contents: read
+
+env:
+  UV_PYTHON: "3.13"
+  RECORD_REVIEW_BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before || (github.event_name == 'workflow_dispatch' && 'HEAD') || 'INVALID-REVIEW-BASE' }}
+
+
+jobs:
+  runtime-replay-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      # Native adoption fixtures capture real transaction/lease source files.
+      # Reuse the existing immutable pin without installing Claw or its providers.
+      - name: Read immutable native Claw revision
+        id: native-claw-pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          pin_path = Path("scripts/.vendored_canon_ref")
+          if pin_path.is_symlink() or not pin_path.is_file():
+              raise SystemExit("Canonical pin must be a regular, non-symlink file")
+          with pin_path.open("rb") as stream:
+              pin = stream.read(64)
+          if re.fullmatch(rb"[0-9a-f]{40}\n?", pin) is None:
+              raise SystemExit("Canonical pin must contain one full lowercase commit SHA")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write("ref=" + pin.decode("ascii").strip() + "\n")
+          PY
+
+      - name: Checkout pinned native Claw fixture source
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: ${{ steps.native-claw-pin.outputs.ref }}
+          path: .temp/native-claw
+          persist-credentials: false
+
+      # Additional-assertion integration uses its reviewed producer without
+      # changing the governance pin or historical campaign inputs (#1426).
+      - name: Checkout reviewed additional-assertion producer
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: 7070392fcb5e31282499a599f7147b56b96e5aca
+          path: .temp/additional-assertion-claw
+          persist-credentials: false
+
+      # The worktree recipe regression test needs the real just executable.
+      - uses: extractions/setup-just@v3
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      - name: Install runtime dependencies
+        # --frozen fails if uv.lock is stale (no silent re-resolve in CI). Runtime
+        # deps only; pytest/pytest-cov are layered via `uv run --with` below so the
+        # heavy py>=3.12 dev extras (edison-client / deep-research-client) aren't
+        # pulled for a hermetic unit-test run.
+        run: uv sync --frozen
+
+      - name: Record exact diagnostic runtime and inputs
+        run: |
+          mkdir -p .temp/runtime-ci-diagnostic-1450
+          uv --version | tee .temp/runtime-ci-diagnostic-1450/uv-version.txt
+          uv run --with pytest --with pytest-cov python - <<'PY'
+          import hashlib
+          import importlib.metadata
+          import json
+          import platform
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          names = (
+              '.python-version', 'pyproject.toml', 'uv.lock',
+              '.github/workflows/tests.yaml',
+              '.github/workflows/runtime-replay-diagnostic-1450.yaml',
+              'scripts/.vendored_canon_ref',
+              'src/mediaingredientmech/curate/curation_successor.py',
+              'src/mediaingredientmech/curate/stable_sssom_replay.py',
+              'tests/test_curation_successor_replay_child.py',
+              'tests/test_curation_successor_runtime_dependencies.py',
+              'tests/test_curation_successor_runtime_replay.py',
+          )
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          record = {
+              'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True, timeout=20).strip(),
+              'python': sys.version,
+              'executable': sys.executable,
+              'executable_sha256': sha(sys.executable),
+              'platform': platform.platform(),
+              'packages': {name: importlib.metadata.version(name) for name in ('pytest', 'pytest-cov', 'PyYAML', 'python-dotenv', 'rfc3339-validator')},
+              'inputs_sha256': {name: sha(name) for name in names},
+              'scope': 'Selected runtime modules only; no full-suite or release conclusion',
+          }
+          Path('.temp/runtime-ci-diagnostic-1450/runtime.json').write_text(json.dumps(record, indent=2) + '\n')
+          print(json.dumps(record, indent=2))
+          PY
+
+      - name: Diagnose the unchanged runtime replay modules
+        env:
+          CLAW_SRC: ${{ github.workspace }}/.temp/native-claw/src
+          MIM_ADDITIONAL_ASSERTION_CLAW_SRC: ${{ github.workspace }}/.temp/additional-assertion-claw/src
+        shell: bash
+        run: |
+          set -euo pipefail
+          uv run --with pytest --with pytest-cov pytest \
+            tests/test_curation_successor_replay_child.py \
+            tests/test_curation_successor_runtime_dependencies.py \
+            tests/test_curation_successor_runtime_replay.py \
+            -vv --tb=long --maxfail=1 -ra --durations=20 \
+            --basetemp=.temp/runtime-ci-diagnostic-1450/fixtures \
+            --junitxml=.temp/runtime-ci-diagnostic-1450/pytest.xml \
+            2>&1 | tee .temp/runtime-ci-diagnostic-1450/pytest.log
+
+      - name: Retain diagnostic results even when tests fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-replay-1450-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            .temp/runtime-ci-diagnostic-1450/uv-version.txt
+            .temp/runtime-ci-diagnostic-1450/runtime.json
+            .temp/runtime-ci-diagnostic-1450/pytest.log
+            .temp/runtime-ci-diagnostic-1450/pytest.xml
+            .temp/runtime-ci-diagnostic-1450/fixtures/**/stdout.log
+            .temp/runtime-ci-diagnostic-1450/fixtures/**/stderr.log
+            .temp/runtime-ci-diagnostic-1450/fixtures/**/pytest.xml
+            .temp/runtime-ci-diagnostic-1450/fixtures/**/COMMAND.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
