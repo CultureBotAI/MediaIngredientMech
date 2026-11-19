@@ -83,6 +83,10 @@ jobs:
       - name: Set up Python
         run: uv python install 3.13
 
+      # A full observed patch keeps uv environment metadata authenticated (#1450).
+      - name: Select the installed Python patch for this run
+        run: python3 -I scripts/select_ci_python_patch.py --output .temp/ci-python-selection.json
+
       - name: Install runtime dependencies
         # --frozen fails if uv.lock is stale (no silent re-resolve in CI). Runtime
         # deps only; pytest/pytest-cov are layered via `uv run --with` below so the
@@ -104,3 +108,13 @@ jobs:
 
       - name: Report legacy-script coverage
         run: uv run --with coverage coverage report --include='scripts/*'
+
+      - name: Retain Python selection evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-selection-${{ github.sha }}-${{ github.run_attempt }}
+          path: .temp/ci-python-selection.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
