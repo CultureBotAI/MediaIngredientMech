@@ -5,6 +5,7 @@ from __future__ import annotations
 import ast
 import inspect
 import json
+from collections import Counter
 from copy import deepcopy
 
 import pytest
@@ -337,3 +338,88 @@ def test_unknown_cm_transport_column_refused_before_combination():
     projection["nodes"] = raw_table(list(values[0]), values)
     with pytest.raises(ValueError, match="CM projection headers"):
         assembly.combine_sources(projection, **data)
+
+
+@pytest.mark.parametrize("count", [5, 17])
+def test_family_hashing_is_constant_and_predecessor_bytes_survive(count, monkeypatch):
+    """#1431/#1551: independent abe1e7bb predecessor outputs, not regenerated expectations."""
+    data = inputs()
+    selected = rows(data["kg"]["occurrences"])
+    selected.extend(deepcopy(selected[0]) for _ in range(count - len(selected)))
+    raw = replace_rows(data["kg"]["occurrences"], selected)
+    data["kg"].update(occurrences=raw, occurrences_sha256=sha(raw))
+    projection = assembly.project_culturemech(data["cm"])
+    families = {
+        f"{name}_{kind}": (projection if name == "cm" else data["kg"])[kind]
+        for name in ("cm", "kg")
+        for kind in ("nodes", "occurrences")
+    }
+    names = {sha(value): name for name, value in families.items()}
+    candidate = None
+    for stage, module in (("assembler", assembly), ("inverse", inverse)):
+        calls = Counter()
+        original_hash = module._sha
+
+        def counted(value, original_hash=original_hash, calls=calls):
+            digest = original_hash(value)
+            if digest in names:
+                calls[names[digest]] += 1
+            return digest
+
+        with monkeypatch.context() as patch:
+            patch.setattr(module, "_sha", counted)
+            if stage == "assembler":
+                candidate = assembly.combine_sources(projection, **data)
+            else:
+                result = inverse.validate_source_conservation(candidate, **data)
+                assert result["occurrences"] == count + 5
+                assert result["scientific_approval"] is False
+        assert dict(calls) == {
+            "cm_nodes": 1,
+            "cm_occurrences": 1,
+            "kg_nodes": 1 if stage == "assembler" else 2,
+            "kg_occurrences": 1 if stage == "assembler" else 2,
+        }
+    # Six exact byte artifacts were retained by the independent reviewer before
+    # this repair. Constants bind the no-output-change claim to that predecessor.
+    expected = {
+        "nodes.tsv": "a0d9735099d80d4749a775f05b6136a9890a8ad32df3309d3a264cf85b7577f2",
+        "occurrences.tsv": {
+            5: "cad6f8cc5c36727e3c358a4ba845a482a4a8418014b5c368461cdfe164c93ae9",
+            17: "5cab627c63d360e53745d0aeab75b9d4eefeecc34cbe3848bbc3af116d294d98",
+        }[count],
+        "reconciliation.tsv": "43474ea11a6338bde965b9995c10aec1d4a98f594fb6eff092aeaf0377e0658d",
+        "cm-nodes.tsv": "bab32ca5031a53502a45afec6dbb48c4c19b94a3603292e0ae2abb269b1be80d",
+        "cm-occurrences.tsv": "3dc34e2655777fa600ce83f9296ca6c2361c521a95aa31e9de53a5fe1e3d62cf",
+        "sidecars.json": {
+            5: "ab19d6cc71140f2d77902f386f3aaa8f10cffb46d78aba51f1b48d6c8479a28d",
+            17: "437394e628e670f2a98bea07b91dd3359e6b8f847d6a59dde862318ffcac2883",
+        }[count],
+    }
+    sidecars = {
+        key: value
+        for key, value in candidate.items()
+        if key not in {"cm", "nodes", "occurrences", "reconciliation"}
+    }
+    sidecars["cm"] = {
+        key: value for key, value in candidate["cm"].items() if key not in {"nodes", "occurrences"}
+    }
+    actual = {
+        "nodes.tsv": candidate["nodes"],
+        "occurrences.tsv": candidate["occurrences"],
+        "reconciliation.tsv": candidate["reconciliation"],
+        "cm-nodes.tsv": candidate["cm"]["nodes"],
+        "cm-occurrences.tsv": candidate["cm"]["occurrences"],
+        "sidecars.json": canonical(sidecars).encode(),
+    }
+    assert {name: sha(raw) for name, raw in actual.items()} == expected
+
+
+@pytest.mark.parametrize("kind", ["nodes", "occurrences"])
+def test_inverse_retains_independent_original_pin_check(kind):
+    """#1551: hoisting candidate provenance hashes never bypasses original pins."""
+    data = inputs()
+    candidate = construct(data)
+    data["kg"][kind + "_sha256"] = "f" * 64
+    with pytest.raises(ValueError, match="selected original bytes differ"):
+        inverse.validate_source_conservation(candidate, **data)

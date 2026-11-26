@@ -539,13 +539,14 @@ def validate_source_conservation(
         cursor = 0
         for name, raw, (original_header, original_rows) in family:
             table_path = family_paths[name + "_" + kind]
+            family_digest = _sha(raw)
             for position, original in enumerate(original_rows, 1):
                 row = rows[cursor]
                 cursor += 1
                 _require(
                     row[META[0]] == table_path
                     and row[META[1]] == str(position)
-                    and row[META[2]] == _sha(raw),
+                    and row[META[2]] == family_digest,
                     "family provenance/order differs",
                 )
                 _require(
@@ -561,7 +562,7 @@ def validate_source_conservation(
                     {
                         "kind": kind,
                         "original_table": table_path,
-                        "original_sha256": _sha(raw),
+                        "original_sha256": family_digest,
                         "original_position": position,
                         "native_position": cursor,
                     }

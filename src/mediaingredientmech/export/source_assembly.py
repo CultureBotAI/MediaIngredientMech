@@ -175,20 +175,21 @@ def combine_sources(
         rows = []
         for name, raw, (_, original_rows) in families:
             path = family_paths[name + "_" + kind]
+            family_digest = _sha(raw)
             for position, original in enumerate(original_rows, 1):
                 rows.append(
                     {
                         **{key: original.get(key, "") for key in fields},
                         META[0]: path,
                         META[1]: str(position),
-                        META[2]: _sha(raw),
+                        META[2]: family_digest,
                     }
                 )
                 result["position_map"].append(
                     {
                         "kind": kind,
                         "original_table": path,
-                        "original_sha256": _sha(raw),
+                        "original_sha256": family_digest,
                         "original_position": position,
                         "native_position": len(rows),
                     }
