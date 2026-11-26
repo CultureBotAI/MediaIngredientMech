@@ -311,6 +311,42 @@ invent scientific dispositions or promote the separately accepted intake into a
 combined release. Explicit consumer selection and complete row reconciliation,
 including context, held and zero-valued observations, remain separate gates.
 
+### Explicit combined source conservation (#1431)
+
+The source-only writer's `cm-v3-kgm-source-conservation-v1` declaration profile
+selects a distinct combined route. Its 13 authority references and 11 artifact
+paths remain inside `original_source_scope`; no new request field is needed.
+Pin the declaration, every authority and generated artifact in ordinary
+`review.inputs`. The combined node/occurrence paths and hashes must also match
+`review.source`. CM rows must carry one consistent declaration whose inline
+bytes equal the pinned file. Partial or unknown advertised profiles and a
+combined profile without the exact `culturemech_intake_replay` selection refuse.
+
+The captured producer authenticates the selected original CM package and KG
+owner evidence, then independently reconstructs complete cases, original rows,
+provider payloads, historical obligations and their reviewed crosswalk from the
+actual candidate files. It never calls the source assembler or treats a writer
+PASS receipt as proof. The selector, inverse and codec execute from captured
+bytes. All selected evidence remains required in both current scientific reports
+and the final native `manifest.inputs`; original holds and target/owner checks
+still apply. Historical CM support counts grant no current source approval.
+
+The new conservation capability is emitted only after that combined check,
+current native reviews and genuine original CM replay succeed. An ordinary or
+replay-only request keeps its existing contract and never gains this capability.
+Actual final CM/KGM admission must require all three values:
+`reviewed-source-bindings-v1`, `culturemech-intake-v3-replay-v1`, and
+`cm-v3-kgm-source-conservation-v1`. Omitting the profile can produce only a weaker
+product, which that final combined gate must reject. A consumer supporting only
+the older capabilities must continue to fail closed; its owner separately
+reviews and implements the combined admission requirement. This does not grant
+publication, owner-transition, final-artifact or KG installation authority.
+
+Pure synthetic and call-path tests qualify the implementation separately from
+an actual native combined run. Current selected-input staging, both scientific
+reports, genuine native execution and final consumer admission still require
+their own exact evidence. The existing replay-only fixtures remain unchanged.
+
 The old filename-based MIM addresses remain historical aliases, not new source
 identity approvals. This candidate contract neither rewrites those historical
 reviews nor makes a minted record address equivalent to an unreviewed material.
