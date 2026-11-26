@@ -101,6 +101,14 @@ def _metadata_counts(value: Any) -> None:
     )
 
 
+def _intake_counts(value: Any) -> None:
+    """Validate the producer's one known nested counter map (#1553)."""
+    _require(type(value) is dict, "intake counts must be an object")
+    _metadata_counts({key: count for key, count in value.items() if key != "classifications"})
+    if "classifications" in value:
+        _metadata_counts(value["classifications"])
+
+
 def select_source_inputs(
     captured: dict[str, bytes],
     *,
@@ -232,7 +240,7 @@ def select_source_inputs(
     final_path, final_raw = cm_file(reviewed + "/reviewed-intake.json", package["reviewed_sha256"])
     review_path, review_raw = cm_file(package["review_path"])
     intake, final = document(intake_raw), document(final_raw)
-    _metadata_counts(intake["counts"])
+    _intake_counts(intake["counts"])
     _metadata_counts(final["counts"])
     _require(
         intake["status"] == "PREPARED_PENDING_SOURCE_BINDING_REVIEW"

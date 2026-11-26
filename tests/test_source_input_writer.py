@@ -903,3 +903,88 @@ def test_1553_literal_float_zero_null_and_unknown_payloads_survive(tmp_path):
     assert type(actual[0]["literal"]["quantities"]["zero"]) is float
     assert actual[0]["occurrence_declaration"] == {"status": "UNKNOWN", "count": None}
     assert result["scientific_approval"] is result["native_conservation"] is False
+
+
+def nested_count_fixture(classifications):
+    """Use the full five-field intake count shape, with synthetic populations."""
+    data = count_fixture("intake.classifications", classifications)
+    cap = data["captures"]
+    intake = json.loads(cap["cm/consumer/prepared/intake.json"])
+    intake["counts"].update(source_occurrences=0, context_only_mentions=1, held_source_mentions=0)
+    cap["cm/consumer/prepared/intake.json"] = raw(intake)
+    final = json.loads(cap["cm/consumer/reviewed/reviewed-intake.json"])
+    final["intake_sha256"] = pin(raw(intake))["sha256"]
+    cap["cm/consumer/reviewed/reviewed-intake.json"] = raw(final)
+    package = json.loads(cap["cm/package.json"])
+    for name in package["files"]:
+        package["files"][name] = pin(cap["cm/" + name])
+    package["intake_sha256"] = pin(raw(intake))["sha256"]
+    package["reviewed_sha256"] = pin(raw(final))["sha256"]
+    cap["cm/package.json"] = raw(package)
+    owner = json.loads(cap["authority/owner.json"])
+    intended = owner["intended_accepted_cm_v3"]
+    intended["transport_package"].update(pin(cap["cm/package.json"]))
+    for name, key in (
+        ("prepared_intake", "cm/consumer/prepared/intake.json"),
+        ("reviewed_intake", "cm/consumer/reviewed/reviewed-intake.json"),
+    ):
+        intended["selected"][name].update(pin(cap[key]))
+    cap["authority/owner.json"] = raw(owner)
+    for ref in data["scope"]["authorities"].values():
+        ref["sha256"] = pin(cap[ref["path"]])["sha256"]
+    path = data["controls"]["declaration"]["path"]
+    declaration = json.loads(cap[path])
+    declaration["original_source_scope"] = deepcopy(data["scope"])
+    cap[path] = writer.encoded(declaration)
+    data["controls"]["declaration"]["sha256"] = pin(cap[path])["sha256"]
+    return data
+
+
+def test_1553_documented_nested_intake_count_shape_passes_unchanged(tmp_path):
+    classifications = {
+        "AGREEING_LABEL_AND_IDENTIFIER": 0,
+        "AMBIGUOUS_OWNER": 0,
+        "KNOWN_UNMAPPED_OWNER": 0,
+        "NO_ACTIVE_OWNER": 1,
+        "SOURCE_IDENTIFIER_CONFLICT": 0,
+        "SOURCE_IDENTIFIER_MISSING": 0,
+    }
+    data = nested_count_fixture(classifications)
+    before = deepcopy(data)
+    selected = select(data)
+    assert len(selected["cm"]["cases"]) == 1
+    plan = plan_at(tmp_path, data)
+    result = writer.execute(tmp_path, plan, context(plan), guard)
+    assert result["accounting"]["cm_lanes"] == {"context_only": 1}
+    assert result["scientific_approval"] is result["native_conservation"] is False
+    counts = json.loads(data["captures"]["cm/consumer/prepared/intake.json"])["counts"]
+    assert counts == {
+        "cases": 1,
+        "source_occurrences": 0,
+        "context_only_mentions": 1,
+        "held_source_mentions": 0,
+        "classifications": classifications,
+    }
+    assert data == before
+    assert (tmp_path / "cm/consumer/prepared/intake.json").read_bytes() == before["captures"][
+        "cm/consumer/prepared/intake.json"
+    ]
+
+
+@pytest.mark.parametrize("value", [True, False, 1.0, "1", None, -1])
+def test_1553_nested_classification_counters_are_exact_nonnegative_int(value):
+    with pytest.raises(ValueError, match="metadata counts must be nonnegative integers"):
+        select(nested_count_fixture({"NO_ACTIVE_OWNER": value}))
+
+
+@pytest.mark.parametrize("value", [None, True, [], "NO_ACTIVE_OWNER"])
+def test_1553_classifications_requires_its_documented_object_shape(value):
+    with pytest.raises(ValueError, match="metadata counts must be an object"):
+        select(nested_count_fixture(value))
+
+
+def test_1553_only_documented_counter_nesting_is_recognized():
+    with pytest.raises(ValueError, match="metadata counts must be nonnegative integers"):
+        select(nested_count_fixture({"NO_ACTIVE_OWNER": {"unexpected": 1}}))
+    with pytest.raises(ValueError, match="metadata counts must be nonnegative integers"):
+        select(count_fixture("intake.unrecognized_nested_map", {"value": 1}))
