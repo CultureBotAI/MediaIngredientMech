@@ -1,10 +1,10 @@
-name: Scalar native proof diagnostic (1545)
+name: Inherited CAS native proof diagnostic (1450)
 
 # Non-gating evidence only. Existing required workflows/tests/pins stay intact.
 on:
   push:
     branches:
-      - diagnose/scalar-native-proof-1545-20261119
+      - diagnose/inherited-cas-proof-1450-20261126
 permissions:
   contents: read
 env:
@@ -18,11 +18,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - scope: two-native-corrections
-            node: tests/test_curation_successor_chain.py::test_two_native_corrections_commit_verify_and_generate
-            seconds: 1200
-          - scope: semantic-relocation
-            node: tests/test_semantic_publication_transition.py::test_1392_actual_corrective_pair_and_history_survive_native_publication_relocation
+          - scope: inherited-cas-chain
+            node: tests/test_inherited_cas_source_chain.py::test_native_inherited_cas_withdrawal_publication_and_semantic_chain
             seconds: 1200
     steps:
       - uses: actions/checkout@v4
@@ -115,6 +112,7 @@ jobs:
               '.github/workflows/tests.yaml', workflow,
               'scripts/select_ci_python_patch.py', 'scripts/.vendored_canon_ref',
               'tests/test_curation_successor_chain.py',
+              'tests/test_inherited_cas_source_chain.py',
               'tests/test_semantic_publication_transition.py',
               'tests/test_semantic_owner_transition.py',
               'tests/test_curation_successor_publication.py',
@@ -145,7 +143,7 @@ jobs:
               'claw_heads': {name: subprocess.check_output(['git', '-C', '.temp/' + name, 'rev-parse', 'HEAD'], text=True, timeout=30).strip() for name in ('native-claw', 'additional-assertion-claw')},
               'cgroup_memory_events_before': cg.read_text() if cg.is_file() else None,
               'selected_node': '${{ matrix.node }}',
-              'scope': 'Two isolated native proof cases; not a scalar-test rerun, full-suite or release qualification',
+              'scope': 'One unchanged inherited-CAS native proof case for #1450; not a full-suite or release qualification',
           }
           path = Path('.temp/scalar-native-proof-1545/runtime.json')
           with path.open('x') as stream:
@@ -184,7 +182,7 @@ jobs:
             timeout --signal=TERM --kill-after=30s '${{ matrix.seconds }}s' \
             uv run --with pytest --with pytest-cov pytest \
               '${{ matrix.node }}' \
-              -vv --tb=long --maxfail=1 -ra --durations=20 \
+              -vv --tb=long --maxfail=1 -ra --durations=20 --capture=tee-sys \
               --basetemp=.temp/scalar-native-proof-1545/fixtures \
               --junitxml=.temp/scalar-native-proof-1545/pytest.xml \
               2>&1 | tee .temp/scalar-native-proof-1545/pytest.log
@@ -215,6 +213,7 @@ jobs:
             .temp/scalar-native-proof-1545/*.txt
             .temp/scalar-native-proof-1545/*.log
             .temp/scalar-native-proof-1545/*.xml
+            .temp/scalar-native-proof-1545/fixtures/**/progress.jsonl
           include-hidden-files: true
           if-no-files-found: warn
           retention-days: 14
