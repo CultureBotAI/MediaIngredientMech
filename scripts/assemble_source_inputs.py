@@ -412,6 +412,7 @@ def execute(
         require(
             sha(item.content) == pin["sha256"]
             and type(pin["bytes"]) is int
+            and pin["bytes"] >= 0
             and len(item.content) == pin["bytes"],
             "selected input bytes differ",
         )

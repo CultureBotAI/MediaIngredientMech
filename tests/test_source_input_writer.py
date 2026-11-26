@@ -723,3 +723,183 @@ def test_isolated_cli_uses_exact_committed_sources_and_runtime(tmp_path):
 def test_bootstrap_requires_actual_isolated_flags():
     with pytest.raises(ValueError, match="-I -B"):
         writer.bootstrap(ROOT, ROOT / "unused.json", "0" * 64)
+
+
+def count_fixture(field=None, value=None):
+    """#1553: one selected context case, preserving independently pinned inputs.
+
+    This reproduces the reviewer's tiny positive and six malformed metadata
+    cases. Rebinding synthetic metadata is not a replacement of real authority.
+    """
+    data = fixture()
+    cap = data["captures"]
+    packet = json.loads(cap["cm/consumer/prepared/review-packet.json"])
+    packet["cases"] = packet["cases"][:1]
+    case_id = packet["cases"][0]["case_id"]
+    cap["cm/consumer/prepared/review-packet.json"] = raw(packet)
+    for name in ("source-mentions.tsv", "source-held-mentions.tsv"):
+        key = "cm/consumer/prepared/" + name
+        fields = next(csv.reader(cap[key].decode().splitlines(), delimiter="\t"))
+        cap[key] = raw_table(fields, [row for row in rows(cap[key]) if row["case_id"] == case_id])
+    bindings_key = "cm/consumer/reviewed/binding-dispositions.tsv"
+    bindings = [row for row in rows(cap[bindings_key]) if row["case_id"] == case_id]
+    cap[bindings_key] = raw_table(list(bindings[0]), bindings)
+    intake = json.loads(cap["cm/consumer/prepared/intake.json"])
+    final = json.loads(cap["cm/consumer/reviewed/reviewed-intake.json"])
+    transport = json.loads(cap["kg/manifest.json"])
+    owner = json.loads(cap["authority/owner.json"])
+    intake["counts"]["cases"] = 1
+    final["counts"] = {"WITHHOLD": 1}
+    intended = owner["intended_accepted_cm_v3"]
+    intended["expected_counts"] = {"positive_inventory": 0, "context_only": 1, "held": 0}
+    groups = {
+        "intake": intake["counts"],
+        "dispositions": final["counts"],
+        "transport": transport["counts"],
+        "rows": owner["row_counts"],
+        "provider": owner["provider_counts"]["microbedecoder"],
+        "lanes": intended["expected_counts"],
+    }
+    if field is not None:
+        group, key = field.split(".")
+        groups[group][key] = value
+    for name in intake["files"]:
+        intake["files"][name] = pin(cap["cm/consumer/prepared/" + name])
+    cap["cm/consumer/prepared/intake.json"] = raw(intake)
+    final["intake_sha256"] = pin(raw(intake))["sha256"]
+    final["files"]["binding-dispositions.tsv"] = pin(cap[bindings_key])
+    cap["cm/consumer/reviewed/reviewed-intake.json"] = raw(final)
+    package = json.loads(cap["cm/package.json"])
+    for name in package["files"]:
+        package["files"][name] = pin(cap["cm/" + name])
+    package["intake_sha256"] = pin(raw(intake))["sha256"]
+    package["reviewed_sha256"] = pin(raw(final))["sha256"]
+    cap["cm/package.json"] = raw(package)
+    cap["kg/manifest.json"] = raw(transport)
+    intended["transport_package"].update(pin(cap["cm/package.json"]))
+    for name, key in (
+        ("prepared_intake", "cm/consumer/prepared/intake.json"),
+        ("reviewed_intake", "cm/consumer/reviewed/reviewed-intake.json"),
+    ):
+        intended["selected"][name].update(pin(cap[key]))
+    owner["kg_transport_manifest_sha256"] = pin(cap["kg/manifest.json"])["sha256"]
+    cap["authority/owner.json"] = raw(owner)
+    for ref in data["scope"]["authorities"].values():
+        ref["sha256"] = pin(cap[ref["path"]])["sha256"]
+    path = data["controls"]["declaration"]["path"]
+    declaration = json.loads(cap[path])
+    declaration["original_source_scope"] = deepcopy(data["scope"])
+    cap[path] = writer.encoded(declaration)
+    data["controls"]["declaration"]["sha256"] = pin(cap[path])["sha256"]
+    return data
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("intake.cases", True),
+        ("dispositions.WITHHOLD", True),
+        ("transport.original_origins", True),
+        ("transport.kg_cases", 4.0),
+        ("lanes.context_only", True),
+        ("provider.occurrences", True),
+    ],
+)
+def test_1553_six_reviewed_malformed_counts_refuse_before_output(tmp_path, field, value):
+    data = count_fixture(field, value)
+    plan = plan_at(tmp_path, data)
+    with pytest.raises(ValueError, match="metadata counts must be nonnegative integers"):
+        writer.execute(tmp_path, plan, context(plan), guard)
+    assert not (tmp_path / "output").exists()
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "intake.cases",
+        "dispositions.WITHHOLD",
+        "transport.original_cases",
+        "transport.original_origins",
+        "transport.kg_cases",
+        "rows.provider_cases",
+        "rows.kg_source_ids",
+        "rows.kg_occurrences",
+        "provider.cases",
+        "provider.occurrences",
+        "lanes.positive_inventory",
+        "lanes.context_only",
+        "lanes.held",
+    ],
+)
+@pytest.mark.parametrize("value", [True, False, 1.0, "1", None, -1])
+def test_1553_consumed_count_types_are_not_coerced(field, value):
+    with pytest.raises(ValueError, match="metadata counts must be nonnegative integers"):
+        select(count_fixture(field, value))
+
+
+# Exact valid synthetic predecessor data, independently retained for #1553.
+COUNT_REPAIR_BASELINE = {
+    "cm-case-crosswalk.json": "55aec685059c719d6567988ca9f96eba0427cabfcd8c3809fe9306228cd2b8c8",
+    "cm-raw-row-map.json": "6ea037ed880a6dacdcc899a91bb90546a245ababdff778cda89234b6293a6013",
+    "cm-reconciliation.tsv": "b567301721532c5e1966bc06af3c0ad7ff4de2932e6bcce5d6f86d2640ea8151",
+    "cm-source-nodes.tsv": "be3ff2c42b6804a8cc507cff08784224cea366d2db7965d6758bf053df131500",
+    "cm-source-occurrences.tsv": "683c8a009e8ceaeebf8316e705f5cfdc636fa5f3d8c03af76964c5fb3fb4c3ff",
+    "combined-position-map.json": "69a4425e5487e200e8450774a402f2fa2d6b120dcf2726049cc0eede7a2967b2",
+    "curie-map.json": "b9f3eaef09ed2ef62267c1e96731efdb4a4485d7bb1100a1189ad61d2360aecd",
+    "historical-obligations.json": "7783e8134658e7341f9be8bb1d29ba3f236bbe8032f3f029363a2d4878fe37aa",
+    "kg-provider-cases.json": "70b3bd29a0965a6b6766bd333e50ff70e0efdb54f8ed662efb5ec022ae29c020",
+    "obligation-crosswalk.json": "52bda2ff204b0fc7f5837b4d733767473a71a890a4df881920310125e14c9978",
+    "projection-declaration.json": "8fb40ce48d6f3a46a81e3fed951b773f0ab20e9d1fe65e8816619831423adf67",
+    "source-nodes.tsv": "9e827ab1504e59beac64c494a6a15f90781ec86deb12cc8b708600d1fd614c34",
+    "source-occurrences.tsv": "38d5e844ee63c5aca1a349f6c26b960009ba8e75a8f9d6e3bb04294bd1153c41",
+}
+
+
+def test_1553_valid_integer_zero_one_preserves_predecessor_data(tmp_path):
+    data = count_fixture()
+    plan = plan_at(tmp_path, data)
+    result = writer.execute(tmp_path, plan, context(plan), guard)
+    assert result["accounting"]["cm_cases"] == 1
+    assert result["accounting"]["cm_lanes"] == {"context_only": 1}
+    assert result["scientific_approval"] is result["native_conservation"] is False
+    for name, expected in COUNT_REPAIR_BASELINE.items():
+        assert pin((tmp_path / "output" / name).read_bytes())["sha256"] == expected
+
+
+def test_1553_literal_float_zero_null_and_unknown_payloads_survive(tmp_path):
+    """Only accounting counts are integers; source quantities remain literal."""
+    data = fixture()
+    cap = data["captures"]
+    ledger = json.loads(cap["original/cases.json"])
+    ledger[0]["literal"]["quantities"] = {"amount": 0.125, "zero": 0.0, "unknown": None}
+    ledger[0]["occurrence_declaration"] = {"status": "UNKNOWN", "count": None}
+    cap["original/cases.json"] = raw(ledger)
+    accounting = json.loads(cap["original/accounting.json"])
+    accounting["case_ledger"]["sha256"] = pin(cap["original/cases.json"])["sha256"]
+    cap["original/accounting.json"] = raw(accounting)
+    transport = json.loads(cap["kg/manifest.json"])
+    transport["inputs"]["cases"].update(pin(cap["original/cases.json"]))
+    transport["inputs"]["accounting"].update(pin(cap["original/accounting.json"]))
+    cap["kg/manifest.json"] = raw(transport)
+    owner = json.loads(cap["authority/owner.json"])
+    owner["kg_transport_manifest_sha256"] = pin(cap["kg/manifest.json"])["sha256"]
+    cap["authority/owner.json"] = raw(owner)
+    crosswalk_path = data["controls"]["reviewed_crosswalk"]["path"]
+    crosswalk = json.loads(cap[crosswalk_path])
+    crosswalk["cases"][ledger[0]["case_id"]]["original_sha256"] = payload_sha256(ledger[0])
+    cap[crosswalk_path] = raw(crosswalk)
+    data["controls"]["reviewed_crosswalk"]["sha256"] = pin(cap[crosswalk_path])["sha256"]
+    for ref in data["scope"]["authorities"].values():
+        ref["sha256"] = pin(cap[ref["path"]])["sha256"]
+    path = data["controls"]["declaration"]["path"]
+    declaration = json.loads(cap[path])
+    declaration["original_source_scope"] = deepcopy(data["scope"])
+    cap[path] = writer.encoded(declaration)
+    data["controls"]["declaration"]["sha256"] = pin(cap[path])["sha256"]
+    plan = plan_at(tmp_path, data)
+    result = writer.execute(tmp_path, plan, context(plan), guard)
+    actual = json.loads((tmp_path / "output/kg-provider-cases.json").read_bytes())
+    assert writer.encoded(actual[0]) == writer.encoded(ledger[0])
+    assert type(actual[0]["literal"]["quantities"]["zero"]) is float
+    assert actual[0]["occurrence_declaration"] == {"status": "UNKNOWN", "count": None}
+    assert result["scientific_approval"] is result["native_conservation"] is False

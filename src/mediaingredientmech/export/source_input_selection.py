@@ -92,6 +92,15 @@ def _indexed(value: Any, key: str) -> dict[str, Any]:
     return result
 
 
+def _metadata_counts(value: Any) -> None:
+    """Counts are JSON integers, never bool/float equality aliases (#1553)."""
+    _require(type(value) is dict, "metadata counts must be an object")
+    _require(
+        all(type(count) is int and count >= 0 for count in value.values()),
+        "metadata counts must be nonnegative integers",
+    )
+
+
 def select_source_inputs(
     captured: dict[str, bytes],
     *,
@@ -119,7 +128,10 @@ def select_source_inputs(
         path = _path(path)
         _require(path in captured, "selected input missing: " + path)
         raw = _pin(captured[path], digest)
-        _require(size is None or (type(size) is int and len(raw) == size), "input size differs")
+        _require(
+            size is None or (type(size) is int and size >= 0 and len(raw) == size),
+            "input size differs",
+        )
         _require(path not in consumed or consumed[path] == digest, "conflicting input pins")
         consumed[path] = digest
         return raw
@@ -138,13 +150,18 @@ def select_source_inputs(
         raw = role(name)
         _require(pin.get("sha256") == refs[name]["sha256"], "independent authority differs")
         _require(
-            type(pin.get("bytes")) is int and len(raw) == pin["bytes"], "authority size differs"
+            type(pin.get("bytes")) is int and pin["bytes"] >= 0 and len(raw) == pin["bytes"],
+            "authority size differs",
         )
 
     for name in AUTHORITY_ROLES:
         role(name)
     owner = document(role("kg_source_selection"))
     _require(type(owner) is dict, "owner selection is not an object")
+    _metadata_counts(owner["row_counts"])
+    _require(type(owner["provider_counts"]) is dict, "provider counts must be an object")
+    for counts in owner["provider_counts"].values():
+        _metadata_counts(counts)
     linked("kg_source_manifest", owner["source_receipt"])
     linked("kg_row_reconciliation", owner["row_reconciliation"])
     for name, filename in (
@@ -154,12 +171,14 @@ def select_source_inputs(
     ):
         linked(name, owner["ledgers"][filename])
     intended = owner["intended_accepted_cm_v3"]
+    _metadata_counts(intended["expected_counts"])
     linked("culturemech_package", intended["transport_package"])
     _require(
         refs["kg_transport_manifest"]["sha256"] == owner["kg_transport_manifest_sha256"],
         "owner-selected transport differs",
     )
     transport = document(role("kg_transport_manifest"))
+    _metadata_counts(transport["counts"])
     for name, original in (
         ("original_case_ledger", "cases"),
         ("original_origin_ledger", "origins"),
@@ -213,6 +232,8 @@ def select_source_inputs(
     final_path, final_raw = cm_file(reviewed + "/reviewed-intake.json", package["reviewed_sha256"])
     review_path, review_raw = cm_file(package["review_path"])
     intake, final = document(intake_raw), document(final_raw)
+    _metadata_counts(intake["counts"])
+    _metadata_counts(final["counts"])
     _require(
         intake["status"] == "PREPARED_PENDING_SOURCE_BINDING_REVIEW"
         and final["status"] == "REVIEWED_SOURCE_INTAKE"
@@ -234,14 +255,20 @@ def select_source_inputs(
     ):
         pin = intended["selected"][name]
         _require(
-            pin["sha256"] == _sha(raw) and type(pin["bytes"]) is int and pin["bytes"] == len(raw),
+            pin["sha256"] == _sha(raw)
+            and type(pin["bytes"]) is int
+            and pin["bytes"] >= 0
+            and pin["bytes"] == len(raw),
             "owner-selected CM metadata differs",
         )
 
     def artifact(prefix: str, manifest: dict[str, Any], name: str) -> tuple[str, bytes]:
         pin = manifest["files"][name]
         path, raw = cm_file(prefix + "/" + name, pin["sha256"])
-        _require(type(pin["bytes"]) is int and len(raw) == pin["bytes"], "CM artifact size differs")
+        _require(
+            type(pin["bytes"]) is int and pin["bytes"] >= 0 and len(raw) == pin["bytes"],
+            "CM artifact size differs",
+        )
         return path, raw
 
     _, packet_raw = artifact(prepared, intake, "review-packet.json")
