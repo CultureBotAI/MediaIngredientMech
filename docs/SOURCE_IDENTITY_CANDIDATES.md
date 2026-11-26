@@ -18,6 +18,49 @@ It grants no approval. Export requires two actually authored native scientific
 reviews of each target. The same module supports `--root`, `--review`,
 `--inspect`, `--output` and `--validate-only` for explicit isolated roots.
 
+### Preparing combined CM/KGM source inputs
+
+The maintained source-only writer is `scripts/assemble_source_inputs.py`
+(#1431). After independent review of its exact committed code, runtime,
+selection, declaration, original authority files and complete obligation
+crosswalk, invoke the retained Python 3.13 interpreter directly:
+
+```bash
+PY -I -B scripts/assemble_source_inputs.py --root /absolute/isolated/root \
+  --selection inputs/source-selection.json --selection-sha256 REVIEWED_SHA256
+```
+
+`PY` denotes the reviewed interpreter, not an environment update command.
+The selection fixes `schema_version: 1`, `head`, the exact `implementation`
+file hashes listed by the script, `runtime` (`executable`, `version`, `sha256`),
+`scope`, `declaration`, `curie_map`, `reviewed_crosswalk`, `output_directory`
+and `inputs`. Control refs contain exactly `path` and `sha256`; each input
+inventory entry contains `sha256` and `bytes`. All paths are root-relative.
+Inputs must already be immutable regular copies; the writer does not stage,
+download, edit, or silently select them. `-I` ignores `PYTHONPATH`: the script
+explicitly verifies the isolated source origins, committed bytes and runtime,
+and refuses foreign preloaded modules and selected bytecode caches.
+
+The separately reviewed scope has the closed
+`cm-v3-kgm-source-conservation-v1` profile, with `authorities` and `artifacts`.
+The fixed roles are defined in `export/source_input_selection.py`. Authority
+refs bind the accepted CM package and independently selected KGM owner,
+closure, transport, ledgers and complete original case/origin obligations.
+The declaration must match that separate selection. Generated artifact roles
+contain paths only: output digests and the ID-bearing crosswalk digest cannot
+enter the declaration that determines source-reference IDs.
+
+The writer reserves a new directory and 15 fixed files, preserves complete
+literal originals, and checks actual output readback with the independent
+inverse. The ordinary 131072-character CSV cell limit is unchanged, including
+the complete inline declaration. Its `manifest.json` can report only
+`SOURCE_INPUTS_ASSEMBLED_UNREVIEWED`; scientific approval, native conservation
+and publication authority remain false. Partial files or a success-shaped
+manifest without a genuine successful terminal and final lineage/input checks
+are not acceptance. Failed outputs are retained, never overwritten or cleaned
+up automatically. Native conservation, both current scientific reviews and all
+ordinary release/consumer gates still follow separately.
+
 ## Input contract
 
 The closed top-level JSON object has these fields (version 1):
