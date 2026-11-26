@@ -15,11 +15,14 @@ import json
 import re
 import tempfile
 import types
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Protocol, TypedDict, runtime_checkable
 
 from mediaingredientmech.export import culturemech_replay
 from mediaingredientmech.export import reviewed_sssom as external
+from mediaingredientmech.export import source_conservation as conservation
+from mediaingredientmech.export import source_input_selection as source_selection
 from mediaingredientmech.mapping_scope import _load_yaml
 from mediaingredientmech.review_claims import payload_sha256
 from mediaingredientmech.stable_ids import (
@@ -83,6 +86,9 @@ PRODUCER_PATHS = (
     "src/mediaingredientmech/export/source_producer.py",
     "src/mediaingredientmech/export/culturemech_replay.py",
     "src/mediaingredientmech/export/culturemech_replay_process.py",
+    "src/mediaingredientmech/export/source_input_selection.py",
+    "src/mediaingredientmech/export/source_conservation.py",
+    "src/mediaingredientmech/export/culturemech_layout.py",
     *culturemech_replay.RESOURCES,
 )
 PRODUCER_AUXILIARY = ("uv.lock", "pyproject.toml", ".python-version")
@@ -170,6 +176,7 @@ class _Inputs:
         self.reports: dict[str, tuple[dict[str, Any], dict[str, str], dict[str, str]]] = {}
         self.cm_replay = None
         self.cm_required_inputs = {}
+        self.combined_conservation = False
         self.git_head = _require_capture().start_context(self.root)
 
     def read(self, name, expected=None):
@@ -393,6 +400,552 @@ def _integrated_request_inputs(inputs, review):
     return {name: digest for name, digest in review["inputs"].items() if name not in excluded}
 
 
+def _combined_input(inputs, review, name, *, expected=None, size=None):
+    """Read an explicitly selected ordinary input, never a historical absolute path."""
+    name = conservation._path(name)
+    _require(name in review["inputs"], "combined input must be explicitly pinned: " + name)
+    digest = review["inputs"][name]
+    _require(expected is None or expected == digest, "combined input pin conflicts: " + name)
+    _require(name in inputs.bytes, "combined input was not captured: " + name)
+    raw = conservation._pin(inputs.bytes[name], digest)
+    _require(inputs.hashes.get(name) == digest, "combined captured pin differs: " + name)
+    _require(
+        size is None or (type(size) is int and size >= 0 and len(raw) == size),
+        "combined input size differs: " + name,
+    )
+    return raw
+
+
+def _combined_declaration(rows):
+    """Recognize only an advertised profile in actual source-row declarations.
+
+    Historical CM rows without this profile retain their existing limited
+    meaning. An advertised malformed/unknown profile cannot fall back to it.
+    Unrelated source extra cells remain opaque, including in combined tables
+    (#1555); only CM-marked or explicitly advertised rows join this cohort.
+    """
+    declarations = []
+    cohort = []
+    for row in rows:
+        marked = (
+            row.get("source_id", "").startswith(conservation.CM_PREFIX + ":")
+            or row.get("projection_contract") == conservation.DOMAIN
+        )
+        if marked:
+            cohort.append(row)
+        text = row.get("projection_declaration_json", "")
+        if not text:
+            continue
+        try:
+            value = conservation._json(text)
+        except ValueError:
+            if marked:
+                raise
+            continue
+        scope = value.get("original_source_scope") if type(value) is dict else None
+        advertised = type(scope) is dict and bool(
+            {"profile", "authorities", "artifacts"} & set(scope)
+        )
+        if not marked and not advertised:
+            continue
+        _require(type(value) is dict, "source projection declaration must be an object")
+        _require(type(scope) is dict, "source projection scope must be an object")
+        if type(scope) is dict and advertised:
+            source_selection.validate_scope(scope)
+            if not marked:
+                cohort.append(row)
+            declarations.append(
+                (
+                    text,
+                    row.get("projection_declaration_sha256"),
+                    row.get("projection_declaration_path"),
+                )
+            )
+    if not declarations:
+        return None
+    _require(len(set(declarations)) == 1, "competing combined source declarations")
+    declaration = declarations[0]
+    for row in cohort:
+        _require(
+            tuple(
+                row.get(key)
+                for key in (
+                    "projection_declaration_json",
+                    "projection_declaration_sha256",
+                    "projection_declaration_path",
+                )
+            )
+            == declaration,
+            "CM cohort declaration is missing or inconsistent",
+        )
+    return declaration
+
+
+def _combined_document(raw):
+    value = conservation._json(raw.decode("utf-8"))
+    conservation._canonical(value)
+    return value
+
+
+def _combined_kg_inputs(inputs, review, scope):
+    """Bind every selected closure member using the maintained receipt-relative join."""
+    refs = scope["authorities"]
+    owner = _combined_document(inputs.bytes[refs["kg_source_selection"]["path"]])
+    receipt = _combined_document(inputs.bytes[refs["kg_source_manifest"]["path"]])
+    proof = _combined_document(inputs.bytes[refs["kg_row_reconciliation"]["path"]])
+    revision = owner["selected_kgm"]["revision"]
+    _require(
+        type(revision) is str
+        and re.fullmatch(r"[0-9a-f]{40}", revision)
+        and type(owner["schema_version"]) is int
+        and owner["schema_version"] == 1
+        and owner["status"] == "REVIEWED_HISTORICAL_SOURCE_CLOSURE"
+        and owner["production_admission"] is False
+        and type(receipt["schema_version"]) is int
+        and receipt["schema_version"] == 1
+        and receipt["upstream_revision"] == revision == proof["kgm_revision"]
+        and proof["kg_manifest_sha256"] == refs["kg_transport_manifest"]["sha256"],
+        "selected KG closure/revision/transport differs",
+    )
+    members = receipt["files"]
+    _require(type(members) is dict and bool(members), "KG closure has no member inventory")
+    base = Path(refs["kg_source_manifest"]["path"]).parent
+    required = {}
+    for name, pin in members.items():
+        name = conservation._path(name)
+        _keys(pin, {"sha256", "bytes"})
+        path = (base / name).as_posix()
+        _combined_input(inputs, review, path, expected=pin["sha256"], size=pin["bytes"])
+        _require(path != refs["kg_source_manifest"]["path"], "self-referencing KG closure")
+        required[path] = pin["sha256"]
+    parent = receipt["parent_manifest"]
+    _keys(parent, {"path", "sha256"})
+    _require(
+        members.get(parent["path"], {}).get("sha256")
+        == parent["sha256"]
+        == proof["historical_manifest_sha256"],
+        "KG historical row-proof parent differs",
+    )
+    prior = owner["consumed_prior_mim"]
+    consumed = receipt["consumed_reviewed"]
+    _require(
+        conservation._canonical(prior["partition_pins"]) == conservation._canonical(consumed)
+        and prior["source_commit"] == consumed["source_commit"] == receipt["mim_revision"]
+        and type(consumed["source_commit"]) is str
+        and re.fullmatch(r"[0-9a-f]{40}", consumed["source_commit"]),
+        "selected prior-consumed MIM provenance differs",
+    )
+    _keys(
+        consumed["files"],
+        {
+            "manifest.json",
+            "ingredient_mappings.sssom.tsv",
+            "withheld_mappings.sssom.tsv",
+            "mapping-dispositions.tsv",
+        },
+    )
+    for name, digest in consumed["files"].items():
+        member = (Path(conservation._path(consumed["directory"])) / name).as_posix()
+        _require(members.get(member, {}).get("sha256") == digest, "KG prior partition differs")
+    pin_name = "snapshots/mappings/mim_reviewed_release.json"
+    _require(
+        members.get(pin_name) == {k: prior["committed_pin_record"][k] for k in ("sha256", "bytes")},
+        "selected prior release record differs",
+    )
+    pinned = _combined_document(inputs.bytes[(base / pin_name).as_posix()])
+    _require(
+        pinned["source_commit"] == consumed["source_commit"]
+        and pinned["manifest_sha256"]
+        == consumed["manifest_sha256"]
+        == consumed["files"]["manifest.json"]
+        and pinned["files"] == {k: v for k, v in consumed["files"].items() if k != "manifest.json"},
+        "KG prior release record/partitions disagree",
+    )
+    for role, name in (
+        ("kg_full_node_ledger", "full-node-ledger.json"),
+        ("kg_full_row_ledger_json", "full-row-ledger.json"),
+        ("kg_full_row_ledger_tsv", "full-row-ledger.tsv"),
+    ):
+        pin = proof["outputs"][name]
+        _keys(pin, {"sha256", "bytes", "row_count"})
+        source_selection._metadata_counts({"bytes": pin["bytes"], "row_count": pin["row_count"]})
+        _require(refs[role]["sha256"] == pin["sha256"], "row-proof ledger pin differs")
+        _combined_input(
+            inputs, review, refs[role]["path"], expected=pin["sha256"], size=pin["bytes"]
+        )
+    return required
+
+
+def _combined_graph_rows(raw):
+    """Frozen KG graphs use explicit unquoted TSV; retain the native character ceiling."""
+    stream = io.BytesIO(raw)
+    fields = stream.readline().rstrip(b"\r\n").decode("utf-8").split("\t")
+    _require(
+        bool(fields) and all(fields) and len(set(fields)) == len(fields), "invalid KG graph header"
+    )
+    for field in fields:
+        conservation._cell(field)
+    yield fields
+    for line in stream:
+        cells = line.rstrip(b"\r\n").decode("utf-8").split("\t")
+        _require(len(cells) == len(fields), "KG graph row width differs")
+        for cell in cells:
+            conservation._cell(cell)
+        yield dict(zip(fields, cells, strict=True))
+
+
+def _combined_kg_accounting(inputs, scope, result):
+    """Recheck original KG positions and full graph incidence, not historical CM offsets."""
+    refs = scope["authorities"]
+
+    def role(name):
+        return _combined_document(inputs.bytes[refs[name]["path"]])
+
+    owner, proof = role("kg_source_selection"), role("kg_row_reconciliation")
+    receipt = role("kg_source_manifest")
+    base = Path(refs["kg_source_manifest"]["path"]).parent
+    nodes = conservation._read_table(inputs.bytes[refs["kg_nodes"]["path"]])[1]
+    occurrences = conservation._read_table(inputs.bytes[refs["kg_occurrences"]["path"]])[1]
+    node_ledger, ledger = role("kg_full_node_ledger"), role("kg_full_row_ledger_json")
+    fields, tsv = conservation._read_table(inputs.bytes[refs["kg_full_row_ledger_tsv"]["path"]])
+    _require(
+        fields
+        == (
+            "provider",
+            "source_id",
+            "kg_occurrence_row",
+            "combined_global_row",
+            "graph_member",
+            "graph_row",
+            "kg_occurrence_row_sha256",
+            "combined_row_sha256",
+            "graph_row_sha256",
+            "full_row_json",
+        ),
+        "KG row-ledger columns differ",
+    )
+    _require(
+        type(node_ledger) is list
+        and type(ledger) is list
+        and len(node_ledger) == len(nodes) == proof["outputs"]["full-node-ledger.json"]["row_count"]
+        and len(ledger)
+        == len(tsv)
+        == len(occurrences)
+        == proof["outputs"]["full-row-ledger.json"]["row_count"]
+        == proof["outputs"]["full-row-ledger.tsv"]["row_count"],
+        "KG original/ledger membership differs",
+    )
+    providers: dict[str, set[str]] = {name: set() for name in owner["provider_counts"]}
+    _require(
+        set(providers) <= {"mediadive", "microbedecoder", "metatraits", "metatraits_gtdb"}
+        and bool(providers),
+        "unknown KG provider",
+    )
+    expected_nodes: dict[str, dict[int, str]] = defaultdict(dict)
+    for ordinal, (node, entry) in enumerate(zip(nodes, node_ledger, strict=True), 1):
+        _keys(entry, {"kg_node_row", "node", "combined_global_row", "combined_row"})
+        _require(
+            type(entry["kg_node_row"]) is int
+            and entry["kg_node_row"] == ordinal
+            and conservation._canonical(entry["node"]) == conservation._canonical(node),
+            "KG original node coordinate/payload differs",
+        )
+        _require(
+            type(entry["combined_global_row"]) is int and entry["combined_global_row"] > 0,
+            "invalid historical combined node position",
+        )
+        scopes = conservation._json(node["providers_json"])
+        current = conservation._json(node["current_graph_node_rows_json"])
+        _require(
+            type(scopes) is list
+            and all(type(x) is str and x in providers for x in scopes)
+            and len(scopes) == len(set(scopes))
+            and type(current) is list
+            and Counter(scopes) == Counter(item["provider"] for item in current),
+            "KG node provider multiplicity differs",
+        )
+        for name in scopes:
+            providers[name].add(node["source_id"])
+        for item in current:
+            source, position = item["provider"], item["position"]
+            member = f"data/transformed/{source}/nodes.tsv"
+            _require(
+                type(position) is int and position > 0 and position not in expected_nodes[member],
+                "duplicate/invalid graph node coordinate",
+            )
+            pin = proof["graph_members"][member]
+            _require(
+                item["row"].get("id") == node["source_id"]
+                and type(item["input"]["bytes"]) is int
+                and item["input"]["bytes"] >= 0
+                and item["input"]["path"] == owner["selected_kgm"]["root"] + "/" + member
+                and all(item["input"][k] == pin[k] for k in ("sha256", "bytes")),
+                "KG node graph provenance differs",
+            )
+            expected_nodes[member][position] = conservation._canonical(item["row"])
+    expected_edges: dict[str, dict[int, str]] = defaultdict(dict)
+    expected_incidence: Counter[tuple[str, int, str]] = Counter()
+    media_locators = set()
+    provider_counts: Counter[str] = Counter()
+    for ordinal, (occurrence, entry, row) in enumerate(
+        zip(occurrences, ledger, tsv, strict=True), 1
+    ):
+        _keys(
+            entry,
+            {
+                "provider",
+                "source_id",
+                "kg_occurrence_row",
+                "kg_occurrence_row_sha256",
+                "occurrence",
+                "combined_global_row",
+                "combined_row_sha256",
+                "combined_row",
+                "graph_member",
+                "graph_sha256",
+                "graph_row",
+                "graph_row_sha256",
+                "graph_full_row",
+            },
+        )
+        _require(
+            type(entry["kg_occurrence_row"]) is int
+            and entry["kg_occurrence_row"] == ordinal
+            and conservation._canonical(entry["occurrence"]) == conservation._canonical(occurrence),
+            "KG original occurrence coordinate/payload differs",
+        )
+        _require(
+            type(entry["combined_global_row"]) is int and entry["combined_global_row"] > 0,
+            "invalid historical combined occurrence position",
+        )
+        _require(
+            conservation._canonical(conservation._json(row["full_row_json"]))
+            == conservation._canonical(entry)
+            and all(row[k] == str(entry[k]) for k in fields[:-1]),
+            "KG ledger JSON/TSV differs",
+        )
+        for key, payload in (
+            ("kg_occurrence_row_sha256", occurrence),
+            ("combined_row_sha256", entry["combined_row"]),
+            ("graph_row_sha256", entry["graph_full_row"]),
+        ):
+            _require(entry[key] == payload_sha256(payload), "KG full row hash differs")
+        source, identifier = entry["provider"], entry["source_id"]
+        _require(
+            source == occurrence["provider"]
+            and identifier == occurrence["source_id"]
+            and source in providers
+            and identifier in providers[source],
+            "KG occurrence provider differs",
+        )
+        member = f"data/transformed/{source}/edges.tsv"
+        position = entry["graph_row"]
+        _require(
+            entry["graph_member"] == member
+            and entry["graph_sha256"] == proof["graph_members"][member]["sha256"]
+            and type(position) is int
+            and position > 0,
+            "KG edge provenance differs",
+        )
+        value = conservation._canonical(entry["graph_full_row"])
+        _require(
+            expected_edges[member].setdefault(position, value) == value, "conflicting KG graph row"
+        )
+        expected_incidence[source, position, identifier] += 1
+        provider_counts[source] += 1
+        if source == "mediadive":
+            media_locators.add(occurrence["source_locator"])
+    graph_members = proof["graph_members"]
+    _require(
+        set(graph_members)
+        == {f"data/transformed/{p}/{kind}.tsv" for p in providers for kind in ("nodes", "edges")},
+        "complete selected graph membership differs",
+    )
+    actual_incidence: Counter[tuple[str, int, str]] = Counter()
+    for member, pin in graph_members.items():
+        _keys(pin, {"bytes", "sha256", "row_count", "columns"})
+        source_selection._metadata_counts({"bytes": pin["bytes"], "row_count": pin["row_count"]})
+        source = Path(member).parent.name
+        is_nodes = Path(member).name == "nodes.tsv"
+        frozen = "snapshots/" + member
+        _require(
+            receipt["files"].get(frozen) == {k: pin[k] for k in ("sha256", "bytes")},
+            "KG graph is not in selected closure",
+        )
+        iterator = _combined_graph_rows(inputs.bytes[(base / frozen).as_posix()])
+        _require(next(iterator) == pin["columns"], "KG graph columns differ")
+        wanted = expected_nodes[member] if is_nodes else expected_edges[member]
+        seen, node_ids, count = set(), set(), 0
+        for count, row in enumerate(iterator, 1):
+            if count in wanted:
+                _require(
+                    conservation._canonical(row) == wanted[count],
+                    "KG graph coordinate/payload differs",
+                )
+                seen.add(count)
+            if is_nodes:
+                identifier = row["id"]
+                if identifier in providers[source]:
+                    _require(identifier not in node_ids, "duplicate selected graph node")
+                    node_ids.add(identifier)
+            elif source == "mediadive":
+                if row["source_assertion_id"] in media_locators or (
+                    row["object"] in providers[source] and row["predicate"] == "biolink:has_part"
+                ):
+                    actual_incidence[source, count, row["object"]] += 1
+            else:
+                for identifier in {row["subject"], row["object"]} & providers[source]:
+                    actual_incidence[source, count, identifier] += 1
+        _require(
+            count == pin["row_count"] and seen == set(wanted),
+            "KG graph complete row coverage differs",
+        )
+        if is_nodes:
+            _require(node_ids == providers[source], "KG graph selected-node coverage differs")
+    _require(actual_incidence == expected_incidence, "KG graph converse incidence differs")
+    _require(
+        result["kg_nodes"] == owner["row_counts"]["kg_source_ids"]
+        and result["kg_occurrences"] == owner["row_counts"]["kg_occurrences"]
+        and result["kg_provider_occurrences"]
+        == dict(provider_counts)
+        == {k: v["occurrences"] for k, v in owner["provider_counts"].items()},
+        "selected KG physical accounting differs",
+    )
+    lanes = owner["intended_accepted_cm_v3"]["expected_counts"]
+    _require(
+        all(
+            result["cm_lanes"].get(k, 0) == lanes[k]
+            for k in ("positive_inventory", "context_only", "held")
+        ),
+        "selected CM lanes differ",
+    )
+
+
+def _combined_source_inputs(inputs, review, rows):
+    """Conserve actual combined artifacts before creating current native targets.
+
+    This consumes captured originals and the independent inverse. No assembly,
+    writer receipt, historical disposition or source label grants approval.
+    """
+    declared = _combined_declaration(rows)
+    if declared is None:
+        return {}
+    _require(inputs.cm_replay is not None, "combined conservation requires explicit CM replay")
+    source = review["source"]
+    _require(
+        (source["id_column"], source["label_column"], source["occurrence_id_column"])
+        == ("source_id", "source_label", "source_id"),
+        "combined source columns differ",
+    )
+    text, digest, path = declared
+    declaration = _combined_input(inputs, review, path, expected=digest)
+    _require(declaration == text.encode("utf-8"), "inline and selected declarations differ")
+    advertised = conservation._json(text)["original_source_scope"]
+    # Paths locate the explicit roles; authority digests come independently
+    # from the selected request inventory, not from this candidate declaration.
+    authorities = {}
+    for role, reference in advertised["authorities"].items():
+        name = reference["path"]
+        _combined_input(inputs, review, name, expected=reference["sha256"])
+        authorities[role] = {"path": name, "sha256": review["inputs"][name]}
+    scope: dict[str, Any] = {
+        "profile": source_selection.PROFILE,
+        "authorities": authorities,
+        "artifacts": dict(advertised["artifacts"]),
+    }
+    source_selection.validate_scope(scope)
+    selection = inputs.cm_replay
+    _require(
+        authorities["culturemech_package"]
+        == review["culturemech_intake_replay"]
+        == {"path": selection.path, "sha256": inputs.hashes[selection.path]},
+        "combined CM package differs from actual replay selection",
+    )
+    artifact_paths = scope["artifacts"]
+    for role, key in (("combined_nodes", "nodes"), ("combined_occurrences", "occurrences")):
+        _require(artifact_paths[role] == source[key], "combined artifact path differs from source")
+        _combined_input(inputs, review, source[key], expected=source[key + "_sha256"])
+    artifacts = {
+        role: _combined_input(inputs, review, name) for role, name in artifact_paths.items()
+    }
+    data = source_selection.select_source_inputs(
+        inputs.bytes,
+        selected_scope=scope,
+        declaration=declaration,
+        declaration_path=path,
+        reviewed_crosswalk=artifacts["obligation_crosswalk"],
+        curie_map=_json(source["curie_map"]),
+    )
+    for role, name in data["selected_metadata_paths"].items():
+        _require(
+            selection.declaration(selection.proof_paths[role])
+            == {"path": name, "sha256": data["consumed_inputs"][name]},
+            "combined CM metadata differs from actual replay selection",
+        )
+
+    def document(role):
+        value = conservation._json(artifacts[role].decode("utf-8"))
+        conservation._canonical(value)
+        return value
+
+    candidate = {
+        "cm": {
+            "nodes": artifacts["cm_nodes"],
+            "occurrences": artifacts["cm_occurrences"],
+            "raw_row_map": document("cm_raw_row_map"),
+            "case_crosswalk": document("cm_case_crosswalk"),
+        },
+        "nodes": artifacts["combined_nodes"],
+        "occurrences": artifacts["combined_occurrences"],
+        "position_map": document("combined_position_map"),
+        "reconciliation": artifacts["cm_reconciliation"],
+        "kg_provider_cases": document("kg_provider_cases"),
+        "historical_obligations": document("historical_obligations"),
+        "obligation_crosswalk": document("obligation_crosswalk"),
+    }
+    required = {
+        **data["consumed_inputs"],
+        **{name: review["inputs"][name] for name in artifact_paths.values()},
+        path: digest,
+    }
+    # Historical package members are also authenticated by the actual Selection;
+    # all other consumed originals must be explicit current request inputs.
+    for name, expected in data["consumed_inputs"].items():
+        if name not in selection.required_inputs:
+            _combined_input(inputs, review, name, expected=expected)
+        else:
+            _require(selection.required_inputs[name] == expected, "CM member selection differs")
+    required.update(_combined_kg_inputs(inputs, review, scope))
+    result = conservation.validate_source_conservation(
+        candidate,
+        **{
+            key: data[key]
+            for key in (
+                "cm",
+                "kg",
+                "family_paths",
+                "curie_map",
+                "historical_obligations",
+                "reviewed_crosswalk",
+            )
+        },
+    )
+    _combined_kg_accounting(inputs, scope, result)
+    inputs.combined_conservation = True
+    return required
+
+
+def _source_capabilities(inputs, cm_proof):
+    """Membership follows validated execution, never an input capability claim."""
+    capabilities = [CAPABILITY]
+    if cm_proof is not None:
+        capabilities.append(culturemech_replay.CAPABILITY)
+    if inputs.combined_conservation:
+        _require(cm_proof is not None, "combined conservation requires completed CM replay")
+        capabilities.append(source_selection.PROFILE)
+    return capabilities
+
+
 def _prepare(root, review_path):
     inputs = _Inputs(root)
     review_path = Path(review_path)
@@ -506,6 +1059,7 @@ def _prepare(root, review_path):
             source["nodes"]: source["nodes_sha256"],
             source["occurrences"]: source["occurrences_sha256"],
         }
+    inputs.cm_required_inputs.update(_combined_source_inputs(inputs, review, rows))
     cases = review["cases"]
     _require(
         isinstance(cases, list) and len(cases) == len(rows), "cases must cover every source row"
@@ -731,7 +1285,7 @@ def expected_products(root, review_path, *, _generation_receipt=None):
     }
     manifest = {
         "schema_version": 1,
-        "required_capabilities": [CAPABILITY],
+        "required_capabilities": _source_capabilities(inputs, cm_proof),
         "semantic_status": "REVIEWED_CANDIDATE_ONLY",
         "production_authorized": False,
         "curie_map": {"MIM": MIM_PREFIX, "MIM.ingredient": MIM_PREFIX},
@@ -746,7 +1300,6 @@ def expected_products(root, review_path, *, _generation_receipt=None):
         "files": {name: _sha(raw) for name, raw in products.items()},
     }
     if cm_proof is not None:
-        manifest["required_capabilities"].append(culturemech_replay.CAPABILITY)
         manifest["culturemech_intake_replay"] = cm_proof
     products["manifest.json"] = _json(manifest)
     if inputs.cm_replay:
