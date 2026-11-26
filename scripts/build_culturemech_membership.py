@@ -57,9 +57,6 @@ OUTPUT = REPO_ROOT / "mappings" / "culturemech_recipe_membership.tsv"
 # CultureMech grounded that MIM has no record for exists nowhere else (#498).
 UNKNOWN_REPORT = REPO_ROOT / "reports" / "culturemech_membership_unknown_ids.tsv"
 
-# `ingredient_json` carries a whole serialized component.
-csv.field_size_limit(1 << 30)
-
 
 def provenance(occurrences: Path, edges: int, recipes: int, records: int) -> str:
     """Which CultureMech tree these edges came from (#486).
@@ -94,25 +91,32 @@ def collect(occurrences: Path, known: set[str]) -> tuple[dict, dict[str, int]]:
     edges: dict[tuple[str, str], int] = defaultdict(int)
     unknown: dict[str, set[str]] = defaultdict(set)
     with occurrences.open(newline="", encoding="utf-8") as fh:
-        reader = csv.DictReader(fh, delimiter="\t")
-        for field in ("resolved_identifier", "recipe_id"):
-            if field not in (reader.fieldnames or []):
-                raise SystemExit(
-                    f"error: {occurrences} has no {field!r} column; this needs the "
-                    "CultureMech#337 occurrence table."
-                )
-        for row in reader:
-            identifier = mim_identifier_for_occurrence(row)
-            recipe_id = (row.get("recipe_id") or "").strip()
-            if not identifier or not recipe_id:
-                continue
-            if identifier not in known:
-                # Reported, not dropped silently: an id CultureMech resolved to
-                # that MIM does not hold is a gap in one of the two, and which
-                # one is a curation question.
-                unknown[identifier].add(recipe_id)
-                continue
-            edges[(identifier, recipe_id)] += 1
+        # Whole ingredient_json components need the existing large-field budget.
+        # Keep it local to this read, including validation/iteration failures (#1559).
+        previous_limit = csv.field_size_limit()
+        try:
+            csv.field_size_limit(1 << 30)
+            reader = csv.DictReader(fh, delimiter="\t")
+            for field in ("resolved_identifier", "recipe_id"):
+                if field not in (reader.fieldnames or []):
+                    raise SystemExit(
+                        f"error: {occurrences} has no {field!r} column; this needs the "
+                        "CultureMech#337 occurrence table."
+                    )
+            for row in reader:
+                identifier = mim_identifier_for_occurrence(row)
+                recipe_id = (row.get("recipe_id") or "").strip()
+                if not identifier or not recipe_id:
+                    continue
+                if identifier not in known:
+                    # Reported, not dropped silently: an id CultureMech resolved to
+                    # that MIM does not hold is a gap in one of the two, and which
+                    # one is a curation question.
+                    unknown[identifier].add(recipe_id)
+                    continue
+                edges[(identifier, recipe_id)] += 1
+        finally:
+            csv.field_size_limit(previous_limit)
     return edges, {k: len(v) for k, v in sorted(unknown.items())}
 
 

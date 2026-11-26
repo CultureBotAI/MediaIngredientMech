@@ -55,10 +55,6 @@ from mediaingredientmech.utils.culturemech_occurrences import mim_identifier_for
 DATA = Path("data/curated/mapped_ingredients.yaml")
 REPORT = Path("reports/occurrence_statistics_refresh.tsv")
 
-# `ingredient_json` carries a whole serialized component, so rows blow past the
-# default 128 KiB field cap.
-csv.field_size_limit(1 << 30)
-
 
 def source_provenance(path: Path, rows: int, recipes: int) -> str:
     """Where these numbers came from, in one line (#486).
@@ -96,21 +92,28 @@ def read_occurrences(path: Path) -> tuple[dict[str, tuple[int, int]], int, int]:
     all_recipes: set[str] = set()
     total_rows = 0
     with path.open(newline="", encoding="utf-8") as fh:
-        reader = csv.DictReader(fh, delimiter="\t")
-        for field in ("resolved_identifier", "recipe_id"):
-            if field not in (reader.fieldnames or []):
-                raise SystemExit(
-                    f"error: {path} has no {field!r} column; this needs the "
-                    "CultureMech#337 occurrence table, not the pre-#337 aggregate."
-                )
-        for row in reader:
-            identifier = mim_identifier_for_occurrence(row)
-            if not identifier:
-                continue
-            recipes[identifier].add(row["recipe_id"])
-            rows[identifier] += 1
-            all_recipes.add(row["recipe_id"])
-            total_rows += 1
+        # Whole ingredient_json components need the existing large-field budget.
+        # Keep it local to this read, including validation/iteration failures (#1559).
+        previous_limit = csv.field_size_limit()
+        try:
+            csv.field_size_limit(1 << 30)
+            reader = csv.DictReader(fh, delimiter="\t")
+            for field in ("resolved_identifier", "recipe_id"):
+                if field not in (reader.fieldnames or []):
+                    raise SystemExit(
+                        f"error: {path} has no {field!r} column; this needs the "
+                        "CultureMech#337 occurrence table, not the pre-#337 aggregate."
+                    )
+            for row in reader:
+                identifier = mim_identifier_for_occurrence(row)
+                if not identifier:
+                    continue
+                recipes[identifier].add(row["recipe_id"])
+                rows[identifier] += 1
+                all_recipes.add(row["recipe_id"])
+                total_rows += 1
+        finally:
+            csv.field_size_limit(previous_limit)
     return ({k: (len(v), rows[k]) for k, v in recipes.items()},
             total_rows, len(all_recipes))
 
