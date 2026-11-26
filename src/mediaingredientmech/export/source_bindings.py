@@ -421,18 +421,39 @@ def _combined_declaration(rows):
 
     Historical CM rows without this profile retain their existing limited
     meaning. An advertised malformed/unknown profile cannot fall back to it.
+    Unrelated source extra cells remain opaque, including in combined tables
+    (#1555); only CM-marked or explicitly advertised rows join this cohort.
     """
     declarations = []
+    cohort = []
     for row in rows:
+        marked = (
+            row.get("source_id", "").startswith(conservation.CM_PREFIX + ":")
+            or row.get("projection_contract") == conservation.DOMAIN
+        )
+        if marked:
+            cohort.append(row)
         text = row.get("projection_declaration_json", "")
         if not text:
             continue
-        value = conservation._json(text)
+        try:
+            value = conservation._json(text)
+        except ValueError:
+            if marked:
+                raise
+            continue
+        scope = value.get("original_source_scope") if type(value) is dict else None
+        advertised = type(scope) is dict and bool(
+            {"profile", "authorities", "artifacts"} & set(scope)
+        )
+        if not marked and not advertised:
+            continue
         _require(type(value) is dict, "source projection declaration must be an object")
-        scope = value.get("original_source_scope")
         _require(type(scope) is dict, "source projection scope must be an object")
-        if {"profile", "authorities", "artifacts"} & set(scope):
+        if type(scope) is dict and advertised:
             source_selection.validate_scope(scope)
+            if not marked:
+                cohort.append(row)
             declarations.append(
                 (
                     text,
@@ -444,24 +465,19 @@ def _combined_declaration(rows):
         return None
     _require(len(set(declarations)) == 1, "competing combined source declarations")
     declaration = declarations[0]
-    for row in rows:
-        if (
-            row.get("source_id", "").startswith(conservation.CM_PREFIX + ":")
-            or row.get("projection_contract") == conservation.DOMAIN
-            or row.get("projection_declaration_json")
-        ):
-            _require(
-                tuple(
-                    row.get(key)
-                    for key in (
-                        "projection_declaration_json",
-                        "projection_declaration_sha256",
-                        "projection_declaration_path",
-                    )
+    for row in cohort:
+        _require(
+            tuple(
+                row.get(key)
+                for key in (
+                    "projection_declaration_json",
+                    "projection_declaration_sha256",
+                    "projection_declaration_path",
                 )
-                == declaration,
-                "CM cohort declaration is missing or inconsistent",
             )
+            == declaration,
+            "CM cohort declaration is missing or inconsistent",
+        )
     return declaration
 
 

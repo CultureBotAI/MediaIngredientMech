@@ -74,7 +74,7 @@ def function(name):
     return NAMESPACE[name]
 
 
-def combined_fixture(*, nested=False, literal_payload=False):
+def combined_fixture(*, nested=False, literal_payload=False, opaque_kg_cell=None):
     """Synthetic complete authority/closure, without native Selection or reports."""
     data = (
         nested_count_fixture(
@@ -116,6 +116,9 @@ def combined_fixture(*, nested=False, literal_payload=False):
             ref["sha256"] = pin(captured[ref["path"]])["sha256"]
     original_owner = json.loads(captured[refs["kg_source_selection"]["path"]])
     nodes = rows(captured[refs["kg_nodes"]["path"]])
+    if opaque_kg_cell is not None:
+        for node in nodes:
+            node["projection_declaration_json"] = opaque_kg_cell
     occurrences = rows(captured[refs["kg_occurrences"]["path"]])
     frozen_root, revision = "/synthetic/historical/kg", "a" * 40
     graph_rows, graph_bytes, graph_pins = {}, {}, {}
@@ -803,7 +806,102 @@ def test_historical_declaration_retains_limited_route():
     ],
 )
 def test_malformed_or_unknown_advertised_profiles_refuse(scope):
-    row = {"projection_declaration_json": canonical({"original_source_scope": scope})}
+    # #1555: malformed scope is a CM declaration only with a real CM marker;
+    # unrelated providers may retain an opaque null/list/scalar extra cell.
+    row = {
+        "source_id": conservation.CM_PREFIX + ":synthetic",
+        "projection_contract": conservation.DOMAIN,
+        "projection_declaration_json": canonical({"original_source_scope": scope}),
+    }
+    with pytest.raises(ValueError):
+        function("_combined_declaration")([row])
+
+
+@pytest.mark.parametrize(
+    "opaque",
+    [
+        "",
+        '{"another_provider_schema":1}',
+        "null",
+        "[]",
+        '"profile"',
+        "not JSON",
+        '{"original_source_scope":null}',
+        '{"original_source_scope":[]}',
+        '{"original_source_scope":{"another_provider_schema":1}}',
+    ],
+)
+def test_1555_ordinary_extra_cells_remain_literal_and_do_not_activate(opaque):
+    inputs = SimpleNamespace(cm_replay=None, combined_conservation=False)
+    values = [{"source_id": "SOURCE:ordinary", "projection_declaration_json": opaque}]
+    before = deepcopy(values)
+    assert function("_combined_source_inputs")(inputs, {}, values) == {}
+    assert values == before
+    assert inputs.combined_conservation is False
+
+
+@pytest.mark.parametrize(
+    "opaque",
+    [
+        '{"another_provider_schema":1}',
+        "null",
+        "not JSON",
+        '{"original_source_scope":{"another_provider_schema":1}}',
+    ],
+)
+def test_1555_combined_inverse_preserves_original_opaque_kg_cells(opaque):
+    inputs, review, scope, _, _ = combined_fixture(opaque_kg_cell=opaque)
+    before = deepcopy((inputs.bytes, inputs.hashes, review))
+    selected = rows(inputs.bytes[scope["authorities"]["kg_nodes"]["path"]])
+    combined = rows(inputs.bytes[review["source"]["nodes"]])
+    kg = [r for r in combined if not r["source_id"].startswith(conservation.CM_PREFIX + ":")]
+    assert len(kg) == len(selected) > 0
+    assert [r["projection_declaration_json"] for r in kg] == [opaque] * len(selected)
+    assert function("_combined_declaration")(combined) is not None
+    required = run_combined(inputs, review)
+    assert scope["authorities"]["kg_nodes"]["path"] in required
+    assert inputs.combined_conservation is True
+    assert (inputs.bytes, inputs.hashes, review) == before
+
+
+@pytest.mark.parametrize("marker", ["prefix", "contract"])
+@pytest.mark.parametrize(
+    "malformed",
+    [
+        "not JSON",
+        "null",
+        "[]",
+        "{}",
+        '{"original_source_scope":null}',
+        '{"original_source_scope":[]}',
+        '{"original_source_scope":{"profile":"unknown"}}',
+        '{"original_source_scope":{"artifacts":{}}}',
+    ],
+)
+def test_1555_either_actual_cm_marker_refuses_malformed_declarations(marker, malformed):
+    row = {"source_id": "SOURCE:ordinary", "projection_declaration_json": malformed}
+    if marker == "prefix":
+        row["source_id"] = conservation.CM_PREFIX + ":synthetic"
+    else:
+        row["projection_contract"] = conservation.DOMAIN
+    with pytest.raises(ValueError):
+        function("_combined_declaration")([row])
+
+
+@pytest.mark.parametrize(
+    "scope",
+    [
+        {"profile": "unknown"},
+        {"authorities": {}},
+        {"artifacts": {}},
+        {"profile": source_selection.PROFILE},
+    ],
+)
+def test_1555_unmarked_explicit_profile_cannot_fall_back_to_ordinary(scope):
+    row = {
+        "source_id": "SOURCE:ordinary",
+        "projection_declaration_json": canonical({"original_source_scope": scope}),
+    }
     with pytest.raises(ValueError):
         function("_combined_declaration")([row])
 
