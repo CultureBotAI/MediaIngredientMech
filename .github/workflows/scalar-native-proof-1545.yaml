@@ -102,12 +102,20 @@ jobs:
           from pathlib import Path
           base = '4697a3a3ca073e199775e30a17604f039f115a14'
           workflow = '.github/workflows/scalar-native-proof-1545.yaml'
+          fixture = 'tests/test_inherited_cas_source_chain.py'
+          original_fixture_sha256 = 'dfa6bacab517ed35e92516dd806aefe466862bd77cfd82c7eb69f88b991ecb1f'
+          reviewed_fixture_sha256 = 'b04d2d1b6a1d2654c5230f36e8a5fe3b4886c8eb10b9104885ed8ebfbc25bfa2'
           git = lambda *args: subprocess.check_output(['git', *args], text=True, timeout=30).strip()
           changed = git('diff', '--name-only', base, 'HEAD').splitlines()
-          if changed != [workflow]:
-              raise SystemExit('Diagnostic source differs from reviewed base beyond the new workflow')
+          if changed != [workflow, fixture]:
+              raise SystemExit('Diagnostic source differs beyond the reviewed workflow and exact observation fixture')
           if git('status', '--porcelain', '--untracked-files=no'):
               raise SystemExit('Tracked source is dirty before diagnostic')
+          original_fixture = subprocess.check_output(['git', 'show', base + ':' + fixture], timeout=30)
+          if hashlib.sha256(original_fixture).hexdigest() != original_fixture_sha256:
+              raise SystemExit('Original fixture bytes differ from the reviewed observation proof')
+          if hashlib.sha256(Path(fixture).read_bytes()).hexdigest() != reviewed_fixture_sha256:
+              raise SystemExit('Current fixture bytes differ from the reviewed observation-only candidate')
           names = (
               '.python-version', 'pyproject.toml', 'uv.lock',
               '.github/workflows/tests.yaml', workflow,
@@ -133,6 +141,7 @@ jobs:
               'head': git('rev-parse', 'HEAD'), 'base': base,
               'base_tree': git('rev-parse', base + '^{tree}'),
               'changed_from_base': changed,
+              'observation_fixture': {'path': fixture, 'original_sha256': original_fixture_sha256, 'reviewed_sha256': reviewed_fixture_sha256},
               'python': sys.version, 'executable': sys.executable,
               'executable_sha256': sha(sys.executable),
               'base_executable': getattr(sys, '_base_executable', None),
@@ -144,7 +153,7 @@ jobs:
               'claw_heads': {name: subprocess.check_output(['git', '-C', '.temp/' + name, 'rev-parse', 'HEAD'], text=True, timeout=30).strip() for name in ('native-claw', 'additional-assertion-claw')},
               'cgroup_memory_events_before': cg.read_text() if cg.is_file() else None,
               'selected_node': '${{ matrix.node }}',
-              'scope': 'One unchanged inherited-CAS native proof case for #1450; not a full-suite or release qualification',
+              'scope': 'One inherited-CAS native proof case with additive phase observations for #1450; not a full-suite or release qualification',
           }
           path = Path('.temp/scalar-native-proof-1545/runtime.json')
           with path.open('x') as stream:
@@ -170,7 +179,7 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Run one unchanged node with first-failure terminal evidence
+      - name: Run one node with additive phase observations
         env:
           CLAW_SRC: ${{ github.workspace }}/.temp/native-claw/src
           MIM_ADDITIONAL_ASSERTION_CLAW_SRC: ${{ github.workspace }}/.temp/additional-assertion-claw/src

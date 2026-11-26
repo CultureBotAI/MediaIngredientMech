@@ -13,6 +13,7 @@ import json
 import os
 import shutil
 import types
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
@@ -480,6 +481,15 @@ def _completed_chain(tmp_path, monkeypatch):
             stream.write(json.dumps({"completed": phase}) + "\n")
         print("#1439 native phase complete: " + phase, flush=True)
 
+    def observed_phase(phase, event):
+        observation = {
+            "phase": phase,
+            "event": event,
+            "at": datetime.now(timezone.utc).isoformat(),
+        }
+        with (tmp_path / "progress.jsonl").open("a", encoding="utf-8") as stream:
+            stream.write(json.dumps(observation) + "\n")
+
     f, historical, old_rows = _source_fixture(tmp_path / "source-chain", monkeypatch)
     adoption_root = f.predecessor
     adoption_before = maintained(adoption_root)
@@ -523,11 +533,17 @@ def _completed_chain(tmp_path, monkeypatch):
     assert checked["status"] == "COMPLETE_CURRENT_CANONICAL_CANDIDATE"
     completed("canonical_prepare_dry_apply_verify")
 
+    observed_phase("semantic_transition.capture", "begin")
     packet = semantic_transition.capture(
         p.root, stage, destination / "application.json", "inherited-cas-semantic"
     )
+    observed_phase("semantic_transition.capture", "end")
+    observed_phase("semantic_case_inputs", "begin")
     arguments = semantic_case_inputs(p.root, packet)
+    observed_phase("semantic_case_inputs", "end")
+    observed_phase("semantic_transition.verify", "begin")
     result = semantic_transition.verify(*arguments)
+    observed_phase("semantic_transition.verify", "end")
     assert result["scope"] == "semantic_reconstruction_not_transaction_reexecution"
     assert result["provenance"]["ordinary_release_review_required"] is True
     assert result["provenance"]["scientific_approval_added"] is False
